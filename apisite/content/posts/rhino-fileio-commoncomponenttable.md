@@ -1,33 +1,37 @@
 ---
-title: "Rhino.FileIO.CommonComponentTable"
+title: "CommonComponentTable"
 draft: false
 ---
 
-# Properties
-## ModelComponentType ComponentType
+*Namespace: Rhino.FileIO*
+
+   Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.
+   
+## Properties
+#### ModelComponentType ComponentType
 - (summary) 
      Returns the actual component type of a table.
      
 - (since) (unknown)
-## int Count
+#### int Count
 - (summary) 
      Returns the count of all items, including deleted ones.
      
 - (since) (unknown)
-# Methods
-## void Clear()
+## Methods
+#### void Clear()
 - (summary) 
      Marks all items as deleted.
      
 - (since) (unknown)
 - (returns) void This is some return comment
-## bool Delete(T item)
+#### bool Delete(T item)
 - (summary) 
      Deletes an item. Items that are deleted are still keeping their space, but the 'IsDeleted' flag is checked.
      
 - (since) (unknown)
 - (returns) bool This is some return comment
-## T FindId(Guid id)
+#### T FindId(Guid id)
 - (summary) 
      Uses the guid to find a model component. Deleted objects cannot be found by id.
      The guid is the value that is stored in the .Id property.
@@ -39,7 +43,7 @@ draft: false
      
 - (since) (unknown)
 - (returns) T This is some return comment
-## IEnumerator<T> GetEnumerator()
+#### IEnumerator<T> GetEnumerator()
 - (summary) 
      Returns the enumerator that yields all items.
      

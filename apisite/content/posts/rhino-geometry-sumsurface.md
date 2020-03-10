@@ -1,10 +1,14 @@
 ---
-title: "Rhino.Geometry.SumSurface"
+title: "SumSurface"
 draft: false
 ---
 
-# Methods
-## static SumSurface Create(Curve curveA,Curve curveB)
+*Namespace: Rhino.Geometry*
+
+   Represents a sum surface, or an extrusion of a curve along a curved path.
+   
+## Methods
+#### static SumSurface Create(Curve curveA,Curve curveB)
 - (summary) 
      Constructs a new sum surface by extruding a curve A along a path B.
      

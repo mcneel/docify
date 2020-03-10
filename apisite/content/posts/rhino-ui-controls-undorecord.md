@@ -1,16 +1,20 @@
 ---
-title: "Rhino.UI.Controls.UndoRecord"
+title: "UndoRecord"
 draft: false
 ---
 
-# Constructors
-## Rhino.UI.Controls.UndoRecord(string description,IRdkViewModel viewModel)
+*Namespace: Rhino.UI.Controls*
+
+   Undo Record
+   
+## Constructors
+#### Rhino.UI.Controls.UndoRecord(string description,IRdkViewModel viewModel)
 - (summary) 
      UndoRecord Constructor
      
 - (since) 6.0
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      UndoRecord Dispose
      

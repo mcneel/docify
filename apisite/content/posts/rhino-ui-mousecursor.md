@@ -1,16 +1,20 @@
 ---
-title: "Rhino.UI.MouseCursor"
+title: "MouseCursor"
 draft: false
 ---
 
-# Properties
-## static Point2d Location
+*Namespace: Rhino.UI*
+
+   Contains static methods to control the mouse icon.
+   
+## Properties
+#### static Point2d Location
 - (summary) 
      Retrieves the position of the mouse cursor, in screen coordinates
      
 - (since) 5.8
-# Methods
-## static void SetToolTip(string tooltip)
+## Methods
+#### static void SetToolTip(string tooltip)
 - (summary) 
      Sets a cursor tooltip string shown next to the mouse cursor.
      Overrides all cursor tooltip panes.

@@ -1,10 +1,14 @@
 ---
-title: "Rhino.DocObjects.OrdinateDimensionObject"
+title: "OrdinateDimensionObject"
 draft: false
 ---
 
-# Properties
-## Geometry.OrdinateDimension OrdinateDimensionGeometry
+*Namespace: Rhino.DocObjects*
+
+   Rhino Object that represents an ordinate dimension geometry and attributes
+   
+## Properties
+#### Geometry.OrdinateDimension OrdinateDimensionGeometry
 - (summary) 
      Get the dimension geometry for this object.
      

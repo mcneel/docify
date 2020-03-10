@@ -1,20 +1,21 @@
 ---
-title: "Rhino.Render.RenderPrimitive"
+title: "RenderPrimitive"
 draft: false
 ---
 
-# Properties
-## BoundingBox BoundingBox
+*Namespace: Rhino.Render*
+## Properties
+#### BoundingBox BoundingBox
 - (summary) 
      The bounding box for this primitive.
      
 - (since) 5.7
-## Transform InstanceTransform
+#### Transform InstanceTransform
 - (summary) 
      Instance reference transform or Identity if not an instance reference.
      
 - (since) 5.7
-## RenderPrimitiveType PrimitiveType
+#### RenderPrimitiveType PrimitiveType
 - (summary) 
      Call this before extracting meshes if you support render primitives to
      get the  of this mesh then call the
@@ -23,29 +24,29 @@ draft: false
      will mesh the primitive and return a mesh always.
      
 - (since) 5.7
-## RenderMaterial RenderMaterial
+#### RenderMaterial RenderMaterial
 - (summary) 
      The  associated with this mesh or None if there is not one.
      
 - (since) 5.7
-## DocObjects.RhinoObject RhinoObject
+#### DocObjects.RhinoObject RhinoObject
 - (summary) 
      The Rhino object associated with this render primitive.
      
 - (since) 5.7
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
 - (since) 5.7
 - (returns) void This is some return comment
-## Mesh Mesh()
+#### Mesh Mesh()
 - (summary) 
      Returns the mesh associated with the object, this will mesh primitives
      and always return a mesh.
      
 - (since) 5.7
 - (returns) Mesh This is some return comment
-## bool TryGetBox(Box box)
+#### bool TryGetBox(Box box)
 - (summary) 
      Call this method to get a  primitive for this mesh.  If this
      meshes  is not a 
@@ -53,7 +54,7 @@ draft: false
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## bool TryGetCone(Cone cone,Plane truncation)
+#### bool TryGetCone(Cone cone,Plane truncation)
 - (summary) 
      Call this method to get a  primitive for this mesh.  If this
      meshes  is not a 
@@ -62,7 +63,7 @@ draft: false
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## bool TryGetPlane(PlaneSurface plane)
+#### bool TryGetPlane(PlaneSurface plane)
 - (summary) 
      Call this method to get a  primitive for this mesh.  If this
      meshes  is not a 
@@ -70,7 +71,7 @@ draft: false
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## bool TryGetSphere(Sphere sphere)
+#### bool TryGetSphere(Sphere sphere)
 - (summary) 
      Call this method to get a sphere primitive for this mesh.  If this
      meshes  is not a 

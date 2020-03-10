@@ -1,10 +1,11 @@
 ---
-title: "Rhino.PlugIns.DigitizerPlugIn"
+title: "DigitizerPlugIn"
 draft: false
 ---
 
-# Methods
-## void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey)
+*Namespace: Rhino.PlugIns*
+## Methods
+#### void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey)
 - (summary) 
      If the digitizer is enabled, call this function to send a point to Rhino.
      Call this function as much as you like.  The digitizers that Rhino currently
@@ -13,7 +14,7 @@ draft: false
      
 - (since) 6.0
 - (returns) void This is some return comment
-## void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey)
+#### void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey)
 - (summary) 
      If the digitizer is enabled, call this function to send a point and direction to Rhino.
      Call this function as much as you like.  The digitizers that Rhino currently

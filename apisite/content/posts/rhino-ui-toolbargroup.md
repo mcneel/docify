@@ -1,18 +1,19 @@
 ---
-title: "Rhino.UI.ToolbarGroup"
+title: "ToolbarGroup"
 draft: false
 ---
 
-# Properties
-## Guid Id
+*Namespace: Rhino.UI*
+## Properties
+#### Guid Id
 - (summary) 
 - (since) 5.0
-## bool IsDocked
+#### bool IsDocked
 - (summary) 
 - (since) 5.0
-## string Name
+#### string Name
 - (summary) 
 - (since) 5.0
-## bool Visible
+#### bool Visible
 - (summary) 
 - (since) 5.0

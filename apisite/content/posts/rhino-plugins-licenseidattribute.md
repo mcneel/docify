@@ -1,13 +1,14 @@
 ---
-title: "Rhino.PlugIns.LicenseIdAttribute"
+title: "LicenseIdAttribute"
 draft: false
 ---
 
-# Constructors
-## Rhino.PlugIns.LicenseIdAttribute(string value)
+*Namespace: Rhino.PlugIns*
+## Constructors
+#### Rhino.PlugIns.LicenseIdAttribute(string value)
 - (summary) 
 - (since) 6.0
-# Properties
-## string Value
+## Properties
+#### string Value
 - (summary) 
 - (since) 6.0

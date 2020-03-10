@@ -1,21 +1,22 @@
 ---
-title: "Rhino.Input.Custom.OptionColor"
+title: "OptionColor"
 draft: false
 ---
 
-# Constructors
-## Rhino.Input.Custom.OptionColor(Color initialValue)
+*Namespace: Rhino.Input.Custom*
+## Constructors
+#### Rhino.Input.Custom.OptionColor(Color initialValue)
 - (summary) 
 - (since) 5.0
-# Properties
-## Color CurrentValue
+## Properties
+#### Color CurrentValue
 - (summary) 
 - (since) 5.0
-## Color InitialValue
+#### Color InitialValue
 - (summary) 
 - (since) 5.0
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
 - (since) 5.0
 - (returns) void This is some return comment

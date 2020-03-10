@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Render.RenderContentChangedEventArgs"
+title: "RenderContentChangedEventArgs"
 draft: false
 ---
 
-# Properties
-## RenderContent.ChangeContexts ChangeContext
+*Namespace: Rhino.Render*
+## Properties
+#### RenderContent.ChangeContexts ChangeContext
 - (summary) 
 - (since) 5.7
-## RenderContent OldContent
+#### RenderContent OldContent
 - (summary) 
 - (since) 6.0

@@ -1,42 +1,47 @@
 ---
-title: "Rhino.Geometry.BrepLoop"
+title: "BrepLoop"
 draft: false
 ---
 
-# Properties
-## Brep Brep
+*Namespace: Rhino.Geometry*
+
+   Represent a single loop in a Brep object. A loop is composed
+   of a list of trim curves.
+   
+## Properties
+#### Brep Brep
 - (summary) 
      Gets the Brep that owns this loop.
      
 - (since) 5.0
-## BrepFace Face
+#### BrepFace Face
 - (summary) 
      BrepFace this loop belongs to.
      
 - (since) 5.0
-## int LoopIndex
+#### int LoopIndex
 - (summary) 
      Gets the index of this loop in the Brep.Loops collection.
      
 - (since) 5.0
-## BrepLoopType LoopType
+#### BrepLoopType LoopType
 - (summary) 
      type of loop.
      
 - (since) 5.0
-## Collections.BrepTrimList Trims
+#### Collections.BrepTrimList Trims
 - (summary) 
      List of trims for this loop
      
 - (since) 5.1
-# Methods
-## Curve To2dCurve()
+## Methods
+#### Curve To2dCurve()
 - (summary) 
      Create a 2d curve that traces the entire loop
      
 - (since) 5.1
 - (returns) Curve This is some return comment
-## Curve To3dCurve()
+#### Curve To3dCurve()
 - (summary) 
      Create a 3D curve that approximates the loop geometry.
      

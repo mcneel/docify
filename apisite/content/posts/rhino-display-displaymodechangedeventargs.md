@@ -1,18 +1,19 @@
 ---
-title: "Rhino.Display.DisplayModeChangedEventArgs"
+title: "DisplayModeChangedEventArgs"
 draft: false
 ---
 
-# Properties
-## Guid ChangedDisplayModeId
+*Namespace: Rhino.Display*
+## Properties
+#### Guid ChangedDisplayModeId
 - (summary) 
 - (since) 6.18
-## Guid OldDisplayModeId
+#### Guid OldDisplayModeId
 - (summary) 
 - (since) 6.18
-## RhinoDoc RhinoDoc
+#### RhinoDoc RhinoDoc
 - (summary) 
 - (since) 6.18
-## RhinoViewport Viewport
+#### RhinoViewport Viewport
 - (summary) 
 - (since) 6.18

@@ -1,20 +1,23 @@
 ---
-title: "Rhino.ApplicationSettings.DraftAngleAnalysisSettingsState"
+title: "DraftAngleAnalysisSettingsState"
 draft: false
 ---
 
-# Properties
-## Interval AngleRange
+*Namespace: Rhino.ApplicationSettings*
+
+   Represents a snapshot of 
+## Properties
+#### Interval AngleRange
 - (summary) 
      The angle range.
      
 - (since) 7.0
-## bool ShowIsoCurves
+#### bool ShowIsoCurves
 - (summary) 
      Show isoparametric curves.
      
 - (since) 7.0
-## Vector3d UpDirection
+#### Vector3d UpDirection
 - (summary) 
      The up direction.
      

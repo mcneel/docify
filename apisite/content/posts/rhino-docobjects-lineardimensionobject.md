@@ -1,10 +1,14 @@
 ---
-title: "Rhino.DocObjects.LinearDimensionObject"
+title: "LinearDimensionObject"
 draft: false
 ---
 
-# Properties
-## Geometry.LinearDimension LinearDimensionGeometry
+*Namespace: Rhino.DocObjects*
+
+   Rhino Object that represents a linear dimension geometry and attributes
+   
+## Properties
+#### Geometry.LinearDimension LinearDimensionGeometry
 - (summary) 
      Get the dimension geometry for this object.
      

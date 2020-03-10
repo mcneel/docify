@@ -1,16 +1,17 @@
 ---
-title: "Rhino.PlugIns.PlugInDescriptionAttribute"
+title: "PlugInDescriptionAttribute"
 draft: false
 ---
 
-# Constructors
-## Rhino.PlugIns.PlugInDescriptionAttribute(DescriptionType descriptionType,string value)
+*Namespace: Rhino.PlugIns*
+## Constructors
+#### Rhino.PlugIns.PlugInDescriptionAttribute(DescriptionType descriptionType,string value)
 - (summary) 
 - (since) 5.0
-# Properties
-## DescriptionType DescriptionType
+## Properties
+#### DescriptionType DescriptionType
 - (summary) 
 - (since) 5.0
-## string Value
+#### string Value
 - (summary) 
 - (since) 5.0

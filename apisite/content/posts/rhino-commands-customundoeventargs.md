@@ -1,24 +1,28 @@
 ---
-title: "Rhino.Commands.CustomUndoEventArgs"
+title: "CustomUndoEventArgs"
 draft: false
 ---
 
-# Properties
-## string ActionDescription
+*Namespace: Rhino.Commands*
+
+   Argument package that is passed to a custom undo delegate
+   
+## Properties
+#### string ActionDescription
 - (summary) 
 - (since) 5.0
-## Guid CommandId
+#### Guid CommandId
 - (summary) 
 - (since) 5.0
-## bool CreatedByRedo
+#### bool CreatedByRedo
 - (summary) 
 - (since) 5.0
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## object Tag
+#### object Tag
 - (summary) 
 - (since) 5.0
-## uint UndoSerialNumber
+#### uint UndoSerialNumber
 - (summary) 
 - (since) 5.0

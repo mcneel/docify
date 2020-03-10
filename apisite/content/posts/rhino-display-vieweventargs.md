@@ -1,9 +1,10 @@
 ---
-title: "Rhino.Display.ViewEventArgs"
+title: "ViewEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoView View
+*Namespace: Rhino.Display*
+## Properties
+#### RhinoView View
 - (summary) 
 - (since) 5.0

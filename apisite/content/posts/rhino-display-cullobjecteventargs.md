@@ -1,16 +1,17 @@
 ---
-title: "Rhino.Display.CullObjectEventArgs"
+title: "CullObjectEventArgs"
 draft: false
 ---
 
-# Properties
-## bool CullObject
+*Namespace: Rhino.Display*
+## Properties
+#### bool CullObject
 - (summary) 
 - (since) 5.3
-## Rhino.DocObjects.RhinoObject RhinoObject
+#### Rhino.DocObjects.RhinoObject RhinoObject
 - (summary) 
 - (since) 5.3
-## uint RhinoObjectSerialNumber
+#### uint RhinoObjectSerialNumber
 - (summary) 
      Gets the rhino object runtime serial number.
      

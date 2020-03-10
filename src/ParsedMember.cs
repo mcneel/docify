@@ -16,22 +16,21 @@ namespace api_docify
     /// Things "inside" of a class, struct, or interface. This includes
     /// constructors, events, properties, or methods
     /// </summary>
-    class ParsedMember
+    class ParsedMember : XmlDocumentedItem
     {
-        System.Xml.XmlDocument _documentationAsXml;
         public ParsedMember(MemberDeclarationSyntax member, DocumentationCommentTriviaSyntax documentation)
+            : base (documentation)
         {
             Member = member;
-            Documentation = documentation;
+            ParsedMemberType mt = ParsedMemberType.None;
+            if (Member is ConstructorDeclarationSyntax) mt = ParsedMemberType.Constructor;
+            if (Member is EventDeclarationSyntax) mt = ParsedMemberType.Event;
+            if (Member is PropertyDeclarationSyntax) mt = ParsedMemberType.Property;
+            if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
+            MemberType = mt;
         }
-        public DocumentationCommentTriviaSyntax Documentation { get; }
-        private MemberDeclarationSyntax Member { get; }
 
-        public bool HasSinceTag()
-        {
-            bool exists = (Documentation != null && Documentation.Content.ToFullString().Contains("<since>"));
-            return exists;
-        }
+        private MemberDeclarationSyntax Member { get; }
 
         public int SinceInsertIndex()
         {
@@ -39,39 +38,12 @@ namespace api_docify
             return rc;
         }
 
-        public ParsedMemberType MemberType
-        {
-            get
-            {
-                if (IsConstructor)
-                    return ParsedMemberType.Constructor;
-                if (IsEvent)
-                    return ParsedMemberType.Event;
-                if (IsProperty)
-                    return ParsedMemberType.Property;
-                if (IsMethod)
-                    return ParsedMemberType.Method;
-                return ParsedMemberType.None;
-            }
-        }
+        public ParsedMemberType MemberType { get; }
 
-        public bool IsConstructor
-        {
-            get { return Member is ConstructorDeclarationSyntax; }
-        }
-        public bool IsEvent
-        {
-            get { return Member is EventDeclarationSyntax; }
-        }
-        public bool IsProperty
-        {
-            get { return Member is PropertyDeclarationSyntax; }
-        }
-        public bool IsMethod
-        {
-            get { return Member is MethodDeclarationSyntax; }
-        }
-
+        public bool IsConstructor { get { return Member is ConstructorDeclarationSyntax; } }
+        public bool IsEvent { get { return Member is EventDeclarationSyntax; } }
+        public bool IsProperty { get { return Member is PropertyDeclarationSyntax; } }
+        public bool IsMethod { get { return Member is MethodDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {
@@ -98,66 +70,14 @@ namespace api_docify
             }
         }
 
-        public bool IsPublic
-        {
-            get
-            {
-                return Member.IsPublic();
-            }
-        }
-
-        public bool IsStatic
-        {
-            get
-            {
-                return Member.IsStatic();
-            }
-        }
+        public bool IsPublic { get { return Member.IsPublic(); } }
+        public bool IsStatic { get { return Member.IsStatic(); } }
 
         public string ClassPath
         {
             get
             {
                 return ParsedBaseType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
-
-                //string className = "";
-                //string ns = "";
-                //var parent = Member.Parent.Parent;
-                //while (parent != null)
-                //{
-                //    var parentClassDeclaration = parent as ClassDeclarationSyntax;
-                //    if (parentClassDeclaration != null)
-                //    {
-                //        ns = $"{parentClassDeclaration.Identifier}.{ns}";
-                //    }
-                //    var namespaceDeclaration = parent as NamespaceDeclarationSyntax;
-                //    if (namespaceDeclaration != null)
-                //    {
-                //        ns = $"{namespaceDeclaration.Name}.{ns}";
-                //    }
-                //    parent = parent.Parent;
-                //}
-                //if (ns.Length > 0)
-                //    className = ns;
-                //var classDeclaration = Member.Parent as ClassDeclarationSyntax;
-                //if (classDeclaration != null)
-                //{
-                //    className = $"{className}{classDeclaration.Identifier}";
-                //}
-                //var interfaceDeclaration = Member.Parent as InterfaceDeclarationSyntax;
-                //if (interfaceDeclaration != null)
-                //{
-                //    className = $"{className}{interfaceDeclaration.Identifier}";
-                //}
-                //var structDeclaration = Member.Parent as StructDeclarationSyntax;
-                //if (structDeclaration != null)
-                //{
-                //    className = $"{className}{structDeclaration.Identifier}";
-                //}
-                //if (classDeclaration == null && interfaceDeclaration == null && structDeclaration == null)
-                //    throw new System.NotImplementedException();
-
-                //return className;
             }
         }
 
@@ -318,34 +238,6 @@ namespace api_docify
             throw new System.NotImplementedException();
         }
 
-        public string Since
-        {
-            get
-            {
-                string since = "(unknown)";
-                var xml = DocumentationAsXml();
-                if (xml != null)
-                {
-                    var element = xml.GetElementsByTagName("since");
-                    if (element != null && element.Count > 0)
-                        since = element[0].InnerText;
-                }
-                return since;
-            }
-        }
-
-        public string Summary()
-        {
-            var xml = DocumentationAsXml();
-            if (xml != null)
-            {
-                var element = xml.GetElementsByTagName("summary");
-                if (element != null && element.Count > 0)
-                    return element[0].InnerText;
-            }
-            return "";
-        }
-
         public string Returns()
         {
             string rc = "";
@@ -357,65 +249,6 @@ namespace api_docify
                 }
             }
             return rc;
-        }
-
-        System.Xml.XmlDocument DocumentationAsXml()
-        {
-            if (_documentationAsXml == null && Documentation != null)
-            {
-                string comment = Documentation.ToString();
-                comment = comment.Replace("///", "");
-                comment = comment.Replace("\t", " ");
-                comment = comment.Replace("null ", "None ");
-                comment = comment.Replace("true ", "True ");
-                comment = comment.Replace("false ", "False ");
-                var doc = new System.Xml.XmlDocument();
-                doc.LoadXml("<doc>" + comment + "</doc>");
-                _documentationAsXml = doc;
-            }
-            return _documentationAsXml;
-        }
-
-    }
-
-
-    static class MethodDeclarationExtensions
-    {
-        public static bool IsStatic(this MemberDeclarationSyntax method)
-        {
-            foreach (var modifier in method.Modifiers)
-            {
-                if (modifier.Text == "static")
-                    return true;
-            }
-            return false;
-        }
-
-        public static bool IsPublic(this MemberDeclarationSyntax method)
-        {
-            foreach (var modifier in method.Modifiers)
-            {
-                if (modifier.Text == "public")
-                    return true;
-            }
-            return false;
-        }
-
-        public static bool IsNonConst(this MethodDeclarationSyntax method, out bool useAsReturnType)
-        {
-            useAsReturnType = false;
-            if (method.IsStatic())
-                return false;
-
-            foreach (var attr in method.AttributeLists)
-            {
-                if (attr.ToString().Equals("[ConstOperation]", StringComparison.InvariantCulture))
-                    return false;
-            }
-
-            useAsReturnType = method.ReturnType.ToString().Equals("void", StringComparison.InvariantCulture);
-
-            return true;
         }
     }
 }

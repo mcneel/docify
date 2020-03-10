@@ -1,30 +1,31 @@
 ---
-title: "Rhino.Render.ContentCollectionIterator"
+title: "ContentCollectionIterator"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.ContentCollectionIterator(IntPtr pCollection)
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.ContentCollectionIterator(IntPtr pCollection)
 - (summary) 
 - (since) 6.0
-# Properties
-## IntPtr CppPointer
+## Properties
+#### IntPtr CppPointer
 - (summary) 
 - (since) 6.0
-# Methods
-## void DeleteThis()
-- (summary) 
-- (since) 6.0
-- (returns) void This is some return comment
-## void Dispose()
+## Methods
+#### void DeleteThis()
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## RenderContent First()
+#### void Dispose()
+- (summary) 
+- (since) 6.0
+- (returns) void This is some return comment
+#### RenderContent First()
 - (summary) 
 - (since) 6.0
 - (returns) RenderContent This is some return comment
-## RenderContent Next()
+#### RenderContent Next()
 - (summary) 
 - (since) 6.0
 - (returns) RenderContent This is some return comment

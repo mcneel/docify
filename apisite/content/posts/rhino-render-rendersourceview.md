@@ -1,10 +1,16 @@
 ---
-title: "Rhino.Render.RenderSourceView"
+title: "RenderSourceView"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RenderSourceView(RhinoDoc doc)
+*Namespace: Rhino.Render*
+
+   Helper class to get the correct view from the Render View Source settings.
+   
+   An instance of this class is supposed to be used with the using() {} construct.
+   
+## Constructors
+#### Rhino.Render.RenderSourceView(RhinoDoc doc)
 - (summary) 
      Create a new RenderSourceView for the given doc.
      
@@ -15,12 +21,12 @@ draft: false
      reverted back to the original once this instance goes out of scope.
      
 - (since) 6.0
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## Rhino.DocObjects.ViewInfo GetViewInfo()
+#### Rhino.DocObjects.ViewInfo GetViewInfo()
 - (summary) 
      Get the ViewInfo as specified by the render source view settings.
      

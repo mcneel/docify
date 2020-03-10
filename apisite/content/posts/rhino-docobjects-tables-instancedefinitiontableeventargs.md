@@ -1,21 +1,22 @@
 ---
-title: "Rhino.DocObjects.Tables.InstanceDefinitionTableEventArgs"
+title: "InstanceDefinitionTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.3
-## InstanceDefinitionTableEventType EventType
+#### InstanceDefinitionTableEventType EventType
 - (summary) 
 - (since) 5.3
-## int InstanceDefinitionIndex
+#### int InstanceDefinitionIndex
 - (summary) 
 - (since) 5.3
-## InstanceDefinition NewState
+#### InstanceDefinition NewState
 - (summary) 
 - (since) 5.3
-## InstanceDefinitionGeometry OldState
+#### InstanceDefinitionGeometry OldState
 - (summary) 
 - (since) 5.3

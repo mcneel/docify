@@ -1,30 +1,34 @@
 ---
-title: "Rhino.DocObjects.Tables.GroupTableEventArgs"
+title: "GroupTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+
+     Contains group table event data.
+     
+## Properties
+#### RhinoDoc Document
 - (summary) 
        The document in which the event occurred.
        
 - (since) 5.0
-## GroupTableEventType EventType
+#### GroupTableEventType EventType
 - (summary) 
        The event type.
        
 - (since) 5.0
-## int GroupIndex
+#### int GroupIndex
 - (summary) 
        The index of the Group that has changed.
        
 - (since) 6.10
-## Group NewState
+#### Group NewState
 - (summary) 
        The Group that has changed.
        
 - (since) 6.10
-## Group OldState
+#### Group OldState
 - (summary) 
        If the event is GroupTableEventType.Modified, then the old Group.
        

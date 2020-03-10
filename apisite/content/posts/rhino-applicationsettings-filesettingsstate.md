@@ -1,19 +1,23 @@
 ---
-title: "Rhino.ApplicationSettings.FileSettingsState"
+title: "FileSettingsState"
 draft: false
 ---
 
-# Properties
-## bool AutoSaveEnabled
+*Namespace: Rhino.ApplicationSettings*
+
+   Represents a snapshot of .
+   
+## Properties
+#### bool AutoSaveEnabled
 - (summary) Enables or disables Rhino's automatic file saving mechanism.
 - (since) 5.0
-## System.TimeSpan AutoSaveInterval
+#### System.TimeSpan AutoSaveInterval
 - (summary) How often the document will be saved when Rhino's automatic file saving mechanism is enabled.
 - (since) 5.0
-## bool AutoSaveMeshes
+#### bool AutoSaveMeshes
 - (summary) Saves render and display meshes in autosave file.
 - (since) 5.0
-## bool ClipboardCopyToPreviousRhinoVersion
+#### bool ClipboardCopyToPreviousRhinoVersion
 - (summary) 
      Gets or sets a value that decides if copies to the clipboard are performed in both the current
      and previous Rhino clipboard formats.  This means you will double the size of what is saved in
@@ -21,22 +25,22 @@ draft: false
      clipboard.
      
 - (since) 5.0
-## ClipboardState ClipboardOnExit
+#### ClipboardState ClipboardOnExit
 - (summary) 
      Gets or sets a value that determines what to do with clipboad data on exit.
      
 - (since) 5.0
-## bool CreateBackupFiles
+#### bool CreateBackupFiles
 - (summary) 
      Gets or sets a value indicating whether to create backup files.
      
 - (since) 5.0
-## bool FileLockingEnabled
+#### bool FileLockingEnabled
 - (summary) Ensures that only one person at a time can have a file open for saving.
 - (since) 5.0
-## bool FileLockingOpenWarning
+#### bool FileLockingOpenWarning
 - (summary) Displays an information dialog which identifies computer file is open on.
 - (since) 5.0
-## bool SaveViewChanges
+#### bool SaveViewChanges
 - (summary) True for users who consider view changes a document change.
 - (since) 5.0

@@ -1,23 +1,27 @@
 ---
-title: "Rhino.Geometry.BrepRegionFaceSide"
+title: "BrepRegionFaceSide"
 draft: false
 ---
 
-# Properties
-## Brep Brep
+*Namespace: Rhino.Geometry*
+
+   Represents a side of a  entity.
+   
+## Properties
+#### Brep Brep
 - (summary) 
      The brep this side belongs to.
      
 - (since) 5.0
-## BrepFace Face
+#### BrepFace Face
 - (summary) Gets the face this side belongs to.
 - (since) 5.0
-## BrepRegion Region
+#### BrepRegion Region
 - (summary) 
      The region this side belongs to.
      
 - (since) 5.0
-## bool SurfaceNormalPointsIntoRegion
+#### bool SurfaceNormalPointsIntoRegion
 - (summary) 
      Gets True if BrepFace's surface normal points into region; False otherwise.
      

@@ -1,18 +1,19 @@
 ---
-title: "Rhino.Render.RenderWindowClonedEventArgs"
+title: "RenderWindowClonedEventArgs"
 draft: false
 ---
 
-# Properties
-## RenderWindow NewRenderWindow
+*Namespace: Rhino.Render*
+## Properties
+#### RenderWindow NewRenderWindow
 - (summary) 
 - (since) 5.11
-## Guid NewSessionId
+#### Guid NewSessionId
 - (summary) 
 - (since) 5.11
-## RenderWindow OldRenderWindow
+#### RenderWindow OldRenderWindow
 - (summary) 
 - (since) 5.11
-## Guid OldSessionId
+#### Guid OldSessionId
 - (summary) 
 - (since) 5.11

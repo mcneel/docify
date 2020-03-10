@@ -1,29 +1,33 @@
 ---
-title: "Rhino.FileIO.File3dmHatchPatternTable"
+title: "File3dmHatchPatternTable"
 draft: false
 ---
 
-# Properties
-## ModelComponentType ComponentType
+*Namespace: Rhino.FileIO*
+
+   Provides access to hatch pattern definitions in the 3dm file.
+   
+## Properties
+#### ModelComponentType ComponentType
 - (summary) 
      Returns .
      
 - (since) 6.0
-# Methods
-## HatchPattern FindIndex(int index)
+## Methods
+#### HatchPattern FindIndex(int index)
 - (summary) 
      Retrieves a HatchPattern object based on Index. This search type of search is discouraged.
      We are moving towards using only IDs for all tables.
      
 - (since) 6.0
 - (returns) HatchPattern This is some return comment
-## HatchPattern FindName(string name)
+#### HatchPattern FindName(string name)
 - (summary) 
      Finds a HatchPattern given its name.
      
 - (since) 6.0
 - (returns) HatchPattern This is some return comment
-## HatchPattern FindNameHash(NameHash nameHash)
+#### HatchPattern FindNameHash(NameHash nameHash)
 - (summary) 
      Finds a HatchPattern given its name hash.
      

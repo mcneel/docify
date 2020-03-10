@@ -1,26 +1,27 @@
 ---
-title: "Rhino.DocObjects.FontQuartet"
+title: "FontQuartet"
 draft: false
 ---
 
-# Properties
-## bool HasBoldFont
+*Namespace: Rhino.DocObjects*
+## Properties
+#### bool HasBoldFont
 - (summary) 
 - (since) 6.7
-## bool HasBoldItalicFont
+#### bool HasBoldItalicFont
 - (summary) 
 - (since) 6.7
-## bool HasItalicFont
+#### bool HasItalicFont
 - (summary) 
 - (since) 6.7
-## bool HasRegularFont
+#### bool HasRegularFont
 - (summary) 
 - (since) 6.7
-## string QuartetName
+#### string QuartetName
 - (summary) 
 - (since) 6.7
-# Methods
-## string ToString()
+## Methods
+#### string ToString()
 - (summary) 
 - (since) (unknown)
 - (returns) string This is some return comment

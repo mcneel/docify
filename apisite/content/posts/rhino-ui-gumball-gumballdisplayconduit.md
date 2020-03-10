@@ -1,71 +1,72 @@
 ---
-title: "Rhino.UI.Gumball.GumballDisplayConduit"
+title: "GumballDisplayConduit"
 draft: false
 ---
 
-# Constructors
-## Rhino.UI.Gumball.GumballDisplayConduit()
+*Namespace: Rhino.UI.Gumball*
+## Constructors
+#### Rhino.UI.Gumball.GumballDisplayConduit()
 - (summary) 
 - (since) 5.0
-# Properties
-## GumballObject BaseGumball
+## Properties
+#### GumballObject BaseGumball
 - (summary) Starting location.
 - (since) 5.0
-## bool Enabled
+#### bool Enabled
 - (summary) 
 - (since) 5.0
-## GumballObject Gumball
+#### GumballObject Gumball
 - (summary) 
 - (since) 5.0
-## Transform GumballTransform
+#### Transform GumballTransform
 - (summary) 
      The gumball transformation is the transformation calculated by comparing
      the current gumball to the starting BaseGumball.
      
 - (since) 5.0
-## bool InRelocate
+#### bool InRelocate
 - (summary) 
 - (since) 5.0
-## GumballPickResult PickResult
+#### GumballPickResult PickResult
 - (summary) The inital mouse down event sets PickResult.
 - (since) 5.0
-## Transform PreTransform
+#### Transform PreTransform
 - (summary) 
      The pre-transform is a transformation that needs to be applied before
      the gumball transformation.
      
 - (since) 5.0
-## Transform TotalTransform
+#### Transform TotalTransform
 - (summary) 
      The total transformation is GumballTransform * PreTransform.
      
 - (since) 5.0
-# Methods
-## void CheckShiftAndControlKeys()
+## Methods
+#### void CheckShiftAndControlKeys()
 - (summary) 
 - (since) 5.0
 - (returns) void This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
 - (since) 5.0
 - (returns) void This is some return comment
-## bool PickGumball(PickContext pickContext,GetPoint getPoint)
+#### bool PickGumball(PickContext pickContext,GetPoint getPoint)
 - (summary) 
 - (since) 5.0
 - (returns) bool This is some return comment
-## void SetBaseGumball(GumballObject gumball)
+#### void SetBaseGumball(GumballObject gumball)
 - (summary) 
      Contents of the gumball are copied to the base gumball of this class.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## void SetBaseGumball(GumballObject gumball,GumballAppearanceSettings appearanceSettings)
+#### void SetBaseGumball(GumballObject gumball,GumballAppearanceSettings appearanceSettings)
 - (summary) 
      Contents of the gumball are copied to the base gumball of this class.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## bool UpdateGumball(Point3d point,Line worldLine)
+#### bool UpdateGumball(Point3d point,Line worldLine)
 - (summary) 
 - (since) 5.0
 - (returns) bool This is some return comment

@@ -1,61 +1,65 @@
 ---
-title: "Rhino.Geometry.Ray3d"
+title: "Ray3d"
 draft: false
 ---
 
-## static !=
+*Namespace: Rhino.Geometry*
+
+   Represents an immutable ray in three dimensions, using position and direction.
+   
+#### static !=
 - (summary) 
      Determines whether two  have different values.
      
 - (since) 5.0
-## static ==
+#### static ==
 - (summary) 
      Determines whether two  have equal values.
      
 - (since) 5.0
-# Constructors
-## Rhino.Geometry.Ray3d(Point3d position,Vector3d direction)
+## Constructors
+#### Rhino.Geometry.Ray3d(Point3d position,Vector3d direction)
 - (summary) 
      Initializes a new Ray3d instance.
      
 - (since) 5.0
-# Properties
-## Vector3d Direction
+## Properties
+#### Vector3d Direction
 - (summary) 
      Gets the direction vector of this ray.
      
 - (since) 5.0
-## Point3d Position
+#### Point3d Position
 - (summary) 
      Gets the starting position of this ray.
      
 - (since) 5.0
-# Methods
-## bool EpsilonEquals(Ray3d other,double epsilon)
+## Methods
+#### bool EpsilonEquals(Ray3d other,double epsilon)
 - (summary) 
      Check that all values in other are within epsilon of the values in this
      
 - (since) 5.4
 - (returns) bool This is some return comment
-## bool Equals(object obj)
+#### bool Equals(object obj)
 - (summary) 
      Determines whether the specified System.Object is a Ray3d and has the same values as the present ray.
      
 - (since) (unknown)
 - (returns) bool This is some return comment
-## bool Equals(Ray3d ray)
+#### bool Equals(Ray3d ray)
 - (summary) 
      Determines whether the specified Ray3d has the same value as the present ray.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## int GetHashCode()
+#### int GetHashCode()
 - (summary) 
      Computes a hashing number that represents the current ray.
      
 - (since) (unknown)
 - (returns) int This is some return comment
-## Point3d PointAt(double t)
+#### Point3d PointAt(double t)
 - (summary) 
      Evaluates a point along the ray.
      

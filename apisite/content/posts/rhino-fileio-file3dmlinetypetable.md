@@ -1,29 +1,33 @@
 ---
-title: "Rhino.FileIO.File3dmLinetypeTable"
+title: "File3dmLinetypeTable"
 draft: false
 ---
 
-# Properties
-## ModelComponentType ComponentType
+*Namespace: Rhino.FileIO*
+
+   Provides access to Linetypes in the 3dm file.
+   
+## Properties
+#### ModelComponentType ComponentType
 - (summary) 
      Returns .
      
 - (since) 6.0
-# Methods
-## Linetype FindIndex(int index)
+## Methods
+#### Linetype FindIndex(int index)
 - (summary) 
      Retrieves a Linetype object based on Index. This search type of search is discouraged.
      We are moving towards using only IDs for all tables.
      
 - (since) 6.0
 - (returns) Linetype This is some return comment
-## Linetype FindName(string name)
+#### Linetype FindName(string name)
 - (summary) 
      Finds a Linetype given its name.
      
 - (since) 6.0
 - (returns) Linetype This is some return comment
-## Linetype FindNameHash(NameHash nameHash)
+#### Linetype FindNameHash(NameHash nameHash)
 - (summary) 
      Finds a Linetype given its name hash.
      

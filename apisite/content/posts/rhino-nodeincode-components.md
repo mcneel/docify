@@ -1,16 +1,20 @@
 ---
-title: "Rhino.NodeInCode.Components"
+title: "Components"
 draft: false
 ---
 
-# Properties
-## static NodeInCodeTable NodeInCodeFunctions
+*Namespace: Rhino.NodeInCode*
+
+   Provides access to all Grasshopper runtime components.
+   
+## Properties
+#### static NodeInCodeTable NodeInCodeFunctions
 - (summary) 
      Returns a collection with all component functions.
      
 - (since) 6.0
-# Methods
-## static ComponentFunctionInfo FindComponent(string fullName)
+## Methods
+#### static ComponentFunctionInfo FindComponent(string fullName)
 - (summary) 
      Finds a component given its full name.
      

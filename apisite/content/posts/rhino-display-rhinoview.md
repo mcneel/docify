@@ -1,31 +1,37 @@
 ---
-title: "Rhino.Display.RhinoView"
+title: "RhinoView"
 draft: false
 ---
 
-# Events
-## static Create
+*Namespace: Rhino.Display*
+
+   A RhinoView represents a single "window" display of a document. A view could
+   contain one or many RhinoViewports (many in the case of Layout views with detail viewports).
+   Standard Rhino modeling views have one viewport.
+   
+## Events
+#### static Create
 - (summary) 
 - (since) 5.0
-## static Destroy
+#### static Destroy
 - (summary) 
 - (since) 5.0
-## static Modified
+#### static Modified
 - (summary) 
 - (since) 7.0
-## static Rename
+#### static Rename
 - (summary) 
 - (since) 5.0
-## static SetActive
+#### static SetActive
 - (summary) 
 - (since) 5.0
-# Properties
-## static bool EnableDrawing
+## Properties
+#### static bool EnableDrawing
 - (summary) 
      Gets or sets the 'drawing enabled' flag. By default, drawing is enabled.
      There are some rare situations where scipts want to disable drawing for a while.
 - (since) 5.0
-## RhinoViewport ActiveViewport
+#### RhinoViewport ActiveViewport
 - (summary) 
      The ActiveViewport is the same as the MainViewport for standard RhinoViews. In
      a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object.
@@ -33,48 +39,48 @@ draft: false
      the main viewport.
      
 - (since) 5.0
-## Guid ActiveViewportID
+#### Guid ActiveViewportID
 - (summary) 
      Returns viewport ID for the active viewport. Faster than ActiveViewport function when
      working with page views.
      
 - (since) 5.0
-## System.Drawing.Rectangle Bounds
+#### System.Drawing.Rectangle Bounds
 - (summary) 
      Gets the size and location of the view including its nonclient elements, in pixels, relative to the parent control.
      
 - (since) 5.0
-## System.Drawing.Rectangle ClientRectangle
+#### System.Drawing.Rectangle ClientRectangle
 - (summary) 
      Gets the rectangle that represents the client area of the view. 
      
 - (since) 5.0
-## DisplayPipeline DisplayPipeline
+#### DisplayPipeline DisplayPipeline
 - (summary) 
      Gets the display pipeline used for this view.
      
 - (since) 6.0
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## bool Floating
+#### bool Floating
 - (summary) 
      Floating state of RhinoView.
      if true, then the view will be in a floating frame window. Otherwise
      the view will be embeded in the main frame.
      
 - (since) 5.0
-## IntPtr Handle
+#### IntPtr Handle
 - (summary) 
      Gets the window handle that this view is bound to.
      
 - (since) 5.0
-## bool IsPageView
+#### bool IsPageView
 - (summary) 
      Return True if this view is a RhinoPageView.
      
 - (since) 7.0
-## RhinoViewport MainViewport
+#### RhinoViewport MainViewport
 - (summary) 
      A RhinoView contains a "main viewport" that fills the entire view client window.
      RhinoPageViews may also contain nested child RhinoViewports for implementing
@@ -82,143 +88,143 @@ draft: false
      The MainViewport will always return this RhinoView's m_vp.
      
 - (since) 5.0
-## bool Maximized
+#### bool Maximized
 - (summary) 
 - (since) 5.0
-## RealtimeDisplayMode RealtimeDisplayMode
+#### RealtimeDisplayMode RealtimeDisplayMode
 - (summary) 
      Gets the RealtimeDisplayMode active for this view. None if the view doesn't have a RealtimeDisplayMode set.
      
 - (since) 6.0
-## uint RuntimeSerialNumber
+#### uint RuntimeSerialNumber
 - (summary) 
 - (since) 6.0
-## System.Drawing.Rectangle ScreenRectangle
+#### System.Drawing.Rectangle ScreenRectangle
 - (summary) 
      Gets the rectangle that represents the client area of the view in screen coordinates.
      
 - (since) 5.0
-## System.Drawing.Size Size
+#### System.Drawing.Size Size
 - (summary) 
      Gets or sets the size of the view
      
 - (since) 6.0
-## bool TitleVisible
+#### bool TitleVisible
 - (summary) 
      Visibility of the viewport title window.
      
 - (since) 5.0
-# Methods
-## static RhinoView FromRuntimeSerialNumber(uint serialNumber)
+## Methods
+#### static RhinoView FromRuntimeSerialNumber(uint serialNumber)
 - (summary) 
      Get a RhinoView from it's unique runtime serial number
      
 - (since) 6.0
 - (returns) RhinoView This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap()
+#### System.Drawing.Bitmap CaptureToBitmap()
 - (summary) 
      Capture View contents to a bitmap.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(bool grid,bool worldAxes,bool cplaneAxes)
+#### System.Drawing.Bitmap CaptureToBitmap(bool grid,bool worldAxes,bool cplaneAxes)
 - (summary) 
      Captures the view contents to a bitmap allowing for visibility of grid and axes.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(DisplayModeDescription mode)
+#### System.Drawing.Bitmap CaptureToBitmap(DisplayModeDescription mode)
 - (summary) 
      Capture View contents to a bitmap using a display mode description to define
      how drawing is performed.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(DisplayPipelineAttributes attributes)
+#### System.Drawing.Bitmap CaptureToBitmap(DisplayPipelineAttributes attributes)
 - (summary) 
      Captures view contents to a bitmap using display attributes to define how
      drawing is performed.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(Size size)
+#### System.Drawing.Bitmap CaptureToBitmap(Size size)
 - (summary) 
      Capture View contents to a bitmap.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(Size size,bool grid,bool worldAxes,bool cplaneAxes)
+#### System.Drawing.Bitmap CaptureToBitmap(Size size,bool grid,bool worldAxes,bool cplaneAxes)
 - (summary) 
      Captures a part of the view contents to a bitmap allowing for visibility of grid and axes.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(Size size,DisplayModeDescription mode)
+#### System.Drawing.Bitmap CaptureToBitmap(Size size,DisplayModeDescription mode)
 - (summary) 
      Capture View contents to a bitmap using a display mode description to define
      how drawing is performed.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CaptureToBitmap(Size size,DisplayPipelineAttributes attributes)
+#### System.Drawing.Bitmap CaptureToBitmap(Size size,DisplayPipelineAttributes attributes)
 - (summary) 
      Capture View contents to a bitmap using display attributes to define how
      drawing is performed.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Point ClientToScreen(Point clientPoint)
+#### System.Drawing.Point ClientToScreen(Point clientPoint)
 - (summary) 
 - (since) 5.0
 - (returns) System.Drawing.Point This is some return comment
-## Geometry.Point2d ClientToScreen(Point2d clientPoint)
+#### Geometry.Point2d ClientToScreen(Point2d clientPoint)
 - (summary) 
 - (since) 5.0
 - (returns) Geometry.Point2d This is some return comment
-## bool Close()
+#### bool Close()
 - (summary) 
      Remove this View from Rhino. DO NOT attempt to use this instance of this
      class after calling Close.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool CreateShadedPreviewImage(string imagePath,Size size,bool ignoreHighlights,bool drawConstructionPlane,bool useGhostedShading)
+#### bool CreateShadedPreviewImage(string imagePath,Size size,bool ignoreHighlights,bool drawConstructionPlane,bool useGhostedShading)
 - (summary) Creates a bitmap preview image of model.
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool CreateWireframePreviewImage(string imagePath,Size size,bool ignoreHighlights,bool drawConstructionPlane)
+#### bool CreateWireframePreviewImage(string imagePath,Size size,bool ignoreHighlights,bool drawConstructionPlane)
 - (summary) Creates a bitmap preview image of model.
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool Equals(object obj)
+#### bool Equals(object obj)
 - (summary) 
 - (since) (unknown)
 - (returns) bool This is some return comment
-## int GetHashCode()
+#### int GetHashCode()
 - (summary) 
 - (since) (unknown)
 - (returns) int This is some return comment
-## bool MouseCaptured(bool bIncludeMovement)
+#### bool MouseCaptured(bool bIncludeMovement)
 - (summary) 
      Returns whether or not the mouse is captured in this view.
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void Redraw()
+#### void Redraw()
 - (summary) Redraws this view.
 - (since) 5.0
 - (returns) void This is some return comment
-## System.Drawing.Point ScreenToClient(Point screenPoint)
+#### System.Drawing.Point ScreenToClient(Point screenPoint)
 - (summary) 
      Converts a point in screen coordinates to client coordinates for this view.
      
 - (since) 5.0
 - (returns) System.Drawing.Point This is some return comment
-## Geometry.Point2d ScreenToClient(Point2d screenPoint)
+#### Geometry.Point2d ScreenToClient(Point2d screenPoint)
 - (summary) 
 - (since) 5.8
 - (returns) Geometry.Point2d This is some return comment
-## double SpeedTest(int frameCount,bool freezeDrawList,int direction,double angleDeltaRadians)
+#### double SpeedTest(int frameCount,bool freezeDrawList,int direction,double angleDeltaRadians)
 - (summary) 
 - (since) 5.8
 - (returns) double This is some return comment

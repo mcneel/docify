@@ -1,246 +1,247 @@
 ---
-title: "Rhino.Render.SupportOptions"
+title: "SupportOptions"
 draft: false
 ---
 
-# Methods
-## static bool AlwaysShowSunPreview()
+*Namespace: Rhino.Render*
+## Methods
+#### static bool AlwaysShowSunPreview()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static int AutoSaveKeepAmount()
+#### static int AutoSaveKeepAmount()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static bool AutoSaveRenderings()
+#### static bool AutoSaveRenderings()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool CheckSupportFilesBeforeRendering()
+#### static bool CheckSupportFilesBeforeRendering()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool CombineEditors()
+#### static bool CombineEditors()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static string CustomLibraryPath()
+#### static string CustomLibraryPath()
 - (summary) 
 - (since) 6.0
 - (returns) string This is some return comment
-## static string CustomPaths()
+#### static string CustomPaths()
 - (summary) 
 - (since) 6.0
 - (returns) string This is some return comment
-## static int DarkPreviewCheckerColor()
+#### static int DarkPreviewCheckerColor()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static bool EnablePreviewJobLog()
+#### static bool EnablePreviewJobLog()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool HarvestContentParameters()
+#### static bool HarvestContentParameters()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static int LabelFormatLoc()
+#### static int LabelFormatLoc()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static int LabelFormatUtc()
+#### static int LabelFormatUtc()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static string LastNavigatedLocation()
+#### static string LastNavigatedLocation()
 - (summary) 
 - (since) 6.10
 - (returns) string This is some return comment
-## static RdkInitialLocation LibrariesInitialLocation()
+#### static RdkInitialLocation LibrariesInitialLocation()
 - (summary) 
 - (since) 6.0
 - (returns) RdkInitialLocation This is some return comment
-## static string LibrariesInitialLocationCustomFolder()
+#### static string LibrariesInitialLocationCustomFolder()
 - (summary) 
 - (since) 6.0
 - (returns) string This is some return comment
-## static int LightPreviewCheckerColor()
+#### static int LightPreviewCheckerColor()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static int MaxPreviewCacheMB()
+#### static int MaxPreviewCacheMB()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static int MaxPreviewSeconds()
+#### static int MaxPreviewSeconds()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static bool MultithreadedTextureEvaluation()
+#### static bool MultithreadedTextureEvaluation()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool PreferNativeRenderer()
+#### static bool PreferNativeRenderer()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static string PreferredUnpackFolder()
+#### static string PreferredUnpackFolder()
 - (summary) 
 - (since) 6.0
 - (returns) string This is some return comment
-## static bool PreviewCustomRenderMeshes()
+#### static bool PreviewCustomRenderMeshes()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static void SetAlwaysShowSunPreview(bool b)
+#### static void SetAlwaysShowSunPreview(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetAutoSaveKeepAmount(int value)
+#### static void SetAutoSaveKeepAmount(int value)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetAutoSaveRenderings(bool b)
+#### static void SetAutoSaveRenderings(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetCheckSupportFilesBeforeRendering(bool b)
+#### static void SetCheckSupportFilesBeforeRendering(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetCombineEditors(bool b)
+#### static void SetCombineEditors(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetCustomLibraryPath(string path)
+#### static void SetCustomLibraryPath(string path)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetCustomPaths(string path)
+#### static void SetCustomPaths(string path)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetHarvestContentParameters(bool b)
+#### static void SetHarvestContentParameters(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetLabelFormatLoc(int value)
+#### static void SetLabelFormatLoc(int value)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetLabelFormatUtc(int value)
+#### static void SetLabelFormatUtc(int value)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetLastNavigatedLocation(string folder)
+#### static void SetLastNavigatedLocation(string folder)
 - (summary) 
 - (since) 6.10
 - (returns) void This is some return comment
-## static void SetLibrariesInitialLocation(RdkInitialLocation l)
+#### static void SetLibrariesInitialLocation(RdkInitialLocation l)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetLibrariesInitialLocationCustomFolder(string path)
+#### static void SetLibrariesInitialLocationCustomFolder(string path)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetMultithreadedTextureEvaluation(bool b)
+#### static void SetMultithreadedTextureEvaluation(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetPreferNativeRenderer(bool b)
+#### static void SetPreferNativeRenderer(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetPreferredUnpackFolder(string path)
+#### static void SetPreferredUnpackFolder(string path)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetPreviewCustomRenderMeshes(bool b)
+#### static void SetPreviewCustomRenderMeshes(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetShowCustom(bool b)
+#### static void SetShowCustom(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetShowDetailsPanel(bool b)
+#### static void SetShowDetailsPanel(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetShowDocuments(bool b)
+#### static void SetShowDocuments(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetShowRenderContent(bool b)
+#### static void SetShowRenderContent(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetSupportSharedUIs(bool b)
+#### static void SetSupportSharedUIs(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetTextureSize(RdkTextureSize size,bool bSendEvent)
+#### static void SetTextureSize(RdkTextureSize size,bool bSendEvent)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetUseDefaultLibraryPath(bool b)
+#### static void SetUseDefaultLibraryPath(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetUsePreviewCache(bool b)
+#### static void SetUsePreviewCache(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static void SetUseQuickInitialPreview(bool b)
+#### static void SetUseQuickInitialPreview(bool b)
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## static bool ShowCustom()
+#### static bool ShowCustom()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool ShowDetailsPanel()
+#### static bool ShowDetailsPanel()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool ShowDocuments()
+#### static bool ShowDocuments()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool ShowRenderContent()
+#### static bool ShowRenderContent()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool SupportSharedUIs()
+#### static bool SupportSharedUIs()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool SupportSharedUIsNoCache()
+#### static bool SupportSharedUIsNoCache()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static int TextureSize()
+#### static int TextureSize()
 - (summary) 
 - (since) 6.0
 - (returns) int This is some return comment
-## static bool UseDefaultLibraryPath()
+#### static bool UseDefaultLibraryPath()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool UsePreview()
+#### static bool UsePreview()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool UsePreviewCache()
+#### static bool UsePreviewCache()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool UseQuickInitialPreview()
+#### static bool UseQuickInitialPreview()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## static bool UseRenderedPreview()
+#### static bool UseRenderedPreview()
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment

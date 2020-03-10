@@ -1,10 +1,14 @@
 ---
-title: "Rhino.DocObjects.LeaderObject"
+title: "LeaderObject"
 draft: false
 ---
 
-# Properties
-## Geometry.Leader LeaderGeometry
+*Namespace: Rhino.DocObjects*
+
+   Rhino Object that represents leader geometry and attributes
+   
+## Properties
+#### Geometry.Leader LeaderGeometry
 - (summary) 
      Get the leader geometry for this object.
      

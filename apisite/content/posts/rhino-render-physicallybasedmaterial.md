@@ -1,95 +1,96 @@
 ---
-title: "Rhino.Render.PhysicallyBasedMaterial"
+title: "PhysicallyBasedMaterial"
 draft: false
 ---
 
-# Properties
-## double Anisotropic
+*Namespace: Rhino.Render*
+## Properties
+#### double Anisotropic
 - (summary) 
 - (since) 7.0
-## double AnisotropicRotation
+#### double AnisotropicRotation
 - (summary) 
 - (since) 7.0
-## Rhino.Display.Color4f BaseColor
+#### Rhino.Display.Color4f BaseColor
 - (summary) 
 - (since) 7.0
-## BRDFs BRDF
+#### BRDFs BRDF
 - (summary) 
 - (since) 7.0
-## double Clearcoat
+#### double Clearcoat
 - (summary) 
 - (since) 7.0
-## double ClearcoatRoughness
+#### double ClearcoatRoughness
 - (summary) 
 - (since) 7.0
-## Rhino.Display.Color4f Emission
+#### Rhino.Display.Color4f Emission
 - (summary) 
 - (since) 7.0
-## DocObjects.Material Material
+#### DocObjects.Material Material
 - (summary) 
 - (since) 7.0
-## double Metallic
+#### double Metallic
 - (summary) 
 - (since) 7.0
-## double Opacity
+#### double Opacity
 - (summary) 
 - (since) 7.0
-## double OpacityIOR
+#### double OpacityIOR
 - (summary) 
 - (since) 7.0
-## double OpacityRoughness
+#### double OpacityRoughness
 - (summary) 
 - (since) 7.0
-## double ReflectiveIOR
+#### double ReflectiveIOR
 - (summary) 
 - (since) 7.0
-## double Roughness
+#### double Roughness
 - (summary) 
 - (since) 7.0
-## double Sheen
+#### double Sheen
 - (summary) 
 - (since) 7.0
-## double SheenTint
+#### double SheenTint
 - (summary) 
 - (since) 7.0
-## double Specular
+#### double Specular
 - (summary) 
 - (since) 7.0
-## double SpecularTint
+#### double SpecularTint
 - (summary) 
 - (since) 7.0
-## double Subsurface
+#### double Subsurface
 - (summary) 
 - (since) 7.0
-## Rhino.Display.Color4f SubsurfaceScatteringColor
+#### Rhino.Display.Color4f SubsurfaceScatteringColor
 - (summary) 
 - (since) 7.0
-## double SubsurfaceScatteringRadius
+#### double SubsurfaceScatteringRadius
 - (summary) 
 - (since) 7.0
-## bool Supported
+#### bool Supported
 - (summary) 
 - (since) 7.0
-# Methods
-## DocObjects.Texture GetTexture(TextureType which)
+## Methods
+#### DocObjects.Texture GetTexture(TextureType which)
 - (summary) 
      Get the texture that corresponds with the specified texture type for this material.
      
 - (since) 7.0
 - (returns) DocObjects.Texture This is some return comment
-## DocObjects.Texture[] GetTextures()
+#### DocObjects.Texture[] GetTextures()
 - (summary) 
      Get array of textures that this material uses
      
 - (since) 7.0
 - (returns) DocObjects.Texture[] This is some return comment
-## bool SetTexture(Texture texture,TextureType which)
+#### bool SetTexture(Texture texture,TextureType which)
 - (summary) 
      Set the texture that corresponds with the specified texture type for this material.
      
 - (since) 7.0
 - (returns) bool This is some return comment
-## void SynchronizeLegacyMaterial()
+#### void SynchronizeLegacyMaterial()
 - (summary) 
 - (since) 7.0
 - (returns) void This is some return comment

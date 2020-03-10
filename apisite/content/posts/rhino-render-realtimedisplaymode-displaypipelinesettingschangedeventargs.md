@@ -1,13 +1,14 @@
 ---
-title: "Rhino.Render.RealtimeDisplayMode.DisplayPipelineSettingsChangedEventArgs"
+title: "DisplayPipelineSettingsChangedEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RealtimeDisplayMode.DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.RealtimeDisplayMode.DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)
 - (summary) 
 - (since) 6.0
-# Properties
-## DisplayPipelineAttributes Attributes
+## Properties
+#### DisplayPipelineAttributes Attributes
 - (summary) 
 - (since) 6.0

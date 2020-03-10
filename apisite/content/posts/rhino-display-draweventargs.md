@@ -1,15 +1,16 @@
 ---
-title: "Rhino.Display.DrawEventArgs"
+title: "DrawEventArgs"
 draft: false
 ---
 
-# Properties
-## DisplayPipeline Display
+*Namespace: Rhino.Display*
+## Properties
+#### DisplayPipeline Display
 - (summary) 
 - (since) 5.0
-## RhinoDoc RhinoDoc
+#### RhinoDoc RhinoDoc
 - (summary) 
 - (since) 5.0
-## RhinoViewport Viewport
+#### RhinoViewport Viewport
 - (summary) 
 - (since) 5.0

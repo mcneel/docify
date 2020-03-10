@@ -1,14 +1,18 @@
 ---
-title: "Rhino.PlugIns.LicenseLeaseChangedEventArgs"
+title: "LicenseLeaseChangedEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.PlugIns.LicenseLeaseChangedEventArgs(LicenseLease lease)
+*Namespace: Rhino.PlugIns*
+
+   Arguments for OnLeaseChangedDelegate
+   
+## Constructors
+#### Rhino.PlugIns.LicenseLeaseChangedEventArgs(LicenseLease lease)
 - (summary) 
 - (since) 6.0
-# Properties
-## LicenseLease Lease
+## Properties
+#### LicenseLease Lease
 - (summary) 
       The lease returned by Rhino Accounts server
      

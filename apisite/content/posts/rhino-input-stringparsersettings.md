@@ -1,14 +1,16 @@
 ---
-title: "Rhino.Input.StringParserSettings"
+title: "StringParserSettings"
 draft: false
 ---
 
-# Constructors
-## Rhino.Input.StringParserSettings()
+*Namespace: Rhino.Input*
+ Parameters for parsing strings 
+## Constructors
+#### Rhino.Input.StringParserSettings()
 - (summary) 
 - (since) 6.0
-# Properties
-## static StringParserSettings DefaultParseSettings
+## Properties
+#### static StringParserSettings DefaultParseSettings
 - (summary) 
      - The default settings parse just about everything in
        a reasonable way.  
@@ -19,7 +21,7 @@ draft: false
        most parsing situations.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsDegrees
+#### static StringParserSettings ParseSettingsDegrees
 - (summary) 
      - The default settings parse just about everything in
        a reasonable way.
@@ -30,14 +32,14 @@ draft: false
        most parsing situations.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsDoubleNumber
+#### static StringParserSettings ParseSettingsDoubleNumber
 - (summary) 
      - The double number settings parse and optional unary + or unary -
        and then parse a number that can be integer, decimal, or
        scientific e notation.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsEmpty
+#### static StringParserSettings ParseSettingsEmpty
 - (summary) 
      - ON_ParseSetting::FalseSettings has all parsing options
        set to false.
@@ -47,13 +49,13 @@ draft: false
        parsing indicates that type of parsing occured.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsIntegerNumber
+#### static StringParserSettings ParseSettingsIntegerNumber
 - (summary) 
      - The integer settings parse and optional unary + or unary - and
        then parses one or more digits.Parsing stops after the last digit.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsRadians
+#### static StringParserSettings ParseSettingsRadians
 - (summary) 
      - The default settings parse just about everything in
        a reasonable way.
@@ -64,7 +66,7 @@ draft: false
        most parsing situations.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsRationalNumber
+#### static StringParserSettings ParseSettingsRationalNumber
 - (summary) 
      - The rational number settings parse and optional unary + or unary -
        and then parse one or more digits.If a rational number fraction
@@ -74,119 +76,119 @@ draft: false
        the last digit in the denominator.
      
 - (since) 6.0
-## static StringParserSettings ParseSettingsRealNumber
+#### static StringParserSettings ParseSettingsRealNumber
 - (summary) 
      - The real number settings parse and optional unary + or unary -
        and then parse a number that can be integer, decimal, 
        scientific e notation or pi.
      
 - (since) 6.0
-## AngleUnitSystem DefaultAngleUnitSystem
+#### AngleUnitSystem DefaultAngleUnitSystem
 - (summary) 
 - (since) 6.0
-## UnitSystem DefaultLengthUnitSystem
+#### UnitSystem DefaultLengthUnitSystem
 - (summary) 
 - (since) 6.0
-## bool ParseAddition
+#### bool ParseAddition
 - (summary) 
 - (since) 6.0
-## bool ParseArcDegreesMinutesSeconds
+#### bool ParseArcDegreesMinutesSeconds
 - (summary) 
 - (since) 6.0
-## bool ParseArithmeticExpression
+#### bool ParseArithmeticExpression
 - (summary) 
 - (since) 6.0
-## bool ParseCommaAsDecimalPoint
+#### bool ParseCommaAsDecimalPoint
 - (summary) 
 - (since) 6.0
-## bool ParseCommaAsDigitSeparator
+#### bool ParseCommaAsDigitSeparator
 - (summary) 
 - (since) 6.0
-## bool ParseDAsExponentInScientificENotation
+#### bool ParseDAsExponentInScientificENotation
 - (summary) 
 - (since) 6.0
-## bool ParseDivision
+#### bool ParseDivision
 - (summary) 
 - (since) 6.0
-## bool ParseExplicitFormulaExpression
+#### bool ParseExplicitFormulaExpression
 - (summary) 
 - (since) 6.0
-## bool ParseFeetInches
+#### bool ParseFeetInches
 - (summary) 
 - (since) 6.0
-## bool ParseFullStopAsDecimalPoint
+#### bool ParseFullStopAsDecimalPoint
 - (summary) 
 - (since) 6.0
-## bool ParseFullStopAsDigitSeparator
+#### bool ParseFullStopAsDigitSeparator
 - (summary) 
 - (since) 6.0
-## bool ParseHyphenAsNumberDash
+#### bool ParseHyphenAsNumberDash
 - (summary) 
 - (since) 6.0
-## bool ParseHyphenMinusAsNumberDash
+#### bool ParseHyphenMinusAsNumberDash
 - (summary) 
 - (since) 6.0
-## bool ParseIntegerDashFraction
+#### bool ParseIntegerDashFraction
 - (summary) 
 - (since) 6.0
-## bool ParseLeadingWhiteSpace
+#### bool ParseLeadingWhiteSpace
 - (summary) 
 - (since) 6.0
-## bool ParseMathFunctions
+#### bool ParseMathFunctions
 - (summary) 
 - (since) 6.0
-## bool ParseMultiplication
+#### bool ParseMultiplication
 - (summary) 
 - (since) 6.0
-## bool ParsePairedParentheses
+#### bool ParsePairedParentheses
 - (summary) 
 - (since) 6.0
-## bool ParsePi
+#### bool ParsePi
 - (summary) 
 - (since) 6.0
-## bool ParseRationalNumber
+#### bool ParseRationalNumber
 - (summary) 
 - (since) 6.0
-## bool ParseScientificENotation
+#### bool ParseScientificENotation
 - (summary) 
 - (since) 6.0
-## bool ParseSignificandDigitSeparators
+#### bool ParseSignificandDigitSeparators
 - (summary) 
 - (since) 6.0
-## bool ParseSignificandFractionalPart
+#### bool ParseSignificandFractionalPart
 - (summary) 
 - (since) 6.0
-## bool ParseSignificandIntegerPart
+#### bool ParseSignificandIntegerPart
 - (summary) 
 - (since) 6.0
-## bool ParseSpaceAsDigitSeparator
+#### bool ParseSpaceAsDigitSeparator
 - (summary) 
 - (since) 6.0
-## bool ParseSubtraction
+#### bool ParseSubtraction
 - (summary) 
 - (since) 6.0
-## bool ParseSurveyorsNotation
+#### bool ParseSurveyorsNotation
 - (summary) 
 - (since) 6.0
-## bool ParseUnaryMinus
+#### bool ParseUnaryMinus
 - (summary) 
 - (since) 6.0
-## bool ParseUnaryPlus
+#### bool ParseUnaryPlus
 - (summary) 
 - (since) 6.0
-## uint PreferedLocaleId
+#### uint PreferedLocaleId
 - (summary) 
 - (since) 6.0
-# Methods
-## void Dispose()
-- (summary) 
-- (since) 6.0
-- (returns) void This is some return comment
-## void SetAllExpressionSettingsToFalse()
+## Methods
+#### void Dispose()
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment
-## void SetAllFieldsToFalse()
+#### void SetAllExpressionSettingsToFalse()
+- (summary) 
+- (since) 6.0
+- (returns) void This is some return comment
+#### void SetAllFieldsToFalse()
 - (summary) 
 - (since) 6.0
 - (returns) void This is some return comment

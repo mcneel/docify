@@ -1,16 +1,17 @@
 ---
-title: "Rhino.Render.NamedValue"
+title: "NamedValue"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.NamedValue(string name,object value)
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.NamedValue(string name,object value)
 - (summary) 
 - (since) 5.1
-# Properties
-## string Name
+## Properties
+#### string Name
 - (summary) 
 - (since) 5.1
-## object Value
+#### object Value
 - (summary) 
 - (since) 5.1

@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Display.DrawObjectEventArgs"
+title: "DrawObjectEventArgs"
 draft: false
 ---
 
-# Properties
-## bool DrawObject
+*Namespace: Rhino.Display*
+## Properties
+#### bool DrawObject
 - (summary) 
 - (since) 5.0
-## Rhino.DocObjects.RhinoObject RhinoObject
+#### Rhino.DocObjects.RhinoObject RhinoObject
 - (summary) 
 - (since) 5.0

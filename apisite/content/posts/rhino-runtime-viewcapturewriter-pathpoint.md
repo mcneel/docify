@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Runtime.ViewCaptureWriter.PathPoint"
+title: "PathPoint"
 draft: false
 ---
 
-# Properties
-## PointF Location
+*Namespace: Rhino.Runtime*
+## Properties
+#### PointF Location
 - (summary) 
 - (since) 6.0
-## PointType PointType
+#### PointType PointType
 - (summary) 
 - (since) 6.0

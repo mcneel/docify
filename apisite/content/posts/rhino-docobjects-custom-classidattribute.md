@@ -1,14 +1,18 @@
 ---
-title: "Rhino.DocObjects.Custom.ClassIdAttribute"
+title: "ClassIdAttribute"
 draft: false
 ---
 
-# Constructors
-## Rhino.DocObjects.Custom.ClassIdAttribute(string id)
+*Namespace: Rhino.DocObjects.Custom*
+
+   Useful for legacy UserData
+   
+## Constructors
+#### Rhino.DocObjects.Custom.ClassIdAttribute(string id)
 - (summary) Initializes a class id attrbute.
 - (since) 6.0
-# Properties
-## Guid Id
+## Properties
+#### Guid Id
 - (summary) 
      Gets the associated style.
      

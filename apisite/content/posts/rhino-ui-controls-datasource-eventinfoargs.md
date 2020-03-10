@@ -1,12 +1,13 @@
 ---
-title: "Rhino.UI.Controls.DataSource.EventInfoArgs"
+title: "EventInfoArgs"
 draft: false
 ---
 
-# Properties
-## Guid DataType
+*Namespace: Rhino.UI.Controls.DataSource*
+## Properties
+#### Guid DataType
 - (summary) 
 - (since) 6.0
-## IntPtr EventInfoPtr
+#### IntPtr EventInfoPtr
 - (summary) 
 - (since) 6.0

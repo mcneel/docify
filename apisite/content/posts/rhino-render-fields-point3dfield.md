@@ -1,16 +1,20 @@
 ---
-title: "Rhino.Render.Fields.Point3dField"
+title: "Point3dField"
 draft: false
 ---
 
-# Properties
-## Point3d Value
+*Namespace: Rhino.Render.Fields*
+
+   Point3d field value class
+   
+## Properties
+#### Point3d Value
 - (summary) 
      Gets or sets the field value
      
 - (since) 5.1
-# Methods
-## object ValueAsObject()
+## Methods
+#### object ValueAsObject()
 - (summary) 
 - (since) 5.7
 - (returns) object This is some return comment

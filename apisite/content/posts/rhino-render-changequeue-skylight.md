@@ -1,26 +1,30 @@
 ---
-title: "Rhino.Render.ChangeQueue.Skylight"
+title: "Skylight"
 draft: false
 ---
 
-# Properties
-## bool Enabled
+*Namespace: Rhino.Render.ChangeQueue*
+
+   ChangeQueue skylight
+   
+## Properties
+#### bool Enabled
 - (summary) 
      Return True if skylight is enabled
      
 - (since) 6.0
-## double ShadowIntensity
+#### double ShadowIntensity
 - (summary) 
      Get shadow intensity for skylight
      
 - (since) 6.0
-## bool UsesCustomEnvironment
+#### bool UsesCustomEnvironment
 - (summary) 
      Return True if skylight uses custom environment
      
 - (since) 6.0
-# Methods
-## string ToString()
+## Methods
+#### string ToString()
 - (summary) 
      Textual representation of Skylight
      

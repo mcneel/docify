@@ -1,14 +1,18 @@
 ---
-title: "Rhino.Runtime.RiskyAction"
+title: "RiskyAction"
 draft: false
 ---
 
-# Constructors
-## Rhino.Runtime.RiskyAction(string description,string file,string member,int line)
+*Namespace: Rhino.Runtime*
+
+   Defines risky actions that need to be reported in crash exceptions
+   
+## Constructors
+#### Rhino.Runtime.RiskyAction(string description,string file,string member,int line)
 - (summary)  Always create this in a using block 
 - (since) 6.0
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      IDisposable implementation
      

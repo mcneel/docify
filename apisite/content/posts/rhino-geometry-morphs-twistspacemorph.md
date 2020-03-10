@@ -1,37 +1,39 @@
 ---
-title: "Rhino.Geometry.Morphs.TwistSpaceMorph"
+title: "TwistSpaceMorph"
 draft: false
 ---
 
-# Constructors
-## Rhino.Geometry.Morphs.TwistSpaceMorph()
+*Namespace: Rhino.Geometry.Morphs*
+Deforms objects by rotating them around an axis.
+## Constructors
+#### Rhino.Geometry.Morphs.TwistSpaceMorph()
 - (summary) 
      Constructs a twist space morph.
      
 - (since) 5.1
-# Properties
-## bool InfiniteTwist
+## Properties
+#### bool InfiniteTwist
 - (summary) 
      If true, the deformation is constant throughout the object, even if the axis is shorter than the object. 
      If false, the deformation takes place only the length of the axis.
      
 - (since) 5.1
-## double TwistAngleRadians
+#### double TwistAngleRadians
 - (summary) 
      Twist angle in radians.
      
 - (since) 5.1
-## Line TwistAxis
+#### Line TwistAxis
 - (summary) Axis to rotate about.
 - (since) 5.1
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 5.1
 - (returns) void This is some return comment
-## Point3d MorphPoint(Point3d point)
+#### Point3d MorphPoint(Point3d point)
 - (summary) Morphs an Euclidean point. This method is abstract.
 - (since) 5.1
 - (returns) Point3d This is some return comment

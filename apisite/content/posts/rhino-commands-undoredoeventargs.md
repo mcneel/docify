@@ -1,33 +1,34 @@
 ---
-title: "Rhino.Commands.UndoRedoEventArgs"
+title: "UndoRedoEventArgs"
 draft: false
 ---
 
-# Properties
-## Guid CommandId
+*Namespace: Rhino.Commands*
+## Properties
+#### Guid CommandId
 - (summary) 
 - (since) 5.0
-## bool IsBeginRecording
+#### bool IsBeginRecording
 - (summary) 
 - (since) 5.0
-## bool IsBeginRedo
+#### bool IsBeginRedo
 - (summary) 
 - (since) 5.0
-## bool IsBeginUndo
+#### bool IsBeginUndo
 - (summary) 
 - (since) 5.0
-## bool IsEndRecording
+#### bool IsEndRecording
 - (summary) 
 - (since) 5.0
-## bool IsEndRedo
+#### bool IsEndRedo
 - (summary) 
 - (since) 5.0
-## bool IsEndUndo
+#### bool IsEndUndo
 - (summary) 
 - (since) 5.0
-## bool IsPurgeRecord
+#### bool IsPurgeRecord
 - (summary) 
 - (since) 5.0
-## uint UndoSerialNumber
+#### uint UndoSerialNumber
 - (summary) 
 - (since) 5.0

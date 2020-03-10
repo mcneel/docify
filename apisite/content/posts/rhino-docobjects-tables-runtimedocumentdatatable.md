@@ -1,14 +1,19 @@
 ---
-title: "Rhino.DocObjects.Tables.RuntimeDocumentDataTable"
+title: "RuntimeDocumentDataTable"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+
+   Collection of document runtime data. This is a good place to
+   put non-serialized, per document data.
+   
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 6.3
-# Methods
-## T GetValue(object key,Func<RhinoDoc, T> newT)
+## Methods
+#### T GetValue(object key,Func<RhinoDoc, T> newT)
 - (summary) 
      Checks the dictionary for the specified key, if found and the value is not
      None then then the value is returned.  If the key is not found or its value
@@ -17,7 +22,7 @@ draft: false
      
 - (since) (unknown)
 - (returns) T This is some return comment
-## T TryGetValue(object key)
+#### T TryGetValue(object key)
 - (summary) 
      Check dictionary for value and return it properly cast if
      found.

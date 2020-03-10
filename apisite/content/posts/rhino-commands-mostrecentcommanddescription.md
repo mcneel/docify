@@ -1,12 +1,16 @@
 ---
-title: "Rhino.Commands.MostRecentCommandDescription"
+title: "MostRecentCommandDescription"
 draft: false
 ---
 
-# Properties
-## string DisplayString
+*Namespace: Rhino.Commands*
+
+   Stores the macro and display string of the most recent command.
+   
+## Properties
+#### string DisplayString
 - (summary) 
 - (since) 5.0
-## string Macro
+#### string Macro
 - (summary) 
 - (since) 5.0

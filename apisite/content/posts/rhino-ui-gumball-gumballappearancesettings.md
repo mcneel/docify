@@ -1,38 +1,39 @@
 ---
-title: "Rhino.UI.Gumball.GumballAppearanceSettings"
+title: "GumballAppearanceSettings"
 draft: false
 ---
 
-# Constructors
-## Rhino.UI.Gumball.GumballAppearanceSettings()
+*Namespace: Rhino.UI.Gumball*
+## Constructors
+#### Rhino.UI.Gumball.GumballAppearanceSettings()
 - (summary) 
 - (since) 5.0
-# Properties
-## int ArcThickness
+## Properties
+#### int ArcThickness
 - (summary) in pixels.
 - (since) 5.0
-## int ArrowHeadLength
+#### int ArrowHeadLength
 - (summary) in pixels.
 - (since) 5.0
-## int ArrowHeadWidth
+#### int ArrowHeadWidth
 - (summary) in pixels.
 - (since) 5.0
-## int AxisThickness
+#### int AxisThickness
 - (summary) in pixels.
 - (since) 5.0
-## System.Drawing.Color ColorMenuButton
+#### System.Drawing.Color ColorMenuButton
 - (summary) 
 - (since) 5.0
-## System.Drawing.Color ColorX
+#### System.Drawing.Color ColorX
 - (summary) Default is Red.
 - (since) 5.0
-## System.Drawing.Color ColorY
+#### System.Drawing.Color ColorY
 - (summary) Default is Green.
 - (since) 5.0
-## System.Drawing.Color ColorZ
+#### System.Drawing.Color ColorZ
 - (summary) Default is Blue.
 - (since) 5.0
-## int FreeTranslate
+#### int FreeTranslate
 - (summary) 
      When FreeTranslate is 1, the center translation control can be dragged
      in any direction and moves the object the gumball controls. When
@@ -40,28 +41,28 @@ draft: false
      direction and moves the object the gumball itself. The default value is 2.
      
 - (since) 5.0
-## int MenuDistance
+#### int MenuDistance
 - (summary) Distance of menu ball from center.
 - (since) 5.0
-## bool MenuEnabled
+#### bool MenuEnabled
 - (summary) 
      When MenuEnabled is true, the menu "button" is drawn on the gumball.
      The default setting is true.
      
 - (since) 5.0
-## int MenuSize
+#### int MenuSize
 - (summary) Radius of menu circle.
 - (since) 5.0
-## int PlanarTranslationGripCorner
+#### int PlanarTranslationGripCorner
 - (summary) in pixels.
 - (since) 5.0
-## int PlanarTranslationGripSize
+#### int PlanarTranslationGripSize
 - (summary) in pixels.
 - (since) 5.0
-## int Radius
+#### int Radius
 - (summary) in pixels.
 - (since) 5.0
-## bool RelocateEnabled
+#### bool RelocateEnabled
 - (summary) 
      When RelocateEnabled is true, the user can reposition the gumball by
      tapping the control key while dragging.  Once the repostion drag is
@@ -69,76 +70,76 @@ draft: false
      The default setting is true.
      
 - (since) 5.0
-## bool RotateXEnabled
+#### bool RotateXEnabled
 - (summary) 
      When RotateX is true, the X rotation control is available. The default
      setting is true.
      
 - (since) 5.0
-## bool RotateYEnabled
+#### bool RotateYEnabled
 - (summary) 
      When RotateY is true, the Y rotation control is available. The default
      setting is true.
      
 - (since) 5.0
-## bool RotateZEnabled
+#### bool RotateZEnabled
 - (summary) 
      When RotateZ is true, the Z rotation control is available. The default
      setting is true.
      
 - (since) 5.0
-## int ScaleGripSize
+#### int ScaleGripSize
 - (summary) in pixels.
 - (since) 5.0
-## bool ScaleXEnabled
+#### bool ScaleXEnabled
 - (summary) 
      When ScaleXEnabled is true, the X scale control is available. The
      default setting is true.
      
 - (since) 5.0
-## bool ScaleYEnabled
+#### bool ScaleYEnabled
 - (summary) 
      When ScaleYEnabled is true, the Y scale control is available. The
      default setting is true.
      
 - (since) 5.0
-## bool ScaleZEnabled
+#### bool ScaleZEnabled
 - (summary) 
      When ScaleZEnabled is true, the Z scale control is available. The
      default setting is true.
      
 - (since) 5.0
-## bool TranslateXEnabled
+#### bool TranslateXEnabled
 - (summary) 
      TranslateXEnabled is true, the X axis translation control is available.
      The default setting is true.
      
 - (since) 5.0
-## bool TranslateXYEnabled
+#### bool TranslateXYEnabled
 - (summary) 
      When TranslateXY is true, the XY plane translation control is available
      in appropriate views. The default setting is true.
      
 - (since) 5.0
-## bool TranslateYEnabled
+#### bool TranslateYEnabled
 - (summary) 
      TranslateYEnabled is true, the Y axis translation control is available.
      The default setting is true.
      
 - (since) 5.0
-## bool TranslateYZEnabled
+#### bool TranslateYZEnabled
 - (summary) 
      When TranslateYZ is true, the YZ plane translation control is available
      in appropriate views. The default setting is true.
      
 - (since) 5.0
-## bool TranslateZEnabled
+#### bool TranslateZEnabled
 - (summary) 
      TranslateZEnabled is true, the Z axis translation control is available.
      The default setting is true.
      
 - (since) 5.0
-## bool TranslateZXEnabled
+#### bool TranslateZXEnabled
 - (summary) 
      When TranslateZX is true, the ZX plane translation control is available
      in appropriate views. The default setting is true.

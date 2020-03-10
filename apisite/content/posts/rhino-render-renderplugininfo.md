@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Render.RenderPlugInInfo"
+title: "RenderPlugInInfo"
 draft: false
 ---
 
-# Properties
-## string Name
+*Namespace: Rhino.Render*
+## Properties
+#### string Name
 - (summary) 
 - (since) 6.0
-## Guid PlugInId
+#### Guid PlugInId
 - (summary) 
 - (since) 6.0

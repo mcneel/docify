@@ -1,14 +1,15 @@
 ---
-title: "Rhino.UI.Gumball.GumballPickResult"
+title: "GumballPickResult"
 draft: false
 ---
 
-# Properties
-## GumballMode Mode
+*Namespace: Rhino.UI.Gumball*
+## Properties
+#### GumballMode Mode
 - (summary) 
 - (since) 5.0
-# Methods
-## void SetToDefault()
+## Methods
+#### void SetToDefault()
 - (summary) 
 - (since) 5.0
 - (returns) void This is some return comment

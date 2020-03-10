@@ -1,21 +1,25 @@
 ---
-title: "Rhino.Runtime.Notifications.NotificationButtonClickedArgs"
+title: "NotificationButtonClickedArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.Runtime.Notifications.NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked)
+*Namespace: Rhino.Runtime.Notifications*
+
+   Used when a button is clicked for a notification.
+   
+## Constructors
+#### Rhino.Runtime.Notifications.NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked)
 - (summary) 
      Creates a new instance.
      
 - (since) 6.0
-# Properties
-## ButtonType ButtonClicked
+## Properties
+#### ButtonType ButtonClicked
 - (summary) 
      The button that was clicked.
      
 - (since) 6.0
-## Notification Notification
+#### Notification Notification
 - (summary) 
      The notification whose button was clicked.
      

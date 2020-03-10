@@ -1,21 +1,25 @@
 ---
-title: "Rhino.Render.ChangeQueue.DynamicObjectTransform"
+title: "DynamicObjectTransform"
 draft: false
 ---
 
-# Properties
-## uint MeshInstanceId
+*Namespace: Rhino.Render.ChangeQueue*
+
+   ChangeQueue DynamicObject
+   
+## Properties
+#### uint MeshInstanceId
 - (summary) 
      Get the mesh instance id for this dynamic object.
      
 - (since) 6.0
-## Transform Transform
+#### Transform Transform
 - (summary) 
      Transform for the DynamicObject
      
 - (since) 6.0
-# Methods
-## string ToString()
+## Methods
+#### string ToString()
 - (summary) 
      String representation of DynamicObject
      

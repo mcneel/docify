@@ -1,14 +1,15 @@
 ---
-title: "Rhino.DocObjects.PointObject"
+title: "PointObject"
 draft: false
 ---
 
-# Properties
-## Point PointGeometry
+*Namespace: Rhino.DocObjects*
+## Properties
+#### Point PointGeometry
 - (summary) 
 - (since) 5.0
-# Methods
-## Point DuplicatePointGeometry()
+## Methods
+#### Point DuplicatePointGeometry()
 - (summary) 
 - (since) 5.0
 - (returns) Point This is some return comment

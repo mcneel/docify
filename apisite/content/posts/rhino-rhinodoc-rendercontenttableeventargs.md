@@ -1,15 +1,20 @@
 ---
-title: "Rhino.RhinoDoc.RenderContentTableEventArgs"
+title: "RenderContentTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino*
+
+     Passed to the ,  and the
+      events.
+     
+## Properties
+#### RhinoDoc Document
 - (summary) 
        Document the table belongs to
        
 - (since) 5.7
-## RenderContentTableEventType EventType
+#### RenderContentTableEventType EventType
 - (summary) 
        Event type
        

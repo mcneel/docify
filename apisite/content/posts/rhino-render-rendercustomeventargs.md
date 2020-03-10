@@ -1,15 +1,19 @@
 ---
-title: "Rhino.Render.RenderCustomEventArgs"
+title: "RenderCustomEventArgs"
 draft: false
 ---
 
-# Properties
-## IntPtr Argument
+*Namespace: Rhino.Render*
+
+   Used as Rhino.Render Custom Events args.
+   
+## Properties
+#### IntPtr Argument
 - (summary) 
      The pointer to the custom event args.
      
 - (since) 7.0
-## Guid EventType
+#### Guid EventType
 - (summary) 
      The type of the event.
      

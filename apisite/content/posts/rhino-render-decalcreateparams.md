@@ -1,60 +1,64 @@
 ---
-title: "Rhino.Render.DecalCreateParams"
+title: "DecalCreateParams"
 draft: false
 ---
 
-# Properties
-## DecalMapping DecalMapping
+*Namespace: Rhino.Render*
+
+   Used by RhinoObject.AddDecal() to create and add a decal
+   
+## Properties
+#### DecalMapping DecalMapping
 - (summary) 
 - (since) 6.0
-## DecalProjection DecalProjection
+#### DecalProjection DecalProjection
 - (summary) 
 - (since) 6.0
-## double EndLatitude
+#### double EndLatitude
 - (summary) 
 - (since) 6.0
-## double EndLongitude
+#### double EndLongitude
 - (summary) 
 - (since) 6.0
-## double Height
+#### double Height
 - (summary) 
 - (since) 6.0
-## bool MapToInside
+#### bool MapToInside
 - (summary) 
 - (since) 6.0
-## double MaxU
+#### double MaxU
 - (summary) 
 - (since) 6.0
-## double MaxV
+#### double MaxV
 - (summary) 
 - (since) 6.0
-## double MinU
+#### double MinU
 - (summary) 
 - (since) 6.0
-## double MinV
+#### double MinV
 - (summary) 
 - (since) 6.0
-## Geometry.Point3d Origin
+#### Geometry.Point3d Origin
 - (summary) 
 - (since) 6.0
-## double Radius
+#### double Radius
 - (summary) 
 - (since) 6.0
-## double StartLatitude
+#### double StartLatitude
 - (summary) 
 - (since) 6.0
-## double StartLongitude
+#### double StartLongitude
 - (summary) 
 - (since) 6.0
-## Guid TextureInstanceId
+#### Guid TextureInstanceId
 - (summary) 
 - (since) 6.0
-## double Transparency
+#### double Transparency
 - (summary) 
 - (since) 6.0
-## Geometry.Vector3d VectorAcross
+#### Geometry.Vector3d VectorAcross
 - (summary) 
 - (since) 6.0
-## Geometry.Vector3d VectorUp
+#### Geometry.Vector3d VectorUp
 - (summary) 
 - (since) 6.0

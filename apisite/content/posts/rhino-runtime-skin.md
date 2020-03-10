@@ -1,10 +1,14 @@
 ---
-title: "Rhino.Runtime.Skin"
+title: "Skin"
 draft: false
 ---
 
-# Properties
-## static Skin ActiveSkin
+*Namespace: Rhino.Runtime*
+
+   Represents a customized environment that changes the appearance of Rhino.
+   Skin DLLs must contain a single class that derives from the Skin class.
+## Properties
+#### static Skin ActiveSkin
 - (summary) 
      Any time Rhino is running there is at most one skin being used (and
      possibly no skin).  If a RhinoCommon based Skin class is being used, use
@@ -12,7 +16,7 @@ draft: false
      if no Skin is being used or if the skin is not a RhinoCommon based skin.
      
 - (since) 5.0
-## PersistentSettings Settings
+#### PersistentSettings Settings
 - (summary) 
      Gets access to the skin persistent settings.
      

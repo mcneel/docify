@@ -1,34 +1,41 @@
 ---
-title: "Rhino.Display.DisplayBitmap"
+title: "DisplayBitmap"
 draft: false
 ---
 
-# Constructors
-## Rhino.Display.DisplayBitmap(Bitmap bitmap)
+*Namespace: Rhino.Display*
+
+   A bitmap resource that can be used by the display pipeline (currently only
+   in OpenGL display).  Reuse DisplayBitmaps for drawing if possible; it is
+   much more expensive to construct new DisplayBitmaps than it is to reuse
+   existing DisplayBitmaps.
+   
+## Constructors
+#### Rhino.Display.DisplayBitmap(Bitmap bitmap)
 - (summary) 
      Constructs a DisplayBitmap from an existing bitmap.
      
 - (since) 5.0
-# Methods
-## static DisplayBitmap Load(string path)
+## Methods
+#### static DisplayBitmap Load(string path)
 - (summary) 
      Load a DisplayBitmap from and image file on disk.
      
 - (since) 5.0
 - (returns) DisplayBitmap This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## void GetBlendModes(BlendMode source,BlendMode destination)
+#### void GetBlendModes(BlendMode source,BlendMode destination)
 - (summary) 
      Gets the source and destination blend modes.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## void SetBlendFunction(BlendMode source,BlendMode destination)
+#### void SetBlendFunction(BlendMode source,BlendMode destination)
 - (summary) 
      Sets blending function used to determine how this bitmap is blended
      with the current framebuffer color.  The default setting is SourceAlpha

@@ -1,13 +1,18 @@
 ---
-title: "Rhino.Geometry.HiddenLineDrawingSegment"
+title: "HiddenLineDrawingSegment"
 draft: false
 ---
 
-# Properties
-## Curve CurveGeometry
+*Namespace: Rhino.Geometry*
+
+   The results of HiddenLineDrawing calculation are a collection of segments.
+   A segment is a subcurve of a HiddenLineDrawingObjectCurve.
+   
+## Properties
+#### Curve CurveGeometry
 - (summary)  The actual curve geometry 
 - (since) 6.0
-## SideFill[] CurveSideFills
+#### SideFill[] CurveSideFills
 - (summary) 
      The SideFill fields are only valid for visible curves.
      With respect to the HiddenLineDrawing, the region to the left (or right respecively) of this curve is
@@ -17,22 +22,22 @@ draft: false
      unknown is used for unset values and for projecting curves
      
 - (since) 6.0
-## int Index
+#### int Index
 - (summary) 
      Index of this curve in HiddenLineDrawing.Curves.
      
 - (since) 6.0
-## bool IsSceneSilhouette
+#### bool IsSceneSilhouette
 - (summary) 
      Returns True if this curve is a scene silhoutte.
      
 - (since) 6.0
-## HiddenLineDrawingObjectCurve ParentCurve
+#### HiddenLineDrawingObjectCurve ParentCurve
 - (summary) 
      This curve is a subcurve of the returned HiddenLineDrawingFullCurve object.
      
 - (since) 6.0
-## Visibility SegmentVisibility
+#### Visibility SegmentVisibility
 - (summary) 
      Returns the segment's visibility
      

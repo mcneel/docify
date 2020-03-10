@@ -1,55 +1,59 @@
 ---
-title: "Rhino.Render.ChangeQueue.MeshInstance"
+title: "MeshInstance"
 draft: false
 ---
 
-# Properties
-## bool CastShadows
+*Namespace: Rhino.Render.ChangeQueue*
+
+   Representation of ChangeQueue MeshInstance
+   
+## Properties
+#### bool CastShadows
 - (summary) 
      Return True if mesh instance should cast shadows
      
 - (since) 6.0
-## uint GroupId
+#### uint GroupId
 - (summary) 
      Get identifier that specifies the grouping of these mesh instances - usually based on the object that this originally comprised.
      
 - (since) 6.0
-## uint InstanceId
+#### uint InstanceId
 - (summary) 
      Get the instance identifier for this mesh instance.
      
 - (since) 6.0
-## uint MaterialId
+#### uint MaterialId
 - (summary) 
      The Material CRC / RenderHash
      
 - (since) 6.0
-## Guid MeshId
+#### Guid MeshId
 - (summary) 
      Get the mesh identifier for this mesh instance.
      
 - (since) 6.0
-## int MeshIndex
+#### int MeshIndex
 - (summary) 
      Get the mesh index for this mesh instance.
      
 - (since) 6.0
-## Transform OcsTransform
+#### Transform OcsTransform
 - (summary) 
      OCS Transform for the MeshInstance (identity means no OCS, potentially just simple WCS/WCS Box)
      
 - (since) 7.0
-## bool ReceiveShadows
+#### bool ReceiveShadows
 - (summary) 
      Return True if mesh instance should receive shadows
      
 - (since) 6.0
-## RenderMaterial RenderMaterial
+#### RenderMaterial RenderMaterial
 - (summary) 
      RenderMaterial associated with mesh instance
      
 - (since) 6.0
-## Transform Transform
+#### Transform Transform
 - (summary) 
      Transform for the MeshInstance
      

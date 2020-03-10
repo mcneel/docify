@@ -1,18 +1,22 @@
 ---
-title: "Rhino.DocObjects.RhinoTransformObjectsEventArgs"
+title: "RhinoTransformObjectsEventArgs"
 draft: false
 ---
 
-# Properties
-## int ObjectCount
+*Namespace: Rhino.DocObjects*
+
+     EventArgs passed to RhinoDoc.BeforeTransform.
+     
+## Properties
+#### int ObjectCount
 - (summary) 
 - (since) 5.10
-## RhinoObject[] Objects
+#### RhinoObject[] Objects
 - (summary) 
 - (since) 5.10
-## bool ObjectsWillBeCopied
+#### bool ObjectsWillBeCopied
 - (summary) 
 - (since) 5.10
-## Transform Transform
+#### Transform Transform
 - (summary) 
 - (since) 5.10

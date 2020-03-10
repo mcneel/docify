@@ -1,40 +1,41 @@
 ---
-title: "Rhino.Render.CustomRenderContentAttribute"
+title: "CustomRenderContentAttribute"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private)
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private)
 - (summary) 
 - (since) 6.0
-## Rhino.Render.CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private,bool is_linear,bool is_hdrcapable,bool is_normalmap)
+#### Rhino.Render.CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private,bool is_linear,bool is_hdrcapable,bool is_normalmap)
 - (summary) 
 - (since) 6.16
-# Properties
-## string Category
+## Properties
+#### string Category
 - (summary) 
 - (since) 6.0
-## bool ImageBased
+#### bool ImageBased
 - (summary) 
 - (since) 6.0
-## bool IsBuiltIn
+#### bool IsBuiltIn
 - (summary) 
 - (since) 6.0
-## bool IsElevated
+#### bool IsElevated
 - (summary) 
 - (since) 6.0
-## bool IsHdrCapable
+#### bool IsHdrCapable
 - (summary) 
 - (since) 6.16
-## bool IsLinear
+#### bool IsLinear
 - (summary) 
 - (since) 6.16
-## bool IsNormalMap
+#### bool IsNormalMap
 - (summary) 
 - (since) 6.16
-## bool IsPrivate
+#### bool IsPrivate
 - (summary) 
 - (since) 6.0
-## Guid RenderEngineId
+#### Guid RenderEngineId
 - (summary) 
 - (since) 6.0

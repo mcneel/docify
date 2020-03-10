@@ -1,47 +1,52 @@
 ---
-title: "Rhino.Geometry.RTreeEventArgs"
+title: "RTreeEventArgs"
 draft: false
 ---
 
-# Properties
-## bool Cancel
+*Namespace: Rhino.Geometry*
+
+   Represents event data that is passed when when an item that meets certain 
+   criteria is found and the passed RTree event is raised.
+   
+## Properties
+#### bool Cancel
 - (summary) 
      Gets or sets a value that determines if the search should be conducted farther.
      
 - (since) 5.0
-## int Id
+#### int Id
 - (summary) 
      Gets the identifier of the found item.
      
 - (since) 5.0
-## int IdB
+#### int IdB
 - (summary) 
      If search is using two r-trees, IdB is element b in the search.
      
 - (since) 5.0
-## IntPtr IdBPtr
+#### IntPtr IdBPtr
 - (summary) 
      If search is using two r-trees, IdB is the element b pointer in the search.
      
 - (since) 5.0
-## IntPtr IdPtr
+#### IntPtr IdPtr
 - (summary) 
      Gets the identifier pointer of the found item.
      
 - (since) 5.0
-## BoundingBox SearchBoundingBox
+#### BoundingBox SearchBoundingBox
 - (summary) 
      Bounding box bounds used during a search. You may modify the box in a search callback
      to help reduce the bounds to search.
      
 - (since) 5.0
-## Sphere SearchSphere
+#### Sphere SearchSphere
 - (summary) 
      Sphere bounds used during a search. You can modify the sphere in a search callback to
      help reduce the bounds to search.
      
 - (since) 5.0
-## object Tag
+#### object Tag
 - (summary) 
      Gets or sets an arbitrary object that can be attached to this event args.
      This object will "stick" through a single search and can represent user-defined state.

@@ -1,109 +1,113 @@
 ---
-title: "Rhino.DocObjects.Tables.NamedPositionTable"
+title: "NamedPositionTable"
 draft: false
 ---
 
-# Properties
-## int Count
+*Namespace: Rhino.DocObjects.Tables*
+
+     All named positions in a rhino document.
+     
+## Properties
+#### int Count
 - (summary) Number of Named Positions in the table.
 - (since) 6.0
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) Document that owns this table.
 - (since) 6.0
-## Guid[] Ids
+#### Guid[] Ids
 - (summary) Array of Named Position guids.
 - (since) 6.0
-## string[] Names
+#### string[] Names
 - (summary) Array of Named Position names.
 - (since) 6.0
-# Methods
-## bool Append(Guid id,IEnumerable<Guid> objectIds)
+## Methods
+#### bool Append(Guid id,IEnumerable<Guid> objectIds)
 - (summary) Append objects to a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Append(Guid id,IEnumerable<RhinoObject> objects)
+#### bool Append(Guid id,IEnumerable<RhinoObject> objects)
 - (summary) Append objects to a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Append(string name,IEnumerable<Guid> objectIds)
+#### bool Append(string name,IEnumerable<Guid> objectIds)
 - (summary) Append objects to a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Append(string name,IEnumerable<RhinoObject> objects)
+#### bool Append(string name,IEnumerable<RhinoObject> objects)
 - (summary) Append objects to a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Delete(Guid id)
+#### bool Delete(Guid id)
 - (summary) Delete a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Delete(string name)
+#### bool Delete(string name)
 - (summary) Delete a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## Guid Id(string name)
+#### Guid Id(string name)
 - (summary) Guid of a Named Position.
 - (since) 6.0
 - (returns) Guid This is some return comment
-## string Name(Guid id)
+#### string Name(Guid id)
 - (summary) Name of a Named Position.
 - (since) 6.0
 - (returns) string This is some return comment
-## Guid[] ObjectIds(Guid id)
+#### Guid[] ObjectIds(Guid id)
 - (summary) Array of Rhino Object Guids related to a Named Position.
 - (since) 6.0
 - (returns) Guid[] This is some return comment
-## Guid[] ObjectIds(string name)
+#### Guid[] ObjectIds(string name)
 - (summary) Array of Rhino Object Guids related to a Named Position.
 - (since) 6.0
 - (returns) Guid[] This is some return comment
-## RhinoObject[] Objects(Guid id)
+#### RhinoObject[] Objects(Guid id)
 - (summary) Array of Rhino Objects related to a Named Position.
 - (since) 6.0
 - (returns) RhinoObject[] This is some return comment
-## RhinoObject[] Objects(string name)
+#### RhinoObject[] Objects(string name)
 - (summary) Array of Rhino Objects related to a Named Position.
 - (since) 6.0
 - (returns) RhinoObject[] This is some return comment
-## bool ObjectXform(Guid id,Guid objId,Transform xform)
+#### bool ObjectXform(Guid id,Guid objId,Transform xform)
 - (summary) Retrieve the Transform of a Rhino Object relate dto a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool ObjectXform(Guid id,RhinoObject obj,Transform xform)
+#### bool ObjectXform(Guid id,RhinoObject obj,Transform xform)
 - (summary) Retrieve the Transform of a Rhino Object relate dto a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Rename(Guid id,string name)
+#### bool Rename(Guid id,string name)
 - (summary) Rename a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Rename(string oldName,string name)
+#### bool Rename(string oldName,string name)
 - (summary) Rename a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Restore(Guid id)
+#### bool Restore(Guid id)
 - (summary) Restore a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Restore(string name)
+#### bool Restore(string name)
 - (summary) Restore a Named Position.
 - (since) 6.0
 - (returns) bool This is some return comment
-## Guid Save(string name,IEnumerable<Guid> objectIds)
+#### Guid Save(string name,IEnumerable<Guid> objectIds)
 - (summary) Save a new Named Position.
 - (since) 6.0
 - (returns) Guid This is some return comment
-## Guid Save(string name,IEnumerable<RhinoObject> objects)
+#### Guid Save(string name,IEnumerable<RhinoObject> objects)
 - (summary) Save a new Named Position.
 - (since) 6.0
 - (returns) Guid This is some return comment
-## bool Update(Guid id)
+#### bool Update(Guid id)
 - (summary) 
          Updates a Named Position, effectively storing the current positions of the objects which the Named Position is tracking.
          
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Update(string name)
+#### bool Update(string name)
 - (summary) 
          Updates a Named Position, effectively storing the current positions of the objects which the Named Position is tracking.
          

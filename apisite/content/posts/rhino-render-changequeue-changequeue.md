@@ -1,22 +1,28 @@
 ---
-title: "Rhino.Render.ChangeQueue.ChangeQueue"
+title: "ChangeQueue"
 draft: false
 ---
 
-# Properties
-## Display.DisplayPipelineAttributes DisplayPipelineAttributes
+*Namespace: Rhino.Render.ChangeQueue*
+
+   Base class for ChangeQueue.
+   
+   Generally used by render plugins to build interactive updating of scenes that are being rendered.
+   
+## Properties
+#### Display.DisplayPipelineAttributes DisplayPipelineAttributes
 - (summary) 
      Get the DisplayPipelineAttributes if available, None otherwise
      
 - (since) 6.0
-## bool IsPreview
+#### bool IsPreview
 - (summary) 
      Return True if this ChangeQueue is created for preview rendering.
      
      No view was set for preview rendering.
      
 - (since) 6.0
-## Guid ViewId
+#### Guid ViewId
 - (summary) 
      Return view ID for a RhinoDoc based ChangeQueue.
      
@@ -24,20 +30,20 @@ draft: false
      i.e. preview rendering.
      
 - (since) 6.0
-# Methods
-## static void ConvertCameraBasedLightToWorld(ChangeQueue changequeue,Light light,ViewInfo vp)
+## Methods
+#### static void ConvertCameraBasedLightToWorld(ChangeQueue changequeue,Light light,ViewInfo vp)
 - (summary) 
      Convert given (camera-based) light to a world-based light (in-place)
      
 - (since) 6.0
 - (returns) void This is some return comment
-## static uint CrcFromGuid(Guid guid)
+#### static uint CrcFromGuid(Guid guid)
 - (summary) 
      Helper function to get a CRC from a Guid.
      
 - (since) 6.0
 - (returns) uint This is some return comment
-## bool AreViewsEqual(ViewInfo aView,ViewInfo bView)
+#### bool AreViewsEqual(ViewInfo aView,ViewInfo bView)
 - (summary) 
      Compare to ViewInfo instances and decide whether they are equal or not.
      
@@ -46,37 +52,37 @@ draft: false
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void CreateWorld()
+#### void CreateWorld()
 - (summary) 
      Calls CreateWorld with True passed.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## void CreateWorld(bool bFlushWhenReady)
+#### void CreateWorld(bool bFlushWhenReady)
 - (summary) 
      Signal the queue to do the initialisation of the queue, seeding it with the content currently available.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Dispose our ChangeQueue
      
 - (since) 6.0
 - (returns) void This is some return comment
-## RenderEnvironment EnvironmentForid(uint crc)
+#### RenderEnvironment EnvironmentForid(uint crc)
 - (summary) 
      Get RenderEnvironment for given RenderHash
      
 - (since) 6.0
 - (returns) RenderEnvironment This is some return comment
-## uint EnvironmentIdForUsage(Usage usage)
+#### uint EnvironmentIdForUsage(Usage usage)
 - (summary) 
      Get RenderEnvironment RenderHash for given usage.
      
 - (since) 6.0
 - (returns) uint This is some return comment
-## void Flush()
+#### void Flush()
 - (summary) 
      Tell the ChangeQueue to flush all collected events.
     
@@ -104,49 +110,49 @@ draft: false
      
 - (since) 6.0
 - (returns) void This is some return comment
-## GroundPlane GetQueueGroundPlane()
+#### GroundPlane GetQueueGroundPlane()
 - (summary) 
      Get groundplane known to the queue at the time of the Flush
      
 - (since) 6.0
 - (returns) GroundPlane This is some return comment
-## RenderSettings GetQueueRenderSettings()
+#### RenderSettings GetQueueRenderSettings()
 - (summary) 
      Get render settings known to the queue at the time of the Flush
      
 - (since) 6.0
 - (returns) RenderSettings This is some return comment
-## BoundingBox GetQueueSceneBoundingBox()
+#### BoundingBox GetQueueSceneBoundingBox()
 - (summary) 
      Get the scene bounding box
      
 - (since) 6.0
 - (returns) BoundingBox This is some return comment
-## Skylight GetQueueSkylight()
+#### Skylight GetQueueSkylight()
 - (summary) 
      Get skylight known to the queue at the time of the Flush
      
 - (since) 6.0
 - (returns) Skylight This is some return comment
-## Geometry.Light GetQueueSun()
+#### Geometry.Light GetQueueSun()
 - (summary) 
      Get sun known to the queue at the time of the Flush
      
 - (since) 6.0
 - (returns) Geometry.Light This is some return comment
-## ViewInfo GetQueueView()
+#### ViewInfo GetQueueView()
 - (summary) 
      Get view known to the queue at the time of the Flush
      
 - (since) 6.0
 - (returns) ViewInfo This is some return comment
-## RenderMaterial MaterialFromId(uint crc)
+#### RenderMaterial MaterialFromId(uint crc)
 - (summary) 
      Get the RenderMaterial from the ChangeQueue material cache based on RenderHash
      
 - (since) 6.0
 - (returns) RenderMaterial This is some return comment
-## void OneShot()
+#### void OneShot()
 - (summary) 
      Call Flush() once, after that automatically dispose the queue.
      

@@ -1,12 +1,13 @@
 ---
-title: "Rhino.DocObjects.Custom.GripStatus"
+title: "GripStatus"
 draft: false
 ---
 
-# Properties
-## bool Culled
+*Namespace: Rhino.DocObjects.Custom*
+## Properties
+#### bool Culled
 - (summary) 
 - (since) 5.0
-## bool Visible
+#### bool Visible
 - (summary) 
 - (since) 5.0

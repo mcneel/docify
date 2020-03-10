@@ -1,69 +1,73 @@
 ---
-title: "Rhino.Geometry.SubD"
+title: "SubD"
 draft: false
 ---
 
-# Constructors
-## Rhino.Geometry.SubD()
+*Namespace: Rhino.Geometry*
+
+   Subdivision surface
+   
+## Constructors
+#### Rhino.Geometry.SubD()
 - (summary) 
      Create a new instance of SubD geometry
      
 - (since) 7.0
-# Properties
-## Collections.SubDEdgeList Edges
+## Properties
+#### Collections.SubDEdgeList Edges
 - (summary) 
      All edges in this SubD
      
 - (since) 7.0
-## Collections.SubDFaceList Faces
+#### Collections.SubDFaceList Faces
 - (summary) 
      All faces in this SubD
      
 - (since) 7.0
-## bool IsSolid
+#### bool IsSolid
 - (summary) 
      Test subd to see if the active level is a solid.  
      A "solid" is a closed oriented manifold, or a closed oriented manifold.
      
 - (since) 7.0
-## Collections.SubDVertexList Vertices
+#### Collections.SubDVertexList Vertices
 - (summary) 
      All vertices in this SubD
      
 - (since) 7.0
-# Methods
-## static SubD CreateFromMesh(Mesh mesh)
+## Methods
+#### static SubD CreateFromMesh(Mesh mesh)
 - (summary) 
      Create a new SubD from a mesh
      
 - (since) 7.0
 - (returns) SubD This is some return comment
-## static SubD CreateFromMesh(Mesh mesh,SubDCreationOptions options)
+#### static SubD CreateFromMesh(Mesh mesh,SubDCreationOptions options)
 - (summary) 
      Create a new SubD from a mesh
      
 - (since) 7.0
 - (returns) SubD This is some return comment
-## void ClearEvaluationCache()
+#### void ClearEvaluationCache()
 - (summary) 
      Clear cached information that depends on the location of vertex control points
      
 - (since) 7.0
 - (returns) void This is some return comment
-## bool Subdivide(int count)
+#### bool Subdivide(int count)
 - (summary) 
      Apply the Catmull-Clark subdivision algorithm and save the results in
      this SubD
      
 - (since) 7.0
 - (returns) bool This is some return comment
-## Brep ToBrep()
+#### Brep ToBrep()
 - (summary) 
      Create a Brep based on this SubD geometry
      
 - (since) 7.0
 - (returns) Brep This is some return comment
-## uint UpdateAllTagsAndSectorCoefficients()
+#### uint UpdateAllTagsAndSectorCoefficients()
 - (summary) 
      Updates vertex tag, edge tag, and edge coefficient values on the active
      level. After completing custom editing operations that modify the

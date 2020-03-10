@@ -1,113 +1,114 @@
 ---
-title: "Rhino.FileIO.FileObjWriteOptions"
+title: "FileObjWriteOptions"
 draft: false
 ---
 
-# Constructors
-## Rhino.FileIO.FileObjWriteOptions(FileWriteOptions writeOptions)
+*Namespace: Rhino.FileIO*
+## Constructors
+#### Rhino.FileIO.FileObjWriteOptions(FileWriteOptions writeOptions)
 - (summary) 
 - (since) 6.0
-# Properties
-## string ActualFilePathOnMac
+## Properties
+#### string ActualFilePathOnMac
 - (summary) 
 - (since) 6.3
-## bool CreateNgons
+#### bool CreateNgons
 - (summary) 
      Setting to enable/diable the creation of ngons for the output
      
 - (since) 6.0
-## bool CullUnnecessaryVertexesInNgons
+#### bool CullUnnecessaryVertexesInNgons
 - (summary) 
      Setting to determine whether interior colinear vertexes are part of the 
      ngon.
      
 - (since) 6.0
-## AsciiEol EolType
+#### AsciiEol EolType
 - (summary) 
 - (since) 6.0
-## ObjGroupNames ExportGroupNameLayerNames
+#### ObjGroupNames ExportGroupNameLayerNames
 - (summary) 
      Setting to determine whether object, group or layer names
      will become "g"s in the OBJ output file
      
 - (since) 6.0
-## bool ExportMaterialDefinitions
+#### bool ExportMaterialDefinitions
 - (summary) 
      Setting to write an .mtl file and "usemtl"s in the obj file
      
 - (since) 6.0
-## bool ExportNormals
+#### bool ExportNormals
 - (summary) 
      Enable/disable export of vertex normals, if they exist.
      
 - (since) 6.0
-## ObjObjectNames ExportObjectNames
+#### ObjObjectNames ExportObjectNames
 - (summary) 
      Setting to determine what object names in Rhino 
      will become in the OBJ output file
      
 - (since) 6.0
-## bool ExportOpenMeshes
+#### bool ExportOpenMeshes
 - (summary) 
      Enable/Disable bailing when an open mesh is encountered.
      
 - (since) 6.0
-## bool ExportTcs
+#### bool ExportTcs
 - (summary) 
      Enable/disable export of texture coordinates, if they exist.
      
 - (since) 6.0
-## bool ExportVcs
+#### bool ExportVcs
 - (summary) 
      Enable/disable export of vertex colors, if they exist.
      
 - (since) 6.0
-## bool IncludeUnweldedEdgesInNgons
+#### bool IncludeUnweldedEdgesInNgons
 - (summary) 
      Setting to determine whether unwelded edges are ignored in the 
      creation of an ngon.
      
 - (since) 6.0
-## bool MapZtoY
+#### bool MapZtoY
 - (summary) 
      Setting to transform Rhino's Z axis to OBJ's Y axis
      
 - (since) 6.0
-## bool MergeNestedGroupingNames
+#### bool MergeNestedGroupingNames
 - (summary) 
      Setting to merge nested layer or group names into a single OBJ group name
      
 - (since) 6.7
-## MeshingParameters MeshParameters
+#### MeshingParameters MeshParameters
 - (summary) 
      Mesh parameters to use when meshing geometry that is not already a mesh.
      
 - (since) 6.0
-## VertexWelding MeshType
+#### VertexWelding MeshType
 - (summary) 
 - (since) 6.0
-## int MinNgonFaceCount
+#### int MinNgonFaceCount
 - (summary) 
      Minimum number of faces to consider creation of ngon
      
 - (since) 6.0
-## GeometryType ObjectType
+#### GeometryType ObjectType
 - (summary) 
 - (since) 6.0
-## int SignificantDigits
+#### int SignificantDigits
 - (summary) 
      Number of significant digits to write out for floating point numbers
      
 - (since) 6.0
-## bool SortObjGroups
+#### bool SortObjGroups
 - (summary) 
      Setting to enable/disable sorting of OBJ groups
      
 - (since) 6.0
-## SubDMeshing SubDMeshType
+#### SubDMeshing SubDMeshType
 - (summary) 
 - (since) 7.0
-## int SubDSurfaceMeshingDensity
+#### int SubDSurfaceMeshingDensity
 - (summary) 
      Determines how coarse the mesh output
      will be when surface meshing subd objects
@@ -116,17 +117,17 @@ draft: false
      for details regarding numbers used.
      
 - (since) 7.0
-## CurveType TrimCurveType
+#### CurveType TrimCurveType
 - (summary) 
      trimming curve option
      
 - (since) 6.0
-## bool UnderbarMaterialNames
+#### bool UnderbarMaterialNames
 - (summary) 
      Enable/disable replacing white space with underbars in material names.
      
 - (since) 6.0
-## bool UseRelativeIndexing
+#### bool UseRelativeIndexing
 - (summary) 
      Determines whether to use relative indexing.
      
@@ -134,18 +135,18 @@ draft: false
      FALSE = use absolute (positive) indexing  
      
 - (since) 6.0
-## bool UseSimpleDialog
+#### bool UseSimpleDialog
 - (summary) 
      Determines whether to use the simple or detailed meshing dialog.
      
 - (since) 6.0
-## bool WrapLongLines
+#### bool WrapLongLines
 - (summary) 
      Setting to enable/disable line wrapping with "\"s
      
 - (since) 6.0
-# Methods
-## Transform GetTransform()
+## Methods
+#### Transform GetTransform()
 - (summary) 
      Calculates the transform combination of ZToY and
      any the translation that might occur in a SavewithOrigin.

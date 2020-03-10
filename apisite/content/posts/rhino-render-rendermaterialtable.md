@@ -1,30 +1,31 @@
 ---
-title: "Rhino.Render.RenderMaterialTable"
+title: "RenderMaterialTable"
 draft: false
 ---
 
-# Properties
-## int Count
+*Namespace: Rhino.Render*
+## Properties
+#### int Count
 - (summary) 
 - (since) 5.7
-# Methods
-## bool Add(RenderMaterial c)
+## Methods
+#### bool Add(RenderMaterial c)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## void BeginChange(ChangeContexts changeContext)
+#### void BeginChange(ChangeContexts changeContext)
 - (summary) 
 - (since) 7.0
 - (returns) void This is some return comment
-## void EndChange()
+#### void EndChange()
 - (summary) 
 - (since) 7.0
 - (returns) void This is some return comment
-## IEnumerator<RenderMaterial> GetEnumerator()
+#### IEnumerator<RenderMaterial> GetEnumerator()
 - (summary) 
 - (since) 5.7
 - (returns) IEnumerator<RenderMaterial> This is some return comment
-## bool Remove(RenderMaterial c)
+#### bool Remove(RenderMaterial c)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment

@@ -1,68 +1,72 @@
 ---
-title: "Rhino.DocObjects.Tables.NamedLayerStateTable"
+title: "NamedLayerStateTable"
 draft: false
 ---
 
-# Properties
-## int Count
+*Namespace: Rhino.DocObjects.Tables*
+
+   All named layer states in a Rhino document.
+   
+## Properties
+#### int Count
 - (summary) 
      Returns the number of named layers states in the document.
      
 - (since) 6.14
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) 
      Document that owns this table.
      
 - (since) 6.14
-## string[] Names
+#### string[] Names
 - (summary) 
      Returns the names of named layer states in the document.
      
 - (since) 6.14
-# Methods
-## bool Delete(string name)
+## Methods
+#### bool Delete(string name)
 - (summary) 
      Deletes an exising named layer state.
      
 - (since) 6.14
 - (returns) bool This is some return comment
-## int FindName(string name)
+#### int FindName(string name)
 - (summary) 
      Returns the index of an existing named layer state.
      
 - (since) 6.14
 - (returns) int This is some return comment
-## int Import(string filename)
+#### int Import(string filename)
 - (summary) 
      Imports named layer states from a 3dm file.
      
 - (since) 6.15
 - (returns) int This is some return comment
-## bool Rename(string oldName,string newName)
+#### bool Rename(string oldName,string newName)
 - (summary) 
      Renames an existing named layer state.
      
 - (since) 6.14
 - (returns) bool This is some return comment
-## bool Restore(string name,RestoreLayerProperties properties)
+#### bool Restore(string name,RestoreLayerProperties properties)
 - (summary) 
      Restores a named layer state.
      
 - (since) 6.14
 - (returns) bool This is some return comment
-## bool Restore(string name,RestoreLayerProperties properties,Guid viewportId)
+#### bool Restore(string name,RestoreLayerProperties properties,Guid viewportId)
 - (summary) 
      Restores a named layer state.
      
 - (since) 6.14
 - (returns) bool This is some return comment
-## int Save(string name)
+#### int Save(string name)
 - (summary) 
      Saves or updates a named layer state. 
      
 - (since) 6.14
 - (returns) int This is some return comment
-## int Save(string name,Guid viewportId)
+#### int Save(string name,Guid viewportId)
 - (summary) 
      Saves or updates a named layer state. 
      

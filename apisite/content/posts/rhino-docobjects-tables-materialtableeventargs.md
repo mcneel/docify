@@ -1,18 +1,19 @@
 ---
-title: "Rhino.DocObjects.Tables.MaterialTableEventArgs"
+title: "MaterialTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## MaterialTableEventType EventType
+#### MaterialTableEventType EventType
 - (summary) 
 - (since) 5.0
-## int Index
+#### int Index
 - (summary) 
 - (since) 5.0
-## Material OldSettings
+#### Material OldSettings
 - (summary) 
 - (since) 5.0

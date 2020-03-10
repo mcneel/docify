@@ -1,21 +1,26 @@
 ---
-title: "Rhino.UI.ObjectPropertiesPageCollection"
+title: "ObjectPropertiesPageCollection"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.UI*
+
+   Passed to Rhino.PlugIns.PlugIn.ObjectPropertiesPages to allow a plug-in
+   to add custom ObjectPropertiesPage pages to the Rhino properties panel.
+   
+## Properties
+#### RhinoDoc Document
 - (summary) 
      Document associated with the Rhino properties panel.
      
 - (since) 7.0
-## uint DocumentRuntimeSerailNumber
+#### uint DocumentRuntimeSerailNumber
 - (summary) 
      Document associated with the Rhino properties panel.
      
 - (since) 7.0
-# Methods
-## void Add(ObjectPropertiesPage page)
+## Methods
+#### void Add(ObjectPropertiesPage page)
 - (summary) 
      Custom page to add
      

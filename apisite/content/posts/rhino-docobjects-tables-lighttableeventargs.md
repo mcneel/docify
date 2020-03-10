@@ -1,21 +1,22 @@
 ---
-title: "Rhino.DocObjects.Tables.LightTableEventArgs"
+title: "LightTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.3
-## LightTableEventType EventType
+#### LightTableEventType EventType
 - (summary) 
 - (since) 5.3
-## int LightIndex
+#### int LightIndex
 - (summary) 
 - (since) 5.3
-## LightObject NewState
+#### LightObject NewState
 - (summary) 
 - (since) 5.3
-## Light OldState
+#### Light OldState
 - (summary) 
 - (since) 5.3

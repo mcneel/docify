@@ -1,12 +1,13 @@
 ---
-title: "Rhino.DocObjects.RhinoObjectEventArgs"
+title: "RhinoObjectEventArgs"
 draft: false
 ---
 
-# Properties
-## Guid ObjectId
+*Namespace: Rhino.DocObjects*
+## Properties
+#### Guid ObjectId
 - (summary) 
 - (since) 5.0
-## RhinoObject TheObject
+#### RhinoObject TheObject
 - (summary) 
 - (since) 5.0

@@ -1,10 +1,14 @@
 ---
-title: "Rhino.FileIO.ImageFile"
+title: "ImageFile"
 draft: false
 ---
 
-# Methods
-## static bool SupportsAlphaChannel(string filename)
+*Namespace: Rhino.FileIO*
+
+   Support functions for image files
+   
+## Methods
+#### static bool SupportsAlphaChannel(string filename)
 - (summary) 
      Returns True if file at given path is an image file and that file format supports
      an alpha channel

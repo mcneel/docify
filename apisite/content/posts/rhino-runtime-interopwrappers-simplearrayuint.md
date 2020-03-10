@@ -1,50 +1,55 @@
 ---
-title: "Rhino.Runtime.InteropWrappers.SimpleArrayUint"
+title: "SimpleArrayUint"
 draft: false
 ---
 
-# Constructors
-## Rhino.Runtime.InteropWrappers.SimpleArrayUint()
+*Namespace: Rhino.Runtime.InteropWrappers*
+
+   Wrapper for ON_SimpleArray<unsigned int>. If you are not writing C++ code
+   then this class is not for you.
+   
+## Constructors
+#### Rhino.Runtime.InteropWrappers.SimpleArrayUint()
 - (summary) 
      Initializes a new  class.
      
 - (since) 6.0
-## Rhino.Runtime.InteropWrappers.SimpleArrayUint(IEnumerable<uint> values)
+#### Rhino.Runtime.InteropWrappers.SimpleArrayUint(IEnumerable<uint> values)
 - (summary) 
      Initializes a new  class.
      
 - (since) 6.0
-# Properties
-## int Count
+## Properties
+#### int Count
 - (summary) 
      Gets the number of elements in this array.
      
 - (since) 6.0
-## uint UnsignedCount
+#### uint UnsignedCount
 - (summary) 
      Gets the number of elements in this array.
      
 - (since) 6.0
-# Methods
-## IntPtr ConstPointer()
+## Methods
+#### IntPtr ConstPointer()
 - (summary) 
      Gets the const (immutable) pointer of this array.
      
 - (since) 6.0
 - (returns) IntPtr This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## IntPtr NonConstPointer()
+#### IntPtr NonConstPointer()
 - (summary) 
      Gets the non-const pointer (for modification) of this array.
      
 - (since) 6.0
 - (returns) IntPtr This is some return comment
-## uint[] ToArray()
+#### uint[] ToArray()
 - (summary) 
      Returns the managed counterpart of the unmanaged array.
      

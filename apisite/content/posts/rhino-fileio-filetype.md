@@ -1,16 +1,17 @@
 ---
-title: "Rhino.FileIO.FileType"
+title: "FileType"
 draft: false
 ---
 
-# Constructors
-## Rhino.FileIO.FileType(string extension,string description)
+*Namespace: Rhino.FileIO*
+## Constructors
+#### Rhino.FileIO.FileType(string extension,string description)
 - (summary) 
 - (since) 5.0
-# Properties
-## string Description
+## Properties
+#### string Description
 - (summary) 
 - (since) 5.0
-## string Extension
+#### string Extension
 - (summary) 
 - (since) 5.0

@@ -1,39 +1,40 @@
 ---
-title: "Rhino.Commands.CommandEventArgs"
+title: "CommandEventArgs"
 draft: false
 ---
 
-# Properties
-## string CommandEnglishName
+*Namespace: Rhino.Commands*
+## Properties
+#### string CommandEnglishName
 - (summary) 
      Gets the English name of the command that raised this event.
      
 - (since) 5.0
-## Guid CommandId
+#### Guid CommandId
 - (summary) 
      Gets the ID of the command that raised this event.
      
 - (since) 5.0
-## string CommandLocalName
+#### string CommandLocalName
 - (summary) 
      Gets the name of the command that raised this event in the local language.
      
 - (since) 5.0
-## string CommandPluginName
+#### string CommandPluginName
 - (summary) 
      Gets the name of the plug-in that this command belongs to.  If the command is internal
      to Rhino, then this propert is an empty string.
      
 - (since) 5.0
-## Result CommandResult
+#### Result CommandResult
 - (summary) 
      Gets the result of the command that raised this event. 
      This value is only meaningful during EndCommand events.
      
 - (since) 5.0
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) 
 - (since) 6.0
-## uint DocumentRuntimeSerialNumber
+#### uint DocumentRuntimeSerialNumber
 - (summary) 
 - (since) 6.0

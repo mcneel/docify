@@ -1,10 +1,15 @@
 ---
-title: "Rhino.UI.LOC"
+title: "LOC"
 draft: false
 ---
 
-# Methods
-## static string COMMANDNAME(string english)
+*Namespace: Rhino.UI*
+
+   Used a placeholded which is used by LocalizationProcessor application to create contextId
+   mapped localized strings.
+   
+## Methods
+#### static string COMMANDNAME(string english)
 - (summary) 
      Command names that need to be localized should call this function. The COMMANDNAME function doesn't actually
      do anything but return the original string. The LocalizationProcessor application walks
@@ -14,7 +19,7 @@ draft: false
     
 - (since) 5.0
 - (returns) string This is some return comment
-## static LocalizeStringPair CON(string english)
+#### static LocalizeStringPair CON(string english)
 - (summary) 
      Command option name strings that need to be localized should call this function. The CON function
      doesn't actually do anything but return the original string. The LocalizationProcessor application walks
@@ -23,7 +28,7 @@ draft: false
     
 - (since) 5.0
 - (returns) LocalizeStringPair This is some return comment
-## static LocalizeStringPair CON(string english,object assemblyFromObject)
+#### static LocalizeStringPair CON(string english,object assemblyFromObject)
 - (summary) 
      Command option name strings that need to be localized should call this function. The CON function
      doesn't actually do anything but return the original string. The LocalizationProcessor application walks
@@ -32,7 +37,7 @@ draft: false
     
 - (since) 5.0
 - (returns) LocalizeStringPair This is some return comment
-## static LocalizeStringPair COV(string english)
+#### static LocalizeStringPair COV(string english)
 - (summary) 
      Command option name strings that need to be localized should call this function. The COV function
      doesn't actually do anything but return the original string. The LocalizationProcessor application walks
@@ -41,7 +46,7 @@ draft: false
     
 - (since) 5.0
 - (returns) LocalizeStringPair This is some return comment
-## static LocalizeStringPair COV(string english,object assemblyFromObject)
+#### static LocalizeStringPair COV(string english,object assemblyFromObject)
 - (summary) 
      Command option name strings that need to be localized should call this function. The COV function
      doesn't actually do anything but return the original string. The LocalizationProcessor application walks
@@ -50,7 +55,7 @@ draft: false
     
 - (since) 5.0
 - (returns) LocalizeStringPair This is some return comment
-## static string STR(string english)
+#### static string STR(string english)
 - (summary) 
      Strings that need to be localized should call this function. The STR function doesn't actually
      do anything but return the original string. The LocalizationProcessor application walks
@@ -59,7 +64,7 @@ draft: false
     
 - (since) 5.0
 - (returns) string This is some return comment
-## static string STR(string english,object assemblyOrObject)
+#### static string STR(string english,object assemblyOrObject)
 - (summary) 
      Similar to  function.
      

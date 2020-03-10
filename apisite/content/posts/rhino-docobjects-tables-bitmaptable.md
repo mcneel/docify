@@ -1,38 +1,42 @@
 ---
-title: "Rhino.DocObjects.Tables.BitmapTable"
+title: "BitmapTable"
 draft: false
 ---
 
-# Properties
-## ModelComponentType ComponentType
+*Namespace: Rhino.DocObjects.Tables*
+
+   Stores the list of bitmaps in a Rhino document.
+   
+## Properties
+#### ModelComponentType ComponentType
 - (summary) 
      Returns .
      
 - (since) 6.0
-# Methods
-## int AddBitmap(string bitmapFilename,bool replaceExisting)
+## Methods
+#### int AddBitmap(string bitmapFilename,bool replaceExisting)
 - (summary) Adds a new bitmap with specified name to the bitmap table.
 - (since) 5.0
 - (returns) int This is some return comment
-## bool Delete(BitmapEntry item)
+#### bool Delete(BitmapEntry item)
 - (summary) 
      Removes the bitmap from the table.
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool DeleteBitmap(string bitmapFilename)
+#### bool DeleteBitmap(string bitmapFilename)
 - (summary) Deletes a bitmap.
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool ExportToFile(int index,string path)
+#### bool ExportToFile(int index,string path)
 - (summary) Writes a bitmap to a file.
 - (since) 5.0
 - (returns) bool This is some return comment
-## int ExportToFiles(string directoryPath,int overwrite)
+#### int ExportToFiles(string directoryPath,int overwrite)
 - (summary) Exports all the bitmaps in the table to files.
 - (since) 5.0
 - (returns) int This is some return comment
-## BitmapEntry Find(string name,bool createFile,string fileName)
+#### BitmapEntry Find(string name,bool createFile,string fileName)
 - (summary) 
      This function first attempts to find the file with "name" on the disk.
      If it does find it, "fileName" is set to the full path of the file and
@@ -46,7 +50,7 @@ draft: false
      
 - (since) 5.1
 - (returns) BitmapEntry This is some return comment
-## BitmapEntry FindIndex(int index)
+#### BitmapEntry FindIndex(int index)
 - (summary) 
      Retrieves a BitmapEntry object based on Index. This seach type of search is discouraged.
      We are moving towards using only IDs for all tables.

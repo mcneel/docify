@@ -1,55 +1,59 @@
 ---
-title: "Rhino.Geometry.SubDCreationOptions"
+title: "SubDCreationOptions"
 draft: false
 ---
 
-# Constructors
-## Rhino.Geometry.SubDCreationOptions()
+*Namespace: Rhino.Geometry*
+
+   Options used for creating a SubD
+   
+## Constructors
+#### Rhino.Geometry.SubDCreationOptions()
 - (summary) 
      Create default options
      
 - (since) 7.0
-# Properties
-## static SubDCreationOptions ConvexCornerAtMeshCorner
+## Properties
+#### static SubDCreationOptions ConvexCornerAtMeshCorner
 - (summary) 
      Look for convex corners at sub-D vertices with 2 edges that have an
      included angle <= 90 degrees.
      
 - (since) 7.0
-## static SubDCreationOptions InteriorCreaseAtMeshCrease
+#### static SubDCreationOptions InteriorCreaseAtMeshCrease
 - (summary) 
      Create an interior sub-D crease along coincident input mesh edges
      where the vertex normal directions at one end differ by at 
      least 30 degrees.
      
 - (since) 7.0
-## static SubDCreationOptions InteriorCreaseAtMeshEdge
+#### static SubDCreationOptions InteriorCreaseAtMeshEdge
 - (summary) 
      Create an interior sub-D crease along all coincident input mesh edges.
      
 - (since) 7.0
-## static SubDCreationOptions Smooth
+#### static SubDCreationOptions Smooth
 - (summary) 
      No interior creases and no corners.
      
 - (since) 7.0
-## ConvexCornerOption ConvexCornerTest
+#### ConvexCornerOption ConvexCornerTest
 - (summary) 
      how convex corners are treated
      
 - (since) 7.0
-## InteriorCreaseOption InteriorCreaseTest
+#### InteriorCreaseOption InteriorCreaseTest
 - (summary) 
      how interior creases are treated
      
 - (since) 7.0
-## bool InterpolateMeshVertices
+#### bool InterpolateMeshVertices
 - (summary) 
      If false, input mesh vertex locations will be used to set subd vertex control net locations.
      If true, input mesh vertex locations will be used to set subd vertex limit surface locations.
      
 - (since) 7.0
-## double MaximumConvexCornerAngleRadians
+#### double MaximumConvexCornerAngleRadians
 - (summary) 
      If ConvexCornerTest is at_mesh_corner, then an input mesh boundary
      vertex becomes a sub-D corner when the number of edges that end at the
@@ -57,7 +61,7 @@ draft: false
      is <= MaximumConvexCornerAngleRadians.
      
 - (since) 7.0
-## uint MaximumConvexCornerEdgeCount
+#### uint MaximumConvexCornerEdgeCount
 - (summary) 
      If ConvexCornerTest is at_mesh_corner, then an input mesh boundary
      vertex becomes a sub-D corner when the number of edges that end at the
@@ -65,7 +69,7 @@ draft: false
      is <= MaximumConvexCornerAngleRadians.
      
 - (since) 7.0
-## double MinimumCreaseAngleRadians
+#### double MinimumCreaseAngleRadians
 - (summary) 
      When the interior crease option is AtMeshCreases the value of
      MinimumCreaseAngleRadians determines which coincident input mesh edges
@@ -75,8 +79,8 @@ draft: false
      input mesh edge, the the correspondeing sub-D edge will be a crease.
      
 - (since) 7.0
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      Delete unmanager pointer for this
      

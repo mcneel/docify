@@ -1,20 +1,21 @@
 ---
-title: "Rhino.Geometry.ParticleSystem"
+title: "ParticleSystem"
 draft: false
 ---
 
-# Properties
-## BoundingBox BoundingBox
+*Namespace: Rhino.Geometry*
+## Properties
+#### BoundingBox BoundingBox
 - (summary) 
 - (since) 5.0
-## bool DisplaySizesInWorldUnits
+#### bool DisplaySizesInWorldUnits
 - (summary) 
 - (since) 5.0
-## bool DrawRequiresDepthSorting
+#### bool DrawRequiresDepthSorting
 - (summary) 
 - (since) 5.0
-# Methods
-## bool Add(Particle particle)
+## Methods
+#### bool Add(Particle particle)
 - (summary) 
      Adds a particle to this ParticleSystem. A Particle can only be in one system
      at a time.  If the Particle already exists in a different system, this function
@@ -23,23 +24,23 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## void Clear()
+#### void Clear()
 - (summary) 
      Remove all Particles from this system.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## IEnumerator<Particle> GetEnumerator()
+#### IEnumerator<Particle> GetEnumerator()
 - (summary) 
 - (since) 5.0
 - (returns) IEnumerator<Particle> This is some return comment
-## void Remove(Particle particle)
+#### void Remove(Particle particle)
 - (summary) 
      Removes a single particle from this system.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## void Update()
+#### void Update()
 - (summary) 
      Calls Update on every particle in the system.
      

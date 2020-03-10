@@ -1,126 +1,127 @@
 ---
-title: "Rhino.UI.Controls.Thumbnaillist.ThumbnailList"
+title: "ThumbnailList"
 draft: false
 ---
 
-# Constructors
-## Rhino.UI.Controls.Thumbnaillist.ThumbnailList()
+*Namespace: Rhino.UI.Controls.Thumbnaillist*
+## Constructors
+#### Rhino.UI.Controls.Thumbnaillist.ThumbnailList()
 - (summary) 
 - (since) (unknown)
-# Properties
-## ContentEditingContext CEC
+## Properties
+#### ContentEditingContext CEC
 - (summary) 
 - (since) (unknown)
-## bool Created
+#### bool Created
 - (summary) 
 - (since) (unknown)
-## bool Enabled
+#### bool Enabled
 - (summary) 
 - (since) (unknown)
-## string EnglishCaption
+#### string EnglishCaption
 - (summary) 
 - (since) (unknown)
-## bool Hidden
+#### bool Hidden
 - (summary) 
 - (since) (unknown)
-## IntPtr HolderParent
+#### IntPtr HolderParent
 - (summary) 
 - (since) (unknown)
-## string LocalCaption
+#### string LocalCaption
 - (summary) 
 - (since) (unknown)
-## bool Shown
+#### bool Shown
 - (summary) 
 - (since) (unknown)
-## RdkThumbnaillistViewModel ViewModel
+#### RdkThumbnaillistViewModel ViewModel
 - (summary) 
 - (since) (unknown)
-# Methods
-## void Add(IRhRdkThumbnail t)
-- (summary) 
-- (since) (unknown)
-- (returns) void This is some return comment
-## void Clear()
+## Methods
+#### void Add(IRhRdkThumbnail t)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## Rhino.Render.RenderContent ContentFromThumbId(Guid uuidThumb)
+#### void Clear()
+- (summary) 
+- (since) (unknown)
+- (returns) void This is some return comment
+#### Rhino.Render.RenderContent ContentFromThumbId(Guid uuidThumb)
 - (summary) 
 - (since) (unknown)
 - (returns) Rhino.Render.RenderContent This is some return comment
-## IRhRdkThumbnail Get(Guid u)
+#### IRhRdkThumbnail Get(Guid u)
 - (summary) 
 - (since) (unknown)
 - (returns) IRhRdkThumbnail This is some return comment
-## void GetGridMetrics(int w,int h,int ox,int oy)
+#### void GetGridMetrics(int w,int h,int ox,int oy)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## IRhRdkContentThumbnailList_Sizes GetSize()
+#### IRhRdkContentThumbnailList_Sizes GetSize()
 - (summary) 
 - (since) (unknown)
 - (returns) IRhRdkContentThumbnailList_Sizes This is some return comment
-## void GetStatisticsHeaderHeight()
+#### void GetStatisticsHeaderHeight()
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## IRhRdkThumbnailList_Modes Mode()
+#### IRhRdkThumbnailList_Modes Mode()
 - (summary) 
 - (since) (unknown)
 - (returns) IRhRdkThumbnailList_Modes This is some return comment
-## void Move(Rectangle rect,bool bRepaint,bool bRepaintNC)
+#### void Move(Rectangle rect,bool bRepaint,bool bRepaintNC)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## bool PropagateSelectedAppearance()
+#### bool PropagateSelectedAppearance()
 - (summary) 
 - (since) (unknown)
 - (returns) bool This is some return comment
-## void SaveMetaDataToDocument()
+#### void SaveMetaDataToDocument()
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## Rhino.Render.PreviewAppearance SelectedAppearance()
+#### Rhino.Render.PreviewAppearance SelectedAppearance()
 - (summary) 
 - (since) (unknown)
 - (returns) Rhino.Render.PreviewAppearance This is some return comment
-## void SetClientText(string w)
+#### void SetClientText(string w)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## void SetCustomBitmapSize(int w,int h)
+#### void SetCustomBitmapSize(int w,int h)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## void SetMode(IRhRdkThumbnailList_Modes m,bool b)
+#### void SetMode(IRhRdkThumbnailList_Modes m,bool b)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## void SetSearchPattern(string w)
+#### void SetSearchPattern(string w)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## void SetSettingsPath(string w)
+#### void SetSettingsPath(string w)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## void SetShowLabels(bool b)
+#### void SetShowLabels(bool b)
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment
-## IRhRdkThumbnailList_Shapes Shape()
+#### IRhRdkThumbnailList_Shapes Shape()
 - (summary) 
 - (since) (unknown)
 - (returns) IRhRdkThumbnailList_Shapes This is some return comment
-## bool ShowLabels()
+#### bool ShowLabels()
 - (summary) 
 - (since) (unknown)
 - (returns) bool This is some return comment
-## Guid UUID()
+#### Guid UUID()
 - (summary) 
 - (since) (unknown)
 - (returns) Guid This is some return comment
-## void ViewModelActivated()
+#### void ViewModelActivated()
 - (summary) 
 - (since) (unknown)
 - (returns) void This is some return comment

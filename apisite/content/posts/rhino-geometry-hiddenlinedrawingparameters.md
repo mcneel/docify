@@ -1,49 +1,53 @@
 ---
-title: "Rhino.Geometry.HiddenLineDrawingParameters"
+title: "HiddenLineDrawingParameters"
 draft: false
 ---
 
-# Constructors
-## Rhino.Geometry.HiddenLineDrawingParameters()
+*Namespace: Rhino.Geometry*
+
+   Input used for computing a hidden line drawing
+   
+## Constructors
+#### Rhino.Geometry.HiddenLineDrawingParameters()
 - (summary) default constructor
 - (since) 6.0
-# Properties
-## double AbsoluteTolerance
+## Properties
+#### double AbsoluteTolerance
 - (summary) 
      Absolute tolerance is used to decide if curves overlap or intersect.
      A suggested value is to use RhinoDoc.AbsoluteTolerance
      
 - (since) 6.0
-## bool Flatten
+#### bool Flatten
 - (summary)  Flatten the computed geometry 
 - (since) 6.0
-## bool IncludeHiddenCurves
+#### bool IncludeHiddenCurves
 - (summary)  Include hidden curves in hidden line drawing (default is true) 
 - (since) 6.0
-## bool IncludeTangentEdges
+#### bool IncludeTangentEdges
 - (summary)  Include tangent edges in hidden line drawing (default is true) 
 - (since) 6.0
-## bool IncludeTangentSeams
+#### bool IncludeTangentSeams
 - (summary)  Include tangent seams in hidden line drawing (default is true) 
 - (since) 6.0
-# Methods
-## void AddClippingPlane(Plane plane)
+## Methods
+#### void AddClippingPlane(Plane plane)
 - (summary)  Specify clipping planes that are active for this view. 
 - (since) 6.0
 - (returns) void This is some return comment
-## bool AddGeometry(GeometryBase geometry,object tag)
+#### bool AddGeometry(GeometryBase geometry,object tag)
 - (summary) 
      Add geometry that should be included in the calculation
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool AddGeometry(GeometryBase geometry,Transform xform,object tag)
+#### bool AddGeometry(GeometryBase geometry,Transform xform,object tag)
 - (summary) 
      Add geometry that should be included in the calculation
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void SetViewport(RhinoViewport viewport)
+#### void SetViewport(RhinoViewport viewport)
 - (summary) 
      Set the viewport for the hidden line drawing (HLD). The viewport supplies
      the projection that determinest he visibility of curves, and the HLD 
@@ -54,7 +58,7 @@ draft: false
      
 - (since) 6.0
 - (returns) void This is some return comment
-## void SetViewport(ViewportInfo viewport)
+#### void SetViewport(ViewportInfo viewport)
 - (summary) 
      Set the viewport for the hidden line drawing (HLD). The viewport supplies
      the projection that determines the visibility of curves, and the HLD 

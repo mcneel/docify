@@ -1,19 +1,20 @@
 ---
-title: "Rhino.Input.Custom.TaskCompleteEventArgs"
+title: "TaskCompleteEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.Input.Custom.TaskCompleteEventArgs(Task task,RhinoDoc doc)
+*Namespace: Rhino.Input.Custom*
+## Constructors
+#### Rhino.Input.Custom.TaskCompleteEventArgs(Task task,RhinoDoc doc)
 - (summary) 
 - (since) 6.0
-# Properties
-## RhinoDoc Doc
+## Properties
+#### RhinoDoc Doc
 - (summary) 
 - (since) 6.0
-## bool Redraw
+#### bool Redraw
 - (summary) 
 - (since) 6.0
-## Task Task
+#### Task Task
 - (summary) 
 - (since) 6.0

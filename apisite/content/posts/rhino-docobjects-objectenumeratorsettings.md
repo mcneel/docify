@@ -1,65 +1,70 @@
 ---
-title: "Rhino.DocObjects.ObjectEnumeratorSettings"
+title: "ObjectEnumeratorSettings"
 draft: false
 ---
 
-# Constructors
-## Rhino.DocObjects.ObjectEnumeratorSettings()
+*Namespace: Rhino.DocObjects*
+
+   Settings used for getting an enumerator of objects in a document
+   See Rhino.Collections.ObjectTable.GetEnumerator()
+   
+## Constructors
+#### Rhino.DocObjects.ObjectEnumeratorSettings()
 - (summary) 
 - (since) 5.0
-# Properties
-## bool ActiveObjects
+## Properties
+#### bool ActiveObjects
 - (summary) 
 - (since) 5.0
-## Type ClassTypeFilter
+#### Type ClassTypeFilter
 - (summary) 
 - (since) 5.0
-## bool DeletedObjects
+#### bool DeletedObjects
 - (summary) 
 - (since) 5.0
-## bool HiddenObjects
+#### bool HiddenObjects
 - (summary) 
 - (since) 5.0
-## bool IdefObjects
+#### bool IdefObjects
 - (summary) 
      When true, ONLY Instance Definitions will be returned
      
 - (since) 5.0
-## bool IncludeGrips
+#### bool IncludeGrips
 - (summary) 
 - (since) 5.0
-## bool IncludeLights
+#### bool IncludeLights
 - (summary) 
 - (since) 5.0
-## bool IncludePhantoms
+#### bool IncludePhantoms
 - (summary) 
 - (since) 5.0
-## int LayerIndexFilter
+#### int LayerIndexFilter
 - (summary) 
 - (since) 5.0
-## bool LockedObjects
+#### bool LockedObjects
 - (summary) 
 - (since) 5.0
-## string NameFilter
+#### string NameFilter
 - (summary) 
 - (since) 5.0
-## bool NormalObjects
+#### bool NormalObjects
 - (summary) 
 - (since) 5.0
-## ObjectType ObjectTypeFilter
+#### ObjectType ObjectTypeFilter
 - (summary) 
 - (since) 5.0
-## bool ReferenceObjects
+#### bool ReferenceObjects
 - (summary) 
 - (since) 5.0
-## bool SelectedObjectsFilter
+#### bool SelectedObjectsFilter
 - (summary) 
 - (since) 5.0
-## RhinoViewport ViewportFilter
+#### RhinoViewport ViewportFilter
 - (summary) 
      Filter on value of object->IsActiveInViewport()
      
 - (since) 5.6
-## bool VisibleFilter
+#### bool VisibleFilter
 - (summary) 
 - (since) 5.0

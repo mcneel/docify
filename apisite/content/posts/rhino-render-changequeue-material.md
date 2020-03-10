@@ -1,20 +1,24 @@
 ---
-title: "Rhino.Render.ChangeQueue.Material"
+title: "Material"
 draft: false
 ---
 
-# Properties
-## uint Id
+*Namespace: Rhino.Render.ChangeQueue*
+
+   Representation of a Material through the change queue
+   
+## Properties
+#### uint Id
 - (summary) 
      Get the material ID (crc)
      
 - (since) 6.0
-## int MeshIndex
+#### int MeshIndex
 - (summary) 
      Get mesh index
      
 - (since) 6.0
-## uint MeshInstanceId
+#### uint MeshInstanceId
 - (summary) 
      Get the material InstanceAncestry
      

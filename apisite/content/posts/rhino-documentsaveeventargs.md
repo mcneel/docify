@@ -1,15 +1,19 @@
 ---
-title: "Rhino.DocumentSaveEventArgs"
+title: "DocumentSaveEventArgs"
 draft: false
 ---
 
-# Properties
-## bool ExportSelected
+*Namespace: Rhino*
+
+   Provides document information for RhinoDoc events.
+   
+## Properties
+#### bool ExportSelected
 - (summary) 
      True if only selected objects are being written to a file.
      
 - (since) 5.0
-## string FileName
+#### string FileName
 - (summary) 
      Name of file being written.
      

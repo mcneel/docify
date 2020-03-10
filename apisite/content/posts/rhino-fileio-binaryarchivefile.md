@@ -1,31 +1,32 @@
 ---
-title: "Rhino.FileIO.BinaryArchiveFile"
+title: "BinaryArchiveFile"
 draft: false
 ---
 
-# Constructors
-## Rhino.FileIO.BinaryArchiveFile(string filename,BinaryArchiveMode mode)
+*Namespace: Rhino.FileIO*
+## Constructors
+#### Rhino.FileIO.BinaryArchiveFile(string filename,BinaryArchiveMode mode)
 - (summary) 
 - (since) 5.1
-# Properties
-## BinaryArchiveReader Reader
+## Properties
+#### BinaryArchiveReader Reader
 - (summary) 
 - (since) 5.1
-## BinaryArchiveWriter Writer
+#### BinaryArchiveWriter Writer
 - (summary) 
 - (since) 5.1
-# Methods
-## void Close()
+## Methods
+#### void Close()
 - (summary) 
 - (since) 5.1
 - (returns) void This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 5.1
 - (returns) void This is some return comment
-## bool Open()
+#### bool Open()
 - (summary) 
 - (since) 5.1
 - (returns) bool This is some return comment

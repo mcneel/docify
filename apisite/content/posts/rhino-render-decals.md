@@ -1,25 +1,27 @@
 ---
-title: "Rhino.Render.Decals"
+title: "Decals"
 draft: false
 ---
 
-# Methods
-## uint Add(Decal decal)
+*Namespace: Rhino.Render*
+Represents all the decals of an object.
+## Methods
+#### uint Add(Decal decal)
 - (summary) 
      Add a new Decal to the decals list, use Decal.Create to create
      a new decal instance to add.
      
 - (since) 5.10
 - (returns) uint This is some return comment
-## void Clear()
+#### void Clear()
 - (summary) 
 - (since) 5.10
 - (returns) void This is some return comment
-## IEnumerator<Decal> GetEnumerator()
+#### IEnumerator<Decal> GetEnumerator()
 - (summary) 
 - (since) 5.10
 - (returns) IEnumerator<Decal> This is some return comment
-## bool Remove(Decal decal)
+#### bool Remove(Decal decal)
 - (summary) 
 - (since) 5.10
 - (returns) bool This is some return comment

@@ -1,21 +1,22 @@
 ---
-title: "Rhino.DocObjects.Tables.LayerTableEventArgs"
+title: "LayerTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## LayerTableEventType EventType
+#### LayerTableEventType EventType
 - (summary) 
 - (since) 5.0
-## int LayerIndex
+#### int LayerIndex
 - (summary) 
 - (since) 5.0
-## Layer NewState
+#### Layer NewState
 - (summary) 
 - (since) 5.0
-## Layer OldState
+#### Layer OldState
 - (summary) 
 - (since) 5.0

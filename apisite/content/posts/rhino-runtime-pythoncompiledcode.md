@@ -1,10 +1,14 @@
 ---
-title: "Rhino.Runtime.PythonCompiledCode"
+title: "PythonCompiledCode"
 draft: false
 ---
 
-# Methods
-## void Execute(PythonScript scope)
+*Namespace: Rhino.Runtime*
+
+   Represents scripting compiled code.
+   
+## Methods
+#### void Execute(PythonScript scope)
 - (summary) 
      Executes the script in a specific scope.
      

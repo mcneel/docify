@@ -1,15 +1,19 @@
 ---
-title: "Rhino.Render.ChangeQueue.MappingChannelCollection"
+title: "MappingChannelCollection"
 draft: false
 ---
 
-# Properties
-## IEnumerable<MappingChannel> Channels
+*Namespace: Rhino.Render.ChangeQueue*
+
+   MappingChannels for a Mesh
+   
+## Properties
+#### IEnumerable<MappingChannel> Channels
 - (summary) 
      Enumerate all available channels in this mapping
      
 - (since) 6.0
-## int Count
+#### int Count
 - (summary) 
      Get count of MappingChannels in this collection
      

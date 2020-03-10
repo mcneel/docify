@@ -1,13 +1,14 @@
 ---
-title: "Rhino.Render.RealtimeDisplayMode.InitFramebufferEventArgs"
+title: "InitFramebufferEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RealtimeDisplayMode.InitFramebufferEventArgs(DisplayPipeline dp)
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.RealtimeDisplayMode.InitFramebufferEventArgs(DisplayPipeline dp)
 - (summary) 
 - (since) 6.0
-# Properties
-## DisplayPipeline Pipeline
+## Properties
+#### DisplayPipeline Pipeline
 - (summary) 
 - (since) 6.0

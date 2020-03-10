@@ -1,10 +1,14 @@
 ---
-title: "Rhino.FileIO.File3dmPlugInData"
+title: "File3dmPlugInData"
 draft: false
 ---
 
-# Properties
-## Guid PlugInId
+*Namespace: Rhino.FileIO*
+
+   Custom data in the file supplied by a plug-in
+   
+## Properties
+#### Guid PlugInId
 - (summary) 
      Plug-in this data is associated with
      

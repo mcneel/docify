@@ -1,18 +1,19 @@
 ---
-title: "Rhino.DocObjects.RhinoModifyObjectAttributesEventArgs"
+title: "RhinoModifyObjectAttributesEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## ObjectAttributes NewAttributes
+#### ObjectAttributes NewAttributes
 - (summary) 
 - (since) 5.0
-## ObjectAttributes OldAttributes
+#### ObjectAttributes OldAttributes
 - (summary) 
 - (since) 5.0
-## RhinoObject RhinoObject
+#### RhinoObject RhinoObject
 - (summary) 
 - (since) 5.0

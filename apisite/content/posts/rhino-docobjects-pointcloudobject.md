@@ -1,14 +1,15 @@
 ---
-title: "Rhino.DocObjects.PointCloudObject"
+title: "PointCloudObject"
 draft: false
 ---
 
-# Properties
-## PointCloud PointCloudGeometry
+*Namespace: Rhino.DocObjects*
+## Properties
+#### PointCloud PointCloudGeometry
 - (summary) 
 - (since) 5.0
-# Methods
-## PointCloud DuplicatePointCloudGeometry()
+## Methods
+#### PointCloud DuplicatePointCloudGeometry()
 - (summary) 
 - (since) 5.0
 - (returns) PointCloud This is some return comment

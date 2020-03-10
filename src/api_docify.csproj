@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeAnalysisExtensions.cs" />
     <Compile Include="ParsedBaseType.cs" />
     <Compile Include="ParsedMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SourceFileWalker.cs" />
+    <Compile Include="XmlDocumentedItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

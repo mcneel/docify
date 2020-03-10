@@ -1,24 +1,25 @@
 ---
-title: "Rhino.UI.MouseCallbackEventArgs"
+title: "MouseCallbackEventArgs"
 draft: false
 ---
 
-# Properties
-## System.Windows.Forms.MouseButtons Button
+*Namespace: Rhino.UI*
+## Properties
+#### System.Windows.Forms.MouseButtons Button
 - (summary) 
 - (since) 5.0
-## bool CtrlKeyDown
+#### bool CtrlKeyDown
 - (summary) 
 - (since) 6.0
-## MouseButton MouseButton
+#### MouseButton MouseButton
 - (summary) 
 - (since) 6.0
-## bool ShiftKeyDown
+#### bool ShiftKeyDown
 - (summary) 
 - (since) 6.0
-## Display.RhinoView View
+#### Display.RhinoView View
 - (summary) 
 - (since) 5.0
-## System.Drawing.Point ViewportPoint
+#### System.Drawing.Point ViewportPoint
 - (summary) 
 - (since) 5.0

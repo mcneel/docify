@@ -1,12 +1,13 @@
 ---
-title: "Rhino.DocObjects.RhinoDeselectAllObjectsEventArgs"
+title: "RhinoDeselectAllObjectsEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## int ObjectCount
+#### int ObjectCount
 - (summary) 
 - (since) 5.0

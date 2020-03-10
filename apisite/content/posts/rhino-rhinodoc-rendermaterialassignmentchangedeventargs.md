@@ -1,24 +1,25 @@
 ---
-title: "Rhino.RhinoDoc.RenderMaterialAssignmentChangedEventArgs"
+title: "RenderMaterialAssignmentChangedEventArgs"
 draft: false
 ---
 
-# Properties
-## bool IsLayer
+*Namespace: Rhino*
+## Properties
+#### bool IsLayer
 - (summary) 
 - (since) 5.10
-## bool IsObject
+#### bool IsObject
 - (summary) 
 - (since) 5.10
-## Guid LayerId
+#### Guid LayerId
 - (summary) 
 - (since) 5.10
-## Guid NewRenderMaterial
+#### Guid NewRenderMaterial
 - (summary) 
 - (since) 5.10
-## Guid ObjectId
+#### Guid ObjectId
 - (summary) 
 - (since) 5.10
-## Guid OldRenderMaterial
+#### Guid OldRenderMaterial
 - (summary) 
 - (since) 5.10

@@ -1,43 +1,47 @@
 ---
-title: "Rhino.FileIO.File3dmObject"
+title: "File3dmObject"
 draft: false
 ---
 
-# Properties
-## ObjectAttributes Attributes
+*Namespace: Rhino.FileIO*
+
+   Used to store geometry table object definition and attributes in a File3dm.
+   
+## Properties
+#### ObjectAttributes Attributes
 - (summary) 
      Gets the attributes that are linked with this document object.
      
 - (since) 5.0
-## ModelComponentType ComponentType
+#### ModelComponentType ComponentType
 - (summary) 
      Returns .
      
 - (since) 6.0
-## GeometryBase Geometry
+#### GeometryBase Geometry
 - (summary) 
      Gets the geometry that is linked with this document object.
      
 - (since) 5.0
-## string Name
+#### string Name
 - (summary) 
      Gets or sets the Name of the object. Equivalent to this.Attributes.Name.
      
 - (since) 5.0
-# Methods
-## bool Equals(File3dmObject other)
+## Methods
+#### bool Equals(File3dmObject other)
 - (summary) 
      Verified that two File3dmObject items refer to the same object in a document.
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Equals(object obj)
+#### bool Equals(object obj)
 - (summary) 
      Verified that two objects refer to the same object in a document.
      
 - (since) (unknown)
 - (returns) bool This is some return comment
-## int GetHashCode()
+#### int GetHashCode()
 - (summary) 
      Provides an hash code for this item.
      

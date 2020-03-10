@@ -1,17 +1,19 @@
 ---
-title: "Rhino.FileIO.FileStpWriteOptions"
+title: "FileStpWriteOptions"
 draft: false
 ---
 
-# Properties
-## bool Export2dCurves
+*Namespace: Rhino.FileIO*
+ Options used when writing a stp file 
+## Properties
+#### bool Export2dCurves
 - (summary) 
      Some (not most, and not Rhino) importing applications can make use of
      the 2-D trimming curves to get a more accurate and faster import. The
      size of the step file will be larger
      
 - (since) 7.0
-## bool ExportBlack
+#### bool ExportBlack
 - (summary) 
      Let importing application set color for black objects. If a Rhino
      object has color black, no color is assigned to the object in the step
@@ -22,7 +24,7 @@ draft: false
      color entities.
      
 - (since) 7.0
-## bool SplitClosedSurfaces
+#### bool SplitClosedSurfaces
 - (summary) 
      Splits closed surfaces, for example, the interior surfaces of drilled
      holes.

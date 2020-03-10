@@ -1,16 +1,20 @@
 ---
-title: "Rhino.DocObjects.BrepObject"
+title: "BrepObject"
 draft: false
 ---
 
-# Properties
-## Brep BrepGeometry
+*Namespace: Rhino.DocObjects*
+
+   Represents a brep in a document.
+   
+## Properties
+#### Brep BrepGeometry
 - (summary) 
      Gets the brep geometry linked with this object.
      
 - (since) 5.0
-# Methods
-## Brep DuplicateBrepGeometry()
+## Methods
+#### Brep DuplicateBrepGeometry()
 - (summary) 
      Constructs a new deep copy of the brep geometry.
      

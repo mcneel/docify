@@ -1,30 +1,34 @@
 ---
-title: "Rhino.ApplicationSettings.CurvatureAnalysisSettingsState"
+title: "CurvatureAnalysisSettingsState"
 draft: false
 ---
 
-# Properties
-## Rhino.Geometry.Interval GaussRange
+*Namespace: Rhino.ApplicationSettings*
+
+   Represents a snapshot of .
+   
+## Properties
+#### Rhino.Geometry.Interval GaussRange
 - (summary) 
      Gets or sets the Gaussian curvature range.
      
 - (since) 6.0
-## Rhino.Geometry.Interval MaxRadiusRange
+#### Rhino.Geometry.Interval MaxRadiusRange
 - (summary) 
      Gets or sets the Maximum Radius curvature range.
      
 - (since) 6.0
-## Rhino.Geometry.Interval MeanRange
+#### Rhino.Geometry.Interval MeanRange
 - (summary) 
      Gets or sets the Mean curvature range.
      
 - (since) 6.0
-## Rhino.Geometry.Interval MinRadiusRange
+#### Rhino.Geometry.Interval MinRadiusRange
 - (summary) 
      Gets or sets the Minimum Radius curvature range.
      
 - (since) 6.0
-## CurvatureAnalysisSettings.CurvatureStyle Style
+#### CurvatureAnalysisSettings.CurvatureStyle Style
 - (summary) 
      Gets or sets the curvature analysis style.
      

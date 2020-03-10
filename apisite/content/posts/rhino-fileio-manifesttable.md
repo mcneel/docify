@@ -1,61 +1,66 @@
 ---
-title: "Rhino.FileIO.ManifestTable"
+title: "ManifestTable"
 draft: false
 ---
 
-# Properties
-## ModelComponentType ComponentType
+*Namespace: Rhino.FileIO*
+
+   Maintains an index to every model component that is in the 3dm file.
+   This is the "more comprehensive" table that contains all objects in all other tables.
+   
+## Properties
+#### ModelComponentType ComponentType
 - (summary) 
      Returns .
      
 - (since) 6.0
-## int Count
+#### int Count
 - (summary) 
      Total number of items in the manifest, including deleted items.
      
 - (since) 6.0
-## long LongCount
+#### long LongCount
 - (summary) 
      Total number of items in the manifest, including deleted items.
      
 - (since) 6.0
-## object Parent
+#### object Parent
 - (summary) 
      Returns the parent object. This is the RhinoDoc, or the File3md file. 
      
 - (since) 6.0
-# Methods
-## static ModelComponentType GetModelComponentTypeFromGenericType()
+## Methods
+#### static ModelComponentType GetModelComponentTypeFromGenericType()
 - (summary) 
      Returns the result of the ComponentType property of a ModelComponent.
      
 - (since) 6.0
 - (returns) ModelComponentType This is some return comment
-## int ActiveObjectCount(ModelComponentType type)
+#### int ActiveObjectCount(ModelComponentType type)
 - (summary) 
      Total number of items in the manifest, including deleted items.
      
 - (since) 6.0
 - (returns) int This is some return comment
-## void Clear()
+#### void Clear()
 - (summary) 
      Marks all items as deleted.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## bool Contains(ModelComponent item)
+#### bool Contains(ModelComponent item)
 - (summary) 
      Determines if an items is contained in this table.
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void CopyTo(ModelComponent[] array,int arrayIndex)
+#### void CopyTo(ModelComponent[] array,int arrayIndex)
 - (summary) 
      Copies the content of this table to an array.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## T FindId(Guid id)
+#### T FindId(Guid id)
 - (summary) 
      Uses the guid to find a model component. Deleted objects cannot be found by id.
      The guid is the value that is stored in the .Id property.
@@ -67,7 +72,7 @@ draft: false
      
 - (since) 6.0
 - (returns) T This is some return comment
-## ModelComponent FindId(Guid id)
+#### ModelComponent FindId(Guid id)
 - (summary) 
      Uses the guid to find a model component. Deleted objects cannot be found by id.
      The guid is the value that is stored in the .Id property.
@@ -79,7 +84,7 @@ draft: false
      
 - (since) 6.0
 - (returns) ModelComponent This is some return comment
-## ModelComponent FindId(Guid id,ModelComponentType type)
+#### ModelComponent FindId(Guid id,ModelComponentType type)
 - (summary) 
      Uses the guid to find a model component. Deleted objects cannot be found by id.
      The guid is the value that is stored in the .Id property.
@@ -91,21 +96,21 @@ draft: false
      
 - (since) 6.0
 - (returns) ModelComponent This is some return comment
-## T FindIndex(int index)
+#### T FindIndex(int index)
 - (summary) 
      Uses the index to find a model component.
      The index is the value that is stored in the .Index property.
      
 - (since) 6.0
 - (returns) T This is some return comment
-## ModelComponent FindIndex(int index,ModelComponentType type)
+#### ModelComponent FindIndex(int index,ModelComponentType type)
 - (summary) 
      Uses the index to find a model component.
      The index is the value that is stored in the .Index property.
      
 - (since) 6.0
 - (returns) ModelComponent This is some return comment
-## T FindName(string name,Guid parent)
+#### T FindName(string name,Guid parent)
 - (summary) 
      Uses the name to find a model component.
      The name is the value that is stored in the .Name property.
@@ -113,7 +118,7 @@ draft: false
      
 - (since) 6.0
 - (returns) T This is some return comment
-## ModelComponent FindName(string name,ModelComponentType type,Guid parent)
+#### ModelComponent FindName(string name,ModelComponentType type,Guid parent)
 - (summary) 
      Uses the name to find a model component.
      The name is the value that is stored in the .Name property.
@@ -121,33 +126,33 @@ draft: false
      
 - (since) 6.0
 - (returns) ModelComponent This is some return comment
-## T FindNameHash(NameHash nameHash)
+#### T FindNameHash(NameHash nameHash)
 - (summary) 
      Uses the hash of the name to find a model component.
      Deleted objects have no name.
      
 - (since) 6.0
 - (returns) T This is some return comment
-## ModelComponent FindNameHash(NameHash nameHash,ModelComponentType type)
+#### ModelComponent FindNameHash(NameHash nameHash,ModelComponentType type)
 - (summary) 
      Uses the hash of the name to find a model component.
      Deleted objects have no name.
      
 - (since) 6.0
 - (returns) ModelComponent This is some return comment
-## IEnumerator<T> GetEnumerator()
+#### IEnumerator<T> GetEnumerator()
 - (summary) 
      Visits all model components in the document, including default ones.
      
 - (since) 6.0
 - (returns) IEnumerator<T> This is some return comment
-## IEnumerator<ModelComponent> GetEnumerator()
+#### IEnumerator<ModelComponent> GetEnumerator()
 - (summary) 
      Visits all model components in the document, including default ones.
      
 - (since) 6.0
 - (returns) IEnumerator<ModelComponent> This is some return comment
-## IEnumerator<ModelComponent> GetEnumerator(ModelComponentType type)
+#### IEnumerator<ModelComponent> GetEnumerator(ModelComponentType type)
 - (summary) 
      Returns an enumerators that yields all model components, including default ones,
      relating to a particular type.

@@ -1,18 +1,19 @@
 ---
-title: "Rhino.UI.Toolbar"
+title: "Toolbar"
 draft: false
 ---
 
-# Properties
-## static Size BitmapSize
+*Namespace: Rhino.UI*
+## Properties
+#### static Size BitmapSize
 - (summary) 
 - (since) 6.0
-## static Size TabSize
+#### static Size TabSize
 - (summary) 
 - (since) 6.0
-## Guid Id
+#### Guid Id
 - (summary) 
 - (since) 5.0
-## string Name
+#### string Name
 - (summary) 
 - (since) 5.0

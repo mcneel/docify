@@ -1,10 +1,14 @@
 ---
-title: "Rhino.DocObjects.CentermarkObject"
+title: "CentermarkObject"
 draft: false
 ---
 
-# Properties
-## Geometry.Centermark CentermarkGeometry
+*Namespace: Rhino.DocObjects*
+
+   Rhino Object that represents a centermark geometry and attributes
+   
+## Properties
+#### Geometry.Centermark CentermarkGeometry
 - (summary) 
      Get the dimension geometry for this object.
      

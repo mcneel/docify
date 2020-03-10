@@ -1,20 +1,25 @@
 ---
-title: "Rhino.DocObjects.Custom.UserData"
+title: "UserData"
 draft: false
 ---
 
-# Properties
-## string Description
+*Namespace: Rhino.DocObjects.Custom*
+
+   Provides a base class for custom classes of information which may be attached to
+   geometry or attribute classes.
+   
+## Properties
+#### string Description
 - (summary) Descriptive name of the user data.
 - (since) 5.0
-## bool ShouldWrite
+#### bool ShouldWrite
 - (summary) 
      If you want to save this user data in a 3dm file, override
      ShouldWrite and return true.  If you do support serialization,
      you must also override the Read and Write functions.
      
 - (since) 5.0
-## Geometry.Transform Transform
+#### Geometry.Transform Transform
 - (summary) 
      Updated if user data is attached to a piece of geometry that is
      transformed and the virtual OnTransform() is not overridden.  If you
@@ -23,8 +28,8 @@ draft: false
      The default constructor sets Transform to the identity.
      
 - (since) 5.0
-# Methods
-## static void Copy(CommonObject source,CommonObject destination)
+## Methods
+#### static void Copy(CommonObject source,CommonObject destination)
 - (summary) 
      Expert user tool that copies user data that has a positive 
      CopyCount from the source object to a destination object.
@@ -33,7 +38,7 @@ draft: false
      
 - (since) 5.0
 - (returns) void This is some return comment
-## static Guid MoveUserDataFrom(CommonObject objectWithUserData)
+#### static Guid MoveUserDataFrom(CommonObject objectWithUserData)
 - (summary) 
      Moves the user data from objectWithUserData to a temporary data storage
      identifierd by the return Guid.  When MoveUserDataFrom returns, the
@@ -41,13 +46,13 @@ draft: false
      
 - (since) 5.0
 - (returns) Guid This is some return comment
-## static void MoveUserDataTo(CommonObject objectToGetUserData,Guid id,bool append)
+#### static void MoveUserDataTo(CommonObject objectToGetUserData,Guid id,bool append)
 - (summary) 
      Moves the user data.
      See  for more information.
 - (since) 5.0
 - (returns) void This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      

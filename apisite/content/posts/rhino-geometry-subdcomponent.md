@@ -1,15 +1,19 @@
 ---
-title: "Rhino.Geometry.SubDComponent"
+title: "SubDComponent"
 draft: false
 ---
 
-# Properties
-## uint Id
+*Namespace: Rhino.Geometry*
+
+   A part of SubD geometry. Common base class for vertices, faces, and edges
+   
+## Properties
+#### uint Id
 - (summary) 
      Unique id within the parent SubD for this item
      
 - (since) 7.0
-## SubD ParentSubD
+#### SubD ParentSubD
 - (summary) 
      SubD that this component belonds to
      

@@ -1,10 +1,11 @@
 ---
-title: "Rhino.DocObjects.Custom.CustomPointObject"
+title: "CustomPointObject"
 draft: false
 ---
 
-# Methods
-## void Dispose()
+*Namespace: Rhino.DocObjects.Custom*
+## Methods
+#### void Dispose()
 - (summary) 
 - (since) 5.6
 - (returns) void This is some return comment

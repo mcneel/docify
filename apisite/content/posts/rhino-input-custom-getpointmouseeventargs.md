@@ -1,33 +1,37 @@
 ---
-title: "Rhino.Input.Custom.GetPointMouseEventArgs"
+title: "GetPointMouseEventArgs"
 draft: false
 ---
 
-# Properties
-## bool ControlKeyDown
+*Namespace: Rhino.Input.Custom*
+
+   Arguments for mouse information during point getting.
+   
+## Properties
+#### bool ControlKeyDown
 - (summary) 
 - (since) 5.0
-## bool LeftButtonDown
+#### bool LeftButtonDown
 - (summary) 
 - (since) 5.0
-## bool MiddleButtonDown
+#### bool MiddleButtonDown
 - (summary) 
 - (since) 5.0
-## Point3d Point
+#### Point3d Point
 - (summary) 
 - (since) 5.0
-## bool RightButtonDown
+#### bool RightButtonDown
 - (summary) 
 - (since) 5.0
-## bool ShiftKeyDown
+#### bool ShiftKeyDown
 - (summary) 
 - (since) 5.0
-## GetPoint Source
+#### GetPoint Source
 - (summary) 
 - (since) 5.0
-## RhinoViewport Viewport
+#### RhinoViewport Viewport
 - (summary) 
 - (since) 5.0
-## System.Drawing.Point WindowPoint
+#### System.Drawing.Point WindowPoint
 - (summary) 
 - (since) 5.0

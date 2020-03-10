@@ -1,14 +1,18 @@
 ---
-title: "Rhino.UI.ShowPanelEventArgs"
+title: "ShowPanelEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.UI.ShowPanelEventArgs(Guid panelId,uint documentSerialNumber,bool show)
+*Namespace: Rhino.UI*
+
+     Panels.Show event arguments
+     
+## Constructors
+#### Rhino.UI.ShowPanelEventArgs(Guid panelId,uint documentSerialNumber,bool show)
 - (summary) 
 - (since) 6.0
-# Properties
-## bool Show
+## Properties
+#### bool Show
 - (summary) 
        Will be True if showing or False if hiding
        

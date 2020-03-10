@@ -1,25 +1,29 @@
 ---
-title: "Rhino.Geometry.MeshPoint"
+title: "MeshPoint"
 draft: false
 ---
 
-# Properties
-## ComponentIndex ComponentIndex
+*Namespace: Rhino.Geometry*
+
+   Represents a point that is found on a mesh.
+   
+## Properties
+#### ComponentIndex ComponentIndex
 - (summary) 
      Gets the component index of the intersecting element in the mesh.
      
 - (since) 5.0
-## int EdgeIndex
+#### int EdgeIndex
 - (summary) 
      When set, EdgeIndex is an index of an edge in the mesh's edge list.
      
 - (since) 5.0
-## double EdgeParameter
+#### double EdgeParameter
 - (summary) 
      Edge parameter when found.
      
 - (since) 5.0
-## int FaceIndex
+#### int FaceIndex
 - (summary) 
      FaceIndex is an index of a face in mesh.Faces.
      When ComponentIndex refers to a vertex, any face that uses the vertex
@@ -27,17 +31,17 @@ draft: false
      EdgeIndex is set, then any face that uses that edge may appear as FaceIndex.
      
 - (since) 5.0
-## Mesh Mesh
+#### Mesh Mesh
 - (summary) 
      The mesh that is ralated to this point.
      
 - (since) 5.0
-## Point3d Point
+#### Point3d Point
 - (summary) 
      Gets the location (position) of this point.
      
 - (since) 5.0
-## double[] T
+#### double[] T
 - (summary) 
      Barycentric quad coordinates for the point on the mesh
      face mesh.Faces[FaceIndex].  If the face is a triangle
@@ -52,13 +56,13 @@ draft: false
      triangle defined by vi[1], vi[2], vi[3].
      
 - (since) 5.0
-## char Triangle
+#### char Triangle
 - (summary) 
      Face triangle where the intersection takes place:
      0 is unsetA is 0,1,2B is 0,2,3C is 0,1,3D is 1,2,3
 - (since) 5.0
-# Methods
-## bool GetTriangle(int a,int b,int c)
+## Methods
+#### bool GetTriangle(int a,int b,int c)
 - (summary) 
      Gets the mesh face indices of the triangle where the
      intersection is on the face takes into consideration

@@ -1,28 +1,33 @@
 ---
-title: "Rhino.Geometry.ClippingPlaneSurface"
+title: "ClippingPlaneSurface"
 draft: false
 ---
 
-# Properties
-## Plane Plane
+*Namespace: Rhino.Geometry*
+
+   Represents a planar surface that is used as clipping plane in viewports.
+   A clipping plane object maintains a list of viewports that it clips against.
+   
+## Properties
+#### Plane Plane
 - (summary) 
      Gets or sets the clipping plane.
      
 - (since) 5.0
-# Methods
-## bool AddClipViewportId(Guid viewportId)
+## Methods
+#### bool AddClipViewportId(Guid viewportId)
 - (summary) 
      Adds a viewport id to the list of viewports that this clipping plane clips.
      
 - (since) 6.1
 - (returns) bool This is some return comment
-## bool RemoveClipViewportId(Guid viewportId)
+#### bool RemoveClipViewportId(Guid viewportId)
 - (summary) 
      Removes a viewport id that this being clipped by this clipping plane.
      
 - (since) 6.1
 - (returns) bool This is some return comment
-## Guid[] ViewportIds()
+#### Guid[] ViewportIds()
 - (summary) 
      Returns the ids of RhinoViewport objects that are clipped by this clipping plane.
      

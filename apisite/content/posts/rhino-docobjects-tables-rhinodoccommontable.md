@@ -1,9 +1,10 @@
 ---
-title: "Rhino.DocObjects.Tables.RhinoDocCommonTable"
+title: "RhinoDocCommonTable"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+## Properties
+#### RhinoDoc Document
 - (summary) Document that owns this table.
 - (since) (unknown)

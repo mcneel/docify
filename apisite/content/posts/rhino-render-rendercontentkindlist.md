@@ -1,40 +1,41 @@
 ---
-title: "Rhino.Render.RenderContentKindList"
+title: "RenderContentKindList"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RenderContentKindList()
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.RenderContentKindList()
 - (summary) 
 - (since) 6.7
-## Rhino.Render.RenderContentKindList(IntPtr pRdkRenderContentKindList)
+#### Rhino.Render.RenderContentKindList(IntPtr pRdkRenderContentKindList)
 - (summary) 
 - (since) 6.1
-## Rhino.Render.RenderContentKindList(RenderContentKindList kind_list)
+#### Rhino.Render.RenderContentKindList(RenderContentKindList kind_list)
 - (summary) 
 - (since) 6.7
-# Properties
-## IntPtr CppPointer
+## Properties
+#### IntPtr CppPointer
 - (summary) 
 - (since) 6.1
-# Methods
-## void Add(RenderContentKind kind)
+## Methods
+#### void Add(RenderContentKind kind)
 - (summary) 
 - (since) 6.7
 - (returns) void This is some return comment
-## bool Contains(RenderContentKind kind)
+#### bool Contains(RenderContentKind kind)
 - (summary) 
 - (since) 6.3
 - (returns) bool This is some return comment
-## int Count()
+#### int Count()
 - (summary) 
 - (since) 6.1
 - (returns) int This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
 - (since) 6.1
 - (returns) void This is some return comment
-## RenderContentKind SingleKind()
+#### RenderContentKind SingleKind()
 - (summary) 
 - (since) 6.1
 - (returns) RenderContentKind This is some return comment

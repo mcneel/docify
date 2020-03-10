@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Render.CreatePreviewEventArgs.SceneObject"
+title: "SceneObject"
 draft: false
 ---
 
-# Properties
-## Rhino.Render.RenderMaterial Material
+*Namespace: Rhino.Render*
+## Properties
+#### Rhino.Render.RenderMaterial Material
 - (summary) 
 - (since) 5.1
-## Rhino.Geometry.Mesh Mesh
+#### Rhino.Geometry.Mesh Mesh
 - (summary) 
 - (since) 5.1

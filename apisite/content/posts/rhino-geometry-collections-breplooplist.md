@@ -1,23 +1,27 @@
 ---
-title: "Rhino.Geometry.Collections.BrepLoopList"
+title: "BrepLoopList"
 draft: false
 ---
 
-# Properties
-## int Count
+*Namespace: Rhino.Geometry.Collections*
+
+   Provides access to all the Loops in a Brep object.
+   
+## Properties
+#### int Count
 - (summary) 
      Gets the number of brep loops.
      
 - (since) 5.0
-# Methods
-## BrepLoop Add(BrepLoopType loopType)
+## Methods
+#### BrepLoop Add(BrepLoopType loopType)
 - (summary) 
      Create a new empty boundary loop. The new loop will not be part of a face and
      will not include any trim curves.
      
 - (since) 5.4
 - (returns) BrepLoop This is some return comment
-## BrepLoop Add(BrepLoopType loopType,BrepFace face)
+#### BrepLoop Add(BrepLoopType loopType,BrepFace face)
 - (summary) 
      Create a new boundary loop on a face.  After you get this
      BrepLoop, you still need to create the vertices, edges, 
@@ -25,7 +29,7 @@ draft: false
      
 - (since) 5.4
 - (returns) BrepLoop This is some return comment
-## BrepLoop AddOuterLoop(int faceIndex)
+#### BrepLoop AddOuterLoop(int faceIndex)
 - (summary) 
      Create a new outer boundary loop that runs along the sides
      of the face's surface.  All the necessary trims, edges,
@@ -33,13 +37,13 @@ draft: false
      
 - (since) 5.4
 - (returns) BrepLoop This is some return comment
-## BrepLoop AddPlanarFaceLoop(int faceIndex,BrepLoopType loopType,IEnumerable<Curve> boundaryCurves)
+#### BrepLoop AddPlanarFaceLoop(int faceIndex,BrepLoopType loopType,IEnumerable<Curve> boundaryCurves)
 - (summary) 
      Add a planar trimming loop to a planar face
      
 - (since) 5.4
 - (returns) BrepLoop This is some return comment
-## IEnumerator<BrepLoop> GetEnumerator()
+#### IEnumerator<BrepLoop> GetEnumerator()
 - (summary) 
      Gets an enumerator that visits all edges.
      

@@ -1,10 +1,15 @@
 ---
-title: "Rhino.FileIO.BinaryArchiveException"
+title: "BinaryArchiveException"
 draft: false
 ---
 
-# Constructors
-## Rhino.FileIO.BinaryArchiveException(string message)
+*Namespace: Rhino.FileIO*
+
+   Thrown by BinaryArchiveReader and BinaryArchiveWriter classes when
+   an IO error has occured.
+   
+## Constructors
+#### Rhino.FileIO.BinaryArchiveException(string message)
 - (summary) 
      Initializes a new instance of the  class.
      

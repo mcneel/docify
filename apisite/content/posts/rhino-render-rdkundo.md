@@ -1,22 +1,27 @@
 ---
-title: "Rhino.Render.RdkUndo"
+title: "RdkUndo"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RdkUndo(IntPtr pUndoRecord)
+*Namespace: Rhino.Render*
+
+   RdkUndo class, which is used to get the 
+   RdkUndoRecord
+   
+## Constructors
+#### Rhino.Render.RdkUndo(IntPtr pUndoRecord)
 - (summary) 
      Constructor for RdkUndo
      
 - (since) 6.11
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      Dispose for RdkUndo
      
 - (since) 6.11
 - (returns) void This is some return comment
-## RdkUndoRecord NewUndoRecord()
+#### RdkUndoRecord NewUndoRecord()
 - (summary) 
      Get a new UndoRecord
      

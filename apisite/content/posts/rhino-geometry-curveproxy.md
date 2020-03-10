@@ -1,10 +1,14 @@
 ---
-title: "Rhino.Geometry.CurveProxy"
+title: "CurveProxy"
 draft: false
 ---
 
-# Properties
-## bool ProxyCurveIsReversed
+*Namespace: Rhino.Geometry*
+
+   Provides strongly-typed access to Brep edges.
+   
+## Properties
+#### bool ProxyCurveIsReversed
 - (summary) 
      True if "this" is a curve is reversed from the "real" curve geometry
      

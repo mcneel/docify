@@ -1,132 +1,137 @@
 ---
-title: "Rhino.Display.DisplayModeDescription"
+title: "DisplayModeDescription"
 draft: false
 ---
 
-# Properties
-## static Guid AmbientOcclusionId
+*Namespace: Rhino.Display*
+
+   Description of a how Rhino will display in a viewport. These are the modes
+   that are listed under "Advanced display" in the options dialog.
+   
+## Properties
+#### static Guid AmbientOcclusionId
 - (summary) 
 - (since) 6.0
-## static Guid GhostedId
+#### static Guid GhostedId
 - (summary) 
 - (since) 6.0
-## static Guid PenId
+#### static Guid PenId
 - (summary) 
 - (since) 6.0
-## static Guid RaytracedId
+#### static Guid RaytracedId
 - (summary) 
 - (since) 6.0
-## static Guid RenderedId
+#### static Guid RenderedId
 - (summary) 
 - (since) 6.0
-## static Guid RenderedShadowsId
+#### static Guid RenderedShadowsId
 - (summary) 
 - (since) 6.0
-## static Guid ShadedId
+#### static Guid ShadedId
 - (summary) 
 - (since) 6.0
-## static Guid TechId
+#### static Guid TechId
 - (summary) 
 - (since) 6.0
-## static Guid WireframeId
+#### static Guid WireframeId
 - (summary) 
 - (since) 6.0
-## static Guid XRayId
+#### static Guid XRayId
 - (summary) 
 - (since) 6.0
-## bool AllowObjectAssignment
+#### bool AllowObjectAssignment
 - (summary) 
 - (since) 5.0
-## DisplayPipelineAttributes DisplayAttributes
+#### DisplayPipelineAttributes DisplayAttributes
 - (summary) 
 - (since) 5.0
-## string EnglishName
+#### string EnglishName
 - (summary) 
 - (since) 5.0
-## Guid Id
+#### Guid Id
 - (summary) 
 - (since) 5.0
-## bool InMenu
+#### bool InMenu
 - (summary) 
 - (since) 5.0
-## string LocalName
+#### string LocalName
 - (summary) 
 - (since) 5.0
-## bool PipelineLocked
+#### bool PipelineLocked
 - (summary) 
 - (since) 5.0
-## bool ShadedPipelineRequired
+#### bool ShadedPipelineRequired
 - (summary) 
 - (since) 5.0
-## bool SupportsShadeCommand
+#### bool SupportsShadeCommand
 - (summary) 
 - (since) 5.0
-## bool SupportsShading
+#### bool SupportsShading
 - (summary) 
 - (since) 5.0
-## bool WireframePipelineRequired
+#### bool WireframePipelineRequired
 - (summary) 
 - (since) 5.0
-# Methods
-## static Guid AddDisplayMode(DisplayModeDescription displayMode)
+## Methods
+#### static Guid AddDisplayMode(DisplayModeDescription displayMode)
 - (summary) 
 - (since) 5.0
 - (returns) Guid This is some return comment
-## static Guid AddDisplayMode(string name)
+#### static Guid AddDisplayMode(string name)
 - (summary) 
      Adds a new display mode.
      
 - (since) 6.7
 - (returns) Guid This is some return comment
-## static Guid CopyDisplayMode(Guid id,string name)
+#### static Guid CopyDisplayMode(Guid id,string name)
 - (summary) 
      Copies an existing display mode.
      
 - (since) 6.7
 - (returns) Guid This is some return comment
-## static bool DeleteDiplayMode(Guid id)
+#### static bool DeleteDiplayMode(Guid id)
 - (summary) 
      Deletes an existing display mode.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## static bool DeleteDisplayMode(Guid id)
+#### static bool DeleteDisplayMode(Guid id)
 - (summary) 
      Deletes an existing display mode.
      
 - (since) 7.0
 - (returns) bool This is some return comment
-## static bool ExportToFile(DisplayModeDescription displayMode,string filename)
+#### static bool ExportToFile(DisplayModeDescription displayMode,string filename)
 - (summary) 
      Exports a DisplayModeDescription to a Windows-style .ini file.
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## static DisplayModeDescription FindByName(string englishName)
+#### static DisplayModeDescription FindByName(string englishName)
 - (summary) 
 - (since) 5.0
 - (returns) DisplayModeDescription This is some return comment
-## static DisplayModeDescription GetDisplayMode(Guid id)
+#### static DisplayModeDescription GetDisplayMode(Guid id)
 - (summary) 
 - (since) 5.0
 - (returns) DisplayModeDescription This is some return comment
-## static DisplayModeDescription[] GetDisplayModes()
+#### static DisplayModeDescription[] GetDisplayModes()
 - (summary) 
      Gets all display mode descriptions that Rhino currently knows about.
      
 - (since) 5.0
 - (returns) DisplayModeDescription[] This is some return comment
-## static Guid ImportFromFile(string filename)
+#### static Guid ImportFromFile(string filename)
 - (summary) 
      Imports a DisplayModeDescription from a Windows-style .ini file.
      
 - (since) 6.0
 - (returns) Guid This is some return comment
-## static bool UpdateDisplayMode(DisplayModeDescription displayMode)
+#### static bool UpdateDisplayMode(DisplayModeDescription displayMode)
 - (summary) 
 - (since) 5.0
 - (returns) bool This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
 - (since) 5.0
 - (returns) void This is some return comment

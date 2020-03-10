@@ -1,16 +1,20 @@
 ---
-title: "Rhino.Commands.CommandStyleAttribute"
+title: "CommandStyleAttribute"
 draft: false
 ---
 
-# Constructors
-## Rhino.Commands.CommandStyleAttribute(Style styles)
+*Namespace: Rhino.Commands*
+
+   Decorates commands to provide styles.
+   
+## Constructors
+#### Rhino.Commands.CommandStyleAttribute(Style styles)
 - (summary) 
      Initializes a new command style attribute class.
      
 - (since) 5.0
-# Properties
-## Style Styles
+## Properties
+#### Style Styles
 - (summary) 
      Gets the associated style.
      

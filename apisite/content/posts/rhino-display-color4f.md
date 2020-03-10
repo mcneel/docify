@@ -1,78 +1,82 @@
 ---
-title: "Rhino.Display.Color4f"
+title: "Color4f"
 draft: false
 ---
 
-## static !=
+*Namespace: Rhino.Display*
+
+   Color defined by 4 floating point values.
+   
+#### static !=
 - (summary) 
 - (since) 5.0
-## static ==
+#### static ==
 - (summary) 
 - (since) 5.0
-# Constructors
-## Rhino.Display.Color4f(Color color)
+## Constructors
+#### Rhino.Display.Color4f(Color color)
 - (summary) 
 - (since) 5.0
-## Rhino.Display.Color4f(Color4f color)
+#### Rhino.Display.Color4f(Color4f color)
 - (summary) 
 - (since) 5.0
-## Rhino.Display.Color4f(float red,float green,float blue,float alpha)
+#### Rhino.Display.Color4f(float red,float green,float blue,float alpha)
 - (summary) 
 - (since) 5.0
-## Rhino.Display.Color4f(int argb)
+#### Rhino.Display.Color4f(int argb)
 - (summary) 
 - (since) 7.0
-# Properties
-## static Color4f Black
+## Properties
+#### static Color4f Black
 - (summary) 
 - (since) 5.0
-## static Color4f Empty
+#### static Color4f Empty
 - (summary) 
 - (since) 5.0
-## static Color4f White
+#### static Color4f White
 - (summary) 
 - (since) 5.0
-## float A
+#### float A
 - (summary) 
 - (since) 5.0
-## float B
+#### float B
 - (summary) 
 - (since) 5.0
-## float G
+#### float G
 - (summary) 
 - (since) 5.0
-## float L
+#### float L
 - (summary) 
 - (since) 6.3
-## float R
+#### float R
 - (summary) 
 - (since) 5.0
-# Methods
-## static Color4f ApplyGamma(Color4f col,float gamma)
+## Methods
+#### static Color4f ApplyGamma(Color4f col,float gamma)
 - (summary) 
 - (since) 6.0
 - (returns) Color4f This is some return comment
-## static Color4f FromArgb(float a,Color4f color)
+#### static Color4f FromArgb(float a,Color4f color)
 - (summary) 
 - (since) 5.11
 - (returns) Color4f This is some return comment
-## static Color4f FromArgb(float a,float r,float g,float b)
+#### static Color4f FromArgb(float a,float r,float g,float b)
 - (summary) 
 - (since) 5.11
 - (returns) Color4f This is some return comment
-## System.Drawing.Color AsSystemColor()
+#### System.Drawing.Color AsSystemColor()
 - (summary) 
 - (since) 5.0
 - (returns) System.Drawing.Color This is some return comment
-## Color4f BlendTo(float t,Color4f col)
+#### Color4f BlendTo(float t,Color4f col)
 - (summary) 
 - (since) 5.0
 - (returns) Color4f This is some return comment
-## bool Equals(object obj)
+#### bool Equals(object obj)
 - (summary) 
 - (since) (unknown)
 - (returns) bool This is some return comment
-## int GetHashCode()
+#### int GetHashCode()
 - (summary) 
 - (since) (unknown)
 - (returns) int This is some return comment

@@ -1,80 +1,84 @@
 ---
-title: "Rhino.Render.LightManagerSupport"
+title: "LightManagerSupport"
 draft: false
 ---
 
-# Methods
-## static void RegisterLightManager(PlugIn plugin)
+*Namespace: Rhino.Render*
+
+   Base class for implementing custom light managers in .NET
+   
+## Methods
+#### static void RegisterLightManager(PlugIn plugin)
 - (summary) 
      Find and register classes that derive from LightManagerSupport
      from the given plug-in.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## static void RegisterProviders(Assembly assembly,Guid pluginId)
+#### static void RegisterProviders(Assembly assembly,Guid pluginId)
 - (summary) 
      Find and register classes that derive from RealtimeDisplayMode
      from the given plug-in. The plug-in is found in the given assembly
      
 - (since) 6.0
 - (returns) void This is some return comment
-## bool DeleteLight(RhinoDoc doc,Light light,bool bUndelete)
+#### bool DeleteLight(RhinoDoc doc,Light light,bool bUndelete)
 - (summary) 
       Delete light
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void GetLights(RhinoDoc doc,LightArray light_array)
+#### void GetLights(RhinoDoc doc,LightArray light_array)
 - (summary) 
       Get all the lights that are associated to the light manager. The lights are added 
       to the LightArray parameter passed to the GetLights method
      
 - (since) 6.0
 - (returns) void This is some return comment
-## bool GetLightSolo(RhinoDoc doc,Guid uuid_light)
+#### bool GetLightSolo(RhinoDoc doc,Guid uuid_light)
 - (summary) 
       Returns the value of "ON_LIght::m_bOn" if the light is in solo storage, or 
       False if not in solo storage (ie - this is the checkbox state on the light manager dialog)
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void GroupLights(RhinoDoc doc,LightArray light_array)
+#### void GroupLights(RhinoDoc doc,LightArray light_array)
 - (summary) 
      Creates a new group with the lights
      
 - (since) 6.0
 - (returns) void This is some return comment
-## string LightDescription(RhinoDoc doc,Light light)
+#### string LightDescription(RhinoDoc doc,Light light)
 - (summary) 
       Gets the string representation of the light description 
      
 - (since) 6.0
 - (returns) string This is some return comment
-## bool LightFromId(RhinoDoc doc,Guid uuid,Light light)
+#### bool LightFromId(RhinoDoc doc,Guid uuid,Light light)
 - (summary) 
       Get Rhino.Geometry.Light object associated to Guig uuid
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## int LightsInSoloStorage(RhinoDoc doc)
+#### int LightsInSoloStorage(RhinoDoc doc)
 - (summary) 
       Returns the number of lights in solo storage - any number other than 0 means "in solo mode"
      
 - (since) 6.0
 - (returns) int This is some return comment
-## void ModifyLight(RhinoDoc doc,Light light)
+#### void ModifyLight(RhinoDoc doc,Light light)
 - (summary) 
       Modify properties of the light 
      
 - (since) 6.0
 - (returns) void This is some return comment
-## int ObjectSerialNumberFromLight(RhinoDoc doc,Light light)
+#### int ObjectSerialNumberFromLight(RhinoDoc doc,Light light)
 - (summary) 
       Get the object serial number of the light
      
 - (since) 6.0
 - (returns) int This is some return comment
-## void OnCustomLightEvent(RhinoDoc doc,LightMangerSupportCustomEvent le,Light light)
+#### void OnCustomLightEvent(RhinoDoc doc,LightMangerSupportCustomEvent le,Light light)
 - (summary) 
       Generates LightMangerSupportCustomEvent: 
         light_added,
@@ -86,26 +90,26 @@ draft: false
      
 - (since) 6.0
 - (returns) void This is some return comment
-## bool OnEditLight(RhinoDoc doc,LightArray light_array)
+#### bool OnEditLight(RhinoDoc doc,LightArray light_array)
 - (summary) 
       The default implementation of OnEditLight selects the lights and opens
       the Lights Properties page
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## Guid PluginId()
+#### Guid PluginId()
 - (summary) 
       The Guid of the plugin 
      
 - (since) 6.0
 - (returns) Guid This is some return comment
-## Guid RenderEngineId()
+#### Guid RenderEngineId()
 - (summary) 
       The Guid of the render engine 
      
 - (since) 6.0
 - (returns) Guid This is some return comment
-## bool SetLightSolo(RhinoDoc doc,Guid uuid_light,bool bSolo)
+#### bool SetLightSolo(RhinoDoc doc,Guid uuid_light,bool bSolo)
 - (summary) 
      First checks to see if we are in "solo mode" - which means that there are any lights that respond "true" to IsInSoloStorage.
      If in solo mode:
@@ -122,7 +126,7 @@ draft: false
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## void UnGroup(RhinoDoc doc,LightArray light_array)
+#### void UnGroup(RhinoDoc doc,LightArray light_array)
 - (summary) 
      UnGroups the lights
      

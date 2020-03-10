@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Runtime.ViewCaptureWriter.Pen"
+title: "Pen"
 draft: false
 ---
 
-# Properties
-## Color Color
+*Namespace: Rhino.Runtime*
+## Properties
+#### Color Color
 - (summary) 
 - (since) 6.0
-## float Width
+#### float Width
 - (summary) 
 - (since) 6.0

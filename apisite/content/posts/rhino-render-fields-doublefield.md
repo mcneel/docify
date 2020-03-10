@@ -1,16 +1,20 @@
 ---
-title: "Rhino.Render.Fields.DoubleField"
+title: "DoubleField"
 draft: false
 ---
 
-# Properties
-## double Value
+*Namespace: Rhino.Render.Fields*
+
+   double field value class
+   
+## Properties
+#### double Value
 - (summary) 
      Gets or sets the field value
      
 - (since) 5.1
-# Methods
-## object ValueAsObject()
+## Methods
+#### object ValueAsObject()
 - (summary) 
 - (since) 5.7
 - (returns) object This is some return comment

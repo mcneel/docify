@@ -1,10 +1,14 @@
 ---
-title: "Rhino.DocObjects.RadialDimensionObject"
+title: "RadialDimensionObject"
 draft: false
 ---
 
-# Properties
-## Geometry.RadialDimension RadialDimensionGeometry
+*Namespace: Rhino.DocObjects*
+
+   Rhino Object that represents a radial dimension geometry and attributes
+   
+## Properties
+#### Geometry.RadialDimension RadialDimensionGeometry
 - (summary) 
      Get the dimension geometry for this object.
      

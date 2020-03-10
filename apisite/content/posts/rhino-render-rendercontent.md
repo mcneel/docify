@@ -1,107 +1,108 @@
 ---
-title: "Rhino.Render.RenderContent"
+title: "RenderContent"
 draft: false
 ---
 
-# Events
-## static ContentAdded
+*Namespace: Rhino.Render*
+## Events
+#### static ContentAdded
 - (summary) 
      Used to monitor render content addition to the document.
      
 - (since) 5.7
-## static ContentChanged
+#### static ContentChanged
 - (summary) 
      Used to monitor render content modifications.
      
 - (since) 5.7
-## static ContentDeleted
+#### static ContentDeleted
 - (summary) 
      Used to monitor render content deletion from the document.
      
 - (since) 6.0
-## static ContentDeleting
+#### static ContentDeleting
 - (summary) 
      Used to monitor render content deletion from the document.
      
 - (since) 5.7
-## static ContentFieldChanged
+#### static ContentFieldChanged
 - (summary) 
      This event is raised when a field value is modified.
      
 - (since) 5.11
-## static ContentRenamed
+#### static ContentRenamed
 - (summary) 
      Used to monitor render content renaming in the document.
      
 - (since) 5.7
-## static ContentReplaced
+#### static ContentReplaced
 - (summary) 
      Used to monitor render content replacing in the document.
      
 - (since) 5.7
-## static ContentReplacing
+#### static ContentReplacing
 - (summary) 
      Used to monitor render content replacing in the document.
      
 - (since) 5.7
-## static ContentUpdatePreview
+#### static ContentUpdatePreview
 - (summary) 
      Used to monitor render content preview updates.
      
 - (since) 5.7
-## static CurrentEnvironmentChanged
+#### static CurrentEnvironmentChanged
 - (summary) 
      Event fired when changes to current environments have been made.
      This will be one of Background, ReflectionAndRefraction or Skylighting
      Since 6.11
      
 - (since) 6.11
-# Properties
-## bool CanBeEdited
+## Properties
+#### bool CanBeEdited
 - (summary) 
      Determines if the content can be edited.
      
 - (since) 6.0
-## String Category
+#### String Category
 - (summary) 
      Category for this content.
      
 - (since) 6.7
-## String ChildSlotDisplayName
+#### String ChildSlotDisplayName
 - (summary) 
      Returns the localized display name of the child slot name
      
 - (since) 7.0
-## String ChildSlotName
+#### String ChildSlotName
 - (summary) 
 - (since) 5.1
-## IntPtr CppPointer
+#### IntPtr CppPointer
 - (summary) 
 - (since) 6.0
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) 
      If this content is in a document content list, the document will be returned.  Otherwise null.
      
 - (since) 5.10
-## RhinoDoc DocumentAssoc
+#### RhinoDoc DocumentAssoc
 - (summary) 
      If this content is associated by a document in any way, the document will be returned.  This includes copies of
      contents that were initially in the document. Otherwise null.
      
 - (since) 6.0
-## RhinoDoc DocumentRegistered
+#### RhinoDoc DocumentRegistered
 - (summary) 
      If this content is used by a document, including not in the content lists (for example, as a decal),
      the document will be returned.  Otherwise null.
      
 - (since) 6.0
-## FieldDictionary Fields
+#### FieldDictionary Fields
 - (summary) 
      Rhino.Render.Fields FieldDictionary which provides access to setting
      and retrieving field values.
      
 - (since) 5.1
-## IEnumerable<string> FilesToEmbed
+#### IEnumerable<string> FilesToEmbed
 - (summary) 
      A string array of full paths to files used by the content that may be
      embedded in .3dm files and library files (.rmtl, .renv, .rtex). The
@@ -111,34 +112,34 @@ draft: false
      imagery. 
      
 - (since) 5.12
-## RenderContent FirstChild
+#### RenderContent FirstChild
 - (summary) 
      Return First child of this content or nullptr if none.
      
 - (since) 6.0
-## bool Hidden
+#### bool Hidden
 - (summary) 
      Determines if the content has the hidden flag set.
      
 - (since) 5.1
-## Guid Id
+#### Guid Id
 - (summary) 
      Instance identifier for this content.
      
 - (since) 5.1
-## bool IsDefaultInstance
+#### bool IsDefaultInstance
 - (summary) 
      Checks if render content is default instance.
      
 - (since) 6.0
-## bool IsHiddenByAutoDelete
+#### bool IsHiddenByAutoDelete
 - (summary) 
      Contents can be created as 'auto-delete' by certain commands such as 'PictureFrame'.
      These contents are automatically hidden from the user when the associated Rhino object
      is deleted. They are later deleted when the document is saved.
      
 - (since) 6.15
-## bool IsLocked
+#### bool IsLocked
 - (summary) 
      Set this property to True prior to adding content to the document to
      lock the content browser editing UI methods.  Setting this to True will
@@ -148,32 +149,32 @@ draft: false
      to the document will cause an exception to be thrown.
      
 - (since) 5.12
-## String Name
+#### String Name
 - (summary) 
      Instance name for this content.
      
 - (since) 5.1
-## RenderContent NextSibling
+#### RenderContent NextSibling
 - (summary) 
      Return First sibling of this content or nullptr if none.
      
 - (since) 6.0
-## String Notes
+#### String Notes
 - (summary) 
      Notes for this content.
      
 - (since) 5.1
-## RenderContent Parent
+#### RenderContent Parent
 - (summary) 
      Returns the top content in this parent/child chain.
      
 - (since) 5.11
-## ProxyTypes ProxyType
+#### ProxyTypes ProxyType
 - (summary) 
      Gets the proxy type of the render content
      
 - (since) 6.0
-## uint RenderHash
+#### uint RenderHash
 - (summary) 
      Render hash for the content hierarchy. It iterates children and includes
      a caching mechanism which means the hash value can be retrieved quickly
@@ -183,41 +184,41 @@ draft: false
      a custom hash value.
      
 - (since) 6.0
-## String Tags
+#### String Tags
 - (summary) 
      Tags for this content.
      
 - (since) 6.4
-## bool TopLevel
+#### bool TopLevel
 - (summary) 
      Returns True if this content has no parent, False if it is the child of another content.
      
 - (since) 5.1
-## RenderContent TopLevelParent
+#### RenderContent TopLevelParent
 - (summary) 
      Returns the top content in this parent/child chain.
      
 - (since) 5.1
-## String TypeDescription
+#### String TypeDescription
 - (summary) 
      Description for your content type.  ie.  "Procedural checker pattern"
      
 - (since) 5.1
-## Guid TypeId
+#### Guid TypeId
 - (summary) 
      Type identifier for this content
      
 - (since) 6.0
-## String TypeName
+#### String TypeName
 - (summary) 
      Name for your content type.  ie. "My .net Texture"
      
 - (since) 5.1
-## String Xml
+#### String Xml
 - (summary) 
 - (since) 6.0
-# Methods
-## static bool AddPersistentRenderContent(RenderContent renderContent)
+## Methods
+#### static bool AddPersistentRenderContent(RenderContent renderContent)
 - (summary) 
      Add a material, environment or texture to the internal RDK document lists as
      top level content.  The content must have been returned from
@@ -226,7 +227,7 @@ draft: false
      
 - (since) 5.1
 - (returns) bool This is some return comment
-## static bool AddPersistentRenderContent(RhinoDoc document,RenderContent renderContent)
+#### static bool AddPersistentRenderContent(RhinoDoc document,RenderContent renderContent)
 - (summary) 
      Add a material, environment or texture to the internal RDK document lists as
      top level content.  The content must have been returned from
@@ -235,7 +236,7 @@ draft: false
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## static RenderContent Create(Guid type,RenderContent parent,String childSlotName,ShowContentChooserFlags flags,RhinoDoc doc)
+#### static RenderContent Create(Guid type,RenderContent parent,String childSlotName,ShowContentChooserFlags flags,RhinoDoc doc)
 - (summary) 
      Constructs a new content of the specified type and add it to the persistent content list.
      This function cannot be used to create temporary content that you delete after use.
@@ -244,7 +245,7 @@ draft: false
      
 - (since) 5.1
 - (returns) RenderContent This is some return comment
-## static RenderContent Create(Guid type,ShowContentChooserFlags flags,RhinoDoc doc)
+#### static RenderContent Create(Guid type,ShowContentChooserFlags flags,RhinoDoc doc)
 - (summary) 
      Constructs a new content of the specified type and add it to the persistent content list.
      This function cannot be used to create temporary content that you delete after use.
@@ -253,7 +254,7 @@ draft: false
      
 - (since) 5.1
 - (returns) RenderContent This is some return comment
-## static RenderContent Create(Type type,RenderContent parent,String childSlotName,ShowContentChooserFlags flags,RhinoDoc doc)
+#### static RenderContent Create(Type type,RenderContent parent,String childSlotName,ShowContentChooserFlags flags,RhinoDoc doc)
 - (summary) 
      Constructs a new content of the specified type and add it to the persistent content list.
      This function cannot be used to create temporary content that you delete after use.
@@ -262,7 +263,7 @@ draft: false
      
 - (since) 5.1
 - (returns) RenderContent This is some return comment
-## static RenderContent Create(Type type,ShowContentChooserFlags flags,RhinoDoc doc)
+#### static RenderContent Create(Type type,ShowContentChooserFlags flags,RhinoDoc doc)
 - (summary) 
      Constructs a new content of the specified type and add it to the persistent content list.
      This function cannot be used to create temporary content that you delete after use.
@@ -271,61 +272,61 @@ draft: false
      
 - (since) 5.1
 - (returns) RenderContent This is some return comment
-## static RenderContent FromId(RhinoDoc document,Guid id)
+#### static RenderContent FromId(RhinoDoc document,Guid id)
 - (summary) 
      Search for a content object based on its Id
      
 - (since) 5.7
 - (returns) RenderContent This is some return comment
-## static RenderContent FromXml(String xml)
+#### static RenderContent FromXml(String xml)
 - (summary) 
 - (since) 6.0
 - (returns) RenderContent This is some return comment
-## static RenderContent FromXml(String xml,RhinoDoc doc)
+#### static RenderContent FromXml(String xml,RhinoDoc doc)
 - (summary) 
 - (since) 6.4
 - (returns) RenderContent This is some return comment
-## static RenderContent LoadFromFile(String filename)
+#### static RenderContent LoadFromFile(String filename)
 - (summary) 
      Loads content from a library file.  Does not add the content to the persistent content list.
      Use AddPersistantContent to add it to the list.
      
 - (since) 5.1
 - (returns) RenderContent This is some return comment
-## static Type[] RegisterContent(Assembly assembly,Guid pluginId)
+#### static Type[] RegisterContent(Assembly assembly,Guid pluginId)
 - (summary) 
      Call RegisterContent in your plug-in's OnLoad function in order to register all of the
      custom RenderContent classes in your assembly.
      
 - (since) 5.1
 - (returns) Type[] This is some return comment
-## static Type[] RegisterContent(PlugIn plugin)
+#### static Type[] RegisterContent(PlugIn plugin)
 - (summary) 
      Call RegisterContent in your plug-in's OnLoad function in order to register all of the
      custom RenderContent classes in your assembly.
      
 - (since) 5.1
 - (returns) Type[] This is some return comment
-## bool AddAutomaticUserInterfaceSection(string caption,int id)
+#### bool AddAutomaticUserInterfaceSection(string caption,int id)
 - (summary) 
      Add a new automatic user interface section, Field values which include
      prompts will be automatically added to this section.
      
 - (since) 5.1
 - (returns) bool This is some return comment
-## bool AddChild(RenderContent renderContent)
+#### bool AddChild(RenderContent renderContent)
 - (summary) 
 - (since) 5.6
 - (returns) bool This is some return comment
-## bool AddChild(RenderContent renderContent,String childSlotName)
+#### bool AddChild(RenderContent renderContent,String childSlotName)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool AddUserInterfaceSection(ICollapsibleSection section)
+#### bool AddUserInterfaceSection(ICollapsibleSection section)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## UI.UserInterfaceSection AddUserInterfaceSection(Type classType,string caption,bool createExpanded,bool createVisible)
+#### UI.UserInterfaceSection AddUserInterfaceSection(Type classType,string caption,bool createExpanded,bool createVisible)
 - (summary) 
      Add a new .NET control to an content expandable tab section, the height
      of the createExpanded tabs client area will be the initial height of the
@@ -333,7 +334,7 @@ draft: false
      
 - (since) 5.1
 - (returns) UI.UserInterfaceSection This is some return comment
-## void BeginChange(ChangeContexts changeContext)
+#### void BeginChange(ChangeContexts changeContext)
 - (summary) 
      Begins a change or batch of changes. This returns a reference to the
      content which you should use to make your changes. It may also make a
@@ -347,29 +348,29 @@ draft: false
      
 - (since) 6.0
 - (returns) void This is some return comment
-## void BindParameterToField(string parameterName,Field field,ChangeContexts setEvent)
+#### void BindParameterToField(string parameterName,Field field,ChangeContexts setEvent)
 - (summary) 
      Use bindings to automatically wire parameters to fields
      
 - (since) 5.7
 - (returns) void This is some return comment
-## void BindParameterToField(string parameterName,string childSlotName,Field field,ChangeContexts setEvent)
+#### void BindParameterToField(string parameterName,string childSlotName,Field field,ChangeContexts setEvent)
 - (summary) 
      Use bindings to automatically wire parameters to fields
      
 - (since) 5.7
 - (returns) void This is some return comment
-## bool ChangeChild(RenderContent oldContent,RenderContent newContent)
+#### bool ChangeChild(RenderContent oldContent,RenderContent newContent)
 - (summary) 
 - (since) 5.6
 - (returns) bool This is some return comment
-## double ChildSlotAmount(String childSlotName)
+#### double ChildSlotAmount(String childSlotName)
 - (summary) 
      Gets the amount property for the texture in the specified child slot.  Values are typically from 0.0 - 100.0
      
 - (since) 5.7
 - (returns) double This is some return comment
-## string ChildSlotNameFromParamName(String paramName)
+#### string ChildSlotNameFromParamName(String paramName)
 - (summary) 
      A "child slot" is the specific "slot" that a child (usually a texture) occupies.
      This is generally the "use" of the child - in other words, the thing the child
@@ -377,36 +378,36 @@ draft: false
      
 - (since) 5.1
 - (returns) string This is some return comment
-## bool ChildSlotOn(String childSlotName)
+#### bool ChildSlotOn(String childSlotName)
 - (summary) 
      Gets the on-ness property for the texture in the specified child slot.
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## void DeleteAllChildren(ChangeContexts changeContexts)
+#### void DeleteAllChildren(ChangeContexts changeContexts)
 - (summary) 
 - (since) 5.10
 - (returns) void This is some return comment
-## bool DeleteChild(string childSlotName,ChangeContexts changeContexts)
+#### bool DeleteChild(string childSlotName,ChangeContexts changeContexts)
 - (summary) 
 - (since) 5.10
 - (returns) bool This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
 - (since) 5.1
 - (returns) void This is some return comment
-## bool DynamicIcon(Size size,Bitmap bitmap,DynamicIconUsage usage)
+#### bool DynamicIcon(Size size,Bitmap bitmap,DynamicIconUsage usage)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## RenderContent Edit()
+#### RenderContent Edit()
 - (summary) 
      Call this method to open the content in the a modal version of the editor.
      The content must be in the document or the call will fail.
      
 - (since) 6.13
 - (returns) RenderContent This is some return comment
-## void EndChange()
+#### void EndChange()
 - (summary) 
      Ends a change or batch of changes. Calls to this method are counted;
      you must call this method once for every call to .
@@ -419,15 +420,15 @@ draft: false
      
 - (since) 6.0
 - (returns) void This is some return comment
-## DataSources.ContentFactory Factory()
+#### DataSources.ContentFactory Factory()
 - (summary) 
 - (since) 6.10
 - (returns) DataSources.ContentFactory This is some return comment
-## RenderContent FindChild(String childSlotName)
+#### RenderContent FindChild(String childSlotName)
 - (summary) 
 - (since) 5.1
 - (returns) RenderContent This is some return comment
-## RenderContent ForDisplay()
+#### RenderContent ForDisplay()
 - (summary) 
      **** This method is for proxies and will be marked obsolete in V7 ****
     
@@ -439,7 +440,7 @@ draft: false
      
 - (since) 6.9
 - (returns) RenderContent This is some return comment
-## object GetChildSlotParameter(String parameterName,String childSlotName)
+#### object GetChildSlotParameter(String parameterName,String childSlotName)
 - (summary) 
      Extra requirements are a way of specifying extra functionality on parameters in the automatic UI.
      Implement this function to specify additional functionality for automatic UI sections or the texture summary.
@@ -447,80 +448,80 @@ draft: false
      
 - (since) 5.7
 - (returns) object This is some return comment
-## string[] GetEmbeddedFilesList()
+#### string[] GetEmbeddedFilesList()
 - (summary) 
 - (since) 6.0
 - (returns) string[] This is some return comment
-## object GetParameter(String parameterName)
+#### object GetParameter(String parameterName)
 - (summary) 
      Query the content instance for the value of a given named parameter.
      If you do not support this parameter, call the base class.
      
 - (since) 5.7
 - (returns) object This is some return comment
-## bool GetUnderlyingInstances(RenderContentCollection collection)
+#### bool GetUnderlyingInstances(RenderContentCollection collection)
 - (summary) 
 - (since) 7.0
 - (returns) bool This is some return comment
-## bool Icon(Size size,Bitmap bitmap)
+#### bool Icon(Size size,Bitmap bitmap)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool Initialize()
+#### bool Initialize()
 - (summary) 
 - (since) 6.1
 - (returns) bool This is some return comment
-## bool IsCompatible(Guid renderEngineId)
+#### bool IsCompatible(Guid renderEngineId)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool IsContentTypeAcceptableAsChild(Guid type,String childSlotName)
+#### bool IsContentTypeAcceptableAsChild(Guid type,String childSlotName)
 - (summary) 
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool IsFactoryProductAcceptableAsChild(ContentFactory factory,String childSlotName)
+#### bool IsFactoryProductAcceptableAsChild(ContentFactory factory,String childSlotName)
 - (summary) 
 - (since) 6.1
 - (returns) bool This is some return comment
-## bool IsFactoryProductAcceptableAsChild(Guid kindId,string factoryKind,string childSlotName)
+#### bool IsFactoryProductAcceptableAsChild(Guid kindId,string factoryKind,string childSlotName)
 - (summary) 
      Override this method to restrict the type of acceptable child content.
      The default implementation of this method just returns true.
      
 - (since) 5.11
 - (returns) bool This is some return comment
-## bool IsReference()
+#### bool IsReference()
 - (summary) 
       Query whether or not the content or any of its ancestors is a reference content.
      
 - (since) 6.9
 - (returns) bool This is some return comment
-## bool IsRenderHashCached()
+#### bool IsRenderHashCached()
 - (summary) 
      This method is deprecated and no longer called. For more information
      see 
 - (since) 6.0
 - (returns) bool This is some return comment
-## RenderContent MakeCopy()
+#### RenderContent MakeCopy()
 - (summary) 
      Create a copy of the render content. All content is the same, except for the
      instance Id.
      
 - (since) 6.0
 - (returns) RenderContent This is some return comment
-## MatchDataResult MatchData(RenderContent oldContent)
+#### MatchDataResult MatchData(RenderContent oldContent)
 - (summary) 
      Implement to transfer data from another content to this content during creation.
      
 - (since) 6.0
 - (returns) MatchDataResult This is some return comment
-## PreviewSceneServer NewPreviewSceneServer(SceneServerData ssd)
+#### PreviewSceneServer NewPreviewSceneServer(SceneServerData ssd)
 - (summary) 
      Gets the PreviewSceneServer of the content
      
 - (since) 6.0
 - (returns) PreviewSceneServer This is some return comment
-## bool OpenInEditor()
+#### bool OpenInEditor()
 - (summary) 
      Call this method to open the content in the relevant thumbnail editor
      and select it for editing by the user. The content must be in the
@@ -528,14 +529,14 @@ draft: false
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## bool OpenInModalEditor()
+#### bool OpenInModalEditor()
 - (summary) 
      Call this method to open the content in the a modal version of the editor.
      The content must be in the document or the call will fail.
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## string ParamNameFromChildSlotName(String childSlotName)
+#### string ParamNameFromChildSlotName(String childSlotName)
 - (summary) 
      A "child slot" is the specific "slot" that a child (usually a texture) occupies.
      This is generally the "use" of the child - in other words, the thing the child
@@ -543,23 +544,23 @@ draft: false
      
 - (since) 5.1
 - (returns) string This is some return comment
-## uint RenderHashExclude(CrcRenderHashFlags flags,string excludeParameterNames)
+#### uint RenderHashExclude(CrcRenderHashFlags flags,string excludeParameterNames)
 - (summary) 
      As RenderHash, but ignore parameter names given.
      
 - (since) 6.2
 - (returns) uint This is some return comment
-## uint RenderHashExclude(TextureRenderHashFlags flags,string excludeParameterNames)
+#### uint RenderHashExclude(TextureRenderHashFlags flags,string excludeParameterNames)
 - (summary) 
      As RenderHash, but ignore parameter names given.
      
 - (since) 6.0
 - (returns) uint This is some return comment
-## bool Replace(RenderContent newcontent)
+#### bool Replace(RenderContent newcontent)
 - (summary) 
 - (since) 6.13
 - (returns) bool This is some return comment
-## bool SetChild(RenderContent renderContent,String childSlotName)
+#### bool SetChild(RenderContent renderContent,String childSlotName)
 - (summary) 
      Set another content as a child of this content. This content may or may
      not be attached to a document.  If this content already has a child
@@ -574,7 +575,7 @@ draft: false
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool SetChild(RenderContent renderContent,String childSlotName,ChangeContexts changeContexts)
+#### bool SetChild(RenderContent renderContent,String childSlotName,ChangeContexts changeContexts)
 - (summary) 
      Set another content as a child of this content. This content may or may
      not be attached to a document.  If this content already has a child
@@ -589,19 +590,19 @@ draft: false
      
 - (since) 5.10
 - (returns) bool This is some return comment
-## void SetChildSlotAmount(String childSlotName,double amount,ChangeContexts cc)
+#### void SetChildSlotAmount(String childSlotName,double amount,ChangeContexts cc)
 - (summary) 
      Sets the amount property for the texture in the specified child slot.  Values are typically from 0.0 - 100.0
      
 - (since) 5.7
 - (returns) void This is some return comment
-## void SetChildSlotOn(String childSlotName,bool bOn,ChangeContexts cc)
+#### void SetChildSlotOn(String childSlotName,bool bOn,ChangeContexts cc)
 - (summary) 
      Sets the on-ness property for the texture in the specified child slot.
      
 - (since) 5.7
 - (returns) void This is some return comment
-## bool SetChildSlotParameter(String parameterName,String childSlotName,object value,ExtraRequirementsSetContexts sc)
+#### bool SetChildSlotParameter(String parameterName,String childSlotName,object value,ExtraRequirementsSetContexts sc)
 - (summary) 
      Extra requirements are a way of specifying extra functionality on parameters in the automatic UI.
      Implement this function to support values being set from automatic UI sections or the texture summary.
@@ -609,43 +610,43 @@ draft: false
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## void SetName(string name,bool bRenameEvents,bool bEnsureNameUnique)
+#### void SetName(string name,bool bRenameEvents,bool bEnsureNameUnique)
 - (summary) 
      Set instance name for this content
      
 - (since) 7.0
 - (returns) void This is some return comment
-## bool SetParameter(String parameterName,object value)
+#### bool SetParameter(String parameterName,object value)
 - (summary) 
      Set the named parameter value for this content instance.
      If you do not support this parameter, call the base class.
      
 - (since) 6.0
 - (returns) bool This is some return comment
-## bool SetParameter(String parameterName,object value,ChangeContexts changeContext)
+#### bool SetParameter(String parameterName,object value,ChangeContexts changeContext)
 - (summary) 
      Set the named parameter value for this content instance.
      If you do not support this parameter, call the base class.
      
 - (since) 5.7
 - (returns) bool This is some return comment
-## void SetRenderHash(uint hash)
+#### void SetRenderHash(uint hash)
 - (summary) 
      This method is deprecated and no longer called. For more information
      see 
 - (since) 6.0
 - (returns) void This is some return comment
-## void Uninitialize()
+#### void Uninitialize()
 - (summary) 
 - (since) 6.1
 - (returns) void This is some return comment
-## int UseCount()
+#### int UseCount()
 - (summary) 
       UseCount returns how many times the content is used
      
 - (since) 6.9
 - (returns) int This is some return comment
-## bool VirtualIcon(Size size,Bitmap bitmap)
+#### bool VirtualIcon(Size size,Bitmap bitmap)
 - (summary) 
      Icon to display in the content browser, this bitmap needs to be valid for
      the life of this content object, the content object that returns the bitmap

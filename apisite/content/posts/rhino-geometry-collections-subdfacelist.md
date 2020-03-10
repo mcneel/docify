@@ -1,28 +1,30 @@
 ---
-title: "Rhino.Geometry.Collections.SubDFaceList"
+title: "SubDFaceList"
 draft: false
 ---
 
-# Properties
-## int Count
+*Namespace: Rhino.Geometry.Collections*
+ All faces in a SubD 
+## Properties
+#### int Count
 - (summary) 
      Gets the number of SubD faces.
      
 - (since) 7.0
-# Methods
-## SubDFace Find(int id)
+## Methods
+#### SubDFace Find(int id)
 - (summary) 
      Find a face in this SubD with a given id
      
 - (since) 7.0
 - (returns) SubDFace This is some return comment
-## SubDFace Find(uint id)
+#### SubDFace Find(uint id)
 - (summary) 
      Find a face in this SubD with a given id
      
 - (since) 7.0
 - (returns) SubDFace This is some return comment
-## IEnumerator<SubDFace> GetEnumerator()
+#### IEnumerator<SubDFace> GetEnumerator()
 - (summary) 
      Implementation of IEnumerable
      

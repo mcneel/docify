@@ -1,23 +1,24 @@
 ---
-title: "Rhino.Render.RenderContentEventArgs"
+title: "RenderContentEventArgs"
 draft: false
 ---
 
-# Properties
-## RenderContent Content
+*Namespace: Rhino.Render*
+## Properties
+#### RenderContent Content
 - (summary) 
 - (since) 5.7
-## RhinoDoc Document
+#### RhinoDoc Document
 - (summary) 
 - (since) 6.0
-## RenderEnvironment.Usage EnvironmentUsage
+#### RenderEnvironment.Usage EnvironmentUsage
 - (summary) 
      Meaningful for CurrentEnvironmentChanged event. Will be one of Background, ReflectionAndRefraction or Skylighting.
      
      Since 6.11
      
 - (since) 6.11
-## RenderContentChangeReason Reason
+#### RenderContentChangeReason Reason
 - (summary) 
      Not when used in CurrentEnvironmentChanged (defaults to None).
      

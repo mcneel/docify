@@ -1,40 +1,44 @@
 ---
-title: "Rhino.Runtime.InteropWrappers.SimpleArrayClippingPlaneObjectPointer"
+title: "SimpleArrayClippingPlaneObjectPointer"
 draft: false
 ---
 
-# Constructors
-## Rhino.Runtime.InteropWrappers.SimpleArrayClippingPlaneObjectPointer()
+*Namespace: Rhino.Runtime.InteropWrappers*
+
+  ON_SimpleArray of CRhinoClippingPlaneObject*
+  
+## Constructors
+#### Rhino.Runtime.InteropWrappers.SimpleArrayClippingPlaneObjectPointer()
 - (summary) 
      Initializes a new  instance.
      
 - (since) 6.7
-# Properties
-## int Count
+## Properties
+#### int Count
 - (summary) 
      Gets the amount of clipping planes in this array.
      
 - (since) 6.7
-# Methods
-## void Add(ClippingPlaneObject clippingplane,bool asConst)
+## Methods
+#### void Add(ClippingPlaneObject clippingplane,bool asConst)
 - (summary) 
      Adds a clipping plane to the list.
      
 - (since) 6.7
 - (returns) void This is some return comment
-## IntPtr ConstPointer()
+#### IntPtr ConstPointer()
 - (summary) 
      Gets the const (immutable) pointer of this array.
      
 - (since) 6.7
 - (returns) IntPtr This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 6.7
 - (returns) void This is some return comment
-## IntPtr NonConstPointer()
+#### IntPtr NonConstPointer()
 - (summary) 
      Gets the non-const pointer (for modification) of this array.
      

@@ -1,10 +1,11 @@
 ---
-title: "Rhino.PlugIns.CustomRenderSaveFileTypes"
+title: "CustomRenderSaveFileTypes"
 draft: false
 ---
 
-# Methods
-## void RegisterFileType(IEnumerable<string> extensions,string description,SaveFileHandler saveFileHandler)
+*Namespace: Rhino.PlugIns*
+## Methods
+#### void RegisterFileType(IEnumerable<string> extensions,string description,SaveFileHandler saveFileHandler)
 - (summary) 
      Call this method to register a custom file save type with the render
      output window save dialog.

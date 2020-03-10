@@ -1,45 +1,50 @@
 ---
-title: "Rhino.Runtime.InteropWrappers.SimpleArray2dex"
+title: "SimpleArray2dex"
 draft: false
 ---
 
-# Constructors
-## Rhino.Runtime.InteropWrappers.SimpleArray2dex()
+*Namespace: Rhino.Runtime.InteropWrappers*
+
+   Wrapper for ON_SimpleArray<ON_2dex>. If you are not writing C++ code
+   then this class is not for you.
+   
+## Constructors
+#### Rhino.Runtime.InteropWrappers.SimpleArray2dex()
 - (summary) 
      Initializes a new  class.
      
 - (since) 6.0
-## Rhino.Runtime.InteropWrappers.SimpleArray2dex(IEnumerable<IndexPair> values)
+#### Rhino.Runtime.InteropWrappers.SimpleArray2dex(IEnumerable<IndexPair> values)
 - (summary) 
      Initializes a new  class
      
 - (since) 6.0
-# Properties
-## int Count
+## Properties
+#### int Count
 - (summary) 
      Gets the amount of elements in this array.
      
 - (since) 6.0
-# Methods
-## IntPtr ConstPointer()
+## Methods
+#### IntPtr ConstPointer()
 - (summary) 
      Gets the const (immutable) pointer of this array.
      
 - (since) 6.0
 - (returns) IntPtr This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 6.0
 - (returns) void This is some return comment
-## IntPtr NonConstPointer()
+#### IntPtr NonConstPointer()
 - (summary) 
      Gets the non-const pointer (for modification) of this array.
      
 - (since) 6.0
 - (returns) IntPtr This is some return comment
-## IndexPair[] ToArray()
+#### IndexPair[] ToArray()
 - (summary) 
      Returns the managed counterpart of the unmanaged array.
      

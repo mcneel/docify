@@ -1,14 +1,15 @@
 ---
-title: "Rhino.DocObjects.ExtrusionObject"
+title: "ExtrusionObject"
 draft: false
 ---
 
-# Properties
-## Extrusion ExtrusionGeometry
+*Namespace: Rhino.DocObjects*
+## Properties
+#### Extrusion ExtrusionGeometry
 - (summary) 
 - (since) 5.0
-# Methods
-## Extrusion DuplicateExtrusionGeometry()
+## Methods
+#### Extrusion DuplicateExtrusionGeometry()
 - (summary) 
 - (since) 5.0
 - (returns) Extrusion This is some return comment

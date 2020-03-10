@@ -1,151 +1,155 @@
 ---
-title: "Rhino.DocObjects.InstanceDefinition"
+title: "InstanceDefinition"
 draft: false
 ---
 
-# Properties
-## InstanceDefinitionArchiveFileStatus ArchiveFileStatus
+*Namespace: Rhino.DocObjects*
+
+   This is the same as , but in a Rhino document.
+   
+## Properties
+#### InstanceDefinitionArchiveFileStatus ArchiveFileStatus
 - (summary) 
      Returns the archive file status of a linked instance definition.
      
 - (since) 5.2
-## ModelComponentType ComponentType
+#### ModelComponentType ComponentType
 - (summary) 
      Returns .
      
 - (since) 6.0
-## string Description
+#### string Description
 - (summary) 
 - (since) 5.0
-## Guid Id
+#### Guid Id
 - (summary) 
 - (since) 5.0
-## int Index
+#### int Index
 - (summary) 
      Index of this instance definition in the index definition table.
      
 - (since) 5.0
-## bool IsDeleted
+#### bool IsDeleted
 - (summary) 
 - (since) 5.0
-## bool IsReference
+#### bool IsReference
 - (summary) 
      An object from a work session reference model is reference a
      reference object and cannot be modified.  An object is a reference
      object if, and only if, it is on a reference layer.
      
 - (since) 5.0
-## bool IsTenuous
+#### bool IsTenuous
 - (summary) 
 - (since) 5.0
-## InstanceDefinitionLayerStyle LayerStyle
+#### InstanceDefinitionLayerStyle LayerStyle
 - (summary) 
 - (since) 5.0
-## string Name
+#### string Name
 - (summary) 
 - (since) 5.0
-## int ObjectCount
+#### int ObjectCount
 - (summary) 
      Number of objects this definition uses. This counts the objects that are used to define the geometry.
      This does NOT count the number of references to this instance definition.
      
 - (since) 5.0
-## bool SkipNestedLinkedDefinitions
+#### bool SkipNestedLinkedDefinitions
 - (summary) 
      Controls how much geometry is read when a linked InstanceDefinition is updated.
      
 - (since) 5.0
-## string SourceArchive
+#### string SourceArchive
 - (summary) 
 - (since) 5.0
-## InstanceDefinitionUpdateType UpdateType
+#### InstanceDefinitionUpdateType UpdateType
 - (summary) 
 - (since) 5.0
-## string Url
+#### string Url
 - (summary) 
      The hyperlink URL that is executed when the UrlDescription hyperlink is clicked on in the Insert and Block UI
      
 - (since) 5.0
-## string UrlDescription
+#### string UrlDescription
 - (summary) 
      The URL description displayed as a hyperlink in the Insert and Block UI
      
 - (since) 5.0
-# Methods
-## System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize)
+## Methods
+#### System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize)
 - (summary) 
      Creates a preview bitmap of the instance definition.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize,bool applyDpiScaling)
+#### System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize,bool applyDpiScaling)
 - (summary) 
      Creates a preview bitmap of the instance definition.
      
 - (since) 6.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,Size bitmapSize)
+#### System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,Size bitmapSize)
 - (summary) 
      Creates a wireframe preview bitmap of the instance definition.
      
 - (since) 5.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,Size bitmapSize,bool applyDpiScaling)
+#### System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,Size bitmapSize,bool applyDpiScaling)
 - (summary) 
      Creates a wireframe preview bitmap of the instance definition.
      
 - (since) 6.0
 - (returns) System.Drawing.Bitmap This is some return comment
-## System.Drawing.Bitmap CreatePreviewBitmap(Guid definitionObjectId,DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize,bool applyDpiScaling)
+#### System.Drawing.Bitmap CreatePreviewBitmap(Guid definitionObjectId,DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize,bool applyDpiScaling)
 - (summary) 
      Creates a preview bitmap of the instance definition.
      
 - (since) 6.21
 - (returns) System.Drawing.Bitmap This is some return comment
-## bool Equals(object obj)
+#### bool Equals(object obj)
 - (summary) 
      Equality is checked against InstanceDefinition.Id
      
 - (since) (unknown)
 - (returns) bool This is some return comment
-## InstanceDefinition[] GetContainers()
+#### InstanceDefinition[] GetContainers()
 - (summary) 
      Gets a list of all the InstanceDefinitions that contain a reference this InstanceDefinition.
      
 - (since) 5.0
 - (returns) InstanceDefinition[] This is some return comment
-## int GetHashCode()
+#### int GetHashCode()
 - (summary) 
      Use Id.GetHashCode()
      
 - (since) (unknown)
 - (returns) int This is some return comment
-## RhinoObject[] GetObjects()
+#### RhinoObject[] GetObjects()
 - (summary) 
      Gets an array with the objects that belong to this instance definition.
      
 - (since) 5.0
 - (returns) RhinoObject[] This is some return comment
-## InstanceObject[] GetReferences(int wheretoLook)
+#### InstanceObject[] GetReferences(int wheretoLook)
 - (summary) 
      Gets a list of the CRhinoInstanceObjects (inserts) that contains
      a reference this instance definition.
      
 - (since) 5.0
 - (returns) InstanceObject[] This is some return comment
-## bool InUse(int wheretoLook)
+#### bool InUse(int wheretoLook)
 - (summary) 
      Determines whether the instance definition is referenced.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## RhinoObject Object(int index)
+#### RhinoObject Object(int index)
 - (summary) 
      returns an object used as part of this definition.
      
 - (since) 5.0
 - (returns) RhinoObject This is some return comment
-## int UsesDefinition(int otherIdefIndex)
+#### int UsesDefinition(int otherIdefIndex)
 - (summary) 
      Determines if this instance definition contains a reference to another instance definition.
      

@@ -20,7 +20,11 @@ namespace api_docify
                 var (containers, parsedItems) = SourceFileWalker.ParseSource(text);
                 foreach (var container in containers)
                 {
-                    allBaseTypes[container.FullName] = container;
+                    string containerName = container.FullName;
+                    if (allBaseTypes.ContainsKey(containerName))
+                        allBaseTypes[containerName].Merge(container);
+                    else
+                        allBaseTypes[container.FullName] = container;
                 }
                 foreach (var parsedItem in parsedItems)
                 {
@@ -50,13 +54,19 @@ namespace api_docify
                         return 1;
                     return string.Compare(a.Signature(true), b.Signature(true));
                 });
+                allBaseTypes[kv.Key].Members = items;
             }
 
-            System.Threading.Tasks.Parallel.ForEach(allMembers, (kv) =>
+
+            System.Threading.Tasks.Parallel.ForEach(allBaseTypes, (keyValue) =>
             {
+                ParsedBaseType basetype = keyValue.Value;
+                if (!basetype.IsPublic)
+                    return;
+
                 var content = new StringBuilder();
                 content.AppendLine("---");
-                content.AppendLine($"title: \"{kv.Key}\"");
+                content.AppendLine($"title: \"{basetype.Name}\"");
                 // Don't set a date yet in the front matter as this constantly changes the
                 // file contents
                 //content.AppendLine($"date: {DateTime.Now.ToString("u")}");
@@ -64,31 +74,39 @@ namespace api_docify
                 content.AppendLine("---");
                 content.AppendLine();
 
-                var items = kv.Value;
+                content.AppendLine($"*Namespace: {basetype.Namespace}*");
+
+                string baseTypeSummary = basetype.Summary();
+                if (!string.IsNullOrEmpty(baseTypeSummary))
+                    content.AppendLine(baseTypeSummary);
+
+                if (basetype.Members == null)
+                    return; // TODO: Figure out this case
+
                 ParsedMemberType state = ParsedMemberType.None;
-                foreach (var item in items)
+                foreach (var item in basetype.Members)
                 {
                     if (item.IsEvent && state != ParsedMemberType.Event)
                     {
-                        content.AppendLine("# Events");
+                        content.AppendLine("## Events");
                         state = ParsedMemberType.Event;
                     }
                     if (item.IsProperty && state != ParsedMemberType.Property)
                     {
-                        content.AppendLine("# Properties");
+                        content.AppendLine("## Properties");
                         state = ParsedMemberType.Property;
                     }
                     if (item.IsMethod && state != ParsedMemberType.Method)
                     {
-                        content.AppendLine("# Methods");
+                        content.AppendLine("## Methods");
                         state = ParsedMemberType.Method;
                     }
                     if (item.IsConstructor && state != ParsedMemberType.Constructor)
                     {
-                        content.AppendLine("# Constructors");
+                        content.AppendLine("## Constructors");
                         state = ParsedMemberType.Constructor;
                     }
-                    content.AppendLine("## " + item.Signature(false));
+                    content.AppendLine("#### " + item.Signature(false));
                     content.AppendLine($"- (summary) {item.Summary()}");
                     content.AppendLine($"- (since) {item.Since}");
                     string returnType = item.Returns();
@@ -98,7 +116,7 @@ namespace api_docify
                     }
                 }
 
-                string name = kv.Key;
+                string name = basetype.FullName;
                 string path = System.IO.Path.Combine(outputDirectory, name.ToLower().Replace(".", "-") + ".md");
                 string newContent = content.ToString();
                 bool writeContent = true;

@@ -1,9 +1,13 @@
 ---
-title: "Rhino.Geometry.InvalidDimensionStyleIdException"
+title: "InvalidDimensionStyleIdException"
 draft: false
 ---
 
-# Constructors
-## Rhino.Geometry.InvalidDimensionStyleIdException(string msg)
+*Namespace: Rhino.Geometry*
+
+   General exception that can be thrown by annotations
+   
+## Constructors
+#### Rhino.Geometry.InvalidDimensionStyleIdException(string msg)
 - (summary) 
 - (since) 6.0

@@ -1,68 +1,72 @@
 ---
-title: "Rhino.Display.Text3d"
+title: "Text3d"
 draft: false
 ---
 
-# Constructors
-## Rhino.Display.Text3d(string text)
+*Namespace: Rhino.Display*
+
+   3D aligned text with font settings.
+   
+## Constructors
+#### Rhino.Display.Text3d(string text)
 - (summary) 
      Constructs a new instance of Text3d.
      
 - (since) 5.0
-## Rhino.Display.Text3d(string text,Plane plane,double height)
+#### Rhino.Display.Text3d(string text,Plane plane,double height)
 - (summary) 
      Constructs a new instance of Text3d.
      
 - (since) 5.0
-# Properties
-## bool Bold
+## Properties
+#### bool Bold
 - (summary) 
      Gets or sets whether this Text3d object will be drawn in Bold.
      
 - (since) 5.0
-## BoundingBox BoundingBox
+#### BoundingBox BoundingBox
 - (summary) 
      Gets the boundingbox for this Text3d object.
      
 - (since) 5.0
-## string FontFace
+#### string FontFace
 - (summary) 
      Gets or sets the FontFace name.
      
 - (since) 5.0
-## double Height
+#### double Height
 - (summary) 
      Gets or sets the height (in units) of this Text3d object. 
      The height should be a positive number larger than zero.
      
 - (since) 5.0
-## DocObjects.TextHorizontalAlignment HorizontalAlignment
+#### DocObjects.TextHorizontalAlignment HorizontalAlignment
 - (summary) 
      Horizontal alignment that this Text3d is drawn with
      
 - (since) 6.4
-## bool Italic
+#### bool Italic
 - (summary) 
      Gets or sets whether this Text3d object will be drawn in Italics.
      
 - (since) 5.0
-## string Text
+#### string Text
 - (summary) 
      Gets or sets the text string for this Text3d object.
      
 - (since) 5.0
-## Plane TextPlane
+#### Plane TextPlane
 - (summary) 
      Gets or sets the 3D aligned plane for this Text3d object. 
      
 - (since) 5.0
-## DocObjects.TextVerticalAlignment VerticalAlignment
+#### DocObjects.TextVerticalAlignment VerticalAlignment
 - (summary) 
      Vertical alignment that this Text3d is drawn with
      
 - (since) 6.4
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      

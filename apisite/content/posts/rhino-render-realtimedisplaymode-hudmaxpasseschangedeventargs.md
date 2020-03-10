@@ -1,13 +1,14 @@
 ---
-title: "Rhino.Render.RealtimeDisplayMode.HudMaxPassesChangedEventArgs"
+title: "HudMaxPassesChangedEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RealtimeDisplayMode.HudMaxPassesChangedEventArgs(int mp)
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.RealtimeDisplayMode.HudMaxPassesChangedEventArgs(int mp)
 - (summary) 
 - (since) 6.0
-# Properties
-## int MaxPasses
+## Properties
+#### int MaxPasses
 - (summary) 
 - (since) 6.0

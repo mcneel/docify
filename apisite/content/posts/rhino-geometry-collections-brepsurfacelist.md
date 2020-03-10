@@ -1,16 +1,20 @@
 ---
-title: "Rhino.Geometry.Collections.BrepSurfaceList"
+title: "BrepSurfaceList"
 draft: false
 ---
 
-# Properties
-## int Count
+*Namespace: Rhino.Geometry.Collections*
+
+   Provides access to all the underlying surfaces in a Brep object.
+   
+## Properties
+#### int Count
 - (summary) 
      Gets the number of surfaces in a brep.
      
 - (since) 5.4
-# Methods
-## IEnumerator<Surface> GetEnumerator()
+## Methods
+#### IEnumerator<Surface> GetEnumerator()
 - (summary) 
      Gets an enumerator that visits all surfaces.
      

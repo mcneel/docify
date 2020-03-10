@@ -1,10 +1,13 @@
 ---
-title: "Rhino.ApplicationSettings.OpenGLSettingsState"
+title: "OpenGLSettingsState"
 draft: false
 ---
 
-# Properties
-## AntialiasLevel AntialiasLevel
+*Namespace: Rhino.ApplicationSettings*
+
+   Represents a sapshot of 
+## Properties
+#### AntialiasLevel AntialiasLevel
 - (summary) 
      AA level used in OpenGL viewports
      

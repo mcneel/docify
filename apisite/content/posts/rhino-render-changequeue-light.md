@@ -1,25 +1,29 @@
 ---
-title: "Rhino.Render.ChangeQueue.Light"
+title: "Light"
 draft: false
 ---
 
-# Properties
-## Event ChangeType
+*Namespace: Rhino.Render.ChangeQueue*
+
+   ChangeQueue Light change representation
+   
+## Properties
+#### Event ChangeType
 - (summary) 
      Get what type of light change this represents
      
 - (since) 6.0
-## Geometry.Light Data
+#### Geometry.Light Data
 - (summary) 
      Get the actual light data
      
 - (since) 6.0
-## Guid Id
+#### Guid Id
 - (summary) 
      Get the light object id
      
 - (since) 6.0
-## uint IdCrc
+#### uint IdCrc
 - (summary) 
      Get CRC computed from Id
      

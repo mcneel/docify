@@ -1,17 +1,21 @@
 ---
-title: "Rhino.Render.RenderPanels"
+title: "RenderPanels"
 draft: false
 ---
 
-# Methods
-## static object FromRenderSessionId(PlugIn plugIn,Type panelType,Guid renderSessionId)
+*Namespace: Rhino.Render*
+
+   This class is used to extend the standard Render user interface
+   
+## Methods
+#### static object FromRenderSessionId(PlugIn plugIn,Type panelType,Guid renderSessionId)
 - (summary) 
      Get the instance of a render panel associated with a specific render
      session, this is useful when it is necessary to update a control from a
      
 - (since) 5.11
 - (returns) object This is some return comment
-## void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)
+#### void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)
 - (summary) 
      Register custom render user interface with Rhino.  This should only be
      done in .  Panels
@@ -20,7 +24,7 @@ draft: false
      
 - (since) 5.11
 - (returns) void This is some return comment
-## void RegisterPanelEx(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,Guid renderEngineId,string caption,bool alwaysShow,bool initialShow)
+#### void RegisterPanelEx(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,Guid renderEngineId,string caption,bool alwaysShow,bool initialShow)
 - (summary) 
      Register custom render user interface with Rhino.  This should only be
      done in .  Panels

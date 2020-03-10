@@ -1,46 +1,51 @@
 ---
-title: "Rhino.Runtime.InteropWrappers.SimpleArrayBrepPointer"
+title: "SimpleArrayBrepPointer"
 draft: false
 ---
 
-# Constructors
-## Rhino.Runtime.InteropWrappers.SimpleArrayBrepPointer()
+*Namespace: Rhino.Runtime.InteropWrappers*
+
+   Wrapper for a C++ ON_SimpleArray<ON_Brep*> or ON_SimpleArray<const ON_Brep*>
+   If you are not writing C++ code then this class is not for you.
+   
+## Constructors
+#### Rhino.Runtime.InteropWrappers.SimpleArrayBrepPointer()
 - (summary) 
      Initializes a new  instance.
      
 - (since) 5.0
-# Properties
-## int Count
+## Properties
+#### int Count
 - (summary) 
      Gets the amount of breps in this array.
      
 - (since) 5.0
-# Methods
-## void Add(Brep brep,bool asConst)
+## Methods
+#### void Add(Brep brep,bool asConst)
 - (summary) 
      Adds a brep to the list.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## IntPtr ConstPointer()
+#### IntPtr ConstPointer()
 - (summary) 
      Gets the const (immutable) pointer of this array.
      
 - (since) 5.0
 - (returns) IntPtr This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Actively reclaims unmanaged resources that this instance uses.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## IntPtr NonConstPointer()
+#### IntPtr NonConstPointer()
 - (summary) 
      Gets the non-const pointer (for modification) of this array.
      
 - (since) 5.0
 - (returns) IntPtr This is some return comment
-## Geometry.Brep[] ToNonConstArray()
+#### Geometry.Brep[] ToNonConstArray()
 - (summary) 
      Copies the unmanaged array to a managed counterpart.
      

@@ -1,28 +1,32 @@
 ---
-title: "Rhino.Render.MetaDataProxy"
+title: "MetaDataProxy"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.MetaDataProxy()
+*Namespace: Rhino.Render*
+
+   ProxyClass for MetaData
+   
+## Constructors
+#### Rhino.Render.MetaDataProxy()
 - (summary) 
      Constructor for MetaDataProxy
      
 - (since) 6.8
-# Properties
-## IntPtr CppPointer
+## Properties
+#### IntPtr CppPointer
 - (summary) 
      MetaDataProxy c++ pointer
      
 - (since) 6.8
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
      Dispose for MetaDataProxy
      
 - (since) 6.8
 - (returns) void This is some return comment
-## void SetContentInstanceId(Guid uuid)
+#### void SetContentInstanceId(Guid uuid)
 - (summary) 
      Set Content instance id for meta data
      

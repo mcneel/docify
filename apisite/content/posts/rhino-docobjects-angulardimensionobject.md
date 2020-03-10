@@ -1,10 +1,14 @@
 ---
-title: "Rhino.DocObjects.AngularDimensionObject"
+title: "AngularDimensionObject"
 draft: false
 ---
 
-# Properties
-## Geometry.AngularDimension AngularDimensionGeometry
+*Namespace: Rhino.DocObjects*
+
+   Rhino Object that represents an angular dimension geometry and attributes
+   
+## Properties
+#### Geometry.AngularDimension AngularDimensionGeometry
 - (summary) 
      Get the dimension geometry for this object.
      

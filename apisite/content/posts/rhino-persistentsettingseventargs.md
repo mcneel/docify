@@ -1,19 +1,23 @@
 ---
-title: "Rhino.PersistentSettingsEventArgs"
+title: "PersistentSettingsEventArgs"
 draft: false
 ---
 
-# Constructors
-## Rhino.PersistentSettingsEventArgs(T currentValue,T newValue)
+*Namespace: Rhino*
+
+   Represents event data that is passed as state in persistent settings events.
+   
+## Constructors
+#### Rhino.PersistentSettingsEventArgs(T currentValue,T newValue)
 - (summary) 
 - (since) (unknown)
-# Properties
-## bool Cancel
+## Properties
+#### bool Cancel
 - (summary) 
 - (since) 5.0
-## T CurrentValue
+#### T CurrentValue
 - (summary) 
 - (since) (unknown)
-## T NewValue
+#### T NewValue
 - (summary) 
 - (since) (unknown)

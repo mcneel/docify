@@ -1,55 +1,61 @@
 ---
-title: "Rhino.FileIO.FileReference"
+title: "FileReference"
 draft: false
 ---
 
-# Constructors
-## Rhino.FileIO.FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status)
+*Namespace: Rhino.FileIO*
+
+   Manages a reference to an existing or nonexisting file,
+   using either or both absolute or relative paths.
+   Once constructed, this class is immutable.
+   
+## Constructors
+#### Rhino.FileIO.FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status)
 - (summary) 
      Constructs a new instance of the FileReference class,
      given a fullPath, a relativePath a content hash and a status value.
      
 - (since) 6.0
-# Properties
-## ContentHash ContentHash
+## Properties
+#### ContentHash ContentHash
 - (summary) 
      Gets the content hash.
      
 - (since) 6.0
-## string FullPath
+#### string FullPath
 - (summary) 
      Gets the absolute path of this file reference.
      
 - (since) 6.0
-## FileReferenceStatus FullPathStatus
+#### FileReferenceStatus FullPathStatus
 - (summary) 
      Gets the file reference status.
      
 - (since) 6.0
-## bool IsSet
+#### bool IsSet
 - (summary) 
      Returns an indication of the fact that the reference is actually set to a non-None value.
      
 - (since) 6.0
-## string RelativePath
+#### string RelativePath
 - (summary) 
      Gets the relative path of this file reference.
      
 - (since) 6.0
-# Methods
-## static FileReference CreateFromFullAndRelativePaths(string fullPath,string relativePath)
+## Methods
+#### static FileReference CreateFromFullAndRelativePaths(string fullPath,string relativePath)
 - (summary) 
      Returns a new file reference. This returns a new instance even if the path does not exist.
      
 - (since) 6.0
 - (returns) FileReference This is some return comment
-## static FileReference CreateFromFullPath(string fullPath)
+#### static FileReference CreateFromFullPath(string fullPath)
 - (summary) 
      Returns a new file reference. This returns a new instance even if the path does not exist.
      
 - (since) 6.0
 - (returns) FileReference This is some return comment
-## void Dispose()
+#### void Dispose()
 - (summary) 
      Reclaims unmanaged resources used by this object.
      

@@ -1,21 +1,25 @@
 ---
-title: "Rhino.Geometry.ComponentIndex"
+title: "ComponentIndex"
 draft: false
 ---
 
-# Constructors
-## Rhino.Geometry.ComponentIndex(ComponentIndexType type,int index)
+*Namespace: Rhino.Geometry*
+
+   Represents an index of an element contained in another object.
+   
+## Constructors
+#### Rhino.Geometry.ComponentIndex(ComponentIndexType type,int index)
 - (summary) 
      Construct component index with a specific type/index combination
      
 - (since) 5.0
-# Properties
-## static ComponentIndex Unset
+## Properties
+#### static ComponentIndex Unset
 - (summary) 
      The unset value of component index.
      
 - (since) 5.0
-## ComponentIndexType ComponentIndexType
+#### ComponentIndexType ComponentIndexType
 - (summary) 
      The interpretation of Index depends on the Type value.
      Type             m_index interpretation (0 based indices)
@@ -38,7 +42,7 @@ draft: false
      dim_text_point     TextEntity2 origin point.
      
 - (since) 5.0
-## int Index
+#### int Index
 - (summary) 
      The interpretation of m_index depends on the m_type value.
      m_type             m_index interpretation (0 based indices)
@@ -61,8 +65,8 @@ draft: false
      dim_text_point     TextEntity2 origin point.
      
 - (since) 5.0
-# Methods
-## bool IsUnset()
+## Methods
+#### bool IsUnset()
 - (summary) 
      Return True is this component index is the same as the Unset component index
      

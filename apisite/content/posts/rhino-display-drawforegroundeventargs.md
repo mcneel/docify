@@ -1,12 +1,13 @@
 ---
-title: "Rhino.Display.DrawForegroundEventArgs"
+title: "DrawForegroundEventArgs"
 draft: false
 ---
 
-# Properties
-## bool DrawWorldAxes
+*Namespace: Rhino.Display*
+## Properties
+#### bool DrawWorldAxes
 - (summary) 
 - (since) 5.0
-## bool WorldAxesDrawn
+#### bool WorldAxesDrawn
 - (summary) 
 - (since) 5.0

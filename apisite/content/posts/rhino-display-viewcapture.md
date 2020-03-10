@@ -1,50 +1,51 @@
 ---
-title: "Rhino.Display.ViewCapture"
+title: "ViewCapture"
 draft: false
 ---
 
-# Constructors
-## Rhino.Display.ViewCapture()
+*Namespace: Rhino.Display*
+## Constructors
+#### Rhino.Display.ViewCapture()
 - (summary) 
 - (since) 6.0
-# Properties
-## bool DrawAxes
+## Properties
+#### bool DrawAxes
 - (summary) 
 - (since) 6.0
-## bool DrawGrid
+#### bool DrawGrid
 - (summary) 
 - (since) 6.0
-## bool DrawGridAxes
+#### bool DrawGridAxes
 - (summary) 
 - (since) 6.0
-## int Height
+#### int Height
 - (summary)  Height of capture in Pixels 
 - (since) 6.0
-## bool Preview
+#### bool Preview
 - (summary) 
 - (since) 6.0
-## int RealtimeRenderPasses
+#### int RealtimeRenderPasses
 - (summary) 
 - (since) 6.0
-## bool ScaleScreenItems
+#### bool ScaleScreenItems
 - (summary) 
 - (since) 6.0
-## bool TransparentBackground
+#### bool TransparentBackground
 - (summary) 
 - (since) 6.0
-## int Width
+#### int Width
 - (summary)  Width of capture in Pixels 
 - (since) 6.0
-# Methods
-## static Bitmap CaptureToBitmap(ViewCaptureSettings settings)
+## Methods
+#### static Bitmap CaptureToBitmap(ViewCaptureSettings settings)
 - (summary) 
 - (since) 6.0
 - (returns) Bitmap This is some return comment
-## static System.Xml.XmlDocument CaptureToSvg(ViewCaptureSettings settings)
+#### static System.Xml.XmlDocument CaptureToSvg(ViewCaptureSettings settings)
 - (summary) 
 - (since) 6.0
 - (returns) System.Xml.XmlDocument This is some return comment
-## Bitmap CaptureToBitmap(RhinoView sourceView)
+#### Bitmap CaptureToBitmap(RhinoView sourceView)
 - (summary) 
 - (since) 6.0
 - (returns) Bitmap This is some return comment

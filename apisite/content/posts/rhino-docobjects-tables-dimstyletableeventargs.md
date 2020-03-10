@@ -1,21 +1,22 @@
 ---
-title: "Rhino.DocObjects.Tables.DimStyleTableEventArgs"
+title: "DimStyleTableEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects.Tables*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 6.0
-## DimStyleTableEventType EventType
+#### DimStyleTableEventType EventType
 - (summary) 
 - (since) 6.0
-## int Index
+#### int Index
 - (summary) 
 - (since) 6.0
-## DimensionStyle NewState
+#### DimensionStyle NewState
 - (summary) 
 - (since) 6.0
-## DimensionStyle OldState
+#### DimensionStyle OldState
 - (summary) 
 - (since) 6.0

@@ -1,24 +1,25 @@
 ---
-title: "Rhino.Render.ImageFileEventArgs"
+title: "ImageFileEventArgs"
 draft: false
 ---
 
-# Properties
-## int EllapsedTime
+*Namespace: Rhino.Render*
+## Properties
+#### int EllapsedTime
 - (summary) 
 - (since) 5.11
-## ImageFileEvent Event
+#### ImageFileEvent Event
 - (summary) 
 - (since) 5.11
-## string FileName
+#### string FileName
 - (summary) 
 - (since) 5.11
-## string RenderEngine
+#### string RenderEngine
 - (summary) 
 - (since) 5.11
-## Guid RenderEngineId
+#### Guid RenderEngineId
 - (summary) 
 - (since) 5.11
-## Guid SessionId
+#### Guid SessionId
 - (summary) 
 - (since) 5.11

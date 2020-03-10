@@ -1,16 +1,20 @@
 ---
-title: "Rhino.Render.Fields.GuidField"
+title: "GuidField"
 draft: false
 ---
 
-# Properties
-## Guid Value
+*Namespace: Rhino.Render.Fields*
+
+   Guid field value class
+   
+## Properties
+#### Guid Value
 - (summary) 
      Gets or sets the field value
      
 - (since) 5.1
-# Methods
-## object ValueAsObject()
+## Methods
+#### object ValueAsObject()
 - (summary) 
 - (since) 5.7
 - (returns) object This is some return comment

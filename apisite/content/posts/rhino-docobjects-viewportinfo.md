@@ -1,29 +1,33 @@
 ---
-title: "Rhino.DocObjects.ViewportInfo"
+title: "ViewportInfo"
 draft: false
 ---
 
-# Constructors
-## Rhino.DocObjects.ViewportInfo()
+*Namespace: Rhino.DocObjects*
+
+   Represents a viewing frustum.
+   
+## Constructors
+#### Rhino.DocObjects.ViewportInfo()
 - (summary) 
      Initializes a new instance.
      
 - (since) 5.0
-## Rhino.DocObjects.ViewportInfo(RhinoViewport rhinoViewport)
+#### Rhino.DocObjects.ViewportInfo(RhinoViewport rhinoViewport)
 - (summary) 
      Copies all of the ViewportInfo data from an existing RhinoViewport.
      
 - (since) 5.0
-## Rhino.DocObjects.ViewportInfo(ViewportInfo other)
+#### Rhino.DocObjects.ViewportInfo(ViewportInfo other)
 - (summary) 
       Initializes a new instance by copying values from another instance.
      
 - (since) 5.0
-# Properties
-## static Vector3d DefaultCameraDirection
+## Properties
+#### static Vector3d DefaultCameraDirection
 - (summary)  Default z=up perspective camera direction 
 - (since) 6.0
-## double Camera35mmLensLength
+#### double Camera35mmLensLength
 - (summary) 
      This property assumes the camera is horizontal and crop the
      film rather than the image when the aspect of the frustum
@@ -32,42 +36,42 @@ draft: false
      changes the frustum, but maintains the frustum's aspect.
      
 - (since) 5.0
-## double CameraAngle
+#### double CameraAngle
 - (summary) 
      Gets or sets the 1/2 smallest angle. See  for more information.
      
 - (since) 5.0
-## Vector3d CameraDirection
+#### Vector3d CameraDirection
 - (summary) 
      Gets the direction that the camera faces.
      
 - (since) 5.0
-## Point3d CameraLocation
+#### Point3d CameraLocation
 - (summary) 
      Gets the camera location (position) point.
      
 - (since) 5.0
-## Vector3d CameraUp
+#### Vector3d CameraUp
 - (summary) 
      Gets the camera up vector.
      
 - (since) 5.0
-## Vector3d CameraX
+#### Vector3d CameraX
 - (summary) 
      Gets the unit "to the right" vector.
      
 - (since) 5.0
-## Vector3d CameraY
+#### Vector3d CameraY
 - (summary) 
      Gets the unit "up" vector.
      
 - (since) 5.0
-## Vector3d CameraZ
+#### Vector3d CameraZ
 - (summary) 
      Gets the unit vector in -CameraDirection.
      
 - (since) 5.0
-## double FrustumAspect
+#### double FrustumAspect
 - (summary) 
      Setting FrustumAspect changes the larger of the frustum's width/height
      so that the resulting value of width/height matches the requested
@@ -77,27 +81,27 @@ draft: false
      GetScreenPortAspect().
      
 - (since) 5.0
-## double FrustumBottom
+#### double FrustumBottom
 - (summary) 
      Gets the frustum bottom value. This is -top if the frustum has a horizontal symmetry axis.
      This number is usually negative.
 - (since) 5.0
-## Rhino.Geometry.Plane FrustumBottomPlane
+#### Rhino.Geometry.Plane FrustumBottomPlane
 - (summary) 
      Gets the frustum bottom plane that separates visibile from off-screen.
      
 - (since) 5.0
-## Point3d FrustumCenter
+#### Point3d FrustumCenter
 - (summary) 
      Gets the frustum center point.
      
 - (since) 5.0
-## double FrustumFar
+#### double FrustumFar
 - (summary) 
      Gets the frustum far-cutting value.
      
 - (since) 5.0
-## Plane FrustumFarPlane
+#### Plane FrustumFarPlane
 - (summary) 
      Gets far clipping plane if camera and frustum
      are valid.  The plane's frame is the same as the camera's
@@ -106,37 +110,37 @@ draft: false
      normal points into the frustum towards the camera location.
      
 - (since) 5.0
-## double FrustumHeight
+#### double FrustumHeight
 - (summary) 
      Gets the frustum height. This is  - .
      
 - (since) 5.0
-## double FrustumLeft
+#### double FrustumLeft
 - (summary) 
      Gets the frustum left value. This is -right if the frustum has a vertical symmetry axis.
      This number is usually negative.
 - (since) 5.0
-## Plane FrustumLeftPlane
+#### Plane FrustumLeftPlane
 - (summary) 
      Gets the frustum left plane that separates visibile from off-screen.
      
 - (since) 5.0
-## double FrustumMaximumDiameter
+#### double FrustumMaximumDiameter
 - (summary) 
      Gets the frustum maximum diameter, or the maximum between  and .
      
 - (since) 5.0
-## double FrustumMinimumDiameter
+#### double FrustumMinimumDiameter
 - (summary) 
      Gets the frustum minimum diameter, or the minimum between  and .
      
 - (since) 5.0
-## double FrustumNear
+#### double FrustumNear
 - (summary) 
      Gets the frustum near-cutting value.
      
 - (since) 5.0
-## Plane FrustumNearPlane
+#### Plane FrustumNearPlane
 - (summary) 
      Gets near clipping plane if camera and frustum
      are valid.  The plane's frame is the same as the camera's
@@ -146,32 +150,32 @@ draft: false
      location.
      
 - (since) 5.0
-## double FrustumRight
+#### double FrustumRight
 - (summary) 
      Gets the frustum right value. This is -left if the frustum has a vertical symmetry axis.
      This number is usually positive.
 - (since) 5.0
-## Plane FrustumRightPlane
+#### Plane FrustumRightPlane
 - (summary) 
      Gets the frustum right plane that separates visibile from off-screen.
      
 - (since) 5.0
-## double FrustumTop
+#### double FrustumTop
 - (summary) 
      Gets the frustum top value. This is -bottom if the frustum has a horizontal symmetry axis.
      This number is usually positive.
 - (since) 5.0
-## Plane FrustumTopPlane
+#### Plane FrustumTopPlane
 - (summary) 
      Gets the frustum top plane that separates visibile from off-screen.
      
 - (since) 5.0
-## double FrustumWidth
+#### double FrustumWidth
 - (summary) 
      Gets the frustum width. This is  - .
      
 - (since) 5.0
-## Guid Id
+#### Guid Id
 - (summary) 
      Sets the viewport's id to the value used to 
      uniquely identify this viewport.
@@ -181,80 +185,80 @@ draft: false
      manage them.
      
 - (since) 5.0
-## bool IsCameraDirectionLocked
+#### bool IsCameraDirectionLocked
 - (summary) 
      Gets or sets a value that indicates whether the direction that the camera faces is unmodifiable.
      
 - (since) 5.0
-## bool IsCameraLocationLocked
+#### bool IsCameraLocationLocked
 - (summary) 
      Gets or sets a value that indicates whether the camera location is unmodifiable.
      
 - (since) 5.0
-## bool IsCameraUpLocked
+#### bool IsCameraUpLocked
 - (summary) 
      Gets or sets a value that indicates whether the camera up vector is unmodifiable.
      
 - (since) 5.0
-## bool IsFrustumLeftRightSymmetric
+#### bool IsFrustumLeftRightSymmetric
 - (summary) 
      Gets or sets a value that indicates whether the camera frustum has a vertical symmetry axis.
      
 - (since) 5.0
-## bool IsFrustumTopBottomSymmetric
+#### bool IsFrustumTopBottomSymmetric
 - (summary) 
      Gets or sets a value that indicates whether the camera frustum has a horizontal symmetry axis.
      
 - (since) 5.0
-## bool IsParallelProjection
+#### bool IsParallelProjection
 - (summary) 
      Get or set whether this projection is parallel.
      
 - (since) 5.0
-## bool IsPerspectiveProjection
+#### bool IsPerspectiveProjection
 - (summary) 
      Get or set whether this projection is perspective.
      
 - (since) 5.0
-## bool IsTwoPointPerspectiveProjection
+#### bool IsTwoPointPerspectiveProjection
 - (summary) 
      Gets a value that indicates whether this projection is a two-point perspective.
      
 - (since) 5.0
-## bool IsValidCamera
+#### bool IsValidCamera
 - (summary) 
      Gets a value that indicates whether the camera is valid.
      
 - (since) 5.0
-## bool IsValidFrustum
+#### bool IsValidFrustum
 - (summary) 
      Gets a value that indicates whether the frustum is valid.
      
 - (since) 5.0
-## double PerspectiveMinNearDist
+#### double PerspectiveMinNearDist
 - (summary) 
      Expert user function to control the minimum
      value of near when perspective projections
      are being used.
      
 - (since) 7.0
-## double PerspectiveMinNearOverFar
+#### double PerspectiveMinNearOverFar
 - (summary) 
      Expert user function to control the minimum
      ratio of near/far when perspective projections
      are begin used.
      
 - (since) 7.0
-## System.Drawing.Rectangle ScreenPort
+#### System.Drawing.Rectangle ScreenPort
 - (summary) 
      Get or set the screen port.  and 
 - (since) 6.0
-## double ScreenPortAspect
+#### double ScreenPortAspect
 - (summary) 
      Gets the sceen aspect ratio.
      This is width / height.
 - (since) 5.0
-## Point3d TargetPoint
+#### Point3d TargetPoint
 - (summary) 
      The current value of the target point.  This point does not play
      a role in the view projection calculations.  It can be used as a 
@@ -265,7 +269,7 @@ draft: false
      the target point.
      
 - (since) 5.0
-## System.Drawing.SizeF ViewScale
+#### System.Drawing.SizeF ViewScale
 - (summary) 
      Applies scaling factors to parallel projection clipping coordinates
      by setting the m_clip_mod transformation. 
@@ -273,20 +277,20 @@ draft: false
      plane, then set x = 0.5, y = 1.0, and z = 1.0.
      
 - (since) 5.0
-# Methods
-## static double CalculateCameraRotationAngle(Vector3d direction,Vector3d up)
+## Methods
+#### static double CalculateCameraRotationAngle(Vector3d direction,Vector3d up)
 - (summary) 
      Calculates the camera rotation angle.
      
 - (since) 6.8
 - (returns) double This is some return comment
-## static Vector3d CalculateCameraUpDirection(Point3d location,Vector3d direction,double angle)
+#### static Vector3d CalculateCameraUpDirection(Point3d location,Vector3d direction,double angle)
 - (summary) 
      Calculates the camera up direction.
      
 - (since) 6.8
 - (returns) Vector3d This is some return comment
-## bool ChangeToParallelProjection(bool symmetricFrustum)
+#### bool ChangeToParallelProjection(bool symmetricFrustum)
 - (summary) 
      Use this function to change projections of valid viewports
      from parallel to perspective.  It will make common additional
@@ -299,7 +303,7 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool ChangeToPerspectiveProjection(double targetDistance,bool symmetricFrustum,double lensLength)
+#### bool ChangeToPerspectiveProjection(double targetDistance,bool symmetricFrustum,double lensLength)
 - (summary) 
      Use this function to change projections of valid viewports
      from parallel to perspective.  It will make common additional
@@ -312,7 +316,7 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool ChangeToSymmetricFrustum(bool isLeftRightSymmetric,bool isTopBottomSymmetric,double targetDistance)
+#### bool ChangeToSymmetricFrustum(bool isLeftRightSymmetric,bool isTopBottomSymmetric,double targetDistance)
 - (summary) 
      If needed, adjusts the current frustum so it has the 
      specified symmetries and adjust the camera location
@@ -320,7 +324,7 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool ChangeToTwoPointPerspectiveProjection(double targetDistance,Vector3d up,double lensLength)
+#### bool ChangeToTwoPointPerspectiveProjection(double targetDistance,Vector3d up,double lensLength)
 - (summary) 
      Changes projections of valid viewports
      to a two point perspective.  It will make common additional
@@ -333,7 +337,7 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool DollyCamera(Vector3d dollyVector)
+#### bool DollyCamera(Vector3d dollyVector)
 - (summary) 
      DollyCamera() does not update the frustum's clipping planes.
      To update the frustum's clipping planes call DollyFrustum(d)
@@ -343,7 +347,7 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool DollyExtents(BoundingBox cameraCoordinateBoundingBox,double border)
+#### bool DollyExtents(BoundingBox cameraCoordinateBoundingBox,double border)
 - (summary) 
      Dolly the camera location and so that the view frustum contains
      all of the document objects that can be seen in view.
@@ -351,7 +355,7 @@ draft: false
      
 - (since) 5.6
 - (returns) bool This is some return comment
-## bool DollyExtents(IEnumerable<GeometryBase> geometry,double border)
+#### bool DollyExtents(IEnumerable<GeometryBase> geometry,double border)
 - (summary) 
      Dolly the camera location and so that the view frustum contains
      all of the document objects that can be seen in view.
@@ -359,13 +363,13 @@ draft: false
      
 - (since) 5.6
 - (returns) bool This is some return comment
-## bool DollyFrustum(double dollyDistance)
+#### bool DollyFrustum(double dollyDistance)
 - (summary) 
      Moves the frustum clipping planes.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool Extents(double halfViewAngleRadians,BoundingBox bbox)
+#### bool Extents(double halfViewAngleRadians,BoundingBox bbox)
 - (summary) 
      Extends this viewport view to include a bounding box.
      Use Extents() as a quick way to set a viewport to so that bounding
@@ -373,7 +377,7 @@ draft: false
      The view angle is used to determine the position of the camera.
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool Extents(double halfViewAngleRadians,Sphere sphere)
+#### bool Extents(double halfViewAngleRadians,Sphere sphere)
 - (summary) 
      Extends this viewport view to include a sphere.
      Use Extents() as a quick way to set a viewport to so that bounding
@@ -381,14 +385,14 @@ draft: false
      The view angle is used to determine the position of the camera.
 - (since) 5.0
 - (returns) bool This is some return comment
-## Point3d FrustumCenterPoint(double targetDistance)
+#### Point3d FrustumCenterPoint(double targetDistance)
 - (summary) 
      Return a point on the central axis of the view frustum.
      This point is a good choice for a general purpose target point.
      
 - (since) 5.0
 - (returns) Point3d This is some return comment
-## bool GetBoundingBoxDepth(BoundingBox bbox,double nearDistance,double farDistance)
+#### bool GetBoundingBoxDepth(BoundingBox bbox,double nearDistance,double farDistance)
 - (summary) 
      Gets near and far clipping distances of a bounding box.
      This function ignores the current value of the viewport's 
@@ -402,31 +406,31 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool GetCameraAngles(double halfDiagonalAngleRadians,double halfVerticalAngleRadians,double halfHorizontalAngleRadians)
+#### bool GetCameraAngles(double halfDiagonalAngleRadians,double halfVerticalAngleRadians,double halfHorizontalAngleRadians)
 - (summary) 
      Gets the field of view angles.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool GetCameraFrame(Point3d location,Vector3d cameraX,Vector3d cameraY,Vector3d cameraZ)
+#### bool GetCameraFrame(Point3d location,Vector3d cameraX,Vector3d cameraY,Vector3d cameraZ)
 - (summary) 
      Gets location and vectors of this camera.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## Vector3d GetDollyCameraVector(int screenX0,int screenY0,int screenX1,int screenY1,double projectionPlaneDistance)
+#### Vector3d GetDollyCameraVector(int screenX0,int screenY0,int screenX1,int screenY1,double projectionPlaneDistance)
 - (summary) 
      Gets a world coordinate dolly vector that can be passed to DollyCamera().
      
 - (since) 5.0
 - (returns) Vector3d This is some return comment
-## Vector3d GetDollyCameraVector(Point screen0,Point screen1,double projectionPlaneDistance)
+#### Vector3d GetDollyCameraVector(Point screen0,Point screen1,double projectionPlaneDistance)
 - (summary) 
      Gets a world coordinate dolly vector that can be passed to DollyCamera().
      
 - (since) 5.0
 - (returns) Vector3d This is some return comment
-## Point3d[] GetFarPlaneCorners()
+#### Point3d[] GetFarPlaneCorners()
 - (summary) 
      Gets the corners of far clipping plane rectangle.
      4 points are returned in the order of bottom left, bottom right,
@@ -434,34 +438,34 @@ draft: false
      
 - (since) 5.0
 - (returns) Point3d[] This is some return comment
-## bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)
+#### bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)
 - (summary) 
      Gets the view frustum.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## Line GetFrustumLine(double screenX,double screenY)
+#### Line GetFrustumLine(double screenX,double screenY)
 - (summary) 
      Gets the world coordinate line in the view frustum
      that projects to a point on the screen.
      
 - (since) 5.1
 - (returns) Line This is some return comment
-## Line GetFrustumLine(Point screenPoint)
+#### Line GetFrustumLine(Point screenPoint)
 - (summary) 
      Gets the world coordinate line in the view frustum
      that projects to a point on the screen.
      
 - (since) 5.1
 - (returns) Line This is some return comment
-## Line GetFrustumLine(PointF screenPoint)
+#### Line GetFrustumLine(PointF screenPoint)
 - (summary) 
      Gets the world coordinate line in the view frustum
      that projects to a point on the screen.
      
 - (since) 5.1
 - (returns) Line This is some return comment
-## Point3d[] GetNearPlaneCorners()
+#### Point3d[] GetNearPlaneCorners()
 - (summary) 
      Gets the corners of near clipping plane rectangle.
      4 points are returned in the order of bottom left, bottom right,
@@ -469,7 +473,7 @@ draft: false
      
 - (since) 5.0
 - (returns) Point3d[] This is some return comment
-## bool GetPointDepth(Point3d point,double distance)
+#### bool GetPointDepth(Point3d point,double distance)
 - (summary) 
      Gets the clipping distance of a point. This function ignores the
      current value of the viewport's near and far settings. If
@@ -482,68 +486,68 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## System.Drawing.Rectangle GetScreenPort()
+#### System.Drawing.Rectangle GetScreenPort()
 - (summary) 
      Gets the location of viewport in pixels.
      See documentation for SetScreenPort.
      
 - (since) 5.0
 - (returns) System.Drawing.Rectangle This is some return comment
-## System.Drawing.Rectangle GetScreenPort(int near,int far)
+#### System.Drawing.Rectangle GetScreenPort(int near,int far)
 - (summary) 
      Gets the location of viewport in pixels.
      See value meanings in SetScreenPort.
 - (since) 5.0
 - (returns) System.Drawing.Rectangle This is some return comment
-## void GetScreenPortLocation(int left,int top,int right,int bottom)
+#### void GetScreenPortLocation(int left,int top,int right,int bottom)
 - (summary) 
      Get the location of viewport in pixels (non System.Drawing version of GetScreenPort)
      
 - (since) 6.0
 - (returns) void This is some return comment
-## bool GetSphereDepth(Sphere sphere,double nearDistance,double farDistance)
+#### bool GetSphereDepth(Sphere sphere,double nearDistance,double farDistance)
 - (summary) 
      Gets near and far clipping distances of a bounding sphere.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## double GetWorldToScreenScale(Point3d pointInFrustum)
+#### double GetWorldToScreenScale(Point3d pointInFrustum)
 - (summary) 
      Gets the scale factor from point in frustum to screen scale.
      
 - (since) 5.1
 - (returns) double This is some return comment
-## Transform GetXform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)
+#### Transform GetXform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)
 - (summary) 
      Computes a transform from a coordinate system to another.
      
 - (since) 5.0
 - (returns) Transform This is some return comment
-## bool RotateCamera(double rotationAngleRadians,Vector3d rotationAxis,Point3d rotationCenter)
+#### bool RotateCamera(double rotationAngleRadians,Vector3d rotationAxis,Point3d rotationCenter)
 - (summary) 
      Rotates the view camera.
      
 - (since) 7.0
 - (returns) bool This is some return comment
-## bool SetCameraDirection(Vector3d direction)
+#### bool SetCameraDirection(Vector3d direction)
 - (summary) 
      Sets the direction that the camera faces.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetCameraLocation(Point3d location)
+#### bool SetCameraLocation(Point3d location)
 - (summary) 
      Sets the camera location (position) point.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetCameraUp(Vector3d up)
+#### bool SetCameraUp(Vector3d up)
 - (summary) 
      Sets the camera up vector.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)
+#### bool SetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)
 - (summary) 
      Sets the view frustum. If FrustumSymmetryIsLocked() is true
      and left != -right or bottom != -top, then they will be
@@ -551,31 +555,31 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetFrustumNearFar(BoundingBox boundingBox)
+#### bool SetFrustumNearFar(BoundingBox boundingBox)
 - (summary) 
      Sets the frustum near and far using a bounding box.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetFrustumNearFar(double nearDistance,double farDistance)
+#### bool SetFrustumNearFar(double nearDistance,double farDistance)
 - (summary) 
      Sets the frustum near and far distances using two values.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetFrustumNearFar(double nearDistance,double farDistance,double minNearDistance,double minNearOverFar,double targetDistance)
+#### bool SetFrustumNearFar(double nearDistance,double farDistance,double minNearDistance,double minNearOverFar,double targetDistance)
 - (summary) 
      Sets near and far clipping distance subject to constraints.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetFrustumNearFar(Point3d center,double radius)
+#### bool SetFrustumNearFar(Point3d center,double radius)
 - (summary) 
      Sets the frustum near and far using a center point and radius.
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetScreenPort(int left,int right,int bottom,int top,int near,int far)
+#### bool SetScreenPort(int left,int right,int bottom,int top,int near,int far)
 - (summary) 
      Location of viewport in pixels.
      These are provided so you can set the port you are using
@@ -596,19 +600,19 @@ draft: false
      
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetScreenPort(Rectangle windowRectangle)
+#### bool SetScreenPort(Rectangle windowRectangle)
 - (summary) 
      Gets the location of viewport in pixels.
      See value meanings in SetScreenPort.
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool SetScreenPort(Rectangle windowRectangle,int near,int far)
+#### bool SetScreenPort(Rectangle windowRectangle,int near,int far)
 - (summary) 
      Gets the location of viewport in pixels.
      See value meanings in SetScreenPort.
 - (since) 5.0
 - (returns) bool This is some return comment
-## double TargetDistance(bool useFrustumCenterFallback)
+#### double TargetDistance(bool useFrustumCenterFallback)
 - (summary) 
      Gets the distance from the target point to the camera plane.
      Note that if the frustum is not symmetric, then this distance
@@ -616,25 +620,25 @@ draft: false
      
 - (since) 5.0
 - (returns) double This is some return comment
-## bool TransformCamera(Transform xform)
+#### bool TransformCamera(Transform xform)
 - (summary) 
      Transforms the view camera location, direction, and up.
      
 - (since) 7.0
 - (returns) bool This is some return comment
-## void UnlockCamera()
+#### void UnlockCamera()
 - (summary) 
      Unlocks the camera vectors and location.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## void UnlockFrustumSymmetry()
+#### void UnlockFrustumSymmetry()
 - (summary) 
      Unlocks frustum horizontal and vertical symmetries.
      
 - (since) 5.0
 - (returns) void This is some return comment
-## bool ZoomToScreenRect(int left,int top,int right,int bottom)
+#### bool ZoomToScreenRect(int left,int top,int right,int bottom)
 - (summary) 
      Zooms to a screen zone.
      View changing from screen input points. Handy for
@@ -642,7 +646,7 @@ draft: false
      ZoomToScreenRect() may change camera and frustum settings.
 - (since) 5.0
 - (returns) bool This is some return comment
-## bool ZoomToScreenRect(Rectangle windowRectangle)
+#### bool ZoomToScreenRect(Rectangle windowRectangle)
 - (summary) 
      Zooms to a screen zone.
      View changing from screen input points. Handy for

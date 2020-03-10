@@ -1,42 +1,43 @@
 ---
-title: "Rhino.DocObjects.MaterialRef"
+title: "MaterialRef"
 draft: false
 ---
 
-# Properties
-## Guid BackFaceMaterialId
+*Namespace: Rhino.DocObjects*
+## Properties
+#### Guid BackFaceMaterialId
 - (summary) 
      The Id of the Material used to render the back of an object.
      
 - (since) 5.10
-## int BackFaceMaterialIndex
+#### int BackFaceMaterialIndex
 - (summary) 
      The index of the material used to render the back of an object
      
 - (since) 5.10
-## Guid FrontFaceMaterialId
+#### Guid FrontFaceMaterialId
 - (summary) 
      The Id of the Material used to render the front of an object.
      
 - (since) 5.10
-## int FrontFaceMaterialIndex
+#### int FrontFaceMaterialIndex
 - (summary) 
      The index of the material used to render the front of an object
      
 - (since) 5.10
-## ObjectMaterialSource MaterialSource
+#### ObjectMaterialSource MaterialSource
 - (summary) 
      Determines if the simple material should come from the object or from
      it's layer.
      
 - (since) 5.10
-## Guid PlugInId
+#### Guid PlugInId
 - (summary) 
      Identifies a rendering plug-in
      
 - (since) 5.10
-# Methods
-## void Dispose()
+## Methods
+#### void Dispose()
 - (summary) 
 - (since) 5.10
 - (returns) void This is some return comment

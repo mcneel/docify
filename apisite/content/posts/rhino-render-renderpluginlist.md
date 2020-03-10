@@ -1,9 +1,10 @@
 ---
-title: "Rhino.Render.RenderPlugInList"
+title: "RenderPlugInList"
 draft: false
 ---
 
-# Constructors
-## Rhino.Render.RenderPlugInList()
+*Namespace: Rhino.Render*
+## Constructors
+#### Rhino.Render.RenderPlugInList()
 - (summary) 
 - (since) 6.0

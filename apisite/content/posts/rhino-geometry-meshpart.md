@@ -1,24 +1,28 @@
 ---
-title: "Rhino.Geometry.MeshPart"
+title: "MeshPart"
 draft: false
 ---
 
-# Properties
-## int EndFaceIndex
+*Namespace: Rhino.Geometry*
+
+   Represents a portion of a mesh for partitioning
+   
+## Properties
+#### int EndFaceIndex
 - (summary) End of subinterval of parent mesh face array
 - (since) 5.6
-## int EndVertexIndex
+#### int EndVertexIndex
 - (summary) End of subinterval of parent mesh vertex array
 - (since) 5.6
-## int StartFaceIndex
+#### int StartFaceIndex
 - (summary) Start of subinterval of parent mesh face array
 - (since) 5.6
-## int StartVertexIndex
+#### int StartVertexIndex
 - (summary) Start of subinterval of parent mesh vertex array
 - (since) 5.6
-## int TriangleCount
+#### int TriangleCount
 - (summary) 
 - (since) 5.6
-## int VertexCount
+#### int VertexCount
 - (summary) EndVertexIndex - StartVertexIndex
 - (since) 5.6

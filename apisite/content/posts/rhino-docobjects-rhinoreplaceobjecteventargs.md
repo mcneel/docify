@@ -1,18 +1,19 @@
 ---
-title: "Rhino.DocObjects.RhinoReplaceObjectEventArgs"
+title: "RhinoReplaceObjectEventArgs"
 draft: false
 ---
 
-# Properties
-## RhinoDoc Document
+*Namespace: Rhino.DocObjects*
+## Properties
+#### RhinoDoc Document
 - (summary) 
 - (since) 5.0
-## RhinoObject NewRhinoObject
+#### RhinoObject NewRhinoObject
 - (summary) 
 - (since) 5.0
-## Guid ObjectId
+#### Guid ObjectId
 - (summary) 
 - (since) 5.0
-## RhinoObject OldRhinoObject
+#### RhinoObject OldRhinoObject
 - (summary) 
 - (since) 5.0
