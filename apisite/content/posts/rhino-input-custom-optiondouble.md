@@ -1,6 +1,5 @@
 ---
 title: "Rhino.Input.Custom.OptionDouble"
-date: 2020-03-10 09:24:56Z
 draft: false
 ---
 

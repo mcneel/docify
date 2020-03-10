@@ -1,6 +1,5 @@
 ---
 title: "Rhino.Geometry.Point4d"
-date: 2020-03-10 09:24:55Z
 draft: false
 ---
 

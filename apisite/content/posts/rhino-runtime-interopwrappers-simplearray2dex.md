@@ -1,6 +1,5 @@
 ---
 title: "Rhino.Runtime.InteropWrappers.SimpleArray2dex"
-date: 2020-03-10 09:24:55Z
 draft: false
 ---
 

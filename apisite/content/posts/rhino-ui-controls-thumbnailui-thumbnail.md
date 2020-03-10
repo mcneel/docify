@@ -1,6 +1,5 @@
 ---
 title: "Rhino.UI.Controls.ThumbnailUI.Thumbnail"
-date: 2020-03-10 09:24:55Z
 draft: false
 ---
 
