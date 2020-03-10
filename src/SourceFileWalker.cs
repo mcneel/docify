@@ -22,6 +22,13 @@ namespace api_docify
     {
     }
 
+    public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
+    {
+      var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
+      _parsedMembers.Add(new ParsedMember(node, docComment));
+      base.VisitConstructorDeclaration(node);
+    }
+
     public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
     {
       var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();

@@ -3,6 +3,15 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace api_docify
 {
+  enum ParsedMemberType
+  {
+    None = 0,
+    Constructor = 1,
+    Event = 2,
+    Property = 3,
+    Method = 4
+  }
+
   class ParsedMember
   {
     System.Xml.XmlDocument _documentationAsXml;
@@ -26,6 +35,26 @@ namespace api_docify
       return rc;
     }
 
+    public ParsedMemberType MemberType
+    {
+      get
+      {
+        if (IsConstructor)
+          return ParsedMemberType.Constructor;
+        if (IsEvent)
+          return ParsedMemberType.Event;
+        if (IsProperty)
+          return ParsedMemberType.Property;
+        if (IsMethod)
+          return ParsedMemberType.Method;
+        return ParsedMemberType.None;
+      }
+    }
+
+    public bool IsConstructor
+    {
+      get { return Member is ConstructorDeclarationSyntax; }
+    }
     public bool IsEvent
     {
       get { return Member is EventDeclarationSyntax; }
@@ -132,95 +161,153 @@ namespace api_docify
       if (!forSorting && IsStatic)
         prefix = "static ";
 
-      MethodDeclarationSyntax method = Member as MethodDeclarationSyntax;
-      if (method != null)
       {
-        var signature = new System.Text.StringBuilder();
-        if (forSorting)
+        MethodDeclarationSyntax method = Member as MethodDeclarationSyntax;
+        if (method != null)
         {
-          signature.Append($"{ClassPath}.{method.Identifier}(");
-        }
-        else
-        {
-          signature.Append($"{prefix}{method.ReturnType} {method.Identifier}(");
-        }
-        int parameterCount = method.ParameterList.Parameters.Count;
-        for (int i = 0; i < parameterCount; i++)
-        {
-          if (i > 0)
-            signature.Append(",");
-          var parameter = method.ParameterList.Parameters[i];
-          string paramType = parameter.Type.ToString();
-          int angleIndex = paramType.IndexOf('<');
-          string prefixType = "";
-          if (angleIndex > 0)
+          var signature = new System.Text.StringBuilder();
+          if (forSorting)
           {
-            prefixType = paramType.Substring(0, angleIndex);
-            int prefixIndex = prefixType.LastIndexOf('.');
-            if (prefixIndex > 0)
-              prefixType = prefixType.Substring(prefixIndex + 1);
-            string genericType = paramType.Substring(angleIndex + 1);
-            int genericIndex = genericType.LastIndexOf('.');
-            if (genericIndex > 0)
-              genericType = genericType.Substring(genericIndex + 1);
-            paramType = prefixType + "<" + genericType;
+            signature.Append($"{ClassPath}.{method.Identifier}(");
           }
           else
           {
-            int index = paramType.LastIndexOf('.');
-            if (index > 0)
-              paramType = paramType.Substring(index + 1);
+            signature.Append($"{prefix}{method.ReturnType} {method.Identifier}(");
           }
-          signature.Append(paramType);
-          if(!forSorting)
+          int parameterCount = method.ParameterList.Parameters.Count;
+          for (int i = 0; i < parameterCount; i++)
           {
-            signature.Append($" {parameter.Identifier}");
+            if (i > 0)
+              signature.Append(",");
+            var parameter = method.ParameterList.Parameters[i];
+            string paramType = parameter.Type.ToString();
+            int angleIndex = paramType.IndexOf('<');
+            string prefixType = "";
+            if (angleIndex > 0)
+            {
+              prefixType = paramType.Substring(0, angleIndex);
+              int prefixIndex = prefixType.LastIndexOf('.');
+              if (prefixIndex > 0)
+                prefixType = prefixType.Substring(prefixIndex + 1);
+              string genericType = paramType.Substring(angleIndex + 1);
+              int genericIndex = genericType.LastIndexOf('.');
+              if (genericIndex > 0)
+                genericType = genericType.Substring(genericIndex + 1);
+              paramType = prefixType + "<" + genericType;
+            }
+            else
+            {
+              int index = paramType.LastIndexOf('.');
+              if (index > 0)
+                paramType = paramType.Substring(index + 1);
+            }
+            signature.Append(paramType);
+            if (!forSorting)
+            {
+              signature.Append($" {parameter.Identifier}");
+            }
           }
+          signature.Append(")");
+          return signature.ToString();
         }
-        signature.Append(")");
-        return signature.ToString();
       }
-
-      PropertyDeclarationSyntax property = Member as PropertyDeclarationSyntax;
-      if (property != null)
       {
-        var signature = new System.Text.StringBuilder();
-        if (forSorting)
+        PropertyDeclarationSyntax property = Member as PropertyDeclarationSyntax;
+        if (property != null)
         {
-          signature.Append($"{ClassPath}.{property.Identifier}");
+          var signature = new System.Text.StringBuilder();
+          if (forSorting)
+          {
+            signature.Append($"{ClassPath}.{property.Identifier}");
+          }
+          else
+          {
+            signature.Append($"{prefix}{property.Type} {property.Identifier}");
+          }
+          return signature.ToString();
         }
-        else
+      }
+      {
+        EventDeclarationSyntax evt = Member as EventDeclarationSyntax;
+        if (evt != null)
         {
-          signature.Append($"{prefix}{property.Type} {property.Identifier}");
+          var signature = new System.Text.StringBuilder();
+          signature.Append($"{prefix}{evt.Identifier}");
+          return signature.ToString();
         }
-        return signature.ToString();
       }
-
-      EventDeclarationSyntax evt = Member as EventDeclarationSyntax;
-      if (evt != null)
       {
-        var signature = new System.Text.StringBuilder();
-        signature.Append($"{prefix}{evt.Identifier}");
-        return signature.ToString();
+        OperatorDeclarationSyntax op = Member as OperatorDeclarationSyntax;
+        if (op != null)
+        {
+          var signature = new System.Text.StringBuilder();
+          signature.Append($"{prefix}{op.OperatorToken}");
+          return signature.ToString();
+        }
       }
-
-      OperatorDeclarationSyntax op = Member as OperatorDeclarationSyntax;
-      if (op != null)
       {
-        var signature = new System.Text.StringBuilder();
-        signature.Append($"{prefix}{op.OperatorToken}");
-        return signature.ToString();
+        EventFieldDeclarationSyntax eventField = Member as EventFieldDeclarationSyntax;
+        if (eventField != null)
+        {
+          var signature = new System.Text.StringBuilder();
+          string declaration = eventField.ToString();
+          int index = declaration.LastIndexOf(' ');
+          declaration = declaration.Substring(index + 1, declaration.Length - 1 - (index + 1));
+          signature.Append($"{prefix}{declaration}");
+          return signature.ToString();
+        }
       }
-
-      EventFieldDeclarationSyntax eventField = Member as EventFieldDeclarationSyntax;
-      if (eventField != null)
       {
-        var signature = new System.Text.StringBuilder();
-        string declaration = eventField.ToString();
-        int index = declaration.LastIndexOf(' ');
-        declaration = declaration.Substring(index + 1, declaration.Length - 1 - (index + 1));
-        signature.Append($"{prefix}{declaration}");
-        return signature.ToString();
+        ConstructorDeclarationSyntax constructor = Member as ConstructorDeclarationSyntax;
+        if (constructor != null)
+        {
+          var signature = new System.Text.StringBuilder();
+          if (forSorting)
+          {
+            signature.Append($"{ClassPath}(");
+          }
+          else
+          {
+            if (IsStatic)
+              signature.Append("static ");
+            signature.Append($"{ClassPath}(");
+          }
+          int parameterCount = constructor.ParameterList.Parameters.Count;
+          for (int i = 0; i < parameterCount; i++)
+          {
+            if (i > 0)
+              signature.Append(",");
+            var parameter = constructor.ParameterList.Parameters[i];
+            string paramType = parameter.Type.ToString();
+            int angleIndex = paramType.IndexOf('<');
+            string prefixType = "";
+            if (angleIndex > 0)
+            {
+              prefixType = paramType.Substring(0, angleIndex);
+              int prefixIndex = prefixType.LastIndexOf('.');
+              if (prefixIndex > 0)
+                prefixType = prefixType.Substring(prefixIndex + 1);
+              string genericType = paramType.Substring(angleIndex + 1);
+              int genericIndex = genericType.LastIndexOf('.');
+              if (genericIndex > 0)
+                genericType = genericType.Substring(genericIndex + 1);
+              paramType = prefixType + "<" + genericType;
+            }
+            else
+            {
+              int index = paramType.LastIndexOf('.');
+              if (index > 0)
+                paramType = paramType.Substring(index + 1);
+            }
+            signature.Append(paramType);
+            if (!forSorting)
+            {
+              signature.Append($" {parameter.Identifier}");
+            }
+          }
+          signature.Append(")");
+          return signature.ToString();
+        }
       }
       throw new System.NotImplementedException();
     }
@@ -251,6 +338,19 @@ namespace api_docify
           return element[0].InnerText;
       }
       return "";
+    }
+
+    public string Returns()
+    {
+      string rc = "";
+      {
+        MethodDeclarationSyntax method = Member as MethodDeclarationSyntax;
+        if (method != null)
+        {
+          rc = $"{method.ReturnType} This is some return comment";
+        }
+      }
+      return rc;
     }
 
     System.Xml.XmlDocument DocumentationAsXml()

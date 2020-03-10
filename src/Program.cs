@@ -32,17 +32,11 @@ namespace api_docify
       {
         var items = kv.Value;
         items.Sort((a, b) => {
-          if (a.IsEvent && !b.IsEvent)
+          int aType = (int)a.MemberType;
+          int bType = (int)b.MemberType;
+          if (aType < bType)
             return -1;
-          if (b.IsEvent && !a.IsEvent)
-            return 1;
-          if (a.IsProperty && !b.IsProperty)
-            return -1;
-          if (b.IsProperty && !a.IsProperty)
-            return 1;
-          if (a.IsMethod && !b.IsMethod)
-            return -1;
-          if (b.IsMethod && !a.IsMethod)
+          if (bType < aType)
             return 1;
           if (a.IsStatic && !b.IsStatic)
             return -1;
@@ -63,27 +57,37 @@ namespace api_docify
         content.AppendLine();
 
         var items = kv.Value;
-        States state = States.None;
+        ParsedMemberType state = ParsedMemberType.None;
         foreach (var item in items)
         {
-          if (item.IsEvent && state != States.Event)
+          if (item.IsEvent && state != ParsedMemberType.Event)
           {
             content.AppendLine("# Events");
-            state = States.Event;
+            state = ParsedMemberType.Event;
           }
-          if (item.IsProperty && state != States.Property)
+          if (item.IsProperty && state != ParsedMemberType.Property)
           {
             content.AppendLine("# Properties");
-            state = States.Property;
+            state = ParsedMemberType.Property;
           }
-          if (item.IsMethod && state != States.Method)
+          if (item.IsMethod && state != ParsedMemberType.Method)
           {
             content.AppendLine("# Methods");
-            state = States.Method;
+            state = ParsedMemberType.Method;
+          }
+          if (item.IsConstructor && state != ParsedMemberType.Constructor)
+          {
+            content.AppendLine("# Constructors");
+            state = ParsedMemberType.Constructor;
           }
           content.AppendLine("## " + item.Signature(false));
           content.AppendLine($"- (summary) {item.Summary()}");
           content.AppendLine($"- (since) {item.Since}");
+          string returnType = item.Returns();
+          if( !string.IsNullOrWhiteSpace(returnType) && !returnType.Equals("void"))
+          {
+            content.AppendLine($"- (returns) {returnType}");
+          }
         }
 
         string name = kv.Key;
@@ -92,14 +96,6 @@ namespace api_docify
         Console.WriteLine(name);
       });
 
-    }
-
-    enum States
-    {
-      None,
-      Event,
-      Property,
-      Method
     }
 
     static IEnumerable<string> AllSourceFiles(string sourcePath)
