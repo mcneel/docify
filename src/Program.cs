@@ -8,8 +8,8 @@ namespace api_docify
   {
     static void Main(string[] args)
     {
-      const string rhinocommonDirectory = @"..\..\..\..\rhino\src4\DotNetSDK\rhinocommon\dotnet\";
-      const string outputDirectory = @"..\..\..\apisite\content\posts\";
+      const string rhinocommonDirectory = "../../../../rhino/src4/DotNetSDK/rhinocommon/dotnet/";
+      const string outputDirectory = "../../../apisite/content/posts/";
 
       Dictionary<string, List<ParsedMember>> allClasses = new Dictionary<string, List<ParsedMember>>();
       foreach (var sourceFile in AllSourceFiles(rhinocommonDirectory))
