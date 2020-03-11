@@ -1,5 +1,0 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "Test API Site"
-theme = "hugo-primer"
-

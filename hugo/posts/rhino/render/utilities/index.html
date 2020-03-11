@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Utilities &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+public class UtilitiesProperties static Guid DefaultRenderPlugInId  (summary) Get the plug-in Id for the default render plug-in (since) 5.3  static bool ShowIncompatibleEnvironments  (summary) Specifies whether incompatible content should be shown in the corresponding editor. (since) 5.3  static bool ShowIncompatibleMaterials  (summary) Specifies whether incompatible content should be shown in the corresponding editor. (since) 5.3  static bool ShowIncompatibleTextures  (summary) Specifies whether incompatible content should be shown in the corresponding editor.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Utilities</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Utilities</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="static-guid-defaultrenderpluginid">static Guid DefaultRenderPlugInId</h4>
+<ul>
+<li>(summary) Get the plug-in Id for the default render plug-in</li>
+<li>(since) 5.3</li>
+</ul>
+<h4 id="static-bool-showincompatibleenvironments">static bool ShowIncompatibleEnvironments</h4>
+<ul>
+<li>(summary) Specifies whether incompatible content should be shown in the corresponding editor.</li>
+<li>(since) 5.3</li>
+</ul>
+<h4 id="static-bool-showincompatiblematerials">static bool ShowIncompatibleMaterials</h4>
+<ul>
+<li>(summary) Specifies whether incompatible content should be shown in the corresponding editor.</li>
+<li>(since) 5.3</li>
+</ul>
+<h4 id="static-bool-showincompatibletextures">static bool ShowIncompatibleTextures</h4>
+<ul>
+<li>(summary) Specifies whether incompatible content should be shown in the corresponding editor.</li>
+<li>(since) 5.3</li>
+</ul>
+<h4 id="static-uiframeworks-uiframework">static UiFrameworks UiFramework</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-rendercontent-changecontenttyperendercontent-oldcontentguid-newtypebool-harvestparameters">static RenderContent ChangeContentType(RenderContent oldContent,Guid newType,bool harvestParameters)</h4>
+<ul>
+<li>(summary) Changes the type of a content. This deletes the content and creates a replacement
+of the specified type allowing the caller to decide about harvesting.</li>
+<li>(since) 6.0</li>
+<li>(returns) RenderContent This is some return comment</li>
+</ul>
+<h4 id="static-string-findfilerhinodoc-docstring-fullpathtofile">static string FindFile(RhinoDoc doc,string fullPathToFile)</h4>
+<ul>
+<li>(summary) Finds a file and also handles network shares.
+This is a replacement for CRhinoFileUtilities::FindFile().</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-findfilerhinodoc-docstring-fullpathtofilebool-unpackfrombitmaptableifnecessary">static string FindFile(RhinoDoc doc,string fullPathToFile,bool unpackFromBitmapTableIfNecessary)</h4>
+<ul>
+<li>(summary) Finds a file and also handles network shares.
+This is a replacement for CRhinoFileUtilities::FindFile().</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-bool-iscachedtexturefileinusestring-texturefilename">static bool IsCachedTextureFileInUse(string textureFileName)</h4>
+<ul>
+<li>(summary) Determines if any texture in any persistent content list is using the specified file name for caching.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-rendercontent-loadpersistentrendercontentfromfileuint-docserialnumberstring-filename">static RenderContent LoadPersistentRenderContentFromFile(uint docSerialNumber,String filename)</h4>
+<ul>
+<li>(summary) Loads a content from a library file and adds it to the persistent content list of a particular document.</li>
+<li>(since) 6.0</li>
+<li>(returns) RenderContent This is some return comment</li>
+</ul>
+<h4 id="static-void-movewindowintptr-hwndrectangle-rectbool-brepaintbool-brepaintnc">static void MoveWindow(IntPtr hwnd,Rectangle rect,bool bRepaint,bool bRepaintNC)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-string-promptforsaveimagefileparametersstring-filenameint-widthint-heightint-colordepth">static string PromptForSaveImageFileParameters(string filename,int width,int height,int colorDepth)</h4>
+<ul>
+<li>(summary) Prompts the user for a save file name and the width, height and depth of an image to be saved.</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-bool-safeframeenabledrhinodoc-doc">static bool SafeFrameEnabled(RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Queries whether or not the Safe Frame is visible.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-setdefaultrenderpluginguid-pluginid">static bool SetDefaultRenderPlugIn(Guid pluginId)</h4>
+<ul>
+<li>(summary) Set default render application</li>
+<li>(since) 5.3</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-showcontentchooserresults-showcontentchooserguid-defaulttypeguid-defaultinstanceidrendercontentkind-kindsguid-instanceidoutshowcontentchooserflags-flagsrhinodoc-doc">static ShowContentChooserResults ShowContentChooser(Guid defaultType,Guid defaultInstanceId,RenderContentKind kinds,Guid instanceIdOut,ShowContentChooserFlags flags,RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Shows the content chooser to allow the user to select a new or existing content.</li>
+<li>(since) 6.25</li>
+<li>(returns) ShowContentChooserResults This is some return comment</li>
+</ul>
+<h4 id="static-bool-showiormenuintptr-hwndpoint-ptdouble-outiorstring-outstring">static bool ShowIORMenu(IntPtr hwnd,Point pt,double outIOR,string outString)</h4>
+<ul>
+<li>(summary) Display and track the context menu.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Utilities</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

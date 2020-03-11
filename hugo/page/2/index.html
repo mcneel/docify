@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/collections/archivabledictionary/">
+        <h3>ArchivableDictionary</h3>
+      </a>
+      <small>http://example.org/posts/rhino/collections/archivabledictionary/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+public class ArchivableDictionaryConstructors ArchivableDictionary()  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version,string name)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/areamassproperties/">
+        <h3>AreaMassProperties</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/areamassproperties/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Contains static initialization methods and allows access to the computed metrics of area, area centroid and area moments in closed planar curves, in meshes, in surfaces, in hatches and in boundary representations.
+public class AreaMassPropertiesProperties double Area  (summary) Gets the area solution. (since) 5.0  double AreaError  (summary) Gets the uncertainty in the area calculation. (since) 5.0  Point3d Centroid  (summary) Gets the area centroid in the world coordinate system.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/arrowhead/">
+        <h3>Arrowhead</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/arrowhead/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Arrowhead used by annotation
+public class ArrowheadConstructors Arrowhead()  (summary) Constructor (since) 6.0  Arrowhead(ArrowType arrowType,Guid blockId)  (summary) Constructor (since) 6.0  Properties DimensionStyle.ArrowType ArrowType  (summary) Type of arrowhead used by annotation (since) 6.0  Guid BlockId  (summary) Id of block used for user-defined arrowhead (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/assemblyresolver/">
+        <h3>AssemblyResolver</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/assemblyresolver/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime
+Assembly Resolver for the Rhino App Domain.
+public class AssemblyResolverMethods static void AddSearchFile(string file)  (summary) Register another file with the Assembly Resolver. File must be a .NET assembly, so it should probably be a dll, rhp or exe. (since) 5.0 (returns) void This is some return comment  static void AddSearchFolder(string folder)  (summary) Register a custom folder with the Assembly Resolver. Folders will be searched recursively, so this could potentially be a very expensive operation.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/asyncrendercontext/">
+        <h3>AsyncRenderContext</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/asyncrendercontext/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+\ingroup rhino_render Inherit from AsyncRenderContext to be able to create asynchronous render engine implementations through RhinoCommon.
+public class AsyncRenderContextProperties Thread RenderThread  (summary) Holder for render thread, that gets set through StartRenderThread() (since) 6.0  RenderWindow RenderWindow  (summary) Handle to the RenderWindow for the instance of this class. This is a convenience property for implementors to use. (since) 6.0  Methods void Dispose()  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/morphs/bendspacemorph/">
+        <h3>BendSpaceMorph</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/morphs/bendspacemorph/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Deforms objects by bending along a spine arc.
+public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  BendSpaceMorph(Point3d start,Point3d end,Point3d point,double angle,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/beziercurve/">
+        <h3>BezierCurve</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/beziercurve/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a Bezier curve. Note: as an exception, the bezier curve is not derived from .
+public class BezierCurveConstructors BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 2d points (since) 5.0  BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 3d points (since) 5.0  BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 4d points (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/binaryarchiveexception/">
+        <h3>BinaryArchiveException</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/binaryarchiveexception/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Thrown by BinaryArchiveReader and BinaryArchiveWriter classes when an IO error has occured.
+public class BinaryArchiveExceptionConstructors BinaryArchiveException(string message)  (summary) Initializes a new instance of the class. (since) 5.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/binaryarchivefile/">
+        <h3>BinaryArchiveFile</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/binaryarchivefile/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+public class BinaryArchiveFileConstructors BinaryArchiveFile(string filename,BinaryArchiveMode mode)  (summary) (since) 5.1  Properties BinaryArchiveReader Reader  (summary) (since) 5.1  BinaryArchiveWriter Writer  (summary) (since) 5.1  Methods void Close()  (summary) (since) 5.1 (returns) void This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.1 (returns) void This is some return comment  bool Open()  (summary) (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/binaryarchivereader/">
+        <h3>BinaryArchiveReader</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/binaryarchivereader/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
+public class BinaryArchiveReaderProperties int Archive3dmVersion  (summary) If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/3/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

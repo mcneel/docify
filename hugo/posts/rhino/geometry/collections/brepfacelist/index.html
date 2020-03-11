@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BrepFaceList &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to all the Faces in a Brep object.
+public class BrepFaceListProperties int Count  (summary) Gets the number of brep faces. (since) 5.0  Methods BrepFace Add(int surfaceIndex)  (summary) Create and add a new face to this list. An incomplete face is added. The caller must create and fill in the loops used by the face. (since) 5.4 (returns) BrepFace This is some return comment  BrepFace Add(Surface surface)  (summary) Add a new face to a brep.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BrepFaceList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to all the Faces in a Brep object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BrepFaceList</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Gets the number of brep faces.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="brepface-addint-surfaceindex">BrepFace Add(int surfaceIndex)</h4>
+<ul>
+<li>(summary) Create and add a new face to this list. An incomplete face is added.
+The caller must create and fill in the loops used by the face.</li>
+<li>(since) 5.4</li>
+<li>(returns) BrepFace This is some return comment</li>
+</ul>
+<h4 id="brepface-addsurface-surface">BrepFace Add(Surface surface)</h4>
+<ul>
+<li>(summary) Add a new face to a brep.  This creates a complete face with
+new vertices at the surface corners, new edges along the surface
+boundary, etc.  The loop of the returned face has four trims that
+correspond to the south, east, north, and west side of the 
+surface in that order.  If you use this version of Add to
+add an exiting brep, then you are responsible for using a tool
+like JoinEdges() to hook the new face to its neighbors.</li>
+<li>(since) 5.4</li>
+<li>(returns) BrepFace This is some return comment</li>
+</ul>
+<h4 id="brepface-addconefacebrepvertex-vertexbrepedge-edgebool-revedge">BrepFace AddConeFace(BrepVertex vertex,BrepEdge edge,bool revEdge)</h4>
+<ul>
+<li>(summary) Add a new face to the brep whose surface geometry is a 
+ruled cone with the edge as the base and the vertex as
+the apex point.</li>
+<li>(since) 5.4</li>
+<li>(returns) BrepFace This is some return comment</li>
+</ul>
+<h4 id="brepface-addruledfacebrepedge-edgeabool-revedgeabrepedge-edgebbool-revedgeb">BrepFace AddRuledFace(BrepEdge edgeA,bool revEdgeA,BrepEdge edgeB,bool revEdgeB)</h4>
+<ul>
+<li>(summary) Add a new face to the brep whose surface geometry is a 
+ruled surface between two edges.</li>
+<li>(since) 5.4</li>
+<li>(returns) BrepFace This is some return comment</li>
+</ul>
+<h4 id="brep-extractfaceint-faceindex">Brep ExtractFace(int faceIndex)</h4>
+<ul>
+<li>(summary) Extracts a face from a Brep.</li>
+<li>(since) 5.0</li>
+<li>(returns) Brep This is some return comment</li>
+</ul>
+<h4 id="void-flipbool-onlyreversedfaces">void Flip(bool onlyReversedFaces)</h4>
+<ul>
+<li>(summary) Flips the orientation of faces.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="ienumeratorbrepface-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary) Gets an enumerators that yields  objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="void-removeatint-faceindex">void RemoveAt(int faceIndex)</h4>
+<ul>
+<li>(summary) Deletes a face at a specified index.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-removeslits">bool RemoveSlits()</h4>
+<ul>
+<li>(summary) Remove slit trims and slit boundaries from each face.</li>
+<li>(since) 5.10</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-shrinkfaces">bool ShrinkFaces()</h4>
+<ul>
+<li>(summary) Shrinks all the underlying surfaces in this Brep. 
+Sometimes the surfaces extend far beyond the trimming boundaries of the Brep Face. 
+This function will remove those portions of the surfaces that are not used.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitbipolarfaces">bool SplitBipolarFaces()</h4>
+<ul>
+<li>(summary) Splits surfaces with two singularities, like spheres, so the results
+have at most one singularity.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitclosedfacesint-minimumdegree">bool SplitClosedFaces(int minimumDegree)</h4>
+<ul>
+<li>(summary) Splits closed surfaces so they are not closed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitfaceattangentsint-faceindex">bool SplitFaceAtTangents(int faceIndex)</h4>
+<ul>
+<li>(summary) Splits the face of a Brep at tangent locations.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitfacesattangents">bool SplitFacesAtTangents()</h4>
+<ul>
+<li>(summary) Splits all of the faces of a Brep at tangent locations.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitkinkyfaceint-faceindexdouble-kinktolerance">bool SplitKinkyFace(int faceIndex,double kinkTolerance)</h4>
+<ul>
+<li>(summary) Splits a single face into G1 pieces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitkinkyfaces">bool SplitKinkyFaces()</h4>
+<ul>
+<li>(summary) Splits any faces with creases into G1 pieces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitkinkyfacesdouble-kinktolerance">bool SplitKinkyFaces(double kinkTolerance)</h4>
+<ul>
+<li>(summary) Splits any faces with creases into G1 pieces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-splitkinkyfacesdouble-kinktolerancebool-compact">bool SplitKinkyFaces(double kinkTolerance,bool compact)</h4>
+<ul>
+<li>(summary) Splits any faces with creases into G1 pieces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-standardizefacesurfaceint-faceindex">bool StandardizeFaceSurface(int faceIndex)</h4>
+<ul>
+<li>(summary) Standardizes the relationship between a BrepFace and the 3d surface it
+uses.  When done, the face will be the only face that references its 3d
+surface, and the orientations of the face and 3d surface will be the same.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-standardizefacesurfaces">void StandardizeFaceSurfaces()</h4>
+<ul>
+<li>(summary) Standardize all faces in the brep.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BrepFaceList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.DocObjects.Tables on Test API Site</title>
+    <link>http://example.org/posts/rhino/docobjects/tables/</link>
+    <description>Recent content in Rhino.DocObjects.Tables on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/docobjects/tables/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BitmapTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/bitmaptable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/bitmaptable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Stores the list of bitmaps in a Rhino document.
+public class BitmapTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods int AddBitmap(string bitmapFilename,bool replaceExisting)  (summary) Adds a new bitmap with specified name to the bitmap table. (since) 5.0 (returns) int This is some return comment  bool Delete(BitmapEntry item)  (summary) Removes the bitmap from the table. (since) 6.0 (returns) bool This is some return comment  bool DeleteBitmap(string bitmapFilename)  (summary) Deletes a bitmap.</description>
+    </item>
+    
+    <item>
+      <title>DimStyleTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/dimstyletable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/dimstyletable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class DimStyleTableProperties DimensionStyle[] BuiltInStyles  (summary) Creates an array of default AnnotationStyle objects (since) 6.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  DimensionStyle Current  (summary) Returns an instance of the current . (since) 6.0  DimensionStyle CurrentDimensionStyle  (summary) Do not use. Use the property. (since) 5.0  Guid CurrentId  (summary) (since) 6.0  int CurrentIndex  (summary) (since) 6.0  Methods int Add(DimensionStyle dimstyle,bool reference)  (summary) Adds a new DimensionStyle to the document.</description>
+    </item>
+    
+    <item>
+      <title>DimStyleTableEventArgs</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/dimstyletableeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/dimstyletableeventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class DimStyleTableEventArgsProperties RhinoDoc Document  (summary) (since) 6.0  DimStyleTableEventType EventType  (summary) (since) 6.0  int Index  (summary) (since) 6.0  DimensionStyle NewState  (summary) (since) 6.0  DimensionStyle OldState  (summary) (since) 6.0  </description>
+    </item>
+    
+    <item>
+      <title>FontTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/fonttable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/fonttable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Font tables store the list of fonts in a Rhino document. The FontTable is now just a wrapper around the DimStyles table.
+public class FontTableProperties int Count  (summary) Number of fonts in the table. (since) 5.0  int CurrentIndex  (summary) At all times, there is a &amp;ldquo;current&amp;rdquo; font. Unless otherwise specified, new dimension objects are assigned to the current font. The current font is never deleted.</description>
+    </item>
+    
+    <item>
+      <title>GroupTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/grouptable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/grouptable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Group tables store the list of groups in a Rhino document.
+public class GroupTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  Methods int Add()  (summary) Adds a new empty group to the group table. (since) 5.0 (returns) int This is some return comment  int Add(IEnumerableobjectIds)  (summary) Adds a new group to the group table with a set of objects. (since) 5.0 (returns) int This is some return comment  int Add(string groupName)  (summary) Adds a new empty group to the group table.</description>
+    </item>
+    
+    <item>
+      <title>GroupTableEventArgs</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/grouptableeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/grouptableeventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Contains group table event data.
+public class GroupTableEventArgsProperties RhinoDoc Document  (summary) The document in which the event occurred. (since) 5.0  GroupTableEventType EventType  (summary) The event type. (since) 5.0  int GroupIndex  (summary) The index of the Group that has changed. (since) 6.10  Group NewState  (summary) The Group that has changed. (since) 6.10  Group OldState  (summary) If the event is GroupTableEventType.</description>
+    </item>
+    
+    <item>
+      <title>HatchPatternTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/hatchpatterntable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/hatchpatterntable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+All of the hatch pattern definitions contained in a rhino document.
+public class HatchPatternTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int CurrentHatchPatternIndex  (summary) At all times, there is a &amp;ldquo;current&amp;rdquo; hatch pattern. Unless otherwise specified, new objects are assigned to the current hatch pattern. The current hatch pattern is never locked, hidden, or deleted. (since) 5.0  Methods int Add(HatchPattern pattern)  (summary) Adds a new hatch pattern with specified definition to the table.</description>
+    </item>
+    
+    <item>
+      <title>InstanceDefinitionTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/instancedefinitiontable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/instancedefinitiontable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTableProperties int ActiveCount  (summary) Number of items in the instance definitions table, excluding deleted definitions. (since) 5.0  ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Number of items in the instance definitions table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes)  (summary) Adds an instance definition to the instance definition table.</description>
+    </item>
+    
+    <item>
+      <title>InstanceDefinitionTableEventArgs</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/instancedefinitiontableeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/instancedefinitiontableeventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.3  InstanceDefinitionTableEventType EventType  (summary) (since) 5.3  int InstanceDefinitionIndex  (summary) (since) 5.3  InstanceDefinition NewState  (summary) (since) 5.3  InstanceDefinitionGeometry OldState  (summary) (since) 5.3  </description>
+    </item>
+    
+    <item>
+      <title>LayerTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/layertable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/layertable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class LayerTableProperties int ActiveCount  (summary) Returns number of layers in the layer table, excluding deleted layers. (since) 5.0  ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Returns number of layers in the layer table, including deleted layers. (since) 5.0  Layer CurrentLayer   (summary) At all times, there is a &amp;ldquo;current&amp;rdquo; layer. Unless otherwise specified, new objects are assigned to the current layer.</description>
+    </item>
+    
+    <item>
+      <title>LayerTableEventArgs</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/layertableeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/layertableeventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class LayerTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  LayerTableEventType EventType  (summary) (since) 5.0  int LayerIndex  (summary) (since) 5.0  Layer NewState  (summary) (since) 5.0  Layer OldState  (summary) (since) 5.0  </description>
+    </item>
+    
+    <item>
+      <title>LightTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/lighttable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/lighttable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class LightTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Number of lights in the light table. Does not include Sun or Skylight. (since) 5.0  RhinoDoc Document  (summary) Document that owns this light table. (since) 5.0  Render.Skylight Skylight  (summary) (since) 6.0  Render.Sun Sun  (summary) Gets the Sun instance that is applied to the document. If the RDK is loaded, an instance is always returned.</description>
+    </item>
+    
+    <item>
+      <title>LightTableEventArgs</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/lighttableeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/lighttableeventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class LightTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.3  LightTableEventType EventType  (summary) (since) 5.3  int LightIndex  (summary) (since) 5.3  LightObject NewState  (summary) (since) 5.3  Light OldState  (summary) (since) 5.3  </description>
+    </item>
+    
+    <item>
+      <title>LinetypeTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/linetypetable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/linetypetable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class LinetypeTableProperties int ActiveCount  (summary) Returns number of linetypes in the linetypes table, excluding deleted linetypes. (since) 5.0  string ByLayerLinetypeName  (summary) Returns the text name of the bylayer linetype. (since) 5.0  string ByParentLinetypeName  (summary) Returns the text name of the byparent linetype. (since) 6.0  ModelComponentType ComponentType  (summary) (since) 6.0  string ContinuousLinetypeName  (summary) Returns the text name of the continuous linetype.</description>
+    </item>
+    
+    <item>
+      <title>MaterialTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/materialtable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/materialtable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class MaterialTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int CurrentMaterialIndex  (summary) At all times, there is a &amp;ldquo;current&amp;rdquo; material. Unless otherwise specified, new objects are assigned to the current material. The current material is never locked, hidden, or deleted. (since) 5.0  ObjectMaterialSource CurrentMaterialSource  (summary) Gets or sets the current material source. (since) 5.0  Methods int Add()  (summary) Adds a new material to the table based on the default material.</description>
+    </item>
+    
+    <item>
+      <title>MaterialTableEventArgs</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/materialtableeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/materialtableeventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class MaterialTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  MaterialTableEventType EventType  (summary) (since) 5.0  int Index  (summary) (since) 5.0  Material OldSettings  (summary) (since) 5.0  </description>
+    </item>
+    
+    <item>
+      <title>NamedConstructionPlaneTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/namedconstructionplanetable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/namedconstructionplanetable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Contains all named construction planes in a rhino document. This class cannot be inherited.
+public class NamedConstructionPlaneTableProperties int Count  (summary) Number of construction planes in the table. (since) 5.0  RhinoDoc Document  (summary) Gets the document that owns this table. (since) 5.0  Methods int Add(string name,Plane plane)  (summary) Adds named construction plane to document. (since) 5.0 (returns) int This is some return comment  bool Delete(int index)  (summary) Remove named construction plane from the document.</description>
+    </item>
+    
+    <item>
+      <title>NamedLayerStateTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/namedlayerstatetable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/namedlayerstatetable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+All named layer states in a Rhino document.
+public class NamedLayerStateTableProperties int Count  (summary) Returns the number of named layers states in the document. (since) 6.14  RhinoDoc Document  (summary) Document that owns this table. (since) 6.14  string[] Names  (summary) Returns the names of named layer states in the document. (since) 6.14  Methods bool Delete(string name)  (summary) Deletes an exising named layer state.</description>
+    </item>
+    
+    <item>
+      <title>NamedPositionTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/namedpositiontable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/namedpositiontable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+All named positions in a rhino document.
+public class NamedPositionTableProperties int Count  (summary) Number of Named Positions in the table. (since) 6.0  RhinoDoc Document  (summary) Document that owns this table. (since) 6.0  Guid[] Ids  (summary) Array of Named Position guids. (since) 6.0  string[] Names  (summary) Array of Named Position names. (since) 6.0  Methods bool Append(Guid id,IEnumerableobjectIds)  (summary) Append objects to a Named Position.</description>
+    </item>
+    
+    <item>
+      <title>NamedViewTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/namedviewtable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/namedviewtable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+All named views in a rhino document.
+public class NamedViewTableProperties int Count  (summary) Number of named views in the table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,Guid viewportId)  (summary) Adds named view to document which is based on an existing viewport. (since) 5.0 (returns) int This is some return comment  int Add(ViewInfo view)  (summary) (since) 5.</description>
+    </item>
+    
+    <item>
+      <title>ObjectTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/objecttable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/objecttable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class ObjectTableProperties BoundingBox BoundingBox  (summary) Gets the boundingbox for all objects (normal, locked and hidden) in this document that exist in &amp;ldquo;model&amp;rdquo; space. This bounding box does not include objects that exist in layout space. (since) 5.0  BoundingBox BoundingBoxVisible  (summary) Gets the boundingbox for all visible objects (normal and locked) in this document that exist in &amp;ldquo;model&amp;rdquo; space. This bounding box does not include hidden objects or any objects that exist in layout space.</description>
+    </item>
+    
+    <item>
+      <title>RhinoDocCommonTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/rhinodoccommontable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/rhinodoccommontable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class RhinoDocCommonTableProperties RhinoDoc Document  (summary) Document that owns this table. (since) (unknown)  </description>
+    </item>
+    
+    <item>
+      <title>RuntimeDocumentDataTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/runtimedocumentdatatable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/runtimedocumentdatatable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Collection of document runtime data. This is a good place to put non-serialized, per document data.
+public class RuntimeDocumentDataTableProperties RhinoDoc Document  (summary) (since) 6.3  Methods T GetValue(object key,Func&amp;lt;RhinoDoc, T&amp;gt; newT)  (summary) Checks the dictionary for the specified key, if found and the value is not None then then the value is returned. If the key is not found or its value is None then newT(Document) is called to create a new value instnce which is put in the dictionary and returned.</description>
+    </item>
+    
+    <item>
+      <title>SnapshotTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/snapshottable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/snapshottable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+All snapshots in a rhino document.
+public class SnapshotTableProperties RhinoDoc Document  (summary) Document that owns this table. (since) 6.7  string[] Names  (summary) Array of Snapshot names. (since) 6.7  </description>
+    </item>
+    
+    <item>
+      <title>StringTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/stringtable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/stringtable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+Collection of document user data strings
+public class StringTableProperties int Count  (summary) The number of user data strings in the current document. (since) 5.0  RhinoDoc Document  (summary) Document that owns this object table. (since) 5.0  int DocumentDataCount  (summary) (since) 6.0  int DocumentUserTextCount  (summary) (since) 6.0  Methods void Delete(string key)  (summary) (since) 5.0 (returns) void This is some return comment  void Delete(string section,string entry)  (summary) Removes user data strings from the document.</description>
+    </item>
+    
+    <item>
+      <title>ViewTable</title>
+      <link>http://example.org/posts/rhino/docobjects/tables/viewtable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/docobjects/tables/viewtable/</guid>
+      <description>Namespace: Rhino.DocObjects.Tables
+public class ViewTableProperties RhinoView ActiveView  (summary) Gets or Sets the active view. (since) 5.0  RhinoDoc Document  (summary) Document that owns this object table. (since) 5.0  bool ModelSpaceIsActive  (summary) (since) 5.0  bool RedrawEnabled  (summary) Returns or sets (enable or disables) screen redrawing. (since) 5.0  Methods RhinoView Add(string title,DefinedViewportProjection projection,Rectangle position,bool floating)  (summary) Constructs a new Rhino view and, at the same time, adds it to the list.</description>
+    </item>
+    
+  </channel>
+</rss>

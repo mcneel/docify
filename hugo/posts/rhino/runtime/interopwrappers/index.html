@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Runtime.InteropWrappers &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Runtime.InteropWrappers</h1>
+  <ul>
+<li><a href="classarrayobjref/">ClassArrayObjRef</a></li>
+<li><a href="classarrayonobjref/">ClassArrayOnObjRef</a></li>
+<li><a href="classarraystring/">ClassArrayString</a></li>
+<li><a href="curvesegment/">CurveSegment</a></li>
+<li><a href="meshpointdatastruct/">MeshPointDataStruct</a></li>
+<li><a href="simplearray2dex/">SimpleArray2dex</a></li>
+<li><a href="simplearrayarraypoint3d/">SimpleArrayArrayPoint3d</a></li>
+<li><a href="simplearraybinaryarchivereader/">SimpleArrayBinaryArchiveReader</a></li>
+<li><a href="simplearraybreppointer/">SimpleArrayBrepPointer</a></li>
+<li><a href="simplearrayclippingplaneobjectpointer/">SimpleArrayClippingPlaneObjectPointer</a></li>
+<li><a href="simplearraycurvepointer/">SimpleArrayCurvePointer</a></li>
+<li><a href="simplearraydouble/">SimpleArrayDouble</a></li>
+<li><a href="simplearrayextrusionpointer/">SimpleArrayExtrusionPointer</a></li>
+<li><a href="simplearraygeometrypointer/">SimpleArrayGeometryPointer</a></li>
+<li><a href="simplearrayguid/">SimpleArrayGuid</a></li>
+<li><a href="simplearrayguidpointer/">SimpleArrayGuidPointer</a></li>
+<li><a href="simplearrayint/">SimpleArrayInt</a></li>
+<li><a href="simplearrayinterval/">SimpleArrayInterval</a></li>
+<li><a href="simplearrayline/">SimpleArrayLine</a></li>
+<li><a href="simplearraylinetypepointer/">SimpleArrayLinetypePointer</a></li>
+<li><a href="simplearraymeshpointer/">SimpleArrayMeshPointer</a></li>
+<li><a href="simplearrayplane/">SimpleArrayPlane</a></li>
+<li><a href="simplearraypoint2d/">SimpleArrayPoint2d</a></li>
+<li><a href="simplearraypoint3d/">SimpleArrayPoint3d</a></li>
+<li><a href="simplearraysurfacepointer/">SimpleArraySurfacePointer</a></li>
+<li><a href="simplearrayuint/">SimpleArrayUint</a></li>
+<li><a href="stringholder/">StringHolder</a></li>
+<li><a href="stringwrapper/">StringWrapper</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/classarrayobjref/">
+        <div class="h2 mt-1 mb-1">ClassArrayObjRef</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged &ldquo;array&rdquo; (list) of CRhinoObjRef instances. Wrapper for a C++ ON_ClassArray of CRhinoObjRef
+public class ClassArrayObjRefConstructors ClassArrayObjRef()  (summary) Initializes a new instance. (since) 5.0  ClassArrayObjRef(IEnumerableobjrefs)  (summary) Initializes a new instances from a set of ObjRefs (since) 5.0  Properties int Count  (summary) Gets the number of CRhinoObjRef instances in this array. (since) 5.0  Methods void Add(ObjRef objref)  (summary) Adds an ObjRef to the list.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/classarrayobjref/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/classarrayonobjref/">
+        <div class="h2 mt-1 mb-1">ClassArrayOnObjRef</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged &ldquo;array&rdquo; (list) of ON_ObjRef instances. Wrapper for a C++ ON_ClassArray of ON_ObjRef
+public class ClassArrayOnObjRefConstructors ClassArrayOnObjRef()  (summary) Initializes a new instance. (since) 5.8  ClassArrayOnObjRef(IEnumerableobjrefs)  (summary) Initializes a new instances from a set of ObjRefs (since) 5.8  Properties int Count  (summary) Gets the number of ObjRef instances in this array. (since) 5.8  Methods void Add(ObjRef objref)  (summary) Adds an ObjRef to the list.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/classarrayonobjref/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/classarraystring/">
+        <div class="h2 mt-1 mb-1">ClassArrayString</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_ClassArray&lt;ON_wString&gt; If you are not writing C++ code then this class is not for you.
+public class ClassArrayStringConstructors ClassArrayString()  (summary) Initializes a new instance. (since) 6.0  Properties int Count  (summary) Gets the number of strings in this array. (since) 6.0  Methods void Add(string s)  (summary) Adds a string to the list. (since) 6.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/classarraystring/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/curvesegment/">
+        <div class="h2 mt-1 mb-1">CurveSegment</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+For internal use only.
+Properties int Index  (summary) The index of the curve used by this boundary element. (since) 7.0  bool Reversed  (summary) True if this piece of the curve should be reversed. (since) 7.0  Interval SubDomain  (summary) The subdomain of the curve used by this boundary element. (since) 7.0  
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/curvesegment/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/simplearray2dex/">
+        <div class="h2 mt-1 mb-1">SimpleArray2dex</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_2dex&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArray2dexConstructors SimpleArray2dex()  (summary) Initializes a new class. (since) 6.0  SimpleArray2dex(IEnumerablevalues)  (summary) Initializes a new class (since) 6.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 6.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/simplearray2dex/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/simplearrayarraypoint3d/">
+        <div class="h2 mt-1 mb-1">SimpleArrayArrayPoint3d</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_PolyLine&gt;, ON_SimpleArray&lt;ON_3dPointArray&gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayArrayPoint3dConstructors SimpleArrayArrayPoint3d()  (summary) Initializes a new empty instance. (since) 7.0  Properties int Count  (summary) Gets the amount of polylines in this array. (since) 7.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 7.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/simplearrayarraypoint3d/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/">
+        <div class="h2 mt-1 mb-1">SimpleArrayBinaryArchiveReader</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_BinaryArchive&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayBinaryArchiveReaderConstructors SimpleArrayBinaryArchiveReader()  (summary) Initializes a new class. (since) 6.0  SimpleArrayBinaryArchiveReader(IntPtr p)  (summary) Initializes a new class. (since) 6.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 6.0  Methods void Add(BinaryArchiveReader reader)  (summary) Adds a new at the end of this array.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/simplearraybreppointer/">
+        <div class="h2 mt-1 mb-1">SimpleArrayBrepPointer</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&lt;ON_Brep&gt; or ON_SimpleArray&lt;const ON_Brep&gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayBrepPointerConstructors SimpleArrayBrepPointer()  (summary) Initializes a new instance. (since) 5.0  Properties int Count  (summary) Gets the amount of breps in this array. (since) 5.0  Methods void Add(Brep brep,bool asConst)  (summary) Adds a brep to the list. (since) 5.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/simplearraybreppointer/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/">
+        <div class="h2 mt-1 mb-1">SimpleArrayClippingPlaneObjectPointer</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray of CRhinoClippingPlaneObject*
+public class SimpleArrayClippingPlaneObjectPointerConstructors SimpleArrayClippingPlaneObjectPointer()  (summary) Initializes a new instance. (since) 6.7  Properties int Count  (summary) Gets the amount of clipping planes in this array. (since) 6.7  Methods void Add(ClippingPlaneObject clippingplane,bool asConst)  (summary) Adds a clipping plane to the list. (since) 6.7 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/runtime/interopwrappers/simplearraycurvepointer/">
+        <div class="h2 mt-1 mb-1">SimpleArrayCurvePointer</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray of ON_Curve* or const ON_Curve*. If you are not writing C++ code, then you can ignore this class.
+public class SimpleArrayCurvePointerConstructors SimpleArrayCurvePointer()  (summary) Initializes a new instance. (since) 5.0  SimpleArrayCurvePointer(IEnumerablecurves)  (summary) Initializes a new instance, from a set of input curves. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 5.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    <a class="muted-link" href="/posts/rhino/runtime/interopwrappers/simplearraycurvepointer/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <span class="previous_page disabled">Prev</span>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">1</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/runtime/interopwrappers/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/runtime/interopwrappers/page/3/">3</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/runtime/interopwrappers/page/2/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

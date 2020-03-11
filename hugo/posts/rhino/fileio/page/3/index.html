@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.FileIO &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.FileIO</h1>
+  <ul>
+<li><a href="binaryarchiveexception/">BinaryArchiveException</a></li>
+<li><a href="binaryarchivefile/">BinaryArchiveFile</a></li>
+<li><a href="binaryarchivemode/">BinaryArchiveMode</a></li>
+<li><a href="binaryarchivereader/">BinaryArchiveReader</a></li>
+<li><a href="binaryarchivewriter/">BinaryArchiveWriter</a></li>
+<li><a href="commoncomponenttable/">CommonComponentTable</a></li>
+<li><a href="contenthash/">ContentHash</a></li>
+<li><a href="dracocompression/">DracoCompression</a></li>
+<li><a href="dracocompressionoptions/">DracoCompressionOptions</a></li>
+<li><a href="file3dm/">File3dm</a></li>
+<li><a href="objecttypefilter/">ObjectTypeFilter</a></li>
+<li><a href="tabletypefilter/">TableTypeFilter</a></li>
+<li><a href="file3dmcommoncomponenttable/">File3dmCommonComponentTable</a></li>
+<li><a href="file3dmdimstyletable/">File3dmDimStyleTable</a></li>
+<li><a href="file3dmgrouptable/">File3dmGroupTable</a></li>
+<li><a href="file3dmhatchpatterntable/">File3dmHatchPatternTable</a></li>
+<li><a href="file3dminstancedefinitiontable/">File3dmInstanceDefinitionTable</a></li>
+<li><a href="file3dmlayertable/">File3dmLayerTable</a></li>
+<li><a href="file3dmlinetypetable/">File3dmLinetypeTable</a></li>
+<li><a href="file3dmmaterialtable/">File3dmMaterialTable</a></li>
+<li><a href="file3dmnamedconstructionplanes/">File3dmNamedConstructionPlanes</a></li>
+<li><a href="file3dmnotes/">File3dmNotes</a></li>
+<li><a href="file3dmobject/">File3dmObject</a></li>
+<li><a href="file3dmobjecttable/">File3dmObjectTable</a></li>
+<li><a href="file3dmplugindata/">File3dmPlugInData</a></li>
+<li><a href="file3dmplugindatatable/">File3dmPlugInDataTable</a></li>
+<li><a href="file3dmsettings/">File3dmSettings</a></li>
+<li><a href="file3dmstringtable/">File3dmStringTable</a></li>
+<li><a href="file3dmtypecodes/">File3dmTypeCodes</a></li>
+<li><a href="file3dmviewtable/">File3dmViewTable</a></li>
+<li><a href="file3dmwriteoptions/">File3dmWriteOptions</a></li>
+<li><a href="fileobj/">FileObj</a></li>
+<li><a href="fileobjreadoptions/">FileObjReadOptions</a></li>
+<li><a href="useobjgsas/">UseObjGsAs</a></li>
+<li><a href="fileobjwriteoptions/">FileObjWriteOptions</a></li>
+<li><a href="asciieol/">AsciiEol</a></li>
+<li><a href="curvetype/">CurveType</a></li>
+<li><a href="geometrytype/">GeometryType</a></li>
+<li><a href="objgroupnames/">ObjGroupNames</a></li>
+<li><a href="objobjectnames/">ObjObjectNames</a></li>
+<li><a href="subdmeshing/">SubDMeshing</a></li>
+<li><a href="vertexwelding/">VertexWelding</a></li>
+<li><a href="objgroupcomparer/">ObjGroupComparer</a></li>
+<li><a href="objlayercomparer/">ObjLayerComparer</a></li>
+<li><a href="objrhinoobject/">ObjRhinoObject</a></li>
+<li><a href="rhinoobjectmesh/">RhinoObjectMesh</a></li>
+<li><a href="filepdf/">FilePdf</a></li>
+<li><a href="filepdfeventargs/">FilePdfEventArgs</a></li>
+<li><a href="fileply/">FilePly</a></li>
+<li><a href="fileplywriteoptions/">FilePlyWriteOptions</a></li>
+<li><a href="filereadoptions/">FileReadOptions</a></li>
+<li><a href="filereference/">FileReference</a></li>
+<li><a href="fileslc/">FileSlc</a></li>
+<li><a href="fileslcwriteoptions/">FileSlcWriteOptions</a></li>
+<li><a href="filestp/">FileStp</a></li>
+<li><a href="filestpwriteoptions/">FileStpWriteOptions</a></li>
+<li><a href="filetype/">FileType</a></li>
+<li><a href="filewriteoptions/">FileWriteOptions</a></li>
+<li><a href="icommoncomponenttable/">ICommonComponentTable</a></li>
+<li><a href="imagefile/">ImageFile</a></li>
+<li><a href="manifesttable/">ManifestTable</a></li>
+<li><a href="namehash/">NameHash</a></li>
+<li><a href="serializationoptions/">SerializationOptions</a></li>
+<li><a href="sha1opennurbs/">SHA1OpenNURBS</a></li>
+<li><a href="textlog/">TextLog</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmobjecttable/">
+        <div class="h2 mt-1 mb-1">File3dmObjectTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Represents a simple object table for a file that is open externally. This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.
+public class File3dmObjectTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int Count  (summary) Returns the total amount of items in the object table, including lights. (since) 5.0  Methods void Add(File3dmObject item)  (summary) Duplicates the object, then adds a copy of the object to the document.
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmobjecttable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmplugindata/">
+        <div class="h2 mt-1 mb-1">File3dmPlugInData</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Custom data in the file supplied by a plug-in
+public class File3dmPlugInDataProperties Guid PlugInId  (summary) Plug-in this data is associated with (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmplugindata/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmplugindatatable/">
+        <div class="h2 mt-1 mb-1">File3dmPlugInDataTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Table of custom data provided by plug-ins
+public class File3dmPlugInDataTableProperties int Count  (summary) Gets the number of File3dmPlugInData in this table. (since) 5.0  Methods void Clear()  (summary) Remove all entries from this table (since) 5.0 (returns) void This is some return comment  string Dump()  (summary) Prepares a text dump of table. (since) 5.0 (returns) string This is some return comment  IEnumeratorGetEnumerator()  (summary) Gets the enumerator that visits any in this table.
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmplugindatatable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmsettings/">
+        <div class="h2 mt-1 mb-1">File3dmSettings</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+General settings in a 3dm file.
+public class File3dmSettingsProperties double ModelAbsoluteTolerance  (summary) Gets or sets the model space absolute tolerance. (since) 5.0  double ModelAngleToleranceDegrees  (summary) Gets or sets the model space angle tolerance. (since) 5.0  double ModelAngleToleranceRadians  (summary) Gets or sets the model space angle tolerance. (since) 5.0  Point3d ModelBasepoint  (summary) Gets or sets the model basepoint that is used when the file is read as an instance definition.
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmsettings/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmstringtable/">
+        <div class="h2 mt-1 mb-1">File3dmStringTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to document strings in the 3dm file.
+public class File3dmStringTableProperties int Count  (summary) Returns the number of document strings in the 3dm file. (since) 6.0  int DocumentUserTextCount  (summary) Returns the number of Section/Entry-style key values. (since) 6.0  Methods void Delete(string key)  (summary) Removes a document string from the 3dm file. (since) 6.0 (returns) void This is some return comment  void Delete(string section,string entry)  (summary) Removes document strings from the 3dm file.
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmstringtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmviewtable/">
+        <div class="h2 mt-1 mb-1">File3dmViewTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to views in the 3dm file.
+public class File3dmViewTableProperties int Count  (summary) Gets the amount of items in the table. (since) 6.0  Methods void Add(ViewInfo item)  (summary) Adds a (since) 6.0 (returns) void This is some return comment  void Clear()  (summary) Removes all items from the table. (since) 6.0 (returns) void This is some return comment  bool Contains(ViewInfo item)  (summary) Returns an indication of the presence of a view in the table.
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmviewtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/file3dmwriteoptions/">
+        <div class="h2 mt-1 mb-1">File3dmWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Options used by File3dm.Write
+public class File3dmWriteOptionsConstructors File3dmWriteOptions()  (summary) Initializes properties to defaults. (since) 5.9  Properties bool SaveAnalysisMeshes  (summary) Include analysis meshes in the file. Default is true (since) 5.9  bool SaveRenderMeshes  (summary) Include Render meshes in the file. Default is true (since) 5.9  bool SaveUserData  (summary) Include custom user data in the file. Default is true (since) 5.9  int Version  (summary) File version.
+    <a class="muted-link" href="/posts/rhino/fileio/file3dmwriteoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileobj/">
+        <div class="h2 mt-1 mb-1">FileObj</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for obj file format
+public class FileObjMethods static bool Read(String filename,RhinoDoc doc,FileObjReadOptions options)  (summary) (since) 6.0 (returns) bool This is some return comment  static WriteFileResult Write(StreamWriter stream,RhinoDoc doc,FileObjWriteOptions options)  (summary) Write an obj stream based on the contents of a RhinoDoc (since) 7.0 (returns) WriteFileResult This is some return comment  static WriteFileResult Write(String filename,Mesh[] meshes,FileObjWriteOptions options)  (summary) Write an obj file with an array of meshes (since) 7.
+    <a class="muted-link" href="/posts/rhino/fileio/fileobj/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileobjreadoptions/">
+        <div class="h2 mt-1 mb-1">FileObjReadOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Options used when reading an obj file.
+public class FileObjReadOptionsConstructors FileObjReadOptions(FileReadOptions readOptions)  (summary) (since) 6.0  Properties bool DisplayColorFromObjMaterial  (summary) Determines whether textures are read from the .mtl file, if it exists. (since) 6.5  bool IgnoreTextures  (summary) Determines whether textures are read from the .mtl file, if it exists. (since) 6.0  bool MapYtoZ  (summary) Setting to transform OBJ&rsquo;s Y axis to Rhino&rsquo;s Z axis (since) 6.
+    <a class="muted-link" href="/posts/rhino/fileio/fileobjreadoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileobjwriteoptions/">
+        <div class="h2 mt-1 mb-1">FileObjWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FileObjWriteOptionsConstructors FileObjWriteOptions(FileWriteOptions writeOptions)  (summary) (since) 6.0  Properties string ActualFilePathOnMac  (summary) (since) 6.3  bool CreateNgons  (summary) Setting to enable/diable the creation of ngons for the output (since) 6.0  bool CullUnnecessaryVertexesInNgons  (summary) Setting to determine whether interior colinear vertexes are part of the ngon. (since) 6.0  AsciiEol EolType  (summary) (since) 6.0  ObjGroupNames ExportGroupNameLayerNames  (summary) Setting to determine whether object, group or layer names will become &ldquo;g&quot;s in the OBJ output file (since) 6.
+    <a class="muted-link" href="/posts/rhino/fileio/fileobjwriteoptions/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/fileio/page/2/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">3</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/page/4/">4</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/page/5/">5</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/fileio/page/4/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GeneralSettings &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to give access to Rhinoceros settings.
+public class GeneralSettingsProperties static bool AutoUpdateCommandHelp  (summary) Command help dialog auto-update feature. (since) 5.0  static System.TimeSpan ContextMenuDelay  (summary) Time to wait before permitting context menu display. (since) 5.0  static bool EnableContextMenu  (summary) True if right mouse down &#43; delay will pop up context menu on a mouse up if no move happens.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GeneralSettings</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.ApplicationSettings</a></em></p>
+<p>Contains static methods and properties to give access to Rhinoceros settings.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GeneralSettings</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="static-bool-autoupdatecommandhelp">static bool AutoUpdateCommandHelp</h4>
+<ul>
+<li>(summary) Command help dialog auto-update feature.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-systemtimespan-contextmenudelay">static System.TimeSpan ContextMenuDelay</h4>
+<ul>
+<li>(summary) Time to wait before permitting context menu display.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-bool-enablecontextmenu">static bool EnableContextMenu</h4>
+<ul>
+<li>(summary) True if right mouse down + delay will pop up context menu on a mouse up if no move happens.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-int-maximumpopupmenulines">static int MaximumPopupMenuLines</h4>
+<ul>
+<li>(summary) Gets or sets the maximum number of popup menu lines.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-int-maximumundomemorymb">static int MaximumUndoMemoryMb</h4>
+<ul>
+<li>(summary) Gets or sets the minimum undo memory Mb.
+Undo records will be purged if there are more than MinimumUndoSteps and
+they use more than MaximumUndoMemoryMb.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-string-middlemousemacro">static string MiddleMouseMacro</h4>
+<ul>
+<li>(summary) Gets or sets the toolbar to popup when the middle mouse is clicked on
+a view, this value is only used when MiddleMouseMode is set to
+PopupToolbar.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-middlemousemode-middlemousemode">static MiddleMouseMode MiddleMouseMode</h4>
+<ul>
+<li>(summary) Gets or sets what happens when the user clicks the middle mouse.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-string-middlemousepopuptoolbar">static string MiddleMousePopupToolbar</h4>
+<ul>
+<li>(summary) Gets or sets the toolbar to popup when the middle mouse is clicked on
+a view, this value is only used when MiddleMouseMode is set to
+PopupToolbar.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-int-minimumundosteps">static int MinimumUndoSteps</h4>
+<ul>
+<li>(summary) Gets or sets the minimum undo steps.
+Undo records will be purged if there are more than MinimumUndoSteps and
+they use more than MaximumUndoMemoryMb.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-mouseselectmode-mouseselectmode">static MouseSelectMode MouseSelectMode</h4>
+<ul>
+<li>(summary) Gets or sets the current selection mode.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-int-newobjectisoparmcount">static int NewObjectIsoparmCount</h4>
+<ul>
+<li>(summary) Gets or sets the number of isoparm curves to show on new objects.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-bool-useextrusions">static bool UseExtrusions</h4>
+<ul>
+<li>(summary) Should extrusion objects be created for things like cylinders</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-generalsettingsstate-getcurrentstate">static GeneralSettingsState GetCurrentState()</h4>
+<ul>
+<li>(summary) Gets the current settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) GeneralSettingsState This is some return comment</li>
+</ul>
+<h4 id="static-generalsettingsstate-getdefaultstate">static GeneralSettingsState GetDefaultState()</h4>
+<ul>
+<li>(summary) Gets the factory settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) GeneralSettingsState This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GeneralSettings</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

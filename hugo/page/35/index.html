@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/mesh/">
+        <h3>Mesh</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/mesh/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a geometry type that is defined by vertices and faces. This is often called a face-vertex mesh.
+public class MeshConstructors Mesh()  (summary) Initializes a new empty mesh. (since) 5.0  Properties Collections.MeshVertexStatusList ComponentStates  (summary) Gets access to the vertex hidden/visibility collection in this mesh. This is a runtime property and it is not saved in the 3dm file. (since) 6.0  int DisjointMeshCount  (summary) Gets the number of disjoint (topologically unconnected) pieces in this mesh.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/changequeue/mesh/">
+        <h3>Mesh</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/changequeue/mesh/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.ChangeQueue
+Representation of ChangeQueue Mesh
+public class MeshProperties ObjectAttributes Attributes  (summary) Get object attributes of object associated to this mesh. This will be possible only after returning True from ChangeQueue.ProvideOriginalObject() (since) 6.0  MappingChannelCollection Mapping  (summary) Get the mapping for this mesh. (since) 6.0  RhinoObject Object   (summary) Get a copy of the original RhinoObject this Mesh is created from. Possible only after return True from ChangeQueue.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/meshcheckparameters/">
+        <h3>MeshCheckParameters</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/meshcheckparameters/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Output of a mesh checking operations.
+Properties bool CheckForBadNormals  (summary) If true, then then look for vertex normals that are not unit vectors, are zero length or vary greatly from the general direction of the face normals. (since) 7.0  bool CheckForDegenerateFaces  (summary) If true, then look for triangles and quads that have zero area and quads where one sub triangle has zero area. (since) 7.0  bool CheckForDisjointMeshes  (summary) If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/intersect/meshclash/">
+        <h3>MeshClash</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/intersect/meshclash/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Intersect
+Represents a particular instance of a clash or intersection between two meshes.
+public class MeshClashProperties Point3d ClashPoint  (summary) If valid, then the sphere centered at ClashPoint of ClashRadius distance intersects the clashing meshes. (since) 5.0  double ClashRadius  (summary) Gets the clash, or intersection, radius. (since) 5.0  Mesh MeshA  (summary) Gets the first mesh. (since) 5.0  Mesh MeshB  (summary) Gets the second mesh.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/meshdisplacementinfo/">
+        <h3>MeshDisplacementInfo</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/meshdisplacementinfo/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Contains mesh displacement information.
+public class MeshDisplacementInfoConstructors MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)  (summary) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties double Black  (summary) Value considered lowest point in the displacement. (since) 6.0  double BlackMove  (summary) The amount of displacement for the black color in the texture.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/meshdisplayattributes/">
+        <h3>MeshDisplayAttributes</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/meshdisplayattributes/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+public class MeshDisplayAttributesProperties Color AllMeshWiresColor  (summary) Color.Empty means that we are NOT using a single color for all mesh wires. (since) 5.0  bool HighlightMeshes  (summary) (since) 5.0  int MeshWireThickness  (summary) (since) 5.0  bool ShowMeshVertices  (summary) (since) 5.0  bool ShowMeshWires  (summary) (since) 5.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/meshextruder/">
+        <h3>MeshExtruder</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/meshextruder/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Extrudes a mesh and provides preview
+public class MeshExtruderConstructors MeshExtruder(Mesh inputMesh,IEnumerablecomponentIndices)  (summary) Construct object to extrude given mesh faces, edges and ngons. (since) 6.3  Properties bool EdgeBasedUVN  (summary) Edge based UVN defines UVN directions according to boundary edge directions (since) 6.4  MeshExtruderFaceDirectionMode FaceDirectionMode  (summary) Face direction mode determines how faces are oriented (since) 6.3  bool KeepOriginalFaces  (summary) Whether or not to keep original faces.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/meshface/">
+        <h3>MeshFace</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/meshface/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the values of the four indices of a mesh face quad. If the third and fourth values are the same, this face represents a triangle.
+static !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Constructors MeshFace(int a,int b,int c)  (summary) Constructs a new triangular Mesh face. (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshfacelist/">
+        <h3>MeshFaceList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshfacelist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the faces and Face related functionality of a Mesh.
+public class MeshFaceListProperties int Capacity  (summary) Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh faces. When getting this can includes invalid faces. (since) 5.0  int QuadCount  (summary) Gets the number of faces that are valid quads (4 corners).
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshfacenormallist/">
+        <h3>MeshFaceNormalList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshfacenormallist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the Face normals of a Mesh.
+public class MeshFaceNormalListProperties int Capacity  (summary) Gets or sets the total number of face normals the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh face normals. (since) 5.0  Methods int AddFaceNormal(double x,double y,double z)  (summary) Appends a face normal to the list of mesh face normals.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/34/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/36/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

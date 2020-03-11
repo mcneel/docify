@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  AnnotationBase &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Provides a common base class to all annotation geometry. This class refers to the geometric element that is independent from the document.
+public class AnnotationBaseProperties DimensionStyle.LengthDisplay AlternateDimensionLengthDisplay  (summary) Alternate length display units and format (since) 6.0  AnnotationType AnnotationType  (summary) Type of annotation (since) 6.0  char DecimalSeparator  (summary) Set or get the decimal separator c (since) 7.0  DimensionStyle.LengthDisplay DimensionLengthDisplay  (summary) Length display units and format (since) 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">AnnotationBase</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Provides a common base class to all annotation geometry.
+This class refers to the geometric element that is independent from the document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnnotationBase</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="dimensionstylelengthdisplay-alternatedimensionlengthdisplay">DimensionStyle.LengthDisplay AlternateDimensionLengthDisplay</h4>
+<ul>
+<li>(summary) Alternate length display units and format</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="annotationtype-annotationtype">AnnotationType AnnotationType</h4>
+<ul>
+<li>(summary) Type of annotation</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="char-decimalseparator">char DecimalSeparator</h4>
+<ul>
+<li>(summary) Set or get the decimal separator c</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="dimensionstylelengthdisplay-dimensionlengthdisplay">DimensionStyle.LengthDisplay DimensionLengthDisplay</h4>
+<ul>
+<li>(summary) Length display units and format</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-dimensionscale">double DimensionScale</h4>
+<ul>
+<li>(summary) Gets or sets the dimension scale</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="dimensionstyle-dimensionstyle">DimensionStyle DimensionStyle</h4>
+<ul>
+<li>(summary) If there are no overrides then the parent style is returned otherwise the dimension style saved with the annotation is returned.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="guid-dimensionstyleid">Guid DimensionStyleId</h4>
+<ul>
+<li>(summary) Id of this annotation&rsquo;s parent dimstyle
+If this annotation has overrides to dimstyle properties, 
+those overrides will be represented in the DimensionStyle
+returned by DimensionStyle(ParentStyle)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-drawforward">bool DrawForward</h4>
+<ul>
+<li>(summary) Gets or sets whether the text is oriented towards the reader when viewed from behind</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-drawtextframe">bool DrawTextFrame</h4>
+<ul>
+<li>(summary) Gets or sets whether to draw a frame around a text mask</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="rhinodocobjectsfont-firstcharfont">Rhino.DocObjects.Font FirstCharFont</h4>
+<ul>
+<li>(summary) Returns the font used by the first run of text in an annotation</li>
+<li>(since) 6.5</li>
+</ul>
+<h4 id="docobjectsfont-font">DocObjects.Font Font</h4>
+<ul>
+<li>(summary) The base Font for the text of the annotation.  The text string is rich text and therefore a different font that the base font can be associated with sub strings of the text</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-fontindex">int FontIndex</h4>
+<ul>
+<li>(summary) Obsolete; use Font property instead</li>
+<li>(since) 6.1</li>
+</ul>
+<h4 id="double-formatwidth">double FormatWidth</h4>
+<ul>
+<li>(summary) Text format width (Wrapping rectangle)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-haspropertyoverrides">bool HasPropertyOverrides</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="color-maskcolor">Color MaskColor</h4>
+<ul>
+<li>(summary) Color to use for drawing a text mask when it is enabled. If the mask is
+enabled and MaskColor is System.Drawing.Color.Transparent, then the
+viewport&rsquo;s color will be used for the MaskColor</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="dimensionstylemasktype-maskcolorsource">DimensionStyle.MaskType MaskColorSource</h4>
+<ul>
+<li>(summary) Gets or sets whether the mask background color is from the background or from a color</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-maskenabled">bool MaskEnabled</h4>
+<ul>
+<li>(summary) Determines whether or not to draw a Text Mask</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="dimensionstylemaskframe-maskframe">DimensionStyle.MaskFrame MaskFrame</h4>
+<ul>
+<li>(summary) Gets or sets whether to draw a frame around a text mask</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="double-maskoffset">double MaskOffset</h4>
+<ul>
+<li>(summary) Offset for the border around text of the rectangle used to draw the mask.  This 
+value multiplied by TextHeight is the offset on each side of the tight rectangle 
+around the text characters to the mask rectangle. The default value is 0.1.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-maskusesviewportcolor">bool MaskUsesViewportColor</h4>
+<ul>
+<li>(summary) If true, the viewport&rsquo;s color is used for the mask color. If
+false, the color defined by MaskColor is used</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="dimensionstyle-parentdimensionstyle">DimensionStyle ParentDimensionStyle</h4>
+<ul>
+<li>(summary) The parent dimension style associated with this annotation</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="string-plaintext">string PlainText</h4>
+<ul>
+<li>(summary) Text stripped of RTF formatting information</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="string-plaintextwithfields">string PlainTextWithFields</h4>
+<ul>
+<li>(summary) Text stripped of RTF formatting information and with field expressions intact</li>
+<li>(since) 6.19</li>
+</ul>
+<h4 id="plane-plane">Plane Plane</h4>
+<ul>
+<li>(summary) Plane that this annotation lies on</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-richtext">string RichText</h4>
+<ul>
+<li>(summary) Text including additional RTF formatting information</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="string-text">string Text</h4>
+<ul>
+<li>(summary) Text including additional RTF formatting information</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-textformula">string TextFormula</h4>
+<ul>
+<li>(summary) See RichText</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-texthasrtfformatting">bool TextHasRtfFormatting</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-textheight">double TextHeight</h4>
+<ul>
+<li>(summary) AnnotationBase.TextHeight
+Gets the parent dimstyle for the annotation and 
+gets or sets the text height in the dimstyle</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-textiswrapped">bool TextIsWrapped</h4>
+<ul>
+<li>(summary) Is text wrapping on</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-textmodelwidth">double TextModelWidth</h4>
+<ul>
+<li>(summary) Width of text in the model</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-textrotationdegrees">double TextRotationDegrees</h4>
+<ul>
+<li>(summary) Rotation of text in degrees</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-textrotationradians">double TextRotationRadians</h4>
+<ul>
+<li>(summary) Rotation of text in radians</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-bool-firstcharpropertiesstring-rtf_strbool-boldbool-italicbool-underlinestring-facename">static bool FirstCharProperties(string rtf_str,bool bold,bool italic,bool underline,string facename)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-string-formatrtfstringstring-rtf_inbool-clear_boldbool-set_boldbool-clear_italicbool-set_italicbool-clear_underlinebool-set_underlinebool-clear_facenamebool-set_facenamestring-facename">static string FormatRtfString(string rtf_in,bool clear_bold,bool set_bold,bool clear_italic,bool set_italic,bool clear_underline,bool set_underline,bool clear_facename,bool set_facename,string facename)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-double-getdimensionscalerhinodoc-docdimensionstyle-dimstylerhinoviewport-vport">static double GetDimensionScale(RhinoDoc doc,DimensionStyle dimstyle,RhinoViewport vport)</h4>
+<ul>
+<li>(summary) Get view dependent dimension scale</li>
+<li>(since) 6.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="static-string-plaintexttortfstring-str">static string PlainTextToRtf(string str)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="bool-clearpropertyoverrides">bool ClearPropertyOverrides()</h4>
+<ul>
+<li>(summary) Clears all overriden properties for this annotation</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="boundingbox-getboundingboxtransform-xform">BoundingBox GetBoundingBox(Transform xform)</h4>
+<ul>
+<li>(summary) Aligned Boundingbox solver. Gets the world axis aligned boundingbox for the transformed geometry.</li>
+<li>(since) 6.10</li>
+<li>(returns) BoundingBox This is some return comment</li>
+</ul>
+<h4 id="dimensionstyle-getdimensionstyledimensionstyle-parentdimstyle">DimensionStyle GetDimensionStyle(DimensionStyle parentDimStyle)</h4>
+<ul>
+<li>(summary) Return the proper dimension style from which to get properties
+for this annotation object
+If this object has style overrides, those will be included in the 
+returned dimension style and the style will be updated to include
+the current state of the parent style for non-overridden fields</li>
+<li>(since) 6.0</li>
+<li>(returns) DimensionStyle This is some return comment</li>
+</ul>
+<h4 id="string-getplaintextwithrunmapint-map">string GetPlainTextWithRunMap(int[] map)</h4>
+<ul>
+<li>(summary) Return plain text string for this annotation with field expressions unevaluated 
+intrunmap is an array of ints in groups of 3: run index, char pos start, length</li>
+<li>(since) 7.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="bool-isallbold">bool IsAllBold()</h4>
+<ul>
+<li>(summary) Returns True if all of the text in the annotation is Bold, otherwise returns false</li>
+<li>(since) 6.22</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-isallitalic">bool IsAllItalic()</h4>
+<ul>
+<li>(summary) Returns True if all of the text in the annotation is Italic, otherwise returns false</li>
+<li>(since) 6.22</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-isallunderlined">bool IsAllUnderlined()</h4>
+<ul>
+<li>(summary) Returns True if all of the text in the annotation is Underlined, otherwise returns false</li>
+<li>(since) 6.22</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-ispropertyoverriddenfield-field">bool IsPropertyOverridden(Field field)</h4>
+<ul>
+<li>(summary) Returns True if a property is overridden</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-runreplacestring-repl_stringint-start_run_idxint-start_run_posint-end_run_idxint-end_run_pos">bool RunReplace(string repl_string,int start_run_idx,int start_run_pos,int end_run_idx,int end_run_pos)</h4>
+<ul>
+<li>(summary) Replace text within a formatted string</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setboldbool-set_on">bool SetBold(bool set_on)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfacenamebool-set_onstring-facename">bool SetFacename(bool set_on,string facename)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setitalicbool-set_on">bool SetItalic(bool set_on)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setoverridedimstyledimensionstyle-overridestyle">bool SetOverrideDimStyle(DimensionStyle OverrideStyle)</h4>
+<ul>
+<li>(summary) Set a style including overrides for this annotation object.
+The DimensionStyle OverrideStyle must have the override fields marked 
+as overridden and must have it&rsquo;s Id set to nil.
+Use DimensinoStyle.SetFieldOverride(Field field) and related functions
+to manage override settings. To override a field, the field value must be set
+and the field must be marked as an override. 
+The DimensionStyle passed in here must not be in the dimstyle table</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-setrichtextstring-rtftextdimensionstyle-dimstyle">void SetRichText(string rtfText,DimensionStyle dimstyle)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-setunderlinebool-set_on">bool SetUnderline(bool set_on)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-wraptext">void WrapText()</h4>
+<ul>
+<li>(summary) Wrap text</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>AnnotationBase</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

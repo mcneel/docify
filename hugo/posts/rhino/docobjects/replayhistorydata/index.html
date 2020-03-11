@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ReplayHistoryData &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Provides history information to commands that will repeat history construction. Generally, a developer using this class will not construct a new instance, but receive one.
+public class ReplayHistoryDataProperties RhinoDoc Document  (summary) The document this record belongs to (since) 5.0  int HistoryVersion  (summary) ReplayHistory overrides check the version number to ensure the information saved in the history record is compatible with the current implementation of ReplayHistory (since) 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ReplayHistoryData</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Provides history information to commands that will repeat history construction.
+Generally, a developer using this class will not construct a new instance, but receive one.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReplayHistoryData</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="rhinodoc-document">RhinoDoc Document</h4>
+<ul>
+<li>(summary) The document this record belongs to</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-historyversion">int HistoryVersion</h4>
+<ul>
+<li>(summary) ReplayHistory overrides check the version number to ensure the information
+saved in the history record is compatible with the current implementation
+of ReplayHistory</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-recordid">Guid RecordId</h4>
+<ul>
+<li>(summary) Each history record has a unique id that Rhino assigns when it adds the
+history record to the history record table</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="replayhistoryresult-results">ReplayHistoryResult[] Results</h4>
+<ul>
+<li>(summary) Provides access to BOTH inputs and outputs of the replay history operation.
+Use this property to then call an appropriate UpdateToX() method and make your
+custom history support work.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="rhinodocobjectsobjref-getrhinoobjrefint-id">Rhino.DocObjects.ObjRef GetRhinoObjRef(int id)</h4>
+<ul>
+<li>(summary) In ReplayHistory, use GetRhinoObjRef to convert the information
+in a history record into the ObjRef that has up to date
+RhinoObject pointers</li>
+<li>(since) 5.0</li>
+<li>(returns) Rhino.DocObjects.ObjRef This is some return comment</li>
+</ul>
+<h4 id="bool-trygetboolint-idbool-value">bool TryGetBool(int id,bool value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetcolorint-idcolor-value">bool TryGetColor(int id,Color value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetdoubleint-iddouble-value">bool TryGetDouble(int id,double value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetdoublesint-iddouble-values">bool TryGetDoubles(int id,double[] values)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.10</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetguidint-idguid-value">bool TryGetGuid(int id,Guid value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetintint-idint-value">bool TryGetInt(int id,int value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetpoint3dint-idpoint3d-value">bool TryGetPoint3d(int id,Point3d value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetpoint3donobjectint-idpoint3d-value">bool TryGetPoint3dOnObject(int id,Point3d value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetstringint-idstring-value">bool TryGetString(int id,string value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygettransformint-idtransform-value">bool TryGetTransform(int id,Transform value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetvector3dint-idvector3d-value">bool TryGetVector3d(int id,Vector3d value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ReplayHistoryData</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  File3dmObjectTable &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents a simple object table for a file that is open externally. This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.
+public class File3dmObjectTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int Count  (summary) Returns the total amount of items in the object table, including lights. (since) 5.0  Methods void Add(File3dmObject item)  (summary) Duplicates the object, then adds a copy of the object to the document.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">File3dmObjectTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents a simple object table for a file that is open externally.
+This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">File3dmObjectTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="modelcomponenttype-componenttype">ModelComponentType ComponentType</h4>
+<ul>
+<li>(summary) Returns .</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Returns the total amount of items in the object table, including lights.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="void-addfile3dmobject-item">void Add(File3dmObject item)</h4>
+<ul>
+<li>(summary) Duplicates the object, then adds a copy of the object to the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="guid-addangulardimensionangulardimension-dimension">Guid AddAngularDimension(AngularDimension dimension)</h4>
+<ul>
+<li>(summary) Adds a angular dimension object to the 3dm file object table.</li>
+<li>(since) 6.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addangulardimensionangulardimension-dimensionobjectattributes-attributes">Guid AddAngularDimension(AngularDimension dimension,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a angular dimension object to the 3dm file object table.</li>
+<li>(since) 6.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addarcarc-arc">Guid AddArc(Arc arc)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an arc.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addarcarc-arcobjectattributes-attributes">Guid AddArc(Arc arc,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an arc.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addbrepbrep-brep">Guid AddBrep(Brep brep)</h4>
+<ul>
+<li>(summary) Adds a brep object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addbrepbrep-brepobjectattributes-attributes">Guid AddBrep(Brep brep,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a brep object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcirclecircle-circle">Guid AddCircle(Circle circle)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing a circle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcirclecircle-circleobjectattributes-attributes">Guid AddCircle(Circle circle,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing a circle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeguid-clippedviewportid">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)</h4>
+<ul>
+<li>(summary) Adds a clipping plane object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeienumerableguid-clippedviewportids">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds)</h4>
+<ul>
+<li>(summary) Adds a clipping plane object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeienumerableguid-clippedviewportidsobjectattributes-attributes">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a clipping plane object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcurvecurve-curve">Guid AddCurve(Curve curve)</h4>
+<ul>
+<li>(summary) Adds a curve object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcurvecurve-curveobjectattributes-attributes">Guid AddCurve(Curve curve,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addellipseellipse-ellipse">Guid AddEllipse(Ellipse ellipse)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an ellipse.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addellipseellipse-ellipseobjectattributes-attributes">Guid AddEllipse(Ellipse ellipse,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an ellipse.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addextrusionextrusion-extrusion">Guid AddExtrusion(Extrusion extrusion)</h4>
+<ul>
+<li>(summary) Adds an extrusion object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addextrusionextrusion-extrusionobjectattributes-attributes">Guid AddExtrusion(Extrusion extrusion,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an extrusion object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addhatchhatch-hatch">Guid AddHatch(Hatch hatch)</h4>
+<ul>
+<li>(summary) Adds a hatch to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addhatchhatch-hatchobjectattributes-attributes">Guid AddHatch(Hatch hatch,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a hatch to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectinstancereferencegeometry-instancereference">Guid AddInstanceObject(InstanceReferenceGeometry instanceReference)</h4>
+<ul>
+<li>(summary) Adds an instance reference geometry object to the table.</li>
+<li>(since) 6.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectinstancereferencegeometry-instancereferenceobjectattributes-attributes">Guid AddInstanceObject(InstanceReferenceGeometry instanceReference,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an instance reference geometry object to the table.</li>
+<li>(since) 6.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectint-instancedefinitionindextransform-instancexform">Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform)</h4>
+<ul>
+<li>(summary) Adds an instance reference geometry object to the table.</li>
+<li>(since) 6.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectint-instancedefinitionindextransform-instancexformobjectattributes-attributes">Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an instance reference geometry object to the table.</li>
+<li>(since) 6.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderienumerablepoint3d-points">Guid AddLeader(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds an annotation leader to the document. This overload is only provided in the Rhino SDK.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderplane-planeienumerablepoint2d-points">Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds an annotation leader to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderplane-planeienumerablepoint2d-pointsobjectattributes-attributes">Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation leader to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textienumerablepoint3d-points">Guid AddLeader(string text,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds an annotation leader to the document. This overload is only provided in the Rhino SDK.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textplane-planeienumerablepoint2d-points">Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds an annotation leader to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textplane-planeienumerablepoint2d-pointsobjectattributes-attributes">Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation leader to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineline-line">Guid AddLine(Line line)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineline-lineobjectattributes-attributes">Guid AddLine(Line line,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlinepoint3d-frompoint3d-to">Guid AddLine(Point3d from,Point3d to)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlinepoint3d-frompoint3d-toobjectattributes-attributes">Guid AddLine(Point3d from,Point3d to,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineardimensionlineardimension-dimension">Guid AddLinearDimension(LinearDimension dimension)</h4>
+<ul>
+<li>(summary) Adds a linear dimension to the 3dm file object table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineardimensionlineardimension-dimensionobjectattributes-attributes">Guid AddLinearDimension(LinearDimension dimension,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a linear dimension to the 3dm file object table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmeshmesh-mesh">Guid AddMesh(Mesh mesh)</h4>
+<ul>
+<li>(summary) Adds a mesh object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmeshmesh-meshobjectattributes-attributes">Guid AddMesh(Mesh mesh,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a mesh object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointdouble-xdouble-ydouble-z">Guid AddPoint(double x,double y,double z)</h4>
+<ul>
+<li>(summary) Adds a point object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3d-point">Guid AddPoint(Point3d point)</h4>
+<ul>
+<li>(summary) Adds a point object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3d-pointobjectattributes-attributes">Guid AddPoint(Point3d point,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3f-point">Guid AddPoint(Point3f point)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3f-pointobjectattributes-attributes">Guid AddPoint(Point3f point,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudienumerablepoint3d-points">Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudienumerablepoint3d-pointsobjectattributes-attributes">Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudpointcloud-cloud">Guid AddPointCloud(PointCloud cloud)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudpointcloud-cloudobjectattributes-attributes">Guid AddPointCloud(PointCloud cloud,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointsienumerablepoint3d-points">Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="guid-addpointsienumerablepoint3d-pointsobjectattributes-attributes">Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="guid-addpointsienumerablepoint3f-points">Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="guid-addpointsienumerablepoint3f-pointsobjectattributes-attributes">Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="guid-addpolylineienumerablepoint3d-points">Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds a polyline object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpolylineienumerablepoint3d-pointsobjectattributes-attributes">Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a polyline object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addspheresphere-sphere">Guid AddSphere(Sphere sphere)</h4>
+<ul>
+<li>(summary) Adds a surface object to the document representing a sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addspheresphere-sphereobjectattributes-attributes">Guid AddSphere(Sphere sphere,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a surface object to the document representing a sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsurfacesurface-surface">Guid AddSurface(Surface surface)</h4>
+<ul>
+<li>(summary) Adds a surface object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsurfacesurface-surfaceobjectattributes-attributes">Guid AddSurface(Surface surface,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a surface object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italic">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italicobjectattributes-attributes">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italictextjustification-justification">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italictextjustification-justificationobjectattributes-attributes">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttext3d-text3d">Guid AddText(Text3d text3d)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttext3d-text3dobjectattributes-attributes">Guid AddText(Text3d text3d,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdotstring-textpoint3d-location">Guid AddTextDot(string text,Point3d location)</h4>
+<ul>
+<li>(summary) Adds a text dot object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdotstring-textpoint3d-locationobjectattributes-attributes">Guid AddTextDot(string text,Point3d location,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a text dot object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdottextdot-dot">Guid AddTextDot(TextDot dot)</h4>
+<ul>
+<li>(summary) Adds a text dot object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdottextdot-dotobjectattributes-attributes">Guid AddTextDot(TextDot dot,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a text dot object to the table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="bool-deleteguid-objectid">bool Delete(Guid objectId)</h4>
+<ul>
+<li>(summary) Deletes object from document.</li>
+<li>(since) 5.2</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-deleteienumerableguid-objectids">int Delete(IEnumerable<!-- raw HTML omitted --> objectIds)</h4>
+<ul>
+<li>(summary) Deletes a collection of objects from the document.</li>
+<li>(since) 5.2</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="file3dmobject-findbygroupgroup-group">File3dmObject[] FindByGroup(Group group)</h4>
+<ul>
+<li>(summary) Finds all File3dmObject that are in a given group.</li>
+<li>(since) 6.20</li>
+<li>(returns) File3dmObject[] This is some return comment</li>
+</ul>
+<h4 id="file3dmobject-findbylayerlayer-layer">File3dmObject[] FindByLayer(Layer layer)</h4>
+<ul>
+<li>(summary) Finds all File3dmObject that are in a given layer.</li>
+<li>(since) 6.0</li>
+<li>(returns) File3dmObject[] This is some return comment</li>
+</ul>
+<h4 id="file3dmobject-findbylayerstring-layer">File3dmObject[] FindByLayer(string layer)</h4>
+<ul>
+<li>(summary) Finds all File3dmObject that are in a given layer.</li>
+<li>(since) 5.0</li>
+<li>(returns) File3dmObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinogeometryboundingbox-getboundingbox">Rhino.Geometry.BoundingBox GetBoundingBox()</h4>
+<ul>
+<li>(summary) Gets the bounding box containing every object in this table.</li>
+<li>(since) 5.0</li>
+<li>(returns) Rhino.Geometry.BoundingBox This is some return comment</li>
+</ul>
+<h4 id="ienumeratorfile3dmobject-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary) Returns an enumerator that yields all objects in this document.
+Like in Rhino, this includes lights. Unlike in Rhino, however, all lights are returned in the end of the list.</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>File3dmObjectTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

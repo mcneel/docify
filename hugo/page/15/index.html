@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displayconduit/">
+        <h3>DisplayConduit</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displayconduit/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+public class DisplayConduitProperties bool Enabled  (summary) (since) 5.0  DocObjects.ActiveSpace SpaceFilter  (summary) If you want this conduit to only work in a specific space (model or page), then set this filter to that specific space. The default is None meaning no filter is applied (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displayengine/">
+        <h3>DisplayEngine</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displayengine/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+public class DisplayEngineMethods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 6.0 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displaymaterial/">
+        <h3>DisplayMaterial</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displaymaterial/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+public class DisplayMaterialConstructors DisplayMaterial()  (summary) Constructs a default material. (since) 5.0  DisplayMaterial(Color diffuse)  (summary) Constructs a default material with a specific diffuse color. (since) 5.0  DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency)  (summary) Constructs a material with custom properties. (since) 5.0  DisplayMaterial(Color diffuse,double transparency)  (summary) Constructs a default material with a specific diffuse color and transparency. (since) 5.0  DisplayMaterial(DisplayMaterial other)  (summary) Duplicate another material.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displaymodechangedeventargs/">
+        <h3>DisplayModeChangedEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displaymodechangedeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+public class DisplayModeChangedEventArgsProperties Guid ChangedDisplayModeId  (summary) (since) 6.18  Guid OldDisplayModeId  (summary) (since) 6.18  RhinoDoc RhinoDoc  (summary) (since) 6.18  RhinoViewport Viewport  (summary) (since) 6.18  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displaymodedescription/">
+        <h3>DisplayModeDescription</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displaymodedescription/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Description of a how Rhino will display in a viewport. These are the modes that are listed under &ldquo;Advanced display&rdquo; in the options dialog.
+public class DisplayModeDescriptionProperties static Guid AmbientOcclusionId  (summary) (since) 6.0  static Guid GhostedId  (summary) (since) 6.0  static Guid PenId  (summary) (since) 6.0  static Guid RaytracedId  (summary) (since) 6.0  static Guid RenderedId  (summary) (since) 6.0  static Guid RenderedShadowsId  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displaypipeline/">
+        <h3>DisplayPipeline</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displaypipeline/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+The display pipeline calls events during specific phases of drawing During the drawing of a single frame the events are called in the following order.
+[Begin Drawing of a Frame] CalculateBoundingBoxCalculateClippingPanesSetupFrustumSetupLightingInitializeFrameBufferDrawBackgroundIf this is a layout and detail objects exist the channels are called in the same order for each detail object (drawn as a nested viewport)PreDrawObjectsFor Each Visible Non Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostDrawObjects - depth writing/testing onDrawForeGround - depth writing/testing offFor Each Visible Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostProcessFrameBuffer (If a delegate exists that requires this)DrawOverlay (if Rhino is in a feedback mode) [End of Drawing of a Frame]
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/displaypipelineattributes/">
+        <h3>DisplayPipelineAttributes</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/displaypipelineattributes/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Represents display pipeline settings, such as &ldquo;show transparency&rdquo; and &ldquo;show grips&rdquo;.
+public class DisplayPipelineAttributesProperties Color AmbientLightingColor  (summary) (since) 6.3  BoundingBoxDisplayMode BoundingBoxMode  (summary) (since) 6.1  bool CastShadows  (summary) Cast shadows. (since) 6.4  ContextsForDraw ContextForDraw  (summary) (since) 6.5  System.Drawing.Color CurveColor  (summary) Color used for drawing curves (since) 5.1  int CurveThickness  (summary) Pixel thickness for curves (since) 5.1  bool DisableConduits  (summary) (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/displaypipelinesettingschangedeventargs/">
+        <h3>DisplayPipelineSettingsChangedEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/displaypipelinesettingschangedeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class DisplayPipelineSettingsChangedEventArgsConstructors DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)  (summary) (since) 6.0  Properties DisplayPipelineAttributes Attributes  (summary) (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/changequeue/displayrendersettings/">
+        <h3>DisplayRenderSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/changequeue/displayrendersettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.ChangeQueue
+ChangeQueue DisplayRenderSettings
+public class DisplayRenderSettingsProperties bool CullBackFaces  (summary) True if backfaces should be culled (since) 6.0  bool ForceFlatShading  (summary) True if flat shading is forced (since) 6.0  bool SceneLightingOn  (summary) True if scene lighting is enabled (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/dithering/">
+        <h3>Dithering</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/dithering/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+This is the interface to linear workflow settings.
+public class DitheringConstructors Dithering()  (summary) Create an utility object not associated with any document (since) 6.0  Dithering(Dithering d)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Properties Methods Method  (summary) (since) 6.0  Methods void CopyFrom(FreeFloatingBase src)  (summary) (since) 6.0 (returns) void This is some return comment  
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/14/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/16/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

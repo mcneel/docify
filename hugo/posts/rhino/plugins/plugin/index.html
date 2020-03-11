@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PlugIn &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.PlugIns
+public class PlugInSettingsSaved  (summary) This event is raised when an instance of Rhino has modified the external settings file associated with this plug-in&amp;rsquo;s property. (since) 6.0  Properties static bool AskOnLoadProtection  (summary) If true, Rhino will display a warning dialog when load-protected plug-ins are attempting to load. If false, load-protected plug-ins will silently not load. (since) 6.0  static int InstalledPlugInCount  (summary) Returns the number of installed Rhino plug-ins.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PlugIn</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.PlugIns</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PlugIn</span>
+</code></pre></div><h4 id="settingssaved">SettingsSaved</h4>
+<ul>
+<li>(summary) This event is raised when an instance of Rhino has modified the
+external settings file associated with this plug-in&rsquo;s 
+property.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-bool-askonloadprotection">static bool AskOnLoadProtection</h4>
+<ul>
+<li>(summary) If true, Rhino will display a warning dialog when load-protected plug-ins are attempting to load. 
+If false, load-protected plug-ins will silently not load.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-int-installedplugincount">static int InstalledPlugInCount</h4>
+<ul>
+<li>(summary) Returns the number of installed Rhino plug-ins.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="systemreflectionassembly-assembly">System.Reflection.Assembly Assembly</h4>
+<ul>
+<li>(summary) Source assembly for this plug-in.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-description">string Description</h4>
+<ul>
+<li>(summary) Returns the description of the plug-in, as found in the plug-in&rsquo;s assembly attributes.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="guid-id">Guid Id</h4>
+<ul>
+<li>(summary) Returns the Guid, or unique Id, of the plug-in.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-licenseid">Guid LicenseId</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-loadatstartup">bool LoadAtStartup</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="pluginloadtime-loadtime">PlugInLoadTime LoadTime</h4>
+<ul>
+<li>(summary) Plug-ins are typically loaded on demand when they are first needed. You can change
+this behavior to load the plug-in at during different stages in time by overriding
+this property.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-name">string Name</h4>
+<ul>
+<li>(summary) Returns the name of the plug-in, as found in the plug-in&rsquo;s assembly attributes.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="persistentsettings-settings">PersistentSettings Settings</h4>
+<ul>
+<li>(summary) Persistent plug-in settings.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-settingsdirectory">string SettingsDirectory</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-settingsdirectoryallusers">string SettingsDirectoryAllUsers</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-version">string Version</h4>
+<ul>
+<li>(summary) Returns the version of the plug-in, as found in the plug-in&rsquo;s assembly attributes.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="persistentsettings-windowpositionsettings">PersistentSettings WindowPositionSettings</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-plugin-findassembly-pluginassembly">static PlugIn Find(Assembly pluginAssembly)</h4>
+<ul>
+<li>(summary) Finds the plug-in instance that was loaded from a given assembly.</li>
+<li>(since) 5.0</li>
+<li>(returns) PlugIn This is some return comment</li>
+</ul>
+<h4 id="static-plugin-findguid-pluginid">static PlugIn Find(Guid plugInId)</h4>
+<ul>
+<li>(summary) Finds the plug-in instance that was loaded from a given plug-in Id.</li>
+<li>(since) 5.5</li>
+<li>(returns) PlugIn This is some return comment</li>
+</ul>
+<h4 id="static-void-flushsettingssavedqueue">static void FlushSettingsSavedQueue()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-string-getenglishcommandnamesguid-pluginid">static string[] GetEnglishCommandNames(Guid pluginId)</h4>
+<ul>
+<li>(summary) Gets names of all &ldquo;non-test&rdquo; commands for a given plug-in.</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-string-getinstalledpluginfolders">static string[] GetInstalledPlugInFolders()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-string-getinstalledpluginnames">static string[] GetInstalledPlugInNames()</h4>
+<ul>
+<li>(summary) Returns the names of all installed Rhino plug-ins.</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-string-getinstalledpluginnamesplugintype-typefilterbool-loadedbool-unloaded">static string[] GetInstalledPlugInNames(PlugInType typeFilter,bool loaded,bool unloaded)</h4>
+<ul>
+<li>(summary) Gets a list of installed plug-in names.  The list can be restricted by some filters.</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-dictionaryguid-string-getinstalledplugins">static Dictionary&lt;Guid, string&gt; GetInstalledPlugIns()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Dictionary&lt;Guid, string&gt; This is some return comment</li>
+</ul>
+<h4 id="static-bool-getloadprotectionguid-pluginidbool-loadsilently">static bool GetLoadProtection(Guid pluginId,bool loadSilently)</h4>
+<ul>
+<li>(summary) Get load protection state for a plug-in</li>
+<li>(since) 5.5</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-plugininfo-getplugininfoguid-pluginid">static PlugInInfo GetPlugInInfo(Guid pluginId)</h4>
+<ul>
+<li>(summary) Returns detailed information about an installed Rhino plug-in.</li>
+<li>(since) 6.0</li>
+<li>(returns) PlugInInfo This is some return comment</li>
+</ul>
+<h4 id="static-persistentsettings-getpluginsettingsguid-pluginidbool-load">static PersistentSettings GetPluginSettings(Guid plugInId,bool load)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) PersistentSettings This is some return comment</li>
+</ul>
+<h4 id="static-guid-idfromnamestring-pluginname">static Guid IdFromName(string pluginName)</h4>
+<ul>
+<li>(summary) Gets the id of an installed plug-in giving the plug-in&rsquo;s name.</li>
+<li>(since) 5.5</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-guid-idfrompathstring-pluginpath">static Guid IdFromPath(string pluginPath)</h4>
+<ul>
+<li>(summary) Gets the id of an installed plug-in giving the plug-in&rsquo;s file path.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-void-loadcomputeextensionplugins">static void LoadComputeExtensionPlugins()</h4>
+<ul>
+<li>(summary) Used by compute&rsquo;s startup code to load plugins that have registered custom endpoints</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-loadpluginguid-pluginid">static bool LoadPlugIn(Guid pluginId)</h4>
+<ul>
+<li>(summary) Loads an installed plug-in.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-loadpluginguid-pluginidbool-loadquietlybool-forceload">static bool LoadPlugIn(Guid pluginId,bool loadQuietly,bool forceLoad)</h4>
+<ul>
+<li>(summary) Loads an installed plug-in.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-loadpluginresult-loadpluginstring-pathguid-pluginid">static LoadPlugInResult LoadPlugIn(string path,Guid plugInId)</h4>
+<ul>
+<li>(summary) Attempt to load a plug-in at a path. Loaded plug-ins are remembered by
+Rhino between sessions, so this function can also be considered a plug-in
+installation routine</li>
+<li>(since) 6.0</li>
+<li>(returns) LoadPlugInResult This is some return comment</li>
+</ul>
+<h4 id="static-string-namefrompathstring-pluginpath">static string NameFromPath(string pluginPath)</h4>
+<ul>
+<li>(summary) Gets a plug-in name for an installed plug-in given the path to that plug-in.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-pathfromidguid-pluginid">static string PathFromId(Guid pluginId)</h4>
+<ul>
+<li>(summary) Gets the path to an installed plug-in given the id of that plug-in</li>
+<li>(since) 5.9</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-pathfromnamestring-pluginname">static string PathFromName(string pluginName)</h4>
+<ul>
+<li>(summary) Gets the path to an installed plug-in given the name of that plug-in</li>
+<li>(since) 5.9</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-bool-pluginexistsguid-idbool-loadedbool-loadprotected">static bool PlugInExists(Guid id,bool loaded,bool loadProtected)</h4>
+<ul>
+<li>(summary) Verifies that a Rhino plug-in is installed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-void-raiseonpluginsettingssavedevent">static void RaiseOnPlugInSettingsSavedEvent()</h4>
+<ul>
+<li>(summary) Raise any pending OnPlugInSettingsSaved events, the events are normally
+queued while a command is running and and fired while Rhino is in an
+idle state.  Calling this method will raise any pending changed events
+regardless of Rhino&rsquo;s current idle state or if a command is running.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-savepluginsettingsguid-pluginid">static void SavePluginSettings(Guid plugInId)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-setloadprotectionguid-pluginidbool-loadsilently">static void SetLoadProtection(Guid pluginId,bool loadSilently)</h4>
+<ul>
+<li>(summary) Set load protection state for a certain plug-in</li>
+<li>(since) 5.5</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="persistentsettings-commandsettingsstring-name">PersistentSettings CommandSettings(string name)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) PersistentSettings This is some return comment</li>
+</ul>
+<h4 id="commandscommand-getcommands">Commands.Command[] GetCommands()</h4>
+<ul>
+<li>(summary) All of the commands associated with this plug-in.</li>
+<li>(since) 5.0</li>
+<li>(returns) Commands.Command[] This is some return comment</li>
+</ul>
+<h4 id="object-getpluginobject">object GetPlugInObject()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) object This is some return comment</li>
+</ul>
+<h4 id="systemdrawingbitmap-iconsize-size">System.Drawing.Bitmap Icon(Size size)</h4>
+<ul>
+<li>(summary) Returns the plug-in&rsquo;s icon in bitmap form.</li>
+<li>(since) 6.0</li>
+<li>(returns) System.Drawing.Bitmap This is some return comment</li>
+</ul>
+<h4 id="void-savesettings">void SaveSettings()</h4>
+<ul>
+<li>(summary) Write settings to disk which will raise a 
+event.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PlugIn</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

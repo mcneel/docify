@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getcylinder/">
+        <h3>GetCylinder</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getcylinder/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a cylinder.
+public class GetCylinderConstructors GetCylinder()  (summary) (since) 6.0  Properties bool BothSidesOption  (summary) Determine if the &ldquo;both sides&rdquo; option is enabled (since) 6.0  bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 6.0  CylinderConstraint CylinderConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getellipsoid/">
+        <h3>GetEllipsoid</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getellipsoid/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetEllipsoidConstructors GetEllipsoid()  (summary) (since) 7.0  Properties Geometry.Point3d FirstPoint  (summary) Returns the first point. If in &ldquo;from foci&rdquo; mode, then this is the first foci point. (since) 7.0  bool IsModeFromFoci  (summary) Indicates the ellipsoid was created from foci. (since) 7.0  bool MarkFoci  (summary) Indicates the user wants the ellipsoid foci marked with point objects.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getinteger/">
+        <h3>GetInteger</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getinteger/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Used to get integer numbers.
+public class GetIntegerConstructors GetInteger()  (summary) (since) 5.0  Methods GetResult Get()  (summary) Call to get an integer. (since) 5.0 (returns) GetResult This is some return comment  int Number()  (summary) (since) 5.0 (returns) int This is some return comment  void SetLowerLimit(int lowerLimit,bool strictlyGreaterThan)  (summary) Sets a lower limit on the number that can be returned. By default there is no lower limit.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getline/">
+        <h3>GetLine</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getline/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Use to interactively get a line. The Rhino &ldquo;Line&rdquo; command uses GetLine.
+public class GetLineConstructors GetLine()  (summary) (since) 5.1  Properties bool AcceptZeroLengthLine  (summary) Controls whether or not a zero length line is acceptable. The default is to require the user to keep picking the end point until we get a point different than the start point. (since) 5.1  System.Drawing.Color FeedbackColor  (summary) If set, the feedback color is used to draw the dynamic line when the second point is begin picked.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getnumber/">
+        <h3>GetNumber</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getnumber/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Used to get double precision numbers.
+public class GetNumberConstructors GetNumber()  (summary) Create a new GetNumber. (since) 5.0  Methods GetResult Get()  (summary) Call to get a number. (since) 5.0 (returns) GetResult This is some return comment  void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan)  (summary) Sets a lower limit on the number that can be returned. By default there is no lower limit. (since) 5.0 (returns) void This is some return comment  void SetUpperLimit(double upperLimit,bool strictlyLessThan)  (summary) Sets an upper limit on the number that can be returned.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getobject/">
+        <h3>GetObject</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getobject/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+The GetObject class is the tool commands use to interactively select objects.
+public class GetObjectConstructors GetObject()  (summary) (since) 5.0  Properties bool AlreadySelectedObjectSelect  (summary) Allow selecting objects that are already selected. By default, GetObjects() disallows selection of objects that are already selected to avoid putting the same object in the selection set more than once. Calling EnableAlreadySelectedObjectSelect = true overrides that restriction and allows selected objects to be selected and returned by GetObjects.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getoption/">
+        <h3>GetOption</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getoption/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+If you want to explicitly get string input, then use GetString class with options. If you only want to get options, then use this class (GetOption)
+public class GetOptionConstructors GetOption()  (summary) (since) 5.0  Methods GetResult Get()  (summary) Call to get an option. A return value of &ldquo;option&rdquo; means the user selected a valid option. Use Option() the determine which option. (since) 5.0 (returns) GetResult This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getpoint/">
+        <h3>GetPoint</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getpoint/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Used to interactively get a point.
+public class GetPointDynamicDraw   (summary) Event to use if you want to dynamically draw things as the mouse/digitizer moves. Every time the mouse moves, DynamicDraw will be called once per viewport. The calls to DynamicDraw happen AFTER the call to MouseMove.
+If you are drawing anything that takes a long time, periodically call InterruptMouseMove() to see if you should stop.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getpointdraweventargs/">
+        <h3>GetPointDrawEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getpointdraweventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Arguments for drawing during point getting.
+public class GetPointDrawEventArgsProperties Point3d CurrentPoint  (summary) (since) 5.0  GetPoint Source  (summary) GetPoint class that this draw event originated from. (since) 5.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getpointmouseeventargs/">
+        <h3>GetPointMouseEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getpointmouseeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Arguments for mouse information during point getting.
+public class GetPointMouseEventArgsProperties bool ControlKeyDown  (summary) (since) 5.0  bool LeftButtonDown  (summary) (since) 5.0  bool MiddleButtonDown  (summary) (since) 5.0  Point3d Point  (summary) (since) 5.0  bool RightButtonDown  (summary) (since) 5.0  bool ShiftKeyDown  (summary) (since) 5.0  GetPoint Source  (summary) (since) 5.0  RhinoViewport Viewport  (summary) (since) 5.0  System.Drawing.Point WindowPoint  (summary) (since) 5.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/23/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/25/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

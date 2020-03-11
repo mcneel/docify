@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Panels &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.UI
+Access to Rhino panels and register custom panels
+public class Panelsstatic Closed  (summary) This event is raised when a panel host is closed (since) 6.0  static Show  (summary) This event is called when a panel is shown or hidden. This event will get raised multipThis times when the active document changes in Mac Rhino. It will called with show equal to False for the prevous active document and with show equal to True for the current document.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Panels</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.UI</a></em></p>
+<p>Access to Rhino panels and register custom panels</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Panels</span>
+</code></pre></div><h4 id="static-closed">static Closed</h4>
+<ul>
+<li>(summary) This event is raised when a panel host is closed</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-show">static Show</h4>
+<ul>
+<li>(summary) This event is called when a panel is shown or hidden.  This event will get raised 
+multipThis times when the active document changes in Mac Rhino.  It will called
+with show equal to False for the prevous active document and with show equal to 
+True for the current document.  When the event is raised with show equal to false
+it only means the document instace of the panel is not visible it does not mean 
+the panel host has been closed.  If you need to know when the panel host closes
+then subsribe to the Closed event.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-string-etopanelstylename">static string EtoPanelStyleName</h4>
+<ul>
+<li>(summary) Style applied to Eto controls hosted by the Rhino.UI.Panels and
+Rhino.UI.ObjectProperties systems.</li>
+<li>(since) 6.15</li>
+</ul>
+<h4 id="static-systemdrawingsize-iconsize">static System.Drawing.Size IconSize</h4>
+<ul>
+<li>(summary) Gets the panel icon size in logical units.</li>
+<li>(since) 6.12</li>
+</ul>
+<h4 id="static-systemdrawingsize-scalediconsize">static System.Drawing.Size ScaledIconSize</h4>
+<ul>
+<li>(summary) Gets the panel icon size in pixels with DPI scaling applied.</li>
+<li>(since) 6.12</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-void-changepanelicontype-paneltypeicon-icon">static void ChangePanelIcon(Type panelType,Icon icon)</h4>
+<ul>
+<li>(summary) Update the icon used for a panel tab.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-closepanelguid-panelid">static void ClosePanel(Guid panelId)</h4>
+<ul>
+<li>(summary) Will close or hide the specified panel type, in Windows Rhino, if it
+is the only visible tab the tab dock bar will be closed as well.  In
+Mac Rhino it will always close the modeless dialog hosting the panel.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-closepaneltype-paneltype">static void ClosePanel(Type panelType)</h4>
+<ul>
+<li>(summary) Will close or hide the specified panel type, in Windows Rhino, if it
+is the only visible tab the tab dock bar will be closed as well.  In
+Mac Rhino it will always close the modeless dialog hosting the panel.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-floatpanelguid-paneltypeidfloatpanelmode-mode">static bool FloatPanel(Guid panelTypeId,FloatPanelMode mode)</h4>
+<ul>
+<li>
+<p>(summary) Mac support:
+Display the specified panel in a floating window on Mac, the floating
+window will only contain the specified panel.</p>
+<pre><code> Windows support:
+   On Windows this will show or hide the floating continer containing the
+   specified panel.  If the tab is docked with other tabs it will be
+   floated in a new container.
+</code></pre>
+</li>
+<li>
+<p>(since) 6.2</p>
+</li>
+<li>
+<p>(returns) bool This is some return comment</p>
+</li>
+</ul>
+<h4 id="static-bool-floatpaneltype-paneltypefloatpanelmode-mode">static bool FloatPanel(Type panelType,FloatPanelMode mode)</h4>
+<ul>
+<li>
+<p>(summary) Mac support:
+Display the specified panel in a floating window on Mac, the floating
+window will only contain the specified panel.</p>
+<pre><code> Windows support:
+   On Windows this will show or hide the floating continer containing the
+   specified panel.  If the tab is docked with other tabs it will be
+   floated in a new container.
+</code></pre>
+</li>
+<li>
+<p>(since) 6.2</p>
+</li>
+<li>
+<p>(returns) bool This is some return comment</p>
+</li>
+</ul>
+<h4 id="static-guid-getopenpanelids">static Guid[] GetOpenPanelIds()</h4>
+<ul>
+<li>(summary) Get a list of the currently open panel tabs in Windows Rhino, on Mac
+Rhino it will be a list of the currently visible modeless panel
+dialogs.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="static-t-getpanel">static T GetPanel()</h4>
+<ul>
+<li>(summary) Return an instance of a .Net panel</li>
+<li>(since) 6.0</li>
+<li>(returns) T This is some return comment</li>
+</ul>
+<h4 id="static-object-getpanelguid-panelid">static object GetPanel(Guid panelId)</h4>
+<ul>
+<li>(summary) Will return an instance of a .Net panel if the panel has been
+displayed at least once.  Panel instances are not created until a
+panel is displayed.</li>
+<li>(since) 5.0</li>
+<li>(returns) object This is some return comment</li>
+</ul>
+<h4 id="static-object-getpanelguid-panelidrhinodoc-rhinodoc">static object GetPanel(Guid panelId,RhinoDoc rhinoDoc)</h4>
+<ul>
+<li>(summary) Will return an instance of a .Net panel if the panel has been
+displayed at least once.  Panel instances are not created until a
+panel is displayed.</li>
+<li>(since) 6.0</li>
+<li>(returns) object This is some return comment</li>
+</ul>
+<h4 id="static-object-getpanelguid-paneliduint-documentserialnumber">static object GetPanel(Guid panelId,uint documentSerialNumber)</h4>
+<ul>
+<li>(summary) Will return an instance of a .Net panel if the panel has been
+displayed at least once.  Panel instances are not created until a
+panel is displayed.</li>
+<li>(since) 6.0</li>
+<li>(returns) object This is some return comment</li>
+</ul>
+<h4 id="static-t-getpanelrhinodoc-rhinodoc">static T GetPanel(RhinoDoc rhinoDoc)</h4>
+<ul>
+<li>(summary) Return an instance of a .Net panel</li>
+<li>(since) 6.0</li>
+<li>(returns) T This is some return comment</li>
+</ul>
+<h4 id="static-t-getpaneluint-documentserialnumber">static T GetPanel(uint documentSerialNumber)</h4>
+<ul>
+<li>(summary) Return an instance of a .Net panel</li>
+<li>(since) 6.0</li>
+<li>(returns) T This is some return comment</li>
+</ul>
+<h4 id="static-object--getpanelsguid-panelidrhinodoc-doc">static object [] GetPanels(Guid panelId,RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Gets the panels.</li>
+<li>(since) 6.3</li>
+<li>(returns) object [] This is some return comment</li>
+</ul>
+<h4 id="static-object-getpanelsguid-paneliduint-documentruntimeserialnumber">static object[] GetPanels(Guid panelId,uint documentRuntimeSerialNumber)</h4>
+<ul>
+<li>(summary) Gets the panels.</li>
+<li>(since) 6.3</li>
+<li>(returns) object[] This is some return comment</li>
+</ul>
+<h4 id="static-t-getpanelsrhinodoc-doc">static T[] GetPanels(RhinoDoc doc)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.3</li>
+<li>(returns) T[] This is some return comment</li>
+</ul>
+<h4 id="static-t--getpanelsuint-documentruntimeserialnumber">static T [] GetPanels(uint documentRuntimeSerialNumber)</h4>
+<ul>
+<li>(summary) Gets the panels.</li>
+<li>(since) 6.3</li>
+<li>(returns) T [] This is some return comment</li>
+</ul>
+<h4 id="static-bool-ishidingshowpanelreason-reason">static bool IsHiding(ShowPanelReason reason)</h4>
+<ul>
+<li>(summary) Check to see if reason is equal to any of the show events</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-ispanelvisibleguid-panelid">static bool IsPanelVisible(Guid panelId)</h4>
+<ul>
+<li>(summary) Check to see if a panel is currently visible, on Windows this means
+you can see the tab, it does not necessarily mean it is the current
+tab.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-ispanelvisibleguid-panelidbool-isselectedtab">static bool IsPanelVisible(Guid panelId,bool isSelectedTab)</h4>
+<ul>
+<li>(summary) Check to see if a panel is currently visible, if isSelectedTab
+is True then the tab must be the active tab as well.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-ispanelvisibletype-paneltype">static bool IsPanelVisible(Type panelType)</h4>
+<ul>
+<li>(summary) Check to see if a panel is currently visible, on Windows this means
+you can see the tab, it does not necessarily mean it is the current
+tab.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-ispanelvisibletype-paneltypebool-isselectedtab">static bool IsPanelVisible(Type panelType,bool isSelectedTab)</h4>
+<ul>
+<li>(summary) Check to see if a panel is currently visible, if isSelectedTab
+is True then the tab must be the active tab as well.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-isshowingshowpanelreason-reason">static bool IsShowing(ShowPanelReason reason)</h4>
+<ul>
+<li>(summary) Check to see if reason is equal to any of the hide events</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-void-onclosepanelguid-paneliduint-documentserialnumber">static void OnClosePanel(Guid panelId,uint documentSerialNumber)</h4>
+<ul>
+<li>(summary) Call this method to raise the Closed event</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-onshowpanelguid-paneliduint-documentserialnumberbool-show">static void OnShowPanel(Guid panelId,uint documentSerialNumber,bool show)</h4>
+<ul>
+<li>(summary) Call this method to raise the Show event</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-openpanelguid-panelid">static void OpenPanel(Guid panelId)</h4>
+<ul>
+<li>(summary) Open the specified panel in its current or default location and if it
+is in a dock bar containing more than one tab, make it the current tab.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-openpanelguid-panelidbool-makeselectedpanel">static void OpenPanel(Guid panelId,bool makeSelectedPanel)</h4>
+<ul>
+<li>(summary) Open the specified panel in its current or default location and if it
+is in a dock bar containing more than one tab, make it the current tab.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-guid-openpanelguid-dockbaridguid-panelid">static Guid OpenPanel(Guid dockBarId,Guid panelId)</h4>
+<ul>
+<li>(summary) In Mac Rhino this will just call the version of OpenPanel that takes
+a class type Id.  In Windows Rhino this will look for a dock bar with
+the specified Id and open or move the specified panel to that dock
+bar.</li>
+<li>(since) 5.12</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-guid-openpanelguid-dockbaridguid-panelidbool-makeselectedpanel">static Guid OpenPanel(Guid dockBarId,Guid panelId,bool makeSelectedPanel)</h4>
+<ul>
+<li>(summary) In Mac Rhino this will just call the version of OpenPanel that takes
+a class type Id.  In Windows Rhino this will look for a dock bar with
+the specified Id and open or move the specified panel to that dock
+bar.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-guid-openpanelguid-dockbaridtype-paneltype">static Guid OpenPanel(Guid dockBarId,Type panelType)</h4>
+<ul>
+<li>(summary) In Mac Rhino this will just call the version of OpenPanel that takes
+a class type Id.  In Windows Rhino this will look for a dock bar with
+the specified Id and open or move the specified panel to that dock
+bar.</li>
+<li>(since) 5.12</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-guid-openpanelguid-dockbaridtype-paneltypebool-makeselectedpanel">static Guid OpenPanel(Guid dockBarId,Type panelType,bool makeSelectedPanel)</h4>
+<ul>
+<li>(summary) In Mac Rhino this will just call the version of OpenPanel that takes
+a class type Id.  In Windows Rhino this will look for a dock bar with
+the specified Id and open or move the specified panel to that dock
+bar.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-void-openpaneltype-paneltype">static void OpenPanel(Type panelType)</h4>
+<ul>
+<li>(summary) Open the specified panel in its current or default location and if it
+is in a dock bar containing more than one tab, make it the current tab.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-openpaneltype-paneltypebool-makeselectedpanel">static void OpenPanel(Type panelType,bool makeSelectedPanel)</h4>
+<ul>
+<li>(summary) Open the specified panel in its current or default location and if it
+is in a dock bar containing more than one tab, make it the current tab.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-openpanelassiblingguid-panelidguid-siblingpanelid">static bool OpenPanelAsSibling(Guid panelId,Guid siblingPanelId)</h4>
+<ul>
+<li>(summary) In Mac Rhino this will currently just call OpenPanel, in Windows Rhino
+this will look for a dock bar which contains the sibling panel and add
+this panel to that dock bar as necessary, if the panel was in another
+dock bar it will be moved to this dock bar.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-openpanelassiblingguid-panelidguid-siblingpanelidbool-makeselectedpanel">static bool OpenPanelAsSibling(Guid panelId,Guid siblingPanelId,bool makeSelectedPanel)</h4>
+<ul>
+<li>(summary) In Mac Rhino this will currently just call OpenPanel, in Windows Rhino
+this will look for a dock bar which contains the sibling panel and add
+this panel to that dock bar as necessary, if the panel was in another
+dock bar it will be moved to this dock bar.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-guid-paneldockbarguid-panelid">static Guid PanelDockBar(Guid panelId)</h4>
+<ul>
+<li>(summary) Will always return Guid.Emty in Mac Rhino.  In Windows Rhino it will
+look for the dock bar which contains the specified panel class Id and
+return the dock bar Id.</li>
+<li>(since) 5.12</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-guid-paneldockbartype-paneltype">static Guid PanelDockBar(Type panelType)</h4>
+<ul>
+<li>(summary) Will always return Guid.Emty in Mac Rhino.  In Windows Rhino it will
+look for the dock bar which contains the specified panel class Id and
+return the dock bar Id.</li>
+<li>(since) 5.12</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-guid-paneldockbarsguid-panelid">static Guid[] PanelDockBars(Guid panelId)</h4>
+<ul>
+<li>(summary) Will always return a empty array in Mac Rhino.  In Windows Rhino it will
+look for any panel dock bars that contain the specified panel class Id and
+return the dock bar Id&rsquo;s.</li>
+<li>(since) 6.1</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="static-void-registerpanelplugin-plugintype-paneltypestring-captionicon-icon">static void RegisterPanel(PlugIn plugin,Type panelType,string caption,Icon icon)</h4>
+<ul>
+<li>(summary) You typically register your panel class in your plug-in&rsquo;s OnLoad
+function.  This will register your custom call with Rhino, Rhino will
+create an instance of your class the first time your panel is created
+and embed this instance of your class in a panel container.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-registerpanelplugin-plugintype-typestring-captionicon-iconpaneltype-paneltype">static void RegisterPanel(PlugIn plugIn,Type type,string caption,Icon icon,PanelType panelType)</h4>
+<ul>
+<li>(summary) Call once to register a panel type which will get dynamically created
+and embedded in a Rhino docking/floating location.</li>
+<li>(since) 6.1</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Panels</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

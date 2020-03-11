@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/freefloatingbase/">
+        <h3>FreeFloatingBase</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/freefloatingbase/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Base class for Rhino.Render objects that are owned by the document, or can be delivered separately from other functions. In general, you cannot create these objects yourself.
+public class FreeFloatingBaseMethods void CopyFrom(FreeFloatingBase src)  (summary) Copy from another object (since) 6.0 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/generalsettings/">
+        <h3>GeneralSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/generalsettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to give access to Rhinoceros settings.
+public class GeneralSettingsProperties static bool AutoUpdateCommandHelp  (summary) Command help dialog auto-update feature. (since) 5.0  static System.TimeSpan ContextMenuDelay  (summary) Time to wait before permitting context menu display. (since) 5.0  static bool EnableContextMenu  (summary) True if right mouse down + delay will pop up context menu on a mouse up if no move happens.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/generalsettingsstate/">
+        <h3>GeneralSettingsState</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/generalsettingsstate/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class GeneralSettingsStateProperties bool AutoUpdateCommandHelp  (summary) Gets or sets the command help dialog auto-update feature. (since) 5.0  System.TimeSpan ContextMenuDelay  (summary) Gets or sets the time to wait before permitting context menu display. (since) 5.0  bool EnableContextMenu  (summary) True if right mouse down + delay will pop up context menu on a mouse up if no move happens. (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/geometrybase/">
+        <h3>GeometryBase</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/geometrybase/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Provides a common base for most geometric classes. This class is abstract.
+public class GeometryBaseProperties bool HasBrepForm  (summary) Returns True if the Brep.TryConvertBrep function will be successful for this object (since) 5.6  bool IsDeformable  (summary) True if object can be accurately modified with &ldquo;squishy&rdquo; transformations like projections, shears, and non-uniform scaling. (since) 5.0  bool IsDocumentControlled  (summary) If True this object may not be modified.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getarc/">
+        <h3>GetArc</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getarc/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+public class GetArcConstructors GetArc()  (summary) (since) 6.0  Properties bool AllowDeformable  (summary) Allow for deformable options (since) 6.0  double DefaultRadius  (summary) Default radius used for start and end radius (since) 6.0  bool Deformable  (summary) Is the deformable option set (since) 6.0  int DeformableDegree  (summary) (since) 6.0  int DeformablePointCount  (summary) (since) 6.0  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getbaseclass/">
+        <h3>GetBaseClass</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getbaseclass/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a GetBaseClass but you will use its member functions after calling GetObject.Gets(), GetPoint.Get(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class GetBaseClassMethods static void PostCustomMessage(object messageData)  (summary) (since) 5.0 (returns) void This is some return comment  void AcceptColor(bool enable)  (summary) If you want to allow the user to be able to type in a color r,g,b or name during GetPoint.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getcancel/">
+        <h3>GetCancel</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getcancel/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+public class GetCancelTaskCompleted  (summary) (since) 6.0  Constructors GetCancel()  (summary) (since) 6.0  Properties IProgressProgress  (summary) (since) 6.0  string ProgressMessage  (summary) (since) 6.0  bool ProgressReporting  (summary) (since) 6.0  CancellationToken Token  (summary) (since) 6.0  Methods Result Wait(Task task,RhinoDoc doc)  (summary) Awaits a particular task to finish. (since) 7.0 (returns) Result This is some return comment  Result Wait(Tasktask,RhinoDoc doc)  (summary) Awaits a particular task to finish.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getcircle/">
+        <h3>GetCircle</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getcircle/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+public class GetCircleConstructors GetCircle()  (summary) (since) 6.0  Properties bool AllowDeformable  (summary) Allow for deformable options (since) 6.0  double DefaultSize  (summary) Default radius or diameter (based on InDiameterMode) (since) 6.0  bool Deformable  (summary) Is the deformable option set (since) 6.0  int DeformableDegree  (summary) (since) 6.0  int DeformablePointCount  (summary) (since) 6.0  bool InDiameterMode  (summary) Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/getcoloreventargs/">
+        <h3>GetColorEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/getcoloreventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI
+public class GetColorEventArgsProperties bool IncludeButtonColors  (summary) (since) 5.0  System.Drawing.Color InputColor  (summary) (since) 5.0  System.Drawing.Color SelectedColor  (summary) (since) 5.0  string Title  (summary) (since) 5.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/custom/getcone/">
+        <h3>GetCone</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/custom/getcone/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a cone.
+public class GetConeConstructors GetCone()  (summary) (since) 6.0  Properties bool AllowInputAngle  (summary) (since) 6.0  double ApexAngleDegrees  (summary) (since) 6.0  double BaseAngleDegrees  (summary) (since) 6.0  bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 6.0  ConeConstraint ConeConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/22/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/24/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

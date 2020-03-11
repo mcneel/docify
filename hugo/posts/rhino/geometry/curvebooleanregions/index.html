@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CurveBooleanRegions &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the results of a Curve.CreateBooleanRegions calculation.
+public class CurveBooleanRegionsProperties int PlanarCurveCount  (summary) Returns number of planar curves that were calculated by Curve.CreateBooleanRegions. (since) 7.0  int PointCount  (summary) If this object were created using the Curve.CreateBooleanRegions override that accepts a collection of points as input, then this value will be equal to the length of the points collection. (since) 7.0  int RegionCount  (summary) Returns the number of curve regions.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CurveBooleanRegions</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the results of a Curve.CreateBooleanRegions calculation.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CurveBooleanRegions</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-planarcurvecount">int PlanarCurveCount</h4>
+<ul>
+<li>(summary) Returns number of planar curves that were calculated by Curve.CreateBooleanRegions.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="int-pointcount">int PointCount</h4>
+<ul>
+<li>(summary) If this object were created using the Curve.CreateBooleanRegions override that
+accepts a collection of points as input, then this value will be equal to the length
+of the points collection.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="int-regioncount">int RegionCount</h4>
+<ul>
+<li>(summary) Returns the number of curve regions. A curve region is a collection of
+curves that bound a single connected region of the plane.</li>
+<li>(since) 7.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-boundarycountint-regionindex">int BoundaryCount(int regionIndex)</h4>
+<ul>
+<li>(summary) Returns the number of boundary curves in a curve region.</li>
+<li>(since) 7.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary) Actively reclaims unmanaged resources that this instance uses.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="curve-planarcurveint-planarcurveindex">Curve PlanarCurve(int planarCurveIndex)</h4>
+<ul>
+<li>(summary) Returns a planar curve that was calculated by Curve.CreateBooleanRegions.</li>
+<li>(since) 7.0</li>
+<li>(returns) Curve This is some return comment</li>
+</ul>
+<h4 id="curve-regioncurvesint-regionindex">Curve[] RegionCurves(int regionIndex)</h4>
+<ul>
+<li>(summary) Returns the boundary curves in a curve region. A curve region is a collection of
+curves that bound a single connected region of the plane. Note, the first curve
+is always the outer boundary.</li>
+<li>(since) 7.0</li>
+<li>(returns) Curve[] This is some return comment</li>
+</ul>
+<h4 id="int-regionpointindexint-pointindex">int RegionPointIndex(int pointIndex)</h4>
+<ul>
+<li>(summary) If this object were created using the Curve.CreateBooleanRegions override that
+accepts a collection of points as input, then you this method to retrieve the
+index of the point contained in a curve region.
+If this.RegionPointIndex(i) = n, then points[i] is contained in this.RegionCurves(n).
+If points[i] is not in any region, then this.RegionPointIndex(i) = -1.</li>
+<li>(since) 7.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-segmentcountint-regionindexint-boundaryindex">int SegmentCount(int regionIndex,int boundaryIndex)</h4>
+<ul>
+<li>(summary) Returns the number of segments in a boundary curve in a curve region.</li>
+<li>(since) 7.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-segmentdetailsint-regionindexint-boundaryindexint-segmmentindexinterval-subdomainbool-reversed">int SegmentDetails(int regionIndex,int boundaryIndex,int segmmentIndex,Interval subDomain,bool reversed)</h4>
+<ul>
+<li>(summary) Returns the details of a segment in a boundary curve in a curve region.</li>
+<li>(since) 7.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CurveBooleanRegions</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

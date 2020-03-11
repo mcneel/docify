@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/pythonscript/">
+        <h3>PythonScript</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/pythonscript/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime
+Represents a Python script.
+public class PythonScriptProperties int ContextId  (summary) Gets or sets a context unique identified. (since) 5.0  ActionOutput  (summary) Gets or sets the Python script &ldquo;print()&rdquo; target. By default string output goes to the Rhino.RhinoApp.Write function. Set Output if you want to redirect the output from python to a different function while this script executes. (since) 5.0  Commands.Command ScriptContextCommand  (summary) Command associated with this script.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/quadremeshparameters/">
+        <h3>QuadRemeshParameters</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/quadremeshparameters/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Parameters for QuadRemesh method
+public class QuadRemeshParametersProperties bool AdaptiveQuadCount  (summary) Respect the original Target Quad Count value as much as possible. True returns more quads than TargetQuadCount depending on amount of high-curvature areas. (since) 7.0  double AdaptiveSize  (summary) Larger values results in for quad sizes that adjust to match input curvature. Smaller values results in more uniform quad sizes at the risk of less feature preservation.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/quaternion/">
+        <h3>Quaternion</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/quaternion/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the four coefficient values in a quaternion. The first value a is the real part, while the rest multipies i, j and k, that are imaginary.quaternion = a + bi + cj + dk
+static -  (summary) Subtracts a quaternion from another one. This computes the difference of each quaternion coefficient with its correspondant and returns a new result quaternion. (since) 5.0  static !=  (summary) Determines whether two quaternions have different values.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/radialdimension/">
+        <h3>RadialDimension</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/radialdimension/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a dimension of a circular entity that can be measured with radius or diameter.
+public class RadialDimensionConstructors RadialDimension()  (summary) (since) 6.0  Properties AnnotationType AnnotationType  (summary) (since) 6.0  Point2d CenterPoint  (summary) (since) 6.0  Point2d DimlinePoint  (summary) (since) 6.0  bool IsDiameterDimension  (summary) Gets a value indicating whether the value refers to the diameter, rather than the radius. (since) 5.0  Point2d KneePoint  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/radialdimensionobject/">
+        <h3>RadialDimensionObject</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/radialdimensionobject/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+Rhino Object that represents a radial dimension geometry and attributes
+public class RadialDimensionObjectProperties Geometry.RadialDimension RadialDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/ray3d/">
+        <h3>Ray3d</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/ray3d/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents an immutable ray in three dimensions, using position and direction.
+static !=  (summary) Determines whether two have different values. (since) 5.0  static ==  (summary) Determines whether two have equal values. (since) 5.0  Constructors Ray3d(Point3d position,Vector3d direction)  (summary) Initializes a new Ray3d instance. (since) 5.0  Properties Vector3d Direction  (summary) Gets the direction vector of this ray. (since) 5.0  Point3d Position  (summary) Gets the starting position of this ray.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/datasources/rdkedit/">
+        <h3>RdkEdit</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/datasources/rdkedit/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.DataSources
+public class RdkEditConstructors RdkEdit(IntPtr pRdkEdit)  (summary) (since) 6.5  Properties IntPtr CppPointer  (summary) (since) 6.5  Methods void Dispose()  (summary) (since) 6.5 (returns) void This is some return comment  bool Execute(RenderContentCollection collection)  (summary) (since) 6.5 (returns) bool This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/datasources/rdkmodaleditcontentbucket/">
+        <h3>RdkModalEditContentBucket</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/datasources/rdkmodaleditcontentbucket/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.DataSources
+public class RdkModalEditContentBucketConstructors RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)  (summary) (since) 6.5  Properties IntPtr CppPointer  (summary) (since) 6.5  Methods RenderContentCollection ContentsIn()  (summary) (since) 6.5 (returns) RenderContentCollection This is some return comment  void Dispose()  (summary) (since) 6.5 (returns) void This is some return comment  void SetContentsOut(RenderContentCollection collection)  (summary) (since) 6.5 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/rdknotloadedexception/">
+        <h3>RdkNotLoadedException</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/rdknotloadedexception/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime
+Is thrown when the RDK is not loaded.
+public class RdkNotLoadedExceptionConstructors RdkNotLoadedException()  (summary) Initializes a new instance of the RDK not loaded exception with a standard message. (since) 5.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/datasources/rdkselectionnavigator/">
+        <h3>RdkSelectionNavigator</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/datasources/rdkselectionnavigator/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.DataSources
+public class RdkSelectionNavigatorConstructors RdkSelectionNavigator(IntPtr pRhinoSettings)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Add(RenderContentCollection selectedContentArray)  (summary) Add a selection of contents at the current position. Clears the navigator ahead of the current position. (since) 6.0 (returns) void This is some return comment  bool CanGoBackwards()  (summary) Check the backwards status of the navigator (since) 6.0 (returns) bool This is some return comment  bool CanGoForwards()  (summary) Check the forwards status of the navigator (since) 6.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/46/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/48/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

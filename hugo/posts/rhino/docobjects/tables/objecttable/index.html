@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ObjectTable &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class ObjectTableProperties BoundingBox BoundingBox  (summary) Gets the boundingbox for all objects (normal, locked and hidden) in this document that exist in &amp;ldquo;model&amp;rdquo; space. This bounding box does not include objects that exist in layout space. (since) 5.0  BoundingBox BoundingBoxVisible  (summary) Gets the boundingbox for all visible objects (normal and locked) in this document that exist in &amp;ldquo;model&amp;rdquo; space. This bounding box does not include hidden objects or any objects that exist in layout space.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ObjectTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObjectTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="boundingbox-boundingbox">BoundingBox BoundingBox</h4>
+<ul>
+<li>(summary) Gets the boundingbox for all objects (normal, locked and hidden) in this
+document that exist in &ldquo;model&rdquo; space. This bounding box does not include
+objects that exist in layout space.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="boundingbox-boundingboxvisible">BoundingBox BoundingBoxVisible</h4>
+<ul>
+<li>(summary) Gets the boundingbox for all visible objects (normal and locked) in this
+document that exist in &ldquo;model&rdquo; space. This bounding box does not include
+hidden objects or any objects that exist in layout space.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="modelcomponenttype-componenttype">ModelComponentType ComponentType</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="rhinodoc-document">RhinoDoc Document</h4>
+<ul>
+<li>(summary) Gets the document that owns this object table.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-historyrecordcount">int HistoryRecordCount</h4>
+<ul>
+<li>(summary) Returns the amount of history records in this document.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="guid-addgeometrybase-geometry">Guid Add(GeometryBase geometry)</h4>
+<ul>
+<li>(summary) Adds geometry that is not further specified.
+This is meant, for example, to handle addition of sets of different geometrical entities.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addgeometrybase-geometryobjectattributes-attributes">Guid Add(GeometryBase geometry,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds geometry that is not further specified.
+This is meant, for example, to handle addition of sets of different geometrical entities.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addgeometrybase-geometryobjectattributes-attributeshistoryrecord-historybool-reference">Guid Add(GeometryBase geometry,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds geometry that is not further specified.
+This is meant, for example, to handle addition of sets of different geometrical entities.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addangulardimensionangulardimension-dimension">Guid AddAngularDimension(AngularDimension dimension)</h4>
+<ul>
+<li>(summary) Adds a angular dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addangulardimensionangulardimension-dimensionobjectattributes-attributes">Guid AddAngularDimension(AngularDimension dimension,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a angular dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addangulardimensionangulardimension-dimensionobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddAngularDimension(AngularDimension dimension,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds an angular dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addarcarc-arc">Guid AddArc(Arc arc)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an arc.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addarcarc-arcobjectattributes-attributes">Guid AddArc(Arc arc,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an arc.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addarcarc-arcobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddArc(Arc arc,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addboxbox-box">Guid AddBox(Box box)</h4>
+<ul>
+<li>(summary) Adds a box to the object table.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addboxbox-boxobjectattributes-attributes">Guid AddBox(Box box,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a box to the object table.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addboxbox-boxobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddBox(Box box,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a box to the object table, as an extrusion.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addbrepbrep-brep">Guid AddBrep(Brep brep)</h4>
+<ul>
+<li>(summary) Adds a brep object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addbrepbrep-brepobjectattributes-attributes">Guid AddBrep(Brep brep,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a brep object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addbrepbrep-brepobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddBrep(Brep brep,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addbrepbrep-brepobjectattributes-attributeshistoryrecord-historybool-referencebool-splitkinkysurfaces">Guid AddBrep(Brep brep,ObjectAttributes attributes,HistoryRecord history,bool reference,bool splitKinkySurfaces)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcentermarkcentermark-centermarkobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddCentermark(Centermark centermark,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds an ordinate dimension object to the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcirclecircle-circle">Guid AddCircle(Circle circle)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing a circle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcirclecircle-circleobjectattributes-attributes">Guid AddCircle(Circle circle,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing a circle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcirclecircle-circleobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddCircle(Circle circle,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeguid-clippedviewportid">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)</h4>
+<ul>
+<li>(summary) Adds a clipping plane object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeguid-clippedviewportidobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeienumerableguid-clippedviewportids">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds)</h4>
+<ul>
+<li>(summary) Adds a clipping plane object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeienumerableguid-clippedviewportidsobjectattributes-attributes">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a clipping plane object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addclippingplaneplane-planedouble-umagnitudedouble-vmagnitudeienumerableguid-clippedviewportidsobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcurvecurve-curve">Guid AddCurve(Curve curve)</h4>
+<ul>
+<li>(summary) Adds a curve object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcurvecurve-curveobjectattributes-attributes">Guid AddCurve(Curve curve,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addcurvecurve-curveobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddCurve(Curve curve,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addellipseellipse-ellipse">Guid AddEllipse(Ellipse ellipse)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an ellipse.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addellipseellipse-ellipseobjectattributes-attributes">Guid AddEllipse(Ellipse ellipse,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a curve object to the document representing an ellipse.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addellipseellipse-ellipseobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddEllipse(Ellipse ellipse,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addexplodedinstancepiecesinstanceobject-instancebool-explodenestedinstancesbool-deleteinstance">Guid[] AddExplodedInstancePieces(InstanceObject instance,bool explodeNestedInstances,bool deleteInstance)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.11</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="guid-addextrusionextrusion-extrusion">Guid AddExtrusion(Extrusion extrusion)</h4>
+<ul>
+<li>(summary) Adds an extrusion object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addextrusionextrusion-extrusionobjectattributes-attributes">Guid AddExtrusion(Extrusion extrusion,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an extrusion object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addextrusionextrusion-extrusionobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddExtrusion(Extrusion extrusion,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addhatchhatch-hatch">Guid AddHatch(Hatch hatch)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addhatchhatch-hatchobjectattributes-attributes">Guid AddHatch(Hatch hatch,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addhatchhatch-hatchobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddHatch(Hatch hatch,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectint-instancedefinitionindextransform-instancexform">Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform)</h4>
+<ul>
+<li>(summary) Adds an instance object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectint-instancedefinitionindextransform-instancexformobjectattributes-attributes">Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an instance object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addinstanceobjectint-instancedefinitionindextransform-instancexformobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds an instance object to the document.</li>
+<li>(since) 6.24</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderienumerablepoint3d-points">Guid AddLeader(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderleader-leader">Guid AddLeader(Leader leader)</h4>
+<ul>
+<li>(summary) Adds a Leader object to the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderleader-leaderobjectattributes-attributes">Guid AddLeader(Leader leader,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Addsa Leader object to the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderleader-leaderobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddLeader(Leader leader,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a Leader object to the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderplane-planeienumerablepoint2d-points">Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderplane-planeienumerablepoint2d-pointsobjectattributes-attributes">Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textienumerablepoint3d-points">Guid AddLeader(string text,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textplane-planeienumerablepoint2d-points">Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textplane-planeienumerablepoint2d-pointsobjectattributes-attributes">Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addleaderstring-textplane-planeienumerablepoint2d-pointsobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineline-line">Guid AddLine(Line line)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineline-lineobjectattributes-attributes">Guid AddLine(Line line,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlinepoint3d-frompoint3d-to">Guid AddLine(Point3d from,Point3d to)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlinepoint3d-frompoint3d-toobjectattributes-attributes">Guid AddLine(Point3d from,Point3d to,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a line object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlinepoint3d-frompoint3d-toobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddLine(Point3d from,Point3d to,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineardimensionlineardimension-dimension">Guid AddLinearDimension(LinearDimension dimension)</h4>
+<ul>
+<li>(summary) Adds a linear dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineardimensionlineardimension-dimensionobjectattributes-attributes">Guid AddLinearDimension(LinearDimension dimension,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a linear dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addlineardimensionlineardimension-dimensionobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddLinearDimension(LinearDimension dimension,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a linear dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmeshmesh-mesh">Guid AddMesh(Mesh mesh)</h4>
+<ul>
+<li>(summary) Adds a mesh object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmeshmesh-meshobjectattributes-attributes">Guid AddMesh(Mesh mesh,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a mesh object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmeshmesh-meshobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddMesh(Mesh mesh,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmeshmesh-meshobjectattributes-attributeshistoryrecord-historybool-referencebool-requirevalidmesh">Guid AddMesh(Mesh mesh,ObjectAttributes attributes,HistoryRecord history,bool reference,bool requireValidMesh)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmorphcontrolmorphcontrol-morphcontrol">Guid AddMorphControl(MorphControl morphControl)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmorphcontrolmorphcontrol-morphcontrolobjectattributes-attributes">Guid AddMorphControl(MorphControl morphControl,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addmorphcontrolmorphcontrol-morphcontrolobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddMorphControl(MorphControl morphControl,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addordinatedimensionordinatedimension-dimordinateobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddOrdinateDimension(OrdinateDimension dimordinate,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds an ordinate dimension object to the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpictureframeplane-planestring-texturepathbool-asmeshdouble-widthdouble-heightbool-selfilluminationbool-embedbitmap">Guid AddPictureFrame(Plane plane,string texturePath,bool asMesh,double width,double height,bool selfIllumination,bool embedBitmap)</h4>
+<ul>
+<li>(summary) Creates a PictureFrame object from a plane and a path to an image file,
+Note, a PictureFrame object is just a Plane surface or mesh that has a
+material with a texture assigned to it that displays in all display
+modes.</li>
+<li>(since) 5.10</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointdouble-xdouble-ydouble-z">Guid AddPoint(double x,double y,double z)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint-pointobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddPoint(Point point,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a point object and its geometry-linked information to the document</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3d-point">Guid AddPoint(Point3d point)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3d-pointobjectattributes-attributes">Guid AddPoint(Point3d point,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3d-pointobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddPoint(Point3d point,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a point object to the document</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3f-point">Guid AddPoint(Point3f point)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointpoint3f-pointobjectattributes-attributes">Guid AddPoint(Point3f point,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudienumerablepoint3d-points">Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudienumerablepoint3d-pointsobjectattributes-attributes">Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudienumerablepoint3d-pointsobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudpointcloud-cloud">Guid AddPointCloud(PointCloud cloud)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudpointcloud-cloudobjectattributes-attributes">Guid AddPointCloud(PointCloud cloud,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpointcloudpointcloud-cloudobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddPointCloud(PointCloud cloud,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a point cloud object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="rhinolistguid-addpointsienumerablepoint3d-points">RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoList<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="rhinolistguid-addpointsienumerablepoint3d-pointsobjectattributes-attributes">RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoList<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="rhinolistguid-addpointsienumerablepoint3f-points">RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoList<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="rhinolistguid-addpointsienumerablepoint3f-pointsobjectattributes-attributes">RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds multiple points to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoList<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="guid-addpolylineienumerablepoint3d-points">Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Adds a polyline object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpolylineienumerablepoint3d-pointsobjectattributes-attributes">Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a polyline object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addpolylineienumerablepoint3d-pointsobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addradialdimensionradialdimension-dimension">Guid AddRadialDimension(RadialDimension dimension)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addradialdimensionradialdimension-dimensionobjectattributes-attributes">Guid AddRadialDimension(RadialDimension dimension,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addradialdimensionradialdimension-dimensionobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddRadialDimension(RadialDimension dimension,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a radial dimension object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addrectanglerectangle3d-rectangle">Guid AddRectangle(Rectangle3d rectangle)</h4>
+<ul>
+<li>(summary) Adds a rectangle to the object table.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addrectanglerectangle3d-rectangleobjectattributes-attributes">Guid AddRectangle(Rectangle3d rectangle,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a rectangle to the object table.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addrectanglerectangle3d-rectangleobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddRectangle(Rectangle3d rectangle,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a rectangle to the object table.</li>
+<li>(since) 6.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectbrepobject-brepobjectbrep-brep">void AddRhinoObject(BrepObject brepObject,Brep brep)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcurveobject-curveobjectcurve-curve">void AddRhinoObject(CurveObject curveObject,Curve curve)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustombrepobject-brepobject">void AddRhinoObject(CustomBrepObject brepObject)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustombrepobject-brepobjecthistoryrecord-history">void AddRhinoObject(CustomBrepObject brepObject,HistoryRecord history)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustomcurveobject-curveobjecthistoryrecord-history">void AddRhinoObject(CustomCurveObject curveObject,HistoryRecord history)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustommeshobject-meshobject">void AddRhinoObject(CustomMeshObject meshObject)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustommeshobject-meshobjecthistoryrecord-history">void AddRhinoObject(CustomMeshObject meshObject,HistoryRecord history)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustompointobject-pointobject">void AddRhinoObject(CustomPointObject pointObject)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.6</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectcustompointobject-pointobjecthistoryrecord-history">void AddRhinoObject(CustomPointObject pointObject,HistoryRecord history)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectmeshobject-meshobjectmesh-mesh">void AddRhinoObject(MeshObject meshObject,Mesh mesh)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobjectpointobject-pointobjectpoint-point">void AddRhinoObject(PointObject pointObject,Point point)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.6</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="guid-addspheresphere-sphere">Guid AddSphere(Sphere sphere)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addspheresphere-sphereobjectattributes-attributes">Guid AddSphere(Sphere sphere,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addspheresphere-sphereobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddSphere(Sphere sphere,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsubdsubd-subd">Guid AddSubD(SubD subD)</h4>
+<ul>
+<li>(summary) Adds a SubD object to Rhino.</li>
+<li>(since) 7.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsubdsubd-subdobjectattributes-attributes">Guid AddSubD(SubD subD,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a SubD object to Rhino.</li>
+<li>(since) 7.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsubdsubd-subdobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddSubD(SubD subD,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a SubD object to Rhino.</li>
+<li>(since) 7.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsurfacesurface-surface">Guid AddSurface(Surface surface)</h4>
+<ul>
+<li>(summary) Adds a surface object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsurfacesurface-surfaceobjectattributes-attributes">Guid AddSurface(Surface surface,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a surface object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addsurfacesurface-surfaceobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddSurface(Surface surface,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italic">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italicobjectattributes-attributes">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italicobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italictextjustification-justification">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italictextjustification-justificationobjectattributes-attributes">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextstring-textplane-planedouble-heightstring-fontnamebool-boldbool-italictextjustification-justificationobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttext3d-text3d">Guid AddText(Text3d text3d)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttext3d-text3dobjectattributes-attributes">Guid AddText(Text3d text3d,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an annotation text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttextentity-text">Guid AddText(TextEntity text)</h4>
+<ul>
+<li>(summary) Adds a v6_TextObject to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttextentity-textobjectattributes-attributes">Guid AddText(TextEntity text,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtexttextentity-textobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddText(TextEntity text,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary) Adds a text object to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdotstring-textpoint3d-location">Guid AddTextDot(string text,Point3d location)</h4>
+<ul>
+<li>(summary) Adds a text dot object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdotstring-textpoint3d-locationobjectattributes-attributes">Guid AddTextDot(string text,Point3d location,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a text dot object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdottextdot-dot">Guid AddTextDot(TextDot dot)</h4>
+<ul>
+<li>(summary) Adds a text dot object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdottextdot-dotobjectattributes-attributes">Guid AddTextDot(TextDot dot,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds a text dot object to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-addtextdottextdot-dotobjectattributes-attributeshistoryrecord-historybool-reference">Guid AddTextDot(TextDot dot,ObjectAttributes attributes,HistoryRecord history,bool reference)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-allobjectssinceuint-runtimeserialnumber">RhinoObject[] AllObjectsSince(uint runtimeSerialNumber)</h4>
+<ul>
+<li>(summary) Gets all the objects that have been added to the document since a given runtime serial number.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="bool-deleteguid-objectidbool-quiet">bool Delete(Guid objectId,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes object from document. The deletion can be undone by calling UndeleteObject().</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-deleteienumerableguid-objectidsbool-quiet">int Delete(IEnumerable<!-- raw HTML omitted --> objectIds,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes a collection of objects from the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-deleteobjref-objrefbool-quiet">bool Delete(ObjRef objref,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes objref.Object(). The deletion can be undone by calling UndeleteObject().</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleteobjref-objrefbool-quietbool-ignoremodes">bool Delete(ObjRef objref,bool quiet,bool ignoreModes)</h4>
+<ul>
+<li>(summary) Deletes objref.Object(). The deletion can be undone by calling UndeleteObject().</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleterhinoobject-item">bool Delete(RhinoObject item)</h4>
+<ul>
+<li>(summary) Deletes an object, taking into account modes and not showing error message boxes.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleterhinoobject-objbool-quiet">bool Delete(RhinoObject obj,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes object from document. The deletion can be undone by calling UndeleteObject().</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleterhinoobject-objbool-quietbool-ignoremodes">bool Delete(RhinoObject obj,bool quiet,bool ignoreModes)</h4>
+<ul>
+<li>(summary) Deletes object from document. The deletion can be undone by calling UndeleteObject().</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deletegripgripobject-grip">bool DeleteGrip(GripObject grip)</h4>
+<ul>
+<li>(summary) Deletes a grip object.</li>
+<li>(since) 6.5</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deletegripguid-gripid">bool DeleteGrip(Guid gripId)</h4>
+<ul>
+<li>(summary) Deletes a grip object.</li>
+<li>(since) 6.5</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deletegripobjref-gripref">bool DeleteGrip(ObjRef gripRef)</h4>
+<ul>
+<li>(summary) Deletes a grip object.</li>
+<li>(since) 6.5</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-deletegripsienumerablegripobject-grips">int DeleteGrips(IEnumerable<!-- raw HTML omitted --> grips)</h4>
+<ul>
+<li>(summary) Deletes one or more grip objects.</li>
+<li>(since) 6.5</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-deletegripsienumerableguid-gripids">int DeleteGrips(IEnumerable<!-- raw HTML omitted --> gripIds)</h4>
+<ul>
+<li>(summary) Deletes one or more grip objects.</li>
+<li>(since) 6.5</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-deletegripsienumerableobjref-griprefs">int DeleteGrips(IEnumerable<!-- raw HTML omitted --> gripRefs)</h4>
+<ul>
+<li>(summary) Deletes one or more grip objects.</li>
+<li>(since) 6.5</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-deletegripsrhinoobject-ownerienumerableint-gripindices">int DeleteGrips(RhinoObject owner,IEnumerable<!-- raw HTML omitted --> gripIndices)</h4>
+<ul>
+<li>(summary) Deletes one or more grip objects.</li>
+<li>(since) 6.5</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="guid-duplicateguid-objectid">Guid Duplicate(Guid objectId)</h4>
+<ul>
+<li>(summary) Same as TransformObject(objref, ON_Xform.Identity, false)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-duplicateobjref-objref">Guid Duplicate(ObjRef objref)</h4>
+<ul>
+<li>(summary) Duplicates the object that is referenced by objref.
+Same as Transform(objref, Transform.Identity, false)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-duplicaterhinoobject-obj">Guid Duplicate(RhinoObject obj)</h4>
+<ul>
+<li>(summary) Duplicates the object that is referenced by obj.
+Same as TransformObject(obj, Transform.Identityy, false)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findguid-objectid">RhinoObject Find(Guid objectId)</h4>
+<ul>
+<li>(summary) Please use FindId().</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-finduint-runtimeserialnumber">RhinoObject Find(uint runtimeSerialNumber)</h4>
+<ul>
+<li>(summary) Use the object runtime serial number to find a rhino object in the document. This is the value stored on
+RhinoObject.RuntimeObjectSerialNumber. The RhinoObject constructor sets the runtime serial number and every
+instance of a RhinoObject class will have a unique serial number for the duration of the Rhino application.
+If an object is replaced with a new object, then the new object will have a different runtime serial number.
+Deleted objects stored in the undo list maintain their runtime serial numbers and this funtion will return
+pointers to these objects. Call RhinoObject.IsDeleted if you need to determine if the returned object is
+active or deleted.  The runtime serial number is not saved in files.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbycrossingwindowregionrhinoviewport-viewportienumerablepoint3d-regionbool-insideobjecttype-filter">RhinoObject[] FindByCrossingWindowRegion(RhinoViewport viewport,IEnumerable<!-- raw HTML omitted --> region,bool inside,ObjectType filter)</h4>
+<ul>
+<li>(summary) Finds objects bounded by a polyline region</li>
+<li>(since) 5.7</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbycrossingwindowregionrhinoviewport-viewportpoint2d-screen1point2d-screen2bool-insideobjecttype-filter">RhinoObject[] FindByCrossingWindowRegion(RhinoViewport viewport,Point2d screen1,Point2d screen2,bool inside,ObjectType filter)</h4>
+<ul>
+<li>(summary) Finds objects bounded by a region</li>
+<li>(since) 5.8</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbydrawcolorcolor-drawcolorbool-includelights">RhinoObject[] FindByDrawColor(Color drawColor,bool includeLights)</h4>
+<ul>
+<li>(summary) Finds all objects whose draw color matches a given color.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbyfilterobjectenumeratorsettings-filter">RhinoObject[] FindByFilter(ObjectEnumeratorSettings filter)</h4>
+<ul>
+<li>(summary) Same as GetObjectList but converts the result to an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbygroupint-groupindex">RhinoObject[] FindByGroup(int groupIndex)</h4>
+<ul>
+<li>(summary) Finds all RhinoObjects that are in a given group.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbylayerlayer-layer">RhinoObject[] FindByLayer(Layer layer)</h4>
+<ul>
+<li>(summary) Finds all RhinoObjects that are in a given layer.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbylayerstring-layername">RhinoObject[] FindByLayer(string layerName)</h4>
+<ul>
+<li>(summary) Finds all RhinoObjects that are in a given layer.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbyobjecttypeobjecttype-typefilter">RhinoObject[] FindByObjectType(ObjectType typeFilter)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbyuserstringstring-keystring-valuebool-casesensitive">RhinoObject[] FindByUserString(string key,string value,bool caseSensitive)</h4>
+<ul>
+<li>(summary) Finds all objects whose UserString matches the search patterns.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbyuserstringstring-keystring-valuebool-casesensitivebool-searchgeometrybool-searchattributesobjectenumeratorsettings-filter">RhinoObject[] FindByUserString(string key,string value,bool caseSensitive,bool searchGeometry,bool searchAttributes,ObjectEnumeratorSettings filter)</h4>
+<ul>
+<li>(summary) Finds all objects whose UserString matches the search patterns.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbyuserstringstring-keystring-valuebool-casesensitivebool-searchgeometrybool-searchattributesobjecttype-filter">RhinoObject[] FindByUserString(string key,string value,bool caseSensitive,bool searchGeometry,bool searchAttributes,ObjectType filter)</h4>
+<ul>
+<li>(summary) Finds all objects whose UserString matches the search patterns.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbywindowregionrhinoviewport-viewportienumerablepoint3d-regionbool-insideobjecttype-filter">RhinoObject[] FindByWindowRegion(RhinoViewport viewport,IEnumerable<!-- raw HTML omitted --> region,bool inside,ObjectType filter)</h4>
+<ul>
+<li>(summary) Finds objects bounded by a polyline region</li>
+<li>(since) 5.7</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findbywindowregionrhinoviewport-viewportpoint2d-screen1point2d-screen2bool-insideobjecttype-filter">RhinoObject[] FindByWindowRegion(RhinoViewport viewport,Point2d screen1,Point2d screen2,bool inside,ObjectType filter)</h4>
+<ul>
+<li>(summary) Finds objects bounded by a polyline region</li>
+<li>(since) 5.8</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="clippingplaneobject-findclippingplanesforviewportrhinoviewport-viewport">ClippingPlaneObject[] FindClippingPlanesForViewport(RhinoViewport viewport)</h4>
+<ul>
+<li>(summary) Finds all of the clipping plane objects that actively clip a viewport.</li>
+<li>(since) 5.0</li>
+<li>(returns) ClippingPlaneObject[] This is some return comment</li>
+</ul>
+<h4 id="geometrybase-findgeometryguid-id">GeometryBase FindGeometry(Guid id)</h4>
+<ul>
+<li>(summary) Same as FindId, but returns the Geometry property directly, if it exists.</li>
+<li>(since) 6.0</li>
+<li>(returns) GeometryBase This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-findidguid-id">RhinoObject FindId(Guid id)</h4>
+<ul>
+<li>(summary) Uses the object guid to find a rhino object. Deleted objects cannot be found by id.
+The guid is the value that is stored on RhinoObject.Id
+In a single document, no two active objects have the same guid. If an object is
+replaced with a new object, then the guid  persists. For example, if the _Move command
+moves an object, then the moved object inherits it&rsquo;s guid from the starting object.
+If the Copy command copies an object, then the copy gets a new guid. This guid persists
+through file saving/openning operations. This function will not find grip objects.</li>
+<li>(since) 6.0</li>
+<li>(returns) RhinoObject This is some return comment</li>
+</ul>
+<h4 id="ienumeratorrhinoobject-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="ienumerablerhinoobject-getobjectlistobjectenumeratorsettings-settings">IEnumerable<!-- raw HTML omitted --> GetObjectList(ObjectEnumeratorSettings settings)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerable<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="ienumerablerhinoobject-getobjectlistobjecttype-typefilter">IEnumerable<!-- raw HTML omitted --> GetObjectList(ObjectType typeFilter)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerable<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="ienumerablerhinoobject-getobjectlisttype-typefilter">IEnumerable<!-- raw HTML omitted --> GetObjectList(Type typeFilter)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerable<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="ienumerablet-getobjectsbytype">IEnumerable<!-- raw HTML omitted --> GetObjectsByType()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="ienumerablet-getobjectsbytypeobjectenumeratorsettings-settings">IEnumerable<!-- raw HTML omitted --> GetObjectsByType(ObjectEnumeratorSettings settings)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="ienumerablerhinoobject-getselectedobjectsbool-includelightsbool-includegrips">IEnumerable<!-- raw HTML omitted --> GetSelectedObjects(bool includeLights,bool includeGrips)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerable<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="objecttype-getselectedobjecttypes">ObjectType GetSelectedObjectTypes()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) ObjectType This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-gripupdaterhinoobject-objbool-deleteoriginal">RhinoObject GripUpdate(RhinoObject obj,bool deleteOriginal)</h4>
+<ul>
+<li>(summary) Altered grip positions on a RhinoObject are used to calculate an updated object
+that is added to the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject This is some return comment</li>
+</ul>
+<h4 id="bool-hideguid-objectidbool-ignorelayermode">bool Hide(Guid objectId,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If Object().IsNormal() is true, then the object will be hidden.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-hideobjref-objrefbool-ignorelayermode">bool Hide(ObjRef objref,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If objref.Object().IsNormal() is true, then the object will be hidden.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-hiderhinoobject-objbool-ignorelayermode">bool Hide(RhinoObject obj,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If obj.IsNormal() is true, then the object will be hidden.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-lockguid-objectidbool-ignorelayermode">bool Lock(Guid objectId,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If objref.Object().IsNormal() is true, then the object will be locked.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-lockobjref-objrefbool-ignorelayermode">bool Lock(ObjRef objref,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If objref.Object().IsNormal() is true, then the object will be locked.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-lockrhinoobject-objbool-ignorelayermode">bool Lock(RhinoObject obj,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If obj.IsNormal() is true, then the object will be locked.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyattributesguid-objectidobjectattributes-newattributesbool-quiet">bool ModifyAttributes(Guid objectId,ObjectAttributes newAttributes,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies an object&rsquo;s attributes.  Cannot be used to change object id.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyattributesobjref-objrefobjectattributes-newattributesbool-quiet">bool ModifyAttributes(ObjRef objref,ObjectAttributes newAttributes,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies an object&rsquo;s attributes.  Cannot be used to change object id.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyattributesrhinoobject-objobjectattributes-newattributesbool-quiet">bool ModifyAttributes(RhinoObject obj,ObjectAttributes newAttributes,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies an object&rsquo;s attributes.  Cannot be used to change object id.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyrendermaterialguid-objectidrendermaterial-material">bool ModifyRenderMaterial(Guid objectId,RenderMaterial material)</h4>
+<ul>
+<li>(summary) Modifies an object&rsquo;s render material assignment, this will set the
+objects material source to ObjectMaterialSource.MaterialFromObject.</li>
+<li>(since) 5.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyrendermaterialobjref-objrefrendermaterial-material">bool ModifyRenderMaterial(ObjRef objRef,RenderMaterial material)</h4>
+<ul>
+<li>(summary) Modifies an object&rsquo;s render material assignment, this will set the
+objects material source to ObjectMaterialSource.MaterialFromObject.</li>
+<li>(since) 5.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyrendermaterialrhinoobject-objrendermaterial-material">bool ModifyRenderMaterial(RhinoObject obj,RenderMaterial material)</h4>
+<ul>
+<li>(summary) Modifies an object&rsquo;s render material assignment, this will set the
+objects material source to ObjectMaterialSource.MaterialFromObject.</li>
+<li>(since) 5.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifytexturemappingguid-objidint-channeltexturemapping-mapping">bool ModifyTextureMapping(Guid objId,int channel,TextureMapping mapping)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifytexturemappingobjref-objrefint-channeltexturemapping-mapping">bool ModifyTextureMapping(ObjRef objRef,int channel,TextureMapping mapping)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifytexturemappingrhinoobject-objint-channeltexturemapping-mapping">bool ModifyTextureMapping(RhinoObject obj,int channel,TextureMapping mapping)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-mostrecentobject">RhinoObject MostRecentObject()</h4>
+<ul>
+<li>(summary) Gets the most recently added object that is still in the Document.</li>
+<li>(since) 5.0</li>
+<li>(returns) RhinoObject This is some return comment</li>
+</ul>
+<h4 id="int-objectcountobjectenumeratorsettings-filter">int ObjectCount(ObjectEnumeratorSettings filter)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="objref-pickobjectspickcontext-pickcontext">ObjRef[] PickObjects(PickContext pickContext)</h4>
+<ul>
+<li>(summary) Pick one or more objects based on a given pick context</li>
+<li>(since) 6.0</li>
+<li>(returns) ObjRef[] This is some return comment</li>
+</ul>
+<h4 id="bool-purgerhinoobject-rhinoobject">bool Purge(RhinoObject rhinoObject)</h4>
+<ul>
+<li>(summary) Removes object from document and deletes the pointer. Typically you will
+want to call Delete instead in order to keep the object on the undo list.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-purgeuint-runtimeserialnumber">bool Purge(uint runtimeSerialNumber)</h4>
+<ul>
+<li>(summary) Removes object from document and deletes the pointer. Typically you will
+want to call Delete instead in order to keep the object on the undo list.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidarc-arc">bool Replace(Guid objectId,Arc arc)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidbrep-brep">bool Replace(Guid objectId,Brep brep)</h4>
+<ul>
+<li>(summary) Replaces one object with new brep object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidbrep-brepbool-splitkinkysurfaces">bool Replace(Guid objectId,Brep brep,bool splitKinkySurfaces)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidcircle-circle">bool Replace(Guid objectId,Circle circle)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidcurve-curve">bool Replace(Guid objectId,Curve curve)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidextrusion-extrusion">bool Replace(Guid objectId,Extrusion extrusion)</h4>
+<ul>
+<li>(summary) Replaces one object with new extrusion object.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidhatch-hatch">bool Replace(Guid objectId,Hatch hatch)</h4>
+<ul>
+<li>(summary) Replaces one object with new hatch object.</li>
+<li>(since) 6.1</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidleader-leader">bool Replace(Guid objectId,Leader leader)</h4>
+<ul>
+<li>(summary) Replaces one object with new text object.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidline-line">bool Replace(Guid objectId,Line line)</h4>
+<ul>
+<li>(summary) Replaces one object with new line curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidmesh-mesh">bool Replace(Guid objectId,Mesh mesh)</h4>
+<ul>
+<li>(summary) Replaces one object with new mesh object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidpoint-point">bool Replace(Guid objectId,Point point)</h4>
+<ul>
+<li>(summary) Replaces one object with new point object.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidpoint3d-point">bool Replace(Guid objectId,Point3d point)</h4>
+<ul>
+<li>(summary) Replaces one object with new point object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidpointcloud-pointcloud">bool Replace(Guid objectId,PointCloud pointcloud)</h4>
+<ul>
+<li>(summary) Replaces one object with new pointcloud object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidpolyline-polyline">bool Replace(Guid objectId,Polyline polyline)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidsubd-subd">bool Replace(Guid objectId,SubD subD)</h4>
+<ul>
+<li>(summary) Replaces one object with new subd object.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidsurface-surface">bool Replace(Guid objectId,Surface surface)</h4>
+<ul>
+<li>(summary) Replaces one object with new surface object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidtextdot-dot">bool Replace(Guid objectId,TextDot dot)</h4>
+<ul>
+<li>(summary) Replaces one object with new textdot object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceguid-objectidtextentity-text">bool Replace(Guid objectId,TextEntity text)</h4>
+<ul>
+<li>(summary) Replaces one object with new text object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefarc-arc">bool Replace(ObjRef objref,Arc arc)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefbrep-brep">bool Replace(ObjRef objref,Brep brep)</h4>
+<ul>
+<li>(summary) Replaces one object with new brep object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefbrep-brepbool-splitkinkysurfaces">bool Replace(ObjRef objref,Brep brep,bool splitKinkySurfaces)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefcircle-circle">bool Replace(ObjRef objref,Circle circle)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefcurve-curve">bool Replace(ObjRef objref,Curve curve)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefextrusion-extrusion">bool Replace(ObjRef objref,Extrusion extrusion)</h4>
+<ul>
+<li>(summary) Replaces one object with new extrusion object.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefhatch-hatch">bool Replace(ObjRef objref,Hatch hatch)</h4>
+<ul>
+<li>(summary) Replaces one object with new hatch object.</li>
+<li>(since) 6.1</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefleader-leader">bool Replace(ObjRef objref,Leader leader)</h4>
+<ul>
+<li>(summary) Replaces one object with new text object.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefline-line">bool Replace(ObjRef objref,Line line)</h4>
+<ul>
+<li>(summary) Replaces one object with new line curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefmesh-mesh">bool Replace(ObjRef objref,Mesh mesh)</h4>
+<ul>
+<li>(summary) Replaces one object with new mesh object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefpoint-point">bool Replace(ObjRef objref,Point point)</h4>
+<ul>
+<li>(summary) Replaces one object with new point object.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefpoint3d-point">bool Replace(ObjRef objref,Point3d point)</h4>
+<ul>
+<li>(summary) Replaces one object with new point object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefpointcloud-pointcloud">bool Replace(ObjRef objref,PointCloud pointcloud)</h4>
+<ul>
+<li>(summary) Replaces one object with new pointcloud object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefpolyline-polyline">bool Replace(ObjRef objref,Polyline polyline)</h4>
+<ul>
+<li>(summary) Replaces one object with new curve object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefrhinoobject-newobject">bool Replace(ObjRef objref,RhinoObject newObject)</h4>
+<ul>
+<li>(summary) Replaces one object with another. Conceptually, this function is the same as calling
+Setting new_object attributes = old_object attributes
+DeleteObject(old_object);
+AddObject(old_object);</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefsubd-subd">bool Replace(ObjRef objref,SubD subD)</h4>
+<ul>
+<li>(summary) Replaces one object with a new SubD object.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objrefsurface-surface">bool Replace(ObjRef objref,Surface surface)</h4>
+<ul>
+<li>(summary) Replaces one object with new surface object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objreftextdot-dot">bool Replace(ObjRef objref,TextDot dot)</h4>
+<ul>
+<li>(summary) Replaces one object with new textdot object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceobjref-objreftextentity-text">bool Replace(ObjRef objref,TextEntity text)</h4>
+<ul>
+<li>(summary) Replaces one object with new text object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceinstanceobjectguid-objectidint-instancedefinitionindex">bool ReplaceInstanceObject(Guid objectId,int instanceDefinitionIndex)</h4>
+<ul>
+<li>(summary) Replaces the underlying instance definition of an instance object.</li>
+<li>(since) 6.8</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replaceinstanceobjectobjref-objrefint-instancedefinitionindex">bool ReplaceInstanceObject(ObjRef objref,int instanceDefinitionIndex)</h4>
+<ul>
+<li>(summary) Replaces the underlying instance definition of an instance object.</li>
+<li>(since) 6.8</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectguid-objectid">bool Select(Guid objectId)</h4>
+<ul>
+<li>(summary) Select a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectguid-objectidbool-select">bool Select(Guid objectId,bool select)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectguid-objectidbool-selectbool-synchighlight">bool Select(Guid objectId,bool select,bool syncHighlight)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectguid-objectidbool-selectbool-synchighlightbool-persistentselect">bool Select(Guid objectId,bool select,bool syncHighlight,bool persistentSelect)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectguid-objectidbool-selectbool-synchighlightbool-persistentselectbool-ignoregripsstatebool-ignorelayerlockingbool-ignorelayervisibility">bool Select(Guid objectId,bool select,bool syncHighlight,bool persistentSelect,bool ignoreGripsState,bool ignoreLayerLocking,bool ignoreLayerVisibility)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-selectienumerableguid-objectids">int Select(IEnumerable<!-- raw HTML omitted --> objectIds)</h4>
+<ul>
+<li>(summary) Selects a collection of objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-selectienumerableguid-objectidsbool-select">int Select(IEnumerable<!-- raw HTML omitted --> objectIds,bool select)</h4>
+<ul>
+<li>(summary) Selects or deselects a collection of objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-selectienumerableobjref-objrefs">int Select(IEnumerable<!-- raw HTML omitted --> objRefs)</h4>
+<ul>
+<li>(summary) Selects a collection of objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-selectienumerableobjref-objrefsbool-select">int Select(IEnumerable<!-- raw HTML omitted --> objRefs,bool select)</h4>
+<ul>
+<li>(summary) Selects or deselects a collection of objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-selectobjref-objref">bool Select(ObjRef objref)</h4>
+<ul>
+<li>(summary) Select a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectobjref-objrefbool-select">bool Select(ObjRef objref,bool select)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectobjref-objrefbool-selectbool-synchighlight">bool Select(ObjRef objref,bool select,bool syncHighlight)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectobjref-objrefbool-selectbool-synchighlightbool-persistentselect">bool Select(ObjRef objref,bool select,bool syncHighlight,bool persistentSelect)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectobjref-objrefbool-selectbool-synchighlightbool-persistentselectbool-ignoregripsstatebool-ignorelayerlockingbool-ignorelayervisibility">bool Select(ObjRef objref,bool select,bool syncHighlight,bool persistentSelect,bool ignoreGripsState,bool ignoreLayerLocking,bool ignoreLayerVisibility)</h4>
+<ul>
+<li>(summary) Select or deselects a single object.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-showguid-objectidbool-ignorelayermode">bool Show(Guid objectId,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If Object().IsHidden() is true, then the object will be returned to normal (visible and selectable) mode.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-showobjref-objrefbool-ignorelayermode">bool Show(ObjRef objref,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If objref.Object().IsHidden() is true, then the object will be returned to normal (visible and selectable) mode.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-showrhinoobject-objbool-ignorelayermode">bool Show(RhinoObject obj,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If obj.IsHidden() is true, then the object will be returned to normal (visible and selectable) mode.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="guid-transformguid-objectidtransform-xformbool-deleteoriginal">Guid Transform(Guid objectId,Transform xform,bool deleteOriginal)</h4>
+<ul>
+<li>(summary) Constructs a new object that is the transformation of the existing object
+and deletes the existing object if deleteOriginal is true.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-transformobjref-objreftransform-xformbool-deleteoriginal">Guid Transform(ObjRef objref,Transform xform,bool deleteOriginal)</h4>
+<ul>
+<li>(summary) Constructs a new object that is the transformation of the existing object
+and deletes the existing object if deleteOriginal is true.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-transformrhinoobject-objtransform-xformbool-deleteoriginal">Guid Transform(RhinoObject obj,Transform xform,bool deleteOriginal)</h4>
+<ul>
+<li>(summary) Constructs a new object that is the transformation of the existing object
+and deletes the existing object if deleteOriginal is true.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-transformwithhistoryguid-objectidtransform-xform">Guid TransformWithHistory(Guid objectId,Transform xform)</h4>
+<ul>
+<li>(summary) Constructs a new object that is the transformation of the existing object
+and records history of the transformation if history recording is turned on.
+If history recording is not enabled, this function will act the same as
+Transform(objectId, xform, false)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-transformwithhistoryobjref-objreftransform-xform">Guid TransformWithHistory(ObjRef objref,Transform xform)</h4>
+<ul>
+<li>(summary) Constructs a new object that is the transformation of the existing object
+and records history of the transformation if history recording is turned on.
+If history recording is not enabled, this function will act the same as
+Transform(objref, xform, false)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-transformwithhistoryrhinoobject-objtransform-xform">Guid TransformWithHistory(RhinoObject obj,Transform xform)</h4>
+<ul>
+<li>(summary) Constructs a new object that is the transformation of the existing object
+and records history of the transformation if history recording is turned on.
+If history recording is not enabled, this function will act the same as
+Transform(obj, xform, false)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="bool-tryfindpointguid-idpoint3d-point">bool TryFindPoint(Guid id,Point3d point)</h4>
+<ul>
+<li>(summary) Finds the location of a point, if a point exists in the document.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undeleterhinoobject-rhinoobject">bool Undelete(RhinoObject rhinoObject)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undeleteuint-runtimeserialnumber">bool Undelete(uint runtimeSerialNumber)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-unlockguid-objectidbool-ignorelayermode">bool Unlock(Guid objectId,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If Object().IsLocked() is true, then the object will be returned to normal (visible and selectable) mode.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-unlockobjref-objrefbool-ignorelayermode">bool Unlock(ObjRef objref,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If objref.Object().IsLocked() is true, then the object will be returned to normal (visible and selectable) mode.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-unlockrhinoobject-objbool-ignorelayermode">bool Unlock(RhinoObject obj,bool ignoreLayerMode)</h4>
+<ul>
+<li>(summary) If obj.IsLocked() is true, then the object will be returned to normal (visible and selectable) mode.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-unselectall">int UnselectAll()</h4>
+<ul>
+<li>(summary) Unselect objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-unselectallbool-ignorepersistentselections">int UnselectAll(bool ignorePersistentSelections)</h4>
+<ul>
+<li>(summary) Unselect objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ObjectTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

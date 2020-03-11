@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NamedViewTable &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+All named views in a rhino document.
+public class NamedViewTableProperties int Count  (summary) Number of named views in the table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,Guid viewportId)  (summary) Adds named view to document which is based on an existing viewport. (since) 5.0 (returns) int This is some return comment  int Add(ViewInfo view)  (summary) (since) 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NamedViewTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<p>All named views in a rhino document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NamedViewTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Number of named views in the table.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinodoc-document">RhinoDoc Document</h4>
+<ul>
+<li>(summary) Document that owns this table.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-addstring-nameguid-viewportid">int Add(string name,Guid viewportId)</h4>
+<ul>
+<li>(summary) Adds named view to document which is based on an existing viewport.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addviewinfo-view">int Add(ViewInfo view)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-deleteint-index">bool Delete(int index)</h4>
+<ul>
+<li>(summary) Remove named view from the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deletestring-name">bool Delete(string name)</h4>
+<ul>
+<li>(summary) Remove named view from the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-findbynamestring-name">int FindByName(string name)</h4>
+<ul>
+<li>(summary) Finds a named view.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="ienumeratorviewinfo-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="bool-renameint-indexstring-newname">bool Rename(int index,string newName)</h4>
+<ul>
+<li>(summary) Renames a named view.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-renamestring-oldnamestring-newname">bool Rename(string oldName,string newName)</h4>
+<ul>
+<li>(summary) Renames a named view.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreint-indexrhinoview-viewbool-backgroundbitmap">bool Restore(int index,RhinoView view,bool backgroundBitmap)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreint-indexrhinoviewport-viewport">bool Restore(int index,RhinoViewport viewport)</h4>
+<ul>
+<li>(summary) Sets the MainViewport of a standard RhinoView to a named views settings</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreint-indexrhinoviewport-viewportbool-backgroundbitmap">bool Restore(int index,RhinoViewport viewport,bool backgroundBitmap)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreanimatedint-indexrhinoview-viewbool-backgroundbitmap">bool RestoreAnimated(int index,RhinoView view,bool backgroundBitmap)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreanimatedint-indexrhinoview-viewbool-backgroundbitmapint-framesint-framerate">bool RestoreAnimated(int index,RhinoView view,bool backgroundBitmap,int frames,int frameRate)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreanimatedint-indexrhinoviewport-viewportbool-backgroundbitmap">bool RestoreAnimated(int index,RhinoViewport viewport,bool backgroundBitmap)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreanimatedint-indexrhinoviewport-viewportbool-backgroundbitmapint-framesint-framerate">bool RestoreAnimated(int index,RhinoViewport viewport,bool backgroundBitmap,int frames,int frameRate)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreanimatedconstantspeedint-indexrhinoviewport-viewportdouble-units_per_frameint-ms_delay">bool RestoreAnimatedConstantSpeed(int index,RhinoViewport viewport,double units_per_frame,int ms_delay)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restoreanimatedconstanttimeint-indexrhinoviewport-viewportint-framesint-ms_delay">bool RestoreAnimatedConstantTime(int index,RhinoViewport viewport,int frames,int ms_delay)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-restorewithaspectratioint-indexrhinoviewport-viewport">bool RestoreWithAspectRatio(int index,RhinoViewport viewport)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NamedViewTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

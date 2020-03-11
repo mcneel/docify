@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Plane &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the value of a center point and two axes in a plane in three dimensions.
+static !=  (summary) Determines if two planes are different. (since) 5.0  static ==  (summary) Determines if two planes are equal. (since) 5.0  Constructors Plane(double a,double b,double c,double d)  (summary) Constructs a plane from an equation Ax&#43;By&#43;Cz&#43;D=0. (since) 5.0  Plane(Plane other)  (summary) Copy constructor. This is nothing special and performs the same as assigning to another variable.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Plane</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the value of a center point and two axes in a plane in three dimensions.</p>
+<h4 id="static-">static !=</h4>
+<ul>
+<li>(summary) Determines if two planes are different.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static--1">static ==</h4>
+<ul>
+<li>(summary) Determines if two planes are equal.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="constructors">Constructors</h2>
+<h4 id="planedouble-adouble-bdouble-cdouble-d">Plane(double a,double b,double c,double d)</h4>
+<ul>
+<li>(summary) Constructs a plane from an equation
+Ax+By+Cz+D=0.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="planeplane-other">Plane(Plane other)</h4>
+<ul>
+<li>(summary) Copy constructor.
+This is nothing special and performs the same as assigning to another variable.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="planepoint3d-originpoint3d-xpointpoint3d-ypoint">Plane(Point3d origin,Point3d xPoint,Point3d yPoint)</h4>
+<ul>
+<li>(summary) Initializes a plane from three non-colinear points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="planepoint3d-originvector3d-normal">Plane(Point3d origin,Vector3d normal)</h4>
+<ul>
+<li>(summary) Constructs a plane from a point and a normal vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="planepoint3d-originvector3d-xdirectionvector3d-ydirection">Plane(Point3d origin,Vector3d xDirection,Vector3d yDirection)</h4>
+<ul>
+<li>(summary) Constructs a plane from a point and two vectors in the plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-plane-unset">static Plane Unset</h4>
+<ul>
+<li>(summary) Gets a plane that contains Unset origin and axis vectors.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-plane-worldxy">static Plane WorldXY</h4>
+<ul>
+<li>(summary) plane coincident with the World XY plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-plane-worldyz">static Plane WorldYZ</h4>
+<ul>
+<li>(summary) plane coincident with the World YZ plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-plane-worldzx">static Plane WorldZX</h4>
+<ul>
+<li>(summary) plane coincident with the World ZX plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalid">bool IsValid</h4>
+<ul>
+<li>(summary) Gets a value indicating whether or not this is a valid plane. 
+A plane is considered to be valid when all fields contain reasonable 
+information and the equation jibes with point and zaxis.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-normal">Vector3d Normal</h4>
+<ul>
+<li>(summary) Gets the normal of this plane. This is essentially the ZAxis of the plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-origin">Point3d Origin</h4>
+<ul>
+<li>(summary) Gets or sets the origin point of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-originx">double OriginX</h4>
+<ul>
+<li>(summary) Gets or sets the X coordinate of the origin of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-originy">double OriginY</h4>
+<ul>
+<li>(summary) Gets or sets the Y coordinate of the origin of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-originz">double OriginZ</h4>
+<ul>
+<li>(summary) Gets or sets the Z coordinate of the origin of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-xaxis">Vector3d XAxis</h4>
+<ul>
+<li>(summary) Gets or sets the X axis vector of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-yaxis">Vector3d YAxis</h4>
+<ul>
+<li>(summary) Gets or sets the Y axis vector of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-zaxis">Vector3d ZAxis</h4>
+<ul>
+<li>(summary) Gets or sets the Z axis vector of this plane.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-planefitresult-fitplanetopointsienumerablepoint3d-pointsplane-plane">static PlaneFitResult FitPlaneToPoints(IEnumerable<!-- raw HTML omitted --> points,Plane plane)</h4>
+<ul>
+<li>(summary) Fit a plane through a collection of points.</li>
+<li>(since) 5.0</li>
+<li>(returns) PlaneFitResult This is some return comment</li>
+</ul>
+<h4 id="static-planefitresult-fitplanetopointsienumerablepoint3d-pointsplane-planedouble-maximumdeviation">static PlaneFitResult FitPlaneToPoints(IEnumerable<!-- raw HTML omitted --> points,Plane plane,double maximumDeviation)</h4>
+<ul>
+<li>(summary) Fit a plane through a collection of points.</li>
+<li>(since) 5.0</li>
+<li>(returns) PlaneFitResult This is some return comment</li>
+</ul>
+<h4 id="plane-clone">Plane Clone()</h4>
+<ul>
+<li>(summary) Returns a deep of this instance.</li>
+<li>(since) 6.0</li>
+<li>(returns) Plane This is some return comment</li>
+</ul>
+<h4 id="bool-closestparameterpoint3d-testpointdouble-sdouble-t">bool ClosestParameter(Point3d testPoint,double s,double t)</h4>
+<ul>
+<li>(summary) Gets the parameters of the point on the plane closest to a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="point3d-closestpointpoint3d-testpoint">Point3d ClosestPoint(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Gets the point on the plane closest to a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="bool-distancetoboundingbox-bboxdouble-mindouble-max">bool DistanceTo(BoundingBox bbox,double min,double max)</h4>
+<ul>
+<li>(summary) Returns the signed minimum and maximum distances from bbox to this plane.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="double-distancetopoint3d-testpoint">double DistanceTo(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Returns the signed distance from testPoint to its projection onto this plane. 
+If the point is below the plane, a negative distance is returned.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="bool-epsilonequalsplane-otherdouble-epsilon">bool EpsilonEquals(Plane other,double epsilon)</h4>
+<ul>
+<li>(summary) Check that all values in other are within epsilon of the values in this</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-equalsobject-obj">bool Equals(object obj)</h4>
+<ul>
+<li>(summary) Determines if an object is a plane and has the same components as this plane.</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-equalsplane-plane">bool Equals(Plane plane)</h4>
+<ul>
+<li>(summary) Determines if another plane has the same components as this plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extendthroughboxboundingbox-boxinterval-sinterval-t">bool ExtendThroughBox(BoundingBox box,Interval s,Interval t)</h4>
+<ul>
+<li>(summary) Extends this plane through a bounding box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extendthroughboxbox-boxinterval-sinterval-t">bool ExtendThroughBox(Box box,Interval s,Interval t)</h4>
+<ul>
+<li>(summary) Extend this plane through a Box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-flip">void Flip()</h4>
+<ul>
+<li>(summary) Flip this plane by swapping out the X and Y axes and inverting the Z axis.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="int-gethashcode">int GetHashCode()</h4>
+<ul>
+<li>(summary) Gets a non-unique hashing code for this entity.</li>
+<li>(since) (unknown)</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="double-getplaneequation">double[] GetPlaneEquation()</h4>
+<ul>
+<li>(summary) Gets the plane equation for this plane in the format of Ax+By+Cz+D=0.</li>
+<li>(since) 5.0</li>
+<li>(returns) double[] This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatdouble-udouble-v">Point3d PointAt(double u,double v)</h4>
+<ul>
+<li>(summary) Evaluate a point on the plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatdouble-udouble-vdouble-w">Point3d PointAt(double u,double v,double w)</h4>
+<ul>
+<li>(summary) Evaluate a point on the plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="bool-remaptoplanespacepoint3d-ptsamplepoint3d-ptplane">bool RemapToPlaneSpace(Point3d ptSample,Point3d ptPlane)</h4>
+<ul>
+<li>(summary) Convert a point from World space coordinates into Plane space coordinates.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-rotatedouble-sinangledouble-cosanglevector3d-axis">bool Rotate(double sinAngle,double cosAngle,Vector3d axis)</h4>
+<ul>
+<li>(summary) Rotate the plane about its origin point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-rotatedouble-sinangledouble-cosanglevector3d-axispoint3d-centerofrotation">bool Rotate(double sinAngle,double cosAngle,Vector3d axis,Point3d centerOfRotation)</h4>
+<ul>
+<li>(summary) Rotate the plane about a custom anchor point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-rotatedouble-anglevector3d-axis">bool Rotate(double angle,Vector3d axis)</h4>
+<ul>
+<li>(summary) Rotate the plane about its origin point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-rotatedouble-anglevector3d-axispoint3d-centerofrotation">bool Rotate(double angle,Vector3d axis,Point3d centerOfRotation)</h4>
+<ul>
+<li>(summary) Rotate the plane about a custom anchor point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="string-tostring">string ToString()</h4>
+<ul>
+<li>(summary) Constructs the string representation of this plane.</li>
+<li>(since) (unknown)</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-tostringstring-formatiformatprovider-formatprovider">string ToString(string format,IFormatProvider formatProvider)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="bool-transformtransform-xform">bool Transform(Transform xform)</h4>
+<ul>
+<li>(summary) Transform the plane with a Transformation matrix.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-translatevector3d-delta">bool Translate(Vector3d delta)</h4>
+<ul>
+<li>(summary) Translate (move) the plane along a vector.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-updateequation">bool UpdateEquation()</h4>
+<ul>
+<li>(summary) Update Equations</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="double-valueatpoint3d-p">double ValueAt(Point3d p)</h4>
+<ul>
+<li>(summary) Get the value of the plane equation at the point.</li>
+<li>(since) 5.7</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Plane</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

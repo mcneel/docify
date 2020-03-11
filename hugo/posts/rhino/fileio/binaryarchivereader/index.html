@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BinaryArchiveReader &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
+public class BinaryArchiveReaderProperties int Archive3dmVersion  (summary) If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BinaryArchiveReader</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents an entity that is capable of reading a binary archive and
+instantiating strongly-typed objects.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinaryArchiveReader</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-archive3dmversion">int Archive3dmVersion</h4>
+<ul>
+<li>(summary) If a 3dm archive is being read or written, then this is the
+version of the 3dm archive format (1, 2, 3, 4 or 5).
+0     a 3dm archive is not being read/written
+1     a version 1 3dm archive is being read/written
+2     a version 2 3dm archive is being read/written
+3     a version 3 3dm archive is being read/written
+4     a version 4 3dm archive is being read/written
+5     an old version 5 3dm archive is being read
+50    a version 5 3dm archive is being read/written.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="ulong-currentposition">ulong CurrentPosition</h4>
+<ul>
+<li>(summary) current offset (in bytes) into archive ( like ftell() )</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-readerroroccured">bool ReadErrorOccured</h4>
+<ul>
+<li>(summary) Gets or sets whether en error occurred during reading.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="bool-atend">bool AtEnd()</h4>
+<ul>
+<li>(summary) True if at end of a file</li>
+<li>(since) 5.1</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-beginread3dmchunkuint-expectedtypecodeint-majorversionint-minorversion">bool BeginRead3dmChunk(uint expectedTypeCode,int majorVersion,int minorVersion)</h4>
+<ul>
+<li>(summary) Begins reading a chunk that must be in the archive at this location.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-beginread3dmchunkuint-typecodelong-value">bool BeginRead3dmChunk(uint typeCode,long value)</h4>
+<ul>
+<li>(summary) Begins reading a chunk that must be in the archive at this location.</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="uint-dump3dmchunktextlog-log">uint Dump3dmChunk(TextLog log)</h4>
+<ul>
+<li>(summary) Fnction for studying contents of a file.  The primary use is as an aid
+to help dig through files that have been damaged (bad disks, transmission
+errors, etc.) If an error is found, a line that begins with the word
+&ldquo;ERROR&rdquo; is printed.</li>
+<li>(since) 5.1</li>
+<li>(returns) uint This is some return comment</li>
+</ul>
+<h4 id="bool-enablecrccalculationbool-enable">bool EnableCRCCalculation(bool enable)</h4>
+<ul>
+<li>(summary) Expert user function to control CRC calculation while reading and writing.
+Typically this is used when seeking around and reading/writing information
+in non-serial order.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-endread3dmchunkbool-suppresspartiallyreadchunkwarning">bool EndRead3dmChunk(bool suppressPartiallyReadChunkWarning)</h4>
+<ul>
+<li>(summary) Calling this will skip rest of stuff in chunk if it was only partially read.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-read3dmchunkversionint-majorint-minor">void Read3dmChunkVersion(int major,int minor)</h4>
+<ul>
+<li>(summary) A chunk version is a single byte that encodes a major.minor
+version number.  Useful when creating I/O code for 3dm chunks
+that may change in the future.  Increment the minor version 
+number if new information is added to the end of the chunk. 
+Increment the major version if the format of the chunk changes
+in some other way.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-read3dmstartsectionint-versionstring-comment">bool Read3dmStartSection(int version,string comment)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.1</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-readbool">bool ReadBool()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-readboolarray">bool[] ReadBoolArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool[] This is some return comment</li>
+</ul>
+<h4 id="geometryboundingbox-readboundingbox">Geometry.BoundingBox ReadBoundingBox()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.BoundingBox This is some return comment</li>
+</ul>
+<h4 id="byte-readbyte">byte ReadByte()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) byte This is some return comment</li>
+</ul>
+<h4 id="byte-readbytearray">byte[] ReadByteArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) byte[] This is some return comment</li>
+</ul>
+<h4 id="void-readchecksum">void ReadCheckSum()</h4>
+<ul>
+<li>(summary) Reads a legacy ON_CheckSum, only provided to read data chunks from old
+V5 files, the CheckSum read is discarded</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="systemdrawingcolor-readcolor">System.Drawing.Color ReadColor()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Color This is some return comment</li>
+</ul>
+<h4 id="byte-readcompressedbuffer">byte[] ReadCompressedBuffer()</h4>
+<ul>
+<li>(summary) Reads an array of compressed  information from the archive and uncompresses it.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.9</li>
+<li>(returns) byte[] This is some return comment</li>
+</ul>
+<h4 id="rhinocollectionsarchivabledictionary-readdictionary">Rhino.Collections.ArchivableDictionary ReadDictionary()</h4>
+<ul>
+<li>(summary) Reads a complete  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Rhino.Collections.ArchivableDictionary This is some return comment</li>
+</ul>
+<h4 id="double-readdouble">double ReadDouble()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="double-readdoublearray">double[] ReadDoubleArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) double[] This is some return comment</li>
+</ul>
+<h4 id="systemdrawingfont-readfont">System.Drawing.Font ReadFont()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Font This is some return comment</li>
+</ul>
+<h4 id="geometrygeometrybase-readgeometry">Geometry.GeometryBase ReadGeometry()</h4>
+<ul>
+<li>(summary) Reads a -derived object from the archive.
+The  class is abstract.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.GeometryBase This is some return comment</li>
+</ul>
+<h4 id="geometrygeometrybase-readgeometryarray">Geometry.GeometryBase[] ReadGeometryArray()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) Geometry.GeometryBase[] This is some return comment</li>
+</ul>
+<h4 id="guid-readguid">Guid ReadGuid()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-readguidarray">Guid[] ReadGuidArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="int-readint">int ReadInt()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int64-readint64">Int64 ReadInt64()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Int64 This is some return comment</li>
+</ul>
+<h4 id="int-readintarray">int[] ReadIntArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="geometryinterval-readinterval">Geometry.Interval ReadInterval()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Interval This is some return comment</li>
+</ul>
+<h4 id="geometryline-readline">Geometry.Line ReadLine()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Line This is some return comment</li>
+</ul>
+<h4 id="geometrymeshingparameters-readmeshingparameters">Geometry.MeshingParameters ReadMeshingParameters()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.MeshingParameters This is some return comment</li>
+</ul>
+<h4 id="docobjectsobjref-readobjref">DocObjects.ObjRef ReadObjRef()</h4>
+<ul>
+<li>(summary) Reads a  from the archive</li>
+<li>(since) 5.8</li>
+<li>(returns) DocObjects.ObjRef This is some return comment</li>
+</ul>
+<h4 id="docobjectsobjref-readobjrefarray">DocObjects.ObjRef[] ReadObjRefArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.8</li>
+<li>(returns) DocObjects.ObjRef[] This is some return comment</li>
+</ul>
+<h4 id="geometryplane-readplane">Geometry.Plane ReadPlane()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Plane This is some return comment</li>
+</ul>
+<h4 id="systemdrawingpoint-readpoint">System.Drawing.Point ReadPoint()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Point This is some return comment</li>
+</ul>
+<h4 id="geometrypoint2d-readpoint2d">Geometry.Point2d ReadPoint2d()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point2d This is some return comment</li>
+</ul>
+<h4 id="geometrypoint3d-readpoint3d">Geometry.Point3d ReadPoint3d()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point3d This is some return comment</li>
+</ul>
+<h4 id="geometrypoint3f-readpoint3f">Geometry.Point3f ReadPoint3f()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point3f This is some return comment</li>
+</ul>
+<h4 id="geometrypoint4d-readpoint4d">Geometry.Point4d ReadPoint4d()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point4d This is some return comment</li>
+</ul>
+<h4 id="systemdrawingpointf-readpointf">System.Drawing.PointF ReadPointF()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.PointF This is some return comment</li>
+</ul>
+<h4 id="geometryray3d-readray3d">Geometry.Ray3d ReadRay3d()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Ray3d This is some return comment</li>
+</ul>
+<h4 id="systemdrawingrectangle-readrectangle">System.Drawing.Rectangle ReadRectangle()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Rectangle This is some return comment</li>
+</ul>
+<h4 id="systemdrawingrectanglef-readrectanglef">System.Drawing.RectangleF ReadRectangleF()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.RectangleF This is some return comment</li>
+</ul>
+<h4 id="rendersettings-readrendersettings">RenderSettings ReadRenderSettings()</h4>
+<ul>
+<li>(summary) Reads a -derived object from the archive.</li>
+<li>(since) 6.0</li>
+<li>(returns) RenderSettings This is some return comment</li>
+</ul>
+<h4 id="sbyte-readsbyte">sbyte ReadSByte()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) sbyte This is some return comment</li>
+</ul>
+<h4 id="sbyte-readsbytearray">sbyte[] ReadSByteArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) sbyte[] This is some return comment</li>
+</ul>
+<h4 id="short-readshort">short ReadShort()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) short This is some return comment</li>
+</ul>
+<h4 id="short-readshortarray">short[] ReadShortArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) short[] This is some return comment</li>
+</ul>
+<h4 id="float-readsingle">float ReadSingle()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) float This is some return comment</li>
+</ul>
+<h4 id="float-readsinglearray">float[] ReadSingleArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) float[] This is some return comment</li>
+</ul>
+<h4 id="systemdrawingsize-readsize">System.Drawing.Size ReadSize()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Size This is some return comment</li>
+</ul>
+<h4 id="systemdrawingsizef-readsizef">System.Drawing.SizeF ReadSizeF()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.SizeF This is some return comment</li>
+</ul>
+<h4 id="string-readstring">string ReadString()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-readstringarray">string[] ReadStringArray()</h4>
+<ul>
+<li>(summary) Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="geometrytransform-readtransform">Geometry.Transform ReadTransform()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Transform This is some return comment</li>
+</ul>
+<h4 id="uint-readuint">uint ReadUInt()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) uint This is some return comment</li>
+</ul>
+<h4 id="ushort-readushort">ushort ReadUShort()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) ushort This is some return comment</li>
+</ul>
+<h4 id="string-readutf8string">string ReadUtf8String()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="geometryvector2d-readvector2d">Geometry.Vector2d ReadVector2d()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Vector2d This is some return comment</li>
+</ul>
+<h4 id="geometryvector3d-readvector3d">Geometry.Vector3d ReadVector3d()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Vector3d This is some return comment</li>
+</ul>
+<h4 id="geometryvector3f-readvector3f">Geometry.Vector3f ReadVector3f()</h4>
+<ul>
+<li>(summary) Reads a  from the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Vector3f This is some return comment</li>
+</ul>
+<h4 id="bool-seekfromcurrentpositionlong-byteoffset">bool SeekFromCurrentPosition(long byteOffset)</h4>
+<ul>
+<li>(summary) seek from current position ( like fseek( ,SEEK_CUR) )</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-seekfromcurrentpositionulong-byteoffsetbool-forward">bool SeekFromCurrentPosition(ulong byteOffset,bool forward)</h4>
+<ul>
+<li>(summary) seek from current position ( like fseek( ,SEEK_CUR) )</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-seekfromstartulong-byteoffset">bool SeekFromStart(ulong byteOffset)</h4>
+<ul>
+<li>(summary) seek from start position ( like fseek( ,SEEK_SET) )</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BinaryArchiveReader</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

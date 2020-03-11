@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ArchivableDictionary &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+public class ArchivableDictionaryConstructors ArchivableDictionary()  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version,string name)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ArchivableDictionary</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Collections</a></em></p>
+<p>Represents a dictionary class that can be attached to objects and
+can be serialized (saved) at necessity.See remarks for layout.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ArchivableDictionary</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="archivabledictionary">ArchivableDictionary()</h4>
+<ul>
+<li>(summary) Initializes an instance of a dictionary for writing to a 3dm archive.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="archivabledictionaryint-version">ArchivableDictionary(int version)</h4>
+<ul>
+<li>(summary) Initializes an instance of a dictionary for writing to a 3dm archive.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="archivabledictionaryint-versionstring-name">ArchivableDictionary(int version,string name)</h4>
+<ul>
+<li>(summary) Initializes an instance of a dictionary for writing to a 3dm archive.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="archivabledictionaryuserdata-parentuserdata">ArchivableDictionary(UserData parentUserData)</h4>
+<ul>
+<li>(summary) Initializes an instance of a dictionary for writing to a 3dm archive</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Gets the number of key/value pairs contained in the dictionary.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-keys">string[] Keys</h4>
+<ul>
+<li>(summary) Gets all entry names or keys.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-name">string Name</h4>
+<ul>
+<li>(summary) Gets or sets the name string of this .</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="docobjectscustomuserdata-parentuserdata">DocObjects.Custom.UserData ParentUserData</h4>
+<ul>
+<li>(summary) If this dictionary is part of userdata (or is a UserDictionary), then
+this is the parent user data. None if this dictionary is not part of
+userdata</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="object-values">object[] Values</h4>
+<ul>
+<li>(summary) Gets all values in this dictionary.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-version">int Version</h4>
+<ul>
+<li>(summary) Gets or sets the version of this .</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="bool-addcontentsfromarchivabledictionary-source">bool AddContentsFrom(ArchivableDictionary source)</h4>
+<ul>
+<li>(summary) Add the contents from the source dictionary.</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-clear">void Clear()</h4>
+<ul>
+<li>(summary) Removes all keys and values from the dictionary.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="archivabledictionary-clone">ArchivableDictionary Clone()</h4>
+<ul>
+<li>(summary) Constructs a deep copy of this object.</li>
+<li>(since) 5.0</li>
+<li>(returns) ArchivableDictionary This is some return comment</li>
+</ul>
+<h4 id="bool-containskeystring-key">bool ContainsKey(string key)</h4>
+<ul>
+<li>(summary) Determines whether the dictionary contains the specified key.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getboolstring-key">bool GetBool(string key)</h4>
+<ul>
+<li>(summary) Get value as bool, will only succeed if value was created using Set(string key, bool value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getboolstring-keybool-defaultvalue">bool GetBool(string key,bool defaultValue)</h4>
+<ul>
+<li>(summary) Get value as bool, will return defaultValue unless value was created using Set(string key, bool value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="byte-getbytesstring-key">byte[] GetBytes(string key)</h4>
+<ul>
+<li>(summary) Get value as byte[], will only succeed if value was created
+using Set(string key, byte[] value)</li>
+<li>(since) 5.9</li>
+<li>(returns) byte[] This is some return comment</li>
+</ul>
+<h4 id="byte-getbytesstring-keybyte-defaultvalue">byte[] GetBytes(string key,byte[] defaultValue)</h4>
+<ul>
+<li>(summary) Get value as byte[], will return defaultValue unless
+value was created using Set(string key, byte[] value)</li>
+<li>(since) 5.9</li>
+<li>(returns) byte[] This is some return comment</li>
+</ul>
+<h4 id="archivabledictionary-getdictionarystring-key">ArchivableDictionary GetDictionary(string key)</h4>
+<ul>
+<li>(summary) Get value as ArchivableDictionary, will only succeed if value was created
+using Set(string key, ArchivableDictionary value)</li>
+<li>(since) 5.9</li>
+<li>(returns) ArchivableDictionary This is some return comment</li>
+</ul>
+<h4 id="archivabledictionary-getdictionarystring-keyarchivabledictionary-defaultvalue">ArchivableDictionary GetDictionary(string key,ArchivableDictionary defaultValue)</h4>
+<ul>
+<li>(summary) Get value as ArchivableDictionary, will return defaultValue unless
+value was created using Set(string key, ArchivableDictionary value)</li>
+<li>(since) 5.9</li>
+<li>(returns) ArchivableDictionary This is some return comment</li>
+</ul>
+<h4 id="double-getdoublestring-key">double GetDouble(string key)</h4>
+<ul>
+<li>(summary) Get value as double, will only succeed if value was created using Set(string key, double value)</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="double-getdoublestring-keydouble-defaultvalue">double GetDouble(string key,double defaultValue)</h4>
+<ul>
+<li>(summary) Get value as double, will only succeed if value was created using Set(string key, double value)</li>
+<li>(since) 5.10</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="ienumeratorkeyvaluepairstring-object-getenumerator">IEnumerator&lt;KeyValuePair&lt;string, object&raquo; GetEnumerator()</h4>
+<ul>
+<li>(summary) Gets the enumerator of this dictionary.</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator&lt;KeyValuePair&lt;string, object&raquo; This is some return comment</li>
+</ul>
+<h4 id="t-getenumvalue">T GetEnumValue()</h4>
+<ul>
+<li>(summary) Get an enum value</li>
+<li>(since) 5.4</li>
+<li>(returns) T This is some return comment</li>
+</ul>
+<h4 id="t-getenumvaluestring-key">T GetEnumValue(string key)</h4>
+<ul>
+<li>(summary) Get an enum value from the dictionary using a custom key.</li>
+<li>(since) 5.4</li>
+<li>(returns) T This is some return comment</li>
+</ul>
+<h4 id="float-getfloatstring-key">float GetFloat(string key)</h4>
+<ul>
+<li>(summary) Get value as float, will only succeed if value was created using Set(string key, float value)</li>
+<li>(since) 5.0</li>
+<li>(returns) float This is some return comment</li>
+</ul>
+<h4 id="float-getfloatstring-keyfloat-defaultvalue">float GetFloat(string key,float defaultValue)</h4>
+<ul>
+<li>(summary) Get value as float, will return defaultValue unless value was created using Set(string key, float value)</li>
+<li>(since) 5.0</li>
+<li>(returns) float This is some return comment</li>
+</ul>
+<h4 id="guid-getguidstring-key">Guid GetGuid(string key)</h4>
+<ul>
+<li>(summary) Get value as Guid, will only succeed if value was created using Set(string key, Guid value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="guid-getguidstring-keyguid-defaultvalue">Guid GetGuid(string key,Guid defaultValue)</h4>
+<ul>
+<li>(summary) Get value as Guid, will return defaultValue unless value was created using Set(string key, Guid value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="int-getintstring-keyint-defaultvalue">int Getint(string key,int defaultValue)</h4>
+<ul>
+<li>(summary) Get value as int, will return defaultValue unless value was created using Set(string key, int value)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-getintegerstring-key">int GetInteger(string key)</h4>
+<ul>
+<li>(summary) Get value as int, will only succeed if value was created using Set(string key, int value)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-getintegerstring-keyint-defaultvalue">int GetInteger(string key,int defaultValue)</h4>
+<ul>
+<li>(summary) Get value as int, will return defaultValue unless value was created using Set(string key, int value)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-getobjectdataserializationinfo-infostreamingcontext-context">void GetObjectData(SerializationInfo info,StreamingContext context)</h4>
+<ul>
+<li>(summary) Populates a System.Runtime.Serialization.SerializationInfo with the data needed to serialize the target object.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="geometryplane-getplanestring-key">Geometry.Plane GetPlane(string key)</h4>
+<ul>
+<li>(summary) Get value as Plane, will return defaultValue unless value was created using Set(string key, Plane value)</li>
+<li>(since) 6.11</li>
+<li>(returns) Geometry.Plane This is some return comment</li>
+</ul>
+<h4 id="geometryplane-getplanestring-keyplane-defaultvalue">Geometry.Plane GetPlane(string key,Plane defaultValue)</h4>
+<ul>
+<li>(summary) Get value as Plane, will return defaultValue unless value was created using Set(string key, Plane value)</li>
+<li>(since) 6.11</li>
+<li>(returns) Geometry.Plane This is some return comment</li>
+</ul>
+<h4 id="geometrypoint3d-getpoint3dstring-key">Geometry.Point3d GetPoint3d(string key)</h4>
+<ul>
+<li>(summary) Get value as Point3d, will only succeed if value was created using Set(string key, Point3d value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point3d This is some return comment</li>
+</ul>
+<h4 id="geometrypoint3d-getpoint3dstring-keypoint3d-defaultvalue">Geometry.Point3d GetPoint3d(string key,Point3d defaultValue)</h4>
+<ul>
+<li>(summary) Get value as Point3d, will return defaultValue unless value was created using Set(string key, Point3d value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point3d This is some return comment</li>
+</ul>
+<h4 id="geometrypoint3f-getpoint3fstring-key">Geometry.Point3f GetPoint3f(string key)</h4>
+<ul>
+<li>(summary) Get value as Point3f, will only succeed if value was created using Set(string key, Point3f value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point3f This is some return comment</li>
+</ul>
+<h4 id="geometrypoint3f-getpoint3fstring-keypoint3f-defaultvalue">Geometry.Point3f GetPoint3f(string key,Point3f defaultValue)</h4>
+<ul>
+<li>(summary) Get value as Point3f, will return defaultValue unless value was created using Set(string key, Point3f value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Point3f This is some return comment</li>
+</ul>
+<h4 id="string-getstringstring-key">string GetString(string key)</h4>
+<ul>
+<li>(summary) Get value as string, will only succeed if value was created using Set(string key, string value)</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-getstringstring-keystring-defaultvalue">string GetString(string key,string defaultValue)</h4>
+<ul>
+<li>(summary) Get value as string, will return defaultValue unless value was created using Set(string key, string value)</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="geometryvector3d-getvector3dstring-key">Geometry.Vector3d GetVector3d(string key)</h4>
+<ul>
+<li>(summary) Get value as Vector3d, will only succeed if value was created using Set(string key, Vector3d value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Vector3d This is some return comment</li>
+</ul>
+<h4 id="geometryvector3d-getvector3dstring-keyvector3d-defaultvalue">Geometry.Vector3d GetVector3d(string key,Vector3d defaultValue)</h4>
+<ul>
+<li>(summary) Get value as Vector3d, will return defaultValue unless value was created using Set(string key, Vector3d value)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Vector3d This is some return comment</li>
+</ul>
+<h4 id="bool-removestring-key">bool Remove(string key)</h4>
+<ul>
+<li>(summary) Removes the value with the specified key from the dictionary.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-removeenumvalue">bool RemoveEnumValue()</h4>
+<ul>
+<li>(summary) Remmove an enum value from the dictionary.</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-replacecontentswitharchivabledictionary-source">bool ReplaceContentsWith(ArchivableDictionary source)</h4>
+<ul>
+<li>(summary) Replace the contents of the dictionary with that of the given source dictionary.</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyarchivabledictionary-val">bool Set(string key,ArchivableDictionary val)</h4>
+<ul>
+<li>(summary) Sets another  as entry in this dictionary.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keybool-val">bool Set(string key,bool val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyboundingbox-val">bool Set(string key,BoundingBox val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keybyte-val">bool Set(string key,byte val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keycolor-val">bool Set(string key,Color val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keydouble-val">bool Set(string key,double val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyfloat-val">bool Set(string key,float val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyfont-val">bool Set(string key,Font val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keygeometrybase-val">bool Set(string key,GeometryBase val)</h4>
+<ul>
+<li>(summary) Sets any class deriving from the  base class.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyguid-val">bool Set(string key,Guid val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerablebool-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerablebyte-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerabledouble-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerablefloat-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerablegeometrybase-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerableguid-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerableint-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerableobjref-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets an array of</li>
+<li>(since) 5.8</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerablesbyte-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerableshort-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyienumerablestring-val">bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</h4>
+<ul>
+<li>(summary) Sets a list, an array or any enumerable of .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyint-val">bool Set(string key,int val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyint64-val">bool Set(string key,Int64 val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyinterval-val">bool Set(string key,Interval val)</h4>
+<ul>
+<li>(summary) Sets an .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyline-val">bool Set(string key,Line val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keymeshingparameters-val">bool Set(string key,MeshingParameters val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyobjref-val">bool Set(string key,ObjRef val)</h4>
+<ul>
+<li>(summary) Sets a</li>
+<li>(since) 5.8</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyplane-val">bool Set(string key,Plane val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keypoint-val">bool Set(string key,Point val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keypoint2d-val">bool Set(string key,Point2d val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keypoint3d-val">bool Set(string key,Point3d val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keypoint3f-val">bool Set(string key,Point3f val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keypoint4d-val">bool Set(string key,Point4d val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keypointf-val">bool Set(string key,PointF val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyray3d-val">bool Set(string key,Ray3d val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyrectangle-val">bool Set(string key,Rectangle val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyrectanglef-val">bool Set(string key,RectangleF val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keysbyte-val">bool Set(string key,sbyte val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyshort-val">bool Set(string key,short val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keysize-val">bool Set(string key,Size val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keysizef-val">bool Set(string key,SizeF val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keystring-val">bool Set(string key,string val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keytransform-val">bool Set(string key,Transform val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyuint-val">bool Set(string key,uint val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyushort-val">bool Set(string key,ushort val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyvector2d-val">bool Set(string key,Vector2d val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyvector3d-val">bool Set(string key,Vector3d val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setstring-keyvector3f-val">bool Set(string key,Vector3f val)</h4>
+<ul>
+<li>(summary) Sets a .</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setenumvaluestring-keyt-enumvalue">bool SetEnumValue(string key,T enumValue)</h4>
+<ul>
+<li>(summary) Set an enum value in the dictionary with a custom key.</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setenumvaluet-enumvalue">bool SetEnumValue(T enumValue)</h4>
+<ul>
+<li>(summary) Set an enum value</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetboolstring-keybool-value">bool TryGetBool(string key,bool value)</h4>
+<ul>
+<li>(summary) Get value as bool, will only succeed if value was created using Set(string key, bool value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetbytesstring-keybyte-value">bool TryGetBytes(string key,byte[] value)</h4>
+<ul>
+<li>(summary) Get value as byte[], will only succeed if value was
+created using Set(string key, byte[] value)</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetdictionarystring-keyarchivabledictionary-value">bool TryGetDictionary(string key,ArchivableDictionary value)</h4>
+<ul>
+<li>(summary) Get value as ArchivableDictionary, will only succeed if value was
+created using Set(string key, ArchivableDictionary value)</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetdoublestring-keydouble-value">bool TryGetDouble(string key,double value)</h4>
+<ul>
+<li>(summary) Get value as double, will only succeed if value was created using Set(string key, double value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetenumvaluestring-keyt-enumvalue">bool TryGetEnumValue(string key,T enumValue)</h4>
+<ul>
+<li>(summary) Attempt to get an enum value from the dictionary using a custom key.</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetfloatstring-keyfloat-value">bool TryGetFloat(string key,float value)</h4>
+<ul>
+<li>(summary) Get value as float, will only succeed if value was created using Set(string key, float value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetguidstring-keyguid-value">bool TryGetGuid(string key,Guid value)</h4>
+<ul>
+<li>(summary) Get value as Guid, will only succeed if value was created using Set(string key, Guid value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetintegerstring-keyint-value">bool TryGetInteger(string key,int value)</h4>
+<ul>
+<li>(summary) Get value as int, will only succeed if value was created using Set(string key, int value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetplanestring-keyplane-value">bool TryGetPlane(string key,Plane value)</h4>
+<ul>
+<li>(summary) Get value as Plane, will only succeed if value was created using Set(string key, Plane value)</li>
+<li>(since) 6.11</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetpoint3dstring-keypoint3d-value">bool TryGetPoint3d(string key,Point3d value)</h4>
+<ul>
+<li>(summary) Get value as Point3d, will only succeed if value was created using Set(string key, Point3d value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetpoint3fstring-keypoint3f-value">bool TryGetPoint3f(string key,Point3f value)</h4>
+<ul>
+<li>(summary) Get value as Point3f, will only succeed if value was created using Set(string key, Point3f value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetstringstring-keystring-value">bool TryGetString(string key,string value)</h4>
+<ul>
+<li>(summary) Get value as string, will only succeed if value was created using Set(string key, string value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetvaluestring-keyobject-value">bool TryGetValue(string key,object value)</h4>
+<ul>
+<li>(summary) Gets the value associated with the specified key.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetvector3dstring-keyvector3d-value">bool TryGetVector3d(string key,Vector3d value)</h4>
+<ul>
+<li>(summary) Get value as Vector3d, will only succeed if value was created using Set(string key, Vector3d value)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ArchivableDictionary</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

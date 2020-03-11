@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.DataSources on Test API Site</title>
+    <link>http://example.org/posts/rhino/render/datasources/</link>
+    <description>Recent content in Rhino.Render.DataSources on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/render/datasources/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ContentFactories</title>
+      <link>http://example.org/posts/rhino/render/datasources/contentfactories/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/contentfactories/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class ContentFactoriesConstructors ContentFactories(IntPtr pRdkContentFactories)  (summary) (since) 6.1  Properties IntPtr CppPointer  (summary) (since) 6.1  Methods void Dispose()  (summary) (since) 6.1 (returns) void This is some return comment  ContentFactory FindFactory(Guid uuid)  (summary) (since) 6.7 (returns) ContentFactory This is some return comment  ContentFactory FirstFactory()  (summary) (since) 6.1 (returns) ContentFactory This is some return comment  ContentFactory NextFactory()  (summary) (since) 6.</description>
+    </item>
+    
+    <item>
+      <title>ContentFactory</title>
+      <link>http://example.org/posts/rhino/render/datasources/contentfactory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/contentfactory/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class ContentFactoryConstructors ContentFactory(IntPtr pRdkContentFactory)  (summary) (since) 6.1  Properties IntPtr CppPointer  (summary) (since) 6.1  Methods Guid ContentTypeId()  (summary) (since) 6.7 (returns) Guid This is some return comment  void Dispose()  (summary) (since) 6.1 (returns) void This is some return comment  RenderContentKind Kind()  (summary) (since) 6.3 (returns) RenderContentKind This is some return comment  RenderContent NewContent()  (summary) New Content returns a new content, which is Initialized with the Initialize() function.</description>
+    </item>
+    
+    <item>
+      <title>MetaData</title>
+      <link>http://example.org/posts/rhino/render/datasources/metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/metadata/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class MetaDataConstructors MetaData(IntPtr pMetaData)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods Guid ContentInstanceId()  (summary) (since) 6.7 (returns) Guid This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  string Geometry()  (summary) (since) 6.0 (returns) string This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>RdkEdit</title>
+      <link>http://example.org/posts/rhino/render/datasources/rdkedit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/rdkedit/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RdkEditConstructors RdkEdit(IntPtr pRdkEdit)  (summary) (since) 6.5  Properties IntPtr CppPointer  (summary) (since) 6.5  Methods void Dispose()  (summary) (since) 6.5 (returns) void This is some return comment  bool Execute(RenderContentCollection collection)  (summary) (since) 6.5 (returns) bool This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>RdkModalEditContentBucket</title>
+      <link>http://example.org/posts/rhino/render/datasources/rdkmodaleditcontentbucket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/rdkmodaleditcontentbucket/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RdkModalEditContentBucketConstructors RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)  (summary) (since) 6.5  Properties IntPtr CppPointer  (summary) (since) 6.5  Methods RenderContentCollection ContentsIn()  (summary) (since) 6.5 (returns) RenderContentCollection This is some return comment  void Dispose()  (summary) (since) 6.5 (returns) void This is some return comment  void SetContentsOut(RenderContentCollection collection)  (summary) (since) 6.5 (returns) void This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>RdkSelectionNavigator</title>
+      <link>http://example.org/posts/rhino/render/datasources/rdkselectionnavigator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/rdkselectionnavigator/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RdkSelectionNavigatorConstructors RdkSelectionNavigator(IntPtr pRhinoSettings)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Add(RenderContentCollection selectedContentArray)  (summary) Add a selection of contents at the current position. Clears the navigator ahead of the current position. (since) 6.0 (returns) void This is some return comment  bool CanGoBackwards()  (summary) Check the backwards status of the navigator (since) 6.0 (returns) bool This is some return comment  bool CanGoForwards()  (summary) Check the forwards status of the navigator (since) 6.</description>
+    </item>
+    
+    <item>
+      <title>RhinoSettings</title>
+      <link>http://example.org/posts/rhino/render/datasources/rhinosettings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/datasources/rhinosettings/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RhinoSettingsConstructors RhinoSettings(IntPtr pRhinoSettings)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods RhinoView ActiveView()  (summary) (since) 6.0 (returns) RhinoView This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  List&amp;lt;System.Drawing.Size&amp;gt; GetCustomRenderSizes()  (summary) (since) 6.0 (returns) List&amp;lt;System.Drawing.Size&amp;gt; This is some return comment  RenderSettings GetRenderSettings()  (summary) (since) 6.0 (returns) RenderSettings This is some return comment  bool GroundPlaneOnInViewDisplayMode(RhinoView view)  (summary) (since) 6.</description>
+    </item>
+    
+  </channel>
+</rss>

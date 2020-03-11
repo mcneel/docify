@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LayerTable &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class LayerTableProperties int ActiveCount  (summary) Returns number of layers in the layer table, excluding deleted layers. (since) 5.0  ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Returns number of layers in the layer table, including deleted layers. (since) 5.0  Layer CurrentLayer   (summary) At all times, there is a &amp;ldquo;current&amp;rdquo; layer. Unless otherwise specified, new objects are assigned to the current layer.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LayerTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LayerTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-activecount">int ActiveCount</h4>
+<ul>
+<li>(summary) Returns number of layers in the layer table, excluding deleted layers.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="modelcomponenttype-componenttype">ModelComponentType ComponentType</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Returns number of layers in the layer table, including deleted layers.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="layer-currentlayer">Layer CurrentLayer</h4>
+<ul>
+<li>
+<p>(summary) At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified,
+new objects are assigned to the current layer. The current layer is
+never locked, hidden, or deleted.</p>
+<p>Returns reference to the current layer. Note that this reference may
+become invalid after a call to AddLayer().</p>
+</li>
+<li>
+<p>(since) 5.0</p>
+</li>
+</ul>
+<h4 id="int-currentlayerindex">int CurrentLayerIndex</h4>
+<ul>
+<li>(summary) At all times, there is a &ldquo;current&rdquo; layer.  Unless otherwise specified, new objects
+are assigned to the current layer. The current layer is never locked, hidden, or deleted.
+Resturns: Zero based layer table index of the current layer.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinodoc-document">RhinoDoc Document</h4>
+<ul>
+<li>(summary) Document that owns this table.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-add">int Add()</h4>
+<ul>
+<li>(summary) Adds a new layer with default definition to the layer table.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addlayer-layer">int Add(Layer layer)</h4>
+<ul>
+<li>(summary) Adds a new layer with specified definition to the layer table.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addstring-layernamecolor-layercolor">int Add(string layerName,Color layerColor)</h4>
+<ul>
+<li>(summary) Adds a new layer with specified definition to the layer table.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addreferencelayer">int AddReferenceLayer()</h4>
+<ul>
+<li>(summary) Adds a new reference layer with default definition to the layer table.
+Reference layers are not saved in files.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addreferencelayerlayer-layer">int AddReferenceLayer(Layer layer)</h4>
+<ul>
+<li>(summary) Adds a new reference layer with specified definition to the layer table
+Reference layers are not saved in files.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-deleteguid-layeridbool-quiet">bool Delete(Guid layerId,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes layer.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleteint-layerindexbool-quiet">bool Delete(int layerIndex,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes layer.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deletelayer-layer">bool Delete(Layer layer)</h4>
+<ul>
+<li>(summary) Deletes layer.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deletelayer-layerbool-quiet">bool Delete(Layer layer,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes layer.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-duplicateienumerableint-layerindicesbool-duplicateobjectsbool-duplicatesublayers">int[] Duplicate(IEnumerable<!-- raw HTML omitted --> layerIndices,bool duplicateObjects,bool duplicateSublayers)</h4>
+<ul>
+<li>(summary) Duplicates, or copies, one or more layers. Duplicated layers are added to the document.</li>
+<li>(since) 6.18</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="int-duplicateint-layerindexbool-duplicateobjectsbool-duplicatesublayers">int[] Duplicate(int layerIndex,bool duplicateObjects,bool duplicateSublayers)</h4>
+<ul>
+<li>(summary) Duplicates, or copies, a layer. Duplicated layers are added to the document.</li>
+<li>(since) 6.18</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="int-findguid-layeridbool-ignoredeletedlayers">int Find(Guid layerId,bool ignoreDeletedLayers)</h4>
+<ul>
+<li>(summary) Finds a layer with a matching ID.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findguid-layeridbool-ignoredeletedlayersint-notfoundreturnvalue">int Find(Guid layerId,bool ignoreDeletedLayers,int notFoundReturnValue)</h4>
+<ul>
+<li>(summary) Finds a layer with a matching ID.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findguid-parentidstring-layernamebool-ignoredeletedlayers">int Find(Guid parentId,string layerName,bool ignoreDeletedLayers)</h4>
+<ul>
+<li>(summary) Finds a layer with a given name and matching parent ID.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findguid-parentidstring-layernameint-notfoundreturnvalue">int Find(Guid parentId,string layerName,int notFoundReturnValue)</h4>
+<ul>
+<li>(summary) Finds a layer with a given name and matching parent ID.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findstring-layernamebool-ignoredeletedlayers">int Find(string layerName,bool ignoreDeletedLayers)</h4>
+<ul>
+<li>(summary) Finds the layer with a given name. If multiple layers exist that have the same name, the
+first match layer index will be returned.
+Deleted layers have no name.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findbyfullpathstring-layerpathbool-ignoredeletedlayers">int FindByFullPath(string layerPath,bool ignoreDeletedLayers)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findbyfullpathstring-layerpathint-notfoundreturnvalue">int FindByFullPath(string layerPath,int notFoundReturnValue)</h4>
+<ul>
+<li>(summary) Searches for a layer using the fully qualified name, that includes ancestors.
+Deleted layers have no name.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="layer-findindexint-index">Layer FindIndex(int index)</h4>
+<ul>
+<li>(summary) Retrieves a Layer object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</li>
+<li>(since) 6.0</li>
+<li>(returns) Layer This is some return comment</li>
+</ul>
+<h4 id="layer-findnamestring-layername">Layer FindName(string layerName)</h4>
+<ul>
+<li>(summary) Finds the layer with a given name. If multiple layers exist that have the same name, the
+first match layer index will be returned.
+Deleted layers have no name.The default layer is NOT included in the search. If required, use the overload with startIndex input.</li>
+<li>(since) 6.0</li>
+<li>(returns) Layer This is some return comment</li>
+</ul>
+<h4 id="layer-findnamestring-layernameint-startindex">Layer FindName(string layerName,int startIndex)</h4>
+<ul>
+<li>(summary) Finds the next layer that has an index equal or higher than the searched value.
+Search in case-insensitive.</li>
+<li>(since) 6.0</li>
+<li>(returns) Layer This is some return comment</li>
+</ul>
+<h4 id="layer-findnamehashnamehash-namehash">Layer FindNameHash(NameHash nameHash)</h4>
+<ul>
+<li>(summary) Finds a Layer given its name hash.</li>
+<li>(since) 6.0</li>
+<li>(returns) Layer This is some return comment</li>
+</ul>
+<h4 id="layer-findnextint-indexstring-layername">Layer FindNext(int index,string layerName)</h4>
+<ul>
+<li>(summary) Use FindName(name, index).</li>
+<li>(since) 6.0</li>
+<li>(returns) Layer This is some return comment</li>
+</ul>
+<h4 id="int-findnextint-indexstring-layernamebool-ignoredeletedlayers">int FindNext(int index,string layerName,bool ignoreDeletedLayers)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-forcelayervisibleguid-layerid">bool ForceLayerVisible(Guid layerId)</h4>
+<ul>
+<li>(summary) Makes a layer and all of its parent layers visible.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-forcelayervisibleint-layerindex">bool ForceLayerVisible(int layerIndex)</h4>
+<ul>
+<li>(summary) Makes a layer and all of its parent layers visible.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="ienumeratorlayer-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="bool-getselectedlistint-layerindices">bool GetSelected(List<!-- raw HTML omitted --> layerIndices)</h4>
+<ul>
+<li>(summary) Returns the indices of layers that are selected on the Layer user interface.</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="string-getunusedlayername">string GetUnusedLayerName()</h4>
+<ul>
+<li>(summary) Gets the next unused layer name used as default when creating new layers.</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-getunusedlayernamebool-ignoredeleted">string GetUnusedLayerName(bool ignoreDeleted)</h4>
+<ul>
+<li>(summary) Gets the next unused layer name used as default when creating new layers.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="bool-modifylayer-newsettingsguid-layeridbool-quiet">bool Modify(Layer newSettings,Guid layerId,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies layer settings.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifylayer-newsettingsint-layerindexbool-quiet">bool Modify(Layer newSettings,int layerIndex,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies layer settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-purgeguid-layeridbool-quiet">bool Purge(Guid layerId,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes a layer and all geometry objects on a layer.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-purgeint-layerindexbool-quiet">bool Purge(int layerIndex,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes a layer and all geometry objects on a layer</li>
+<li>(since) 5.5</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-selectienumerableint-layerindicesbool-bdeselect">bool Select(IEnumerable<!-- raw HTML omitted --> layerIndices,bool bDeselect)</h4>
+<ul>
+<li>(summary) Selects layers in the Layer user interface.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setcurrentlayerindexint-layerindexbool-quiet">bool SetCurrentLayerIndex(int layerIndex,bool quiet)</h4>
+<ul>
+<li>(summary) At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified, new objects
+are assigned to the current layer. The current layer is never locked, hidden, or deleted.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undeleteint-layerindex">bool Undelete(int layerIndex)</h4>
+<ul>
+<li>(summary) Undeletes a layer that has been deleted by DeleteLayer().</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undomodifyguid-layerid">bool UndoModify(Guid layerId)</h4>
+<ul>
+<li>(summary) Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undomodifyguid-layeriduint-undorecordserialnumber">bool UndoModify(Guid layerId,uint undoRecordSerialNumber)</h4>
+<ul>
+<li>(summary) Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undomodifyint-layerindex">bool UndoModify(int layerIndex)</h4>
+<ul>
+<li>(summary) Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undomodifyint-layerindexuint-undorecordserialnumber">bool UndoModify(int layerIndex,uint undoRecordSerialNumber)</h4>
+<ul>
+<li>(summary) Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LayerTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

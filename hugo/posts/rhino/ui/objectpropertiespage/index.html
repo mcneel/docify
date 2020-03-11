@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ObjectPropertiesPage &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.UI
+Base class used to add object property user interface panels
+public class ObjectPropertiesPageProperties bool AllObjectsMustBeSupported   (summary) Returns True when running on Mac which requires only objects of SupportedTypes. Returns False when running on Windows which only requires a single item of SupportedTypes to be selected.
+Override if you wish to change the above behavior.
+  (since) 6.7
+  string EnglishPageTitle  (summary) English string used to describe this page (since) 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ObjectPropertiesPage</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.UI</a></em></p>
+<p>Base class used to add object property user interface panels</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObjectPropertiesPage</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="bool-allobjectsmustbesupported">bool AllObjectsMustBeSupported</h4>
+<ul>
+<li>
+<p>(summary) Returns True when running on Mac which requires only objects of 
+SupportedTypes.  Returns False when running on Windows which only
+requires a single item of SupportedTypes to be selected.</p>
+<p>Override if you wish to change the above behavior.</p>
+</li>
+<li>
+<p>(since) 6.7</p>
+</li>
+</ul>
+<h4 id="string-englishpagetitle">string EnglishPageTitle</h4>
+<ul>
+<li>(summary) English string used to describe this page</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="systemdrawingicon-icon">System.Drawing.Icon Icon</h4>
+<ul>
+<li>(summary) (OBSOLETE - Override PageIcon instead)
+Icon to display in the object properties tab control</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-localpagetitle">string LocalPageTitle</h4>
+<ul>
+<li>(summary) Localized page description string, returns the EnglishPageTitle by
+default.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="object-pagecontrol">object PageControl</h4>
+<ul>
+<li>(summary) The control that represents this page. Rhino Windows supports classes
+that implement the IWin32Windows interface, are derived from
+System.Windows.FrameworkElement or Eto.Forms.Control.  Mac Rhino
+supports controls that are derived from NSview or Eto.Forms.Control.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-pageiconembeddedresourcestring">string PageIconEmbeddedResourceString</h4>
+<ul>
+<li>(summary) Resource string for a embedded icon resource in the assembly containing
+the page instance.  If this returns a valid resource and Rhino can
+load the icon the loaed icon will get used directly otherwise;
+the PageIcon method will get called.</li>
+<li>(since) 6.4</li>
+</ul>
+<h4 id="propertypagetype-pagetype">PropertyPageType PageType</h4>
+<ul>
+<li>(summary) Override this and return the page you want to replace a specific object
+properties page.</li>
+<li>(since) 5.11</li>
+</ul>
+<h4 id="rhinoobject-selectedobjects">RhinoObject[] SelectedObjects</h4>
+<ul>
+<li>(summary) Return a list of Rhino objects to be processed by this object properties page</li>
+<li>(since) 5.11</li>
+</ul>
+<h4 id="objecttype-supportedtypes">ObjectType SupportedTypes</h4>
+<ul>
+<li>(summary) Override to specify which objects this page supports</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-supportssubobjects">bool SupportsSubObjects</h4>
+<ul>
+<li>(summary) If your object properties page supports sub-object selection, you
+should override this method and return true.  This is ignored for view
+pages.  The default implementation returns false.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="bool-anyselectedobject">bool AnySelectedObject()</h4>
+<ul>
+<li>(summary) Return True if any of the selected objects match the given type</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-anyselectedobjectbool-allmustmatch">bool AnySelectedObject(bool allMustMatch)</h4>
+<ul>
+<li>(summary) Return True if any of the selected objects match the given type</li>
+<li>(since) 6.7</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="t-getselectedobjects">T[] GetSelectedObjects()</h4>
+<ul>
+<li>(summary) Get selected objects of a given type</li>
+<li>(since) 6.0</li>
+<li>(returns) T[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-getselectedobjectsobjecttype-filter">RhinoObject[] GetSelectedObjects(ObjectType filter)</h4>
+<ul>
+<li>(summary) Get selected objects that match a given filter</li>
+<li>(since) 6.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="void-initializecontrolsrhinoobject-rhobj">void InitializeControls(RhinoObject rhObj)</h4>
+<ul>
+<li>(summary) Called on the active page after the selected objects list has changed
+to notify the page to initialize its content to reflect the new
+object list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-modifypageactionobjectpropertiespageeventargs-callbackaction">void ModifyPage(Action<!-- raw HTML omitted --> callbackAction)</h4>
+<ul>
+<li>(summary) Call this method when the page is ready to modify the selected objects
+list.  Rhino will suspend UpdatePageNotfictaion, call the passed action
+then restore UpdatePageNotfictaion.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-onactivatebool-active">bool OnActivate(bool active)</h4>
+<ul>
+<li>(summary) Called when this page is activated/deactivated.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-oncreateparentintptr-hwndparent">void OnCreateParent(IntPtr hwndParent)</h4>
+<ul>
+<li>(summary) Called when the parent container is initially created.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-onhelp">void OnHelp()</h4>
+<ul>
+<li>(summary) Called when the F1 key or help button is pressed, override to display
+plug-in specific help for this page.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-onsizeparentint-widthint-height">void OnSizeParent(int width,int height)</h4>
+<ul>
+<li>(summary) Called when the parent containers client rectangle size has changed and
+the PageControl has been resized.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="systemdrawingicon-pageiconsize-sizeinpixels">System.Drawing.Icon PageIcon(Size sizeInPixels)</h4>
+<ul>
+<li>(summary) Icon to display in the object properties tab control.  Will not get called
+if PageIconEmbeddedResourceString is overriden and provides a string for a 
+successfully loaded icon resrouce.</li>
+<li>(since) 6.0</li>
+<li>(returns) System.Drawing.Icon This is some return comment</li>
+</ul>
+<h4 id="commandsresult-runscriptobjectpropertiespageeventargs-e">Commands.Result RunScript(ObjectPropertiesPageEventArgs e)</h4>
+<ul>
+<li>(summary) This method is called when scripting the Rhino Properties command and
+choosing this page.</li>
+<li>(since) 6.0</li>
+<li>(returns) Commands.Result This is some return comment</li>
+</ul>
+<h4 id="commandsresult-runscriptrhinodoc-docrhinoobject-objectlist">Commands.Result RunScript(RhinoDoc doc,RhinoObject[] objectList)</h4>
+<ul>
+<li>(summary) This method is called when scripting the Rhino Properties command and
+choosing this page.</li>
+<li>(since) 6.0</li>
+<li>(returns) Commands.Result This is some return comment</li>
+</ul>
+<h4 id="bool-shoulddisplayobjectpropertiespageeventargs-e">bool ShouldDisplay(ObjectPropertiesPageEventArgs e)</h4>
+<ul>
+<li>(summary) Called when the selected objects list changes, return True if the
+object list contains one or more object the page can modify.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-shoulddisplayrhinoobject-rhobj">bool ShouldDisplay(RhinoObject rhObj)</h4>
+<ul>
+<li>(summary) Called when the selected objects list changes, return True if the
+object list contains one or more object the page can modify.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-updatepageobjectpropertiespageeventargs-e">void UpdatePage(ObjectPropertiesPageEventArgs e)</h4>
+<ul>
+<li>(summary) Called on the active page after the selected objects list has changed
+to notify the page to initialize its content to reflect the new
+object list.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ObjectPropertiesPage</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

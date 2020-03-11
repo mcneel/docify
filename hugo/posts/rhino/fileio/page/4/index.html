@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.FileIO &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.FileIO</h1>
+  <ul>
+<li><a href="binaryarchiveexception/">BinaryArchiveException</a></li>
+<li><a href="binaryarchivefile/">BinaryArchiveFile</a></li>
+<li><a href="binaryarchivemode/">BinaryArchiveMode</a></li>
+<li><a href="binaryarchivereader/">BinaryArchiveReader</a></li>
+<li><a href="binaryarchivewriter/">BinaryArchiveWriter</a></li>
+<li><a href="commoncomponenttable/">CommonComponentTable</a></li>
+<li><a href="contenthash/">ContentHash</a></li>
+<li><a href="dracocompression/">DracoCompression</a></li>
+<li><a href="dracocompressionoptions/">DracoCompressionOptions</a></li>
+<li><a href="file3dm/">File3dm</a></li>
+<li><a href="objecttypefilter/">ObjectTypeFilter</a></li>
+<li><a href="tabletypefilter/">TableTypeFilter</a></li>
+<li><a href="file3dmcommoncomponenttable/">File3dmCommonComponentTable</a></li>
+<li><a href="file3dmdimstyletable/">File3dmDimStyleTable</a></li>
+<li><a href="file3dmgrouptable/">File3dmGroupTable</a></li>
+<li><a href="file3dmhatchpatterntable/">File3dmHatchPatternTable</a></li>
+<li><a href="file3dminstancedefinitiontable/">File3dmInstanceDefinitionTable</a></li>
+<li><a href="file3dmlayertable/">File3dmLayerTable</a></li>
+<li><a href="file3dmlinetypetable/">File3dmLinetypeTable</a></li>
+<li><a href="file3dmmaterialtable/">File3dmMaterialTable</a></li>
+<li><a href="file3dmnamedconstructionplanes/">File3dmNamedConstructionPlanes</a></li>
+<li><a href="file3dmnotes/">File3dmNotes</a></li>
+<li><a href="file3dmobject/">File3dmObject</a></li>
+<li><a href="file3dmobjecttable/">File3dmObjectTable</a></li>
+<li><a href="file3dmplugindata/">File3dmPlugInData</a></li>
+<li><a href="file3dmplugindatatable/">File3dmPlugInDataTable</a></li>
+<li><a href="file3dmsettings/">File3dmSettings</a></li>
+<li><a href="file3dmstringtable/">File3dmStringTable</a></li>
+<li><a href="file3dmtypecodes/">File3dmTypeCodes</a></li>
+<li><a href="file3dmviewtable/">File3dmViewTable</a></li>
+<li><a href="file3dmwriteoptions/">File3dmWriteOptions</a></li>
+<li><a href="fileobj/">FileObj</a></li>
+<li><a href="fileobjreadoptions/">FileObjReadOptions</a></li>
+<li><a href="useobjgsas/">UseObjGsAs</a></li>
+<li><a href="fileobjwriteoptions/">FileObjWriteOptions</a></li>
+<li><a href="asciieol/">AsciiEol</a></li>
+<li><a href="curvetype/">CurveType</a></li>
+<li><a href="geometrytype/">GeometryType</a></li>
+<li><a href="objgroupnames/">ObjGroupNames</a></li>
+<li><a href="objobjectnames/">ObjObjectNames</a></li>
+<li><a href="subdmeshing/">SubDMeshing</a></li>
+<li><a href="vertexwelding/">VertexWelding</a></li>
+<li><a href="objgroupcomparer/">ObjGroupComparer</a></li>
+<li><a href="objlayercomparer/">ObjLayerComparer</a></li>
+<li><a href="objrhinoobject/">ObjRhinoObject</a></li>
+<li><a href="rhinoobjectmesh/">RhinoObjectMesh</a></li>
+<li><a href="filepdf/">FilePdf</a></li>
+<li><a href="filepdfeventargs/">FilePdfEventArgs</a></li>
+<li><a href="fileply/">FilePly</a></li>
+<li><a href="fileplywriteoptions/">FilePlyWriteOptions</a></li>
+<li><a href="filereadoptions/">FileReadOptions</a></li>
+<li><a href="filereference/">FileReference</a></li>
+<li><a href="fileslc/">FileSlc</a></li>
+<li><a href="fileslcwriteoptions/">FileSlcWriteOptions</a></li>
+<li><a href="filestp/">FileStp</a></li>
+<li><a href="filestpwriteoptions/">FileStpWriteOptions</a></li>
+<li><a href="filetype/">FileType</a></li>
+<li><a href="filewriteoptions/">FileWriteOptions</a></li>
+<li><a href="icommoncomponenttable/">ICommonComponentTable</a></li>
+<li><a href="imagefile/">ImageFile</a></li>
+<li><a href="manifesttable/">ManifestTable</a></li>
+<li><a href="namehash/">NameHash</a></li>
+<li><a href="serializationoptions/">SerializationOptions</a></li>
+<li><a href="sha1opennurbs/">SHA1OpenNURBS</a></li>
+<li><a href="textlog/">TextLog</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/filepdf/">
+        <div class="h2 mt-1 mb-1">FilePdf</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for PDF file format
+public class FilePdfstatic PreWrite  (summary) Fired immediately before a Pdf is written (since) 6.0  Methods static FilePdf Create()  (summary) Create a new instance of a FilePdf class (since) 6.0 (returns) FilePdf This is some return comment  int AddPage(int widthInDots,int heightInDots,int dotsPerInch)  (summary) Add a blank page to this document (since) 6.5 (returns) int This is some return comment  int AddPage(ViewCaptureSettings settings)  (summary) Add a new page to this document and draw a viewport into it based on provided ViewCaptureSettings (since) 6.
+    <a class="muted-link" href="/posts/rhino/fileio/filepdf/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/filepdfeventargs/">
+        <div class="h2 mt-1 mb-1">FilePdfEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Used for events that are fired while constructing/saving a Pdf
+public class FilePdfEventArgsProperties FilePdf Pdf  (summary) The document that is about to be written (since) 6.0  
+    <a class="muted-link" href="/posts/rhino/fileio/filepdfeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileply/">
+        <div class="h2 mt-1 mb-1">FilePly</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for ply file format
+public class FilePlyMethods static WriteFileResult Write(String filename,RhinoDoc doc,FilePlyWriteOptions options)  (summary) Write a ply file based on the contents of a RhinoDoc (since) 7.0 (returns) WriteFileResult This is some return comment  
+    <a class="muted-link" href="/posts/rhino/fileio/fileply/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileplywriteoptions/">
+        <div class="h2 mt-1 mb-1">FilePlyWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FilePlyWriteOptionsConstructors FilePlyWriteOptions(FileWriteOptions writeOptions)  (summary) (since) 7.0  Properties bool ExportASCII  (summary) Determines whether to export as Ascii. (since) 7.0  bool ExportColors  (summary) Determines whether to export vertex colors. (since) 7.0  bool ExportMaterial  (summary) Determines whether to export a material. (since) 7.0  bool ExportNormals  (summary) Determines whether to export vertex normals. (since) 7.0  MeshingParameters MeshingParameters  (summary) (since) 7.
+    <a class="muted-link" href="/posts/rhino/fileio/fileplywriteoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/filereadoptions/">
+        <div class="h2 mt-1 mb-1">FileReadOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FileReadOptionsConstructors FileReadOptions()  (summary) (since) 5.0  Properties bool BatchMode  (summary) True means you cannot ask questions during reading. (no dialogs, no &ldquo;getters&rdquo;, etc.) (since) 5.0  bool ImportMode   (summary) True means we are merging whatever is being read into an existing document. This means you need to consider things like:
+If the information being read is in a different unit system, it should be scaled if UseScaleGeometry is true.
+    <a class="muted-link" href="/posts/rhino/fileio/filereadoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/filereference/">
+        <div class="h2 mt-1 mb-1">FileReference</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Manages a reference to an existing or nonexisting file, using either or both absolute or relative paths. Once constructed, this class is immutable.
+public class FileReferenceConstructors FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status)  (summary) Constructs a new instance of the FileReference class, given a fullPath, a relativePath a content hash and a status value. (since) 6.0  Properties ContentHash ContentHash  (summary) Gets the content hash. (since) 6.0  string FullPath  (summary) Gets the absolute path of this file reference.
+    <a class="muted-link" href="/posts/rhino/fileio/filereference/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileslc/">
+        <div class="h2 mt-1 mb-1">FileSlc</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for writing slice (slc) file format
+public class FileSlcMethods static bool Write(string filename,RhinoDoc doc,FileSlcWriteOptions options)  (summary) Write a slc file based on the contents of a RhinoDoc (since) 7.0 (returns) bool This is some return comment  
+    <a class="muted-link" href="/posts/rhino/fileio/fileslc/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/fileslcwriteoptions/">
+        <div class="h2 mt-1 mb-1">FileSlcWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Options used when writing a slc file
+public class FileSlcWriteOptionsProperties double AngleBetweenSegmentsDegrees  (summary) The angle that determines how smooth the polylines of the slice curves will be. When the number is small you will get a smooth final output but it will take more time to export and a larger file. (since) 7.0  Point3d EndPoint  (summary) End of the slicing normal (since) 7.0  double SliceDistance  (summary) The distance between the slices or layers of curves that your final output will contain.
+    <a class="muted-link" href="/posts/rhino/fileio/fileslcwriteoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/filestp/">
+        <div class="h2 mt-1 mb-1">FileStp</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for writing step (stp) file format
+public class FileStpMethods static bool Write(string filename,RhinoDoc doc,FileStpWriteOptions options)  (summary) Write a stp file based on the contents of a RhinoDoc (since) 7.0 (returns) bool This is some return comment  
+    <a class="muted-link" href="/posts/rhino/fileio/filestp/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/fileio/filestpwriteoptions/">
+        <div class="h2 mt-1 mb-1">FileStpWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Options used when writing a stp file
+public class FileStpWriteOptionsProperties bool Export2dCurves  (summary) Some (not most, and not Rhino) importing applications can make use of the 2-D trimming curves to get a more accurate and faster import. The size of the step file will be larger (since) 7.0  bool ExportBlack  (summary) Let importing application set color for black objects. If a Rhino object has color black, no color is assigned to the object in the step file.
+    <a class="muted-link" href="/posts/rhino/fileio/filestpwriteoptions/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/fileio/page/3/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">4</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/fileio/page/5/">5</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/fileio/page/5/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

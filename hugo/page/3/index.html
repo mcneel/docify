@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/binaryarchivewriter/">
+        <h3>BinaryArchiveWriter</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/binaryarchivewriter/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Represents an entity that is able to write data to an archive.
+public class BinaryArchiveWriterProperties int Archive3dmVersion  (summary) If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/bitmapentry/">
+        <h3>BitmapEntry</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/bitmapentry/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+Rhino.DocObjects.Tables.BitmapTable entry
+public class BitmapEntryProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string FileName  (summary) The name of this bitmap. (since) 5.1  bool IsReference  (summary) Gets a value indicting whether this bitmap is a referenced bitmap. Referenced bitmaps are part of referenced documents. (since) 5.1  Methods bool Save(string fileName)  (summary) (since) 5.1 (returns) bool This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/tables/bitmaptable/">
+        <h3>BitmapTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/tables/bitmaptable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+Stores the list of bitmaps in a Rhino document.
+public class BitmapTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods int AddBitmap(string bitmapFilename,bool replaceExisting)  (summary) Adds a new bitmap with specified name to the bitmap table. (since) 5.0 (returns) int This is some return comment  bool Delete(BitmapEntry item)  (summary) Removes the bitmap from the table. (since) 6.0 (returns) bool This is some return comment  bool DeleteBitmap(string bitmapFilename)  (summary) Deletes a bitmap.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/fields/boolfield/">
+        <h3>BoolField</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/fields/boolfield/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.Fields
+bool field value class
+public class BoolFieldProperties bool Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/boundingbox/">
+        <h3>BoundingBox</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/boundingbox/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the value of two points in a bounding box defined by the two extreme corner points. This box is therefore aligned to the world X, Y and Z axes.
+Constructors BoundingBox(double minX,double minY,double minZ,double maxX,double maxY,double maxZ)  (summary) Constructs a boundingbox from numeric extremes. (since) 5.0  BoundingBox(IEnumerablepoints)  (summary) Constructs a boundingbox from a collection of points. (since) 5.0  BoundingBox(IEnumerablepoints,Transform xform)  (summary) Constructs a boundingbox from a collection of points.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/box/">
+        <h3>Box</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/box/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the value of a plane and three intervals in an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.
+Constructors Box(BoundingBox bbox)  (summary) Initializes a new Box that mimics a BoundingBox struct. The orientation plane of the Box is coincident with the World XY plane. (since) 5.0  Box(Plane basePlane,BoundingBox boundingbox)  (summary) Initializes a world aligned box from a base plane and a boundingbox.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/brep/">
+        <h3>Brep</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/brep/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Boundary Representation. A surface or polysurface along with trim curve information.
+public class BrepConstructors Brep()  (summary) Initializes a new empty brep (since) 5.4  Properties Collections.BrepCurveList Curves2D  (summary) Parameter space trimming curves (used by trims) (since) 5.6  Collections.BrepCurveList Curves3D  (summary) Pointers to 3d curves (used by edges) (since) 5.6  Collections.BrepEdgeList Edges  (summary) Gets the brep edges list accessor. (since) 5.0  Collections.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/brepcurvelist/">
+        <h3>BrepCurveList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/brepcurvelist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the underlying curves in a Brep object.
+public class BrepCurveListProperties int Count  (summary) Gets the number of curves in this list. (since) 5.6  Methods int Add(Curve curve)  (summary) Adds a curve (since) 5.6 (returns) int This is some return comment  IEnumeratorGetEnumerator()  (summary) Get an enumerator that visits all curves. (since) 5.6 (returns) IEnumeratorThis is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/brepedge/">
+        <h3>BrepEdge</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/brepedge/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a single edge curve in a Brep object.
+public class BrepEdgeProperties Brep Brep  (summary) Gets the Brep that owns this edge. (since) 5.0  Curve EdgeCurve  (summary) Get the brep.Curves3D[] 3d curve geometry used by this edge or null. (since) 6.0  int EdgeCurveIndex  (summary) Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1. (since) 6.0  int EdgeIndex  (summary) Gets the index of this edge in the Brep.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/brepedgelist/">
+        <h3>BrepEdgeList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/brepedgelist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the Edges in a Brep object.
+public class BrepEdgeListProperties int Count  (summary) Gets the number of brep edges. (since) 5.0  Methods BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,double edgeTolerance)  (summary) Create and add a new edge to this list (since) 5.4 (returns) BrepEdge This is some return comment  BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,Interval subDomain,double edgeTolerance)  (summary) Create and add a new edge to this list (since) 5.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/2/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/4/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

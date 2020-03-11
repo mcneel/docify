@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.PlugIns on Test API Site</title>
+    <link>http://example.org/posts/rhino/plugins/</link>
+    <description>Recent content in Rhino.PlugIns on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CustomRenderSaveFileTypes</title>
+      <link>http://example.org/posts/rhino/plugins/customrendersavefiletypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/customrendersavefiletypes/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class CustomRenderSaveFileTypesMethods void RegisterFileType(IEnumerableextensions,string description,SaveFileHandler saveFileHandler)  (summary) Call this method to register a custom file save type with the render output window save dialog. (since) 5.11 (returns) void This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>DigitizerPlugIn</title>
+      <link>http://example.org/posts/rhino/plugins/digitizerplugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/digitizerplugin/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class DigitizerPlugInMethods void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey)  (summary) If the digitizer is enabled, call this function to send a point to Rhino. Call this function as much as you like. The digitizers that Rhino currently supports send a point every 15 milliseconds or so. This function should be called when users press or release any digitizer button. (since) 6.0 (returns) void This is some return comment  void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey)  (summary) If the digitizer is enabled, call this function to send a point and direction to Rhino.</description>
+    </item>
+    
+    <item>
+      <title>FileTypeList</title>
+      <link>http://example.org/posts/rhino/plugins/filetypelist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/filetypelist/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class FileTypeListConstructors FileTypeList()  (summary) (since) 5.0  FileTypeList(string description,string extension)  (summary) (since) 6.0  FileTypeList(string description,string extension,bool showOptionsButtonInFileDialog)  (summary) (since) 6.0  Methods int AddFileType(string description,IEnumerableextensions)  (summary) (since) 5.0 (returns) int This is some return comment  int AddFileType(string description,IEnumerableextensions,bool showOptionsButtonInFileDialog)  (summary) (since) 6.0 (returns) int This is some return comment  int AddFileType(string description,string extension)  (summary) (since) 5.0 (returns) int This is some return comment  int AddFileType(string description,string extension,bool showOptionsButtonInFileDialog)  (summary) (since) 6.</description>
+    </item>
+    
+    <item>
+      <title>LicenseData</title>
+      <link>http://example.org/posts/rhino/plugins/licensedata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/licensedata/</guid>
+      <description>Namespace: Rhino.PlugIns
+Zoo plugin license data.
+public class LicenseDataConstructors LicenseData()  (summary) Public constructor. (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate)  (summary) Public constructor (since) (unknown)  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime?</description>
+    </item>
+    
+    <item>
+      <title>LicenseIdAttribute</title>
+      <link>http://example.org/posts/rhino/plugins/licenseidattribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/licenseidattribute/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class LicenseIdAttributeConstructors LicenseIdAttribute(string value)  (summary) (since) 6.0  Properties string Value  (summary) (since) 6.0  </description>
+    </item>
+    
+    <item>
+      <title>LicenseLease</title>
+      <link>http://example.org/posts/rhino/plugins/licenselease/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/licenselease/</guid>
+      <description>Namespace: Rhino.PlugIns
+LicenseLease represents a lease returned from the Cloud Zoo
+public class LicenseLeaseConstructors LicenseLease(IntPtr unmanagedPointer)  (summary) (since) 6.0  LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp)  (summary) (since) 6.0  LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp,DateTime renewable_until)  (summary) (since) 6.4  Properties DateTime Expiration  (summary) The date when this lease will expire (since) 6.</description>
+    </item>
+    
+    <item>
+      <title>LicenseLeaseChangedEventArgs</title>
+      <link>http://example.org/posts/rhino/plugins/licenseleasechangedeventargs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/licenseleasechangedeventargs/</guid>
+      <description>Namespace: Rhino.PlugIns
+Arguments for OnLeaseChangedDelegate
+public class LicenseLeaseChangedEventArgsConstructors LicenseLeaseChangedEventArgs(LicenseLease lease)  (summary) (since) 6.0  Properties LicenseLease Lease  (summary) The lease returned by Rhino Accounts server (since) 6.0  </description>
+    </item>
+    
+    <item>
+      <title>LicenseStatus</title>
+      <link>http://example.org/posts/rhino/plugins/licensestatus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/licensestatus/</guid>
+      <description>Namespace: Rhino.PlugIns
+LicenseStatus class.
+public class LicenseStatusConstructors LicenseStatus()  (summary) Public constructor. (since) 5.0  Properties LicenseBuildType BuildType  (summary) The build contentType of the product, where: 100 = A release build, either commercical, education, nfr, etc. 200 = A evaluation build 300 = A beta build, such as a wip. (since) 5.0  DateTime? CheckOutExpirationDate  (summary) The date and time the checked out license will expire. Note, this is only set if m_license_type = Standalone or CloudZoo and if &amp;ldquo;limited license checkout&amp;rdquo; was enabled on the Zoo server in the case of Standalone.</description>
+    </item>
+    
+    <item>
+      <title>LicenseUtils</title>
+      <link>http://example.org/posts/rhino/plugins/licenseutils/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/licenseutils/</guid>
+      <description>Namespace: Rhino.PlugIns
+License Manager Utilities.
+public class LicenseUtilsMethods static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  (summary) This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense is used by Rhino C++ plug-ins. (since) 6.0 (returns) bool This is some return comment  static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CheckInLicense(Guid productId)  (summary) Checks in a previously checked out license to the Zoo server from which it was checked out.</description>
+    </item>
+    
+    <item>
+      <title>PlugIn</title>
+      <link>http://example.org/posts/rhino/plugins/plugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/plugin/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class PlugInSettingsSaved  (summary) This event is raised when an instance of Rhino has modified the external settings file associated with this plug-in&amp;rsquo;s property. (since) 6.0  Properties static bool AskOnLoadProtection  (summary) If true, Rhino will display a warning dialog when load-protected plug-ins are attempting to load. If false, load-protected plug-ins will silently not load. (since) 6.0  static int InstalledPlugInCount  (summary) Returns the number of installed Rhino plug-ins.</description>
+    </item>
+    
+    <item>
+      <title>PlugInDescriptionAttribute</title>
+      <link>http://example.org/posts/rhino/plugins/plugindescriptionattribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/plugindescriptionattribute/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class PlugInDescriptionAttributeConstructors PlugInDescriptionAttribute(DescriptionType descriptionType,string value)  (summary) (since) 5.0  Properties DescriptionType DescriptionType  (summary) (since) 5.0  string Value  (summary) (since) 5.0  </description>
+    </item>
+    
+    <item>
+      <title>PlugInInfo</title>
+      <link>http://example.org/posts/rhino/plugins/plugininfo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/plugininfo/</guid>
+      <description>Namespace: Rhino.PlugIns
+Contains detailed information about a Rhino plug-in.
+public class PlugInInfoProperties string Address  (summary) Returns the address of the organization or company that created the plug-in. (since) 6.0  string[] CommandNames  (summary) Returns a plug-in&amp;rsquo;s English command names. (since) 6.0  string Country  (summary) Returns the country of the organization or company that created the plug-in. (since) 6.0  string Description  (summary) Returns the plug-in&amp;rsquo;s description.</description>
+    </item>
+    
+    <item>
+      <title>PreviewNotification</title>
+      <link>http://example.org/posts/rhino/plugins/previewnotification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/previewnotification/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class PreviewNotificationMethods void NotifyIntermediateUpdate(RenderWindow rw)  (summary) (since) 6.0 (returns) void This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>RenderPlugIn</title>
+      <link>http://example.org/posts/rhino/plugins/renderplugin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/plugins/renderplugin/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class RenderPlugInProperties bool PerferBasicContent  (summary) Set to True if you would like Rhino to quickly create a basic render content in response to &amp;lsquo;Create New&amp;rsquo; commands. Set to False if you would prefer Rhino to display the render content chooser dialog. (since) 5.12  Methods static bool CurrentRendererSupportsFeature(RenderFeature feature)  (summary) (since) 6.1 (returns) bool This is some return comment  bool EnableAssignMaterialButton()  (summary) Called to enable/disable the &amp;ldquo;Material&amp;rdquo; button located on the &amp;ldquo;Material&amp;rdquo; tab in the Properties and Layer dialog boxes.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoGet &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a RhinoGet but you will use its member functions after calling GetObject::GetObjects(), GetPoint::GetPoint(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &amp;ldquo;get&amp;rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class RhinoGetProperties static BitmapFileTypes AllBitmapFileTypes  (summary) (since) 6.0  Methods static Result Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView)  (summary) Gets a rectangle in view window coordinates.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoGet</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input</a></em></p>
+<p>Base class for GetObject, GetPoint, GetSphere, etc.</p>
+<p>You will never directly create a RhinoGet but you will use its member
+functions after calling GetObject::GetObjects(), GetPoint::GetPoint(), and so on.</p>
+<p>Provides tools to set command prompt, set command options, and specify
+if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter),
+and undo.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoGet</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="static-bitmapfiletypes-allbitmapfiletypes">static BitmapFileTypes AllBitmapFileTypes</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-result-get2drectanglebool-solidpenrectangle-rectanglerhinoview-rectview">static Result Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView)</h4>
+<ul>
+<li>(summary) Gets a rectangle in view window coordinates.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getanglestring-commandpromptpoint3d-basepointpoint3d-referencepointdouble-defaultangleradiansdouble-angleradians">static Result GetAngle(string commandPrompt,Point3d basePoint,Point3d referencePoint,double defaultAngleRadians,double angleRadians)</h4>
+<ul>
+<li>(summary) Allows user to interactively pick an angle</li>
+<li>(since) 5.2</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getarcarc-arc">static Result GetArc(Arc arc)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getboolstring-promptbool-acceptnothingstring-offpromptstring-onpromptbool-boolvalue">static Result GetBool(string prompt,bool acceptNothing,string offPrompt,string onPrompt,bool boolValue)</h4>
+<ul>
+<li>(summary) Easy to use bool getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getboxbox-box">static Result GetBox(Box box)</h4>
+<ul>
+<li>(summary) Asks the user to select a Box in the viewport.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getboxbox-boxgetboxmode-modepoint3d-basepointstring-prompt1string-prompt2string-prompt3">static Result GetBox(Box box,GetBoxMode mode,Point3d basePoint,string prompt1,string prompt2,string prompt3)</h4>
+<ul>
+<li>(summary) Asks the user to select a Box in the viewport.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getboxwithcountsint-xminint-xcountint-yminint-ycountint-zminint-zcountpoint3d-corners">static Result GetBoxWithCounts(int xMin,int xCount,int yMin,int yCount,int zMin,int zCount,Point3d[] corners)</h4>
+<ul>
+<li>(summary) Gets a 3d box with prompts for counts in X, Y and Z directions.</li>
+<li>(since) 6.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getcirclecircle-circle">static Result GetCircle(Circle circle)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getcolorstring-promptbool-acceptnothingcolor-color">static Result GetColor(string prompt,bool acceptNothing,Color color)</h4>
+<ul>
+<li>(summary) Easy to use color getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-string-getfilenamegetfilenamemode-modestring-defaultnamestring-titleobject-parent">static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-getfilenamegetfilenamemode-modestring-defaultnamestring-titleobject-parentbitmapfiletypes-filetypes">static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent,BitmapFileTypes fileTypes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-getfilenamescriptedgetfilenamemode-modestring-defaultname">static string GetFileNameScripted(GetFileNameMode mode,string defaultName)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-result-getgripgripobject-gripstring-prompt">static Result GetGrip(GripObject grip,string prompt)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getgripsgripobject-gripsstring-prompt">static Result GetGrips(GripObject[] grips,string prompt)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-gethelixnurbscurve-helix">static Result GetHelix(NurbsCurve helix)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getintegerstring-promptbool-acceptnothingint-outputnumber">static Result GetInteger(string prompt,bool acceptNothing,int outputNumber)</h4>
+<ul>
+<li>(summary) Easy to use number getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getintegerstring-promptbool-acceptnothingint-outputnumberint-lowerlimitint-upperlimit">static Result GetInteger(string prompt,bool acceptNothing,int outputNumber,int lowerLimit,int upperLimit)</h4>
+<ul>
+<li>(summary) Easy to use number getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getlineline-line">static Result GetLine(Line line)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getlineardimensionlineardimension-dimension">static Result GetLinearDimension(LinearDimension dimension)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getmultipleobjectsstring-promptbool-acceptnothinggetobjectgeometryfilter-filterobjref-rhobjects">static Result GetMultipleObjects(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef[] rhObjects)</h4>
+<ul>
+<li>(summary) Easy to use object getter for getting multiple objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getmultipleobjectsstring-promptbool-acceptnothingobjecttype-filterobjref-rhobjects">static Result GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,ObjRef[] rhObjects)</h4>
+<ul>
+<li>(summary) Easy to use object getter for getting multiple objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getnumberstring-promptbool-acceptnothingdouble-outputnumber">static Result GetNumber(string prompt,bool acceptNothing,double outputNumber)</h4>
+<ul>
+<li>(summary) Easy to use number getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getnumberstring-promptbool-acceptnothingdouble-outputnumberdouble-lowerlimitdouble-upperlimit">static Result GetNumber(string prompt,bool acceptNothing,double outputNumber,double lowerLimit,double upperLimit)</h4>
+<ul>
+<li>(summary) Easy to use number getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getoneobjectstring-promptbool-acceptnothinggetobjectgeometryfilter-filterobjref-objref">static Result GetOneObject(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef objref)</h4>
+<ul>
+<li>(summary) Easy to use object getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getoneobjectstring-promptbool-acceptnothingobjecttype-filterobjref-rhobject">static Result GetOneObject(string prompt,bool acceptNothing,ObjectType filter,ObjRef rhObject)</h4>
+<ul>
+<li>(summary) Easy to use object getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getplaneplane-plane">static Result GetPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Gets an oriented infinite plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getpointstring-promptbool-acceptnothingpoint3d-point">static Result GetPoint(string prompt,bool acceptNothing,Point3d point)</h4>
+<ul>
+<li>(summary) Gets a point coordinate from the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getpointonmeshguid-meshobjectidstring-promptbool-acceptnothingpoint3d-point">static Result GetPointOnMesh(Guid meshObjectId,string prompt,bool acceptNothing,Point3d point)</h4>
+<ul>
+<li>(summary) Gets a point constrained to an existing mesh in the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getpointonmeshmeshobject-meshobjectstring-promptbool-acceptnothingpoint3d-point">static Result GetPointOnMesh(MeshObject meshObject,string prompt,bool acceptNothing,Point3d point)</h4>
+<ul>
+<li>(summary) Gets a point constrained to an existing mesh in the document.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getpolygonint-numbersidesbool-inscribedpolyline-polyline">static Result GetPolygon(int numberSides,bool inscribed,Polyline polyline)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getpolylinepolyline-polyline">static Result GetPolyline(Polyline polyline)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.9</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getprintwindowviewcapturesettings-settings">static Result GetPrintWindow(ViewCaptureSettings settings)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.1</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getrectanglegetboxmode-modepoint3d-firstpointienumerablestring-promptspoint3d-corners">static Result GetRectangle(GetBoxMode mode,Point3d firstPoint,IEnumerable<!-- raw HTML omitted --> prompts,Point3d[] corners)</h4>
+<ul>
+<li>(summary) Gets a 3d rectangle made up of four points.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getrectanglepoint3d-corners">static Result GetRectangle(Point3d[] corners)</h4>
+<ul>
+<li>(summary) Gets a 3d rectangle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getrectanglestring-firstpromptpoint3d-corners">static Result GetRectangle(string firstPrompt,Point3d[] corners)</h4>
+<ul>
+<li>(summary) Gets a 3d rectangle.</li>
+<li>(since) 6.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getrectanglewithcountsint-xminint-xcountint-yminint-ycountpoint3d-corners">static Result GetRectangleWithCounts(int xMin,int xCount,int yMin,int yCount,Point3d[] corners)</h4>
+<ul>
+<li>(summary) Gets a 3d rectangle with prompts for counts in X and Y directions.</li>
+<li>(since) 6.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getspiralnurbscurve-spiral">static Result GetSpiral(NurbsCurve spiral)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getstringstring-promptbool-acceptnothingstring-outputstring">static Result GetString(string prompt,bool acceptNothing,string outputString)</h4>
+<ul>
+<li>(summary) Easy to use string getter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-result-getviewstring-commandpromptrhinoview-view">static Result GetView(string commandPrompt,RhinoView view)</h4>
+<ul>
+<li>(summary) Allows the user to interactively pick a viewport.</li>
+<li>(since) 5.0</li>
+<li>(returns) Result This is some return comment</li>
+</ul>
+<h4 id="static-bool-ingetrhinodoc-doc">static bool InGet(RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Returns True if the document is current in a &ldquo;Get&rdquo; operation.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-ingetobjectrhinodoc-doc">static bool InGetObject(RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Returns True if currently in a GetObject.GetObjects()</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-ingetpointrhinodoc-doc">static bool InGetPoint(RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Returns True if currently in a GetPoint.Get()</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-string-stringtocommandoptionnamestring-stringtoconvert">static string StringToCommandOptionName(string stringToConvert)</h4>
+<ul>
+<li>(summary) Convert some arbitrary string value to a valid command option name
+removing any invalid characters.</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-localizestringpair-stringtocommandoptionnamestring-englishstringstring-localizedstring">static LocalizeStringPair StringToCommandOptionName(string englishString,string localizedString)</h4>
+<ul>
+<li>(summary) Convert some arbitrary string value to a valid command option name
+removing any invalid characters.</li>
+<li>(since) 6.0</li>
+<li>(returns) LocalizeStringPair This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoGet</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

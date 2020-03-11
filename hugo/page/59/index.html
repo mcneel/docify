@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/tables/snapshottable/">
+        <h3>SnapshotTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/tables/snapshottable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+All snapshots in a rhino document.
+public class SnapshotTableProperties RhinoDoc Document  (summary) Document that owns this table. (since) 6.7  string[] Names  (summary) Array of Snapshot names. (since) 6.7  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/spacemorph/">
+        <h3>SpaceMorph</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/spacemorph/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a spacial, Euclidean morph.
+public class SpaceMorphProperties bool PreserveStructure  (summary) True if the morph should be done in a way that preserves the structure of the geometry. In particular, for NURBS objects, True means that only the control points are moved. The PreserveStructure value does not affect the way meshes and points are morphed. The default is false. (since) 5.0  bool QuickPreview  (summary) True if the morph should be done as quickly as possible because the result is being used for some type of dynamic preview.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/sphere/">
+        <h3>Sphere</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/sphere/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the plane and radius values of a sphere.
+Constructors Sphere(Plane equatorialPlane,double radius)  (summary) Initializes a new sphere given the plane of the equator circle and radius. (since) 5.0  Sphere(Point3d center,double radius)  (summary) Initializes a new sphere given center point and radius. (since) 5.0  Properties static Sphere Unset  (summary) Gets a sphere with invalid members. (since) 5.0  BoundingBox BoundingBox  (summary) Gets the world aligned boundingbox for this Sphere.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/morphs/splopspacemorph/">
+        <h3>SplopSpaceMorph</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/morphs/splopspacemorph/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Rotates, scales, and wraps objects on a surface.
+public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale,double angle)  (summary) Constructs a flow space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/morphs/sporphspacemorph/">
+        <h3>SporphSpaceMorph</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/morphs/sporphspacemorph/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Deforms an object from a source surface to a target surface.
+public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Surface surface1)  (summary) Constructs a sporph space morph. (since) 5.9  SporphSpaceMorph(Surface surface0,Surface surface1,Point2d surface0Param,Point2d surface1Param)  (summary) Constructs a sporph space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/stackeddialogpage/">
+        <h3>StackedDialogPage</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/stackeddialogpage/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI
+Base class to inherit from for the addition of stacked dialog pages.
+public class StackedDialogPageProperties ListChildren  (summary) List of child (sub) pages of this page (since) 5.0  string EnglishPageTitle  (summary) English string used when scripting this page and a user prefixes a command option with &ldquo;_&rdquo; (since) 5.0  IntPtr Handle  (summary) When running on Windows return the window handle for the parent of this page otherwise; return IntPtr.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/statusbar/">
+        <h3>StatusBar</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/statusbar/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI
+Contains static methods to control the application status bar.
+public class StatusBarMethods static void ClearMessagePane()  (summary) Removes the message from the message pane. (since) 5.0 (returns) void This is some return comment  static void HideProgressMeter()  (summary) Ends, or hides, Rhino&rsquo;s status bar progress meter. (since) 5.0 (returns) void This is some return comment  static void HideProgressMeter(uint docSerialNumber)  (summary) Ends, or hides, Rhino&rsquo;s status bar progress meter.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/morphs/stretchspacemorph/">
+        <h3>StretchSpaceMorph</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/morphs/stretchspacemorph/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Deforms objects toward or away from a specified axis.
+public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Point3d end,double length)  (summary) Constructs a stretch space morph. (since) 5.9  StretchSpaceMorph(Point3d start,Point3d end,Point3d point)  (summary) Constructs a stretch space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/fields/stringfield/">
+        <h3>StringField</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/fields/stringfield/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.Fields
+String field value class
+public class StringFieldProperties string Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/interopwrappers/stringholder/">
+        <h3>StringHolder</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/interopwrappers/stringholder/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+This class is used to pass strings back and forth between managed and unmanaged code. This should not be be needed by plug-ins. If you are just dealing with an ON_wString*, use
+public class StringHolderConstructors StringHolder()  (summary) Constructor (since) 5.8  Methods static string GetString(IntPtr pStringHolder)  (summary) Gets managed string from unmanaged ON_wString pointer. (since) 5.8 (returns) string This is some return comment  IntPtr ConstPointer()  (summary) C++ pointer used to access the ON_wString, managed plug-ins should never need this.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/58/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/60/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

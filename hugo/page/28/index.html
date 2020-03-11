@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hiddenlinedrawingsegment/">
+        <h3>HiddenLineDrawingSegment</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hiddenlinedrawingsegment/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+The results of HiddenLineDrawing calculation are a collection of segments. A segment is a subcurve of a HiddenLineDrawingObjectCurve.
+public class HiddenLineDrawingSegmentProperties Curve CurveGeometry  (summary) The actual curve geometry (since) 6.0  SideFill[] CurveSideFills  (summary) The SideFill fields are only valid for visible curves. With respect to the HiddenLineDrawing, the region to the left (or right respecively) of this curve is described by CurveSideFills[0] or CurveSideFills[1], respectively.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/historyrecord/">
+        <h3>HistoryRecord</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/historyrecord/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+Provides a single bundling of information to be passed to Rhino when setting up history for an object.
+public class HistoryRecordConstructors HistoryRecord(Command command,int version)  (summary) (since) 5.0  Properties bool CopyOnReplaceObject  (summary) When an object is replaced and the old object has a history record with this field set, the history record is copied and attached to the new object. That allows a descendant object to continue the history linkage after it is edited.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/historysettings/">
+        <h3>HistorySettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/historysettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Provides static (Shared in Vb.Net) properties to modify Rhino History settings.
+public class HistorySettingsProperties static bool BrokenRecordWarningEnabled  (summary) Displays a warning dialog when an action is taken that breaks the link between the output and input objects. (since) 6.10  static bool ObjectLockingEnabled  (summary) When history object locking is enabled, objects with history on them act as if they were locked and the only way to modify these objects is to edit their inputs.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/hostutils/">
+        <h3>HostUtils</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/hostutils/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime
+Contains static methods to deal with teh runtime environment.
+public class HostUtilsstatic OnExceptionReport  (summary) Is raised when an exception is reported with one of the method. (since) 5.0  static OnSendLogMessageToCloud  (summary) Is raised when an exception is reported with one of the method. (since) 6.4  Properties static string ComputerSerialNumber  (summary) Gets the serial number of the computer running Rhino. (since) 6.0  static uint CurrentOSLanguage  (summary) Get the current operating system language.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/hudmaxpasseschangedeventargs/">
+        <h3>HudMaxPassesChangedEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/hudmaxpasseschangedeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class HudMaxPassesChangedEventArgsConstructors HudMaxPassesChangedEventArgs(int mp)  (summary) (since) 6.0  Properties int MaxPasses  (summary) (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/imageadjust/">
+        <h3>ImageAdjust</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/imageadjust/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Class to set image adjusting settings to a RenderWindow. This can&rsquo;t be directly created. Instead, one should use RenderWindow.GetAdjust() to get an ImageAdjust instance that can be modified, then passed into RenderWindow.SetAdjust() to update image adjusting settings.1
+public class ImageAdjustProperties Dithering.Methods Dither  (summary) Set the Dithering method to use when adjusting the RenderWindow content. (since) 6.0  float Gamma  (summary) Set the gamma value. The inverse of this will be used to apply gamma correction to the RenderWindow RGBA channel when necessary.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/imagefile/">
+        <h3>ImageFile</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/imagefile/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Support functions for image files
+public class ImageFileMethods static bool SupportsAlphaChannel(string filename)  (summary) Returns True if file at given path is an image file and that file format supports an alpha channel (since) 6.0 (returns) bool This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/imagefile/">
+        <h3>ImageFile</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/imagefile/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Controls interaction with RDK render image files
+public class ImageFileEvents static Deleted  (summary) Called when the RDK is cleaning up old render image files, a plug-in should delete any plug-in specific image files at this time. (since) 5.11  static Loaded  (summary) Generally called when the &ldquo;RenderOpenLastRender&rdquo; command is run, this event is raised after the render window has been created and the saved scene has been loaded.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/imagefileeventargs/">
+        <h3>ImageFileEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/imagefileeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class ImageFileEventArgsProperties int EllapsedTime  (summary) (since) 5.11  ImageFileEvent Event  (summary) (since) 5.11  string FileName  (summary) (since) 5.11  string RenderEngine  (summary) (since) 5.11  Guid RenderEngineId  (summary) (since) 5.11  Guid SessionId  (summary) (since) 5.11  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/indexpair/">
+        <h3>IndexPair</h3>
+      </a>
+      <small>http://example.org/posts/rhino/indexpair/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino
+Represents two indices: I and J.
+Constructors IndexPair(int i,int j)  (summary) Initializes a new instance of with two indices. (since) 5.0  Properties int Count  (summary) Returns the amount of elements in this pair of indices, which is always 2. (since) 6.0  int I  (summary) Gets or sets the first, I index. (since) 5.0  int J  (summary) Gets or sets the second, J index.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/27/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/29/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

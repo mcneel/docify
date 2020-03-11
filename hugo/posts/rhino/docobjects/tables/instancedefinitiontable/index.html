@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  InstanceDefinitionTable &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTableProperties int ActiveCount  (summary) Number of items in the instance definitions table, excluding deleted definitions. (since) 5.0  ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Number of items in the instance definitions table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes)  (summary) Adds an instance definition to the instance definition table.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">InstanceDefinitionTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceDefinitionTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-activecount">int ActiveCount</h4>
+<ul>
+<li>(summary) Number of items in the instance definitions table, excluding deleted definitions.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="modelcomponenttype-componenttype">ModelComponentType ComponentType</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Number of items in the instance definitions table.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinodoc-document">RhinoDoc Document</h4>
+<ul>
+<li>(summary) Document that owns this table.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-addstring-namestring-descriptionpoint3d-basepointgeometrybase-geometryobjectattributes-attributes">int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes)</h4>
+<ul>
+<li>(summary) Adds an instance definition to the instance definition table.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addstring-namestring-descriptionpoint3d-basepointienumerablegeometrybase-geometry">int Add(string name,string description,Point3d basePoint,IEnumerable<!-- raw HTML omitted --> geometry)</h4>
+<ul>
+<li>(summary) Adds an instance definition to the instance definition table.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addstring-namestring-descriptionpoint3d-basepointienumerablegeometrybase-geometryienumerableobjectattributes-attributes">int Add(string name,string description,Point3d basePoint,IEnumerable<!-- raw HTML omitted --> geometry,IEnumerable<!-- raw HTML omitted --> attributes)</h4>
+<ul>
+<li>(summary) Adds an instance definition to the instance definition table.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-compactbool-ignoreundoreferences">void Compact(bool ignoreUndoReferences)</h4>
+<ul>
+<li>(summary) Purge deleted instance definition information that is not in use.
+This function is time consuming and should be used in a thoughtful manner.</li>
+<li>(since) 5.9</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-deleteinstancedefinition-item">bool Delete(InstanceDefinition item)</h4>
+<ul>
+<li>(summary) Deletes the instance definition. This deletes all references too.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleteint-idefindexbool-deletereferencesbool-quiet">bool Delete(int idefIndex,bool deleteReferences,bool quiet)</h4>
+<ul>
+<li>(summary) Deletes the instance definition.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-destroysourcearchiveinstancedefinition-definitionbool-quiet">bool DestroySourceArchive(InstanceDefinition definition,bool quiet)</h4>
+<ul>
+<li>(summary) Destroys all source archive information.
+Specifically:
+<ul>
+<li>is set to the empty string.</li>
+<li>SourceRelativePath is set to false</li>
+<li>The alternative source archive path is set to the empty string.</li>
+<li>Checksum.Zero() is used to private destroy all checksum information.</li>
+<li>is set to .</li>
+</ul>
+</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="instancedefinition-findguid-instanceidbool-ignoredeletedinstancedefinitions">InstanceDefinition Find(Guid instanceId,bool ignoreDeletedInstanceDefinitions)</h4>
+<ul>
+<li>(summary) Finds the instance definition with a given id.</li>
+<li>(since) 5.0</li>
+<li>(returns) InstanceDefinition This is some return comment</li>
+</ul>
+<h4 id="instancedefinition-findstring-instancedefinitionname">InstanceDefinition Find(string instanceDefinitionName)</h4>
+<ul>
+<li>(summary) Finds the instance definition with a given name.</li>
+<li>(since) 6.0</li>
+<li>(returns) InstanceDefinition This is some return comment</li>
+</ul>
+<h4 id="instancedefinition-findstring-instancedefinitionnamebool-ignoredeletedinstancedefinitions">InstanceDefinition Find(string instanceDefinitionName,bool ignoreDeletedInstanceDefinitions)</h4>
+<ul>
+<li>(summary) Finds the instance definition with a given name.</li>
+<li>(since) 5.0</li>
+<li>(returns) InstanceDefinition This is some return comment</li>
+</ul>
+<h4 id="ienumeratorinstancedefinition-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="instancedefinition-getlistbool-ignoredeleted">InstanceDefinition[] GetList(bool ignoreDeleted)</h4>
+<ul>
+<li>(summary) Gets an array of instance definitions.</li>
+<li>(since) 5.0</li>
+<li>(returns) InstanceDefinition[] This is some return comment</li>
+</ul>
+<h4 id="string-getunusedinstancedefinitionname">string GetUnusedInstanceDefinitionName()</h4>
+<ul>
+<li>(summary) Gets unsed instance definition name used as default when creating
+new instance definitions.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-getunusedinstancedefinitionnamestring-root">string GetUnusedInstanceDefinitionName(string root)</h4>
+<ul>
+<li>(summary) Gets unsed instance definition name used as default when creating
+new instance definitions.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-getunusedinstancedefinitionnamestring-rootuint-defaultsuffix">string GetUnusedInstanceDefinitionName(string root,uint defaultSuffix)</h4>
+<ul>
+<li>(summary) Gets unsed instance definition name used as default when creating
+new instance definitions.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="int-instancedefinitionindexguid-instanceidbool-ignoredeletedinstancedefinitions">int InstanceDefinitionIndex(Guid instanceId,bool ignoreDeletedInstanceDefinitions)</h4>
+<ul>
+<li>(summary) Get the index of the instance definition with a given id.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-makesourcepathrelativeinstancedefinition-idefbool-relativebool-quiet">bool MakeSourcePathRelative(InstanceDefinition idef,bool relative,bool quiet)</h4>
+<ul>
+<li>(summary) Obsolete method that always returns false.
+Marks the source path for a linked instance definition as relative or absolute.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyinstancedefinition-idefstring-newnamestring-newdescriptionbool-quiet">bool Modify(InstanceDefinition idef,string newName,string newDescription,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies the instance definition name and description.
+Does not change instance definition ID or geometry.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifyint-idefindexstring-newnamestring-newdescriptionbool-quiet">bool Modify(int idefIndex,string newName,string newDescription,bool quiet)</h4>
+<ul>
+<li>(summary) Modifies the instance definition name and description.
+Does not change instance definition ID or geometry.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifygeometryint-idefindexgeometrybase-newgeometryobjectattributes-newattributes">bool ModifyGeometry(int idefIndex,GeometryBase newGeometry,ObjectAttributes newAttributes)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifygeometryint-idefindexienumerablegeometrybase-newgeometry">bool ModifyGeometry(int idefIndex,IEnumerable<!-- raw HTML omitted --> newGeometry)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifygeometryint-idefindexienumerablegeometrybase-newgeometryienumerableobjectattributes-newattributes">bool ModifyGeometry(int idefIndex,IEnumerable<!-- raw HTML omitted --> newGeometry,IEnumerable<!-- raw HTML omitted --> newAttributes)</h4>
+<ul>
+<li>(summary) Modifies the instance definition geometry and replaces all references
+to the current definition with references to the new definition.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifysourcearchiveint-idefindexfilereference-sourcearchiveinstancedefinitionupdatetype-updatetypebool-quiet">bool ModifySourceArchive(int idefIndex,FileReference sourceArchive,InstanceDefinitionUpdateType updateType,bool quiet)</h4>
+<ul>
+<li>(summary) If the instance definition is linked or embedded, use SetSource to
+specify the source archive.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-modifysourcearchiveint-idefindexstring-sourcearchiveinstancedefinitionupdatetype-updatetypebool-quiet">bool ModifySourceArchive(int idefIndex,string sourceArchive,InstanceDefinitionUpdateType updateType,bool quiet)</h4>
+<ul>
+<li>(summary) If the instance definition is linked or embedded, use SetSource to
+specify the source archive.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-purgeint-idefindex">bool Purge(int idefIndex)</h4>
+<ul>
+<li>(summary) Purges an instance definition and its definition geometry.</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-refreshlinkedblockinstancedefinition-definition">bool RefreshLinkedBlock(InstanceDefinition definition)</h4>
+<ul>
+<li>(summary) Reload linked block definitions and update the Rhino display.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undeleteint-idefindex">bool Undelete(int idefIndex)</h4>
+<ul>
+<li>(summary) Undeletes an instance definition that has been deleted by Delete()</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-undomodifyint-idefindex">bool UndoModify(int idefIndex)</h4>
+<ul>
+<li>(summary) Restores the instance definition to its previous state,
+if the instance definition has been modified and the modification can be undone.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-updatelinkedinstancedefinitionint-idefindexstring-filenamebool-updatenestedlinksbool-quiet">bool UpdateLinkedInstanceDefinition(int idefIndex,string filename,bool updateNestedLinks,bool quiet)</h4>
+<ul>
+<li>(summary) Read the objects from a file and use them as the instance&rsquo;s definition geometry.</li>
+<li>(since) 5.9</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>InstanceDefinitionTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Input.Custom &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Input.Custom</h1>
+  <ul>
+<li><a href="commandlineoption/">CommandLineOption</a></li>
+<li><a href="coneconstraint/">ConeConstraint</a></li>
+<li><a href="cylinderconstraint/">CylinderConstraint</a></li>
+<li><a href="geometryattributefilter/">GeometryAttributeFilter</a></li>
+<li><a href="getarc/">GetArc</a></li>
+<li><a href="getbaseclass/">GetBaseClass</a></li>
+<li><a href="getcancel/">GetCancel</a></li>
+<li><a href="getcircle/">GetCircle</a></li>
+<li><a href="getcone/">GetCone</a></li>
+<li><a href="getcylinder/">GetCylinder</a></li>
+<li><a href="getellipsoid/">GetEllipsoid</a></li>
+<li><a href="getfilenamemode/">GetFileNameMode</a></li>
+<li><a href="getinteger/">GetInteger</a></li>
+<li><a href="getline/">GetLine</a></li>
+<li><a href="getlinemode/">GetLineMode</a></li>
+<li><a href="getnumber/">GetNumber</a></li>
+<li><a href="getobject/">GetObject</a></li>
+<li><a href="getoption/">GetOption</a></li>
+<li><a href="getpoint/">GetPoint</a></li>
+<li><a href="getpointdraweventargs/">GetPointDrawEventArgs</a></li>
+<li><a href="getpointmouseeventargs/">GetPointMouseEventArgs</a></li>
+<li><a href="getpolyline/">GetPolyline</a></li>
+<li><a href="getsphere/">GetSphere</a></li>
+<li><a href="getstring/">GetString</a></li>
+<li><a href="gettorus/">GetTorus</a></li>
+<li><a href="gettransform/">GetTransform</a></li>
+<li><a href="gettruncatedcone/">GetTruncatedCone</a></li>
+<li><a href="optioncolor/">OptionColor</a></li>
+<li><a href="optiondouble/">OptionDouble</a></li>
+<li><a href="optioninteger/">OptionInteger</a></li>
+<li><a href="optiontoggle/">OptionToggle</a></li>
+<li><a href="pickcontext/">PickContext</a></li>
+<li><a href="meshhitflag/">MeshHitFlag</a></li>
+<li><a href="meshpickstyle/">MeshPickStyle</a></li>
+<li><a href="pickmode/">PickMode</a></li>
+<li><a href="pickstyle/">PickStyle</a></li>
+<li><a href="taskcompleteeventargs/">TaskCompleteEventArgs</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/commandlineoption/">
+        <div class="h2 mt-1 mb-1">CommandLineOption</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class CommandLineOptionProperties int CurrentListOptionIndex  (summary) (since) 5.0  string EnglishName  (summary) The English command option name (since) 5.0  int Index  (summary) (since) 5.0  string LocalName  (summary) The localized command option name (since) 6.24  string StringOptionValue  (summary) Assigned by RhinoGet.Get if an option value is specified in a script or by a command window control. (since) 6.24  Methods static bool IsValidOptionName(string optionName)  (summary) Test a string to see if it can be used as an option name in any of the RhinoGet::AddCommandOption&hellip;() functions.
+    <a class="muted-link" href="/posts/rhino/input/custom/commandlineoption/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getarc/">
+        <div class="h2 mt-1 mb-1">GetArc</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class GetArcConstructors GetArc()  (summary) (since) 6.0  Properties bool AllowDeformable  (summary) Allow for deformable options (since) 6.0  double DefaultRadius  (summary) Default radius used for start and end radius (since) 6.0  bool Deformable  (summary) Is the deformable option set (since) 6.0  int DeformableDegree  (summary) (since) 6.0  int DeformablePointCount  (summary) (since) 6.0  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    <a class="muted-link" href="/posts/rhino/input/custom/getarc/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getbaseclass/">
+        <div class="h2 mt-1 mb-1">GetBaseClass</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a GetBaseClass but you will use its member functions after calling GetObject.Gets(), GetPoint.Get(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class GetBaseClassMethods static void PostCustomMessage(object messageData)  (summary) (since) 5.0 (returns) void This is some return comment  void AcceptColor(bool enable)  (summary) If you want to allow the user to be able to type in a color r,g,b or name during GetPoint.
+    <a class="muted-link" href="/posts/rhino/input/custom/getbaseclass/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getcancel/">
+        <div class="h2 mt-1 mb-1">GetCancel</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class GetCancelTaskCompleted  (summary) (since) 6.0  Constructors GetCancel()  (summary) (since) 6.0  Properties IProgressProgress  (summary) (since) 6.0  string ProgressMessage  (summary) (since) 6.0  bool ProgressReporting  (summary) (since) 6.0  CancellationToken Token  (summary) (since) 6.0  Methods Result Wait(Task task,RhinoDoc doc)  (summary) Awaits a particular task to finish. (since) 7.0 (returns) Result This is some return comment  Result Wait(Tasktask,RhinoDoc doc)  (summary) Awaits a particular task to finish.
+    <a class="muted-link" href="/posts/rhino/input/custom/getcancel/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getcircle/">
+        <div class="h2 mt-1 mb-1">GetCircle</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class GetCircleConstructors GetCircle()  (summary) (since) 6.0  Properties bool AllowDeformable  (summary) Allow for deformable options (since) 6.0  double DefaultSize  (summary) Default radius or diameter (based on InDiameterMode) (since) 6.0  bool Deformable  (summary) Is the deformable option set (since) 6.0  int DeformableDegree  (summary) (since) 6.0  int DeformablePointCount  (summary) (since) 6.0  bool InDiameterMode  (summary) Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter (since) 6.
+    <a class="muted-link" href="/posts/rhino/input/custom/getcircle/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getcone/">
+        <div class="h2 mt-1 mb-1">GetCone</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a cone.
+public class GetConeConstructors GetCone()  (summary) (since) 6.0  Properties bool AllowInputAngle  (summary) (since) 6.0  double ApexAngleDegrees  (summary) (since) 6.0  double BaseAngleDegrees  (summary) (since) 6.0  bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 6.0  ConeConstraint ConeConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
+    <a class="muted-link" href="/posts/rhino/input/custom/getcone/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getcylinder/">
+        <div class="h2 mt-1 mb-1">GetCylinder</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a cylinder.
+public class GetCylinderConstructors GetCylinder()  (summary) (since) 6.0  Properties bool BothSidesOption  (summary) Determine if the &ldquo;both sides&rdquo; option is enabled (since) 6.0  bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 6.0  CylinderConstraint CylinderConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
+    <a class="muted-link" href="/posts/rhino/input/custom/getcylinder/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getellipsoid/">
+        <div class="h2 mt-1 mb-1">GetEllipsoid</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetEllipsoidConstructors GetEllipsoid()  (summary) (since) 7.0  Properties Geometry.Point3d FirstPoint  (summary) Returns the first point. If in &ldquo;from foci&rdquo; mode, then this is the first foci point. (since) 7.0  bool IsModeFromFoci  (summary) Indicates the ellipsoid was created from foci. (since) 7.0  bool MarkFoci  (summary) Indicates the user wants the ellipsoid foci marked with point objects.
+    <a class="muted-link" href="/posts/rhino/input/custom/getellipsoid/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getinteger/">
+        <div class="h2 mt-1 mb-1">GetInteger</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Used to get integer numbers.
+public class GetIntegerConstructors GetInteger()  (summary) (since) 5.0  Methods GetResult Get()  (summary) Call to get an integer. (since) 5.0 (returns) GetResult This is some return comment  int Number()  (summary) (since) 5.0 (returns) int This is some return comment  void SetLowerLimit(int lowerLimit,bool strictlyGreaterThan)  (summary) Sets a lower limit on the number that can be returned. By default there is no lower limit.
+    <a class="muted-link" href="/posts/rhino/input/custom/getinteger/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/custom/getline/">
+        <div class="h2 mt-1 mb-1">GetLine</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Use to interactively get a line. The Rhino &ldquo;Line&rdquo; command uses GetLine.
+public class GetLineConstructors GetLine()  (summary) (since) 5.1  Properties bool AcceptZeroLengthLine  (summary) Controls whether or not a zero length line is acceptable. The default is to require the user to keep picking the end point until we get a point different than the start point. (since) 5.1  System.Drawing.Color FeedbackColor  (summary) If set, the feedback color is used to draw the dynamic line when the second point is begin picked.
+    <a class="muted-link" href="/posts/rhino/input/custom/getline/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <span class="previous_page disabled">Prev</span>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">1</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/input/custom/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/input/custom/page/3/">3</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/input/custom/page/2/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

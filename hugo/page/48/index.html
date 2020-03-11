@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/rdkundo/">
+        <h3>RdkUndo</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/rdkundo/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+RdkUndo class, which is used to get the RdkUndoRecord
+public class RdkUndoConstructors RdkUndo(IntPtr pUndoRecord)  (summary) Constructor for RdkUndo (since) 6.11  Methods void Dispose()  (summary) Dispose for RdkUndo (since) 6.11 (returns) void This is some return comment  RdkUndoRecord NewUndoRecord()  (summary) Get a new UndoRecord (since) 6.11 (returns) RdkUndoRecord This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/rdkundorecord/">
+        <h3>RdkUndoRecord</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/rdkundorecord/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+RdkUndoRecord class
+public class RdkUndoRecordConstructors RdkUndoRecord(IntPtr pUndoRecord)  (summary) Constructor for RdkUndoRecord (since) 6.0  Methods void Dispose()  (summary) Dispose for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  void SetDescription(String description)  (summary) Set description for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/realtimedisplaymode/">
+        <h3>RealtimeDisplayMode</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/realtimedisplaymode/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Base class for implementing real-time display modes in .NET.
+Pay special attention that in StartRenderer the RenderWindow.SetSize() function is called if the implementation relies on the RenderWindow to do the drawing to the viewport. If i.e. OpenGL is used to draw render results to the viewport then SetSize() doesn&rsquo;t have to be called, nor should the implementation then access channels on the RenderWindow, as those then don&rsquo;t exist. For OpenGL-based drawing the RenderWindow is used as a container for ViewInfo management, nothing else.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/realtimedisplaymodeclassinfo/">
+        <h3>RealtimeDisplayModeClassInfo</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/realtimedisplaymodeclassinfo/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Class information obligatory for registering RealtimeDisplayMode implementations.
+public class RealtimeDisplayModeClassInfoProperties bool DontRegisterAttributesOnStart  (summary) Override and return True when you don&rsquo;t want your class info to cause display attributes to be registered with the system. (since) 6.0  bool DrawOpenGl  (summary) Return True if the RealtimeDisplayMode draws its result using OpenGL. RenderWindow usage will then be skipped. (since) 6.0  Guid GUID  (summary) Get the RealtimeDisplayMode implementation GUID (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/rectangle3d/">
+        <h3>Rectangle3d</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/rectangle3d/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the values of a plane and two intervals that form an oriented rectangle in three dimensions.
+Constructors Rectangle3d(Plane plane,double width,double height)  (summary) Initializes a new rectangle from width and height. (since) 5.0  Rectangle3d(Plane plane,Interval width,Interval height)  (summary) Initializes a new rectangle from dimensions. (since) 5.0  Rectangle3d(Plane plane,Point3d cornerA,Point3d cornerB)  (summary) Initializes a new rectangle from a base plane and two corner points. (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/reducemeshparameters/">
+        <h3>ReduceMeshParameters</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/reducemeshparameters/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Parameters for Reduce method
+public class ReduceMeshParametersConstructors ReduceMeshParameters()  (summary) Constructs a polygon reduction parameter object with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties int Accuracy  (summary) Integer from 1 to 10 telling how accurate reduction algorithm to use. Greater number gives more accurate results (since) 6.0  bool AllowDistortion  (summary) If True mesh appearance is not changed even if the target polygon count is not reached (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/meshrefinements/refinementsettings/">
+        <h3>RefinementSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/meshrefinements/refinementsettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.MeshRefinements
+Defines the way a mesh refinement modifier works.
+public class RefinementSettingsConstructors RefinementSettings()  (summary) Creates a default operation settings object. (since) 6.0  Properties CancellationToken ContinueRequest  (summary) A token to request computation termination. (since) 6.0  bool HasPull  (summary) Gets a value indicating whether this subdivision should create a result on a specific surface. (since) 6.0  int Level  (summary) The level of subdivision to achieve.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/rendercontent/">
+        <h3>RenderContent</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/rendercontent/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class RenderContentEvents static ContentAdded  (summary) Used to monitor render content addition to the document. (since) 5.7  static ContentChanged  (summary) Used to monitor render content modifications. (since) 5.7  static ContentDeleted  (summary) Used to monitor render content deletion from the document. (since) 6.0  static ContentDeleting  (summary) Used to monitor render content deletion from the document. (since) 5.7  static ContentFieldChanged  (summary) This event is raised when a field value is modified.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/rendercontentchangedeventargs/">
+        <h3>RenderContentChangedEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/rendercontentchangedeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class RenderContentChangedEventArgsProperties RenderContent.ChangeContexts ChangeContext  (summary) (since) 5.7  RenderContent OldContent  (summary) (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/rendercontentcollection/">
+        <h3>RenderContentCollection</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/rendercontentcollection/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class RenderContentCollectionConstructors RenderContentCollection()  (summary) (since) 6.0  RenderContentCollection(IntPtr nativePtr)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Add(RenderContentCollection collection)  (summary) (since) 6.0 (returns) void This is some return comment  void Append(RenderContent content)  (summary) (since) 6.0 (returns) void This is some return comment  void Clear()  (summary) (since) 6.0 (returns) void This is some return comment  RenderContent ContentAt(int index)  (summary) (since) 6.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/47/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/49/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshingParameters &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents settings used for creating a mesh representation of a brep or surface.
+public class MeshingParametersConstructors MeshingParameters()  (summary) Initializes a new instance with default values. Initial values are same as . (since) 5.0  MeshingParameters(double density)  (summary) Initializes a new instance with simple values, similar to that of Rhino&amp;rsquo;s meshing slider interface. (since) 6.0  MeshingParameters(double density,double minimumEdgeLength)  (summary) Initializes a new instance with simple values, similar to that of Rhino&amp;rsquo;s meshing slider interface.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshingParameters</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents settings used for creating a mesh representation of a brep or surface.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshingParameters</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="meshingparameters">MeshingParameters()</h4>
+<ul>
+<li>(summary) Initializes a new instance with default values.
+Initial values are same as .</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="meshingparametersdouble-density">MeshingParameters(double density)</h4>
+<ul>
+<li>(summary) Initializes a new instance with simple values, 
+similar to that of Rhino&rsquo;s meshing slider interface.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="meshingparametersdouble-densitydouble-minimumedgelength">MeshingParameters(double density,double minimumEdgeLength)</h4>
+<ul>
+<li>(summary) Initializes a new instance with simple values, 
+similar to that of Rhino&rsquo;s meshing slider interface.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-meshingparameters-coarse">static MeshingParameters Coarse</h4>
+<ul>
+<li>(summary) Gets mesh creation parameters for coarse meshing. 
+This corresponds with the &ldquo;Jagged and Faster&rdquo; default in Rhino.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-meshingparameters-default">static MeshingParameters Default</h4>
+<ul>
+<li>(summary) Gets mesh creation parameters to create the default render mesh.
+Only use this if you plan on specifying your own custom meshing
+parameters.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-meshingparameters-defaultanalysismesh">static MeshingParameters DefaultAnalysisMesh</h4>
+<ul>
+<li>(summary) Gets mesh creation parameters to create the default analysis mesh.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-meshingparameters-fastrendermesh">static MeshingParameters FastRenderMesh</h4>
+<ul>
+<li>(summary) Gets mesh creation parameters to create the a render mesh when 
+meshing speed is prefered over mesh quality.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-meshingparameters-minimal">static MeshingParameters Minimal</h4>
+<ul>
+<li>(summary) Gets minimal meshing parameters.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-meshingparameters-qualityrendermesh">static MeshingParameters QualityRenderMesh</h4>
+<ul>
+<li>(summary) Gets mesh creation parameters to create the a render mesh when mesh 
+quality is prefered over meshing speed.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-meshingparameters-smooth">static MeshingParameters Smooth</h4>
+<ul>
+<li>(summary) Gets mesh creation parameters for smooth meshing. 
+This corresponds with the &ldquo;Smooth and Slower&rdquo; default in Rhino.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-closedobjectpostprocess">bool ClosedObjectPostProcess</h4>
+<ul>
+<li>(summary) Gets or sets a value indicating whether or not to post process non-closed meshes
+that should be closed. If the Brep being meshed is closed, JaggedSeams = false, 
+and ClosedObjectPostProcess = true, and the resulting mesh is not closed, then a
+post meshing process is applied to find and close gaps in the mesh. Typically the
+resulting mesh is not closed because the input Brep has a geometric flaw, like
+loops in trimming curve.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-computecurvature">bool ComputeCurvature</h4>
+<ul>
+<li>(summary) Gets or sets a value indicating whether or not surface curvature 
+data will be embedded in the mesh.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-gridamplification">double GridAmplification</h4>
+<ul>
+<li>(summary) Gets or sets the grid amplification factor. 
+Values lower than 1.0 will decrease the number of initial quads, 
+values higher than 1.0 will increase the number of initial quads.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-gridangle">double GridAngle</h4>
+<ul>
+<li>(summary) Gets or sets the maximum allowed angle difference (in radians) 
+for a single sampling quad. The angle pertains to the surface normals.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-gridaspectratio">double GridAspectRatio</h4>
+<ul>
+<li>(summary) Gets or sets the maximum allowed aspect ratio of sampling quads.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-gridmaxcount">int GridMaxCount</h4>
+<ul>
+<li>(summary) Gets or sets the maximum number of grid quads in the initial sampling grid.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-gridmincount">int GridMinCount</h4>
+<ul>
+<li>(summary) Gets or sets the minimum number of grid quads in the initial sampling grid.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-jaggedseams">bool JaggedSeams</h4>
+<ul>
+<li>(summary) Gets or sets whether or not the mesh is allowed to have jagged seams. 
+When this flag is set to true, meshes on either side of a Brep Edge will not match up.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-maximumedgelength">double MaximumEdgeLength</h4>
+<ul>
+<li>(summary) Gets or sets the maximum allowed mesh edge length.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-minimumedgelength">double MinimumEdgeLength</h4>
+<ul>
+<li>(summary) Gets or sets the minimum allowed mesh edge length.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-minimumtolerance">double MinimumTolerance</h4>
+<ul>
+<li>(summary) Gets or sets the minimum tolerance.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-refineangle">double RefineAngle</h4>
+<ul>
+<li>(summary) Gets or sets the mesh parameter refine angle.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-refinegrid">bool RefineGrid</h4>
+<ul>
+<li>(summary) Gets or sets a value indicating whether or not the sampling grid can be refined 
+when certain tolerances are not met.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-relativetolerance">double RelativeTolerance</h4>
+<ul>
+<li>(summary) Gets or sets the relative tolerance.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-simpleplanes">bool SimplePlanes</h4>
+<ul>
+<li>(summary) Gets or sets a value indicating whether or not planar areas are allowed 
+to be meshed in a simplified manner.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="meshingparametertexturerange-texturerange">MeshingParameterTextureRange TextureRange</h4>
+<ul>
+<li>(summary) Gets or sets how and if textures will be packed.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-tolerance">double Tolerance</h4>
+<ul>
+<li>(summary) Gets or sets the maximum allowed edge deviation. 
+This tolerance is measured between the center of the mesh edge and the surface.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-meshingparameters-documentcurrentsettingrhinodoc-doc">static MeshingParameters DocumentCurrentSetting(RhinoDoc doc)</h4>
+<ul>
+<li>(summary) Gets the MeshingParameters that are currently set for a document.
+These are the same settings that are shown in the DocumentProperties
+&ldquo;mesh settings&rdquo; user interface.</li>
+<li>(since) 5.0</li>
+<li>(returns) MeshingParameters This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary) Actively reclaims unmanaged resources that this instance uses.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshingParameters</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

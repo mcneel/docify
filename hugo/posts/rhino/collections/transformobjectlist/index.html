@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  TransformObjectList &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Collections
+Used by the TransformCommand and GetTransform classes.
+public class TransformObjectListConstructors TransformObjectList()  (summary) (since) 5.0  Properties int Count  (summary) Number of elements in this list (since) 5.10  bool DisplayFeedbackEnabled  (summary) (since) 5.0  int GripCount  (summary) Number of elements in grip list (since) 6.0  int GripOwnerCount  (summary) Number of elements in grip owner list (since) 6.0  Methods void Add(ObjRef objref)  (summary) Add an ObjRef to this list.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">TransformObjectList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Collections</a></em></p>
+<p>Used by the TransformCommand and GetTransform classes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TransformObjectList</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="transformobjectlist">TransformObjectList()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Number of elements in this list</li>
+<li>(since) 5.10</li>
+</ul>
+<h4 id="bool-displayfeedbackenabled">bool DisplayFeedbackEnabled</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-gripcount">int GripCount</h4>
+<ul>
+<li>(summary) Number of elements in grip list</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-gripownercount">int GripOwnerCount</h4>
+<ul>
+<li>(summary) Number of elements in grip owner list</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="void-addobjref-objref">void Add(ObjRef objref)</h4>
+<ul>
+<li>(summary) Add an ObjRef to this list. Use this to add Polyedges so the references are properly counted</li>
+<li>(since) 5.10</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrhinoobject-rhinoobject">void Add(RhinoObject rhinoObject)</h4>
+<ul>
+<li>(summary) Add a RhinoObject to this list</li>
+<li>(since) 5.10</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="int-addobjectsgetobject-gobool-allowgrips">int AddObjects(GetObject go,bool allowGrips)</h4>
+<ul>
+<li>(summary) Add objects to list with a GetObject</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-clear">void Clear()</h4>
+<ul>
+<li>(summary) Remove all elements from this list</li>
+<li>(since) 5.10</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="boundingbox-getboundingboxbool-regularobjectsbool-grips">BoundingBox GetBoundingBox(bool regularObjects,bool grips)</h4>
+<ul>
+<li>(summary) Gets the bounding box of all of the objects that this list contains.</li>
+<li>(since) 5.0</li>
+<li>(returns) BoundingBox This is some return comment</li>
+</ul>
+<h4 id="gripobject-griparray">GripObject[] GripArray()</h4>
+<ul>
+<li>(summary) Gets access to the GripObject array of the TransformObjectList object.</li>
+<li>(since) 6.0</li>
+<li>(returns) GripObject[] This is some return comment</li>
+</ul>
+<h4 id="rhinoobject-gripownerarray">RhinoObject[] GripOwnerArray()</h4>
+<ul>
+<li>(summary) Gets access to the  GripOwner array of the TransformObjectList object.</li>
+<li>(since) 6.0</li>
+<li>(returns) RhinoObject[] This is some return comment</li>
+</ul>
+<h4 id="bool-updatedisplayfeedbacktransformtransform-xform">bool UpdateDisplayFeedbackTransform(Transform xform)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>TransformObjectList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

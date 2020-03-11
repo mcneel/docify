@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/controls/datasource/eventargs/">
+        <h3>EventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/controls/datasource/eventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI.Controls.DataSource
+public class EventArgsProperties Guid DataType  (summary) (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/controls/datasource/eventinfoargs/">
+        <h3>EventInfoArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/controls/datasource/eventinfoargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI.Controls.DataSource
+public class EventInfoArgsProperties Guid DataType  (summary) (since) 6.0  IntPtr EventInfoPtr  (summary) (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/extrusion/">
+        <h3>Extrusion</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/extrusion/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents an extrusion, or objects such as beams or linearly extruded elements, that can be represented by profile curves and two miter planes at the extremes.
+public class ExtrusionConstructors Extrusion()  (summary) Initializes a new instance of the class. (since) 5.0  Properties int CapCount  (summary) Gets the amount of capping surfaces. (since) 5.0  bool IsCappedAtBottom  (summary) Gets a value indicating whether the surface that fills the bottom profile is existing.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/extrusionobject/">
+        <h3>ExtrusionObject</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/extrusionobject/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+public class ExtrusionObjectProperties Extrusion ExtrusionGeometry  (summary) (since) 5.0  Methods Extrusion DuplicateExtrusionGeometry()  (summary) (since) 5.0 (returns) Extrusion This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/controls/factorybase/">
+        <h3>FactoryBase</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/controls/factorybase/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI.Controls
+Base class for CollapsibleSection and ViewModel factories used by the RDK UI
+public class FactoryBaseMethods static Type[] Register()  (summary) Call this function during startup of current assembly to load classes with factory creation support are registed (since) 6.0 (returns) Type[] This is some return comment  static Type[] Register(PlugIn plugin)  (summary) Call this function during the startup of your plug-in to ensure that all classes that support factory creation are registed (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/fields/field/">
+        <h3>Field</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/fields/field/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.Fields
+Generic data fields used to add publicly accessible properties to RenderContent.FieldDictionary. These should be created by calling a FieldDictaionary.Add() method on a Render content object. These are allocated after the RenderContent object&rsquo;s C++ object is created and added to the underlying C++ objects content dictionary, who ever allocates a field is responsible for deleting it so these objects clean up the C++ pointers when they are disposed of.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/fields/fielddictionary/">
+        <h3>FieldDictionary</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/fields/fielddictionary/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.Fields
+Dictionary containing RenderContent data fields, add fields to this dictionary in your derived RenderContent classes constructor. Get field values using the TryGetdata type methods and set them using the Set() method.
+public class FieldDictionaryMethods BoolField Add(string key,bool value)  (summary) Add a new BoolField to the dictionary. This will be a data only field and not show up in the content browsers. (since) 5.1 (returns) BoolField This is some return comment  BoolField Add(string key,bool value,string prompt)  (summary) Add a new BoolField to the dictionary.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/file3dm/">
+        <h3>File3dm</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/file3dm/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Represents a 3dm file, which is stored using the OpenNURBS file standard. The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.
+public class File3dmConstructors File3dm()  (summary) Initializes a new instance of a 3dm file. (since) 5.0  Properties File3dmDimStyleTable AllDimStyles  (summary) Dimension Styles in this file. (since) 6.0  File3dmGroupTable AllGroups  (summary) Grpups in this file. (since) 6.5  File3dmHatchPatternTable AllHatchPatterns  (summary) Hatch patterns in this file.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/file3dmcommoncomponenttable/">
+        <h3>File3dmCommonComponentTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/file3dmcommoncomponenttable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Provides a base table type that is shared among all File3dm tables.
+public class File3dmCommonComponentTableMethods void Add(T item)  (summary) Adds an item. (since) (unknown) (returns) void This is some return comment  void Delete(int index)  (summary) Flags a component as deleted. (since) (unknown) (returns) void This is some return comment  bool Delete(T item)  (summary) Flags a component as deleted. (since) (unknown) (returns) bool This is some return comment  string Dump()  (summary) Prepares a text dump of object table.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/file3dmdimstyletable/">
+        <h3>File3dmDimStyleTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/file3dmdimstyletable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Provides access to annotation styles in the 3dm file.
+public class File3dmDimStyleTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods DimensionStyle FindIndex(int index)  (summary) Retrieves a DimensionStyle object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.0 (returns) DimensionStyle This is some return comment  DimensionStyle FindName(string name)  (summary) Finds a DimensionStyle given its name.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/17/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/19/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

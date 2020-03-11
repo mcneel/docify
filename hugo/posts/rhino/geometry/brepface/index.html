@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BrepFace &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Provides strongly-typed access to brep faces. A Brep face is composed of one surface and trimming curves.
+public class BrepFaceProperties Brep Brep  (summary) Gets the Brep that owns this face. (since) 6.9  int FaceIndex  (summary) Index of face in Brep.Faces array. (since) 5.0  bool IsSurface  (summary) Gets a value indicating whether the face is synonymous with the underlying surface. If a Face has no trimming curves then it is considered a Surface.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BrepFace</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Provides strongly-typed access to brep faces.
+A Brep face is composed of one surface and trimming curves.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BrepFace</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="brep-brep">Brep Brep</h4>
+<ul>
+<li>(summary) Gets the Brep that owns this face.</li>
+<li>(since) 6.9</li>
+</ul>
+<h4 id="int-faceindex">int FaceIndex</h4>
+<ul>
+<li>(summary) Index of face in Brep.Faces array.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-issurface">bool IsSurface</h4>
+<ul>
+<li>(summary) Gets a value indicating whether the face is synonymous with the underlying surface. 
+If a Face has no trimming curves then it is considered a Surface.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="collectionsbreplooplist-loops">Collections.BrepLoopList Loops</h4>
+<ul>
+<li>(summary) Loops in this face.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-orientationisreversed">bool OrientationIsReversed</h4>
+<ul>
+<li>(summary) True if face orientation is opposite of natural surface orientation.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="breploop-outerloop">BrepLoop OuterLoop</h4>
+<ul>
+<li>(summary) Every face has a single outer loop.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-surfaceindex">int SurfaceIndex</h4>
+<ul>
+<li>(summary) Surface index of the 3d surface geometry used by this face or -1</li>
+<li>(since) 5.6</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-adjacentedges">int[] AdjacentEdges()</h4>
+<ul>
+<li>(summary) Gets the indices of all the BrepEdges that delineate this Face.</li>
+<li>(since) 5.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="int-adjacentfaces">int[] AdjacentFaces()</h4>
+<ul>
+<li>(summary) Gets the indices of all the BrepFaces that surround (are adjacent to) this face.</li>
+<li>(since) 5.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="bool-changesurfaceint-surfaceindex">bool ChangeSurface(int surfaceIndex)</h4>
+<ul>
+<li>(summary) Expert user tool that replaces the 3d surface geometry use by the face.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="brep-createextrusioncurve-pathcurvebool-cap">Brep CreateExtrusion(Curve pathCurve,bool cap)</h4>
+<ul>
+<li>(summary) Extrude a face in a Brep.</li>
+<li>(since) 5.3</li>
+<li>(returns) Brep This is some return comment</li>
+</ul>
+<h4 id="bool-draftanglepointpoint2d-testpointdouble-testanglevector3d-pulldirectionbool-edgepoint3d-draftpointdouble-draftangle">bool DraftAnglePoint(Point2d testPoint,double testAngle,Vector3d pullDirection,bool edge,Point3d draftPoint,double draftAngle)</h4>
+<ul>
+<li>(summary) Returns the surface draft angle and point at a parameter.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="brep-duplicatefacebool-duplicatemeshes">Brep DuplicateFace(bool duplicateMeshes)</h4>
+<ul>
+<li>(summary) Duplicate a face from the brep to create new single face brep.</li>
+<li>(since) 5.0</li>
+<li>(returns) Brep This is some return comment</li>
+</ul>
+<h4 id="surface-duplicatesurface">Surface DuplicateSurface()</h4>
+<ul>
+<li>(summary) Gets a copy to the untrimmed surface that this face is based on.</li>
+<li>(since) 5.0</li>
+<li>(returns) Surface This is some return comment</li>
+</ul>
+<h4 id="mesh-getmeshmeshtype-meshtype">Mesh GetMesh(MeshType meshType)</h4>
+<ul>
+<li>(summary) Obtains a reference to a specified type of mesh for this brep face.</li>
+<li>(since) 5.0</li>
+<li>(returns) Mesh This is some return comment</li>
+</ul>
+<h4 id="pointfacerelation-ispointonfacedouble-udouble-v">PointFaceRelation IsPointOnFace(double u,double v)</h4>
+<ul>
+<li>(summary) Tests if a parameter space point is on the interior of a trimmed face.</li>
+<li>(since) 5.0</li>
+<li>(returns) PointFaceRelation This is some return comment</li>
+</ul>
+<h4 id="point3d-pullpointstofaceienumerablepoint3d-pointsdouble-tolerance">Point3d[] PullPointsToFace(IEnumerable<!-- raw HTML omitted --> points,double tolerance)</h4>
+<ul>
+<li>(summary) Pulls one or more points to a brep face.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="bool-rebuildedgesdouble-tolerancebool-rebuildsharededgesbool-rebuildvertices">bool RebuildEdges(double tolerance,bool rebuildSharedEdges,bool rebuildVertices)</h4>
+<ul>
+<li>(summary) Rebuild the edges used by a face so they lie on the surface.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="brep-removeholesdouble-tolerance">Brep RemoveHoles(double tolerance)</h4>
+<ul>
+<li>(summary) Remove all inner loops, or holes, from a Brep face.</li>
+<li>(since) 6.0</li>
+<li>(returns) Brep This is some return comment</li>
+</ul>
+<h4 id="bool-setdomainint-directioninterval-domain">bool SetDomain(int direction,Interval domain)</h4>
+<ul>
+<li>(summary) Sets the surface domain of this face.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setmeshmeshtype-meshtypemesh-mesh">bool SetMesh(MeshType meshType,Mesh mesh)</h4>
+<ul>
+<li>(summary) Sets a reference to a specified type of mesh for this brep face.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-shrinkfaceshrinkdisableside-disableside">bool ShrinkFace(ShrinkDisableSide disableSide)</h4>
+<ul>
+<li>(summary) Shrinks the underlying untrimmed surface of this Brep face close to trimming boundaries.
+Shrinking a surface is like extending smoothly, only backwards. knot of full multiplicity
+are added where you want the surface to be cut off. Then the remaining control points are
+thrown away.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-shrinksurfacetoedge">bool ShrinkSurfaceToEdge()</h4>
+<ul>
+<li>(summary) Shrinks the underlying untrimmed surface of this Brep face right to the trimming boundaries.
+Note, shrinking the trimmed surface can sometimes cause problems later since having
+the edges so close to the trimming boundaries can cause commands that use the surface
+edges as input to fail.</li>
+<li>(since) 6.16</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="brep-splitienumerablecurve-curvesdouble-tolerance">Brep Split(IEnumerable<!-- raw HTML omitted --> curves,double tolerance)</h4>
+<ul>
+<li>(summary) Split this face using 3D trimming curves.</li>
+<li>(since) 5.0</li>
+<li>(returns) Brep This is some return comment</li>
+</ul>
+<h4 id="curve-trimawareisocurveint-directiondouble-constantparameter">Curve[] TrimAwareIsoCurve(int direction,double constantParameter)</h4>
+<ul>
+<li>(summary) Similar to IsoCurve function, except this function pays attention to trims on faces 
+and may return multiple curves.</li>
+<li>(since) 5.0</li>
+<li>(returns) Curve[] This is some return comment</li>
+</ul>
+<h4 id="interval-trimawareisointervalsint-directiondouble-constantparameter">Interval[] TrimAwareIsoIntervals(int direction,double constantParameter)</h4>
+<ul>
+<li>(summary) Gets intervals where the iso curve exists on a BrepFace (trimmed surface)</li>
+<li>(since) 5.0</li>
+<li>(returns) Interval[] This is some return comment</li>
+</ul>
+<h4 id="surface-underlyingsurface">Surface UnderlyingSurface()</h4>
+<ul>
+<li>(summary) Gets the untrimmed surface that is the base of this face.</li>
+<li>(since) 5.0</li>
+<li>(returns) Surface This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BrepFace</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

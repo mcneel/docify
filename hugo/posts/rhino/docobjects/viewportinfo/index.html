@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ViewportInfo &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Represents a viewing frustum.
+public class ViewportInfoConstructors ViewportInfo()  (summary) Initializes a new instance. (since) 5.0  ViewportInfo(RhinoViewport rhinoViewport)  (summary) Copies all of the ViewportInfo data from an existing RhinoViewport. (since) 5.0  ViewportInfo(ViewportInfo other)  (summary) Initializes a new instance by copying values from another instance. (since) 5.0  Properties static Vector3d DefaultCameraDirection  (summary) Default z=up perspective camera direction (since) 6.0  double Camera35mmLensLength  (summary) This property assumes the camera is horizontal and crop the film rather than the image when the aspect of the frustum is not 36/24.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ViewportInfo</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Represents a viewing frustum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewportInfo</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="viewportinfo">ViewportInfo()</h4>
+<ul>
+<li>(summary) Initializes a new instance.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="viewportinforhinoviewport-rhinoviewport">ViewportInfo(RhinoViewport rhinoViewport)</h4>
+<ul>
+<li>(summary) Copies all of the ViewportInfo data from an existing RhinoViewport.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="viewportinfoviewportinfo-other">ViewportInfo(ViewportInfo other)</h4>
+<ul>
+<li>(summary) Initializes a new instance by copying values from another instance.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-vector3d-defaultcameradirection">static Vector3d DefaultCameraDirection</h4>
+<ul>
+<li>(summary) Default z=up perspective camera direction</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-camera35mmlenslength">double Camera35mmLensLength</h4>
+<ul>
+<li>(summary) This property assumes the camera is horizontal and crop the
+film rather than the image when the aspect of the frustum
+is not 36/24.  (35mm film is 36mm wide and 24mm high.)
+Setting preserves camera location,
+changes the frustum, but maintains the frustum&rsquo;s aspect.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-cameraangle">double CameraAngle</h4>
+<ul>
+<li>(summary) Gets or sets the 1/2 smallest angle. See  for more information.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameradirection">Vector3d CameraDirection</h4>
+<ul>
+<li>(summary) Gets the direction that the camera faces.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-cameralocation">Point3d CameraLocation</h4>
+<ul>
+<li>(summary) Gets the camera location (position) point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameraup">Vector3d CameraUp</h4>
+<ul>
+<li>(summary) Gets the camera up vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-camerax">Vector3d CameraX</h4>
+<ul>
+<li>(summary) Gets the unit &ldquo;to the right&rdquo; vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameray">Vector3d CameraY</h4>
+<ul>
+<li>(summary) Gets the unit &ldquo;up&rdquo; vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameraz">Vector3d CameraZ</h4>
+<ul>
+<li>(summary) Gets the unit vector in -CameraDirection.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumaspect">double FrustumAspect</h4>
+<ul>
+<li>(summary) Setting FrustumAspect changes the larger of the frustum&rsquo;s width/height
+so that the resulting value of width/height matches the requested
+aspect.  The camera angle is not changed.  If you change the shape
+of the view port with a call SetScreenPort(), then you generally 
+want to call SetFrustumAspect() with the value returned by 
+GetScreenPortAspect().</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumbottom">double FrustumBottom</h4>
+<ul>
+<li>(summary) Gets the frustum bottom value. This is -top if the frustum has a horizontal symmetry axis.
+This number is usually negative.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinogeometryplane-frustumbottomplane">Rhino.Geometry.Plane FrustumBottomPlane</h4>
+<ul>
+<li>(summary) Gets the frustum bottom plane that separates visibile from off-screen.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-frustumcenter">Point3d FrustumCenter</h4>
+<ul>
+<li>(summary) Gets the frustum center point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumfar">double FrustumFar</h4>
+<ul>
+<li>(summary) Gets the frustum far-cutting value.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="plane-frustumfarplane">Plane FrustumFarPlane</h4>
+<ul>
+<li>(summary) Gets far clipping plane if camera and frustum
+are valid.  The plane&rsquo;s frame is the same as the camera&rsquo;s
+frame.  The origin is located at the intersection of the
+camera direction ray and the far clipping plane. The plane&rsquo;s
+normal points into the frustum towards the camera location.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumheight">double FrustumHeight</h4>
+<ul>
+<li>(summary) Gets the frustum height. This is  - .</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumleft">double FrustumLeft</h4>
+<ul>
+<li>(summary) Gets the frustum left value. This is -right if the frustum has a vertical symmetry axis.
+This number is usually negative.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="plane-frustumleftplane">Plane FrustumLeftPlane</h4>
+<ul>
+<li>(summary) Gets the frustum left plane that separates visibile from off-screen.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustummaximumdiameter">double FrustumMaximumDiameter</h4>
+<ul>
+<li>(summary) Gets the frustum maximum diameter, or the maximum between  and .</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumminimumdiameter">double FrustumMinimumDiameter</h4>
+<ul>
+<li>(summary) Gets the frustum minimum diameter, or the minimum between  and .</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumnear">double FrustumNear</h4>
+<ul>
+<li>(summary) Gets the frustum near-cutting value.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="plane-frustumnearplane">Plane FrustumNearPlane</h4>
+<ul>
+<li>(summary) Gets near clipping plane if camera and frustum
+are valid.  The plane&rsquo;s frame is the same as the camera&rsquo;s
+frame.  The origin is located at the intersection of the
+camera direction ray and the near clipping plane. The plane&rsquo;s
+normal points out of the frustum towards the camera
+location.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumright">double FrustumRight</h4>
+<ul>
+<li>(summary) Gets the frustum right value. This is -left if the frustum has a vertical symmetry axis.
+This number is usually positive.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="plane-frustumrightplane">Plane FrustumRightPlane</h4>
+<ul>
+<li>(summary) Gets the frustum right plane that separates visibile from off-screen.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumtop">double FrustumTop</h4>
+<ul>
+<li>(summary) Gets the frustum top value. This is -bottom if the frustum has a horizontal symmetry axis.
+This number is usually positive.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="plane-frustumtopplane">Plane FrustumTopPlane</h4>
+<ul>
+<li>(summary) Gets the frustum top plane that separates visibile from off-screen.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumwidth">double FrustumWidth</h4>
+<ul>
+<li>(summary) Gets the frustum width. This is  - .</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-id">Guid Id</h4>
+<ul>
+<li>(summary) Sets the viewport&rsquo;s id to the value used to 
+uniquely identify this viewport.
+There is no approved way to change the viewport 
+id once it is set in order to maintain consistency
+across multiple viewports and those routines that 
+manage them.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-iscameradirectionlocked">bool IsCameraDirectionLocked</h4>
+<ul>
+<li>(summary) Gets or sets a value that indicates whether the direction that the camera faces is unmodifiable.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-iscameralocationlocked">bool IsCameraLocationLocked</h4>
+<ul>
+<li>(summary) Gets or sets a value that indicates whether the camera location is unmodifiable.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-iscamerauplocked">bool IsCameraUpLocked</h4>
+<ul>
+<li>(summary) Gets or sets a value that indicates whether the camera up vector is unmodifiable.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isfrustumleftrightsymmetric">bool IsFrustumLeftRightSymmetric</h4>
+<ul>
+<li>(summary) Gets or sets a value that indicates whether the camera frustum has a vertical symmetry axis.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isfrustumtopbottomsymmetric">bool IsFrustumTopBottomSymmetric</h4>
+<ul>
+<li>(summary) Gets or sets a value that indicates whether the camera frustum has a horizontal symmetry axis.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isparallelprojection">bool IsParallelProjection</h4>
+<ul>
+<li>(summary) Get or set whether this projection is parallel.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isperspectiveprojection">bool IsPerspectiveProjection</h4>
+<ul>
+<li>(summary) Get or set whether this projection is perspective.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-istwopointperspectiveprojection">bool IsTwoPointPerspectiveProjection</h4>
+<ul>
+<li>(summary) Gets a value that indicates whether this projection is a two-point perspective.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalidcamera">bool IsValidCamera</h4>
+<ul>
+<li>(summary) Gets a value that indicates whether the camera is valid.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalidfrustum">bool IsValidFrustum</h4>
+<ul>
+<li>(summary) Gets a value that indicates whether the frustum is valid.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-perspectiveminneardist">double PerspectiveMinNearDist</h4>
+<ul>
+<li>(summary) Expert user function to control the minimum
+value of near when perspective projections
+are being used.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="double-perspectiveminnearoverfar">double PerspectiveMinNearOverFar</h4>
+<ul>
+<li>(summary) Expert user function to control the minimum
+ratio of near/far when perspective projections
+are begin used.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="systemdrawingrectangle-screenport">System.Drawing.Rectangle ScreenPort</h4>
+<ul>
+<li>(summary) Get or set the screen port.  and</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-screenportaspect">double ScreenPortAspect</h4>
+<ul>
+<li>(summary) Gets the sceen aspect ratio.
+This is width / height.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-targetpoint">Point3d TargetPoint</h4>
+<ul>
+<li>(summary) The current value of the target point.  This point does not play
+a role in the view projection calculations.  It can be used as a 
+fixed point when changing the camera so the visible regions of the
+before and after frustums both contain the region of interest.
+The default constructor sets this point on ON_3dPoint::UnsetPoint.
+You must explicitly call one SetTargetPoint() functions to set
+the target point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="systemdrawingsizef-viewscale">System.Drawing.SizeF ViewScale</h4>
+<ul>
+<li>(summary) Applies scaling factors to parallel projection clipping coordinates
+by setting the m_clip_mod transformation. 
+If you want to compress the view projection across the viewing
+plane, then set x = 0.5, y = 1.0, and z = 1.0.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-double-calculatecamerarotationanglevector3d-directionvector3d-up">static double CalculateCameraRotationAngle(Vector3d direction,Vector3d up)</h4>
+<ul>
+<li>(summary) Calculates the camera rotation angle.</li>
+<li>(since) 6.8</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="static-vector3d-calculatecameraupdirectionpoint3d-locationvector3d-directiondouble-angle">static Vector3d CalculateCameraUpDirection(Point3d location,Vector3d direction,double angle)</h4>
+<ul>
+<li>(summary) Calculates the camera up direction.</li>
+<li>(since) 6.8</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+<h4 id="bool-changetoparallelprojectionbool-symmetricfrustum">bool ChangeToParallelProjection(bool symmetricFrustum)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports
+from parallel to perspective.  It will make common additional
+adjustments to the frustum and camera location so the resulting
+views are similar.  The camera direction and target point are
+not be changed.
+If the current projection is parallel and symmetricFrustum,
+FrustumIsLeftRightSymmetric() and FrustumIsTopBottomSymmetric()
+are all equal, then no changes are made and True is returned.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetoperspectiveprojectiondouble-targetdistancebool-symmetricfrustumdouble-lenslength">bool ChangeToPerspectiveProjection(double targetDistance,bool symmetricFrustum,double lensLength)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports
+from parallel to perspective.  It will make common additional
+adjustments to the frustum and camera location so the resulting
+views are similar.  The camera direction and target point are
+not changed.
+If the current projection is perspective and symmetricFrustum,
+IsFrustumIsLeftRightSymmetric, and IsFrustumIsTopBottomSymmetric
+are all equal, then no changes are made and True is returned.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetosymmetricfrustumbool-isleftrightsymmetricbool-istopbottomsymmetricdouble-targetdistance">bool ChangeToSymmetricFrustum(bool isLeftRightSymmetric,bool isTopBottomSymmetric,double targetDistance)</h4>
+<ul>
+<li>(summary) If needed, adjusts the current frustum so it has the 
+specified symmetries and adjust the camera location
+so the target plane remains visible.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetotwopointperspectiveprojectiondouble-targetdistancevector3d-updouble-lenslength">bool ChangeToTwoPointPerspectiveProjection(double targetDistance,Vector3d up,double lensLength)</h4>
+<ul>
+<li>(summary) Changes projections of valid viewports
+to a two point perspective.  It will make common additional
+adjustments to the frustum and camera location and direction
+so the resulting views are similar.
+If the current projection is perspective and
+IsFrustumIsLeftRightSymmetric is True and
+IsFrustumIsTopBottomSymmetric is false, then no changes are
+made and True is returned.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-dollycameravector3d-dollyvector">bool DollyCamera(Vector3d dollyVector)</h4>
+<ul>
+<li>(summary) DollyCamera() does not update the frustum&rsquo;s clipping planes.
+To update the frustum&rsquo;s clipping planes call DollyFrustum(d)
+with d = dollyVector o cameraFrameZ.  To convert screen locations
+into a dolly vector, use GetDollyCameraVector().
+Does not update frustum.  To update frustum use DollyFrustum(d) with d = dollyVector o cameraFrameZ.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-dollyextentsboundingbox-cameracoordinateboundingboxdouble-border">bool DollyExtents(BoundingBox cameraCoordinateBoundingBox,double border)</h4>
+<ul>
+<li>(summary) Dolly the camera location and so that the view frustum contains
+all of the document objects that can be seen in view.
+If the projection is perspective, the camera angle is not changed.</li>
+<li>(since) 5.6</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-dollyextentsienumerablegeometrybase-geometrydouble-border">bool DollyExtents(IEnumerable<!-- raw HTML omitted --> geometry,double border)</h4>
+<ul>
+<li>(summary) Dolly the camera location and so that the view frustum contains
+all of the document objects that can be seen in view.
+If the projection is perspective, the camera angle is not changed.</li>
+<li>(since) 5.6</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-dollyfrustumdouble-dollydistance">bool DollyFrustum(double dollyDistance)</h4>
+<ul>
+<li>(summary) Moves the frustum clipping planes.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extentsdouble-halfviewangleradiansboundingbox-bbox">bool Extents(double halfViewAngleRadians,BoundingBox bbox)</h4>
+<ul>
+<li>(summary) Extends this viewport view to include a bounding box.
+Use Extents() as a quick way to set a viewport to so that bounding
+volume is inside of a viewports frustrum.
+The view angle is used to determine the position of the camera.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extentsdouble-halfviewangleradianssphere-sphere">bool Extents(double halfViewAngleRadians,Sphere sphere)</h4>
+<ul>
+<li>(summary) Extends this viewport view to include a sphere.
+Use Extents() as a quick way to set a viewport to so that bounding
+volume is inside of a viewports frustrum.
+The view angle is used to determine the position of the camera.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="point3d-frustumcenterpointdouble-targetdistance">Point3d FrustumCenterPoint(double targetDistance)</h4>
+<ul>
+<li>(summary) Return a point on the central axis of the view frustum.
+This point is a good choice for a general purpose target point.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="bool-getboundingboxdepthboundingbox-bboxdouble-neardistancedouble-fardistance">bool GetBoundingBoxDepth(BoundingBox bbox,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Gets near and far clipping distances of a bounding box.
+This function ignores the current value of the viewport&rsquo;s 
+near and far settings. If the viewport is a perspective
+projection, the it intersects the semi infinite frustum
+volume with the bounding box and returns the near and far
+distances of the intersection.  If the viewport is a parallel
+projection, it instersects the infinte view region with the
+bounding box and returns the near and far distances of the
+projection.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getcameraanglesdouble-halfdiagonalangleradiansdouble-halfverticalangleradiansdouble-halfhorizontalangleradians">bool GetCameraAngles(double halfDiagonalAngleRadians,double halfVerticalAngleRadians,double halfHorizontalAngleRadians)</h4>
+<ul>
+<li>(summary) Gets the field of view angles.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getcameraframepoint3d-locationvector3d-cameraxvector3d-camerayvector3d-cameraz">bool GetCameraFrame(Point3d location,Vector3d cameraX,Vector3d cameraY,Vector3d cameraZ)</h4>
+<ul>
+<li>(summary) Gets location and vectors of this camera.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="vector3d-getdollycameravectorint-screenx0int-screeny0int-screenx1int-screeny1double-projectionplanedistance">Vector3d GetDollyCameraVector(int screenX0,int screenY0,int screenX1,int screenY1,double projectionPlaneDistance)</h4>
+<ul>
+<li>(summary) Gets a world coordinate dolly vector that can be passed to DollyCamera().</li>
+<li>(since) 5.0</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+<h4 id="vector3d-getdollycameravectorpoint-screen0point-screen1double-projectionplanedistance">Vector3d GetDollyCameraVector(Point screen0,Point screen1,double projectionPlaneDistance)</h4>
+<ul>
+<li>(summary) Gets a world coordinate dolly vector that can be passed to DollyCamera().</li>
+<li>(since) 5.0</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+<h4 id="point3d-getfarplanecorners">Point3d[] GetFarPlaneCorners()</h4>
+<ul>
+<li>(summary) Gets the corners of far clipping plane rectangle.
+4 points are returned in the order of bottom left, bottom right,
+top left, top right.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumdouble-leftdouble-rightdouble-bottomdouble-topdouble-neardistancedouble-fardistance">bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Gets the view frustum.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="line-getfrustumlinedouble-screenxdouble-screeny">Line GetFrustumLine(double screenX,double screenY)</h4>
+<ul>
+<li>(summary) Gets the world coordinate line in the view frustum
+that projects to a point on the screen.</li>
+<li>(since) 5.1</li>
+<li>(returns) Line This is some return comment</li>
+</ul>
+<h4 id="line-getfrustumlinepoint-screenpoint">Line GetFrustumLine(Point screenPoint)</h4>
+<ul>
+<li>(summary) Gets the world coordinate line in the view frustum
+that projects to a point on the screen.</li>
+<li>(since) 5.1</li>
+<li>(returns) Line This is some return comment</li>
+</ul>
+<h4 id="line-getfrustumlinepointf-screenpoint">Line GetFrustumLine(PointF screenPoint)</h4>
+<ul>
+<li>(summary) Gets the world coordinate line in the view frustum
+that projects to a point on the screen.</li>
+<li>(since) 5.1</li>
+<li>(returns) Line This is some return comment</li>
+</ul>
+<h4 id="point3d-getnearplanecorners">Point3d[] GetNearPlaneCorners()</h4>
+<ul>
+<li>(summary) Gets the corners of near clipping plane rectangle.
+4 points are returned in the order of bottom left, bottom right,
+top left, top right.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="bool-getpointdepthpoint3d-pointdouble-distance">bool GetPointDepth(Point3d point,double distance)</h4>
+<ul>
+<li>(summary) Gets the clipping distance of a point. This function ignores the
+current value of the viewport&rsquo;s near and far settings. If
+the viewport is a perspective projection, then it intersects
+the semi infinite frustum volume with the bounding box and
+returns the near and far distances of the intersection.
+If the viewport is a parallel projection, it instersects the
+infinte view region with the bounding box and returns the
+near and far distances of the projection.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="systemdrawingrectangle-getscreenport">System.Drawing.Rectangle GetScreenPort()</h4>
+<ul>
+<li>(summary) Gets the location of viewport in pixels.
+See documentation for SetScreenPort.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Rectangle This is some return comment</li>
+</ul>
+<h4 id="systemdrawingrectangle-getscreenportint-nearint-far">System.Drawing.Rectangle GetScreenPort(int near,int far)</h4>
+<ul>
+<li>(summary) Gets the location of viewport in pixels.
+See value meanings in SetScreenPort.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Rectangle This is some return comment</li>
+</ul>
+<h4 id="void-getscreenportlocationint-leftint-topint-rightint-bottom">void GetScreenPortLocation(int left,int top,int right,int bottom)</h4>
+<ul>
+<li>(summary) Get the location of viewport in pixels (non System.Drawing version of GetScreenPort)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-getspheredepthsphere-spheredouble-neardistancedouble-fardistance">bool GetSphereDepth(Sphere sphere,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Gets near and far clipping distances of a bounding sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="double-getworldtoscreenscalepoint3d-pointinfrustum">double GetWorldToScreenScale(Point3d pointInFrustum)</h4>
+<ul>
+<li>(summary) Gets the scale factor from point in frustum to screen scale.</li>
+<li>(since) 5.1</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="transform-getxformcoordinatesystem-sourcesystemcoordinatesystem-destinationsystem">Transform GetXform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)</h4>
+<ul>
+<li>(summary) Computes a transform from a coordinate system to another.</li>
+<li>(since) 5.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="bool-rotatecameradouble-rotationangleradiansvector3d-rotationaxispoint3d-rotationcenter">bool RotateCamera(double rotationAngleRadians,Vector3d rotationAxis,Point3d rotationCenter)</h4>
+<ul>
+<li>(summary) Rotates the view camera.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setcameradirectionvector3d-direction">bool SetCameraDirection(Vector3d direction)</h4>
+<ul>
+<li>(summary) Sets the direction that the camera faces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setcameralocationpoint3d-location">bool SetCameraLocation(Point3d location)</h4>
+<ul>
+<li>(summary) Sets the camera location (position) point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setcameraupvector3d-up">bool SetCameraUp(Vector3d up)</h4>
+<ul>
+<li>(summary) Sets the camera up vector.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfrustumdouble-leftdouble-rightdouble-bottomdouble-topdouble-neardistancedouble-fardistance">bool SetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Sets the view frustum. If FrustumSymmetryIsLocked() is true
+and left != -right or bottom != -top, then they will be
+adjusted so the resulting frustum is symmetric.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfrustumnearfarboundingbox-boundingbox">bool SetFrustumNearFar(BoundingBox boundingBox)</h4>
+<ul>
+<li>(summary) Sets the frustum near and far using a bounding box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfrustumnearfardouble-neardistancedouble-fardistance">bool SetFrustumNearFar(double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Sets the frustum near and far distances using two values.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfrustumnearfardouble-neardistancedouble-fardistancedouble-minneardistancedouble-minnearoverfardouble-targetdistance">bool SetFrustumNearFar(double nearDistance,double farDistance,double minNearDistance,double minNearOverFar,double targetDistance)</h4>
+<ul>
+<li>(summary) Sets near and far clipping distance subject to constraints.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfrustumnearfarpoint3d-centerdouble-radius">bool SetFrustumNearFar(Point3d center,double radius)</h4>
+<ul>
+<li>(summary) Sets the frustum near and far using a center point and radius.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setscreenportint-leftint-rightint-bottomint-topint-nearint-far">bool SetScreenPort(int left,int right,int bottom,int top,int near,int far)</h4>
+<ul>
+<li>(summary) Location of viewport in pixels.
+These are provided so you can set the port you are using
+and get the appropriate transformations to and from
+screen space.
+// For a Windows window
+/      int width = width of window client area in pixels;
+/      int height = height of window client area in pixels;
+/      port_left = 0;
+/      port_right = width;
+/      port_top = 0;
+/      port_bottom = height;
+/      port_near = 0;
+/      port_far = 1;
+/      SetScreenPort( port_left, port_right, 
+/                     port_bottom, port_top, 
+/                     port_near, port_far );</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setscreenportrectangle-windowrectangle">bool SetScreenPort(Rectangle windowRectangle)</h4>
+<ul>
+<li>(summary) Gets the location of viewport in pixels.
+See value meanings in SetScreenPort.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setscreenportrectangle-windowrectangleint-nearint-far">bool SetScreenPort(Rectangle windowRectangle,int near,int far)</h4>
+<ul>
+<li>(summary) Gets the location of viewport in pixels.
+See value meanings in SetScreenPort.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="double-targetdistancebool-usefrustumcenterfallback">double TargetDistance(bool useFrustumCenterFallback)</h4>
+<ul>
+<li>(summary) Gets the distance from the target point to the camera plane.
+Note that if the frustum is not symmetric, then this distance
+is shorter than the distance from the target to the camera location.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="bool-transformcameratransform-xform">bool TransformCamera(Transform xform)</h4>
+<ul>
+<li>(summary) Transforms the view camera location, direction, and up.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-unlockcamera">void UnlockCamera()</h4>
+<ul>
+<li>(summary) Unlocks the camera vectors and location.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-unlockfrustumsymmetry">void UnlockFrustumSymmetry()</h4>
+<ul>
+<li>(summary) Unlocks frustum horizontal and vertical symmetries.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-zoomtoscreenrectint-leftint-topint-rightint-bottom">bool ZoomToScreenRect(int left,int top,int right,int bottom)</h4>
+<ul>
+<li>(summary) Zooms to a screen zone.
+View changing from screen input points. Handy for
+using a mouse to manipulate a view.
+ZoomToScreenRect() may change camera and frustum settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-zoomtoscreenrectrectangle-windowrectangle">bool ZoomToScreenRect(Rectangle windowRectangle)</h4>
+<ul>
+<li>(summary) Zooms to a screen zone.
+View changing from screen input points. Handy for
+using a mouse to manipulate a view.
+ZoomToScreenRect() may change camera and frustum settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ViewportInfo</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

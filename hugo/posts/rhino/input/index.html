@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Input &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Input</h1>
+  <ul>
+<li><a href="getboxmode/">GetBoxMode</a></li>
+<li><a href="getresult/">GetResult</a></li>
+<li><a href="rhinoget/">RhinoGet</a></li>
+<li><a href="bitmapfiletypes/">BitmapFileTypes</a></li>
+<li><a href="stringparser/">StringParser</a></li>
+<li><a href="stringparsersettings/">StringParserSettings</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/rhinoget/">
+        <div class="h2 mt-1 mb-1">RhinoGet</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a RhinoGet but you will use its member functions after calling GetObject::GetObjects(), GetPoint::GetPoint(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class RhinoGetProperties static BitmapFileTypes AllBitmapFileTypes  (summary) (since) 6.0  Methods static Result Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView)  (summary) Gets a rectangle in view window coordinates.
+    <a class="muted-link" href="/posts/rhino/input/rhinoget/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/stringparser/">
+        <div class="h2 mt-1 mb-1">StringParser</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input
+Parse strings to numbers, distances and angles
+public class StringParserMethods static int ParseAngleExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,AngleUnitSystem output_angle_unit_system,double value_out,StringParserSettings parse_results,AngleUnitSystem parsed_unit_system)  (summary) (since) 6.0 (returns) int This is some return comment  static bool ParseAngleExpressionDegrees(string expression,double angle_degrees)  (summary) (since) 6.0 (returns) bool This is some return comment  static bool ParseAngleExpressionRadians(string expression,double angle_radians)  (summary) (since) 6.0 (returns) bool This is some return comment  static int ParseLengthExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,UnitSystem output_unit_system,double value_out,StringParserSettings parse_results,UnitSystem parsed_unit_system)  (summary) Parse a string for a length value.
+    <a class="muted-link" href="/posts/rhino/input/stringparser/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/input/stringparsersettings/">
+        <div class="h2 mt-1 mb-1">StringParserSettings</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input
+Parameters for parsing strings
+public class StringParserSettingsConstructors StringParserSettings()  (summary) (since) 6.0  Properties static StringParserSettings DefaultParseSettings  (summary) - The default settings parse just about everything in a reasonable way.  Any angle values with unspecified units will be treated as radians. Angles without units can be encountered while parsing formulas, lengths and points and need to be thoughtfully considered in most parsing situations.   (since) 6.
+    <a class="muted-link" href="/posts/rhino/input/stringparsersettings/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/stringparser/">
+        <h3>StringParser</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/stringparser/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input
+Parse strings to numbers, distances and angles
+public class StringParserMethods static int ParseAngleExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,AngleUnitSystem output_angle_unit_system,double value_out,StringParserSettings parse_results,AngleUnitSystem parsed_unit_system)  (summary) (since) 6.0 (returns) int This is some return comment  static bool ParseAngleExpressionDegrees(string expression,double angle_degrees)  (summary) (since) 6.0 (returns) bool This is some return comment  static bool ParseAngleExpressionRadians(string expression,double angle_radians)  (summary) (since) 6.0 (returns) bool This is some return comment  static int ParseLengthExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,UnitSystem output_unit_system,double value_out,StringParserSettings parse_results,UnitSystem parsed_unit_system)  (summary) Parse a string for a length value.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/input/stringparsersettings/">
+        <h3>StringParserSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/input/stringparsersettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Input
+Parameters for parsing strings
+public class StringParserSettingsConstructors StringParserSettings()  (summary) (since) 6.0  Properties static StringParserSettings DefaultParseSettings  (summary) - The default settings parse just about everything in a reasonable way.  Any angle values with unspecified units will be treated as radians. Angles without units can be encountered while parsing formulas, lengths and points and need to be thoughtfully considered in most parsing situations.   (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/tables/stringtable/">
+        <h3>StringTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/tables/stringtable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+Collection of document user data strings
+public class StringTableProperties int Count  (summary) The number of user data strings in the current document. (since) 5.0  RhinoDoc Document  (summary) Document that owns this object table. (since) 5.0  int DocumentDataCount  (summary) (since) 6.0  int DocumentUserTextCount  (summary) (since) 6.0  Methods void Delete(string key)  (summary) (since) 5.0 (returns) void This is some return comment  void Delete(string section,string entry)  (summary) Removes user data strings from the document.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/interopwrappers/stringwrapper/">
+        <h3>StringWrapper</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/interopwrappers/stringwrapper/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged OpenNurbs string. Wraps a C++ ON_wString*.
+public class StringWrapperConstructors StringWrapper()  (summary) Initializes a new empty unmanaged string (ON_wString*). (since) 5.0  StringWrapper(string s)  (summary) Initializes a new unmanaged string with an initial value. The string s can be null. (since) 5.0  Properties IntPtr ConstPointer  (summary) Gets the const pointer (const ON_wString*). (since) 5.0  IntPtr NonConstPointer  (summary) Gets the non-const pointer (ON_wString*).
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/subd/">
+        <h3>SubD</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/subd/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Subdivision surface
+public class SubDConstructors SubD()  (summary) Create a new instance of SubD geometry (since) 7.0  Properties Collections.SubDEdgeList Edges  (summary) All edges in this SubD (since) 7.0  Collections.SubDFaceList Faces  (summary) All faces in this SubD (since) 7.0  bool IsSolid  (summary) Test subd to see if the active level is a solid.
+A &ldquo;solid&rdquo; is a closed oriented manifold, or a closed oriented manifold.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/subdcomponent/">
+        <h3>SubDComponent</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/subdcomponent/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+A part of SubD geometry. Common base class for vertices, faces, and edges
+public class SubDComponentProperties uint Id  (summary) Unique id within the parent SubD for this item (since) 7.0  SubD ParentSubD  (summary) SubD that this component belonds to (since) 7.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/subdcreationoptions/">
+        <h3>SubDCreationOptions</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/subdcreationoptions/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Options used for creating a SubD
+public class SubDCreationOptionsConstructors SubDCreationOptions()  (summary) Create default options (since) 7.0  Properties static SubDCreationOptions ConvexCornerAtMeshCorner  (summary) Look for convex corners at sub-D vertices with 2 edges that have an included angle &lt;= 90 degrees. (since) 7.0  static SubDCreationOptions InteriorCreaseAtMeshCrease  (summary) Create an interior sub-D crease along coincident input mesh edges where the vertex normal directions at one end differ by at least 30 degrees.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/subdedge/">
+        <h3>SubDEdge</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/subdedge/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Single edge of a SubD
+public class SubDEdgeProperties Line ControlNetLine  (summary) Line representing the control net end points (since) 7.0  int FaceCount  (summary) Number of faces for this edge (since) 7.0  SubDEdgeTag Tag  (summary) identifies the type of subdivision edge (since) 7.0  SubDVertex VertexFrom  (summary) Start vertex for this edge (since) 7.0  SubDVertex VertexTo  (summary) End vertex for this edge (since) 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/subdedgelist/">
+        <h3>SubDEdgeList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/subdedgelist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+All edges in a SubD
+public class SubDEdgeListProperties int Count  (summary) Gets the number of SubD edges. (since) 7.0  Methods SubDEdge Add(SubDEdgeTag tag,SubDVertex v0,SubDVertex v1)  (summary) Add a new edge to the list. (since) 7.0 (returns) SubDEdge This is some return comment  SubDEdge Find(int id)  (summary) Find an edge in this SubD with a given id (since) 7.0 (returns) SubDEdge This is some return comment  SubDEdge Find(uint id)  (summary) Find an edge in this SubD with a given id (since) 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/subdface/">
+        <h3>SubDFace</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/subdface/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Single face of a SubD
+public class SubDFaceProperties int EdgeCount  (summary) Number of edges for this face. Note that EdgeCount is always the same as VertexCount. Two properties are provided simply for clarity. (since) 7.0  Point3d LimitSurfaceCenterPoint  (summary) Get the limit surface point location at the center of the face (since) 7.0  int VertexCount  (summary) Number of vertices for this face. Note that EdgeCount is always the same as VertexCount.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/59/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/61/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

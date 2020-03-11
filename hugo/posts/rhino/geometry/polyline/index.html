@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Polyline &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents an ordered set of points connected by linear segments. Polylines are closed if start and end points coincide.
+public class PolylineConstructors Polyline()  (summary) Initializes a new empty polyline. (since) 5.0  Polyline(IEnumerablecollection)  (summary) Initializes a new polyline from a collection of points. (since) 5.0  Polyline(int initialCapacity)  (summary) Initializes a new empty polyline with an initial capacity. (since) 5.0  Properties bool IsClosed  (summary) Gets a value that indicates whether this polyline is closed.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Polyline</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents an ordered set of points connected by linear segments.
+Polylines are closed if start and end points coincide.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Polyline</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="polyline">Polyline()</h4>
+<ul>
+<li>(summary) Initializes a new empty polyline.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="polylineienumerablepoint3d-collection">Polyline(IEnumerable<!-- raw HTML omitted --> collection)</h4>
+<ul>
+<li>(summary) Initializes a new polyline from a collection of points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="polylineint-initialcapacity">Polyline(int initialCapacity)</h4>
+<ul>
+<li>(summary) Initializes a new empty polyline with an initial capacity.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="bool-isclosed">bool IsClosed</h4>
+<ul>
+<li>(summary) Gets a value that indicates whether this polyline is closed. 
+The polyline is considered to be closed if its start is 
+identical to its endpoint.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalid">bool IsValid</h4>
+<ul>
+<li>(summary) Gets a value that indicates whether this polyline is valid. 
+Valid polylines have at least one segment, no Invalid points and no zero length segments.Closed polylines with only two segments are also not considered valid.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-length">double Length</h4>
+<ul>
+<li>(summary) Gets the total length of the polyline.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-segmentcount">int SegmentCount</h4>
+<ul>
+<li>(summary) Gets the number of segments for this polyline.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-polyline-createcircumscribedpolygoncircle-circleint-sidecount">static Polyline CreateCircumscribedPolygon(Circle circle,int sideCount)</h4>
+<ul>
+<li>(summary) Create a regular polygon circumscribe about a circle. The midpoints of the polygon&rsquo;s edges will be tanget to the circle.</li>
+<li>(since) 6.10</li>
+<li>(returns) Polyline This is some return comment</li>
+</ul>
+<h4 id="static-polyline-createinscribedpolygoncircle-circleint-sidecount">static Polyline CreateInscribedPolygon(Circle circle,int sideCount)</h4>
+<ul>
+<li>(summary) Create a regular polygon inscribed in a circle. The vertices of the polygon will be on the circle.</li>
+<li>(since) 6.10</li>
+<li>(returns) Polyline This is some return comment</li>
+</ul>
+<h4 id="static-polyline-createstarpolygoncircle-circledouble-radiusint-cornercount">static Polyline CreateStarPolygon(Circle circle,double radius,int cornerCount)</h4>
+<ul>
+<li>(summary) Create a regular star polygon. The star begins at circle.PointAt(0) and the vertices
+alternate between being on circle and begin on a concentric circle of other_radius.</li>
+<li>(since) 6.10</li>
+<li>(returns) Polyline This is some return comment</li>
+</ul>
+<h4 id="polyline-breakatanglesdouble-angle">Polyline[] BreakAtAngles(double angle)</h4>
+<ul>
+<li>(summary) Breaks this polyline into sections at sharp kinks. 
+Closed polylines will also be broken at the first and last vertex.</li>
+<li>(since) 5.0</li>
+<li>(returns) Polyline[] This is some return comment</li>
+</ul>
+<h4 id="point3d-centerpoint">Point3d CenterPoint()</h4>
+<ul>
+<li>(summary) Compute the center point of the polyline as the weighted average of all segments.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="double-closestparameterpoint3d-testpoint">double ClosestParameter(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Gets the parameter along the polyline which is closest to a test-point.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="point3d-closestpointpoint3d-testpoint">Point3d ClosestPoint(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Gets the point on the polyline which is closest to a test-point.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="int-collapseshortsegmentsdouble-tolerance">int CollapseShortSegments(double tolerance)</h4>
+<ul>
+<li>(summary) Collapses all segments until none are shorter than tolerance. 
+This function is significantly slower than DeleteShortSegments, 
+since it recursively operates on the shortest segment. 
+When a segment is collapsed the end-points are placed in the center of the segment.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-deleteshortsegmentsdouble-tolerance">int DeleteShortSegments(double tolerance)</h4>
+<ul>
+<li>(summary) Removes all points that are closer than tolerance to the previous point. 
+Start and end points are left intact.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="polyline-duplicate">Polyline Duplicate()</h4>
+<ul>
+<li>(summary) Returns a deep copy of this polyline instance.</li>
+<li>(since) 6.0</li>
+<li>(returns) Polyline This is some return comment</li>
+</ul>
+<h4 id="line-getsegments">Line[] GetSegments()</h4>
+<ul>
+<li>(summary) Constructs an array of line segments that make up the entire polyline.</li>
+<li>(since) 5.0</li>
+<li>(returns) Line[] This is some return comment</li>
+</ul>
+<h4 id="bool-isclosedwithintolerancedouble-tolerance">bool IsClosedWithinTolerance(double tolerance)</h4>
+<ul>
+<li>(summary) Determines whether the polyline is closed, provided a tolerance value.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-mergecolinearsegmentsdouble-angletolerancebool-includeseam">int MergeColinearSegments(double angleTolerance,bool includeSeam)</h4>
+<ul>
+<li>(summary) Merge co-linear consecutive segments in a polyline.
+This method will automatically remove any zero-length segments as well.</li>
+<li>(since) 6.3</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatdouble-t">Point3d PointAt(double t)</h4>
+<ul>
+<li>(summary) Gets the point on the polyline at the given parameter. 
+The integer part of the parameter indicates the index of the segment.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="int-reducesegmentsdouble-tolerance">int ReduceSegments(double tolerance)</h4>
+<ul>
+<li>(summary) Constructs a reduction of this polyline by recursively removing the least significant segments.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="line-segmentatint-index">Line SegmentAt(int index)</h4>
+<ul>
+<li>(summary) Gets the line segment at the given index.</li>
+<li>(since) 5.0</li>
+<li>(returns) Line This is some return comment</li>
+</ul>
+<h4 id="bool-smoothdouble-amount">bool Smooth(double amount)</h4>
+<ul>
+<li>(summary) Smoothens the polyline segments by averaging adjacent vertices. 
+Smoothing requires a polyline with exclusively valid vertices.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="vector3d-tangentatdouble-t">Vector3d TangentAt(double t)</h4>
+<ul>
+<li>(summary) Gets the unit tangent vector along the polyline at the given parameter. 
+The integer part of the parameter indicates the index of the segment.</li>
+<li>(since) 5.0</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+<h4 id="nurbscurve-tonurbscurve">NurbsCurve ToNurbsCurve()</h4>
+<ul>
+<li>(summary) Constructs a nurbs curve representation of this polyline.</li>
+<li>(since) 5.0</li>
+<li>(returns) NurbsCurve This is some return comment</li>
+</ul>
+<h4 id="polylinecurve-topolylinecurve">PolylineCurve ToPolylineCurve()</h4>
+<ul>
+<li>(summary) Constructs a polyline curve representation of this polyline.</li>
+<li>(since) 6.0</li>
+<li>(returns) PolylineCurve This is some return comment</li>
+</ul>
+<h4 id="meshface-triangulateclosedpolyline">MeshFace[] TriangulateClosedPolyline()</h4>
+<ul>
+<li>(summary) Attempts to create a list of triangles which represent a
+triangulation of a closed polyline</li>
+<li>(since) 5.0</li>
+<li>(returns) MeshFace[] This is some return comment</li>
+</ul>
+<h4 id="polyline-triminterval-domain">Polyline Trim(Interval domain)</h4>
+<ul>
+<li>(summary) Constructs a polyline out of a parameter subdomain in this curve.</li>
+<li>(since) 5.0</li>
+<li>(returns) Polyline This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Polyline</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

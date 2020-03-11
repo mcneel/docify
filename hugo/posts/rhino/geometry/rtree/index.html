@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RTree &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a spatial search structure based on implementations of the R-tree algorithm by Toni Gutman.
+public class RTreeConstructors RTree()  (summary) Initializes a new, empty instance of the tree. (since) 5.0  Properties int Count  (summary) Gets the number of items in this tree. (since) 5.0  Methods static RTree CreateFromPointArray(IEnumerablepoints)  (summary) Constructs a new tree with an element for each pointcloud point. (since) 6.0 (returns) RTree This is some return comment  static RTree CreateMeshFaceTree(Mesh mesh)  (summary) Constructs a new tree with an element for each face in the mesh.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RTree</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a spatial search structure based on implementations of the
+R-tree algorithm by Toni Gutman.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RTree</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="rtree">RTree()</h4>
+<ul>
+<li>(summary) Initializes a new, empty instance of the tree.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Gets the number of items in this tree.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-rtree-createfrompointarrayienumerablepoint3d-points">static RTree CreateFromPointArray(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Constructs a new tree with an element for each pointcloud point.</li>
+<li>(since) 6.0</li>
+<li>(returns) RTree This is some return comment</li>
+</ul>
+<h4 id="static-rtree-createmeshfacetreemesh-mesh">static RTree CreateMeshFaceTree(Mesh mesh)</h4>
+<ul>
+<li>(summary) Constructs a new tree with an element for each face in the mesh.
+The element id is set to the index of the face.</li>
+<li>(since) 5.0</li>
+<li>(returns) RTree This is some return comment</li>
+</ul>
+<h4 id="static-rtree-createpointcloudtreepointcloud-cloud">static RTree CreatePointCloudTree(PointCloud cloud)</h4>
+<ul>
+<li>(summary) Constructs a new tree with an element for each pointcloud point.</li>
+<li>(since) 5.0</li>
+<li>(returns) RTree This is some return comment</li>
+</ul>
+<h4 id="static-ienumerableint-point3dclosestpointsienumerablepoint3d-haypointsienumerablepoint3d-needleptsdouble-limitdistance">static IEnumerable&lt;int[]&gt; Point3dClosestPoints(IEnumerable<!-- raw HTML omitted --> hayPoints,IEnumerable<!-- raw HTML omitted --> needlePts,double limitDistance)</h4>
+<ul>
+<li>(summary) Finds the point in a list of 3D points that is closest to a test point.</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable&lt;int[]&gt; This is some return comment</li>
+</ul>
+<h4 id="static-ienumerableint-point3dkneighborsienumerablepoint3d-haypointsienumerablepoint3d-needleptsint-amount">static IEnumerable&lt;int[]&gt; Point3dKNeighbors(IEnumerable<!-- raw HTML omitted --> hayPoints,IEnumerable<!-- raw HTML omitted --> needlePts,int amount)</h4>
+<ul>
+<li>(summary) Finds a certain amout of points in a list of 3D points that are the k-closest to a test point.</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable&lt;int[]&gt; This is some return comment</li>
+</ul>
+<h4 id="static-ienumerableint-pointcloudclosestpointspointcloud-pointcloudienumerablepoint3d-needleptsdouble-limitdistance">static IEnumerable&lt;int[]&gt; PointCloudClosestPoints(PointCloud pointcloud,IEnumerable<!-- raw HTML omitted --> needlePts,double limitDistance)</h4>
+<ul>
+<li>(summary) Finds the point in a list of 3D points that is closest to a test point.</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable&lt;int[]&gt; This is some return comment</li>
+</ul>
+<h4 id="static-ienumerableint-pointcloudkneighborspointcloud-pointcloudienumerablepoint3d-needleptsint-amount">static IEnumerable&lt;int[]&gt; PointCloudKNeighbors(PointCloud pointcloud,IEnumerable<!-- raw HTML omitted --> needlePts,int amount)</h4>
+<ul>
+<li>(summary) Finds a certain amout of points in a list of 3D points that are the k-closest to a test point.</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable&lt;int[]&gt; This is some return comment</li>
+</ul>
+<h4 id="static-bool-searchoverlapsrtree-treeartree-treebdouble-toleranceeventhandlerrtreeeventargs-callback">static bool SearchOverlaps(RTree treeA,RTree treeB,double tolerance,EventHandler<!-- raw HTML omitted --> callback)</h4>
+<ul>
+<li>(summary) Searches two R-trees for all pairs elements whose bounding boxes overlap.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-clear">void Clear()</h4>
+<ul>
+<li>(summary) Removes all elements.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary) Actively reclaims unmanaged resources that this instance uses.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-insertboundingbox-boxint-elementid">bool Insert(BoundingBox box,int elementId)</h4>
+<ul>
+<li>(summary) Inserts an element into the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-insertboundingbox-boxintptr-elementid">bool Insert(BoundingBox box,IntPtr elementId)</h4>
+<ul>
+<li>(summary) Inserts an element into the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-insertpoint2d-pointint-elementid">bool Insert(Point2d point,int elementId)</h4>
+<ul>
+<li>(summary) Inserts an element into the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-insertpoint2d-pointintptr-elementid">bool Insert(Point2d point,IntPtr elementId)</h4>
+<ul>
+<li>(summary) Inserts an element into the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-insertpoint3d-pointint-elementid">bool Insert(Point3d point,int elementId)</h4>
+<ul>
+<li>(summary) Inserts an element into the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-insertpoint3d-pointintptr-elementid">bool Insert(Point3d point,IntPtr elementId)</h4>
+<ul>
+<li>(summary) Inserts an element into the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-removeboundingbox-boxint-elementid">bool Remove(BoundingBox box,int elementId)</h4>
+<ul>
+<li>(summary) Removes an element from the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-removeboundingbox-boxintptr-elementid">bool Remove(BoundingBox box,IntPtr elementId)</h4>
+<ul>
+<li>(summary) Removes an element from the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-removepoint2d-pointint-elementid">bool Remove(Point2d point,int elementId)</h4>
+<ul>
+<li>(summary) Removes an element from the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-removepoint3d-pointint-elementid">bool Remove(Point3d point,int elementId)</h4>
+<ul>
+<li>(summary) Removes an element from the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-removepoint3d-pointintptr-elementid">bool Remove(Point3d point,IntPtr elementId)</h4>
+<ul>
+<li>(summary) Removes an element from the tree.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-searchboundingbox-boxeventhandlerrtreeeventargs-callback">bool Search(BoundingBox box,EventHandler<!-- raw HTML omitted --> callback)</h4>
+<ul>
+<li>(summary) Searches for items in a bounding box.
+The bounding box can be singular and contain exactly one single point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-searchboundingbox-boxeventhandlerrtreeeventargs-callbackobject-tag">bool Search(BoundingBox box,EventHandler<!-- raw HTML omitted --> callback,object tag)</h4>
+<ul>
+<li>(summary) Searches for items in a bounding box.
+The bounding box can be singular and contain exactly one single point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-searchsphere-sphereeventhandlerrtreeeventargs-callback">bool Search(Sphere sphere,EventHandler<!-- raw HTML omitted --> callback)</h4>
+<ul>
+<li>(summary) Searches for items in a sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-searchsphere-sphereeventhandlerrtreeeventargs-callbackobject-tag">bool Search(Sphere sphere,EventHandler<!-- raw HTML omitted --> callback,object tag)</h4>
+<ul>
+<li>(summary) Searches for items in a sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RTree</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Geometry &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Geometry</h1>
+  <ul>
+<li><a href="angulardimension/">AngularDimension</a></li>
+<li><a href="annotationbase/">AnnotationBase</a></li>
+<li><a href="arc/">Arc</a></li>
+<li><a href="arccurve/">ArcCurve</a></li>
+<li><a href="areamassproperties/">AreaMassProperties</a></li>
+<li><a href="arrowhead/">Arrowhead</a></li>
+<li><a href="beziercurve/">BezierCurve</a></li>
+<li><a href="blendcontinuity/">BlendContinuity</a></li>
+<li><a href="blendtype/">BlendType</a></li>
+<li><a href="boundingbox/">BoundingBox</a></li>
+<li><a href="box/">Box</a></li>
+<li><a href="brep/">Brep</a></li>
+<li><a href="brepedge/">BrepEdge</a></li>
+<li><a href="brepface/">BrepFace</a></li>
+<li><a href="shrinkdisableside/">ShrinkDisableSide</a></li>
+<li><a href="breploop/">BrepLoop</a></li>
+<li><a href="breplooptype/">BrepLoopType</a></li>
+<li><a href="brepregion/">BrepRegion</a></li>
+<li><a href="brepregionfaceside/">BrepRegionFaceSide</a></li>
+<li><a href="brepsolidorientation/">BrepSolidOrientation</a></li>
+<li><a href="breptrim/">BrepTrim</a></li>
+<li><a href="breptrimtype/">BrepTrimType</a></li>
+<li><a href="brepvertex/">BrepVertex</a></li>
+<li><a href="centermark/">Centermark</a></li>
+<li><a href="circle/">Circle</a></li>
+<li><a href="clippingplanesurface/">ClippingPlaneSurface</a></li>
+<li><a href="componentindex/">ComponentIndex</a></li>
+<li><a href="componentindextype/">ComponentIndexType</a></li>
+<li><a href="componentstatus/">ComponentStatus</a></li>
+<li><a href="concavity/">Concavity</a></li>
+<li><a href="cone/">Cone</a></li>
+<li><a href="conicsectiontype/">ConicSectionType</a></li>
+<li><a href="continuity/">Continuity</a></li>
+<li><a href="controlpoint/">ControlPoint</a></li>
+<li><a href="curve/">Curve</a></li>
+<li><a href="curvebooleanregions/">CurveBooleanRegions</a></li>
+<li><a href="curveend/">CurveEnd</a></li>
+<li><a href="curveevaluationside/">CurveEvaluationSide</a></li>
+<li><a href="curveextensionstyle/">CurveExtensionStyle</a></li>
+<li><a href="curveknotstyle/">CurveKnotStyle</a></li>
+<li><a href="curveoffsetcornerstyle/">CurveOffsetCornerStyle</a></li>
+<li><a href="curveorientation/">CurveOrientation</a></li>
+<li><a href="curveproxy/">CurveProxy</a></li>
+<li><a href="curvesimplifyoptions/">CurveSimplifyOptions</a></li>
+<li><a href="cylinder/">Cylinder</a></li>
+<li><a href="detailview/">DetailView</a></li>
+<li><a href="developablesrf/">DevelopableSrf</a></li>
+<li><a href="dimension/">Dimension</a></li>
+<li><a href="distancingmode/">DistancingMode</a></li>
+<li><a href="edgeadjacency/">EdgeAdjacency</a></li>
+<li><a href="ellipse/">Ellipse</a></li>
+<li><a href="extrudecornertype/">ExtrudeCornerType</a></li>
+<li><a href="extrusion/">Extrusion</a></li>
+<li><a href="geometrybase/">GeometryBase</a></li>
+<li><a href="hatch/">Hatch</a></li>
+<li><a href="hermitesurface/">HermiteSurface</a></li>
+<li><a href="hiddenlinedrawing/">HiddenLineDrawing</a></li>
+<li><a href="hiddenlinedrawingobject/">HiddenLineDrawingObject</a></li>
+<li><a href="hiddenlinedrawingobjectcurve/">HiddenLineDrawingObjectCurve</a></li>
+<li><a href="hiddenlinedrawingparameters/">HiddenLineDrawingParameters</a></li>
+<li><a href="hiddenlinedrawingpoint/">HiddenLineDrawingPoint</a></li>
+<li><a href="visibility/">Visibility</a></li>
+<li><a href="hiddenlinedrawingsegment/">HiddenLineDrawingSegment</a></li>
+<li><a href="sidefill/">SideFill</a></li>
+<li><a href="visibility/">Visibility</a></li>
+<li><a href="instancedefinitiongeometry/">InstanceDefinitionGeometry</a></li>
+<li><a href="instancereferencegeometry/">InstanceReferenceGeometry</a></li>
+<li><a href="interpolator/">Interpolator</a></li>
+<li><a href="interval/">Interval</a></li>
+<li><a href="invaliddimensionstyleidexception/">InvalidDimensionStyleIdException</a></li>
+<li><a href="isostatus/">IsoStatus</a></li>
+<li><a href="leader/">Leader</a></li>
+<li><a href="light/">Light</a></li>
+<li><a href="attenuation/">Attenuation</a></li>
+<li><a href="lightstyle/">LightStyle</a></li>
+<li><a href="line/">Line</a></li>
+<li><a href="lineardimension/">LinearDimension</a></li>
+<li><a href="linecurve/">LineCurve</a></li>
+<li><a href="lofttype/">LoftType</a></li>
+<li><a href="matrix/">Matrix</a></li>
+<li><a href="mesh/">Mesh</a></li>
+<li><a href="meshcheckparameters/">MeshCheckParameters</a></li>
+<li><a href="meshdisplacementinfo/">MeshDisplacementInfo</a></li>
+<li><a href="meshextruder/">MeshExtruder</a></li>
+<li><a href="meshface/">MeshFace</a></li>
+<li><a href="meshingparameters/">MeshingParameters</a></li>
+<li><a href="meshingparameterstyle/">MeshingParameterStyle</a></li>
+<li><a href="meshingparametertexturerange/">MeshingParameterTextureRange</a></li>
+<li><a href="meshngon/">MeshNgon</a></li>
+<li><a href="meshpart/">MeshPart</a></li>
+<li><a href="meshpoint/">MeshPoint</a></li>
+<li><a href="meshthicknessmeasurement/">MeshThicknessMeasurement</a></li>
+<li><a href="meshtype/">MeshType</a></li>
+<li><a href="meshunsafelock/">MeshUnsafeLock</a></li>
+<li><a href="morphcontrol/">MorphControl</a></li>
+<li><a href="nurbscurve/">NurbsCurve</a></li>
+<li><a href="nurbscurveendconditiontype/">NurbsCurveEndConditionType</a></li>
+<li><a href="nurbssurface/">NurbsSurface</a></li>
+<li><a href="ordinatedimension/">OrdinateDimension</a></li>
+<li><a href="particle/">Particle</a></li>
+<li><a href="particlesystem/">ParticleSystem</a></li>
+<li><a href="pipecapmode/">PipeCapMode</a></li>
+<li><a href="plane/">Plane</a></li>
+<li><a href="planefitresult/">PlaneFitResult</a></li>
+<li><a href="planesurface/">PlaneSurface</a></li>
+<li><a href="point/">Point</a></li>
+<li><a href="point2d/">Point2d</a></li>
+<li><a href="point2f/">Point2f</a></li>
+<li><a href="point3d/">Point3d</a></li>
+<li><a href="point3dgrid/">Point3dGrid</a></li>
+<li><a href="point3f/">Point3f</a></li>
+<li><a href="point4d/">Point4d</a></li>
+<li><a href="pointcloud/">PointCloud</a></li>
+<li><a href="pointclouditem/">PointCloudItem</a></li>
+<li><a href="pointcontainment/">PointContainment</a></li>
+<li><a href="pointfacerelation/">PointFaceRelation</a></li>
+<li><a href="polycurve/">PolyCurve</a></li>
+<li><a href="polyline/">Polyline</a></li>
+<li><a href="polylinecurve/">PolylineCurve</a></li>
+<li><a href="quadremeshparameters/">QuadRemeshParameters</a></li>
+<li><a href="quadremeshsymmetryaxis/">QuadRemeshSymmetryAxis</a></li>
+<li><a href="quaternion/">Quaternion</a></li>
+<li><a href="radialdimension/">RadialDimension</a></li>
+<li><a href="railtype/">RailType</a></li>
+<li><a href="ray3d/">Ray3d</a></li>
+<li><a href="rectangle3d/">Rectangle3d</a></li>
+<li><a href="reducemeshparameters/">ReduceMeshParameters</a></li>
+<li><a href="regioncontainment/">RegionContainment</a></li>
+<li><a href="revsurface/">RevSurface</a></li>
+<li><a href="rtree/">RTree</a></li>
+<li><a href="rtreeeventargs/">RTreeEventArgs</a></li>
+<li><a href="shutliningcurveinfo/">ShutLiningCurveInfo</a></li>
+<li><a href="silhouette/">Silhouette</a></li>
+<li><a href="silhouettetype/">SilhouetteType</a></li>
+<li><a href="smoothingcoordinatesystem/">SmoothingCoordinateSystem</a></li>
+<li><a href="spacemorph/">SpaceMorph</a></li>
+<li><a href="sphere/">Sphere</a></li>
+<li><a href="subd/">SubD</a></li>
+<li><a href="subdcomponent/">SubDComponent</a></li>
+<li><a href="subdcreationoptions/">SubDCreationOptions</a></li>
+<li><a href="subdedge/">SubDEdge</a></li>
+<li><a href="subdface/">SubDFace</a></li>
+<li><a href="subdvertex/">SubDVertex</a></li>
+<li><a href="sumsurface/">SumSurface</a></li>
+<li><a href="surface/">Surface</a></li>
+<li><a href="surfacecurvature/">SurfaceCurvature</a></li>
+<li><a href="surfaceproxy/">SurfaceProxy</a></li>
+<li><a href="sweeponerail/">SweepOneRail</a></li>
+<li><a href="sweeprebuild/">SweepRebuild</a></li>
+<li><a href="sweeptworail/">SweepTwoRail</a></li>
+<li><a href="textdot/">TextDot</a></li>
+<li><a href="textentity/">TextEntity</a></li>
+<li><a href="textjustification/">TextJustification</a></li>
+<li><a href="textruntype/">TextRunType</a></li>
+<li><a href="torus/">Torus</a></li>
+<li><a href="transform/">Transform</a></li>
+<li><a href="transformrigidtype/">TransformRigidType</a></li>
+<li><a href="transformsimilaritytype/">TransformSimilarityType</a></li>
+<li><a href="unroller/">Unroller</a></li>
+<li><a href="vector2d/">Vector2d</a></li>
+<li><a href="vector2f/">Vector2f</a></li>
+<li><a href="vector3d/">Vector3d</a></li>
+<li><a href="vector3f/">Vector3f</a></li>
+<li><a href="volumemassproperties/">VolumeMassProperties</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/brepedge/">
+        <div class="h2 mt-1 mb-1">BrepEdge</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a single edge curve in a Brep object.
+public class BrepEdgeProperties Brep Brep  (summary) Gets the Brep that owns this edge. (since) 5.0  Curve EdgeCurve  (summary) Get the brep.Curves3D[] 3d curve geometry used by this edge or null. (since) 6.0  int EdgeCurveIndex  (summary) Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1. (since) 6.0  int EdgeIndex  (summary) Gets the index of this edge in the Brep.
+    <a class="muted-link" href="/posts/rhino/geometry/brepedge/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/brepface/">
+        <div class="h2 mt-1 mb-1">BrepFace</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Provides strongly-typed access to brep faces. A Brep face is composed of one surface and trimming curves.
+public class BrepFaceProperties Brep Brep  (summary) Gets the Brep that owns this face. (since) 6.9  int FaceIndex  (summary) Index of face in Brep.Faces array. (since) 5.0  bool IsSurface  (summary) Gets a value indicating whether the face is synonymous with the underlying surface. If a Face has no trimming curves then it is considered a Surface.
+    <a class="muted-link" href="/posts/rhino/geometry/brepface/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/breploop/">
+        <div class="h2 mt-1 mb-1">BrepLoop</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represent a single loop in a Brep object. A loop is composed of a list of trim curves.
+public class BrepLoopProperties Brep Brep  (summary) Gets the Brep that owns this loop. (since) 5.0  BrepFace Face  (summary) BrepFace this loop belongs to. (since) 5.0  int LoopIndex  (summary) Gets the index of this loop in the Brep.Loops collection. (since) 5.0  BrepLoopType LoopType  (summary) type of loop.
+    <a class="muted-link" href="/posts/rhino/geometry/breploop/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/brepregion/">
+        <div class="h2 mt-1 mb-1">BrepRegion</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a brep topological region that has sides.
+public class BrepRegionProperties BoundingBox BoundingBox  (summary) Gets the region bounding box. (since) 5.0  Brep Brep  (summary) Gets a reference to the Brep this region belongs to. (since) 5.0  int Index  (summary) Gets the index of region in the RegionTopology array. (since) 5.0  bool IsFinite  (summary) Gets a value indicating whether this region is finite.
+    <a class="muted-link" href="/posts/rhino/geometry/brepregion/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/brepregionfaceside/">
+        <div class="h2 mt-1 mb-1">BrepRegionFaceSide</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a side of a entity.
+public class BrepRegionFaceSideProperties Brep Brep  (summary) The brep this side belongs to. (since) 5.0  BrepFace Face  (summary) Gets the face this side belongs to. (since) 5.0  BrepRegion Region  (summary) The region this side belongs to. (since) 5.0  bool SurfaceNormalPointsIntoRegion  (summary) Gets True if BrepFace&rsquo;s surface normal points into region; False otherwise. (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/geometry/brepregionfaceside/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/breptrim/">
+        <div class="h2 mt-1 mb-1">BrepTrim</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Brep trim information is stored in BrepTrim classes. Brep.Trims is an array of all the trims in the brep. A BrepTrim is derived from CurveProxy so the trim can supply easy to use evaluation tools via the Curve virtual member functions. Note well that the domains and orientations of the curve m_C2[trim.m_c2i] and the trim as a curve may not agree.
+public class BrepTrimProperties Brep Brep  (summary) Gets the Brep that owns this trim.
+    <a class="muted-link" href="/posts/rhino/geometry/breptrim/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/brepvertex/">
+        <div class="h2 mt-1 mb-1">BrepVertex</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Brep vertex information
+public class BrepVertexProperties Brep Brep  (summary) Gets the Brep that owns this vertex. (since) 5.4  int VertexIndex  (summary) Gets the index of this vertex in the Brep.Vertices collection. (since) 5.4  Methods int[] EdgeIndices()  (summary) Gets the indices of all edges associated with this vertex. (since) 5.12 (returns) int[] This is some return comment  
+    <a class="muted-link" href="/posts/rhino/geometry/brepvertex/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/centermark/">
+        <div class="h2 mt-1 mb-1">Centermark</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a centermark
+public class CentermarkConstructors Centermark()  (summary) (since) 6.0  Methods static Centermark Create(DimensionStyle dimStyle,Plane plane,Point3d centerpoint,double radius)  (summary) Create a new centermark (since) 6.0 (returns) Centermark This is some return comment  
+    <a class="muted-link" href="/posts/rhino/geometry/centermark/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/circle/">
+        <div class="h2 mt-1 mb-1">Circle</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a circle in 3D. The values used are a radius and an orthonormal frame of the plane containing the circle, with origin at the center.The circle is parameterized by radians from 0 to 2 Pi given byt -&gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere center, xaxis and yaxis define the orthonormal frame of the circle plane.
+Constructors Circle(Arc arc)  (summary) Initializes a circle from an arc. (since) 5.
+    <a class="muted-link" href="/posts/rhino/geometry/circle/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/clippingplanesurface/">
+        <div class="h2 mt-1 mb-1">ClippingPlaneSurface</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a planar surface that is used as clipping plane in viewports. A clipping plane object maintains a list of viewports that it clips against.
+public class ClippingPlaneSurfaceProperties Plane Plane  (summary) Gets or sets the clipping plane. (since) 5.0  Methods bool AddClipViewportId(Guid viewportId)  (summary) Adds a viewport id to the list of viewports that this clipping plane clips. (since) 6.1 (returns) bool This is some return comment  bool RemoveClipViewportId(Guid viewportId)  (summary) Removes a viewport id that this being clipped by this clipping plane.
+    <a class="muted-link" href="/posts/rhino/geometry/clippingplanesurface/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/geometry/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/12/">12</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/geometry/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

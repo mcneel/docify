@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GetPoint &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input.Custom
+Used to interactively get a point.
+public class GetPointDynamicDraw   (summary) Event to use if you want to dynamically draw things as the mouse/digitizer moves. Every time the mouse moves, DynamicDraw will be called once per viewport. The calls to DynamicDraw happen AFTER the call to MouseMove.
+If you are drawing anything that takes a long time, periodically call InterruptMouseMove() to see if you should stop.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GetPoint</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input.Custom</a></em></p>
+<p>Used to interactively get a point.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GetPoint</span>
+</code></pre></div><h4 id="dynamicdraw">DynamicDraw</h4>
+<ul>
+<li>
+<p>(summary) Event to use if you want to dynamically draw things as the mouse/digitizer moves.
+Every time the mouse moves, DynamicDraw will be called once per viewport. The
+calls to DynamicDraw happen AFTER the call to MouseMove.</p>
+<p>If you are drawing anything that takes a long time, periodically call 
+InterruptMouseMove() to see if you should stop.</p>
+</li>
+<li>
+<p>(since) 5.0</p>
+</li>
+</ul>
+<h4 id="mousedown">MouseDown</h4>
+<ul>
+<li>(summary) Called during Get2dRectangle, Get2dLine, and GetPoint(..,true) when the mouse down event for
+the initial point occurs. This function is not called during ordinary point getting because
+the mouse down event terminates an ordinary point get and returns a GetResult.Point result.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="mousemove">MouseMove</h4>
+<ul>
+<li>(summary) Called every time the mouse moves. MouseMove is called once per mouse move and is called
+BEFORE any calls to OnDynamicDraw. If you are doing anything that takes a long time,
+periodically call InterruptMouseMove() to see if you should stop. If the view is such
+that the 2d screen point can&rsquo;t be mapped to a 3d point, the &lsquo;point&rsquo; argument will be Unset.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="postdrawobjects">PostDrawObjects</h4>
+<ul>
+<li>(summary) Same as the DisplayPipeline.PostDrawObjects, but only works during the 
+operation of the Get() function.
+NOTE: You must set FullFrameRedrawDuringGet to True in order for this
+event to be called.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="constructors">Constructors</h2>
+<h4 id="getpoint">GetPoint()</h4>
+<ul>
+<li>(summary) Create a new GetPoint.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="systemdrawingcolor-dynamicdrawcolor">System.Drawing.Color DynamicDrawColor</h4>
+<ul>
+<li>(summary) Color used by CRhinoGetPoint::DynamicDraw to draw the current point and
+the line from the base point to the current point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-fullframeredrawduringget">bool FullFrameRedrawDuringGet</h4>
+<ul>
+<li>(summary) In the &ldquo;RARE&rdquo; case that you need to draw some depth buffered geometry during
+a Get() operation, setting this value to True will force entire frames to be redrawn
+while the user moves the mouse. This allows DisplayPipeline events to be triggered
+as well as OnPostDrawObjects
+NOTE!! Setting this value to True comes with a significant performance penalty because the
+scene needs to be fully regenerated every frame where the standard
+DynamicDraw event draws temporary decorations (geometry) on top of a static scene.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinoapplicationsettingsosnapmodes-osnapeventtype">Rhino.ApplicationSettings.OsnapModes OsnapEventType</h4>
+<ul>
+<li>(summary) Gets the type of object snap used to obtain the point.</li>
+<li>(since) 6.24</li>
+</ul>
+<h4 id="object-tag">object Tag</h4>
+<ul>
+<li>(summary) Gets or sets an arbitrary object that can be attached to this  instance.
+Useful for passing some/ information that you may need in a DynamicDraw event since you can get at this Tag from
+the GetPointDrawEventArgs.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-addconstructionpointpoint3d-point">int AddConstructionPoint(Point3d point)</h4>
+<ul>
+<li>(summary) Adds a point to the list of construction points.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addconstructionpointspoint3d-points">int AddConstructionPoints(Point3d[] points)</h4>
+<ul>
+<li>(summary) Adds points to the list of construction points.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addsnappointpoint3d-point">int AddSnapPoint(Point3d point)</h4>
+<ul>
+<li>(summary) Adds a point to the list of osnap points.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addsnappointspoint3d-points">int AddSnapPoints(Point3d[] points)</h4>
+<ul>
+<li>(summary) Adds points to the list of osnap points.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-clearconstraints">void ClearConstraints()</h4>
+<ul>
+<li>(summary) Removes any explicit constraints added by calls to GetPoint::Constraint() and enable
+the built-in constraint options.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clearconstructionpoints">void ClearConstructionPoints()</h4>
+<ul>
+<li>(summary) Remove all construction points.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clearsnappoints">void ClearSnapPoints()</h4>
+<ul>
+<li>(summary) Remove all snap points.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-constrainarc-arc">bool Constrain(Arc arc)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on an arc.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainbrep-brepint-wiredensityint-faceindexbool-allowpickingpointoffobject">bool Constrain(Brep brep,int wireDensity,int faceIndex,bool allowPickingPointOffObject)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a brep.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constraincircle-circle">bool Constrain(Circle circle)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a circle.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constraincurve-curvebool-allowpickingpointoffobject">bool Constrain(Curve curve,bool allowPickingPointOffObject)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a curve.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constraincylinder-cylinder">bool Constrain(Cylinder cylinder)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a cylinder.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainline-line">bool Constrain(Line line)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a line.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainmesh-meshbool-allowpickingpointoffobject">bool Constrain(Mesh mesh,bool allowPickingPointOffObject)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainplane-planebool-allowelevator">bool Constrain(Plane plane,bool allowElevator)</h4>
+<ul>
+<li>(summary) constrain the picked point to lie on a plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainpoint3d-frompoint3d-to">bool Constrain(Point3d from,Point3d to)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a line.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainsphere-sphere">bool Constrain(Sphere sphere)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-constrainsurface-surfacebool-allowpickingpointoffobject">bool Constrain(Surface surface,bool allowPickingPointOffObject)</h4>
+<ul>
+<li>(summary) Constrains the picked point to lie on a surface.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-constraindistancefrombasepointdouble-distance">void ConstrainDistanceFromBasePoint(double distance)</h4>
+<ul>
+<li>(summary) Sets distance constraint from base point.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-constraintoconstructionplanebool-throughbasepoint">bool ConstrainToConstructionPlane(bool throughBasePoint)</h4>
+<ul>
+<li>(summary) If enabled, the picked point is constrained to be on the active construction plane.
+If the base point is set, then the point is constrained to be on the plane that contains
+the base point and is parallel to the active construction plane. By default this
+constraint is enabled.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-constraintotargetplane">void ConstrainToTargetPlane()</h4>
+<ul>
+<li>(summary) Constrains point to lie on a plane that is parallel to the
+viewing plane and passes through the view&rsquo;s target point.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-constraintovirtualcplaneintersectionplane-plane">bool ConstrainToVirtualCPlaneIntersection(Plane plane)</h4>
+<ul>
+<li>(summary) If enabled, the picked point is constrained to be on the 
+intersection of the plane and the virtual CPlane going through
+the plane origin.
+If the planes are parallel, the constraint works just like planar constraint.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-drawlinefrompointpoint3d-startpointbool-showdistanceinstatusbar">void DrawLineFromPoint(Point3d startPoint,bool showDistanceInStatusBar)</h4>
+<ul>
+<li>(summary) Use DrawLineFromPoint() if you want a dynamic line drawn from a point to the point being picked.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enablecurvesnaparrowbool-drawdirectionarrowatsnappointbool-reversearrow">void EnableCurveSnapArrow(bool drawDirectionArrowAtSnapPoint,bool reverseArrow)</h4>
+<ul>
+<li>(summary) Controls display of the curve snap arrow icon.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enablecurvesnapperpbarbool-drawperpbaratsnappointbool-drawendpoints">void EnableCurveSnapPerpBar(bool drawPerpBarAtSnapPoint,bool drawEndPoints)</h4>
+<ul>
+<li>(summary) Controls display of the curve snap perpendicular bar icon.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enablecurvesnaptangentbarbool-drawtangentbaratsnappointbool-drawendpoints">void EnableCurveSnapTangentBar(bool drawTangentBarAtSnapPoint,bool drawEndPoints)</h4>
+<ul>
+<li>(summary) Controls display of the curve snap tangent bar icon.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enabledrawlinefrompointbool-enable">void EnableDrawLineFromPoint(bool enable)</h4>
+<ul>
+<li>(summary) Controls drawing of dynamic a line from the start point.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enablenoredrawonexitbool-noredraw">void EnableNoRedrawOnExit(bool noRedraw)</h4>
+<ul>
+<li>(summary) The default functionality of the getpoint operation is to perform a redraw on exit.
+Calling this function with True turns off automatic redraw at the end of GetPoint.
+May be needed in some commands for flicker free feedback.
+When set to true, the caller is responsible for cleaning up the screen
+after GetPoint.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enableobjectsnapcursorsbool-enable">void EnableObjectSnapCursors(bool enable)</h4>
+<ul>
+<li>(summary) Enables or disables object snap cursors. By default, object snap cursors are enabled.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-enablesnaptocurvesbool-enable">void EnableSnapToCurves(bool enable)</h4>
+<ul>
+<li>(summary) If you want GetPoint() to try to snap to curves when the mouse is near a curve
+(like the center point in the Circle command when the AroundCurve option is on),
+then enable the snap to curves option.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="getresult-get">GetResult Get()</h4>
+<ul>
+<li>(summary) After setting up options and so on, call GetPoint::Get to get a 3d point. The
+point is retrieved when the mouse goes down.</li>
+<li>(since) 5.0</li>
+<li>(returns) GetResult This is some return comment</li>
+</ul>
+<h4 id="getresult-getbool-onmouseup">GetResult Get(bool onMouseUp)</h4>
+<ul>
+<li>(summary) After setting up options and so on, call this method to get a 3d point.</li>
+<li>(since) 5.0</li>
+<li>(returns) GetResult This is some return comment</li>
+</ul>
+<h4 id="getresult-getbool-onmouseupbool-get2dpoint">GetResult Get(bool onMouseUp,bool get2DPoint)</h4>
+<ul>
+<li>(summary) After setting up options and so on, call this method to get a 2d or 3d point.</li>
+<li>(since) 5.12</li>
+<li>(returns) GetResult This is some return comment</li>
+</ul>
+<h4 id="point3d-getconstructionpoints">Point3d[] GetConstructionPoints()</h4>
+<ul>
+<li>(summary) Gets current construction points.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="bool-getplanarconstraintrhinoviewport-vpplane-plane">bool GetPlanarConstraint(RhinoViewport vp,Plane plane)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="point3d-getsnappoints">Point3d[] GetSnapPoints()</h4>
+<ul>
+<li>(summary) Gets current snap points.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="bool-interruptmousemove">bool InterruptMouseMove()</h4>
+<ul>
+<li>(summary) If you have lengthy computations in OnMouseMove() and/or DymanicDraw()
+overrides, then periodically call InterruptMouseMove() to see if you
+should interrupt your work because the mouse has moved again.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-permitconstraintoptionsbool-permit">void PermitConstraintOptions(bool permit)</h4>
+<ul>
+<li>(summary) Control the availability of the built-in linear, planar, curve, and surface
+constraint options like &ldquo;Along&rdquo;, &ldquo;AlongPerp&rdquo;, &ldquo;AlongTan&rdquo;, &ldquo;AlongParallel&rdquo;,
+&ldquo;Between&rdquo;, &ldquo;OnCrv&rdquo;, &ldquo;OnSrf&rdquo;, &ldquo;.x&rdquo;, &ldquo;.y&rdquo;, &ldquo;.z&rdquo;, &ldquo;.xy&rdquo;, etc.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-permitelevatormodeint-permitmode">void PermitElevatorMode(int permitMode)</h4>
+<ul>
+<li>(summary) Permits the use of the control key to define a line constraint.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-permitfromoptionbool-permit">void PermitFromOption(bool permit)</h4>
+<ul>
+<li>(summary) Control the availability of the built-in &ldquo;From&rdquo; option. By default, the &ldquo;From&rdquo; option is enabled.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-permitobjectsnapbool-permit">void PermitObjectSnap(bool permit)</h4>
+<ul>
+<li>(summary) By default, object snaps like &ldquo;end&rdquo;, &ldquo;near&rdquo;, etc. are controled by the user.
+If you want to disable this ability, then call PermitObjectSnap(false).</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-permitorthosnapbool-permit">void PermitOrthoSnap(bool permit)</h4>
+<ul>
+<li>(summary) Controls availability of ortho snap. Default is true.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-permittabmodebool-permit">void PermitTabMode(bool permit)</h4>
+<ul>
+<li>(summary) Permits the use of the tab key to define a line constraint.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="brepface-pointonbrepdouble-udouble-v">BrepFace PointOnBrep(double u,double v)</h4>
+<ul>
+<li>(summary) Use to determine if point was on a Brep face. If the point was on a Brep face, 
+then the (u,v) are the face parameters for the point.</li>
+<li>(since) 6.0</li>
+<li>(returns) BrepFace This is some return comment</li>
+</ul>
+<h4 id="curve-pointoncurvedouble-t">Curve PointOnCurve(double t)</h4>
+<ul>
+<li>(summary) Use to determine is point was on a curve.</li>
+<li>(since) 5.0</li>
+<li>(returns) Curve This is some return comment</li>
+</ul>
+<h4 id="docobjectsobjref-pointonobject">DocObjects.ObjRef PointOnObject()</h4>
+<ul>
+<li>(summary) Call this function to see if the point was on an object. If the point was
+on an object an ObjRef is returned; otherwise None is returned.</li>
+<li>(since) 5.0</li>
+<li>(returns) DocObjects.ObjRef This is some return comment</li>
+</ul>
+<h4 id="surface-pointonsurfacedouble-udouble-v">Surface PointOnSurface(double u,double v)</h4>
+<ul>
+<li>(summary) Use to determine if point was on a surface. If the point was on a surface, 
+then the (u,v) are the surface parameters for the point. The point returned
+by Point() is the same as surface.PointAt(u,v).</li>
+<li>(since) 6.0</li>
+<li>(returns) Surface This is some return comment</li>
+</ul>
+<h4 id="void-setbasepointpoint3d-basepointbool-showdistanceinstatusbar">void SetBasePoint(Point3d basePoint,bool showDistanceInStatusBar)</h4>
+<ul>
+<li>(summary) Sets a base point used by ortho snap, from snap, planar snap, etc.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setcursorcursorstyle-cursor">void SetCursor(CursorStyle cursor)</h4>
+<ul>
+<li>(summary) Sets cursor that will be used when Get() is called and snap is not
+happening.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-trygetbasepointpoint3d-basepoint">bool TryGetBasePoint(Point3d basePoint)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GetPoint</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

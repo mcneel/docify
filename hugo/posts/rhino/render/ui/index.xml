@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.UI on Test API Site</title>
+    <link>http://example.org/posts/rhino/render/ui/</link>
+    <description>Recent content in Rhino.Render.UI on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/render/ui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UserInterfaceSection</title>
+      <link>http://example.org/posts/rhino/render/ui/userinterfacesection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/ui/userinterfacesection/</guid>
+      <description>Namespace: Rhino.Render.UI
+Custom user interface section manager
+public class UserInterfaceSectionProperties RenderContent RenderContent  (summary) The RenderContent object that created this user interface object. (since) 5.1  object Window  (summary) The user control associated with this user interface object. (since) 5.1  Methods static UserInterfaceSection FromWindow(object window)  (summary) Find the UserInterfaceSection that created the specified instance of a window. (since) 6.0 (returns) UserInterfaceSection This is some return comment  void Expand(bool expand)  (summary) Expand or collapse this content section.</description>
+    </item>
+    
+    <item>
+      <title>WorldMapDayNight</title>
+      <link>http://example.org/posts/rhino/render/ui/worldmapdaynight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/ui/worldmapdaynight/</guid>
+      <description>Namespace: Rhino.Render.UI
+public class WorldMapDayNightConstructors WorldMapDayNight()  (summary) (since) 6.0  Methods void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  bool HasMapForCurrentSettings()  (summary) (since) 6.0 (returns) bool This is some return comment  System.Drawing.Point LocationToMap(Point2d latlong)  (summary) (since) 6.0 (returns) System.Drawing.Point This is some return comment  void MakeMapBitmap()  (summary) (since) 6.0 (returns) void This is some return comment  System.</description>
+    </item>
+    
+  </channel>
+</rss>

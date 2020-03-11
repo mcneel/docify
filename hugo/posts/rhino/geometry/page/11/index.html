@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Geometry &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Geometry</h1>
+  <ul>
+<li><a href="angulardimension/">AngularDimension</a></li>
+<li><a href="annotationbase/">AnnotationBase</a></li>
+<li><a href="arc/">Arc</a></li>
+<li><a href="arccurve/">ArcCurve</a></li>
+<li><a href="areamassproperties/">AreaMassProperties</a></li>
+<li><a href="arrowhead/">Arrowhead</a></li>
+<li><a href="beziercurve/">BezierCurve</a></li>
+<li><a href="blendcontinuity/">BlendContinuity</a></li>
+<li><a href="blendtype/">BlendType</a></li>
+<li><a href="boundingbox/">BoundingBox</a></li>
+<li><a href="box/">Box</a></li>
+<li><a href="brep/">Brep</a></li>
+<li><a href="brepedge/">BrepEdge</a></li>
+<li><a href="brepface/">BrepFace</a></li>
+<li><a href="shrinkdisableside/">ShrinkDisableSide</a></li>
+<li><a href="breploop/">BrepLoop</a></li>
+<li><a href="breplooptype/">BrepLoopType</a></li>
+<li><a href="brepregion/">BrepRegion</a></li>
+<li><a href="brepregionfaceside/">BrepRegionFaceSide</a></li>
+<li><a href="brepsolidorientation/">BrepSolidOrientation</a></li>
+<li><a href="breptrim/">BrepTrim</a></li>
+<li><a href="breptrimtype/">BrepTrimType</a></li>
+<li><a href="brepvertex/">BrepVertex</a></li>
+<li><a href="centermark/">Centermark</a></li>
+<li><a href="circle/">Circle</a></li>
+<li><a href="clippingplanesurface/">ClippingPlaneSurface</a></li>
+<li><a href="componentindex/">ComponentIndex</a></li>
+<li><a href="componentindextype/">ComponentIndexType</a></li>
+<li><a href="componentstatus/">ComponentStatus</a></li>
+<li><a href="concavity/">Concavity</a></li>
+<li><a href="cone/">Cone</a></li>
+<li><a href="conicsectiontype/">ConicSectionType</a></li>
+<li><a href="continuity/">Continuity</a></li>
+<li><a href="controlpoint/">ControlPoint</a></li>
+<li><a href="curve/">Curve</a></li>
+<li><a href="curvebooleanregions/">CurveBooleanRegions</a></li>
+<li><a href="curveend/">CurveEnd</a></li>
+<li><a href="curveevaluationside/">CurveEvaluationSide</a></li>
+<li><a href="curveextensionstyle/">CurveExtensionStyle</a></li>
+<li><a href="curveknotstyle/">CurveKnotStyle</a></li>
+<li><a href="curveoffsetcornerstyle/">CurveOffsetCornerStyle</a></li>
+<li><a href="curveorientation/">CurveOrientation</a></li>
+<li><a href="curveproxy/">CurveProxy</a></li>
+<li><a href="curvesimplifyoptions/">CurveSimplifyOptions</a></li>
+<li><a href="cylinder/">Cylinder</a></li>
+<li><a href="detailview/">DetailView</a></li>
+<li><a href="developablesrf/">DevelopableSrf</a></li>
+<li><a href="dimension/">Dimension</a></li>
+<li><a href="distancingmode/">DistancingMode</a></li>
+<li><a href="edgeadjacency/">EdgeAdjacency</a></li>
+<li><a href="ellipse/">Ellipse</a></li>
+<li><a href="extrudecornertype/">ExtrudeCornerType</a></li>
+<li><a href="extrusion/">Extrusion</a></li>
+<li><a href="geometrybase/">GeometryBase</a></li>
+<li><a href="hatch/">Hatch</a></li>
+<li><a href="hermitesurface/">HermiteSurface</a></li>
+<li><a href="hiddenlinedrawing/">HiddenLineDrawing</a></li>
+<li><a href="hiddenlinedrawingobject/">HiddenLineDrawingObject</a></li>
+<li><a href="hiddenlinedrawingobjectcurve/">HiddenLineDrawingObjectCurve</a></li>
+<li><a href="hiddenlinedrawingparameters/">HiddenLineDrawingParameters</a></li>
+<li><a href="hiddenlinedrawingpoint/">HiddenLineDrawingPoint</a></li>
+<li><a href="visibility/">Visibility</a></li>
+<li><a href="hiddenlinedrawingsegment/">HiddenLineDrawingSegment</a></li>
+<li><a href="sidefill/">SideFill</a></li>
+<li><a href="visibility/">Visibility</a></li>
+<li><a href="instancedefinitiongeometry/">InstanceDefinitionGeometry</a></li>
+<li><a href="instancereferencegeometry/">InstanceReferenceGeometry</a></li>
+<li><a href="interpolator/">Interpolator</a></li>
+<li><a href="interval/">Interval</a></li>
+<li><a href="invaliddimensionstyleidexception/">InvalidDimensionStyleIdException</a></li>
+<li><a href="isostatus/">IsoStatus</a></li>
+<li><a href="leader/">Leader</a></li>
+<li><a href="light/">Light</a></li>
+<li><a href="attenuation/">Attenuation</a></li>
+<li><a href="lightstyle/">LightStyle</a></li>
+<li><a href="line/">Line</a></li>
+<li><a href="lineardimension/">LinearDimension</a></li>
+<li><a href="linecurve/">LineCurve</a></li>
+<li><a href="lofttype/">LoftType</a></li>
+<li><a href="matrix/">Matrix</a></li>
+<li><a href="mesh/">Mesh</a></li>
+<li><a href="meshcheckparameters/">MeshCheckParameters</a></li>
+<li><a href="meshdisplacementinfo/">MeshDisplacementInfo</a></li>
+<li><a href="meshextruder/">MeshExtruder</a></li>
+<li><a href="meshface/">MeshFace</a></li>
+<li><a href="meshingparameters/">MeshingParameters</a></li>
+<li><a href="meshingparameterstyle/">MeshingParameterStyle</a></li>
+<li><a href="meshingparametertexturerange/">MeshingParameterTextureRange</a></li>
+<li><a href="meshngon/">MeshNgon</a></li>
+<li><a href="meshpart/">MeshPart</a></li>
+<li><a href="meshpoint/">MeshPoint</a></li>
+<li><a href="meshthicknessmeasurement/">MeshThicknessMeasurement</a></li>
+<li><a href="meshtype/">MeshType</a></li>
+<li><a href="meshunsafelock/">MeshUnsafeLock</a></li>
+<li><a href="morphcontrol/">MorphControl</a></li>
+<li><a href="nurbscurve/">NurbsCurve</a></li>
+<li><a href="nurbscurveendconditiontype/">NurbsCurveEndConditionType</a></li>
+<li><a href="nurbssurface/">NurbsSurface</a></li>
+<li><a href="ordinatedimension/">OrdinateDimension</a></li>
+<li><a href="particle/">Particle</a></li>
+<li><a href="particlesystem/">ParticleSystem</a></li>
+<li><a href="pipecapmode/">PipeCapMode</a></li>
+<li><a href="plane/">Plane</a></li>
+<li><a href="planefitresult/">PlaneFitResult</a></li>
+<li><a href="planesurface/">PlaneSurface</a></li>
+<li><a href="point/">Point</a></li>
+<li><a href="point2d/">Point2d</a></li>
+<li><a href="point2f/">Point2f</a></li>
+<li><a href="point3d/">Point3d</a></li>
+<li><a href="point3dgrid/">Point3dGrid</a></li>
+<li><a href="point3f/">Point3f</a></li>
+<li><a href="point4d/">Point4d</a></li>
+<li><a href="pointcloud/">PointCloud</a></li>
+<li><a href="pointclouditem/">PointCloudItem</a></li>
+<li><a href="pointcontainment/">PointContainment</a></li>
+<li><a href="pointfacerelation/">PointFaceRelation</a></li>
+<li><a href="polycurve/">PolyCurve</a></li>
+<li><a href="polyline/">Polyline</a></li>
+<li><a href="polylinecurve/">PolylineCurve</a></li>
+<li><a href="quadremeshparameters/">QuadRemeshParameters</a></li>
+<li><a href="quadremeshsymmetryaxis/">QuadRemeshSymmetryAxis</a></li>
+<li><a href="quaternion/">Quaternion</a></li>
+<li><a href="radialdimension/">RadialDimension</a></li>
+<li><a href="railtype/">RailType</a></li>
+<li><a href="ray3d/">Ray3d</a></li>
+<li><a href="rectangle3d/">Rectangle3d</a></li>
+<li><a href="reducemeshparameters/">ReduceMeshParameters</a></li>
+<li><a href="regioncontainment/">RegionContainment</a></li>
+<li><a href="revsurface/">RevSurface</a></li>
+<li><a href="rtree/">RTree</a></li>
+<li><a href="rtreeeventargs/">RTreeEventArgs</a></li>
+<li><a href="shutliningcurveinfo/">ShutLiningCurveInfo</a></li>
+<li><a href="silhouette/">Silhouette</a></li>
+<li><a href="silhouettetype/">SilhouetteType</a></li>
+<li><a href="smoothingcoordinatesystem/">SmoothingCoordinateSystem</a></li>
+<li><a href="spacemorph/">SpaceMorph</a></li>
+<li><a href="sphere/">Sphere</a></li>
+<li><a href="subd/">SubD</a></li>
+<li><a href="subdcomponent/">SubDComponent</a></li>
+<li><a href="subdcreationoptions/">SubDCreationOptions</a></li>
+<li><a href="subdedge/">SubDEdge</a></li>
+<li><a href="subdface/">SubDFace</a></li>
+<li><a href="subdvertex/">SubDVertex</a></li>
+<li><a href="sumsurface/">SumSurface</a></li>
+<li><a href="surface/">Surface</a></li>
+<li><a href="surfacecurvature/">SurfaceCurvature</a></li>
+<li><a href="surfaceproxy/">SurfaceProxy</a></li>
+<li><a href="sweeponerail/">SweepOneRail</a></li>
+<li><a href="sweeprebuild/">SweepRebuild</a></li>
+<li><a href="sweeptworail/">SweepTwoRail</a></li>
+<li><a href="textdot/">TextDot</a></li>
+<li><a href="textentity/">TextEntity</a></li>
+<li><a href="textjustification/">TextJustification</a></li>
+<li><a href="textruntype/">TextRunType</a></li>
+<li><a href="torus/">Torus</a></li>
+<li><a href="transform/">Transform</a></li>
+<li><a href="transformrigidtype/">TransformRigidType</a></li>
+<li><a href="transformsimilaritytype/">TransformSimilarityType</a></li>
+<li><a href="unroller/">Unroller</a></li>
+<li><a href="vector2d/">Vector2d</a></li>
+<li><a href="vector2f/">Vector2f</a></li>
+<li><a href="vector3d/">Vector3d</a></li>
+<li><a href="vector3f/">Vector3f</a></li>
+<li><a href="volumemassproperties/">VolumeMassProperties</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/subdedge/">
+        <div class="h2 mt-1 mb-1">SubDEdge</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Single edge of a SubD
+public class SubDEdgeProperties Line ControlNetLine  (summary) Line representing the control net end points (since) 7.0  int FaceCount  (summary) Number of faces for this edge (since) 7.0  SubDEdgeTag Tag  (summary) identifies the type of subdivision edge (since) 7.0  SubDVertex VertexFrom  (summary) Start vertex for this edge (since) 7.0  SubDVertex VertexTo  (summary) End vertex for this edge (since) 7.
+    <a class="muted-link" href="/posts/rhino/geometry/subdedge/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/subdface/">
+        <div class="h2 mt-1 mb-1">SubDFace</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Single face of a SubD
+public class SubDFaceProperties int EdgeCount  (summary) Number of edges for this face. Note that EdgeCount is always the same as VertexCount. Two properties are provided simply for clarity. (since) 7.0  Point3d LimitSurfaceCenterPoint  (summary) Get the limit surface point location at the center of the face (since) 7.0  int VertexCount  (summary) Number of vertices for this face. Note that EdgeCount is always the same as VertexCount.
+    <a class="muted-link" href="/posts/rhino/geometry/subdface/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/subdvertex/">
+        <div class="h2 mt-1 mb-1">SubDVertex</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Single vertex of a SubD
+public class SubDVertexProperties Point3d ControlNetPoint  (summary) Location of the &ldquo;control net&rdquo; point that this SubDVertex represents (since) 7.0  int EdgeCount  (summary) Number of edges for this vertex (since) 7.0  IEnumerableEdges  (summary) All edges that this vertex is part of (since) 7.0  int FaceCount  (summary) Number of faces for this vertex (since) 7.0  SubDVertex Next  (summary) Next vertex in linked list of vertices on this level (since) 7.
+    <a class="muted-link" href="/posts/rhino/geometry/subdvertex/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/sumsurface/">
+        <div class="h2 mt-1 mb-1">SumSurface</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a sum surface, or an extrusion of a curve along a curved path.
+public class SumSurfaceMethods static SumSurface Create(Curve curveA,Curve curveB)  (summary) Constructs a new sum surface by extruding a curve A along a path B. (since) 5.0 (returns) SumSurface This is some return comment  
+    <a class="muted-link" href="/posts/rhino/geometry/sumsurface/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/surface/">
+        <div class="h2 mt-1 mb-1">Surface</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a base class that is common to most RhinoCommon surface types. A surface represents an entity that can be all visited by providing two independent parameters, usually called (u, v), or sometimes (s, t).
+public class SurfaceProperties bool IsSolid  (summary) Gets a values indicating whether a surface is solid. (since) 5.0  Methods static Surface CreateExtrusion(Curve profile,Vector3d direction)  (summary) Constructs a surface by extruding a curve along a vector.
+    <a class="muted-link" href="/posts/rhino/geometry/surface/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/surfacecurvature/">
+        <div class="h2 mt-1 mb-1">SurfaceCurvature</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Maintains computed information for surface curvature evaluation.
+public class SurfaceCurvatureProperties double Gaussian  (summary) Gets the Gaussian curvature value at UV. (since) 5.0  double Mean  (summary) Gets the Mean curvature value at UV. (since) 5.0  Vector3d Normal  (summary) Gets the surface normal at UV. (since) 5.0  Point3d Point  (summary) Gets the surface point at UV. (since) 5.0  Point2d UVPoint  (summary) Gets the UV location where the curvature was computed.
+    <a class="muted-link" href="/posts/rhino/geometry/surfacecurvature/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/sweeponerail/">
+        <div class="h2 mt-1 mb-1">SweepOneRail</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Utility class for generating Breps by sweeping cross section curves over a single rail curve. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
+public class SweepOneRailConstructors SweepOneRail()  (summary) (since) 5.0  Properties double AngleToleranceRadians  (summary) (since) 5.0  bool ClosedSweep  (summary) If the input rail is closed, ClosedSweep determines if the swept breps will also be closed. (since) 5.0  bool GlobalShapeBlending  (summary) If true, the sweep is linearly blended from one end to the other, creating sweeps that taper from one cross-section curve to the other.
+    <a class="muted-link" href="/posts/rhino/geometry/sweeponerail/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/sweeptworail/">
+        <div class="h2 mt-1 mb-1">SweepTwoRail</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Utility class for generating Breps by sweeping cross section curves over two rail curves. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
+public class SweepTwoRailConstructors SweepTwoRail()  (summary) (since) 5.0  Properties double AngleToleranceRadians  (summary) Gets or sets the angle tolerance in radians. (since) 5.0  bool ClosedSweep  (summary) If the input rails are closed, ClosedSweep determines if the swept Breps will also be closed.
+    <a class="muted-link" href="/posts/rhino/geometry/sweeptworail/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/textdot/">
+        <div class="h2 mt-1 mb-1">TextDot</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a text dot, or an annotation entity with text that always faces the camera and always has the same size. This class refers to the geometric element that is independent from the document.
+public class TextDotConstructors TextDot(string text,Point3d location)  (summary) Initializes a new textdot based on the text and the location. (since) 5.0  Properties string FontFace  (summary) Font face used for displaying the dot (since) 5.
+    <a class="muted-link" href="/posts/rhino/geometry/textdot/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/textentity/">
+        <div class="h2 mt-1 mb-1">TextEntity</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+public class TextEntityConstructors TextEntity()  (summary) Initializes a new instance of the class. (since) 5.0  Properties TextJustification Justification  (summary) Gets or sets the justification of text in relation to its base point. (since) 5.0  TextHorizontalAlignment TextHorizontalAlignment  (summary) (since) 6.0  TextOrientation TextOrientation  (summary) (since) 6.0  TextVerticalAlignment TextVerticalAlignment  (summary) (since) 6.0  Methods static TextEntity Create(string text,Plane plane,DimensionStyle style,bool wrapped,double rectWidth,double rotationRadians)  (summary) Create Text geometry or None if input is invalid (since) 6.
+    <a class="muted-link" href="/posts/rhino/geometry/textentity/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/geometry/page/10/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/10/">10</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">11</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/12/">12</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/geometry/page/12/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

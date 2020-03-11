@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MaterialTable &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class MaterialTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int CurrentMaterialIndex  (summary) At all times, there is a &amp;ldquo;current&amp;rdquo; material. Unless otherwise specified, new objects are assigned to the current material. The current material is never locked, hidden, or deleted. (since) 5.0  ObjectMaterialSource CurrentMaterialSource  (summary) Gets or sets the current material source. (since) 5.0  Methods int Add()  (summary) Adds a new material to the table based on the default material.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MaterialTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaterialTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="modelcomponenttype-componenttype">ModelComponentType ComponentType</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-currentmaterialindex">int CurrentMaterialIndex</h4>
+<ul>
+<li>(summary) At all times, there is a &ldquo;current&rdquo; material.  Unless otherwise
+specified, new objects are assigned to the current material.
+The current material is never locked, hidden, or deleted.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="objectmaterialsource-currentmaterialsource">ObjectMaterialSource CurrentMaterialSource</h4>
+<ul>
+<li>(summary) Gets or sets the current material source.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-add">int Add()</h4>
+<ul>
+<li>(summary) Adds a new material to the table based on the default material.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addmaterial-material">int Add(Material material)</h4>
+<ul>
+<li>(summary) Adds a new material to the table based on a given material.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addmaterial-materialbool-reference">int Add(Material material,bool reference)</h4>
+<ul>
+<li>(summary) Adds a new material to the table based on a given material.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-deletematerial-item">bool Delete(Material item)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-deleteatint-materialindex">bool DeleteAt(int materialIndex)</h4>
+<ul>
+<li>(summary) Removes a material at a specific position from this material table.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-findguid-materialidbool-ignoredeletedmaterials">int Find(Guid materialId,bool ignoreDeletedMaterials)</h4>
+<ul>
+<li>(summary) Finds a material with a matching id.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-findstring-materialnamebool-ignoredeletedmaterials">int Find(string materialName,bool ignoreDeletedMaterials)</h4>
+<ul>
+<li>(summary) Finds a meterial with a given name.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="material-findindexint-index">Material FindIndex(int index)</h4>
+<ul>
+<li>(summary) Retrieves a Material object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</li>
+<li>(since) 6.0</li>
+<li>(returns) Material This is some return comment</li>
+</ul>
+<h4 id="bool-modifymaterial-newsettingsint-materialindexbool-quiet">bool Modify(Material newSettings,int materialIndex,bool quiet)</h4>
+<ul>
+<li>(summary) Modify material settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-resetmaterialint-materialindex">bool ResetMaterial(int materialIndex)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MaterialTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

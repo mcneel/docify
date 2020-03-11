@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Extrusion &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents an extrusion, or objects such as beams or linearly extruded elements, that can be represented by profile curves and two miter planes at the extremes.
+public class ExtrusionConstructors Extrusion()  (summary) Initializes a new instance of the class. (since) 5.0  Properties int CapCount  (summary) Gets the amount of capping surfaces. (since) 5.0  bool IsCappedAtBottom  (summary) Gets a value indicating whether the surface that fills the bottom profile is existing.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Extrusion</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents an extrusion, or objects such as beams or linearly extruded elements,
+that can be represented by profile curves and two miter planes at the extremes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Extrusion</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="extrusion">Extrusion()</h4>
+<ul>
+<li>(summary) Initializes a new instance of the  class.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="int-capcount">int CapCount</h4>
+<ul>
+<li>(summary) Gets the amount of capping surfaces.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-iscappedatbottom">bool IsCappedAtBottom</h4>
+<ul>
+<li>(summary) Gets a value indicating whether the surface that fills the bottom profile is existing.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-iscappedattop">bool IsCappedAtTop</h4>
+<ul>
+<li>(summary) Gets a value indicating whether the surface that fills the top profile is existing.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-ismiteredatend">bool IsMiteredAtEnd</h4>
+<ul>
+<li>(summary) Gets a value indicating whether a miter plane at the end is defined.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-ismiteredatstart">bool IsMiteredAtStart</h4>
+<ul>
+<li>(summary) Returns a value indicating whether a miter plane at start is defined.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-issolid">bool IsSolid</h4>
+<ul>
+<li>(summary) Gets a value indicating whether there is no gap among all surfaces constructing this object.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-miterplanenormalatend">Vector3d MiterPlaneNormalAtEnd</h4>
+<ul>
+<li>(summary) Gets or sets the normal of the miter plane at the end in profile coordinates.
+In profile coordinates, 0,0,1 always maps to the extrusion axis</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-miterplanenormalatstart">Vector3d MiterPlaneNormalAtStart</h4>
+<ul>
+<li>(summary) Gets or sets the normal of the miter plane at the start in profile coordinates.
+In profile coordinates, 0,0,1 always maps to the extrusion axis</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-pathend">Point3d PathEnd</h4>
+<ul>
+<li>(summary) Gets the end point of the path.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-pathstart">Point3d PathStart</h4>
+<ul>
+<li>(summary) Gets the start point of the path.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-pathtangent">Vector3d PathTangent</h4>
+<ul>
+<li>(summary) Gets the up vector of the path.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-profilecount">int ProfileCount</h4>
+<ul>
+<li>(summary) Gets the amount of profile curves.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-extrusion-createcurve-planarcurvedouble-heightbool-cap">static Extrusion Create(Curve planarCurve,double height,bool cap)</h4>
+<ul>
+<li>(summary) Creates an extrusion of a 3d curve (which must be planar) and a height.</li>
+<li>(since) 5.1</li>
+<li>(returns) Extrusion This is some return comment</li>
+</ul>
+<h4 id="static-extrusion-createboxextrusionbox-boxbool-cap">static Extrusion CreateBoxExtrusion(Box box,bool cap)</h4>
+<ul>
+<li>(summary) Gets an extrusion from a box.</li>
+<li>(since) 6.0</li>
+<li>(returns) Extrusion This is some return comment</li>
+</ul>
+<h4 id="static-extrusion-createcylinderextrusioncylinder-cylinderbool-capbottombool-captop">static Extrusion CreateCylinderExtrusion(Cylinder cylinder,bool capBottom,bool capTop)</h4>
+<ul>
+<li>(summary) Gets an extrusion form of a cylinder.</li>
+<li>(since) 5.0</li>
+<li>(returns) Extrusion This is some return comment</li>
+</ul>
+<h4 id="static-extrusion-createpipeextrusioncylinder-cylinderdouble-otherradiusbool-captopbool-capbottom">static Extrusion CreatePipeExtrusion(Cylinder cylinder,double otherRadius,bool capTop,bool capBottom)</h4>
+<ul>
+<li>(summary) Gets an extrusion form of a pipe.</li>
+<li>(since) 5.0</li>
+<li>(returns) Extrusion This is some return comment</li>
+</ul>
+<h4 id="bool-addinnerprofilecurve-innerprofile">bool AddInnerProfile(Curve innerProfile)</h4>
+<ul>
+<li>(summary) Adds an inner profile.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="mesh-getmeshmeshtype-meshtype">Mesh GetMesh(MeshType meshType)</h4>
+<ul>
+<li>(summary) Obtains a reference to a specified type of mesh for this extrusion.</li>
+<li>(since) 5.6</li>
+<li>(returns) Mesh This is some return comment</li>
+</ul>
+<h4 id="plane-getpathplanedouble-s">Plane GetPathPlane(double s)</h4>
+<ul>
+<li>(summary) Gets the 3D plane perpendicular to the path at a normalized path parameter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Plane This is some return comment</li>
+</ul>
+<h4 id="plane-getprofileplanedouble-s">Plane GetProfilePlane(double s)</h4>
+<ul>
+<li>(summary) Gets the 3D plane containing the profile curve at a normalized path parameter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Plane This is some return comment</li>
+</ul>
+<h4 id="transform-getprofiletransformationdouble-s">Transform GetProfileTransformation(double s)</h4>
+<ul>
+<li>(summary) Gets the transformation that maps the xy profile curve to its 3d location.</li>
+<li>(since) 5.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="curve-getwireframe">Curve[] GetWireframe()</h4>
+<ul>
+<li>(summary) Constructs all the Wireframe curves for this Extrusion.</li>
+<li>(since) 5.6</li>
+<li>(returns) Curve[] This is some return comment</li>
+</ul>
+<h4 id="linecurve-pathlinecurve">LineCurve PathLineCurve()</h4>
+<ul>
+<li>(summary) Gets the line-like curve that is the conceptual axis of the extrusion.</li>
+<li>(since) 5.0</li>
+<li>(returns) LineCurve This is some return comment</li>
+</ul>
+<h4 id="curve-profile3dcomponentindex-ci">Curve Profile3d(ComponentIndex ci)</h4>
+<ul>
+<li>(summary) Gets one of the profiles.</li>
+<li>(since) 5.0</li>
+<li>(returns) Curve This is some return comment</li>
+</ul>
+<h4 id="curve-profile3dint-profileindexdouble-s">Curve Profile3d(int profileIndex,double s)</h4>
+<ul>
+<li>(summary) Gets a transversal isocurve of the extruded profile.</li>
+<li>(since) 5.0</li>
+<li>(returns) Curve This is some return comment</li>
+</ul>
+<h4 id="int-profileindexdouble-profileparameter">int ProfileIndex(double profileParameter)</h4>
+<ul>
+<li>(summary) Gets the index of the profile curve at a domain related to a parameter.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-setouterprofilecurve-outerprofilebool-cap">bool SetOuterProfile(Curve outerProfile,bool cap)</h4>
+<ul>
+<li>(summary) Sets the outer profile of the extrusion.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setpathanduppoint3d-apoint3d-bvector3d-up">bool SetPathAndUp(Point3d a,Point3d b,Vector3d up)</h4>
+<ul>
+<li>(summary) Allows to set the two points at the extremes and the up vector.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="brep-tobrepbool-splitkinkyfaces">Brep ToBrep(bool splitKinkyFaces)</h4>
+<ul>
+<li>(summary) Constructs a brep form of the extrusion. The outer profile is always the first face of the brep.
+If there are inner profiles, additional brep faces are created for each profile. If the
+outer profile is closed, then end caps are added as the last two faces of the brep.</li>
+<li>(since) 5.0</li>
+<li>(returns) Brep This is some return comment</li>
+</ul>
+<h4 id="curve-walledgecomponentindex-ci">Curve WallEdge(ComponentIndex ci)</h4>
+<ul>
+<li>(summary) Gets one of the longitudinal curves along the beam or extrusion.</li>
+<li>(since) 5.0</li>
+<li>(returns) Curve This is some return comment</li>
+</ul>
+<h4 id="surface-wallsurfacecomponentindex-ci">Surface WallSurface(ComponentIndex ci)</h4>
+<ul>
+<li>(summary) Gets one of the longitudinal surfaces of the extrusion.</li>
+<li>(since) 5.0</li>
+<li>(returns) Surface This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Extrusion</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

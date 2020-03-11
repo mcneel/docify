@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Render &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Render</h1>
+  <ul>
+<li><a href="asyncrendercontext/">AsyncRenderContext</a></li>
+<li><a href="cachedtexturecoordinates/">CachedTextureCoordinates</a></li>
+<li><a href="city/">City</a></li>
+<li><a href="contentcollectioniterator/">ContentCollectionIterator</a></li>
+<li><a href="contentundoblocker/">ContentUndoBlocker</a></li>
+<li><a href="contentundohelper/">ContentUndoHelper</a></li>
+<li><a href="contentuuids/">ContentUuids</a></li>
+<li><a href="convertibleextensions/">ConvertibleExtensions</a></li>
+<li><a href="crcrenderhashflags/">CrcRenderHashFlags</a></li>
+<li><a href="createprevieweventargs/">CreatePreviewEventArgs</a></li>
+<li><a href="sceneobject/">SceneObject</a></li>
+<li><a href="createpreviewreason/">CreatePreviewReason</a></li>
+<li><a href="createtexture2dprevieweventargs/">CreateTexture2dPreviewEventArgs</a></li>
+<li><a href="customevent/">CustomEvent</a></li>
+<li><a href="customrendercontentattribute/">CustomRenderContentAttribute</a></li>
+<li><a href="customrendermeshprovider/">CustomRenderMeshProvider</a></li>
+<li><a href="customrendermeshprovider2/">CustomRenderMeshProvider2</a></li>
+<li><a href="decal/">Decal</a></li>
+<li><a href="decalcreateparams/">DecalCreateParams</a></li>
+<li><a href="decalmapping/">DecalMapping</a></li>
+<li><a href="decalprojection/">DecalProjection</a></li>
+<li><a href="decals/">Decals</a></li>
+<li><a href="dithering/">Dithering</a></li>
+<li><a href="documentorfreefloatingbase/">DocumentOrFreeFloatingBase</a></li>
+<li><a href="dynamiciconusage/">DynamicIconUsage</a></li>
+<li><a href="filtercontentbyusage/">FilterContentByUsage</a></li>
+<li><a href="freefloatingbase/">FreeFloatingBase</a></li>
+<li><a href="groundplane/">GroundPlane</a></li>
+<li><a href="icurrentenvironment/">ICurrentEnvironment</a></li>
+<li><a href="icurrentenvironment_get/">ICurrentEnvironment_Get</a></li>
+<li><a href="imagefile/">ImageFile</a></li>
+<li><a href="imagefileevent/">ImageFileEvent</a></li>
+<li><a href="imagefileeventargs/">ImageFileEventArgs</a></li>
+<li><a href="irhrdkpreviewsceneserver_erotationtype/">IRhRdkPreviewSceneServer_eRotationType</a></li>
+<li><a href="it_strategy/">it_strategy</a></li>
+<li><a href="lightarray/">LightArray</a></li>
+<li><a href="lightmanagersupport/">LightManagerSupport</a></li>
+<li><a href="lightmanagersupportclient/">LightManagerSupportClient</a></li>
+<li><a href="lightmangersupportcustomevent/">LightMangerSupportCustomEvent</a></li>
+<li><a href="linearworkflow/">LinearWorkflow</a></li>
+<li><a href="mappingtag/">MappingTag</a></li>
+<li><a href="metadataproxy/">MetaDataProxy</a></li>
+<li><a href="namedvalue/">NamedValue</a></li>
+<li><a href="physicallybasedmaterial/">PhysicallyBasedMaterial</a></li>
+<li><a href="brdfs/">BRDFs</a></li>
+<li><a href="parametersnames/">ParametersNames</a></li>
+<li><a href="pixelbuffer/">PixelBuffer</a></li>
+<li><a href="previewappearance/">PreviewAppearance</a></li>
+<li><a href="previewbackground/">PreviewBackground</a></li>
+<li><a href="previewgeometry/">PreviewGeometry</a></li>
+<li><a href="previewlighting/">PreviewLighting</a></li>
+<li><a href="previewscenequality/">PreviewSceneQuality</a></li>
+<li><a href="previewsceneserver/">PreviewSceneServer</a></li>
+<li><a href="proxytypes/">ProxyTypes</a></li>
+<li><a href="rdkundo/">RdkUndo</a></li>
+<li><a href="rdkundorecord/">RdkUndoRecord</a></li>
+<li><a href="realtimedisplaymode/">RealtimeDisplayMode</a></li>
+<li><a href="displaypipelinesettingschangedeventargs/">DisplayPipelineSettingsChangedEventArgs</a></li>
+<li><a href="drawmiddlegroundeventargs/">DrawMiddlegroundEventArgs</a></li>
+<li><a href="hudmaxpasseschangedeventargs/">HudMaxPassesChangedEventArgs</a></li>
+<li><a href="initframebuffereventargs/">InitFramebufferEventArgs</a></li>
+<li><a href="realtimedisplaymodeclassinfo/">RealtimeDisplayModeClassInfo</a></li>
+<li><a href="rendercontent/">RenderContent</a></li>
+<li><a href="changecontexts/">ChangeContexts</a></li>
+<li><a href="extrarequirementssetcontexts/">ExtraRequirementsSetContexts</a></li>
+<li><a href="matchdataresult/">MatchDataResult</a></li>
+<li><a href="showcontentchooserflags/">ShowContentChooserFlags</a></li>
+<li><a href="rendercontentchangedeventargs/">RenderContentChangedEventArgs</a></li>
+<li><a href="rendercontentchangereason/">RenderContentChangeReason</a></li>
+<li><a href="rendercontentcollection/">RenderContentCollection</a></li>
+<li><a href="rendercontenteventargs/">RenderContentEventArgs</a></li>
+<li><a href="rendercontentfieldchangedeventargs/">RenderContentFieldChangedEventArgs</a></li>
+<li><a href="rendercontentkind/">RenderContentKind</a></li>
+<li><a href="rendercontentkindlist/">RenderContentKindList</a></li>
+<li><a href="rendercontentmanager/">RenderContentManager</a></li>
+<li><a href="rendercontentserializer/">RenderContentSerializer</a></li>
+<li><a href="rendercontentstyles/">RenderContentStyles</a></li>
+<li><a href="rendercontenttableeventargs/">RenderContentTableEventArgs</a></li>
+<li><a href="rendercontenttype/">RenderContentType</a></li>
+<li><a href="rendercustomeventargs/">RenderCustomEventArgs</a></li>
+<li><a href="renderendeventargs/">RenderEndEventArgs</a></li>
+<li><a href="renderenvironment/">RenderEnvironment</a></li>
+<li><a href="usage/">Usage</a></li>
+<li><a href="renderenvironmenttable/">RenderEnvironmentTable</a></li>
+<li><a href="commandfilters/">CommandFilters</a></li>
+<li><a href="statustexts/">StatusTexts</a></li>
+<li><a href="menucategories/">MenuCategories</a></li>
+<li><a href="states/">States</a></li>
+<li><a href="histogramflags/">HistogramFlags</a></li>
+<li><a href="histogramtype/">HistogramType</a></li>
+<li><a href="states/">States</a></li>
+<li><a href="disposition/">Disposition</a></li>
+<li><a href="rendermaterial/">RenderMaterial</a></li>
+<li><a href="basicmaterialparameternames/">BasicMaterialParameterNames</a></li>
+<li><a href="physicallybased/">PhysicallyBased</a></li>
+<li><a href="childslotnames/">ChildSlotNames</a></li>
+<li><a href="parametersnames/">ParametersNames</a></li>
+<li><a href="previewbackgroundtype/">PreviewBackgroundType</a></li>
+<li><a href="previewgeometrytype/">PreviewGeometryType</a></li>
+<li><a href="standardchildslots/">StandardChildSlots</a></li>
+<li><a href="rendermaterialtable/">RenderMaterialTable</a></li>
+<li><a href="renderpanels/">RenderPanels</a></li>
+<li><a href="renderpaneltype/">RenderPanelType</a></li>
+<li><a href="renderpipeline/">RenderPipeline</a></li>
+<li><a href="renderreturncode/">RenderReturnCode</a></li>
+<li><a href="renderplugininfo/">RenderPlugInInfo</a></li>
+<li><a href="renderpluginlist/">RenderPlugInList</a></li>
+<li><a href="renderprimitive/">RenderPrimitive</a></li>
+<li><a href="renderprimitivelist/">RenderPrimitiveList</a></li>
+<li><a href="renderprimitivetype/">RenderPrimitiveType</a></li>
+<li><a href="renderpropertychangedevent/">RenderPropertyChangedEvent</a></li>
+<li><a href="rendersettings/">RenderSettings</a></li>
+<li><a href="renderingsources/">RenderingSources</a></li>
+<li><a href="rendersourceview/">RenderSourceView</a></li>
+<li><a href="rendertabs/">RenderTabs</a></li>
+<li><a href="rendertexture/">RenderTexture</a></li>
+<li><a href="elocalmappingtype/">eLocalMappingType</a></li>
+<li><a href="textureevaluatorflags/">TextureEvaluatorFlags</a></li>
+<li><a href="texturegeneration/">TextureGeneration</a></li>
+<li><a href="rendertexturetable/">RenderTextureTable</a></li>
+<li><a href="renderwindow/">RenderWindow</a></li>
+<li><a href="channel/">Channel</a></li>
+<li><a href="imageadjust/">ImageAdjust</a></li>
+<li><a href="rendersuccesscode/">RenderSuccessCode</a></li>
+<li><a href="standardchannels/">StandardChannels</a></li>
+<li><a href="renderwindowclonedeventargs/">RenderWindowClonedEventArgs</a></li>
+<li><a href="sceneserverdata/">SceneServerData</a></li>
+<li><a href="sceneserverdatausage/">SceneServerDataUsage</a></li>
+<li><a href="simulatedenvironment/">SimulatedEnvironment</a></li>
+<li><a href="backgroundprojections/">BackgroundProjections</a></li>
+<li><a href="simulatedtexture/">SimulatedTexture</a></li>
+<li><a href="environmentmappingmodes/">EnvironmentMappingModes</a></li>
+<li><a href="projectionmodes/">ProjectionModes</a></li>
+<li><a href="skylight/">Skylight</a></li>
+<li><a href="sun/">Sun</a></li>
+<li><a href="supportoptions/">SupportOptions</a></li>
+<li><a href="rdkinitiallocation/">RdkInitialLocation</a></li>
+<li><a href="rdktexturesize/">RdkTextureSize</a></li>
+<li><a href="texturedcolor/">TexturedColor</a></li>
+<li><a href="texturedfloat/">TexturedFloat</a></li>
+<li><a href="texturedvalue/">TexturedValue</a></li>
+<li><a href="textureenvironmentmappingmode/">TextureEnvironmentMappingMode</a></li>
+<li><a href="textureevaluator/">TextureEvaluator</a></li>
+<li><a href="texturegeneration/">TextureGeneration</a></li>
+<li><a href="texturegraphinfo/">TextureGraphInfo</a></li>
+<li><a href="axis/">Axis</a></li>
+<li><a href="channel/">Channel</a></li>
+<li><a href="texturemapping/">TextureMapping</a></li>
+<li><a href="texturemappingtype/">TextureMappingType</a></li>
+<li><a href="texturemode/">TextureMode</a></li>
+<li><a href="textureprojectionmode/">TextureProjectionMode</a></li>
+<li><a href="texturerenderhashflags/">TextureRenderHashFlags</a></li>
+<li><a href="texturewraptype/">TextureWrapType</a></li>
+<li><a href="timezone/">TimeZone</a></li>
+<li><a href="twocolorrendertexture/">TwoColorRenderTexture</a></li>
+<li><a href="undoredo/">UndoRedo</a></li>
+<li><a href="utilities/">Utilities</a></li>
+<li><a href="showcontentchooserresults/">ShowContentChooserResults</a></li>
+<li><a href="uiframeworks/">UiFrameworks</a></li>
+<li><a href="varianttypes/">VariantTypes</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/previewappearance/">
+        <div class="h2 mt-1 mb-1">PreviewAppearance</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+PreviewAppearance class
+public class PreviewAppearanceConstructors PreviewAppearance(IntPtr pRenderContent)  (summary) Constructor for previewappearance (since) 6.0  Properties IntPtr CppPointer  (summary) Previewappearances c++ pointer (since) 6.0  MetaData MetaData  (summary) Previewappearance MetaData (since) 6.0  Methods PreviewBackground Background()  (summary) Background (since) 6.0 (returns) PreviewBackground This is some return comment  void Dispose()  (summary) Dispose for previewappearance (since) 6.0 (returns) void This is some return comment  void FromMetaData(MetaData md)  (summary) Copy data from MetaData to PreviewAppearance (since) 6.
+    <a class="muted-link" href="/posts/rhino/render/previewappearance/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/previewbackground/">
+        <div class="h2 mt-1 mb-1">PreviewBackground</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+PreviewBackGround takes care of constucting and desctrutction of PreviewLight
+public class PreviewBackgroundConstructors PreviewBackground(IntPtr pPreviewBackground)  (summary) Constructor for PreivewLighting (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreivewLighting (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  Guid EnvironmentInstanceId()  (summary) EnvironmentInstanceId (since) 6.0 (returns) Guid This is some return comment  void SetEnvironmentInstanceId(Guid guid)  (summary) SetEnvironmentInstanceId (since) 6.
+    <a class="muted-link" href="/posts/rhino/render/previewbackground/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/previewgeometry/">
+        <div class="h2 mt-1 mb-1">PreviewGeometry</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+PreviewAppearance takes care of constucting and desctrutction of PreivewGeometry
+public class PreviewGeometryConstructors PreviewGeometry(IntPtr pPreviewGeometry)  (summary) Constructor for PreviewGeometry (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreviewGeometry (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  void SetUpPreview(IntPtr sceneServerPointer,IntPtr pRenderContent,bool bCopy)  (summary) SetUpPreview (since) 6.0 (returns) void This is some return comment  
+    <a class="muted-link" href="/posts/rhino/render/previewgeometry/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/previewlighting/">
+        <div class="h2 mt-1 mb-1">PreviewLighting</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+PreviewAppearance takes care of constucting and desctrutction of PreviewLight
+public class PreviewLightingConstructors PreviewLighting(IntPtr pPreviewLighting)  (summary) Constructor for PreivewLighting (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreivewLighting (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  void SetUpPreview(IntPtr sceneServerPointer)  (summary) SetUpPreview (since) 6.0 (returns) void This is some return comment  
+    <a class="muted-link" href="/posts/rhino/render/previewlighting/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/previewsceneserver/">
+        <div class="h2 mt-1 mb-1">PreviewSceneServer</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+PreviewSceneServer
+public class PreviewSceneServerConstructors PreviewSceneServer(IntPtr pPreviewSceneServer)  (summary) Constructor for PreviewSceneServer (since) 6.0  Properties IntPtr CppPointer  (summary) The CppPointer of PreviewSceneServer (since) 6.0  Methods void ApplyRotation(double X,double Y,IRhRdkPreviewSceneServer_eRotationType type)  (summary) Set Scene Server Rotation (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) Dispose for PreviewSceneServer (since) 6.0 (returns) void This is some return comment  
+    <a class="muted-link" href="/posts/rhino/render/previewsceneserver/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/rdkundo/">
+        <div class="h2 mt-1 mb-1">RdkUndo</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+RdkUndo class, which is used to get the RdkUndoRecord
+public class RdkUndoConstructors RdkUndo(IntPtr pUndoRecord)  (summary) Constructor for RdkUndo (since) 6.11  Methods void Dispose()  (summary) Dispose for RdkUndo (since) 6.11 (returns) void This is some return comment  RdkUndoRecord NewUndoRecord()  (summary) Get a new UndoRecord (since) 6.11 (returns) RdkUndoRecord This is some return comment  
+    <a class="muted-link" href="/posts/rhino/render/rdkundo/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/rdkundorecord/">
+        <div class="h2 mt-1 mb-1">RdkUndoRecord</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+RdkUndoRecord class
+public class RdkUndoRecordConstructors RdkUndoRecord(IntPtr pUndoRecord)  (summary) Constructor for RdkUndoRecord (since) 6.0  Methods void Dispose()  (summary) Dispose for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  void SetDescription(String description)  (summary) Set description for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  
+    <a class="muted-link" href="/posts/rhino/render/rdkundorecord/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/realtimedisplaymode/">
+        <div class="h2 mt-1 mb-1">RealtimeDisplayMode</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+Base class for implementing real-time display modes in .NET.
+Pay special attention that in StartRenderer the RenderWindow.SetSize() function is called if the implementation relies on the RenderWindow to do the drawing to the viewport. If i.e. OpenGL is used to draw render results to the viewport then SetSize() doesn&rsquo;t have to be called, nor should the implementation then access channels on the RenderWindow, as those then don&rsquo;t exist. For OpenGL-based drawing the RenderWindow is used as a container for ViewInfo management, nothing else.
+    <a class="muted-link" href="/posts/rhino/render/realtimedisplaymode/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/realtimedisplaymodeclassinfo/">
+        <div class="h2 mt-1 mb-1">RealtimeDisplayModeClassInfo</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+Class information obligatory for registering RealtimeDisplayMode implementations.
+public class RealtimeDisplayModeClassInfoProperties bool DontRegisterAttributesOnStart  (summary) Override and return True when you don&rsquo;t want your class info to cause display attributes to be registered with the system. (since) 6.0  bool DrawOpenGl  (summary) Return True if the RealtimeDisplayMode draws its result using OpenGL. RenderWindow usage will then be skipped. (since) 6.0  Guid GUID  (summary) Get the RealtimeDisplayMode implementation GUID (since) 6.
+    <a class="muted-link" href="/posts/rhino/render/realtimedisplaymodeclassinfo/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/render/rendercontent/">
+        <div class="h2 mt-1 mb-1">RenderContent</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render
+public class RenderContentEvents static ContentAdded  (summary) Used to monitor render content addition to the document. (since) 5.7  static ContentChanged  (summary) Used to monitor render content modifications. (since) 5.7  static ContentDeleted  (summary) Used to monitor render content deletion from the document. (since) 6.0  static ContentDeleting  (summary) Used to monitor render content deletion from the document. (since) 5.7  static ContentFieldChanged  (summary) This event is raised when a field value is modified.
+    <a class="muted-link" href="/posts/rhino/render/rendercontent/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/render/page/4/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/render/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/render/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/render/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/render/page/4/">4</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">5</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/render/page/6/">6</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/render/page/10/">10</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/render/page/6/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

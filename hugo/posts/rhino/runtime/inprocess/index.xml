@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Runtime.InProcess on Test API Site</title>
+    <link>http://example.org/posts/rhino/runtime/inprocess/</link>
+    <description>Recent content in Rhino.Runtime.InProcess on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/runtime/inprocess/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RhinoCore</title>
+      <link>http://example.org/posts/rhino/runtime/inprocess/rhinocore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/runtime/inprocess/rhinocore/</guid>
+      <description>Namespace: Rhino.Runtime.InProcess
+Represents an instance of RhinoCore.DLL.
+public class RhinoCoreConstructors RhinoCore()  (summary) Initializes a new instance of the class. (since) 7.0  RhinoCore(string[] args)  (summary) Initializes a new instance of the class. (since) 7.0  RhinoCore(string[] args,WindowStyle windowStyle)  (summary) Initializes a new instance of the class. (since) 7.0  RhinoCore(string[] args,WindowStyle windowStyle,IntPtr hostWnd)  (summary) Initializes a new instance of the class. (since) 7.0  Methods void Dispose()  (summary) IDisposable implementation (since) 7.</description>
+    </item>
+    
+  </channel>
+</rss>

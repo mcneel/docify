@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hatch/">
+        <h3>Hatch</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hatch/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a hatch in planar boundary loop or loops. This is a 2d entity with a plane defining a local coordinate system. The loops, patterns, angles, etc are all in this local coordinate system. The Hatch object manages the plane and loop array Fill definitions are in the HatchPattern or class derived from HatchPattern Hatch has an index to get the pattern definition from the pattern table.
+public class HatchProperties Point3d BasePoint  (summary) Gets or sets the hatchpattern basepoint (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/hatchobject/">
+        <h3>HatchObject</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/hatchobject/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+public class HatchObjectProperties Hatch HatchGeometry  (summary) (since) 5.0  Methods bool SetHatchGeometry(Hatch hatch)  (summary) Replaces a hatch object&rsquo;s underlying hatch geometry. This only works for non-document hatch objects. (since) 7.0 (returns) bool This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/hatchpattern/">
+        <h3>HatchPattern</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/hatchpattern/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+public class HatchPatternConstructors HatchPattern()  (summary) (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) (since) 5.0  HatchPatternFillType FillType  (summary) (since) 5.0  int Index  (summary) Index in the hatch pattern table for this pattern. -1 if not in the table. (since) 5.0  bool IsDeleted  (summary) Deleted hatch patterns are kept in the runtime hatch pattern table so that undo will work with hatch patterns.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/tables/hatchpatterntable/">
+        <h3>HatchPatternTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/tables/hatchpatterntable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+All of the hatch pattern definitions contained in a rhino document.
+public class HatchPatternTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int CurrentHatchPatternIndex  (summary) At all times, there is a &ldquo;current&rdquo; hatch pattern. Unless otherwise specified, new objects are assigned to the current hatch pattern. The current hatch pattern is never locked, hidden, or deleted. (since) 5.0  Methods int Add(HatchPattern pattern)  (summary) Adds a new hatch pattern with specified definition to the table.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hermitesurface/">
+        <h3>HermiteSurface</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hermitesurface/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.
+public class HermiteSurfaceConstructors HermiteSurface()  (summary) Initializes a new instance. (since) 7.0  HermiteSurface(int uCount,int vCount)  (summary) Initializes a new instance. (since) 7.0  Properties bool IsValid  (summary) Returns True if the all of values in all of the internal data structues contain valid values, False otherwise. (since) 7.0  int UCount  (summary) Gets the number of parameters in the &ldquo;u&rdquo; direction.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hiddenlinedrawing/">
+        <h3>HiddenLineDrawing</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hiddenlinedrawing/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a hidden line drawing object. A hidden line drawing consists of curves generated from source objects. The curves correspond to edges, and silhouettes of source objects and intersections with cutting planes.
+public class HiddenLineDrawingProperties IEnumerablePoints  (summary) Point objects calculated by the hidden line drawing. (since) 6.8  IEnumerableSegments  (summary) Subcurve objects calculated by the hidden line drawing. (since) 6.0  ViewportInfo Viewport  (summary) Returns the ViewportInfo used by the hidden line drawing.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hiddenlinedrawingobject/">
+        <h3>HiddenLineDrawingObject</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hiddenlinedrawingobject/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents an object added to a HiddenLineDrawing
+public class HiddenLineDrawingObjectProperties GeometryBase Geometry  (summary) Returns the geometry in world coordinates if UseXform is false. Otherwise, the geometry in object space coordinates is returned. (since) 6.0  object Tag  (summary) Returns the extra data used to cross-reference the object specified in HiddenLineDrawing.AddObject. (since) 6.0  Transform Transform  (summary) Returns the transformation passed into the Add&hellip; function when setting up the hidden line drawing parameters.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hiddenlinedrawingobjectcurve/">
+        <h3>HiddenLineDrawingObjectCurve</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Curves generated from source objects which correspond to edges, and silhouettes of source objects and intersections with cutting planes. A HiddenLineDrawingObjectCurve is partitioned into hidden and visible segments called HiddenLineDrawingSegment
+public class HiddenLineDrawingObjectCurveProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.0  int Index  (summary) Index of this object in HiddenLineDrawing.FullCurves. (since) 6.0  bool IsProjecting  (summary) Returns True if all the non clipped portions of this curve are projecting.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hiddenlinedrawingparameters/">
+        <h3>HiddenLineDrawingParameters</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hiddenlinedrawingparameters/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Input used for computing a hidden line drawing
+public class HiddenLineDrawingParametersConstructors HiddenLineDrawingParameters()  (summary) default constructor (since) 6.0  Properties double AbsoluteTolerance  (summary) Absolute tolerance is used to decide if curves overlap or intersect. A suggested value is to use RhinoDoc.AbsoluteTolerance (since) 6.0  bool Flatten  (summary) Flatten the computed geometry (since) 6.0  bool IncludeHiddenCurves  (summary) Include hidden curves in hidden line drawing (default is true) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/hiddenlinedrawingpoint/">
+        <h3>HiddenLineDrawingPoint</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/hiddenlinedrawingpoint/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Points generated from source objects which coorespond to point and point cloud source objects.
+public class HiddenLineDrawingPointProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.8  int Index  (summary) Index of this object in HiddenLineDrawing.Points. (since) 6.8  Point3d Location  (summary) Returns the location of this object in HiddenLineDrawing coordinates. (since) 6.8  Visibility PointVisibility  (summary) Returns the point&rsquo;s visibility (since) 6.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/26/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/28/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

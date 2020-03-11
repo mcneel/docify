@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Command &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Commands
+Defines a base class for all commands. This class is abstract.
+public class CommandEvents static BeginCommand  (summary) Called just before command.RunCommand(). (since) 5.0  static EndCommand  (summary) Called immediately after command.RunCommand(). (since) 5.0  static UndoRedo  (summary) Used to monitor Rhino&amp;rsquo;s built in undo/redo support. (since) 5.0  Properties static Guid LastCommandId  (summary) Gets the ID of the last commands. (since) 5.0  static Result LastCommandResult  (summary) Gets the result code of the last command.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Command</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Commands</a></em></p>
+<p>Defines a base class for all commands. This class is abstract.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Command</span>
+</code></pre></div><h2 id="events">Events</h2>
+<h4 id="static-begincommand">static BeginCommand</h4>
+<ul>
+<li>(summary) Called just before command.RunCommand().</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-endcommand">static EndCommand</h4>
+<ul>
+<li>(summary) Called immediately after command.RunCommand().</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-undoredo">static UndoRedo</h4>
+<ul>
+<li>(summary) Used to monitor Rhino&rsquo;s built in undo/redo support.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-guid-lastcommandid">static Guid LastCommandId</h4>
+<ul>
+<li>(summary) Gets the ID of the last commands.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-result-lastcommandresult">static Result LastCommandResult</h4>
+<ul>
+<li>(summary) Gets the result code of the last command.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-englishname">string EnglishName</h4>
+<ul>
+<li>(summary) Gets the name of the command.
+This method is abstract.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-id">Guid Id</h4>
+<ul>
+<li>(summary) Gets the  unique ID of this command. It is best to use a Guid
+attribute for each custom derived command class since this will
+keep the id consistent between sessions of Rhino
+GuidAttribute</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-localname">string LocalName</h4>
+<ul>
+<li>(summary) Gets the local name of the command.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="pluginsplugin-plugin">PlugIns.PlugIn PlugIn</h4>
+<ul>
+<li>(summary) Gets the plug-in where this commands is placed.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="persistentsettings-settings">PersistentSettings Settings</h4>
+<ul>
+<li>(summary) Gets the settings of the command.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-void-displayhelpguid-commandid">static void DisplayHelp(Guid commandId)</h4>
+<ul>
+<li>(summary) Displays help for a command.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-string-getcommandnamesbool-englishbool-loaded">static string[] GetCommandNames(bool english,bool loaded)</h4>
+<ul>
+<li>(summary) Gets list of command names in Rhino. This list does not include Test, Alpha, or System commands.</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-guid-getcommandstack">static Guid[] GetCommandStack()</h4>
+<ul>
+<li>(summary) Determines if Rhino is currently running a command. Because Rhino allow for transparent commands
+(commands that can be run from inside of other commands), this method returns the total ids of
+active commands.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid[] This is some return comment</li>
+</ul>
+<h4 id="static-mostrecentcommanddescription-getmostrecentcommands">static MostRecentCommandDescription[] GetMostRecentCommands()</h4>
+<ul>
+<li>(summary) Gets an array of most recent command descriptions.</li>
+<li>(since) 5.0</li>
+<li>(returns) MostRecentCommandDescription[] This is some return comment</li>
+</ul>
+<h4 id="static-bool-incommand">static bool InCommand()</h4>
+<ul>
+<li>(summary) Determines if Rhino is currently running a command.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-inscriptrunnercommand">static bool InScriptRunnerCommand()</h4>
+<ul>
+<li>(summary) This is a low level tool to determine if Rhino is currently running
+a script running command like &ldquo;ReadCommandFile&rdquo; or the RhinoScript
+plug-in&rsquo;s &ldquo;RunScript&rdquo;.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-iscommandstring-name">static bool IsCommand(string name)</h4>
+<ul>
+<li>(summary) Determines is a string is a command.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-isvalidcommandnamestring-name">static bool IsValidCommandName(string name)</h4>
+<ul>
+<li>(summary) Determines if a string is a valid command name.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-guid-lookupcommandidstring-namebool-searchforenglishname">static Guid LookupCommandId(string name,bool searchForEnglishName)</h4>
+<ul>
+<li>(summary) Returns the ID of a command.</li>
+<li>(since) 5.0</li>
+<li>(returns) Guid This is some return comment</li>
+</ul>
+<h4 id="static-string-lookupcommandnameguid-commandidbool-englishname">static string LookupCommandName(Guid commandId,bool englishName)</h4>
+<ul>
+<li>(summary) Returns the command name given a command ID.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-void-runproxycommandruncommanddelegate-commandcallbackrhinodoc-docobject-data">static void RunProxyCommand(RunCommandDelegate commandCallback,RhinoDoc doc,object data)</h4>
+<ul>
+<li>(summary) Execute some code as if it were running in a command</li>
+<li>(since) 6.13</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Command</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#events">Events</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

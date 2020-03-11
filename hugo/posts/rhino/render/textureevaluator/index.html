@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  TextureEvaluator &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+This is the interface to a lightweight object capable of evaluating texture color throughout uvw space. Derive from this class to create your own texture evaluator to return from a custom RenderTexture.
+public class TextureEvaluatorMethods static void FreeByteArray(IntPtr p)  (summary) (since) 7.0 (returns) void This is some return comment  static byte GetByteArrayValue(IntPtr p,int offset)  (summary) (since) 7.0 (returns) byte This is some return comment  static IntPtr NewByteArray(int width,int height)  (summary) (since) 7.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">TextureEvaluator</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>This is the interface to a lightweight object capable of evaluating texture color throughout uvw space.  Derive from this class to create your own texture evaluator to return from a custom RenderTexture.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextureEvaluator</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<h4 id="static-void-freebytearrayintptr-p">static void FreeByteArray(IntPtr p)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-byte-getbytearrayvalueintptr-pint-offset">static byte GetByteArrayValue(IntPtr p,int offset)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) byte This is some return comment</li>
+</ul>
+<h4 id="static-intptr-newbytearrayint-widthint-height">static IntPtr NewByteArray(int width,int height)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) IntPtr This is some return comment</li>
+</ul>
+<h4 id="static-void-rdk_textureevaluator_applygammaintptr-pint-widthint-heightfloat-gamma">static void Rdk_TextureEvaluator_ApplyGamma(IntPtr p,int width,int height,float gamma)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-setbytearrayvalueintptr-pint-offsetbyte-value">static void SetByteArrayValue(IntPtr p,int offset,byte value)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-canbedumpedtobytesint-widthint-height">bool CanBeDumpedToBytes(int width,int height)</h4>
+<ul>
+<li>(summary) Fast access to bitmap evaluator for Cycles - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
+if the data can be extracted direct to a width<em>height</em>4 array of unsigned chars.
+This is implemented by EVF(L&quot;CanBeDumpedToBytes&rdquo;, ON_2iSize*) != nullptr;</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary) For Dispose pattern</li>
+<li>(since) 5.1</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-dumptobytesint-widthint-heightintptr-buffer">void DumpToBytes(int width,int height,IntPtr buffer)</h4>
+<ul>
+<li>(summary) Fast access to bitmap evaluator for Cycles - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
+if the data can be extracted direct to a width<em>height</em>4 array of unsigned chars.
+This is implemented by EVF(L&quot;CanBeDumpedToBytes&rdquo;, ON_2iSize*) != nullptr;</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="displaycolor4f-getcolorpoint3d-uvwvector3d-duvwdxvector3d-duvwdy">Display.Color4f GetColor(Point3d uvw,Vector3d duvwdx,Vector3d duvwdy)</h4>
+<ul>
+<li>(summary) Get the color of the texture at a particular point in uvw space.
+May be called from within a rendering shade pipeline.
+note For ray differentials see Pharr Humphreys, &ldquo;Physically Based Rendering&rdquo;, chapter 11.</li>
+<li>(since) 5.1</li>
+<li>(returns) Display.Color4f This is some return comment</li>
+</ul>
+<h4 id="bool-getcolorpoint3d-uvwvector3d-duvwdxvector3d-duvwdycolor4f-color">bool GetColor(Point3d uvw,Vector3d duvwdx,Vector3d duvwdy,Color4f color)</h4>
+<ul>
+<li>(summary) Optimized version of GetColor for callers.  Much faster in the case of a native (C++) evaluator.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-initialize">bool Initialize()</h4>
+<ul>
+<li>(summary) Call this function before calling GetColor for the first time. Ideally, this should
+be on the main thread, but you can also call it on a worker thread as long as you
+are sure that Initialize() or GetColor() cannot be called at the same time on another thread.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>TextureEvaluator</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

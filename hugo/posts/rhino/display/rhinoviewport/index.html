@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoViewport &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Displays geometry with a given projection. In standard modeling views there is a one to one relationship between RhinoView and RhinoViewports. In a page layout, there may be multiple RhinoViewports for a single layout.
+public class RhinoViewportConstructors RhinoViewport()  (summary) (since) 5.0  RhinoViewport(RhinoViewport other)  (summary) (since) 5.0  Properties System.Drawing.Rectangle Bounds  (summary) Gets the size and location of the viewport, in pixels, relative to the parent view.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoViewport</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Displays geometry with a given projection. In standard modeling views there
+is a one to one relationship between RhinoView and RhinoViewports. In a page
+layout, there may be multiple RhinoViewports for a single layout.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoViewport</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="rhinoviewport">RhinoViewport()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinoviewportrhinoviewport-other">RhinoViewport(RhinoViewport other)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="systemdrawingrectangle-bounds">System.Drawing.Rectangle Bounds</h4>
+<ul>
+<li>(summary) Gets the size and location of the viewport, in pixels, relative to the parent view.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-camera35mmlenslength">double Camera35mmLensLength</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameradirection">Vector3d CameraDirection</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-cameralocation">Point3d CameraLocation</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-cameratarget">Point3d CameraTarget</h4>
+<ul>
+<li>(summary) Viewport target point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameraup">Vector3d CameraUp</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-camerax">Vector3d CameraX</h4>
+<ul>
+<li>(summary) Gets the &ldquo;unit to the right&rdquo; vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameray">Vector3d CameraY</h4>
+<ul>
+<li>(summary) Gets the &ldquo;unit up&rdquo; vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-cameraz">Vector3d CameraZ</h4>
+<ul>
+<li>(summary) Gets the unit vector in CameraDirection.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="uint-changecounter">uint ChangeCounter</h4>
+<ul>
+<li>(summary) The value of change counter is incremented every time the view projection
+or construction plane changes. The user can the mouse and nestable view 
+manipulation commands to change a view at any time. The value of change
+counter can be used to detect these changes in code that is sensitive to
+the view projection.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-constructionaxesvisible">bool ConstructionAxesVisible</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-constructiongridvisible">bool ConstructionGridVisible</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="displaymodedescription-displaymode">DisplayModeDescription DisplayMode</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-frustumaspect">double FrustumAspect</h4>
+<ul>
+<li>(summary) Gets the width/height ratio of the frustum.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-id">Guid Id</h4>
+<ul>
+<li>(summary) Unique id for this viewport.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isparallelprojection">bool IsParallelProjection</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isperspectiveprojection">bool IsPerspectiveProjection</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isplanview">bool IsPlanView</h4>
+<ul>
+<li>(summary) True if construction plane z axis is parallel to camera direction.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-istwopointperspectiveprojection">bool IsTwoPointPerspectiveProjection</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalidcamera">bool IsValidCamera</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalidfrustum">bool IsValidFrustum</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-name">string Name</h4>
+<ul>
+<li>(summary) Name associated with this viewport.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="rhinoview-parentview">RhinoView ParentView</h4>
+<ul>
+<li>
+<p>(summary) Gets the parent view, if there is one</p>
+<p>Every RhinoView has an associated RhinoViewport that does all the 3d display work.
+Those associated viewports return the RhinoView as their parent view. However,
+RhinoViewports are used in other image creating contexts that do not have a parent
+RhinoView.  If you call ParentView, you MUST check for NULL return values.</p>
+</li>
+<li>
+<p>(since) 5.0</p>
+</li>
+</ul>
+<h4 id="double-screenportaspect">double ScreenPortAspect</h4>
+<ul>
+<li>(summary) screen port&rsquo;s width/height.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="systemdrawingsize-size">System.Drawing.Size Size</h4>
+<ul>
+<li>(summary) Gets or sets the height and width of the viewport (in pixels)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-userstringcount">int UserStringCount</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.18</li>
+</ul>
+<h4 id="viewporttype-viewporttype">ViewportType ViewportType</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-wallpaperfilename">string WallpaperFilename</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-wallpapergrayscale">bool WallpaperGrayscale</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-wallpapervisible">bool WallpaperVisible</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-worldaxesvisible">bool WorldAxesVisible</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-rhinoviewport-fromidguid-id">static RhinoViewport FromId(Guid id)</h4>
+<ul>
+<li>(summary) Call this method to get the viewport with the specified Id.</li>
+<li>(since) 6.0</li>
+<li>(returns) RhinoViewport This is some return comment</li>
+</ul>
+<h4 id="bool-changetoparallelprojectionbool-symmetricfrustum">bool ChangeToParallelProjection(bool symmetricFrustum)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports from persective to parallel.
+It will make common additional adjustments to the frustum so the resulting views are
+similar. The camera location and direction will not be changed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetoperspectiveprojectionbool-symmetricfrustumdouble-lenslength">bool ChangeToPerspectiveProjection(bool symmetricFrustum,double lensLength)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports from parallel to perspective.
+It will make common additional adjustments to the frustum and camera location so the
+resulting views are similar. The camera direction and target point are not be changed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetoperspectiveprojectiondouble-targetdistancebool-symmetricfrustumdouble-lenslength">bool ChangeToPerspectiveProjection(double targetDistance,bool symmetricFrustum,double lensLength)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports from parallel to perspective.
+It will make common additional adjustments to the frustum and camera location so the
+resulting views are similar. The camera direction and target point are not be changed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetotwopointperspectiveprojectiondouble-lenslength">bool ChangeToTwoPointPerspectiveProjection(double lensLength)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports
+to a two point perspective.  It will make common additional
+adjustments to the frustum and camera location and direction
+so the resulting views are similar.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-changetotwopointperspectiveprojectiondouble-targetdistancevector3d-updouble-lenslength">bool ChangeToTwoPointPerspectiveProjection(double targetDistance,Vector3d up,double lensLength)</h4>
+<ul>
+<li>(summary) Use this function to change projections of valid viewports
+to a two point perspective.  It will make common additional
+adjustments to the frustum and camera location and direction
+so the resulting views are similar.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-cleartraceimage">void ClearTraceImage()</h4>
+<ul>
+<li>(summary) Remove trace image (background bitmap) for this viewport if one exists.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="systemdrawingpoint-clienttoscreenpoint-clientpoint">System.Drawing.Point ClientToScreen(Point clientPoint)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Point This is some return comment</li>
+</ul>
+<h4 id="systemdrawingpoint-clienttoscreenpoint2d-clientpoint">System.Drawing.Point ClientToScreen(Point2d clientPoint)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Point This is some return comment</li>
+</ul>
+<h4 id="line-clienttoworldpoint-clientpoint">Line ClientToWorld(Point clientPoint)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Line This is some return comment</li>
+</ul>
+<h4 id="line-clienttoworldpoint2d-clientpoint">Line ClientToWorld(Point2d clientPoint)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Line This is some return comment</li>
+</ul>
+<h4 id="plane-constructionplane">Plane ConstructionPlane()</h4>
+<ul>
+<li>(summary) Simple plane information for this viewport&rsquo;s construction plane. If you want
+detailed construction lpane information, use GetConstructionPlane.</li>
+<li>(since) 5.0</li>
+<li>(returns) Plane This is some return comment</li>
+</ul>
+<h4 id="void-deletealluserstrings">void DeleteAllUserStrings()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.18</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-deleteuserstringstring-key">bool DeleteUserString(string key)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.18</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-getcameraangledouble-halfdiagonalangledouble-halfverticalangledouble-halfhorizontalangle">bool GetCameraAngle(double halfDiagonalAngle,double halfVerticalAngle,double halfHorizontalAngle)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="boundingbox-getcameraextentsienumerablepoint3d-points">BoundingBox GetCameraExtents(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) BoundingBox This is some return comment</li>
+</ul>
+<h4 id="bool-getcameraframeplane-frame">bool GetCameraFrame(Plane frame)</h4>
+<ul>
+<li>(summary) Gets the camera plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="docobjectsconstructionplane-getconstructionplane">DocObjects.ConstructionPlane GetConstructionPlane()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) DocObjects.ConstructionPlane This is some return comment</li>
+</ul>
+<h4 id="bool-getdepthboundingbox-bboxdouble-neardistancedouble-fardistance">bool GetDepth(BoundingBox bbox,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Gets near and far clipping distances of a bounding box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getdepthpoint3d-pointdouble-distance">bool GetDepth(Point3d point,double distance)</h4>
+<ul>
+<li>(summary) Gets clipping distance of a point.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getdepthsphere-spheredouble-neardistancedouble-fardistance">bool GetDepth(Sphere sphere,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Gets near and far clipping distances of a sphere.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="point3d-getfarrect">Point3d[] GetFarRect()</h4>
+<ul>
+<li>(summary) Get corners of far clipping plane rectangle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumdouble-leftdouble-rightdouble-bottomdouble-topdouble-neardistancedouble-fardistance">bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)</h4>
+<ul>
+<li>(summary) Gets the view frustum.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumbottomplaneplane-plane">bool GetFrustumBottomPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Get bottom world frustum clipping plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="boundingbox-getfrustumboundingbox">BoundingBox GetFrustumBoundingBox()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) BoundingBox This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumcenterpoint3d-center">bool GetFrustumCenter(Point3d center)</h4>
+<ul>
+<li>(summary) Returns world coordinates of frustum&rsquo;s center.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumfarplaneplane-plane">bool GetFrustumFarPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Get far clipping plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumleftplaneplane-plane">bool GetFrustumLeftPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Get left world frustum clipping plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumlinedouble-screenxdouble-screenyline-worldline">bool GetFrustumLine(double screenX,double screenY,Line worldLine)</h4>
+<ul>
+<li>(summary) Gets the world coordinate line in the view frustum that projects to a point on the screen.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumnearplaneplane-plane">bool GetFrustumNearPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Get near clipping plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumrightplaneplane-plane">bool GetFrustumRightPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Get right world frustum clipping plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-getfrustumtopplaneplane-plane">bool GetFrustumTopPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Get top world frustum clipping plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="point3d-getnearrect">Point3d[] GetNearRect()</h4>
+<ul>
+<li>(summary) Get corners of near clipping plane rectangle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="transform-getpicktransformint-clientxint-clienty">Transform GetPickTransform(int clientX,int clientY)</h4>
+<ul>
+<li>(summary) Takes a rectangle in screen coordinates and returns a transformation
+that maps the 3d frustum defined by the rectangle to a -1/+1 clipping
+coordinate box. This takes a single point and inflates it by
+Rhino.ApplicationSettings.ModelAidSettings.MousePickBoxRadius to define
+the screen rectangle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="transform-getpicktransformpoint-clientpoint">Transform GetPickTransform(Point clientPoint)</h4>
+<ul>
+<li>(summary) Takes a rectangle in screen coordinates and returns a transformation
+that maps the 3d frustum defined by the rectangle to a -1/+1 clipping
+coordinate box. This takes a single point and inflates it by
+Rhino.ApplicationSettings.ModelAidSettings.MousePickBoxRadius to define
+the screen rectangle.</li>
+<li>(since) 5.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="transform-getpicktransformrectangle-clientrectangle">Transform GetPickTransform(Rectangle clientRectangle)</h4>
+<ul>
+<li>(summary) Takes a rectangle in screen coordinates and returns a transformation
+that maps the 3d frustum defined by the rectangle to a -1/+1 clipping
+coordinate box.</li>
+<li>(since) 5.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="bool-getscreenportint-portleftint-portrightint-portbottomint-porttopint-portnearint-portfar">bool GetScreenPort(int portLeft,int portRight,int portBottom,int portTop,int portNear,int portFar)</h4>
+<ul>
+<li>(summary) Location of viewport in pixels.  These are provided so you can set the port you are using
+and get the appropriate transformations to and from screen space.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="transform-gettransformcoordinatesystem-sourcesystemcoordinatesystem-destinationsystem">Transform GetTransform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)</h4>
+<ul>
+<li>(summary) Gets a transform from origin coordinate system to a target coordinate system.</li>
+<li>(since) 5.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="string-getuserstringstring-key">string GetUserString(string key)</h4>
+<ul>
+<li>(summary) Gets a user string.</li>
+<li>(since) 6.18</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="systemcollectionsspecializednamevaluecollection-getuserstrings">System.Collections.Specialized.NameValueCollection GetUserStrings()</h4>
+<ul>
+<li>(summary) Gets an independent copy of the collection of (user text key, user text value) pairs attached to this object.</li>
+<li>(since) 6.18</li>
+<li>(returns) System.Collections.Specialized.NameValueCollection This is some return comment</li>
+</ul>
+<h4 id="bool-getworldtoscreenscalepoint3d-pointinfrustumdouble-pixelsperunit">bool GetWorldToScreenScale(Point3d pointInFrustum,double pixelsPerUnit)</h4>
+<ul>
+<li>(summary) Gets the world to screen size scaling factor at a point in frustum.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-isvisibleboundingbox-bbox">bool IsVisible(BoundingBox bbox)</h4>
+<ul>
+<li>(summary) Returns True if some portion of a world coordinate bounding box is
+potentially visible in the viewing frustum.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-isvisiblepoint3d-point">bool IsVisible(Point3d point)</h4>
+<ul>
+<li>(summary) Deterines if a world coordinate point is visible in the viewing frustum.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-keyboarddollybool-leftrightdouble-amount">bool KeyboardDolly(bool leftRight,double amount)</h4>
+<ul>
+<li>(summary) Emulates the keyboard arrow key in terms of interaction.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-keyboarddollyinoutdouble-amount">bool KeyboardDollyInOut(double amount)</h4>
+<ul>
+<li>(summary) Emulates the keyboard arrow key in terms of interaction.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-keyboardrotatebool-leftrightdouble-angleradians">bool KeyboardRotate(bool leftRight,double angleRadians)</h4>
+<ul>
+<li>(summary) Emulates the keyboard arrow key in terms of interaction.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-magnifydouble-magnificationfactorbool-mode">bool Magnify(double magnificationFactor,bool mode)</h4>
+<ul>
+<li>(summary) Zooms or dollies in order to scale the viewport projection of observed objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-magnifydouble-magnificationfactorbool-modepoint-fixedscreenpoint">bool Magnify(double magnificationFactor,bool mode,Point fixedScreenPoint)</h4>
+<ul>
+<li>(summary) Zooms or dollies in order to scale the viewport projection of observed objects.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mouseadjustlenslengthpoint-mousepreviouspointpoint-mousecurrentpointbool-movetarget">bool MouseAdjustLensLength(Point mousePreviousPoint,Point mouseCurrentPoint,bool moveTarget)</h4>
+<ul>
+<li>(summary) Adjusts the camera lens length.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mousedollyzoompoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseDollyZoom(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Zooms lens (thus adjusting the field of view) while moving the camera.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mouseinoutdollypoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseInOutDolly(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Moves the camera towards or away from the view maintaing focus on the view.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mouselateraldollypoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseLateralDolly(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Pans the camera</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mousemagnifypoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseMagnify(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Moves the camera towards or away from the view.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mouserotatearoundtargetpoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseRotateAroundTarget(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Rotates the viewport around target.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mouserotatecamerapoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseRotateCamera(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Rotates the view around the camera location.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-mousetiltpoint-mousepreviouspointpoint-mousecurrentpoint">bool MouseTilt(Point mousePreviousPoint,Point mouseCurrentPoint)</h4>
+<ul>
+<li>(summary) Tilts the camera view.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-nextconstructionplane">bool NextConstructionPlane()</h4>
+<ul>
+<li>(summary) Sets the construction plane to the plane that was
+active before the last call to PreviousConstructionPlane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-nextviewprojection">bool NextViewProjection()</h4>
+<ul>
+<li>(summary) Sets the view projection and target to the settings that 
+were active before the last call to PrevView.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-popconstructionplane">bool PopConstructionPlane()</h4>
+<ul>
+<li>(summary) Sets the construction plane to the plane that was
+active before the last call to PushConstructionPlane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-popviewprojection">bool PopViewProjection()</h4>
+<ul>
+<li>(summary) Sets the view projection and target to the settings at the top of
+the view stack and removes those settings from the view stack.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-previousconstructionplane">bool PreviousConstructionPlane()</h4>
+<ul>
+<li>(summary) Sets the construction plane to the plane that was
+active before the last call to NextConstructionPlane
+or SetConstructionPlane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-previousviewprojection">bool PreviousViewProjection()</h4>
+<ul>
+<li>(summary) Sets the view projection and target to the settings that
+were active before the last call to NextViewProjection.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-pushconstructionplaneconstructionplane-cplane">void PushConstructionPlane(ConstructionPlane cplane)</h4>
+<ul>
+<li>(summary) Pushes the current construction plane on the viewport&rsquo;s
+construction plane stack and sets the construction plane
+to cplane.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-pushviewinfoviewinfo-viewinfobool-includetraceimage">bool PushViewInfo(ViewInfo viewinfo,bool includeTraceImage)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-pushviewprojection">void PushViewProjection()</h4>
+<ul>
+<li>(summary) Appends the current view projection and target to the viewport&rsquo;s view stack.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-rotatedouble-angleradiansvector3d-rotationaxispoint3d-rotationcenter">bool Rotate(double angleRadians,Vector3d rotationAxis,Point3d rotationCenter)</h4>
+<ul>
+<li>(summary) Rotates about the specified axis. A positive rotation angle results
+in a counter-clockwise rotation about the axis (right hand rule).</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="systemdrawingpoint-screentoclientpoint-screenpoint">System.Drawing.Point ScreenToClient(Point screenPoint)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Drawing.Point This is some return comment</li>
+</ul>
+<h4 id="void-setcameradirectionvector3d-cameradirectionbool-updatetargetlocation">void SetCameraDirection(Vector3d cameraDirection,bool updateTargetLocation)</h4>
+<ul>
+<li>(summary) Set viewport camera direction. By default the target location is changed so that
+the vector from the camera location to the target is parallel to the camera direction.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setcameralocationpoint3d-cameralocationbool-updatetargetlocation">void SetCameraLocation(Point3d cameraLocation,bool updateTargetLocation)</h4>
+<ul>
+<li>(summary) Set viewport camera location. By default the target location is changed so that
+the vector from the camera location to the target is parallel to the camera direction
+vector.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setcameralocationspoint3d-targetlocationpoint3d-cameralocation">void SetCameraLocations(Point3d targetLocation,Point3d cameraLocation)</h4>
+<ul>
+<li>(summary) Set viewport camera location and target location. The camera direction vector is
+changed so that it is parallel to the vector from the camera location to
+the target location.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setcameratargetpoint3d-targetlocationbool-updatecameralocation">void SetCameraTarget(Point3d targetLocation,bool updateCameraLocation)</h4>
+<ul>
+<li>(summary) Set viewport target point. By default the camera location
+is translated so that the camera direction vector is parallel
+to the vector from the camera location to the target location.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setclippingplanesboundingbox-box">void SetClippingPlanes(BoundingBox box)</h4>
+<ul>
+<li>(summary) Sets optimal clipping planes to view objects in a world coordinate 3d bounding box.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setconstructionplaneconstructionplane-cplane">void SetConstructionPlane(ConstructionPlane cplane)</h4>
+<ul>
+<li>(summary) Sets the construction plane to cplane.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setconstructionplaneplane-plane">void SetConstructionPlane(Plane plane)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-setprojectiondefinedviewportprojection-projectionstring-viewnamebool-updateconstructionplane">bool SetProjection(DefinedViewportProjection projection,string viewName,bool updateConstructionPlane)</h4>
+<ul>
+<li>(summary) Set viewport to a defined projection.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-settoplanviewpoint3d-planeoriginvector3d-planexaxisvector3d-planeyaxisbool-setconstructionplane">bool SetToPlanView(Point3d planeOrigin,Vector3d planeXaxis,Vector3d planeYaxis,bool setConstructionPlane)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-settraceimagestring-bitmapfilenameplane-planedouble-widthdouble-heightbool-grayscalebool-filtered">bool SetTraceImage(string bitmapFileName,Plane plane,double width,double height,bool grayscale,bool filtered)</h4>
+<ul>
+<li>(summary) Set trace image (background bitmap) for this viewport.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setuserstringstring-keystring-value">bool SetUserString(string key,string value)</h4>
+<ul>
+<li>(summary) Attach a user string (key,value combination) to this geometry.</li>
+<li>(since) 6.18</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setviewprojectionviewportinfo-projectionbool-updatetargetlocation">bool SetViewProjection(ViewportInfo projection,bool updateTargetLocation)</h4>
+<ul>
+<li>(summary) Sets the viewport camera projection.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setwallpaperstring-imagefilenamebool-grayscale">bool SetWallpaper(string imageFilename,bool grayscale)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setwallpaperstring-imagefilenamebool-grayscalebool-visible">bool SetWallpaper(string imageFilename,bool grayscale,bool visible)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="point2d-worldtoclientpoint3d-worldpoint">Point2d WorldToClient(Point3d worldPoint)</h4>
+<ul>
+<li>(summary) Convert a point from world coordinates in the viewport to a 2d screen
+point in the local coordinates of the viewport (X/Y of point is relative
+to top left corner of viewport on screen)</li>
+<li>(since) 5.0</li>
+<li>(returns) Point2d This is some return comment</li>
+</ul>
+<h4 id="bool-zoomboundingboxboundingbox-box">bool ZoomBoundingBox(BoundingBox box)</h4>
+<ul>
+<li>(summary) Zooms the viewport to the given bounding box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-zoomextents">bool ZoomExtents()</h4>
+<ul>
+<li>(summary) Dollies the camera location and so that the view frustum contains all of the
+selected document objects that can be seen in view. If the projection is
+perspective, the camera angle is not changed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-zoomextentsselected">bool ZoomExtentsSelected()</h4>
+<ul>
+<li>(summary) Dollies the camera location and so that the view frustum contains all of the
+selected document objects that can be seen in view. If the projection is
+perspective, the camera angle is not changed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoViewport</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

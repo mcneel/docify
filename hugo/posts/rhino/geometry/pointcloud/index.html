@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PointCloud &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a collection of coordinates with optional normal vectors and colors.
+public class PointCloudConstructors PointCloud()  (summary) Initializes a new instance of the class that is empty. (since) 5.0  PointCloud(IEnumerablepoints)  (summary) Initializes a new instance of the class, copying the content from a set of points. (since) 5.0  PointCloud(PointCloud other)  (summary) Initializes a new instance of the class, copying (Merge) the content of another pointcloud.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PointCloud</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a collection of coordinates with optional normal vectors and colors.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PointCloud</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="pointcloud">PointCloud()</h4>
+<ul>
+<li>(summary) Initializes a new instance of the  class
+that is empty.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="pointcloudienumerablepoint3d-points">PointCloud(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Initializes a new instance of the  class,
+copying the content from a set of points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="pointcloudpointcloud-other">PointCloud(PointCloud other)</h4>
+<ul>
+<li>(summary) Initializes a new instance of the  class,
+copying (Merge) the content of another pointcloud.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="bool-containscolors">bool ContainsColors</h4>
+<ul>
+<li>(summary) Gets a value indicating whether or not the points in this 
+pointcloud have colors assigned to them.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-containshiddenflags">bool ContainsHiddenFlags</h4>
+<ul>
+<li>(summary) Gets a value indicating whether or not the points in this 
+pointcloud have hidden flags assigned to them.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-containsnormals">bool ContainsNormals</h4>
+<ul>
+<li>(summary) Gets a value indicating whether or not the points in this 
+pointcloud have normals assigned to them.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Gets the number of points in this pointcloud.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-hiddenpointcount">int HiddenPointCount</h4>
+<ul>
+<li>(summary) Gets the number of points that have their Hidden flag set.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="void-addpoint3d-point">void Add(Point3d point)</h4>
+<ul>
+<li>(summary) Append a new point to the end of the list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addpoint3d-pointcolor-color">void Add(Point3d point,Color color)</h4>
+<ul>
+<li>(summary) Append a new point to the end of the list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addpoint3d-pointvector3d-normal">void Add(Point3d point,Vector3d normal)</h4>
+<ul>
+<li>(summary) Append a new point to the end of the list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addpoint3d-pointvector3d-normalcolor-color">void Add(Point3d point,Vector3d normal,Color color)</h4>
+<ul>
+<li>(summary) Append a new point to the end of the list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrangeienumerablepoint3d-points">void AddRange(IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Appends a collection of points to this point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrangeienumerablepoint3d-pointsienumerablecolor-colors">void AddRange(IEnumerable<!-- raw HTML omitted --> points,IEnumerable<!-- raw HTML omitted --> colors)</h4>
+<ul>
+<li>(summary) Appends a collection of points and normal vectors to this point cloud.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrangeienumerablepoint3d-pointsienumerablevector3d-normals">void AddRange(IEnumerable<!-- raw HTML omitted --> points,IEnumerable<!-- raw HTML omitted --> normals)</h4>
+<ul>
+<li>(summary) Appends a collection of points and normal vectors to this point cloud.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-addrangeienumerablepoint3d-pointsienumerablevector3d-normalsienumerablecolor-colors">void AddRange(IEnumerable<!-- raw HTML omitted --> points,IEnumerable<!-- raw HTML omitted --> normals,IEnumerable<!-- raw HTML omitted --> colors)</h4>
+<ul>
+<li>(summary) Appends a collection of points and normal vectors to this point cloud.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="pointclouditem-appendnew">PointCloudItem AppendNew()</h4>
+<ul>
+<li>(summary) Appends a new PointCloudItem to the end of this point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) PointCloudItem This is some return comment</li>
+</ul>
+<h4 id="ireadonlylistpoint3d-asreadonlylistofpoints">IReadOnlyList<!-- raw HTML omitted --> AsReadOnlyListOfPoints()</h4>
+<ul>
+<li>(summary) Returns an enumerator and list indexer over point cloud locations.</li>
+<li>(since) 6.0</li>
+<li>(returns) IReadOnlyList<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="void-clearcolors">void ClearColors()</h4>
+<ul>
+<li>(summary) Destroys the color information in this point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clearhiddenflags">void ClearHiddenFlags()</h4>
+<ul>
+<li>(summary) Destroys the hidden flag information in this point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clearnormals">void ClearNormals()</h4>
+<ul>
+<li>(summary) Destroys the normal vector information in this point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="int-closestpointpoint3d-testpoint">int ClosestPoint(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Returns index of the closest point in the point cloud to a given test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="color-getcolors">Color[] GetColors()</h4>
+<ul>
+<li>(summary) Copy all the point colors in this point cloud to an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) Color[] This is some return comment</li>
+</ul>
+<h4 id="ienumeratorpointclouditem-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary) Gets an enumerator that allows to modify each pointcloud point.</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="vector3d-getnormals">Vector3d[] GetNormals()</h4>
+<ul>
+<li>(summary) Copy all the normal vectors in this point cloud to an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) Vector3d[] This is some return comment</li>
+</ul>
+<h4 id="point3d-getpoints">Point3d[] GetPoints()</h4>
+<ul>
+<li>(summary) Copy all the point coordinates in this point cloud to an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="void-insertint-indexpoint3d-point">void Insert(int index,Point3d point)</h4>
+<ul>
+<li>(summary) Inserts a new point into the point list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-insertint-indexpoint3d-pointcolor-color">void Insert(int index,Point3d point,Color color)</h4>
+<ul>
+<li>(summary) Inserts a new point into the point list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-insertint-indexpoint3d-pointvector3d-normal">void Insert(int index,Point3d point,Vector3d normal)</h4>
+<ul>
+<li>(summary) Inserts a new point into the point list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-insertint-indexpoint3d-pointvector3d-normalcolor-color">void Insert(int index,Point3d point,Vector3d normal,Color color)</h4>
+<ul>
+<li>(summary) Inserts a new point into the point list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="pointclouditem-insertnewint-index">PointCloudItem InsertNew(int index)</h4>
+<ul>
+<li>(summary) Inserts a new  at a specific position of the point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) PointCloudItem This is some return comment</li>
+</ul>
+<h4 id="void-insertrangeint-indexienumerablepoint3d-points">void InsertRange(int index,IEnumerable<!-- raw HTML omitted --> points)</h4>
+<ul>
+<li>(summary) Append a collection of points to this point cloud.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-mergepointcloud-other">void Merge(PointCloud other)</h4>
+<ul>
+<li>(summary) Copies the point values of another pointcloud into this one.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatint-index">Point3d PointAt(int index)</h4>
+<ul>
+<li>(summary) Returns the location of the point at a specific index.</li>
+<li>(since) 6.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="void-removeatint-index">void RemoveAt(int index)</h4>
+<ul>
+<li>(summary) Remove the point at the given index.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PointCloud</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

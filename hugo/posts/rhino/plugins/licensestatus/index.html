@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LicenseStatus &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.PlugIns
+LicenseStatus class.
+public class LicenseStatusConstructors LicenseStatus()  (summary) Public constructor. (since) 5.0  Properties LicenseBuildType BuildType  (summary) The build contentType of the product, where: 100 = A release build, either commercical, education, nfr, etc. 200 = A evaluation build 300 = A beta build, such as a wip. (since) 5.0  DateTime? CheckOutExpirationDate  (summary) The date and time the checked out license will expire. Note, this is only set if m_license_type = Standalone or CloudZoo and if &amp;ldquo;limited license checkout&amp;rdquo; was enabled on the Zoo server in the case of Standalone.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LicenseStatus</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.PlugIns</a></em></p>
+<p>LicenseStatus class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LicenseStatus</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="licensestatus">LicenseStatus()</h4>
+<ul>
+<li>(summary) Public constructor.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="licensebuildtype-buildtype">LicenseBuildType BuildType</h4>
+<ul>
+<li>(summary) The build contentType of the product, where:
+100 = A release build, either commercical, education, nfr, etc.
+200 = A evaluation build
+300 = A beta build, such as a wip.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="datetime-checkoutexpirationdate">DateTime? CheckOutExpirationDate</h4>
+<ul>
+<li>(summary) The date and time the checked out license will expire.
+Note, this is only set if m_license_type = Standalone or CloudZoo
+and if &ldquo;limited license checkout&rdquo; was enabled on the Zoo server in the case of Standalone.
+Note, date and time is in local time coordinates.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="datetime-cloudzooleaseexpiration">DateTime? CloudZooLeaseExpiration</h4>
+<ul>
+<li>(summary) Returns the expiration date of the lease this instance represents.</li>
+<li>(since) 6.4</li>
+</ul>
+<h4 id="bool-cloudzooleaseisvalid">bool CloudZooLeaseIsValid</h4>
+<ul>
+<li>(summary) Returns True if the Cloud Zoo Lease represented by this instance is actively being managed by the Cloud Zoo Manager; else returns false.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="datetime-expirationdate">DateTime? ExpirationDate</h4>
+<ul>
+<li>(summary) The date and time the license will expire.
+This value can be None if:
+1.) The license contentType is &ldquo;Standalone&rdquo; and the license does not expire.
+2.) The license contentType is &ldquo;Network&rdquo;.
+3.) The license contentType is &ldquo;NetworkCheckedOut&rdquo; and the checkout does not expire
+Note, date and time is in local time coordinates.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-licensetitle">string LicenseTitle</h4>
+<ul>
+<li>(summary) The title of the license. (e.g. &ldquo;Rhinoceros 6.0 Commercial&rdquo;)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="licensetype-licensetype">LicenseType LicenseType</h4>
+<ul>
+<li>(summary) The license contentType. (e.g. Standalone, Network, etc.)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-pluginid">Guid PluginId</h4>
+<ul>
+<li>(summary) The ID of the plug-in that owns this license information</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="icon-producticon">Icon ProductIcon</h4>
+<ul>
+<li>(summary) The product&rsquo;s icon. Note, this can be null.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="guid-productid">Guid ProductId</h4>
+<ul>
+<li>(summary) The id of the product or plugin.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-registeredorganization">string RegisteredOrganization</h4>
+<ul>
+<li>(summary) The registered organization of the product (e.g. &ldquo;Robert McNeel and Associates&rdquo;)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-registeredowner">string RegisteredOwner</h4>
+<ul>
+<li>(summary) The registered owner of the product. (e.g. &ldquo;Dale Fugier&rdquo;)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="string-serialnumber">string SerialNumber</h4>
+<ul>
+<li>(summary) The &ldquo;for display only&rdquo; product license or serial number.</li>
+<li>(since) 5.0</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LicenseStatus</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ModelComponent &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Base class for all components in a model (document) and manages the index, id and other information common to this type of objects. This class parallels the C&#43;&#43; ON_ModelComponent.
+public class ModelComponentProperties ComponentStatus ComponentStatus  (summary) Gets or sets the component status of the model component. (since) 6.0  ModelComponentType ComponentType  (summary) Gets the for this object. Useful in switch statements. (since) 6.0  string DeletedName  (summary) Gets the name of a component that is deleted.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ModelComponent</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Base class for all components in a model (document) and manages the
+index, id and other information common to this type of objects.
+This class parallels the C++ ON_ModelComponent.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ModelComponent</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="componentstatus-componentstatus">ComponentStatus ComponentStatus</h4>
+<ul>
+<li>(summary) Gets or sets the component status of the model component.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="modelcomponenttype-componenttype">ModelComponentType ComponentType</h4>
+<ul>
+<li>(summary) Gets the  for this object.
+Useful in switch statements.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="string-deletedname">string DeletedName</h4>
+<ul>
+<li>(summary) Gets the name of a component that is deleted.</li>
+<li>(since) 6.2</li>
+</ul>
+<h4 id="bool-hasid">bool HasId</h4>
+<ul>
+<li>(summary) Returns a value indicating whether the component has an ID.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-hasindex">bool HasIndex</h4>
+<ul>
+<li>(summary) Returns a value indicating whether the component has an Index.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-hasname">bool HasName</h4>
+<ul>
+<li>(summary) Returns a value indicating whether the component has a Name.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="guid-id">Guid Id</h4>
+<ul>
+<li>(summary) Gets or sets the ID of the current instance.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-idislocked">bool IdIsLocked</h4>
+<ul>
+<li>(summary) Returns a value indicating whether the component ID is already locked.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-index">int Index</h4>
+<ul>
+<li>(summary) Gets or sets the model component index attribute.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-indexislocked">bool IndexIsLocked</h4>
+<ul>
+<li>(summary) Returns a value indicating whether the component Index is already locked.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="uint-instancedefinitionmodelserialnumber">uint InstanceDefinitionModelSerialNumber</h4>
+<ul>
+<li>(summary) When a component is in a model as part of the information required for a linked instance definition,
+this value identifies the the linked instance definition reference model.</li>
+<li>(since) 6.12</li>
+</ul>
+<h4 id="bool-iscomponentstatuslocked">bool IsComponentStatusLocked</h4>
+<ul>
+<li>(summary) The component status itself can be locked. This returns an indication.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-issystemcomponent">bool IsSystemComponent</h4>
+<ul>
+<li>(summary) True if this model component is a system constant.
+An incomplete list of system constant model components is below:ON_ModelComponent::Unset
+ON_InstanceDefinition::Empty
+ON_Linetype::UnsetON_Linetype::ContinuousON_Linetype::ByLayerON_Linetype::ByParent
+ON_Layer::UnsetON_Layer::Default
+ON_TextStyle::UnsetON_TextStyle::DefaultON_TextStyle::ByLayerON_TextStyle::ByParent
+ON_DimStyle::UnsetON_DimStyle::DefaultON_DimStyle::DefaultInchDecimalON_DimStyle::DefaultInchFractionalON_DimStyle::DefaultFootInchArchitectureON_DimStyle::DefaultMillimeterSmallON_DimStyle::DefaultMillimeterLargeON_DimStyle::DefaultMillimeterArchitecture</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="uint-modelserialnumber">uint ModelSerialNumber</h4>
+<ul>
+<li>(summary) A value identifing the model that manages this component.</li>
+<li>(since) 6.12</li>
+</ul>
+<h4 id="string-name">string Name</h4>
+<ul>
+<li>(summary) Gets or sets the name</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-nameislocked">bool NameIsLocked</h4>
+<ul>
+<li>(summary) Returns a value indicating whether the component Name is already locked.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="uint-referencemodelserialnumber">uint ReferenceModelSerialNumber</h4>
+<ul>
+<li>(summary) When a component is in a model for reference, this value identifies the reference model.</li>
+<li>(since) 6.12</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-bool-isvalidcomponentnamestring-name">static bool IsValidComponentName(string name)</h4>
+<ul>
+<li>(summary) Tests for a valid model component name.</li>
+<li>(since) 6.15</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-modelcomponenttypeignorescasemodelcomponenttype-type">static bool ModelComponentTypeIgnoresCase(ModelComponentType type)</h4>
+<ul>
+<li>(summary) Informs the developer if a particular model component type will require case-ignoring searching within a document.
+This is currently True with groups; False otherwise.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-modelcomponenttypeincludesparentmodelcomponenttype-type">static bool ModelComponentTypeIncludesParent(ModelComponentType type)</h4>
+<ul>
+<li>(summary) Informs the developer if a particular model component type will include the hash of the parent.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-modelcomponenttyperequiresuniquenamemodelcomponenttype-type">static bool ModelComponentTypeRequiresUniqueName(ModelComponentType type)</h4>
+<ul>
+<li>(summary) Informs the developer if a particular model component type will require uniqueness within a document.
+This is currently True with render materials and model geometry; False otherwise.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-clearid">void ClearId()</h4>
+<ul>
+<li>(summary) Resets the HasId property of the model component to false, if possible.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clearindex">void ClearIndex()</h4>
+<ul>
+<li>(summary) Resets the HasIndex property of the model component to false, if possible.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clearname">void ClearName()</h4>
+<ul>
+<li>(summary) Resets the HasName property of the model component to false, if possible.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="uint-datacrcuint-currentremainder">uint DataCRC(uint currentRemainder)</h4>
+<ul>
+<li>(summary) Increments the Cyclic Redundancy Check value by this instance.</li>
+<li>(since) 6.0</li>
+<li>(returns) uint This is some return comment</li>
+</ul>
+<h4 id="void-lockid">void LockId()</h4>
+<ul>
+<li>(summary) Locks the component Id property.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-lockindex">void LockIndex()</h4>
+<ul>
+<li>(summary) Locks the component Index property.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-lockname">void LockName()</h4>
+<ul>
+<li>(summary) Locks the component Name property.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="string-tostring">string ToString()</h4>
+<ul>
+<li>(summary) Returns the name of the model component type, and then its name and index.</li>
+<li>(since) (unknown)</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ModelComponent</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

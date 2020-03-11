@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  HermiteSurface &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.
+public class HermiteSurfaceConstructors HermiteSurface()  (summary) Initializes a new instance. (since) 7.0  HermiteSurface(int uCount,int vCount)  (summary) Initializes a new instance. (since) 7.0  Properties bool IsValid  (summary) Returns True if the all of values in all of the internal data structues contain valid values, False otherwise. (since) 7.0  int UCount  (summary) Gets the number of parameters in the &amp;ldquo;u&amp;rdquo; direction.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">HermiteSurface</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HermiteSurface</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="hermitesurface">HermiteSurface()</h4>
+<ul>
+<li>(summary) Initializes a new  instance.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="hermitesurfaceint-ucountint-vcount">HermiteSurface(int uCount,int vCount)</h4>
+<ul>
+<li>(summary) Initializes a new  instance.</li>
+<li>(since) 7.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="bool-isvalid">bool IsValid</h4>
+<ul>
+<li>(summary) Returns True if the all of values in all of the internal data structues contain valid values, False otherwise.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="int-ucount">int UCount</h4>
+<ul>
+<li>(summary) Gets the number of parameters in the &ldquo;u&rdquo; direction.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="int-vcount">int VCount</h4>
+<ul>
+<li>(summary) Gets the number of parameters in the &ldquo;v&rdquo; direction.</li>
+<li>(since) 7.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="intptr-constpointer">IntPtr ConstPointer()</h4>
+<ul>
+<li>(summary) Gets the const (immutable) pointer of this class.</li>
+<li>(since) 7.0</li>
+<li>(returns) IntPtr This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary) Actively reclaims unmanaged resources that this instance uses.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="intptr-nonconstpointer">IntPtr NonConstPointer()</h4>
+<ul>
+<li>(summary) Gets the non-const pointer (for modification) of this class.</li>
+<li>(since) 7.0</li>
+<li>(returns) IntPtr This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatint-uindexint-vindex">Point3d PointAt(int uIndex,int vIndex)</h4>
+<ul>
+<li>(summary) Gets the interpolation point at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="void-setpointatint-uindexint-vindexpoint3d-point">void SetPointAt(int uIndex,int vIndex,Point3d point)</h4>
+<ul>
+<li>(summary) Sets the interpolation point at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-settwistatint-uindexint-vindexvector3d-twist">void SetTwistAt(int uIndex,int vIndex,Vector3d twist)</h4>
+<ul>
+<li>(summary) Set the twist direction (mixed second partial derivative) to intepolate at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setuparameteratint-indexdouble-parameter">void SetUParameterAt(int index,double parameter)</h4>
+<ul>
+<li>(summary) Sets the &ldquo;u&rdquo; parameter at an index. These parameters are strictly increasing.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setutangentatint-uindexint-vindexvector3d-tangent">void SetUTangentAt(int uIndex,int vIndex,Vector3d tangent)</h4>
+<ul>
+<li>(summary) Set the &ldquo;u&rdquo; tangent direction (actually first derivative) to intepolate at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setvparameteratint-indexdouble-parameter">void SetVParameterAt(int index,double parameter)</h4>
+<ul>
+<li>(summary) Sets the &ldquo;v&rdquo; parameter at an index. These parameters are strictly increasing.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setvtangentatint-uindexint-vindexvector3d-tangent">void SetVTangentAt(int uIndex,int vIndex,Vector3d tangent)</h4>
+<ul>
+<li>(summary) Set the &ldquo;v&rdquo; tangent direction (actually first derivative) to intepolate at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="nurbssurface-tonurbssurface">NurbsSurface ToNurbsSurface()</h4>
+<ul>
+<li>(summary) Constructs a NURBS surface satisfying the Hermite interpolation conditions.</li>
+<li>(since) 7.0</li>
+<li>(returns) NurbsSurface This is some return comment</li>
+</ul>
+<h4 id="vector3d-twistatint-uindexint-vindex">Vector3d TwistAt(int uIndex,int vIndex)</h4>
+<ul>
+<li>(summary) Get the twist direction (mixed second partial derivative) to intepolate at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+<h4 id="double-uparameteratint-index">double UParameterAt(int index)</h4>
+<ul>
+<li>(summary) Gets the &ldquo;u&rdquo; parameter at an index. These parameters are strictly increasing.</li>
+<li>(since) 7.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="vector3d-utangentatint-uindexint-vindex">Vector3d UTangentAt(int uIndex,int vIndex)</h4>
+<ul>
+<li>(summary) Get the &ldquo;u&rdquo; tangent direction (actually first derivative) to intepolate at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+<h4 id="double-vparameteratint-index">double VParameterAt(int index)</h4>
+<ul>
+<li>(summary) Gets the &ldquo;v&rdquo; parameter at an index. These parameters are strictly increasing.</li>
+<li>(since) 7.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="vector3d-vtangentatint-uindexint-vindex">Vector3d VTangentAt(int uIndex,int vIndex)</h4>
+<ul>
+<li>(summary) Get the &ldquo;v&rdquo; tangent direction (actually first derivative) to intepolate at the u,v parameter location.</li>
+<li>(since) 7.0</li>
+<li>(returns) Vector3d This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>HermiteSurface</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

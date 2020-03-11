@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Display &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Display</h1>
+  <ul>
+<li><a href="backgroundstyle/">BackgroundStyle</a></li>
+<li><a href="blendmode/">BlendMode</a></li>
+<li><a href="calculateboundingboxeventargs/">CalculateBoundingBoxEventArgs</a></li>
+<li><a href="color4f/">Color4f</a></li>
+<li><a href="colorcmyk/">ColorCMYK</a></li>
+<li><a href="colorgradient/">ColorGradient</a></li>
+<li><a href="colorhsl/">ColorHSL</a></li>
+<li><a href="colorhsv/">ColorHSV</a></li>
+<li><a href="colorlab/">ColorLAB</a></li>
+<li><a href="colorlch/">ColorLCH</a></li>
+<li><a href="colorstop/">ColorStop</a></li>
+<li><a href="colorxyz/">ColorXYZ</a></li>
+<li><a href="cullfacemode/">CullFaceMode</a></li>
+<li><a href="cullobjecteventargs/">CullObjectEventArgs</a></li>
+<li><a href="customdisplay/">CustomDisplay</a></li>
+<li><a href="definedviewportprojection/">DefinedViewportProjection</a></li>
+<li><a href="depthmode/">DepthMode</a></li>
+<li><a href="displaybitmap/">DisplayBitmap</a></li>
+<li><a href="displaybitmapdrawlist/">DisplayBitmapDrawList</a></li>
+<li><a href="displayconduit/">DisplayConduit</a></li>
+<li><a href="displayengine/">DisplayEngine</a></li>
+<li><a href="displaymaterial/">DisplayMaterial</a></li>
+<li><a href="displaymodechangedeventargs/">DisplayModeChangedEventArgs</a></li>
+<li><a href="displaymodedescription/">DisplayModeDescription</a></li>
+<li><a href="displaypipeline/">DisplayPipeline</a></li>
+<li><a href="displaypipelineattributes/">DisplayPipelineAttributes</a></li>
+<li><a href="boundingboxdisplaymode/">BoundingBoxDisplayMode</a></li>
+<li><a href="contextsfordraw/">ContextsForDraw</a></li>
+<li><a href="framebufferfillmode/">FrameBufferFillMode</a></li>
+<li><a href="meshdisplayattributes/">MeshDisplayAttributes</a></li>
+<li><a href="stereorendercontextenum/">StereoRenderContextEnum</a></li>
+<li><a href="viewdisplayattributes/">ViewDisplayAttributes</a></li>
+<li><a href="draweventargs/">DrawEventArgs</a></li>
+<li><a href="drawforegroundeventargs/">DrawForegroundEventArgs</a></li>
+<li><a href="drawframestages/">DrawFrameStages</a></li>
+<li><a href="drawobjecteventargs/">DrawObjectEventArgs</a></li>
+<li><a href="gradienttype/">GradientType</a></li>
+<li><a href="initframebuffereventargs/">InitFrameBufferEventArgs</a></li>
+<li><a href="pageviewspacechangeeventargs/">PageViewSpaceChangeEventArgs</a></li>
+<li><a href="rhinopageview/">RhinoPageView</a></li>
+<li><a href="rhinoview/">RhinoView</a></li>
+<li><a href="rhinoviewport/">RhinoViewport</a></li>
+<li><a href="text3d/">Text3d</a></li>
+<li><a href="viewcapture/">ViewCapture</a></li>
+<li><a href="viewcapturesettings/">ViewCaptureSettings</a></li>
+<li><a href="anchorlocation/">AnchorLocation</a></li>
+<li><a href="colormode/">ColorMode</a></li>
+<li><a href="vieweventargs/">ViewEventArgs</a></li>
+<li><a href="viewporttype/">ViewportType</a></li>
+<li><a href="visualanalysismode/">VisualAnalysisMode</a></li>
+<li><a href="analysisstyle/">AnalysisStyle</a></li>
+<li><a href="zbiasmode/">ZBiasMode</a></li>
+<li><a href="zbuffercapture/">ZBufferCapture</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/displaypipelineattributes/">
+        <div class="h2 mt-1 mb-1">DisplayPipelineAttributes</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+Represents display pipeline settings, such as &ldquo;show transparency&rdquo; and &ldquo;show grips&rdquo;.
+public class DisplayPipelineAttributesProperties Color AmbientLightingColor  (summary) (since) 6.3  BoundingBoxDisplayMode BoundingBoxMode  (summary) (since) 6.1  bool CastShadows  (summary) Cast shadows. (since) 6.4  ContextsForDraw ContextForDraw  (summary) (since) 6.5  System.Drawing.Color CurveColor  (summary) Color used for drawing curves (since) 5.1  int CurveThickness  (summary) Pixel thickness for curves (since) 5.1  bool DisableConduits  (summary) (since) 5.
+    <a class="muted-link" href="/posts/rhino/display/displaypipelineattributes/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/draweventargs/">
+        <div class="h2 mt-1 mb-1">DrawEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DrawEventArgsProperties DisplayPipeline Display  (summary) (since) 5.0  RhinoDoc RhinoDoc  (summary) (since) 5.0  RhinoViewport Viewport  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/display/draweventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/drawforegroundeventargs/">
+        <div class="h2 mt-1 mb-1">DrawForegroundEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DrawForegroundEventArgsProperties bool DrawWorldAxes  (summary) (since) 5.0  bool WorldAxesDrawn  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/display/drawforegroundeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/drawobjecteventargs/">
+        <div class="h2 mt-1 mb-1">DrawObjectEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DrawObjectEventArgsProperties bool DrawObject  (summary) (since) 5.0  Rhino.DocObjects.RhinoObject RhinoObject  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/display/drawobjecteventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/initframebuffereventargs/">
+        <div class="h2 mt-1 mb-1">InitFrameBufferEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class InitFrameBufferEventArgsMethods void SetFill(Color color)  (summary) (since) 6.18 (returns) void This is some return comment  void SetFill(Color top,Color bottom)  (summary) (since) 6.18 (returns) void This is some return comment  void SetFill(Color topLeft,Color bottomLeft,Color topRight,Color bottomRight)  (summary) (since) 6.18 (returns) void This is some return comment  
+    <a class="muted-link" href="/posts/rhino/display/initframebuffereventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/meshdisplayattributes/">
+        <div class="h2 mt-1 mb-1">MeshDisplayAttributes</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class MeshDisplayAttributesProperties Color AllMeshWiresColor  (summary) Color.Empty means that we are NOT using a single color for all mesh wires. (since) 5.0  bool HighlightMeshes  (summary) (since) 5.0  int MeshWireThickness  (summary) (since) 5.0  bool ShowMeshVertices  (summary) (since) 5.0  bool ShowMeshWires  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/display/meshdisplayattributes/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/pageviewspacechangeeventargs/">
+        <div class="h2 mt-1 mb-1">PageViewSpaceChangeEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class PageViewSpaceChangeEventArgsProperties Guid NewActiveDetailId  (summary) The id of the detail object was set active. Note, if this id is equal to Guid.Empty, then the active detail object is the page view itself. (since) 5.0  Guid OldActiveDetailId  (summary) The id of the previously active detail object. Note, if this id is equal to Guid.Empty, then the active detail object was the page view itself. (since) 5.
+    <a class="muted-link" href="/posts/rhino/display/pageviewspacechangeeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/rhinopageview/">
+        <div class="h2 mt-1 mb-1">RhinoPageView</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+A window that contains a single layout &lsquo;page&rsquo;
+public class RhinoPageViewEvents static PageViewSpaceChange  (summary) (since) 5.0  Properties RhinoViewport ActiveViewport  (summary) The ActiveViewport is the same as the MainViewport for standard RhinoViews. In a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object. Most of the time, you will use ActiveViewport unless you explicitly need to work with the main viewport. (since) 5.
+    <a class="muted-link" href="/posts/rhino/display/rhinopageview/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/rhinoview/">
+        <div class="h2 mt-1 mb-1">RhinoView</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+A RhinoView represents a single &ldquo;window&rdquo; display of a document. A view could contain one or many RhinoViewports (many in the case of Layout views with detail viewports). Standard Rhino modeling views have one viewport.
+public class RhinoViewEvents static Create  (summary) (since) 5.0  static Destroy  (summary) (since) 5.0  static Modified  (summary) (since) 7.0  static Rename  (summary) (since) 5.0  static SetActive  (summary) (since) 5.
+    <a class="muted-link" href="/posts/rhino/display/rhinoview/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/display/rhinoviewport/">
+        <div class="h2 mt-1 mb-1">RhinoViewport</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+Displays geometry with a given projection. In standard modeling views there is a one to one relationship between RhinoView and RhinoViewports. In a page layout, there may be multiple RhinoViewports for a single layout.
+public class RhinoViewportConstructors RhinoViewport()  (summary) (since) 5.0  RhinoViewport(RhinoViewport other)  (summary) (since) 5.0  Properties System.Drawing.Rectangle Bounds  (summary) Gets the size and location of the viewport, in pixels, relative to the parent view.
+    <a class="muted-link" href="/posts/rhino/display/rhinoviewport/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/display/page/2/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/display/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/display/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">3</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/display/page/4/">4</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/display/page/4/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

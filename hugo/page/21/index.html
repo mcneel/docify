@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/filepdfeventargs/">
+        <h3>FilePdfEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/filepdfeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Used for events that are fired while constructing/saving a Pdf
+public class FilePdfEventArgsProperties FilePdf Pdf  (summary) The document that is about to be written (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/fileply/">
+        <h3>FilePly</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/fileply/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Support for ply file format
+public class FilePlyMethods static WriteFileResult Write(String filename,RhinoDoc doc,FilePlyWriteOptions options)  (summary) Write a ply file based on the contents of a RhinoDoc (since) 7.0 (returns) WriteFileResult This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/fileplywriteoptions/">
+        <h3>FilePlyWriteOptions</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/fileplywriteoptions/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+public class FilePlyWriteOptionsConstructors FilePlyWriteOptions(FileWriteOptions writeOptions)  (summary) (since) 7.0  Properties bool ExportASCII  (summary) Determines whether to export as Ascii. (since) 7.0  bool ExportColors  (summary) Determines whether to export vertex colors. (since) 7.0  bool ExportMaterial  (summary) Determines whether to export a material. (since) 7.0  bool ExportNormals  (summary) Determines whether to export vertex normals. (since) 7.0  MeshingParameters MeshingParameters  (summary) (since) 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/filereadoptions/">
+        <h3>FileReadOptions</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/filereadoptions/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+public class FileReadOptionsConstructors FileReadOptions()  (summary) (since) 5.0  Properties bool BatchMode  (summary) True means you cannot ask questions during reading. (no dialogs, no &ldquo;getters&rdquo;, etc.) (since) 5.0  bool ImportMode   (summary) True means we are merging whatever is being read into an existing document. This means you need to consider things like:
+If the information being read is in a different unit system, it should be scaled if UseScaleGeometry is true.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/filereference/">
+        <h3>FileReference</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/filereference/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Manages a reference to an existing or nonexisting file, using either or both absolute or relative paths. Once constructed, this class is immutable.
+public class FileReferenceConstructors FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status)  (summary) Constructs a new instance of the FileReference class, given a fullPath, a relativePath a content hash and a status value. (since) 6.0  Properties ContentHash ContentHash  (summary) Gets the content hash. (since) 6.0  string FullPath  (summary) Gets the absolute path of this file reference.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/filesettings/">
+        <h3>FileSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/filesettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties relating Rhino files.
+public class FileSettingsProperties static bool AutoSaveEnabled  (summary) Enables or disables Rhino&rsquo;s automatic file saving mechanism. (since) 5.0  static string AutoSaveFile  (summary) the file name used by Rhino&rsquo;s automatic file saving mechanism. (since) 5.0  static System.TimeSpan AutoSaveInterval  (summary) how often the document will be saved when Rhino&rsquo;s automatic file saving mechanism is enabled. (since) 5.0  static bool AutoSaveMeshes  (summary) save render and display meshes in autosave file.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/filesettingsstate/">
+        <h3>FileSettingsState</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/filesettingsstate/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class FileSettingsStateProperties bool AutoSaveEnabled  (summary) Enables or disables Rhino&rsquo;s automatic file saving mechanism. (since) 5.0  System.TimeSpan AutoSaveInterval  (summary) How often the document will be saved when Rhino&rsquo;s automatic file saving mechanism is enabled. (since) 5.0  bool AutoSaveMeshes  (summary) Saves render and display meshes in autosave file. (since) 5.0  bool ClipboardCopyToPreviousRhinoVersion  (summary) Gets or sets a value that decides if copies to the clipboard are performed in both the current and previous Rhino clipboard formats.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/fileslc/">
+        <h3>FileSlc</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/fileslc/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Support for writing slice (slc) file format
+public class FileSlcMethods static bool Write(string filename,RhinoDoc doc,FileSlcWriteOptions options)  (summary) Write a slc file based on the contents of a RhinoDoc (since) 7.0 (returns) bool This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/fileslcwriteoptions/">
+        <h3>FileSlcWriteOptions</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/fileslcwriteoptions/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Options used when writing a slc file
+public class FileSlcWriteOptionsProperties double AngleBetweenSegmentsDegrees  (summary) The angle that determines how smooth the polylines of the slice curves will be. When the number is small you will get a smooth final output but it will take more time to export and a larger file. (since) 7.0  Point3d EndPoint  (summary) End of the slicing normal (since) 7.0  double SliceDistance  (summary) The distance between the slices or layers of curves that your final output will contain.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/filestp/">
+        <h3>FileStp</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/filestp/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Support for writing step (stp) file format
+public class FileStpMethods static bool Write(string filename,RhinoDoc doc,FileStpWriteOptions options)  (summary) Write a stp file based on the contents of a RhinoDoc (since) 7.0 (returns) bool This is some return comment  
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/20/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/22/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshFaceList &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the faces and Face related functionality of a Mesh.
+public class MeshFaceListProperties int Capacity  (summary) Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh faces. When getting this can includes invalid faces. (since) 5.0  int QuadCount  (summary) Gets the number of faces that are valid quads (4 corners).|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshFaceList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the faces and Face related functionality of a Mesh.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshFaceList</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-capacity">int Capacity</h4>
+<ul>
+<li>(summary) Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Gets or sets the number of mesh faces. When getting this can includes invalid faces.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-quadcount">int QuadCount</h4>
+<ul>
+<li>(summary) Gets the number of faces that are valid quads (4 corners).</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="int-trianglecount">int TriangleCount</h4>
+<ul>
+<li>(summary) Gets the number of faces that are valid triangles (3 corners).</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="int-addfaceint-vertex1int-vertex2int-vertex3">int AddFace(int vertex1,int vertex2,int vertex3)</h4>
+<ul>
+<li>(summary) Appends a new triangular face to the end of the mesh face list.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addfaceint-vertex1int-vertex2int-vertex3int-vertex4">int AddFace(int vertex1,int vertex2,int vertex3,int vertex4)</h4>
+<ul>
+<li>(summary) Appends a new quadragular face to the end of the mesh face list.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addfacemeshface-face">int AddFace(MeshFace face)</h4>
+<ul>
+<li>(summary) Appends a new mesh face to the end of the mesh face list.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-addfacesienumerablemeshface-faces">int[] AddFaces(IEnumerable<!-- raw HTML omitted --> faces)</h4>
+<ul>
+<li>(summary) Appends a list of faces to the end of the mesh face list.</li>
+<li>(since) 5.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="int-adjacentfacesint-faceindex">int[] AdjacentFaces(int faceIndex)</h4>
+<ul>
+<li>(summary) Gets all faces that share a topological edge with a given face.</li>
+<li>(since) 5.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="void-clear">void Clear()</h4>
+<ul>
+<li>(summary) Clears the Face list on the mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="int-convertnonplanarquadstotrianglesdouble-planartolerancedouble-angletoleranceradiansint-splitmethod">int ConvertNonPlanarQuadsToTriangles(double planarTolerance,double angleToleranceRadians,int splitMethod)</h4>
+<ul>
+<li>(summary) Splits non-planar quads into two triangles based on given params.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-convertquadstotriangles">bool ConvertQuadsToTriangles()</h4>
+<ul>
+<li>(summary) Splits all quads along the short diagonal.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-converttrianglestoquadsdouble-angletoleranceradiansdouble-minimumdiagonallengthratio">bool ConvertTrianglesToQuads(double angleToleranceRadians,double minimumDiagonalLengthRatio)</h4>
+<ul>
+<li>(summary) Joins adjacent triangles into quads if the resulting quad is &lsquo;nice&rsquo;.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-culldegeneratefaces">int CullDegenerateFaces()</h4>
+<ul>
+<li>(summary) Attempts to removes degenerate faces from the mesh.
+Degenerate faces are faces that contains such a combination of indices,
+that their final shape collapsed in a line or point.Before returning, this method also attempts to repair faces by juggling
+vertex indices.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-deletefacesienumerableint-faceindexes">int DeleteFaces(IEnumerable<!-- raw HTML omitted --> faceIndexes)</h4>
+<ul>
+<li>(summary) Removes a collection of faces from the mesh without affecting the remaining geometry.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="int-deletefacesienumerableint-faceindexesbool-compact">int DeleteFaces(IEnumerable<!-- raw HTML omitted --> faceIndexes,bool compact)</h4>
+<ul>
+<li>(summary) Removes a collection of faces from the mesh without affecting the remaining geometry.</li>
+<li>(since) 6.6</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-destroy">void Destroy()</h4>
+<ul>
+<li>(summary) Releases all memory allocated to store faces. The list capacity will be 0 after this call.
+Subsequent calls can add new items.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="mesh-extractduplicatefaces">Mesh ExtractDuplicateFaces()</h4>
+<ul>
+<li>(summary) Extracts, or removes, duplicate faces.</li>
+<li>(since) 6.0</li>
+<li>(returns) Mesh This is some return comment</li>
+</ul>
+<h4 id="mesh-extractfacesienumerableint-faceindices">Mesh ExtractFaces(IEnumerable<!-- raw HTML omitted --> faceIndices)</h4>
+<ul>
+<li>(summary) Extracts, or removes, faces.</li>
+<li>(since) 6.0</li>
+<li>(returns) Mesh This is some return comment</li>
+</ul>
+<h4 id="indexpair-getclashingfacepairsint-maxpaircount">IndexPair[] GetClashingFacePairs(int maxPairCount)</h4>
+<ul>
+<li>(summary) Gets an array of pairs of mesh faces that clash.</li>
+<li>(since) 6.0</li>
+<li>(returns) IndexPair[] This is some return comment</li>
+</ul>
+<h4 id="int-getconnectedfacesint-faceindexdouble-angleradiansbool-greaterthanangle">int[] GetConnectedFaces(int faceIndex,double angleRadians,bool greaterThanAngle)</h4>
+<ul>
+<li>(summary) Find all connected face indices where adjacent face normals meet
+the criteria of angleRadians and greaterThanAngle</li>
+<li>(since) 5.6</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="int-getconnectedfacestoedgesint-startfaceindexbool-treatnonmanifoldlikeunwelded">int[] GetConnectedFacesToEdges(int startFaceIndex,bool treatNonmanifoldLikeUnwelded)</h4>
+<ul>
+<li>(summary) Uses startFaceIndex and finds all connected face indexes up to unwelded
+or naked edges. If treatNonmanifoldLikeUnwelded is True then non-manifold
+edges will be considered as unwelded or naked</li>
+<li>(since) 5.6</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="int-getduplicatefaces">int[] GetDuplicateFaces()</h4>
+<ul>
+<li>(summary) Finds all of the duplicate faces.</li>
+<li>(since) 6.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="ienumeratormeshface-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary) Gets an enumerator that yields all faces in this collection.</li>
+<li>(since) 5.0</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="meshface-getfaceint-index">MeshFace GetFace(int index)</h4>
+<ul>
+<li>(summary) Returns the mesh face at the given index.</li>
+<li>(since) 5.0</li>
+<li>(returns) MeshFace This is some return comment</li>
+</ul>
+<h4 id="double-getfaceaspectratioint-index">double GetFaceAspectRatio(int index)</h4>
+<ul>
+<li>(summary) Returns the mesh face at the given index.</li>
+<li>(since) 6.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="boundingbox-getfaceboundingboxint-faceindex">BoundingBox GetFaceBoundingBox(int faceIndex)</h4>
+<ul>
+<li>(summary) Gets the bounding box of a face.</li>
+<li>(since) 5.0</li>
+<li>(returns) BoundingBox This is some return comment</li>
+</ul>
+<h4 id="point3d-getfacecenterint-faceindex">Point3d GetFaceCenter(int faceIndex)</h4>
+<ul>
+<li>(summary) Gets the center point of a face.
+For a triangular face, this is the centroid or barycenter.For a quad, this is the avarage of four coner points.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="bool-getfaceverticesint-faceindexpoint3f-apoint3f-bpoint3f-cpoint3f-d">bool GetFaceVertices(int faceIndex,Point3f a,Point3f b,Point3f c,Point3f d)</h4>
+<ul>
+<li>(summary) Gets the 3D location of the vertices forming a face.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-gettopologicalverticesint-faceindex">int[] GetTopologicalVertices(int faceIndex)</h4>
+<ul>
+<li>(summary) Gets the topology vertex indices of a face.</li>
+<li>(since) 5.0</li>
+<li>(returns) int[] This is some return comment</li>
+</ul>
+<h4 id="bool-getzeroareafacesint-whollydegeneratefacesint-partiallydegeneratefaces">bool GetZeroAreaFaces(int[] whollyDegenerateFaces,int[] partiallyDegenerateFaces)</h4>
+<ul>
+<li>(summary) Examines and adds face indexes to whollyDegenerateFaces if the face is a triangle with zero area or a quad both triangles have zero area.
+Face indexes are added to partiallyDegenerateFaces when a quad has one triangle with zero area.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-hasnakededgesint-faceindex">bool HasNakedEdges(int faceIndex)</h4>
+<ul>
+<li>(summary) Returns True if at least one of the face edges are not topologically
+connected to any other faces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-insertint-indexmeshface-face">void Insert(int index,MeshFace face)</h4>
+<ul>
+<li>(summary) Inserts a mesh face at a defined index in this list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-ishiddenint-faceindex">bool IsHidden(int faceIndex)</h4>
+<ul>
+<li>(summary) Gets a value indicating whether a face is hidden.
+A face is hidden if, and only if, at least one of its vertices is hidden.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-removeatint-index">void RemoveAt(int index)</h4>
+<ul>
+<li>(summary) Removes a face from the mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-removeatint-indexbool-compact">void RemoveAt(int index,bool compact)</h4>
+<ul>
+<li>(summary) Removes a face from the mesh.</li>
+<li>(since) 6.6</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="int-removezeroareafacesint-fixedfacecount">int RemoveZeroAreaFaces(int fixedFaceCount)</h4>
+<ul>
+<li>(summary) Deletes or fixes mesh faces that have zero area.</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="bool-setfaceint-indexint-vertex1int-vertex2int-vertex3">bool SetFace(int index,int vertex1,int vertex2,int vertex3)</h4>
+<ul>
+<li>(summary) Sets a triangular face at a specific index of the mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfaceint-indexint-vertex1int-vertex2int-vertex3int-vertex4">bool SetFace(int index,int vertex1,int vertex2,int vertex3,int vertex4)</h4>
+<ul>
+<li>(summary) Sets a quadrangular face at a specific index of the mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-setfaceint-indexmeshface-face">bool SetFace(int index,MeshFace face)</h4>
+<ul>
+<li>(summary) Sets a face at a specific index of the mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="int-tointarraybool-astriangles">int[] ToIntArray(bool asTriangles)</h4>
+<ul>
+<li>
+<p>(summary) Copies all of the face indices to a linear array of indices per face.</p>
+<p>Note that this includes indices from invalid faces too.</p>
+</li>
+<li>
+<p>(since) 5.9</p>
+</li>
+<li>
+<p>(returns) int[] This is some return comment</p>
+</li>
+</ul>
+<h4 id="int-tointarraybool-astriangleslistint-replacedindices">int[] ToIntArray(bool asTriangles,List<!-- raw HTML omitted --> replacedIndices)</h4>
+<ul>
+<li>
+<p>(summary) Copies all of the faces to a linear array of indices.</p>
+<p>Clean-up of vertex indices if replacedIndices is a valid List<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>(since) (unknown)</p>
+</li>
+<li>
+<p>(returns) int[] This is some return comment</p>
+</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshFaceList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

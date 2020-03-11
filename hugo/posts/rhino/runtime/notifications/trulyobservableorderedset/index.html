@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  TrulyObservableOrderedSet &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime.Notifications
+An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.
+public class TrulyObservableOrderedSetCollectionChanged  (summary) Triggered whenever the set changes or when one of its elements has its PropertyChanged event triggered. (since) (unknown)  Constructors TrulyObservableOrderedSet()  (summary) Creates an empty instance. (since) (unknown)  TrulyObservableOrderedSet(IEnumerableitems)  (summary) Creates an instance with the given items. (since) (unknown)  Properties int Count  (summary) Returns the total number of items in the set.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">TrulyObservableOrderedSet</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime.Notifications</a></em></p>
+<p>An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TrulyObservableOrderedSet</span>
+</code></pre></div><h4 id="collectionchanged">CollectionChanged</h4>
+<ul>
+<li>(summary) Triggered whenever the set changes or when one of its elements has its PropertyChanged event triggered.</li>
+<li>(since) (unknown)</li>
+</ul>
+<h2 id="constructors">Constructors</h2>
+<h4 id="trulyobservableorderedset">TrulyObservableOrderedSet()</h4>
+<ul>
+<li>(summary) Creates an empty instance.</li>
+<li>(since) (unknown)</li>
+</ul>
+<h4 id="trulyobservableorderedsetienumerablet-items">TrulyObservableOrderedSet(IEnumerable<!-- raw HTML omitted --> items)</h4>
+<ul>
+<li>(summary) Creates an instance with the given items.</li>
+<li>(since) (unknown)</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="int-count">int Count</h4>
+<ul>
+<li>(summary) Returns the total number of items in the set.</li>
+<li>(since) (unknown)</li>
+</ul>
+<h4 id="bool-isreadonly">bool IsReadOnly</h4>
+<ul>
+<li>(summary) Always returns false.</li>
+<li>(since) (unknown)</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="void-addt-item">void Add(T item)</h4>
+<ul>
+<li>(summary) Adds an object to the end of the ordered set if the set does not already contain the item.</li>
+<li>(since) (unknown)</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-clear">void Clear()</h4>
+<ul>
+<li>(summary) Clears the ordered set.</li>
+<li>(since) (unknown)</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-containst-item">bool Contains(T item)</h4>
+<ul>
+<li>(summary) Determines whether an element is in the set.</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-copytot-arrayint-arrayindex">void CopyTo(T[] array,int arrayIndex)</h4>
+<ul>
+<li>(summary) Copies the values of the set to an array.</li>
+<li>(since) (unknown)</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="ienumeratort-getenumerator">IEnumerator<!-- raw HTML omitted --> GetEnumerator()</h4>
+<ul>
+<li>(summary) Returns an enumerator that iterates through the set.</li>
+<li>(since) (unknown)</li>
+<li>(returns) IEnumerator<!-- raw HTML omitted --> This is some return comment</li>
+</ul>
+<h4 id="int-indexoft-item">int IndexOf(T item)</h4>
+<ul>
+<li>(summary) Searches for the specified object and returns the zero-based index of the first occurrence.</li>
+<li>(since) (unknown)</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="void-insertint-indext-item">void Insert(int index,T item)</h4>
+<ul>
+<li>(summary) Inserts an element at the specified index.</li>
+<li>(since) (unknown)</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="bool-removet-item">bool Remove(T item)</h4>
+<ul>
+<li>(summary) Removes an element from the set.</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-removeatint-index">void RemoveAt(int index)</h4>
+<ul>
+<li>(summary) Removes an element at the specified index from the set.</li>
+<li>(since) (unknown)</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-sortfunct-tkey-keyselectorbool-descending">void Sort(Func&lt;T, TKey&gt; keySelector,bool descending)</h4>
+<ul>
+<li>(summary) Sorts the set.</li>
+<li>(since) (unknown)</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>TrulyObservableOrderedSet</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

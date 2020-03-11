@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Collections on Test API Site</title>
+    <link>http://example.org/posts/rhino/collections/</link>
+    <description>Recent content in Rhino.Collections on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/collections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArchivableDictionary</title>
+      <link>http://example.org/posts/rhino/collections/archivabledictionary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/collections/archivabledictionary/</guid>
+      <description>Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+public class ArchivableDictionaryConstructors ArchivableDictionary()  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version,string name)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive.</description>
+    </item>
+    
+    <item>
+      <title>CurveList</title>
+      <link>http://example.org/posts/rhino/collections/curvelist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/collections/curvelist/</guid>
+      <description>Namespace: Rhino.Collections
+Represents a list of curves.
+public class CurveListConstructors CurveList()  (summary) Initializes a new empty list of curves. (since) 5.0  CurveList(IEnumerablecollection)  (summary) Initializes a new list that is filled with all items of the input enumerable. Input items are not explicitly duplicated (this is a shallow copy). (since) 5.0  CurveList(int initialCapacity)  (summary) Initializes a new empty list of curves with a predefined capacity. This is the amount of items the list will accept before resizing.</description>
+    </item>
+    
+    <item>
+      <title>Point3dList</title>
+      <link>http://example.org/posts/rhino/collections/point3dlist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/collections/point3dlist/</guid>
+      <description>Namespace: Rhino.Collections
+Represents a list of .
+public class Point3dListConstructors Point3dList()  (summary) Initializes a new empty list with default capacity. (since) 5.0  Point3dList(IEnumerablecollection)  (summary) Initializes a new point list by copying the values from another set. (since) 5.0  Point3dList(int initialCapacity)  (summary) Initializes a new point list with a preallocated initial capacity. (since) 5.0  Point3dList(Point3d[] initialPoints)  (summary) Constructs a new point list from values in a point array.</description>
+    </item>
+    
+    <item>
+      <title>RhinoList</title>
+      <link>http://example.org/posts/rhino/collections/rhinolist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/collections/rhinolist/</guid>
+      <description>Namespace: Rhino.Collections
+Provides helper methods to work with and other collections.
+public class RhinoListConstructors RhinoList()  (summary) Initializes a new, empty list. (since) (unknown)  RhinoList(IEnumerablecollection)  (summary) Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T. (since) (unknown)  RhinoList(int initialCapacity)  (summary) Initializes an empty list with a certain capacity. (since) (unknown)  RhinoList(int amount,T defaultValue)  (summary) Initializes a new list with a specified amount of values.</description>
+    </item>
+    
+    <item>
+      <title>TransformObjectList</title>
+      <link>http://example.org/posts/rhino/collections/transformobjectlist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/collections/transformobjectlist/</guid>
+      <description>Namespace: Rhino.Collections
+Used by the TransformCommand and GetTransform classes.
+public class TransformObjectListConstructors TransformObjectList()  (summary) (since) 5.0  Properties int Count  (summary) Number of elements in this list (since) 5.10  bool DisplayFeedbackEnabled  (summary) (since) 5.0  int GripCount  (summary) Number of elements in grip list (since) 6.0  int GripOwnerCount  (summary) Number of elements in grip owner list (since) 6.0  Methods void Add(ObjRef objref)  (summary) Add an ObjRef to this list.</description>
+    </item>
+    
+  </channel>
+</rss>

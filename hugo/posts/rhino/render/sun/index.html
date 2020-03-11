@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Sun &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Represents the Sun on a little portion of Earth.
+public class SunConstructors Sun()  (summary) Create a non-document controlled Sun (since) 5.0  Events static Changed  (summary) This event is raised when a Sun property value is changed. (since) 5.10  Properties double Altitude  (summary) Get the altitude for the sun. To set use SetPosition(azimuth, altitude) (since) 5.0  double Azimuth  (summary) Get the azimuth for the sun.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Sun</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Represents the Sun on a little portion of Earth.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sun</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="sun">Sun()</h4>
+<ul>
+<li>(summary) Create a non-document controlled Sun</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="events">Events</h2>
+<h4 id="static-changed">static Changed</h4>
+<ul>
+<li>(summary) This event is raised when a Sun property value is changed.</li>
+<li>(since) 5.10</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="double-altitude">double Altitude</h4>
+<ul>
+<li>(summary) Get the altitude for the sun. To set use SetPosition(azimuth, altitude)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-azimuth">double Azimuth</h4>
+<ul>
+<li>(summary) Get the azimuth for the sun. To set use SetPosition(azimuth, altitude)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-daylightsaving">bool DaylightSaving</h4>
+<ul>
+<li>(summary) Daylight savings time</li>
+<li>(since) 5.10</li>
+</ul>
+<h4 id="int-daylightsavingminutes">int DaylightSavingMinutes</h4>
+<ul>
+<li>(summary) Daylight saving minutes</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-enabled">bool Enabled</h4>
+<ul>
+<li>(summary) Turn the sun on/off in this document.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-intensity">double Intensity</h4>
+<ul>
+<li>(summary) Sun intensity.</li>
+<li>(since) 7.0</li>
+</ul>
+<h4 id="double-latitude">double Latitude</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="geometrylight-light">Geometry.Light Light</h4>
+<ul>
+<li>(summary) Get a Light which represents the sun. If manual control is in effect, no sun calculation
+is performed; the function uses the values last used in calls to Azimuth, Altitude
+or Vector. If manual control is not in effect, the observer&rsquo;s position, date, time,
+time zone and daylight saving values are used to calculate the position of the sun.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-longitude">double Longitude</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-manualcontrol">bool ManualControl</h4>
+<ul>
+<li>(summary) Set angles directly or use place/date/time</li>
+<li>(since) 5.10</li>
+</ul>
+<h4 id="double-north">double North</h4>
+<ul>
+<li>(summary) Angle in degrees on world X-Y plane that should be considered north in the model. Angle is
+measured starting at X-Axis and travels counterclockwise. Y-Axis would be a north angle of 90
+degrees.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-skylighton">bool SkylightOn</h4>
+<ul>
+<li>(summary) Turn skylight on or off.</li>
+<li>(since) 5.10</li>
+</ul>
+<h4 id="double-timezone">double TimeZone</h4>
+<ul>
+<li>(summary) Measured in hours += UTC</li>
+<li>(since) 5.10</li>
+</ul>
+<h4 id="geometryvector3d-vector">Geometry.Vector3d Vector</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-double-altitudefromvaluesdouble-latitudedouble-longitudedouble-timezonehoursint-daylightminutesdatetime-whendouble-hoursbool-fast">static double AltitudeFromValues(double latitude,double longitude,double timezoneHours,int daylightMinutes,DateTime when,double hours,bool fast)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="static-systemdrawingcolor-colorfromaltitudedouble-altitudedegrees">static System.Drawing.Color ColorFromAltitude(double altitudeDegrees)</h4>
+<ul>
+<li>(summary) Get sun color based on altitude.</li>
+<li>(since) 6.0</li>
+<li>(returns) System.Drawing.Color This is some return comment</li>
+</ul>
+<h4 id="static-bool-heredouble-latitudedouble-longitude">static bool Here(double latitude,double longitude)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-double-juliandaydouble-timezonehoursint-daylightminutesdatetime-whendouble-hours">static double JulianDay(double timezoneHours,int daylightMinutes,DateTime when,double hours)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="static-geometryvector3d-sundirectiondouble-latitudedouble-longitudedatetime-when">static Geometry.Vector3d SunDirection(double latitude,double longitude,DateTime when)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) Geometry.Vector3d This is some return comment</li>
+</ul>
+<h4 id="static-double-twilightzone">static double TwilightZone()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="void-copyfromfreefloatingbase-src">void CopyFrom(FreeFloatingBase src)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-dispose">void Dispose()</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="datetime-getdatetimedatetimekind-kind">DateTime GetDateTime(DateTimeKind kind)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 5.0</li>
+<li>(returns) DateTime This is some return comment</li>
+</ul>
+<h4 id="void-setdatetimedatetime-timedatetimekind-kind">void SetDateTime(DateTime time,DateTimeKind kind)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setpositiondatetime-whendouble-latitudedegreesdouble-longitudedegrees">void SetPosition(DateTime when,double latitudeDegrees,double longitudeDegrees)</h4>
+<ul>
+<li>(summary) Sets position of the sun based on physical location and time.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-setpositiondouble-azimuthdegreesdouble-altitudedegrees">void SetPosition(double azimuthDegrees,double altitudeDegrees)</h4>
+<ul>
+<li>(summary) Sets position of the Sun based on azimuth and altitude values.
+Using this function will also set sun to manual.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-showdialog">void ShowDialog()</h4>
+<ul>
+<li>(summary) Show the tabbed sun dialog.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Sun</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#events">Events</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

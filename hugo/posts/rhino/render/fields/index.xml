@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.Fields on Test API Site</title>
+    <link>http://example.org/posts/rhino/render/fields/</link>
+    <description>Recent content in Rhino.Render.Fields on Test API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://example.org/posts/rhino/render/fields/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BoolField</title>
+      <link>http://example.org/posts/rhino/render/fields/boolfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/boolfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+bool field value class
+public class BoolFieldProperties bool Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>ByteArrayField</title>
+      <link>http://example.org/posts/rhino/render/fields/bytearrayfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/bytearrayfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+ByteArray field value class
+public class ByteArrayFieldProperties byte[] Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Color4fField</title>
+      <link>http://example.org/posts/rhino/render/fields/color4ffield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/color4ffield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Color4f field value class
+public class Color4fFieldProperties System.Drawing.Color SystemColorValue  (summary) Gets or sets the field value (since) 5.1  Color4f Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>DateTimeField</title>
+      <link>http://example.org/posts/rhino/render/fields/datetimefield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/datetimefield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+DateTime field value class
+public class DateTimeFieldProperties DateTime Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>DoubleField</title>
+      <link>http://example.org/posts/rhino/render/fields/doublefield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/doublefield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+double field value class
+public class DoubleFieldProperties double Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Field</title>
+      <link>http://example.org/posts/rhino/render/fields/field/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/field/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Generic data fields used to add publicly accessible properties to RenderContent.FieldDictionary. These should be created by calling a FieldDictaionary.Add() method on a Render content object. These are allocated after the RenderContent object&amp;rsquo;s C++ object is created and added to the underlying C++ objects content dictionary, who ever allocates a field is responsible for deleting it so these objects clean up the C++ pointers when they are disposed of.</description>
+    </item>
+    
+    <item>
+      <title>FieldDictionary</title>
+      <link>http://example.org/posts/rhino/render/fields/fielddictionary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/fielddictionary/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Dictionary containing RenderContent data fields, add fields to this dictionary in your derived RenderContent classes constructor. Get field values using the TryGetdata type methods and set them using the Set() method.
+public class FieldDictionaryMethods BoolField Add(string key,bool value)  (summary) Add a new BoolField to the dictionary. This will be a data only field and not show up in the content browsers. (since) 5.1 (returns) BoolField This is some return comment  BoolField Add(string key,bool value,string prompt)  (summary) Add a new BoolField to the dictionary.</description>
+    </item>
+    
+    <item>
+      <title>FloatField</title>
+      <link>http://example.org/posts/rhino/render/fields/floatfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/floatfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+float field value class
+public class FloatFieldProperties float Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>GuidField</title>
+      <link>http://example.org/posts/rhino/render/fields/guidfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/guidfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Guid field value class
+public class GuidFieldProperties Guid Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>IntField</title>
+      <link>http://example.org/posts/rhino/render/fields/intfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/intfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Integer field value class
+public class IntFieldProperties int Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Point2dField</title>
+      <link>http://example.org/posts/rhino/render/fields/point2dfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/point2dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Point2d field value class
+public class Point2dFieldProperties Point2d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Point3dField</title>
+      <link>http://example.org/posts/rhino/render/fields/point3dfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/point3dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Point3d field value class
+public class Point3dFieldProperties Point3d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Point4dField</title>
+      <link>http://example.org/posts/rhino/render/fields/point4dfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/point4dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Point4d field value class
+public class Point4dFieldProperties Point4d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>StringField</title>
+      <link>http://example.org/posts/rhino/render/fields/stringfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/stringfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+String field value class
+public class StringFieldProperties string Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>TransformField</title>
+      <link>http://example.org/posts/rhino/render/fields/transformfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/transformfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Transform field value class
+public class TransformFieldProperties Transform Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Vector2dField</title>
+      <link>http://example.org/posts/rhino/render/fields/vector2dfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/vector2dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Vector2d field value class
+public class Vector2dFieldProperties Vector2d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+    <item>
+      <title>Vector3dField</title>
+      <link>http://example.org/posts/rhino/render/fields/vector3dfield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/rhino/render/fields/vector3dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Vector3d field value class
+public class Vector3dFieldProperties Vector3d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  </description>
+    </item>
+    
+  </channel>
+</rss>

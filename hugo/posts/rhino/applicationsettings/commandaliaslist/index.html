@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CommandAliasList &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to access command aliases.
+public class CommandAliasListProperties static int Count  (summary) Returns the number of command alias in Rhino. (since) 5.0  Methods static bool Add(string alias,string macro)  (summary) Adds a new command alias to Rhino. (since) 5.0 (returns) bool This is some return comment  static void Clear()  (summary) Removes all aliases from the list. (since) 5.0 (returns) void This is some return comment  static bool Delete(string alias)  (summary) Deletes an existing command alias from Rhino.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CommandAliasList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.ApplicationSettings</a></em></p>
+<p>Contains static methods and properties to access command aliases.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CommandAliasList</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="static-int-count">static int Count</h4>
+<ul>
+<li>(summary) Returns the number of command alias in Rhino.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-bool-addstring-aliasstring-macro">static bool Add(string alias,string macro)</h4>
+<ul>
+<li>(summary) Adds a new command alias to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-void-clear">static void Clear()</h4>
+<ul>
+<li>(summary) Removes all aliases from the list.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-deletestring-alias">static bool Delete(string alias)</h4>
+<ul>
+<li>(summary) Deletes an existing command alias from Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-systemcollectionsgenericdictionarystring-string-getdefaults">static System.Collections.Generic.Dictionary&lt;string, string&gt; GetDefaults()</h4>
+<ul>
+<li>(summary) Constructs a dictionary containing as keys the default names and as value the default macro.
+The returned dicionary contains a copy of the settings.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Collections.Generic.Dictionary&lt;string, string&gt; This is some return comment</li>
+</ul>
+<h4 id="static-string-getmacrostring-alias">static string GetMacro(string alias)</h4>
+<ul>
+<li>(summary) Returns the macro of a command alias.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-getnames">static string[] GetNames()</h4>
+<ul>
+<li>(summary) Returns a list of command alias names.</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-bool-isaliasstring-alias">static bool IsAlias(string alias)</h4>
+<ul>
+<li>(summary) Verifies that a command alias exists in Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-isdefault">static bool IsDefault()</h4>
+<ul>
+<li>(summary) Computes a value indicating if the current alias list is the same as the default alias list.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-setmacrostring-aliasstring-macro">static bool SetMacro(string alias,string macro)</h4>
+<ul>
+<li>(summary) Modifies the macro of a command alias.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-systemcollectionsgenericdictionarystringstring-todictionary">static System.Collections.Generic.Dictionary&lt;string,string&gt; ToDictionary()</h4>
+<ul>
+<li>(summary) Constructs a new dictionary that contains: as keys all names and as values all macros.
+Modifications to this dictionary do not affect any Rhino command alias.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Collections.Generic.Dictionary&lt;string,string&gt; This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CommandAliasList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ColorLCH &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Represents an LCH (Lightness, A, B) color with double precision floating point channels. LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, in order to approach perceptual uniformity. They are primarily used in computer graphics which deal with colored lights.
+Constructors ColorLCH(Color rgb)  (summary) Constructs a new instance of ColorLCH that is equivalent to an RGB color. (since) 5.0  ColorLCH(double lightness,double chroma,double hue)  (summary) Constructs a new instance of ColorLCH with custom channel values.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ColorLCH</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Represents an LCH (Lightness, A, B) color with double precision floating point channels. 
+LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, 
+in order to approach perceptual uniformity. They are primarily used in computer graphics which 
+deal with colored lights.</p>
+<h2 id="constructors">Constructors</h2>
+<h4 id="colorlchcolor-rgb">ColorLCH(Color rgb)</h4>
+<ul>
+<li>(summary) Constructs a new instance of ColorLCH that is equivalent to an RGB color.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="colorlchdouble-lightnessdouble-chromadouble-hue">ColorLCH(double lightness,double chroma,double hue)</h4>
+<ul>
+<li>(summary) Constructs a new instance of ColorLCH with custom channel values.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="colorlchdouble-alphadouble-lightnessdouble-chromadouble-hue">ColorLCH(double alpha,double lightness,double chroma,double hue)</h4>
+<ul>
+<li>(summary) Constructs a new instance of ColorLCH with custom channel values.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="double-a">double A</h4>
+<ul>
+<li>(summary) Gets or sets the Alpha channel. The Alpha channel is limited to the 0~1 range.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-c">double C</h4>
+<ul>
+<li>(summary) Gets or sets the Chroma channel. Chroma is defined from -1.0 to +1.0.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-h">double H</h4>
+<ul>
+<li>(summary) Gets or sets the Hue channel. The hue channel is limited to the 0~360 degree range.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-l">double L</h4>
+<ul>
+<li>(summary) Gets or sets the Lightness channel.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-colorlch-createfromcmykcolorcmyk-cmyk">static ColorLCH CreateFromCMYK(ColorCMYK cmyk)</h4>
+<ul>
+<li>(summary) Create the nearest LCH equivalent of a CMYK color.</li>
+<li>(since) 5.0</li>
+<li>(returns) ColorLCH This is some return comment</li>
+</ul>
+<h4 id="static-colorlch-createfromhslcolorhsl-hsl">static ColorLCH CreateFromHSL(ColorHSL hsl)</h4>
+<ul>
+<li>(summary) Create the nearest LCH equivalent of an HSL color.</li>
+<li>(since) 5.0</li>
+<li>(returns) ColorLCH This is some return comment</li>
+</ul>
+<h4 id="static-colorlch-createfromlabcolorlab-lab">static ColorLCH CreateFromLAB(ColorLAB lab)</h4>
+<ul>
+<li>(summary) Create the nearest LCH equivalent of a LAB color.</li>
+<li>(since) 5.0</li>
+<li>(returns) ColorLCH This is some return comment</li>
+</ul>
+<h4 id="static-colorlch-createfromxyzcolorxyz-xyz">static ColorLCH CreateFromXYZ(ColorXYZ xyz)</h4>
+<ul>
+<li>(summary) Create the nearest LCH equivalent of an XYZ color.</li>
+<li>(since) 5.0</li>
+<li>(returns) ColorLCH This is some return comment</li>
+</ul>
+<h4 id="void-makepositive">void MakePositive()</h4>
+<ul>
+<li>(summary) Ensure the Chromaticity of this color is positive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ColorLCH</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

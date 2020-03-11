@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  HiddenLineDrawingObjectCurve &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Curves generated from source objects which correspond to edges, and silhouettes of source objects and intersections with cutting planes. A HiddenLineDrawingObjectCurve is partitioned into hidden and visible segments called HiddenLineDrawingSegment
+public class HiddenLineDrawingObjectCurveProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.0  int Index  (summary) Index of this object in HiddenLineDrawing.FullCurves. (since) 6.0  bool IsProjecting  (summary) Returns True if all the non clipped portions of this curve are projecting.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">HiddenLineDrawingObjectCurve</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Curves generated from source objects which correspond to edges, and
+silhouettes of source objects and intersections with cutting planes. A
+HiddenLineDrawingObjectCurve is partitioned into hidden and visible
+segments called HiddenLineDrawingSegment</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HiddenLineDrawingObjectCurve</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-clippingplaneindex">int ClippingPlaneIndex</h4>
+<ul>
+<li>(summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-index">int Index</h4>
+<ul>
+<li>(summary) Index of this object in HiddenLineDrawing.FullCurves.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-isprojecting">bool IsProjecting</h4>
+<ul>
+<li>(summary) Returns True if all the non clipped portions of this curve are projecting.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="bool-isvalid">bool IsValid</h4>
+<ul>
+<li>(summary) Verifies the object is valid.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-originaldomainstart">double OriginalDomainStart</h4>
+<ul>
+<li>(summary) Initialized to RhinoMath.UnsetValue. Valid if the full curve is closed.
+Rejoin can reparmeterize the curve by moving the seam.  When this has been
+done the original domain start is stored here.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-parameters">double[] Parameters</h4>
+<ul>
+<li>(summary) Increasing, partition of curve.Domain.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="hiddenlinedrawingsegment-segments">HiddenLineDrawingSegment[] Segments</h4>
+<ul>
+<li>(summary) The HiddenLineDrawingCurve objects that make up this full curve.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="silhouettetype-silhouettetype">SilhouetteType SilhouetteType</h4>
+<ul>
+<li>(summary) The silhouette event type</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="hiddenlinedrawingobject-sourceobject">HiddenLineDrawingObject SourceObject</h4>
+<ul>
+<li>(summary) Return the source object that this curve came from</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="componentindex-sourceobjectcomponentindex">ComponentIndex SourceObjectComponentIndex</h4>
+<ul>
+<li>(summary) Component of source object part that generated this curve.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="hiddenlinedrawingsegment-curvedouble-t">HiddenLineDrawingSegment Curve(double t)</h4>
+<ul>
+<li>(summary) Returns the HiddenLineDrawingCurve object containing parameter &lsquo;t&rsquo;.</li>
+<li>(since) 6.0</li>
+<li>(returns) HiddenLineDrawingSegment This is some return comment</li>
+</ul>
+<h4 id="hiddenlinedrawingsegment-curvedouble-tint-side">HiddenLineDrawingSegment Curve(double t,int side)</h4>
+<ul>
+<li>(summary) Returns the HiddenLineDrawingCurve object containing parameter &lsquo;t&rsquo;.</li>
+<li>(since) 6.0</li>
+<li>(returns) HiddenLineDrawingSegment This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>HiddenLineDrawingObjectCurve</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

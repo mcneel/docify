@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BinaryArchiveWriter &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents an entity that is able to write data to an archive.
+public class BinaryArchiveWriterProperties int Archive3dmVersion  (summary) If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BinaryArchiveWriter</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents an entity that is able to write data to an archive.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinaryArchiveWriter</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="int-archive3dmversion">int Archive3dmVersion</h4>
+<ul>
+<li>(summary) If a 3dm archive is being read or written, then this is the
+version of the 3dm archive format (1, 2, 3, 4 or 5).
+0     a 3dm archive is not being read/written
+1     a version 1 3dm archive is being read/written
+2     a version 2 3dm archive is being read/written
+3     a version 3 3dm archive is being read/written
+4     a version 4 3dm archive is being read/written
+5     an old version 5 3dm archive is being read
+50    a version 5 3dm archive is being read/written.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-writeerroroccured">bool WriteErrorOccured</h4>
+<ul>
+<li>(summary) Gets or sets whether an error occurred.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="bool-beginwrite3dmchunkuint-typecodeint-majorversionint-minorversion">bool BeginWrite3dmChunk(uint typecode,int majorVersion,int minorVersion)</h4>
+<ul>
+<li>(summary) Begins writing a chunk</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-beginwrite3dmchunkuint-typecodelong-value">bool BeginWrite3dmChunk(uint typecode,long value)</h4>
+<ul>
+<li>(summary) Begins writing a chunk</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-enablecrccalculationbool-enable">bool EnableCRCCalculation(bool enable)</h4>
+<ul>
+<li>(summary) Expert user function to control CRC calculation while reading and writing.
+Typically this is used when seeking around and reading/writing information
+in non-serial order.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-endwrite3dmchunk">bool EndWrite3dmChunk()</h4>
+<ul>
+<li>(summary) updates length in chunk header</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-write3dmchunkversionint-majorint-minor">void Write3dmChunkVersion(int major,int minor)</h4>
+<ul>
+<li>(summary) A chunk version is a single byte that encodes a major.minor
+version number.  Useful when creating I/O code for 3dm chunks
+that may change in the future.  Increment the minor version 
+number if new information is added to the end of the chunk. 
+Increment the major version if the format of the chunk changes
+in some other way.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeboolbool-value">void WriteBool(bool value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeboolarrayienumerablebool-value">void WriteBoolArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeboundingboxboundingbox-value">void WriteBoundingBox(BoundingBox value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writebytebyte-value">void WriteByte(byte value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writebytearrayienumerablebyte-value">void WriteByteArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writecolorcolor-value">void WriteColor(Color value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writecompressedbufferienumerablebyte-value">void WriteCompressedBuffer(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive as a compressed buffer.
+The return will always be an array.</li>
+<li>(since) 5.9</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writedictionaryarchivabledictionary-dictionary">void WriteDictionary(ArchivableDictionary dictionary)</h4>
+<ul>
+<li>(summary) Delivers the complete content of a dictionary to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writedoubledouble-value">void WriteDouble(double value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writedoublearrayienumerabledouble-value">void WriteDoubleArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeemptychecksum">void WriteEmptyCheckSum()</h4>
+<ul>
+<li>(summary) Reads a legacy ON_CheckSum, only provided to read data chunks from old
+V5 files, the CheckSum read is discarded</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writefontfont-value">void WriteFont(Font value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writegeometrygeometrybase-value">void WriteGeometry(GeometryBase value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writegeometryarrayienumerablegeometrybase-geometry">void WriteGeometryArray(IEnumerable<!-- raw HTML omitted --> geometry)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeguidguid-value">void WriteGuid(Guid value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeguidarrayienumerableguid-value">void WriteGuidArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeintint-value">void WriteInt(int value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeint64int64-value">void WriteInt64(Int64 value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeintarrayienumerableint-value">void WriteIntArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeintervalinterval-value">void WriteInterval(Interval value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writelineline-value">void WriteLine(Line value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writemeshingparametersmeshingparameters-value">void WriteMeshingParameters(MeshingParameters value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeobjrefobjref-objref">void WriteObjRef(ObjRef objref)</h4>
+<ul>
+<li>(summary) Writes a  to the archive</li>
+<li>(since) 5.8</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeobjrefarrayienumerableobjref-objrefs">void WriteObjRefArray(IEnumerable<!-- raw HTML omitted --> objrefs)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.8</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeplaneplane-value">void WritePlane(Plane value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writepointpoint-value">void WritePoint(Point value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writepoint2dpoint2d-value">void WritePoint2d(Point2d value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writepoint3dpoint3d-value">void WritePoint3d(Point3d value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writepoint3fpoint3f-value">void WritePoint3f(Point3f value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writepoint4dpoint4d-value">void WritePoint4d(Point4d value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writepointfpointf-value">void WritePointF(PointF value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeray3dray3d-value">void WriteRay3d(Ray3d value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writerectanglerectangle-value">void WriteRectangle(Rectangle value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writerectanglefrectanglef-value">void WriteRectangleF(RectangleF value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writerendersettingsrendersettings-value">void WriteRenderSettings(RenderSettings value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writesbytesbyte-value">void WriteSByte(sbyte value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writesbytearrayienumerablesbyte-value">void WriteSByteArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeshortshort-value">void WriteShort(short value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeshortarrayienumerableshort-value">void WriteShortArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writesinglefloat-value">void WriteSingle(float value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writesinglearrayienumerablefloat-value">void WriteSingleArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writesizesize-value">void WriteSize(Size value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writesizefsizef-value">void WriteSizeF(SizeF value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writestringstring-value">void WriteString(string value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writestringarrayienumerablestring-value">void WriteStringArray(IEnumerable<!-- raw HTML omitted --> value)</h4>
+<ul>
+<li>(summary) Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writetransformtransform-value">void WriteTransform(Transform value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeuintuint-value">void WriteUInt(uint value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeushortushort-value">void WriteUShort(ushort value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writeutf8stringstring-value">void WriteUtf8String(string value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writevector2dvector2d-value">void WriteVector2d(Vector2d value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writevector3dvector3d-value">void WriteVector3d(Vector3d value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="void-writevector3fvector3f-value">void WriteVector3f(Vector3f value)</h4>
+<ul>
+<li>(summary) Writes a  value to the archive.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BinaryArchiveWriter</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

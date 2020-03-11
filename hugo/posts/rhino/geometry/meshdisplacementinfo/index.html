@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshDisplacementInfo &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Contains mesh displacement information.
+public class MeshDisplacementInfoConstructors MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)  (summary) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties double Black  (summary) Value considered lowest point in the displacement. (since) 6.0  double BlackMove  (summary) The amount of displacement for the black color in the texture.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshDisplacementInfo</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Contains mesh displacement information.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshDisplacementInfo</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="meshdisplacementinforendertexture-texturetexturemapping-mapping">MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)</h4>
+<ul>
+<li>(summary) Constructs a displacement information instance with default values.
+Users of this class should not rely on default values to stay constant
+across service releases.</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="double-black">double Black</h4>
+<ul>
+<li>(summary) Value considered lowest point in the displacement.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-blackmove">double BlackMove</h4>
+<ul>
+<li>(summary) The amount of displacement for the black color in the texture.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-channelnumber">int ChannelNumber</h4>
+<ul>
+<li>(summary) Mapping channel number for the displacement mapping.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-facelimit">int FaceLimit</h4>
+<ul>
+<li>(summary) Runs a mesh reduction as a post process o simplify the result of
+displacement to meet the specified number of faces.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-fairingamount">int FairingAmount</h4>
+<ul>
+<li>(summary) Straightens rough feature edges.
+The value specifies the number of passes.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="transform-instancetransform">Transform InstanceTransform</h4>
+<ul>
+<li>(summary) Instance transformation of the mesh.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="texturemapping-mapping">TextureMapping Mapping</h4>
+<ul>
+<li>(summary) The texture mapping of the mesh.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="transform-mappingtransform">Transform MappingTransform</h4>
+<ul>
+<li>(summary) Texture mapping transform.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-memorylimit">int MemoryLimit</h4>
+<ul>
+<li>(summary) Specifies how much memory can be allocated for use by the
+displacement mesh. Value in megabytes.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-postweldangle">double PostWeldAngle</h4>
+<ul>
+<li>(summary) Specifies the maximum angle between face normals of adjacent faces
+that will get welded together.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-refinesensitivity">double RefineSensitivity</h4>
+<ul>
+<li>(summary) Specifies how sensitive the divider for contrasts is on the
+displacement texture.Specify 1 to split all mesh edges on each refine step.Specify 0.99 to make even slight contrasts on the displacement
+texture cause edges to be split.Specifying 0.01 only splits edges where heavy contrast
+exists.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-refinestepcount">int RefineStepCount</h4>
+<ul>
+<li>(summary) Specifies the number of refinement passes.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-sweeppitch">double SweepPitch</h4>
+<ul>
+<li>(summary) Specifies how densely the object is initially subdivided.
+The lower the value, the higher the resolution of the displaced mesh.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="rendertexture-texture">RenderTexture Texture</h4>
+<ul>
+<li>(summary) The texture used as displacement.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-white">double White</h4>
+<ul>
+<li>(summary) Value considered highest point of the displacement texture.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="double-whitemove">double WhiteMove</h4>
+<ul>
+<li>(summary) The amount of displacement for the white color in the texture.</li>
+<li>(since) 6.0</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshDisplacementInfo</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

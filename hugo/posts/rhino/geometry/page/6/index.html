@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Geometry &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Geometry</h1>
+  <ul>
+<li><a href="angulardimension/">AngularDimension</a></li>
+<li><a href="annotationbase/">AnnotationBase</a></li>
+<li><a href="arc/">Arc</a></li>
+<li><a href="arccurve/">ArcCurve</a></li>
+<li><a href="areamassproperties/">AreaMassProperties</a></li>
+<li><a href="arrowhead/">Arrowhead</a></li>
+<li><a href="beziercurve/">BezierCurve</a></li>
+<li><a href="blendcontinuity/">BlendContinuity</a></li>
+<li><a href="blendtype/">BlendType</a></li>
+<li><a href="boundingbox/">BoundingBox</a></li>
+<li><a href="box/">Box</a></li>
+<li><a href="brep/">Brep</a></li>
+<li><a href="brepedge/">BrepEdge</a></li>
+<li><a href="brepface/">BrepFace</a></li>
+<li><a href="shrinkdisableside/">ShrinkDisableSide</a></li>
+<li><a href="breploop/">BrepLoop</a></li>
+<li><a href="breplooptype/">BrepLoopType</a></li>
+<li><a href="brepregion/">BrepRegion</a></li>
+<li><a href="brepregionfaceside/">BrepRegionFaceSide</a></li>
+<li><a href="brepsolidorientation/">BrepSolidOrientation</a></li>
+<li><a href="breptrim/">BrepTrim</a></li>
+<li><a href="breptrimtype/">BrepTrimType</a></li>
+<li><a href="brepvertex/">BrepVertex</a></li>
+<li><a href="centermark/">Centermark</a></li>
+<li><a href="circle/">Circle</a></li>
+<li><a href="clippingplanesurface/">ClippingPlaneSurface</a></li>
+<li><a href="componentindex/">ComponentIndex</a></li>
+<li><a href="componentindextype/">ComponentIndexType</a></li>
+<li><a href="componentstatus/">ComponentStatus</a></li>
+<li><a href="concavity/">Concavity</a></li>
+<li><a href="cone/">Cone</a></li>
+<li><a href="conicsectiontype/">ConicSectionType</a></li>
+<li><a href="continuity/">Continuity</a></li>
+<li><a href="controlpoint/">ControlPoint</a></li>
+<li><a href="curve/">Curve</a></li>
+<li><a href="curvebooleanregions/">CurveBooleanRegions</a></li>
+<li><a href="curveend/">CurveEnd</a></li>
+<li><a href="curveevaluationside/">CurveEvaluationSide</a></li>
+<li><a href="curveextensionstyle/">CurveExtensionStyle</a></li>
+<li><a href="curveknotstyle/">CurveKnotStyle</a></li>
+<li><a href="curveoffsetcornerstyle/">CurveOffsetCornerStyle</a></li>
+<li><a href="curveorientation/">CurveOrientation</a></li>
+<li><a href="curveproxy/">CurveProxy</a></li>
+<li><a href="curvesimplifyoptions/">CurveSimplifyOptions</a></li>
+<li><a href="cylinder/">Cylinder</a></li>
+<li><a href="detailview/">DetailView</a></li>
+<li><a href="developablesrf/">DevelopableSrf</a></li>
+<li><a href="dimension/">Dimension</a></li>
+<li><a href="distancingmode/">DistancingMode</a></li>
+<li><a href="edgeadjacency/">EdgeAdjacency</a></li>
+<li><a href="ellipse/">Ellipse</a></li>
+<li><a href="extrudecornertype/">ExtrudeCornerType</a></li>
+<li><a href="extrusion/">Extrusion</a></li>
+<li><a href="geometrybase/">GeometryBase</a></li>
+<li><a href="hatch/">Hatch</a></li>
+<li><a href="hermitesurface/">HermiteSurface</a></li>
+<li><a href="hiddenlinedrawing/">HiddenLineDrawing</a></li>
+<li><a href="hiddenlinedrawingobject/">HiddenLineDrawingObject</a></li>
+<li><a href="hiddenlinedrawingobjectcurve/">HiddenLineDrawingObjectCurve</a></li>
+<li><a href="hiddenlinedrawingparameters/">HiddenLineDrawingParameters</a></li>
+<li><a href="hiddenlinedrawingpoint/">HiddenLineDrawingPoint</a></li>
+<li><a href="visibility/">Visibility</a></li>
+<li><a href="hiddenlinedrawingsegment/">HiddenLineDrawingSegment</a></li>
+<li><a href="sidefill/">SideFill</a></li>
+<li><a href="visibility/">Visibility</a></li>
+<li><a href="instancedefinitiongeometry/">InstanceDefinitionGeometry</a></li>
+<li><a href="instancereferencegeometry/">InstanceReferenceGeometry</a></li>
+<li><a href="interpolator/">Interpolator</a></li>
+<li><a href="interval/">Interval</a></li>
+<li><a href="invaliddimensionstyleidexception/">InvalidDimensionStyleIdException</a></li>
+<li><a href="isostatus/">IsoStatus</a></li>
+<li><a href="leader/">Leader</a></li>
+<li><a href="light/">Light</a></li>
+<li><a href="attenuation/">Attenuation</a></li>
+<li><a href="lightstyle/">LightStyle</a></li>
+<li><a href="line/">Line</a></li>
+<li><a href="lineardimension/">LinearDimension</a></li>
+<li><a href="linecurve/">LineCurve</a></li>
+<li><a href="lofttype/">LoftType</a></li>
+<li><a href="matrix/">Matrix</a></li>
+<li><a href="mesh/">Mesh</a></li>
+<li><a href="meshcheckparameters/">MeshCheckParameters</a></li>
+<li><a href="meshdisplacementinfo/">MeshDisplacementInfo</a></li>
+<li><a href="meshextruder/">MeshExtruder</a></li>
+<li><a href="meshface/">MeshFace</a></li>
+<li><a href="meshingparameters/">MeshingParameters</a></li>
+<li><a href="meshingparameterstyle/">MeshingParameterStyle</a></li>
+<li><a href="meshingparametertexturerange/">MeshingParameterTextureRange</a></li>
+<li><a href="meshngon/">MeshNgon</a></li>
+<li><a href="meshpart/">MeshPart</a></li>
+<li><a href="meshpoint/">MeshPoint</a></li>
+<li><a href="meshthicknessmeasurement/">MeshThicknessMeasurement</a></li>
+<li><a href="meshtype/">MeshType</a></li>
+<li><a href="meshunsafelock/">MeshUnsafeLock</a></li>
+<li><a href="morphcontrol/">MorphControl</a></li>
+<li><a href="nurbscurve/">NurbsCurve</a></li>
+<li><a href="nurbscurveendconditiontype/">NurbsCurveEndConditionType</a></li>
+<li><a href="nurbssurface/">NurbsSurface</a></li>
+<li><a href="ordinatedimension/">OrdinateDimension</a></li>
+<li><a href="particle/">Particle</a></li>
+<li><a href="particlesystem/">ParticleSystem</a></li>
+<li><a href="pipecapmode/">PipeCapMode</a></li>
+<li><a href="plane/">Plane</a></li>
+<li><a href="planefitresult/">PlaneFitResult</a></li>
+<li><a href="planesurface/">PlaneSurface</a></li>
+<li><a href="point/">Point</a></li>
+<li><a href="point2d/">Point2d</a></li>
+<li><a href="point2f/">Point2f</a></li>
+<li><a href="point3d/">Point3d</a></li>
+<li><a href="point3dgrid/">Point3dGrid</a></li>
+<li><a href="point3f/">Point3f</a></li>
+<li><a href="point4d/">Point4d</a></li>
+<li><a href="pointcloud/">PointCloud</a></li>
+<li><a href="pointclouditem/">PointCloudItem</a></li>
+<li><a href="pointcontainment/">PointContainment</a></li>
+<li><a href="pointfacerelation/">PointFaceRelation</a></li>
+<li><a href="polycurve/">PolyCurve</a></li>
+<li><a href="polyline/">Polyline</a></li>
+<li><a href="polylinecurve/">PolylineCurve</a></li>
+<li><a href="quadremeshparameters/">QuadRemeshParameters</a></li>
+<li><a href="quadremeshsymmetryaxis/">QuadRemeshSymmetryAxis</a></li>
+<li><a href="quaternion/">Quaternion</a></li>
+<li><a href="radialdimension/">RadialDimension</a></li>
+<li><a href="railtype/">RailType</a></li>
+<li><a href="ray3d/">Ray3d</a></li>
+<li><a href="rectangle3d/">Rectangle3d</a></li>
+<li><a href="reducemeshparameters/">ReduceMeshParameters</a></li>
+<li><a href="regioncontainment/">RegionContainment</a></li>
+<li><a href="revsurface/">RevSurface</a></li>
+<li><a href="rtree/">RTree</a></li>
+<li><a href="rtreeeventargs/">RTreeEventArgs</a></li>
+<li><a href="shutliningcurveinfo/">ShutLiningCurveInfo</a></li>
+<li><a href="silhouette/">Silhouette</a></li>
+<li><a href="silhouettetype/">SilhouetteType</a></li>
+<li><a href="smoothingcoordinatesystem/">SmoothingCoordinateSystem</a></li>
+<li><a href="spacemorph/">SpaceMorph</a></li>
+<li><a href="sphere/">Sphere</a></li>
+<li><a href="subd/">SubD</a></li>
+<li><a href="subdcomponent/">SubDComponent</a></li>
+<li><a href="subdcreationoptions/">SubDCreationOptions</a></li>
+<li><a href="subdedge/">SubDEdge</a></li>
+<li><a href="subdface/">SubDFace</a></li>
+<li><a href="subdvertex/">SubDVertex</a></li>
+<li><a href="sumsurface/">SumSurface</a></li>
+<li><a href="surface/">Surface</a></li>
+<li><a href="surfacecurvature/">SurfaceCurvature</a></li>
+<li><a href="surfaceproxy/">SurfaceProxy</a></li>
+<li><a href="sweeponerail/">SweepOneRail</a></li>
+<li><a href="sweeprebuild/">SweepRebuild</a></li>
+<li><a href="sweeptworail/">SweepTwoRail</a></li>
+<li><a href="textdot/">TextDot</a></li>
+<li><a href="textentity/">TextEntity</a></li>
+<li><a href="textjustification/">TextJustification</a></li>
+<li><a href="textruntype/">TextRunType</a></li>
+<li><a href="torus/">Torus</a></li>
+<li><a href="transform/">Transform</a></li>
+<li><a href="transformrigidtype/">TransformRigidType</a></li>
+<li><a href="transformsimilaritytype/">TransformSimilarityType</a></li>
+<li><a href="unroller/">Unroller</a></li>
+<li><a href="vector2d/">Vector2d</a></li>
+<li><a href="vector2f/">Vector2f</a></li>
+<li><a href="vector3d/">Vector3d</a></li>
+<li><a href="vector3f/">Vector3f</a></li>
+<li><a href="volumemassproperties/">VolumeMassProperties</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/lineardimension/">
+        <div class="h2 mt-1 mb-1">LinearDimension</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a linear dimension
+public class LinearDimensionConstructors LinearDimension()  (summary) (since) 5.0  LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)  (summary) (since) 5.0  Properties bool Aligned  (summary) Gets or sets a value indicating whether this annotation is aligned. (since) 5.0  AnnotationType AnnotationType  (summary) (since) 6.0  Point2d Arrowhead1End  (summary) Gets the arrow head end of the first extension line. (since) 5.0  Point2d Arrowhead2End  (summary) Gets the arrow head end of the second extension line.
+    <a class="muted-link" href="/posts/rhino/geometry/lineardimension/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/linecurve/">
+        <div class="h2 mt-1 mb-1">LineCurve</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a linear curve.
+public class LineCurveConstructors LineCurve()  (summary) Initializes a new instance of the class. (since) 5.0  LineCurve(Line line)  (summary) Initializes a new instance of the class, by retrieving its value from a line. (since) 5.0  LineCurve(Line line,double t0,double t1)  (summary) Initializes a new instance of the class, by retrieving its value from a line and setting the domain. (since) 5.0  LineCurve(LineCurve other)  (summary) Initializes a new instance of the class, by copying values from another linear curve.
+    <a class="muted-link" href="/posts/rhino/geometry/linecurve/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/matrix/">
+        <div class="h2 mt-1 mb-1">Matrix</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents an arbitrarily sized matrix of double-precision floating point numbers. If you are working with a 4x4 matrix, then you may want to use the class instead.
+public class Matrixstatic *  (summary) Multiplies two matrices and returns a new product matrix. (since) 5.0  static +  (summary) Adds two matrices and returns a new sum matrix. (since) (unknown)  Constructors Matrix(int rowCount,int columnCount)  (summary) Initializes a new instance of the matrix.
+    <a class="muted-link" href="/posts/rhino/geometry/matrix/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/mesh/">
+        <div class="h2 mt-1 mb-1">Mesh</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a geometry type that is defined by vertices and faces. This is often called a face-vertex mesh.
+public class MeshConstructors Mesh()  (summary) Initializes a new empty mesh. (since) 5.0  Properties Collections.MeshVertexStatusList ComponentStates  (summary) Gets access to the vertex hidden/visibility collection in this mesh. This is a runtime property and it is not saved in the 3dm file. (since) 6.0  int DisjointMeshCount  (summary) Gets the number of disjoint (topologically unconnected) pieces in this mesh.
+    <a class="muted-link" href="/posts/rhino/geometry/mesh/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/meshcheckparameters/">
+        <div class="h2 mt-1 mb-1">MeshCheckParameters</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Output of a mesh checking operations.
+Properties bool CheckForBadNormals  (summary) If true, then then look for vertex normals that are not unit vectors, are zero length or vary greatly from the general direction of the face normals. (since) 7.0  bool CheckForDegenerateFaces  (summary) If true, then look for triangles and quads that have zero area and quads where one sub triangle has zero area. (since) 7.0  bool CheckForDisjointMeshes  (summary) If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.
+    <a class="muted-link" href="/posts/rhino/geometry/meshcheckparameters/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/meshdisplacementinfo/">
+        <div class="h2 mt-1 mb-1">MeshDisplacementInfo</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Contains mesh displacement information.
+public class MeshDisplacementInfoConstructors MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)  (summary) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties double Black  (summary) Value considered lowest point in the displacement. (since) 6.0  double BlackMove  (summary) The amount of displacement for the black color in the texture.
+    <a class="muted-link" href="/posts/rhino/geometry/meshdisplacementinfo/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/meshextruder/">
+        <div class="h2 mt-1 mb-1">MeshExtruder</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Extrudes a mesh and provides preview
+public class MeshExtruderConstructors MeshExtruder(Mesh inputMesh,IEnumerablecomponentIndices)  (summary) Construct object to extrude given mesh faces, edges and ngons. (since) 6.3  Properties bool EdgeBasedUVN  (summary) Edge based UVN defines UVN directions according to boundary edge directions (since) 6.4  MeshExtruderFaceDirectionMode FaceDirectionMode  (summary) Face direction mode determines how faces are oriented (since) 6.3  bool KeepOriginalFaces  (summary) Whether or not to keep original faces.
+    <a class="muted-link" href="/posts/rhino/geometry/meshextruder/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/meshface/">
+        <div class="h2 mt-1 mb-1">MeshFace</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents the values of the four indices of a mesh face quad. If the third and fourth values are the same, this face represents a triangle.
+static !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Constructors MeshFace(int a,int b,int c)  (summary) Constructs a new triangular Mesh face. (since) 5.
+    <a class="muted-link" href="/posts/rhino/geometry/meshface/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/meshingparameters/">
+        <div class="h2 mt-1 mb-1">MeshingParameters</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents settings used for creating a mesh representation of a brep or surface.
+public class MeshingParametersConstructors MeshingParameters()  (summary) Initializes a new instance with default values. Initial values are same as . (since) 5.0  MeshingParameters(double density)  (summary) Initializes a new instance with simple values, similar to that of Rhino&rsquo;s meshing slider interface. (since) 6.0  MeshingParameters(double density,double minimumEdgeLength)  (summary) Initializes a new instance with simple values, similar to that of Rhino&rsquo;s meshing slider interface.
+    <a class="muted-link" href="/posts/rhino/geometry/meshingparameters/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/geometry/meshngon/">
+        <div class="h2 mt-1 mb-1">MeshNgon</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry
+Represents a mesh ngon. When retrieved from the Ngon property of a mesh, this contains faces that have edge valence strictly higher than 4.When retrieving Ngons from , this might contain also triangles and quads.
+public class MeshNgonstatic !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Properties static MeshNgon Empty  (summary) Gets an empty MeshNgon.
+    <a class="muted-link" href="/posts/rhino/geometry/meshngon/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/geometry/page/5/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/5/">5</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">6</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/7/">7</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/geometry/page/12/">12</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/geometry/page/7/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

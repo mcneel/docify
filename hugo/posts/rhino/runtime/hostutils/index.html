@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  HostUtils &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime
+Contains static methods to deal with teh runtime environment.
+public class HostUtilsstatic OnExceptionReport  (summary) Is raised when an exception is reported with one of the method. (since) 5.0  static OnSendLogMessageToCloud  (summary) Is raised when an exception is reported with one of the method. (since) 6.4  Properties static string ComputerSerialNumber  (summary) Gets the serial number of the computer running Rhino. (since) 6.0  static uint CurrentOSLanguage  (summary) Get the current operating system language.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">HostUtils</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime</a></em></p>
+<p>Contains static methods to deal with teh runtime environment.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HostUtils</span>
+</code></pre></div><h4 id="static-onexceptionreport">static OnExceptionReport</h4>
+<ul>
+<li>(summary) Is raised when an exception is reported with one of the  method.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-onsendlogmessagetocloud">static OnSendLogMessageToCloud</h4>
+<ul>
+<li>(summary) Is raised when an exception is reported with one of the  method.</li>
+<li>(since) 6.4</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-string-computerserialnumber">static string ComputerSerialNumber</h4>
+<ul>
+<li>(summary) Gets the serial number of the computer running Rhino.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-uint-currentoslanguage">static uint CurrentOSLanguage</h4>
+<ul>
+<li>(summary) Get the current operating system language.</li>
+<li>(since) 6.8</li>
+</ul>
+<h4 id="static-guid-deviceid">static Guid DeviceId</h4>
+<ul>
+<li>(summary) The DeviceId is a unique, stable ID that anonymously identifies the device
+that Rhino is running on. It is computed based on hardware information that
+should not change when the OS is upgraded, or if commonly modified hardware
+are added or removed from the computer. The machine-specific information is
+hashed using a cryptographic hash to make it anonymous.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-string-devicename">static string DeviceName</h4>
+<ul>
+<li>(summary) Name of the computer running Rhino. If the computer is part of a
+Windows Domain, the computer name has &ldquo;@[DOMAIN]&rdquo; appended.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="static-string-operatingsystembuildnumber">static string OperatingSystemBuildNumber</h4>
+<ul>
+<li>(summary) Returns Operating System Build Number &ldquo;11763&rdquo; | &ldquo;7601&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</li>
+<li>(since) 6.15</li>
+</ul>
+<h4 id="static-string-operatingsystemedition">static string OperatingSystemEdition</h4>
+<ul>
+<li>(summary) Returns Operating System Edition: &ldquo;Professional&rdquo; | &ldquo;ServerDatacenter&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</li>
+<li>(since) 6.15</li>
+</ul>
+<h4 id="static-string-operatingsysteminstallationtype">static string OperatingSystemInstallationType</h4>
+<ul>
+<li>(summary) Returns Operating System Installation Type: &ldquo;Client&rdquo; | &ldquo;Server&rdquo; | &ldquo;Unknown&rdquo;</li>
+<li>(since) 6.15</li>
+</ul>
+<h4 id="static-string-operatingsystemproductname">static string OperatingSystemProductName</h4>
+<ul>
+<li>(summary) Returns Operating System Edition: &ldquo;Professional&rdquo; | &ldquo;ServerDatacenter&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</li>
+<li>(since) 6.15</li>
+</ul>
+<h4 id="static-string-operatingsystemversion">static string OperatingSystemVersion</h4>
+<ul>
+<li>(summary) Returns Operating System Version &ldquo;6.1&rdquo; | &ldquo;6.3&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</li>
+<li>(since) 6.15</li>
+</ul>
+<h4 id="static-bool-runningindarkmode">static bool RunningInDarkMode</h4>
+<ul>
+<li>(summary) Returns True if the host operating system is in dark mode and Rhino
+supports dark mode.</li>
+<li>(since) 6.19</li>
+</ul>
+<h4 id="static-bool-runninginmono">static bool RunningInMono</h4>
+<ul>
+<li>(summary) Tests if this process is currently executing under the Mono runtime.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-bool-runninginrhino">static bool RunningInRhino</h4>
+<ul>
+<li>(summary) Tests if RhinoCommon is currently executing inside of the Rhino.exe process.
+There are other cases where RhinoCommon could be running; specifically inside
+of Visual Studio when something like a windows form is being worked on in the
+resource editor or running stand-alone when compiled to be used as a version
+of OpenNURBS.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-bool-runningonosx">static bool RunningOnOSX</h4>
+<ul>
+<li>(summary) Tests if this process is currently executing on the Mac OSX platform.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-bool-runningonwindows">static bool RunningOnWindows</h4>
+<ul>
+<li>(summary) Tests if this process is currently executing on the Windows platform.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static-bool-senddebugtocommandline">static bool SendDebugToCommandLine</h4>
+<ul>
+<li>(summary) Gets or sets whether debug messages are printed to the command line.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-string-autoinstallpluginfolderbool-currentuser">static string AutoInstallPlugInFolder(bool currentUser)</h4>
+<ul>
+<li>(summary) Gets the auto install plug-in folder for machine or current user.</li>
+<li>(since) 6.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-int-callfromcorerhinostring-task">static int CallFromCoreRhino(string task)</h4>
+<ul>
+<li>(summary) Don&rsquo;t change this function in ANY way unless you chat with Steve first!
+This function is called by Rhino on initial startup and the signature
+must be exact</li>
+<li>(since) 6.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="static-bool-checkforrdkbool-throwonfalsebool-usepreviousresult">static bool CheckForRdk(bool throwOnFalse,bool usePreviousResult)</h4>
+<ul>
+<li>(summary) Determines if the RDK is loaded.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-void-clearfpuexceptionstatus">static void ClearFpuExceptionStatus()</h4>
+<ul>
+<li>(summary) Clear FPU exception and busy flags (Intel assembly fnclex)</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-int-createcommandsintptr-ppluginassembly-pluginassembly">static int CreateCommands(IntPtr pPlugIn,Assembly pluginAssembly)</h4>
+<ul>
+<li>(summary) Parses a plugin and create all the commands defined therein.</li>
+<li>(since) 5.0</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="static-void-createcommandsplugin-plugin">static void CreateCommands(PlugIn plugin)</h4>
+<ul>
+<li>(summary) Parses a plugin and create all the commands defined therein.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-plugin-createplugintype-plugintypebool-printdebugmessages">static PlugIn CreatePlugIn(Type pluginType,bool printDebugMessages)</h4>
+<ul>
+<li>(summary) Instantiates a plug-in type and registers the associated commands and classes.</li>
+<li>(since) 5.0</li>
+<li>(returns) PlugIn This is some return comment</li>
+</ul>
+<h4 id="static-string-debugdumptostringbeziercurve-beziercurve">static string DebugDumpToString(BezierCurve bezierCurve)</h4>
+<ul>
+<li>(summary) Gets the debug dumps. This is a text description of the geometric contents.
+DebugDump() is intended for debugging and is not suitable for creating high
+quality text descriptions of an object.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-string-debugdumptostringgeometrybase-geometry">static string DebugDumpToString(GeometryBase geometry)</h4>
+<ul>
+<li>(summary) Gets the debug dumps. This is a text description of the geometric contents.
+DebugDump() is intended for debugging and is not suitable for creating high
+quality text descriptions of an object.</li>
+<li>(since) 5.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="static-void-debugstringstring-msg">static void DebugString(string msg)</h4>
+<ul>
+<li>(summary) Prints a debug message to the Rhino Command Line.
+The message will only appear if the SendDebugToCommandLine property is set to true.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-debugstringstring-formatobject-args">static void DebugString(string format,object[] args)</h4>
+<ul>
+<li>(summary) Prints a debug message to the Rhino Command Line.
+The message will only appear if the SendDebugToCommandLine property is set to true.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-displayolealertsbool-display">static void DisplayOleAlerts(bool display)</h4>
+<ul>
+<li>(summary) Defines if Ole alerts (&ldquo;Server busy&rdquo;) alerts should be visualized.
+This function makes no sense on Mono.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-exceptionreportexception-ex">static void ExceptionReport(Exception ex)</h4>
+<ul>
+<li>(summary) Informs RhinoCommon of an exception that has been handled but that the developer wants to screen.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-exceptionreportstring-sourceexception-ex">static void ExceptionReport(string source,Exception ex)</h4>
+<ul>
+<li>(summary) Informs RhinoCommon of an exception that has been handled but that the developer wants to screen.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-executenamedcallbackstring-namenamedparameterseventargs-args">static void ExecuteNamedCallback(string name,NamedParametersEventArgs args)</h4>
+<ul>
+<li>(summary) Execute a named callback</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-filenameendswithrhinobackupextensionstring-filename">static bool FileNameEndsWithRhinoBackupExtension(string fileName)</h4>
+<ul>
+<li>(summary) Strip file extension from file name and check to see if it is a valid
+Rhino backup file extension.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-filenameendswithrhinoextensionstring-filename">static bool FileNameEndsWithRhinoExtension(string fileName)</h4>
+<ul>
+<li>(summary) Strip file extension from file name and check to see if it is a valid
+Rhino file extension.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-getabsolutepathstring-relativepathbool-brelativepathisfilenamestring-relativetobool-brelativetoisfilenamestring-pathout">static bool GetAbsolutePath(string relativePath,bool bRelativePathisFileName,string relativeTo,bool bRelativeToIsFileName,string pathOut)</h4>
+<ul>
+<li>(summary) Call this method to convert a relative path to an absolute path
+relative to the specified path.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-ienumerablesystemiodirectoryinfo-getactivepluginversionfoldersbool-currentuser">static IEnumerable&lt;System.IO.DirectoryInfo&gt; GetActivePlugInVersionFolders(bool currentUser)</h4>
+<ul>
+<li>(summary) Recurses through the auto install plug-in folders and returns the directories containing &ldquo;active&rdquo; versions of plug-ins.</li>
+<li>(since) 6.0</li>
+<li>(returns) IEnumerable&lt;System.IO.DirectoryInfo&gt; This is some return comment</li>
+</ul>
+<h4 id="static-string-getassemblysearchpaths">static string[] GetAssemblySearchPaths()</h4>
+<ul>
+<li>(summary) Returns list of directory names where additional assemblies (plug-ins, DLLs, Grasshopper components)
+may be located</li>
+<li>(since) 5.0</li>
+<li>(returns) string[] This is some return comment</li>
+</ul>
+<h4 id="static-void-getcurrentprocessinfostring-processnameversion-processversion">static void GetCurrentProcessInfo(string processName,Version processVersion)</h4>
+<ul>
+<li>
+<p>(summary) Returns information about the current process. If Rhino is the top level process,
+processName is &ldquo;Rhino&rdquo;. Otherwise, processName is the name, without extension, of the main
+module that is executing. For example, &ldquo;compute.backend&rdquo; or &ldquo;Revit&rdquo;.</p>
+<p>processVersion is the System.Version of the running process. It is the FileVersion
+of the executable.</p>
+</li>
+<li>
+<p>(since) 6.15</p>
+</li>
+<li>
+<p>(returns) void This is some return comment</p>
+</li>
+</ul>
+<h4 id="static-tuplestring-type-getcustomcomputeendpoints">static Tuple&lt;string, Type&gt;[] GetCustomComputeEndpoints()</h4>
+<ul>
+<li>(summary) Used by compute to define custom endpoints</li>
+<li>(since) 7.0</li>
+<li>(returns) Tuple&lt;string, Type&gt;[] This is some return comment</li>
+</ul>
+<h4 id="static-t-getplatformservicestring-assemblypathstring-typefullname">static T GetPlatformService(string assemblyPath,string typeFullName)</h4>
+<ul>
+<li>(summary) For internal use only. Loads an assembly for dependency injection via IPlatformServiceLocator.</li>
+<li>(since) 6.0</li>
+<li>(returns) T This is some return comment</li>
+</ul>
+<h4 id="static-systemreflectionassembly-getrhinodotnetassembly">static System.Reflection.Assembly GetRhinoDotNetAssembly()</h4>
+<ul>
+<li>(summary) Only works on Windows. Returns None on Mac.</li>
+<li>(since) 5.0</li>
+<li>(returns) System.Reflection.Assembly This is some return comment</li>
+</ul>
+<h4 id="static-void-initializerhinocommon">static void InitializeRhinoCommon()</h4>
+<ul>
+<li>(summary) Makes sure all static RhinoCommon components is set up correctly.
+This happens automatically when a plug-in is loaded, so you probably won&rsquo;t
+have to call this method.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-initializerhinocommon_rdk">static void InitializeRhinoCommon_RDK()</h4>
+<ul>
+<li>(summary) Makes sure all static RhinoCommon RDK components are set up correctly.
+This happens automatically when the RDK is loaded, so you probably won&rsquo;t
+have to call this method.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-initializezooclient">static void InitializeZooClient()</h4>
+<ul>
+<li>(summary) Initializes the ZooClient and Rhino license manager, this should get
+called automatically when RhinoCommon is loaded so you probably won&rsquo;t
+have to call this method.</li>
+<li>(since) 5.6</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-inplaceconstcastgeometrybase-geometrybool-makenonconst">static void InPlaceConstCast(GeometryBase geometry,bool makeNonConst)</h4>
+<ul>
+<li>(summary) DO NOT USE UNLESS YOU ARE CERTAIN ABOUT THE IMPLICATIONS.
+This is an expert user function which should not be needed in most
+cases. This function is similar to a const_cast in C++ to allow an object
+to be made temporarily modifiable without causing RhinoCommon to convert
+the class from const to non-const by creating a duplicate.You must call this function with a True parameter, make your
+modifications, and then restore the const flag by calling this function
+again with a False parameter. If you have any questions, please
+contact McNeel developer support before using!</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-ismanageddllstring-path">static bool IsManagedDll(string path)</h4>
+<ul>
+<li>(summary) Inspects a dll to see if it is compiled as native code or as a .NET assembly</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-isrhinobackupfileextensionstring-fileextension">static bool IsRhinoBackupFileExtension(string fileExtension)</h4>
+<ul>
+<li>(summary) Check to see if the file extension is a valid Rhino file extension.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-isrhinofileextensionstring-fileextension">static bool IsRhinoFileExtension(string fileExtension)</h4>
+<ul>
+<li>(summary) Check to see if the file extension is a valid Rhino file extension.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-void-recordinitinstancetimestring-description">static void RecordInitInstanceTime(string description)</h4>
+<ul>
+<li>(summary) Used to help record times at startup with the -stopwatch flag to help
+determine bottlenecks in start up speed</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-registercomputeendpointstring-endpointpathtype-t">static void RegisterComputeEndpoint(string endpointPath,Type t)</h4>
+<ul>
+<li>(summary) Register a class that can participate as a compute endpoint</li>
+<li>(since) 7.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-bool-registerdynamiccommandplugin-plugincommand-cmd">static bool RegisterDynamicCommand(PlugIn plugin,Command cmd)</h4>
+<ul>
+<li>(summary) Adds a new dynamic command to Rhino.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-void-registernamedcallbackstring-nameeventhandlernamedparameterseventargs-callback">static void RegisterNamedCallback(string name,EventHandler<!-- raw HTML omitted --> callback)</h4>
+<ul>
+<li>(summary) Register a named callback</li>
+<li>(since) 6.15</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-rhinocommonexceptionhandlerstring-titleobject-senderexception-ex">static void RhinoCommonExceptionHandler(string title,object sender,Exception ex)</h4>
+<ul>
+<li>(summary) For internal use only!!!
+Unhanded exception handler, writes stack trace to RhinoDotNet.txt file</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-sendlogmessagetocloudcallbackproclogmessagetype-msg_typeintptr-pwstringclassintptr-pwstringdescintptr-pwstringmessage">static void SendLogMessageToCloudCallbackProc(LogMessageType msg_type,IntPtr pwStringClass,IntPtr pwStringDesc,IntPtr pwStringMessage)</h4>
+<ul>
+<li>(summary) Informs RhinoCommon of an message that has been handled but that the developer wants to screen.</li>
+<li>(since) 6.4</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-setinshutdown">static void SetInShutDown()</h4>
+<ul>
+<li>(summary) Informs the runtime that the application is shutting down.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-shutdownrhinocommon_rdk">static void ShutDownRhinoCommon_RDK()</h4>
+<ul>
+<li>(summary) Makes sure all static RhinoCommon RDK components are de-initialized so they aren&rsquo;t calling into space when the RDK is unloaded.</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="static-void-unhandledthreadexceptionobject-senderthreadexceptioneventargs-e">static void UnhandledThreadException(object sender,ThreadExceptionEventArgs e)</h4>
+<ul>
+<li>(summary) Exception handler for exceptions occurring on the UI thread</li>
+<li>(since) 6.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>HostUtils</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

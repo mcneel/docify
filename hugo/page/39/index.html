@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/tables/namedpositiontable/">
+        <h3>NamedPositionTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/tables/namedpositiontable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+All named positions in a rhino document.
+public class NamedPositionTableProperties int Count  (summary) Number of Named Positions in the table. (since) 6.0  RhinoDoc Document  (summary) Document that owns this table. (since) 6.0  Guid[] Ids  (summary) Array of Named Position guids. (since) 6.0  string[] Names  (summary) Array of Named Position names. (since) 6.0  Methods bool Append(Guid id,IEnumerableobjectIds)  (summary) Append objects to a Named Position.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/namedvalue/">
+        <h3>NamedValue</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/namedvalue/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+public class NamedValueConstructors NamedValue(string name,object value)  (summary) (since) 5.1  Properties string Name  (summary) (since) 5.1  object Value  (summary) (since) 5.1  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/tables/namedviewtable/">
+        <h3>NamedViewTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/tables/namedviewtable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+All named views in a rhino document.
+public class NamedViewTableProperties int Count  (summary) Number of named views in the table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,Guid viewportId)  (summary) Adds named view to document which is based on an existing viewport. (since) 5.0 (returns) int This is some return comment  int Add(ViewInfo view)  (summary) (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/fileio/namehash/">
+        <h3>NameHash</h3>
+      </a>
+      <small>http://example.org/posts/rhino/fileio/namehash/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.FileIO
+Contains information that is useful to uniquly identify an object name. This object is immutable.
+public class NameHashstatic !=  (summary) Determines if two NameHash instances are different by value. (since) 6.0  static ==  (summary) Determines if two NameHash instances are equal by value. (since) 6.0  Constructors NameHash(string name)  (summary) Creates a new NameHash, representing a piece of text. (since) 6.0  NameHash(string name,Guid parentId)  (summary) Creates a new NameHash, representing a piece of text.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/neverrepeatlist/">
+        <h3>NeverRepeatList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/neverrepeatlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties relating to the list of commands that are never repeated.
+public class NeverRepeatListProperties static bool UseNeverRepeatList  (summary) Only use the list if somebody modifies it via CRhinoAppSettings::SetDontRepeatCommands(). Return value of True means CRhinoCommand don&rsquo;t repeat flags will be ignored and the m_dont_repeat_list will be used instead. False means the individual CRhinoCommands will determine if they are repeatable. (since) 5.0  Methods static string[] CommandNames()  (summary) The list of commands to not repeat.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/nodeincode/nodeincodetable/">
+        <h3>NodeInCodeTable</h3>
+      </a>
+      <small>http://example.org/posts/rhino/nodeincode/nodeincodetable/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.NodeInCode
+Permits rapid access to references to all Grasshopper functions.
+public class NodeInCodeTableConstructors NodeInCodeTable(IEnumerableitems)  (summary) Instantiates the table. Users of RhinoCommon do not typically need to call this constructor. (since) 6.0  Properties int Count  (summary) Returns the amount of items in this table. (since) 6.0  Methods void Add(ComponentFunctionInfo item)  (summary) Adds, or replaces a new instance of component function information. (since) 6.0 (returns) void This is some return comment  IEnumerableGetDynamicMemberNames()  (summary) Returns all additional names in the table.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/notifications/notification/">
+        <h3>Notification</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/notifications/notification/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime.Notifications
+A Notification instance can be used to inform the user about various events. For a Notification instance to be displayed in Rhino, it must be added to the . When added, it will be displayed in the Notifications panel in Rhino. A Notification contains 1 to 3 buttons that are automatically wired to its Action if it is not null. The buttons are displayed when the Notification is shown modally by either the user clicking on a particular notification in the Notifications panel, or by programatically showing it using .
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/notifications/notificationbuttonclickedargs/">
+        <h3>NotificationButtonClickedArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/notifications/notificationbuttonclickedargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime.Notifications
+Used when a button is clicked for a notification.
+public class NotificationButtonClickedArgsConstructors NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked)  (summary) Creates a new instance. (since) 6.0  Properties ButtonType ButtonClicked  (summary) The button that was clicked. (since) 6.0  Notification Notification  (summary) The notification whose button was clicked. (since) 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/runtime/notlicensedexception/">
+        <h3>NotLicensedException</h3>
+      </a>
+      <small>http://example.org/posts/rhino/runtime/notlicensedexception/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Runtime
+Exception thrown when calling functions in RhinoCommon and the application is executing without a license
+public class NotLicensedExceptionConstructors NotLicensedException()  (summary) Default constructor (since) 7.0  NotLicensedException(string message)  (summary) Create a new instance with a custom message (since) 7.0  NotLicensedException(string message,Exception inner)  (summary) Create a new instance with a custom message and an inner exception (since) 7.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/nurbscurve/">
+        <h3>NurbsCurve</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/nurbscurve/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a Non Uniform Rational B-Splines (NURBS) curve.
+public class NurbsCurveConstructors NurbsCurve(int dimension,bool rational,int order,int pointCount)  (summary) Constructs a new NURBS curve with knot and CV memory allocated. (since) 5.0  NurbsCurve(int degree,int pointCount)  (summary) Constructs a new NURBS curve with a specific degree and control point count. (since) 5.0  NurbsCurve(NurbsCurve other)  (summary) Initializes a NURBS curve by copying its values from another NURBS curve.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/38/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/40/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

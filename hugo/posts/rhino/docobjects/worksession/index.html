@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Worksession &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Manages a list of models that are being used as reference geometry.
+public class WorksessionProperties RhinoDoc Document  (summary) Gets the document that owns this worksession. (since) 6.0  string FileName  (summary) Returns the path to the open worksession, or .rws, file. If there is no worksession file open, or the active worksession has not yet been saved, then None is returned. (since) 6.0  int ModelCount  (summary) Returns the number of models in the worksession.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Worksession</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Manages a list of models that are being used as reference geometry.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Worksession</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="rhinodoc-document">RhinoDoc Document</h4>
+<ul>
+<li>(summary) Gets the document that owns this worksession.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="string-filename">string FileName</h4>
+<ul>
+<li>(summary) Returns the path to the open worksession, or .rws, file. 
+If there is no worksession file open, or the active worksession
+has not yet been saved, then None is returned.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="int-modelcount">int ModelCount</h4>
+<ul>
+<li>(summary) Returns the number of models in the worksession. The active model will included
+in this count whether or not it has been saved.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="string-modelpaths">string[] ModelPaths</h4>
+<ul>
+<li>(summary) Returns the paths to the models used by the worksession. If the active model has
+not been saved, then it will not be included in the output array.</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="uint-runtimeserialnumber">uint RuntimeSerialNumber</h4>
+<ul>
+<li>(summary) Unique serial number for the worksession while the application is running.
+This is not a persistent value.</li>
+<li>(since) 6.3</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-string-filenamefromruntimeserialnumberuint-runtimeserialnumber">static string FileNameFromRuntimeSerialNumber(uint runtimeSerialNumber)</h4>
+<ul>
+<li>(summary) Returns the path to the open worksession, or .rws, file. 
+If there is no worksession file open, or the active worksession
+has not yet been saved, then None is returned.</li>
+<li>(since) 6.3</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-modelpathfromserialnumberuint-modelserialnumber">string ModelPathFromSerialNumber(uint modelSerialNumber)</h4>
+<ul>
+<li>(summary) Returns the path to a model, used by the worksession, given a reference model serial number</li>
+<li>(since) 6.12</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Worksession</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

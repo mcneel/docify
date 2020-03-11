@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Intersection &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Intersect
+Provides static methods for the computation of intersections, projections, sections and similar.
+public class IntersectionProperties static double MeshIntersectionsTolerancesCoefficient  (summary) Offers a requested adjustment coefficient for mesh-mesh intersections tolerances. The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs. (since) 7.0  Methods static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)  (summary) Intersects two Breps.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Intersection</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Intersect</a></em></p>
+<p>Provides static methods for the computation of intersections, projections, sections and similar.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Intersection</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<h4 id="static-double-meshintersectionstolerancescoefficient">static double MeshIntersectionsTolerancesCoefficient</h4>
+<ul>
+<li>(summary) Offers a requested adjustment coefficient for mesh-mesh intersections tolerances.
+The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs.</li>
+<li>(since) 7.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-bool-brepbrepbrep-brepabrep-brepbdouble-tolerancecurve-intersectioncurvespoint3d-intersectionpoints">static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</h4>
+<ul>
+<li>(summary) Intersects two Breps.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-brepplanebrep-brepplane-planedouble-tolerancecurve-intersectioncurvespoint3d-intersectionpoints">static bool BrepPlane(Brep brep,Plane plane,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</h4>
+<ul>
+<li>(summary) Intersects a Brep with an (infinite) plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-brepsurfacebrep-brepsurface-surfacedouble-tolerancecurve-intersectioncurvespoint3d-intersectionpoints">static bool BrepSurface(Brep brep,Surface surface,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</h4>
+<ul>
+<li>(summary) Intersects a Brep and a Surface.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-curvebrepcurve-curvebrep-brepdouble-tolerancecurve-overlapcurvespoint3d-intersectionpoints">static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)</h4>
+<ul>
+<li>(summary) Intersects a curve with a Brep. This function returns the 3D points of intersection
+and 3D overlap curves. If an error occurs while processing overlap curves, this function 
+will return false, but it will still provide partial results.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-curvebrepcurve-curvebrep-brepdouble-tolerancecurve-overlapcurvespoint3d-intersectionpointsdouble-curveparameters">static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints,double[] curveParameters)</h4>
+<ul>
+<li>(summary) Intersects a curve with a Brep. This function returns the 3D points of intersection, curve parameters at the intersection locations,
+and 3D overlap curves. If an error occurs while processing overlap curves, this function 
+will return false, but it will still provide partial results.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-curvebrepcurve-curvebrep-brepdouble-tolerancedouble-angletolerancedouble-t">static bool CurveBrep(Curve curve,Brep brep,double tolerance,double angleTolerance,double[] t)</h4>
+<ul>
+<li>(summary) Intersect a curve with a Brep. This function returns the intersection parameters on the curve.</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-curvebrepfacecurve-curvebrepface-facedouble-tolerancecurve-overlapcurvespoint3d-intersectionpoints">static bool CurveBrepFace(Curve curve,BrepFace face,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)</h4>
+<ul>
+<li>(summary) Intersects a curve with a Brep face.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvecurvecurve-curveacurve-curvebdouble-tolerancedouble-overlaptolerance">static CurveIntersections CurveCurve(Curve curveA,Curve curveB,double tolerance,double overlapTolerance)</h4>
+<ul>
+<li>(summary) Finds the intersections between two curves.</li>
+<li>(since) 5.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvecurvevalidatecurve-curveacurve-curvebdouble-tolerancedouble-overlaptoleranceint-invalidindicestextlog-textlog">static CurveIntersections CurveCurveValidate(Curve curveA,Curve curveB,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)</h4>
+<ul>
+<li>(summary) Finds the intersections between two curves.</li>
+<li>(since) 7.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvelinecurve-curveline-linedouble-tolerancedouble-overlaptolerance">static CurveIntersections CurveLine(Curve curve,Line line,double tolerance,double overlapTolerance)</h4>
+<ul>
+<li>(summary) Intersects a curve and an infinite line.</li>
+<li>(since) 6.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curveplanecurve-curveplane-planedouble-tolerance">static CurveIntersections CurvePlane(Curve curve,Plane plane,double tolerance)</h4>
+<ul>
+<li>(summary) Intersects a curve with an (infinite) plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curveselfcurve-curvedouble-tolerance">static CurveIntersections CurveSelf(Curve curve,double tolerance)</h4>
+<ul>
+<li>(summary) Finds the places where a curve intersects itself.</li>
+<li>(since) 5.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvesurfacecurve-curveinterval-curvedomainsurface-surfacedouble-tolerancedouble-overlaptolerance">static CurveIntersections CurveSurface(Curve curve,Interval curveDomain,Surface surface,double tolerance,double overlapTolerance)</h4>
+<ul>
+<li>(summary) Intersects a sub-curve and a surface.</li>
+<li>(since) 5.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvesurfacecurve-curvesurface-surfacedouble-tolerancedouble-overlaptolerance">static CurveIntersections CurveSurface(Curve curve,Surface surface,double tolerance,double overlapTolerance)</h4>
+<ul>
+<li>(summary) Intersects a curve and a surface.</li>
+<li>(since) 5.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvesurfacevalidatecurve-curveinterval-curvedomainsurface-surfacedouble-tolerancedouble-overlaptoleranceint-invalidindicestextlog-textlog">static CurveIntersections CurveSurfaceValidate(Curve curve,Interval curveDomain,Surface surface,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)</h4>
+<ul>
+<li>(summary) Intersects a sub-curve and a surface.</li>
+<li>(since) 7.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-curveintersections-curvesurfacevalidatecurve-curvesurface-surfacedouble-tolerancedouble-overlaptoleranceint-invalidindicestextlog-textlog">static CurveIntersections CurveSurfaceValidate(Curve curve,Surface surface,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)</h4>
+<ul>
+<li>(summary) Intersects a curve and a surface.</li>
+<li>(since) 7.0</li>
+<li>(returns) CurveIntersections This is some return comment</li>
+</ul>
+<h4 id="static-bool-lineboxline-lineboundingbox-boxdouble-toleranceinterval-lineparameters">static bool LineBox(Line line,BoundingBox box,double tolerance,Interval lineParameters)</h4>
+<ul>
+<li>(summary) Intersects an infinite line and an axis aligned bounding box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-lineboxline-linebox-boxdouble-toleranceinterval-lineparameters">static bool LineBox(Line line,Box box,double tolerance,Interval lineParameters)</h4>
+<ul>
+<li>(summary) Intersects an infinite line with a box volume.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-linecircleintersection-linecircleline-linecircle-circledouble-t1point3d-point1double-t2point3d-point2">static LineCircleIntersection LineCircle(Line line,Circle circle,double t1,Point3d point1,double t2,Point3d point2)</h4>
+<ul>
+<li>(summary) Intersects a line with a circle using exact calculations.</li>
+<li>(since) 5.0</li>
+<li>(returns) LineCircleIntersection This is some return comment</li>
+</ul>
+<h4 id="static-linecylinderintersection-linecylinderline-linecylinder-cylinderpoint3d-intersectionpoint1point3d-intersectionpoint2">static LineCylinderIntersection LineCylinder(Line line,Cylinder cylinder,Point3d intersectionPoint1,Point3d intersectionPoint2)</h4>
+<ul>
+<li>(summary) Intersects a line with a cylinder using exact calculations.</li>
+<li>(since) 5.0</li>
+<li>(returns) LineCylinderIntersection This is some return comment</li>
+</ul>
+<h4 id="static-bool-linelineline-linealine-linebdouble-adouble-b">static bool LineLine(Line lineA,Line lineB,double a,double b)</h4>
+<ul>
+<li>(summary) Finds the closest point between two infinite lines.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-linelineline-linealine-linebdouble-adouble-bdouble-tolerancebool-finitesegments">static bool LineLine(Line lineA,Line lineB,double a,double b,double tolerance,bool finiteSegments)</h4>
+<ul>
+<li>(summary) Intersects two lines.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-lineplaneline-lineplane-planedouble-lineparameter">static bool LinePlane(Line line,Plane plane,double lineParameter)</h4>
+<ul>
+<li>(summary) Intersects a line and a plane. This function only returns True if the 
+intersection result is a single point (i.e. if the line is coincident with 
+the plane then no intersection is assumed).</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-linesphereintersection-linesphereline-linesphere-spherepoint3d-intersectionpoint1point3d-intersectionpoint2">static LineSphereIntersection LineSphere(Line line,Sphere sphere,Point3d intersectionPoint1,Point3d intersectionPoint2)</h4>
+<ul>
+<li>(summary) Intersects a line with a sphere using exact calculations.</li>
+<li>(since) 5.0</li>
+<li>(returns) LineSphereIntersection This is some return comment</li>
+</ul>
+<h4 id="static-point3d-meshlinemesh-meshline-lineint-faceids">static Point3d[] MeshLine(Mesh mesh,Line line,int[] faceIds)</h4>
+<ul>
+<li>(summary) Finds the intersection of a mesh and a line</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-bool-meshmeshienumerablemesh-meshesdouble-tolerancepolyline-intersectionsbool-overlapspolylinespolyline-overlapspolylinesresultbool-overlapsmeshmesh-overlapsmeshresulttextlog-textlogcancellationtoken-canceliprogressdouble-progress">static bool MeshMesh(IEnumerable<!-- raw HTML omitted --> meshes,double tolerance,Polyline[] intersections,bool overlapsPolylines,Polyline[] overlapsPolylinesResult,bool overlapsMesh,Mesh overlapsMeshResult,TextLog textLog,CancellationToken cancel,IProgress<!-- raw HTML omitted --> progress)</h4>
+<ul>
+<li>(summary) Intersects meshes. Overlaps and perforations are provided in the output list.</li>
+<li>(since) 7.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-polyline-meshmeshaccuratemesh-meshamesh-meshbdouble-tolerance">static Polyline[] MeshMeshAccurate(Mesh meshA,Mesh meshB,double tolerance)</h4>
+<ul>
+<li>(summary) Intersects two meshes. Overlaps and near misses are handled. This is an old method kept for compatibility.</li>
+<li>(since) 5.0</li>
+<li>(returns) Polyline[] This is some return comment</li>
+</ul>
+<h4 id="static-line-meshmeshfastmesh-meshamesh-meshb">static Line[] MeshMeshFast(Mesh meshA,Mesh meshB)</h4>
+<ul>
+<li>(summary) This is an old overload kept for compatibility. Overlaps and near misses are ignored.</li>
+<li>(since) 5.0</li>
+<li>(returns) Line[] This is some return comment</li>
+</ul>
+<h4 id="static-polyline-meshplanemesh-meshienumerableplane-planes">static Polyline[] MeshPlane(Mesh mesh,IEnumerable<!-- raw HTML omitted --> planes)</h4>
+<ul>
+<li>(summary) Intersects a mesh with a collection of (infinite) planes.</li>
+<li>(since) 5.0</li>
+<li>(returns) Polyline[] This is some return comment</li>
+</ul>
+<h4 id="static-polyline-meshplanemesh-meshplane-plane">static Polyline[] MeshPlane(Mesh mesh,Plane plane)</h4>
+<ul>
+<li>(summary) Intersects a mesh with an (infinite) plane.</li>
+<li>(since) 5.0</li>
+<li>(returns) Polyline[] This is some return comment</li>
+</ul>
+<h4 id="static-point3d-meshpolylinemesh-meshpolylinecurve-curveint-faceids">static Point3d[] MeshPolyline(Mesh mesh,PolylineCurve curve,int[] faceIds)</h4>
+<ul>
+<li>(summary) Finds the intersection of a mesh and a polyline.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-double-meshraymesh-meshray3d-ray">static double MeshRay(Mesh mesh,Ray3d ray)</h4>
+<ul>
+<li>(summary) Finds the first intersection of a ray with a mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="static-double-meshraymesh-meshray3d-rayint-meshfaceindices">static double MeshRay(Mesh mesh,Ray3d ray,int[] meshFaceIndices)</h4>
+<ul>
+<li>(summary) Finds the first intersection of a ray with a mesh.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="static-planecircleintersection-planecircleplane-planecircle-circledouble-firstcircleparameterdouble-secondcircleparameter">static PlaneCircleIntersection PlaneCircle(Plane plane,Circle circle,double firstCircleParameter,double secondCircleParameter)</h4>
+<ul>
+<li>(summary) Intersects a plane with a circle using exact calculations.</li>
+<li>(since) 5.0</li>
+<li>(returns) PlaneCircleIntersection This is some return comment</li>
+</ul>
+<h4 id="static-bool-planeplaneplane-planeaplane-planebline-intersectionline">static bool PlanePlane(Plane planeA,Plane planeB,Line intersectionLine)</h4>
+<ul>
+<li>(summary) Intersects two planes and return the intersection line. If the planes are 
+parallel or coincident, no intersection is assumed.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-planeplaneplaneplane-planeaplane-planebplane-planecpoint3d-intersectionpoint">static bool PlanePlanePlane(Plane planeA,Plane planeB,Plane planeC,Point3d intersectionPoint)</h4>
+<ul>
+<li>(summary) Intersects three planes to find the single point they all share.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-planesphereintersection-planesphereplane-planesphere-spherecircle-intersectioncircle">static PlaneSphereIntersection PlaneSphere(Plane plane,Sphere sphere,Circle intersectionCircle)</h4>
+<ul>
+<li>(summary) Intersects a plane with a sphere using exact calculations.</li>
+<li>(since) 5.0</li>
+<li>(returns) PlaneSphereIntersection This is some return comment</li>
+</ul>
+<h4 id="static-point3d-projectpointstobrepsienumerablebrep-brepsienumerablepoint3d-pointsvector3d-directiondouble-tolerance">static Point3d[] ProjectPointsToBreps(IEnumerable<!-- raw HTML omitted --> breps,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance)</h4>
+<ul>
+<li>(summary) Projects points onto breps.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-point3d-projectpointstobrepsexienumerablebrep-brepsienumerablepoint3d-pointsvector3d-directiondouble-toleranceint-indices">static Point3d[] ProjectPointsToBrepsEx(IEnumerable<!-- raw HTML omitted --> breps,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance,int[] indices)</h4>
+<ul>
+<li>(summary) Projects points onto breps.</li>
+<li>(since) 5.10</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-point3d-projectpointstomeshesienumerablemesh-meshesienumerablepoint3d-pointsvector3d-directiondouble-tolerance">static Point3d[] ProjectPointsToMeshes(IEnumerable<!-- raw HTML omitted --> meshes,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance)</h4>
+<ul>
+<li>(summary) Projects points onto meshes.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-point3d-projectpointstomeshesexienumerablemesh-meshesienumerablepoint3d-pointsvector3d-directiondouble-toleranceint-indices">static Point3d[] ProjectPointsToMeshesEx(IEnumerable<!-- raw HTML omitted --> meshes,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance,int[] indices)</h4>
+<ul>
+<li>(summary) Projects points onto meshes.</li>
+<li>(since) 5.10</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-point3d-rayshootray3d-rayienumerablegeometrybase-geometryint-maxreflections">static Point3d[] RayShoot(Ray3d ray,IEnumerable<!-- raw HTML omitted --> geometry,int maxReflections)</h4>
+<ul>
+<li>(summary) Computes point intersections that occur when shooting a ray to a collection of surfaces.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d[] This is some return comment</li>
+</ul>
+<h4 id="static-spheresphereintersection-spherespheresphere-sphereasphere-spherebcircle-intersectioncircle">static SphereSphereIntersection SphereSphere(Sphere sphereA,Sphere sphereB,Circle intersectionCircle)</h4>
+<ul>
+<li>(summary) Intersects two spheres using exact calculations.</li>
+<li>(since) 5.0</li>
+<li>(returns) SphereSphereIntersection This is some return comment</li>
+</ul>
+<h4 id="static-bool-surfacesurfacesurface-surfaceasurface-surfacebdouble-tolerancecurve-intersectioncurvespoint3d-intersectionpoints">static bool SurfaceSurface(Surface surfaceA,Surface surfaceB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</h4>
+<ul>
+<li>(summary) Intersects two Surfaces.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Intersection</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

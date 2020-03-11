@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/nurbscurveknotlist/">
+        <h3>NurbsCurveKnotList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/nurbscurveknotlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the knot vector of a nurbs curve.
+public class NurbsCurveKnotListProperties int Count  (summary) Total number of knots in this curve. (since) 5.0  bool IsClampedEnd  (summary) Gets a value indicating whether or not the knot vector is clamped at the end of the curve. Clamped curves are coincident with the first and last control-point. This requires fully multiple knots. (since) 5.0  bool IsClampedStart  (summary) Gets a value indicating whether or not the knot vector is clamped at the start of the curve.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/nurbscurvepointlist/">
+        <h3>NurbsCurvePointList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/nurbscurvepointlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the control points of a nurbs curve.
+public class NurbsCurvePointListProperties double ControlPolygonLength  (summary) Gets the length of the polyline connecting all control points. (since) 5.0  int Count  (summary) Gets the number of control points in this curve. (since) 5.0  int PointSize  (summary) Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Curve.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/nurbssurface/">
+        <h3>NurbsSurface</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/nurbssurface/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a Non Uniform Rational B-Splines (NURBS) surface.
+public class NurbsSurfaceConstructors NurbsSurface(NurbsSurface other)  (summary) Initializes a new NURBS surface by copying the values from another surface. (since) 5.0  Properties bool IsRational  (summary) Gets a value indicating whether or not the nurbs surface is rational. (since) 5.0  Collections.NurbsSurfaceKnotList KnotsU  (summary) The U direction knot vector. (since) 5.0  Collections.NurbsSurfaceKnotList KnotsV  (summary) The V direction knot vector.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/nurbssurfaceknotlist/">
+        <h3>NurbsSurfaceKnotList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/nurbssurfaceknotlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the knot vector of a nurbs surface.
+public class NurbsSurfaceKnotListProperties bool ClampedAtEnd  (summary) Determines if a knot vector is clamped. (since) 5.0  bool ClampedAtStart  (summary) Determines if a knot vector is clamped. (since) 5.0  int Count  (summary) Gets the total number of knots in this curve. (since) 5.0  Methods bool CreatePeriodicKnots(double knotSpacing)  (summary) Compute a clamped, uniform, periodic knot vector based on the current degree and control point count.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/nurbssurfacepointlist/">
+        <h3>NurbsSurfacePointList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/nurbssurfacepointlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the control points of a nurbs surface.
+public class NurbsSurfacePointListProperties int CountU  (summary) Gets the number of control points in the U direction of this surface. (since) 5.0  int CountV  (summary) Gets the number of control points in the V direction of this surface. (since) 5.0  int PointSize  (summary) Returns the control point size, or the number of doubles per control point.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/objectattributes/">
+        <h3>ObjectAttributes</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/objectattributes/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+Attributes (color, material, layer,&hellip;) associated with a rhino object
+public class ObjectAttributesConstructors ObjectAttributes()  (summary) (since) 5.0  Properties bool CastsShadows  (summary) Gets or sets an object&rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane. (since) 6.0  ObjectColorSource ColorSource  (summary) The color used to display an object is specified in one of three ways. If ColorSource is ON::color_from_layer, then the object&rsquo;s layer ON_Layer::Color() is used.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/objectenumeratorsettings/">
+        <h3>ObjectEnumeratorSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/objectenumeratorsettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+Settings used for getting an enumerator of objects in a document See Rhino.Collections.ObjectTable.GetEnumerator()
+public class ObjectEnumeratorSettingsConstructors ObjectEnumeratorSettings()  (summary) (since) 5.0  Properties bool ActiveObjects  (summary) (since) 5.0  Type ClassTypeFilter  (summary) (since) 5.0  bool DeletedObjects  (summary) (since) 5.0  bool HiddenObjects  (summary) (since) 5.0  bool IdefObjects  (summary) When true, ONLY Instance Definitions will be returned (since) 5.0  bool IncludeGrips  (summary) (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/objectpropertiespage/">
+        <h3>ObjectPropertiesPage</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/objectpropertiespage/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI
+Base class used to add object property user interface panels
+public class ObjectPropertiesPageProperties bool AllObjectsMustBeSupported   (summary) Returns True when running on Mac which requires only objects of SupportedTypes. Returns False when running on Windows which only requires a single item of SupportedTypes to be selected.
+Override if you wish to change the above behavior.
+  (since) 6.7
+  string EnglishPageTitle  (summary) English string used to describe this page (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/objectpropertiespagecollection/">
+        <h3>ObjectPropertiesPageCollection</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/objectpropertiespagecollection/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI
+Passed to Rhino.PlugIns.PlugIn.ObjectPropertiesPages to allow a plug-in to add custom ObjectPropertiesPage pages to the Rhino properties panel.
+public class ObjectPropertiesPageCollectionProperties RhinoDoc Document  (summary) Document associated with the Rhino properties panel. (since) 7.0  uint DocumentRuntimeSerailNumber  (summary) Document associated with the Rhino properties panel. (since) 7.0  Methods void Add(ObjectPropertiesPage page)  (summary) Custom page to add (since) 7.0 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/objectpropertiespageeventargs/">
+        <h3>ObjectPropertiesPageEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/objectpropertiespageeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI
+public class ObjectPropertiesPageEventArgsConstructors ObjectPropertiesPageEventArgs(ObjectPropertiesPage page)  (summary) Used by to notify the page when updating, modifying or determining if the page should be included in the navigation bar (since) 6.0  Properties uint DocRuntimeSerialNumber  (summary) Document containing the objects and views (since) 6.0  RhinoDoc Document  (summary) Document containing the objects and views (since) 6.0  uint EventRuntimeSerialNumber  (summary) Gets the runtime serial number. (since) 6.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/39/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/41/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

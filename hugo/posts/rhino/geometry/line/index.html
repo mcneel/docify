@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Line &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the value of start and end points in a single line segment.
+static !=  (summary) Determines whether two lines have different values. (since) 5.0  static ==  (summary) Determines whether two lines have the same value. (since) 5.0  Constructors Line(double x0,double y0,double z0,double x1,double y1,double z1)  (summary) Constructs a new line segment between two points. (since) 5.0  Line(Point3d from,Point3d to)  (summary) Constructs a new line segment between two points.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Line</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the value of start and end points in a single line segment.</p>
+<h4 id="static-">static !=</h4>
+<ul>
+<li>(summary) Determines whether two lines have different values.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="static--1">static ==</h4>
+<ul>
+<li>(summary) Determines whether two lines have the same value.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="constructors">Constructors</h2>
+<h4 id="linedouble-x0double-y0double-z0double-x1double-y1double-z1">Line(double x0,double y0,double z0,double x1,double y1,double z1)</h4>
+<ul>
+<li>(summary) Constructs a new line segment between two points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="linepoint3d-frompoint3d-to">Line(Point3d from,Point3d to)</h4>
+<ul>
+<li>(summary) Constructs a new line segment between two points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="linepoint3d-startvector3d-span">Line(Point3d start,Vector3d span)</h4>
+<ul>
+<li>(summary) Constructs a new line segment from start point and span vector.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="linepoint3d-startvector3d-directiondouble-length">Line(Point3d start,Vector3d direction,double length)</h4>
+<ul>
+<li>(summary) Constructs a new line segment from start point, direction and length.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="static-line-unset">static Line Unset</h4>
+<ul>
+<li>(summary) Gets a line segment which has  end points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="boundingbox-boundingbox">BoundingBox BoundingBox</h4>
+<ul>
+<li>(summary) Gets the line&rsquo;s 3d axis aligned bounding box.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-direction">Vector3d Direction</h4>
+<ul>
+<li>(summary) Gets the direction of this line segment. 
+The length of the direction vector equals the length of 
+the line segment.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-from">Point3d From</h4>
+<ul>
+<li>(summary) Start point of line segment.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-fromx">double FromX</h4>
+<ul>
+<li>(summary) Gets or sets the X coordinate of the line From point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-fromy">double FromY</h4>
+<ul>
+<li>(summary) Gets or sets the Y coordinate of the line From point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-fromz">double FromZ</h4>
+<ul>
+<li>(summary) Gets or sets the Z coordinate of the line From point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="bool-isvalid">bool IsValid</h4>
+<ul>
+<li>(summary) Gets a value indicating whether or not this line is valid. 
+Valid lines must have valid start and end points.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-length">double Length</h4>
+<ul>
+<li>(summary) Gets or sets the length of this line segment. 
+Note that a negative length will invert the line segment without 
+making the actual length negative. The line From point will remain fixed 
+when a new Length is set.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="point3d-to">Point3d To</h4>
+<ul>
+<li>(summary) End point of line segment.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-tox">double ToX</h4>
+<ul>
+<li>(summary) Gets or sets the X coordinate of the line To point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-toy">double ToY</h4>
+<ul>
+<li>(summary) Gets or sets the Y coordinate of the line To point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="double-toz">double ToZ</h4>
+<ul>
+<li>(summary) Gets or sets the Z coordinate of the line To point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="vector3d-unittangent">Vector3d UnitTangent</h4>
+<ul>
+<li>(summary) Gets the tangent of the line segment. 
+Note that tangent vectors are always unit vectors.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-bool-trycreatebetweencurvescurve-curve0curve-curve1double-t0double-t1bool-perpendicular0bool-perpendicular1line-line">static bool TryCreateBetweenCurves(Curve curve0,Curve curve1,double t0,double t1,bool perpendicular0,bool perpendicular1,Line line)</h4>
+<ul>
+<li>(summary) Creates a line segment between a pair of curves such that the line segment is either tangent or perpendicular to each of the curves.</li>
+<li>(since) 5.2</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="static-bool-tryfitlinetopointsienumerablepoint3d-pointsline-fitline">static bool TryFitLineToPoints(IEnumerable<!-- raw HTML omitted --> points,Line fitLine)</h4>
+<ul>
+<li>(summary) Attempt to fit a line through a set of points.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="double-closestparameterpoint3d-testpoint">double ClosestParameter(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Finds the parameter on the infinite line segment that is closest to a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="point3d-closestpointpoint3d-testpointbool-limittofinitesegment">Point3d ClosestPoint(Point3d testPoint,bool limitToFiniteSegment)</h4>
+<ul>
+<li>(summary) Finds the point on the (in)finite line segment that is closest to a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="double-distancetopoint3d-testpointbool-limittofinitesegment">double DistanceTo(Point3d testPoint,bool limitToFiniteSegment)</h4>
+<ul>
+<li>(summary) Compute the shortest distance between this line segment and a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="bool-epsilonequalsline-otherdouble-epsilon">bool EpsilonEquals(Line other,double epsilon)</h4>
+<ul>
+<li>(summary) Check that all values in other are within epsilon of the values in this</li>
+<li>(since) 5.4</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-equalsline-other">bool Equals(Line other)</h4>
+<ul>
+<li>(summary) Determines whether a line has the same value as this line.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-equalsobject-obj">bool Equals(object obj)</h4>
+<ul>
+<li>(summary) Determines whether an object is a line that has the same value as this line.</li>
+<li>(since) (unknown)</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extenddouble-startlengthdouble-endlength">bool Extend(double startLength,double endLength)</h4>
+<ul>
+<li>(summary) Extend the line by custom distances on both sides.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extendthroughboxboundingbox-box">bool ExtendThroughBox(BoundingBox box)</h4>
+<ul>
+<li>(summary) Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line 
+that overlaps the box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extendthroughboxboundingbox-boxdouble-additionallength">bool ExtendThroughBox(BoundingBox box,double additionalLength)</h4>
+<ul>
+<li>(summary) Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line that overlaps the box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extendthroughboxbox-box">bool ExtendThroughBox(Box box)</h4>
+<ul>
+<li>(summary) Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line that overlaps the box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-extendthroughboxbox-boxdouble-additionallength">bool ExtendThroughBox(Box box,double additionalLength)</h4>
+<ul>
+<li>(summary) Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line that overlaps the box.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="void-flip">void Flip()</h4>
+<ul>
+<li>(summary) Flip the endpoints of the line segment.</li>
+<li>(since) 5.0</li>
+<li>(returns) void This is some return comment</li>
+</ul>
+<h4 id="int-gethashcode">int GetHashCode()</h4>
+<ul>
+<li>(summary) Computes a hash number that represents this line.</li>
+<li>(since) (unknown)</li>
+<li>(returns) int This is some return comment</li>
+</ul>
+<h4 id="double-maximumdistancetoline-testline">double MaximumDistanceTo(Line testLine)</h4>
+<ul>
+<li>(summary) Finds the largest distance between this line as a finite segment
+and another finite segment.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="double-maximumdistancetopoint3d-testpoint">double MaximumDistanceTo(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Finds the largest distance between this line as a finite segment
+and a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="double-minimumdistancetoline-testline">double MinimumDistanceTo(Line testLine)</h4>
+<ul>
+<li>(summary) Finds the shortest distance between this line as a finite segment
+and another finite segment.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="double-minimumdistancetopoint3d-testpoint">double MinimumDistanceTo(Point3d testPoint)</h4>
+<ul>
+<li>(summary) Finds the shortest distance between this line as a finite segment
+and a test point.</li>
+<li>(since) 5.0</li>
+<li>(returns) double This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatdouble-t">Point3d PointAt(double t)</h4>
+<ul>
+<li>(summary) Evaluates the line at the specified parameter.</li>
+<li>(since) 5.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="point3d-pointatlengthdouble-distance">Point3d PointAtLength(double distance)</h4>
+<ul>
+<li>(summary) Computes a point located at a specific metric distance from the line origin ().
+If line start and end coincide, then the start point is always returned.</li>
+<li>(since) 6.0</li>
+<li>(returns) Point3d This is some return comment</li>
+</ul>
+<h4 id="nurbscurve-tonurbscurve">NurbsCurve ToNurbsCurve()</h4>
+<ul>
+<li>(summary) Constructs a nurbs curve representation of this line. 
+This amounts to the same as calling NurbsCurve.CreateFromLine().</li>
+<li>(since) 5.0</li>
+<li>(returns) NurbsCurve This is some return comment</li>
+</ul>
+<h4 id="string-tostring">string ToString()</h4>
+<ul>
+<li>(summary) Constructs the string representation of this line, in the form &ldquo;From,To&rdquo;.</li>
+<li>(since) (unknown)</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="string-tostringstring-formatiformatprovider-formatprovider">string ToString(string format,IFormatProvider formatProvider)</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 7.0</li>
+<li>(returns) string This is some return comment</li>
+</ul>
+<h4 id="bool-transformtransform-xform">bool Transform(Transform xform)</h4>
+<ul>
+<li>(summary) Transform the line using a Transformation matrix.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+<h4 id="bool-trygetplaneplane-plane">bool TryGetPlane(Plane plane)</h4>
+<ul>
+<li>(summary) Gets a plane that contains the line. The origin of the plane is at the start of the line.
+If possible, a plane parallel to the world xy, yz, or zx plane is returned.</li>
+<li>(since) 5.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Line</b><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

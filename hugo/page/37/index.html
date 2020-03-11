@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshtopologyedgelist/">
+        <h3>MeshTopologyEdgeList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshtopologyedgelist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Represents an entry point to the list of edges in a mesh topology.
+public class MeshTopologyEdgeListProperties int Count  (summary) Gets the amount of edges in this list. (since) 5.0  Methods bool CollapseEdge(int topologyEdgeIndex)  (summary) Replaces a mesh edge with a vertex at its center and update adjacent faces as needed. (since) 5.0 (returns) bool This is some return comment  Line EdgeLine(int topologyEdgeIndex)  (summary) Gets the 3d line along an edge.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshtopologyvertexlist/">
+        <h3>MeshTopologyVertexList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshtopologyvertexlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the mesh topology vertices of a mesh. Topology vertices are sets of vertices in the MeshVertexList that can topologically be considered the same vertex.
+public class MeshTopologyVertexListProperties int Count  (summary) Gets or sets the number of mesh topology vertices. (since) 5.0  Methods int ConnectedEdge(int topologyVertexIndex,int edgeAtVertexIndex)  (summary) Gets a particular edge that is connected to a topological vertex. Call TopologyVertices.SortVertices before this if you are interested in ordered edges.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/meshunsafelock/">
+        <h3>MeshUnsafeLock</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/meshunsafelock/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Permits access to the underlying mesh raw data structures in an unsafe way.
+public class MeshUnsafeLockMethods MeshFace* FacesArray(int length)  (summary) Retrieves a pointer to the raw faces array, which uses 4 integers for each face. . (since) 6.20 (returns) MeshFace* This is some return comment  Vector3f* NormalVector3fArray(int length)  (summary) Retrieves a pointer to the raw mesh vertex normal array, which uses vectors defined with single precision floating point numbers, or throws an exception if none is available.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshvertexcolorlist/">
+        <h3>MeshVertexColorList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshvertexcolorlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the vertex colors of a mesh object.
+public class MeshVertexColorListProperties int Capacity  (summary) Gets or sets the total number of vertex colors the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh colors. (since) 5.0  MappingTag Tag  (summary) Gets or sets a mapping information for the mesh associated with these vertex colors.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshvertexlist/">
+        <h3>MeshVertexList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshvertexlist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the vertices and vertex-related functionality of a mesh.
+public class MeshVertexListProperties int Capacity  (summary) Gets or sets the total number of vertices the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh vertices. (since) 5.0  bool UseDoublePrecisionVertices  (summary) Set to True if the vertices should be stored in double precision (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshvertexnormallist/">
+        <h3>MeshVertexNormalList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshvertexnormallist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the Vertex Normals of a Mesh.
+public class MeshVertexNormalListProperties int Capacity  (summary) Gets or sets the amount of vertex normals that the list can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh vertex normals. (since) 5.0  Methods int Add(double x,double y,double z)  (summary) Adds a new vertex normal at the end of the list.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/collections/meshvertexstatuslist/">
+        <h3>MeshVertexStatusList</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/collections/meshvertexstatuslist/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to status information relative to components of a mesh.
+public class MeshVertexStatusListProperties int Capacity  (summary) Gets or sets the total number of hidden vertex information the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of hidden vertices. For this to be a valid part of a mesh, this count should be the same as the one of mesh vertices.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/datasources/metadata/">
+        <h3>MetaData</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/datasources/metadata/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.DataSources
+public class MetaDataConstructors MetaData(IntPtr pMetaData)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods Guid ContentInstanceId()  (summary) (since) 6.7 (returns) Guid This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  string Geometry()  (summary) (since) 6.0 (returns) string This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/metadataproxy/">
+        <h3>MetaDataProxy</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/metadataproxy/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+ProxyClass for MetaData
+public class MetaDataProxyConstructors MetaDataProxy()  (summary) Constructor for MetaDataProxy (since) 6.8  Properties IntPtr CppPointer  (summary) MetaDataProxy c++ pointer (since) 6.8  Methods void Dispose()  (summary) Dispose for MetaDataProxy (since) 6.8 (returns) void This is some return comment  void SetContentInstanceId(Guid uuid)  (summary) Set Content instance id for meta data (since) 6.8 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/applicationsettings/modelaidsettings/">
+        <h3>ModelAidSettings</h3>
+      </a>
+      <small>http://example.org/posts/rhino/applicationsettings/modelaidsettings/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to modify model aid settings.
+public class ModelAidSettingsProperties static bool AltPlusArrow  (summary) True means Alt+arrow is used for nudging. (since) 5.0  static bool AutoGumballEnabled  (summary) When AutoGumball is on, a gumball automatically appears when objects are prepicked. (since) 5.0  static int ControlPolygonDisplayDensity  (summary) Gets or sets the control polygon display density. (since) 5.0  static double CtrlNudgeKeyStep  (summary) Gets or sets the Ctrl-key based nudge step amount.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/36/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/38/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

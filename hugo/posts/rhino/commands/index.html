@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Commands &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Commands</h1>
+  <ul>
+<li><a href="command/">Command</a></li>
+<li><a href="commandeventargs/">CommandEventArgs</a></li>
+<li><a href="commandstyleattribute/">CommandStyleAttribute</a></li>
+<li><a href="customundoeventargs/">CustomUndoEventArgs</a></li>
+<li><a href="mostrecentcommanddescription/">MostRecentCommandDescription</a></li>
+<li><a href="result/">Result</a></li>
+<li><a href="runmode/">RunMode</a></li>
+<li><a href="selcommand/">SelCommand</a></li>
+<li><a href="style/">Style</a></li>
+<li><a href="transformcommand/">TransformCommand</a></li>
+<li><a href="undoredoeventargs/">UndoRedoEventArgs</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/command/">
+        <div class="h2 mt-1 mb-1">Command</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+Defines a base class for all commands. This class is abstract.
+public class CommandEvents static BeginCommand  (summary) Called just before command.RunCommand(). (since) 5.0  static EndCommand  (summary) Called immediately after command.RunCommand(). (since) 5.0  static UndoRedo  (summary) Used to monitor Rhino&rsquo;s built in undo/redo support. (since) 5.0  Properties static Guid LastCommandId  (summary) Gets the ID of the last commands. (since) 5.0  static Result LastCommandResult  (summary) Gets the result code of the last command.
+    <a class="muted-link" href="/posts/rhino/commands/command/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/commandeventargs/">
+        <div class="h2 mt-1 mb-1">CommandEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+public class CommandEventArgsProperties string CommandEnglishName  (summary) Gets the English name of the command that raised this event. (since) 5.0  Guid CommandId  (summary) Gets the ID of the command that raised this event. (since) 5.0  string CommandLocalName  (summary) Gets the name of the command that raised this event in the local language. (since) 5.0  string CommandPluginName  (summary) Gets the name of the plug-in that this command belongs to.
+    <a class="muted-link" href="/posts/rhino/commands/commandeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/commandstyleattribute/">
+        <div class="h2 mt-1 mb-1">CommandStyleAttribute</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+Decorates commands to provide styles.
+public class CommandStyleAttributeConstructors CommandStyleAttribute(Style styles)  (summary) Initializes a new command style attribute class. (since) 5.0  Properties Style Styles  (summary) Gets the associated style. (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/commands/commandstyleattribute/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/customundoeventargs/">
+        <div class="h2 mt-1 mb-1">CustomUndoEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+Argument package that is passed to a custom undo delegate
+public class CustomUndoEventArgsProperties string ActionDescription  (summary) (since) 5.0  Guid CommandId  (summary) (since) 5.0  bool CreatedByRedo  (summary) (since) 5.0  RhinoDoc Document  (summary) (since) 5.0  object Tag  (summary) (since) 5.0  uint UndoSerialNumber  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/commands/customundoeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/mostrecentcommanddescription/">
+        <div class="h2 mt-1 mb-1">MostRecentCommandDescription</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+Stores the macro and display string of the most recent command.
+public class MostRecentCommandDescriptionProperties string DisplayString  (summary) (since) 5.0  string Macro  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/commands/mostrecentcommanddescription/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/selcommand/">
+        <div class="h2 mt-1 mb-1">SelCommand</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+For adding nestable selection commands that work like the native Rhino SelCrv command, derive your command from SelCommand and override the virtual SelFilter function.
+public class SelCommandProperties bool BeQuiet  (summary) (since) 5.0  bool TestGrips  (summary) (since) 5.0  bool TestLights  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/commands/selcommand/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/commands/undoredoeventargs/">
+        <div class="h2 mt-1 mb-1">UndoRedoEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Commands
+public class UndoRedoEventArgsProperties Guid CommandId  (summary) (since) 5.0  bool IsBeginRecording  (summary) (since) 5.0  bool IsBeginRedo  (summary) (since) 5.0  bool IsBeginUndo  (summary) (since) 5.0  bool IsEndRecording  (summary) (since) 5.0  bool IsEndRedo  (summary) (since) 5.0  bool IsEndUndo  (summary) (since) 5.0  bool IsPurgeRecord  (summary) (since) 5.0  uint UndoSerialNumber  (summary) (since) 5.0  
+    <a class="muted-link" href="/posts/rhino/commands/undoredoeventargs/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

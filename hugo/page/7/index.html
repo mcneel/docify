@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/controls/collapsiblesectionimpl/">
+        <h3>CollapsibleSectionImpl</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/controls/collapsiblesectionimpl/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI.Controls
+public class CollapsibleSectionImplConstructors CollapsibleSectionImpl(ICollapsibleSection section)  (summary) (since) 6.0  Events DataChanged  (summary) (since) 6.0  ViewModelActivated  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  IRdkViewModel ViewModel  (summary) (since) 6.0  Methods static void CreateHostedSection(ICollapsibleSection section)  (summary) (since) 6.0 (returns) void This is some return comment  static ICollapsibleSection Find(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSection This is some return comment  static ICollapsibleSection GetSibling(ICollapsibleSection section,Guid siblingSectionId)  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/ui/controls/collapsiblesectionviewmodel/">
+        <h3>CollapsibleSectionViewModel</h3>
+      </a>
+      <small>http://example.org/posts/rhino/ui/controls/collapsiblesectionviewmodel/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.UI.Controls
+Derive from this class to implement your own view model that wraps around a built in implementation of IRdkViewModel. Use GetData etc to implement your properties.
+public class CollapsibleSectionViewModelConstructors CollapsibleSectionViewModel(ICollapsibleSection section)  (summary) Construct from your section - the view model should be a member of the section (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Commit(Guid uuidDataType)  (summary) (since) 6.0 (returns) void This is some return comment  void Discard(Guid uuidDataType)  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/color4f/">
+        <h3>Color4f</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/color4f/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Color defined by 4 floating point values.
+static !=  (summary) (since) 5.0  static ==  (summary) (since) 5.0  Constructors Color4f(Color color)  (summary) (since) 5.0  Color4f(Color4f color)  (summary) (since) 5.0  Color4f(float red,float green,float blue,float alpha)  (summary) (since) 5.0  Color4f(int argb)  (summary) (since) 7.0  Properties static Color4f Black  (summary) (since) 5.0  static Color4f Empty  (summary) (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/fields/color4ffield/">
+        <h3>Color4fField</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/fields/color4ffield/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.Fields
+Color4f field value class
+public class Color4fFieldProperties System.Drawing.Color SystemColorValue  (summary) Gets or sets the field value (since) 5.1  Color4f Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/colorcmyk/">
+        <h3>ColorCMYK</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/colorcmyk/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Represents a CMYK (Cyan, Magenta, Yellow, Key) color with double precision floating point channels. CMYK colors are used primarily in printing environments as they provide a good simulation of physical ink.
+Constructors ColorCMYK(Color rgb)  (summary) Initializes a new instance of ColorCMYK that is equivalent to an RGB color. (since) 5.0  ColorCMYK(double cyan,double magenta,double yellow)  (summary) Initializes a new instance of ColorCMYK with custom channel values. The cyan, magenta and yellow values will be adjusted based on their combined darkness.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/colorgradient/">
+        <h3>ColorGradient</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/colorgradient/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+public class ColorGradientProperties Rhino.Geometry.Point3d EndPoint  (summary) End point of gradient (since) 7.0  Rhino.Display.GradientType GradientType  (summary) Gradient fill type associated with this hatch (since) 7.0  double Repeat  (summary) Repeat factor for gradient. Factors greater than 1 define a reflected repeat factor while values less than -1 define a wrapped repeat factor. (since) 7.0  Rhino.Geometry.Point3d StartPoint  (summary) Start point of gradient (since) 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/colorhsl/">
+        <h3>ColorHSL</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/colorhsl/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Represents an HSL (Hue, Saturation, Luminance) color with double precision floating point channels. HSL colors are used primarily in Graphical User Interface environments as they provide a very natural approach to picking colors.
+Constructors ColorHSL(Color rgb)  (summary) Constructs a new instance of ColorHSL that is equivalent to an RGB color. (since) 5.0  ColorHSL(double hue,double saturation,double luminance)  (summary) Constructs a new instance of ColorHSL with custom channel values.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/colorhsv/">
+        <h3>ColorHSV</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/colorhsv/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Represents an HSV (Hue, Saturation, Value) color with double precision floating point channels. HSV colors (also sometimes called HSB, where B means Brightness) are similar to HSL colors in that they represent colors in a cylindrical color space, and are intended to provide intuitive means to edit the brightness of a particular color over RGB color space where each each color channel would need to be modified to affect the color brightness.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/colorlab/">
+        <h3>ColorLAB</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/colorlab/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Represents a LAB (Lightness, A, B) color with double precision floating point channels. LAB colors are based on nonlinearly compressed CIE XYZ color space coordinates.
+The A and B parameters of a LAB color represent the opponents.
+Constructors ColorLAB(Color rgb)  (summary) Constructs a new instance of ColorLAB that is equivalent to an RGB color. (since) 5.0  ColorLAB(double lightness,double a,double b)  (summary) Constructs a new instance of ColorLAB with custom channel values.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/display/colorlch/">
+        <h3>ColorLCH</h3>
+      </a>
+      <small>http://example.org/posts/rhino/display/colorlch/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Display
+Represents an LCH (Lightness, A, B) color with double precision floating point channels. LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, in order to approach perceptual uniformity. They are primarily used in computer graphics which deal with colored lights.
+Constructors ColorLCH(Color rgb)  (summary) Constructs a new instance of ColorLCH that is equivalent to an RGB color. (since) 5.0  ColorLCH(double lightness,double chroma,double hue)  (summary) Constructs a new instance of ColorLCH with custom channel values.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/6/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/8/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

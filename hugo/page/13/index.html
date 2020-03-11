@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.66.0" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Placeholder &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Placeholder</h1>
+  <p>Just a placeholder</p>
+
+
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/plugins/customrendersavefiletypes/">
+        <h3>CustomRenderSaveFileTypes</h3>
+      </a>
+      <small>http://example.org/posts/rhino/plugins/customrendersavefiletypes/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.PlugIns
+public class CustomRenderSaveFileTypesMethods void RegisterFileType(IEnumerableextensions,string description,SaveFileHandler saveFileHandler)  (summary) Call this method to register a custom file save type with the render output window save dialog. (since) 5.11 (returns) void This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/commands/customundoeventargs/">
+        <h3>CustomUndoEventArgs</h3>
+      </a>
+      <small>http://example.org/posts/rhino/commands/customundoeventargs/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Commands
+Argument package that is passed to a custom undo delegate
+public class CustomUndoEventArgsProperties string ActionDescription  (summary) (since) 5.0  Guid CommandId  (summary) (since) 5.0  bool CreatedByRedo  (summary) (since) 5.0  RhinoDoc Document  (summary) (since) 5.0  object Tag  (summary) (since) 5.0  uint UndoSerialNumber  (summary) (since) 5.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/cylinder/">
+        <h3>Cylinder</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/cylinder/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents the values of a plane, a radius and two heights -on top and beneath- that define a right circular cylinder.
+Constructors Cylinder(Circle baseCircle)  (summary) Constructs a new cylinder with infinite height. (since) 5.0  Cylinder(Circle baseCircle,double height)  (summary) Constructs a new cylinder with a finite height. (since) 5.0  Properties static Cylinder Unset  (summary) Gets an invalid Cylinder. (since) 5.0  Vector3d Axis  (summary) Gets the axis direction of the cylinder.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/fields/datetimefield/">
+        <h3>DateTimeField</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/fields/datetimefield/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render.Fields
+DateTime field value class
+public class DateTimeFieldProperties DateTime Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/decal/">
+        <h3>Decal</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/decal/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Represents a decal, or a picture that can be moved on an object.
+public class DecalProperties int CRC  (summary) The decal CRC identifies a decal by its state. Multiple decals which would be exactly the same would have the same CRC and are culled from the system. If you store this value with the intention of using it to find the decal again later, you must update your stored value whenever the decal state changes.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/decalcreateparams/">
+        <h3>DecalCreateParams</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/decalcreateparams/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Used by RhinoObject.AddDecal() to create and add a decal
+public class DecalCreateParamsProperties DecalMapping DecalMapping  (summary) (since) 6.0  DecalProjection DecalProjection  (summary) (since) 6.0  double EndLatitude  (summary) (since) 6.0  double EndLongitude  (summary) (since) 6.0  double Height  (summary) (since) 6.0  bool MapToInside  (summary) (since) 6.0  double MaxU  (summary) (since) 6.0  double MaxV  (summary) (since) 6.0  double MinU  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/render/decals/">
+        <h3>Decals</h3>
+      </a>
+      <small>http://example.org/posts/rhino/render/decals/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Render
+Represents all the decals of an object.
+public class DecalsMethods uint Add(Decal decal)  (summary) Add a new Decal to the decals list, use Decal.Create to create a new decal instance to add. (since) 5.10 (returns) uint This is some return comment  void Clear()  (summary) (since) 5.10 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.10 (returns) IEnumeratorThis is some return comment  bool Remove(Decal decal)  (summary) (since) 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/defaults/">
+        <h3>Defaults</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/defaults/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+public class DefaultsProperties static HatchPattern Dash  (summary) (since) 6.0  static HatchPattern Grid  (summary) (since) 6.0  static HatchPattern Grid60  (summary) (since) 6.0  static HatchPattern Hatch1  (summary) (since) 6.0  static HatchPattern Hatch2  (summary) (since) 6.0  static HatchPattern Hatch3  (summary) (since) 6.0  static HatchPattern Plus  (summary) (since) 6.0  static HatchPattern Solid  (summary) (since) 6.0  static HatchPattern Squares  (summary) (since) 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/geometry/detailview/">
+        <h3>DetailView</h3>
+      </a>
+      <small>http://example.org/posts/rhino/geometry/detailview/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.Geometry
+Represents a view of the model placed on a page layout.
+public class DetailViewProperties bool IsParallelProjection  (summary) Gets or sets whether the view is parallel. (since) 5.0  bool IsPerspectiveProjection  (summary) Gets or sets whether the view is perspective. (since) 5.0  bool IsProjectionLocked  (summary) Gets or sets whether the view projection is locked. (since) 5.0  double PageToModelRatio  (summary) Gets the page units/model units quotient.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/posts/rhino/docobjects/detailviewobject/">
+        <h3>DetailViewObject</h3>
+      </a>
+      <small>http://example.org/posts/rhino/docobjects/detailviewobject/</small>
+      0001-01-01
+    </div>
+    Namespace: Rhino.DocObjects
+A detail view object is a nested Rhino viewport placed on a page view with a 2D closed curve boundary. It can be any type of modeling view.
+public class DetailViewObjectProperties string DescriptiveTitle  (summary) Detail objects have two strings that can be used to describe the detail: 1. The name string that is part of the object&rsquo;s attributes 2. The viewport projection title that is part of the viewport This function combines these two strings to create a single &ldquo;description&rdquo; string in the form of attribute_name - projection_title.
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/12/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+          <a href="/page/15/">
+            15
+          </a>
+        
+          <a href="/page/16/">
+            16
+          </a>
+        
+          <a href="/page/17/">
+            17
+          </a>
+        
+          <a href="/page/18/">
+            18
+          </a>
+        
+          <a href="/page/19/">
+            19
+          </a>
+        
+          <a href="/page/20/">
+            20
+          </a>
+        
+          <a href="/page/21/">
+            21
+          </a>
+        
+          <a href="/page/22/">
+            22
+          </a>
+        
+          <a href="/page/23/">
+            23
+          </a>
+        
+          <a href="/page/24/">
+            24
+          </a>
+        
+          <a href="/page/25/">
+            25
+          </a>
+        
+          <a href="/page/26/">
+            26
+          </a>
+        
+          <a href="/page/27/">
+            27
+          </a>
+        
+          <a href="/page/28/">
+            28
+          </a>
+        
+          <a href="/page/29/">
+            29
+          </a>
+        
+          <a href="/page/30/">
+            30
+          </a>
+        
+          <a href="/page/31/">
+            31
+          </a>
+        
+          <a href="/page/32/">
+            32
+          </a>
+        
+          <a href="/page/33/">
+            33
+          </a>
+        
+          <a href="/page/34/">
+            34
+          </a>
+        
+          <a href="/page/35/">
+            35
+          </a>
+        
+          <a href="/page/36/">
+            36
+          </a>
+        
+          <a href="/page/37/">
+            37
+          </a>
+        
+          <a href="/page/38/">
+            38
+          </a>
+        
+          <a href="/page/39/">
+            39
+          </a>
+        
+          <a href="/page/40/">
+            40
+          </a>
+        
+          <a href="/page/41/">
+            41
+          </a>
+        
+          <a href="/page/42/">
+            42
+          </a>
+        
+          <a href="/page/43/">
+            43
+          </a>
+        
+          <a href="/page/44/">
+            44
+          </a>
+        
+          <a href="/page/45/">
+            45
+          </a>
+        
+          <a href="/page/46/">
+            46
+          </a>
+        
+          <a href="/page/47/">
+            47
+          </a>
+        
+          <a href="/page/48/">
+            48
+          </a>
+        
+          <a href="/page/49/">
+            49
+          </a>
+        
+          <a href="/page/50/">
+            50
+          </a>
+        
+          <a href="/page/51/">
+            51
+          </a>
+        
+          <a href="/page/52/">
+            52
+          </a>
+        
+          <a href="/page/53/">
+            53
+          </a>
+        
+          <a href="/page/54/">
+            54
+          </a>
+        
+          <a href="/page/55/">
+            55
+          </a>
+        
+          <a href="/page/56/">
+            56
+          </a>
+        
+          <a href="/page/57/">
+            57
+          </a>
+        
+          <a href="/page/58/">
+            58
+          </a>
+        
+          <a href="/page/59/">
+            59
+          </a>
+        
+          <a href="/page/60/">
+            60
+          </a>
+        
+          <a href="/page/61/">
+            61
+          </a>
+        
+          <a href="/page/62/">
+            62
+          </a>
+        
+          <a href="/page/63/">
+            63
+          </a>
+        
+          <a href="/page/64/">
+            64
+          </a>
+        
+          <a href="/page/65/">
+            65
+          </a>
+        
+          <a href="/page/66/">
+            66
+          </a>
+        
+          <a href="/page/67/">
+            67
+          </a>
+        
+          <a href="/page/68/">
+            68
+          </a>
+        
+
+        
+        <a href="/page/14/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

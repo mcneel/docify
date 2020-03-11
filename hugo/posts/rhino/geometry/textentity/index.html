@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  TextEntity &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+public class TextEntityConstructors TextEntity()  (summary) Initializes a new instance of the class. (since) 5.0  Properties TextJustification Justification  (summary) Gets or sets the justification of text in relation to its base point. (since) 5.0  TextHorizontalAlignment TextHorizontalAlignment  (summary) (since) 6.0  TextOrientation TextOrientation  (summary) (since) 6.0  TextVerticalAlignment TextVerticalAlignment  (summary) (since) 6.0  Methods static TextEntity Create(string text,Plane plane,DimensionStyle style,bool wrapped,double rectWidth,double rotationRadians)  (summary) Create Text geometry or None if input is invalid (since) 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">TextEntity</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 0001-01-01. Published at: 0001-01-01.">
+        
+          Published: 0001-01-01
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextEntity</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<h4 id="textentity">TextEntity()</h4>
+<ul>
+<li>(summary) Initializes a new instance of the  class.</li>
+<li>(since) 5.0</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<h4 id="textjustification-justification">TextJustification Justification</h4>
+<ul>
+<li>(summary) Gets or sets the justification of text in relation to its base point.</li>
+<li>(since) 5.0</li>
+</ul>
+<h4 id="texthorizontalalignment-texthorizontalalignment">TextHorizontalAlignment TextHorizontalAlignment</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="textorientation-textorientation">TextOrientation TextOrientation</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h4 id="textverticalalignment-textverticalalignment">TextVerticalAlignment TextVerticalAlignment</h4>
+<ul>
+<li>(summary)</li>
+<li>(since) 6.0</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h4 id="static-textentity-createstring-textplane-planedimensionstyle-stylebool-wrappeddouble-rectwidthdouble-rotationradians">static TextEntity Create(string text,Plane plane,DimensionStyle style,bool wrapped,double rectWidth,double rotationRadians)</h4>
+<ul>
+<li>(summary) Create Text geometry or None if input is invalid</li>
+<li>(since) 6.0</li>
+<li>(returns) TextEntity This is some return comment</li>
+</ul>
+<h4 id="static-textentity-createwithrichtextstring-richtextstringplane-planedimensionstyle-stylebool-wrappeddouble-rectwidthdouble-rotationradians">static TextEntity CreateWithRichText(string richTextString,Plane plane,DimensionStyle style,bool wrapped,double rectWidth,double rotationRadians)</h4>
+<ul>
+<li>(summary) Create RichText geometry or None if input is invalid</li>
+<li>(since) 6.0</li>
+<li>(returns) TextEntity This is some return comment</li>
+</ul>
+<h4 id="curve-createcurvesdimensionstyle-dimstylebool-ballowopendouble-smallcapsscaledouble-spacing">Curve[] CreateCurves(DimensionStyle dimstyle,bool bAllowOpen,double smallCapsScale,double spacing)</h4>
+<ul>
+<li>(summary) Returns the outline curves.</li>
+<li>(since) 6.0</li>
+<li>(returns) Curve[] This is some return comment</li>
+</ul>
+<h4 id="extrusion-createextrusionsdimensionstyle-dimstyledouble-heightdouble-smallcapsscaledouble-spacing">Extrusion[] CreateExtrusions(DimensionStyle dimstyle,double height,double smallCapsScale,double spacing)</h4>
+<ul>
+<li>(summary) Creates extrusions from the outline curves with specified height.</li>
+<li>(since) 6.0</li>
+<li>(returns) Extrusion[] This is some return comment</li>
+</ul>
+<h4 id="brep-createpolysurfacesdimensionstyle-dimstyledouble-heightdouble-smallcapsscaledouble-spacing">Brep[] CreatePolySurfaces(DimensionStyle dimstyle,double height,double smallCapsScale,double spacing)</h4>
+<ul>
+<li>(summary) Creates breps from the outline curves with specified height.</li>
+<li>(since) 6.0</li>
+<li>(returns) Brep[] This is some return comment</li>
+</ul>
+<h4 id="brep-createsurfacesdimensionstyle-dimstyledouble-smallcapsscaledouble-spacing">Brep[] CreateSurfaces(DimensionStyle dimstyle,double smallCapsScale,double spacing)</h4>
+<ul>
+<li>(summary) Creates planar breps from the outline curves.</li>
+<li>(since) 6.0</li>
+<li>(returns) Brep[] This is some return comment</li>
+</ul>
+<h4 id="curve-explode">Curve[] Explode()</h4>
+<ul>
+<li>(summary) Explodes this text entity into an array of curves.</li>
+<li>(since) 5.0</li>
+<li>(returns) Curve[] This is some return comment</li>
+</ul>
+<h4 id="transform-gettexttransformdouble-textscaledimensionstyle-dimstyle">Transform GetTextTransform(double textscale,DimensionStyle dimstyle)</h4>
+<ul>
+<li>(summary) Get the transform for this text object&rsquo;s text geometry</li>
+<li>(since) 6.0</li>
+<li>(returns) Transform This is some return comment</li>
+</ul>
+<h4 id="bool-transformtransform-transformdimensionstyle-style">bool Transform(Transform transform,DimensionStyle style)</h4>
+<ul>
+<li>(summary) Transform the object by a 4x4 transform matrix and change text height
+override to accommodate scaling in the transform if necessary</li>
+<li>(since) 6.0</li>
+<li>(returns) bool This is some return comment</li>
+</ul>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>TextEntity</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#methods">Methods</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

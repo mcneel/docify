@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.DocObjects &ndash; Test API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="http://example.org/">
+    Test API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.DocObjects</h1>
+  <ul>
+<li><a href="activespace/">ActiveSpace</a></li>
+<li><a href="angledisplaymode/">AngleDisplayMode</a></li>
+<li><a href="angulardimensionobject/">AngularDimensionObject</a></li>
+<li><a href="animationproperties/">AnimationProperties</a></li>
+<li><a href="capturetypes/">CaptureTypes</a></li>
+<li><a href="annotationobjectbase/">AnnotationObjectBase</a></li>
+<li><a href="basepointzero/">BasepointZero</a></li>
+<li><a href="bitmapentry/">BitmapEntry</a></li>
+<li><a href="brepobject/">BrepObject</a></li>
+<li><a href="centermarkobject/">CentermarkObject</a></li>
+<li><a href="clippingplaneobject/">ClippingPlaneObject</a></li>
+<li><a href="constructionplane/">ConstructionPlane</a></li>
+<li><a href="coordinatesystem/">CoordinateSystem</a></li>
+<li><a href="curveobject/">CurveObject</a></li>
+<li><a href="detailviewobject/">DetailViewObject</a></li>
+<li><a href="scaleformat/">ScaleFormat</a></li>
+<li><a href="dimensionobject/">DimensionObject</a></li>
+<li><a href="dimensionstyle/">DimensionStyle</a></li>
+<li><a href="displaymode/">DisplayMode</a></li>
+<li><a href="distancedisplaymode/">DistanceDisplayMode</a></li>
+<li><a href="earthanchorpoint/">EarthAnchorPoint</a></li>
+<li><a href="extrusionobject/">ExtrusionObject</a></li>
+<li><a href="font/">Font</a></li>
+<li><a href="fontquartet/">FontQuartet</a></li>
+<li><a href="gripobject/">GripObject</a></li>
+<li><a href="group/">Group</a></li>
+<li><a href="hatchobject/">HatchObject</a></li>
+<li><a href="hatchpattern/">HatchPattern</a></li>
+<li><a href="defaults/">Defaults</a></li>
+<li><a href="hatchpatternfilltype/">HatchPatternFillType</a></li>
+<li><a href="historyrecord/">HistoryRecord</a></li>
+<li><a href="instancedefinition/">InstanceDefinition</a></li>
+<li><a href="instancedefinitionarchivefilestatus/">InstanceDefinitionArchiveFileStatus</a></li>
+<li><a href="instancedefinitionlayerstyle/">InstanceDefinitionLayerStyle</a></li>
+<li><a href="instancedefinitionupdatetype/">InstanceDefinitionUpdateType</a></li>
+<li><a href="instanceobject/">InstanceObject</a></li>
+<li><a href="layer/">Layer</a></li>
+<li><a href="leaderobject/">LeaderObject</a></li>
+<li><a href="lightobject/">LightObject</a></li>
+<li><a href="lineardimensionobject/">LinearDimensionObject</a></li>
+<li><a href="linetype/">Linetype</a></li>
+<li><a href="material/">Material</a></li>
+<li><a href="materialref/">MaterialRef</a></li>
+<li><a href="materialrefcreateparams/">MaterialRefCreateParams</a></li>
+<li><a href="materialrefs/">MaterialRefs</a></li>
+<li><a href="meshobject/">MeshObject</a></li>
+<li><a href="modelcomponent/">ModelComponent</a></li>
+<li><a href="morphcontrolobject/">MorphControlObject</a></li>
+<li><a href="objectattributes/">ObjectAttributes</a></li>
+<li><a href="objectcolorsource/">ObjectColorSource</a></li>
+<li><a href="objectdecoration/">ObjectDecoration</a></li>
+<li><a href="objectenumeratorsettings/">ObjectEnumeratorSettings</a></li>
+<li><a href="objectlinetypesource/">ObjectLinetypeSource</a></li>
+<li><a href="objectmaterialsource/">ObjectMaterialSource</a></li>
+<li><a href="objectmode/">ObjectMode</a></li>
+<li><a href="objectplotcolorsource/">ObjectPlotColorSource</a></li>
+<li><a href="objectplotweightsource/">ObjectPlotWeightSource</a></li>
+<li><a href="objecttype/">ObjectType</a></li>
+<li><a href="objref/">ObjRef</a></li>
+<li><a href="ordinatedimensionobject/">OrdinateDimensionObject</a></li>
+<li><a href="pointcloudobject/">PointCloudObject</a></li>
+<li><a href="pointobject/">PointObject</a></li>
+<li><a href="proxyobject/">ProxyObject</a></li>
+<li><a href="radialdimensionobject/">RadialDimensionObject</a></li>
+<li><a href="replayhistorydata/">ReplayHistoryData</a></li>
+<li><a href="replayhistoryresult/">ReplayHistoryResult</a></li>
+<li><a href="rhinodeselectallobjectseventargs/">RhinoDeselectAllObjectsEventArgs</a></li>
+<li><a href="rhinomodifyobjectattributeseventargs/">RhinoModifyObjectAttributesEventArgs</a></li>
+<li><a href="rhinoobject/">RhinoObject</a></li>
+<li><a href="rhinoobjecteventargs/">RhinoObjectEventArgs</a></li>
+<li><a href="rhinoobjectselectioneventargs/">RhinoObjectSelectionEventArgs</a></li>
+<li><a href="rhinoreplaceobjecteventargs/">RhinoReplaceObjectEventArgs</a></li>
+<li><a href="rhinotransformobjectseventargs/">RhinoTransformObjectsEventArgs</a></li>
+<li><a href="selectionmethod/">SelectionMethod</a></li>
+<li><a href="subdobject/">SubDObject</a></li>
+<li><a href="surfaceobject/">SurfaceObject</a></li>
+<li><a href="textdisplayalignment/">TextDisplayAlignment</a></li>
+<li><a href="textdotobject/">TextDotObject</a></li>
+<li><a href="textobject/">TextObject</a></li>
+<li><a href="texture/">Texture</a></li>
+<li><a href="texturecombinemode/">TextureCombineMode</a></li>
+<li><a href="texturetype/">TextureType</a></li>
+<li><a href="textureuvwwrapping/">TextureUvwWrapping</a></li>
+<li><a href="viewinfo/">ViewInfo</a></li>
+<li><a href="viewinfofocalblurmodes/">ViewInfoFocalBlurModes</a></li>
+<li><a href="viewportinfo/">ViewportInfo</a></li>
+<li><a href="worksession/">Worksession</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/materialref/">
+        <div class="h2 mt-1 mb-1">MaterialRef</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+public class MaterialRefProperties Guid BackFaceMaterialId  (summary) The Id of the Material used to render the back of an object. (since) 5.10  int BackFaceMaterialIndex  (summary) The index of the material used to render the back of an object (since) 5.10  Guid FrontFaceMaterialId  (summary) The Id of the Material used to render the front of an object. (since) 5.10  int FrontFaceMaterialIndex  (summary) The index of the material used to render the front of an object (since) 5.
+    <a class="muted-link" href="/posts/rhino/docobjects/materialref/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/materialrefcreateparams/">
+        <div class="h2 mt-1 mb-1">MaterialRefCreateParams</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Options passed to MaterialRefs.Create
+public class MaterialRefCreateParamsProperties Guid BackFaceMaterialId  (summary) The Id of the Material used to render the back of an object. (since) 5.10  int BackFaceMaterialIndex  (summary) The index of the material used to render the back of an object (since) 5.10  Guid FrontFaceMaterialId  (summary) The Id of the Material used to render the front of an object. (since) 5.10  int FrontFaceMaterialIndex  (summary) The index of the material used to render the front of an object (since) 5.
+    <a class="muted-link" href="/posts/rhino/docobjects/materialrefcreateparams/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/materialrefs/">
+        <div class="h2 mt-1 mb-1">MaterialRefs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+If you are developing a high quality plug-in renderer, and a user is assigning a custom render material to this object, then add rendering material information to the MaterialRefs dictionary.
+Note to developers: As soon as the MaterialRefs dictionary contains items rendering material queries slow down. Do not populate the MaterialRefs dictionary when setting the MaterialIndex will take care of your needs.
+public class MaterialRefsProperties int Count  (summary) Gets the number of elements contained in this dictionary (since) 5.
+    <a class="muted-link" href="/posts/rhino/docobjects/materialrefs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/meshobject/">
+        <div class="h2 mt-1 mb-1">MeshObject</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+public class MeshObjectProperties bool IsCustomObject  (summary) (since) 6.0  Mesh MeshGeometry  (summary) (since) 5.0  Methods static bool CheckMeshes(IEnumerablemeshObjects,TextLog textLog,MeshCheckParameters parameters)  (summary) Examines mesh objects and logs a description of what it finds right or wrong. The various properties the function checks for are described in MeshCheckParameters. (since) 7.0 (returns) bool This is some return comment  Mesh DuplicateMeshGeometry()  (summary) (since) 5.0 (returns) Mesh This is some return comment  
+    <a class="muted-link" href="/posts/rhino/docobjects/meshobject/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/modelcomponent/">
+        <div class="h2 mt-1 mb-1">ModelComponent</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Base class for all components in a model (document) and manages the index, id and other information common to this type of objects. This class parallels the C++ ON_ModelComponent.
+public class ModelComponentProperties ComponentStatus ComponentStatus  (summary) Gets or sets the component status of the model component. (since) 6.0  ModelComponentType ComponentType  (summary) Gets the for this object. Useful in switch statements. (since) 6.0  string DeletedName  (summary) Gets the name of a component that is deleted.
+    <a class="muted-link" href="/posts/rhino/docobjects/modelcomponent/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/objectattributes/">
+        <div class="h2 mt-1 mb-1">ObjectAttributes</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Attributes (color, material, layer,&hellip;) associated with a rhino object
+public class ObjectAttributesConstructors ObjectAttributes()  (summary) (since) 5.0  Properties bool CastsShadows  (summary) Gets or sets an object&rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane. (since) 6.0  ObjectColorSource ColorSource  (summary) The color used to display an object is specified in one of three ways. If ColorSource is ON::color_from_layer, then the object&rsquo;s layer ON_Layer::Color() is used.
+    <a class="muted-link" href="/posts/rhino/docobjects/objectattributes/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/objectenumeratorsettings/">
+        <div class="h2 mt-1 mb-1">ObjectEnumeratorSettings</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Settings used for getting an enumerator of objects in a document See Rhino.Collections.ObjectTable.GetEnumerator()
+public class ObjectEnumeratorSettingsConstructors ObjectEnumeratorSettings()  (summary) (since) 5.0  Properties bool ActiveObjects  (summary) (since) 5.0  Type ClassTypeFilter  (summary) (since) 5.0  bool DeletedObjects  (summary) (since) 5.0  bool HiddenObjects  (summary) (since) 5.0  bool IdefObjects  (summary) When true, ONLY Instance Definitions will be returned (since) 5.0  bool IncludeGrips  (summary) (since) 5.
+    <a class="muted-link" href="/posts/rhino/docobjects/objectenumeratorsettings/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/objref/">
+        <div class="h2 mt-1 mb-1">ObjRef</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Represents a reference to a Rhino object.
+public class ObjRefConstructors ObjRef(Guid id)  (summary) Initializes a new object reference from a globally unique identifier (). (since) 5.0  ObjRef(Guid id,ComponentIndex ci)  (summary) Initializes a new object reference from a guid and component index. The component index is used to specify a &ldquo;piece&rdquo; of the geometry (since) 7.0  ObjRef(RhinoObject rhinoObject)  (summary) Initializes a new object reference from a Rhino object.
+    <a class="muted-link" href="/posts/rhino/docobjects/objref/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/ordinatedimensionobject/">
+        <div class="h2 mt-1 mb-1">OrdinateDimensionObject</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Rhino Object that represents an ordinate dimension geometry and attributes
+public class OrdinateDimensionObjectProperties Geometry.OrdinateDimension OrdinateDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+    <a class="muted-link" href="/posts/rhino/docobjects/ordinatedimensionobject/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/posts/rhino/docobjects/pointcloudobject/">
+        <div class="h2 mt-1 mb-1">PointCloudObject</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>0001-01-01</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+public class PointCloudObjectProperties PointCloud PointCloudGeometry  (summary) (since) 5.0  Methods PointCloud DuplicatePointCloudGeometry()  (summary) (since) 5.0 (returns) PointCloud This is some return comment  
+    <a class="muted-link" href="/posts/rhino/docobjects/pointcloudobject/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/posts/rhino/docobjects/page/3/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/docobjects/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/docobjects/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/docobjects/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">4</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/docobjects/page/5/">5</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/posts/rhino/docobjects/page/6/">6</a>
+            
+          
+      
+
+      
+      <a href="/posts/rhino/docobjects/page/5/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>
