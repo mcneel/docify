@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  DimStyleTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class DimStyleTable :RhinoDocCommonTable&amp;lt;DimensionStyle&amp;gt;,ICollection&amp;lt;DimensionStyle&amp;gt;Properties  DimensionStyle[] BuiltInStyles Creates an array of default AnnotationStyle objects since 6.0 ModelComponentType ComponentType Returns . since 6.0 DimensionStyle Current Returns an instance of the current . since 6.0 DimensionStyle CurrentDimensionStyle Do not use. Use the property. Guid CurrentId  since 6.0 int CurrentIndex  since 6.0  Methods  int Add(DimensionStyle dimstyle,bool reference) Adds a new DimensionStyle to the document. Returns - index of new AnnotationStyle.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">DimStyleTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DimStyleTable</span> :
+    RhinoDocCommonTable&lt;DimensionStyle&gt;,
+     ICollection&lt;DimensionStyle&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a>[] BuiltInStyles</dt>
+<dd>Creates an array of default AnnotationStyle objects</dd>
+<dd>since 6.0</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> Current</dt>
+<dd>Returns an instance of the current .</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> CurrentDimensionStyle</dt>
+<dd>Do not use. Use the  property.</dd>
+<dt>Guid CurrentId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int CurrentIndex</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add(DimensionStyle dimstyle,bool reference)</dt>
+<dd>Adds a new DimensionStyle to the document.</dd>
+<dd>Returns - index of new AnnotationStyle.</dd>
+<dd>since 6.0</dd>
+<dt>int Add(string name)</dt>
+<dd>Adds a new AnnotationStyle to the document. The new AnnotationStyle will be initialized
+with the current default AnnotationStyle properties.</dd>
+<dd>Returns - index of new AnnotationStyle.</dd>
+<dt>int Add(string name,bool reference)</dt>
+<dd>Adds a new AnnotationStyle to the document. The new AnnotationStyle will be initialized
+with the current default AnnotationStyle properties.</dd>
+<dd>Returns - index of new AnnotationStyle.</dd>
+<dt>bool Delete(DimensionStyle item)</dt>
+<dd>Removes an annotation style.</dd>
+<dd>Returns - True if the item was removed; False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(int index,bool quiet)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> Find(Guid styleId,bool ignoreDeleted)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> Find(string name,bool ignoreDeleted)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> FindIndex(int index)</dt>
+<dd>Retrieves a DimensionStyle object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</dd>
+<dd>Returns - A DimensionStyle object, or None if none was found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> FindName(string name)</dt>
+<dd>Finds the DimensionStyle with a given name and retuns it. None is returned if no DimensionStyle is found.</dd>
+<dd>Returns - The instance, or null.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> FindRoot(Guid styleId,bool ignoreDeleted)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd></dd>
+<dt>string GetUnusedStyleName()</dt>
+<dd>Get a unique name for a style that does not already exist in the DimStyle table</dd>
+<dd>since 6.0</dd>
+<dt>string GetUnusedStyleName(string rootName)</dt>
+<dd>Get a unique name for a dimension style that does not already exist in the DimStyle table</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/modifytype/">ModifyType</a> Modify(DimensionStyle dimstyle,AnnotationBase annotation)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool Modify(DimensionStyle newSettings,Guid dimstyleId,bool quiet)</dt>
+<dd>Modifies dimension style settings.</dd>
+<dd>Returns - True if successful. False if Id is not already in table</dd>
+<dd>since 6.0</dd>
+<dt>bool Modify(DimensionStyle newSettings,int dimstyleIndex,bool quiet)</dt>
+<dd>Modifies dimension style settings.</dd>
+<dd>Returns - True if successful. False if dimstyleIndex is out of range</dd>
+<dd>since 6.0</dd>
+<dt>bool SetCurrent(int index,bool quiet)</dt>
+<dd>Sets the  property.</dd>
+<dd>Returns - True if the method achieved its goal; otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetCurrentDimensionStyleIndex(int index,bool quiet)</dt>
+<dd>Do not use. Use the  method.</dd>
+<dd>Returns - Do not use.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>DimStyleTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

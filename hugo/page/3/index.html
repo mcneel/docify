@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,133 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/binaryarchivewriter/">
-        <h3>BinaryArchiveWriter</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettings/">
+        <h3>GeneralSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/binaryarchivewriter/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Represents an entity that is able to write data to an archive.
-public class BinaryArchiveWriterProperties int Archive3dmVersion  (summary) If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to give access to Rhinoceros settings.
+public class GeneralSettingsProperties  static bool AutoUpdateCommandHelp Command help dialog auto-update feature. static TimeSpan ContextMenuDelay Time to wait before permitting context menu display. static bool EnableContextMenu True if right mouse down + delay will pop up context menu on a mouse up if no move happens. static int MaximumPopupMenuLines Gets or sets the maximum number of popup menu lines.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/bitmapentry/">
-        <h3>BitmapEntry</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettingsstate/">
+        <h3>GeneralSettingsState</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/bitmapentry/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettingsstate/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Rhino.DocObjects.Tables.BitmapTable entry
-public class BitmapEntryProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string FileName  (summary) The name of this bitmap. (since) 5.1  bool IsReference  (summary) Gets a value indicting whether this bitmap is a referenced bitmap. Referenced bitmaps are part of referenced documents. (since) 5.1  Methods bool Save(string fileName)  (summary) (since) 5.1 (returns) bool This is some return comment  
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class GeneralSettingsStateProperties  bool AutoUpdateCommandHelp Gets or sets the command help dialog auto-update feature. TimeSpan ContextMenuDelay Gets or sets the time to wait before permitting context menu display. bool EnableContextMenu True if right mouse down + delay will pop up context menu on a mouse up if no move happens. int MaximumPopupMenuLines Gets or sets the maximum number of popup menu lines.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/bitmaptable/">
-        <h3>BitmapTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getbaseclass/">
+        <h3>GetBaseClass</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/bitmaptable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getbaseclass/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-Stores the list of bitmaps in a Rhino document.
-public class BitmapTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods int AddBitmap(string bitmapFilename,bool replaceExisting)  (summary) Adds a new bitmap with specified name to the bitmap table. (since) 5.0 (returns) int This is some return comment  bool Delete(BitmapEntry item)  (summary) Removes the bitmap from the table. (since) 6.0 (returns) bool This is some return comment  bool DeleteBitmap(string bitmapFilename)  (summary) Deletes a bitmap.
+    Namespace: Rhino.Input.Custom
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a GetBaseClass but you will use its member functions after calling GetObject.Gets(), GetPoint.Get(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class GetBaseClass : IDisposableMethods  static void PostCustomMessage(object messageData)  void AcceptColor(bool enable) If you want to allow the user to be able to type in a color r,g,b or name during GetPoint.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/boolfield/">
-        <h3>BoolField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/getcoloreventargs/">
+        <h3>GetColorEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/boolfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/getcoloreventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-bool field value class
-public class BoolFieldProperties bool Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.UI
+public class GetColorEventArgs : EventArgsProperties  bool IncludeButtonColors  Color InputColor  Color SelectedColor  string Title   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/boundingbox/">
-        <h3>BoundingBox</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getinteger/">
+        <h3>GetInteger</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/boundingbox/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getinteger/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the value of two points in a bounding box defined by the two extreme corner points. This box is therefore aligned to the world X, Y and Z axes.
-Constructors BoundingBox(double minX,double minY,double minZ,double maxX,double maxY,double maxZ)  (summary) Constructs a boundingbox from numeric extremes. (since) 5.0  BoundingBox(IEnumerablepoints)  (summary) Constructs a boundingbox from a collection of points. (since) 5.0  BoundingBox(IEnumerablepoints,Transform xform)  (summary) Constructs a boundingbox from a collection of points.
+    Namespace: Rhino.Input.Custom
+Used to get integer numbers.
+public class GetInteger : GetBaseClassConstructors  GetInteger()   Methods  GetResult Get() Call to get an integer. Returns - If the user chose a number, then ; another enumeration value otherwise. int Number()  void SetLowerLimit(int lowerLimit,bool strictlyGreaterThan) Sets a lower limit on the number that can be returned. By default there is no lower limit. void SetUpperLimit(int upperLimit,bool strictlyLessThan) Sets an upper limit on the number that can be returned.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/box/">
-        <h3>Box</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getnumber/">
+        <h3>GetNumber</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/box/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getnumber/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the value of a plane and three intervals in an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.
-Constructors Box(BoundingBox bbox)  (summary) Initializes a new Box that mimics a BoundingBox struct. The orientation plane of the Box is coincident with the World XY plane. (since) 5.0  Box(Plane basePlane,BoundingBox boundingbox)  (summary) Initializes a world aligned box from a base plane and a boundingbox.
+    Namespace: Rhino.Input.Custom
+Used to get double precision numbers.
+public class GetNumber : GetBaseClassConstructors  GetNumber() Create a new GetNumber.  Methods  GetResult Get() Call to get a number. Returns - If the user chose a number, then ; another enumeration value otherwise. void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan) Sets a lower limit on the number that can be returned. By default there is no lower limit. void SetUpperLimit(double upperLimit,bool strictlyLessThan) Sets an upper limit on the number that can be returned.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/brep/">
-        <h3>Brep</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getobject/">
+        <h3>GetObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/brep/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Boundary Representation. A surface or polysurface along with trim curve information.
-public class BrepConstructors Brep()  (summary) Initializes a new empty brep (since) 5.4  Properties Collections.BrepCurveList Curves2D  (summary) Parameter space trimming curves (used by trims) (since) 5.6  Collections.BrepCurveList Curves3D  (summary) Pointers to 3d curves (used by edges) (since) 5.6  Collections.BrepEdgeList Edges  (summary) Gets the brep edges list accessor. (since) 5.0  Collections.
+    Namespace: Rhino.Input.Custom
+The GetObject class is the tool commands use to interactively select objects.
+public class GetObject : GetBaseClassConstructors  GetObject()   Properties  bool AlreadySelectedObjectSelect Allow selecting objects that are already selected. By default, GetObjects() disallows selection of objects that are already selected to avoid putting the same object in the selection set more than once. Calling EnableAlreadySelectedObjectSelect = true overrides that restriction and allows selected objects to be selected and returned by GetObjects.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/brepcurvelist/">
-        <h3>BrepCurveList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getoption/">
+        <h3>GetOption</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/brepcurvelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getoption/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the underlying curves in a Brep object.
-public class BrepCurveListProperties int Count  (summary) Gets the number of curves in this list. (since) 5.6  Methods int Add(Curve curve)  (summary) Adds a curve (since) 5.6 (returns) int This is some return comment  IEnumeratorGetEnumerator()  (summary) Get an enumerator that visits all curves. (since) 5.6 (returns) IEnumeratorThis is some return comment  
+    Namespace: Rhino.Input.Custom
+If you want to explicitly get string input, then use GetString class with options. If you only want to get options, then use this class (GetOption)
+public class GetOption : GetBaseClassConstructors  GetOption()   Methods  GetResult Get() Call to get an option. A return value of &ldquo;option&rdquo; means the user selected a valid option. Use Option() the determine which option. Returns - If the user chose an option, then ; another enumeration value otherwise.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/brepedge/">
-        <h3>BrepEdge</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getpoint/">
+        <h3>GetPoint</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/brepedge/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getpoint/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a single edge curve in a Brep object.
-public class BrepEdgeProperties Brep Brep  (summary) Gets the Brep that owns this edge. (since) 5.0  Curve EdgeCurve  (summary) Get the brep.Curves3D[] 3d curve geometry used by this edge or null. (since) 6.0  int EdgeCurveIndex  (summary) Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1. (since) 6.0  int EdgeIndex  (summary) Gets the index of this edge in the Brep.
+    Namespace: Rhino.Input.Custom
+Used to interactively get a point.
+public class GetPoint : GetBaseClass DynamicDraw Event to use if you want to dynamically draw things as the mouse/digitizer moves. Every time the mouse moves, DynamicDraw will be called once per viewport. The calls to DynamicDraw happen AFTER the call to MouseMove. If you are drawing anything that takes a long time, periodically call InterruptMouseMove() to see if you should stop.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/brepedgelist/">
-        <h3>BrepEdgeList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getpointdraweventargs/">
+        <h3>GetPointDrawEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/brepedgelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getpointdraweventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the Edges in a Brep object.
-public class BrepEdgeListProperties int Count  (summary) Gets the number of brep edges. (since) 5.0  Methods BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,double edgeTolerance)  (summary) Create and add a new edge to this list (since) 5.4 (returns) BrepEdge This is some return comment  BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,Interval subDomain,double edgeTolerance)  (summary) Create and add a new edge to this list (since) 5.
+    Namespace: Rhino.Input.Custom
+Arguments for drawing during point getting.
+public class GetPointDrawEventArgs : DrawEventArgsProperties  Point3d CurrentPoint  GetPoint Source GetPoint class that this draw event originated from.  
   </div>
   
 

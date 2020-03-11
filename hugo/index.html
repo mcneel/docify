@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,125 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/analytics/">
-        <h3>Analytics</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/centermarkobject/">
+        <h3>CentermarkObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/analytics/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-Provides tools for sending Google Analytics events using the Measurement Protocol. See https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event for details.
-public class AnalyticsConstructors Analytics(string TrackingID,string Name)  (summary) Construct Analytics class (since) 6.0  Analytics(string TrackingID,string Name,string Platform,string InstallerId,string Version)  (summary) Construct Analytics class (since) 6.0  Properties static bool UsageStatisticsEnabled  (summary) Determine if user allows automatic data collection from Rhino (since) 6.0  static Guid UserId  (summary) Returns a GUID that allows events to be aggregated by user.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/angulardimension/">
-        <h3>AngularDimension</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/angulardimension/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a dimension of an entity that can be measured with an angle.
-public class AngularDimensionConstructors AngularDimension()  (summary) (since) 6.0  AngularDimension(Arc arc,double offset)  (summary) Create an angular dimension from a given arc (since) 5.0  Properties DimensionStyle.AngleDisplayFormat AngleFormat  (summary) (since) 6.0  int AngleResolution  (summary) (since) 6.0  double AngleRoundoff  (summary) (since) 6.0  DimensionStyle.ZeroSuppression AngleZeroSuppression  (summary) (since) 6.0  Point2d ArrowPoint1  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/angulardimensionobject/">
-        <h3>AngularDimensionObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/angulardimensionobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/centermarkobject/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Rhino Object that represents an angular dimension geometry and attributes
-public class AngularDimensionObjectProperties Geometry.AngularDimension AngularDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+Rhino Object that represents a centermark geometry and attributes
+public class CentermarkObject : DimensionObjectProperties  Centermark CentermarkGeometry Get the dimension geometry for this object. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/animationproperties/">
-        <h3>AnimationProperties</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/commandlineoption/">
+        <h3>CommandLineOption</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/animationproperties/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/commandlineoption/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input.Custom
+public class CommandLineOptionProperties  int CurrentListOptionIndex  string EnglishName The English command option name int Index  string LocalName The localized command option name since 6.24 string StringOptionValue Assigned by RhinoGet.Get if an option value is specified in a script or by a command window control. since 6.24  Methods  static bool IsValidOptionName(string optionName) Test a string to see if it can be used as an option name in any of the RhinoGet::AddCommandOption&hellip;() functions.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customgripobject/">
+        <h3>CustomGripObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customgripobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Custom
+public class CustomGripObject : GripObject, IDisposableConstructors  CustomGripObject()   Properties  int Index  Point3d OriginalLocation  double Weight   Methods  void Dispose()  void NewLocation()   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custommeshobject/">
+        <h3>CustomMeshObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custommeshobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Custom
+public class CustomMeshObject : MeshObject, IDisposableMethods  void Dispose()   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custompointobject/">
+        <h3>CustomPointObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custompointobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Custom
+public class CustomPointObject : PointObject, IDisposableMethods  void Dispose()  since 5.6  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/defaults/">
+        <h3>Defaults</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/defaults/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Contains information used by the Animation Tools to create sun, season, turntable and fly through animations.
-public class AnimationPropertiesConstructors AnimationProperties()  (summary) Initializes a new instance of the class. (since) 6.11  AnimationProperties(AnimationProperties source)  (summary) Initialize new instance of the AnimationProperties class. (since) 6.11  Properties string AnimationName  (summary) Gets or sets the name of the animation sequence. (since) 6.11  Guid CameraPathId  (summary) Gets or sets the object ID of the camera path.
+public class DefaultsProperties  static HatchPattern Dash  since 6.0 static HatchPattern Grid  since 6.0 static HatchPattern Grid60  since 6.0 static HatchPattern Hatch1  since 6.0 static HatchPattern Hatch2  since 6.0 static HatchPattern Hatch3  since 6.0 static HatchPattern Plus  since 6.0 static HatchPattern Solid  since 6.0 static HatchPattern Squares  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/annotationbase/">
-        <h3>AnnotationBase</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/developablesrf/">
+        <h3>DevelopableSrf</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/annotationbase/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/developablesrf/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Provides a common base class to all annotation geometry. This class refers to the geometric element that is independent from the document.
-public class AnnotationBaseProperties DimensionStyle.LengthDisplay AlternateDimensionLengthDisplay  (summary) Alternate length display units and format (since) 6.0  AnnotationType AnnotationType  (summary) Type of annotation (since) 6.0  char DecimalSeparator  (summary) Set or get the decimal separator c (since) 7.0  DimensionStyle.LengthDisplay DimensionLengthDisplay  (summary) Length display units and format (since) 6.
+Helpers for developable surface functions
+public class DevelopableSrfMethods  static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out) Finds minimum twist ruling between 2 curves at local domains Returns - -1: Error 0: Exact non-twisting ruling found between t0_out and t1_out 1: Ruling found between t0_out and t1_out that has less twist the ruling between t0 and t1 since 6.0 static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out,double cos_twist_out) Find a ruling from rail0(t0_out) to rail1(t1_out) that has the least twist across the ruling with t0_out in domain0 and t1_out in domain1.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/annotationobjectbase/">
-        <h3>AnnotationObjectBase</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/dialogs/">
+        <h3>Dialogs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/annotationobjectbase/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/dialogs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+public class DialogsMethods  static void KillSplash() Destroy the splash screen if it is being displayed. static void SetCustomColorDialog(EventHandlerhandler)  static void ShowAboutDialog(bool forceSimpleDialog)  since 6.0 static bool[] ShowCheckListBox(string title,string message,IList items,IListcheckState) Displays Rhino&rsquo;s check list box. Returns - An array or boolean values determining if the user checked the corresponding box. On error, null. static bool ShowColorDialog(Color color) Display Rhino&rsquo;s color selection dialog. Returns - True if the color changed.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/dimensionstyle/">
+        <h3>DimensionStyle</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/dimensionstyle/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Base class for all annotation objects (text and dimensions)
-public class AnnotationObjectBaseProperties AnnotationBase AnnotationGeometry  (summary) Get the annotation base geometry for this object (since) 6.0  string DisplayText  (summary) Gets the text that is displayed to users. (since) 5.0  bool HasMeasurableTextFields  (summary) Test if the text in the annotation object contains fields that involve length, area, or volume measurements (since) 7.0  
+Can also be considered an annotation style since it is used for more than just dimensions
+[Serializable]public class DimensionStyle : ModelComponentConstructors  DimensionStyle() Create a new non-document controlled annotation style  Properties  bool AlternateBelowLine  since 6.0 LengthDisplay AlternateDimensionLengthDisplay  since 6.0 double AlternateLengthFactor  int AlternateLengthResolution  since 6.0 string AlternatePrefix  since 6.0 double AlternateRoundoff  since 6.0 string AlternateSuffix  since 6.0 int AlternateToleranceResolution  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/appearancesettings/">
-        <h3>AppearanceSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletable/">
+        <h3>DimStyleTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/appearancesettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Provides static methods and properties to deal with the appearance of the application.
-public class AppearanceSettingsProperties static Color CommandPromptBackgroundColor  (summary) Gets or sets the color of the command prompt background. (since) 5.0  static Color CommandPromptHypertextColor  (summary) Gets or sets the color of the command prompt hypertext. (since) 5.0  static CommandPromptPosition CommandPromptPosition  (summary) Gets or sets the command prompt position. (since) 5.0  static Color CommandPromptTextColor  (summary) Gets or sets the color of the command prompt text.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/appearancesettingsstate/">
-        <h3>AppearanceSettingsState</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/appearancesettingsstate/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of the values in .
-public class AppearanceSettingsStateProperties Color CommandPromptBackgroundColor  (summary) Gets or sets the comand prompt background color. (since) 5.0  Color CommandPromptHypertextColor  (summary) Gets or sets the comand prompt hypertext color. (since) 5.0  Color CommandPromptTextColor  (summary) Gets or sets the command prompt text color. (since) 5.0  Color CrosshairColor  (summary) Gets or sets the crosshair color. (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/arc/">
-        <h3>Arc</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/arc/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents the value of a plane, two angles and a radius in a subcurve of a three-dimensional circle.
-The curve is parameterized by an angle expressed in radians. For an IsValid arc the total subtended angle AngleRadians() = Domain()(1) - Domain()(0) must satisfy 0 &lt; AngleRadians() &lt; 2*PiThe parameterization of the Arc is inherited from the Circle it is derived from. In particulart -&gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere xaxis and yaxis, (part of Circle.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/arccurve/">
-        <h3>ArcCurve</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/arccurve/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represent arcs and circles. ArcCurve.IsCircle returns True if the curve is a complete circle.
-public class ArcCurveConstructors ArcCurve()  (summary) Initializes a new instance. Radius is set to 1, position to Origin and Domain to full span (circle). (since) 5.0  ArcCurve(Arc arc)  (summary) Initializes a new instance, copying values from another . (since) 5.0  ArcCurve(Arc arc,double t0,double t1)  (summary) Initializes a new instance, copying values from another and specifying the needed parametrization of the arc.
+    Namespace: Rhino.DocObjects.Tables
+public class DimStyleTable :RhinoDocCommonTable&lt;DimensionStyle&gt;,ICollection&lt;DimensionStyle&gt;Properties  DimensionStyle[] BuiltInStyles Creates an array of default AnnotationStyle objects since 6.0 ModelComponentType ComponentType Returns . since 6.0 DimensionStyle Current Returns an instance of the current . since 6.0 DimensionStyle CurrentDimensionStyle Do not use. Use the property. Guid CurrentId  since 6.0 int CurrentIndex  since 6.0  Methods  int Add(DimensionStyle dimstyle,bool reference) Adds a new DimensionStyle to the document. Returns - index of new AnnotationStyle.
   </div>
   
 

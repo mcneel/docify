@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,127 +57,128 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/developablesrf/">
-        <h3>DevelopableSrf</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettings/">
+        <h3>CursorTooltipSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/developablesrf/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Helpers for developable surface functions
-public class DevelopableSrfMethods static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out)  (summary) Finds minimum twist ruling between 2 curves at local domains (since) 6.0 (returns) int This is some return comment  static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out,double cos_twist_out)  (summary) Find a ruling from rail0(t0_out) to rail1(t1_out) that has the least twist across the ruling with t0_out in domain0 and t1_out in domain1.
+    Namespace: Rhino.ApplicationSettings
+Cursor tooltips place information at the cursor location. Note: Turning on cursor tooltips turns off object snap cursors.
+public class CursorTooltipSettingsProperties  static bool AutoSuppress Attempts to display only the most useful tooltip. static Color BackgroundColor Tooltip background color. static bool CommandPromptPane Displays the current command prompt. static bool DistancePane Displays the distance from the last picked point. static Point Offset The x and y distances in pixels from the cursor location to the tooltip.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/dialogs/">
-        <h3>Dialogs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettingsstate/">
+        <h3>CursorTooltipSettingsState</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/dialogs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettingsstate/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class DialogsMethods static void KillSplash()  (summary) Destroy the splash screen if it is being displayed. (since) 5.0 (returns) void This is some return comment  static void SetCustomColorDialog(EventHandlerhandler)  (summary) (since) 5.0 (returns) void This is some return comment  static void ShowAboutDialog(bool forceSimpleDialog)  (summary) (since) 6.0 (returns) void This is some return comment  static bool[] ShowCheckListBox(string title,string message,IList items,IListcheckState)  (summary) Displays Rhino&rsquo;s check list box.
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class CursorTooltipSettingsStateProperties  bool AutoSuppress Attempts to display only the most useful tooltip. Color BackgroundColor Tooltip background color. bool CommandPromptPane Displays the current command prompt. bool DistancePane Displays the distance from the last picked point. Point Offset The x and y distances in pixels from the cursor location to the tooltip. bool OsnapPane Displays the current object snap selection. bool PointPane Displays the current construction plane coordinates.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/digitizerplugin/">
-        <h3>DigitizerPlugIn</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettings/">
+        <h3>CurvatureAnalysisSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/digitizerplugin/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettings/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to modify curvature analysis-related commands.
+public class CurvatureAnalysisSettingsProperties  static Interval GaussRange Gets or sets the Gaussian curvature range. since 6.0 static Interval MaxRadiusRange Gets or sets the Maximum Radius curvature range. since 6.0 static Interval MeanRange Gets or sets the Mean curvature range. since 6.0 static Interval MinRadiusRange Gets or sets the Minimum Radius curvature range. since 6.0 static CurvatureStyle Style Gets or sets the curvature analysis style.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettingsstate/">
+        <h3>CurvatureAnalysisSettingsState</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettingsstate/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class CurvatureAnalysisSettingsStateProperties  Interval GaussRange Gets or sets the Gaussian curvature range. since 6.0 Interval MaxRadiusRange Gets or sets the Maximum Radius curvature range. since 6.0 Interval MeanRange Gets or sets the Mean curvature range. since 6.0 Interval MinRadiusRange Gets or sets the Minimum Radius curvature range. since 6.0 CurvatureStyle Style Gets or sets the curvature analysis style. since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/curveobject/">
+        <h3>CurveObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/curveobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+A Rhino Object that represents curve geometry and attributes
+public class CurveObject : RhinoObjectProperties  Curve CurveGeometry   Methods  Curve DuplicateCurveGeometry()   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customcurveobject/">
+        <h3>CustomCurveObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customcurveobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Custom
+public class CustomCurveObject : CurveObject, IDisposableMethods  void Dispose()   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/customdisplay/">
+        <h3>CustomDisplay</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/display/customdisplay/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Display
+Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.
+public class CustomDisplay : IDisposableConstructors  CustomDisplay(bool enable) Constructs a new CustomDisplay instance. You must call Dispose() when you are done with this instance, otherwise the display methods will never be switched off.  Properties  BoundingBox ClippingBox Gets the clipping box of this CustomDisplay. bool Enabled Gets or sets the Enabled state of this CustomDisplay instance.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customobjectgrips/">
+        <h3>CustomObjectGrips</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customobjectgrips/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Custom
+public class CustomObjectGrips : IDisposableProperties  int GripCount  bool GripsMoved If GripsMoved is True if some of the grips have ever been moved GripObject.NewLocation() sets GripsMoved=true. bool NewLocation True if some of the grips have been moved. GripObject.NewLocation() sets NewLocation=true. Derived classes can set NewLocation to False after updating temporary display information. RhinoObject OwnerObject Owner of the grips.  Methods  static bool Dragging() Determines if grips are currently being dragged.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/customrendercontentattribute/">
+        <h3>CustomRenderContentAttribute</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/customrendercontentattribute/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+[AttributeUsage(AttributeTargets.Class)]public class CustomRenderContentAttribute : AttributeConstructors  CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private)  since 6.0 CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private,bool is_linear,bool is_hdrcapable,bool is_normalmap)  since 6.16  Properties  string Category  since 6.0 bool ImageBased  since 6.0 bool IsBuiltIn  since 6.0 bool IsElevated  since 6.0 bool IsHdrCapable  since 6.16 bool IsLinear  since 6.16 bool IsNormalMap  since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/customrendersavefiletypes/">
+        <h3>CustomRenderSaveFileTypes</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/customrendersavefiletypes/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.PlugIns
-public class DigitizerPlugInMethods void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey)  (summary) If the digitizer is enabled, call this function to send a point to Rhino. Call this function as much as you like. The digitizers that Rhino currently supports send a point every 15 milliseconds or so. This function should be called when users press or release any digitizer button. (since) 6.0 (returns) void This is some return comment  void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey)  (summary) If the digitizer is enabled, call this function to send a point and direction to Rhino.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/dimension/">
-        <h3>Dimension</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/dimension/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Base class for dimensions
-public class DimensionProperties bool AlternateBelowLine  (summary) (since) 6.0  double AltLengthFactor  (summary) (since) 6.0  int AltLengthResolution  (summary) (since) 6.0  double AltLengthRoundoff  (summary) (since) 6.0  string AltPrefix  (summary) (since) 6.0  string AltSuffix  (summary) (since) 6.0  int AltToleranceResolution  (summary) (since) 6.0  bool AltUnitsDisplay  (summary) (since) 6.0  DimensionStyle.ZeroSuppression AltZeroSuppression  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/dimensionobject/">
-        <h3>DimensionObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/dimensionobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-Rhino Object that represents dimension geometry and attributes
-public class DimensionObjectProperties DimensionStyle DimensionStyle  (summary) Gets the associated with this OrdinateDimensionObject. (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/dimensionstyle/">
-        <h3>DimensionStyle</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/dimensionstyle/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-Can also be considered an annotation style since it is used for more than just dimensions
-public class DimensionStyleConstructors DimensionStyle()  (summary) Create a new non-document controlled annotation style (since) 5.0  Properties bool AlternateBelowLine  (summary) (since) 6.0  LengthDisplay AlternateDimensionLengthDisplay  (summary) (since) 6.0  double AlternateLengthFactor  (summary) (since) 5.0  int AlternateLengthResolution  (summary) (since) 6.0  string AlternatePrefix  (summary) (since) 6.0  double AlternateRoundoff  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/dimstyletable/">
-        <h3>DimStyleTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/dimstyletable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-public class DimStyleTableProperties DimensionStyle[] BuiltInStyles  (summary) Creates an array of default AnnotationStyle objects (since) 6.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  DimensionStyle Current  (summary) Returns an instance of the current . (since) 6.0  DimensionStyle CurrentDimensionStyle  (summary) Do not use. Use the property. (since) 5.0  Guid CurrentId  (summary) (since) 6.0  int CurrentIndex  (summary) (since) 6.0  Methods int Add(DimensionStyle dimstyle,bool reference)  (summary) Adds a new DimensionStyle to the document.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/dimstyletableeventargs/">
-        <h3>DimStyleTableEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/dimstyletableeventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-public class DimStyleTableEventArgsProperties RhinoDoc Document  (summary) (since) 6.0  DimStyleTableEventType EventType  (summary) (since) 6.0  int Index  (summary) (since) 6.0  DimensionStyle NewState  (summary) (since) 6.0  DimensionStyle OldState  (summary) (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaybitmap/">
-        <h3>DisplayBitmap</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaybitmap/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-A bitmap resource that can be used by the display pipeline (currently only in OpenGL display). Reuse DisplayBitmaps for drawing if possible; it is much more expensive to construct new DisplayBitmaps than it is to reuse existing DisplayBitmaps.
-public class DisplayBitmapConstructors DisplayBitmap(Bitmap bitmap)  (summary) Constructs a DisplayBitmap from an existing bitmap. (since) 5.0  Methods static DisplayBitmap Load(string path)  (summary) Load a DisplayBitmap from and image file on disk.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaybitmapdrawlist/">
-        <h3>DisplayBitmapDrawList</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaybitmapdrawlist/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-public class DisplayBitmapDrawListConstructors DisplayBitmapDrawList()  (summary) (since) 5.0  Properties Geometry.BoundingBox BoundingBox  (summary) (since) 5.0  int MaximumCachedSortLists  (summary) Maximum number of cached sort order index lists stored on this class. Default is 10, but depending on the number of points in this list you may get better performance by setting this value to a certain percentage of the point count. (since) 5.0  double SortAngleTolerance  (summary) Angle in radians used to determine if an index list is &ldquo;parallel enough&rdquo; to a viewports camera angle.
+public class CustomRenderSaveFileTypesMethods  void RegisterFileType(IEnumerableextensions,string description,SaveFileHandler saveFileHandler) Call this method to register a custom file save type with the render output window save dialog. since 5.11  
   </div>
   
 

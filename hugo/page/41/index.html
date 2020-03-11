@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,126 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/objecttable/">
-        <h3>ObjectTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/skylight/">
+        <h3>Skylight</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/objecttable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/skylight/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class ObjectTableProperties BoundingBox BoundingBox  (summary) Gets the boundingbox for all objects (normal, locked and hidden) in this document that exist in &ldquo;model&rdquo; space. This bounding box does not include objects that exist in layout space. (since) 5.0  BoundingBox BoundingBoxVisible  (summary) Gets the boundingbox for all visible objects (normal and locked) in this document that exist in &ldquo;model&rdquo; space. This bounding box does not include hidden objects or any objects that exist in layout space.
+    Namespace: Rhino.Render
+public class Skylight : DocumentOrFreeFloatingBaseConstructors  Skylight() Create an utility object not associated with any document since 6.0 Skylight(Skylight src) Create an utility object not associated with any document from another object since 6.0  Events  static Changed This event is raised when a Skylight property value is changed. since 6.0  Properties  Guid CustomEnvironment  since 6.0 bool CustomEnvironmentOn  since 6.0 bool Enabled  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/objref/">
-        <h3>ObjRef</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/spacemorph/">
+        <h3>SpaceMorph</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/objref/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/spacemorph/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Represents a reference to a Rhino object.
-public class ObjRefConstructors ObjRef(Guid id)  (summary) Initializes a new object reference from a globally unique identifier (). (since) 5.0  ObjRef(Guid id,ComponentIndex ci)  (summary) Initializes a new object reference from a guid and component index. The component index is used to specify a &ldquo;piece&rdquo; of the geometry (since) 7.0  ObjRef(RhinoObject rhinoObject)  (summary) Initializes a new object reference from a Rhino object.
+    Namespace: Rhino.Geometry
+Represents a spacial, Euclidean morph.
+public class SpaceMorphProperties  bool PreserveStructure True if the morph should be done in a way that preserves the structure of the geometry. In particular, for NURBS objects, True means that only the control points are moved. The PreserveStructure value does not affect the way meshes and points are morphed. The default is false. bool QuickPreview True if the morph should be done as quickly as possible because the result is being used for some type of dynamic preview.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/openfiledialog/">
-        <h3>OpenFileDialog</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/sphere/">
+        <h3>Sphere</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/openfiledialog/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/sphere/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Similar to the System.Windows.Forms.OpenFileDialog, but with customized Rhino user interface.
-public class OpenFileDialogConstructors OpenFileDialog()  (summary) Create a new open file dialog. (since) 5.0  Properties string DefaultExt  (summary) The default file name extension. The returned string does not include the period. (since) 5.0  string FileName  (summary) Gets or sets a string containing the file name selected in the file dialog box. (since) 5.0  string[] FileNames  (summary) Gets the names of all of the selected files in the dialog box (since) 5.
+    Namespace: Rhino.Geometry
+Represents the plane and radius values of a sphere.
+Constructors  Sphere(Plane equatorialPlane,double radius) Initializes a new sphere given the plane of the equator circle and radius. Sphere(Point3d center,double radius) Initializes a new sphere given center point and radius.  Properties  static Sphere Unset Gets a sphere with invalid members. BoundingBox BoundingBox Gets the world aligned boundingbox for this Sphere. If the Sphere is Invalid, an empty box is returned.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/openglsettings/">
-        <h3>OpenGLSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/splopspacemorph/">
+        <h3>SplopSpaceMorph</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/openglsettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/splopspacemorph/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Static methods and properties to control OpenGL settings
-public class OpenGLSettingsProperties static AntialiasLevel AntialiasLevel  (summary) Gets or sets the antialias level used by OpenGL viewports (since) 6.1  Methods static OpenGLSettingsState GetCurrentState()  (summary) Gets the current settings. (since) 6.1 (returns) OpenGLSettingsState This is some return comment  static OpenGLSettingsState GetDefaultState()  (summary) Gets the OpenGL factory settings. (since) 6.1 (returns) OpenGLSettingsState This is some return comment  static void RestoreDefaults()  (summary) Updates from the default setting state.
+    Namespace: Rhino.Geometry.Morphs
+Rotates, scales, and wraps objects on a surface.
+public class SplopSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam) Constructs a flow space morph. since 5.9 SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale) Constructs a flow space morph. since 5.9 SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale,double angle) Constructs a flow space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/openglsettingsstate/">
-        <h3>OpenGLSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/sporphspacemorph/">
+        <h3>SporphSpaceMorph</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/openglsettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/sporphspacemorph/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a sapshot of
-public class OpenGLSettingsStateProperties AntialiasLevel AntialiasLevel  (summary) AA level used in OpenGL viewports (since) 6.1  
+    Namespace: Rhino.Geometry.Morphs
+Deforms an object from a source surface to a target surface.
+public class SporphSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  SporphSpaceMorph(Surface surface0,Surface surface1) Constructs a sporph space morph. since 5.9 SporphSpaceMorph(Surface surface0,Surface surface1,Point2d surface0Param,Point2d surface1Param) Constructs a sporph space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/optioncolor/">
-        <h3>OptionColor</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/stretchspacemorph/">
+        <h3>StretchSpaceMorph</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/optioncolor/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/stretchspacemorph/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-public class OptionColorConstructors OptionColor(Color initialValue)  (summary) (since) 5.0  Properties Color CurrentValue  (summary) (since) 5.0  Color InitialValue  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.Geometry.Morphs
+Deforms objects toward or away from a specified axis.
+public class StretchSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  StretchSpaceMorph(Point3d start,Point3d end,double length) Constructs a stretch space morph. since 5.9 StretchSpaceMorph(Point3d start,Point3d end,Point3d point) Constructs a stretch space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/optiondouble/">
-        <h3>OptionDouble</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/stringfield/">
+        <h3>StringField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/optiondouble/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/stringfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-public class OptionDoubleConstructors OptionDouble(double initialValue)  (summary) (since) 5.0  OptionDouble(double initialValue,bool setLowerLimit,double limit)  (summary) Initializes a new instance of the double option class. (since) 5.0  OptionDouble(double initialValue,double lowerLimit,double upperLimit)  (summary) Initializes a new instance of the class with lower and upper limits. (since) 5.0  Properties double CurrentValue  (summary) (since) 5.0  double InitialValue  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.
+    Namespace: Rhino.Render.Fields
+String field value class
+public class StringField : FieldProperties  string Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/optioninteger/">
-        <h3>OptionInteger</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringwrapper/">
+        <h3>StringWrapper</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/optioninteger/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringwrapper/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-public class OptionIntegerConstructors OptionInteger(int initialValue)  (summary) (since) 5.0  OptionInteger(int initialValue,bool setLowerLimit,int limit)  (summary) Initializes a new instance of the class. (since) 5.0  OptionInteger(int initialValue,int lowerLimit,int upperLimit)  (summary) Initializes a new instance of the class wiht both lower and upper limits. (since) 5.0  Properties int CurrentValue  (summary) (since) 5.0  int InitialValue  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged OpenNurbs string. Wraps a C++ ON_wString*.
+public class StringWrapper : IDisposableConstructors  StringWrapper() Initializes a new empty unmanaged string (ON_wString*). StringWrapper(string s) Initializes a new unmanaged string with an initial value. The string s can be null.  Properties  IntPtr ConstPointer Gets the const pointer (const ON_wString*). Returns - The const pointer. IntPtr NonConstPointer Gets the non-const pointer (ON_wString*). Returns - The non-const pointer.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/optionsdialogpage/">
-        <h3>OptionsDialogPage</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/subd/">
+        <h3>SubD</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/optionsdialogpage/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/subd/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class OptionsDialogPageMethods Commands.Result RunScript(RhinoDoc doc,RunMode mode)  (summary) (since) 5.0 (returns) Commands.Result This is some return comment  
+    Namespace: Rhino.Geometry
+Subdivision surface
+[Serializable]public class SubD : GeometryBaseConstructors  SubD() Create a new instance of SubD geometry since 7.0  Properties  SubDEdgeList Edges All edges in this SubD since 7.0 SubDFaceList Faces All faces in this SubD since 7.0 bool IsSolid Test subd to see if the active level is a solid.
+A &ldquo;solid&rdquo; is a closed oriented manifold, or a closed oriented manifold. since 7.0 SubDVertexList Vertices All vertices in this SubD since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/optiontoggle/">
-        <h3>OptionToggle</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/subdcomponent/">
+        <h3>SubDComponent</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/optiontoggle/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/subdcomponent/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-public class OptionToggleConstructors OptionToggle(bool initialValue,LocalizeStringPair offValue,LocalizeStringPair onValue)  (summary) (since) 5.0  OptionToggle(bool initialValue,string offValue,string onValue)  (summary) (since) 5.0  Properties bool CurrentValue  (summary) (since) 5.0  bool InitialValue  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.Geometry
+A part of SubD geometry. Common base class for vertices, faces, and edges
+public class SubDComponentProperties  uint Id Unique id within the parent SubD for this item since 7.0 SubD ParentSubD SubD that this component belonds to since 7.0  
   </div>
   
 

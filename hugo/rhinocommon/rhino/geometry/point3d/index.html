@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Point3d &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the three coordinates of a point in three-dimensional space, using -precision floating point values.
+ static - Computes the additive inverse of all coordinates in the point, and returns the new point. Returns - A point value that, when summed with the point input, yields the . static - Subtracts a point from another point. Returns - A new vector that is the difference of point minus vector.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Point3d</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the three coordinates of a point in three-dimensional space,
+using -precision floating point values.</p>
+<dl>
+<dt>static -</dt>
+<dd>Computes the additive inverse of all coordinates in the point, and returns the new point.</dd>
+<dd>Returns - A point value that, when summed with the point input, yields the .</dd>
+<dt>static -</dt>
+<dd>Subtracts a point from another point.</dd>
+<dd>Returns - A new vector that is the difference of point minus vector.</dd>
+<dt>static -</dt>
+<dd>Subtracts a vector from a point.</dd>
+<dd>Returns - A new point that is the difference of point minus vector.</dd>
+<dt>static !=</dt>
+<dd>Determines whether two Point3d have different values.</dd>
+<dd>Returns - True if the two points differ in any coordinate; False otherwise.</dd>
+<dt>static *</dt>
+<dd>Multiplies a  by a number.</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static *</dt>
+<dd>Multiplies a  by a number.</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static /</dt>
+<dd>Divides a  by a number.</dd>
+<dd>Returns - A new point that is coordinatewise divided by t.</dd>
+<dt>static +</dt>
+<dd>Sums up a point and a vector, and returns a new point.</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Sums two  instances.</dd>
+<dd>Returns - A new point that results from the addition of point1 and point2.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Sums up a point and a vector, and returns a new point.</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Sums up a point and a vector, and returns a new point.</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dd>since (unknown)</dd>
+<dt>static &lt;</dt>
+<dd>Determines whether the first specified point comes before (has inferior sorting value than) the second point.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is smaller than b.X,
+or a.X == b.X and a.Y is smaller than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z is smaller than b.Z;
+otherwise, false.</dd>
+<dt>static &lt;=</dt>
+<dd>Determines whether the first specified point comes before
+(has inferior sorting value than) the second point, or it is equal to it.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is smaller than b.X,
+or a.X == b.X and a.Y is smaller than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z &lt;= b.Z;
+otherwise, false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether two Point3d have equal values.</dd>
+<dd>Returns - True if the coordinates of the two points are exactly equal; otherwise false.</dd>
+<dt>static &gt;</dt>
+<dd>Determines whether the first specified point comes after (has superior sorting value than) the second point.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is larger than b.X,
+or a.X == b.X and a.Y is larger than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z is larger than b.Z;
+otherwise, false.</dd>
+<dt>static &gt;=</dt>
+<dd>Determines whether the first specified point comes after
+(has superior sorting value than) the second point, or it is equal to it.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is larger than b.X,
+or a.X == b.X and a.Y is larger than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z &gt;= b.Z;
+otherwise, false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Point3d(double x,double y,double z)</dt>
+<dd>Initializes a new point by defining the X, Y and Z coordinates.</dd>
+<dt>Point3d(Point3d point)</dt>
+<dd>Initializes a new point by copying coordinates from another point.</dd>
+<dt>Point3d(Point3f point)</dt>
+<dd>Initializes a new point by copying coordinates from a single-precision point.</dd>
+<dt>Point3d(Point4d point)</dt>
+<dd>Initializes a new point by copying coordinates from a four-dimensional point.
+The first three coordinates are divided by the last one.
+If the W (fourth) dimension of the input point is zero, then it will be just discarded.</dd>
+<dt>Point3d(Vector3d vector)</dt>
+<dd>Initializes a new point by copying coordinates from the components of a vector.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Point3d Origin</dt>
+<dd>Gets the value of a point at location 0,0,0.</dd>
+<dt>static Point3d Unset</dt>
+<dd>Gets the value of a point at location RhinoMath.UnsetValue,RhinoMath.UnsetValue,RhinoMath.UnsetValue.</dd>
+<dt>bool IsValid</dt>
+<dd>Each coordinate of the point must pass the  test.</dd>
+<dt>double MaximumCoordinate</dt>
+<dd>Gets the largest (both positive and negative) valid coordinate in this point,
+or RhinoMath.UnsetValue if no coordinate is valid.</dd>
+<dt>double MinimumCoordinate</dt>
+<dd>Gets the smallest (both positive and negative) coordinate value in this point.</dd>
+<dt>double X</dt>
+<dd>Gets or sets the X (first) coordinate of this point.</dd>
+<dt>double Y</dt>
+<dd>Gets or sets the Y (second) coordinate of this point.</dd>
+<dt>double Z</dt>
+<dd>Gets or sets the Z (third) coordinate of this point.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Point3d Add(Point3d point1,Point3d point2)</dt>
+<dd>Sums two  instances.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that results from the addition of point1 and point2.</dd>
+<dt>static Point3d Add(Point3d point,Vector3d vector)</dt>
+<dd>Sums up a point and a vector, and returns a new point.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dt>static Point3d Add(Point3d point,Vector3f vector)</dt>
+<dd>Sums up a point and a vector, and returns a new point.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dt>static Point3d Add(Vector3d vector,Point3d point)</dt>
+<dd>Sums up a point and a vector, and returns a new point.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dt>static bool ArePointsCoplanar(IEnumerable<!-- raw HTML omitted --> points,double tolerance)</dt>
+<dd>Determines whether a set of points is coplanar within a given tolerance.</dd>
+<dd>Returns - True if points are on the same plane; False otherwise.</dd>
+<dt>static Point3d[] CullDuplicates(IEnumerable<!-- raw HTML omitted --> points,double tolerance)</dt>
+<dd>Removes duplicates in the supplied set of points.</dd>
+<dd>Returns - An array of points without duplicates; or None on error.</dd>
+<dt>static Point3d Divide(Point3d point,double t)</dt>
+<dd>Divides a  by a number.
+(Provided for languages that do not support operator overloading. You can use the / operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise divided by t.</dd>
+<dt>static Point3d FromPoint3f(Point3f point)</dt>
+<dd>Converts a single-precision point in a double-precision point.</dd>
+<dd>Returns - The resulting point.</dd>
+<dd>since 6.0</dd>
+<dt>static Point3d Multiply(double t,Point3d point)</dt>
+<dd>Multiplies a  by a number.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static Point3d Multiply(Point3d point,double t)</dt>
+<dd>Multiplies a  by a number.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static Point3d[] SortAndCullPointList(IEnumerable<!-- raw HTML omitted --> points,double minimumDistance)</dt>
+<dd>Orders a set of points so they will be connected in a &ldquo;reasonable polyline&rdquo; order.
+Also, removes points from the list if their common distance exceeds a specified threshold.</dd>
+<dd>Returns - The new array of sorted and culled points.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Subtract(Point3d point1,Point3d point2)</dt>
+<dd>Subtracts a point from another point.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new vector that is the difference of point minus vector.</dd>
+<dt>static Point3d Subtract(Point3d point,Vector3d vector)</dt>
+<dd>Subtracts a vector from a point.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new point that is the difference of point minus vector.</dd>
+<dt>static bool TryParse(string input,Point3d result)</dt>
+<dd>Converts the string representation of a point to the equivalent Point3d structure.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.12</dd>
+<dt>int CompareTo(Point3d other)</dt>
+<dd>Compares this  with another .
+Component evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - 0: if this is identical to other-1: if this.X &lt; other.X-1: if this.X == other.X and this.Y &lt; other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z &lt; other.Z+1: otherwise.</dd>
+<dt>double DistanceTo(Point3d other)</dt>
+<dd>Computes the distance between two points.</dd>
+<dd>Returns - The length of the line between this and the other point; or 0 if any of the points is not valid.</dd>
+<dt>double DistanceToSquared(Point3d other)</dt>
+<dd>Computes the square of the distance between two points.
+This method is usually largely faster than DistanceTo().</dd>
+<dd>Returns - The squared length of the line between this and the other point; or 0 if any of the points is not valid.</dd>
+<dd>since 6.0</dd>
+<dt>bool EpsilonEquals(Point3d other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether the specified  is a  and has the same values as the present point.</dd>
+<dd>Returns - True if obj is a Point3d and has the same coordinates as this; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Point3d point)</dt>
+<dd>Determines whether the specified  has the same values as the present point.</dd>
+<dd>Returns - True if point has the same coordinates as this; otherwise false.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes a hash code for the present point.</dd>
+<dd>Returns - A non-unique integer that represents this point.</dd>
+<dd>since (unknown)</dd>
+<dt>void Interpolate(Point3d pA,Point3d pB,double t)</dt>
+<dd>Interpolate between two points.</dd>
+<dt>string ToString()</dt>
+<dd>Constructs the string representation for the current point.</dd>
+<dd>Returns - The point representation in the form X,Y,Z.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void Transform(Transform xform)</dt>
+<dd>Transforms the present point in place. The transformation matrix acts on the left of the point. i.e.,
+result = transformation*point</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Point3d</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

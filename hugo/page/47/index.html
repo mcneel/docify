@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/pythonscript/">
-        <h3>PythonScript</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepcurvelist/">
+        <h3>BrepCurveList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/pythonscript/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepcurvelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Represents a Python script.
-public class PythonScriptProperties int ContextId  (summary) Gets or sets a context unique identified. (since) 5.0  ActionOutput  (summary) Gets or sets the Python script &ldquo;print()&rdquo; target. By default string output goes to the Rhino.RhinoApp.Write function. Set Output if you want to redirect the output from python to a different function while this script executes. (since) 5.0  Commands.Command ScriptContextCommand  (summary) Command associated with this script.
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the underlying curves in a Brep object.
+public class BrepCurveList : IEnumerable&lt;Curve&gt;, Rhino.Collections.IRhinoTable&lt;Curve&gt;Properties  int Count Gets the number of curves in this list. since 5.6  Methods  int Add(Curve curve) Adds a curve Returns - Index that should be used to reference the geometry. -1 is returned if the input is not acceptable. since 5.6 IEnumeratorGetEnumerator() Get an enumerator that visits all curves.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/quadremeshparameters/">
-        <h3>QuadRemeshParameters</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/brepedge/">
+        <h3>BrepEdge</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/quadremeshparameters/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/brepedge/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Parameters for QuadRemesh method
-public class QuadRemeshParametersProperties bool AdaptiveQuadCount  (summary) Respect the original Target Quad Count value as much as possible. True returns more quads than TargetQuadCount depending on amount of high-curvature areas. (since) 7.0  double AdaptiveSize  (summary) Larger values results in for quad sizes that adjust to match input curvature. Smaller values results in more uniform quad sizes at the risk of less feature preservation.
+Represents a single edge curve in a Brep object.
+public class BrepEdge : CurveProxyProperties  Brep Brep Gets the Brep that owns this edge. Curve EdgeCurve Get the brep.Curves3D[] 3d curve geometry used by this edge or null. since 6.0 int EdgeCurveIndex Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1. since 6.0 int EdgeIndex Gets the index of this edge in the Brep.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/quaternion/">
-        <h3>Quaternion</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepedgelist/">
+        <h3>BrepEdgeList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/quaternion/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepedgelist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the Edges in a Brep object.
+public class BrepEdgeList : IEnumerable&lt;BrepEdge&gt;, Rhino.Collections.IRhinoTable&lt;BrepEdge&gt;Properties  int Count Gets the number of brep edges.  Methods  BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,double edgeTolerance) Create and add a new edge to this list since 5.4 BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,Interval subDomain,double edgeTolerance) Create and add a new edge to this list since 5.4 BrepEdge Add(int curve3dIndex) Create and add a new edge to this list since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/brepface/">
+        <h3>BrepFace</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/brepface/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents the four coefficient values in a quaternion. The first value a is the real part, while the rest multipies i, j and k, that are imaginary.quaternion = a + bi + cj + dk
-static -  (summary) Subtracts a quaternion from another one. This computes the difference of each quaternion coefficient with its correspondant and returns a new result quaternion. (since) 5.0  static !=  (summary) Determines whether two quaternions have different values.
+Provides strongly-typed access to brep faces. A Brep face is composed of one surface and trimming curves.
+public class BrepFace : SurfaceProxyProperties  Brep Brep Gets the Brep that owns this face. since 6.9 int FaceIndex Index of face in Brep.Faces array. bool IsSurface Gets a value indicating whether the face is synonymous with the underlying surface. If a Face has no trimming curves then it is considered a Surface.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/radialdimension/">
-        <h3>RadialDimension</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepfacelist/">
+        <h3>BrepFaceList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/radialdimension/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepfacelist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the Faces in a Brep object.
+public class BrepFaceList : IEnumerable&lt;BrepFace&gt;, Rhino.Collections.IRhinoTable&lt;BrepFace&gt;Properties  int Count Gets the number of brep faces.  Methods  BrepFace Add(int surfaceIndex) Create and add a new face to this list. An incomplete face is added. The caller must create and fill in the loops used by the face. since 5.4 BrepFace Add(Surface surface) Add a new face to a brep.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/breploop/">
+        <h3>BrepLoop</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/breploop/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a dimension of a circular entity that can be measured with radius or diameter.
-public class RadialDimensionConstructors RadialDimension()  (summary) (since) 6.0  Properties AnnotationType AnnotationType  (summary) (since) 6.0  Point2d CenterPoint  (summary) (since) 6.0  Point2d DimlinePoint  (summary) (since) 6.0  bool IsDiameterDimension  (summary) Gets a value indicating whether the value refers to the diameter, rather than the radius. (since) 5.0  Point2d KneePoint  (summary) (since) 6.
+Represent a single loop in a Brep object. A loop is composed of a list of trim curves.
+public class BrepLoop : GeometryBaseProperties  Brep Brep Gets the Brep that owns this loop. BrepFace Face BrepFace this loop belongs to. int LoopIndex Gets the index of this loop in the Brep.Loops collection. BrepLoopType LoopType type of loop. BrepTrimList Trims List of trims for this loop since 5.1  Methods  Curve To2dCurve() Create a 2d curve that traces the entire loop since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/radialdimensionobject/">
-        <h3>RadialDimensionObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/breplooplist/">
+        <h3>BrepLoopList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/radialdimensionobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/breplooplist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Rhino Object that represents a radial dimension geometry and attributes
-public class RadialDimensionObjectProperties Geometry.RadialDimension RadialDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the Loops in a Brep object.
+public class BrepLoopList : IEnumerable&lt;BrepLoop&gt;, Rhino.Collections.IRhinoTable&lt;BrepLoop&gt;Properties  int Count Gets the number of brep loops.  Methods  BrepLoop Add(BrepLoopType loopType) Create a new empty boundary loop. The new loop will not be part of a face and will not include any trim curves. since 5.4 BrepLoop Add(BrepLoopType loopType,BrepFace face) Create a new boundary loop on a face.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/ray3d/">
-        <h3>Ray3d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/brepregion/">
+        <h3>BrepRegion</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/ray3d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/brepregion/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents an immutable ray in three dimensions, using position and direction.
-static !=  (summary) Determines whether two have different values. (since) 5.0  static ==  (summary) Determines whether two have equal values. (since) 5.0  Constructors Ray3d(Point3d position,Vector3d direction)  (summary) Initializes a new Ray3d instance. (since) 5.0  Properties Vector3d Direction  (summary) Gets the direction vector of this ray. (since) 5.0  Point3d Position  (summary) Gets the starting position of this ray.
+Represents a brep topological region that has sides.
+public class BrepRegion : Runtime.CommonObjectProperties  BoundingBox BoundingBox Gets the region bounding box. Brep Brep Gets a reference to the Brep this region belongs to. int Index Gets the index of region in the RegionTopology array. bool IsFinite Gets a value indicating whether this region is finite.  Methods  Brep BoundaryBrep() Gets the boundary of a region as a brep object.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/datasources/rdkedit/">
-        <h3>RdkEdit</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/brepregionfaceside/">
+        <h3>BrepRegionFaceSide</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/datasources/rdkedit/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/brepregionfaceside/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.DataSources
-public class RdkEditConstructors RdkEdit(IntPtr pRdkEdit)  (summary) (since) 6.5  Properties IntPtr CppPointer  (summary) (since) 6.5  Methods void Dispose()  (summary) (since) 6.5 (returns) void This is some return comment  bool Execute(RenderContentCollection collection)  (summary) (since) 6.5 (returns) bool This is some return comment  
+    Namespace: Rhino.Geometry
+Represents a side of a entity.
+public class BrepRegionFaceSide : Runtime.CommonObjectProperties  Brep Brep The brep this side belongs to. BrepFace Face Gets the face this side belongs to. BrepRegion Region The region this side belongs to. bool SurfaceNormalPointsIntoRegion Gets True if BrepFace&rsquo;s surface normal points into region; False otherwise.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/datasources/rdkmodaleditcontentbucket/">
-        <h3>RdkModalEditContentBucket</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepsurfacelist/">
+        <h3>BrepSurfaceList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/datasources/rdkmodaleditcontentbucket/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepsurfacelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.DataSources
-public class RdkModalEditContentBucketConstructors RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)  (summary) (since) 6.5  Properties IntPtr CppPointer  (summary) (since) 6.5  Methods RenderContentCollection ContentsIn()  (summary) (since) 6.5 (returns) RenderContentCollection This is some return comment  void Dispose()  (summary) (since) 6.5 (returns) void This is some return comment  void SetContentsOut(RenderContentCollection collection)  (summary) (since) 6.5 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/rdknotloadedexception/">
-        <h3>RdkNotLoadedException</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/rdknotloadedexception/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-Is thrown when the RDK is not loaded.
-public class RdkNotLoadedExceptionConstructors RdkNotLoadedException()  (summary) Initializes a new instance of the RDK not loaded exception with a standard message. (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/datasources/rdkselectionnavigator/">
-        <h3>RdkSelectionNavigator</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/datasources/rdkselectionnavigator/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render.DataSources
-public class RdkSelectionNavigatorConstructors RdkSelectionNavigator(IntPtr pRhinoSettings)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Add(RenderContentCollection selectedContentArray)  (summary) Add a selection of contents at the current position. Clears the navigator ahead of the current position. (since) 6.0 (returns) void This is some return comment  bool CanGoBackwards()  (summary) Check the backwards status of the navigator (since) 6.0 (returns) bool This is some return comment  bool CanGoForwards()  (summary) Check the forwards status of the navigator (since) 6.
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the underlying surfaces in a Brep object.
+public class BrepSurfaceList : IEnumerable&lt;Surface&gt;, Rhino.Collections.IRhinoTable&lt;Surface&gt;Properties  int Count Gets the number of surfaces in a brep. since 5.4  Methods  IEnumeratorGetEnumerator() Gets an enumerator that visits all surfaces. Returns - The enumerator. since 5.4  
   </div>
   
 

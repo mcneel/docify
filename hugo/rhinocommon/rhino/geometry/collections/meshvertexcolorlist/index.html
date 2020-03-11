@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshVertexColorList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the vertex colors of a mesh object.
+public class MeshVertexColorList : IResizableList&amp;lt;Color&amp;gt;, IList, IReadOnlyList&amp;lt;Color&amp;gt;Properties  int Capacity Gets or sets the total number of vertex colors the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh colors. MappingTag Tag Gets or sets a mapping information for the mesh associated with these vertex colors.  Methods  int Add(Color color) Adds a new vertex color to the end of the color list.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshVertexColorList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the vertex colors of a mesh object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshVertexColorList</span> : IResizableList&lt;Color&gt;, IList, IReadOnlyList&lt;Color&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Capacity</dt>
+<dd>Gets or sets the total number of vertex colors the internal data structure can hold without resizing.</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Gets or sets the number of mesh colors.</dd>
+<dt><a href="/rhinocommon/rhino/render/mappingtag/">MappingTag</a> Tag</dt>
+<dd>Gets or sets a mapping information for the mesh associated with these vertex colors.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add(Color color)</dt>
+<dd>Adds a new vertex color to the end of the color list.</dd>
+<dd>Returns - The index of the newly added color.</dd>
+<dt>int Add(int red,int green,int blue)</dt>
+<dd>Adds a new vertex color to the end of the color list.</dd>
+<dd>Returns - The index of the newly added color.</dd>
+<dt>bool AppendColors(Color[] colors)</dt>
+<dd>Appends a collection of colors to the vertex color list. 
+For the Mesh to be valid, the number of colors must match the number of vertices.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Clear()</dt>
+<dd>Clears the vertex color list on the mesh.</dd>
+<dt>bool CreateMonotoneMesh(Color baseColor)</dt>
+<dd>Constructs a valid vertex color list consisting of a single color.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Destroy()</dt>
+<dd>Releases all memory allocated to store vertex colors. The list capacity will be 0 after this call.
+Subsequent calls can add new items.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that yields all colors in this collection.</dd>
+<dd>Returns - The enumerator.</dd>
+<dt>bool SetColor(int index,Color color)</dt>
+<dd>Sets or adds a vertex to the Vertex List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetColor(int index,int red,int green,int blue)</dt>
+<dd>Sets or adds a vertex color to the color List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetColor(MeshFace face,Color color)</dt>
+<dd>Sets a color at the three or four vertex indices of a specified face.</dd>
+<dd>Returns - True on success; False on error.</dd>
+<dt>bool SetColors(Color[] colors)</dt>
+<dd>Sets all the vertex colors in one go. For the Mesh to be valid, the number 
+of colors must match the number of vertices.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>int[] ToARGBArray()</dt>
+<dd>Return colors as an array of integers with packed ARGB values</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshVertexColorList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

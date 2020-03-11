@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoDoc &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino
+Represents an active model.
+public class RhinoDoc : IDisposableEvents  static ActiveDocumentChanged This event is raised when the active document used by modeless user interface changes. On Mac Rhino this will get raised before the , and events. Mac Rhino will also raise this event with 0 for the document Id and a None document pointer when the last document is closed. Windows Rhino will raise this event after the , and events when a new or existing model is opened.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoDoc</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino</a></em></p>
+<p>Represents an active model.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoDoc</span> : IDisposable
+</code></pre></div><h2 id="events">Events</h2>
+<dl>
+<dt>static ActiveDocumentChanged</dt>
+<dd>This event is raised when the active document used by modeless user
+interface changes.  On Mac Rhino this will get raised before the
+,  and
+events.  Mac Rhino will also raise this
+event with 0 for the document Id and a None document pointer when the
+last document is closed.  Windows Rhino will raise this event after the
+,  and
+events when a new or existing model is
+opened.</dd>
+<dd>since 6.0</dd>
+<dt>static AddRhinoObject</dt>
+<dd>Called if a new object is added to the document.</dd>
+<dt>static BeforeTransformObjects</dt>
+<dd>Called before objects are being transformed</dd>
+<dd>since 5.10</dd>
+<dt>static BeginOpenDocument</dt>
+<dd>This event is raised when the document open operation begins.
+NOTE: On Windows, this event will be fired when a clipboard paste 
+operation occurs, as Rhino opens a .tmp file in the User&rsquo;s
+Local folder with the contents of the pasted document.</dd>
+<dt>static BeginSaveDocument</dt>
+<dd></dd>
+<dt>static CloseDocument</dt>
+<dd></dd>
+<dt>static DeleteRhinoObject</dt>
+<dd>Called if an object is deleted. At some later point the object can be un-deleted.</dd>
+<dt>static DeselectAllObjects</dt>
+<dd>Called when all objects are deselected.</dd>
+<dt>static DeselectObjects</dt>
+<dd>Called when object(s) are deselected.</dd>
+<dt>static DimensionStyleTableEvent</dt>
+<dd>Called when any modification happens to a document&rsquo;s dimension style table.</dd>
+<dd>since 6.0</dd>
+<dt>static DocumentPropertiesChanged</dt>
+<dd></dd>
+<dt>static EndOpenDocument</dt>
+<dd></dd>
+<dt>static EndOpenDocumentInitialiViewUpdate</dt>
+<dd>This event is raised after  when the
+documents initial views have been created and initialized.</dd>
+<dd>since 5.11</dd>
+<dt>static EndOpenDocumentInitialViewUpdate</dt>
+<dd>This event is raised after  when the
+documents initial views have been created and initialized.</dd>
+<dd>since 6.18</dd>
+<dt>static EndSaveDocument</dt>
+<dd></dd>
+<dt>static GroupTableEvent</dt>
+<dd>Called when any modification happens to a document&rsquo;s group table.</dd>
+<dt>static InstanceDefinitionTableEvent</dt>
+<dd>Called when any modification happens to a document&rsquo;s light table.</dd>
+<dd>since 5.3</dd>
+<dt>static LayerTableEvent</dt>
+<dd>Called when any modification happens to a document&rsquo;s layer table.</dd>
+<dt>static LightTableEvent</dt>
+<dd>Called when any modification happens to a document&rsquo;s light table.</dd>
+<dd>since 5.3</dd>
+<dt>static MaterialTableEvent</dt>
+<dd>Called when any modification happens to a document&rsquo;s material table.</dd>
+<dt>static ModifyObjectAttributes</dt>
+<dd>Called when all object attributes are changed.</dd>
+<dt>static NewDocument</dt>
+<dd></dd>
+<dt>static PurgeRhinoObject</dt>
+<dd>Called if an object is being purged from a document. The object will cease to exist forever.</dd>
+<dt>static RenderEnvironmentTableEvent</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>static RenderMaterialsTableEvent</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>static RenderTextureTableEvent</dt>
+<dd>Called when the  has been loaded, is
+about to be cleared or has been cleared.  See  for more
+information.</dd>
+<dd>since 5.7</dd>
+<dt>static ReplaceRhinoObject</dt>
+<dd>Called if an object is about to be replaced.
+If both RhinoDoc.UndoActive() and RhinoDoc.RedoActive() return false,
+then immediately after the ReplaceObject event, there will be a DeleteObject
+event followed by an AddObject event.
+<p>If either RhinoDoc.UndoActive() or RhinoDoc::RedoActive() return true,
+then immediately after the ReplaceObject event, there will be a DeleteObject
+event followed by an UndeleteObject event.</p>
+</dd>
+<dt>static SelectObjects</dt>
+<dd>Called when object(s) are selected.</dd>
+<dt>static TextureMappingEvent</dt>
+<dd>Called when any modification happens to a document objects texture mapping.</dd>
+<dd>since 5.8</dd>
+<dt>static UndeleteRhinoObject</dt>
+<dd>Called if an object is un-deleted.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static RhinoDoc ActiveDoc</dt>
+<dd>WARNING!! Do not use the ActiveDoc if you don&rsquo;t have to. Under Mac Rhino the ActiveDoc
+can change while a command is running. Use the doc that is passed to you in your RunCommand
+function or continue to use the same doc after the first call to ActiveDoc.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/animationproperties/">AnimationProperties</a> AnimationProperties</dt>
+<dd></dd>
+<dd>since 6.11</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/bitmaptable/">BitmapTable</a> Bitmaps</dt>
+<dd>bitmaps used in textures, backgrounds, wallpapers, &hellip;</dd>
+<dt><a href="/rhinocommon/rhino/render/icurrentenvironment/">ICurrentEnvironment</a> CurrentEnvironment</dt>
+<dd>Access to the current environment for various uses</dd>
+<dd>since 6.0</dd>
+<dt>uint CurrentUndoRecordSerialNumber</dt>
+<dd><blockquote>
+<p>0: undo recording is active and being saved on the undo record with
+the specified serial number.
+0: undo recording is not active. (Disabled or nothing is being
+recorded.)</p>
+</blockquote>
+</dd>
+<dd>since 6.0</dd>
+<dt>Size&gt; CustomRenderSizes</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>DateTime DateCreated</dt>
+<dd></dd>
+<dt>DateTime DateLastEdited</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/dimstyletable/">DimStyleTable</a> DimStyles</dt>
+<dd></dd>
+<dt>int DistanceDisplayPrecision</dt>
+<dd></dd>
+<dt>int DocumentId</dt>
+<dd>Gets the Document Id.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/earthanchorpoint/">EarthAnchorPoint</a> EarthAnchorPoint</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/fonttable/">FontTable</a> Fonts</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/render/groundplane/">GroundPlane</a> GroundPlane</dt>
+<dd>Gets the ground plane of this document.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/grouptable/">GroupTable</a> Groups</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/hatchpatterntable/">HatchPatternTable</a> HatchPatterns</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/instancedefinitiontable/">InstanceDefinitionTable</a> InstanceDefinitions</dt>
+<dd></dd>
+<dt>bool IsAvailable</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsClosing</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsCommandRunning</dt>
+<dd>Returns True if Rhino is currently running a command.</dd>
+<dd>since 7.0</dd>
+<dt>bool IsCreating</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsHeadless</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>bool IsInitializing</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsLocked</dt>
+<dd>Check to see if the file associated with this document is locked.  If it is
+locked then this is the only document that will be able to write the file.  Other
+instances of Rhino will fail to write this document.</dd>
+<dt>bool IsOpening</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsReadOnly</dt>
+<dd>Current read-only mode for this document.
+True if the document can be viewed but NOT saved.
+False if document can be viewed and saved.</dd>
+<dt>bool IsSendingMail</dt>
+<dd>True if Rhino is in the process of sending this document as an email attachment.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/layertable/">LayerTable</a> Layers</dt>
+<dd>Layers in the document.</dd>
+<dt>bool LayoutSpaceAnnotationScalingEnabled</dt>
+<dd>If LayoutSpaceAnnotationScaling is on, sizes in dimstyles are multiplied by 
+dimscale when the annotation is displayed in a detail viewport not in a detail</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/lighttable/">LightTable</a> Lights</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/linetypetable/">LinetypeTable</a> Linetypes</dt>
+<dd>Linetypes in the document.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/manifesttable/">ManifestTable</a> Manifest</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/materialtable/">MaterialTable</a> Materials</dt>
+<dd>Materials in the document.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparameterstyle/">MeshingParameterStyle</a> MeshingParameterStyle</dt>
+<dd>Type of MeshingParameters currently used by the document to mesh objects</dd>
+<dd>since 5.1</dd>
+<dt>double ModelAbsoluteTolerance</dt>
+<dd>Model space absolute tolerance.</dd>
+<dt>double ModelAngleToleranceDegrees</dt>
+<dd>Model space angle tolerance.</dd>
+<dt>double ModelAngleToleranceRadians</dt>
+<dd>Model space angle tolerance.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ModelBasepoint</dt>
+<dd>The base point in the model that is used when inserting the model into another as a block definition.
+By default the base point in any model is 0,0,0.</dd>
+<dd>since 6.10</dd>
+<dt>int ModelDistanceDisplayPrecision</dt>
+<dd></dd>
+<dd>since 5.8</dd>
+<dt>double ModelRelativeTolerance</dt>
+<dd>Model space relative tolerance.</dd>
+<dt>bool ModelSpaceAnnotationScalingEnabled</dt>
+<dd>If ModelSpaceAnnotationScaling is on, sizes in dimstyles are multiplied by 
+dimscale when the annotation is displayed in a model space viewport not in a detail</dd>
+<dd>since 6.0</dd>
+<dt>double ModelSpaceHatchScale</dt>
+<dd>The scale factor for hatches in model space when Hatch Scaling is enabled</dd>
+<dd>since 6.1</dd>
+<dt>bool ModelSpaceHatchScalingEnabled</dt>
+<dd>True if hatch scaling is enabled, False if not.</dd>
+<dd>since 6.16</dd>
+<dt>double ModelSpaceTextScale</dt>
+<dd>The scale factor for text in model space when Annotation Scaling is enabled</dd>
+<dd>since 6.1</dd>
+<dt>UnitSystem ModelUnitSystem</dt>
+<dd></dd>
+<dt>bool Modified</dt>
+<dd>Returns or sets the document&rsquo;s modified flag.</dd>
+<dt>string Name</dt>
+<dd>Returns the name of the currently loaded Rhino document (3DM file).</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/namedconstructionplanetable/">NamedConstructionPlaneTable</a> NamedConstructionPlanes</dt>
+<dd>Collection of named construction planes.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/namedlayerstatetable/">NamedLayerStateTable</a> NamedLayerStates</dt>
+<dd>Collection of named layer states.</dd>
+<dd>since 6.14</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/namedpositiontable/">NamedPositionTable</a> NamedPositions</dt>
+<dd>Collection of named positions.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/namedviewtable/">NamedViewTable</a> NamedViews</dt>
+<dd>Collection of named views.</dd>
+<dt>uint NextUndoRecordSerialNumber</dt>
+<dd>The serial number that will be assigned to the next undo record that is
+constructed.</dd>
+<dd>since 6.0</dd>
+<dt>string Notes</dt>
+<dd>Returns or sets the document&rsquo;s notes.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/objecttable/">ObjectTable</a> Objects</dt>
+<dd></dd>
+<dt>double PageAbsoluteTolerance</dt>
+<dd>Page space absolute tolerance.</dd>
+<dt>double PageAngleToleranceDegrees</dt>
+<dd>Page space angle tolerance.</dd>
+<dt>double PageAngleToleranceRadians</dt>
+<dd>Page space angle tolerance.</dd>
+<dt>int PageDistanceDisplayPrecision</dt>
+<dd></dd>
+<dd>since 5.8</dd>
+<dt>double PageRelativeTolerance</dt>
+<dd>Page space relative tolerance.</dd>
+<dt>UnitSystem PageUnitSystem</dt>
+<dd></dd>
+<dt>string Path</dt>
+<dd>Returns the path of the currently loaded Rhino document (3DM file).</dd>
+<dt>bool RedoActive</dt>
+<dd>Returns True if Redo is currently active.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/renderenvironmenttable/">RenderEnvironmentTable</a> RenderEnvironments</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterialtable/">RenderMaterialTable</a> RenderMaterials</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/rendersettings/">RenderSettings</a> RenderSettings</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/render/rendertexturetable/">RenderTextureTable</a> RenderTextures</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/runtimedocumentdatatable/">RuntimeDocumentDataTable</a> RuntimeData</dt>
+<dd>Collection of document runtime data. This is a good place to
+put non-serializable, per document data, such as panel view models.<br>
+Note well: This data will be dispose with the document and does not
+get serailzed.</dd>
+<dd>since 6.3</dd>
+<dt>uint RuntimeSerialNumber</dt>
+<dd>Unique serialNumber for the document while the application is running.
+This is not a persistent value.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/snapshottable/">SnapshotTable</a> Snapshots</dt>
+<dd>Collection of snapshots.</dd>
+<dd>since 6.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/stringtable/">StringTable</a> Strings</dt>
+<dd>Collection of document user data strings in this document</dd>
+<dt>string TemplateFileUsed</dt>
+<dd>name of the template file used to create this document. This is a runtime value
+only present if the document was newly created.</dd>
+<dt>bool UndoActive</dt>
+<dd>Returns True if Undo is currently active.</dd>
+<dd>since 6.0</dd>
+<dt>bool UndoRecordingEnabled</dt>
+<dd></dd>
+<dt>bool UndoRecordingIsActive</dt>
+<dd>True if undo recording is actually happening now.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/tables/viewtable/">ViewTable</a> Views</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/worksession/">Worksession</a> Worksession</dt>
+<dd>Provides access to the document&rsquo;s worksession.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static RhinoDoc Create(string modelTemplateFileName)</dt>
+<dd>Creates a new RhinoDoc</dd>
+<dd>since 6.4</dd>
+<dt>static RhinoDoc CreateHeadless(string file3dmTemplatePath)</dt>
+<dd>Create a new headless RhinoDoc from a template file</dd>
+<dd>Returns - New RhinoDoc on success. Note that this is a &ldquo;headless&rdquo; RhinoDoc and it&rsquo;s
+lifetime is under your control.</dd>
+<dd>since 7.0</dd>
+<dt>static System.Drawing.Bitmap ExtractPreviewImage(string path)</dt>
+<dd>Extracts the bitmap preview image from the specified model (3DM).</dd>
+<dd>Returns - True on success.</dd>
+<dt>static RhinoDoc FromFilePath(string filePath)</dt>
+<dd>Search the open document list for a document with a Path equal
+to the specified file path.</dd>
+<dd>Returns - The file name to search for</dd>
+<dd>since 6.0</dd>
+<dt>static RhinoDoc FromId(int docId)</dt>
+<dd></dd>
+<dt>static RhinoDoc FromRuntimeSerialNumber(uint serialNumber)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static RhinoDoc Load(string file3dmPath)</dt>
+<dd>Loads a 3DM file into a new headless RhinoDoc. Load is different than New in that
+load sets the document path</dd>
+<dd>since 7.0</dd>
+<dt>static RhinoDoc New(string file3dmTemplatePath)</dt>
+<dd>Create a new headless RhinoDoc from a template file</dd>
+<dd>Returns - New RhinoDoc on success. Note that this is a &ldquo;headless&rdquo; RhinoDoc and it&rsquo;s
+lifetime is under your control.</dd>
+<dd>since 7.0</dd>
+<dt>static RhinoDoc Open(string filePath,bool wasAlreadyOpen)</dt>
+<dd>Opens a 3dm file and makes it the active document. If called on
+windows the active document will be saved and closed and the new
+document will be opened and become the active document.  If called
+on the Mac the file will be opened in a new document window.</dd>
+<dd>Returns - Returns the newly opened document on success or None on error.</dd>
+<dd>since 6.0</dd>
+<dt>static RhinoDoc[] OpenDocuments()</dt>
+<dd>Returns a list of currently open Rhino documents</dd>
+<dd>since 6.0</dd>
+<dt>static bool OpenFile(string path)</dt>
+<dd></dd>
+<dt>static RhinoDoc OpenHeadless(string file3dmPath)</dt>
+<dd>Opens a 3DM file into a new headless RhinoDoc.</dd>
+<dd>since 7.0</dd>
+<dt>static bool ReadFile(string path,FileReadOptions options)</dt>
+<dd></dd>
+<dt>bool AddCustomUndoEvent(string description,EventHandler<!-- raw HTML omitted --> handler)</dt>
+<dd></dd>
+<dt>bool AddCustomUndoEvent(string description,EventHandler<!-- raw HTML omitted --> handler,object tag)</dt>
+<dd>Add a custom undo event so you can undo private plug-in data
+when the user performs an undo or redo</dd>
+<dt>void AdjustModelUnitSystem(UnitSystem newUnitSystem,bool scale)</dt>
+<dd></dd>
+<dt>void AdjustPageUnitSystem(UnitSystem newUnitSystem,bool scale)</dt>
+<dd></dd>
+<dt>uint BeginUndoRecord(string description)</dt>
+<dd>Instructs Rhino to begin recording undo information when the document
+is changed outside of a command. We use this, e.g., to save changes
+caused by the modeless layer or object properties dialogs
+when commands are not running.</dd>
+<dd>Returns - Serial number of record.  Returns 0 if record is not started
+because undo information is already being recorded or
+undo is disabled.</dd>
+<dt>void ClearRedoRecords()</dt>
+<dd></dd>
+<dt>void ClearUndoRecords(bool purgeDeletedObjects)</dt>
+<dd></dd>
+<dt>void ClearUndoRecords(uint undoSerialNumber,bool purgeDeletedObjects)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>DocObjects.ObjectAttributes CreateDefaultAttributes()</dt>
+<dd>Gets the default object attributes for this document. 
+The attributes will be linked to the currently active layer 
+and they will inherit the Document WireDensity setting.</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>bool EndUndoRecord(uint undoRecordSerialNumber)</dt>
+<dd>Ends the undo record.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dt>bool Equals(object obj)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>bool Export(string filePath)</dt>
+<dd>Export the entire document to a file. All file formats that Rhino can export to
+are supported by this function.</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>bool ExportSelected(string filePath)</dt>
+<dd>Export selected geometry to a file. All file formats that Rhino can export
+to are supported by this function.</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>string FindFile(string filename)</dt>
+<dd>Search for a file using Rhino&rsquo;s search path.  Rhino will look in the
+following places:
+<ol>
+<li>Current model folder</li>
+<li>Path specified in options dialog/File tab</li>
+<li>Rhino system folders</li>
+<li>Rhino executable folder</li>
+</ol>
+</dd>
+<dd>Returns - Path to existing file if found, an empty string if no file was found</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparameters/">MeshingParameters</a> GetAnalysisMeshingParameters()</dt>
+<dd>Get analysis meshing parameters currently used by the document</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparameters/">MeshingParameters</a> GetCurrentMeshingParameters()</dt>
+<dd>Get the custom meshing parameters that this document will use.</dd>
+<dd>since 6.0</dd>
+<dt>string[] GetEmbeddedFilesList(bool missingOnly)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool GetGumballPlane(Plane plane)</dt>
+<dd>Returns the active plane of Rhino&rsquo;s auto-gumball widget.
+Note, when calling from a Rhino command, make sure the command 
+class has the Rhino.Commands.Style.Transparent command style attribute.</dd>
+<dd>Returns - True if the auto-gumball widget is enabled and visible. False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>int GetHashCode()</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparameters/">MeshingParameters</a> GetMeshingParameters(MeshingParameterStyle style)</dt>
+<dd>Get MeshingParameters currently used by the document</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/renderprimitivelist/">RenderPrimitiveList</a> GetRenderPrimitiveList(ViewportInfo viewport,DisplayPipelineAttributes attrs)</dt>
+<dd>Build custom render mesh(es) for this document (ie - GH meshes).</dd>
+<dd>Returns - Returns a RenderPrimitiveList if successful otherwise returns null.</dd>
+<dd>since 6.9</dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetRenderPrimitives(bool forceTriangleMeshes,bool quietly)</dt>
+<dd>Get a enumerable list of custom mesh primitives</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetRenderPrimitives(Guid plugInId,ViewportInfo viewport,bool forceTriangleMeshes,bool quietly)</dt>
+<dd>Get a enumerable list of custom mesh primitives</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetRenderPrimitives(ViewportInfo viewport,bool forceTriangleMeshes,bool quietly)</dt>
+<dd>Get a enumerable list of custom mesh primitives</dd>
+<dd>since 6.0</dd>
+<dt>string GetUnitSystemName(bool modelUnits,bool capitalize,bool singular,bool abbreviate)</dt>
+<dd></dd>
+<dt>bool Import(string filePath)</dt>
+<dd>Import geometry into a RhinoDoc from a file. This can be any file format
+that Rhino can import</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>int ReadFileVersion()</dt>
+<dd>Returns the file version of the current document.<br>
+Use this function to determine which version of Rhino last saved the document.</dd>
+<dd>Returns - The file version (e.g. 1, 2, 3, 4, etc.) or -1 if the document has not been read from disk.</dd>
+<dt>bool Redo()</dt>
+<dd>Redo the last action that was &ldquo;undone&rdquo;</dd>
+<dd>Returns - True on success</dd>
+<dd>since 6.16</dd>
+<dt>bool Save()</dt>
+<dd>Save doc to disk using the document&rsquo;s Path</dd>
+<dd>since 7.0</dd>
+<dt>bool SaveAs(string file3dmPath)</dt>
+<dd>Save doc as a 3dm to a specified path using the current Rhino file version</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>bool SaveAs(string file3dmPath,int version)</dt>
+<dd>Save doc as a 3dm to a specified path</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>bool SaveAsTemplate(string file3dmTemplatePath)</dt>
+<dd>Save this document as a template</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>bool SaveAsTemplate(string file3dmTemplatePath,int version)</dt>
+<dd>Save this document as a template to a specific Rhino file version</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt>void SetCustomMeshingParameters(MeshingParameters mp)</dt>
+<dd>Set the custom meshing parameters that this document will use. You must also modify the
+MeshingParameterStyle property on the document to Custom if you want these meshing
+parameters to be used</dd>
+<dd>since 5.1</dd>
+<dt>bool SupportsRenderPrimitiveList(ViewportInfo viewport,DisplayPipelineAttributes attrs)</dt>
+<dd>Determines if custom render meshes will be built for this document (ie - GH meshes).</dd>
+<dd>Returns - Returns True if custom render mesh(es) will get built for this document.</dd>
+<dd>since 6.9</dd>
+<dt>bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,DisplayPipelineAttributes attrs,BoundingBox boundingBox)</dt>
+<dd>Get the bounding box for the custom render meshes associated with this
+document (ie - GH meshes).</dd>
+<dd>Returns - Returns True if the bounding box was successfully calculated otherwise
+returns False on error.</dd>
+<dd>since 6.9</dd>
+<dt>bool Undo()</dt>
+<dd>Undo the last action</dd>
+<dd>Returns - True on success</dd>
+<dd>since 6.16</dd>
+<dt>bool Write3dmFile(string path,FileWriteOptions options)</dt>
+<dd>Write information in this document to a .3dm file. 
+Note, the active document&rsquo;s name will not be changed.</dd>
+<dd>Returns - True if successful, False on failure.</dd>
+<dd>since 6.5</dd>
+<dt>bool WriteFile(string path,FileWriteOptions options)</dt>
+<dd>Write information in this document to a file. 
+Note, the active document&rsquo;s name will be changed to that
+of the path provided.</dd>
+<dd>Returns - True if successful, False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoDoc</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

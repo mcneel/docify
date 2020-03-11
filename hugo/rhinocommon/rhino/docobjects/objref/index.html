@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ObjRef &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Represents a reference to a Rhino object.
+public class ObjRef : IDisposableConstructors  ObjRef(Guid id) Initializes a new object reference from a globally unique identifier (). ObjRef(Guid id,ComponentIndex ci) Initializes a new object reference from a guid and component index. The component index is used to specify a &amp;ldquo;piece&amp;rdquo; of the geometry since 7.0 ObjRef(RhinoObject rhinoObject) Initializes a new object reference from a Rhino object. ObjRef(RhinoObject rhinoObject,PickContext pickContext) Initialized a new object reference from a Rhino object and pick context  Properties  ComponentIndex GeometryComponentIndex Gets the component index of the referenced (sub) geometry.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ObjRef</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Represents a reference to a Rhino object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObjRef</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ObjRef(Guid id)</dt>
+<dd>Initializes a new object reference from a globally unique identifier ().</dd>
+<dt>ObjRef(Guid id,ComponentIndex ci)</dt>
+<dd>Initializes a new object reference from a guid and component index. The
+component index is used to specify a &ldquo;piece&rdquo; of the geometry</dd>
+<dd>since 7.0</dd>
+<dt>ObjRef(RhinoObject rhinoObject)</dt>
+<dd>Initializes a new object reference from a Rhino object.</dd>
+<dt>ObjRef(RhinoObject rhinoObject,PickContext pickContext)</dt>
+<dd>Initialized a new object reference from a Rhino object and pick context</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/componentindex/">ComponentIndex</a> GeometryComponentIndex</dt>
+<dd>Gets the component index of the referenced (sub) geometry.
+Some objects have subobjects that are valid pieces of geometry. For
+example, breps have edges and faces that are valid curves and surfaces.
+Each subobject has a component index that is &gt; 0. The parent
+geometry has a component index = -1.</dd>
+<dt>Guid ObjectId</dt>
+<dd>Returns the id of the referenced Rhino object.</dd>
+<dt>uint RuntimeSerialNumber</dt>
+<dd>If &gt; 0, then this is the value of a Rhino object&rsquo;s serial number field.
+The serial number is used instead of the pointer to prevent crashes in
+cases when the RhinoObject is deleted but an ObjRef continues to reference
+the Rhino object. The value of RuntimeSerialNumber is not saved in archives
+because it generally changes if you save and reload an archive.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> Brep()</dt>
+<dd>Gets the brep if this reference geometry is one.</dd>
+<dd>Returns - A boundary representation; or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/clippingplanesurface/">ClippingPlaneSurface</a> ClippingPlaneSurface()</dt>
+<dd>Gets the clipping plane surface if this reference targeted one.</dd>
+<dd>Returns - A clipping plane surface, or None if this reference targeted something else.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Curve()</dt>
+<dd>Gets the curve if this reference targeted one.</dd>
+<dd>Returns - A curve, or None if this reference targeted something else.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> CurveParameter(double parameter)</dt>
+<dd>If the reference geometry is a curve or edge with a selection
+point, then this gets the parameter of the selection point.</dd>
+<dd>Returns - If the selection point was on a curve or edge, then the
+curve/edge is returned, otherwise null.</dd>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brepedge/">BrepEdge</a> Edge()</dt>
+<dd>Gets the edge if this reference geometry is one.</dd>
+<dd>Returns - A boundary representation edge; or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brepface/">BrepFace</a> Face()</dt>
+<dd>If the referenced geometry is a brep face, a brep with one face, or
+a surface, this returns the brep face.</dd>
+<dd>Returns - A boundary representation face; or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/geometrybase/">GeometryBase</a> Geometry()</dt>
+<dd>Gets the geometry linked to the object targeted by this reference.</dd>
+<dd>Returns - The geometry.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/hatch/">Hatch</a> Hatch()</dt>
+<dd>Gets the hatch if the referenced geometry is one.</dd>
+<dd>Returns - A hatch; or None if the referenced object is not a hatch</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> InstanceDefinitionPart()</dt>
+<dd>If subobject selection is enabled and a piece of an instance reference
+is selected, this will return the selected piece.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/light/">Light</a> Light()</dt>
+<dd>Gets the light if the referenced geometry is one.</dd>
+<dd>Returns - A light; or None if the referenced object is not a light, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> Mesh()</dt>
+<dd>Gets the mesh if the referenced geometry is one.</dd>
+<dd>Returns - A mesh; or None if the referenced object is not a mesh, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> Object()</dt>
+<dd>Returns the referenced Rhino object.</dd>
+<dt><a href="/rhinocommon/unsafenativemethods/point/">Point</a> Point()</dt>
+<dd>Gets the point if the referenced geometry is one.</dd>
+<dd>Returns - A point; or None if the referenced object is not a point, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointcloud/">PointCloud</a> PointCloud()</dt>
+<dd>Gets the point cloud if the referenced geometry is one.</dd>
+<dd>Returns - A point cloud; or None if the referenced object is not a point cloud, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/selectionmethod/">SelectionMethod</a> SelectionMethod()</dt>
+<dd>Gets the method used to select this object.</dd>
+<dd>Returns - The method used to select this object.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> SelectionPoint()</dt>
+<dd>If the object was selected by picking a point on it, then
+SelectionPoint() returns the point where the selection
+occured, otherwise it returns Point3d.Unset.</dd>
+<dd>Returns - The point where the selection occured or Point3d.Unset on failure.</dd>
+<dt><a href="/rhinocommon/rhino/display/rhinoview/">RhinoView</a> SelectionView()</dt>
+<dd>If the object was interactively selected in a particular viewport, then
+SelectionView() returns the view where the object was selected.</dd>
+<dd>since 6.5</dd>
+<dt>uint SelectionViewDetailSerialNumber()</dt>
+<dd>If the object was interactively selected in a page space detail
+view, then SelectionViewDetailSerialNumber() returns the CRhinoObject
+serial number of the detail view object.  Use SelectionView()
+to get the page view that contains the detail view object.
+If SelectionViewDetailSerialNumber() returns 0, then the selection
+did not happen in a detail view.</dd>
+<dd>since 6.5</dd>
+<dt>void SetSelectionComponent(ComponentIndex componentIndex)</dt>
+<dd>When an object is selected by picking a sub-object, SetSelectionComponent
+may be used to identify the sub-object.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/subd/">SubD</a> SubD()</dt>
+<dd>Gets the SubD if the referenced geometry is one.</dd>
+<dd>Returns - A SubD; or None if the referenced object is not a SubD, or on error.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/surface/">Surface</a> Surface()</dt>
+<dd>Gets the surface if the referenced geometry is one.</dd>
+<dd>Returns - A surface; or None if the referenced object is not a surface, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/surface/">Surface</a> SurfaceParameter(double u,double v)</dt>
+<dd>If the reference geometry is a surface, brep with one face,
+or surface edge with a selection point, then this gets the 
+surface paramters of the selection point.</dd>
+<dd>Returns - If the selection point was on a surface, then the surface is returned.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/textdot/">TextDot</a> TextDot()</dt>
+<dd>Gets the text dot if the referenced geometry is one.</dd>
+<dd>Returns - A text dot; or None if the referenced object is not a text dot, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/textentity/">TextEntity</a> TextEntity()</dt>
+<dd>Gets the text entity if the referenced geometry is one.</dd>
+<dd>Returns - A text entity; or None if the referenced object is not a text entity, or on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> Trim()</dt>
+<dd>If the referenced geometry is an edge of a surface,
+this returns the associated brep trim.</dd>
+<dd>Returns - A boundary representation trim; or None on error</dd>
+<dd>since 5.8</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ObjRef</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

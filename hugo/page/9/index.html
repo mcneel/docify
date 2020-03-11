@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/nodeincode/componentfunctioninfo/">
-        <h3>ComponentFunctionInfo</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/rhinodoccommontable/">
+        <h3>RhinoDocCommonTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/nodeincode/componentfunctioninfo/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/rhinodoccommontable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.NodeInCode
-Defines the base class for a function representing a component. This class is abstract.
-public class ComponentFunctionInfoProperties Guid ComponentGuid  (summary) The unique identifier of the Grasshopper component. It is the original developer&rsquo;s responsibility to ensure that this ID is unique. (since) 6.0  Delegate Delegate  (summary) Returns a delegate that can be directly invoked using a list of arguments. This flattens trees. (since) 6.0  Delegate DelegateNoWarnings  (summary) Returns a delegate that can be directly invoked using a list of arguments.
+    Namespace: Rhino.DocObjects.Tables
+public class RhinoDocCommonTable : CommonComponentTable&lt;T&gt;Properties  RhinoDoc Document Document that owns this table. since (unknown)  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/componentindex/">
-        <h3>ComponentIndex</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/rhinoget/">
+        <h3>RhinoGet</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/componentindex/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/rhinoget/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents an index of an element contained in another object.
-Constructors ComponentIndex(ComponentIndexType type,int index)  (summary) Construct component index with a specific type/index combination (since) 5.0  Properties static ComponentIndex Unset  (summary) The unset value of component index. (since) 5.0  ComponentIndexType ComponentIndexType  (summary) The interpretation of Index depends on the Type value. Type m_index interpretation (0 based indices) no_type used when context makes it clear what array is being index brep_vertex Brep.
+    Namespace: Rhino.Input
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a RhinoGet but you will use its member functions after calling GetObject::GetObjects(), GetPoint::GetPoint(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class RhinoGetProperties  static BitmapFileTypes AllBitmapFileTypes  since 6.0  Methods  static Result Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView) Gets a rectangle in view window coordinates.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/nodeincode/components/">
-        <h3>Components</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/rhinohelp/">
+        <h3>RhinoHelp</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/nodeincode/components/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/rhinohelp/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.NodeInCode
-Provides access to all Grasshopper runtime components.
-public class ComponentsProperties static NodeInCodeTable NodeInCodeFunctions  (summary) Returns a collection with all component functions. (since) 6.0  Methods static ComponentFunctionInfo FindComponent(string fullName)  (summary) Finds a component given its full name. (since) 6.0 (returns) ComponentFunctionInfo This is some return comment  
+    Namespace: Rhino.UI
+Provides access to the built in Rhino help system
+public class RhinoHelpMethods  static bool Show(string helpLink) Call this method to display standard Rhino help since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/componentstatus/">
-        <h3>ComponentStatus</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinomodifyobjectattributeseventargs/">
+        <h3>RhinoModifyObjectAttributesEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/componentstatus/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Provides information about selection, highlighting, visibility, editability and integrity states of a component. This structure is immutable.
-static !=  (summary) Determines if two ComponentStatus objects differ. (since) 6.0  static +  (summary) Sets flags from both component states and returns a new ComponentStatus. (since) (unknown)  static ==  (summary) Determines if two ComponentStatus objects are equal. (since) 6.0  Properties static ComponentStatus AllSet  (summary) All flags are checked.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/cone/">
-        <h3>Cone</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/cone/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents the center plane, radius and height values in a right circular cone.
-Constructors Cone(Plane plane,double height,double radius)  (summary) Initializes a new cone with a specified base plane, height and radius. (since) 5.0  Properties static Cone Unset  (summary) Gets an invalid Cone. (since) 5.0  Point3d ApexPoint  (summary) Point at tip of the cone. (since) 5.0  Vector3d Axis  (summary) Unit vector axis of cone.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/constructionplane/">
-        <h3>ConstructionPlane</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/constructionplane/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinomodifyobjectattributeseventargs/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Represents a contruction plane inside the document. Use Rhino.DocObjects.Tables.NamedConstructionPlaneTable methods and indexers to add and access a .
-public class ConstructionPlaneConstructors ConstructionPlane()  (summary) Initializes a new instance of . (since) 5.0  Properties bool DepthBuffered  (summary) Gets or sets whether the grid is drawn on top of geometry. false=grid is always drawn behind 3d geometrytrue=grid is drawn at its depth as a 3d plane and grid lines obscure things behind the grid.
+public class RhinoModifyObjectAttributesEventArgs : EventArgsProperties  RhinoDoc Document  ObjectAttributes NewAttributes  ObjectAttributes OldAttributes  RhinoObject RhinoObject   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/contentcollectioniterator/">
-        <h3>ContentCollectionIterator</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoobject/">
+        <h3>RhinoObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/contentcollectioniterator/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class ContentCollectionIteratorConstructors ContentCollectionIterator(IntPtr pCollection)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void DeleteThis()  (summary) (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  RenderContent First()  (summary) (since) 6.0 (returns) RenderContent This is some return comment  RenderContent Next()  (summary) (since) 6.0 (returns) RenderContent This is some return comment  
+    Namespace: Rhino.DocObjects
+Represents an object in the document. RhinoObjects should only ever be creatable by the RhinoDoc.
+public class RhinoObject : ModelComponentProperties  static uint NextRuntimeSerialNumber Gets the runtime serial number that will be assigned to the next Rhino Object that is created. ObjectAttributes Attributes Gets or sets the object attributes. ModelComponentType ComponentType Returns . since 6.0 RhinoDoc Document Gets the document that owns this object. GeometryBase Geometry Gets the underlying geometry for this object.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/datasources/contentfactories/">
-        <h3>ContentFactories</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinotransformobjectseventargs/">
+        <h3>RhinoTransformObjectsEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/datasources/contentfactories/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinotransformobjectseventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.DataSources
-public class ContentFactoriesConstructors ContentFactories(IntPtr pRdkContentFactories)  (summary) (since) 6.1  Properties IntPtr CppPointer  (summary) (since) 6.1  Methods void Dispose()  (summary) (since) 6.1 (returns) void This is some return comment  ContentFactory FindFactory(Guid uuid)  (summary) (since) 6.7 (returns) ContentFactory This is some return comment  ContentFactory FirstFactory()  (summary) (since) 6.1 (returns) ContentFactory This is some return comment  ContentFactory NextFactory()  (summary) (since) 6.
+    Namespace: Rhino.DocObjects
+EventArgs passed to RhinoDoc.BeforeTransform.
+public class RhinoTransformObjectsEventArgs : EventArgsProperties  int ObjectCount  since 5.10 RhinoObject[] Objects  since 5.10 bool ObjectsWillBeCopied  since 5.10 Transform Transform  since 5.10  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/datasources/contentfactory/">
-        <h3>ContentFactory</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/rhinoview/">
+        <h3>RhinoView</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/datasources/contentfactory/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/rhinoview/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.DataSources
-public class ContentFactoryConstructors ContentFactory(IntPtr pRdkContentFactory)  (summary) (since) 6.1  Properties IntPtr CppPointer  (summary) (since) 6.1  Methods Guid ContentTypeId()  (summary) (since) 6.7 (returns) Guid This is some return comment  void Dispose()  (summary) (since) 6.1 (returns) void This is some return comment  RenderContentKind Kind()  (summary) (since) 6.3 (returns) RenderContentKind This is some return comment  RenderContent NewContent()  (summary) New Content returns a new content, which is Initialized with the Initialize() function.
+    Namespace: Rhino.Display
+A RhinoView represents a single &ldquo;window&rdquo; display of a document. A view could contain one or many RhinoViewports (many in the case of Layout views with detail viewports). Standard Rhino modeling views have one viewport.
+public class RhinoViewEvents  static Create  static Destroy  static Modified  since 7.0 static Rename  static SetActive   Properties  static bool EnableDrawing Gets or sets the &lsquo;drawing enabled&rsquo; flag.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/contenthash/">
-        <h3>ContentHash</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/rhinoviewport/">
+        <h3>RhinoViewport</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/contenthash/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/rhinoviewport/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Contains information that is useful to uniquly identify an object. This object is immutable.
-public class ContentHashstatic !=  (summary) Determines if two ContentHash instances are different by value. (since) 6.0  static ==  (summary) Determines if two ContentHash instances are equal by value. (since) 6.0  Properties ulong ByteCount  (summary) Gets the length of the content, in bytes. (since) 6.0  DateTime HashTime  (summary) Gets the hash time, rounded to seconds.
+    Namespace: Rhino.Display
+Displays geometry with a given projection. In standard modeling views there is a one to one relationship between RhinoView and RhinoViewports. In a page layout, there may be multiple RhinoViewports for a single layout.
+public class RhinoViewport : IDisposableConstructors  RhinoViewport()  RhinoViewport(RhinoViewport other)   Properties  Rectangle Bounds Gets the size and location of the viewport, in pixels, relative to the parent view. double Camera35mmLensLength  Vector3d CameraDirection  Point3d CameraLocation  Point3d CameraTarget Viewport target point.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/ruiupdateui/">
+        <h3>RuiUpdateUi</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/ruiupdateui/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+[CLSCompliant(false)]public class RuiUpdateUi : EventArgsProperties  bool Checked Set to True to enable menu item or False to check menu item since 5.11 bool Enabled Set to True to enable menu item or False to disable menu item since 5.11 Guid FileId Id of the RUI file that owns this menu item since 5.11 IntPtr MenuHandle Windows menu handle of menu that contains this item since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/runtimedocumentdatatable/">
+        <h3>RuntimeDocumentDataTable</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/runtimedocumentdatatable/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+Collection of document runtime data. This is a good place to put non-serialized, per document data.
+public class RuntimeDocumentDataTable : Dictionary&lt;object, object&gt;Properties  RhinoDoc Document  since 6.3  Methods  T GetValue(object key,Func&lt;RhinoDoc, T&gt; newT) Checks the dictionary for the specified key, if found and the value is not None then then the value is returned. If the key is not found or its value is None then newT(Document) is called to create a new value instnce which is put in the dictionary and returned.
   </div>
   
 

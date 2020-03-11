@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,130 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/polylinecurve/">
-        <h3>PolylineCurve</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/ui/worldmapdaynight/">
+        <h3>WorldMapDayNight</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/polylinecurve/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/ui/worldmapdaynight/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.UI
+public class WorldMapDayNight : IDisposableConstructors  WorldMapDayNight()  since 6.0  Methods  void Dispose()  since 6.0 bool HasMapForCurrentSettings()  since 6.0 System.Drawing.Point LocationToMap(Point2d latlong)  since 6.0 void MakeMapBitmap()  since 6.0 System.Drawing.Image Map()  since 6.0 Rhino.Geometry.Point2d MapToLocation(Point mapPoint)  since 6.0 void SetDayNightDisplay(bool bOn)  since 6.0 void SetEnabled(bool bEnabled)  since 6.0 void SetTimeInfo(DateTime dt,double timezone,int daylightSavingMinutes,bool bDaylightSavingsOn)  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/angulardimension/">
+        <h3>AngularDimension</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/angulardimension/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents the geometry of a set of linked line segments. This is fundamentally a class that derives from and internally contains a .
-public class PolylineCurveConstructors PolylineCurve()  (summary) Initializes a new empty polyline curve. (since) 5.0  PolylineCurve(IEnumerablepoints)  (summary) Initializes a new polyline curve by copying its content from another set of points. (since) 5.0  PolylineCurve(PolylineCurve other)  (summary) Initializes a new polyline curve by copying its content from another polyline curve.
+Represents a dimension of an entity that can be measured with an angle.
+[Serializable]public class AngularDimension : DimensionConstructors  AngularDimension()  since 6.0 AngularDimension(Arc arc,double offset) Create an angular dimension from a given arc  Properties  AngleDisplayFormat AngleFormat  since 6.0 int AngleResolution  since 6.0 double AngleRoundoff  since 6.0 ZeroSuppression AngleZeroSuppression  since 6.0 Point2d ArrowPoint1  since 6.0 Point2d ArrowPoint2  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/previewappearance/">
-        <h3>PreviewAppearance</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/arc/">
+        <h3>Arc</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/previewappearance/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/arc/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-PreviewAppearance class
-public class PreviewAppearanceConstructors PreviewAppearance(IntPtr pRenderContent)  (summary) Constructor for previewappearance (since) 6.0  Properties IntPtr CppPointer  (summary) Previewappearances c++ pointer (since) 6.0  MetaData MetaData  (summary) Previewappearance MetaData (since) 6.0  Methods PreviewBackground Background()  (summary) Background (since) 6.0 (returns) PreviewBackground This is some return comment  void Dispose()  (summary) Dispose for previewappearance (since) 6.0 (returns) void This is some return comment  void FromMetaData(MetaData md)  (summary) Copy data from MetaData to PreviewAppearance (since) 6.
+    Namespace: Rhino.Geometry
+Represents the value of a plane, two angles and a radius in a subcurve of a three-dimensional circle.
+The curve is parameterized by an angle expressed in radians. For an IsValid arc the total subtended angle AngleRadians() = Domain()(1) - Domain()(0) must satisfy 0 &lt; AngleRadians() &lt; 2*PiThe parameterization of the Arc is inherited from the Circle it is derived from. In particulart -&gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere xaxis and yaxis, (part of Circle.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/previewbackground/">
-        <h3>PreviewBackground</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/areamassproperties/">
+        <h3>AreaMassProperties</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/previewbackground/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/areamassproperties/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-PreviewBackGround takes care of constucting and desctrutction of PreviewLight
-public class PreviewBackgroundConstructors PreviewBackground(IntPtr pPreviewBackground)  (summary) Constructor for PreivewLighting (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreivewLighting (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  Guid EnvironmentInstanceId()  (summary) EnvironmentInstanceId (since) 6.0 (returns) Guid This is some return comment  void SetEnvironmentInstanceId(Guid guid)  (summary) SetEnvironmentInstanceId (since) 6.
+    Namespace: Rhino.Geometry
+Contains static initialization methods and allows access to the computed metrics of area, area centroid and area moments in closed planar curves, in meshes, in surfaces, in hatches and in boundary representations.
+public class AreaMassProperties : IDisposableProperties  double Area Gets the area solution. double AreaError Gets the uncertainty in the area calculation. Point3d Centroid Gets the area centroid in the world coordinate system. Vector3d CentroidCoordinatesMomentsOfInertia Moments of inertia with respect to centroid coordinate system.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/previewgeometry/">
-        <h3>PreviewGeometry</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/arrowhead/">
+        <h3>Arrowhead</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/previewgeometry/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/arrowhead/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-PreviewAppearance takes care of constucting and desctrutction of PreivewGeometry
-public class PreviewGeometryConstructors PreviewGeometry(IntPtr pPreviewGeometry)  (summary) Constructor for PreviewGeometry (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreviewGeometry (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  void SetUpPreview(IntPtr sceneServerPointer,IntPtr pRenderContent,bool bCopy)  (summary) SetUpPreview (since) 6.0 (returns) void This is some return comment  
+    Namespace: Rhino.Geometry
+Arrowhead used by annotation
+public class ArrowheadConstructors  Arrowhead() Constructor since 6.0 Arrowhead(ArrowType arrowType,Guid blockId) Constructor since 6.0  Properties  ArrowType ArrowType Type of arrowhead used by annotation since 6.0 Guid BlockId Id of block used for user-defined arrowhead since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/previewlighting/">
-        <h3>PreviewLighting</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/beziercurve/">
+        <h3>BezierCurve</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/previewlighting/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/beziercurve/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-PreviewAppearance takes care of constucting and desctrutction of PreviewLight
-public class PreviewLightingConstructors PreviewLighting(IntPtr pPreviewLighting)  (summary) Constructor for PreivewLighting (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreivewLighting (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  void SetUpPreview(IntPtr sceneServerPointer)  (summary) SetUpPreview (since) 6.0 (returns) void This is some return comment  
+    Namespace: Rhino.Geometry
+Represents a Bezier curve. Note: as an exception, the bezier curve is not derived from .
+[Serializable]public class BezierCurve : IDisposable, ISerializableConstructors  BezierCurve(IEnumerablecontrolPoints) Create bezier curve with controls defined by a list of 2d points BezierCurve(IEnumerablecontrolPoints) Create bezier curve with controls defined by a list of 3d points BezierCurve(IEnumerablecontrolPoints) Create bezier curve with controls defined by a list of 4d points  Properties  int ControlVertexCount Number of control vertices in this curve int Dimension Dimension of Bezier since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/previewnotification/">
-        <h3>PreviewNotification</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivefile/">
+        <h3>BinaryArchiveFile</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/previewnotification/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivefile/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-public class PreviewNotificationMethods void NotifyIntermediateUpdate(RenderWindow rw)  (summary) (since) 6.0 (returns) void This is some return comment  
+    Namespace: Rhino.FileIO
+public class BinaryArchiveFile : IDisposableConstructors  BinaryArchiveFile(string filename,BinaryArchiveMode mode)  since 5.1  Properties  BinaryArchiveReader Reader  since 5.1 BinaryArchiveWriter Writer  since 5.1  Methods  void Close()  since 5.1 void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.1 bool Open()  since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/previewsceneserver/">
-        <h3>PreviewSceneServer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/boundingbox/">
+        <h3>BoundingBox</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/previewsceneserver/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/boundingbox/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-PreviewSceneServer
-public class PreviewSceneServerConstructors PreviewSceneServer(IntPtr pPreviewSceneServer)  (summary) Constructor for PreviewSceneServer (since) 6.0  Properties IntPtr CppPointer  (summary) The CppPointer of PreviewSceneServer (since) 6.0  Methods void ApplyRotation(double X,double Y,IRhRdkPreviewSceneServer_eRotationType type)  (summary) Set Scene Server Rotation (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) Dispose for PreviewSceneServer (since) 6.0 (returns) void This is some return comment  
+    Namespace: Rhino.Geometry
+Represents the value of two points in a bounding box defined by the two extreme corner points. This box is therefore aligned to the world X, Y and Z axes.
+Constructors  BoundingBox(double minX,double minY,double minZ,double maxX,double maxY,double maxZ) Constructs a boundingbox from numeric extremes. BoundingBox(IEnumerablepoints) Constructs a boundingbox from a collection of points. BoundingBox(IEnumerablepoints,Transform xform) Constructs a boundingbox from a collection of points. since 6.0 BoundingBox(Point3d min,Point3d max) Constructs a new boundingbox from two corner points.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/datasource/providerids/">
-        <h3>ProviderIds</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/box/">
+        <h3>Box</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/datasource/providerids/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/box/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls.DataSource
-public class ProviderIdsProperties static Guid ContentChildSlot  (summary) (since) 6.1  static Guid ContentDatabase  (summary) (since) 6.0  static Guid ContentDisplayCollection  (summary) (since) 6.0  static Guid ContentEditorSettings  (summary) (since) 6.0  static Guid ContentLookup  (summary) (since) 6.0  static Guid ContentParam  (summary) (since) 6.0  static Guid ContentPreviewRendered  (summary) (since) 6.0  static Guid ContentSelection  (summary) (since) 6.0  static Guid ContentUIs  (summary) (since) 6.
+    Namespace: Rhino.Geometry
+Represents the value of a plane and three intervals in an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.
+Constructors  Box(BoundingBox bbox) Initializes a new Box that mimics a BoundingBox struct. The orientation plane of the Box is coincident with the World XY plane. Box(Plane basePlane,BoundingBox boundingbox) Initializes a world aligned box from a base plane and a boundingbox. Box(Plane basePlane,GeometryBase geometry) Initializes a box that contains a generic piece of geometry.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/proxyobject/">
-        <h3>ProxyObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/brep/">
+        <h3>Brep</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/proxyobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/brep/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-A proxy object (not saved in files)
-public class ProxyObjectMethods int CreateMeshes(MeshType meshType,MeshingParameters parameters,bool ignoreCustomParameters)  (summary) (since) 7.0 (returns) int This is some return comment  Mesh[] GetMeshes(MeshType meshType)  (summary) (since) 7.0 (returns) Mesh[] This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/pythoncompiledcode/">
-        <h3>PythonCompiledCode</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/pythoncompiledcode/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-Represents scripting compiled code.
-public class PythonCompiledCodeMethods void Execute(PythonScript scope)  (summary) Executes the script in a specific scope. (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.Geometry
+Boundary Representation. A surface or polysurface along with trim curve information.
+[Serializable]public class Brep : GeometryBaseConstructors  Brep() Initializes a new empty brep since 5.4  Properties  BrepCurveList Curves2D Parameter space trimming curves (used by trims) since 5.6 BrepCurveList Curves3D Pointers to 3d curves (used by edges) since 5.6 BrepEdgeList Edges Gets the brep edges list accessor. BrepFaceList Faces Gets the brep faces list accessor. bool IsManifold Gets a value indicating whether or not the Brep is manifold.
   </div>
   
 

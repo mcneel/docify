@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/">
-        <h3>HiddenLineDrawingSegment</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/viewdisplayattributes/">
+        <h3>ViewDisplayAttributes</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/viewdisplayattributes/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-The results of HiddenLineDrawing calculation are a collection of segments. A segment is a subcurve of a HiddenLineDrawingObjectCurve.
-public class HiddenLineDrawingSegmentProperties Curve CurveGeometry  (summary) The actual curve geometry (since) 6.0  SideFill[] CurveSideFills  (summary) The SideFill fields are only valid for visible curves. With respect to the HiddenLineDrawing, the region to the left (or right respecively) of this curve is described by CurveSideFills[0] or CurveSideFills[1], respectively.
+    Namespace: Rhino.Display
+public class ViewDisplayAttributesProperties  bool BlendGrid  bool DrawGrid  bool DrawGridAxes  bool DrawTransparentGridPlane  bool DrawWorldAxes  bool DrawZAxis  double HorizontalViewportScale  bool ShowGridOnTop  bool UseDocumentGrid  double VerticalViewportScale  Color WorldAxisColorX  Color WorldAxisColorY  Color WorldAxisColorZ   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/historyrecord/">
-        <h3>HistoryRecord</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettings/">
+        <h3>ViewSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/historyrecord/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-Provides a single bundling of information to be passed to Rhino when setting up history for an object.
-public class HistoryRecordConstructors HistoryRecord(Command command,int version)  (summary) (since) 5.0  Properties bool CopyOnReplaceObject  (summary) When an object is replaced and the old object has a history record with this field set, the history record is copied and attached to the new object. That allows a descendant object to continue the history linkage after it is edited.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/historysettings/">
-        <h3>HistorySettings</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/historysettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettings/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.ApplicationSettings
-Provides static (Shared in Vb.Net) properties to modify Rhino History settings.
-public class HistorySettingsProperties static bool BrokenRecordWarningEnabled  (summary) Displays a warning dialog when an action is taken that breaks the link between the output and input objects. (since) 6.10  static bool ObjectLockingEnabled  (summary) When history object locking is enabled, objects with history on them act as if they were locked and the only way to modify these objects is to edit their inputs.
+Contains static methods and properties to control view settings.
+public class ViewSettingsProperties  static bool AlwaysPanParallelViews Gets or sets the &lsquo;always pan parallel views&rsquo; value. If the view is not looking straight at the construction plane, then sets parallel viewports so they will not rotate. static bool DefinedViewSetCPlane Gets or sets the &lsquo;named views set CPlane&rsquo; value. When true, restoring a named view causes the construction plane saved with that view to also restore.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/hostutils/">
-        <h3>HostUtils</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/zbuffercapture/">
+        <h3>ZBufferCapture</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/hostutils/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/zbuffercapture/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Contains static methods to deal with teh runtime environment.
-public class HostUtilsstatic OnExceptionReport  (summary) Is raised when an exception is reported with one of the method. (since) 5.0  static OnSendLogMessageToCloud  (summary) Is raised when an exception is reported with one of the method. (since) 6.4  Properties static string ComputerSerialNumber  (summary) Gets the serial number of the computer running Rhino. (since) 6.0  static uint CurrentOSLanguage  (summary) Get the current operating system language.
+    Namespace: Rhino.Display
+Provides functionality for getting the zbuffer values from a viewport and a given display mode
+public class ZBufferCapture : IDisposableConstructors  ZBufferCapture(RhinoViewport viewport)  since 5.3  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.3 System.Drawing.Bitmap GrayscaleDib()  since 5.3 int HitCount()  since 5.3 float MaxZ()  since 5.3 float MinZ()  since 5.3 void SetDisplayMode(Guid modeId)  since 5.3 void ShowAnnotations(bool on)  since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/">
-        <h3>HudMaxPassesChangedEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/annotationobjectbase/">
+        <h3>AnnotationObjectBase</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/annotationobjectbase/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class HudMaxPassesChangedEventArgsConstructors HudMaxPassesChangedEventArgs(int mp)  (summary) (since) 6.0  Properties int MaxPasses  (summary) (since) 6.0  
+    Namespace: Rhino.DocObjects
+Base class for all annotation objects (text and dimensions)
+public class AnnotationObjectBase : RhinoObjectProperties  AnnotationBase AnnotationGeometry Get the annotation base geometry for this object since 6.0 string DisplayText Gets the text that is displayed to users. bool HasMeasurableTextFields Test if the text in the annotation object contains fields that involve length, area, or volume measurements since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/imageadjust/">
-        <h3>ImageAdjust</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/asyncrendercontext/">
+        <h3>AsyncRenderContext</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/imageadjust/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Class to set image adjusting settings to a RenderWindow. This can&rsquo;t be directly created. Instead, one should use RenderWindow.GetAdjust() to get an ImageAdjust instance that can be modified, then passed into RenderWindow.SetAdjust() to update image adjusting settings.1
-public class ImageAdjustProperties Dithering.Methods Dither  (summary) Set the Dithering method to use when adjusting the RenderWindow content. (since) 6.0  float Gamma  (summary) Set the gamma value. The inverse of this will be used to apply gamma correction to the RenderWindow RGBA channel when necessary.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/imagefile/">
-        <h3>ImageFile</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/imagefile/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.FileIO
-Support functions for image files
-public class ImageFileMethods static bool SupportsAlphaChannel(string filename)  (summary) Returns True if file at given path is an image file and that file format supports an alpha channel (since) 6.0 (returns) bool This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/imagefile/">
-        <h3>ImageFile</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/imagefile/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/asyncrendercontext/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-Controls interaction with RDK render image files
-public class ImageFileEvents static Deleted  (summary) Called when the RDK is cleaning up old render image files, a plug-in should delete any plug-in specific image files at this time. (since) 5.11  static Loaded  (summary) Generally called when the &ldquo;RenderOpenLastRender&rdquo; command is run, this event is raised after the render window has been created and the saved scene has been loaded.
+\ingroup rhino_render Inherit from AsyncRenderContext to be able to create asynchronous render engine implementations through RhinoCommon.
+public class AsyncRenderContext : IDisposableProperties  Thread RenderThread Holder for render thread, that gets set through StartRenderThread() since 6.0 RenderWindow RenderWindow Handle to the RenderWindow for the instance of this class. This is a convenience property for implementors to use. since 6.0  Methods  void Dispose()  since 6.0 void JoinRenderThread() Join the render thread, then set to null; since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/imagefileeventargs/">
-        <h3>ImageFileEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/bendspacemorph/">
+        <h3>BendSpaceMorph</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/imagefileeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/bendspacemorph/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Deforms objects by bending along a spine arc.
+public class BendSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric) Constructs a bend space morph. since 5.9 BendSpaceMorph(Point3d start,Point3d end,Point3d point,double angle,bool straight,bool symmetric) Constructs a bend space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/boolfield/">
+        <h3>BoolField</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/boolfield/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.Fields
+bool field value class
+public class BoolField : FieldProperties  bool Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/bytearrayfield/">
+        <h3>ByteArrayField</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/bytearrayfield/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.Fields
+ByteArray field value class
+public class ByteArrayField : FieldProperties  byte[] Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/changequeue/">
+        <h3>ChangeQueue</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/changequeue/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.ChangeQueue
+Base class for ChangeQueue.
+Generally used by render plugins to build interactive updating of scenes that are being rendered.
+public class ChangeQueue : IDisposableProperties  DisplayPipelineAttributes DisplayPipelineAttributes Get the DisplayPipelineAttributes if available, None otherwise since 6.0 bool IsPreview Return True if this ChangeQueue is created for preview rendering. No view was set for preview rendering.
+ since 6.0 Guid ViewId Return view ID for a RhinoDoc based ChangeQueue.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/channel/">
+        <h3>Channel</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/channel/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class ImageFileEventArgsProperties int EllapsedTime  (summary) (since) 5.11  ImageFileEvent Event  (summary) (since) 5.11  string FileName  (summary) (since) 5.11  string RenderEngine  (summary) (since) 5.11  Guid RenderEngineId  (summary) (since) 5.11  Guid SessionId  (summary) (since) 5.11  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/indexpair/">
-        <h3>IndexPair</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/indexpair/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino
-Represents two indices: I and J.
-Constructors IndexPair(int i,int j)  (summary) Initializes a new instance of with two indices. (since) 5.0  Properties int Count  (summary) Returns the amount of elements in this pair of indices, which is always 2. (since) 6.0  int I  (summary) Gets or sets the first, I index. (since) 5.0  int J  (summary) Gets or sets the second, J index.
+public class Channel : IDisposableMethods  void AddValue(int x,int y,Color4f value) Add value to existing values at point x, y. If x or y are out of range, the function will fail and may crash Rhino. since 6.0 void Dispose()  int PixelSize() Returns the size of the data in one pixel in the channel. For RDK standard channels, this value is always sizeof(float). For the special chanRGBA collective channel, this value is 4 * sizeof(float).
   </div>
   
 

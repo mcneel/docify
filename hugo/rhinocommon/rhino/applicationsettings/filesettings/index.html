@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  FileSettings &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.ApplicationSettings
+Contains static methods and properties relating Rhino files.
+public class FileSettingsProperties  static bool AutoSaveEnabled Enables or disables Rhino&amp;rsquo;s automatic file saving mechanism. static string AutoSaveFile the file name used by Rhino&amp;rsquo;s automatic file saving mechanism. static TimeSpan AutoSaveInterval how often the document will be saved when Rhino&amp;rsquo;s automatic file saving mechanism is enabled. static bool AutoSaveMeshes save render and display meshes in autosave file. static bool ClipboardCopyToPreviousRhinoVersion Gets or sets a value that decides if copies to the clipboard are performed in both the current and previous Rhino clipboard formats.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">FileSettings</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.ApplicationSettings</a></em></p>
+<p>Contains static methods and properties relating Rhino files.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileSettings</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static bool AutoSaveEnabled</dt>
+<dd>Enables or disables Rhino&rsquo;s automatic file saving mechanism.</dd>
+<dt>static string AutoSaveFile</dt>
+<dd>the file name used by Rhino&rsquo;s automatic file saving mechanism.</dd>
+<dt>static TimeSpan AutoSaveInterval</dt>
+<dd>how often the document will be saved when Rhino&rsquo;s automatic file saving mechanism is enabled.</dd>
+<dt>static bool AutoSaveMeshes</dt>
+<dd>save render and display meshes in autosave file.</dd>
+<dt>static bool ClipboardCopyToPreviousRhinoVersion</dt>
+<dd>Gets or sets a value that decides if copies to the clipboard are performed in both the current
+and previous Rhino clipboard formats.  This means you will double the size of what is saved in
+the clipboard but will be able to copy from the current to the previous version using the
+clipboard.</dd>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/clipboardstate/">ClipboardState</a> ClipboardOnExit</dt>
+<dd>Gets or sets a value that determines what to do with clipboad data on exit.</dd>
+<dt>static bool CreateBackupFiles</dt>
+<dd>Gets or sets a value that controls the creation of backup files.</dd>
+<dt>static string DefaultRuiFile</dt>
+<dd>Gets the path to the default RUI file.</dd>
+<dt>static string ExecutableFolder</dt>
+<dd>Returns the directory where the main Rhino executable is located.</dd>
+<dt>static bool FileLockingEnabled</dt>
+<dd>Ensure that only one person at a time can have a file open for saving.</dd>
+<dt>static bool FileLockingOpenWarning</dt>
+<dd>Gets or sets whether to display the information dialog which identifies computer files.</dd>
+<dt>static string HelpFilePath</dt>
+<dd>Gets the Rhino help file path.</dd>
+<dt>static DirectoryInfo InstallFolder</dt>
+<dd>Returns Rhino&rsquo;s installation folder.</dd>
+<dt>static string LocalProfileDataFolder</dt>
+<dd>Get full path to a Rhino specific sub-folder under the per-user Local
+(non-roaming) Profile folder.  This is the folder where user-specific
+data is stored.
+<p>On Windows 7, 8, usually someplace like:
+&ldquo;C:\Users[USERNAME]\AppData\Local\McNeel\Rhinoceros[VERSION_NUMBER]&quot;</p>
+</dd>
+<dd>since 5.8</dd>
+<dt>static bool SaveViewChanges</dt>
+<dd>True for users who consider view changes a document change.</dd>
+<dt>static int SearchPathCount</dt>
+<dd>Gets the amount of search paths that are currently defined.</dd>
+<dt>static string TemplateFile</dt>
+<dd>Returns or sets the location of Rhino&rsquo;s template file.</dd>
+<dt>static string TemplateFolder</dt>
+<dd>Returns or sets the location of Rhino&rsquo;s template files.</dd>
+<dt>static string WorkingFolder</dt>
+<dd>Returns or sets Rhino&rsquo;s working directory, or folder.
+The working folder is the default folder for all file operations.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static int AddSearchPath(string folder,int index)</dt>
+<dd>Adds a new imagePath to Rhino&rsquo;s search imagePath list.
+See &ldquo;Options Files settings&rdquo; in the Rhino help file for more details.</dd>
+<dd>Returns - The index where the item was inserted if success.
+-1 on failure.</dd>
+<dt>static string[] AutoSaveBeforeCommands()</dt>
+<dd>Input list of commands that force AutoSave prior to running.</dd>
+<dt>static bool DeleteSearchPath(string folder)</dt>
+<dd>Removes an existing imagePath from Rhino&rsquo;s search imagePath list.
+See &ldquo;Options Files settings&rdquo; in the Rhino help file for more details.</dd>
+<dd>Returns - True or False indicating success or failure.</dd>
+<dt>static string FindFile(string fileName)</dt>
+<dd>Searches for a file using Rhino&rsquo;s search imagePath. Rhino will look for a file in the following locations:
+<ol>
+<li>The current document&rsquo;s folder.</li>
+<li>Folder&rsquo;s specified in Options dialog, File tab.</li>
+<li>Rhino&rsquo;s System folders.</li>
+</ol>
+</dd>
+<dd>Returns - full imagePath on success; None on error.</dd>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/filesettingsstate/">FileSettingsState</a> GetCurrentState()</dt>
+<dd>Returns the current state.</dd>
+<dd>Returns - A new instance containing the current state.</dd>
+<dt>static string GetDataFolder(bool currentUser)</dt>
+<dd>Gets the data folder for machine or current user.</dd>
+<dd>Returns - A directory to user or machine data.</dd>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/filesettingsstate/">FileSettingsState</a> GetDefaultState()</dt>
+<dd>Returns the default state.</dd>
+<dd>Returns - A new instance containing the default state.</dd>
+<dt>static string[] GetSearchPaths()</dt>
+<dd>Returns all of the imagePath items in Rhino&rsquo;s search imagePath list. See &ldquo;Options Files settings&rdquo; in the Rhino help file for more details.</dd>
+<dt>static string[] RecentlyOpenedFiles()</dt>
+<dd>Returns a list of recently opened files. Note that this function does not
+check to make sure that these files still exist.</dd>
+<dd>Returns - An array of strings with the paths to the recently opened files.</dd>
+<dt>static void SetAutoSaveBeforeCommands(string[] commands)</dt>
+<dd>Set list of commands that force AutoSave prior to running.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>FileSettings</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.FileIO on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/fileio/</link>
+    <description>Recent content in Rhino.FileIO on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/fileio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FileReadOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filereadoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filereadoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+public class FileReadOptions : IDisposableConstructors  FileReadOptions()   Properties  bool BatchMode True means you cannot ask questions during reading. (no dialogs, no &amp;ldquo;getters&amp;rdquo;, etc.) bool ImportMode True means we are merging whatever is being read into an existing document. This means you need to consider things like: If the information being read is in a different unit system, it should be scaled if UseScaleGeometry is true.</description>
+    </item>
+    
+    <item>
+      <title>FileWriteOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filewriteoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filewriteoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+public class FileWriteOptions : IDisposableConstructors  FileWriteOptions()   Properties  string DestinationFileName For use on Apple frameworks only. Retrns the final destination file name. since 6.3 int FileVersion  bool IncludeBitmapTable The file written should include the bitmap table if your File Writing Plug-in supports it. bool IncludeHistory The file written should include history information if your File Writing Plug-In supports it. bool IncludePreviewImage The file written should include a preview image if your File Writing Plug-in supports it.</description>
+    </item>
+    
+    <item>
+      <title>FileType</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filetype/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filetype/</guid>
+      <description>Namespace: Rhino.FileIO
+public class FileTypeConstructors  FileType(string extension,string description)   Properties  string Description  string Extension   </description>
+    </item>
+    
+    <item>
+      <title>TextLog</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/textlog/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/textlog/</guid>
+      <description>Namespace: Rhino.FileIO
+Used for collecting text data
+public class TextLog : IDisposableConstructors  TextLog() Creates a text log that stores all text in memory. Use ToString on this version of the TextLog to get the text that we written since 5.1 TextLog(IntPtr ptr)  since 6.0 TextLog(string filename) Creates a text log that writes all text to a file. If no filename is provided, then text is written to StdOut since 5.</description>
+    </item>
+    
+    <item>
+      <title>BinaryArchiveFile</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivefile/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivefile/</guid>
+      <description>Namespace: Rhino.FileIO
+public class BinaryArchiveFile : IDisposableConstructors  BinaryArchiveFile(string filename,BinaryArchiveMode mode)  since 5.1  Properties  BinaryArchiveReader Reader  since 5.1 BinaryArchiveWriter Writer  since 5.1  Methods  void Close()  since 5.1 void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.1 bool Open()  since 5.1  </description>
+    </item>
+    
+    <item>
+      <title>CommonComponentTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/commoncomponenttable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/commoncomponenttable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.
+public class CommonComponentTable :ICommonComponentTable&amp;lt;T&amp;gt;,IList&amp;lt;T&amp;gt;, IReadOnlyList&amp;lt;T&amp;gt;Properties  ModelComponentType ComponentType Returns the actual component type of a table. since (unknown) int Count Returns the count of all items, including deleted ones. since (unknown)  Methods  void Clear() Marks all items as deleted. since (unknown) bool Delete(T item) Deletes an item. Items that are deleted are still keeping their space, but the &amp;lsquo;IsDeleted&amp;rsquo; flag is checked.</description>
+    </item>
+    
+    <item>
+      <title>ContentHash</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/contenthash/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/contenthash/</guid>
+      <description>Namespace: Rhino.FileIO
+Contains information that is useful to uniquly identify an object. This object is immutable.
+public class ContentHash : ICloneable, IEquatable&amp;lt;ContentHash&amp;gt; static != Determines if two ContentHash instances are different by value. Returns - True if they are different by value, otherwise false. since 6.0 static == Determines if two ContentHash instances are equal by value. Returns - True if they are equal by value, otherwise false. since 6.</description>
+    </item>
+    
+    <item>
+      <title>File3dm</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dm/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dm/</guid>
+      <description>Namespace: Rhino.FileIO
+Represents a 3dm file, which is stored using the OpenNURBS file standard. The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.
+public class File3dm : IDisposableConstructors  File3dm() Initializes a new instance of a 3dm file.  Properties  File3dmDimStyleTable AllDimStyles Dimension Styles in this file. since 6.0 File3dmGroupTable AllGroups Grpups in this file. since 6.5 File3dmHatchPatternTable AllHatchPatterns Hatch patterns in this file. since 6.</description>
+    </item>
+    
+    <item>
+      <title>File3dmCommonComponentTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmcommoncomponenttable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmcommoncomponenttable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides a base table type that is shared among all File3dm tables.
+public class File3dmCommonComponentTable : CommonComponentTable&amp;lt;T&amp;gt;, ICollection&amp;lt;T&amp;gt;Methods  void Add(T item) Adds an item. since (unknown) void Delete(int index) Flags a component as deleted. Returns - True on success. since (unknown) bool Delete(T item) Flags a component as deleted. Returns - True on success. since (unknown) string Dump() Prepares a text dump of object table. Returns - A string containing the dump.</description>
+    </item>
+    
+    <item>
+      <title>File3dmDimStyleTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmdimstyletable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmdimstyletable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to annotation styles in the 3dm file.
+public class File3dmDimStyleTable :File3dmCommonComponentTable&amp;lt;DimensionStyle&amp;gt;,IList&amp;lt;DimensionStyle&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  DimensionStyle FindIndex(int index) Retrieves a DimensionStyle object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A DimensionStyle object, or None if none was found. since 6.0 DimensionStyle FindName(string name) Finds a DimensionStyle given its name.</description>
+    </item>
+    
+    <item>
+      <title>File3dmGroupTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmgrouptable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmgrouptable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to groups in the 3dm file.
+public class File3dmGroupTable :File3dmCommonComponentTable&amp;lt;Group&amp;gt;,IList&amp;lt;Group&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.5  Methods  Group FindIndex(int groupIndex) Retrieves a Group object based on an index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Group object, or None if none was found. since 6.5 Group FindName(string name) Finds a Group given its name.</description>
+    </item>
+    
+    <item>
+      <title>File3dmHatchPatternTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmhatchpatterntable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmhatchpatterntable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to hatch pattern definitions in the 3dm file.
+public class File3dmHatchPatternTable :File3dmCommonComponentTable&amp;lt;HatchPattern&amp;gt;,IList&amp;lt;HatchPattern&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  HatchPattern FindIndex(int index) Retrieves a HatchPattern object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A HatchPattern object, or None if none was found. since 6.0 HatchPattern FindName(string name) Finds a HatchPattern given its name.</description>
+    </item>
+    
+    <item>
+      <title>File3dmInstanceDefinitionTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to instance (block) definitions in the 3dm file.
+public class File3dmInstanceDefinitionTable :File3dmCommonComponentTable&amp;lt;InstanceDefinitionGeometry&amp;gt;, IList&amp;lt;InstanceDefinitionGeometry&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes) Adds an instance definition to the instance definition table. Returns - &amp;gt;=0 index of instance definition in the instance definition table. -1 on failure. since 6.5 int Add(string name,string description,Point3d basePoint,IEnumerablegeometry) Adds an instance definition to the instance definition table.</description>
+    </item>
+    
+    <item>
+      <title>File3dmLayerTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlayertable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlayertable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to layers in the 3dm file.
+public class File3dmLayerTable :File3dmCommonComponentTable&amp;lt;Layer&amp;gt;,IList&amp;lt;Layer&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  Layer FindIndex(int index) Retrieves a Layer object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Layer object, or None if none was found. since 6.0 Layer FindName(string name,Guid parentId) Finds a Layer given its name.</description>
+    </item>
+    
+    <item>
+      <title>File3dmLinetypeTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlinetypetable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlinetypetable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to Linetypes in the 3dm file.
+public class File3dmLinetypeTable :File3dmCommonComponentTable&amp;lt;Linetype&amp;gt;,IList&amp;lt;DocObjects.Linetype&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  Linetype FindIndex(int index) Retrieves a Linetype object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Linetype, or None if none was found. since 6.0 Linetype FindName(string name) Finds a Linetype given its name.</description>
+    </item>
+    
+    <item>
+      <title>File3dmMaterialTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmmaterialtable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmmaterialtable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to materials in the 3dm file.
+public class File3dmMaterialTable :File3dmCommonComponentTable&amp;lt;Material&amp;gt;,IList&amp;lt;DocObjects.Material&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  DocObjects.Material FindIndex(int index) Retrieves a material based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A material, or None if none was found. since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>File3dmNamedConstructionPlanes</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnamedconstructionplanes/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnamedconstructionplanes/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to namned construction planes in the 3dm file.
+public class File3dmNamedConstructionPlanes :IList&amp;lt;ConstructionPlane&amp;gt;, Collections.IRhinoTable&amp;lt;ConstructionPlane&amp;gt;Properties  int Count Number of named construction planes in the table. since 6.0  Methods  void Add(ConstructionPlane cplane) Adds a named construction plane to the table. since 6.0 int Add(string name,Plane plane) Adds a named construction plane to the table. Returns - 0 based index of the named construction plane. -1 on failure.</description>
+    </item>
+    
+    <item>
+      <title>File3dmObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobject/</guid>
+      <description>Namespace: Rhino.FileIO
+Used to store geometry table object definition and attributes in a File3dm.
+public class File3dmObject : ModelComponent, IEquatable&amp;lt;File3dmObject&amp;gt;Properties  ObjectAttributes Attributes Gets the attributes that are linked with this document object. ModelComponentType ComponentType Returns . since 6.0 GeometryBase Geometry Gets the geometry that is linked with this document object. string Name Gets or sets the Name of the object. Equivalent to this.Attributes.Name.  Methods  bool Equals(File3dmObject other) Verified that two File3dmObject items refer to the same object in a document.</description>
+    </item>
+    
+    <item>
+      <title>File3dmObjectTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobjecttable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobjecttable/</guid>
+      <description>Namespace: Rhino.FileIO
+Represents a simple object table for a file that is open externally. This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.
+public class File3dmObjectTable :File3dmCommonComponentTable&amp;lt;File3dmObject&amp;gt;,IEnumerable&amp;lt;File3dmObject&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0 int Count Returns the total amount of items in the object table, including lights.  Methods  void Add(File3dmObject item) Duplicates the object, then adds a copy of the object to the document.</description>
+    </item>
+    
+    <item>
+      <title>File3dmPlugInData</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmplugindata/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmplugindata/</guid>
+      <description>Namespace: Rhino.FileIO
+Custom data in the file supplied by a plug-in
+public class File3dmPlugInDataProperties  Guid PlugInId Plug-in this data is associated with  </description>
+    </item>
+    
+    <item>
+      <title>File3dmPlugInDataTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmplugindatatable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmplugindatatable/</guid>
+      <description>Namespace: Rhino.FileIO
+Table of custom data provided by plug-ins
+public class File3dmPlugInDataTable ://FileIO.File3dmCommonComponentTable&amp;lt;File3dmPlugInData&amp;gt;, IEnumerable&amp;lt;File3dmPlugInData&amp;gt;, Collections.IRhinoTable&amp;lt;File3dmPlugInData&amp;gt;Properties  int Count Gets the number of File3dmPlugInData in this table.  Methods  void Clear() Remove all entries from this table string Dump() Prepares a text dump of table. Returns - A string containing the dump. IEnumeratorGetEnumerator() Gets the enumerator that visits any in this table. Returns - The enumerator.  </description>
+    </item>
+    
+    <item>
+      <title>File3dmStringTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmstringtable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmstringtable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to document strings in the 3dm file.
+public class File3dmStringTableProperties  int Count Returns the number of document strings in the 3dm file. since 6.0 int DocumentUserTextCount Returns the number of Section/Entry-style key values. since 6.0  Methods  void Delete(string key) Removes a document string from the 3dm file. since 6.0 void Delete(string section,string entry) Removes document strings from the 3dm file. since 6.0 string[] GetEntryNames(string section) Return list of all entry names for a given section of document strings in the 3dm file.</description>
+    </item>
+    
+    <item>
+      <title>File3dmViewTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmviewtable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmviewtable/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides access to views in the 3dm file.
+public class File3dmViewTable :IList&amp;lt;ViewInfo&amp;gt;, Collections.IRhinoTable&amp;lt;DocObjects.ViewInfo&amp;gt;Properties  int Count Gets the amount of items in the table. since 6.0  Methods  void Add(ViewInfo item) Adds a since 6.0 void Clear() Removes all items from the table. since 6.0 bool Contains(ViewInfo item) Returns an indication of the presence of a view in the table. Returns - True if the item is in the table; False otherwise.</description>
+    </item>
+    
+    <item>
+      <title>File3dmWriteOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmwriteoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmwriteoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+Options used by File3dm.Write
+public class File3dmWriteOptionsConstructors  File3dmWriteOptions() Initializes properties to defaults. since 5.9  Properties  bool SaveAnalysisMeshes Include analysis meshes in the file. Default is true since 5.9 bool SaveRenderMeshes Include Render meshes in the file. Default is true since 5.9 bool SaveUserData Include custom user data in the file. Default is true since 5.9 int Version File version. Default is major version number of this assembly version.</description>
+    </item>
+    
+    <item>
+      <title>FileReference</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filereference/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filereference/</guid>
+      <description>Namespace: Rhino.FileIO
+Manages a reference to an existing or nonexisting file, using either or both absolute or relative paths. Once constructed, this class is immutable.
+public class FileReference : IDisposableConstructors  FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status) Constructs a new instance of the FileReference class, given a fullPath, a relativePath a content hash and a status value. since 6.0  Properties  ContentHash ContentHash Gets the content hash. since 6.0 string FullPath Gets the absolute path of this file reference.</description>
+    </item>
+    
+    <item>
+      <title>ManifestTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/manifesttable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/manifesttable/</guid>
+      <description>Namespace: Rhino.FileIO
+Maintains an index to every model component that is in the 3dm file. This is the &amp;ldquo;more comprehensive&amp;rdquo; table that contains all objects in all other tables.
+public class ManifestTable :ICommonComponentTable&amp;lt;ModelComponent&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0 int Count Total number of items in the manifest, including deleted items. since 6.0 long LongCount Total number of items in the manifest, including deleted items. since 6.0 object Parent Returns the parent object.</description>
+    </item>
+    
+    <item>
+      <title>NameHash</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/namehash/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/namehash/</guid>
+      <description>Namespace: Rhino.FileIO
+Contains information that is useful to uniquly identify an object name. This object is immutable.
+public class NameHash : ICloneable, IEquatable&amp;lt;NameHash&amp;gt; static != Determines if two NameHash instances are different by value. Returns - True if they are different by value, otherwise false. since 6.0 static == Determines if two NameHash instances are equal by value. Returns - True if they are equal by value, otherwise false. since 6.</description>
+    </item>
+    
+    <item>
+      <title>SerializationOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/serializationoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/serializationoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+Contains options for serializing -or storing- data, such as Rhino version and user data.
+public class SerializationOptionsConstructors  SerializationOptions() Initializes a new instance of the class.  Properties  int RhinoVersion Gets or sets a value indicating the Rhino version. bool WriteUserData Gets or sets a value indicating whether to write user data.  </description>
+    </item>
+    
+    <item>
+      <title>SHA1OpenNURBS</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/sha1opennurbs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/sha1opennurbs/</guid>
+      <description>Namespace: Rhino.FileIO
+Provides the OpenNURBS implementation of SHA1.
+This class is provided only with the purpose of hashing. It is not meant to be used for any cryptographic purpose.
+public class SHA1OpenNURBS : SHA1Constructors  SHA1OpenNURBS() Constructs a new instance of the SHA1 algorithm. since 6.0  Methods  static byte[] FileSystemPathHash(string path,bool? ignoreCase) Computes the SHA1 hash of a file system path, converted to UTF8. These file system paths have identical values of FileSystemPathHash():/x/y/z/name.</description>
+    </item>
+    
+    <item>
+      <title>BinaryArchiveException</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchiveexception/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchiveexception/</guid>
+      <description>Namespace: Rhino.FileIO
+Thrown by BinaryArchiveReader and BinaryArchiveWriter classes when an IO error has occured.
+public class BinaryArchiveException : System.IO.IOExceptionConstructors  BinaryArchiveException(string message) Initializes a new instance of the class.  </description>
+    </item>
+    
+    <item>
+      <title>BinaryArchiveReader</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivereader/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivereader/</guid>
+      <description>Namespace: Rhino.FileIO
+Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
+public class BinaryArchiveReaderProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.</description>
+    </item>
+    
+    <item>
+      <title>BinaryArchiveWriter</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivewriter/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivewriter/</guid>
+      <description>Namespace: Rhino.FileIO
+Represents an entity that is able to write data to an archive.
+public class BinaryArchiveWriterProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.</description>
+    </item>
+    
+    <item>
+      <title>DracoCompression</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/dracocompression/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/dracocompression/</guid>
+      <description>Namespace: Rhino.FileIO
+Google draco compression for mesh and point cloud data
+public class DracoCompression : IDisposableMethods  static DracoCompression Compress(Mesh mesh) Compress a mesh using default compression options. Returns - instance of class representing the compressed data since 7.0 static DracoCompression Compress(Mesh mesh,DracoCompressionOptions options) Compress a mesh Returns - instance of class representing the compressed data since 7.0 static Rhino.Geometry.GeometryBase DecompressBase64String(string encoded) Decompress base64 encoded version of draco data into either a mesh or point cloud Returns - Mesh or point cloud on success.</description>
+    </item>
+    
+    <item>
+      <title>DracoCompressionOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/dracocompressionoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/dracocompressionoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+Options for applying drac compression
+public class DracoCompressionOptionsConstructors  DracoCompressionOptions() Initializes to default options since 7.0  Properties  int CompressionLevel Compression level. 0 if fastest, but least compression. 10 is slowest, but best compression since 7.0 int NormalQuantizationBits Sets the quantization compression options for normal values. The values will be quantized in a box defined by the maximum extent of the values. I.e., the actual precision of this option depends on the scale of the attribute values.</description>
+    </item>
+    
+    <item>
+      <title>File3dmNotes</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnotes/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnotes/</guid>
+      <description>Namespace: Rhino.FileIO
+Represents the notes information stored in a 3dm file.
+public class File3dmNotesConstructors  File3dmNotes() Creates empty default notes  Properties  bool IsHtml Gets or sets the text format. If the format is HTML, true; False otherwise. bool IsVisible Gets or sets the notes visibility. If the notes are visible, true; False otherwise. string Notes Gets or sets the text content of the notes. Rectangle WindowRectangle Gets or sets the position of the Notes when they were saved.</description>
+    </item>
+    
+    <item>
+      <title>File3dmSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmsettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmsettings/</guid>
+      <description>Namespace: Rhino.FileIO
+General settings in a 3dm file.
+public class File3dmSettingsProperties  double ModelAbsoluteTolerance Gets or sets the model space absolute tolerance. double ModelAngleToleranceDegrees Gets or sets the model space angle tolerance. double ModelAngleToleranceRadians Gets or sets the model space angle tolerance. Point3d ModelBasepoint Gets or sets the model basepoint that is used when the file is read as an instance definition. This point is mapped to the origin in the instance definition.</description>
+    </item>
+    
+    <item>
+      <title>FileObj</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileobj/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileobj/</guid>
+      <description>Namespace: Rhino.FileIO
+Support for obj file format
+public class FileObjMethods  static bool Read(String filename,RhinoDoc doc,FileObjReadOptions options)  since 6.0 static WriteFileResult Write(StreamWriter stream,RhinoDoc doc,FileObjWriteOptions options) Write an obj stream based on the contents of a RhinoDoc since 7.0 static WriteFileResult Write(String filename,Mesh[] meshes,FileObjWriteOptions options) Write an obj file with an array of meshes since 7.0 static WriteFileResult Write(String filename,RhinoDoc doc,FileObjWriteOptions options) Write an obj file based on the contents of a RhinoDoc since 6.</description>
+    </item>
+    
+    <item>
+      <title>FileObjReadOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileobjreadoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileobjreadoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+Options used when reading an obj file.
+public class FileObjReadOptionsConstructors  FileObjReadOptions(FileReadOptions readOptions)  since 6.0  Properties  bool DisplayColorFromObjMaterial Determines whether textures are read from the .mtl file, if it exists. since 6.5 bool IgnoreTextures Determines whether textures are read from the .mtl file, if it exists. since 6.0 bool MapYtoZ Setting to transform OBJ&amp;rsquo;s Y axis to Rhino&amp;rsquo;s Z axis since 6.0 bool MorphTargetOnly TODO since 6.</description>
+    </item>
+    
+    <item>
+      <title>FileObjWriteOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileobjwriteoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileobjwriteoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+public class FileObjWriteOptionsConstructors  FileObjWriteOptions(FileWriteOptions writeOptions)  since 6.0  Properties  string ActualFilePathOnMac  since 6.3 bool CreateNgons Setting to enable/diable the creation of ngons for the output since 6.0 bool CullUnnecessaryVertexesInNgons Setting to determine whether interior colinear vertexes are part of the ngon. since 6.0 AsciiEol EolType  since 6.0 ObjGroupNames ExportGroupNameLayerNames Setting to determine whether object, group or layer names will become &amp;ldquo;g&amp;quot;s in the OBJ output file since 6.</description>
+    </item>
+    
+    <item>
+      <title>FilePdf</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filepdf/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filepdf/</guid>
+      <description>Namespace: Rhino.FileIO
+Support for PDF file format
+public class FilePdf static PreWrite Fired immediately before a Pdf is written since 6.0  Methods  static FilePdf Create() Create a new instance of a FilePdf class since 6.0 int AddPage(int widthInDots,int heightInDots,int dotsPerInch) Add a blank page to this document Returns - page number on success since 6.5 int AddPage(ViewCaptureSettings settings) Add a new page to this document and draw a viewport into it based on provided ViewCaptureSettings Returns - page number on success since 6.</description>
+    </item>
+    
+    <item>
+      <title>FilePdfEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filepdfeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filepdfeventargs/</guid>
+      <description>Namespace: Rhino.FileIO
+Used for events that are fired while constructing/saving a Pdf
+public class FilePdfEventArgs : EventArgsProperties  FilePdf Pdf The document that is about to be written since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>FilePly</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileply/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileply/</guid>
+      <description>Namespace: Rhino.FileIO
+Support for ply file format
+public class FilePlyMethods  static WriteFileResult Write(String filename,RhinoDoc doc,FilePlyWriteOptions options) Write a ply file based on the contents of a RhinoDoc since 7.0  </description>
+    </item>
+    
+    <item>
+      <title>FilePlyWriteOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileplywriteoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileplywriteoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+public class FilePlyWriteOptionsConstructors  FilePlyWriteOptions(FileWriteOptions writeOptions)  since 7.0  Properties  bool ExportASCII Determines whether to export as Ascii. since 7.0 bool ExportColors Determines whether to export vertex colors. since 7.0 bool ExportMaterial Determines whether to export a material. since 7.0 bool ExportNormals Determines whether to export vertex normals. since 7.0 MeshingParameters MeshingParameters  since 7.0 bool UseSimpleDialog Determines whether to use the simple or detailed meshing dialog.</description>
+    </item>
+    
+    <item>
+      <title>FileSlc</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileslc/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileslc/</guid>
+      <description>Namespace: Rhino.FileIO
+Support for writing slice (slc) file format
+public class FileSlcMethods  static bool Write(string filename,RhinoDoc doc,FileSlcWriteOptions options) Write a slc file based on the contents of a RhinoDoc Returns - True on success since 7.0  </description>
+    </item>
+    
+    <item>
+      <title>FileSlcWriteOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/fileslcwriteoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/fileslcwriteoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+Options used when writing a slc file
+public class FileSlcWriteOptionsProperties  double AngleBetweenSegmentsDegrees The angle that determines how smooth the polylines of the slice curves will be. When the number is small you will get a smooth final output but it will take more time to export and a larger file. since 7.0 Point3d EndPoint End of the slicing normal since 7.0 double SliceDistance The distance between the slices or layers of curves that your final output will contain.</description>
+    </item>
+    
+    <item>
+      <title>FileStp</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filestp/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filestp/</guid>
+      <description>Namespace: Rhino.FileIO
+Support for writing step (stp) file format
+public class FileStpMethods  static bool Write(string filename,RhinoDoc doc,FileStpWriteOptions options) Write a stp file based on the contents of a RhinoDoc Returns - True on success since 7.0  </description>
+    </item>
+    
+    <item>
+      <title>FileStpWriteOptions</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/filestpwriteoptions/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/filestpwriteoptions/</guid>
+      <description>Namespace: Rhino.FileIO
+Options used when writing a stp file
+public class FileStpWriteOptionsProperties  bool Export2dCurves Some (not most, and not Rhino) importing applications can make use of the 2-D trimming curves to get a more accurate and faster import. The size of the step file will be larger since 7.0 bool ExportBlack Let importing application set color for black objects. If a Rhino object has color black, no color is assigned to the object in the step file.</description>
+    </item>
+    
+    <item>
+      <title>ImageFile</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/fileio/imagefile/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/fileio/imagefile/</guid>
+      <description>Namespace: Rhino.FileIO
+Support functions for image files
+public class ImageFileMethods  static bool SupportsAlphaChannel(string filename) Returns True if file at given path is an image file and that file format supports an alpha channel since 6.0  </description>
+    </item>
+    
+  </channel>
+</rss>

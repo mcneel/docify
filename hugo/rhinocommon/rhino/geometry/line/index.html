@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Line &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the value of start and end points in a single line segment.
+ static != Determines whether two lines have different values. Returns - True if a has any coordinate that distinguishes it from b; otherwise false. static == Determines whether two lines have the same value. Returns - True if a has the same coordinates as b; otherwise false.  Constructors  Line(double x0,double y0,double z0,double x1,double y1,double z1) Constructs a new line segment between two points.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Line</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the value of start and end points in a single line segment.</p>
+<dl>
+<dt>static !=</dt>
+<dd>Determines whether two lines have different values.</dd>
+<dd>Returns - True if a has any coordinate that distinguishes it from b; otherwise false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether two lines have the same value.</dd>
+<dd>Returns - True if a has the same coordinates as b; otherwise false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Line(double x0,double y0,double z0,double x1,double y1,double z1)</dt>
+<dd>Constructs a new line segment between two points.</dd>
+<dt>Line(Point3d from,Point3d to)</dt>
+<dd>Constructs a new line segment between two points.</dd>
+<dt>Line(Point3d start,Vector3d span)</dt>
+<dd>Constructs a new line segment from start point and span vector.</dd>
+<dt>Line(Point3d start,Vector3d direction,double length)</dt>
+<dd>Constructs a new line segment from start point, direction and length.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Line Unset</dt>
+<dd>Gets a line segment which has  end points.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox</dt>
+<dd>Gets the line&rsquo;s 3d axis aligned bounding box.</dd>
+<dd>Returns - 3d bounding box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Direction</dt>
+<dd>Gets the direction of this line segment. 
+The length of the direction vector equals the length of 
+the line segment.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> From</dt>
+<dd>Start point of line segment.</dd>
+<dt>double FromX</dt>
+<dd>Gets or sets the X coordinate of the line From point.</dd>
+<dt>double FromY</dt>
+<dd>Gets or sets the Y coordinate of the line From point.</dd>
+<dt>double FromZ</dt>
+<dd>Gets or sets the Z coordinate of the line From point.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether or not this line is valid. 
+Valid lines must have valid start and end points.</dd>
+<dt>double Length</dt>
+<dd>Gets or sets the length of this line segment. 
+Note that a negative length will invert the line segment without 
+making the actual length negative. The line From point will remain fixed 
+when a new Length is set.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> To</dt>
+<dd>End point of line segment.</dd>
+<dt>double ToX</dt>
+<dd>Gets or sets the X coordinate of the line To point.</dd>
+<dt>double ToY</dt>
+<dd>Gets or sets the Y coordinate of the line To point.</dd>
+<dt>double ToZ</dt>
+<dd>Gets or sets the Z coordinate of the line To point.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> UnitTangent</dt>
+<dd>Gets the tangent of the line segment. 
+Note that tangent vectors are always unit vectors.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool TryCreateBetweenCurves(Curve curve0,Curve curve1,double t0,double t1,bool perpendicular0,bool perpendicular1,Line line)</dt>
+<dd>Creates a line segment between a pair of curves such that the line segment is either tangent or perpendicular to each of the curves.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 5.2</dd>
+<dt>static bool TryFitLineToPoints(IEnumerable<!-- raw HTML omitted --> points,Line fitLine)</dt>
+<dd>Attempt to fit a line through a set of points.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>double ClosestParameter(Point3d testPoint)</dt>
+<dd>Finds the parameter on the infinite line segment that is closest to a test point.</dd>
+<dd>Returns - The parameter on the line that is closest to testPoint.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d testPoint,bool limitToFiniteSegment)</dt>
+<dd>Finds the point on the (in)finite line segment that is closest to a test point.</dd>
+<dd>Returns - The point on the (in)finite line that is closest to testPoint.</dd>
+<dt>double DistanceTo(Point3d testPoint,bool limitToFiniteSegment)</dt>
+<dd>Compute the shortest distance between this line segment and a test point.</dd>
+<dd>Returns - The shortest distance between this line segment and testPoint.</dd>
+<dt>bool EpsilonEquals(Line other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(Line other)</dt>
+<dd>Determines whether a line has the same value as this line.</dd>
+<dd>Returns - True if other has the same coordinates as this; otherwise false.</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether an object is a line that has the same value as this line.</dd>
+<dd>Returns - True if obj is a Line and has the same coordinates as this; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Extend(double startLength,double endLength)</dt>
+<dd>Extend the line by custom distances on both sides.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ExtendThroughBox(BoundingBox box)</dt>
+<dd>Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line 
+that overlaps the box.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ExtendThroughBox(BoundingBox box,double additionalLength)</dt>
+<dd>Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line that overlaps the box.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ExtendThroughBox(Box box)</dt>
+<dd>Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line that overlaps the box.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ExtendThroughBox(Box box,double additionalLength)</dt>
+<dd>Ensure the line extends all the way through a box. 
+Note, this does not result in the shortest possible line that overlaps the box.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Flip()</dt>
+<dd>Flip the endpoints of the line segment.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes a hash number that represents this line.</dd>
+<dd>Returns - A number that is not unique to the value of this line.</dd>
+<dd>since (unknown)</dd>
+<dt>double MaximumDistanceTo(Line testLine)</dt>
+<dd>Finds the largest distance between this line as a finite segment
+and another finite segment.</dd>
+<dd>Returns - The maximum distance.</dd>
+<dt>double MaximumDistanceTo(Point3d testPoint)</dt>
+<dd>Finds the largest distance between this line as a finite segment
+and a test point.</dd>
+<dd>Returns - The maximum distance.</dd>
+<dt>double MinimumDistanceTo(Line testLine)</dt>
+<dd>Finds the shortest distance between this line as a finite segment
+and another finite segment.</dd>
+<dd>Returns - The minimum distance.</dd>
+<dt>double MinimumDistanceTo(Point3d testPoint)</dt>
+<dd>Finds the shortest distance between this line as a finite segment
+and a test point.</dd>
+<dd>Returns - The minimum distance.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double t)</dt>
+<dd>Evaluates the line at the specified parameter.</dd>
+<dd>Returns - The point at the specified parameter.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAtLength(double distance)</dt>
+<dd>Computes a point located at a specific metric distance from the line origin ().
+If line start and end coincide, then the start point is always returned.</dd>
+<dd>Returns - The newly found point.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve()</dt>
+<dd>Constructs a nurbs curve representation of this line. 
+This amounts to the same as calling NurbsCurve.CreateFromLine().</dd>
+<dd>Returns - A nurbs curve representation of this line or None if no such representation could be made.</dd>
+<dt>string ToString()</dt>
+<dd>Constructs the string representation of this line, in the form &ldquo;From,To&rdquo;.</dd>
+<dd>Returns - A text string.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transform the line using a Transformation matrix.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool TryGetPlane(Plane plane)</dt>
+<dd>Gets a plane that contains the line. The origin of the plane is at the start of the line.
+If possible, a plane parallel to the world xy, yz, or zx plane is returned.</dd>
+<dd>Returns - True on success.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Line</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

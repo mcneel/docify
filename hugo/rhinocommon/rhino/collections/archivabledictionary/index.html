@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ArchivableDictionary &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+[Serializable]public class ArchivableDictionary : ICloneable, IDictionary&amp;lt;string, object&amp;gt;, ISerializableConstructors  ArchivableDictionary() Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version) Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version,string name) Initializes an instance of a dictionary for writing to a 3dm archive.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ArchivableDictionary</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Collections</a></em></p>
+<p>Represents a dictionary class that can be attached to objects and
+can be serialized (saved) at necessity.See remarks for layout.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ArchivableDictionary</span> : ICloneable, IDictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">object</span>&gt;, ISerializable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ArchivableDictionary()</dt>
+<dd>Initializes an instance of a dictionary for writing to a 3dm archive.</dd>
+<dt>ArchivableDictionary(int version)</dt>
+<dd>Initializes an instance of a dictionary for writing to a 3dm archive.</dd>
+<dt>ArchivableDictionary(int version,string name)</dt>
+<dd>Initializes an instance of a dictionary for writing to a 3dm archive.</dd>
+<dt>ArchivableDictionary(UserData parentUserData)</dt>
+<dd>Initializes an instance of a dictionary for writing to a 3dm archive</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Gets the number of key/value pairs contained in the dictionary.</dd>
+<dt>string[] Keys</dt>
+<dd>Gets all entry names or keys.</dd>
+<dt>string Name</dt>
+<dd>Gets or sets the name string of this .</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/custom/userdata/">UserData</a> ParentUserData</dt>
+<dd>If this dictionary is part of userdata (or is a UserDictionary), then
+this is the parent user data. None if this dictionary is not part of
+userdata</dd>
+<dt>object[] Values</dt>
+<dd>Gets all values in this dictionary.</dd>
+<dt>int Version</dt>
+<dd>Gets or sets the version of this .</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool AddContentsFrom(ArchivableDictionary source)</dt>
+<dd>Add the contents from the source dictionary.</dd>
+<dd>since 5.4</dd>
+<dt>void Clear()</dt>
+<dd>Removes all keys and values from the dictionary.</dd>
+<dt>ArchivableDictionary Clone()</dt>
+<dd>Constructs a deep copy of this object.</dd>
+<dd>Returns - The copy of this object.</dd>
+<dt>bool ContainsKey(string key)</dt>
+<dd>Determines whether the dictionary contains the specified key.</dd>
+<dd>Returns - True if the dictionary contains an element with the specified key; otherwise, false.</dd>
+<dt>bool GetBool(string key)</dt>
+<dd>Get value as bool, will only succeed if value was created using Set(string key, bool value)</dd>
+<dt>bool GetBool(string key,bool defaultValue)</dt>
+<dd>Get value as bool, will return defaultValue unless value was created using Set(string key, bool value)</dd>
+<dt>byte[] GetBytes(string key)</dt>
+<dd>Get value as byte[], will only succeed if value was created
+using Set(string key, byte[] value)</dd>
+<dd>since 5.9</dd>
+<dt>byte[] GetBytes(string key,byte[] defaultValue)</dt>
+<dd>Get value as byte[], will return defaultValue unless
+value was created using Set(string key, byte[] value)</dd>
+<dd>since 5.9</dd>
+<dt>ArchivableDictionary GetDictionary(string key)</dt>
+<dd>Get value as ArchivableDictionary, will only succeed if value was created
+using Set(string key, ArchivableDictionary value)</dd>
+<dd>since 5.9</dd>
+<dt>ArchivableDictionary GetDictionary(string key,ArchivableDictionary defaultValue)</dt>
+<dd>Get value as ArchivableDictionary, will return defaultValue unless
+value was created using Set(string key, ArchivableDictionary value)</dd>
+<dd>since 5.9</dd>
+<dt>double GetDouble(string key)</dt>
+<dd>Get value as double, will only succeed if value was created using Set(string key, double value)</dd>
+<dt>double GetDouble(string key,double defaultValue)</dt>
+<dd>Get value as double, will only succeed if value was created using Set(string key, double value)</dd>
+<dd>since 5.10</dd>
+<dt>IEnumerator&lt;KeyValuePair&lt;string, object&raquo; GetEnumerator()</dt>
+<dd>Gets the enumerator of this dictionary.</dd>
+<dd>Returns - A , where T is an instance of , with T0 set as string, and T1 as Syste.Object.</dd>
+<dt>T GetEnumValue()</dt>
+<dd>Get an enum value</dd>
+<dd>since 5.4</dd>
+<dt>T GetEnumValue(string key)</dt>
+<dd>Get an enum value from the dictionary using a custom key.</dd>
+<dd>since 5.4</dd>
+<dt>float GetFloat(string key)</dt>
+<dd>Get value as float, will only succeed if value was created using Set(string key, float value)</dd>
+<dt>float GetFloat(string key,float defaultValue)</dt>
+<dd>Get value as float, will return defaultValue unless value was created using Set(string key, float value)</dd>
+<dt>Guid GetGuid(string key)</dt>
+<dd>Get value as Guid, will only succeed if value was created using Set(string key, Guid value)</dd>
+<dt>Guid GetGuid(string key,Guid defaultValue)</dt>
+<dd>Get value as Guid, will return defaultValue unless value was created using Set(string key, Guid value)</dd>
+<dt>int Getint(string key,int defaultValue)</dt>
+<dd>Get value as int, will return defaultValue unless value was created using Set(string key, int value)</dd>
+<dt>int GetInteger(string key)</dt>
+<dd>Get value as int, will only succeed if value was created using Set(string key, int value)</dd>
+<dt>int GetInteger(string key,int defaultValue)</dt>
+<dd>Get value as int, will return defaultValue unless value was created using Set(string key, int value)</dd>
+<dt>void GetObjectData(SerializationInfo info,StreamingContext context)</dt>
+<dd>Populates a System.Runtime.Serialization.SerializationInfo with the data needed to serialize the target object.</dd>
+<dd>since 7.0</dd>
+<dt>Geometry.Plane GetPlane(string key)</dt>
+<dd>Get value as Plane, will return defaultValue unless value was created using Set(string key, Plane value)</dd>
+<dd>Returns - The value as Plane.</dd>
+<dd>since 6.11</dd>
+<dt>Geometry.Plane GetPlane(string key,Plane defaultValue)</dt>
+<dd>Get value as Plane, will return defaultValue unless value was created using Set(string key, Plane value)</dd>
+<dd>Returns - The value as Plane.</dd>
+<dd>since 6.11</dd>
+<dt>Geometry.Point3d GetPoint3d(string key)</dt>
+<dd>Get value as Point3d, will only succeed if value was created using Set(string key, Point3d value)</dd>
+<dt>Geometry.Point3d GetPoint3d(string key,Point3d defaultValue)</dt>
+<dd>Get value as Point3d, will return defaultValue unless value was created using Set(string key, Point3d value)</dd>
+<dt>Geometry.Point3f GetPoint3f(string key)</dt>
+<dd>Get value as Point3f, will only succeed if value was created using Set(string key, Point3f value)</dd>
+<dt>Geometry.Point3f GetPoint3f(string key,Point3f defaultValue)</dt>
+<dd>Get value as Point3f, will return defaultValue unless value was created using Set(string key, Point3f value)</dd>
+<dt>string GetString(string key)</dt>
+<dd>Get value as string, will only succeed if value was created using Set(string key, string value)</dd>
+<dd>Returns - The string</dd>
+<dt>string GetString(string key,string defaultValue)</dt>
+<dd>Get value as string, will return defaultValue unless value was created using Set(string key, string value)</dd>
+<dt>Geometry.Vector3d GetVector3d(string key)</dt>
+<dd>Get value as Vector3d, will only succeed if value was created using Set(string key, Vector3d value)</dd>
+<dt>Geometry.Vector3d GetVector3d(string key,Vector3d defaultValue)</dt>
+<dd>Get value as Vector3d, will return defaultValue unless value was created using Set(string key, Vector3d value)</dd>
+<dt>bool Remove(string key)</dt>
+<dd>Removes the value with the specified key from the dictionary.</dd>
+<dd>Returns - True if the element is successfully found and removed; otherwise, false.
+This method returns False if key is not found.</dd>
+<dt>bool RemoveEnumValue()</dt>
+<dd>Remmove an enum value from the dictionary.</dd>
+<dd>since 5.4</dd>
+<dt>bool ReplaceContentsWith(ArchivableDictionary source)</dt>
+<dd>Replace the contents of the dictionary with that of the given source dictionary.</dd>
+<dd>since 5.4</dd>
+<dt>bool Set(string key,ArchivableDictionary val)</dt>
+<dd>Sets another  as entry in this dictionary.</dd>
+<dt>bool Set(string key,bool val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,BoundingBox val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,byte val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Color val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,double val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,float val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Font val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,GeometryBase val)</dt>
+<dd>Sets any class deriving from the  base class.</dd>
+<dt>bool Set(string key,Guid val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets an array of</dd>
+<dd>since 5.8</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,IEnumerable<!-- raw HTML omitted --> val)</dt>
+<dd>Sets a list, an array or any enumerable of .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,int val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Int64 val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Interval val)</dt>
+<dd>Sets an .</dd>
+<dt>bool Set(string key,Line val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,MeshingParameters val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,ObjRef val)</dt>
+<dd>Sets a</dd>
+<dd>since 5.8</dd>
+<dt>bool Set(string key,Plane val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Point val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Point2d val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Point3d val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Point3f val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Point4d val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,PointF val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Ray3d val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Rectangle val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,RectangleF val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,sbyte val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,short val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Size val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,SizeF val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,string val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Transform val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,uint val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,ushort val)</dt>
+<dd>Sets a .</dd>
+<dd>Returns - True if set operation succeeded, otherwise false.</dd>
+<dt>bool Set(string key,Vector2d val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Vector3d val)</dt>
+<dd>Sets a .</dd>
+<dt>bool Set(string key,Vector3f val)</dt>
+<dd>Sets a .</dd>
+<dt>bool SetEnumValue(string key,T enumValue)</dt>
+<dd>Set an enum value in the dictionary with a custom key.</dd>
+<dd>since 5.4</dd>
+<dt>bool SetEnumValue(T enumValue)</dt>
+<dd>Set an enum value</dd>
+<dd>since 5.4</dd>
+<dt>bool TryGetBool(string key,bool value)</dt>
+<dd>Get value as bool, will only succeed if value was created using Set(string key, bool value)</dd>
+<dt>bool TryGetBytes(string key,byte[] value)</dt>
+<dd>Get value as byte[], will only succeed if value was
+created using Set(string key, byte[] value)</dd>
+<dd>since 5.9</dd>
+<dt>bool TryGetDictionary(string key,ArchivableDictionary value)</dt>
+<dd>Get value as ArchivableDictionary, will only succeed if value was
+created using Set(string key, ArchivableDictionary value)</dd>
+<dd>since 5.9</dd>
+<dt>bool TryGetDouble(string key,double value)</dt>
+<dd>Get value as double, will only succeed if value was created using Set(string key, double value)</dd>
+<dt>bool TryGetEnumValue(string key,T enumValue)</dt>
+<dd>Attempt to get an enum value from the dictionary using a custom key.</dd>
+<dd>since 5.4</dd>
+<dt>bool TryGetFloat(string key,float value)</dt>
+<dd>Get value as float, will only succeed if value was created using Set(string key, float value)</dd>
+<dt>bool TryGetGuid(string key,Guid value)</dt>
+<dd>Get value as Guid, will only succeed if value was created using Set(string key, Guid value)</dd>
+<dt>bool TryGetInteger(string key,int value)</dt>
+<dd>Get value as int, will only succeed if value was created using Set(string key, int value)</dd>
+<dt>bool TryGetPlane(string key,Plane value)</dt>
+<dd>Get value as Plane, will only succeed if value was created using Set(string key, Plane value)</dd>
+<dd>Returns - The value as Plane.</dd>
+<dd>since 6.11</dd>
+<dt>bool TryGetPoint3d(string key,Point3d value)</dt>
+<dd>Get value as Point3d, will only succeed if value was created using Set(string key, Point3d value)</dd>
+<dt>bool TryGetPoint3f(string key,Point3f value)</dt>
+<dd>Get value as Point3f, will only succeed if value was created using Set(string key, Point3f value)</dd>
+<dt>bool TryGetString(string key,string value)</dt>
+<dd>Get value as string, will only succeed if value was created using Set(string key, string value)</dd>
+<dt>bool TryGetValue(string key,object value)</dt>
+<dd>Gets the value associated with the specified key.</dd>
+<dd>Returns - True if the dictionary contains an element with the specified key; otherwise, false.</dd>
+<dt>bool TryGetVector3d(string key,Vector3d value)</dt>
+<dd>Get value as Vector3d, will only succeed if value was created using Set(string key, Vector3d value)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ArchivableDictionary</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

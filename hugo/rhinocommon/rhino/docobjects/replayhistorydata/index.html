@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ReplayHistoryData &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Provides history information to commands that will repeat history construction. Generally, a developer using this class will not construct a new instance, but receive one.
+public class ReplayHistoryData : IDisposableProperties  RhinoDoc Document The document this record belongs to int HistoryVersion ReplayHistory overrides check the version number to ensure the information saved in the history record is compatible with the current implementation of ReplayHistory Guid RecordId Each history record has a unique id that Rhino assigns when it adds the history record to the history record table ReplayHistoryResult[] Results Provides access to BOTH inputs and outputs of the replay history operation.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ReplayHistoryData</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Provides history information to commands that will repeat history construction.
+Generally, a developer using this class will not construct a new instance, but receive one.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ReplayHistoryData</span> : IDisposable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>The document this record belongs to</dd>
+<dt>int HistoryVersion</dt>
+<dd>ReplayHistory overrides check the version number to ensure the information
+saved in the history record is compatible with the current implementation
+of ReplayHistory</dd>
+<dt>Guid RecordId</dt>
+<dd>Each history record has a unique id that Rhino assigns when it adds the
+history record to the history record table</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/replayhistoryresult/">ReplayHistoryResult</a>[] Results</dt>
+<dd>Provides access to BOTH inputs and outputs of the replay history operation.
+Use this property to then call an appropriate UpdateToX() method and make your
+custom history support work.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>Rhino.DocObjects.ObjRef GetRhinoObjRef(int id)</dt>
+<dd>In ReplayHistory, use GetRhinoObjRef to convert the information
+in a history record into the ObjRef that has up to date
+RhinoObject pointers</dd>
+<dd>Returns - ObjRef on success, None if not successful</dd>
+<dt>bool TryGetBool(int id,bool value)</dt>
+<dd></dd>
+<dt>bool TryGetColor(int id,Color value)</dt>
+<dd></dd>
+<dt>bool TryGetDouble(int id,double value)</dt>
+<dd></dd>
+<dt>bool TryGetDoubles(int id,double[] values)</dt>
+<dd></dd>
+<dd>since 6.10</dd>
+<dt>bool TryGetGuid(int id,Guid value)</dt>
+<dd></dd>
+<dt>bool TryGetInt(int id,int value)</dt>
+<dd></dd>
+<dt>bool TryGetPoint3d(int id,Point3d value)</dt>
+<dd></dd>
+<dt>bool TryGetPoint3dOnObject(int id,Point3d value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetString(int id,string value)</dt>
+<dd></dd>
+<dt>bool TryGetTransform(int id,Transform value)</dt>
+<dd></dd>
+<dt>bool TryGetVector3d(int id,Vector3d value)</dt>
+<dd></dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ReplayHistoryData</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,127 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/namedpositiontable/">
-        <h3>NamedPositionTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderpipeline/">
+        <h3>RenderPipeline</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/namedpositiontable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-All named positions in a rhino document.
-public class NamedPositionTableProperties int Count  (summary) Number of Named Positions in the table. (since) 6.0  RhinoDoc Document  (summary) Document that owns this table. (since) 6.0  Guid[] Ids  (summary) Array of Named Position guids. (since) 6.0  string[] Names  (summary) Array of Named Position names. (since) 6.0  Methods bool Append(Guid id,IEnumerableobjectIds)  (summary) Append objects to a Named Position.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/namedvalue/">
-        <h3>NamedValue</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/namedvalue/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderpipeline/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class NamedValueConstructors NamedValue(string name,object value)  (summary) (since) 5.1  Properties string Name  (summary) (since) 5.1  object Value  (summary) (since) 5.1  
+Provides facilities to a render plug-in for integrating with the standard Rhino render window. Also adds helper functions for processing a render scene. This is the suggested class to use when integrating a renderer with Rhino and maintaining a &ldquo;standard&rdquo; user interface that users will expect.
+public class RenderPipeline : IDisposableProperties  int ConfirmationSeconds Sets the number of seconds that need to elapse during rendering before the user is asked if the rendered image should be saved.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/namedviewtable/">
-        <h3>NamedViewTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderplugininfo/">
+        <h3>RenderPlugInInfo</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/namedviewtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderplugininfo/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-All named views in a rhino document.
-public class NamedViewTableProperties int Count  (summary) Number of named views in the table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,Guid viewportId)  (summary) Adds named view to document which is based on an existing viewport. (since) 5.0 (returns) int This is some return comment  int Add(ViewInfo view)  (summary) (since) 5.
+    Namespace: Rhino.Render
+public class RenderPlugInInfoProperties  string Name  since 6.0 Guid PlugInId  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/namehash/">
-        <h3>NameHash</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderpluginlist/">
+        <h3>RenderPlugInList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/namehash/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderpluginlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Contains information that is useful to uniquly identify an object name. This object is immutable.
-public class NameHashstatic !=  (summary) Determines if two NameHash instances are different by value. (since) 6.0  static ==  (summary) Determines if two NameHash instances are equal by value. (since) 6.0  Constructors NameHash(string name)  (summary) Creates a new NameHash, representing a piece of text. (since) 6.0  NameHash(string name,Guid parentId)  (summary) Creates a new NameHash, representing a piece of text.
+    Namespace: Rhino.Render
+public class RenderPlugInList : List&lt;RenderPlugInInfo&gt;Constructors  RenderPlugInList()  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/neverrepeatlist/">
-        <h3>NeverRepeatList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderprimitivelist/">
+        <h3>RenderPrimitiveList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/neverrepeatlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderprimitivelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties relating to the list of commands that are never repeated.
-public class NeverRepeatListProperties static bool UseNeverRepeatList  (summary) Only use the list if somebody modifies it via CRhinoAppSettings::SetDontRepeatCommands(). Return value of True means CRhinoCommand don&rsquo;t repeat flags will be ignored and the m_dont_repeat_list will be used instead. False means the individual CRhinoCommands will determine if they are repeatable. (since) 5.0  Methods static string[] CommandNames()  (summary) The list of commands to not repeat.
+    Namespace: Rhino.Render
+public class RenderPrimitiveList : IDisposableProperties  int Count Number of meshes in this list since 5.7 RhinoObject RhinoObject The Rhino object associated with this list since 5.7 bool UseObjectsMappingChannels Returns True if the texture mapping will be taken from the Rhino object otherwise; the texture mapping will use the texture coordinates on the mesh only. since 5.7  Methods  void Add(Box box,RenderMaterial material) Add primitive box and material.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/nodeincode/nodeincodetable/">
-        <h3>NodeInCodeTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderpropertychangedevent/">
+        <h3>RenderPropertyChangedEvent</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/nodeincode/nodeincodetable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderpropertychangedevent/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.NodeInCode
-Permits rapid access to references to all Grasshopper functions.
-public class NodeInCodeTableConstructors NodeInCodeTable(IEnumerableitems)  (summary) Instantiates the table. Users of RhinoCommon do not typically need to call this constructor. (since) 6.0  Properties int Count  (summary) Returns the amount of items in this table. (since) 6.0  Methods void Add(ComponentFunctionInfo item)  (summary) Adds, or replaces a new instance of component function information. (since) 6.0 (returns) void This is some return comment  IEnumerableGetDynamicMemberNames()  (summary) Returns all additional names in the table.
+    Namespace: Rhino.Render
+Used by Rhino.Render object property value has changed events.
+public class RenderPropertyChangedEvent : EventArgsProperties  int Context Optional argument which may specify the property being modified. since 5.10 RhinoDoc Document The document triggering the event. since 5.10  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/notifications/notification/">
-        <h3>Notification</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendersourceview/">
+        <h3>RenderSourceView</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/notifications/notification/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendersourceview/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.Notifications
-A Notification instance can be used to inform the user about various events. For a Notification instance to be displayed in Rhino, it must be added to the . When added, it will be displayed in the Notifications panel in Rhino. A Notification contains 1 to 3 buttons that are automatically wired to its Action if it is not null. The buttons are displayed when the Notification is shown modally by either the user clicking on a particular notification in the Notifications panel, or by programatically showing it using .
+    Namespace: Rhino.Render
+Helper class to get the correct view from the Render View Source settings.
+An instance of this class is supposed to be used with the using() {} construct.
+public class RenderSourceView : IDisposableConstructors  RenderSourceView(RhinoDoc doc) Create a new RenderSourceView for the given doc. Note that this should be done with using(var rsv = new RenderSourceView(doc)) {}
+If the RenderSettings have the source view set to for instance a SnapShot this construct will ensure that the (active) view is set to the correct snapshot, and reverted back to the original once this instance goes out of scope.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/notifications/notificationbuttonclickedargs/">
-        <h3>NotificationButtonClickedArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendertabs/">
+        <h3>RenderTabs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/notifications/notificationbuttonclickedargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendertabs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.Notifications
-Used when a button is clicked for a notification.
-public class NotificationButtonClickedArgsConstructors NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked)  (summary) Creates a new instance. (since) 6.0  Properties ButtonType ButtonClicked  (summary) The button that was clicked. (since) 6.0  Notification Notification  (summary) The notification whose button was clicked. (since) 6.0  
+    Namespace: Rhino.Render
+public class RenderTabsMethods  static object FromRenderSessionId(PlugIn plugIn,Type tabType,Guid renderSessionId) Get the instance of a render tab associated with a specific render session, this is useful when it is necessary to update a control from a Returns - Returns the custom tab object if found; otherwise None is returned. since 5.11 static Guid SessionIdFromTab(object tab) Get the session Id that created the specified tab object. since 5.11 void RegisterTab(PlugIn plugin,Type tabType,string caption,Icon icon) Register custom render user interface with Rhino.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/notlicensedexception/">
-        <h3>NotLicensedException</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendertexture/">
+        <h3>RenderTexture</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/notlicensedexception/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendertexture/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Exception thrown when calling functions in RhinoCommon and the application is executing without a license
-public class NotLicensedExceptionConstructors NotLicensedException()  (summary) Default constructor (since) 7.0  NotLicensedException(string message)  (summary) Create a new instance with a custom message (since) 7.0  NotLicensedException(string message,Exception inner)  (summary) Create a new instance with a custom message and an inner exception (since) 7.0  
+    Namespace: Rhino.Render
+public class RenderTexture : RenderContentProperties  Transform LocalMappingTransform Gets the transformation that can be applied to the UVW vector to convert it from normalized texture space into locally mapped space (ie - with repeat, offset and rotation applied.) since 5.1 uint RenderHashWithoutLocalMapping Render hash for texture excluding local mapping. since 6.0  Methods  static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)  since 5.7 static Point3d GetWcsBoxMapping(Point3d worldXyz,Vector3d normal)  since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/nurbscurve/">
-        <h3>NurbsCurve</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendertexturetable/">
+        <h3>RenderTextureTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/nurbscurve/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendertexturetable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a Non Uniform Rational B-Splines (NURBS) curve.
-public class NurbsCurveConstructors NurbsCurve(int dimension,bool rational,int order,int pointCount)  (summary) Constructs a new NURBS curve with knot and CV memory allocated. (since) 5.0  NurbsCurve(int degree,int pointCount)  (summary) Constructs a new NURBS curve with a specific degree and control point count. (since) 5.0  NurbsCurve(NurbsCurve other)  (summary) Initializes a NURBS curve by copying its values from another NURBS curve.
+    Namespace: Rhino.Render
+public class RenderTextureTable : IRenderContentTable&lt;RenderTexture&gt;, IEnumerable&lt;RenderTexture&gt;, Collections.IRhinoTable&lt;RenderTexture&gt;Properties  int Count  since 5.7  Methods  bool Add(RenderTexture c)  since 6.0 void BeginChange(ChangeContexts changeContext)  since 7.0 void EndChange()  since 7.0 IEnumeratorGetEnumerator()  since 5.7 bool Remove(RenderTexture c)  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderwindow/">
+        <h3>RenderWindow</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderwindow/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class RenderWindow : IDisposableEvents  static Cloned  since 5.11  Properties  Guid SessionId  since 5.11  Methods  static Guid ChannelId(StandardChannels ch)  static RenderWindow Create(Size szSize)  since 6.0 static RenderWindow FromSessionId(Guid sessionId)  since 5.11 bool AddChannel(StandardChannels channel) Add a channel to the frame buffer in addition to the fixed Red, Green, Blue and Alpha channels. Returns - If the channel existed then True is returned otherwise; returns True if the channel was added or False if not.
   </div>
   
 

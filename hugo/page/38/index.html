@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,127 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/modelaidsettingsstate/">
-        <h3>ModelAidSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontentfieldchangedeventargs/">
+        <h3>RenderContentFieldChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/modelaidsettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontentfieldchangedeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class ModelAidSettingsStateProperties bool AltPlusArrow  (summary) True mean Alt+arrow is used for nudging. (since) 5.0  int ControlPolygonDisplayDensity  (summary) Gets or sets the control polygon display density. (since) 5.0  double CtrlNudgeKeyStep  (summary) Gets or sets the Ctrl-key based nudge step amount. (since) 5.0  bool DisplayControlPolygon  (summary) Gets or sets the enabled state of Rhino&rsquo;s display control polygon.
+    Namespace: Rhino.Render
+public class RenderContentFieldChangedEventArgs : RenderContentChangedEventArgsProperties  string FieldName  since 5.11  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/modelcomponent/">
-        <h3>ModelComponent</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontentmanager/">
+        <h3>RenderContentManager</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/modelcomponent/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontentmanager/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Base class for all components in a model (document) and manages the index, id and other information common to this type of objects. This class parallels the C++ ON_ModelComponent.
-public class ModelComponentProperties ComponentStatus ComponentStatus  (summary) Gets or sets the component status of the model component. (since) 6.0  ModelComponentType ComponentType  (summary) Gets the for this object. Useful in switch statements. (since) 6.0  string DeletedName  (summary) Gets the name of a component that is deleted.
+    Namespace: Rhino.Render
+RenderContentManager&rsquo;s RestoreRenderContents method unpacks the default render contents from the from the application and places them in the User&rsquo;s folder. Only available on Mac at the moment.
+public class RenderContentManagerProperties  static string UserRenderContentPath Get the path to: Windows: C:\Users\user\AppData\Roaming\McNeel\Rhinoceros\6.0\Localization\en-US\Render Content macOS: ~/Library/Application Support/McNeel/Rhinoceros/6.0/Render Content If a CustomLibraryPath is set, this is returned since 6.10  Methods  static bool RestoreRenderContent() Unpacks the default render contents from the from the application and places them in the User&rsquo;s folder.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphcontrol/">
-        <h3>MorphControl</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontentserializer/">
+        <h3>RenderContentSerializer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphcontrol/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontentserializer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a geometry that is able to control the morphing behaviour of some other geometry.
-public class MorphControlConstructors MorphControl(NurbsCurve originCurve,NurbsCurve targetCurve)  (summary) Constructs a MorphControl that allows for morphing between two curves. (since) 5.0  Properties NurbsCurve Curve  (summary) Returns the morph control&rsquo;s curve. While this should never be null, the calling function should check. (since) 6.0  bool PreserveStructure  (summary) True if the morph should be done in a way that preserves the structure of the geometry.
+    Namespace: Rhino.Render
+Used to import and export custom render content types such as materials, environments and textures. You must override RenderPlugIn.RenderContentSerializers() and return an array of derived RenderContentSerializer class types to add to the content browsers.
+public class RenderContentSerializerProperties  bool CanRead If True then the file type can be imported and will be included in the file open box when importing the specified render content type. since 5.7 bool CanWrite If True then the file type can be exported and will be included in the file save box when exporting the specified render content type.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/commands/mostrecentcommanddescription/">
-        <h3>MostRecentCommandDescription</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontenttype/">
+        <h3>RenderContentType</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/commands/mostrecentcommanddescription/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontenttype/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Commands
-Stores the macro and display string of the most recent command.
-public class MostRecentCommandDescriptionProperties string DisplayString  (summary) (since) 5.0  string Macro  (summary) (since) 5.0  
+    Namespace: Rhino.Render
+Represents one of the render content types registered with Rhino.
+public class RenderContentType : IDisposableConstructors  RenderContentType(Guid typeId)  since 6.0  Properties  Guid Id Returns the type identifier associated with this type. since 6.0 String InternalName Returns the internal name identifier associated with this type. since 6.0 Guid PlugInId  since 6.0 Guid RenderEngineId  since 6.0  Methods  static RenderContentType[] GetAllAvailableTypes() Gets an array of all available render content types registered with Rhino.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/mousecallback/">
-        <h3>MouseCallback</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercustomeventargs/">
+        <h3>RenderCustomEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/mousecallback/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercustomeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Used for intercepting mouse events in the Rhino views.
-public class MouseCallbackProperties bool Enabled  (summary) (since) 5.0  
+    Namespace: Rhino.Render
+Used as Rhino.Render Custom Events args.
+public class RenderCustomEventArgs : EventArgsProperties  IntPtr Argument The pointer to the custom event args. since 7.0 Guid EventType The type of the event. since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/mousecallbackeventargs/">
-        <h3>MouseCallbackEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderenvironment/">
+        <h3>RenderEnvironment</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/mousecallbackeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderenvironment/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class MouseCallbackEventArgsProperties System.Windows.Forms.MouseButtons Button  (summary) (since) 5.0  bool CtrlKeyDown  (summary) (since) 6.0  MouseButton MouseButton  (summary) (since) 6.0  bool ShiftKeyDown  (summary) (since) 6.0  Display.RhinoView View  (summary) (since) 5.0  System.Drawing.Point ViewportPoint  (summary) (since) 5.0  
+    Namespace: Rhino.Render
+public class RenderEnvironment : RenderContentProperties  static RenderEnvironment CurrentEnvironment  since 5.1 String TextureChildSlotName  since 6.0  Methods  static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment) Constructs a new from a . Returns - A new basic environment. since 5.3 static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment,RhinoDoc doc)  since 6.4 SimulatedEnvironment SimulateEnvironment(bool isForDataOnly)  since 6.0 void SimulateEnvironment(SimulatedEnvironment simulation,bool isForDataOnly)  since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/mousecursor/">
-        <h3>MouseCursor</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderenvironmenttable/">
+        <h3>RenderEnvironmentTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/mousecursor/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderenvironmenttable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Contains static methods to control the mouse icon.
-public class MouseCursorProperties static Point2d Location  (summary) Retrieves the position of the mouse cursor, in screen coordinates (since) 5.8  Methods static void SetToolTip(string tooltip)  (summary) Sets a cursor tooltip string shown next to the mouse cursor. Overrides all cursor tooltip panes. (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.Render
+public class RenderEnvironmentTable : IRenderContentTable&lt;RenderEnvironment&gt;, IEnumerable&lt;RenderEnvironment&gt;, Collections.IRhinoTable&lt;RenderEnvironment&gt;Properties  int Count  since 5.7  Methods  bool Add(RenderEnvironment c)  since 6.0 void BeginChange(ChangeContexts changeContext)  since 7.0 void EndChange()  since 7.0 IEnumeratorGetEnumerator()  since 5.7 bool Remove(RenderEnvironment c)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/namedconstructionplanetable/">
-        <h3>NamedConstructionPlaneTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendermaterial/">
+        <h3>RenderMaterial</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/namedconstructionplanetable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendermaterial/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-Contains all named construction planes in a rhino document. This class cannot be inherited.
-public class NamedConstructionPlaneTableProperties int Count  (summary) Number of construction planes in the table. (since) 5.0  RhinoDoc Document  (summary) Gets the document that owns this table. (since) 5.0  Methods int Add(string name,Plane plane)  (summary) Adds named construction plane to document. (since) 5.0 (returns) int This is some return comment  bool Delete(int index)  (summary) Remove named construction plane from the document.
+    Namespace: Rhino.Render
+public class RenderMaterial : RenderContentProperties  static Guid GemMaterialGuid  since 6.0 static Guid GlassMaterialGuid  since 6.0 static Guid MetalMaterialGuid  since 6.0 static Guid PaintMaterialGuid  since 6.0 static Guid PictureMaterialGuid  since 6.0 static Guid PlasterMaterialGuid  since 6.0 static Guid PlasticMaterialGuid  since 6.0 PreviewBackgroundType DefaultPreviewBackgroundType Set or get the default scene background for the image that appears in preview panes since 5.11 PreviewGeometryType DefaultPreviewGeometryType Set or get the default geometry that appears in preview panes since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/namedlayerstatetable/">
-        <h3>NamedLayerStateTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendermaterialtable/">
+        <h3>RenderMaterialTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/namedlayerstatetable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendermaterialtable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-All named layer states in a Rhino document.
-public class NamedLayerStateTableProperties int Count  (summary) Returns the number of named layers states in the document. (since) 6.14  RhinoDoc Document  (summary) Document that owns this table. (since) 6.14  string[] Names  (summary) Returns the names of named layer states in the document. (since) 6.14  Methods bool Delete(string name)  (summary) Deletes an exising named layer state.
+    Namespace: Rhino.Render
+public class RenderMaterialTable : IRenderContentTable&lt;RenderMaterial&gt;, IEnumerable&lt;RenderMaterial&gt;, Collections.IRhinoTable&lt;RenderMaterial&gt;Properties  int Count  since 5.7  Methods  bool Add(RenderMaterial c)  since 6.0 void BeginChange(ChangeContexts changeContext)  since 7.0 void EndChange()  since 7.0 IEnumeratorGetEnumerator()  since 5.7 bool Remove(RenderMaterial c)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/namedparameterseventargs/">
-        <h3>NamedParametersEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderpanels/">
+        <h3>RenderPanels</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/namedparameterseventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderpanels/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Dictionary style class used for named callbacks from C++ -&gt; .NET
-public class NamedParametersEventArgsConstructors NamedParametersEventArgs()  (summary) Construct a new named parameter even args. You should dispose this class when you are done with it (since) 7.0  Methods void Dispose()  (summary) Dispose native resources (since) 7.0 (returns) void This is some return comment  void Set(string name,bool value)  (summary) Set a bool value for a given key name (since) 7.
+    Namespace: Rhino.Render
+This class is used to extend the standard Render user interface
+public class RenderPanelsMethods  static object FromRenderSessionId(PlugIn plugIn,Type panelType,Guid renderSessionId) Get the instance of a render panel associated with a specific render session, this is useful when it is necessary to update a control from a Returns - Returns the custom panel object if found; otherwise None is returned. since 5.11 void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow) Register custom render user interface with Rhino.
   </div>
   
 

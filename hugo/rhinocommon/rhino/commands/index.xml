@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Commands on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/commands/</link>
+    <description>Recent content in Rhino.Commands on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/commands/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Command</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/command/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/command/</guid>
+      <description>Namespace: Rhino.Commands
+Defines a base class for all commands. This class is abstract.
+public class CommandEvents  static BeginCommand Called just before command.RunCommand(). static EndCommand Called immediately after command.RunCommand(). static UndoRedo Used to monitor Rhino&amp;rsquo;s built in undo/redo support.  Properties  static Guid LastCommandId Gets the ID of the last commands. static Result LastCommandResult Gets the result code of the last command. string EnglishName Gets the name of the command.</description>
+    </item>
+    
+    <item>
+      <title>CommandEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/commandeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/commandeventargs/</guid>
+      <description>Namespace: Rhino.Commands
+public class CommandEventArgs : EventArgsProperties  string CommandEnglishName Gets the English name of the command that raised this event. Guid CommandId Gets the ID of the command that raised this event. string CommandLocalName Gets the name of the command that raised this event in the local language. string CommandPluginName Gets the name of the plug-in that this command belongs to. If the command is internal to Rhino, then this propert is an empty string.</description>
+    </item>
+    
+    <item>
+      <title>CommandStyleAttribute</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/commandstyleattribute/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/commandstyleattribute/</guid>
+      <description>Namespace: Rhino.Commands
+Decorates commands to provide styles.
+[AttributeUsage(AttributeTargets.Class)]public class CommandStyleAttribute : AttributeConstructors  CommandStyleAttribute(Style styles) Initializes a new command style attribute class.  Properties  Style Styles Gets the associated style.  </description>
+    </item>
+    
+    <item>
+      <title>CustomUndoEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/customundoeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/customundoeventargs/</guid>
+      <description>Namespace: Rhino.Commands
+Argument package that is passed to a custom undo delegate
+public class CustomUndoEventArgs : EventArgsProperties  string ActionDescription  Guid CommandId  bool CreatedByRedo  RhinoDoc Document  object Tag  uint UndoSerialNumber   </description>
+    </item>
+    
+    <item>
+      <title>MostRecentCommandDescription</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/mostrecentcommanddescription/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/mostrecentcommanddescription/</guid>
+      <description>Namespace: Rhino.Commands
+Stores the macro and display string of the most recent command.
+public class MostRecentCommandDescriptionProperties  string DisplayString  string Macro   </description>
+    </item>
+    
+    <item>
+      <title>SelCommand</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/selcommand/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/selcommand/</guid>
+      <description>Namespace: Rhino.Commands
+For adding nestable selection commands that work like the native Rhino SelCrv command, derive your command from SelCommand and override the virtual SelFilter function.
+public class SelCommand : CommandProperties  bool BeQuiet  bool TestGrips  bool TestLights   </description>
+    </item>
+    
+    <item>
+      <title>UndoRedoEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/commands/undoredoeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/commands/undoredoeventargs/</guid>
+      <description>Namespace: Rhino.Commands
+public class UndoRedoEventArgs : EventArgsProperties  Guid CommandId  bool IsBeginRecording  bool IsBeginRedo  bool IsBeginUndo  bool IsEndRecording  bool IsEndRedo  bool IsEndUndo  bool IsPurgeRecord  uint UndoSerialNumber   </description>
+    </item>
+    
+  </channel>
+</rss>

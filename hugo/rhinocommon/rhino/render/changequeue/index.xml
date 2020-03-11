@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.ChangeQueue on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/</link>
+    <description>Recent content in Rhino.Render.ChangeQueue on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ChangeQueue</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/changequeue/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/changequeue/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+Base class for ChangeQueue.
+Generally used by render plugins to build interactive updating of scenes that are being rendered.
+public class ChangeQueue : IDisposableProperties  DisplayPipelineAttributes DisplayPipelineAttributes Get the DisplayPipelineAttributes if available, None otherwise since 6.0 bool IsPreview Return True if this ChangeQueue is created for preview rendering. No view was set for preview rendering.
+ since 6.0 Guid ViewId Return view ID for a RhinoDoc based ChangeQueue.</description>
+    </item>
+    
+    <item>
+      <title>ClippingPlane</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/clippingplane/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/clippingplane/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+ChangeQueue clipping plane
+public class ClippingPlaneProperties  ObjectAttributes Attributes Get the ClippingPlaneObject for this clipping plane since 6.0 Guid Id Get Guid for this clipping plane since 6.0 bool IsEnabled True if clipping plane is enabled since 6.0 Plane Plane Get the plane that represents this clipping plane since 6.0 ListViewIds Get list of View IDs this clipping plane is supposed to clip. since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>DisplayRenderSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/displayrendersettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/displayrendersettings/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+ChangeQueue DisplayRenderSettings
+public class DisplayRenderSettingsProperties  bool CullBackFaces True if backfaces should be culled since 6.0 bool ForceFlatShading True if flat shading is forced since 6.0 bool SceneLightingOn True if scene lighting is enabled since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>DynamicObjectTransform</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/dynamicobjecttransform/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/dynamicobjecttransform/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+ChangeQueue DynamicObject
+public class DynamicObjectTransformProperties  uint MeshInstanceId Get the mesh instance id for this dynamic object. since 6.0 Transform Transform Transform for the DynamicObject since 6.0  Methods  string ToString() String representation of DynamicObject since (unknown)  </description>
+    </item>
+    
+    <item>
+      <title>GroundPlane</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/groundplane/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/groundplane/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+ChangeQueue ground plane
+public class GroundPlaneProperties  double Altitude Get the altitude for ground plane since 6.0 uint Crc Get the checksum of this groundplane object since 6.0 bool Enabled Return True if ground plane is enabled since 6.0 bool IsShadowOnly Get True if ground plane should be shadow-only since 6.0 uint MaterialId The CRC / RenderHash of the material on this ground plane since 6.0 Vector2d TextureOffset Get texture offset on the ground plane since 6.</description>
+    </item>
+    
+    <item>
+      <title>Light</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/light/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/light/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+ChangeQueue Light change representation
+public class LightProperties  Event ChangeType Get what type of light change this represents since 6.0 Light Data Get the actual light data since 6.0 Guid Id Get the light object id since 6.0 uint IdCrc Get CRC computed from Id since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>MappingChannel</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannel/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannel/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+Mapping Channel for a ChangeQueue Mesh
+public class MappingChannelProperties  Transform Local Local transform for the mapping since 6.0 TextureMapping Mapping Return TexturMapping for this MappingChannel since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>MappingChannelCollection</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannelcollection/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannelcollection/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+MappingChannels for a Mesh
+public class MappingChannelCollectionProperties  IEnumerableChannels Enumerate all available channels in this mapping since 6.0 int Count Get count of MappingChannels in this collection since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>Material</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/material/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/material/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+Representation of a Material through the change queue
+public class MaterialProperties  uint Id Get the material ID (crc) since 6.0 int MeshIndex Get mesh index since 6.0 uint MeshInstanceId Get the material InstanceAncestry since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>Mesh</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mesh/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mesh/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+Representation of ChangeQueue Mesh
+public class MeshProperties  ObjectAttributes Attributes Get object attributes of object associated to this mesh. This will be possible only after returning True from ChangeQueue.ProvideOriginalObject() since 6.0 MappingChannelCollection Mapping Get the mapping for this mesh. since 6.0 RhinoObject Object Get a copy of the original RhinoObject this Mesh is created from. Possible only after return True from ChangeQueue.ProvideOriginalObject(). Access this only with a using(var o = mesh.</description>
+    </item>
+    
+    <item>
+      <title>MeshInstance</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/meshinstance/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/meshinstance/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+Representation of ChangeQueue MeshInstance
+public class MeshInstanceProperties  bool CastShadows Return True if mesh instance should cast shadows since 6.0 uint GroupId Get identifier that specifies the grouping of these mesh instances - usually based on the object that this originally comprised. since 6.0 uint InstanceId Get the instance identifier for this mesh instance. since 6.0 uint MaterialId The Material CRC / RenderHash since 6.0 Guid MeshId Get the mesh identifier for this mesh instance.</description>
+    </item>
+    
+    <item>
+      <title>Skylight</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/changequeue/skylight/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/changequeue/skylight/</guid>
+      <description>Namespace: Rhino.Render.ChangeQueue
+ChangeQueue skylight
+public class SkylightProperties  bool Enabled Return True if skylight is enabled since 6.0 double ShadowIntensity Get shadow intensity for skylight since 6.0 bool UsesCustomEnvironment Return True if skylight uses custom environment since 6.0  Methods  string ToString() Textual representation of Skylight since (unknown)  </description>
+    </item>
+    
+  </channel>
+</rss>

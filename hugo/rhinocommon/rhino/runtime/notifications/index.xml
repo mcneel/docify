@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Runtime.Notifications on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/</link>
+    <description>Recent content in Rhino.Runtime.Notifications on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/runtime/notifications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notification</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notification/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notification/</guid>
+      <description>Namespace: Rhino.Runtime.Notifications
+A Notification instance can be used to inform the user about various events. For a Notification instance to be displayed in Rhino, it must be added to the . When added, it will be displayed in the Notifications panel in Rhino. A Notification contains 1 to 3 buttons that are automatically wired to its Action if it is not null. The buttons are displayed when the Notification is shown modally by either the user clicking on a particular notification in the Notifications panel, or by programatically showing it using .</description>
+    </item>
+    
+    <item>
+      <title>NotificationButtonClickedArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notificationbuttonclickedargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notificationbuttonclickedargs/</guid>
+      <description>Namespace: Rhino.Runtime.Notifications
+Used when a button is clicked for a notification.
+public class NotificationButtonClickedArgs : EventArgsConstructors  NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked) Creates a new instance. since 6.0  Properties  ButtonType ButtonClicked The button that was clicked. since 6.0 Notification Notification The notification whose button was clicked. since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>TrulyObservableOrderedSet</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/trulyobservableorderedset/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/trulyobservableorderedset/</guid>
+      <description>Namespace: Rhino.Runtime.Notifications
+An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.
+public class TrulyObservableOrderedSet : IList&amp;lt;T&amp;gt;, INotifyCollectionChanged CollectionChanged Triggered whenever the set changes or when one of its elements has its PropertyChanged event triggered. since (unknown)  Constructors  TrulyObservableOrderedSet() Creates an empty instance. since (unknown) TrulyObservableOrderedSet(IEnumerableitems) Creates an instance with the given items. since (unknown)  Properties  int Count Returns the total number of items in the set.</description>
+    </item>
+    
+  </channel>
+</rss>

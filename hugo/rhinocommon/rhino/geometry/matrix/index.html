@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Matrix &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents an arbitrarily sized matrix of double-precision floating point numbers. If you are working with a 4x4 matrix, then you may want to use the class instead.
+public class Matrix : IDisposable static * Multiplies two matrices and returns a new product matrix. Returns - The product matrix. static &#43; Adds two matrices and returns a new sum matrix. Returns - The sum matrix. since (unknown)  Constructors  Matrix(int rowCount,int columnCount) Initializes a new instance of the matrix.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Matrix</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents an arbitrarily sized matrix of double-precision
+floating point numbers. If you are working with a 4x4 matrix, then you may want
+to use the  class instead.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Matrix</span> : IDisposable
+</code></pre></div><dl>
+<dt>static *</dt>
+<dd>Multiplies two matrices and returns a new product matrix.</dd>
+<dd>Returns - The product matrix.</dd>
+<dt>static +</dt>
+<dd>Adds two matrices and returns a new sum matrix.</dd>
+<dd>Returns - The sum matrix.</dd>
+<dd>since (unknown)</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Matrix(int rowCount,int columnCount)</dt>
+<dd>Initializes a new instance of the matrix.</dd>
+<dt>Matrix(Transform xform)</dt>
+<dd>Initializes a new instance of the matrix based on a 4x4 matrix .</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>int ColumnCount</dt>
+<dd>Gets the amount of columns.</dd>
+<dt>bool IsColumnOrthogonal</dt>
+<dd>Gets a value indicating whether the matrix is column orthogonal.</dd>
+<dt>bool IsColumnOrthoNormal</dt>
+<dd>Gets a value indicating whether the matrix is column orthonormal.</dd>
+<dt>bool IsRowOrthogonal</dt>
+<dd>Gets a value indicating whether the matrix is row orthogonal.</dd>
+<dt>bool IsRowOrthoNormal</dt>
+<dd>Gets a value indicating whether the matrix is row orthonormal.</dd>
+<dt>bool IsSquare</dt>
+<dd>Gets a value indicating whether this matrix has the same number of rows
+and columns. 0x0 matrices are not considered square.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether this matrix is valid.</dd>
+<dt>int RowCount</dt>
+<dd>Gets the amount of rows.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>double[] BackSolve(double zeroTolerance,double[] b)</dt>
+<dd>Solves M*x=b where M is upper triangular with a unit diagonal and
+b is a column of values.</dd>
+<dd>Returns - Array of length ColumnCount on success. None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] BackSolvePoints(double zeroTolerance,Point3d[] b)</dt>
+<dd>Solves M*x=b where M is upper triangular with a unit diagonal and
+b is a column of 3d points.</dd>
+<dd>Returns - Array of length ColumnCount on success. None on error.</dd>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dt>Matrix Duplicate()</dt>
+<dd>Create a duplicate of this matrix.</dd>
+<dd>Returns - An exact duplicate of this matrix.</dd>
+<dd>since 5.1</dd>
+<dt>int GetHashCode()</dt>
+<dd>Gets the hash code for this matrix. The hash code will change 
+when the matrix changes so you cannot change matrices while they are stored in 
+hash tables.</dd>
+<dd>Returns - Hash code.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Invert(double zeroTolerance)</dt>
+<dd>Modifies this matrix to become its own inverse.
+Matrix might be non-invertible (singular) and the return value will be false.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>int RowReduce(double zeroTolerance,double determinant,double pivot)</dt>
+<dd>Row reduces a matrix to calculate rank and determinant.</dd>
+<dd>Returns - Rank of the matrix.</dd>
+<dt>int RowReduce(double zeroTolerance,double[] b,double pivot)</dt>
+<dd>Row reduces a matrix as the first step in solving M*X=b where
+b is a column of values.</dd>
+<dd>Returns - Rank of the matrix.</dd>
+<dt>int RowReduce(double zeroTolerance,Point3d[] b,double pivot)</dt>
+<dd>Row reduces a matrix as the first step in solving M*X=b where
+b is a column of 3d points.</dd>
+<dd>Returns - Rank of the matrix.</dd>
+<dt>void Scale(double s)</dt>
+<dd>Modifies the current matrix by multiplying its values by a number.</dd>
+<dt>void SetDiagonal(double d)</dt>
+<dd>Sets diagonal value and zeros off all non-diagonal values.</dd>
+<dt>bool SwapColumns(int columnA,int columnB)</dt>
+<dd>Exchanges two columns.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool SwapRows(int rowA,int rowB)</dt>
+<dd>Exchanges two rows.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool Transpose()</dt>
+<dd>Modifies this matrix to be its transpose.
+This is like swapping rows with columns.http://en.wikipedia.org/wiki/Transpose</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>void Zero()</dt>
+<dd>Sets all values inside the matrix to zero.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Matrix</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

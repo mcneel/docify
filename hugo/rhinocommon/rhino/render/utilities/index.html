@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Utilities &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+public class UtilitiesProperties  static Guid DefaultRenderPlugInId Get the plug-in Id for the default render plug-in since 5.3 static bool ShowIncompatibleEnvironments Specifies whether incompatible content should be shown in the corresponding editor. since 5.3 static bool ShowIncompatibleMaterials Specifies whether incompatible content should be shown in the corresponding editor. since 5.3 static bool ShowIncompatibleTextures Specifies whether incompatible content should be shown in the corresponding editor. since 5.3 static UiFrameworks UiFramework  since 7.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Utilities</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Utilities</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static Guid DefaultRenderPlugInId</dt>
+<dd>Get the plug-in Id for the default render plug-in</dd>
+<dd>since 5.3</dd>
+<dt>static bool ShowIncompatibleEnvironments</dt>
+<dd>Specifies whether incompatible content should be shown in the corresponding editor.</dd>
+<dd>since 5.3</dd>
+<dt>static bool ShowIncompatibleMaterials</dt>
+<dd>Specifies whether incompatible content should be shown in the corresponding editor.</dd>
+<dd>since 5.3</dd>
+<dt>static bool ShowIncompatibleTextures</dt>
+<dd>Specifies whether incompatible content should be shown in the corresponding editor.</dd>
+<dd>since 5.3</dd>
+<dt>static <a href="/rhinocommon/rhino/render/utilities/uiframeworks/">UiFrameworks</a> UiFramework</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/render/rendercontent/">RenderContent</a> ChangeContentType(RenderContent oldContent,Guid newType,bool harvestParameters)</dt>
+<dd>Changes the type of a content. This deletes the content and creates a replacement
+of the specified type allowing the caller to decide about harvesting.</dd>
+<dd>Returns - A new persistent render content.</dd>
+<dd>since 6.0</dd>
+<dt>static string FindFile(RhinoDoc doc,string fullPathToFile)</dt>
+<dd>Finds a file and also handles network shares.
+This is a replacement for CRhinoFileUtilities::FindFile().</dd>
+<dd>Returns - The found file.</dd>
+<dd>since 6.0</dd>
+<dt>static string FindFile(RhinoDoc doc,string fullPathToFile,bool unpackFromBitmapTableIfNecessary)</dt>
+<dd>Finds a file and also handles network shares.
+This is a replacement for CRhinoFileUtilities::FindFile().</dd>
+<dd>Returns - The found file.</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsCachedTextureFileInUse(string textureFileName)</dt>
+<dd>Determines if any texture in any persistent content list is using the specified file name for caching.</dd>
+<dd>Returns - True if the texture is present.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/render/rendercontent/">RenderContent</a> LoadPersistentRenderContentFromFile(uint docSerialNumber,String filename)</dt>
+<dd>Loads a content from a library file and adds it to the persistent content list of a particular document.</dd>
+<dd>Returns - The loaded content or None if an error occurred.</dd>
+<dd>since 6.0</dd>
+<dt>static void MoveWindow(IntPtr hwnd,Rectangle rect,bool bRepaint,bool bRepaintNC)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static string PromptForSaveImageFileParameters(string filename,int width,int height,int colorDepth)</dt>
+<dd>Prompts the user for a save file name and the width, height and depth of an image to be saved.</dd>
+<dd>Returns - The new file name.</dd>
+<dd>since 6.0</dd>
+<dt>static bool SafeFrameEnabled(RhinoDoc doc)</dt>
+<dd>Queries whether or not the Safe Frame is visible.</dd>
+<dd>since 6.0</dd>
+<dt>static bool SetDefaultRenderPlugIn(Guid pluginId)</dt>
+<dd>Set default render application</dd>
+<dd>Returns - True if plug-in found and loaded successfully.  False if pluginId is
+invalid or was unable to load plug-in</dd>
+<dd>since 5.3</dd>
+<dt>static <a href="/rhinocommon/rhino/render/utilities/showcontentchooserresults/">ShowContentChooserResults</a> ShowContentChooser(Guid defaultType,Guid defaultInstanceId,RenderContentKind kinds,Guid instanceIdOut,ShowContentChooserFlags flags,RhinoDoc doc)</dt>
+<dd>Shows the content chooser to allow the user to select a new or existing content.</dd>
+<dd>Returns - The result.</dd>
+<dd>since 6.25</dd>
+<dt>static bool ShowIORMenu(IntPtr hwnd,Point pt,double outIOR,string outString)</dt>
+<dd>Display and track the context menu.</dd>
+<dd>Returns - True if the function showed the IOR menu and something was picked.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Utilities</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

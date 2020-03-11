@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Cylinder &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the values of a plane, a radius and two heights -on top and beneath- that define a right circular cylinder.
+Constructors  Cylinder(Circle baseCircle) Constructs a new cylinder with infinite height. Cylinder(Circle baseCircle,double height) Constructs a new cylinder with a finite height.  Properties  static Cylinder Unset Gets an invalid Cylinder. Vector3d Axis Gets the axis direction of the cylinder. Plane BasePlane Gets or sets the base plane of the cylinder.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Cylinder</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the values of a plane, a radius and two heights -on top and beneath-
+that define a right circular cylinder.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Cylinder(Circle baseCircle)</dt>
+<dd>Constructs a new cylinder with infinite height.</dd>
+<dt>Cylinder(Circle baseCircle,double height)</dt>
+<dd>Constructs a new cylinder with a finite height.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Cylinder Unset</dt>
+<dd>Gets an invalid Cylinder.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Axis</dt>
+<dd>Gets the axis direction of the cylinder.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> BasePlane</dt>
+<dd>Gets or sets the base plane of the cylinder.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Center</dt>
+<dd>Gets the center point of the defining circle.</dd>
+<dt>double Height1</dt>
+<dd>Gets or sets the start height of the cylinder.
+The center of bottom cap is: BasePlane.Origin + Height1 * BasePlane.ZAxis.</dd>
+<dt>double Height2</dt>
+<dd>Gets or sets the end height of the cylinder. 
+If the end height equals the start height, the cylinder is 
+presumed to be infinite.
+The center of top cap is: BasePlane.Origin + Height2 * BasePlane.ZAxis.</dd>
+<dt>bool IsFinite</dt>
+<dd>True if the cylinder is finite (Height0 != Height1)
+False if the cylinder is infinite.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a boolean value indicating whether this cylinder is valid.
+A valid cylinder is represented by a valid circle and two valid heights.</dd>
+<dt>double Radius</dt>
+<dd>Gets or sets the radius of the cylinder.</dd>
+<dd>since 6.0</dd>
+<dt>double TotalHeight</dt>
+<dd>Gets the height of the cylinder. 
+Infinite cylinders have a height of zero, not Double.PositiveInfinity.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/circle/">Circle</a> CircleAt(double linearParameter)</dt>
+<dd>Compute the circle at the given elevation parameter.</dd>
+<dt>bool EpsilonEquals(Cylinder other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> LineAt(double angularParameter)</dt>
+<dd>Compute the line at the given angle parameter. This line will be degenerate if the cylinder is infite.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep(bool capBottom,bool capTop)</dt>
+<dd>Constructs a Brep representation of this Cylinder. 
+This is synonymous with calling NurbsSurface.CreateFromCylinder().</dd>
+<dd>Returns - A Brep representation of the cylinder or null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> ToNurbsSurface()</dt>
+<dd>Constructs a Nurbs surface representation of this cylinder. 
+This is synonymous with calling NurbsSurface.CreateFromCylinder().</dd>
+<dd>Returns - A Nurbs surface representation of the cylinder or null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/revsurface/">RevSurface</a> ToRevSurface()</dt>
+<dd>Constructs a RevSurface representation of this Cylinder. 
+This is synonymous with calling RevSurface.CreateFromCylinder().</dd>
+<dd>Returns - A RevSurface representation of the cylinder or null.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Cylinder</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

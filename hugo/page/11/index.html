@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,128 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/cursortooltipsettingsstate/">
-        <h3>CursorTooltipSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/viewcapture/">
+        <h3>ViewCapture</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/cursortooltipsettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/viewcapture/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class CursorTooltipSettingsStateProperties bool AutoSuppress  (summary) Attempts to display only the most useful tooltip. (since) 5.0  System.Drawing.Color BackgroundColor  (summary) Tooltip background color. (since) 5.0  bool CommandPromptPane  (summary) Displays the current command prompt. (since) 5.0  bool DistancePane  (summary) Displays the distance from the last picked point. (since) 5.0  System.Drawing.Point Offset  (summary) The x and y distances in pixels from the cursor location to the tooltip.
+    Namespace: Rhino.Display
+public class ViewCaptureConstructors  ViewCapture()  since 6.0  Properties  bool DrawAxes  since 6.0 bool DrawGrid  since 6.0 bool DrawGridAxes  since 6.0 int Height Height of capture in Pixels since 6.0 bool Preview  since 6.0 int RealtimeRenderPasses  since 6.0 bool ScaleScreenItems  since 6.0 bool TransparentBackground  since 6.0 int Width Width of capture in Pixels since 6.0  Methods  static Bitmap CaptureToBitmap(ViewCaptureSettings settings)  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/curvatureanalysissettings/">
-        <h3>CurvatureAnalysisSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/viewcapturesettings/">
+        <h3>ViewCaptureSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/curvatureanalysissettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/viewcapturesettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties to modify curvature analysis-related commands.
-public class CurvatureAnalysisSettingsProperties static Rhino.Geometry.Interval GaussRange  (summary) Gets or sets the Gaussian curvature range. (since) 6.0  static Rhino.Geometry.Interval MaxRadiusRange  (summary) Gets or sets the Maximum Radius curvature range. (since) 6.0  static Rhino.Geometry.Interval MeanRange  (summary) Gets or sets the Mean curvature range. (since) 6.0  static Rhino.Geometry.Interval MinRadiusRange  (summary) Gets or sets the Minimum Radius curvature range.
+    Namespace: Rhino.Display
+Used to hold the information required to generate high resolution output of a RhinoViewport. This is used for generating paper prints or image files
+public class ViewCaptureSettings : IDisposableConstructors  ViewCaptureSettings()  since 6.0 ViewCaptureSettings(RhinoPageView sourcePageView,double dpi)  since 6.0 ViewCaptureSettings(RhinoView sourceView,Size mediaSize,double dpi)  since 6.0  Properties  double ArrowheadSizeMillimeters arrowhead size in millimeters since 6.15 Rectangle CropRectangle Actual area of output rectangle that view capture is sent to.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/curvatureanalysissettingsstate/">
-        <h3>CurvatureAnalysisSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/viewcapturewriter/">
+        <h3>ViewCaptureWriter</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/curvatureanalysissettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/viewcapturewriter/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class CurvatureAnalysisSettingsStateProperties Rhino.Geometry.Interval GaussRange  (summary) Gets or sets the Gaussian curvature range. (since) 6.0  Rhino.Geometry.Interval MaxRadiusRange  (summary) Gets or sets the Maximum Radius curvature range. (since) 6.0  Rhino.Geometry.Interval MeanRange  (summary) Gets or sets the Mean curvature range. (since) 6.0  Rhino.Geometry.Interval MinRadiusRange  (summary) Gets or sets the Minimum Radius curvature range. (since) 6.0  CurvatureAnalysisSettings.CurvatureStyle Style  (summary) Gets or sets the curvature analysis style.
+    Namespace: Rhino.Runtime
+Callback system used by SVG and PDF exporter to generate documents
+public class ViewCaptureWriterConstructors  ViewCaptureWriter(double dpi,Size pageSize)  since 6.0  Methods  void Draw(IntPtr constPtrPrintInfo,RhinoDoc doc)  since 6.15  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/curve/">
-        <h3>Curve</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/vieweventargs/">
+        <h3>ViewEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/curve/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/vieweventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a base class that is common to most RhinoCommon curve types. A curve represents an entity that can be all visited by providing a single parameter, usually called t.
-public class CurveProperties int Degree  (summary) Gets the maximum algebraic degree of any span or a good estimate if curve spans are not algebraic. (since) 5.0  int Dimension  (summary) Gets the dimension of the object.
+    Namespace: Rhino.Display
+public class ViewEventArgs : EventArgsProperties  RhinoView View   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/curvebooleanregions/">
-        <h3>CurveBooleanRegions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/viewtable/">
+        <h3>ViewTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/curvebooleanregions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/viewtable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the results of a Curve.CreateBooleanRegions calculation.
-public class CurveBooleanRegionsProperties int PlanarCurveCount  (summary) Returns number of planar curves that were calculated by Curve.CreateBooleanRegions. (since) 7.0  int PointCount  (summary) If this object were created using the Curve.CreateBooleanRegions override that accepts a collection of points as input, then this value will be equal to the length of the points collection. (since) 7.0  int RegionCount  (summary) Returns the number of curve regions.
+    Namespace: Rhino.DocObjects.Tables
+public class ViewTable : IEnumerable&lt;RhinoView&gt;Properties  RhinoView ActiveView Gets or Sets the active view. RhinoDoc Document Document that owns this object table. bool ModelSpaceIsActive  bool RedrawEnabled Returns or sets (enable or disables) screen redrawing.  Methods  RhinoView Add(string title,DefinedViewportProjection projection,Rectangle position,bool floating) Constructs a new Rhino view and, at the same time, adds it to the list. Returns - The newly constructed Rhino view; or None on error.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/intersect/curveintersections/">
-        <h3>CurveIntersections</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/waitcursor/">
+        <h3>WaitCursor</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/intersect/curveintersections/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/waitcursor/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Intersect
-Maintains an ordered list of Curve Intersection results.
-public class CurveIntersectionsProperties int Count  (summary) Gets the number of recorded intersection events. (since) 5.0  Methods void CopyTo(IntersectionEvent[] array,int arrayIndex)  (summary) Copies all intersection results into another array, departing at an index in the target array. (since) 5.0 (returns) void This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.UI
+public class WaitCursor : IDisposableConstructors  WaitCursor()  since 5.1  Methods  void Clear()  since 5.1 void Dispose()  since 5.1 void Set()  since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/collections/curvelist/">
-        <h3>CurveList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/worksession/">
+        <h3>Worksession</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/collections/curvelist/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Collections
-Represents a list of curves.
-public class CurveListConstructors CurveList()  (summary) Initializes a new empty list of curves. (since) 5.0  CurveList(IEnumerablecollection)  (summary) Initializes a new list that is filled with all items of the input enumerable. Input items are not explicitly duplicated (this is a shallow copy). (since) 5.0  CurveList(int initialCapacity)  (summary) Initializes a new empty list of curves with a predefined capacity. This is the amount of items the list will accept before resizing.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/curveobject/">
-        <h3>CurveObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/curveobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/worksession/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-A Rhino Object that represents curve geometry and attributes
-public class CurveObjectProperties Curve CurveGeometry  (summary) (since) 5.0  Methods Curve DuplicateCurveGeometry()  (summary) (since) 5.0 (returns) Curve This is some return comment  
+Manages a list of models that are being used as reference geometry.
+public class WorksessionProperties  RhinoDoc Document Gets the document that owns this worksession. since 6.0 string FileName Returns the path to the open worksession, or .rws, file. If there is no worksession file open, or the active worksession has not yet been saved, then None is returned. since 6.0 int ModelCount Returns the number of models in the worksession.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/curveproxy/">
-        <h3>CurveProxy</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/angulardimensionobject/">
+        <h3>AngularDimensionObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/curveproxy/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/angulardimensionobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Provides strongly-typed access to Brep edges.
-public class CurveProxyProperties bool ProxyCurveIsReversed  (summary) True if &ldquo;this&rdquo; is a curve is reversed from the &ldquo;real&rdquo; curve geometry (since) 5.10  
+    Namespace: Rhino.DocObjects
+Rhino Object that represents an angular dimension geometry and attributes
+public class AngularDimensionObject : DimensionObjectProperties  AngularDimension AngularDimensionGeometry Get the dimension geometry for this object. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/curvesegment/">
-        <h3>CurveSegment</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettings/">
+        <h3>AppearanceSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/curvesegment/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-For internal use only.
-Properties int Index  (summary) The index of the curve used by this boundary element. (since) 7.0  bool Reversed  (summary) True if this piece of the curve should be reversed. (since) 7.0  Interval SubDomain  (summary) The subdomain of the curve used by this boundary element. (since) 7.0  
+    Namespace: Rhino.ApplicationSettings
+Provides static methods and properties to deal with the appearance of the application.
+public class AppearanceSettingsProperties  static Color CommandPromptBackgroundColor Gets or sets the color of the command prompt background. static Color CommandPromptHypertextColor Gets or sets the color of the command prompt hypertext. static CommandPromptPosition CommandPromptPosition Gets or sets the command prompt position. static Color CommandPromptTextColor Gets or sets the color of the command prompt text. static Color CrosshairColor Gets or sets the color of the crosshair icon.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettingsstate/">
+        <h3>AppearanceSettingsState</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettingsstate/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of the values in .
+public class AppearanceSettingsStateProperties  Color CommandPromptBackgroundColor Gets or sets the comand prompt background color. Color CommandPromptHypertextColor Gets or sets the comand prompt hypertext color. Color CommandPromptTextColor Gets or sets the command prompt text color. Color CrosshairColor Gets or sets the crosshair color. Color CurrentLayerBackgroundColor Gets or sets the color used by the layer manager dialog as the background color for the current layer.
   </div>
   
 

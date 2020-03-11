@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  InstanceDefinition &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+This is the same as , but in a Rhino document.
+public class InstanceDefinition : InstanceDefinitionGeometryProperties  InstanceDefinitionArchiveFileStatus ArchiveFileStatus Returns the archive file status of a linked instance definition. since 5.2 ModelComponentType ComponentType Returns . since 6.0 string Description  Guid Id  int Index Index of this instance definition in the index definition table. bool IsDeleted  bool IsReference An object from a work session reference model is reference a reference object and cannot be modified.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">InstanceDefinition</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>This is the same as , but in a Rhino document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceDefinition</span> : InstanceDefinitionGeometry
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinitionarchivefilestatus/">InstanceDefinitionArchiveFileStatus</a> ArchiveFileStatus</dt>
+<dd>Returns the archive file status of a linked instance definition.</dd>
+<dd>since 5.2</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt>string Description</dt>
+<dd></dd>
+<dt>Guid Id</dt>
+<dd></dd>
+<dt>int Index</dt>
+<dd>Index of this instance definition in the index definition table.</dd>
+<dt>bool IsDeleted</dt>
+<dd></dd>
+<dt>bool IsReference</dt>
+<dd>An object from a work session reference model is reference a
+reference object and cannot be modified.  An object is a reference
+object if, and only if, it is on a reference layer.</dd>
+<dt>bool IsTenuous</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinitionlayerstyle/">InstanceDefinitionLayerStyle</a> LayerStyle</dt>
+<dd></dd>
+<dt>string Name</dt>
+<dd></dd>
+<dt>int ObjectCount</dt>
+<dd>Number of objects this definition uses. This counts the objects that are used to define the geometry.
+This does NOT count the number of references to this instance definition.</dd>
+<dt>bool SkipNestedLinkedDefinitions</dt>
+<dd>Controls how much geometry is read when a linked InstanceDefinition is updated.</dd>
+<dd>Returns - If this returns True then nested linked InstanceDefinition objects will be skipped otherwise; read everything, included nested linked InstanceDefinition objects</dd>
+<dt>string SourceArchive</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinitionupdatetype/">InstanceDefinitionUpdateType</a> UpdateType</dt>
+<dd></dd>
+<dt>string Url</dt>
+<dd>The hyperlink URL that is executed when the UrlDescription hyperlink is clicked on in the Insert and Block UI</dd>
+<dt>string UrlDescription</dt>
+<dd>The URL description displayed as a hyperlink in the Insert and Block UI</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize)</dt>
+<dd>Creates a preview bitmap of the instance definition.</dd>
+<dd>Returns - The preview bitmap if successful, None otherwise.</dd>
+<dt>System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize,bool applyDpiScaling)</dt>
+<dd>Creates a preview bitmap of the instance definition.</dd>
+<dd>Returns - The preview bitmap if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,Size bitmapSize)</dt>
+<dd>Creates a wireframe preview bitmap of the instance definition.</dd>
+<dd>Returns - The preview bitmap if successful, None otherwise.</dd>
+<dt>System.Drawing.Bitmap CreatePreviewBitmap(DefinedViewportProjection definedViewportProjection,Size bitmapSize,bool applyDpiScaling)</dt>
+<dd>Creates a wireframe preview bitmap of the instance definition.</dd>
+<dd>Returns - The preview bitmap if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Bitmap CreatePreviewBitmap(Guid definitionObjectId,DefinedViewportProjection definedViewportProjection,DisplayMode displayMode,Size bitmapSize,bool applyDpiScaling)</dt>
+<dd>Creates a preview bitmap of the instance definition.</dd>
+<dd>Returns - The preview bitmap if successful, None otherwise.</dd>
+<dd>since 6.21</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Equality is checked against InstanceDefinition.Id</dd>
+<dd>Returns - True if obj.Id equals Id</dd>
+<dd>since (unknown)</dd>
+<dt>InstanceDefinition[] GetContainers()</dt>
+<dd>Gets a list of all the InstanceDefinitions that contain a reference this InstanceDefinition.</dd>
+<dd>Returns - An array of instance definitions. The returned array can be empty, but not null.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Use Id.GetHashCode()</dd>
+<dd>since (unknown)</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] GetObjects()</dt>
+<dd>Gets an array with the objects that belong to this instance definition.</dd>
+<dd>Returns - An array of Rhino objects. The returned array can be empty, but not null.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instanceobject/">InstanceObject</a>[] GetReferences(int wheretoLook)</dt>
+<dd>Gets a list of the CRhinoInstanceObjects (inserts) that contains
+a reference this instance definition.</dd>
+<dd>Returns - An array of instance objects. The returned array can be empty, but not null.</dd>
+<dt>bool InUse(int wheretoLook)</dt>
+<dd>Determines whether the instance definition is referenced.</dd>
+<dd>Returns - True if the instance definition is used; otherwise false.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> Object(int index)</dt>
+<dd>returns an object used as part of this definition.</dd>
+<dd>Returns - Returns an object that is used to define the geometry.
+Does NOT return an object that references this definition.count the number of references to this instance.</dd>
+<dt>int UsesDefinition(int otherIdefIndex)</dt>
+<dd>Determines if this instance definition contains a reference to another instance definition.</dd>
+<dd>Returns - 0      no
+1      other_idef_index is the index of this instance definition
+&gt;1      This InstanceDefinition uses the instance definition
+and the returned value is the nesting depth.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>InstanceDefinition</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

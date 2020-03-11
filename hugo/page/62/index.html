@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/sweeptworail/">
-        <h3>SweepTwoRail</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraylinetypepointer/">
+        <h3>SimpleArrayLinetypePointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/sweeptworail/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraylinetypepointer/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&lt;ON_Linetype*&gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayLinetypePointer : IDisposableConstructors  SimpleArrayLinetypePointer() Initializes a new instance. since 6.6  Properties  int Count Gets the amount of linetypes in this array. since 6.6  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.6 void Dispose() Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraymeshpointer/">
+        <h3>SimpleArrayMeshPointer</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraymeshpointer/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged array of mesh pointers. Wrapper for a C++ ON_SimpleArray of ON_Mesh* or const ON_Mesh*. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayMeshPointer : IDisposableConstructors  SimpleArrayMeshPointer() Initializes a new instance.  Properties  int Count Gets the amount of meshes in this array.  Methods  void Add(Mesh mesh,bool asConst) Adds a mesh to the list.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayplane/">
+        <h3>SimpleArrayPlane</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayplane/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_Plane&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayPlane : IDisposableConstructors  SimpleArrayPlane() Initializes a new instance. since 6.0  Properties  int Count Gets the amount of lines in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.0 void Dispose() Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint2d/">
+        <h3>SimpleArrayPoint2d</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint2d/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray&lt;ON_2dPoint&gt; class wrapper. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayPoint2d : IDisposableConstructors  SimpleArrayPoint2d() Initializes a new empty instance. since 5.6  Properties  int Count Gets the amount of points in this array. since 5.6  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 5.6 void Dispose() Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint3d/">
+        <h3>SimpleArrayPoint3d</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint3d/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray&lt;ON_3dPoint&gt;, ON_3dPointArray, ON_PolyLine all have the same size This class wraps all of these C++ versions. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayPoint3d : IDisposableConstructors  SimpleArrayPoint3d() Initializes a new empty instance.  Properties  int Count Gets the amount of points in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraysurfacepointer/">
+        <h3>SimpleArraySurfacePointer</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraysurfacepointer/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray of ON_Surface* or const ON_Surface*. If you are not writing C++ code then this class is not for you.
+public class SimpleArraySurfacePointer : IDisposableConstructors  SimpleArraySurfacePointer() Initializes a new instance.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses. IntPtr NonConstPointer() Gets the non-const pointer (for modification) of this array.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayuint/">
+        <h3>SimpleArrayUint</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayuint/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayUint : IDisposableConstructors  SimpleArrayUint() Initializes a new class. since 6.0 SimpleArrayUint(IEnumerablevalues) Initializes a new class. since 6.0  Properties  int Count Gets the number of elements in this array. since 6.0 uint UnsignedCount Gets the number of elements in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/stringparser/">
+        <h3>StringParser</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/input/stringparser/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input
+Parse strings to numbers, distances and angles
+public class StringParserMethods  static int ParseAngleExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,AngleUnitSystem output_angle_unit_system,double value_out,StringParserSettings parse_results,AngleUnitSystem parsed_unit_system)  since 6.0 static bool ParseAngleExpressionDegrees(string expression,double angle_degrees)  since 6.0 static bool ParseAngleExpressionRadians(string expression,double angle_radians)  since 6.0 static int ParseLengthExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,UnitSystem output_unit_system,double value_out,StringParserSettings parse_results,UnitSystem parsed_unit_system) Parse a string for a length value. Expression can include complex expressions Most complex version of length parsing Returns - Returns the count of characters that were parsed or 0 if the operation was unsuccesful since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/stringparsersettings/">
+        <h3>StringParserSettings</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/input/stringparsersettings/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input
+Parameters for parsing strings
+public class StringParserSettings : IDisposableConstructors  StringParserSettings()  since 6.0  Properties  static StringParserSettings DefaultParseSettings  The default settings parse just about everything in a reasonable way.  Any angle values with unspecified units will be treated as radians. Angles without units can be encountered while parsing formulas, lengths and points and need to be thoughtfully considered in most parsing situations.     since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/subdface/">
+        <h3>SubDFace</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/subdface/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Utility class for generating Breps by sweeping cross section curves over two rail curves. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
-public class SweepTwoRailConstructors SweepTwoRail()  (summary) (since) 5.0  Properties double AngleToleranceRadians  (summary) Gets or sets the angle tolerance in radians. (since) 5.0  bool ClosedSweep  (summary) If the input rails are closed, ClosedSweep determines if the swept Breps will also be closed.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/symbols/">
-        <h3>Symbols</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/symbols/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino
-Characters used for different &lsquo;drafting style&rsquo; symbols
-public class SymbolsProperties static char DegreeSymbol  (summary) Degree symbol used for angles (since) 6.0  static char DiameterSymbol  (summary) Diameter symbol (since) 6.0  static char PlusMinusSymbol  (summary) Plus-Minus tolerance symbol (since) 6.0  static char RadiusSymbol  (summary) Radius symbol (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/taperspacemorph/">
-        <h3>TaperSpaceMorph</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/taperspacemorph/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Morphs
-Deforms objects toward or away from a specified axis.
-public class TaperSpaceMorphConstructors TaperSpaceMorph(Point3d start,Point3d end,double startRadius,double endRadius,bool bFlat,bool infiniteTaper)  (summary) Constructs a taper space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.9 (returns) void This is some return comment  Point3d MorphPoint(Point3d point)  (summary) Morphs an Euclidean point.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/taskcompleteeventargs/">
-        <h3>TaskCompleteEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/taskcompleteeventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Input.Custom
-public class TaskCompleteEventArgsConstructors TaskCompleteEventArgs(Task task,RhinoDoc doc)  (summary) (since) 6.0  Properties RhinoDoc Doc  (summary) (since) 6.0  bool Redraw  (summary) (since) 6.0  Task Task  (summary) (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/text3d/">
-        <h3>Text3d</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/text3d/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-3D aligned text with font settings.
-public class Text3dConstructors Text3d(string text)  (summary) Constructs a new instance of Text3d. (since) 5.0  Text3d(string text,Plane plane,double height)  (summary) Constructs a new instance of Text3d. (since) 5.0  Properties bool Bold  (summary) Gets or sets whether this Text3d object will be drawn in Bold. (since) 5.0  BoundingBox BoundingBox  (summary) Gets the boundingbox for this Text3d object.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/textdot/">
-        <h3>TextDot</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/textdot/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a text dot, or an annotation entity with text that always faces the camera and always has the same size. This class refers to the geometric element that is independent from the document.
-public class TextDotConstructors TextDot(string text,Point3d location)  (summary) Initializes a new textdot based on the text and the location. (since) 5.0  Properties string FontFace  (summary) Font face used for displaying the dot (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/textentity/">
-        <h3>TextEntity</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/textentity/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-public class TextEntityConstructors TextEntity()  (summary) Initializes a new instance of the class. (since) 5.0  Properties TextJustification Justification  (summary) Gets or sets the justification of text in relation to its base point. (since) 5.0  TextHorizontalAlignment TextHorizontalAlignment  (summary) (since) 6.0  TextOrientation TextOrientation  (summary) (since) 6.0  TextVerticalAlignment TextVerticalAlignment  (summary) (since) 6.0  Methods static TextEntity Create(string text,Plane plane,DimensionStyle style,bool wrapped,double rectWidth,double rotationRadians)  (summary) Create Text geometry or None if input is invalid (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/textfields/">
-        <h3>TextFields</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/textfields/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-This Class Processes Text Field Functions
-public class TextFieldsMethods static double Area(string id)  (summary) Returns the area value for a selected object id (since) 7.0 (returns) double This is some return comment  static double Area(string id,string unitSystem)  (summary) Returns the area value for a selected object id in a specified unit system (since) 7.0 (returns) double This is some return comment  static string BlockAttributeText(string key,string prompt,string defaultValue)  (summary) User text associated with a block (since) 7.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/textlog/">
-        <h3>TextLog</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/textlog/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.FileIO
-Used for collecting text data
-public class TextLogConstructors TextLog()  (summary) Creates a text log that stores all text in memory. Use ToString on this version of the TextLog to get the text that we written (since) 5.1  TextLog(IntPtr ptr)  (summary) (since) 6.0  TextLog(string filename)  (summary) Creates a text log that writes all text to a file. If no filename is provided, then text is written to StdOut (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/textobject/">
-        <h3>TextObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/textobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-Rhino Object that represents text geometry and attributes
-public class TextObjectProperties Geometry.TextEntity TextGeometry  (summary) Get the text geometry for this object. (since) 5.0  
+Single face of a SubD
+public class SubDFace : SubDComponentProperties  int EdgeCount Number of edges for this face. Note that EdgeCount is always the same as VertexCount. Two properties are provided simply for clarity. since 7.0 Point3d LimitSurfaceCenterPoint Get the limit surface point location at the center of the face since 7.0 int VertexCount Number of vertices for this face. Note that EdgeCount is always the same as VertexCount.
   </div>
   
 

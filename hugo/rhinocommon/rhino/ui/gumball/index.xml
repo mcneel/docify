@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.UI.Gumball on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/ui/gumball/</link>
+    <description>Recent content in Rhino.UI.Gumball on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GumballAppearanceSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballappearancesettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballappearancesettings/</guid>
+      <description>Namespace: Rhino.UI.Gumball
+public class GumballAppearanceSettingsConstructors  GumballAppearanceSettings()   Properties  int ArcThickness in pixels. int ArrowHeadLength in pixels. int ArrowHeadWidth in pixels. int AxisThickness in pixels. Color ColorMenuButton  Color ColorX Default is Red. Color ColorY Default is Green. Color ColorZ Default is Blue. int FreeTranslate When FreeTranslate is 1, the center translation control can be dragged in any direction and moves the object the gumball controls. When FreeTranslate is 2, the center translation control can be dragged in any direction and moves the object the gumball itself.</description>
+    </item>
+    
+    <item>
+      <title>GumballDisplayConduit</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballdisplayconduit/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballdisplayconduit/</guid>
+      <description>Namespace: Rhino.UI.Gumball
+public class GumballDisplayConduit : IDisposableConstructors  GumballDisplayConduit()   Properties  GumballObject BaseGumball Starting location. bool Enabled  GumballObject Gumball  Transform GumballTransform The gumball transformation is the transformation calculated by comparing the current gumball to the starting BaseGumball. bool InRelocate  GumballPickResult PickResult The inital mouse down event sets PickResult. Transform PreTransform The pre-transform is a transformation that needs to be applied before the gumball transformation. Transform TotalTransform The total transformation is GumballTransform * PreTransform.</description>
+    </item>
+    
+    <item>
+      <title>GumballFrame</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballframe/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballframe/</guid>
+      <description>Namespace: Rhino.UI.Gumball
+Properties  Plane Plane  Vector3d ScaleGripDistance  GumballScaleMode ScaleMode   </description>
+    </item>
+    
+    <item>
+      <title>GumballObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballobject/</guid>
+      <description>Namespace: Rhino.UI.Gumball
+public class GumballObject : IDisposableConstructors  GumballObject()   Properties  GumballFrame Frame   Methods  void Dispose()  bool SetFromArc(Arc arc)  bool SetFromBoundingBox(BoundingBox boundingBox)  bool SetFromBoundingBox(Plane frame,BoundingBox frameBoundingBox) Sets the gumball bounding box with respect to a frame. Returns - True if input is valid and gumball is set. False if input is not valid. In this case, gumball is set to the default.</description>
+    </item>
+    
+    <item>
+      <title>GumballPickResult</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballpickresult/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballpickresult/</guid>
+      <description>Namespace: Rhino.UI.Gumball
+public class GumballPickResultProperties  GumballMode Mode   Methods  void SetToDefault()   </description>
+    </item>
+    
+  </channel>
+</rss>

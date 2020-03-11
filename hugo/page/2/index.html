@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,126 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/collections/archivabledictionary/">
-        <h3>ArchivableDictionary</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletableeventargs/">
+        <h3>DimStyleTableEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/collections/archivabledictionary/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletableeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Collections
-Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
-public class ArchivableDictionaryConstructors ArchivableDictionary()  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive. (since) 5.0  ArchivableDictionary(int version,string name)  (summary) Initializes an instance of a dictionary for writing to a 3dm archive.
+    Namespace: Rhino.DocObjects.Tables
+public class DimStyleTableEventArgs : EventArgsProperties  RhinoDoc Document  since 6.0 DimStyleTableEventType EventType  since 6.0 int Index  since 6.0 DimensionStyle NewState  since 6.0 DimensionStyle OldState  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/areamassproperties/">
-        <h3>AreaMassProperties</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/drawingutilities/">
+        <h3>DrawingUtilities</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/areamassproperties/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/drawingutilities/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Contains static initialization methods and allows access to the computed metrics of area, area centroid and area moments in closed planar curves, in meshes, in surfaces, in hatches and in boundary representations.
-public class AreaMassPropertiesProperties double Area  (summary) Gets the area solution. (since) 5.0  double AreaError  (summary) Gets the uncertainty in the area calculation. (since) 5.0  Point3d Centroid  (summary) Gets the area centroid in the world coordinate system.
+    Namespace: Rhino.UI
+RhinoCommon Drawing Utilities
+public class DrawingUtilitiesMethods  static Bitmap BitmapFromIconResource(string resourceName,Assembly assembly) Load a Icon from an embedded resource and convert it to a bitmap of the specified size. Will look for a icon image that is greater than or equal to the requested size, if all images are less than the requested size the largest image will be used. since 6.12 static Bitmap BitmapFromIconResource(string resourceName,Size bitmapSize,Assembly assembly) Load a Icon from an embedded resource and convert it to a bitmap of the specified size.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/arrowhead/">
-        <h3>Arrowhead</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/extrusionobject/">
+        <h3>ExtrusionObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/arrowhead/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/extrusionobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Arrowhead used by annotation
-public class ArrowheadConstructors Arrowhead()  (summary) Constructor (since) 6.0  Arrowhead(ArrowType arrowType,Guid blockId)  (summary) Constructor (since) 6.0  Properties DimensionStyle.ArrowType ArrowType  (summary) Type of arrowhead used by annotation (since) 6.0  Guid BlockId  (summary) Id of block used for user-defined arrowhead (since) 6.0  
+    Namespace: Rhino.DocObjects
+public class ExtrusionObject : RhinoObjectProperties  Extrusion ExtrusionGeometry   Methods  Extrusion DuplicateExtrusionGeometry()   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/assemblyresolver/">
-        <h3>AssemblyResolver</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filereadoptions/">
+        <h3>FileReadOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/assemblyresolver/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-Assembly Resolver for the Rhino App Domain.
-public class AssemblyResolverMethods static void AddSearchFile(string file)  (summary) Register another file with the Assembly Resolver. File must be a .NET assembly, so it should probably be a dll, rhp or exe. (since) 5.0 (returns) void This is some return comment  static void AddSearchFolder(string folder)  (summary) Register a custom folder with the Assembly Resolver. Folders will be searched recursively, so this could potentially be a very expensive operation.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/asyncrendercontext/">
-        <h3>AsyncRenderContext</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/asyncrendercontext/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-\ingroup rhino_render Inherit from AsyncRenderContext to be able to create asynchronous render engine implementations through RhinoCommon.
-public class AsyncRenderContextProperties Thread RenderThread  (summary) Holder for render thread, that gets set through StartRenderThread() (since) 6.0  RenderWindow RenderWindow  (summary) Handle to the RenderWindow for the instance of this class. This is a convenience property for implementors to use. (since) 6.0  Methods void Dispose()  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/bendspacemorph/">
-        <h3>BendSpaceMorph</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/bendspacemorph/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Morphs
-Deforms objects by bending along a spine arc.
-public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  BendSpaceMorph(Point3d start,Point3d end,Point3d point,double angle,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/beziercurve/">
-        <h3>BezierCurve</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/beziercurve/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a Bezier curve. Note: as an exception, the bezier curve is not derived from .
-public class BezierCurveConstructors BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 2d points (since) 5.0  BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 3d points (since) 5.0  BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 4d points (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/binaryarchiveexception/">
-        <h3>BinaryArchiveException</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/binaryarchiveexception/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/filereadoptions/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.FileIO
-Thrown by BinaryArchiveReader and BinaryArchiveWriter classes when an IO error has occured.
-public class BinaryArchiveExceptionConstructors BinaryArchiveException(string message)  (summary) Initializes a new instance of the class. (since) 5.0  
+public class FileReadOptions : IDisposableConstructors  FileReadOptions()   Properties  bool BatchMode True means you cannot ask questions during reading. (no dialogs, no &ldquo;getters&rdquo;, etc.) bool ImportMode True means we are merging whatever is being read into an existing document. This means you need to consider things like: If the information being read is in a different unit system, it should be scaled if UseScaleGeometry is true.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/binaryarchivefile/">
-        <h3>BinaryArchiveFile</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/filetypelist/">
+        <h3>FileTypeList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/binaryarchivefile/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/filetypelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-public class BinaryArchiveFileConstructors BinaryArchiveFile(string filename,BinaryArchiveMode mode)  (summary) (since) 5.1  Properties BinaryArchiveReader Reader  (summary) (since) 5.1  BinaryArchiveWriter Writer  (summary) (since) 5.1  Methods void Close()  (summary) (since) 5.1 (returns) void This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.1 (returns) void This is some return comment  bool Open()  (summary) (since) 5.
+    Namespace: Rhino.PlugIns
+public class FileTypeListConstructors  FileTypeList()  FileTypeList(string description,string extension)  since 6.0 FileTypeList(string description,string extension,bool showOptionsButtonInFileDialog)  since 6.0  Methods  int AddFileType(string description,IEnumerableextensions)  int AddFileType(string description,IEnumerableextensions,bool showOptionsButtonInFileDialog)  since 6.0 int AddFileType(string description,string extension)  int AddFileType(string description,string extension,bool showOptionsButtonInFileDialog)  since 6.0 int AddFileType(string description,string extension1,string extension2)  int AddFileType(string description,string extension1,string extension2,bool showOptionsButtonInFileDialog)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/binaryarchivereader/">
-        <h3>BinaryArchiveReader</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filewriteoptions/">
+        <h3>FileWriteOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/binaryarchivereader/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/filewriteoptions/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.FileIO
-Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
-public class BinaryArchiveReaderProperties int Archive3dmVersion  (summary) If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+public class FileWriteOptions : IDisposableConstructors  FileWriteOptions()   Properties  string DestinationFileName For use on Apple frameworks only. Retrns the final destination file name. since 6.3 int FileVersion  bool IncludeBitmapTable The file written should include the bitmap table if your File Writing Plug-in supports it. bool IncludeHistory The file written should include history information if your File Writing Plug-In supports it. bool IncludePreviewImage The file written should include a preview image if your File Writing Plug-in supports it.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/font/">
+        <h3>Font</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/font/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+Defines a format for text.
+public class FontConstructors  Font(string familyName)  since 6.0 Font(string familyName,FontWeight weight,FontStyle style,bool underlined,bool strikethrough)  since 6.0  Properties  bool Bold  string Description Returns a long description that includes family, face, weight, stretch and style information. Generally not useful for finding matching fonts. since 6.5 string EnglishFaceName Returns English Facename since 6.9 string EnglishFamilyName  since 6.9 string EnglishQuartetName  since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/fontquartet/">
+        <h3>FontQuartet</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/fontquartet/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+public class FontQuartetProperties  bool HasBoldFont  since 6.7 bool HasBoldItalicFont  since 6.7 bool HasItalicFont  since 6.7 bool HasRegularFont  since 6.7 string QuartetName  since 6.7  Methods  string ToString()  since (unknown)  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/fonts/">
+        <h3>Fonts</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/fonts/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+Rhino.Rumtime.UI
+public class FontsProperties  static Font BoldHeadingFont Returns a font that is 1.2x NormalFont and Bold since 6.0 static Font HeadingFont Returns a font used for dialog headings. 1.2x the size of NormalFont. since 6.0 static Font NormalFont Returns the normal font used for dialog boxes and buttons. since 6.0 static Font SmallFont Returns a font use for small text in dialog boxes. 0.8x the size of NormalFont.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/fonttable/">
+        <h3>FontTable</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/fonttable/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+Font tables store the list of fonts in a Rhino document. The FontTable is now just a wrapper around the DimStyles table.
+public class FontTable : IEnumerable&lt;Font&gt;, Collections.IRhinoTable&lt;Font&gt;Properties  int Count Number of fonts in the table. int CurrentIndex At all times, there is a &ldquo;current&rdquo; font. Unless otherwise specified, new dimension objects are assigned to the current font. The current font is never deleted. Returns: Zero based font index of the current font.
   </div>
   
 

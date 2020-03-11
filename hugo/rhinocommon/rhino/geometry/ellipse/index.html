@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Ellipse &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the values of a plane and the two semiaxes radii in an ellipse.
+Constructors  Ellipse(Plane plane,double radius1,double radius2) Initializes a new ellipse from base plane and both principal radii. Ellipse(Point3d center,Point3d second,Point3d third) Initializes a new ellipse from a center point and the two semiaxes intersections.  Properties  bool IsValid Returns an indication of the validity of this ellipse. since 6.0 Plane Plane Gets or sets the base plane of the ellipse.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Ellipse</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the values of a plane and the two semiaxes radii in an ellipse.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Ellipse(Plane plane,double radius1,double radius2)</dt>
+<dd>Initializes a new ellipse from base plane and both principal radii.</dd>
+<dt>Ellipse(Point3d center,Point3d second,Point3d third)</dt>
+<dd>Initializes a new ellipse from a center point and the two semiaxes intersections.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool IsValid</dt>
+<dd>Returns an indication of the validity of this ellipse.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Gets or sets the base plane of the ellipse.</dd>
+<dt>double Radius1</dt>
+<dd>Gets or sets the radius of the ellipse along the base plane X semiaxis.</dd>
+<dt>double Radius2</dt>
+<dd>Gets or sets the radius of the ellipse along the base plane Y semiaxis.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool EpsilonEquals(Ellipse other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve()</dt>
+<dd>Constructs a nurbs curve representation of this ellipse. 
+This is equivalent to calling NurbsCurve.CreateFromEllipse().</dd>
+<dd>Returns - A nurbs curve representation of this ellipse or None if no such representation could be made.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Ellipse</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

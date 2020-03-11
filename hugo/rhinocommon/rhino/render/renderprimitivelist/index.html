@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RenderPrimitiveList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+public class RenderPrimitiveList : IDisposableProperties  int Count Number of meshes in this list since 5.7 RhinoObject RhinoObject The Rhino object associated with this list since 5.7 bool UseObjectsMappingChannels Returns True if the texture mapping will be taken from the Rhino object otherwise; the texture mapping will use the texture coordinates on the mesh only. since 5.7  Methods  void Add(Box box,RenderMaterial material) Add primitive box and material.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RenderPrimitiveList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderPrimitiveList</span> : IDisposable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Number of meshes in this list</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> RhinoObject</dt>
+<dd>The Rhino object associated with this list</dd>
+<dd>since 5.7</dd>
+<dt>bool UseObjectsMappingChannels</dt>
+<dd>Returns True if the texture mapping will be taken from the Rhino
+object otherwise; the texture mapping will use the texture coordinates
+on the mesh only.</dd>
+<dd>since 5.7</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Add(Box box,RenderMaterial material)</dt>
+<dd>Add primitive box and material.</dd>
+<dd>since 5.7</dd>
+<dt>void Add(Cone cone,Plane truncation,RenderMaterial material)</dt>
+<dd>Add primitive cone and material.</dd>
+<dd>since 5.7</dd>
+<dt>void Add(Mesh mesh,RenderMaterial material)</dt>
+<dd>Add mesh and material.</dd>
+<dd>since 5.7</dd>
+<dt>void Add(Mesh mesh,RenderMaterial material,Transform t)</dt>
+<dd>Add mesh and material.</dd>
+<dd>since 6.12</dd>
+<dt>void Add(PlaneSurface plane,RenderMaterial material)</dt>
+<dd>Add primitive plane and material.</dd>
+<dd>since 5.7</dd>
+<dt>void Add(Sphere sphere,RenderMaterial material)</dt>
+<dd>Add primitive sphere and material.</dd>
+<dd>since 5.7</dd>
+<dt>bool AutoDeleteMaterialsOn()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool AutoDeleteMeshesOn()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Clear()</dt>
+<dd>Remove all primitives from this list</dd>
+<dd>since 5.7</dd>
+<dt>void ConvertMeshesToTriangles()</dt>
+<dd>Convert mesh quad faces to triangle faces.</dd>
+<dd>since 5.7</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetInstanceTransform(int index)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> Material(int index)</dt>
+<dd>Call this method to get the render material associated with the mesh at
+the specified index.  Will return None if there is no
+material associated with the requested mesh.</dd>
+<dd>Returns - If there is a render material associated at the requested index then
+the material is returned otherwise None is returned.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> Mesh(int index)</dt>
+<dd>Get the mesh for the primitive at the specified index. If the item at
+this index is a primitive type other than a mesh then it mesh
+representation is returned.</dd>
+<dd>Returns - Returns the mesh for the primitive at the specified index. If the item
+at this index is a primitive type other than a mesh then it mesh
+representation is returned.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> MeshInstance(int index,Transform instance_transform)</dt>
+<dd>Get the mesh for the primitive at the specified index. If the item at
+this index is a primitive type other than a mesh then it mesh
+representation is returned.</dd>
+<dd>Returns - Returns the mesh for the primitive at the specified index. If the item
+at this index is a primitive type other than a mesh then it mesh
+representation is returned.</dd>
+<dd>since 6.12</dd>
+<dt><a href="/rhinocommon/rhino/render/renderprimitivetype/">RenderPrimitiveType</a> PrimitiveType(int index)</dt>
+<dd>Type of primitive object at this index.</dd>
+<dd>Returns - Primitive type of the item at this index.</dd>
+<dd>since 5.7</dd>
+<dt>void SetInstanceTransform(int index,Transform xform)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a>[] ToMaterialArray()</dt>
+<dd>Call this method to see if there are any RenderMaterials associated
+with the meshes.  Each primitive can optionally have a RenderMaterial
+associated with it, if the RenderMaterial is None then check for a
+RhinoObject.RenderMaterial.</dd>
+<dd>Returns - Return an array that of the same size as the ToMeshArray() containing
+the RenderMaterial associated with the mesh, may contain None entries
+if there is no RenderMaterial associated with the custom mesh.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a>[] ToMeshArray()</dt>
+<dd>Call this method to get a array of meshes, all primitives will get
+meshed and the meshes will get included in the returned array.</dd>
+<dd>Returns - Return an array of meshes from this list, this will convert all
+primitives to meshes.</dd>
+<dd>since 5.7</dd>
+<dt>bool TryGetBox(int index,Box box)</dt>
+<dd>Call this method to get a box at the specified index.</dd>
+<dd>Returns - Return True if the index is in range and the primitive at the requested
+index is a box otherwise returns false.</dd>
+<dd>since 5.7</dd>
+<dt>bool TryGetCone(int index,Cone cone,Plane truncation)</dt>
+<dd>Call this method to get a box at the specified index.</dd>
+<dd>Returns - Return True if the index is in range and the primitive at the requested
+index is a box otherwise returns false.</dd>
+<dd>since 5.7</dd>
+<dt>bool TryGetPlane(int index,PlaneSurface plane)</dt>
+<dd>Call this method to get a box at the specified index.</dd>
+<dd>Returns - Return True if the index is in range and the primitive at the requested
+index is a plane otherwise returns false.</dd>
+<dd>since 5.7</dd>
+<dt>bool TryGetSphere(int index,Sphere sphere)</dt>
+<dd>Call this method to get a box at the specified index.</dd>
+<dd>Returns - Return True if the index is in range and the primitive at the requested
+index is a box otherwise returns false.</dd>
+<dd>since 5.7</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RenderPrimitiveList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Geometry.Morphs on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/</link>
+    <description>Recent content in Rhino.Geometry.Morphs on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BendSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/bendspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/bendspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Deforms objects by bending along a spine arc.
+public class BendSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric) Constructs a bend space morph. since 5.9 BendSpaceMorph(Point3d start,Point3d end,Point3d point,double angle,bool straight,bool symmetric) Constructs a bend space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>FlowSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/flowspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/flowspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Re-aligns objects from a base curve to a target curve.
+public class FlowSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  FlowSpaceMorph(Curve curve0,Curve curve1,bool preventStretching) Constructs a flow space morph. since 5.9 FlowSpaceMorph(Curve curve0,Curve curve1,bool reverseCurve0,bool reverseCurve1,bool preventStretching) Constructs a flow space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>MaelstromSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/maelstromspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/maelstromspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Deforms objects in a spiral as if they were caught in a whirlpool.
+public class MaelstromSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  MaelstromSpaceMorph(Plane plane,double radius0,double radius1,double angle) Constructs a maelstrom space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.9 Point3d MorphPoint(Point3d point) Morphs an Euclidean point.</description>
+    </item>
+    
+    <item>
+      <title>SplopSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/splopspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/splopspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Rotates, scales, and wraps objects on a surface.
+public class SplopSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam) Constructs a flow space morph. since 5.9 SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale) Constructs a flow space morph. since 5.9 SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale,double angle) Constructs a flow space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.</description>
+    </item>
+    
+    <item>
+      <title>SporphSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/sporphspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/sporphspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Deforms an object from a source surface to a target surface.
+public class SporphSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  SporphSpaceMorph(Surface surface0,Surface surface1) Constructs a sporph space morph. since 5.9 SporphSpaceMorph(Surface surface0,Surface surface1,Point2d surface0Param,Point2d surface1Param) Constructs a sporph space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>StretchSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/stretchspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/stretchspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Deforms objects toward or away from a specified axis.
+public class StretchSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  StretchSpaceMorph(Point3d start,Point3d end,double length) Constructs a stretch space morph. since 5.9 StretchSpaceMorph(Point3d start,Point3d end,Point3d point) Constructs a stretch space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>TaperSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/taperspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/taperspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Deforms objects toward or away from a specified axis.
+public class TaperSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  TaperSpaceMorph(Point3d start,Point3d end,double startRadius,double endRadius,bool bFlat,bool infiniteTaper) Constructs a taper space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.9 Point3d MorphPoint(Point3d point) Morphs an Euclidean point.</description>
+    </item>
+    
+    <item>
+      <title>TwistSpaceMorph</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/twistspacemorph/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/twistspacemorph/</guid>
+      <description>Namespace: Rhino.Geometry.Morphs
+Deforms objects by rotating them around an axis.
+public class TwistSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  TwistSpaceMorph() Constructs a twist space morph. since 5.1  Properties  bool InfiniteTwist If true, the deformation is constant throughout the object, even if the axis is shorter than the object. If false, the deformation takes place only the length of the axis. since 5.1 double TwistAngleRadians Twist angle in radians. since 5.</description>
+    </item>
+    
+  </channel>
+</rss>

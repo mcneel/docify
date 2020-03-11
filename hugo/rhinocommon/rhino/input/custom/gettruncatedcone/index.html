@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GetTruncatedCone &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetTruncatedCone : IDisposableConstructors  GetTruncatedCone()  since 7.0  Properties  bool Cap Gets or sets whether or not the output should be capped. since 7.0 CylinderConstraint CylinderConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl. By default the vertical cone/cyl option not available but is not selected.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GetTruncatedCone</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input.Custom</a></em></p>
+<p>Class provides user interface to define a truncated cone.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GetTruncatedCone</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>GetTruncatedCone()</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool Cap</dt>
+<dd>Gets or sets whether or not the output should be capped.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/input/custom/cylinderconstraint/">CylinderConstraint</a> CylinderConstraint</dt>
+<dd>State of the cone/cyl constraint option. When the cone/cyl option is
+selected, the circle is being made as a base for a cone/cyl.
+By default the vertical cone/cyl option not available but is not
+selected.  By default the &ldquo;Vertical&rdquo; option applies to VerticalCircle.</dd>
+<dd>since 7.0</dd>
+<dt>double DefaultSize</dt>
+<dd>Default radius or diameter (based on InDiameterMode)</dd>
+<dd>since 7.0</dd>
+<dt>double Height</dt>
+<dd>Height of truncated cone.</dd>
+<dd>since 7.0</dd>
+<dt>bool InDiameterMode</dt>
+<dd>Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter</dd>
+<dd>since 7.0</dd>
+<dt>double SecondRadius</dt>
+<dd>Radius of second circle.</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dd>since 7.0</dd>
+<dt>Commands.Result Get(Brep truncatedCone)</dt>
+<dd>Prompt for the getting of a truncated cone.</dd>
+<dd>Returns - The result of the getting operation.</dd>
+<dd>since 7.0</dd>
+<dt>Commands.Result GetMesh(int verticalFaces,int aroundFaces,int capStyle,Mesh truncatedCone)</dt>
+<dd>Prompt for the getting of a mesh truncated cone.</dd>
+<dd>Returns - The result of the getting operation.</dd>
+<dd>since 7.0</dd>
+<dt>Commands.Result GetMesh(int verticalFaces,int aroundFaces,Mesh truncatedCone)</dt>
+<dd>Prompt for the getting of a mesh truncated cone.</dd>
+<dd>Returns - The result of the getting operation.</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GetTruncatedCone</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,128 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/contentundoblocker/">
-        <h3>ContentUndoBlocker</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/snapshottable/">
+        <h3>SnapshotTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/contentundoblocker/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/snapshottable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class ContentUndoBlockerConstructors ContentUndoBlocker()  (summary) Constructs a ContentUndoBlocker object inside a using block to block undo when modifying a RenderContent while a ContentUndoHelper is active. Alternatively - create the ContentUndoBlocker and explicitly call Dispose when you are done. (since) 5.10  Methods void Dispose()  (summary) (since) 5.10 (returns) void This is some return comment  
+    Namespace: Rhino.DocObjects.Tables
+All snapshots in a rhino document.
+public class SnapshotTableProperties  RhinoDoc Document Document that owns this table. since 6.7 string[] Names Array of Snapshot names. Returns - A string array with the names of all Snapshots in the document. since 6.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/contentundohelper/">
-        <h3>ContentUndoHelper</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/stringtable/">
+        <h3>StringTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/contentundohelper/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/stringtable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Content undo helper to be used with &ldquo;using {}&rdquo; to enclose a block of changes.
-public class ContentUndoHelperConstructors ContentUndoHelper(RhinoDoc doc,String description)  (summary) Constructs a ContentUndoHelper object inside a using block to handle undo when modifying a RenderContent or - alternatively - create the ContentUndoHelper and explicitly call Dispose when you are done. (since) 6.0  Methods bool AddContent(RenderContent content,RenderContent parent)  (summary) Call this after adding a content.
+    Namespace: Rhino.DocObjects.Tables
+Collection of document user data strings
+public class StringTableProperties  int Count The number of user data strings in the current document. RhinoDoc Document Document that owns this object table. int DocumentDataCount  since 6.0 int DocumentUserTextCount  since 6.0  Methods  void Delete(string key)  void Delete(string section,string entry) Removes user data strings from the document. string[] GetEntryNames(string section) Return list of all entry names for a given section of user data strings in the document.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/contentuuids/">
-        <h3>ContentUuids</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/textfields/">
+        <h3>TextFields</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/contentuuids/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Content Guids of RenderContent provided by the RDK SDK.
-These Guids can be used to check against RenderContent.TypeId.
-public class ContentUuidsProperties static Guid AdvancedDotTextureType  (summary) (since) 6.0  static Guid BasicEnvironmentCCI  (summary) (since) 6.0  static Guid BasicEnvironmentType  (summary) (since) 6.0  static Guid BasicMaterialCCI  (summary) (since) 6.0  static Guid BasicMaterialType  (summary) (since) 6.0  static Guid BitmapTextureType  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/controlpoint/">
-        <h3>ControlPoint</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/controlpoint/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents control point geometry with three-dimensional position and weight.
-Constructors ControlPoint(double x,double y,double z)  (summary) Constructs a new world 3-D, or Euclidean, control point. The 4-D representation is (x, y, z, 1.0). (since) 5.0  ControlPoint(double x,double y,double z,double weight)  (summary) Constructs a new homogeneous control point, where the 4-D representation is (x, y, z, w). The world 3-D, or Euclidean, representation is (x/w, y/w, z/w). (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/convertibleextensions/">
-        <h3>ConvertibleExtensions</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/convertibleextensions/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Extension methods for IConvertible that work when an object is a Variant.
-public class ConvertibleExtensionsMethods static Color4f ToColor4f(IConvertible variant)  (summary) (since) 6.0 (returns) Color4f This is some return comment  static Vector2d ToVector2d(IConvertible variant)  (summary) (since) 6.0 (returns) Vector2d This is some return comment  static Vector3d ToVector3d(IConvertible variant)  (summary) (since) 6.0 (returns) Vector3d This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/corruptgeometryexception/">
-        <h3>CorruptGeometryException</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/corruptgeometryexception/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/textfields/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Runtime
-Thrown when Rhino finds a brep or mesh that will cause a crash if used for calculations.
-public class CorruptGeometryExceptionProperties CommonObject CommonObject  (summary) Corrupt geometry .NET class (since) 6.10  IntPtr Pointer  (summary) pointer to base geometry (ON_Object*) (since) 6.10  
+This Class Processes Text Field Functions
+public class TextFieldsMethods  static double Area(string id) Returns the area value for a selected object id since 7.0 static double Area(string id,string unitSystem) Returns the area value for a selected object id in a specified unit system since 7.0 static string BlockAttributeText(string key,string prompt,string defaultValue) User text associated with a block since 7.0 static int BlockInstanceCount(string instanceDefinitionNameOrId) Returns the number of block instances found in the document with the specified block definition name or the instance reference id.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/createprevieweventargs/">
-        <h3>CreatePreviewEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/textobject/">
+        <h3>TextObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/createprevieweventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/textobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Used in RenderPlugIn virtual CreatePreview function
-public class CreatePreviewEventArgsProperties bool Cancel  (summary) Get set by Rhino if the preview generation should be canceled for this (since) 5.1  RenderContentKind ContentKind  (summary) Description of content that preview is being generated for. (since) 6.0  Guid ContentTypeId  (summary) The class Id of content that preview is being generated for. (since) 6.0  Rhino.Render.RenderEnvironment Environment  (summary) The environment that the previewed object is rendered in.
+    Namespace: Rhino.DocObjects
+Rhino Object that represents text geometry and attributes
+public class TextObject : AnnotationObjectBaseProperties  TextEntity TextGeometry Get the text geometry for this object.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/createtexture2dprevieweventargs/">
-        <h3>CreateTexture2dPreviewEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/toolbar/">
+        <h3>Toolbar</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/createtexture2dprevieweventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/toolbar/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class CreateTexture2dPreviewEventArgsProperties System.Drawing.Bitmap PreviewImage  (summary) Initially null. If this image is set, then this image will be used for the preview. If never set, the default internal simulation preview will be used. (since) 5.1  System.Drawing.Size PreviewImageSize  (summary) Pixel size of the image that is being requested for the preview scene (since) 5.1  
+    Namespace: Rhino.UI
+public class ToolbarProperties  static Size BitmapSize  since 6.0 static Size TabSize  since 6.0 Guid Id  string Name   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/cullobjecteventargs/">
-        <h3>CullObjectEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/toolbarfile/">
+        <h3>ToolbarFile</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/cullobjecteventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/toolbarfile/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-public class CullObjectEventArgsProperties bool CullObject  (summary) (since) 5.3  Rhino.DocObjects.RhinoObject RhinoObject  (summary) (since) 5.3  uint RhinoObjectSerialNumber  (summary) Gets the rhino object runtime serial number. (since) 6.14  
+    Namespace: Rhino.UI
+public class ToolbarFileProperties  int GroupCount  Guid Id  string Name  string Path Full path to this file on disk int ToolbarCount   Methods  bool Close(bool prompt)  ToolbarGroup GetGroup(int index)  ToolbarGroup GetGroup(string name)  Toolbar GetToolbar(int index)  bool Save()  bool SaveAs(string path)   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/cursortooltipsettings/">
-        <h3>CursorTooltipSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/toolbarfilecollection/">
+        <h3>ToolbarFileCollection</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/cursortooltipsettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/toolbarfilecollection/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Cursor tooltips place information at the cursor location. Note: Turning on cursor tooltips turns off object snap cursors.
-public class CursorTooltipSettingsProperties static bool AutoSuppress  (summary) Attempts to display only the most useful tooltip. (since) 5.0  static System.Drawing.Color BackgroundColor  (summary) Tooltip background color. (since) 5.0  static bool CommandPromptPane  (summary) Displays the current command prompt. (since) 5.0  static bool DistancePane  (summary) Displays the distance from the last picked point.
+    Namespace: Rhino.UI
+public class ToolbarFileCollection : IEnumerable&lt;ToolbarFile&gt;Properties  static bool MruSidebarIsVisible  static bool SidebarIsVisible  int Count Number of open toolbar files  Methods  ToolbarFile FindByName(string name,bool ignoreCase)  ToolbarFile FindByPath(string path)  IEnumeratorGetEnumerator()  ToolbarFile Open(string path)   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/toolbargroup/">
+        <h3>ToolbarGroup</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/toolbargroup/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+public class ToolbarGroupProperties  Guid Id  bool IsDocked  string Name  bool Visible   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/transformobjectlist/">
+        <h3>TransformObjectList</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/collections/transformobjectlist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Collections
+Used by the TransformCommand and GetTransform classes.
+public class TransformObjectList : IDisposableConstructors  TransformObjectList()   Properties  int Count Number of elements in this list since 5.10 bool DisplayFeedbackEnabled  int GripCount Number of elements in grip list since 6.0 int GripOwnerCount Number of elements in grip owner list since 6.0  Methods  void Add(ObjRef objref) Add an ObjRef to this list. Use this to add Polyedges so the references are properly counted since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/unroller/">
+        <h3>Unroller</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/unroller/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents the operation of unrolling a single surface.
+public class UnrollerConstructors  Unroller(Brep brep) Initializes a new instance of the class with a brep. Unroller(Surface surface) Initializes a new instance of the class with surface.  Properties  double AbsoluteTolerance Gets or sets the absolute tolerance for the unrolling operation. Absolute tolerance is used in the evaluation of new entities, such as intersections, reprojections and splits.In the current implementation, absolute tolerance is used in tessellating rails, fitting curves and pulling back trims.
   </div>
   
 

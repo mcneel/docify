@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MaterialRefs &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+If you are developing a high quality plug-in renderer, and a user is assigning a custom render material to this object, then add rendering material information to the MaterialRefs dictionary.
+Note to developers: As soon as the MaterialRefs dictionary contains items rendering material queries slow down. Do not populate the MaterialRefs dictionary when setting the MaterialIndex will take care of your needs.
+public class MaterialRefs : IDictionary&amp;lt;Guid, MaterialRef&amp;gt;Properties  int Count Gets the number of elements contained in this dictionary since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MaterialRefs</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>If you are developing a high quality plug-in renderer, and a user is
+assigning a custom render material to this object, then add rendering
+material information to the MaterialRefs dictionary.</p>
+<p>Note to developers:
+As soon as the MaterialRefs dictionary contains items rendering
+material queries slow down.  Do not populate the MaterialRefs
+dictionary when setting the MaterialIndex will take care of your needs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaterialRefs</span> : IDictionary&lt;Guid, MaterialRef&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Gets the number of elements contained in this dictionary</dd>
+<dd>since 5.10</dd>
+<dt>bool IsReadOnly</dt>
+<dd>IDictionary required property, always returns False for this dictionary.</dd>
+<dd>since 5.10</dd>
+<dt>ICollection<!-- raw HTML omitted --> Keys</dt>
+<dd>Gets an ICollection containing the plug-in Id&rsquo;s in this dictionary.</dd>
+<dd>since 5.10</dd>
+<dt>ICollection<!-- raw HTML omitted --> Values</dt>
+<dd>Gets an ICollection containing the MaterialRef objects in this
+dictionary.</dd>
+<dd>since 5.10</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Add(Guid key,MaterialRef value)</dt>
+<dd>Add or replace an element with the provided key and value to this dictionary.</dd>
+<dd>since 5.10</dd>
+<dt>void Add(KeyValuePair&lt;Guid, MaterialRef&gt; item)</dt>
+<dd>Adds an item to this dictionary.</dd>
+<dd>since (unknown)</dd>
+<dt>void Clear()</dt>
+<dd>Removes all items from this dictionary.</dd>
+<dd>since 5.10</dd>
+<dt>bool Contains(KeyValuePair&lt;Guid, MaterialRef&gt; item)</dt>
+<dd>Determines whether this dictionary contains a specific value.</dd>
+<dd>Returns - True if item is found in this dictionary; otherwise, false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool ContainsKey(Guid key)</dt>
+<dd>Determines whether this dictionary contains an MaterialRef with the
+specified plug-in id.</dd>
+<dd>Returns - True if this dictionary contains an element with the specified plug-in
+Id; otherwise, false.</dd>
+<dd>since 5.10</dd>
+<dt>void CopyTo(KeyValuePair&lt;Guid, MaterialRef&gt;[] array,int arrayIndex)</dt>
+<dd>Copies the elements of this dictionary to an System.Array, starting at
+a particular System.Array index.</dd>
+<dd>since (unknown)</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/materialref/">MaterialRef</a> Create(MaterialRefCreateParams createParams)</dt>
+<dd>Call this method to create a MaterialRef which can be used when calling
+one of the Add methods.</dd>
+<dd>Returns - A temporary MaterialRef object, the caller is responsible for disposing
+of this object.</dd>
+<dd>since 5.10</dd>
+<dt>IEnumerator&lt;KeyValuePair&lt;Guid, MaterialRef&raquo; GetEnumerator()</dt>
+<dd>Returns an enumerator that iterates through this dictionary.</dd>
+<dd>Returns - A IEnumerator that can be used to iterate this dictionary.</dd>
+<dd>since 5.10</dd>
+<dt>bool Remove(Guid key)</dt>
+<dd>Removes the MaterialRef with the specified plug-in Id from this
+dictionary.</dd>
+<dd>Returns - True if the MaterialRef is successfully removed; otherwise, false. This
+method also returns False if key was not found in the original dictionary.</dd>
+<dd>since 5.10</dd>
+<dt>bool Remove(KeyValuePair&lt;Guid, MaterialRef&gt; item)</dt>
+<dd>Removes the element with the specified plug-in id from the this dictionary.</dd>
+<dd>since (unknown)</dd>
+<dt>bool TryGetValue(Guid key,MaterialRef value)</dt>
+<dd>Gets the value associated with the specified key.</dd>
+<dd>Returns - True if this dictionary contains a MaterialRef with the specified key;
+otherwise, false.</dd>
+<dd>since 5.10</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MaterialRefs</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

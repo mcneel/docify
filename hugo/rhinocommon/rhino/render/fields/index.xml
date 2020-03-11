@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.Fields on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/render/fields/</link>
+    <description>Recent content in Rhino.Render.Fields on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/render/fields/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GuidField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/guidfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/guidfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Guid field value class
+public class GuidField : FieldProperties  Guid Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>TransformField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/transformfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/transformfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Transform field value class
+public class TransformField : FieldProperties  Transform Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>BoolField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/boolfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/boolfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+bool field value class
+public class BoolField : FieldProperties  bool Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>ByteArrayField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/bytearrayfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/bytearrayfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+ByteArray field value class
+public class ByteArrayField : FieldProperties  byte[] Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Color4fField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/color4ffield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/color4ffield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Color4f field value class
+public class Color4fField : FieldProperties  Color SystemColorValue Gets or sets the field value since 5.1 Color4f Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>DateTimeField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/datetimefield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/datetimefield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+DateTime field value class
+public class DateTimeField : FieldProperties  DateTime Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>DoubleField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/doublefield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/doublefield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+double field value class
+public class DoubleField : FieldProperties  double Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Field</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/field/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/field/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Generic data fields used to add publicly accessible properties to RenderContent.FieldDictionary. These should be created by calling a FieldDictaionary.Add() method on a Render content object. These are allocated after the RenderContent object&amp;rsquo;s C++ object is created and added to the underlying C++ objects content dictionary, who ever allocates a field is responsible for deleting it so these objects clean up the C++ pointers when they are disposed of.</description>
+    </item>
+    
+    <item>
+      <title>FieldDictionary</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/fielddictionary/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/fielddictionary/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Dictionary containing RenderContent data fields, add fields to this dictionary in your derived RenderContent classes constructor. Get field values using the TryGetdata type methods and set them using the Set() method.
+public class FieldDictionary : IEnumerableMethods  BoolField Add(string key,bool value) Add a new BoolField to the dictionary. This will be a data only field and not show up in the content browsers. since 5.1 BoolField Add(string key,bool value,string prompt) Add a new BoolField to the dictionary.</description>
+    </item>
+    
+    <item>
+      <title>FloatField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/floatfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/floatfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+float field value class
+public class FloatField : FieldProperties  float Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>IntField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/intfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/intfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Integer field value class
+public class IntField : FieldProperties  int Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Point2dField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/point2dfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/point2dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Point2d field value class
+public class Point2dField : FieldProperties  Point2d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Point3dField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/point3dfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/point3dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Point3d field value class
+public class Point3dField : FieldProperties  Point3d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Point4dField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/point4dfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/point4dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Point4d field value class
+public class Point4dField : FieldProperties  Point4d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>StringField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/stringfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/stringfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+String field value class
+public class StringField : FieldProperties  string Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Vector2dField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/vector2dfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/vector2dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Vector2d field value class
+public class Vector2dField : FieldProperties  Vector2d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+    <item>
+      <title>Vector3dField</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/fields/vector3dfield/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/fields/vector3dfield/</guid>
+      <description>Namespace: Rhino.Render.Fields
+Vector3d field value class
+public class Vector3dField : FieldProperties  Vector3d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  </description>
+    </item>
+    
+  </channel>
+</rss>

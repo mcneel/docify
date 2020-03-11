@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LinetypeTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class LinetypeTable :RhinoDocCommonTable&amp;lt;Linetype&amp;gt;, ICollection&amp;lt;Linetype&amp;gt;Properties  int ActiveCount Returns number of linetypes in the linetypes table, excluding deleted linetypes. string ByLayerLinetypeName Returns the text name of the bylayer linetype. string ByParentLinetypeName Returns the text name of the byparent linetype. since 6.0 ModelComponentType ComponentType  since 6.0 string ContinuousLinetypeName Returns the text name of the continuous linetype. int Count Returns number of linetypes in the linetypes table, including deleted linetypes.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LinetypeTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinetypeTable</span> :
+    RhinoDocCommonTable&lt;Linetype&gt;, ICollection&lt;Linetype&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int ActiveCount</dt>
+<dd>Returns number of linetypes in the linetypes table, excluding deleted linetypes.</dd>
+<dt>string ByLayerLinetypeName</dt>
+<dd>Returns the text name of the bylayer linetype.</dd>
+<dt>string ByParentLinetypeName</dt>
+<dd>Returns the text name of the byparent linetype.</dd>
+<dd>since 6.0</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>string ContinuousLinetypeName</dt>
+<dd>Returns the text name of the continuous linetype.</dd>
+<dt>int Count</dt>
+<dd>Returns number of linetypes in the linetypes table, including deleted linetypes.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/linetype/">Linetype</a> CurrentLinetype</dt>
+<dd>Returns reference to the current linetype. Note that this reference may
+become invalid after a call to AddLinetype().</dd>
+<dt>int CurrentLinetypeIndex</dt>
+<dd>At all times, there is a &ldquo;current&rdquo; linetype.  Unless otherwise specified,
+new objects are assigned to the current linetype. If the current linetype
+source is LinetypeFromLayer the object&rsquo;s layer&rsquo;s linetype is used instead.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectlinetypesource/">ObjectLinetypeSource</a> CurrentLinetypeSource</dt>
+<dd>Source used by an object to determine its current linetype to be used by new objects.</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Document that owns this table.</dd>
+<dt>double LinetypeScale</dt>
+<dd>For display in Rhino viewports, the linetypes are scaled by a single scale
+factor for all viewports. This is not used for printing, where all linetype
+patterns are scaled to print in their defined size 1:1 on the paper.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add(Linetype linetype)</dt>
+<dd>Adds a new linetype with specified definition to the linetype table.</dd>
+<dd>Returns - Index of newline type or -1 on error.</dd>
+<dt>int Add(string name,IEnumerable<!-- raw HTML omitted --> segmentLengths)</dt>
+<dd>Adds a new linetype with specified definition to the linetype table.</dd>
+<dd>Returns - Index of new linetype or -1 on error.</dd>
+<dt>int AddReferenceLinetype(Linetype linetype)</dt>
+<dd>Adds a reference linetypes that will not be saved in files.</dd>
+<dd>Returns - Index of new linetype or -1 on error.</dd>
+<dt>bool Delete(IEnumerable<!-- raw HTML omitted --> indices,bool quiet)</dt>
+<dd>Deletes multiple linetypes.</dd>
+<dd>Returns - True if operation succeeded.</dd>
+<dt>bool Delete(int index,bool quiet)</dt>
+<dd>Deletes linetype.</dd>
+<dd>Returns - True if successful. False if linetypeIndex is out of range or the
+linetype cannot be deleted because it is the current linetype or
+because it linetype is referenced by active geometry.</dd>
+<dt>bool Delete(Linetype item)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int Find(Guid id,bool ignoreDeletedLinetypes)</dt>
+<dd>Finds a linetype with a matching ID.</dd>
+<dd>Returns - Zero or a positive value if the index of the linetype with the given ID is found.
+-1 if no linetype has the given ID.</dd>
+<dt>int Find(string name)</dt>
+<dd>Finds the linetype with a given name.</dd>
+<dd>Returns - &gt;=0 index of the linetype with the given name
+-1  no linetype has the given name.</dd>
+<dd>since 6.0</dd>
+<dt>int Find(string name,bool ignoreDeletedLinetypes)</dt>
+<dd>Obsolete. Use the other overload.</dd>
+<dd>Returns - &gt;=0 index of the linetype with the given name
+-1  no linetype has the given name.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/linetype/">Linetype</a> FindIndex(int index)</dt>
+<dd>Retrieves a Linetype object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</dd>
+<dd>Returns - A Linetype object, or None if none was found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/linetype/">Linetype</a> FindName(string name)</dt>
+<dd>Finds the linetype with a given name.</dd>
+<dd>Returns - A linetype, or None if the name does not exist.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd></dd>
+<dt>string GetUnusedLinetypeName()</dt>
+<dd>Gets unused linetype name used as default when creating new linetypes.</dd>
+<dd>Returns - The unused linetype name.</dd>
+<dd>since 6.0</dd>
+<dt>string GetUnusedLinetypeName(bool ignoreDeleted)</dt>
+<dd>Obsolete. Use the other overload. Gets unused linetype name used as default when creating new linetypes.</dd>
+<dd>Returns - The unused linetype name.</dd>
+<dt>int LinetypeIndexForObject(RhinoObject rhinoObject)</dt>
+<dd>Returns the effective linetype index to be used to find the 
+linetype definition to draw an object. If an object&rsquo;s linetype
+source is LinetypeFromObject, the linetype index in the object&rsquo;s
+attributes is used. If an object&rsquo;s linetype source is LinetypeFromLayer
+the linetype index from the object&rsquo;s layer is used.</dd>
+<dd>Returns - The effective linetype index.</dd>
+<dt>int LoadDefaultLinetypes()</dt>
+<dd>Fills in the linetype table with any default linetypes not already included.</dd>
+<dd>Returns - The number of default linetypes added to the linetype table.</dd>
+<dd>since 6.0</dd>
+<dt>bool Modify(Linetype linetype,int index,bool quiet)</dt>
+<dd>Modify linetype settings.</dd>
+<dd>Returns - True if successful. False if linetype_index is out of range or the
+settings attempt to lock or hide the current linetype.</dd>
+<dt>bool SetCurrentLinetypeIndex(int linetypeIndex,bool quiet)</dt>
+<dd>At all times, there is a &ldquo;current&rdquo; linetype. Unless otherwise specified, new objects
+are assigned to the current linetype. The current linetype is never deleted.</dd>
+<dd>Returns - True if current linetype index successfully set.</dd>
+<dt>bool Undelete(int index)</dt>
+<dd>Restores a linetype that has been deleted.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool UndoModify(int index)</dt>
+<dd>If the linetype has been modified and the modifcation can be undone,
+then UndoModify() will restore the linetype to its previous state.</dd>
+<dd>Returns - True if this linetype had been modified and the modifications were undone.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LinetypeTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RTreeEventArgs &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents event data that is passed when when an item that meets certain criteria is found and the passed RTree event is raised.
+public class RTreeEventArgs : EventArgsProperties  bool Cancel Gets or sets a value that determines if the search should be conducted farther. int Id Gets the identifier of the found item. int IdB If search is using two r-trees, IdB is element b in the search.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RTreeEventArgs</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents event data that is passed when when an item that meets certain 
+criteria is found and the passed RTree event is raised.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RTreeEventArgs</span> : EventArgs
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>bool Cancel</dt>
+<dd>Gets or sets a value that determines if the search should be conducted farther.</dd>
+<dt>int Id</dt>
+<dd>Gets the identifier of the found item.</dd>
+<dt>int IdB</dt>
+<dd>If search is using two r-trees, IdB is element b in the search.</dd>
+<dt>IntPtr IdBPtr</dt>
+<dd>If search is using two r-trees, IdB is the element b pointer in the search.</dd>
+<dt>IntPtr IdPtr</dt>
+<dd>Gets the identifier pointer of the found item.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> SearchBoundingBox</dt>
+<dd>Bounding box bounds used during a search. You may modify the box in a search callback
+to help reduce the bounds to search.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/sphere/">Sphere</a> SearchSphere</dt>
+<dd>Sphere bounds used during a search. You can modify the sphere in a search callback to
+help reduce the bounds to search.</dd>
+<dt>object Tag</dt>
+<dd>Gets or sets an arbitrary object that can be attached to this event args.
+This object will &ldquo;stick&rdquo; through a single search and can represent user-defined state.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RTreeEventArgs</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

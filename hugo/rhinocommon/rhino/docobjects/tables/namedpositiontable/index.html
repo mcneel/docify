@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NamedPositionTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+All named positions in a rhino document.
+public class NamedPositionTableProperties  int Count Number of Named Positions in the table. since 6.0 RhinoDoc Document Document that owns this table. since 6.0 Guid[] Ids Array of Named Position guids. Returns - Guid array of each Named Position in the document. since 6.0 string[] Names Array of Named Position names. Returns - A string array with the names all Named Positions in the document.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NamedPositionTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<p>All named positions in a rhino document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NamedPositionTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Number of Named Positions in the table.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Document that owns this table.</dd>
+<dd>since 6.0</dd>
+<dt>Guid[] Ids</dt>
+<dd>Array of Named Position guids.</dd>
+<dd>Returns - Guid array of each Named Position in the document.</dd>
+<dd>since 6.0</dd>
+<dt>string[] Names</dt>
+<dd>Array of Named Position names.</dd>
+<dd>Returns - A string array with the names all Named Positions in the document.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool Append(Guid id,IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Append objects to a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Append was successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Append(Guid id,IEnumerable<!-- raw HTML omitted --> objects)</dt>
+<dd>Append objects to a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Append was successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Append(string name,IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Append objects to a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Append was successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Append(string name,IEnumerable<!-- raw HTML omitted --> objects)</dt>
+<dd>Append objects to a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Append was successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(Guid id)</dt>
+<dd>Delete a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Delete was successful, Null in case the id does not exist as a Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(string name)</dt>
+<dd>Delete a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Delete was successful, Null in case the id does not exist as a Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>Guid Id(string name)</dt>
+<dd>Guid of a Named Position.</dd>
+<dd>Returns - The Guid of the Named Position.  If not found, an empty Guid is returned.</dd>
+<dd>since 6.0</dd>
+<dt>string Name(Guid id)</dt>
+<dd>Name of a Named Position.</dd>
+<dd>Returns - The name of the Named Position as a string.</dd>
+<dd>since 6.0</dd>
+<dt>Guid[] ObjectIds(Guid id)</dt>
+<dd>Array of Rhino Object Guids related to a Named Position.</dd>
+<dd>Returns - Array of Guid which pertain to the objects tracked by the Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>Guid[] ObjectIds(string name)</dt>
+<dd>Array of Rhino Object Guids related to a Named Position.</dd>
+<dd>Returns - Array of Guid which pertain to the objects tracked by the Named Position, or None in case no such Named Position is found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] Objects(Guid id)</dt>
+<dd>Array of Rhino Objects related to a Named Position.</dd>
+<dd>Returns - Array of Rhino Objects which are tracked by the Named Position.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] Objects(string name)</dt>
+<dd>Array of Rhino Objects related to a Named Position.</dd>
+<dd>Returns - Array of Rhino Objects which are tracked by the Named Position if successful, None if no such Named Position exists.</dd>
+<dd>since 6.0</dd>
+<dt>bool ObjectXform(Guid id,Guid objId,Transform xform)</dt>
+<dd>Retrieve the Transform of a Rhino Object relate dto a Named Position.</dd>
+<dd>Returns - Transform of the RhinoObject related to the Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>bool ObjectXform(Guid id,RhinoObject obj,Transform xform)</dt>
+<dd>Retrieve the Transform of a Rhino Object relate dto a Named Position.</dd>
+<dd>Returns - Transform of the RhinoObject related to the Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>bool Rename(Guid id,string name)</dt>
+<dd>Rename a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Rename was successful.  For example, this method might return False if you attempt to remane the Named Position with the currently assigned name.</dd>
+<dd>since 6.0</dd>
+<dt>bool Rename(string oldName,string name)</dt>
+<dd>Rename a Named Position.</dd>
+<dd>Returns - True or False depending on whether the Rename was successful.  For example, this method might return False if you attempt to remane the Named Position with the currently assigned name.</dd>
+<dd>since 6.0</dd>
+<dt>bool Restore(Guid id)</dt>
+<dd>Restore a Named Position.</dd>
+<dd>Returns - True or False based on whether the Named Position was able to be restored.</dd>
+<dd>since 6.0</dd>
+<dt>bool Restore(string name)</dt>
+<dd>Restore a Named Position.</dd>
+<dd>Returns - True or False based on whether the Named Position was able to be restored.</dd>
+<dd>since 6.0</dd>
+<dt>Guid Save(string name,IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Save a new Named Position.</dd>
+<dd>Returns - Guid of the newly saved Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>Guid Save(string name,IEnumerable<!-- raw HTML omitted --> objects)</dt>
+<dd>Save a new Named Position.</dd>
+<dd>Returns - Guid of the newly saved Named Position.</dd>
+<dd>since 6.0</dd>
+<dt>bool Update(Guid id)</dt>
+<dd>Updates a Named Position, effectively storing the current positions of the objects which the Named Position is tracking.</dd>
+<dd>Returns - True or False depending on whether the Update was successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Update(string name)</dt>
+<dd>Updates a Named Position, effectively storing the current positions of the objects which the Named Position is tracking.</dd>
+<dd>Returns - True or False depending on whether the Update was successful.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NamedPositionTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

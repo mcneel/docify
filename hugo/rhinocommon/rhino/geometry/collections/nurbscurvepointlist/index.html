@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NurbsCurvePointList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the control points of a nurbs curve.
+public class NurbsCurvePointList :IEnumerable&amp;lt;ControlPoint&amp;gt;, IRhinoTable&amp;lt;ControlPoint&amp;gt;, IEpsilonComparable&amp;lt;NurbsCurvePointList&amp;gt;,IList&amp;lt;ControlPoint&amp;gt;Properties  double ControlPolygonLength Gets the length of the polyline connecting all control points. int Count Gets the number of control points in this curve. int PointSize Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Curve.Dimension &#43; 1. For non-rational curves, PointSize = Curve.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NurbsCurvePointList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the control points of a nurbs curve.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NurbsCurvePointList</span> :
+    IEnumerable&lt;ControlPoint&gt;, IRhinoTable&lt;ControlPoint&gt;, IEpsilonComparable&lt;NurbsCurvePointList&gt;,
+    IList&lt;ControlPoint&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>double ControlPolygonLength</dt>
+<dd>Gets the length of the polyline connecting all control points.</dd>
+<dt>int Count</dt>
+<dd>Gets the number of control points in this curve.</dd>
+<dt>int PointSize</dt>
+<dd>Returns the control point size, or the number of doubles per control point. 
+For rational curves, PointSize = Curve.Dimension + 1. 
+For non-rational curves, PointSize = Curve.Dimension.</dd>
+<dd>since 6.9</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool ChangeEndWeights(double w0,double w1)</dt>
+<dd>Use a combination of scaling and reparameterization to change the end weights to the specified values.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Contains(ControlPoint item)</dt>
+<dd>Determines if this list contains an item.</dd>
+<dd>Returns - A boolean value.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polyline/">Polyline</a> ControlPolygon()</dt>
+<dd>Constructs a polyline through all the control points. 
+Note that periodic curves generate a closed polyline with fewer 
+points than control-points.</dd>
+<dd>Returns - A polyline connecting all control points.</dd>
+<dt>void CopyTo(ControlPoint[] array,int arrayIndex)</dt>
+<dd>Copied the list to an array.</dd>
+<dd>since 6.0</dd>
+<dt>void EnsurePrivateCopy()</dt>
+<dd>If you want to keep a copy of this class around by holding onto it in a variable after a command
+completes, call EnsurePrivateCopy to make sure that this class is not tied to the document. You can
+call this function as many times as you want.</dd>
+<dt>bool EpsilonEquals(NurbsCurvePointList other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool GetPoint(int index,Point3d point)</dt>
+<dd>Gets a world 3-D, or Euclidean, control point at the given index.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetPoint(int index,Point4d point)</dt>
+<dd>Gets a homogeneous control point at the given index, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>double GetWeight(int index)</dt>
+<dd>Gets the weight of a control point at the given index.
+Note, if the curve is non-rational, the weight will be 1.0.</dd>
+<dd>Returns - The control point weight if successful, Rhino.Math.UnsetValue otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>int IndexOf(ControlPoint item)</dt>
+<dd>Gets the index of a control point, or -1.</dd>
+<dd>Returns - The index.</dd>
+<dd>since 6.0</dd>
+<dt>bool MakeNonRational()</dt>
+<dd>Converts the curve to a Non-rational NURBS curve. Non-rational curves have unweighted control points.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool MakeRational()</dt>
+<dd>Converts the curve to a Rational NURBS curve. Rational NURBS curves have weighted control points.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetPoint(int index,double x,double y,double z)</dt>
+<dd>Sets a world 3-D, or Euclidean, control point at the given index.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetPoint(int index,double x,double y,double z,double weight)</dt>
+<dd>Sets a homogeneous control point at the given index, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetPoint(int index,Point3d point)</dt>
+<dd>Sets a world 3-D, or Euclidean, control point at the given index.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetPoint(int index,Point3d point,double weight)</dt>
+<dd>Sets a world 3-D, or Euclidean, control point and weight at a given index.
+The 4-D representation is (x<em>w, y</em>w, z*w, w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetPoint(int index,Point4d point)</dt>
+<dd>Sets a homogeneous control point at the given index, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetWeight(int index,double weight)</dt>
+<dd>Sets the weight of a control point at the given index
+Note, if the curve is non-rational, it will be converted to rational.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool UVNDirectionsAt(int index,Vector3d uDir,Vector3d vDir,Vector3d nDir)</dt>
+<dd>Calculates the U, V, and N directions of a NURBS curve control point similar to the method used by Rhino&rsquo;s MoveUVN command.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>bool ValidateSpacing(double closeTolerance,double stackTolerance,int[] closeIndices,int[] stackedIndices)</dt>
+<dd>Simple check of distance between adjacent control points</dd>
+<dd>Returns - True if close or stacked indices are found</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NurbsCurvePointList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

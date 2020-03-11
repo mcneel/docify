@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,130 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/leaderobject/">
-        <h3>LeaderObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/decal/">
+        <h3>Decal</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/leaderobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/decal/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Represents a decal, or a picture that can be moved on an object.
+public class Decal : IDisposableProperties  int CRC The decal CRC identifies a decal by its state. Multiple decals which would be exactly the same would have the same CRC and are culled from the system. If you store this value with the intention of using it to find the decal again later, you must update your stored value whenever the decal state changes.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/decalcreateparams/">
+        <h3>DecalCreateParams</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/decalcreateparams/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Used by RhinoObject.AddDecal() to create and add a decal
+public class DecalCreateParamsProperties  DecalMapping DecalMapping  since 6.0 DecalProjection DecalProjection  since 6.0 double EndLatitude  since 6.0 double EndLongitude  since 6.0 double Height  since 6.0 bool MapToInside  since 6.0 double MaxU  since 6.0 double MaxV  since 6.0 double MinU  since 6.0 double MinV  since 6.0 Point3d Origin  since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/decals/">
+        <h3>Decals</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/decals/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Represents all the decals of an object.
+public class Decals : IEnumerable&lt;Decal&gt;Methods  uint Add(Decal decal) Add a new Decal to the decals list, use Decal.Create to create a new decal instance to add. since 5.10 void Clear()  since 5.10 IEnumeratorGetEnumerator()  since 5.10 bool Remove(Decal decal)  since 5.10  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/dimensionobject/">
+        <h3>DimensionObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/dimensionobject/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Rhino Object that represents leader geometry and attributes
-public class LeaderObjectProperties Geometry.Leader LeaderGeometry  (summary) Get the leader geometry for this object. (since) 6.0  
+Rhino Object that represents dimension geometry and attributes
+public class DimensionObject : AnnotationObjectBaseProperties  DimensionStyle DimensionStyle Gets the associated with this OrdinateDimensionObject. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/lengthvalue/">
-        <h3>LengthValue</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/displaypipelinesettingschangedeventargs/">
+        <h3>DisplayPipelineSettingsChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/lengthvalue/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/displaypipelinesettingschangedeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino
-Represents a length with an associated unit system and a string representation of that length. This allows for going back and forth from numerical representation of a length and a string representation without &ldquo;guessing&rdquo; at the initial string
-public class LengthValueProperties AngleUnitSystem ContextAngleUnitSystem  (summary) Returns the context AngleUnitSystem from this LengthValue&rsquo;s ParseSettings (since) 6.0  uint ContextLocaleId  (summary) returns the context LocaleId from this LengthValue (since) 6.
+    Namespace: Rhino.Render
+public class DisplayPipelineSettingsChangedEventArgs : EventArgsConstructors  DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)  since 6.0  Properties  DisplayPipelineAttributes Attributes  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/licensedata/">
-        <h3>LicenseData</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/displayrendersettings/">
+        <h3>DisplayRenderSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/licensedata/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/displayrendersettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-Zoo plugin license data.
-public class LicenseDataConstructors LicenseData()  (summary) Public constructor. (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate)  (summary) Public constructor (since) (unknown)  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime?
+    Namespace: Rhino.Render.ChangeQueue
+ChangeQueue DisplayRenderSettings
+public class DisplayRenderSettingsProperties  bool CullBackFaces True if backfaces should be culled since 6.0 bool ForceFlatShading True if flat shading is forced since 6.0 bool SceneLightingOn True if scene lighting is enabled since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/licenseidattribute/">
-        <h3>LicenseIdAttribute</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/dithering/">
+        <h3>Dithering</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/licenseidattribute/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/dithering/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-public class LicenseIdAttributeConstructors LicenseIdAttribute(string value)  (summary) (since) 6.0  Properties string Value  (summary) (since) 6.0  
+    Namespace: Rhino.Render
+This is the interface to linear workflow settings.
+public class Dithering : DocumentOrFreeFloatingBaseConstructors  Dithering() Create an utility object not associated with any document since 6.0 Dithering(Dithering d) Create an utility object not associated with any document from another object since 6.0  Properties  Methods Method  since 6.0  Methods  void CopyFrom(FreeFloatingBase src)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/licenselease/">
-        <h3>LicenseLease</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/documentorfreefloatingbase/">
+        <h3>DocumentOrFreeFloatingBase</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/licenselease/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/documentorfreefloatingbase/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-LicenseLease represents a lease returned from the Cloud Zoo
-public class LicenseLeaseConstructors LicenseLease(IntPtr unmanagedPointer)  (summary) (since) 6.0  LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp)  (summary) (since) 6.0  LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp,DateTime renewable_until)  (summary) (since) 6.4  Properties DateTime Expiration  (summary) The date when this lease will expire (since) 6.
+    Namespace: Rhino.Render
+Base class for Rhino.Render objects that are owned by the document, or can be delivered separately from other functions. In general, you cannot create these objects yourself.
+public class DocumentOrFreeFloatingBase : FreeFloatingBaseMethods  void BeginChange(ChangeContexts cc) Call this function before making any change to this object (calling a setter) otherwise undo will not work correctly. Calls to BeginChange must be paired with a call to EndChange. since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/licenseleasechangedeventargs/">
-        <h3>LicenseLeaseChangedEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/doublefield/">
+        <h3>DoubleField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/licenseleasechangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/doublefield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-Arguments for OnLeaseChangedDelegate
-public class LicenseLeaseChangedEventArgsConstructors LicenseLeaseChangedEventArgs(LicenseLease lease)  (summary) (since) 6.0  Properties LicenseLease Lease  (summary) The lease returned by Rhino Accounts server (since) 6.0  
+    Namespace: Rhino.Render.Fields
+double field value class
+public class DoubleField : FieldProperties  double Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/licensestatechangedeventargs/">
-        <h3>LicenseStateChangedEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/drawmiddlegroundeventargs/">
+        <h3>DrawMiddlegroundEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/licensestatechangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/drawmiddlegroundeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Passed to LicenseStateChanged event on RhinoApp
-public class LicenseStateChangedEventArgsConstructors LicenseStateChangedEventArgs(bool callingRhinoCommonAllowed)  (summary) LicenseStateChangedEventArgs constructor (since) 7.0  Properties bool CallingRhinoCommonAllowed  (summary) True if RhinoCommon calls will never raise Rhino.Runtime.NotLicensedException. False otherwise (since) 7.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/licensestatus/">
-        <h3>LicenseStatus</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/licensestatus/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.PlugIns
-LicenseStatus class.
-public class LicenseStatusConstructors LicenseStatus()  (summary) Public constructor. (since) 5.0  Properties LicenseBuildType BuildType  (summary) The build contentType of the product, where: 100 = A release build, either commercical, education, nfr, etc. 200 = A evaluation build 300 = A beta build, such as a wip. (since) 5.0  DateTime? CheckOutExpirationDate  (summary) The date and time the checked out license will expire. Note, this is only set if m_license_type = Standalone or CloudZoo and if &ldquo;limited license checkout&rdquo; was enabled on the Zoo server in the case of Standalone.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/licenseutils/">
-        <h3>LicenseUtils</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/licenseutils/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.PlugIns
-License Manager Utilities.
-public class LicenseUtilsMethods static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  (summary) This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense is used by Rhino C++ plug-ins. (since) 6.0 (returns) bool This is some return comment  static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CheckInLicense(Guid productId)  (summary) Checks in a previously checked out license to the Zoo server from which it was checked out.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/light/">
-        <h3>Light</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/light/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a light that shines in the modeling space.
-public class LightConstructors Light()  (summary) Initializes a new light. (since) 5.0  Properties System.Drawing.Color Ambient  (summary) Gets or sets the ambient color. (since) 5.0  Attenuation AttenuationType  (summary) Get the type of attenuation for this light. (since) 7.0  Vector3d AttenuationVector  (summary) Gets or Sets the attenuation vector. (since) 5.7  DocObjects.CoordinateSystem CoordinateSystem  (summary) Gets a value, determined by LightStyle, that explains whether the camera directions are relative to World or Camera spaces.
+    Namespace: Rhino.Render
+public class DrawMiddlegroundEventArgs : EventArgsConstructors  DrawMiddlegroundEventArgs(DisplayPipeline dp)  since 6.0  Properties  DisplayPipeline Pipeline  since 6.0  
   </div>
   
 

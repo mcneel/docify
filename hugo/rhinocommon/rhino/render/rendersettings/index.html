@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RenderSettings &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Contains settings used in rendering.
+public class RenderSettings : Runtime.CommonObjectConstructors  RenderSettings() Initialize a new instance of the RenderSettings class. RenderSettings(RenderSettings source) Initialize new instance of the RenderSettings class. since 6.0  Properties  Color AmbientLight Gets or sets the ambient light color used in rendering. AntialiasLevel AntialiasLevel Gets or sets antialias level, used for render quality Color BackgroundColorBottom Gets or sets the background bottom color used in rendering.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RenderSettings</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Contains settings used in rendering.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderSettings</span> : Runtime.CommonObject
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>RenderSettings()</dt>
+<dd>Initialize a new instance of the RenderSettings class.</dd>
+<dt>RenderSettings(RenderSettings source)</dt>
+<dd>Initialize new instance of the RenderSettings class.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>Color AmbientLight</dt>
+<dd>Gets or sets the ambient light color used in rendering.</dd>
+<dt><a href="/rhinocommon/rhino/antialiaslevel/">AntialiasLevel</a> AntialiasLevel</dt>
+<dd>Gets or sets antialias level, used for render quality</dd>
+<dt>Color BackgroundColorBottom</dt>
+<dd>Gets or sets the background bottom color used in rendering.</dd>
+<dt>Color BackgroundColorTop</dt>
+<dd>Gets or sets the background top color used in rendering.
+Sets also the background color if a solid background color is set.</dd>
+<dt><a href="/rhinocommon/rhino/display/backgroundstyle/">BackgroundStyle</a> BackgroundStyle</dt>
+<dd>How the viewport&rsquo;s backgroun should be filled.</dd>
+<dt>bool DepthCue</dt>
+<dd>Gets or sets a value indicating whether to render using depth cues.
+These are clues to help the perception of position and orientation of objects in the image.</dd>
+<dt><a href="/rhinocommon/rhino/render/dithering/">Dithering</a> Dithering</dt>
+<dd>Get the document dithering interface</dd>
+<dd>since 6.0</dd>
+<dt>bool FlatShade</dt>
+<dd>Gets or sets a value indicating whether to render using flat shading.</dd>
+<dt>double ImageDpi</dt>
+<dd>Number of dots/inch (dots=pixels) to use when printing and saving
+bitmaps. The default is 72.0 dots/inch.</dd>
+<dd>since 5.11</dd>
+<dt>Size ImageSize</dt>
+<dd>Gets or sets a value indicating the size of the rendering result if
+UseViewportSize is set to false.  If UseViewportSize is set to true,
+then this value is ignored.</dd>
+<dt>UnitSystem ImageUnitSystem</dt>
+<dd>unit system to use when converting image pixel size and dpi information
+into a print size.  Default = inches</dd>
+<dd>since 5.11</dd>
+<dt><a href="/rhinocommon/rhino/render/linearworkflow/">LinearWorkflow</a> LinearWorkflow</dt>
+<dd>Get the document linear workflow interface</dd>
+<dd>since 6.0</dd>
+<dt>string NamedView</dt>
+<dd>Get or set the given named view</dd>
+<dd>since 6.1</dd>
+<dt>bool RenderAnnotations</dt>
+<dd>Gets or sets a value indicating whether to instruct the rendering engine to show annotations,
+such as linear dimensions or angular dimensions.</dd>
+<dt>bool RenderBackfaces</dt>
+<dd>Gets or sets a value indicating whether to render back faces.</dd>
+<dt>bool RenderCurves</dt>
+<dd>Gets or sets a value indicating whether to instruct the rendering engine to show curves.</dd>
+<dt>bool RenderIsoparams</dt>
+<dd>Gets or sets a value indicating whether to instruct the rendering engine to show isocurves.</dd>
+<dt>bool RenderMeshEdges</dt>
+<dd>Gets or sets a value indicating whether to instruct the rendering engine to show mesh edges.</dd>
+<dt>bool RenderPoints</dt>
+<dd>Gets or sets a value indicating whether to instruct the rendering engine to show points.</dd>
+<dt><a href="/rhinocommon/rhino/render/rendersettings/renderingsources/">RenderingSources</a> RenderSource</dt>
+<dd>Gets or sets the render source  enumeration.</dd>
+<dd>since 6.1</dd>
+<dt>bool ScaleBackgroundToFit</dt>
+<dd>Gets or sets a value indicating whether to scale the wallpaper in the
+background or not. This is meaningful only if the viewport has a wallpaper
+and render settings are set to render Wallpaper into the background.</dd>
+<dd>since 6.0</dd>
+<dt>int ShadowmapLevel</dt>
+<dd>0=none, 1=normal, 2=best.</dd>
+<dt>string Snapshot</dt>
+<dd>Set os get the given snapshot view</dd>
+<dd>since 6.1</dd>
+<dt>string SpecificViewport</dt>
+<dd>Set or get the given specific viewport</dd>
+<dd>since 6.1</dd>
+<dt>bool TransparentBackground</dt>
+<dd>Gets or sets whether rendering should be done with transparent background.</dd>
+<dd>since 6.0</dd>
+<dt>bool UseHiddenLights</dt>
+<dd>Gets or sets a value indicating whether to render using lights that are on layers that are off.</dd>
+<dt>bool UseViewportSize</dt>
+<dd>Gets or sets a value indicating whether to use the resolution of the
+viewport being rendered or ImageSize when rendering</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RenderSettings</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

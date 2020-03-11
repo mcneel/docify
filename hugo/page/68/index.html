@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,103 +57,106 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/viewtable/">
-        <h3>ViewTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguidpointer/">
+        <h3>SimpleArrayGuidPointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/viewtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguidpointer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class ViewTableProperties RhinoView ActiveView  (summary) Gets or Sets the active view. (since) 5.0  RhinoDoc Document  (summary) Document that owns this object table. (since) 5.0  bool ModelSpaceIsActive  (summary) (since) 5.0  bool RedrawEnabled  (summary) Returns or sets (enable or disables) screen redrawing. (since) 5.0  Methods RhinoView Add(string title,DefinedViewportProjection projection,Rectangle position,bool floating)  (summary) Constructs a new Rhino view and, at the same time, adds it to the list.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_UUID&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayGuidPointer : IDisposableConstructors  SimpleArrayGuidPointer() Initializes a new class. since 6.0  Properties  int Count Gets the amount of elements in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.0 void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/visualanalysismode/">
-        <h3>VisualAnalysisMode</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayint/">
+        <h3>SimpleArrayInt</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/visualanalysismode/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayint/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Represents a base class for visual analysis modes. This class is abstract.
-public class VisualAnalysisModeProperties static Guid RhinoCurvatureColorAnalyisModeId  (summary) Id for Rhino&rsquo;s built-in curvature color analysis mode. Surface curvature is shown using False color mapping. (since) 5.0  static Guid RhinoCurvatureGraphAnalysisModeId  (summary) Id for Rhino&rsquo;s built-in curvature graphs analysis mode. Curvature hair is shown on curves and surfaces. (since) 5.0  static Guid RhinoDraftAngleAnalysisModeId  (summary) Id for Rhino&rsquo;s built-in draft angle analysis mode.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayInt : IDisposableConstructors  SimpleArrayInt() Initializes a new class. SimpleArrayInt(IEnumerablevalues) Initializes a new class since 5.9  Properties  int Count Gets the amount of elements in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/volumemassproperties/">
-        <h3>VolumeMassProperties</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/skin/">
+        <h3>Skin</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/volumemassproperties/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/skin/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime
+Represents a customized environment that changes the appearance of Rhino. Skin DLLs must contain a single class that derives from the Skin class.
+public class SkinProperties  static Skin ActiveSkin Any time Rhino is running there is at most one skin being used (and possibly no skin). If a RhinoCommon based Skin class is being used, use ActiveSkin to get at the instance of this Skin class. May return null if no Skin is being used or if the skin is not a RhinoCommon based skin.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringholder/">
+        <h3>StringHolder</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringholder/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+This class is used to pass strings back and forth between managed and unmanaged code. This should not be be needed by plug-ins. If you are just dealing with an ON_wString*, use
+public class StringHolder : IDisposableConstructors  StringHolder() Constructor since 5.8  Methods  static string GetString(IntPtr pStringHolder) Gets managed string from unmanaged ON_wString pointer. Returns - Null if pStringHolder has no reference, otherwise, the string. This may be an empty string, if setting an empty string is possible.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/textdot/">
+        <h3>TextDot</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/textdot/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Contains static initialization methods and allows access to the computed metrics of volume, volume centroid and volume moments in in solid meshes, in solid surfaces and in solid (closed) boundary representations.
-public class VolumeMassPropertiesProperties Point3d Centroid  (summary) Gets the volume centroid in the world coordinate system. (since) 5.0  Vector3d CentroidCoordinatesMomentsOfInertia  (summary) Moments of inertia with respect to centroid coordinate system. X = integral of ((y-y0)^2 + (z-z0)^2) dm Y = integral of ((z-z0)^2 + (x-x0)^2) dm Z = integral of ((z-z0)^2 + (y-y0)^2) dm where (x0,y0,z0) = centroid.
+Represents a text dot, or an annotation entity with text that always faces the camera and always has the same size. This class refers to the geometric element that is independent from the document.
+[Serializable]public class TextDot : GeometryBaseConstructors  TextDot(string text,Point3d location) Initializes a new textdot based on the text and the location.  Properties  string FontFace Font face used for displaying the dot since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/waitcursor/">
-        <h3>WaitCursor</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/notifications/trulyobservableorderedset/">
+        <h3>TrulyObservableOrderedSet</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/waitcursor/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/trulyobservableorderedset/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class WaitCursorConstructors WaitCursor()  (summary) (since) 5.1  Methods void Clear()  (summary) (since) 5.1 (returns) void This is some return comment  void Dispose()  (summary) (since) 5.1 (returns) void This is some return comment  void Set()  (summary) (since) 5.1 (returns) void This is some return comment  
+    Namespace: Rhino.Runtime.Notifications
+An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.
+public class TrulyObservableOrderedSet : IList&lt;T&gt;, INotifyCollectionChanged CollectionChanged Triggered whenever the set changes or when one of its elements has its PropertyChanged event triggered. since (unknown)  Constructors  TrulyObservableOrderedSet() Creates an empty instance. since (unknown) TrulyObservableOrderedSet(IEnumerableitems) Creates an instance with the given items. since (unknown)  Properties  int Count Returns the total number of items in the set.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/worksession/">
-        <h3>Worksession</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/viewinfo/">
+        <h3>ViewInfo</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/worksession/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/viewinfo/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Manages a list of models that are being used as reference geometry.
-public class WorksessionProperties RhinoDoc Document  (summary) Gets the document that owns this worksession. (since) 6.0  string FileName  (summary) Returns the path to the open worksession, or .rws, file. If there is no worksession file open, or the active worksession has not yet been saved, then None is returned. (since) 6.0  int ModelCount  (summary) Returns the number of models in the worksession.
+Represents the name and orientation of a View (and named view). views can be thought of as cameras.
+public class ViewInfo : IDisposableConstructors  ViewInfo(RhinoViewport rhinoViewPort) Access to the ViewInfo for given RhinoViewport since 6.0 ViewInfo(uint docRuntimeSerialNumber) Construct the ViewInfo for active viewport of given doc. since 6.0  Properties  double FocalBlurAperture Gets or sets the Focal blur aperture of the active viewport since 6.0 double FocalBlurDistance Gets or sets the Focal blur distance of the active viewport since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/ui/worldmapdaynight/">
-        <h3>WorldMapDayNight</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/ui/worldmapdaynight/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render.UI
-public class WorldMapDayNightConstructors WorldMapDayNight()  (summary) (since) 6.0  Methods void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  bool HasMapForCurrentSettings()  (summary) (since) 6.0 (returns) bool This is some return comment  System.Drawing.Point LocationToMap(Point2d latlong)  (summary) (since) 6.0 (returns) System.Drawing.Point This is some return comment  void MakeMapBitmap()  (summary) (since) 6.0 (returns) void This is some return comment  System.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/zbuffercapture/">
-        <h3>ZBufferCapture</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/zbuffercapture/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-Provides functionality for getting the zbuffer values from a viewport and a given display mode
-public class ZBufferCaptureConstructors ZBufferCapture(RhinoViewport viewport)  (summary) (since) 5.3  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.3 (returns) void This is some return comment  System.Drawing.Bitmap GrayscaleDib()  (summary) (since) 5.3 (returns) System.Drawing.Bitmap This is some return comment  int HitCount()  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/zooclientparameters/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/zooclientparameters/">
         <h3>ZooClientParameters</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/zooclientparameters/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/zooclientparameters/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Runtime
 ZooClientParameters is a read-only set of parameters that control the flow of licensing inside ZooClient. Because this class flows through a number of other classes, functions, and UI, it is read-only so that inadvertent changes are not made to the data as it propagates from the caller.
-public class ZooClientParametersConstructors ZooClientParameters(Guid productGuid,Guid licenseGuid,string productTitle,int productBuildType,LicenseCapabilities capabilities,string licenseEntryTextMask,string productPath,object parentWindow,LicenseTypes selectedLicenseType,ValidateProductKeyDelegate validateProductKey,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate)  (summary) ZooClientParameters Constructor (since) 6.
+public class ZooClientParametersConstructors  ZooClientParameters(Guid productGuid,Guid licenseGuid,string productTitle,int productBuildType,LicenseCapabilities capabilities,string licenseEntryTextMask,string productPath,object parentWindow,LicenseTypes selectedLicenseType,ValidateProductKeyDelegate validateProductKey,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate) ZooClientParameters Constructor since 6.
   </div>
   
 

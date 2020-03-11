@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LicenseUtils &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.PlugIns
+License Manager Utilities.
+public class LicenseUtilsMethods  static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities) This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense is used by Rhino C&#43;&#43; plug-ins. since 6.0 static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  since 6.0 static bool CheckInLicense(Guid productId) Checks in a previously checked out license to the Zoo server from which it was checked out.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LicenseUtils</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.PlugIns</a></em></p>
+<p>License Manager Utilities.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LicenseUtils</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)</dt>
+<dd>This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense
+is used by Rhino C++ plug-ins.</dd>
+<dd>since 6.0</dd>
+<dt>static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static bool CheckInLicense(Guid productId)</dt>
+<dd>Checks in a previously checked out license to
+the Zoo server from which it was checked out.</dd>
+<dd>Returns - True if the license was checked in successful.
+False if not successful or on error.</dd>
+<dt>static bool CheckOutLicense(Guid productId)</dt>
+<dd>Checks out a license that is on loan from a Zoo server
+on a permanent basis.</dd>
+<dd>Returns - True if the license was checked out successful.
+False if not successful or on error.</dd>
+<dt>static bool ConvertLicense(Guid productId)</dt>
+<dd>Converts a product license from a standalone node
+to a network node.</dd>
+<dd>Returns - True if the license was successfully converted.
+False if not successful or on error.</dd>
+<dt>static bool DeleteLicense(Guid productId)</dt>
+<dd>Deletes a license along with its license file.</dd>
+<dd>since 6.0</dd>
+<dt>static string Echo(string message)</dt>
+<dd>Test connectivity with the Zoo.</dd>
+<dt>static bool GetLicense(ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate leaseChangedDelegate,int product_type,int capabilities,string textMask,string product_path,string product_title,Guid pluginId,Guid licenseId)</dt>
+<dd>This version of Rhino.PlugIns.LicenseUtils.GetLicense
+is used by Rhino C++ plug-ins.</dd>
+<dd>since 6.0</dd>
+<dt>static bool GetLicense(ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate leaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,int product_type,int capabilities,string textMask,string product_path,string product_title,Guid pluginId,Guid licenseId)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/plugins/licensecapabilities/">LicenseCapabilities</a> GetLicenseCapabilities(int filter)</dt>
+<dd>Converts an integer to a LicenseCapabilities flag</dd>
+<dd>since 5.5</dd>
+<dt>static <a href="/rhinocommon/rhino/plugins/licensestatus/">LicenseStatus</a>[] GetLicenseStatus()</dt>
+<dd>Returns the current status of every license for ui purposes.</dd>
+<dt>static int GetLicenseType(Guid productId)</dt>
+<dd>Returns the contentType of a specified product license</dd>
+<dt>static <a href="/rhinocommon/rhino/plugins/licensestatus/">LicenseStatus</a> GetOneLicenseStatus(Guid productid)</dt>
+<dd>Returns the current status of a license for ui purposes.</dd>
+<dd>since 5.5</dd>
+<dt>static bool Initialize()</dt>
+<dd>Initializes the license manager.</dd>
+<dt>static bool IsCheckOutEnabled()</dt>
+<dd>Returns whether or not license checkout is enabled.</dd>
+<dt>static bool LicenseOptionsHandler(Guid pluginId,Guid licenseId,string productTitle,bool standAlone)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static bool LoginToCloudZoo()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static bool LogoutOfCloudZoo()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static bool ReturnLicense(Guid productId)</dt>
+<dd>OBSOLETE - REMOVE WHEN POSSIBLE.</dd>
+<dt>static void ShowBuyLicenseUi(Guid productId)</dt>
+<dd></dd>
+<dd>since 5.5</dd>
+<dt>static bool ShowLicenseValidationUi(string cdkey)</dt>
+<dd>ShowLicenseValidationUi</dd>
+<dt>static bool ShowRhinoExpiredMessage(Mode mode,int result)</dt>
+<dd>Show Rhino or Beta expired message</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LicenseUtils</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

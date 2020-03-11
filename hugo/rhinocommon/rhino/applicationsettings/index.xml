@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.ApplicationSettings on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/</link>
+    <description>Recent content in Rhino.ApplicationSettings on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GeneralSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to give access to Rhinoceros settings.
+public class GeneralSettingsProperties  static bool AutoUpdateCommandHelp Command help dialog auto-update feature. static TimeSpan ContextMenuDelay Time to wait before permitting context menu display. static bool EnableContextMenu True if right mouse down + delay will pop up context menu on a mouse up if no move happens. static int MaximumPopupMenuLines Gets or sets the maximum number of popup menu lines.</description>
+    </item>
+    
+    <item>
+      <title>GeneralSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/generalsettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class GeneralSettingsStateProperties  bool AutoUpdateCommandHelp Gets or sets the command help dialog auto-update feature. TimeSpan ContextMenuDelay Gets or sets the time to wait before permitting context menu display. bool EnableContextMenu True if right mouse down + delay will pop up context menu on a mouse up if no move happens. int MaximumPopupMenuLines Gets or sets the maximum number of popup menu lines.</description>
+    </item>
+    
+    <item>
+      <title>HistorySettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/historysettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/historysettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Provides static (Shared in Vb.Net) properties to modify Rhino History settings.
+public class HistorySettingsProperties  static bool BrokenRecordWarningEnabled Displays a warning dialog when an action is taken that breaks the link between the output and input objects. since 6.10 static bool ObjectLockingEnabled When history object locking is enabled, objects with history on them act as if they were locked and the only way to modify these objects is to edit their inputs.</description>
+    </item>
+    
+    <item>
+      <title>NeverRepeatList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/neverrepeatlist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/neverrepeatlist/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties relating to the list of commands that are never repeated.
+public class NeverRepeatListProperties  static bool UseNeverRepeatList Only use the list if somebody modifies it via CRhinoAppSettings::SetDontRepeatCommands(). Return value of True means CRhinoCommand don&amp;rsquo;t repeat flags will be ignored and the m_dont_repeat_list will be used instead. False means the individual CRhinoCommands will determine if they are repeatable.  Methods  static string[] CommandNames() The list of commands to not repeat.</description>
+    </item>
+    
+    <item>
+      <title>AppearanceSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Provides static methods and properties to deal with the appearance of the application.
+public class AppearanceSettingsProperties  static Color CommandPromptBackgroundColor Gets or sets the color of the command prompt background. static Color CommandPromptHypertextColor Gets or sets the color of the command prompt hypertext. static CommandPromptPosition CommandPromptPosition Gets or sets the command prompt position. static Color CommandPromptTextColor Gets or sets the color of the command prompt text. static Color CrosshairColor Gets or sets the color of the crosshair icon.</description>
+    </item>
+    
+    <item>
+      <title>AppearanceSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/appearancesettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of the values in .
+public class AppearanceSettingsStateProperties  Color CommandPromptBackgroundColor Gets or sets the comand prompt background color. Color CommandPromptHypertextColor Gets or sets the comand prompt hypertext color. Color CommandPromptTextColor Gets or sets the command prompt text color. Color CrosshairColor Gets or sets the crosshair color. Color CurrentLayerBackgroundColor Gets or sets the color used by the layer manager dialog as the background color for the current layer.</description>
+    </item>
+    
+    <item>
+      <title>CommandAliasList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/commandaliaslist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/commandaliaslist/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to access command aliases.
+public class CommandAliasListProperties  static int Count Returns the number of command alias in Rhino.  Methods  static bool Add(string alias,string macro) Adds a new command alias to Rhino. Returns - True if successful. static void Clear() Removes all aliases from the list. static bool Delete(string alias) Deletes an existing command alias from Rhino. Returns - True if successful.</description>
+    </item>
+    
+    <item>
+      <title>CursorTooltipSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Cursor tooltips place information at the cursor location. Note: Turning on cursor tooltips turns off object snap cursors.
+public class CursorTooltipSettingsProperties  static bool AutoSuppress Attempts to display only the most useful tooltip. static Color BackgroundColor Tooltip background color. static bool CommandPromptPane Displays the current command prompt. static bool DistancePane Displays the distance from the last picked point. static Point Offset The x and y distances in pixels from the cursor location to the tooltip.</description>
+    </item>
+    
+    <item>
+      <title>CursorTooltipSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/cursortooltipsettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class CursorTooltipSettingsStateProperties  bool AutoSuppress Attempts to display only the most useful tooltip. Color BackgroundColor Tooltip background color. bool CommandPromptPane Displays the current command prompt. bool DistancePane Displays the distance from the last picked point. Point Offset The x and y distances in pixels from the cursor location to the tooltip. bool OsnapPane Displays the current object snap selection. bool PointPane Displays the current construction plane coordinates.</description>
+    </item>
+    
+    <item>
+      <title>CurvatureAnalysisSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to modify curvature analysis-related commands.
+public class CurvatureAnalysisSettingsProperties  static Interval GaussRange Gets or sets the Gaussian curvature range. since 6.0 static Interval MaxRadiusRange Gets or sets the Maximum Radius curvature range. since 6.0 static Interval MeanRange Gets or sets the Mean curvature range. since 6.0 static Interval MinRadiusRange Gets or sets the Minimum Radius curvature range. since 6.0 static CurvatureStyle Style Gets or sets the curvature analysis style.</description>
+    </item>
+    
+    <item>
+      <title>CurvatureAnalysisSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/curvatureanalysissettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class CurvatureAnalysisSettingsStateProperties  Interval GaussRange Gets or sets the Gaussian curvature range. since 6.0 Interval MaxRadiusRange Gets or sets the Maximum Radius curvature range. since 6.0 Interval MeanRange Gets or sets the Mean curvature range. since 6.0 Interval MinRadiusRange Gets or sets the Minimum Radius curvature range. since 6.0 CurvatureStyle Style Gets or sets the curvature analysis style. since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>DraftAngleAnalysisSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/draftangleanalysissettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/draftangleanalysissettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+public class DraftAngleAnalysisSettingsProperties  static Interval AngleRange The angle range. since 7.0 static bool ShowIsoCurves Show isoparametric curves. since 7.0 static Vector3d UpDirection The up direction. since 7.0  Methods  static DraftAngleAnalysisSettingsState GetCurrentState() Gets the current settings of the application. since 7.0 static DraftAngleAnalysisSettingsState GetDefaultState() Gets the factory settings of the application. since 7.0 static void RestoreDefaults() Commits the default settings as the current settings. since 7.</description>
+    </item>
+    
+    <item>
+      <title>DraftAngleAnalysisSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/draftangleanalysissettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/draftangleanalysissettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of
+public class DraftAngleAnalysisSettingsStateProperties  Interval AngleRange The angle range. since 7.0 bool ShowIsoCurves Show isoparametric curves. since 7.0 Vector3d UpDirection The up direction. since 7.0  </description>
+    </item>
+    
+    <item>
+      <title>EdgeAnalysisSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/edgeanalysissettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/edgeanalysissettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to modify the visibility of edges in edge-related commands.
+public class EdgeAnalysisSettingsProperties  static Color ShowEdgeColor Gets or sets a color used to enhance display edges in commands like _ShowEdges and _ShowNakedEdges. static int ShowEdges Gets or sets a value referring to the group of edges that are targeted. 0 = all.1 = naked.2 = non-manifold.  Methods  static EdgeAnalysisSettingsState GetCurrentState() Gets the current settings of the application.</description>
+    </item>
+    
+    <item>
+      <title>EdgeAnalysisSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/edgeanalysissettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/edgeanalysissettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class EdgeAnalysisSettingsStateProperties  Color ShowEdgeColor Gets or sets a color used to enhance display edges in commands like _ShowEdges and _ShowNakedEdges. int ShowEdges Gets or sets a value referring to the group of edges that are targeted. 0 = all.1 = naked.2 = non-manifold.  </description>
+    </item>
+    
+    <item>
+      <title>FileSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/filesettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/filesettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties relating Rhino files.
+public class FileSettingsProperties  static bool AutoSaveEnabled Enables or disables Rhino&amp;rsquo;s automatic file saving mechanism. static string AutoSaveFile the file name used by Rhino&amp;rsquo;s automatic file saving mechanism. static TimeSpan AutoSaveInterval how often the document will be saved when Rhino&amp;rsquo;s automatic file saving mechanism is enabled. static bool AutoSaveMeshes save render and display meshes in autosave file. static bool ClipboardCopyToPreviousRhinoVersion Gets or sets a value that decides if copies to the clipboard are performed in both the current and previous Rhino clipboard formats.</description>
+    </item>
+    
+    <item>
+      <title>FileSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/filesettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/filesettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class FileSettingsStateProperties  bool AutoSaveEnabled Enables or disables Rhino&amp;rsquo;s automatic file saving mechanism. TimeSpan AutoSaveInterval How often the document will be saved when Rhino&amp;rsquo;s automatic file saving mechanism is enabled. bool AutoSaveMeshes Saves render and display meshes in autosave file. bool ClipboardCopyToPreviousRhinoVersion Gets or sets a value that decides if copies to the clipboard are performed in both the current and previous Rhino clipboard formats.</description>
+    </item>
+    
+    <item>
+      <title>OpenGLSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/openglsettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/openglsettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Static methods and properties to control OpenGL settings
+public class OpenGLSettingsProperties  static AntialiasLevel AntialiasLevel Gets or sets the antialias level used by OpenGL viewports since 6.1  Methods  static OpenGLSettingsState GetCurrentState() Gets the current settings. Returns - A new OpenGL state with current settings. since 6.1 static OpenGLSettingsState GetDefaultState() Gets the OpenGL factory settings. Returns - A new OpenGL state with factory settings. since 6.1 static void RestoreDefaults() Updates from the default setting state.</description>
+    </item>
+    
+    <item>
+      <title>OpenGLSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/openglsettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/openglsettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a sapshot of
+public class OpenGLSettingsStateProperties  AntialiasLevel AntialiasLevel AA level used in OpenGL viewports since 6.1  </description>
+    </item>
+    
+    <item>
+      <title>SelectionFilterSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Selection filter settings restrict any selection mode (SelWindow, SelCrossing, SelAll, etc.) to specified object types. Note, selection filter settings are not persistent.
+public class SelectionFilterSettingsProperties  static bool Enabled Enables or disables the global object selection filter. since 7.0 static ObjectType GlobalGeometryFilter The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types.</description>
+    </item>
+    
+    <item>
+      <title>SelectionFilterSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class SelectionFilterSettingsStateProperties  bool Enabled Enables or disables the global object selection filter. since 7.0 ObjectType GlobalGeometryFilter The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types. since 7.0 ObjectType OneShotGeometryFilter The one-shot geometry type filter controls which types of geometry will be be filtered for one selection.</description>
+    </item>
+    
+    <item>
+      <title>ShortcutKeySettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/shortcutkeysettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/shortcutkeysettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to control keyboard shortcut keys
+public class ShortcutKeySettingsMethods  static string GetMacro(ShortcutKey key) Get macro associated with a given keyboard shortcut static void SetMacro(ShortcutKey key,string macro) Set macro associated with a keyboard shortcut  </description>
+    </item>
+    
+    <item>
+      <title>SmartTrackSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties that target the Smart Track feature behavior.
+public class SmartTrackSettingsProperties  static int ActivationDelayMilliseconds Gets or sets the activation delay in milliseconds. static Color ActivePointColor Gets or sets the active point color. static Color LineColor Gets or sets the smart track line color. static int MaxSmartPoints Gets or sets the maximum number of smart points. static Color PointColor Gets or sets the point color.</description>
+    </item>
+    
+    <item>
+      <title>SmartTrackSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class SmartTrackSettingsStateProperties  static int MaxSmartPoints Gets or sets the maximum number of smart points. int ActivationDelayMilliseconds Gets or sets the activation delay in milliseconds. Color ActivePointColor Gets or sets the active point color. Color LineColor Gets or sets the smart track line color. Color PointColor Gets or sets the point color. bool SmartOrtho Gets or sets a value indicating if the &amp;lsquo;Smart Ortho&amp;rsquo; feature is active.</description>
+    </item>
+    
+    <item>
+      <title>ViewSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to control view settings.
+public class ViewSettingsProperties  static bool AlwaysPanParallelViews Gets or sets the &amp;lsquo;always pan parallel views&amp;rsquo; value. If the view is not looking straight at the construction plane, then sets parallel viewports so they will not rotate. static bool DefinedViewSetCPlane Gets or sets the &amp;lsquo;named views set CPlane&amp;rsquo; value. When true, restoring a named view causes the construction plane saved with that view to also restore.</description>
+    </item>
+    
+    <item>
+      <title>ModelAidSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettings/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to modify model aid settings.
+public class ModelAidSettingsProperties  static bool AltPlusArrow True means Alt+arrow is used for nudging. static bool AutoGumballEnabled When AutoGumball is on, a gumball automatically appears when objects are prepicked. static int ControlPolygonDisplayDensity Gets or sets the control polygon display density. static double CtrlNudgeKeyStep Gets or sets the Ctrl-key based nudge step amount. static bool DisplayControlPolygon Gets or sets the enabled state of Rhino&amp;rsquo;s display control polygon.</description>
+    </item>
+    
+    <item>
+      <title>ModelAidSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class ModelAidSettingsStateProperties  bool AltPlusArrow True mean Alt+arrow is used for nudging. int ControlPolygonDisplayDensity Gets or sets the control polygon display density. double CtrlNudgeKeyStep Gets or sets the Ctrl-key based nudge step amount. bool DisplayControlPolygon Gets or sets the enabled state of Rhino&amp;rsquo;s display control polygon. bool ExtendToApparentIntersection Gets or sets the enabled state of Rhino&amp;rsquo;s extend to apparent intersections. bool ExtendTrimLines Gets or sets the enabled state of Rhino&amp;rsquo;s extend trim lines.</description>
+    </item>
+    
+    <item>
+      <title>ViewSettingsState</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettingsstate/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettingsstate/</guid>
+      <description>Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class ViewSettingsStateProperties  bool AlwaysPanParallelViews Gets or sets the &amp;lsquo;always pan parallel views&amp;rsquo; value. If the view is not looking straight at the construction plane, then sets parallel viewports so they will not rotate. bool DefinedViewSetCPlane Gets or sets the &amp;lsquo;named views set CPlane&amp;rsquo; value. When true, restoring a named view causes the construction plane saved with that view to also restore.</description>
+    </item>
+    
+  </channel>
+</rss>

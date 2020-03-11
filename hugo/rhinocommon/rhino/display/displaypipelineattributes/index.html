@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  DisplayPipelineAttributes &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Represents display pipeline settings, such as &amp;ldquo;show transparency&amp;rdquo; and &amp;ldquo;show grips&amp;rdquo;.
+[Serializable]public class DisplayPipelineAttributes : IDisposable, ISerializableProperties  Color AmbientLightingColor  since 6.3 BoundingBoxDisplayMode BoundingBoxMode  since 6.1 bool CastShadows Cast shadows. since 6.4 ContextsForDraw ContextForDraw  since 6.5 Color CurveColor Color used for drawing curves since 5.1 int CurveThickness Pixel thickness for curves since 5.1 bool DisableConduits  bool DisableTransparency  string EnglishName  FrameBufferFillMode FillMode Get or set the frame buffer fill mode.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">DisplayPipelineAttributes</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Represents display pipeline settings, such as &ldquo;show transparency&rdquo; and &ldquo;show grips&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisplayPipelineAttributes</span> : IDisposable, ISerializable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>Color AmbientLightingColor</dt>
+<dd></dd>
+<dd>since 6.3</dd>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/boundingboxdisplaymode/">BoundingBoxDisplayMode</a> BoundingBoxMode</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>bool CastShadows</dt>
+<dd>Cast shadows.</dd>
+<dd>since 6.4</dd>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/contextsfordraw/">ContextsForDraw</a> ContextForDraw</dt>
+<dd></dd>
+<dd>since 6.5</dd>
+<dt>Color CurveColor</dt>
+<dd>Color used for drawing curves</dd>
+<dd>since 5.1</dd>
+<dt>int CurveThickness</dt>
+<dd>Pixel thickness for curves</dd>
+<dd>since 5.1</dd>
+<dt>bool DisableConduits</dt>
+<dd></dd>
+<dt>bool DisableTransparency</dt>
+<dd></dd>
+<dt>string EnglishName</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/render/changequeue/environment/framebufferfillmode/">FrameBufferFillMode</a> FillMode</dt>
+<dd>Get or set the frame buffer fill mode.</dd>
+<dd>since 6.0</dd>
+<dt>Guid Id</dt>
+<dd></dd>
+<dt>bool IgnoreHighlights</dt>
+<dd></dd>
+<dt>string LocalName</dt>
+<dd></dd>
+<dt>bool LockedObjectsDrawBehindOthers</dt>
+<dd>Locked object are drawn behind other objects</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/meshdisplayattributes/">MeshDisplayAttributes</a> MeshSpecificAttributes</dt>
+<dd></dd>
+<dt>Color ObjectColor</dt>
+<dd></dd>
+<dt>float PointRadius</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>PointStyle PointStyle</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Guid RealtimeDisplayId</dt>
+<dd>Get the ID of the realtime display engine attached to the view. This will be
+Guid.Empty if no realtime display engine is in use. This can be the case for instance
+when starting a _Render session for a realtime viewport integration. That still would
+cause this ID to be Guid.Empty.</dd>
+<dd>since 6.0</dd>
+<dt>int RealtimeRenderPasses</dt>
+<dd>Get or set the realtime passes amount</dd>
+<dd>since 6.0</dd>
+<dt>bool ShadeVertexColors</dt>
+<dd>Shade using vertex colors.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShadingEnabled</dt>
+<dd>Draw shaded meshes and surfaces. Set to False to use Flat Shading.</dd>
+<dd>since 5.1</dd>
+<dt>Color ShadowColor</dt>
+<dd></dd>
+<dd>since 6.3</dd>
+<dt>bool ShowAnnotations</dt>
+<dd>Show annotations.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowClippingPlanes</dt>
+<dd>Show clipping planes.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowCurves</dt>
+<dd>Draw curves</dd>
+<dd>since 5.1</dd>
+<dt>bool ShowGrips</dt>
+<dd></dd>
+<dt>bool ShowIsoCurves</dt>
+<dd>Draw surface ISO curves.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowLights</dt>
+<dd>Show light widgets.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowPointClouds</dt>
+<dd>Show point clouds.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowPoints</dt>
+<dd>Show points.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowRealtimeRenderProgressBar</dt>
+<dd>Get or set whether the display is used for preview rendering or not.</dd>
+<dd>since 6.0</dd>
+<dt>bool ShowSurfaceEdges</dt>
+<dd>Show surface edges.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowTangentEdges</dt>
+<dd>Show tangent edges.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowTangentSeams</dt>
+<dd>Show tangent seams.</dd>
+<dd>since 6.4</dd>
+<dt>bool ShowText</dt>
+<dd>Show text.</dd>
+<dd>since 6.4</dd>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/stereorendercontextenum/">StereoRenderContextEnum</a> StereoRenderContext</dt>
+<dd>Get or set the stereo render context.</dd>
+<dd>since 7.0</dd>
+<dt>int SurfaceEdgeThickness</dt>
+<dd>Thickness for surface edges</dd>
+<dd>since 6.1</dd>
+<dt>bool UseAssignedObjectMaterial</dt>
+<dd>Gets whether objects ought to be drawn using their assigned rendering material.</dd>
+<dd>since 6.0</dd>
+<dt>bool UseCustomObjectColor</dt>
+<dd>Gets whether objects ought to be drawn using a custom color.</dd>
+<dd>since 6.0</dd>
+<dt>bool UseCustomObjectMaterial</dt>
+<dd>Gets whether objects ought to be drawn using a custom material.</dd>
+<dd>since 6.0</dd>
+<dt>bool UseSingleCurveColor</dt>
+<dd>Use a single color for drawing curves</dd>
+<dd>since 6.3</dd>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/viewdisplayattributes/">ViewDisplayAttributes</a> ViewSpecificAttributes</dt>
+<dd></dd>
+<dt>bool XrayAllObjects</dt>
+<dd></dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>void GetFill(Color topLeft,Color bottomLeft,Color topRight,Color bottomRight)</dt>
+<dd>Get fill colors used for clearing the frame buffer</dd>
+<dd>since 6.23</dd>
+<dt>void GetObjectData(SerializationInfo info,StreamingContext context)</dt>
+<dd></dd>
+<dt>void SetFill(Color singleColor)</dt>
+<dd>Set fill mode to solid color and set the fill color</dd>
+<dd>since 6.23</dd>
+<dt>void SetFill(Color gradientTop,Color gradientBottom)</dt>
+<dd>Set fill mode to two color and set the colors</dd>
+<dd>since 6.23</dd>
+<dt>void SetFill(Color gradientTopLeft,Color gradientBottomLeft,Color gradientTopRight,Color gradientBottomRight)</dt>
+<dd>Set the fill mode to four color gradient and set the colors</dd>
+<dd>since 6.23</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>DisplayPipelineAttributes</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

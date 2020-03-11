@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,134 +57,127 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/">
-        <h3>NurbsCurveKnotList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderwindowclonedeventargs/">
+        <h3>RenderWindowClonedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderwindowclonedeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the knot vector of a nurbs curve.
-public class NurbsCurveKnotListProperties int Count  (summary) Total number of knots in this curve. (since) 5.0  bool IsClampedEnd  (summary) Gets a value indicating whether or not the knot vector is clamped at the end of the curve. Clamped curves are coincident with the first and last control-point. This requires fully multiple knots. (since) 5.0  bool IsClampedStart  (summary) Gets a value indicating whether or not the knot vector is clamped at the start of the curve.
+    Namespace: Rhino.Render
+public class RenderWindowClonedEventArgs : EventArgsProperties  RenderWindow NewRenderWindow  since 5.11 Guid NewSessionId  since 5.11 RenderWindow OldRenderWindow  since 5.11 Guid OldSessionId  since 5.11  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/">
-        <h3>NurbsCurvePointList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rhinosettings/">
+        <h3>RhinoSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/datasources/rhinosettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the control points of a nurbs curve.
-public class NurbsCurvePointListProperties double ControlPolygonLength  (summary) Gets the length of the polyline connecting all control points. (since) 5.0  int Count  (summary) Gets the number of control points in this curve. (since) 5.0  int PointSize  (summary) Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Curve.
+    Namespace: Rhino.Render.DataSources
+public class RhinoSettings : IDisposableConstructors  RhinoSettings(IntPtr pRhinoSettings)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  RhinoView ActiveView()  since 6.0 void Dispose()  since 6.0 List&lt;System.Drawing.Size&gt; GetCustomRenderSizes()  since 6.0 RenderSettings GetRenderSettings()  since 6.0 bool GroundPlaneOnInViewDisplayMode(RhinoView view)  since 6.14 Rhino.DocObjects.ViewInfo RenderingView()  since 6.12 void SetGroundPlaneOnInViewDisplayMode(RhinoView view,bool bOn)  since 6.14 void SetRenderSettings(RenderSettings renderSettings)  since 6.0 bool ViewSupportsShading(RhinoView view)  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/nurbssurface/">
-        <h3>NurbsSurface</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/rtree/">
+        <h3>RTree</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/nurbssurface/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/rtree/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a Non Uniform Rational B-Splines (NURBS) surface.
-public class NurbsSurfaceConstructors NurbsSurface(NurbsSurface other)  (summary) Initializes a new NURBS surface by copying the values from another surface. (since) 5.0  Properties bool IsRational  (summary) Gets a value indicating whether or not the nurbs surface is rational. (since) 5.0  Collections.NurbsSurfaceKnotList KnotsU  (summary) The U direction knot vector. (since) 5.0  Collections.NurbsSurfaceKnotList KnotsV  (summary) The V direction knot vector.
+Represents a spatial search structure based on implementations of the R-tree algorithm by Toni Gutman.
+public class RTree : IDisposableConstructors  RTree() Initializes a new, empty instance of the tree.  Properties  int Count Gets the number of items in this tree.  Methods  static RTree CreateFromPointArray(IEnumerablepoints) Constructs a new tree with an element for each pointcloud point. Returns - A new tree, or None on error.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/">
-        <h3>NurbsSurfaceKnotList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/scalevalue/">
+        <h3>ScaleValue</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/scalevalue/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the knot vector of a nurbs surface.
-public class NurbsSurfaceKnotListProperties bool ClampedAtEnd  (summary) Determines if a knot vector is clamped. (since) 5.0  bool ClampedAtStart  (summary) Determines if a knot vector is clamped. (since) 5.0  int Count  (summary) Gets the total number of knots in this curve. (since) 5.0  Methods bool CreatePeriodicKnots(double knotSpacing)  (summary) Compute a clamped, uniform, periodic knot vector based on the current degree and control point count.
+    Namespace: Rhino
+Represents a scale with associated LengthValues and string representations of the scale. This allows for going back and forth from numerical representations of a scale and a string representation without &ldquo;guessing&rdquo; at the initial scale.
+public class ScaleValue : IDisposableConstructors  ScaleValue() Default constructor since 6.0  Properties  double LeftToRightScale LeftLengthValue / RightLengthValue since 6.0 double RightToLeftScale RightLengthValue / LeftLengthValue since 6.0  Methods  static ScaleValue Create(LengthValue left,LengthValue right,ScaleStringFormat format) Create from 2 length values since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/">
-        <h3>NurbsSurfacePointList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/sceneobject/">
+        <h3>SceneObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/sceneobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the control points of a nurbs surface.
-public class NurbsSurfacePointListProperties int CountU  (summary) Gets the number of control points in the U direction of this surface. (since) 5.0  int CountV  (summary) Gets the number of control points in the V direction of this surface. (since) 5.0  int PointSize  (summary) Returns the control point size, or the number of doubles per control point.
+    Namespace: Rhino.Render
+public class SceneObjectProperties  RenderMaterial Material  since 5.1 Mesh Mesh  since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/objectattributes/">
-        <h3>ObjectAttributes</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/sceneserverdata/">
+        <h3>SceneServerData</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/objectattributes/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/sceneserverdata/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Attributes (color, material, layer,&hellip;) associated with a rhino object
-public class ObjectAttributesConstructors ObjectAttributes()  (summary) (since) 5.0  Properties bool CastsShadows  (summary) Gets or sets an object&rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane. (since) 6.0  ObjectColorSource ColorSource  (summary) The color used to display an object is specified in one of three ways. If ColorSource is ON::color_from_layer, then the object&rsquo;s layer ON_Layer::Color() is used.
+    Namespace: Rhino.Render
+The Scene Server Data used by the PreviewSceneServer
+public class SceneServerDataConstructors  SceneServerData(PreviewGeometry geo,PreviewBackground back,PreviewLighting light,SceneServerDataUsage usage) Constructor for SceneServerData since 6.0  Properties  IntPtr CppPointer The CppPointer of SceneServerData since 6.0  Methods  void Dispose() Dispose for SceneServerData since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/objectenumeratorsettings/">
-        <h3>ObjectEnumeratorSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/silhouette/">
+        <h3>Silhouette</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/objectenumeratorsettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/silhouette/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Settings used for getting an enumerator of objects in a document See Rhino.Collections.ObjectTable.GetEnumerator()
-public class ObjectEnumeratorSettingsConstructors ObjectEnumeratorSettings()  (summary) (since) 5.0  Properties bool ActiveObjects  (summary) (since) 5.0  Type ClassTypeFilter  (summary) (since) 5.0  bool DeletedObjects  (summary) (since) 5.0  bool HiddenObjects  (summary) (since) 5.0  bool IdefObjects  (summary) When true, ONLY Instance Definitions will be returned (since) 5.0  bool IncludeGrips  (summary) (since) 5.
+    Namespace: Rhino.Geometry
+Information about silhouette curves that are generated from geometry (surfaces, brep faces, meshes)
+public class SilhouetteProperties  Curve Curve 3D curve representing the shape of the silhouette. since 6.0 ComponentIndex GeometryComponentIndex Gets the component index corresponding with this silhouette curve. This field is only set when the entire silhouette curve is part of some geometry component. since 6.0 SilhouetteType SilhouetteType Gets the type of this silhouette curve. since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/objectpropertiespage/">
-        <h3>ObjectPropertiesPage</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/simulatedenvironment/">
+        <h3>SimulatedEnvironment</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/objectpropertiespage/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/simulatedenvironment/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Base class used to add object property user interface panels
-public class ObjectPropertiesPageProperties bool AllObjectsMustBeSupported   (summary) Returns True when running on Mac which requires only objects of SupportedTypes. Returns False when running on Windows which only requires a single item of SupportedTypes to be selected.
-Override if you wish to change the above behavior.
-  (since) 6.7
-  string EnglishPageTitle  (summary) English string used to describe this page (since) 5.
+    Namespace: Rhino.Render
+public class SimulatedEnvironment : IDisposableConstructors  SimulatedEnvironment()  since 5.1  Properties  Color BackgroundColor  since 5.1 SimulatedTexture BackgroundImage  since 5.1 BackgroundProjections BackgroundProjection  since 5.1  Methods  static BackgroundProjections ProjectionFromString(String projection)  since 5.1 static string StringFromProjection(BackgroundProjections projection)  since 5.1 IntPtr ConstPointer()  since 5.1 void Dispose()  since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/objectpropertiespagecollection/">
-        <h3>ObjectPropertiesPageCollection</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/simulatedtexture/">
+        <h3>SimulatedTexture</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/objectpropertiespagecollection/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/simulatedtexture/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Passed to Rhino.PlugIns.PlugIn.ObjectPropertiesPages to allow a plug-in to add custom ObjectPropertiesPage pages to the Rhino properties panel.
-public class ObjectPropertiesPageCollectionProperties RhinoDoc Document  (summary) Document associated with the Rhino properties panel. (since) 7.0  uint DocumentRuntimeSerailNumber  (summary) Document associated with the Rhino properties panel. (since) 7.0  Methods void Add(ObjectPropertiesPage page)  (summary) Custom page to add (since) 7.0 (returns) void This is some return comment  
+    Namespace: Rhino.Render
+public class SimulatedTexture : IDisposableConstructors  SimulatedTexture()  since 5.1  Properties  static int BitmapSize  since 5.1 String Filename  since 5.1 bool Filtered  since 5.1 bool HasTransparentColor  since 5.1 Transform LocalMappingTransform  since 5.1 int MappingChannel  since 5.1 Vector2d Offset  since 5.1 String OriginalFilename  since 5.1 ProjectionModes ProjectionMode  since 5.1 Vector2d Repeat  since 5.1 bool Repeating  since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/objectpropertiespageeventargs/">
-        <h3>ObjectPropertiesPageEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/skylight/">
+        <h3>Skylight</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/objectpropertiespageeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/skylight/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class ObjectPropertiesPageEventArgsConstructors ObjectPropertiesPageEventArgs(ObjectPropertiesPage page)  (summary) Used by to notify the page when updating, modifying or determining if the page should be included in the navigation bar (since) 6.0  Properties uint DocRuntimeSerialNumber  (summary) Document containing the objects and views (since) 6.0  RhinoDoc Document  (summary) Document containing the objects and views (since) 6.0  uint EventRuntimeSerialNumber  (summary) Gets the runtime serial number. (since) 6.
+    Namespace: Rhino.Render.ChangeQueue
+ChangeQueue skylight
+public class SkylightProperties  bool Enabled Return True if skylight is enabled since 6.0 double ShadowIntensity Get shadow intensity for skylight since 6.0 bool UsesCustomEnvironment Return True if skylight uses custom environment since 6.0  Methods  string ToString() Textual representation of Skylight since (unknown)  
   </div>
   
 

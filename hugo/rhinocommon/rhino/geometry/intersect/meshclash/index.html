@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshClash &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Intersect
+Represents a particular instance of a clash or intersection between two meshes.
+public class MeshClashProperties  Point3d ClashPoint If valid, then the sphere centered at ClashPoint of ClashRadius distance intersects the clashing meshes. double ClashRadius Gets the clash, or intersection, radius. Mesh MeshA Gets the first mesh. Mesh MeshB Gets the second mesh.  Methods  static Mesh[] FindDetail(RhinoObject objA,RhinoObject objB,double distance) Finds all of the mesh faces on each of two Rhino objects that interfere within a clash distance.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshClash</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Intersect</a></em></p>
+<p>Represents a particular instance of a clash or intersection between two meshes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshClash</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClashPoint</dt>
+<dd>If valid, then the sphere centered at ClashPoint of ClashRadius
+distance intersects the clashing meshes.</dd>
+<dt>double ClashRadius</dt>
+<dd>Gets the clash, or intersection, radius.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> MeshA</dt>
+<dd>Gets the first mesh.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> MeshB</dt>
+<dd>Gets the second mesh.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a>[] FindDetail(RhinoObject objA,RhinoObject objB,double distance)</dt>
+<dd>Finds all of the mesh faces on each of two Rhino objects that interfere within a clash distance.
+This function uses the object&rsquo;s mesh to calculate the interferences.
+Acceptable object types include: BrepObject, ExtrusionObject, MeshObject, and SubDObject.</dd>
+<dd>Returns - The resulting meshes are sub-meshes of the input meshes if successful, or an empty array on error.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a>[] FindDetail(RhinoObject objA,RhinoObject objB,double distance,MeshType meshType,MeshingParameters meshingParameters)</dt>
+<dd>Finds all of the mesh faces on each of two Rhino objects that interfere within a clash distance.
+This function uses the object&rsquo;s mesh to calculate the interferences.
+Acceptable object types include: BrepObject, ExtrusionObject, MeshObject, and SubDObject.</dd>
+<dd>Returns - The resulting meshes are sub-meshes of the input meshes if successful, or an empty array on error.</dd>
+<dd>since 7.0</dd>
+<dt>static MeshClash[] Search(IEnumerable<!-- raw HTML omitted --> setA,IEnumerable<!-- raw HTML omitted --> setB,double distance,int maxEventCount)</dt>
+<dd>Searches for locations where the distance from a mesh in one set of meshes
+is less than distance to another mesh in a second set of meshes.</dd>
+<dd>Returns - An array of clash objects.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/meshinterference/">MeshInterference</a>[] Search(IEnumerable<!-- raw HTML omitted --> setA,IEnumerable<!-- raw HTML omitted --> setB,double distance)</dt>
+<dd>Searches for locations where the distance from a RhinoObject, in one set of objects,
+is less than the specified distance to another RhinoObject in a second set of objects.
+This function uses the object&rsquo;s mesh to calculate the interferences.
+Acceptable object types include: BrepObject, ExtrusionObject, MeshObject, and SubDObject.</dd>
+<dd>Returns - An array of mesh interference object if successful, or an empty array on failure.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/meshinterference/">MeshInterference</a>[] Search(IEnumerable<!-- raw HTML omitted --> setA,IEnumerable<!-- raw HTML omitted --> setB,double distance,MeshType meshType,MeshingParameters meshingParameters)</dt>
+<dd>Searches for locations where the distance from a RhinoObject, in one set of objects,
+is less than the specified distance to another RhinoObject in a second set of objects.
+This function uses the object&rsquo;s mesh to calculate the interferences.
+Acceptable object types include: BrepObject, ExtrusionObject, MeshObject, and SubDObject.</dd>
+<dd>Returns - An array of mesh interference object if successful, or an empty array on failure.</dd>
+<dd>since 7.0</dd>
+<dt>static MeshClash[] Search(Mesh meshA,IEnumerable<!-- raw HTML omitted --> setB,double distance,int maxEventCount)</dt>
+<dd>Searches the locations where the distance from the first mesh to a mesh in the second set of meshes
+is less than the provided value.</dd>
+<dd>Returns - An array of clash objects.</dd>
+<dt>static MeshClash[] Search(Mesh meshA,Mesh meshB,double distance,int maxEventCount)</dt>
+<dd>Searches the locations where the distance from the first mesh to the second mesh
+is less than the provided value.</dd>
+<dd>Returns - An array of clash objects.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshClash</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

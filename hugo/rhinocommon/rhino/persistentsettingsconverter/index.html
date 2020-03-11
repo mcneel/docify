@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PersistentSettingsConverter &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino
+Used to convert string to string lists and string dictionaries and back to strings again.
+public class PersistentSettingsConverterMethods  static bool IsStringDictionary(string s) Determines if the string value is formatted as a key value pair string list. Returns - Returns True if it is a XML key value pair list otherwise return false. since 6.0 static bool IsStringList(string s) Determines if the string value is formatted as a string list.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PersistentSettingsConverter</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino</a></em></p>
+<p>Used to convert string to string lists and string dictionaries and back
+to strings again.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PersistentSettingsConverter</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool IsStringDictionary(string s)</dt>
+<dd>Determines if the string value is formatted as a key value pair
+string list.</dd>
+<dd>Returns - Returns True if it is a XML key value pair list otherwise return false.</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsStringList(string s)</dt>
+<dd>Determines if the string value is formatted as a string list.</dd>
+<dd>Returns - Returns True if it is a XML string list otherwise return false.</dd>
+<dd>since 6.0</dd>
+<dt>static string ToString(double value)</dt>
+<dd>Converts a double value to a string.</dd>
+<dd>Returns - Returns the double value as a settings file formatted string.</dd>
+<dd>since 6.10</dd>
+<dt>static string ToString(KeyValuePair&lt;string, string&gt;[] value)</dt>
+<dd>Converts a key value string pair array to a properly formatted string
+dictionary XML string.</dd>
+<dd>Returns - Returns a properly formatted XML string that represents the string
+dictionary.</dd>
+<dd>since (unknown)</dd>
+<dt>static string ToString(string[] values)</dt>
+<dd>Converts a string array to a properly formatted string list XML string.</dd>
+<dd>Returns - Returns a properly formatted XML string that represents the list of
+strings.</dd>
+<dd>since 6.0</dd>
+<dt>static bool TryParseDouble(string s,double value)</dt>
+<dd>Converts the string representation of a number to its double-precision
+floating-point number equivalent. A return value indicates whether the
+conversion succeeded or failed.
+system culture.</dd>
+<dd>Returns - Returns True if s was converted successfully; otherwise, false..</dd>
+<dd>since 6.10</dd>
+<dt>static bool TryParseEnum(Type type,string enumValueName,int value)</dt>
+<dd>Converts an enum value name to its integer
+equivalent.</dd>
+<dd>Returns - Returns True if the the successfully converted or False if not.</dd>
+<dd>since 6.0</dd>
+<dt>static bool TryParseEnum(Type type,string intValueAsString,string value)</dt>
+<dd>Converts an enum value string (integer as string) to
+a enum value name.</dd>
+<dd>Returns - Returns True if the the successfully converted or False if not.</dd>
+<dd>since 6.0</dd>
+<dt>static bool TryParseStringDictionary(string s,KeyValuePair&lt;string, string&gt;[] value)</dt>
+<dd>Attempts to convert a string to a key value string pair array.</dd>
+<dd>Returns - Returns True if the string is not empty and properly formatted as a
+key value string pair list otherwise returns false.</dd>
+<dd>since (unknown)</dd>
+<dt>static bool TryParseStringList(string s,string[] value)</dt>
+<dd>Attempts to convert a string to a string value list.</dd>
+<dd>Returns - Returns True if the string is not empty and properly formatted as a
+string list otherwise returns false.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PersistentSettingsConverter</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

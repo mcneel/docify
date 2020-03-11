@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.DocObjects.Tables &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.DocObjects.Tables</h1>
+  <ul>
+<li><a href="bitmaptable/">BitmapTable</a></li>
+<li><a href="dimstyletable/">DimStyleTable</a></li>
+<li><a href="dimstyletableeventargs/">DimStyleTableEventArgs</a></li>
+<li><a href="dimstyletableeventtype/">DimStyleTableEventType</a></li>
+<li><a href="fonttable/">FontTable</a></li>
+<li><a href="grouptable/">GroupTable</a></li>
+<li><a href="grouptableeventargs/">GroupTableEventArgs</a></li>
+<li><a href="grouptableeventtype/">GroupTableEventType</a></li>
+<li><a href="hatchpatterntable/">HatchPatternTable</a></li>
+<li><a href="instancedefinitiontable/">InstanceDefinitionTable</a></li>
+<li><a href="instancedefinitiontableeventargs/">InstanceDefinitionTableEventArgs</a></li>
+<li><a href="instancedefinitiontableeventtype/">InstanceDefinitionTableEventType</a></li>
+<li><a href="layertable/">LayerTable</a></li>
+<li><a href="layertableeventargs/">LayerTableEventArgs</a></li>
+<li><a href="layertableeventtype/">LayerTableEventType</a></li>
+<li><a href="lighttable/">LightTable</a></li>
+<li><a href="lighttableeventargs/">LightTableEventArgs</a></li>
+<li><a href="lighttableeventtype/">LightTableEventType</a></li>
+<li><a href="linetypetable/">LinetypeTable</a></li>
+<li><a href="materialtable/">MaterialTable</a></li>
+<li><a href="materialtableeventargs/">MaterialTableEventArgs</a></li>
+<li><a href="materialtableeventtype/">MaterialTableEventType</a></li>
+<li><a href="modifytype/">ModifyType</a></li>
+<li><a href="namedconstructionplanetable/">NamedConstructionPlaneTable</a></li>
+<li><a href="namedlayerstatetable/">NamedLayerStateTable</a></li>
+<li><a href="namedpositiontable/">NamedPositionTable</a></li>
+<li><a href="namedviewtable/">NamedViewTable</a></li>
+<li><a href="objecttable/">ObjectTable</a></li>
+<li><a href="restorelayerproperties/">RestoreLayerProperties</a></li>
+<li><a href="rhinodoccommontable/">RhinoDocCommonTable</a></li>
+<li><a href="runtimedocumentdatatable/">RuntimeDocumentDataTable</a></li>
+<li><a href="snapshottable/">SnapshotTable</a></li>
+<li><a href="stringtable/">StringTable</a></li>
+<li><a href="viewtable/">ViewTable</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedlayerstatetable/">
+        <div class="h2 mt-1 mb-1">NamedLayerStateTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+All named layer states in a Rhino document.
+public class NamedLayerStateTableProperties  int Count Returns the number of named layers states in the document. since 6.14 RhinoDoc Document Document that owns this table. since 6.14 string[] Names Returns the names of named layer states in the document. since 6.14  Methods  bool Delete(string name) Deletes an exising named layer state. Returns - True if successful, False otherwise.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedlayerstatetable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedpositiontable/">
+        <div class="h2 mt-1 mb-1">NamedPositionTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+All named positions in a rhino document.
+public class NamedPositionTableProperties  int Count Number of Named Positions in the table. since 6.0 RhinoDoc Document Document that owns this table. since 6.0 Guid[] Ids Array of Named Position guids. Returns - Guid array of each Named Position in the document. since 6.0 string[] Names Array of Named Position names. Returns - A string array with the names all Named Positions in the document.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedpositiontable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedviewtable/">
+        <div class="h2 mt-1 mb-1">NamedViewTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+All named views in a rhino document.
+public class NamedViewTable : IEnumerable&lt;ViewInfo&gt;, Collections.IRhinoTable&lt;ViewInfo&gt;Properties  int Count Number of named views in the table. RhinoDoc Document Document that owns this table.  Methods  int Add(string name,Guid viewportId) Adds named view to document which is based on an existing viewport. Returns - 0 based index of named view. -1 on failure. int Add(ViewInfo view)  bool Delete(int index) Remove named view from the document.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedviewtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/rhinodoccommontable/">
+        <div class="h2 mt-1 mb-1">RhinoDocCommonTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class RhinoDocCommonTable : CommonComponentTable&lt;T&gt;Properties  RhinoDoc Document Document that owns this table. since (unknown)  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/rhinodoccommontable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/runtimedocumentdatatable/">
+        <div class="h2 mt-1 mb-1">RuntimeDocumentDataTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Collection of document runtime data. This is a good place to put non-serialized, per document data.
+public class RuntimeDocumentDataTable : Dictionary&lt;object, object&gt;Properties  RhinoDoc Document  since 6.3  Methods  T GetValue(object key,Func&lt;RhinoDoc, T&gt; newT) Checks the dictionary for the specified key, if found and the value is not None then then the value is returned. If the key is not found or its value is None then newT(Document) is called to create a new value instnce which is put in the dictionary and returned.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/runtimedocumentdatatable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/snapshottable/">
+        <div class="h2 mt-1 mb-1">SnapshotTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+All snapshots in a rhino document.
+public class SnapshotTableProperties  RhinoDoc Document Document that owns this table. since 6.7 string[] Names Array of Snapshot names. Returns - A string array with the names of all Snapshots in the document. since 6.7  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/snapshottable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/stringtable/">
+        <div class="h2 mt-1 mb-1">StringTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Collection of document user data strings
+public class StringTableProperties  int Count The number of user data strings in the current document. RhinoDoc Document Document that owns this object table. int DocumentDataCount  since 6.0 int DocumentUserTextCount  since 6.0  Methods  void Delete(string key)  void Delete(string section,string entry) Removes user data strings from the document. string[] GetEntryNames(string section) Return list of all entry names for a given section of user data strings in the document.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/stringtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/viewtable/">
+        <div class="h2 mt-1 mb-1">ViewTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class ViewTable : IEnumerable&lt;RhinoView&gt;Properties  RhinoView ActiveView Gets or Sets the active view. RhinoDoc Document Document that owns this object table. bool ModelSpaceIsActive  bool RedrawEnabled Returns or sets (enable or disables) screen redrawing.  Methods  RhinoView Add(string title,DefinedViewportProjection projection,Rectangle position,bool floating) Constructs a new Rhino view and, at the same time, adds it to the list. Returns - The newly constructed Rhino view; or None on error.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/viewtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/bitmaptable/">
+        <div class="h2 mt-1 mb-1">BitmapTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Stores the list of bitmaps in a Rhino document.
+public class BitmapTable :RhinoDocCommonTable&lt;BitmapEntry&gt;,ICollection&lt;BitmapEntry&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  int AddBitmap(string bitmapFilename,bool replaceExisting) Adds a new bitmap with specified name to the bitmap table. Returns - index of new bitmap in table on success. -1 on error. bool Delete(BitmapEntry item) Removes the bitmap from the table. Returns - True if the item could be deleted; otherwise, false.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/bitmaptable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptable/">
+        <div class="h2 mt-1 mb-1">GroupTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Group tables store the list of groups in a Rhino document.
+public class GroupTable :RhinoDocCommonTable&lt;Group&gt;, ICollection&lt;Group&gt;Properties  ModelComponentType ComponentType  since 6.0  Methods  int Add() Adds a new empty group to the group table. Returns - &gt;=0 index of new group. -1 group not added because a group with that name already exists. int Add(IEnumerableobjectIds) Adds a new group to the group table with a set of objects.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptable/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/3/">3</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

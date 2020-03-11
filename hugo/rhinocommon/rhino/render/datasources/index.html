@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Render.DataSources &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Render.DataSources</h1>
+  <ul>
+<li><a href="assignbys/">AssignBys</a></li>
+<li><a href="attachreason/">AttachReason</a></li>
+<li><a href="detachreason/">DetachReason</a></li>
+<li><a href="types/">Types</a></li>
+<li><a href="layouts/">Layouts</a></li>
+<li><a href="splitters/">Splitters</a></li>
+<li><a href="contentfactories/">ContentFactories</a></li>
+<li><a href="contentfactory/">ContentFactory</a></li>
+<li><a href="types/">Types</a></li>
+<li><a href="operations/">Operations</a></li>
+<li><a href="metadata/">MetaData</a></li>
+<li><a href="modes/">Modes</a></li>
+<li><a href="states/">States</a></li>
+<li><a href="commandfilters/">CommandFilters</a></li>
+<li><a href="displaymodes/">DisplayModes</a></li>
+<li><a href="uihints/">UiHints</a></li>
+<li><a href="rdkedit/">RdkEdit</a></li>
+<li><a href="rdkmodaleditcontentbucket/">RdkModalEditContentBucket</a></li>
+<li><a href="rdkselectionnavigator/">RdkSelectionNavigator</a></li>
+<li><a href="rhinosettings/">RhinoSettings</a></li>
+<li><a href="shapes/">Shapes</a></li>
+<li><a href="sizes/">Sizes</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactories/">
+        <div class="h2 mt-1 mb-1">ContentFactories</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+public class ContentFactories : IDisposableConstructors  ContentFactories(IntPtr pRdkContentFactories)  since 6.1  Properties  IntPtr CppPointer  since 6.1  Methods  void Dispose()  since 6.1 ContentFactory FindFactory(Guid uuid)  since 6.7 ContentFactory FirstFactory()  since 6.1 ContentFactory NextFactory()  since 6.1  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactories/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactory/">
+        <div class="h2 mt-1 mb-1">ContentFactory</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+public class ContentFactory : IDisposableConstructors  ContentFactory(IntPtr pRdkContentFactory)  since 6.1  Properties  IntPtr CppPointer  since 6.1  Methods  Guid ContentTypeId()  since 6.7 void Dispose()  since 6.1 RenderContentKind Kind()  since 6.3 RenderContent NewContent() New Content returns a new content, which is Initialized with the Initialize() function. The content should be unitilized after use with the Unitialize function. since 6.1  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactory/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/metadata/">
+        <div class="h2 mt-1 mb-1">MetaData</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+public class MetaData : IDisposableConstructors  MetaData(IntPtr pMetaData)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  Guid ContentInstanceId()  since 6.7 void Dispose()  since 6.0 string Geometry()  since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/metadata/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkedit/">
+        <div class="h2 mt-1 mb-1">RdkEdit</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+public class RdkEdit : IDisposableConstructors  RdkEdit(IntPtr pRdkEdit)  since 6.5  Properties  IntPtr CppPointer  since 6.5  Methods  void Dispose()  since 6.5 bool Execute(RenderContentCollection collection)  since 6.5  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkedit/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkmodaleditcontentbucket/">
+        <div class="h2 mt-1 mb-1">RdkModalEditContentBucket</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+[Obsolete(&#34;RdkModalEditContentBucket is obsolete&#34;, false)]public class RdkModalEditContentBucket : IDisposableConstructors  RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)  since 6.5  Properties  IntPtr CppPointer  since 6.5  Methods  RenderContentCollection ContentsIn()  since 6.5 void Dispose()  since 6.5 void SetContentsOut(RenderContentCollection collection)  since 6.5  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkmodaleditcontentbucket/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkselectionnavigator/">
+        <div class="h2 mt-1 mb-1">RdkSelectionNavigator</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+public class RdkSelectionNavigator : IDisposableConstructors  RdkSelectionNavigator(IntPtr pRhinoSettings)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void Add(RenderContentCollection selectedContentArray) Add a selection of contents at the current position. Clears the navigator ahead of the current position. since 6.0 bool CanGoBackwards() Check the backwards status of the navigator Returns - True if it is possible to navigate backwards, else false since 6.0 bool CanGoForwards() Check the forwards status of the navigator Returns - True if it is possible to navigate forwards, else false since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkselectionnavigator/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rhinosettings/">
+        <div class="h2 mt-1 mb-1">RhinoSettings</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Render.DataSources
+public class RhinoSettings : IDisposableConstructors  RhinoSettings(IntPtr pRhinoSettings)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  RhinoView ActiveView()  since 6.0 void Dispose()  since 6.0 List&lt;System.Drawing.Size&gt; GetCustomRenderSizes()  since 6.0 RenderSettings GetRenderSettings()  since 6.0 bool GroundPlaneOnInViewDisplayMode(RhinoView view)  since 6.14 Rhino.DocObjects.ViewInfo RenderingView()  since 6.12 void SetGroundPlaneOnInViewDisplayMode(RhinoView view,bool bOn)  since 6.14 void SetRenderSettings(RenderSettings renderSettings)  since 6.0 bool ViewSupportsShading(RhinoView view)  since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/render/datasources/rhinosettings/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

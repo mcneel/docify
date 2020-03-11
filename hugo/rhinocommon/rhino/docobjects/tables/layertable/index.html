@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LayerTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class LayerTable :RhinoDocCommonTable&amp;lt;Layer&amp;gt;, ICollection&amp;lt;Layer&amp;gt;Properties  int ActiveCount Returns number of layers in the layer table, excluding deleted layers. ModelComponentType ComponentType  since 6.0 int Count Returns number of layers in the layer table, including deleted layers. Layer CurrentLayer At all times, there is a &amp;ldquo;current&amp;rdquo; layer. Unless otherwise specified, new objects are assigned to the current layer. The current layer is never locked, hidden, or deleted.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LayerTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LayerTable</span> :
+    RhinoDocCommonTable&lt;Layer&gt;, ICollection&lt;Layer&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int ActiveCount</dt>
+<dd>Returns number of layers in the layer table, excluding deleted layers.</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Returns number of layers in the layer table, including deleted layers.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/layer/">Layer</a> CurrentLayer</dt>
+<dd>At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified,
+new objects are assigned to the current layer. The current layer is
+never locked, hidden, or deleted.
+<p>Returns reference to the current layer. Note that this reference may
+become invalid after a call to AddLayer().</p>
+</dd>
+<dt>int CurrentLayerIndex</dt>
+<dd>At all times, there is a &ldquo;current&rdquo; layer.  Unless otherwise specified, new objects
+are assigned to the current layer. The current layer is never locked, hidden, or deleted.
+Resturns: Zero based layer table index of the current layer.</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Document that owns this table.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add()</dt>
+<dd>Adds a new layer with default definition to the layer table.</dd>
+<dd>Returns - index of new layer.</dd>
+<dt>int Add(Layer layer)</dt>
+<dd>Adds a new layer with specified definition to the layer table.</dd>
+<dd>Returns - &gt;=0 index of new layer
+-1  layer not added because a layer with that name already exists.</dd>
+<dt>int Add(string layerName,Color layerColor)</dt>
+<dd>Adds a new layer with specified definition to the layer table.</dd>
+<dd>Returns - &gt;=0 index of new layer
+-1  layer not added because a layer with that name already exists.</dd>
+<dt>int AddReferenceLayer()</dt>
+<dd>Adds a new reference layer with default definition to the layer table.
+Reference layers are not saved in files.</dd>
+<dd>Returns - index of new layer.</dd>
+<dt>int AddReferenceLayer(Layer layer)</dt>
+<dd>Adds a new reference layer with specified definition to the layer table
+Reference layers are not saved in files.</dd>
+<dd>Returns - &gt;=0 index of new layer
+-1  layer not added because a layer with that name already exists.</dd>
+<dt>bool Delete(Guid layerId,bool quiet)</dt>
+<dd>Deletes layer.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the the layer cannot be
+deleted because it is the current layer or because it layer contains active geometry.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(int layerIndex,bool quiet)</dt>
+<dd>Deletes layer.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the the layer cannot be
+deleted because it is the current layer or because it layer contains active geometry.</dd>
+<dt>bool Delete(Layer layer)</dt>
+<dd>Deletes layer.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the the layer cannot be
+deleted because it is the current layer or because it layer contains active geometry.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(Layer layer,bool quiet)</dt>
+<dd>Deletes layer.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the the layer cannot be
+deleted because it is the current layer or because it layer contains active geometry.</dd>
+<dd>since 6.0</dd>
+<dt>int[] Duplicate(IEnumerable<!-- raw HTML omitted --> layerIndices,bool duplicateObjects,bool duplicateSublayers)</dt>
+<dd>Duplicates, or copies, one or more layers. Duplicated layers are added to the document.</dd>
+<dd>Returns - The indices of the newly added layers if successful, an empty array on failure.</dd>
+<dd>since 6.18</dd>
+<dt>int[] Duplicate(int layerIndex,bool duplicateObjects,bool duplicateSublayers)</dt>
+<dd>Duplicates, or copies, a layer. Duplicated layers are added to the document.</dd>
+<dd>Returns - The indices of the newly added layers if successful, an empty array on failure.</dd>
+<dd>since 6.18</dd>
+<dt>int Find(Guid layerId,bool ignoreDeletedLayers)</dt>
+<dd>Finds a layer with a matching ID.</dd>
+<dd>Returns - &gt;=0 index of the layer with the given name
+-1  no layer has the given name.</dd>
+<dt>int Find(Guid layerId,bool ignoreDeletedLayers,int notFoundReturnValue)</dt>
+<dd>Finds a layer with a matching ID.</dd>
+<dd>Returns - The index of the found layer, or notFoundReturnValue.</dd>
+<dd>since 6.0</dd>
+<dt>int Find(Guid parentId,string layerName,bool ignoreDeletedLayers)</dt>
+<dd>Finds a layer with a given name and matching parent ID.</dd>
+<dd>Returns - &gt;=0 index of the layer with the given name
+-1  no layer has the given name.</dd>
+<dd>since 6.0</dd>
+<dt>int Find(Guid parentId,string layerName,int notFoundReturnValue)</dt>
+<dd>Finds a layer with a given name and matching parent ID.</dd>
+<dd>Returns - The index of the found layer, or notFoundReturnValue.</dd>
+<dd>since 6.0</dd>
+<dt>int Find(string layerName,bool ignoreDeletedLayers)</dt>
+<dd>Finds the layer with a given name. If multiple layers exist that have the same name, the
+first match layer index will be returned.
+Deleted layers have no name.</dd>
+<dd>Returns - index of the layer with the given name.
+If no layer is found, the index of the default layer, -1, is returned.</dd>
+<dt>int FindByFullPath(string layerPath,bool ignoreDeletedLayers)</dt>
+<dd></dd>
+<dt>int FindByFullPath(string layerPath,int notFoundReturnValue)</dt>
+<dd>Searches for a layer using the fully qualified name, that includes ancestors.
+Deleted layers have no name.</dd>
+<dd>Returns - The index of the found layer, or notFoundReturnValue.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/layer/">Layer</a> FindIndex(int index)</dt>
+<dd>Retrieves a Layer object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</dd>
+<dd>Returns - A Layer object, or None if none was found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/layer/">Layer</a> FindName(string layerName)</dt>
+<dd>Finds the layer with a given name. If multiple layers exist that have the same name, the
+first match layer index will be returned.
+Deleted layers have no name.The default layer is NOT included in the search. If required, use the overload with startIndex input.</dd>
+<dd>Returns - A layer, or null.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/layer/">Layer</a> FindName(string layerName,int startIndex)</dt>
+<dd>Finds the next layer that has an index equal or higher than the searched value.
+Search in case-insensitive.</dd>
+<dd>Returns - A layer, or null.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/layer/">Layer</a> FindNameHash(NameHash nameHash)</dt>
+<dd>Finds a Layer given its name hash.</dd>
+<dd>Returns - An Layer, or None on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/layer/">Layer</a> FindNext(int index,string layerName)</dt>
+<dd>Use FindName(name, index).</dd>
+<dd>Returns - Do not use.</dd>
+<dd>since 6.0</dd>
+<dt>int FindNext(int index,string layerName,bool ignoreDeletedLayers)</dt>
+<dd></dd>
+<dt>bool ForceLayerVisible(Guid layerId)</dt>
+<dd>Makes a layer and all of its parent layers visible.</dd>
+<dd>Returns - True if the operation succeeded.</dd>
+<dt>bool ForceLayerVisible(int layerIndex)</dt>
+<dd>Makes a layer and all of its parent layers visible.</dd>
+<dd>Returns - True if the operation succeeded.</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd></dd>
+<dt>bool GetSelected(List<!-- raw HTML omitted --> layerIndices)</dt>
+<dd>Returns the indices of layers that are selected on the Layer user interface.</dd>
+<dd>Returns - True if the layer user inteface is visible, False otherwise.</dd>
+<dd>since (unknown)</dd>
+<dt>string GetUnusedLayerName()</dt>
+<dd>Gets the next unused layer name used as default when creating new layers.</dd>
+<dd>Returns - An unused layer name string.</dd>
+<dd>since 6.0</dd>
+<dt>string GetUnusedLayerName(bool ignoreDeleted)</dt>
+<dd>Gets the next unused layer name used as default when creating new layers.</dd>
+<dd>Returns - An unused layer name string.</dd>
+<dt>bool Modify(Layer newSettings,Guid layerId,bool quiet)</dt>
+<dd>Modifies layer settings.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the settings attempt
+to lock or hide the current layer.</dd>
+<dd>since 6.0</dd>
+<dt>bool Modify(Layer newSettings,int layerIndex,bool quiet)</dt>
+<dd>Modifies layer settings.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the settings attempt
+to lock or hide the current layer.</dd>
+<dt>bool Purge(Guid layerId,bool quiet)</dt>
+<dd>Deletes a layer and all geometry objects on a layer.</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the the layer cannot be
+deleted because it is the current layer.</dd>
+<dd>since 6.0</dd>
+<dt>bool Purge(int layerIndex,bool quiet)</dt>
+<dd>Deletes a layer and all geometry objects on a layer</dd>
+<dd>Returns - True if successful. False if layerIndex is out of range or the the layer cannot be
+deleted because it is the current layer.</dd>
+<dd>since 5.5</dd>
+<dt>bool Select(IEnumerable<!-- raw HTML omitted --> layerIndices,bool bDeselect)</dt>
+<dd>Selects layers in the Layer user interface.</dd>
+<dd>Returns - True if the layer user inteface is visible, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetCurrentLayerIndex(int layerIndex,bool quiet)</dt>
+<dd>At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified, new objects
+are assigned to the current layer. The current layer is never locked, hidden, or deleted.</dd>
+<dd>Returns - True if current layer index successfully set.</dd>
+<dt>bool Undelete(int layerIndex)</dt>
+<dd>Undeletes a layer that has been deleted by DeleteLayer().</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool UndoModify(Guid layerId)</dt>
+<dd>Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</dd>
+<dd>Returns - True if this layer had been modified and the modifications were undone.</dd>
+<dd>since 6.0</dd>
+<dt>bool UndoModify(Guid layerId,uint undoRecordSerialNumber)</dt>
+<dd>Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</dd>
+<dd>Returns - True if this layer had been modified and the modifications were undone.</dd>
+<dd>since 6.0</dd>
+<dt>bool UndoModify(int layerIndex)</dt>
+<dd>Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</dd>
+<dd>Returns - True if this layer had been modified and the modifications were undone.</dd>
+<dt>bool UndoModify(int layerIndex,uint undoRecordSerialNumber)</dt>
+<dd>Restores the layer to its previous state,
+if the layer has been modified and the modification can be undone.</dd>
+<dd>Returns - True if this layer had been modified and the modifications were undone.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LayerTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

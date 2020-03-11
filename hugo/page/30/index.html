@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/interpolator/">
-        <h3>Interpolator</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/contentundohelper/">
+        <h3>ContentUndoHelper</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/interpolator/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/contentundohelper/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Content undo helper to be used with &ldquo;using {}&rdquo; to enclose a block of changes.
+public class ContentUndoHelper : IDisposableConstructors  ContentUndoHelper(RhinoDoc doc,String description) Constructs a ContentUndoHelper object inside a using block to handle undo when modifying a RenderContent or - alternatively - create the ContentUndoHelper and explicitly call Dispose when you are done. since 6.0  Methods  bool AddContent(RenderContent content,RenderContent parent) Call this after adding a content.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/contentuuids/">
+        <h3>ContentUuids</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/contentuuids/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Content Guids of RenderContent provided by the RDK SDK.
+These Guids can be used to check against RenderContent.TypeId.
+public class ContentUuidsProperties  static Guid AdvancedDotTextureType  since 6.0 static Guid BasicEnvironmentCCI  since 6.0 static Guid BasicEnvironmentType  since 6.0 static Guid BasicMaterialCCI  since 6.0 static Guid BasicMaterialType  since 6.0 static Guid BitmapTextureType  since 6.0 static Guid BlendMaterialCCI  since 6.0 static Guid BlendMaterialType  since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/controlpoint/">
+        <h3>ControlPoint</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/controlpoint/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Exposes a set of standard numeric interpolation algorithms.
-public class InterpolatorConstructors Interpolator()  (summary) Constructs a new, empty Interpolator. (since) 5.0  Interpolator(IEnumerablecollection)  (summary) Constructs an Interpolator from a collection of numbers. (since) 5.0  Interpolator(int initialCapacity)  (summary) Constructs an empty Interpolator with a certain capacity. (since) 5.0  Interpolator(int amount,double defaultValue)  (summary) Constructs a new Interpolator with a specified amount of numbers. (since) 5.
+Represents control point geometry with three-dimensional position and weight.
+Constructors  ControlPoint(double x,double y,double z) Constructs a new world 3-D, or Euclidean, control point. The 4-D representation is (x, y, z, 1.0). ControlPoint(double x,double y,double z,double weight) Constructs a new homogeneous control point, where the 4-D representation is (x, y, z, w). The world 3-D, or Euclidean, representation is (x/w, y/w, z/w). ControlPoint(Point3d pt) Constructs a new world 3-D, or Euclidean, control point.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/intersect/intersection/">
-        <h3>Intersection</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/convertibleextensions/">
+        <h3>ConvertibleExtensions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/intersect/intersection/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/convertibleextensions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Intersect
-Provides static methods for the computation of intersections, projections, sections and similar.
-public class IntersectionProperties static double MeshIntersectionsTolerancesCoefficient  (summary) Offers a requested adjustment coefficient for mesh-mesh intersections tolerances. The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs. (since) 7.0  Methods static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)  (summary) Intersects two Breps.
+    Namespace: Rhino.Render
+Extension methods for IConvertible that work when an object is a Variant.
+public class ConvertibleExtensionsMethods  static Color4f ToColor4f(IConvertible variant)  since 6.0 static Vector2d ToVector2d(IConvertible variant)  since 6.0 static Vector3d ToVector3d(IConvertible variant)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/intersect/intersectionevent/">
-        <h3>IntersectionEvent</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/createprevieweventargs/">
+        <h3>CreatePreviewEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/intersect/intersectionevent/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/createprevieweventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Intersect
-Provides all the information for a single Curve Intersection event.
-public class IntersectionEventProperties bool IsOverlap  (summary) All curve intersection events are either a single point or an overlap. (since) 5.0  bool IsPoint  (summary) All curve intersection events are either a single point or an overlap. (since) 5.0  Interval OverlapA  (summary) Gets the interval on curve A where the overlap occurs. If the intersection type is not overlap, this value is meaningless.
+    Namespace: Rhino.Render
+Used in RenderPlugIn virtual CreatePreview function
+public class CreatePreviewEventArgs : EventArgsProperties  bool Cancel Get set by Rhino if the preview generation should be canceled for this since 5.1 RenderContentKind ContentKind Description of content that preview is being generated for. since 6.0 Guid ContentTypeId The class Id of content that preview is being generated for. since 6.0 RenderEnvironment Environment The environment that the previewed object is rendered in.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/interval/">
-        <h3>Interval</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/createtexture2dprevieweventargs/">
+        <h3>CreateTexture2dPreviewEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/interval/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/createtexture2dprevieweventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents an interval in one-dimensional space, that is defined as two extrema or bounds.
-static -  (summary) Shifts an interval by a specific amount (subtraction). (since) 5.0  static -  (summary) Shifts an interval by a specific amount (subtraction). (since) 5.0  static !=  (summary) Determines whether the two Intervals have different values. (since) 5.0  static +  (summary) Shifts a by a specific amount (addition).
+    Namespace: Rhino.Render
+public class CreateTexture2dPreviewEventArgs : EventArgsProperties  Bitmap PreviewImage Initially null. If this image is set, then this image will be used for the preview. If never set, the default internal simulation preview will be used. since 5.1 Size PreviewImageSize Pixel size of the image that is being requested for the preview scene since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/intfield/">
-        <h3>IntField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/customevent/">
+        <h3>CustomEvent</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/intfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/customevent/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+This class contains the event for CustomEvents that are fired from RDK .
+public class CustomEventEvents  static OnCustomEvent This event is raised when a Custom Event is triggered in rdk. since 7.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/customrendermeshprovider/">
+        <h3>CustomRenderMeshProvider</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/customrendermeshprovider/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+You must call CustomRenderMeshProvider.RegisterProviders() from your plug-ins OnLoad override for each assembly containing a custom mesh provider. Only publicly exported classes derived from CustomRenderMeshProvider with a public constructor that has no parameters will get registered.
+[Obsolete]public class CustomRenderMeshProviderProperties  static Guid CurvePipingId  since 6.0 static Guid DisplacementId  since 6.0 static Guid EdgeSofteningId  since 6.0 static Guid ShutLiningId  since 6.0 static Guid ThickeningId  since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/customrendermeshprovider2/">
+        <h3>CustomRenderMeshProvider2</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/customrendermeshprovider2/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class CustomRenderMeshProvider2 : CustomRenderMeshProviderMethods  BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)  since 6.4 BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,RhinoDoc doc,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  since 6.0 bool BuildCustomMeshes(ViewportInfo vp,RenderPrimitiveList objMeshes,Guid requestingPlugIn,bool preview)  since 6.4 bool BuildCustomMeshes(ViewportInfo vp,RhinoDoc doc,RenderPrimitiveList objMeshes,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  since 6.0 bool WillBuildCustomMeshes(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)  since 6.4 bool WillBuildCustomMeshes(ViewportInfo vp,RhinoObject obj,RhinoDoc doc,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/datetimefield/">
+        <h3>DateTimeField</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/datetimefield/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.Fields
-Integer field value class
-public class IntFieldProperties int Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/">
-        <h3>InvalidDimensionStyleIdException</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-General exception that can be thrown by annotations
-public class InvalidDimensionStyleIdExceptionConstructors InvalidDimensionStyleIdException(string msg)  (summary) (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/layer/">
-        <h3>Layer</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/layer/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class Layerstatic !=  (summary) (since) 6.0  static ==  (summary) (since) 6.0  Constructors Layer()  (summary) (since) 5.0  Properties static string PathSeparator  (summary) The string &ldquo;::&rdquo; (colon,colon) is used to separate parent and child layer names. (since) 6.0  System.Drawing.Color Color  (summary) Gets or sets the display color for this layer. (since) 5.0  ComponentStatus ComponentStatus  (summary) Gets or sets the status of the layer.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/layertable/">
-        <h3>LayerTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/layertable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-public class LayerTableProperties int ActiveCount  (summary) Returns number of layers in the layer table, excluding deleted layers. (since) 5.0  ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Returns number of layers in the layer table, including deleted layers. (since) 5.0  Layer CurrentLayer   (summary) At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified, new objects are assigned to the current layer.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/layertableeventargs/">
-        <h3>LayerTableEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/layertableeventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-public class LayerTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  LayerTableEventType EventType  (summary) (since) 5.0  int LayerIndex  (summary) (since) 5.0  Layer NewState  (summary) (since) 5.0  Layer OldState  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/leader/">
-        <h3>Leader</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/leader/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Leader geometry class
-public class LeaderConstructors Leader()  (summary) Constructor (since) 6.0  Properties NurbsCurve Curve  (summary) Gets the curve used by this leader (since) 6.0  Guid LeaderArrowBlockId  (summary) Id of the block used as the arrow for the leader when the arrow type is &lsquo;User arrow&rsquo; (since) 6.0  double LeaderArrowSize  (summary) The size of the leader arrow (since) 6.0  DimensionStyle.ArrowType LeaderArrowType  (summary) The arrowhead type for the leader (since) 6.
+DateTime field value class
+public class DateTimeField : FieldProperties  DateTime Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
 

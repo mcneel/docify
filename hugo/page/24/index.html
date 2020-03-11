@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,133 +57,125 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getcylinder/">
-        <h3>GetCylinder</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rdkundo/">
+        <h3>RdkUndo</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getcylinder/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rdkundo/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Class provides user interface to define a cylinder.
-public class GetCylinderConstructors GetCylinder()  (summary) (since) 6.0  Properties bool BothSidesOption  (summary) Determine if the &ldquo;both sides&rdquo; option is enabled (since) 6.0  bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 6.0  CylinderConstraint CylinderConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
+    Namespace: Rhino.Render
+RdkUndo class, which is used to get the RdkUndoRecord
+public class RdkUndo : IDisposableConstructors  RdkUndo(IntPtr pUndoRecord) Constructor for RdkUndo since 6.11  Methods  void Dispose() Dispose for RdkUndo since 6.11 RdkUndoRecord NewUndoRecord() Get a new UndoRecord since 6.11  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getellipsoid/">
-        <h3>GetEllipsoid</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontent/">
+        <h3>RenderContent</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getellipsoid/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontent/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Class provides user interface to define a truncated cone.
-public class GetEllipsoidConstructors GetEllipsoid()  (summary) (since) 7.0  Properties Geometry.Point3d FirstPoint  (summary) Returns the first point. If in &ldquo;from foci&rdquo; mode, then this is the first foci point. (since) 7.0  bool IsModeFromFoci  (summary) Indicates the ellipsoid was created from foci. (since) 7.0  bool MarkFoci  (summary) Indicates the user wants the ellipsoid foci marked with point objects.
+    Namespace: Rhino.Render
+public class RenderContent : IDisposableEvents  static ContentAdded Used to monitor render content addition to the document. since 5.7 static ContentChanged Used to monitor render content modifications. since 5.7 static ContentDeleted Used to monitor render content deletion from the document. since 6.0 static ContentDeleting Used to monitor render content deletion from the document. since 5.7 static ContentFieldChanged This event is raised when a field value is modified. since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getinteger/">
-        <h3>GetInteger</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontentcollection/">
+        <h3>RenderContentCollection</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getinteger/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontentcollection/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Used to get integer numbers.
-public class GetIntegerConstructors GetInteger()  (summary) (since) 5.0  Methods GetResult Get()  (summary) Call to get an integer. (since) 5.0 (returns) GetResult This is some return comment  int Number()  (summary) (since) 5.0 (returns) int This is some return comment  void SetLowerLimit(int lowerLimit,bool strictlyGreaterThan)  (summary) Sets a lower limit on the number that can be returned. By default there is no lower limit.
+    Namespace: Rhino.Render
+public class RenderContentCollection : IDisposable, IEnumerableConstructors  RenderContentCollection()  since 6.0 RenderContentCollection(IntPtr nativePtr)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void Add(RenderContentCollection collection)  since 6.0 void Append(RenderContent content)  since 6.0 void Clear()  since 6.0 RenderContent ContentAt(int index)  since 6.0 bool ContentNeedsPreviewThumbnail(RenderContent c)  since 7.0 bool ContentNeedsPreviewThumbnail(RenderContent c,bool bIncludeChildren)  since 7.0 int Count()  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getline/">
-        <h3>GetLine</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendercontentkindlist/">
+        <h3>RenderContentKindList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getline/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendercontentkindlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Use to interactively get a line. The Rhino &ldquo;Line&rdquo; command uses GetLine.
-public class GetLineConstructors GetLine()  (summary) (since) 5.1  Properties bool AcceptZeroLengthLine  (summary) Controls whether or not a zero length line is acceptable. The default is to require the user to keep picking the end point until we get a point different than the start point. (since) 5.1  System.Drawing.Color FeedbackColor  (summary) If set, the feedback color is used to draw the dynamic line when the second point is begin picked.
+    Namespace: Rhino.Render
+public class RenderContentKindList : IDisposableConstructors  RenderContentKindList()  since 6.7 RenderContentKindList(IntPtr pRdkRenderContentKindList)  since 6.1 RenderContentKindList(RenderContentKindList kind_list)  since 6.7  Properties  IntPtr CppPointer  since 6.1  Methods  void Add(RenderContentKind kind)  since 6.7 bool Contains(RenderContentKind kind)  since 6.3 int Count()  since 6.1 void Dispose()  since 6.1 RenderContentKind SingleKind()  since 6.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getnumber/">
-        <h3>GetNumber</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rendercontenttableeventargs/">
+        <h3>RenderContentTableEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getnumber/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/rendercontenttableeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Used to get double precision numbers.
-public class GetNumberConstructors GetNumber()  (summary) Create a new GetNumber. (since) 5.0  Methods GetResult Get()  (summary) Call to get a number. (since) 5.0 (returns) GetResult This is some return comment  void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan)  (summary) Sets a lower limit on the number that can be returned. By default there is no lower limit. (since) 5.0 (returns) void This is some return comment  void SetUpperLimit(double upperLimit,bool strictlyLessThan)  (summary) Sets an upper limit on the number that can be returned.
+    Namespace: Rhino
+Passed to the , and the events.
+public class RenderContentTableEventArgs : EventArgsProperties  RhinoDoc Document Document the table belongs to since 5.7 RenderContentTableEventType EventType Event type since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getobject/">
-        <h3>GetObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rendermaterialassignmentchangedeventargs/">
+        <h3>RenderMaterialAssignmentChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/rendermaterialassignmentchangedeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-The GetObject class is the tool commands use to interactively select objects.
-public class GetObjectConstructors GetObject()  (summary) (since) 5.0  Properties bool AlreadySelectedObjectSelect  (summary) Allow selecting objects that are already selected. By default, GetObjects() disallows selection of objects that are already selected to avoid putting the same object in the selection set more than once. Calling EnableAlreadySelectedObjectSelect = true overrides that restriction and allows selected objects to be selected and returned by GetObjects.
+    Namespace: Rhino
+public class RenderMaterialAssignmentChangedEventArgs : RenderContentTableEventArgsProperties  bool IsLayer  since 5.10 bool IsObject  since 5.10 Guid LayerId  since 5.10 Guid NewRenderMaterial  since 5.10 Guid ObjectId  since 5.10 Guid OldRenderMaterial  since 5.10  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getoption/">
-        <h3>GetOption</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/renderplugin/">
+        <h3>RenderPlugIn</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getoption/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/renderplugin/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-If you want to explicitly get string input, then use GetString class with options. If you only want to get options, then use this class (GetOption)
-public class GetOptionConstructors GetOption()  (summary) (since) 5.0  Methods GetResult Get()  (summary) Call to get an option. A return value of &ldquo;option&rdquo; means the user selected a valid option. Use Option() the determine which option. (since) 5.0 (returns) GetResult This is some return comment  
+    Namespace: Rhino.PlugIns
+public class RenderPlugIn : PlugInProperties  bool PerferBasicContent Set to True if you would like Rhino to quickly create a basic render content in response to &lsquo;Create New&rsquo; commands. Set to False if you would prefer Rhino to display the render content chooser dialog. since 5.12  Methods  static bool CurrentRendererSupportsFeature(RenderFeature feature)  since 6.1 bool EnableAssignMaterialButton() Called to enable/disable the &ldquo;Material&rdquo; button located on the &ldquo;Material&rdquo; tab in the Properties and Layer dialog boxes.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getpoint/">
-        <h3>GetPoint</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/renderprimitive/">
+        <h3>RenderPrimitive</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getpoint/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/renderprimitive/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Used to interactively get a point.
-public class GetPointDynamicDraw   (summary) Event to use if you want to dynamically draw things as the mouse/digitizer moves. Every time the mouse moves, DynamicDraw will be called once per viewport. The calls to DynamicDraw happen AFTER the call to MouseMove.
-If you are drawing anything that takes a long time, periodically call InterruptMouseMove() to see if you should stop.
+    Namespace: Rhino.Render
+public class RenderPrimitive : IDisposableProperties  BoundingBox BoundingBox The bounding box for this primitive. since 5.7 Transform InstanceTransform Instance reference transform or Identity if not an instance reference. since 5.7 RenderPrimitiveType PrimitiveType Call this before extracting meshes if you support render primitives to get the of this mesh then call the associated , , , or method. Calling the property will mesh the primitive and return a mesh always.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getpointdraweventargs/">
-        <h3>GetPointDrawEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/replayhistorydata/">
+        <h3>ReplayHistoryData</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getpointdraweventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/replayhistorydata/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Arguments for drawing during point getting.
-public class GetPointDrawEventArgsProperties Point3d CurrentPoint  (summary) (since) 5.0  GetPoint Source  (summary) GetPoint class that this draw event originated from. (since) 5.0  
+    Namespace: Rhino.DocObjects
+Provides history information to commands that will repeat history construction. Generally, a developer using this class will not construct a new instance, but receive one.
+public class ReplayHistoryData : IDisposableProperties  RhinoDoc Document The document this record belongs to int HistoryVersion ReplayHistory overrides check the version number to ensure the information saved in the history record is compatible with the current implementation of ReplayHistory Guid RecordId Each history record has a unique id that Rhino assigns when it adds the history record to the history record table ReplayHistoryResult[] Results Provides access to BOTH inputs and outputs of the replay history operation.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getpointmouseeventargs/">
-        <h3>GetPointMouseEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/replayhistoryresult/">
+        <h3>ReplayHistoryResult</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getpointmouseeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/replayhistoryresult/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Arguments for mouse information during point getting.
-public class GetPointMouseEventArgsProperties bool ControlKeyDown  (summary) (since) 5.0  bool LeftButtonDown  (summary) (since) 5.0  bool MiddleButtonDown  (summary) (since) 5.0  Point3d Point  (summary) (since) 5.0  bool RightButtonDown  (summary) (since) 5.0  bool ShiftKeyDown  (summary) (since) 5.0  GetPoint Source  (summary) (since) 5.0  RhinoViewport Viewport  (summary) (since) 5.0  System.Drawing.Point WindowPoint  (summary) (since) 5.
+    Namespace: Rhino.DocObjects
+public class ReplayHistoryResultProperties  RhinoObject ExistingObject The previously existing object. Do not attempt to edit this object. It might have been already deleted by, for example, dragging.  Methods  bool UpdateToAngularDimension(AngularDimension dimension,ObjectAttributes attributes)  bool UpdateToArc(Arc arc,ObjectAttributes attributes)  bool UpdateToBrep(Brep brep,ObjectAttributes attributes)  bool UpdateToCircle(Circle circle,ObjectAttributes attributes)  bool UpdateToClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId,ObjectAttributes attributes)  bool UpdateToClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerableclippedViewportIds,ObjectAttributes attributes)  bool UpdateToCurve(Curve curve,ObjectAttributes attributes)  bool UpdateToEllipse(Ellipse ellipse,ObjectAttributes attributes)  bool UpdateToExtrusion(Extrusion extrusion,ObjectAttributes attributes)  bool UpdateToHatch(Hatch hatch,ObjectAttributes attributes)  bool UpdateToLeader(Leader leader,ObjectAttributes attributes)  bool UpdateToLine(Point3d from,Point3d to,ObjectAttributes attributes)  bool UpdateToLinearDimension(LinearDimension dimension,ObjectAttributes attributes)  bool UpdateToMesh(Mesh mesh,ObjectAttributes attributes)  bool UpdateToPoint(Point3d point,ObjectAttributes attributes)  bool UpdateToPointCloud(IEnumerablepoints,ObjectAttributes attributes)  bool UpdateToPointCloud(PointCloud cloud,ObjectAttributes attributes)  bool UpdateToPolyline(IEnumerablepoints,ObjectAttributes attributes)  bool UpdateToRadialDimension(RadialDimension dimension,ObjectAttributes attributes)  bool UpdateToSphere(Sphere sphere,ObjectAttributes attributes)  bool UpdateToSurface(Surface surface,ObjectAttributes attributes)  bool UpdateToText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes)  bool UpdateToText(TextEntity text,ObjectAttributes attributes)  bool UpdateToTextDot(TextDot dot,ObjectAttributes attributes)   
   </div>
   
 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ColorHSV &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Represents an HSV (Hue, Saturation, Value) color with double precision floating point channels. HSV colors (also sometimes called HSB, where B means Brightness) are similar to HSL colors in that they represent colors in a cylindrical color space, and are intended to provide intuitive means to edit the brightness of a particular color over RGB color space where each each color channel would need to be modified to affect the color brightness.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ColorHSV</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Represents an HSV (Hue, Saturation, Value) color with double precision floating point channels. 
+HSV colors (also sometimes called HSB, where B means Brightness) are similar to HSL colors in that they
+represent colors in a cylindrical color space, and are intended to provide intuitive means to edit the 
+brightness of a particular color over RGB color space where each each color channel would need to be 
+modified to affect the color brightness.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ColorHSV(Color rgb)</dt>
+<dd>Constructs a new instance of ColorHSV that is equivalent to an RGB color.</dd>
+<dd>since 6.0</dd>
+<dt>ColorHSV(double hue,double saturation,double value)</dt>
+<dd>Constructs a new instance of ColorHSV with custom channel values.</dd>
+<dd>since 6.0</dd>
+<dt>ColorHSV(double alpha,double hue,double saturation,double value)</dt>
+<dd>Constructs a new instance of ColorHSV with custom channel values.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double A</dt>
+<dd>Gets or sets the alpha channel value. 
+Alpha channels are limited to a 0~1 range.</dd>
+<dd>since 6.0</dd>
+<dt>double H</dt>
+<dd>Gets or sets the hue channel value. 
+Hue channels rotate between 0.0 and 1.0.</dd>
+<dd>since 6.0</dd>
+<dt>double S</dt>
+<dd>Gets or sets the saturation channel value. 
+Saturation channels are limited to a 0~1 range.</dd>
+<dd>since 6.0</dd>
+<dt>double V</dt>
+<dd>Gets or sets the value (brightness) channel value. 
+Value channels are limited to a 0~1 range.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static ColorHSV CreateFromCMYK(ColorCMYK cmyk)</dt>
+<dd>Create the nearest HSV equivalent of a CMYK color.</dd>
+<dd>Returns - The HSV equivalent of the CMYK color.</dd>
+<dd>since 6.0</dd>
+<dt>static ColorHSV CreateFromHSL(ColorHSL hsl)</dt>
+<dd>Constructs the nearest CMYK equivalent of an HSV color.</dd>
+<dd>Returns - The HSV equivalent of the HSL color.</dd>
+<dd>since 6.0</dd>
+<dt>static ColorHSV CreateFromLAB(ColorLAB lab)</dt>
+<dd>Create the nearest HSV equivalent of a LAB color.</dd>
+<dd>Returns - The HSV equivalent of the LAB color.</dd>
+<dd>since 6.0</dd>
+<dt>static ColorHSV CreateFromLCH(ColorLCH lch)</dt>
+<dd>Create the nearest HSV equivalent of a LCH color.</dd>
+<dd>Returns - The HSV equivalent of the LCH color.</dd>
+<dd>since 6.0</dd>
+<dt>static ColorHSV CreateFromXYZ(ColorXYZ xyz)</dt>
+<dd>Create the nearest HSV equivalent of an XYZ color.</dd>
+<dd>Returns - The HSV equivalent of the XYZ color.</dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Color ToArgbColor()</dt>
+<dd>Convert HSV color to an equivalent System.Drawing.Color.</dd>
+<dd>Returns - A .Net framework library color value.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ColorHSV</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,125 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/freefloatingbase/">
-        <h3>FreeFloatingBase</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/particle/">
+        <h3>Particle</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/freefloatingbase/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Base class for Rhino.Render objects that are owned by the document, or can be delivered separately from other functions. In general, you cannot create these objects yourself.
-public class FreeFloatingBaseMethods void CopyFrom(FreeFloatingBase src)  (summary) Copy from another object (since) 6.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/generalsettings/">
-        <h3>GeneralSettings</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/generalsettings/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties to give access to Rhinoceros settings.
-public class GeneralSettingsProperties static bool AutoUpdateCommandHelp  (summary) Command help dialog auto-update feature. (since) 5.0  static System.TimeSpan ContextMenuDelay  (summary) Time to wait before permitting context menu display. (since) 5.0  static bool EnableContextMenu  (summary) True if right mouse down + delay will pop up context menu on a mouse up if no move happens.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/generalsettingsstate/">
-        <h3>GeneralSettingsState</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/generalsettingsstate/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class GeneralSettingsStateProperties bool AutoUpdateCommandHelp  (summary) Gets or sets the command help dialog auto-update feature. (since) 5.0  System.TimeSpan ContextMenuDelay  (summary) Gets or sets the time to wait before permitting context menu display. (since) 5.0  bool EnableContextMenu  (summary) True if right mouse down + delay will pop up context menu on a mouse up if no move happens. (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/geometrybase/">
-        <h3>GeometryBase</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/geometrybase/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/particle/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Provides a common base for most geometric classes. This class is abstract.
-public class GeometryBaseProperties bool HasBrepForm  (summary) Returns True if the Brep.TryConvertBrep function will be successful for this object (since) 5.6  bool IsDeformable  (summary) True if object can be accurately modified with &ldquo;squishy&rdquo; transformations like projections, shears, and non-uniform scaling. (since) 5.0  bool IsDocumentControlled  (summary) If True this object may not be modified.
+Represents a simple particle. This base class only defines position and display properties (size, color, bitmap id). You will most likely create a class that derives from this particle class to perform some sort of physical simulation (movement over time or frames).
+public class ParticleConstructors  Particle() Initializes a new instance of the class.  Properties  Color Color  int DisplayBitmapIndex  int Index Index in ParentSystem for this Particle.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getarc/">
-        <h3>GetArc</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/particlesystem/">
+        <h3>ParticleSystem</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getarc/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/particlesystem/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+public class ParticleSystem : IEnumerable&lt;Particle&gt;Properties  BoundingBox BoundingBox  bool DisplaySizesInWorldUnits  bool DrawRequiresDepthSorting   Methods  bool Add(Particle particle) Adds a particle to this ParticleSystem. A Particle can only be in one system at a time. If the Particle already exists in a different system, this function will return false. You should remove the particle from the other system first before adding it. Returns - True if this particle was added to the system or if is already in the system.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/pathpoint/">
+        <h3>PathPoint</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/pathpoint/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime
+Properties  PointF Location  since 6.0 PointType PointType  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/pickcontext/">
+        <h3>PickContext</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/pickcontext/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Input.Custom
-public class GetArcConstructors GetArc()  (summary) (since) 6.0  Properties bool AllowDeformable  (summary) Allow for deformable options (since) 6.0  double DefaultRadius  (summary) Default radius used for start and end radius (since) 6.0  bool Deformable  (summary) Is the deformable option set (since) 6.0  int DeformableDegree  (summary) (since) 6.0  int DeformablePointCount  (summary) (since) 6.0  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+Utility for determining if objects are picked
+public class PickContext : IDisposableConstructors  PickContext()   Properties  GetObject GetObjectUsed  bool PickGroupsEnabled Thue if GroupObjects should be added to the pick list Line PickLine pick chord starts on near clipping plane and ends on far clipping plane. PickMode PickMode  PickStyle PickStyle  bool SubObjectSelectionEnabled True if the user had activated subobject selection RhinoView View This view can be a model view or a page view.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getbaseclass/">
-        <h3>GetBaseClass</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/plugin/">
+        <h3>PlugIn</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getbaseclass/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/plugin/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Base class for GetObject, GetPoint, GetSphere, etc.
-You will never directly create a GetBaseClass but you will use its member functions after calling GetObject.Gets(), GetPoint.Get(), and so on.
-Provides tools to set command prompt, set command options, and specify if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
-public class GetBaseClassMethods static void PostCustomMessage(object messageData)  (summary) (since) 5.0 (returns) void This is some return comment  void AcceptColor(bool enable)  (summary) If you want to allow the user to be able to type in a color r,g,b or name during GetPoint.
+    Namespace: Rhino.PlugIns
+public class PlugIn SettingsSaved This event is raised when an instance of Rhino has modified the external settings file associated with this plug-in&rsquo;s property. since 6.0  Properties  static bool AskOnLoadProtection If true, Rhino will display a warning dialog when load-protected plug-ins are attempting to load. If false, load-protected plug-ins will silently not load. since 6.0 static int InstalledPlugInCount Returns the number of installed Rhino plug-ins. Assembly Assembly Source assembly for this plug-in.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getcancel/">
-        <h3>GetCancel</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/plugindescriptionattribute/">
+        <h3>PlugInDescriptionAttribute</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getcancel/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/plugindescriptionattribute/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-public class GetCancelTaskCompleted  (summary) (since) 6.0  Constructors GetCancel()  (summary) (since) 6.0  Properties IProgressProgress  (summary) (since) 6.0  string ProgressMessage  (summary) (since) 6.0  bool ProgressReporting  (summary) (since) 6.0  CancellationToken Token  (summary) (since) 6.0  Methods Result Wait(Task task,RhinoDoc doc)  (summary) Awaits a particular task to finish. (since) 7.0 (returns) Result This is some return comment  Result Wait(Tasktask,RhinoDoc doc)  (summary) Awaits a particular task to finish.
+    Namespace: Rhino.PlugIns
+[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]public class PlugInDescriptionAttribute : AttributeConstructors  PlugInDescriptionAttribute(DescriptionType descriptionType,string value)   Properties  DescriptionType DescriptionType  string Value   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getcircle/">
-        <h3>GetCircle</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/pointcloudobject/">
+        <h3>PointCloudObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getcircle/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/pointcloudobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-public class GetCircleConstructors GetCircle()  (summary) (since) 6.0  Properties bool AllowDeformable  (summary) Allow for deformable options (since) 6.0  double DefaultSize  (summary) Default radius or diameter (based on InDiameterMode) (since) 6.0  bool Deformable  (summary) Is the deformable option set (since) 6.0  int DeformableDegree  (summary) (since) 6.0  int DeformablePointCount  (summary) (since) 6.0  bool InDiameterMode  (summary) Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter (since) 6.
+    Namespace: Rhino.DocObjects
+public class PointCloudObject : RhinoObjectProperties  PointCloud PointCloudGeometry   Methods  PointCloud DuplicatePointCloudGeometry()   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/getcoloreventargs/">
-        <h3>GetColorEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/pointobject/">
+        <h3>PointObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/getcoloreventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/pointobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class GetColorEventArgsProperties bool IncludeButtonColors  (summary) (since) 5.0  System.Drawing.Color InputColor  (summary) (since) 5.0  System.Drawing.Color SelectedColor  (summary) (since) 5.0  string Title  (summary) (since) 5.0  
+    Namespace: Rhino.DocObjects
+public class PointObject : RhinoObjectProperties  Point PointGeometry   Methods  Point DuplicatePointGeometry()   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getcone/">
-        <h3>GetCone</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/previewnotification/">
+        <h3>PreviewNotification</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getcone/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/previewnotification/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Class provides user interface to define a cone.
-public class GetConeConstructors GetCone()  (summary) (since) 6.0  Properties bool AllowInputAngle  (summary) (since) 6.0  double ApexAngleDegrees  (summary) (since) 6.0  double BaseAngleDegrees  (summary) (since) 6.0  bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 6.0  ConeConstraint ConeConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
+    Namespace: Rhino.PlugIns
+public class PreviewNotificationMethods  void NotifyIntermediateUpdate(RenderWindow rw)  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/radialdimensionobject/">
+        <h3>RadialDimensionObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/radialdimensionobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+Rhino Object that represents a radial dimension geometry and attributes
+public class RadialDimensionObject : DimensionObjectProperties  RadialDimension RadialDimensionGeometry Get the dimension geometry for this object. since 6.0  
   </div>
   
 

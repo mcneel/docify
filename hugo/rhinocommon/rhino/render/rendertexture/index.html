@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RenderTexture &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+public class RenderTexture : RenderContentProperties  Transform LocalMappingTransform Gets the transformation that can be applied to the UVW vector to convert it from normalized texture space into locally mapped space (ie - with repeat, offset and rotation applied.) since 5.1 uint RenderHashWithoutLocalMapping Render hash for texture excluding local mapping. since 6.0  Methods  static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)  since 5.7 static Point3d GetWcsBoxMapping(Point3d worldXyz,Vector3d normal)  since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RenderTexture</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderTexture</span> : RenderContent
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> LocalMappingTransform</dt>
+<dd>Gets the transformation that can be applied to the UVW vector to convert it
+from normalized texture space into locally mapped space (ie - with repeat,
+offset and rotation applied.)</dd>
+<dd>since 5.1</dd>
+<dt>uint RenderHashWithoutLocalMapping</dt>
+<dd>Render hash for texture excluding local mapping.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetWcsBoxMapping(Point3d worldXyz,Vector3d normal)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>static RenderTexture NewBitmapTexture(Bitmap bitmap,RhinoDoc doc)</dt>
+<dd>Constructs a new basic texture from a Bitmap.</dd>
+<dd>Returns - A new render texture.</dd>
+<dd>since 7.0</dd>
+<dt>static RenderTexture NewBitmapTexture(SimulatedTexture texture)</dt>
+<dd>Constructs a new basic texture from a SimulatedTexture.</dd>
+<dd>Returns - A new render texture.</dd>
+<dd>since 5.3</dd>
+<dt>static RenderTexture NewBitmapTexture(SimulatedTexture texture,RhinoDoc doc)</dt>
+<dd>Constructs a new basic texture from a SimulatedTexture.</dd>
+<dd>Returns - A new render texture.</dd>
+<dd>since 6.4</dd>
+<dt><a href="/rhinocommon/rhino/render/textureevaluator/">TextureEvaluator</a> CreateEvaluator()</dt>
+<dd>Constructs a texture evaluator. This is an independent lightweight object
+capable of evaluating texture color throughout uvw space. May be called
+from within a rendering shade pipeline.</dd>
+<dd>Returns - A texture evaluator instance.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/textureevaluator/">TextureEvaluator</a> CreateEvaluator(TextureEvaluatorFlags evaluatorFlags)</dt>
+<dd>Constructs a texture evaluator. This is an independent lightweight object
+capable of evaluating texture color throughout uvw space. May be called
+from within a rendering shade pipeline.</dd>
+<dd>Returns - A texture evaluator instance.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetDisplayInViewport()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/textureenvironmentmappingmode/">TextureEnvironmentMappingMode</a> GetEnvironmentMappingMode()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/textureenvironmentmappingmode/">TextureEnvironmentMappingMode</a> GetInternalEnvironmentMappingMode()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>eLocalMappingType GetLocalMappingType()</dt>
+<dd></dd>
+<dd>since 6.3</dd>
+<dt>int GetMappingChannel()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> GetOffset()</dt>
+<dd>Get offset value across UVW space. If the projection type is WCS or
+other type specified in model units, then this is the offset in meters.</dd>
+<dd>since 5.7</dd>
+<dt>bool GetOffsetLocked()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>bool GetPreviewIn3D()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>bool GetPreviewLocalMapping()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/textureprojectionmode/">TextureProjectionMode</a> GetProjectionMode()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> GetRepeat()</dt>
+<dd>Get repeat value across UVW space. If the projection type is WCS or
+other type specified in model units, then this is the repeat across 1
+meter of the model.</dd>
+<dd>since 5.7</dd>
+<dt>bool GetRepeatLocked()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> GetRotation()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/texturewraptype/">TextureWrapType</a> GetWrapType()</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void GraphInfo(TextureGraphInfo tgi)</dt>
+<dd></dd>
+<dd>since 6.3</dd>
+<dt>bool IsHdrCapable()</dt>
+<dd>Return True if the texture is HDR capable.
+<p>When creating a custom RenderTexture implementation that is HDR capable
+set the appropriate property on the CustomRenderContentAttribute decorator on that clas.</p>
+</dd>
+<dd>since 5.7</dd>
+<dt>bool IsImageBased()</dt>
+<dd>Query if the texture is image based.
+<p>When creating a custom RenderTexture implementation of an image-based texture
+set the appropriate property on the CustomRenderContentAttribute decorator on that class.</p>
+<p>Do not override this function</p>
+</dd>
+<dd>Returns - True if the texture is image-based.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsLinear()</dt>
+<dd>Return True if the texture color data is linear.
+<pre><code>NOTE: this function is marked as virtual, but the correct way to make a custom RenderTexture linear is by
+setting the correct property for the CustomRenderContentAttribute decorator on the class.
+</code></pre>
+</dd>
+<dd>since 6.0</dd>
+<dt>bool IsNormalMap()</dt>
+<dd>Return True if the texture is a normalmap.
+<p>When creating a custom RenderTexture implementation of a normal map
+set the appropriate property on the CustomRenderContentAttribute decorator on that clas.</p>
+</dd>
+<dd>since 6.16</dd>
+<dt>void PixelSize(int u,int v,int w)</dt>
+<dd>Get the texture dimensions for the RenderTexture.</dd>
+<dd>since 6.0</dd>
+<dt>bool SaveAsImage(string FullPath,int width,int height,int depth)</dt>
+<dd>Save texture as image</dd>
+<dd>Returns - returns True if file was saved, otherwise false</dd>
+<dd>since 6.15</dd>
+<dt>void SetDisplayInViewport(bool value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetDisplayInViewport(bool value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetEnvironmentMappingMode(TextureEnvironmentMappingMode value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetEnvironmentMappingMode(TextureEnvironmentMappingMode value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetGraphInfo(TextureGraphInfo tgi)</dt>
+<dd></dd>
+<dd>since 6.3</dd>
+<dt>void SetMappingChannel(int value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetOffset(Vector3d value,ChangeContexts changeContext)</dt>
+<dd>Set offset value across UVW space. If the projection type is WCS or
+other type specified in model units, then this is the offset in meters.</dd>
+<dd>since 5.7</dd>
+<dt>void SetOffsetLocked(bool value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetPreviewIn3D(bool value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetPreviewLocalMapping(bool value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetPreviewLocalMapping(bool value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetProjectionMode(TextureProjectionMode value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetRepeat(Vector3d value,ChangeContexts changeContext)</dt>
+<dd>Set repeat value across UVW space. If the projection type is WCS or
+other type specified in model units, then this is the repeat across 1
+meter of the model.</dd>
+<dd>since 5.7</dd>
+<dt>void SetRepeatLocked(bool value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetRotation(Vector3d value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>void SetWrapType(TextureWrapType value,ChangeContexts changeContext)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/simulatedtexture/">SimulatedTexture</a> SimulatedTexture(TextureGeneration tg,int size,RhinoObject obj)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SimulateTexture(SimulatedTexture simulation,bool isForDataOnly)</dt>
+<dd></dd>
+<dd>since 5.1</dd>
+<dt>void SimulateTexture(SimulatedTexture simulation,TextureGeneration tg,int size,RhinoObject obj)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RenderTexture</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

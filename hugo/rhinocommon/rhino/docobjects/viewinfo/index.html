@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ViewInfo &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Represents the name and orientation of a View (and named view). views can be thought of as cameras.
+public class ViewInfo : IDisposableConstructors  ViewInfo(RhinoViewport rhinoViewPort) Access to the ViewInfo for given RhinoViewport since 6.0 ViewInfo(uint docRuntimeSerialNumber) Construct the ViewInfo for active viewport of given doc. since 6.0  Properties  double FocalBlurAperture Gets or sets the Focal blur aperture of the active viewport since 6.0 double FocalBlurDistance Gets or sets the Focal blur distance of the active viewport since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ViewInfo</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Represents the name and orientation of a View (and named view).
+views can be thought of as cameras.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewInfo</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ViewInfo(RhinoViewport rhinoViewPort)</dt>
+<dd>Access to the ViewInfo for given RhinoViewport</dd>
+<dd>since 6.0</dd>
+<dt>ViewInfo(uint docRuntimeSerialNumber)</dt>
+<dd>Construct the ViewInfo for active viewport of given doc.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double FocalBlurAperture</dt>
+<dd>Gets or sets the Focal blur aperture of the active viewport</dd>
+<dd>since 6.0</dd>
+<dt>double FocalBlurDistance</dt>
+<dd>Gets or sets the Focal blur distance of the active viewport</dd>
+<dd>since 6.0</dd>
+<dt>double FocalBlurJitter</dt>
+<dd>Gets or sets the Focal blur jitter of the active viewport</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/viewinfofocalblurmodes/">ViewInfoFocalBlurModes</a> FocalBlurMode</dt>
+<dd>Gets or sets the Focal blur mode of the active viewport</dd>
+<dd>since 6.0</dd>
+<dt>uint FocalBlurSampleCount</dt>
+<dd>Gets or sets the Focal blur sample count of the active viewport</dd>
+<dd>since 6.0</dd>
+<dt>string Name</dt>
+<dd>Gets or sets the name of the view.</dd>
+<dt>bool ShowWallpaperInGrayScale</dt>
+<dd>True if wallpaper (if any) is to be shown in gray scale in this view.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/viewportinfo/">ViewportInfo</a> Viewport</dt>
+<dd>Gets the viewport, or viewing frustum, associated with this view.</dd>
+<dt>string WallpaperFilename</dt>
+<dd>Get filename for wallpaper set to this view, if any.</dd>
+<dd>since 6.0</dd>
+<dt>bool WallpaperHidden</dt>
+<dd>True if wallpaper (if any) is to be hidden from this view.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ViewInfo</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

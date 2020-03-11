@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayguid/">
-        <h3>SimpleArrayGuid</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshunsafelock/">
+        <h3>MeshUnsafeLock</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayguid/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshunsafelock/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_UUID&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayGuidConstructors SimpleArrayGuid()  (summary) Initializes a new class. (since) 5.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 5.0  Methods void Append(Guid uuid)  (summary) Appends a new at the end of this array. (since) 6.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry
+Permits access to the underlying mesh raw data structures in an unsafe way.
+public class MeshUnsafeLock : IDisposableMethods  MeshFace* FacesArray(int length) Retrieves a pointer to the raw faces array, which uses 4 integers for each face. . Returns - The beginning of the vertex array. Item 0 is the first vertex, and item length-1 is the last valid one. since 6.20 Vector3f* NormalVector3fArray(int length) Retrieves a pointer to the raw mesh vertex normal array, which uses vectors defined with single precision floating point numbers, or throws an exception if none is available.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayguidpointer/">
-        <h3>SimpleArrayGuidPointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexcolorlist/">
+        <h3>MeshVertexColorList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayguidpointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexcolorlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_UUID&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayGuidPointerConstructors SimpleArrayGuidPointer()  (summary) Initializes a new class. (since) 6.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 6.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 6.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the vertex colors of a mesh object.
+public class MeshVertexColorList : IResizableList&lt;Color&gt;, IList, IReadOnlyList&lt;Color&gt;Properties  int Capacity Gets or sets the total number of vertex colors the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh colors. MappingTag Tag Gets or sets a mapping information for the mesh associated with these vertex colors.  Methods  int Add(Color color) Adds a new vertex color to the end of the color list.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayint/">
-        <h3>SimpleArrayInt</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexlist/">
+        <h3>MeshVertexList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayint/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayIntConstructors SimpleArrayInt()  (summary) Initializes a new class. (since) 5.0  SimpleArrayInt(IEnumerablevalues)  (summary) Initializes a new class (since) 5.9  Properties int Count  (summary) Gets the amount of elements in this array. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the vertices and vertex-related functionality of a mesh.
+public class MeshVertexList : IResizableList&lt;Point3f&gt;, IReadOnlyList&lt;Point3f&gt;, IListProperties  int Capacity Gets or sets the total number of vertices the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh vertices. bool UseDoublePrecisionVertices Set to True if the vertices should be stored in double precision since 6.4  Methods  static int Align(IEnumerablemeshes,double distance,IEnumerable&lt;IEnumerable&gt; whichVertices) Moves mesh vertices that belong to naked edges to neighboring vertices, within the specified distance.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayinterval/">
-        <h3>SimpleArrayInterval</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexnormallist/">
+        <h3>MeshVertexNormalList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayinterval/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexnormallist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_Interval&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayIntervalConstructors SimpleArrayInterval()  (summary) Initializes a new class. (since) 5.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 5.0  Methods void Add(Interval interval)  (summary) Adds a new at the end of this array. (since) 6.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the Vertex Normals of a Mesh.
+public class MeshVertexNormalList : IResizableList&lt;Vector3f&gt;, IList, IReadOnlyList&lt;Vector3f&gt;Properties  int Capacity Gets or sets the amount of vertex normals that the list can hold without resizing. since 6.0 int Count Gets or sets the number of mesh vertex normals.  Methods  int Add(double x,double y,double z) Adds a new vertex normal at the end of the list. Returns - The index of the newly added vertex normal.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayline/">
-        <h3>SimpleArrayLine</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexstatuslist/">
+        <h3>MeshVertexStatusList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayline/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexstatuslist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_Line&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayLineConstructors SimpleArrayLine()  (summary) Initializes a new instance. (since) 5.0  Properties int Count  (summary) Gets the amount of lines in this array. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 5.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry.Collections
+Provides access to status information relative to components of a mesh.
+public class MeshVertexStatusList : IResizableList&lt;bool&gt;, IList, IReadOnlyList&lt;bool&gt;Properties  int Capacity Gets or sets the total number of hidden vertex information the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of hidden vertices. For this to be a valid part of a mesh, this count should be the same as the one of mesh vertices.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraylinetypepointer/">
-        <h3>SimpleArrayLinetypePointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphcontrol/">
+        <h3>MorphControl</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraylinetypepointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphcontrol/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_SimpleArray&lt;ON_Linetype*&gt; If you are not writing C++ code then this class is not for you.
-public class SimpleArrayLinetypePointerConstructors SimpleArrayLinetypePointer()  (summary) Initializes a new instance. (since) 6.6  Properties int Count  (summary) Gets the amount of linetypes in this array. (since) 6.6  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 6.6 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry
+Represents a geometry that is able to control the morphing behaviour of some other geometry.
+[Serializable]public class MorphControl : GeometryBaseConstructors  MorphControl(NurbsCurve originCurve,NurbsCurve targetCurve) Constructs a MorphControl that allows for morphing between two curves.  Properties  NurbsCurve Curve Returns the morph control&rsquo;s curve. While this should never be null, the calling function should check. since 6.0 bool PreserveStructure True if the morph should be done in a way that preserves the structure of the geometry.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraymeshpointer/">
-        <h3>SimpleArrayMeshPointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/namehash/">
+        <h3>NameHash</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraymeshpointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/namehash/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Represents a wrapper to an unmanaged array of mesh pointers. Wrapper for a C++ ON_SimpleArray of ON_Mesh* or const ON_Mesh*. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayMeshPointerConstructors SimpleArrayMeshPointer()  (summary) Initializes a new instance. (since) 5.0  Properties int Count  (summary) Gets the amount of meshes in this array. (since) 5.0  Methods void Add(Mesh mesh,bool asConst)  (summary) Adds a mesh to the list.
+    Namespace: Rhino.FileIO
+Contains information that is useful to uniquly identify an object name. This object is immutable.
+public class NameHash : ICloneable, IEquatable&lt;NameHash&gt; static != Determines if two NameHash instances are different by value. Returns - True if they are different by value, otherwise false. since 6.0 static == Determines if two NameHash instances are equal by value. Returns - True if they are equal by value, otherwise false. since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayplane/">
-        <h3>SimpleArrayPlane</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/nodeincode/nodeincodetable/">
+        <h3>NodeInCodeTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayplane/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/nodeincode/nodeincodetable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_Plane&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayPlaneConstructors SimpleArrayPlane()  (summary) Initializes a new instance. (since) 6.0  Properties int Count  (summary) Gets the amount of lines in this array. (since) 6.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 6.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.NodeInCode
+Permits rapid access to references to all Grasshopper functions.
+public class NodeInCodeTable : DynamicObjectConstructors  NodeInCodeTable(IEnumerableitems) Instantiates the table. Users of RhinoCommon do not typically need to call this constructor. since 6.0  Properties  int Count Returns the amount of items in this table. since 6.0  Methods  void Add(ComponentFunctionInfo item) Adds, or replaces a new instance of component function information. since 6.0 IEnumerableGetDynamicMemberNames() Returns all additional names in the table.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint2d/">
-        <h3>SimpleArrayPoint2d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notification/">
+        <h3>Notification</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint2d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notification/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-ON_SimpleArray&lt;ON_2dPoint&gt; class wrapper. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayPoint2dConstructors SimpleArrayPoint2d()  (summary) Initializes a new empty instance. (since) 5.6  Properties int Count  (summary) Gets the amount of points in this array. (since) 5.6  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 5.6 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Runtime.Notifications
+A Notification instance can be used to inform the user about various events. For a Notification instance to be displayed in Rhino, it must be added to the . When added, it will be displayed in the Notifications panel in Rhino. A Notification contains 1 to 3 buttons that are automatically wired to its Action if it is not null. The buttons are displayed when the Notification is shown modally by either the user clicking on a particular notification in the Notifications panel, or by programatically showing it using .
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint3d/">
-        <h3>SimpleArrayPoint3d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfaceknotlist/">
+        <h3>NurbsSurfaceKnotList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint3d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfaceknotlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-ON_SimpleArray&lt;ON_3dPoint&gt;, ON_3dPointArray, ON_PolyLine all have the same size This class wraps all of these C++ versions. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayPoint3dConstructors SimpleArrayPoint3d()  (summary) Initializes a new empty instance. (since) 5.0  Properties int Count  (summary) Gets the amount of points in this array. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the knot vector of a nurbs surface.
+public class NurbsSurfaceKnotList : IEnumerable&lt;double&gt;, Rhino.Collections.IRhinoTable&lt;double&gt;, IEpsilonComparable&lt;NurbsSurfaceKnotList&gt;Properties  bool ClampedAtEnd Determines if a knot vector is clamped. bool ClampedAtStart Determines if a knot vector is clamped. int Count Gets the total number of knots in this curve.  Methods  bool CreatePeriodicKnots(double knotSpacing) Compute a clamped, uniform, periodic knot vector based on the current degree and control point count.
   </div>
   
 

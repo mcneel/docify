@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.DocObjects.Tables &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.DocObjects.Tables</h1>
+  <ul>
+<li><a href="bitmaptable/">BitmapTable</a></li>
+<li><a href="dimstyletable/">DimStyleTable</a></li>
+<li><a href="dimstyletableeventargs/">DimStyleTableEventArgs</a></li>
+<li><a href="dimstyletableeventtype/">DimStyleTableEventType</a></li>
+<li><a href="fonttable/">FontTable</a></li>
+<li><a href="grouptable/">GroupTable</a></li>
+<li><a href="grouptableeventargs/">GroupTableEventArgs</a></li>
+<li><a href="grouptableeventtype/">GroupTableEventType</a></li>
+<li><a href="hatchpatterntable/">HatchPatternTable</a></li>
+<li><a href="instancedefinitiontable/">InstanceDefinitionTable</a></li>
+<li><a href="instancedefinitiontableeventargs/">InstanceDefinitionTableEventArgs</a></li>
+<li><a href="instancedefinitiontableeventtype/">InstanceDefinitionTableEventType</a></li>
+<li><a href="layertable/">LayerTable</a></li>
+<li><a href="layertableeventargs/">LayerTableEventArgs</a></li>
+<li><a href="layertableeventtype/">LayerTableEventType</a></li>
+<li><a href="lighttable/">LightTable</a></li>
+<li><a href="lighttableeventargs/">LightTableEventArgs</a></li>
+<li><a href="lighttableeventtype/">LightTableEventType</a></li>
+<li><a href="linetypetable/">LinetypeTable</a></li>
+<li><a href="materialtable/">MaterialTable</a></li>
+<li><a href="materialtableeventargs/">MaterialTableEventArgs</a></li>
+<li><a href="materialtableeventtype/">MaterialTableEventType</a></li>
+<li><a href="modifytype/">ModifyType</a></li>
+<li><a href="namedconstructionplanetable/">NamedConstructionPlaneTable</a></li>
+<li><a href="namedlayerstatetable/">NamedLayerStateTable</a></li>
+<li><a href="namedpositiontable/">NamedPositionTable</a></li>
+<li><a href="namedviewtable/">NamedViewTable</a></li>
+<li><a href="objecttable/">ObjectTable</a></li>
+<li><a href="restorelayerproperties/">RestoreLayerProperties</a></li>
+<li><a href="rhinodoccommontable/">RhinoDocCommonTable</a></li>
+<li><a href="runtimedocumentdatatable/">RuntimeDocumentDataTable</a></li>
+<li><a href="snapshottable/">SnapshotTable</a></li>
+<li><a href="stringtable/">StringTable</a></li>
+<li><a href="viewtable/">ViewTable</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletable/">
+        <div class="h2 mt-1 mb-1">DimStyleTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class DimStyleTable :RhinoDocCommonTable&lt;DimensionStyle&gt;,ICollection&lt;DimensionStyle&gt;Properties  DimensionStyle[] BuiltInStyles Creates an array of default AnnotationStyle objects since 6.0 ModelComponentType ComponentType Returns . since 6.0 DimensionStyle Current Returns an instance of the current . since 6.0 DimensionStyle CurrentDimensionStyle Do not use. Use the property. Guid CurrentId  since 6.0 int CurrentIndex  since 6.0  Methods  int Add(DimensionStyle dimstyle,bool reference) Adds a new DimensionStyle to the document. Returns - index of new AnnotationStyle.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletableeventargs/">
+        <div class="h2 mt-1 mb-1">DimStyleTableEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class DimStyleTableEventArgs : EventArgsProperties  RhinoDoc Document  since 6.0 DimStyleTableEventType EventType  since 6.0 int Index  since 6.0 DimensionStyle NewState  since 6.0 DimensionStyle OldState  since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/dimstyletableeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/fonttable/">
+        <div class="h2 mt-1 mb-1">FontTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Font tables store the list of fonts in a Rhino document. The FontTable is now just a wrapper around the DimStyles table.
+public class FontTable : IEnumerable&lt;Font&gt;, Collections.IRhinoTable&lt;Font&gt;Properties  int Count Number of fonts in the table. int CurrentIndex At all times, there is a &ldquo;current&rdquo; font. Unless otherwise specified, new dimension objects are assigned to the current font. The current font is never deleted. Returns: Zero based font index of the current font.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/fonttable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/hatchpatterntable/">
+        <div class="h2 mt-1 mb-1">HatchPatternTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+All of the hatch pattern definitions contained in a rhino document.
+public class HatchPatternTable :RhinoDocCommonTable&lt;HatchPattern&gt;, ICollection&lt;HatchPattern&gt;Properties  ModelComponentType ComponentType  since 6.0 int CurrentHatchPatternIndex At all times, there is a &ldquo;current&rdquo; hatch pattern. Unless otherwise specified, new objects are assigned to the current hatch pattern. The current hatch pattern is never locked, hidden, or deleted.  Methods  int Add(HatchPattern pattern) Adds a new hatch pattern with specified definition to the table.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/hatchpatterntable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontable/">
+        <div class="h2 mt-1 mb-1">InstanceDefinitionTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTable :RhinoDocCommonTable&lt;InstanceDefinition&gt;Properties  int ActiveCount Number of items in the instance definitions table, excluding deleted definitions. ModelComponentType ComponentType  since 6.0 int Count Number of items in the instance definitions table. RhinoDoc Document Document that owns this table.  Methods  int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes) Adds an instance definition to the instance definition table. Returns - &gt;=0 index of instance definition in the instance definition table.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontableeventargs/">
+        <div class="h2 mt-1 mb-1">InstanceDefinitionTableEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTableEventArgs : EventArgsProperties  RhinoDoc Document  since 5.3 InstanceDefinitionTableEventType EventType  since 5.3 int InstanceDefinitionIndex  since 5.3 InstanceDefinition NewState  since 5.3 InstanceDefinitionGeometry OldState  since 5.3  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontableeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertableeventargs/">
+        <div class="h2 mt-1 mb-1">LayerTableEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class LayerTableEventArgs : EventArgsProperties  RhinoDoc Document  LayerTableEventType EventType  int LayerIndex  Layer NewState  Layer OldState   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertableeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtable/">
+        <div class="h2 mt-1 mb-1">MaterialTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class MaterialTable :RhinoDocCommonTable&lt;Material&gt;, ICollection&lt;Material&gt;Properties  ModelComponentType ComponentType  since 6.0 int CurrentMaterialIndex At all times, there is a &ldquo;current&rdquo; material. Unless otherwise specified, new objects are assigned to the current material. The current material is never locked, hidden, or deleted. ObjectMaterialSource CurrentMaterialSource Gets or sets the current material source.  Methods  int Add() Adds a new material to the table based on the default material.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtableeventargs/">
+        <div class="h2 mt-1 mb-1">MaterialTableEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class MaterialTableEventArgs : EventArgsProperties  RhinoDoc Document  MaterialTableEventType EventType  int Index  Material OldSettings   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtableeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedconstructionplanetable/">
+        <div class="h2 mt-1 mb-1">NamedConstructionPlaneTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Contains all named construction planes in a rhino document. This class cannot be inherited.
+public class NamedConstructionPlaneTable : IEnumerable&lt;ConstructionPlane&gt;, Collections.IRhinoTable&lt;ConstructionPlane&gt;Properties  int Count Number of construction planes in the table. RhinoDoc Document Gets the document that owns this table.  Methods  int Add(string name,Plane plane) Adds named construction plane to document. Returns - 0 based index of named construction plane. -1 on failure. bool Delete(int index) Remove named construction plane from the document.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedconstructionplanetable/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <span class="previous_page disabled">Prev</span>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">1</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/3/">3</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/2/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

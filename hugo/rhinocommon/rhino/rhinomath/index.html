@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoMath &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino
+Provides constants and static methods that are additional to .
+public class RhinoMathMethods  static double Clamp(double value,double bound1,double bound2) Restricts a to be specified within an interval of two numbers. Returns - The clamped value. static int Clamp(int value,int bound1,int bound2) Restricts a to be specified within an interval of two integers. Returns - The clamped value. static uint CRC32(uint currentRemainder,byte[] buffer) Advances the cyclic redundancy check value remainder given a byte array.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoMath</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino</a></em></p>
+<p>Provides constants and static methods that are additional to
+.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoMath</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static double Clamp(double value,double bound1,double bound2)</dt>
+<dd>Restricts a  to be specified within an interval of two numbers.</dd>
+<dd>Returns - The clamped value.</dd>
+<dt>static int Clamp(int value,int bound1,int bound2)</dt>
+<dd>Restricts a  to be specified within an interval of two integers.</dd>
+<dd>Returns - The clamped value.</dd>
+<dt>static uint CRC32(uint currentRemainder,byte[] buffer)</dt>
+<dd>Advances the cyclic redundancy check value remainder given a byte array.
+<a href="http://en.wikipedia.org/wiki/Cyclic_redundancy_check">http://en.wikipedia.org/wiki/Cyclic_redundancy_check</a>.</dd>
+<dd>Returns - The new current remainder.</dd>
+<dt>static uint CRC32(uint currentRemainder,double value)</dt>
+<dd>Advances the cyclic redundancy check value remainder given a .
+<a href="http://en.wikipedia.org/wiki/Cyclic_redundancy_check">http://en.wikipedia.org/wiki/Cyclic_redundancy_check</a>.</dd>
+<dd>Returns - The new current remainder.</dd>
+<dt>static uint CRC32(uint currentRemainder,int value)</dt>
+<dd>Advances the cyclic redundancy check value remainder given a .
+<a href="http://en.wikipedia.org/wiki/Cyclic_redundancy_check">http://en.wikipedia.org/wiki/Cyclic_redundancy_check</a>.</dd>
+<dd>Returns - The new current remainder.</dd>
+<dt>static bool EpsilonEquals(double x,double y,double epsilon)</dt>
+<dd>Compare two doubles for equality within some &ldquo;epsilon&rdquo; range</dd>
+<dd>since 5.4</dd>
+<dt>static bool EpsilonEquals(float x,float y,float epsilon)</dt>
+<dd>Compare to floats for equality within some &ldquo;epsilon&rdquo; range</dd>
+<dd>since 5.4</dd>
+<dt>static bool EvaluateNormal(int limitDirection,Vector3d ds,Vector3d dt,Vector3d dss,Vector3d dst,Vector3d dtt,Vector3d n)</dt>
+<dd>Expert tool to evaluate surface unit normal.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>static bool EvaluateNormalPartials(Vector3d ds,Vector3d dt,Vector3d dss,Vector3d dst,Vector3d dtt,Vector3d ns,Vector3d nt)</dt>
+<dd>Expert tool to evaluate partial derivatives of surface unit normal.</dd>
+<dd>Returns - True if Jacobian is non-degenerate, False if Jacobian is degenerate.</dd>
+<dd>since 7.0</dd>
+<dt>static string IntIndexToString(int index)</dt>
+<dd>Portrays an  index in text.</dd>
+<dd>Returns - The text representation of the int index.</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsValidDouble(double x)</dt>
+<dd>Determines whether a  value is valid within the RhinoCommon context.
+Rhino does not use Double.NaN by convention, so this test evaluates to True if:x is not equal to RhinoMath.UnsetValueSystem.Double.IsNaN(x) evaluates to falseSystem.Double.IsInfinity(x) evaluates to false</dd>
+<dd>Returns - True if the number if valid, False if the number is NaN, Infinity or Unset.</dd>
+<dt>static bool IsValidSingle(float x)</dt>
+<dd>Determines whether a  value is valid within the RhinoCommon context.
+Rhino does not use Single.NaN by convention, so this test evaluates to True if:x is not equal to RhinoMath.UnsetValue,System.Single.IsNaN(x) evaluates to falseSystem.Single.IsInfinity(x) evaluates to false</dd>
+<dd>Returns - True if the number if valid, False if the number is NaN, Infinity or Unset.</dd>
+<dt>static double ParseNumber(string expression)</dt>
+<dd>Evaluates command line math expression.</dd>
+<dd>Returns - result</dd>
+<dd>since 6.0</dd>
+<dt>static double ToDegrees(double radians)</dt>
+<dd>Convert an angle from radians to degrees.</dd>
+<dt>static double ToRadians(double degrees)</dt>
+<dd>Convert an angle from degrees to radians.</dd>
+<dt>static bool TryParseNumber(string expression,double result)</dt>
+<dd>Evaluates command line math expression.</dd>
+<dd>Returns - True if successfull otherwise false</dd>
+<dd>since 6.0</dd>
+<dt>static double UnitScale(UnitSystem from,UnitSystem to)</dt>
+<dd>Computes the scale factor for changing the measurements unit systems.</dd>
+<dd>Returns - A scale multiplier.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoMath</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

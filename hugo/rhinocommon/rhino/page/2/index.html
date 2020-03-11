@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino</h1>
+  <ul>
+<li><a href="antialiaslevel/">AntialiasLevel</a></li>
+<li><a href="documenteventargs/">DocumentEventArgs</a></li>
+<li><a href="documentopeneventargs/">DocumentOpenEventArgs</a></li>
+<li><a href="documentsaveeventargs/">DocumentSaveEventArgs</a></li>
+<li><a href="iepsiloncomparable/">IEpsilonComparable</a></li>
+<li><a href="iepsilonfcomparable/">IEpsilonFComparable</a></li>
+<li><a href="indexpair/">IndexPair</a></li>
+<li><a href="irhinodocobserver/">IRhinoDocObserver</a></li>
+<li><a href="lengthvalue/">LengthValue</a></li>
+<li><a href="persistentsettings/">PersistentSettings</a></li>
+<li><a href="persistentsettingsconverter/">PersistentSettingsConverter</a></li>
+<li><a href="persistentsettingseventargs/">PersistentSettingsEventArgs</a></li>
+<li><a href="persistentsettingssavedeventargs/">PersistentSettingsSavedEventArgs</a></li>
+<li><a href="rhinoapp/">RhinoApp</a></li>
+<li><a href="commandlinetextwriter/">CommandLineTextWriter</a></li>
+<li><a href="rhinodoc/">RhinoDoc</a></li>
+<li><a href="rendercontenttableeventargs/">RenderContentTableEventArgs</a></li>
+<li><a href="rendercontenttableeventtype/">RenderContentTableEventType</a></li>
+<li><a href="rendermaterialassignmentchangedeventargs/">RenderMaterialAssignmentChangedEventArgs</a></li>
+<li><a href="texturemappingeventargs/">TextureMappingEventArgs</a></li>
+<li><a href="texturemappingeventtype/">TextureMappingEventType</a></li>
+<li><a href="rhinodocobserverargs/">RhinoDocObserverArgs</a></li>
+<li><a href="rhinomath/">RhinoMath</a></li>
+<li><a href="rhinowindow/">RhinoWindow</a></li>
+<li><a href="scalevalue/">ScaleValue</a></li>
+<li><a href="symbols/">Symbols</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinoapp/">
+        <div class="h2 mt-1 mb-1">RhinoApp</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+.NET RhinoApp is parallel to C++ CRhinoApp.
+public class RhinoApp static LicenseStateChanged Fires when the license state has changed since 7.0  Events  static AppSettingsChanged Is raised when settings are changed. static Closing Is raised when the application is about to close. static EscapeKeyPressed Can add or removed delegates that are raised when the escape key is clicked. static Idle Occurs when the application finishes processing and is about to enter the idle state since 5.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/rhinoapp/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinodoc/">
+        <div class="h2 mt-1 mb-1">RhinoDoc</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Represents an active model.
+public class RhinoDoc : IDisposableEvents  static ActiveDocumentChanged This event is raised when the active document used by modeless user interface changes. On Mac Rhino this will get raised before the , and events. Mac Rhino will also raise this event with 0 for the document Id and a None document pointer when the last document is closed. Windows Rhino will raise this event after the , and events when a new or existing model is opened.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/rhinodoc/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinodocobserverargs/">
+        <div class="h2 mt-1 mb-1">RhinoDocObserverArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Arguments passed to methods.
+public class RhinoDocObserverArgsConstructors  RhinoDocObserverArgs(RhinoDoc doc)  since 6.0  Properties  RhinoDoc Doc Document since 6.0 uint RuntimeSerialNumber Document runtime serial number, will be different across Rhino sessions. since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/rhinodocobserverargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinowindow/">
+        <div class="h2 mt-1 mb-1">RhinoWindow</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Represents the top level window in Rhino
+[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]public class RhinoWindow : System.Windows.Forms.IWin32WindowProperties  IntPtr Handle  bool InvokeRequired See Control.InvokeRequired  Methods  void Invoke(Delegate method)   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/rhinowindow/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/texturemappingeventargs/">
+        <div class="h2 mt-1 mb-1">TextureMappingEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Event arguments passed to the RhinoDoc.TextureMappingEvent.
+public class TextureMappingEventArgs : EventArgsProperties  RhinoDoc Document  since 5.8 TextureMappingEventType EventType  since 5.8 TextureMapping NewMapping  since 5.8 TextureMapping OldMapping  since 5.8  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/texturemappingeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/lengthvalue/">
+        <div class="h2 mt-1 mb-1">LengthValue</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Represents a length with an associated unit system and a string representation of that length. This allows for going back and forth from numerical representation of a length and a string representation without &ldquo;guessing&rdquo; at the initial string
+public class LengthValue : IDisposableProperties  AngleUnitSystem ContextAngleUnitSystem Returns the context AngleUnitSystem from this LengthValue&rsquo;s ParseSettings since 6.0 uint ContextLocaleId returns the context LocaleId from this LengthValue since 6.0 string LengthString Return length as a string since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/lengthvalue/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/scalevalue/">
+        <div class="h2 mt-1 mb-1">ScaleValue</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Represents a scale with associated LengthValues and string representations of the scale. This allows for going back and forth from numerical representations of a scale and a string representation without &ldquo;guessing&rdquo; at the initial scale.
+public class ScaleValue : IDisposableConstructors  ScaleValue() Default constructor since 6.0  Properties  double LeftToRightScale LeftLengthValue / RightLengthValue since 6.0 double RightToLeftScale RightLengthValue / LeftLengthValue since 6.0  Methods  static ScaleValue Create(LengthValue left,LengthValue right,ScaleStringFormat format) Create from 2 length values since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/scalevalue/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/indexpair/">
+        <div class="h2 mt-1 mb-1">IndexPair</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Represents two indices: I and J.
+Constructors  IndexPair(int i,int j) Initializes a new instance of with two indices.  Properties  int Count Returns the amount of elements in this pair of indices, which is always 2. since 6.0 int I Gets or sets the first, I index. int J Gets or sets the second, J index.  Methods  bool Contains(int item) Determines whether the contains a specific value.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/indexpair/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinomath/">
+        <div class="h2 mt-1 mb-1">RhinoMath</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Provides constants and static methods that are additional to .
+public class RhinoMathMethods  static double Clamp(double value,double bound1,double bound2) Restricts a to be specified within an interval of two numbers. Returns - The clamped value. static int Clamp(int value,int bound1,int bound2) Restricts a to be specified within an interval of two integers. Returns - The clamped value. static uint CRC32(uint currentRemainder,byte[] buffer) Advances the cyclic redundancy check value remainder given a byte array.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/rhinomath/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/symbols/">
+        <div class="h2 mt-1 mb-1">Symbols</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino
+Characters used for different &lsquo;drafting style&rsquo; symbols
+public class SymbolsProperties  static char DegreeSymbol Degree symbol used for angles since 6.0 static char DiameterSymbol Diameter symbol since 6.0 static char PlusMinusSymbol Plus-Minus tolerance symbol since 6.0 static char RadiusSymbol Radius symbol since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/symbols/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+
+      
+      <span class="next_page disabled">Next</span>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

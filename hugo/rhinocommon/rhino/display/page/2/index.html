@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Display &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Display</h1>
+  <ul>
+<li><a href="backgroundstyle/">BackgroundStyle</a></li>
+<li><a href="blendmode/">BlendMode</a></li>
+<li><a href="calculateboundingboxeventargs/">CalculateBoundingBoxEventArgs</a></li>
+<li><a href="color4f/">Color4f</a></li>
+<li><a href="colorcmyk/">ColorCMYK</a></li>
+<li><a href="colorgradient/">ColorGradient</a></li>
+<li><a href="colorhsl/">ColorHSL</a></li>
+<li><a href="colorhsv/">ColorHSV</a></li>
+<li><a href="colorlab/">ColorLAB</a></li>
+<li><a href="colorlch/">ColorLCH</a></li>
+<li><a href="colorstop/">ColorStop</a></li>
+<li><a href="colorxyz/">ColorXYZ</a></li>
+<li><a href="cullfacemode/">CullFaceMode</a></li>
+<li><a href="cullobjecteventargs/">CullObjectEventArgs</a></li>
+<li><a href="customdisplay/">CustomDisplay</a></li>
+<li><a href="definedviewportprojection/">DefinedViewportProjection</a></li>
+<li><a href="depthmode/">DepthMode</a></li>
+<li><a href="displaybitmap/">DisplayBitmap</a></li>
+<li><a href="displaybitmapdrawlist/">DisplayBitmapDrawList</a></li>
+<li><a href="displayconduit/">DisplayConduit</a></li>
+<li><a href="displayengine/">DisplayEngine</a></li>
+<li><a href="displaymaterial/">DisplayMaterial</a></li>
+<li><a href="displaymodechangedeventargs/">DisplayModeChangedEventArgs</a></li>
+<li><a href="displaymodedescription/">DisplayModeDescription</a></li>
+<li><a href="displaypipeline/">DisplayPipeline</a></li>
+<li><a href="displaypipelineattributes/">DisplayPipelineAttributes</a></li>
+<li><a href="boundingboxdisplaymode/">BoundingBoxDisplayMode</a></li>
+<li><a href="contextsfordraw/">ContextsForDraw</a></li>
+<li><a href="framebufferfillmode/">FrameBufferFillMode</a></li>
+<li><a href="meshdisplayattributes/">MeshDisplayAttributes</a></li>
+<li><a href="stereorendercontextenum/">StereoRenderContextEnum</a></li>
+<li><a href="viewdisplayattributes/">ViewDisplayAttributes</a></li>
+<li><a href="draweventargs/">DrawEventArgs</a></li>
+<li><a href="drawforegroundeventargs/">DrawForegroundEventArgs</a></li>
+<li><a href="drawframestages/">DrawFrameStages</a></li>
+<li><a href="drawobjecteventargs/">DrawObjectEventArgs</a></li>
+<li><a href="gradienttype/">GradientType</a></li>
+<li><a href="initframebuffereventargs/">InitFrameBufferEventArgs</a></li>
+<li><a href="pageviewspacechangeeventargs/">PageViewSpaceChangeEventArgs</a></li>
+<li><a href="rhinopageview/">RhinoPageView</a></li>
+<li><a href="rhinoview/">RhinoView</a></li>
+<li><a href="rhinoviewport/">RhinoViewport</a></li>
+<li><a href="text3d/">Text3d</a></li>
+<li><a href="viewcapture/">ViewCapture</a></li>
+<li><a href="viewcapturesettings/">ViewCaptureSettings</a></li>
+<li><a href="anchorlocation/">AnchorLocation</a></li>
+<li><a href="colormode/">ColorMode</a></li>
+<li><a href="vieweventargs/">ViewEventArgs</a></li>
+<li><a href="viewporttype/">ViewportType</a></li>
+<li><a href="visualanalysismode/">VisualAnalysisMode</a></li>
+<li><a href="analysisstyle/">AnalysisStyle</a></li>
+<li><a href="zbiasmode/">ZBiasMode</a></li>
+<li><a href="zbuffercapture/">ZBufferCapture</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorlab/">
+        <div class="h2 mt-1 mb-1">ColorLAB</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+Represents a LAB (Lightness, A, B) color with double precision floating point channels. LAB colors are based on nonlinearly compressed CIE XYZ color space coordinates.
+The A and B parameters of a LAB color represent the opponents.
+Constructors  ColorLAB(Color rgb) Constructs a new instance of ColorLAB that is equivalent to an RGB color. ColorLAB(double lightness,double a,double b) Constructs a new instance of ColorLAB with custom channel values. ColorLAB(double alpha,double lightness,double a,double b) Constructs a new instance of ColorLAB with custom channel values.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/colorlab/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorlch/">
+        <div class="h2 mt-1 mb-1">ColorLCH</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+Represents an LCH (Lightness, A, B) color with double precision floating point channels. LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, in order to approach perceptual uniformity. They are primarily used in computer graphics which deal with colored lights.
+Constructors  ColorLCH(Color rgb) Constructs a new instance of ColorLCH that is equivalent to an RGB color. ColorLCH(double lightness,double chroma,double hue) Constructs a new instance of ColorLCH with custom channel values.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/colorlch/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorxyz/">
+        <div class="h2 mt-1 mb-1">ColorXYZ</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+Represents an XYZ (Hue, Saturation, Luminance) color with double precision floating point channels. XYZ colors are based on the CIE 1931 XYZ color space standard and they mimic the natural sensitivity of cones in the human retina.
+Constructors  ColorXYZ(Color rgb) Constructs a new instance of ColorXYZ that is equivalent to an RGB color. ColorXYZ(double x,double y,double z) Constructs a new instance of ColorXYZ with custom channel values. ColorXYZ(double alpha,double x,double y,double z) Constructs a new instance of ColorXYZ with custom channel values.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/colorxyz/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/cullobjecteventargs/">
+        <div class="h2 mt-1 mb-1">CullObjectEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class CullObjectEventArgs : DrawEventArgsProperties  bool CullObject  since 5.3 RhinoObject RhinoObject  since 5.3 uint RhinoObjectSerialNumber Gets the rhino object runtime serial number. since 6.14  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/cullobjecteventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/customdisplay/">
+        <div class="h2 mt-1 mb-1">CustomDisplay</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.
+public class CustomDisplay : IDisposableConstructors  CustomDisplay(bool enable) Constructs a new CustomDisplay instance. You must call Dispose() when you are done with this instance, otherwise the display methods will never be switched off.  Properties  BoundingBox ClippingBox Gets the clipping box of this CustomDisplay. bool Enabled Gets or sets the Enabled state of this CustomDisplay instance.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/customdisplay/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaybitmap/">
+        <div class="h2 mt-1 mb-1">DisplayBitmap</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+A bitmap resource that can be used by the display pipeline (currently only in OpenGL display). Reuse DisplayBitmaps for drawing if possible; it is much more expensive to construct new DisplayBitmaps than it is to reuse existing DisplayBitmaps.
+public class DisplayBitmap : IDisposableConstructors  DisplayBitmap(Bitmap bitmap) Constructs a DisplayBitmap from an existing bitmap.  Methods  static DisplayBitmap Load(string path) Load a DisplayBitmap from and image file on disk.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/displaybitmap/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaybitmapdrawlist/">
+        <div class="h2 mt-1 mb-1">DisplayBitmapDrawList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DisplayBitmapDrawListConstructors  DisplayBitmapDrawList()   Properties  BoundingBox BoundingBox  int MaximumCachedSortLists Maximum number of cached sort order index lists stored on this class. Default is 10, but depending on the number of points in this list you may get better performance by setting this value to a certain percentage of the point count. double SortAngleTolerance Angle in radians used to determine if an index list is &ldquo;parallel enough&rdquo; to a viewports camera angle.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/displaybitmapdrawlist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displayconduit/">
+        <div class="h2 mt-1 mb-1">DisplayConduit</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DisplayConduitProperties  bool Enabled  ActiveSpace SpaceFilter If you want this conduit to only work in a specific space (model or page), then set this filter to that specific space. The default is None meaning no filter is applied since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/displayconduit/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displayengine/">
+        <div class="h2 mt-1 mb-1">DisplayEngine</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DisplayEngine : IDisposableMethods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/displayengine/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaymaterial/">
+        <div class="h2 mt-1 mb-1">DisplayMaterial</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Display
+public class DisplayMaterial : IDisposableConstructors  DisplayMaterial() Constructs a default material. DisplayMaterial(Color diffuse) Constructs a default material with a specific diffuse color. DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency) Constructs a material with custom properties. DisplayMaterial(Color diffuse,double transparency) Constructs a default material with a specific diffuse color and transparency. DisplayMaterial(DisplayMaterial other) Duplicate another material. DisplayMaterial(Material material)   Properties  Color Ambient Gets or sets the Ambient color of the Material.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/display/displaymaterial/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/display/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/display/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/display/page/4/">4</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

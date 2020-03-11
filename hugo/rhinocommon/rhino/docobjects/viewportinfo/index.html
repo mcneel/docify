@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ViewportInfo &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Represents a viewing frustum.
+[Serializable]public class ViewportInfo : Runtime.CommonObjectConstructors  ViewportInfo() Initializes a new instance. ViewportInfo(RhinoViewport rhinoViewport) Copies all of the ViewportInfo data from an existing RhinoViewport. ViewportInfo(ViewportInfo other) Initializes a new instance by copying values from another instance.  Properties  static Vector3d DefaultCameraDirection Default z=up perspective camera direction since 6.0 double Camera35mmLensLength This property assumes the camera is horizontal and crop the film rather than the image when the aspect of the frustum is not 36/24.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ViewportInfo</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Represents a viewing frustum.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewportInfo</span> : Runtime.CommonObject
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ViewportInfo()</dt>
+<dd>Initializes a new instance.</dd>
+<dt>ViewportInfo(RhinoViewport rhinoViewport)</dt>
+<dd>Copies all of the ViewportInfo data from an existing RhinoViewport.</dd>
+<dt>ViewportInfo(ViewportInfo other)</dt>
+<dd>Initializes a new instance by copying values from another instance.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> DefaultCameraDirection</dt>
+<dd>Default z=up perspective camera direction</dd>
+<dd>since 6.0</dd>
+<dt>double Camera35mmLensLength</dt>
+<dd>This property assumes the camera is horizontal and crop the
+film rather than the image when the aspect of the frustum
+is not 36/24.  (35mm film is 36mm wide and 24mm high.)
+Setting preserves camera location,
+changes the frustum, but maintains the frustum&rsquo;s aspect.</dd>
+<dt>double CameraAngle</dt>
+<dd>Gets or sets the 1/2 smallest angle. See  for more information.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraDirection</dt>
+<dd>Gets the direction that the camera faces.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> CameraLocation</dt>
+<dd>Gets the camera location (position) point.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraUp</dt>
+<dd>Gets the camera up vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraX</dt>
+<dd>Gets the unit &ldquo;to the right&rdquo; vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraY</dt>
+<dd>Gets the unit &ldquo;up&rdquo; vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraZ</dt>
+<dd>Gets the unit vector in -CameraDirection.</dd>
+<dt>double FrustumAspect</dt>
+<dd>Setting FrustumAspect changes the larger of the frustum&rsquo;s width/height
+so that the resulting value of width/height matches the requested
+aspect.  The camera angle is not changed.  If you change the shape
+of the view port with a call SetScreenPort(), then you generally 
+want to call SetFrustumAspect() with the value returned by 
+GetScreenPortAspect().</dd>
+<dt>double FrustumBottom</dt>
+<dd>Gets the frustum bottom value. This is -top if the frustum has a horizontal symmetry axis.
+This number is usually negative.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> FrustumBottomPlane</dt>
+<dd>Gets the frustum bottom plane that separates visibile from off-screen.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> FrustumCenter</dt>
+<dd>Gets the frustum center point.</dd>
+<dt>double FrustumFar</dt>
+<dd>Gets the frustum far-cutting value.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> FrustumFarPlane</dt>
+<dd>Gets far clipping plane if camera and frustum
+are valid.  The plane&rsquo;s frame is the same as the camera&rsquo;s
+frame.  The origin is located at the intersection of the
+camera direction ray and the far clipping plane. The plane&rsquo;s
+normal points into the frustum towards the camera location.</dd>
+<dt>double FrustumHeight</dt>
+<dd>Gets the frustum height. This is  - .</dd>
+<dt>double FrustumLeft</dt>
+<dd>Gets the frustum left value. This is -right if the frustum has a vertical symmetry axis.
+This number is usually negative.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> FrustumLeftPlane</dt>
+<dd>Gets the frustum left plane that separates visibile from off-screen.</dd>
+<dt>double FrustumMaximumDiameter</dt>
+<dd>Gets the frustum maximum diameter, or the maximum between  and .</dd>
+<dt>double FrustumMinimumDiameter</dt>
+<dd>Gets the frustum minimum diameter, or the minimum between  and .</dd>
+<dt>double FrustumNear</dt>
+<dd>Gets the frustum near-cutting value.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> FrustumNearPlane</dt>
+<dd>Gets near clipping plane if camera and frustum
+are valid.  The plane&rsquo;s frame is the same as the camera&rsquo;s
+frame.  The origin is located at the intersection of the
+camera direction ray and the near clipping plane. The plane&rsquo;s
+normal points out of the frustum towards the camera
+location.</dd>
+<dt>double FrustumRight</dt>
+<dd>Gets the frustum right value. This is -left if the frustum has a vertical symmetry axis.
+This number is usually positive.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> FrustumRightPlane</dt>
+<dd>Gets the frustum right plane that separates visibile from off-screen.</dd>
+<dt>double FrustumTop</dt>
+<dd>Gets the frustum top value. This is -bottom if the frustum has a horizontal symmetry axis.
+This number is usually positive.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> FrustumTopPlane</dt>
+<dd>Gets the frustum top plane that separates visibile from off-screen.</dd>
+<dt>double FrustumWidth</dt>
+<dd>Gets the frustum width. This is  - .</dd>
+<dt>Guid Id</dt>
+<dd>Sets the viewport&rsquo;s id to the value used to 
+uniquely identify this viewport.
+There is no approved way to change the viewport 
+id once it is set in order to maintain consistency
+across multiple viewports and those routines that 
+manage them.</dd>
+<dt>bool IsCameraDirectionLocked</dt>
+<dd>Gets or sets a value that indicates whether the direction that the camera faces is unmodifiable.</dd>
+<dt>bool IsCameraLocationLocked</dt>
+<dd>Gets or sets a value that indicates whether the camera location is unmodifiable.</dd>
+<dt>bool IsCameraUpLocked</dt>
+<dd>Gets or sets a value that indicates whether the camera up vector is unmodifiable.</dd>
+<dt>bool IsFrustumLeftRightSymmetric</dt>
+<dd>Gets or sets a value that indicates whether the camera frustum has a vertical symmetry axis.</dd>
+<dt>bool IsFrustumTopBottomSymmetric</dt>
+<dd>Gets or sets a value that indicates whether the camera frustum has a horizontal symmetry axis.</dd>
+<dt>bool IsParallelProjection</dt>
+<dd>Get or set whether this projection is parallel.</dd>
+<dt>bool IsPerspectiveProjection</dt>
+<dd>Get or set whether this projection is perspective.</dd>
+<dt>bool IsTwoPointPerspectiveProjection</dt>
+<dd>Gets a value that indicates whether this projection is a two-point perspective.</dd>
+<dt>bool IsValidCamera</dt>
+<dd>Gets a value that indicates whether the camera is valid.</dd>
+<dt>bool IsValidFrustum</dt>
+<dd>Gets a value that indicates whether the frustum is valid.</dd>
+<dt>double PerspectiveMinNearDist</dt>
+<dd>Expert user function to control the minimum
+value of near when perspective projections
+are being used.</dd>
+<dd>since 7.0</dd>
+<dt>double PerspectiveMinNearOverFar</dt>
+<dd>Expert user function to control the minimum
+ratio of near/far when perspective projections
+are begin used.</dd>
+<dd>since 7.0</dd>
+<dt>Rectangle ScreenPort</dt>
+<dd>Get or set the screen port.  and</dd>
+<dd>since 6.0</dd>
+<dt>double ScreenPortAspect</dt>
+<dd>Gets the sceen aspect ratio.
+This is width / height.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> TargetPoint</dt>
+<dd>The current value of the target point.  This point does not play
+a role in the view projection calculations.  It can be used as a 
+fixed point when changing the camera so the visible regions of the
+before and after frustums both contain the region of interest.
+The default constructor sets this point on ON_3dPoint::UnsetPoint.
+You must explicitly call one SetTargetPoint() functions to set
+the target point.</dd>
+<dt>SizeF ViewScale</dt>
+<dd>Applies scaling factors to parallel projection clipping coordinates
+by setting the m_clip_mod transformation. 
+If you want to compress the view projection across the viewing
+plane, then set x = 0.5, y = 1.0, and z = 1.0.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static double CalculateCameraRotationAngle(Vector3d direction,Vector3d up)</dt>
+<dd>Calculates the camera rotation angle.</dd>
+<dd>Returns - The camera rotation angle in radians.</dd>
+<dd>since 6.8</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CalculateCameraUpDirection(Point3d location,Vector3d direction,double angle)</dt>
+<dd>Calculates the camera up direction.</dd>
+<dd>Returns - The camera up direction.</dd>
+<dd>since 6.8</dd>
+<dt>bool ChangeToParallelProjection(bool symmetricFrustum)</dt>
+<dd>Use this function to change projections of valid viewports
+from parallel to perspective.  It will make common additional
+adjustments to the frustum and camera location so the resulting
+views are similar.  The camera direction and target point are
+not be changed.
+If the current projection is parallel and symmetricFrustum,
+FrustumIsLeftRightSymmetric() and FrustumIsTopBottomSymmetric()
+are all equal, then no changes are made and True is returned.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool ChangeToPerspectiveProjection(double targetDistance,bool symmetricFrustum,double lensLength)</dt>
+<dd>Use this function to change projections of valid viewports
+from parallel to perspective.  It will make common additional
+adjustments to the frustum and camera location so the resulting
+views are similar.  The camera direction and target point are
+not changed.
+If the current projection is perspective and symmetricFrustum,
+IsFrustumIsLeftRightSymmetric, and IsFrustumIsTopBottomSymmetric
+are all equal, then no changes are made and True is returned.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool ChangeToSymmetricFrustum(bool isLeftRightSymmetric,bool isTopBottomSymmetric,double targetDistance)</dt>
+<dd>If needed, adjusts the current frustum so it has the 
+specified symmetries and adjust the camera location
+so the target plane remains visible.</dd>
+<dd>Returns - Returns True if the viewport has now a frustum with the specified symmetries.</dd>
+<dt>bool ChangeToTwoPointPerspectiveProjection(double targetDistance,Vector3d up,double lensLength)</dt>
+<dd>Changes projections of valid viewports
+to a two point perspective.  It will make common additional
+adjustments to the frustum and camera location and direction
+so the resulting views are similar.
+If the current projection is perspective and
+IsFrustumIsLeftRightSymmetric is True and
+IsFrustumIsTopBottomSymmetric is false, then no changes are
+made and True is returned.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool DollyCamera(Vector3d dollyVector)</dt>
+<dd>DollyCamera() does not update the frustum&rsquo;s clipping planes.
+To update the frustum&rsquo;s clipping planes call DollyFrustum(d)
+with d = dollyVector o cameraFrameZ.  To convert screen locations
+into a dolly vector, use GetDollyCameraVector().
+Does not update frustum.  To update frustum use DollyFrustum(d) with d = dollyVector o cameraFrameZ.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool DollyExtents(BoundingBox cameraCoordinateBoundingBox,double border)</dt>
+<dd>Dolly the camera location and so that the view frustum contains
+all of the document objects that can be seen in view.
+If the projection is perspective, the camera angle is not changed.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 5.6</dd>
+<dt>bool DollyExtents(IEnumerable<!-- raw HTML omitted --> geometry,double border)</dt>
+<dd>Dolly the camera location and so that the view frustum contains
+all of the document objects that can be seen in view.
+If the projection is perspective, the camera angle is not changed.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 5.6</dd>
+<dt>bool DollyFrustum(double dollyDistance)</dt>
+<dd>Moves the frustum clipping planes.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool Extents(double halfViewAngleRadians,BoundingBox bbox)</dt>
+<dd>Extends this viewport view to include a bounding box.
+Use Extents() as a quick way to set a viewport to so that bounding
+volume is inside of a viewports frustrum.
+The view angle is used to determine the position of the camera.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool Extents(double halfViewAngleRadians,Sphere sphere)</dt>
+<dd>Extends this viewport view to include a sphere.
+Use Extents() as a quick way to set a viewport to so that bounding
+volume is inside of a viewports frustrum.
+The view angle is used to determine the position of the camera.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> FrustumCenterPoint(double targetDistance)</dt>
+<dd>Return a point on the central axis of the view frustum.
+This point is a good choice for a general purpose target point.</dd>
+<dd>Returns - A point on the frustum&rsquo;s central axis.  If the viewport or input
+is not valid, then ON_3dPoint::UnsetPoint is returned.</dd>
+<dt>bool GetBoundingBoxDepth(BoundingBox bbox,double nearDistance,double farDistance)</dt>
+<dd>Gets near and far clipping distances of a bounding box.
+This function ignores the current value of the viewport&rsquo;s 
+near and far settings. If the viewport is a perspective
+projection, the it intersects the semi infinite frustum
+volume with the bounding box and returns the near and far
+distances of the intersection.  If the viewport is a parallel
+projection, it instersects the infinte view region with the
+bounding box and returns the near and far distances of the
+projection.</dd>
+<dd>Returns - True if the bounding box intersects the view frustum and near_dist/far_dist were set. 
+False if the bounding box does not intesect the view frustum.</dd>
+<dt>bool GetCameraAngles(double halfDiagonalAngleRadians,double halfVerticalAngleRadians,double halfHorizontalAngleRadians)</dt>
+<dd>Gets the field of view angles.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool GetCameraFrame(Point3d location,Vector3d cameraX,Vector3d cameraY,Vector3d cameraZ)</dt>
+<dd>Gets location and vectors of this camera.</dd>
+<dd>Returns - True if current camera orientation is valid; otherwise false.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> GetDollyCameraVector(int screenX0,int screenY0,int screenX1,int screenY1,double projectionPlaneDistance)</dt>
+<dd>Gets a world coordinate dolly vector that can be passed to DollyCamera().</dd>
+<dd>Returns - The world coordinate dolly vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> GetDollyCameraVector(Point screen0,Point screen1,double projectionPlaneDistance)</dt>
+<dd>Gets a world coordinate dolly vector that can be passed to DollyCamera().</dd>
+<dd>Returns - The world coordinate dolly vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] GetFarPlaneCorners()</dt>
+<dd>Gets the corners of far clipping plane rectangle.
+4 points are returned in the order of bottom left, bottom right,
+top left, top right.</dd>
+<dd>Returns - Four corner points on success.
+Empty array if viewport is not valid.</dd>
+<dt>bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)</dt>
+<dd>Gets the view frustum.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> GetFrustumLine(double screenX,double screenY)</dt>
+<dd>Gets the world coordinate line in the view frustum
+that projects to a point on the screen.</dd>
+<dd>Returns - 3d world coordinate line segment starting on the near clipping plane and ending on the far clipping plane.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> GetFrustumLine(Point screenPoint)</dt>
+<dd>Gets the world coordinate line in the view frustum
+that projects to a point on the screen.</dd>
+<dd>Returns - 3d world coordinate line segment starting on the near clipping plane and ending on the far clipping plane.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> GetFrustumLine(PointF screenPoint)</dt>
+<dd>Gets the world coordinate line in the view frustum
+that projects to a point on the screen.</dd>
+<dd>Returns - 3d world coordinate line segment starting on the near clipping plane and ending on the far clipping plane.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] GetNearPlaneCorners()</dt>
+<dd>Gets the corners of near clipping plane rectangle.
+4 points are returned in the order of bottom left, bottom right,
+top left, top right.</dd>
+<dd>Returns - Four corner points on success.
+Empty array if viewport is not valid.</dd>
+<dt>bool GetPointDepth(Point3d point,double distance)</dt>
+<dd>Gets the clipping distance of a point. This function ignores the
+current value of the viewport&rsquo;s near and far settings. If
+the viewport is a perspective projection, then it intersects
+the semi infinite frustum volume with the bounding box and
+returns the near and far distances of the intersection.
+If the viewport is a parallel projection, it instersects the
+infinte view region with the bounding box and returns the
+near and far distances of the projection.</dd>
+<dd>Returns - True if the bounding box intersects the view frustum and
+near_dist/far_dist were set.
+False if the bounding box does not intesect the view frustum.</dd>
+<dt>System.Drawing.Rectangle GetScreenPort()</dt>
+<dd>Gets the location of viewport in pixels.
+See documentation for SetScreenPort.</dd>
+<dd>Returns - The rectangle, or Empty rectangle on error.</dd>
+<dt>System.Drawing.Rectangle GetScreenPort(int near,int far)</dt>
+<dd>Gets the location of viewport in pixels.
+See value meanings in SetScreenPort.</dd>
+<dd>Returns - The rectangle, or Empty rectangle on error.</dd>
+<dt>void GetScreenPortLocation(int left,int top,int right,int bottom)</dt>
+<dd>Get the location of viewport in pixels (non System.Drawing version of GetScreenPort)</dd>
+<dd>since 6.0</dd>
+<dt>bool GetSphereDepth(Sphere sphere,double nearDistance,double farDistance)</dt>
+<dd>Gets near and far clipping distances of a bounding sphere.</dd>
+<dd>Returns - True if the sphere intersects the view frustum and near_dist/far_dist were set.
+False if the sphere does not intesect the view frustum.</dd>
+<dt>double GetWorldToScreenScale(Point3d pointInFrustum)</dt>
+<dd>Gets the scale factor from point in frustum to screen scale.</dd>
+<dd>Returns - number of pixels per world unit at the 3d point.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetXform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)</dt>
+<dd>Computes a transform from a coordinate system to another.</dd>
+<dd>Returns - The 4x4 transformation matrix (acts on the left).</dd>
+<dt>bool RotateCamera(double rotationAngleRadians,Vector3d rotationAxis,Point3d rotationCenter)</dt>
+<dd>Rotates the view camera.</dd>
+<dd>Returns - True if rotation is successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>bool SetCameraDirection(Vector3d direction)</dt>
+<dd>Sets the direction that the camera faces.</dd>
+<dd>Returns - True if the direction was set; otherwise false.</dd>
+<dt>bool SetCameraLocation(Point3d location)</dt>
+<dd>Sets the camera location (position) point.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool SetCameraUp(Vector3d up)</dt>
+<dd>Sets the camera up vector.</dd>
+<dd>Returns - True if the direction was set; otherwise false.</dd>
+<dt>bool SetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)</dt>
+<dd>Sets the view frustum. If FrustumSymmetryIsLocked() is true
+and left != -right or bottom != -top, then they will be
+adjusted so the resulting frustum is symmetric.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt>bool SetFrustumNearFar(BoundingBox boundingBox)</dt>
+<dd>Sets the frustum near and far using a bounding box.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt>bool SetFrustumNearFar(double nearDistance,double farDistance)</dt>
+<dd>Sets the frustum near and far distances using two values.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt>bool SetFrustumNearFar(double nearDistance,double farDistance,double minNearDistance,double minNearOverFar,double targetDistance)</dt>
+<dd>Sets near and far clipping distance subject to constraints.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt>bool SetFrustumNearFar(Point3d center,double radius)</dt>
+<dd>Sets the frustum near and far using a center point and radius.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt>bool SetScreenPort(int left,int right,int bottom,int top,int near,int far)</dt>
+<dd>Location of viewport in pixels.
+These are provided so you can set the port you are using
+and get the appropriate transformations to and from
+screen space.
+// For a Windows window
+/      int width = width of window client area in pixels;
+/      int height = height of window client area in pixels;
+/      port_left = 0;
+/      port_right = width;
+/      port_top = 0;
+/      port_bottom = height;
+/      port_near = 0;
+/      port_far = 1;
+/      SetScreenPort( port_left, port_right, 
+/                     port_bottom, port_top, 
+/                     port_near, port_far );</dd>
+<dd>Returns - True if input is valid.</dd>
+<dt>bool SetScreenPort(Rectangle windowRectangle)</dt>
+<dd>Gets the location of viewport in pixels.
+See value meanings in SetScreenPort.</dd>
+<dd>Returns - True if input is valid.</dd>
+<dt>bool SetScreenPort(Rectangle windowRectangle,int near,int far)</dt>
+<dd>Gets the location of viewport in pixels.
+See value meanings in SetScreenPort.</dd>
+<dd>Returns - True if input is valid.</dd>
+<dt>double TargetDistance(bool useFrustumCenterFallback)</dt>
+<dd>Gets the distance from the target point to the camera plane.
+Note that if the frustum is not symmetric, then this distance
+is shorter than the distance from the target to the camera location.</dd>
+<dd>Returns - Shortest signed distance from camera plane to target point.
+If the target point is on the visible side of the camera,
+a positive value is returned.  ON_UNSET_VALUE is returned
+when the input of view is not valid.</dd>
+<dt>bool TransformCamera(Transform xform)</dt>
+<dd>Transforms the view camera location, direction, and up.</dd>
+<dd>Returns - True if a valid camera was transformed, False if
+invalid camera, frustum, or transformation.</dd>
+<dd>since 7.0</dd>
+<dt>void UnlockCamera()</dt>
+<dd>Unlocks the camera vectors and location.</dd>
+<dt>void UnlockFrustumSymmetry()</dt>
+<dd>Unlocks frustum horizontal and vertical symmetries.</dd>
+<dt>bool ZoomToScreenRect(int left,int top,int right,int bottom)</dt>
+<dd>Zooms to a screen zone.
+View changing from screen input points. Handy for
+using a mouse to manipulate a view.
+ZoomToScreenRect() may change camera and frustum settings.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool ZoomToScreenRect(Rectangle windowRectangle)</dt>
+<dd>Zooms to a screen zone.
+View changing from screen input points. Handy for
+using a mouse to manipulate a view.
+ZoomToScreenRect() may change camera and frustum settings.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ViewportInfo</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

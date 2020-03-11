@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  SnapShotsClient &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.SnapShots
+This is the abstract interface class for for all Snapshot clients.
+public class SnapShotsClient : IDisposableConstructors  SnapShotsClient() SnapShotsClient constructor since 6.0  Properties  IntPtr CppPointer  since 6.0 int SerialNumber  since 6.0  Methods  static string ApplicationCategory() Predefined application category since 6.0 static string DocumentCategory() Predefined document category since 6.0 static string LayersCategory() Predefined layers category since 6.0 static string LightsCategory() Predefined lights category since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">SnapShotsClient</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.SnapShots</a></em></p>
+<p>This is the abstract interface class for for all Snapshot clients.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnapShotsClient</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>SnapShotsClient()</dt>
+<dd>SnapShotsClient constructor</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>IntPtr CppPointer</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int SerialNumber</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static string ApplicationCategory()</dt>
+<dd>Predefined application category</dd>
+<dd>since 6.0</dd>
+<dt>static string DocumentCategory()</dt>
+<dd>Predefined document category</dd>
+<dd>since 6.0</dd>
+<dt>static string LayersCategory()</dt>
+<dd>Predefined layers category</dd>
+<dd>since 6.0</dd>
+<dt>static string LightsCategory()</dt>
+<dd>Predefined lights category</dd>
+<dd>since 6.0</dd>
+<dt>static string ObjectsCategory()</dt>
+<dd>Predefined objects category</dd>
+<dd>since 6.0</dd>
+<dt>static bool RegisterSnapShotClient(SnapShotsClient client)</dt>
+<dd>Function used to register snapshots client</dd>
+<dd>since 6.0</dd>
+<dt>static string RenderingCategory()</dt>
+<dd>Predefined rendering category</dd>
+<dd>since 6.0</dd>
+<dt>static string ViewsCategory()</dt>
+<dd>Predefined views category</dd>
+<dd>since 6.0</dd>
+<dt>bool AnimateDocument(RhinoDoc doc,double dPos,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)</dt>
+<dd>Called for each frame. Starting at 0.0.</dd>
+<dd>Returns - True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool AnimateObject(RhinoDoc doc,RhinoObject doc_object,Transform transform,double dPos,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)</dt>
+<dd>Called for each frame. Starting at 0.0.</dd>
+<dd>since 6.0</dd>
+<dt>void AnimationStart(RhinoDoc doc,int iFrames)</dt>
+<dd>Called once at the start of an animation.</dd>
+<dd>since 6.0</dd>
+<dt>bool AnimationStop(RhinoDoc doc)</dt>
+<dd>Called once at the end of an animation.</dd>
+<dd>since 6.0</dd>
+<dt>string Category()</dt>
+<dd>The category of this client. Usually one of the above predefined categories like e.g
+object, rendering or application category</dd>
+<dd>since 6.0</dd>
+<dt>Guid ClientId()</dt>
+<dd>The unique id of this client.</dd>
+<dd>Returns - The unique id of this client.</dd>
+<dd>since 6.0</dd>
+<dt>void Dispose()</dt>
+<dd>SnapShotsClient Dispose</dd>
+<dd>since 6.0</dd>
+<dt>void ExtendBoundingBoxForDocumentAnimation(RhinoDoc doc,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop,BoundingBox bbox)</dt>
+<dd>Called once at the start of an animation. This can be used to extend the scene bounding box to avoid clipping.</dd>
+<dd>since 6.0</dd>
+<dt>void ExtendBoundingBoxForObjectAnimation(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop,BoundingBox bbox)</dt>
+<dd>Called once at the start of an animation. This can be used to extend the scene bounding box to avoid clipping.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsCurrentModelStateInAnySnapshot(RhinoDoc doc,BinaryArchiveReader archive,SimpleArrayBinaryArchiveReader archive_array,TextLog text_log)</dt>
+<dd>Called before restoring a snapshot. Warns the user if the current model state is not already saved.</dd>
+<dd>Returns - return True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsCurrentModelStateInAnySnapshot(RhinoDoc doc,RhinoObject doc_object,BinaryArchiveReader archive,SimpleArrayBinaryArchiveReader archive_array,TextLog text_log)</dt>
+<dd>Called before restoring a snapshot. Warns the user if the current model state is not already saved.</dd>
+<dd>Returns - return True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>string Name()</dt>
+<dd>The client&rsquo;s name.</dd>
+<dd>Returns - The client&rsquo;s name.</dd>
+<dd>since 6.0</dd>
+<dt>bool ObjectTransformNotification(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive)</dt>
+<dd>Called for every object that is associated with a snapshot and gets transformed in Rhino. This is getting called for each stored snapshot and gives the client the possibility to update the stored data.</dd>
+<dd>Returns - True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>Guid PlugInId()</dt>
+<dd>The plug-in id that registers this client.</dd>
+<dd>Returns - The plug-in id that registers this client.</dd>
+<dd>since 6.0</dd>
+<dt>bool PrepareForDocumentAnimation(RhinoDoc doc,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)</dt>
+<dd>Called once at the start of an animation.</dd>
+<dd>Returns - True if successful, otherwise</dd>
+<dd>since 6.0</dd>
+<dt>bool PrepareForObjectAnimation(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)</dt>
+<dd>Called once at the start of an animation.</dd>
+<dd>Returns - True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool RestoreDocument(RhinoDoc doc,BinaryArchiveReader archive)</dt>
+<dd>Called when the user restores a snapshot and SupportDocument() returns true.</dd>
+<dd>Returns - True if successful, otherwise false</dd>
+<dd>since 6.0</dd>
+<dt>bool RestoreObject(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive)</dt>
+<dd>Called when the user restores a snapshot and SupportsObjects() and SupportsObject(Rhino.DocObjects.RhinoObject doc_object) returns true.</dd>
+<dd>Returns - True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool SaveDocument(RhinoDoc doc,BinaryArchiveWriter archive)</dt>
+<dd>Called when the user saves a snapshot and SupportDocument() returns true.</dd>
+<dd>Returns - True if successful, otherwise false</dd>
+<dd>since 6.0</dd>
+<dt>bool SaveObject(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveWriter archive)</dt>
+<dd>Called when the user saves a snapshot and SupportsObjects() and SupportsObject(Rhino.DocObjects.RhinoObject doc_object) returns true.</dd>
+<dd>Returns - True if successful, otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>void SnapshotRestored(RhinoDoc doc)</dt>
+<dd>Called after all clients restored their data.</dd>
+<dd>since 6.0</dd>
+<dt>bool SupportsAnimation()</dt>
+<dd>Returns True if the client allows animation.</dd>
+<dd>Returns - True if the client allows animation.</dd>
+<dd>since 6.0</dd>
+<dt>bool SupportsDocument()</dt>
+<dd>Defines if the client supports document user data or not</dd>
+<dd>Returns - True if the client saves/restores document user data.</dd>
+<dd>since 6.0</dd>
+<dt>bool SupportsObject(RhinoObject doc_object)</dt>
+<dd>Returns True if the client saves/restores object user data for the given object.</dd>
+<dd>Returns - True if the client saves/restores object user data for the given object.</dd>
+<dd>since 6.0</dd>
+<dt>bool SupportsObjects()</dt>
+<dd>Returns True if the client saves/restores object user data.</dd>
+<dd>Returns - True if the client saves/restores object user data.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>SnapShotsClient</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

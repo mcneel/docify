@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Collections on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/collections/</link>
+    <description>Recent content in Rhino.Collections on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/collections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TransformObjectList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/collections/transformobjectlist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/collections/transformobjectlist/</guid>
+      <description>Namespace: Rhino.Collections
+Used by the TransformCommand and GetTransform classes.
+public class TransformObjectList : IDisposableConstructors  TransformObjectList()   Properties  int Count Number of elements in this list since 5.10 bool DisplayFeedbackEnabled  int GripCount Number of elements in grip list since 6.0 int GripOwnerCount Number of elements in grip owner list since 6.0  Methods  void Add(ObjRef objref) Add an ObjRef to this list. Use this to add Polyedges so the references are properly counted since 5.</description>
+    </item>
+    
+    <item>
+      <title>CurveList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/collections/curvelist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/collections/curvelist/</guid>
+      <description>Namespace: Rhino.Collections
+Represents a list of curves.
+public class CurveList : RhinoList&amp;lt;Curve&amp;gt;Constructors  CurveList() Initializes a new empty list of curves. CurveList(IEnumerablecollection) Initializes a new list that is filled with all items of the input enumerable. Input items are not explicitly duplicated (this is a shallow copy). CurveList(int initialCapacity) Initializes a new empty list of curves with a predefined capacity. This is the amount of items the list will accept before resizing.</description>
+    </item>
+    
+    <item>
+      <title>Point3dList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/collections/point3dlist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/collections/point3dlist/</guid>
+      <description>Namespace: Rhino.Collections
+Represents a list of .
+[Serializable]public class Point3dList : RhinoList&amp;lt;Point3d&amp;gt;, ICloneableConstructors  Point3dList() Initializes a new empty list with default capacity. Point3dList(IEnumerablecollection) Initializes a new point list by copying the values from another set. Point3dList(int initialCapacity) Initializes a new point list with a preallocated initial capacity. Point3dList(Point3d[] initialPoints) Constructs a new point list from values in a point array.  Properties  BoundingBox BoundingBox Even though this is a property, it is not a &amp;ldquo;fast&amp;rdquo; calculation.</description>
+    </item>
+    
+    <item>
+      <title>RhinoList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/collections/rhinolist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/collections/rhinolist/</guid>
+      <description>Namespace: Rhino.Collections
+Provides helper methods to work with and other collections.
+[Serializable,DebuggerTypeProxy(typeof(ListDebuggerDisplayProxy&amp;lt;&amp;gt;)),DebuggerDisplay(&amp;#34;Count = {Count}&amp;#34;)]public class RhinoList : IList&amp;lt;T&amp;gt;, IList, ICloneableConstructors  RhinoList() Initializes a new, empty list. since (unknown) RhinoList(IEnumerablecollection) Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T. since (unknown) RhinoList(int initialCapacity) Initializes an empty list with a certain capacity. since (unknown) RhinoList(int amount,T defaultValue) Initializes a new list with a specified amount of values.</description>
+    </item>
+    
+    <item>
+      <title>ArchivableDictionary</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/collections/archivabledictionary/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/collections/archivabledictionary/</guid>
+      <description>Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+[Serializable]public class ArchivableDictionary : ICloneable, IDictionary&amp;lt;string, object&amp;gt;, ISerializableConstructors  ArchivableDictionary() Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version) Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version,string name) Initializes an instance of a dictionary for writing to a 3dm archive.</description>
+    </item>
+    
+  </channel>
+</rss>

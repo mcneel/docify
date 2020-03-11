@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rectangle3d &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the values of a plane and two intervals that form an oriented rectangle in three dimensions.
+Constructors  Rectangle3d(Plane plane,double width,double height) Initializes a new rectangle from width and height. Rectangle3d(Plane plane,Interval width,Interval height) Initializes a new rectangle from dimensions. Rectangle3d(Plane plane,Point3d cornerA,Point3d cornerB) Initializes a new rectangle from a base plane and two corner points.  Properties  static Rectangle3d Unset Gets a rectangle with Unset components.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Rectangle3d</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the values of a plane and two intervals
+that form an oriented rectangle in three dimensions.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Rectangle3d(Plane plane,double width,double height)</dt>
+<dd>Initializes a new rectangle from width and height.</dd>
+<dt>Rectangle3d(Plane plane,Interval width,Interval height)</dt>
+<dd>Initializes a new rectangle from dimensions.</dd>
+<dt>Rectangle3d(Plane plane,Point3d cornerA,Point3d cornerB)</dt>
+<dd>Initializes a new rectangle from a base plane and two corner points.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Rectangle3d Unset</dt>
+<dd>Gets a rectangle with Unset components.</dd>
+<dt>double Area</dt>
+<dd>Gets the unsigned Area of the rectangle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox</dt>
+<dd>Gets the world aligned boundingbox for this rectangle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Center</dt>
+<dd>Gets the point in the center of the rectangle.</dd>
+<dt>double Circumference</dt>
+<dd>Gets the circumference of the rectangle.</dd>
+<dt>double Height</dt>
+<dd>Gets the signed height of the rectangle. If the Y dimension is decreasing, the height will be negative.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether or not this is a valid rectangle. 
+A rectangle is considered to be valid when the base plane and both dimensions are valid.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Gets or sets the base plane of the rectangle.</dd>
+<dt>double Width</dt>
+<dd>Gets the signed width of the rectangle. If the X dimension is decreasing, the width will be negative.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> X</dt>
+<dd>Gets or sets the dimensions of the rectangle along the base plane X-Axis (i.e. the width).</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> Y</dt>
+<dd>Gets or sets the dimensions of the rectangle along the base plane Y-Axis (i.e. the height).</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Rectangle3d CreateFromPolyline(IEnumerable<!-- raw HTML omitted --> polyline)</dt>
+<dd>Attempts to create a rectangle from a polyline. This method only works well for
+polylines that already closely resemble rectangles. If the polyline contains
+more than four vertices, the least significant ones will be ignored. If the
+polylines is non-orthogonal, the discrepancies will be averaged away.
+This method should not be used as a Rectangle fitter.</dd>
+<dd>Returns - A rectangle that is shaped similarly to the polyline or Rectangle3d.Unset 
+if the polyline does not represent a rectangle.</dd>
+<dt>static Rectangle3d CreateFromPolyline(IEnumerable<!-- raw HTML omitted --> polyline,double deviation,double angleDeviation)</dt>
+<dd>Attempts to create a rectangle from a polyline. This method only works well for
+polylines that already closely resemble rectangles. If the polyline contains
+more than four vertices, the least significant ones will be ignored. If the
+polylines is non-orthogonal, the discrepancies will be averaged away.
+This method should not be used as a Rectangle fitter.</dd>
+<dd>Returns - A rectangle that is shaped similarly to the polyline or Rectangle3d.Unset 
+if the polyline does not represent a rectangle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d point)</dt>
+<dd>Gets the point on the rectangle that is closest to a test-point.</dd>
+<dd>Returns - The point on or in the rectangle closest to the test point or Point3d.Unset on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d point,bool includeInterior)</dt>
+<dd>Gets the point on the rectangle that is closest to a test-point.</dd>
+<dd>Returns - The point on the rectangle closest to the test point or Point3d.Unset on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointcontainment/">PointContainment</a> Contains(double x,double y)</dt>
+<dd>Determines if two plane parameters are included in this rectangle.</dd>
+<dd>Returns - Parameter Rectangle relationship.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointcontainment/">PointContainment</a> Contains(Point3d pt)</dt>
+<dd>Determines if a point is included in this rectangle.</dd>
+<dd>Returns - Point Rectangle relationship.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Corner(int index)</dt>
+<dd>Gets the corner at the given index.</dd>
+<dd>Returns - The point at the given corner index.</dd>
+<dt>bool EpsilonEquals(Rectangle3d other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>void MakeIncreasing()</dt>
+<dd>Ensures the X and Y dimensions are increasing or singleton intervals.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double t)</dt>
+<dd>Gets a point along the rectangle boundary.</dd>
+<dd>Returns - The point at the given boundary parameter.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double x,double y)</dt>
+<dd>Gets a point in Rectangle space.</dd>
+<dd>Returns - The point at the given x,y parameter.</dd>
+<dt>void RecenterPlane(int index)</dt>
+<dd>Recenters the base plane on one of the corners.</dd>
+<dt>void RecenterPlane(Point3d origin)</dt>
+<dd>Recenters the base plane on a new origin.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve()</dt>
+<dd>Constructs a nurbs curve representation of this rectangle.</dd>
+<dd>Returns - A nurbs curve with the same shape as this rectangle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polyline/">Polyline</a> ToPolyline()</dt>
+<dd>Constructs a polyline from this rectangle.</dd>
+<dd>Returns - A polyline with the same shape as this rectangle.</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transforms this rectangle. Note that rectangles cannot be skewed or tapered.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Rectangle3d</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  VisualAnalysisMode &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Represents a base class for visual analysis modes. This class is abstract.
+public class VisualAnalysisModeProperties  static Guid RhinoCurvatureColorAnalyisModeId Id for Rhino&amp;rsquo;s built-in curvature color analysis mode. Surface curvature is shown using False color mapping. static Guid RhinoCurvatureGraphAnalysisModeId Id for Rhino&amp;rsquo;s built-in curvature graphs analysis mode. Curvature hair is shown on curves and surfaces. static Guid RhinoDraftAngleAnalysisModeId Id for Rhino&amp;rsquo;s built-in draft angle analysis mode. Draft angle is displayed using False colors.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">VisualAnalysisMode</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Represents a base class for visual analysis modes.
+This class is abstract.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">VisualAnalysisMode</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static Guid RhinoCurvatureColorAnalyisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in curvature color analysis mode.  Surface curvature
+is shown using False color mapping.</dd>
+<dt>static Guid RhinoCurvatureGraphAnalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in curvature graphs analysis mode. Curvature hair
+is shown on curves and surfaces.</dd>
+<dt>static Guid RhinoDraftAngleAnalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in draft angle analysis mode.  Draft angle is 
+displayed using False colors.</dd>
+<dt>static Guid RhinoEdgeAnalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in edge analysis mode. Brep and mesh edges are
+shown in a selected color.</dd>
+<dt>static Guid RhinoEdgeContinuityAlalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in edge continuity analysis mode.</dd>
+<dd>since 7.0</dd>
+<dt>static Guid RhinoEmapAnalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in emap analysis mode.  An environment map is
+shown on sufaces and meshes.</dd>
+<dt>static Guid RhinoThicknessAnalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in thickness analysis mode.</dd>
+<dt>static Guid RhinoZebraStripeAnalysisModeId</dt>
+<dd>Id for Rhino&rsquo;s built-in zebra stripe analysis mode. Zebra stripes are
+shown on surfaces and meshes.</dd>
+<dt>Guid Id</dt>
+<dd>Gets the visual analysis mode GUID.
+The Guid is specified with the GuidAttribute
+applied to the class.</dd>
+<dt>string Name</dt>
+<dd>Gets the name of the analysis mode. It is used by the _What command and the object
+properties details window to describe the object.</dd>
+<dt>bool ShowIsoCurves</dt>
+<dd>Gets True if this visual analysis mode will show isocuves on shaded surface
+objects.  Often a mode&rsquo;s user interface will provide a way to change this
+setting.
+The default is false.</dd>
+<dt><a href="/rhinocommon/rhino/display/visualanalysismode/analysisstyle/">AnalysisStyle</a> Style</dt>
+<dd>Gets the visual analysis mode style.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool AdjustAnalysisMeshes(RhinoDoc doc,Guid analysisModeId)</dt>
+<dd>Interactively adjusts surface analysis meshes of objects using a Rhino built-in analysis mode.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>static VisualAnalysisMode Find(Guid id)</dt>
+<dd>Finds a visual analysis mode by guid.</dd>
+<dd>Returns - The found visual analysis mode, or None if it was not found, or on error.</dd>
+<dt>static VisualAnalysisMode Find(Type t)</dt>
+<dd>Finds a visual analysis mode by type.</dd>
+<dd>Returns - A visual analysis mode on success, or None on error.</dd>
+<dt>static VisualAnalysisMode Register(Type customAnalysisModeType)</dt>
+<dd>Registers a custom visual analysis mode for use in Rhino.  It is OK to call
+register multiple times for a single custom analysis mode type, since subsequent
+register calls will notice that the type has already been registered.</dd>
+<dd>Returns - An instance of registered analysis mode on success.</dd>
+<dt>void EnableUserInterface(bool on)</dt>
+<dd>Turns the analysis mode&rsquo;s user interface on and off. For Rhino&rsquo;s built
+in modes this opens or closes the modeless dialog that controls the
+analysis mode&rsquo;s display settings.</dd>
+<dt>bool ObjectSupportsAnalysisMode(RhinoObject obj)</dt>
+<dd>Gets a value indicating if this visual analysis mode can be used on a given Rhino object.</dd>
+<dd>Returns - True if this mode can indeed be used on the object; otherwise false.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>VisualAnalysisMode</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

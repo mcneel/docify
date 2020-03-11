@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PointCloud &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a collection of coordinates with optional normal vectors and colors.
+[Serializable]public class PointCloud : GeometryBase, IEnumerable&amp;lt;PointCloudItem&amp;gt;Constructors  PointCloud() Initializes a new instance of the class that is empty. PointCloud(IEnumerablepoints) Initializes a new instance of the class, copying the content from a set of points. PointCloud(PointCloud other) Initializes a new instance of the class, copying (Merge) the content of another pointcloud.  Properties  bool ContainsColors Gets a value indicating whether or not the points in this pointcloud have colors assigned to them.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PointCloud</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a collection of coordinates with optional normal vectors and colors.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PointCloud</span> : GeometryBase, IEnumerable&lt;PointCloudItem&gt;
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>PointCloud()</dt>
+<dd>Initializes a new instance of the  class
+that is empty.</dd>
+<dt>PointCloud(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Initializes a new instance of the  class,
+copying the content from a set of points.</dd>
+<dt>PointCloud(PointCloud other)</dt>
+<dd>Initializes a new instance of the  class,
+copying (Merge) the content of another pointcloud.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool ContainsColors</dt>
+<dd>Gets a value indicating whether or not the points in this 
+pointcloud have colors assigned to them.</dd>
+<dt>bool ContainsHiddenFlags</dt>
+<dd>Gets a value indicating whether or not the points in this 
+pointcloud have hidden flags assigned to them.</dd>
+<dt>bool ContainsNormals</dt>
+<dd>Gets a value indicating whether or not the points in this 
+pointcloud have normals assigned to them.</dd>
+<dt>int Count</dt>
+<dd>Gets the number of points in this pointcloud.</dd>
+<dt>int HiddenPointCount</dt>
+<dd>Gets the number of points that have their Hidden flag set.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Add(Point3d point)</dt>
+<dd>Append a new point to the end of the list.</dd>
+<dt>void Add(Point3d point,Color color)</dt>
+<dd>Append a new point to the end of the list.</dd>
+<dt>void Add(Point3d point,Vector3d normal)</dt>
+<dd>Append a new point to the end of the list.</dd>
+<dt>void Add(Point3d point,Vector3d normal,Color color)</dt>
+<dd>Append a new point to the end of the list.</dd>
+<dt>void AddRange(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Appends a collection of points to this point cloud.</dd>
+<dt>void AddRange(IEnumerable<!-- raw HTML omitted --> points,IEnumerable<!-- raw HTML omitted --> colors)</dt>
+<dd>Appends a collection of points and normal vectors to this point cloud.</dd>
+<dd>since 6.0</dd>
+<dt>void AddRange(IEnumerable<!-- raw HTML omitted --> points,IEnumerable<!-- raw HTML omitted --> normals)</dt>
+<dd>Appends a collection of points and normal vectors to this point cloud.</dd>
+<dd>since 6.0</dd>
+<dt>void AddRange(IEnumerable<!-- raw HTML omitted --> points,IEnumerable<!-- raw HTML omitted --> normals,IEnumerable<!-- raw HTML omitted --> colors)</dt>
+<dd>Appends a collection of points and normal vectors to this point cloud.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointclouditem/">PointCloudItem</a> AppendNew()</dt>
+<dd>Appends a new PointCloudItem to the end of this point cloud.</dd>
+<dd>Returns - The newly appended item.</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> AsReadOnlyListOfPoints()</dt>
+<dd>Returns an enumerator and list indexer over point cloud locations.</dd>
+<dd>Returns - The read-only list. This is a reference to the present point cloud.</dd>
+<dd>since 6.0</dd>
+<dt>void ClearColors()</dt>
+<dd>Destroys the color information in this point cloud.</dd>
+<dt>void ClearHiddenFlags()</dt>
+<dd>Destroys the hidden flag information in this point cloud.</dd>
+<dt>void ClearNormals()</dt>
+<dd>Destroys the normal vector information in this point cloud.</dd>
+<dt>int ClosestPoint(Point3d testPoint)</dt>
+<dd>Returns index of the closest point in the point cloud to a given test point.</dd>
+<dd>Returns - Index of point in the point cloud on success. -1 on failure.</dd>
+<dt>Color[] GetColors()</dt>
+<dd>Copy all the point colors in this point cloud to an array.</dd>
+<dd>Returns - An array containing all the colors in this point cloud.</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that allows to modify each pointcloud point.</dd>
+<dd>Returns - A instance of .</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a>[] GetNormals()</dt>
+<dd>Copy all the normal vectors in this point cloud to an array.</dd>
+<dd>Returns - An array containing all the normals in this point cloud.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] GetPoints()</dt>
+<dd>Copy all the point coordinates in this point cloud to an array.</dd>
+<dd>Returns - An array containing all the points in this point cloud.</dd>
+<dt>void Insert(int index,Point3d point)</dt>
+<dd>Inserts a new point into the point list.</dd>
+<dt>void Insert(int index,Point3d point,Color color)</dt>
+<dd>Inserts a new point into the point list.</dd>
+<dt>void Insert(int index,Point3d point,Vector3d normal)</dt>
+<dd>Inserts a new point into the point list.</dd>
+<dt>void Insert(int index,Point3d point,Vector3d normal,Color color)</dt>
+<dd>Inserts a new point into the point list.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointclouditem/">PointCloudItem</a> InsertNew(int index)</dt>
+<dd>Inserts a new  at a specific position of the point cloud.</dd>
+<dd>Returns - The newly inserted item.</dd>
+<dt>void InsertRange(int index,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Append a collection of points to this point cloud.</dd>
+<dt>void Merge(PointCloud other)</dt>
+<dd>Copies the point values of another pointcloud into this one.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(int index)</dt>
+<dd>Returns the location of the point at a specific index.</dd>
+<dd>since 6.0</dd>
+<dt>void RemoveAt(int index)</dt>
+<dd>Remove the point at the given index.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PointCloud</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Cone &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the center plane, radius and height values in a right circular cone.
+Constructors  Cone(Plane plane,double height,double radius) Initializes a new cone with a specified base plane, height and radius.  Properties  static Cone Unset Gets an invalid Cone. Point3d ApexPoint Point at tip of the cone. Vector3d Axis Unit vector axis of cone. Point3d BasePoint Center of base circle. double Height Gets or sets the height of the circular right cone.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Cone</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the center plane, radius and height values in a right circular cone.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Cone(Plane plane,double height,double radius)</dt>
+<dd>Initializes a new cone with a specified base plane, height and radius.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Cone Unset</dt>
+<dd>Gets an invalid Cone.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ApexPoint</dt>
+<dd>Point at tip of the cone.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Axis</dt>
+<dd>Unit vector axis of cone.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> BasePoint</dt>
+<dd>Center of base circle.</dd>
+<dt>double Height</dt>
+<dd>Gets or sets the height of the circular right cone.</dd>
+<dt>bool IsValid</dt>
+<dd>True if plane is valid, height is not zero and radius is not zero.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Gets or sets the base plane of the cone.  The apex of the cone is at the plane&rsquo;s origin.</dd>
+<dt>double Radius</dt>
+<dd>Gets or sets the radius of the cone.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>double AngleInDegrees()</dt>
+<dd>Computes the angle (in degrees) between the axis and the 
+side of the cone.
+The angle and the height have the same sign.</dd>
+<dd>Returns - An angle in degrees.</dd>
+<dt>double AngleInRadians()</dt>
+<dd>Computes the angle (in radians) between the axis and the 
+side of the cone.
+The angle and the height have the same sign.</dd>
+<dd>Returns - Math.Atan(Radius / Height) if the height is not 0; 0 if the radius is 0; Math.PI otherwise.</dd>
+<dt>bool EpsilonEquals(Cone other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep(bool capBottom)</dt>
+<dd>Gets a Brep representation of the cone with a single
+face for the cone, an edge along the cone seam, 
+and vertices at the base and apex ends of this seam edge.
+The optional cap is a single face with one circular edge 
+starting and ending at the base vertex.</dd>
+<dd>Returns - A brep (polysurface) representation of this cone values.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> ToNurbsSurface()</dt>
+<dd>Constructs a Nurbs surface representation of this Cone. 
+This is synonymous with calling NurbsSurface.CreateFromCone().</dd>
+<dd>Returns - A Nurbs surface representation of the cone or null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/revsurface/">RevSurface</a> ToRevSurface()</dt>
+<dd>Constructs a RevSurface representation of this Cone. 
+This is synonymous with calling RevSurface.CreateFromCone().</dd>
+<dd>Returns - A RevSurface representation of the cone or null.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Cone</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NamedLayerStateTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+All named layer states in a Rhino document.
+public class NamedLayerStateTableProperties  int Count Returns the number of named layers states in the document. since 6.14 RhinoDoc Document Document that owns this table. since 6.14 string[] Names Returns the names of named layer states in the document. since 6.14  Methods  bool Delete(string name) Deletes an exising named layer state. Returns - True if successful, False otherwise.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NamedLayerStateTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<p>All named layer states in a Rhino document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NamedLayerStateTable</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Returns the number of named layers states in the document.</dd>
+<dd>since 6.14</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Document that owns this table.</dd>
+<dd>since 6.14</dd>
+<dt>string[] Names</dt>
+<dd>Returns the names of named layer states in the document.</dd>
+<dd>since 6.14</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool Delete(string name)</dt>
+<dd>Deletes an exising named layer state.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.14</dd>
+<dt>int FindName(string name)</dt>
+<dd>Returns the index of an existing named layer state.</dd>
+<dd>Returns - &gt;0 if successful, -1 if not found.</dd>
+<dd>since 6.14</dd>
+<dt>int Import(string filename)</dt>
+<dd>Imports named layer states from a 3dm file.</dd>
+<dd>Returns - The number of named layers states imported.</dd>
+<dd>since 6.15</dd>
+<dt>bool Rename(string oldName,string newName)</dt>
+<dd>Renames an existing named layer state.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.14</dd>
+<dt>bool Restore(string name,RestoreLayerProperties properties)</dt>
+<dd>Restores a named layer state.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.14</dd>
+<dt>bool Restore(string name,RestoreLayerProperties properties,Guid viewportId)</dt>
+<dd>Restores a named layer state.</dd>
+<dd>since 6.14</dd>
+<dt>int Save(string name)</dt>
+<dd>Saves or updates a named layer state.</dd>
+<dd>Returns - The index of the newly added, or updated, layer state.</dd>
+<dd>since 6.14</dd>
+<dt>int Save(string name,Guid viewportId)</dt>
+<dd>Saves or updates a named layer state.</dd>
+<dd>Returns - The index of the newly added, or updated, layer state.</dd>
+<dd>since 6.14</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NamedLayerStateTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

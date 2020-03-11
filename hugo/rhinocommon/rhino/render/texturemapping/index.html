@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  TextureMapping &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Represents a texture mapping.
+public class TextureMapping : ModelComponentProperties  ModelComponentType ComponentType Returns . since 6.0 Guid Id The unique Id for this texture mapping object. since 5.10 TextureMappingType MappingType Texture mapping type associated with this Mapping object. since 5.10 Transform NormalTransform For primitive based mappings, these transformations are used to map the world coordinate (x,y,z) point P and surface normal N before it is projected to the normalized mapping primitive.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">TextureMapping</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Represents a texture mapping.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextureMapping</span> : ModelComponent
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt>Guid Id</dt>
+<dd>The unique Id for this texture mapping object.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/render/texturemappingtype/">TextureMappingType</a> MappingType</dt>
+<dd>Texture mapping type associated with this Mapping object.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> NormalTransform</dt>
+<dd>For primitive based mappings, these transformations are used to map
+the world coordinate (x,y,z) point P and  surface normal N before it is
+projected to the normalized mapping primitive. The surface normal
+transformation, m_Nxyz, is always calculated from m_Pxyz.  It is a
+runtime setting that is not saved in 3dm files. If m_type is
+srfp_mapping, then m_Pxyz and m_Nxyz are ignored.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> PrimativeTransform</dt>
+<dd>For primitive based mappings, these transformations are used to map
+the world coordinate (x,y,z) point P and  surface normal N before it is
+projected to the normalized mapping primitive. The surface normal
+transformation, m_Nxyz, is always calculated from m_Pxyz.  It is a
+runtime setting that is not saved in 3dm files. If m_type is
+srfp_mapping, then m_Pxyz and m_Nxyz are ignored.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> UvwTransform</dt>
+<dd>Transform applied to mapping coordinate (u,v,w) to convert it into a
+texture coordinate.</dd>
+<dd>since 5.10</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static TextureMapping CreateBoxMapping(Plane plane,Interval dx,Interval dy,Interval dz,bool capped)</dt>
+<dd>Create a box projection texture mapping.</dd>
+<dd>Returns - TextureMapping instance if input is valid</dd>
+<dt>static TextureMapping CreateCustomMeshMapping(Mesh mesh)</dt>
+<dd>Create custom mesh mapping</dd>
+<dd>Returns - TextureMapping instance</dd>
+<dd>since 6.15</dd>
+<dt>static TextureMapping CreateCylinderMapping(Cylinder cylinder,bool capped)</dt>
+<dd>Create a cylindrical projection texture mapping.</dd>
+<dd>Returns - TextureMapping instance if input is valid</dd>
+<dt>static TextureMapping CreatePlaneMapping(Plane plane,Interval dx,Interval dy,Interval dz)</dt>
+<dd>Create a planar UV projection texture mapping</dd>
+<dd>Returns - TextureMapping instance if input is valid</dd>
+<dt>static TextureMapping CreatePlaneMapping(Plane plane,Interval dx,Interval dy,Interval dz,bool capped)</dt>
+<dd>Create a planar projection texture mapping</dd>
+<dd>Returns - TextureMapping instance if input is valid</dd>
+<dd>since 6.7</dd>
+<dt>static TextureMapping CreateSphereMapping(Sphere sphere)</dt>
+<dd>Create a spherical projection texture mapping.</dd>
+<dd>Returns - TextureMapping instance if input is valid</dd>
+<dt>int Evaluate(Point3d p,Vector3d n,Point3d t)</dt>
+<dd>Evaluate the mapping to get a texture coordinate</dd>
+<dd>Returns - Nonzero if evaluation is successful.  When the mapping is a box or
+capped cylinder mapping, the value indicates which side was evaluated.
+Cylinder mapping: 1 = cylinder wall, 2 = bottom cap, 3 = top cap
+Box mapping: 1 = front, 2 = right, 3 = back, 4 = left, 5 = bottom, 6 = top</dd>
+<dd>since 6.17</dd>
+<dt>int Evaluate(Point3d p,Vector3d n,Point3d t,Transform pXform,Transform nXform)</dt>
+<dd>Evaluate the mapping to get a texture coordinate</dd>
+<dd>Returns - Nonzero if evaluation is successful.  When the mapping is a box or
+capped cylinder mapping, the value indicates which side was evaluated.
+Cylinder mapping: 1 = cylinder wall, 2 = bottom cap, 3 = top cap
+Box mapping: 1 = front, 2 = right, 3 = back, 4 = left, 5 = bottom, 6 = top</dd>
+<dd>since 6.17</dd>
+<dt>bool TryGetMappingBox(Plane plane,Interval dx,Interval dy,Interval dz)</dt>
+<dd>Get a box projection from the texture mapping.</dd>
+<dd>Returns - Returns True if a valid box is returned.</dd>
+<dd>since 5.10</dd>
+<dt>bool TryGetMappingBox(Plane plane,Interval dx,Interval dy,Interval dz,bool capped)</dt>
+<dd>Get a box projection from the texture mapping, including capped information</dd>
+<dd>Returns - Returns True if a valid box is returned.</dd>
+<dd>since 6.7</dd>
+<dt>bool TryGetMappingCylinder(Cylinder cylinder)</dt>
+<dd>Get a cylindrical projection parameters from this texture mapping.</dd>
+<dd>Returns - Returns True if a valid cylinder is returned.</dd>
+<dd>since 5.10</dd>
+<dt>bool TryGetMappingCylinder(Cylinder cylinder,bool capped)</dt>
+<dd>Get a cylindrical projection parameters from this texture mapping.</dd>
+<dd>Returns - Returns True if a valid cylinder is returned.</dd>
+<dd>since 6.7</dd>
+<dt>bool TryGetMappingMesh(Mesh mesh)</dt>
+<dd>Get custom mapping mesh from this texture mapping.</dd>
+<dd>Returns - True if custom mapping mesh was returned.</dd>
+<dd>since 6.18</dd>
+<dt>bool TryGetMappingPlane(Plane plane,Interval dx,Interval dy,Interval dz)</dt>
+<dd>Get plane mapping parameters from this texture mapping.</dd>
+<dd>Returns - Return True if valid plane mapping parameters were returned.</dd>
+<dd>since 5.10</dd>
+<dt>bool TryGetMappingPlane(Plane plane,Interval dx,Interval dy,Interval dz,bool capped)</dt>
+<dd>Get plane mapping parameters from this texture mapping, including capping information</dd>
+<dd>Returns - Return True if valid plane mapping parameters were returned.</dd>
+<dd>since 6.7</dd>
+<dt>bool TryGetMappingSphere(Sphere sphere)</dt>
+<dd>Get a spherical projection parameters from this texture mapping.</dd>
+<dd>Returns - Returns True if a valid sphere is returned.</dd>
+<dd>since 5.10</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>TextureMapping</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

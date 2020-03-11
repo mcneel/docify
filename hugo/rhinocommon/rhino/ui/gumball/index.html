@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.UI.Gumball &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.UI.Gumball</h1>
+  <ul>
+<li><a href="gumballappearancesettings/">GumballAppearanceSettings</a></li>
+<li><a href="gumballdisplayconduit/">GumballDisplayConduit</a></li>
+<li><a href="gumballframe/">GumballFrame</a></li>
+<li><a href="gumballmode/">GumballMode</a></li>
+<li><a href="gumballobject/">GumballObject</a></li>
+<li><a href="gumballpickresult/">GumballPickResult</a></li>
+<li><a href="gumballscalemode/">GumballScaleMode</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballappearancesettings/">
+        <div class="h2 mt-1 mb-1">GumballAppearanceSettings</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.UI.Gumball
+public class GumballAppearanceSettingsConstructors  GumballAppearanceSettings()   Properties  int ArcThickness in pixels. int ArrowHeadLength in pixels. int ArrowHeadWidth in pixels. int AxisThickness in pixels. Color ColorMenuButton  Color ColorX Default is Red. Color ColorY Default is Green. Color ColorZ Default is Blue. int FreeTranslate When FreeTranslate is 1, the center translation control can be dragged in any direction and moves the object the gumball controls. When FreeTranslate is 2, the center translation control can be dragged in any direction and moves the object the gumball itself.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballappearancesettings/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballdisplayconduit/">
+        <div class="h2 mt-1 mb-1">GumballDisplayConduit</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.UI.Gumball
+public class GumballDisplayConduit : IDisposableConstructors  GumballDisplayConduit()   Properties  GumballObject BaseGumball Starting location. bool Enabled  GumballObject Gumball  Transform GumballTransform The gumball transformation is the transformation calculated by comparing the current gumball to the starting BaseGumball. bool InRelocate  GumballPickResult PickResult The inital mouse down event sets PickResult. Transform PreTransform The pre-transform is a transformation that needs to be applied before the gumball transformation. Transform TotalTransform The total transformation is GumballTransform * PreTransform.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballdisplayconduit/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballframe/">
+        <div class="h2 mt-1 mb-1">GumballFrame</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.UI.Gumball
+Properties  Plane Plane  Vector3d ScaleGripDistance  GumballScaleMode ScaleMode   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballframe/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballobject/">
+        <div class="h2 mt-1 mb-1">GumballObject</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.UI.Gumball
+public class GumballObject : IDisposableConstructors  GumballObject()   Properties  GumballFrame Frame   Methods  void Dispose()  bool SetFromArc(Arc arc)  bool SetFromBoundingBox(BoundingBox boundingBox)  bool SetFromBoundingBox(Plane frame,BoundingBox frameBoundingBox) Sets the gumball bounding box with respect to a frame. Returns - True if input is valid and gumball is set. False if input is not valid. In this case, gumball is set to the default.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballobject/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballpickresult/">
+        <div class="h2 mt-1 mb-1">GumballPickResult</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.UI.Gumball
+public class GumballPickResultProperties  GumballMode Mode   Methods  void SetToDefault()   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballpickresult/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

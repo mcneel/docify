@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RevSurface &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a surface of revolution. Revolutions can be incomplete (they can form arcs).
+[Serializable]public class RevSurface : SurfaceProperties  Interval Angle Gets the start and end angles of revolution in radians. The interval angle must be increasing and satisfy RhinoMath.ZeroTolerance &amp;lt; Angle.Length&amp;lt;= 2.0 * System.Math.PI. since 6.0 Line Axis Gets the axis of revolution. since 6.0 Curve Curve Gets the revolute curve. since 6.0  Methods  static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution) Constructs a new surface of revolution from a generatrix curve and an axis.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RevSurface</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a surface of revolution.
+Revolutions can be incomplete (they can form arcs).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RevSurface</span> : Surface
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> Angle</dt>
+<dd>Gets the start and end angles of revolution in radians. 
+The interval angle must be increasing and satisfy 
+RhinoMath.ZeroTolerance &lt; Angle.Length&lt;= 2.0 * System.Math.PI.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> Axis</dt>
+<dd>Gets the axis of revolution.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Curve</dt>
+<dd>Gets the revolute curve.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution)</dt>
+<dd>Constructs a new surface of revolution from a generatrix curve and an axis.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution,double startAngleRadians,double endAngleRadians)</dt>
+<dd>Constructs a new surface of revolution from a generatrix curve and an axis.
+This overload accepts a slice start and end angles.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface Create(Line revoluteLine,Line axisOfRevolution)</dt>
+<dd>Constructs a new surface of revolution from a generatrix line and an axis.
+If the operation succeeds, results can be (truncated) cones, cylinders and circular hyperboloids.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface Create(Line revoluteLine,Line axisOfRevolution,double startAngleRadians,double endAngleRadians)</dt>
+<dd>Constructs a new surface of revolution from a generatrix line and an axis.
+This overload accepts a slice start and end angles.Results can be (truncated) cones, cylinders and circular hyperboloids, or can fail.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface Create(Polyline revolutePolyline,Line axisOfRevolution)</dt>
+<dd>Constructs a new surface of revolution from a generatrix polyline and an axis.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface Create(Polyline revolutePolyline,Line axisOfRevolution,double startAngleRadians,double endAngleRadians)</dt>
+<dd>Constructs a new surface of revolution from a generatrix polyline and an axis.
+This overload accepts a slice start and end angles.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface CreateFromCone(Cone cone)</dt>
+<dd>Constructs a new surface of revolution from the values of a cone.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface CreateFromCylinder(Cylinder cylinder)</dt>
+<dd>Constructs a new surface of revolution from the values of a cylinder.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface CreateFromSphere(Sphere sphere)</dt>
+<dd>Constructs a new surface of revolution from the values of a sphere.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+<dt>static RevSurface CreateFromTorus(Torus torus)</dt>
+<dd>Constructs a new surface of revolution from the values of a torus.</dd>
+<dd>Returns - A new surface of revolution, or None if any of the inputs is invalid or on error.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RevSurface</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

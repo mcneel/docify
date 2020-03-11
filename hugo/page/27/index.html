@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,129 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hatch/">
-        <h3>Hatch</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/statusbar/">
+        <h3>StatusBar</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hatch/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/statusbar/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a hatch in planar boundary loop or loops. This is a 2d entity with a plane defining a local coordinate system. The loops, patterns, angles, etc are all in this local coordinate system. The Hatch object manages the plane and loop array Fill definitions are in the HatchPattern or class derived from HatchPattern Hatch has an index to get the pattern definition from the pattern table.
-public class HatchProperties Point3d BasePoint  (summary) Gets or sets the hatchpattern basepoint (since) 6.
+    Namespace: Rhino.UI
+Contains static methods to control the application status bar.
+public class StatusBarMethods  static void ClearMessagePane() Removes the message from the message pane. static void HideProgressMeter() Ends, or hides, Rhino&rsquo;s status bar progress meter. static void HideProgressMeter(uint docSerialNumber) Ends, or hides, Rhino&rsquo;s status bar progress meter. since 6.12 static void SetDistancePane(double distance) Sets the distance pane to a distance value. static void SetMessagePane(string message) Sets the message pane to a message.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/hatchobject/">
-        <h3>HatchObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/surfaceobject/">
+        <h3>SurfaceObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/hatchobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/surfaceobject/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-public class HatchObjectProperties Hatch HatchGeometry  (summary) (since) 5.0  Methods bool SetHatchGeometry(Hatch hatch)  (summary) Replaces a hatch object&rsquo;s underlying hatch geometry. This only works for non-document hatch objects. (since) 7.0 (returns) bool This is some return comment  
+Represents a surface in a document.
+public class SurfaceObject : RhinoObjectProperties  Surface SurfaceGeometry Gets the surface geometry linked with this object.  Methods  Surface DuplicateSurfaceGeometry() Constructs a new deep copy of the surface geometry. Returns - The copy of the geometry.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/hatchpattern/">
-        <h3>HatchPattern</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/sweeponerail/">
+        <h3>SweepOneRail</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/hatchpattern/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class HatchPatternConstructors HatchPattern()  (summary) (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) (since) 5.0  HatchPatternFillType FillType  (summary) (since) 5.0  int Index  (summary) Index in the hatch pattern table for this pattern. -1 if not in the table. (since) 5.0  bool IsDeleted  (summary) Deleted hatch patterns are kept in the runtime hatch pattern table so that undo will work with hatch patterns.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/hatchpatterntable/">
-        <h3>HatchPatternTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/hatchpatterntable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-All of the hatch pattern definitions contained in a rhino document.
-public class HatchPatternTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int CurrentHatchPatternIndex  (summary) At all times, there is a &ldquo;current&rdquo; hatch pattern. Unless otherwise specified, new objects are assigned to the current hatch pattern. The current hatch pattern is never locked, hidden, or deleted. (since) 5.0  Methods int Add(HatchPattern pattern)  (summary) Adds a new hatch pattern with specified definition to the table.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hermitesurface/">
-        <h3>HermiteSurface</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hermitesurface/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/sweeponerail/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.
-public class HermiteSurfaceConstructors HermiteSurface()  (summary) Initializes a new instance. (since) 7.0  HermiteSurface(int uCount,int vCount)  (summary) Initializes a new instance. (since) 7.0  Properties bool IsValid  (summary) Returns True if the all of values in all of the internal data structues contain valid values, False otherwise. (since) 7.0  int UCount  (summary) Gets the number of parameters in the &ldquo;u&rdquo; direction.
+Utility class for generating Breps by sweeping cross section curves over a single rail curve. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
+public class SweepOneRailConstructors  SweepOneRail()   Properties  double AngleToleranceRadians  bool ClosedSweep If the input rail is closed, ClosedSweep determines if the swept breps will also be closed. bool GlobalShapeBlending If true, the sweep is linearly blended from one end to the other, creating sweeps that taper from one cross-section curve to the other.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawing/">
-        <h3>HiddenLineDrawing</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/sweeptworail/">
+        <h3>SweepTwoRail</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawing/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/sweeptworail/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a hidden line drawing object. A hidden line drawing consists of curves generated from source objects. The curves correspond to edges, and silhouettes of source objects and intersections with cutting planes.
-public class HiddenLineDrawingProperties IEnumerablePoints  (summary) Point objects calculated by the hidden line drawing. (since) 6.8  IEnumerableSegments  (summary) Subcurve objects calculated by the hidden line drawing. (since) 6.0  ViewportInfo Viewport  (summary) Returns the ViewportInfo used by the hidden line drawing.
+Utility class for generating Breps by sweeping cross section curves over two rail curves. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
+public class SweepTwoRailConstructors  SweepTwoRail()   Properties  double AngleToleranceRadians Gets or sets the angle tolerance in radians. bool ClosedSweep If the input rails are closed, ClosedSweep determines if the swept Breps will also be closed. bool MaintainHeight Removes the association between the height scaling from the width scaling.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobject/">
-        <h3>HiddenLineDrawingObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/taskcompleteeventargs/">
+        <h3>TaskCompleteEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/taskcompleteeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents an object added to a HiddenLineDrawing
-public class HiddenLineDrawingObjectProperties GeometryBase Geometry  (summary) Returns the geometry in world coordinates if UseXform is false. Otherwise, the geometry in object space coordinates is returned. (since) 6.0  object Tag  (summary) Returns the extra data used to cross-reference the object specified in HiddenLineDrawing.AddObject. (since) 6.0  Transform Transform  (summary) Returns the transformation passed into the Add&hellip; function when setting up the hidden line drawing parameters.
+    Namespace: Rhino.Input.Custom
+public class TaskCompleteEventArgs : EventArgsConstructors  TaskCompleteEventArgs(Task task,RhinoDoc doc)  since 6.0  Properties  RhinoDoc Doc  since 6.0 bool Redraw  since 6.0 Task Task  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/">
-        <h3>HiddenLineDrawingObjectCurve</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/texturemappingeventargs/">
+        <h3>TextureMappingEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/texturemappingeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Curves generated from source objects which correspond to edges, and silhouettes of source objects and intersections with cutting planes. A HiddenLineDrawingObjectCurve is partitioned into hidden and visible segments called HiddenLineDrawingSegment
-public class HiddenLineDrawingObjectCurveProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.0  int Index  (summary) Index of this object in HiddenLineDrawing.FullCurves. (since) 6.0  bool IsProjecting  (summary) Returns True if all the non clipped portions of this curve are projecting.
+    Namespace: Rhino
+Event arguments passed to the RhinoDoc.TextureMappingEvent.
+public class TextureMappingEventArgs : EventArgsProperties  RhinoDoc Document  since 5.8 TextureMappingEventType EventType  since 5.8 TextureMapping NewMapping  since 5.8 TextureMapping OldMapping  since 5.8  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/">
-        <h3>HiddenLineDrawingParameters</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbnail/">
+        <h3>Thumbnail</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbnail/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Input used for computing a hidden line drawing
-public class HiddenLineDrawingParametersConstructors HiddenLineDrawingParameters()  (summary) default constructor (since) 6.0  Properties double AbsoluteTolerance  (summary) Absolute tolerance is used to decide if curves overlap or intersect. A suggested value is to use RhinoDoc.AbsoluteTolerance (since) 6.0  bool Flatten  (summary) Flatten the computed geometry (since) 6.0  bool IncludeHiddenCurves  (summary) Include hidden curves in hidden line drawing (default is true) (since) 6.
+    Namespace: Rhino.UI.Controls.ThumbnailUI
+[Obsolete(&#34;Thumbnail is obsolete&#34;, false)]public class Thumbnail : IRhRdkThumbnail, IDisposableConstructors  Thumbnail(IntPtr pRdkThumbnail) Constructor for Thumbnail since 6.0  Properties  IntPtr CppPointer Thumbnail c++ pointer since 6.0  Methods  void Dib(Bitmap dibOut)  since 6.0 void Dispose() Dispose for Thumbnail since 6.0 System.Drawing.Bitmap GetDib()  since 6.0 void GetDisplayRect(RectangleF rectOut)  since 6.0 Guid Id()  since 6.0 bool IsHot()  since 6.0 bool IsSelected()  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/">
-        <h3>HiddenLineDrawingPoint</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/transformfield/">
+        <h3>TransformField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/transformfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Points generated from source objects which coorespond to point and point cloud source objects.
-public class HiddenLineDrawingPointProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.8  int Index  (summary) Index of this object in HiddenLineDrawing.Points. (since) 6.8  Point3d Location  (summary) Returns the location of this object in HiddenLineDrawing coordinates. (since) 6.8  Visibility PointVisibility  (summary) Returns the point&rsquo;s visibility (since) 6.
+    Namespace: Rhino.Render.Fields
+Transform field value class
+public class TransformField : FieldProperties  Transform Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/controls/undorecord/">
+        <h3>UndoRecord</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/controls/undorecord/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI.Controls
+Undo Record
+public class UndoRecord : IDisposableConstructors  UndoRecord(string description,IRdkViewModel viewModel) UndoRecord Constructor Returns - Return the undo record since 6.0  Methods  void Dispose() UndoRecord Dispose since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/undoredoeventargs/">
+        <h3>UndoRedoEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/undoredoeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Commands
+public class UndoRedoEventArgs : EventArgsProperties  Guid CommandId  bool IsBeginRecording  bool IsBeginRedo  bool IsBeginUndo  bool IsEndRecording  bool IsEndRedo  bool IsEndUndo  bool IsPurgeRecord  uint UndoSerialNumber   
   </div>
   
 

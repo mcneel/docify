@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Decal &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Represents a decal, or a picture that can be moved on an object.
+public class Decal : IDisposableProperties  int CRC The decal CRC identifies a decal by its state. Multiple decals which would be exactly the same would have the same CRC and are culled from the system. If you store this value with the intention of using it to find the decal again later, you must update your stored value whenever the decal state changes.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Decal</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Represents a decal, or a picture that can be moved on an object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Decal</span> : IDisposable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int CRC</dt>
+<dd>The decal CRC identifies a decal by its state. Multiple decals which would be
+exactly the same would have the same CRC and are culled from the system.
+If you store this value with the intention of using it to find the decal again
+later, you must update your stored value whenever the decal state changes.
+You can detect when a decal changes by watching for the OnUserDataTransformed event.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/decalmapping/">DecalMapping</a> DecalMapping</dt>
+<dd>Gets the mapping of the decal.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/render/decalprojection/">DecalProjection</a> DecalProjection</dt>
+<dd>Gets the decal&rsquo;s projection. Used only when mapping is planar.</dd>
+<dd>since 5.10</dd>
+<dt>double EndLatitude</dt>
+<dd>Gets the end angle of the decal&rsquo;s arc of latitude or &lsquo;horizontal sweep&rsquo;. This is actually a LONGITUDINAL angle. Only used when mapping is cylindrical or spherical.</dd>
+<dd>since 5.10</dd>
+<dt>double EndLongitude</dt>
+<dd>Gets the end angle of the decal&rsquo;s arc of longitude or &lsquo;vertical sweep&rsquo;. This is actually a LATITUDINAL angle. Only used when mapping is spherical.</dd>
+<dd>since 5.10</dd>
+<dt>double Height</dt>
+<dd>Gets the height of the decal. Only used when mapping is cylindrical.</dd>
+<dd>since 5.10</dd>
+<dt>bool MapToInside</dt>
+<dd>Used only when mapping is cylindrical or spherical.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Origin</dt>
+<dd>Gets the origin of the decal in world space.</dd>
+<dd>since 5.10</dd>
+<dt>double Radius</dt>
+<dd>Gets the radius of the decal. Only used when mapping is cylindrical or spherical.</dd>
+<dd>since 5.10</dd>
+<dt>double StartLatitude</dt>
+<dd>Gets the start angle of the decal&rsquo;s arc of latitude or &lsquo;horizontal sweep&rsquo;. This is actually a LONGITUDINAL angle. Only used when mapping is cylindrical or spherical.</dd>
+<dd>since 5.10</dd>
+<dt>double StartLongitude</dt>
+<dd>Gets the start angle of the decal&rsquo;s arc of longitude or &lsquo;vertical sweep&rsquo;. This is actually a LATITUDINAL angle. Only used when mapping is spherical.</dd>
+<dd>since 5.10</dd>
+<dt>Guid TextureInstanceId</dt>
+<dd>Gets the texture ID for this decal.</dd>
+<dd>since 5.10</dd>
+<dt>double Transparency</dt>
+<dd>Gets the decal&rsquo;s transparency in the range 0 to 1.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> VectorAcross</dt>
+<dd>Gets the vector across. For cylindrical and spherical mapping, the vector is unitized.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> VectorUp</dt>
+<dd>For cylindrical and spherical mapping, the vector is unitized.</dd>
+<dd>Returns - The &lsquo;up&rsquo; vector of the decal. For planar mapping the length of the vector is relevant.</dd>
+<dd>since 5.10</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Decal Create(DecalCreateParams createParams)</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>IntPtr ConstPointer()</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>List&lt;Rhino.Render.NamedValue&gt; CustomData()</dt>
+<dd>Gets custom data associated with this decal - see Rhino.Plugins.RenderPlugIn.ShowDecalProperties.</dd>
+<dd>Returns - The return value can be None if there is no data associated with this decal.</dd>
+<dd>since 6.0</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>void Dispose(bool isDisposing)</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>IntPtr NonConstPointer()</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>bool TryGetColor(Point3d point,Vector3d normal,Color4f colInOut,Point2d uvOut)</dt>
+<dd>Blend color with the decal color at a given point.</dd>
+<dd>Returns - True if the given point hits the decal, else false.</dd>
+<dd>since 5.10</dd>
+<dt>void UVBounds(double minUOut,double minVOut,double maxUOut,double maxVOut)</dt>
+<dd>The UV bounds of the decal. Only used when mapping is UV.</dd>
+<dd>since 5.10</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Decal</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

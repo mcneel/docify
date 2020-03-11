@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoViewport &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Displays geometry with a given projection. In standard modeling views there is a one to one relationship between RhinoView and RhinoViewports. In a page layout, there may be multiple RhinoViewports for a single layout.
+public class RhinoViewport : IDisposableConstructors  RhinoViewport()  RhinoViewport(RhinoViewport other)   Properties  Rectangle Bounds Gets the size and location of the viewport, in pixels, relative to the parent view. double Camera35mmLensLength  Vector3d CameraDirection  Point3d CameraLocation  Point3d CameraTarget Viewport target point.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoViewport</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Displays geometry with a given projection. In standard modeling views there
+is a one to one relationship between RhinoView and RhinoViewports. In a page
+layout, there may be multiple RhinoViewports for a single layout.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoViewport</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>RhinoViewport()</dt>
+<dd></dd>
+<dt>RhinoViewport(RhinoViewport other)</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>Rectangle Bounds</dt>
+<dd>Gets the size and location of the viewport, in pixels, relative to the parent view.</dd>
+<dt>double Camera35mmLensLength</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraDirection</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> CameraLocation</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> CameraTarget</dt>
+<dd>Viewport target point.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraUp</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraX</dt>
+<dd>Gets the &ldquo;unit to the right&rdquo; vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraY</dt>
+<dd>Gets the &ldquo;unit up&rdquo; vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CameraZ</dt>
+<dd>Gets the unit vector in CameraDirection.</dd>
+<dt>uint ChangeCounter</dt>
+<dd>The value of change counter is incremented every time the view projection
+or construction plane changes. The user can the mouse and nestable view 
+manipulation commands to change a view at any time. The value of change
+counter can be used to detect these changes in code that is sensitive to
+the view projection.</dd>
+<dt>bool ConstructionAxesVisible</dt>
+<dd></dd>
+<dt>bool ConstructionGridVisible</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/display/displaymodedescription/">DisplayModeDescription</a> DisplayMode</dt>
+<dd></dd>
+<dt>double FrustumAspect</dt>
+<dd>Gets the width/height ratio of the frustum.</dd>
+<dt>Guid Id</dt>
+<dd>Unique id for this viewport.</dd>
+<dt>bool IsParallelProjection</dt>
+<dd></dd>
+<dt>bool IsPerspectiveProjection</dt>
+<dd></dd>
+<dt>bool IsPlanView</dt>
+<dd>True if construction plane z axis is parallel to camera direction.</dd>
+<dt>bool IsTwoPointPerspectiveProjection</dt>
+<dd></dd>
+<dt>bool IsValidCamera</dt>
+<dd></dd>
+<dt>bool IsValidFrustum</dt>
+<dd></dd>
+<dt>string Name</dt>
+<dd>Name associated with this viewport.</dd>
+<dt><a href="/rhinocommon/rhino/display/rhinoview/">RhinoView</a> ParentView</dt>
+<dd>Gets the parent view, if there is one
+<p>Every RhinoView has an associated RhinoViewport that does all the 3d display work.
+Those associated viewports return the RhinoView as their parent view. However,
+RhinoViewports are used in other image creating contexts that do not have a parent
+RhinoView.  If you call ParentView, you MUST check for NULL return values.</p>
+</dd>
+<dt>double ScreenPortAspect</dt>
+<dd>screen port&rsquo;s width/height.</dd>
+<dt>Size Size</dt>
+<dd>Gets or sets the height and width of the viewport (in pixels)</dd>
+<dt>int UserStringCount</dt>
+<dd></dd>
+<dd>since 6.18</dd>
+<dt><a href="/rhinocommon/rhino/display/viewporttype/">ViewportType</a> ViewportType</dt>
+<dd></dd>
+<dt>string WallpaperFilename</dt>
+<dd></dd>
+<dt>bool WallpaperGrayscale</dt>
+<dd></dd>
+<dt>bool WallpaperVisible</dt>
+<dd></dd>
+<dt>bool WorldAxesVisible</dt>
+<dd></dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static RhinoViewport FromId(Guid id)</dt>
+<dd>Call this method to get the viewport with the specified Id.</dd>
+<dd>Returns - Returns a RhinoViewport if the Id is found otherwise null.</dd>
+<dd>since 6.0</dd>
+<dt>bool ChangeToParallelProjection(bool symmetricFrustum)</dt>
+<dd>Use this function to change projections of valid viewports from persective to parallel.
+It will make common additional adjustments to the frustum so the resulting views are
+similar. The camera location and direction will not be changed.</dd>
+<dd>Returns - If the current projection is parallel and bSymmetricFrustum, FrustumIsLeftRightSymmetric()
+and FrustumIsTopBottomSymmetric() are all equal, then no changes are made and True is returned.</dd>
+<dt>bool ChangeToPerspectiveProjection(bool symmetricFrustum,double lensLength)</dt>
+<dd>Use this function to change projections of valid viewports from parallel to perspective.
+It will make common additional adjustments to the frustum and camera location so the
+resulting views are similar. The camera direction and target point are not be changed.</dd>
+<dd>Returns - If the current projection is perspective and bSymmetricFrustum, FrustumIsLeftRightSymmetric()
+and FrustumIsTopBottomSymmetric() are all equal, then no changes are made and True is returned.</dd>
+<dt>bool ChangeToPerspectiveProjection(double targetDistance,bool symmetricFrustum,double lensLength)</dt>
+<dd>Use this function to change projections of valid viewports from parallel to perspective.
+It will make common additional adjustments to the frustum and camera location so the
+resulting views are similar. The camera direction and target point are not be changed.</dd>
+<dd>Returns - If the current projection is perspective and bSymmetricFrustum, FrustumIsLeftRightSymmetric()
+and FrustumIsTopBottomSymmetric() are all equal, then no changes are made and True is returned.</dd>
+<dt>bool ChangeToTwoPointPerspectiveProjection(double lensLength)</dt>
+<dd>Use this function to change projections of valid viewports
+to a two point perspective.  It will make common additional
+adjustments to the frustum and camera location and direction
+so the resulting views are similar.</dd>
+<dd>Returns - If the current projection is perspective and bSymmetricFrustum, FrustumIsLeftRightSymmetric()
+and FrustumIsTopBottomSymmetric() are all equal, then no changes are made and True is returned.</dd>
+<dd>since 6.0</dd>
+<dt>bool ChangeToTwoPointPerspectiveProjection(double targetDistance,Vector3d up,double lensLength)</dt>
+<dd>Use this function to change projections of valid viewports
+to a two point perspective.  It will make common additional
+adjustments to the frustum and camera location and direction
+so the resulting views are similar.</dd>
+<dd>Returns - If the current projection is perspective and bSymmetricFrustum, FrustumIsLeftRightSymmetric()
+and FrustumIsTopBottomSymmetric() are all equal, then no changes are made and True is returned.</dd>
+<dd>since 6.0</dd>
+<dt>void ClearTraceImage()</dt>
+<dd>Remove trace image (background bitmap) for this viewport if one exists.</dd>
+<dt>System.Drawing.Point ClientToScreen(Point clientPoint)</dt>
+<dd></dd>
+<dt>System.Drawing.Point ClientToScreen(Point2d clientPoint)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> ClientToWorld(Point clientPoint)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> ClientToWorld(Point2d clientPoint)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> ConstructionPlane()</dt>
+<dd>Simple plane information for this viewport&rsquo;s construction plane. If you want
+detailed construction lpane information, use GetConstructionPlane.</dd>
+<dt>void DeleteAllUserStrings()</dt>
+<dd></dd>
+<dd>since 6.18</dd>
+<dt>bool DeleteUserString(string key)</dt>
+<dd></dd>
+<dd>since 6.18</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>bool GetCameraAngle(double halfDiagonalAngle,double halfVerticalAngle,double halfHorizontalAngle)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetCameraExtents(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd></dd>
+<dt>bool GetCameraFrame(Plane frame)</dt>
+<dd>Gets the camera plane.</dd>
+<dd>Returns - True if current camera orientation is valid.</dd>
+<dt>DocObjects.ConstructionPlane GetConstructionPlane()</dt>
+<dd></dd>
+<dt>bool GetDepth(BoundingBox bbox,double nearDistance,double farDistance)</dt>
+<dd>Gets near and far clipping distances of a bounding box.</dd>
+<dd>Returns - True if the bounding box intersects the view frustum and near_dist/far_dist were set.
+False if the bounding box does not intesect the view frustum.</dd>
+<dt>bool GetDepth(Point3d point,double distance)</dt>
+<dd>Gets clipping distance of a point.</dd>
+<dd>Returns - True if the point is ing the view frustum and near_dist/far_dist were set.
+False if the bounding box does not intesect the view frustum.</dd>
+<dt>bool GetDepth(Sphere sphere,double nearDistance,double farDistance)</dt>
+<dd>Gets near and far clipping distances of a sphere.</dd>
+<dd>Returns - True if the sphere intersects the view frustum and near_dist/far_dist were set.
+False if the sphere does not intesect the view frustum.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] GetFarRect()</dt>
+<dd>Get corners of far clipping plane rectangle.</dd>
+<dd>Returns - [left_bottom, right_bottom, left_top, right_top] points on success
+None on failure.</dd>
+<dt>bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)</dt>
+<dd>Gets the view frustum.</dd>
+<dd>Returns - True if operation succeeded.</dd>
+<dt>bool GetFrustumBottomPlane(Plane plane)</dt>
+<dd>Get bottom world frustum clipping plane.</dd>
+<dd>Returns - True if camera and frustum are valid and plane was set.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetFrustumBoundingBox()</dt>
+<dd></dd>
+<dt>bool GetFrustumCenter(Point3d center)</dt>
+<dd>Returns world coordinates of frustum&rsquo;s center.</dd>
+<dd>Returns - True if the center was successfully computed.</dd>
+<dt>bool GetFrustumFarPlane(Plane plane)</dt>
+<dd>Get far clipping plane.</dd>
+<dd>Returns - True if camera and frustum are valid.</dd>
+<dt>bool GetFrustumLeftPlane(Plane plane)</dt>
+<dd>Get left world frustum clipping plane.</dd>
+<dd>Returns - True if camera and frustum are valid and plane was set.</dd>
+<dt>bool GetFrustumLine(double screenX,double screenY,Line worldLine)</dt>
+<dd>Gets the world coordinate line in the view frustum that projects to a point on the screen.</dd>
+<dd>Returns - True if successful.
+False if view projection or frustum is invalid.</dd>
+<dt>bool GetFrustumNearPlane(Plane plane)</dt>
+<dd>Get near clipping plane.</dd>
+<dd>Returns - True if camera and frustum are valid.</dd>
+<dt>bool GetFrustumRightPlane(Plane plane)</dt>
+<dd>Get right world frustum clipping plane.</dd>
+<dd>Returns - True if camera and frustum are valid and plane was set.</dd>
+<dt>bool GetFrustumTopPlane(Plane plane)</dt>
+<dd>Get top world frustum clipping plane.</dd>
+<dd>Returns - True if camera and frustum are valid and plane was set.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] GetNearRect()</dt>
+<dd>Get corners of near clipping plane rectangle.</dd>
+<dd>Returns - [left_bottom, right_bottom, left_top, right_top] points on success
+None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetPickTransform(int clientX,int clientY)</dt>
+<dd>Takes a rectangle in screen coordinates and returns a transformation
+that maps the 3d frustum defined by the rectangle to a -1/+1 clipping
+coordinate box. This takes a single point and inflates it by
+Rhino.ApplicationSettings.ModelAidSettings.MousePickBoxRadius to define
+the screen rectangle.</dd>
+<dd>Returns - A transformation matrix.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetPickTransform(Point clientPoint)</dt>
+<dd>Takes a rectangle in screen coordinates and returns a transformation
+that maps the 3d frustum defined by the rectangle to a -1/+1 clipping
+coordinate box. This takes a single point and inflates it by
+Rhino.ApplicationSettings.ModelAidSettings.MousePickBoxRadius to define
+the screen rectangle.</dd>
+<dd>Returns - A transformation matrix.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetPickTransform(Rectangle clientRectangle)</dt>
+<dd>Takes a rectangle in screen coordinates and returns a transformation
+that maps the 3d frustum defined by the rectangle to a -1/+1 clipping
+coordinate box.</dd>
+<dd>Returns - A transformation matrix.</dd>
+<dt>bool GetScreenPort(int portLeft,int portRight,int portBottom,int portTop,int portNear,int portFar)</dt>
+<dd>Location of viewport in pixels.  These are provided so you can set the port you are using
+and get the appropriate transformations to and from screen space.</dd>
+<dd>Returns - True if the operation is successful.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetTransform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)</dt>
+<dd>Gets a transform from origin coordinate system to a target coordinate system.</dd>
+<dd>Returns - 4x4 transformation matrix (acts on the left)
+Identity matrix is returned if this function fails.</dd>
+<dt>string GetUserString(string key)</dt>
+<dd>Gets a user string.</dd>
+<dd>Returns - string associated with the key if successful. None if no key was found.</dd>
+<dd>since 6.18</dd>
+<dt>System.Collections.Specialized.NameValueCollection GetUserStrings()</dt>
+<dd>Gets an independent copy of the collection of (user text key, user text value) pairs attached to this object.</dd>
+<dd>Returns - A collection of key strings and values strings. This</dd>
+<dd>since 6.18</dd>
+<dt>bool GetWorldToScreenScale(Point3d pointInFrustum,double pixelsPerUnit)</dt>
+<dd>Gets the world to screen size scaling factor at a point in frustum.</dd>
+<dd>Returns - True if the operation is successful.</dd>
+<dt>bool IsVisible(BoundingBox bbox)</dt>
+<dd>Returns True if some portion of a world coordinate bounding box is
+potentially visible in the viewing frustum.</dd>
+<dd>Returns - True if the box is potentially visible; otherwise false.</dd>
+<dt>bool IsVisible(Point3d point)</dt>
+<dd>Deterines if a world coordinate point is visible in the viewing frustum.</dd>
+<dd>Returns - True if the point is visible; otherwise false.</dd>
+<dt>bool KeyboardDolly(bool leftRight,double amount)</dt>
+<dd>Emulates the keyboard arrow key in terms of interaction.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool KeyboardDollyInOut(double amount)</dt>
+<dd>Emulates the keyboard arrow key in terms of interaction.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool KeyboardRotate(bool leftRight,double angleRadians)</dt>
+<dd>Emulates the keyboard arrow key in terms of interaction.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool Magnify(double magnificationFactor,bool mode)</dt>
+<dd>Zooms or dollies in order to scale the viewport projection of observed objects.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool Magnify(double magnificationFactor,bool mode,Point fixedScreenPoint)</dt>
+<dd>Zooms or dollies in order to scale the viewport projection of observed objects.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool MouseAdjustLensLength(Point mousePreviousPoint,Point mouseCurrentPoint,bool moveTarget)</dt>
+<dd>Adjusts the camera lens length.</dd>
+<dd>since 6.0</dd>
+<dt>bool MouseDollyZoom(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Zooms lens (thus adjusting the field of view) while moving the camera.</dd>
+<dt>bool MouseInOutDolly(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Moves the camera towards or away from the view maintaing focus on the view.</dd>
+<dt>bool MouseLateralDolly(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Pans the camera</dd>
+<dd>since 6.0</dd>
+<dt>bool MouseMagnify(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Moves the camera towards or away from the view.</dd>
+<dt>bool MouseRotateAroundTarget(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Rotates the viewport around target.</dd>
+<dt>bool MouseRotateCamera(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Rotates the view around the camera location.</dd>
+<dt>bool MouseTilt(Point mousePreviousPoint,Point mouseCurrentPoint)</dt>
+<dd>Tilts the camera view.</dd>
+<dt>bool NextConstructionPlane()</dt>
+<dd>Sets the construction plane to the plane that was
+active before the last call to PreviousConstructionPlane.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool NextViewProjection()</dt>
+<dd>Sets the view projection and target to the settings that 
+were active before the last call to PrevView.</dd>
+<dd>Returns - True if the view stack was popped.</dd>
+<dt>bool PopConstructionPlane()</dt>
+<dd>Sets the construction plane to the plane that was
+active before the last call to PushConstructionPlane.</dd>
+<dd>Returns - True if a construction plane was popped.</dd>
+<dt>bool PopViewProjection()</dt>
+<dd>Sets the view projection and target to the settings at the top of
+the view stack and removes those settings from the view stack.</dd>
+<dd>Returns - True if there were settings that could be popped from the stack.</dd>
+<dt>bool PreviousConstructionPlane()</dt>
+<dd>Sets the construction plane to the plane that was
+active before the last call to NextConstructionPlane
+or SetConstructionPlane.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool PreviousViewProjection()</dt>
+<dd>Sets the view projection and target to the settings that
+were active before the last call to NextViewProjection.</dd>
+<dd>Returns - True if the view stack was popped.</dd>
+<dt>void PushConstructionPlane(ConstructionPlane cplane)</dt>
+<dd>Pushes the current construction plane on the viewport&rsquo;s
+construction plane stack and sets the construction plane
+to cplane.</dd>
+<dt>bool PushViewInfo(ViewInfo viewinfo,bool includeTraceImage)</dt>
+<dd></dd>
+<dt>void PushViewProjection()</dt>
+<dd>Appends the current view projection and target to the viewport&rsquo;s view stack.</dd>
+<dt>bool Rotate(double angleRadians,Vector3d rotationAxis,Point3d rotationCenter)</dt>
+<dd>Rotates about the specified axis. A positive rotation angle results
+in a counter-clockwise rotation about the axis (right hand rule).</dd>
+<dd>Returns - True if geometry successfully rotated.</dd>
+<dt>System.Drawing.Point ScreenToClient(Point screenPoint)</dt>
+<dd></dd>
+<dt>void SetCameraDirection(Vector3d cameraDirection,bool updateTargetLocation)</dt>
+<dd>Set viewport camera direction. By default the target location is changed so that
+the vector from the camera location to the target is parallel to the camera direction.</dd>
+<dt>void SetCameraLocation(Point3d cameraLocation,bool updateTargetLocation)</dt>
+<dd>Set viewport camera location. By default the target location is changed so that
+the vector from the camera location to the target is parallel to the camera direction
+vector.</dd>
+<dt>void SetCameraLocations(Point3d targetLocation,Point3d cameraLocation)</dt>
+<dd>Set viewport camera location and target location. The camera direction vector is
+changed so that it is parallel to the vector from the camera location to
+the target location.</dd>
+<dt>void SetCameraTarget(Point3d targetLocation,bool updateCameraLocation)</dt>
+<dd>Set viewport target point. By default the camera location
+is translated so that the camera direction vector is parallel
+to the vector from the camera location to the target location.</dd>
+<dt>void SetClippingPlanes(BoundingBox box)</dt>
+<dd>Sets optimal clipping planes to view objects in a world coordinate 3d bounding box.</dd>
+<dt>void SetConstructionPlane(ConstructionPlane cplane)</dt>
+<dd>Sets the construction plane to cplane.</dd>
+<dt>void SetConstructionPlane(Plane plane)</dt>
+<dd></dd>
+<dt>bool SetProjection(DefinedViewportProjection projection,string viewName,bool updateConstructionPlane)</dt>
+<dd>Set viewport to a defined projection.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool SetToPlanView(Point3d planeOrigin,Vector3d planeXaxis,Vector3d planeYaxis,bool setConstructionPlane)</dt>
+<dd></dd>
+<dt>bool SetTraceImage(string bitmapFileName,Plane plane,double width,double height,bool grayscale,bool filtered)</dt>
+<dd>Set trace image (background bitmap) for this viewport.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool SetUserString(string key,string value)</dt>
+<dd>Attach a user string (key,value combination) to this geometry.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.18</dd>
+<dt>bool SetViewProjection(ViewportInfo projection,bool updateTargetLocation)</dt>
+<dd>Sets the viewport camera projection.</dd>
+<dd>Returns - True on success.</dd>
+<dt>bool SetWallpaper(string imageFilename,bool grayscale)</dt>
+<dd></dd>
+<dt>bool SetWallpaper(string imageFilename,bool grayscale,bool visible)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> WorldToClient(Point3d worldPoint)</dt>
+<dd>Convert a point from world coordinates in the viewport to a 2d screen
+point in the local coordinates of the viewport (X/Y of point is relative
+to top left corner of viewport on screen)</dd>
+<dd>Returns - The 2D point on the screen.</dd>
+<dt>bool ZoomBoundingBox(BoundingBox box)</dt>
+<dd>Zooms the viewport to the given bounding box.</dd>
+<dd>Returns - True if operation succeeded; otherwise false.</dd>
+<dt>bool ZoomExtents()</dt>
+<dd>Dollies the camera location and so that the view frustum contains all of the
+selected document objects that can be seen in view. If the projection is
+perspective, the camera angle is not changed.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool ZoomExtentsSelected()</dt>
+<dd>Dollies the camera location and so that the view frustum contains all of the
+selected document objects that can be seen in view. If the projection is
+perspective, the camera angle is not changed.</dd>
+<dd>Returns - True if successful.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoViewport</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

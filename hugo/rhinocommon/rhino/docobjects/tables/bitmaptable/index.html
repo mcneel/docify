@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BitmapTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+Stores the list of bitmaps in a Rhino document.
+public class BitmapTable :RhinoDocCommonTable&amp;lt;BitmapEntry&amp;gt;,ICollection&amp;lt;BitmapEntry&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  int AddBitmap(string bitmapFilename,bool replaceExisting) Adds a new bitmap with specified name to the bitmap table. Returns - index of new bitmap in table on success. -1 on error. bool Delete(BitmapEntry item) Removes the bitmap from the table. Returns - True if the item could be deleted; otherwise, false.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BitmapTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<p>Stores the list of bitmaps in a Rhino document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BitmapTable</span> :
+    RhinoDocCommonTable&lt;BitmapEntry&gt;,
+    ICollection&lt;BitmapEntry&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int AddBitmap(string bitmapFilename,bool replaceExisting)</dt>
+<dd>Adds a new bitmap with specified name to the bitmap table.</dd>
+<dd>Returns - index of new bitmap in table on success. -1 on error.</dd>
+<dt>bool Delete(BitmapEntry item)</dt>
+<dd>Removes the bitmap from the table.</dd>
+<dd>Returns - True if the item could be deleted; otherwise, false.</dd>
+<dd>since 6.0</dd>
+<dt>bool DeleteBitmap(string bitmapFilename)</dt>
+<dd>Deletes a bitmap.</dd>
+<dd>Returns - True if successful. False if the bitmap cannot be deleted because it
+is the current bitmap or because it bitmap contains active geometry.</dd>
+<dt>bool ExportToFile(int index,string path)</dt>
+<dd>Writes a bitmap to a file.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>int ExportToFiles(string directoryPath,int overwrite)</dt>
+<dd>Exports all the bitmaps in the table to files.</dd>
+<dd>Returns - Number of bitmaps written.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/bitmapentry/">BitmapEntry</a> Find(string name,bool createFile,string fileName)</dt>
+<dd>This function first attempts to find the file with &ldquo;name&rdquo; on the disk.
+If it does find it, &ldquo;fileName&rdquo; is set to the full path of the file and
+the BitmapEntry returned will be null, even if there was a BitmapEntry
+with &ldquo;name&rdquo; in the bitmap table.
+If the function cannot find the file on the disk, it searches the bitmap
+table.  If it finds it, the returned BitmapEntry entry will be the entry
+in the table with that name.
+Additionally, if &ldquo;createFile&rdquo; is true, and an entry is found, the file
+will be written to the disk and it&rsquo;s full path will be contained in &ldquo;fileName&rdquo;.</dd>
+<dd>Returns - Returns None if &ldquo;name&rdquo; was found on the disk.  If name was not found on the disk,
+returns the BitmapEntry with the specified name if it is found in the bitmap table
+and None if it was not found in the bitmap table.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/bitmapentry/">BitmapEntry</a> FindIndex(int index)</dt>
+<dd>Retrieves a BitmapEntry object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</dd>
+<dd>Returns - A BitmapEntry object, or None if none was found.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BitmapTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

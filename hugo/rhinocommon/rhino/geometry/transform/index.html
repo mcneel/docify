@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Transform &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the values in a 4x4 transform matrix. This is parallel to C&#43;&#43; ON_Xform.
+ static != Determines if two transformations are different in value. Returns - True if transforms are different; otherwise false. static * Multiplies (combines) two transformations. Returns - A transformation matrix that combines the effect of both input transformations. The resulting Transform gives the same result as though you&amp;rsquo;d first apply A then B. static * Multiplies a transformation by a point and gets a new point.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Transform</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the values in a 4x4 transform matrix.
+This is parallel to C++ ON_Xform.</p>
+<dl>
+<dt>static !=</dt>
+<dd>Determines if two transformations are different in value.</dd>
+<dd>Returns - True if transforms are different; otherwise false.</dd>
+<dt>static *</dt>
+<dd>Multiplies (combines) two transformations.</dd>
+<dd>Returns - A transformation matrix that combines the effect of both input transformations. 
+The resulting Transform gives the same result as though you&rsquo;d first apply A then B.</dd>
+<dt>static *</dt>
+<dd>Multiplies a transformation by a point and gets a new point.</dd>
+<dd>Returns - The tranformed point.</dd>
+<dt>static *</dt>
+<dd>Multiplies a transformation by a vector and gets a new vector.</dd>
+<dd>Returns - The tranformed vector.</dd>
+<dt>static ==</dt>
+<dd>Determines if two transformations are equal in value.</dd>
+<dd>Returns - True if transforms are equal; otherwise false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Transform(double diagonalValue)</dt>
+<dd>Initializes a new transform matrix with a specified value along the diagonal.</dd>
+<dt>Transform(Transform value)</dt>
+<dd>Initializes a new transform matrix with a specified value.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Transform Identity</dt>
+<dd>Gets a new identity transform matrix. An identity matrix defines no transformation.</dd>
+<dt>static Transform Unset</dt>
+<dd>Gets an XForm filled with RhinoMath.UnsetValue.</dd>
+<dt>static Transform ZeroTransformation</dt>
+<dd>ZeroTransformation diagonal = (0,0,0,1)</dd>
+<dd>since 6.1</dd>
+<dt>double Determinant</dt>
+<dd>The determinant of this 4x4 matrix.</dd>
+<dt>bool IsAffine</dt>
+<dd>Tests for an affine transformation.
+An affine transformation can be broken into a linear transformation and a translation.</dd>
+<dd>since 6.12</dd>
+<dt>bool IsIdentity</dt>
+<dd>Return True if this Transform is the identity transform</dd>
+<dd>since 6.0</dd>
+<dt>bool IsLinear</dt>
+<dd>Tests for a linear transformation.
+An affine transformation can be broken into a linear transformation and a translation.</dd>
+<dd>since 6.12</dd>
+<dt>bool IsRotation</dt>
+<dd>Returns True if this is a proper rotation.</dd>
+<dd>since 6.12</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether or not this Transform is a valid matrix. 
+A valid transform matrix is not allowed to have any invalid numbers.</dd>
+<dt>bool IsZero</dt>
+<dd>True if matrix is Zero4x4, ZeroTransformation, or some other type of
+zero.The value xform[3][3] can be anything.</dd>
+<dd>since 6.1</dd>
+<dt>bool IsZero4x4</dt>
+<dd>True if all values are 0</dd>
+<dd>since 6.1</dd>
+<dt>bool IsZeroTransformation</dt>
+<dd>True if all values are 0 and M33 is 1</dd>
+<dd>since 6.1</dd>
+<dt>double M00</dt>
+<dd>Gets or sets this[0,0].</dd>
+<dt>double M01</dt>
+<dd>Gets or sets this[0,1].</dd>
+<dt>double M02</dt>
+<dd>Gets or sets this[0,2].</dd>
+<dt>double M03</dt>
+<dd>Gets or sets this[0,3].</dd>
+<dt>double M10</dt>
+<dd>Gets or sets this[1,0].</dd>
+<dt>double M11</dt>
+<dd>Gets or sets this[1,1].</dd>
+<dt>double M12</dt>
+<dd>Gets or sets this[1,2].</dd>
+<dt>double M13</dt>
+<dd>Gets or sets this[1,3].</dd>
+<dt>double M20</dt>
+<dd>Gets or sets this[2,0].</dd>
+<dt>double M21</dt>
+<dd>Gets or sets this[2,1].</dd>
+<dt>double M22</dt>
+<dd>Gets or sets this[2,2].</dd>
+<dt>double M23</dt>
+<dd>Gets or sets this[2,3].</dd>
+<dt>double M30</dt>
+<dd>Gets or sets this[3,0].</dd>
+<dt>double M31</dt>
+<dd>Gets or sets this[3,1].</dd>
+<dt>double M32</dt>
+<dd>Gets or sets this[3,2].</dd>
+<dt>double M33</dt>
+<dd>Gets or sets this[3,3].</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transformrigidtype/">TransformRigidType</a> RigidType</dt>
+<dd>Gets a value indicating whether or not the Transform is rigid. 
+A rigid transformation can be broken into  a proper rotation and a translation,
+while an isometry transformation could also include a reflection.</dd>
+<dd>since 6.12</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transformsimilaritytype/">TransformSimilarityType</a> SimilarityType</dt>
+<dd>Gets a value indicating whether or not the Transform maintains similarity. 
+The easiest way to think of Similarity is that any circle, when transformed, 
+remains a circle. Whereas a non-similarity Transform deforms circles into ellipses.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Transform ChangeBasis(Plane plane0,Plane plane1)</dt>
+<dd>Computes a change of basis transformation. A basis change is essentially a remapping 
+of geometry from one coordinate system to another.</dd>
+<dd>Returns - A transformation matrix which orients geometry from one coordinate system to another on success.
+Transform.Unset on failure.</dd>
+<dt>static Transform ChangeBasis(Vector3d initialBasisX,Vector3d initialBasisY,Vector3d initialBasisZ,Vector3d finalBasisX,Vector3d finalBasisY,Vector3d finalBasisZ)</dt>
+<dd>Computes a change of basis transformation. A basis change is essentially a remapping 
+of geometry from one coordinate system to another.</dd>
+<dd>Returns - A transformation matrix which orients geometry from one coordinate system to another on success.
+Transform.Unset on failure.</dd>
+<dt>static Transform Diagonal(double d0,double d1,double d2)</dt>
+<dd>Constructs a new transformation with diagonal (d0,d1,d2,1.0).</dd>
+<dd>Returns - A transformation with diagonal (d0,d1,d2,1.0).</dd>
+<dd>since 6.12</dd>
+<dt>static Transform Diagonal(Vector3d diagonal)</dt>
+<dd>Constructs a new transformation with diagonal (d0,d1,d2,1.0).</dd>
+<dd>Returns - A transformation with diagonal (d0,d1,d2,1.0).</dd>
+<dd>since 6.12</dd>
+<dt>static Transform Mirror(Plane mirrorPlane)</dt>
+<dd>Constructs a new Mirror transformation.</dd>
+<dd>Returns - A transformation matrix which mirrors geometry in a specified plane.</dd>
+<dt>static Transform Mirror(Point3d pointOnMirrorPlane,Vector3d normalToMirrorPlane)</dt>
+<dd>Create mirror transformation matrix
+The mirror transform maps a point Q to 
+Q - (2*(Q-P)oN)*N, where
+P = pointOnMirrorPlane and N = normalToMirrorPlane.</dd>
+<dd>Returns - A transformation matrix which mirrors geometry in a specified plane.</dd>
+<dt>static Transform Multiply(Transform a,Transform b)</dt>
+<dd>Multiplies (combines) two transformations.
+This is the same as the * operator between two transformations.</dd>
+<dd>Returns - A transformation matrix that combines the effect of both input transformations. 
+The resulting Transform gives the same result as though you&rsquo;d first apply B then A.</dd>
+<dt>static Transform PlanarProjection(Plane plane)</dt>
+<dd>Constructs a projection transformation.</dd>
+<dd>Returns - A transformation matrix which projects geometry onto a specified plane.</dd>
+<dt>static Transform PlaneToPlane(Plane plane0,Plane plane1)</dt>
+<dd>Create a rotation transformation that orients plane0 to plane1. If you want to orient objects from
+one plane to another, use this form of transformation.</dd>
+<dd>Returns - The translation transformation if successful, Transform.Unset on failure.</dd>
+<dt>static Transform ProjectAlong(Plane plane,Vector3d direction)</dt>
+<dd>Construct a projection onto a plane along a specific direction.</dd>
+<dd>Returns - Projection transformation or identity transformation if projection could not be calculated.</dd>
+<dd>since 6.0</dd>
+<dt>static Transform Rotation(double sinAngle,double cosAngle,Vector3d rotationAxis,Point3d rotationCenter)</dt>
+<dd>Constructs a new rotation transformation with specified angle, rotation center and rotation axis.</dd>
+<dd>Returns - A transformation matrix which rotates geometry around an anchor point.</dd>
+<dt>static Transform Rotation(double angleRadians,Point3d rotationCenter)</dt>
+<dd>Constructs a new rotation transformation with specified angle and rotation center.</dd>
+<dd>Returns - A transformation matrix which rotates geometry around an anchor point.</dd>
+<dt>static Transform Rotation(double angleRadians,Vector3d rotationAxis,Point3d rotationCenter)</dt>
+<dd>Constructs a new rotation transformation with specified angle, rotation center and rotation axis.</dd>
+<dd>Returns - A transformation matrix which rotates geometry around an anchor point.</dd>
+<dt>static Transform Rotation(Vector3d startDirection,Vector3d endDirection,Point3d rotationCenter)</dt>
+<dd>Constructs a new rotation transformation with start and end directions and rotation center.</dd>
+<dd>Returns - A transformation matrix which rotates geometry around an anchor point.</dd>
+<dt>static Transform Rotation(Vector3d x0,Vector3d y0,Vector3d z0,Vector3d x1,Vector3d y1,Vector3d z1)</dt>
+<dd>Constructs a transformation that maps X0 to X1, Y0 to Y1, Z0 to Z1.</dd>
+<dd>Returns - A rotation transformation value.</dd>
+<dt>static Transform RotationZYX(double yaw,double pitch,double roll)</dt>
+<dd>Create rotation transformation From Tait-Byran angles (also loosely known as Euler angles).</dd>
+<dd>Returns - A transform matrix from Tait-Byran angles.</dd>
+<dd>since 6.11</dd>
+<dt>static Transform RotationZYZ(double alpha,double beta,double gamma)</dt>
+<dd>Create rotation transformation From Euler angles.</dd>
+<dd>Returns - A transform matrix from Euler angles.</dd>
+<dd>since 6.11</dd>
+<dt>static Transform Scale(Plane plane,double xScaleFactor,double yScaleFactor,double zScaleFactor)</dt>
+<dd>Constructs a new non-uniform scaling transformation with a specified scaling anchor point.</dd>
+<dd>Returns - A transformation matrix which scales geometry non-uniformly.</dd>
+<dt>static Transform Scale(Point3d anchor,double scaleFactor)</dt>
+<dd>Constructs a new uniform scaling transformation with a specified scaling anchor point.</dd>
+<dd>Returns - A transform matrix which scales geometry uniformly around the anchor point.</dd>
+<dt>static Transform Shear(Plane plane,Vector3d x,Vector3d y,Vector3d z)</dt>
+<dd>Constructs a Shear transformation.</dd>
+<dd>Returns - A transformation matrix which shear geometry.</dd>
+<dt>static Transform Translation(double dx,double dy,double dz)</dt>
+<dd>Constructs a new translation (move) tranformation. 
+Right column is (dx, dy, dz, 1.0).</dd>
+<dd>Returns - A transform matrix which moves geometry with the specified distances.</dd>
+<dt>static Transform Translation(Vector3d motion)</dt>
+<dd>Constructs a new translation (move) transformation.</dd>
+<dd>Returns - A transform matrix which moves geometry along the motion vector.</dd>
+<dt>void Affineize()</dt>
+<dd>Replaces the last row with (0 0 0 1), discarding any perspecive part of this transform</dd>
+<dd>since 6.12</dd>
+<dt>Transform Clone()</dt>
+<dd>Returns a deep copy of the transform. For languages that treat structures as value types, this can 
+be accomplished by a simple assignment.</dd>
+<dd>Returns - A deep copy of this data structure.</dd>
+<dd>since 6.0</dd>
+<dt>int CompareTo(Transform other)</dt>
+<dd>Compares this transform with another transform.
+M33 has highest value, then M32, etc..</dd>
+<dd>Returns - -1 if this &lt; other; 0 if both are equal; 1 otherwise.</dd>
+<dt>bool DecomposeAffine(Transform linear,Vector3d translation)</dt>
+<dd>Decomposes an affine transformation.
+An affine transformation can be broken into a linear transformation and a translation.
+Note, a perspective transformation is not affine.</dd>
+<dd>Returns - True if successful decomposition.</dd>
+<dd>since 6.12</dd>
+<dt>bool DecomposeAffine(Vector3d translation,Transform linear)</dt>
+<dd>Decomposes an affine transformation.
+An affine transformation can be broken into a linear transformation and a translation.
+Note, a perspective transformation is not affine.</dd>
+<dd>Returns - True if successful decomposition.</dd>
+<dd>since 6.12</dd>
+<dt>bool DecomposeAffine(Vector3d translation,Transform rotation,Transform orthogonal,Vector3d diagonal)</dt>
+<dd>An affine transformation can be decomposed into a Symmetric, Rotation and Translation.
+Then the Symmetric component may be further decomposed as non-uniform scale in an orthonormal
+coordinate system.</dd>
+<dd>Returns - True if successful decomposition.</dd>
+<dd>since 6.12</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transformrigidtype/">TransformRigidType</a> DecomposeRigid(Vector3d translation,Transform rotation,double tolerance)</dt>
+<dd>Decomposes a rigid transformation. The transfomration must be affine.</dd>
+<dd>Returns - The rigid type.</dd>
+<dd>since 6.12</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transformsimilaritytype/">TransformSimilarityType</a> DecomposeSimilarity(Vector3d translation,double dilation,Transform rotation,double tolerance)</dt>
+<dd>Decomposes a similarity transformation. The transformation must be affine.
+A similarity transformation can be broken into a sequence of a dialation, translation, rotation, and a reflection.</dd>
+<dd>Returns - The similarity type.</dd>
+<dd>since 6.12</dd>
+<dt>bool DecomposeSymmetric(Transform matrix,Vector3d diagonal)</dt>
+<dd>A Symmetric linear transformation can be decomposed A = Q * Diag * Q ^ T, where Diag is a diagonal
+transformation. Diag[i][i] is an eigenvalue of A and the i-th coulmn of Q is a corresponding
+unit length eigenvector. Note, this transformation must be Linear and Symmetric.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.12</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines if another object is a transform and its value equals this transform value.</dd>
+<dd>Returns - True if obj is a transform and has the same value as this transform; otherwise, false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Transform other)</dt>
+<dd>Determines if another transform equals this transform value.</dd>
+<dd>Returns - True if other has the same value as this transform; otherwise, false.</dd>
+<dt>bool GetEulerZYZ(double alpha,double beta,double gamma)</dt>
+<dd>Find the Euler angles for a rotation transformation.</dd>
+<dd>Returns - If true, then RotationZYZ(alpha, beta, gamma) = R_z(alpha) * R_y(beta) * R_z(gamma)
+where R_*(angle) is rotation of angle radians about the corresponding *-world coordinate axis.
+If false, then this is not a rotation.</dd>
+<dd>since 6.11</dd>
+<dt>int GetHashCode()</dt>
+<dd>Gets a non-unique hashing code for this transform.</dd>
+<dd>Returns - A number that can be used to hash this transform in a dictionary.</dd>
+<dd>since (unknown)</dd>
+<dt>bool GetYawPitchRoll(double yaw,double pitch,double roll)</dt>
+<dd>Find the Tait-Byran angles (also loosely called Euler angles) for a rotation transformation.</dd>
+<dd>Returns - If true, then RotationZYX(yaw, pitch, roll) = R_z(yaw) * R_y(pitch) * R_x(roll) 
+where R_*(angle) is rotation of angle radians about the corresponding world coordinate axis.
+If false, then this is not a rotation.</dd>
+<dd>since 6.11</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transformrigidtype/">TransformRigidType</a> IsRigid(double tolerance)</dt>
+<dd>Gets a value indicating whether or not the Transform is rigid. 
+A rigid transformation can be broken into  a proper rotation and a translation,
+while an isometry transformation could also include a reflection.</dd>
+<dd>Returns - The rigid type.</dd>
+<dd>since 6.12</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transformsimilaritytype/">TransformSimilarityType</a> IsSimilarity(double tolerance)</dt>
+<dd>Gets a value indicating whether or not the Transform maintains similarity. 
+A similarity transformation can be broken into a sequence of a dialation, translation, rotation, and a reflection.</dd>
+<dd>Returns - The similarity type.</dd>
+<dd>since 6.12</dd>
+<dt>bool IsZeroTransformaton(double zeroTolerance)</dt>
+<dd>True if all values are 0 and M33 is 1 within tolerance.</dd>
+<dd>Returns - Returns True if all values are 0 and M33 is 1 within tolerance.</dd>
+<dd>since 6.12</dd>
+<dt>void Linearize()</dt>
+<dd>Affineize() and replaces the last column with (0 0 0 1)^T, discarding any translation part of this transform.</dd>
+<dd>since 6.12</dd>
+<dt>bool Orthogonalize(double tolerance)</dt>
+<dd>Force the linear part of this transformation to be a rotation (or a rotation with reflection).
+Use DecomposeRigid(T,R) to find the nearest rotation.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.12</dd>
+<dt>float[] ToFloatArray(bool rowDominant)</dt>
+<dd>Return the matrix as a linear array of 16 float values</dd>
+<dd>since 5.9</dd>
+<dt>string ToString()</dt>
+<dd>Returns a string representation of this transform.</dd>
+<dd>Returns - A textual representation.</dd>
+<dd>since (unknown)</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> TransformBoundingBox(BoundingBox bbox)</dt>
+<dd>Computes a new boundingbox that is the smallest axis aligned
+boundingbox that contains the transformed result of its 8 original corner
+points.</dd>
+<dd>Returns - A new bounding box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] TransformList(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Given a list, an array or any enumerable set of points, computes a new array of tranformed points.</dd>
+<dd>Returns - A new array.</dd>
+<dt>Transform Transpose()</dt>
+<dd>Flip row/column values</dd>
+<dd>since 5.9</dd>
+<dt>bool TryGetInverse(Transform inverseTransform)</dt>
+<dd>Attempts to get the inverse transform of this transform.</dd>
+<dd>Returns - True on success. 
+If False is returned and this Transform is Invalid, inserveTransform will be set to this Transform. 
+If False is returned and this Transform is Valid, inverseTransform will be set to a pseudo inverse.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Transform</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

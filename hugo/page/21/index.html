@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,129 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/filepdfeventargs/">
-        <h3>FilePdfEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/lineardimensionobject/">
+        <h3>LinearDimensionObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/filepdfeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/lineardimensionobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Used for events that are fired while constructing/saving a Pdf
-public class FilePdfEventArgsProperties FilePdf Pdf  (summary) The document that is about to be written (since) 6.0  
+    Namespace: Rhino.DocObjects
+Rhino Object that represents a linear dimension geometry and attributes
+public class LinearDimensionObject : DimensionObjectProperties  LinearDimension LinearDimensionGeometry Get the dimension geometry for this object. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileply/">
-        <h3>FilePly</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/linetype/">
+        <h3>Linetype</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileply/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/linetype/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Support for ply file format
-public class FilePlyMethods static WriteFileResult Write(String filename,RhinoDoc doc,FilePlyWriteOptions options)  (summary) Write a ply file based on the contents of a RhinoDoc (since) 7.0 (returns) WriteFileResult This is some return comment  
+    Namespace: Rhino.DocObjects
+[Serializable]public class Linetype : ModelComponentConstructors  Linetype()   Properties  ModelComponentType ComponentType Returns . since 6.0 bool IsDeleted Gets a value indicating whether this linetype has been deleted and is currently in the Undo buffer. bool IsModified True if this linetype has been modified by LinetypeTable.ModifyLinetype() and the modifications can be undone. bool IsReference Gets a value indicting whether this linetype is a referenced linetype. Referenced linetypes are part of referenced documents.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileplywriteoptions/">
-        <h3>FilePlyWriteOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/linetypetable/">
+        <h3>LinetypeTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileplywriteoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/linetypetable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-public class FilePlyWriteOptionsConstructors FilePlyWriteOptions(FileWriteOptions writeOptions)  (summary) (since) 7.0  Properties bool ExportASCII  (summary) Determines whether to export as Ascii. (since) 7.0  bool ExportColors  (summary) Determines whether to export vertex colors. (since) 7.0  bool ExportMaterial  (summary) Determines whether to export a material. (since) 7.0  bool ExportNormals  (summary) Determines whether to export vertex normals. (since) 7.0  MeshingParameters MeshingParameters  (summary) (since) 7.
+    Namespace: Rhino.DocObjects.Tables
+public class LinetypeTable :RhinoDocCommonTable&lt;Linetype&gt;, ICollection&lt;Linetype&gt;Properties  int ActiveCount Returns number of linetypes in the linetypes table, excluding deleted linetypes. string ByLayerLinetypeName Returns the text name of the bylayer linetype. string ByParentLinetypeName Returns the text name of the byparent linetype. since 6.0 ModelComponentType ComponentType  since 6.0 string ContinuousLinetypeName Returns the text name of the continuous linetype. int Count Returns number of linetypes in the linetypes table, including deleted linetypes.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/filereadoptions/">
-        <h3>FileReadOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/materialref/">
+        <h3>MaterialRef</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/filereadoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/materialref/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-public class FileReadOptionsConstructors FileReadOptions()  (summary) (since) 5.0  Properties bool BatchMode  (summary) True means you cannot ask questions during reading. (no dialogs, no &ldquo;getters&rdquo;, etc.) (since) 5.0  bool ImportMode   (summary) True means we are merging whatever is being read into an existing document. This means you need to consider things like:
-If the information being read is in a different unit system, it should be scaled if UseScaleGeometry is true.
+    Namespace: Rhino.DocObjects
+public class MaterialRef : IDisposableProperties  Guid BackFaceMaterialId The Id of the Material used to render the back of an object. since 5.10 int BackFaceMaterialIndex The index of the material used to render the back of an object since 5.10 Guid FrontFaceMaterialId The Id of the Material used to render the front of an object. since 5.10 int FrontFaceMaterialIndex The index of the material used to render the front of an object since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/filereference/">
-        <h3>FileReference</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/materialrefcreateparams/">
+        <h3>MaterialRefCreateParams</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/filereference/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/materialrefcreateparams/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Manages a reference to an existing or nonexisting file, using either or both absolute or relative paths. Once constructed, this class is immutable.
-public class FileReferenceConstructors FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status)  (summary) Constructs a new instance of the FileReference class, given a fullPath, a relativePath a content hash and a status value. (since) 6.0  Properties ContentHash ContentHash  (summary) Gets the content hash. (since) 6.0  string FullPath  (summary) Gets the absolute path of this file reference.
+    Namespace: Rhino.DocObjects
+Options passed to MaterialRefs.Create
+public class MaterialRefCreateParamsProperties  Guid BackFaceMaterialId The Id of the Material used to render the back of an object. since 5.10 int BackFaceMaterialIndex The index of the material used to render the back of an object since 5.10 Guid FrontFaceMaterialId The Id of the Material used to render the front of an object. since 5.10 int FrontFaceMaterialIndex The index of the material used to render the front of an object since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/filesettings/">
-        <h3>FileSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/meshdisplayattributes/">
+        <h3>MeshDisplayAttributes</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/filesettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/meshdisplayattributes/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties relating Rhino files.
-public class FileSettingsProperties static bool AutoSaveEnabled  (summary) Enables or disables Rhino&rsquo;s automatic file saving mechanism. (since) 5.0  static string AutoSaveFile  (summary) the file name used by Rhino&rsquo;s automatic file saving mechanism. (since) 5.0  static System.TimeSpan AutoSaveInterval  (summary) how often the document will be saved when Rhino&rsquo;s automatic file saving mechanism is enabled. (since) 5.0  static bool AutoSaveMeshes  (summary) save render and display meshes in autosave file.
+    Namespace: Rhino.Display
+public class MeshDisplayAttributesProperties  Color AllMeshWiresColor Color.Empty means that we are NOT using a single color for all mesh wires. bool HighlightMeshes  int MeshWireThickness  bool ShowMeshVertices  bool ShowMeshWires   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/filesettingsstate/">
-        <h3>FileSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/mostrecentcommanddescription/">
+        <h3>MostRecentCommandDescription</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/filesettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/mostrecentcommanddescription/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class FileSettingsStateProperties bool AutoSaveEnabled  (summary) Enables or disables Rhino&rsquo;s automatic file saving mechanism. (since) 5.0  System.TimeSpan AutoSaveInterval  (summary) How often the document will be saved when Rhino&rsquo;s automatic file saving mechanism is enabled. (since) 5.0  bool AutoSaveMeshes  (summary) Saves render and display meshes in autosave file. (since) 5.0  bool ClipboardCopyToPreviousRhinoVersion  (summary) Gets or sets a value that decides if copies to the clipboard are performed in both the current and previous Rhino clipboard formats.
+    Namespace: Rhino.Commands
+Stores the macro and display string of the most recent command.
+public class MostRecentCommandDescriptionProperties  string DisplayString  string Macro   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileslc/">
-        <h3>FileSlc</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/mousecursor/">
+        <h3>MouseCursor</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileslc/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/mousecursor/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Support for writing slice (slc) file format
-public class FileSlcMethods static bool Write(string filename,RhinoDoc doc,FileSlcWriteOptions options)  (summary) Write a slc file based on the contents of a RhinoDoc (since) 7.0 (returns) bool This is some return comment  
+    Namespace: Rhino.UI
+Contains static methods to control the mouse icon.
+public class MouseCursorProperties  static Point2d Location Retrieves the position of the mouse cursor, in screen coordinates since 5.8  Methods  static void SetToolTip(string tooltip) Sets a cursor tooltip string shown next to the mouse cursor. Overrides all cursor tooltip panes.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileslcwriteoptions/">
-        <h3>FileSlcWriteOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/objectpropertiespage/">
+        <h3>ObjectPropertiesPage</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileslcwriteoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/objectpropertiespage/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Options used when writing a slc file
-public class FileSlcWriteOptionsProperties double AngleBetweenSegmentsDegrees  (summary) The angle that determines how smooth the polylines of the slice curves will be. When the number is small you will get a smooth final output but it will take more time to export and a larger file. (since) 7.0  Point3d EndPoint  (summary) End of the slicing normal (since) 7.0  double SliceDistance  (summary) The distance between the slices or layers of curves that your final output will contain.
+    Namespace: Rhino.UI
+Base class used to add object property user interface panels
+public class ObjectPropertiesPageProperties  bool AllObjectsMustBeSupported Returns True when running on Mac which requires only objects of SupportedTypes. Returns False when running on Windows which only requires a single item of SupportedTypes to be selected. Override if you wish to change the above behavior.
+ since 6.7 string EnglishPageTitle English string used to describe this page Icon Icon (OBSOLETE - Override PageIcon instead) Icon to display in the object properties tab control string LocalPageTitle Localized page description string, returns the EnglishPageTitle by default.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/filestp/">
-        <h3>FileStp</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/objectpropertiespagecollection/">
+        <h3>ObjectPropertiesPageCollection</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/filestp/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/objectpropertiespagecollection/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Support for writing step (stp) file format
-public class FileStpMethods static bool Write(string filename,RhinoDoc doc,FileStpWriteOptions options)  (summary) Write a stp file based on the contents of a RhinoDoc (since) 7.0 (returns) bool This is some return comment  
+    Namespace: Rhino.UI
+Passed to Rhino.PlugIns.PlugIn.ObjectPropertiesPages to allow a plug-in to add custom ObjectPropertiesPage pages to the Rhino properties panel.
+public class ObjectPropertiesPageCollectionProperties  RhinoDoc Document Document associated with the Rhino properties panel. since 7.0 uint DocumentRuntimeSerailNumber Document associated with the Rhino properties panel. since 7.0  Methods  void Add(ObjectPropertiesPage page) Custom page to add since 7.0  
   </div>
   
 

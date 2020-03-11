@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Extrusion &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents an extrusion, or objects such as beams or linearly extruded elements, that can be represented by profile curves and two miter planes at the extremes.
+[Serializable]public class Extrusion : SurfaceConstructors  Extrusion() Initializes a new instance of the class.  Properties  int CapCount Gets the amount of capping surfaces. bool IsCappedAtBottom Gets a value indicating whether the surface that fills the bottom profile is existing.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Extrusion</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents an extrusion, or objects such as beams or linearly extruded elements,
+that can be represented by profile curves and two miter planes at the extremes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Extrusion</span> : Surface
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Extrusion()</dt>
+<dd>Initializes a new instance of the  class.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>int CapCount</dt>
+<dd>Gets the amount of capping surfaces.</dd>
+<dt>bool IsCappedAtBottom</dt>
+<dd>Gets a value indicating whether the surface that fills the bottom profile is existing.</dd>
+<dt>bool IsCappedAtTop</dt>
+<dd>Gets a value indicating whether the surface that fills the top profile is existing.</dd>
+<dt>bool IsMiteredAtEnd</dt>
+<dd>Gets a value indicating whether a miter plane at the end is defined.</dd>
+<dt>bool IsMiteredAtStart</dt>
+<dd>Returns a value indicating whether a miter plane at start is defined.</dd>
+<dt>bool IsSolid</dt>
+<dd>Gets a value indicating whether there is no gap among all surfaces constructing this object.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> MiterPlaneNormalAtEnd</dt>
+<dd>Gets or sets the normal of the miter plane at the end in profile coordinates.
+In profile coordinates, 0,0,1 always maps to the extrusion axis</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> MiterPlaneNormalAtStart</dt>
+<dd>Gets or sets the normal of the miter plane at the start in profile coordinates.
+In profile coordinates, 0,0,1 always maps to the extrusion axis</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PathEnd</dt>
+<dd>Gets the end point of the path.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PathStart</dt>
+<dd>Gets the start point of the path.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> PathTangent</dt>
+<dd>Gets the up vector of the path.</dd>
+<dt>int ProfileCount</dt>
+<dd>Gets the amount of profile curves.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Extrusion Create(Curve planarCurve,double height,bool cap)</dt>
+<dd>Creates an extrusion of a 3d curve (which must be planar) and a height.</dd>
+<dd>Returns - If the input is valid, then a new extrusion is returned. Otherwise None is returned</dd>
+<dd>since 5.1</dd>
+<dt>static Extrusion CreateBoxExtrusion(Box box,bool cap)</dt>
+<dd>Gets an extrusion from a box.</dd>
+<dd>Returns - Extrusion on success. None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>static Extrusion CreateCylinderExtrusion(Cylinder cylinder,bool capBottom,bool capTop)</dt>
+<dd>Gets an extrusion form of a cylinder.</dd>
+<dd>Returns - Extrusion on success. None on failure.</dd>
+<dt>static Extrusion CreatePipeExtrusion(Cylinder cylinder,double otherRadius,bool capTop,bool capBottom)</dt>
+<dd>Gets an extrusion form of a pipe.</dd>
+<dd>Returns - Extrusion on success. None on failure.</dd>
+<dt>bool AddInnerProfile(Curve innerProfile)</dt>
+<dd>Adds an inner profile.</dd>
+<dd>Returns - True if the profile was set.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> GetMesh(MeshType meshType)</dt>
+<dd>Obtains a reference to a specified type of mesh for this extrusion.</dd>
+<dd>Returns - A mesh.</dd>
+<dd>since 5.6</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> GetPathPlane(double s)</dt>
+<dd>Gets the 3D plane perpendicular to the path at a normalized path parameter.</dd>
+<dd>Returns - A plane. The plane is Invalid on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> GetProfilePlane(double s)</dt>
+<dd>Gets the 3D plane containing the profile curve at a normalized path parameter.</dd>
+<dd>Returns - A plane. The plane is Invalid on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetProfileTransformation(double s)</dt>
+<dd>Gets the transformation that maps the xy profile curve to its 3d location.</dd>
+<dd>Returns - A Transformation. The transform is Invalid on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a>[] GetWireframe()</dt>
+<dd>Constructs all the Wireframe curves for this Extrusion.</dd>
+<dd>Returns - An array of Wireframe curves.</dd>
+<dd>since 5.6</dd>
+<dt><a href="/rhinocommon/rhino/geometry/linecurve/">LineCurve</a> PathLineCurve()</dt>
+<dd>Gets the line-like curve that is the conceptual axis of the extrusion.</dd>
+<dd>Returns - The path as a line curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Profile3d(ComponentIndex ci)</dt>
+<dd>Gets one of the profiles.</dd>
+<dd>Returns - The profile.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Profile3d(int profileIndex,double s)</dt>
+<dd>Gets a transversal isocurve of the extruded profile.</dd>
+<dd>Returns - The profile.</dd>
+<dt>int ProfileIndex(double profileParameter)</dt>
+<dd>Gets the index of the profile curve at a domain related to a parameter.</dd>
+<dd>Returns - -1 if profileParameter does not correspond to a point on the profile curve.
+When the profileParameter corresponds to the end of one profile and the
+beginning of the next profile, the index of the next profile is returned.</dd>
+<dt>bool SetOuterProfile(Curve outerProfile,bool cap)</dt>
+<dd>Sets the outer profile of the extrusion.</dd>
+<dd>Returns - True if the profile was set. If the outer profile is closed, then the
+extrusion may also have inner profiles. If the outer profile is open,
+the extrusion may not have inner profiles. If the extrusion already
+has a profile, the set will fail.</dd>
+<dt>bool SetPathAndUp(Point3d a,Point3d b,Vector3d up)</dt>
+<dd>Allows to set the two points at the extremes and the up vector.</dd>
+<dd>Returns - True if the operation succeeded; otherwise false.
+Setting up=a-b will make the operation fail.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep(bool splitKinkyFaces)</dt>
+<dd>Constructs a brep form of the extrusion. The outer profile is always the first face of the brep.
+If there are inner profiles, additional brep faces are created for each profile. If the
+outer profile is closed, then end caps are added as the last two faces of the brep.</dd>
+<dd>Returns - A brep with a similar shape like this extrustion, or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> WallEdge(ComponentIndex ci)</dt>
+<dd>Gets one of the longitudinal curves along the beam or extrusion.</dd>
+<dd>Returns - The profile.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/surface/">Surface</a> WallSurface(ComponentIndex ci)</dt>
+<dd>Gets one of the longitudinal surfaces of the extrusion.</dd>
+<dd>Returns - The surface.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Extrusion</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

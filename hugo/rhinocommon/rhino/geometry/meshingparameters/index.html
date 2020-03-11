@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshingParameters &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents settings used for creating a mesh representation of a brep or surface.
+public class MeshingParameters : IDisposableConstructors  MeshingParameters() Initializes a new instance with default values. Initial values are same as . MeshingParameters(double density) Initializes a new instance with simple values, similar to that of Rhino&amp;rsquo;s meshing slider interface. since 6.0 MeshingParameters(double density,double minimumEdgeLength) Initializes a new instance with simple values, similar to that of Rhino&amp;rsquo;s meshing slider interface.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshingParameters</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents settings used for creating a mesh representation of a brep or surface.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshingParameters</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>MeshingParameters()</dt>
+<dd>Initializes a new instance with default values.
+Initial values are same as .</dd>
+<dt>MeshingParameters(double density)</dt>
+<dd>Initializes a new instance with simple values, 
+similar to that of Rhino&rsquo;s meshing slider interface.</dd>
+<dd>since 6.0</dd>
+<dt>MeshingParameters(double density,double minimumEdgeLength)</dt>
+<dd>Initializes a new instance with simple values, 
+similar to that of Rhino&rsquo;s meshing slider interface.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static MeshingParameters Coarse</dt>
+<dd>Gets mesh creation parameters for coarse meshing. 
+This corresponds with the &ldquo;Jagged and Faster&rdquo; default in Rhino.</dd>
+<dt>static MeshingParameters Default</dt>
+<dd>Gets mesh creation parameters to create the default render mesh.
+Only use this if you plan on specifying your own custom meshing
+parameters.</dd>
+<dt>static MeshingParameters DefaultAnalysisMesh</dt>
+<dd>Gets mesh creation parameters to create the default analysis mesh.</dd>
+<dd>since 6.0</dd>
+<dt>static MeshingParameters FastRenderMesh</dt>
+<dd>Gets mesh creation parameters to create the a render mesh when 
+meshing speed is prefered over mesh quality.</dd>
+<dd>since 6.0</dd>
+<dt>static MeshingParameters Minimal</dt>
+<dd>Gets minimal meshing parameters.</dd>
+<dt>static MeshingParameters QualityRenderMesh</dt>
+<dd>Gets mesh creation parameters to create the a render mesh when mesh 
+quality is prefered over meshing speed.</dd>
+<dd>since 6.0</dd>
+<dt>static MeshingParameters Smooth</dt>
+<dd>Gets mesh creation parameters for smooth meshing. 
+This corresponds with the &ldquo;Smooth and Slower&rdquo; default in Rhino.</dd>
+<dt>bool ClosedObjectPostProcess</dt>
+<dd>Gets or sets a value indicating whether or not to post process non-closed meshes
+that should be closed. If the Brep being meshed is closed, JaggedSeams = false, 
+and ClosedObjectPostProcess = true, and the resulting mesh is not closed, then a
+post meshing process is applied to find and close gaps in the mesh. Typically the
+resulting mesh is not closed because the input Brep has a geometric flaw, like
+loops in trimming curve.</dd>
+<dd>since 6.0</dd>
+<dt>bool ComputeCurvature</dt>
+<dd>Gets or sets a value indicating whether or not surface curvature 
+data will be embedded in the mesh.</dd>
+<dt>double GridAmplification</dt>
+<dd>Gets or sets the grid amplification factor. 
+Values lower than 1.0 will decrease the number of initial quads, 
+values higher than 1.0 will increase the number of initial quads.</dd>
+<dt>double GridAngle</dt>
+<dd>Gets or sets the maximum allowed angle difference (in radians) 
+for a single sampling quad. The angle pertains to the surface normals.</dd>
+<dt>double GridAspectRatio</dt>
+<dd>Gets or sets the maximum allowed aspect ratio of sampling quads.</dd>
+<dt>int GridMaxCount</dt>
+<dd>Gets or sets the maximum number of grid quads in the initial sampling grid.</dd>
+<dt>int GridMinCount</dt>
+<dd>Gets or sets the minimum number of grid quads in the initial sampling grid.</dd>
+<dt>bool JaggedSeams</dt>
+<dd>Gets or sets whether or not the mesh is allowed to have jagged seams. 
+When this flag is set to true, meshes on either side of a Brep Edge will not match up.</dd>
+<dt>double MaximumEdgeLength</dt>
+<dd>Gets or sets the maximum allowed mesh edge length.</dd>
+<dt>double MinimumEdgeLength</dt>
+<dd>Gets or sets the minimum allowed mesh edge length.</dd>
+<dt>double MinimumTolerance</dt>
+<dd>Gets or sets the minimum tolerance.</dd>
+<dt>double RefineAngle</dt>
+<dd>Gets or sets the mesh parameter refine angle.</dd>
+<dt>bool RefineGrid</dt>
+<dd>Gets or sets a value indicating whether or not the sampling grid can be refined 
+when certain tolerances are not met.</dd>
+<dt>double RelativeTolerance</dt>
+<dd>Gets or sets the relative tolerance.</dd>
+<dt>bool SimplePlanes</dt>
+<dd>Gets or sets a value indicating whether or not planar areas are allowed 
+to be meshed in a simplified manner.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparametertexturerange/">MeshingParameterTextureRange</a> TextureRange</dt>
+<dd>Gets or sets how and if textures will be packed.</dd>
+<dd>since 6.0</dd>
+<dt>double Tolerance</dt>
+<dd>Gets or sets the maximum allowed edge deviation. 
+This tolerance is measured between the center of the mesh edge and the surface.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static MeshingParameters DocumentCurrentSetting(RhinoDoc doc)</dt>
+<dd>Gets the MeshingParameters that are currently set for a document.
+These are the same settings that are shown in the DocumentProperties
+&ldquo;mesh settings&rdquo; user interface.</dd>
+<dd>Returns - Meshing parameters of the document.</dd>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshingParameters</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

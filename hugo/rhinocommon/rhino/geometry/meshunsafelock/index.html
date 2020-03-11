@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshUnsafeLock &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Permits access to the underlying mesh raw data structures in an unsafe way.
+public class MeshUnsafeLock : IDisposableMethods  MeshFace* FacesArray(int length) Retrieves a pointer to the raw faces array, which uses 4 integers for each face. . Returns - The beginning of the vertex array. Item 0 is the first vertex, and item length-1 is the last valid one. since 6.20 Vector3f* NormalVector3fArray(int length) Retrieves a pointer to the raw mesh vertex normal array, which uses vectors defined with single precision floating point numbers, or throws an exception if none is available.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshUnsafeLock</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Permits access to the underlying mesh raw data structures in an unsafe way.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshUnsafeLock</span> : IDisposable
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>MeshFace* FacesArray(int length)</dt>
+<dd>Retrieves a pointer to the raw faces array, which uses 4 integers for each face.
+.</dd>
+<dd>Returns - The beginning of the vertex array. Item 0 is the first vertex,
+and item length-1 is the last valid one.</dd>
+<dd>since 6.20</dd>
+<dt>Vector3f* NormalVector3fArray(int length)</dt>
+<dd>Retrieves a pointer to the raw mesh vertex normal array, which uses vectors
+defined with single precision floating point numbers, or throws an exception if none is available.</dd>
+<dd>Returns - The beginning of the vertex array. Item 0 is the first vertex,
+and item length-1 is the last valid one.</dd>
+<dd>since 6.20</dd>
+<dt>void Release()</dt>
+<dd>Releases the lock and updates the underlying unmanaged data structures.</dd>
+<dd>since 6.0</dd>
+<dt>Point3d* VertexPoint3dArray(int length)</dt>
+<dd>Retrieves a pointer to the raw mesh vertex array, which uses coordinates
+defined with double precision floating point numbers, or throws an exception if none is available.</dd>
+<dd>Returns - The beginning of the vertex array. Item 0 is the first vertex,
+and item length-1 is the last valid one. If no array is available, None is returned.</dd>
+<dd>since 6.20</dd>
+<dt>Point3f* VertexPoint3fArray(int length)</dt>
+<dd>Retrieves a pointer to the raw mesh vertex array, which uses coordinates
+defined with single precision floating point numbers, or None if none is available.</dd>
+<dd>Returns - The beginning of the vertex array. Item 0 is the first vertex,
+and item length-1 is the last valid one. If no array is available, None is returned.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshUnsafeLock</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

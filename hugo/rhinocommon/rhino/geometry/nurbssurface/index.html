@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NurbsSurface &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a Non Uniform Rational B-Splines (NURBS) surface.
+[Serializable]public class NurbsSurface : Surface, IEpsilonComparable&amp;lt;NurbsSurface&amp;gt;Constructors  NurbsSurface(NurbsSurface other) Initializes a new NURBS surface by copying the values from another surface.  Properties  bool IsRational Gets a value indicating whether or not the nurbs surface is rational. NurbsSurfaceKnotList KnotsU The U direction knot vector. NurbsSurfaceKnotList KnotsV The V direction knot vector. int OrderU Gets the order in the U direction.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NurbsSurface</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a Non Uniform Rational B-Splines (NURBS) surface.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NurbsSurface</span> : Surface, IEpsilonComparable&lt;NurbsSurface&gt;
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>NurbsSurface(NurbsSurface other)</dt>
+<dd>Initializes a new NURBS surface by copying the values from another surface.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool IsRational</dt>
+<dd>Gets a value indicating whether or not the nurbs surface is rational.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/nurbssurfaceknotlist/">NurbsSurfaceKnotList</a> KnotsU</dt>
+<dd>The U direction knot vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/nurbssurfaceknotlist/">NurbsSurfaceKnotList</a> KnotsV</dt>
+<dd>The V direction knot vector.</dd>
+<dt>int OrderU</dt>
+<dd>Gets the order in the U direction.</dd>
+<dt>int OrderV</dt>
+<dd>Gets the order in the V direction.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/nurbssurfacepointlist/">NurbsSurfacePointList</a> Points</dt>
+<dd>Gets a collection of surface control points that form this surface.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static NurbsSurface Create(int dimension,bool isRational,int order0,int order1,int controlPointCount0,int controlPointCount1)</dt>
+<dd>Constructs a new NURBS surface with internal uninitialized arrays.</dd>
+<dd>Returns - A new NURBS surface, or None on error.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> CreateCurveOnSurface(Surface surface,IEnumerable<!-- raw HTML omitted --> points,double tolerance,bool periodic)</dt>
+<dd>Fit a sequence of 2d points on a surface to make a curve on the surface.</dd>
+<dd>Returns - A curve interpolating the points if successful, None on error.</dd>
+<dd>since 6.3</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a>[] CreateCurveOnSurfacePoints(Surface surface,IEnumerable<!-- raw HTML omitted --> fixedPoints,double tolerance,bool periodic,int initCount,int levels)</dt>
+<dd>Computes a discrete spline curve on the surface. In other words, computes a sequence 
+of points on the surface, each with a corresponding parameter value.</dd>
+<dd>Returns - A sequence of surface points, given by surface parameters, if successful.
+The number of output points is approximatelely: 2 ^ (level-1) * initCount * fixedPoints.Count.</dd>
+<dd>since 6.3</dd>
+<dt>static NurbsSurface CreateFromCone(Cone cone)</dt>
+<dd>Constructs a new NURBS surfaces from cone data.</dd>
+<dd>Returns - A new NURBS surface, or None on error.</dd>
+<dt>static NurbsSurface CreateFromCorners(Point3d corner1,Point3d corner2,Point3d corner3)</dt>
+<dd>Makes a surface from 3 corner points.</dd>
+<dd>Returns - The resulting surface or None on error.</dd>
+<dt>static NurbsSurface CreateFromCorners(Point3d corner1,Point3d corner2,Point3d corner3,Point3d corner4)</dt>
+<dd>Makes a surface from 4 corner points.
+This is the same as calling  with tolerance 0.</dd>
+<dd>Returns - the resulting surface or None on error.</dd>
+<dt>static NurbsSurface CreateFromCorners(Point3d corner1,Point3d corner2,Point3d corner3,Point3d corner4,double tolerance)</dt>
+<dd>Makes a surface from 4 corner points.</dd>
+<dd>Returns - The resulting surface or None on error.</dd>
+<dt>static NurbsSurface CreateFromCylinder(Cylinder cylinder)</dt>
+<dd>Constructs a new NURBS surfaces from cylinder data.</dd>
+<dd>Returns - A new NURBS surface, or None on error.</dd>
+<dt>static NurbsSurface CreateFromPoints(IEnumerable<!-- raw HTML omitted --> points,int uCount,int vCount,int uDegree,int vDegree)</dt>
+<dd>Constructs a NURBS surface from a 2D grid of control points.</dd>
+<dd>Returns - A NurbsSurface on success or None on failure.</dd>
+<dt>static NurbsSurface CreateFromSphere(Sphere sphere)</dt>
+<dd>Constructs a new NURBS surfaces from sphere data.</dd>
+<dd>Returns - A new NURBS surface, or None on error.</dd>
+<dt>static NurbsSurface CreateFromTorus(Torus torus)</dt>
+<dd>Constructs a new NURBS surfaces from torus data.</dd>
+<dd>Returns - A new NURBS surface, or None on error.</dd>
+<dt>static NurbsSurface CreateNetworkSurface(IEnumerable<!-- raw HTML omitted --> curves,int continuity,double edgeTolerance,double interiorTolerance,double angleTolerance,int error)</dt>
+<dd>Builds a surface from an autosorted network of curves/edges.</dd>
+<dd>Returns - A NurbsSurface or None on failure.</dd>
+<dt>static NurbsSurface CreateNetworkSurface(IEnumerable<!-- raw HTML omitted --> uCurves,int uContinuityStart,int uContinuityEnd,IEnumerable<!-- raw HTML omitted --> vCurves,int vContinuityStart,int vContinuityEnd,double edgeTolerance,double interiorTolerance,double angleTolerance,int error)</dt>
+<dd>Builds a surface from an ordered network of curves/edges.</dd>
+<dd>Returns - A NurbsSurface or None on failure.</dd>
+<dt>static NurbsSurface CreateRailRevolvedSurface(Curve profile,Curve rail,Line axis,bool scaleHeight)</dt>
+<dd>Constructs a railed Surface-of-Revolution.</dd>
+<dd>Returns - A NurbsSurface or None on failure.</dd>
+<dt>static NurbsSurface CreateRuledSurface(Curve curveA,Curve curveB)</dt>
+<dd>Constructs a ruled surface between two curves. Curves must share the same knot-vector.</dd>
+<dd>Returns - A ruled surface on success or None on failure.</dd>
+<dt>static NurbsSurface CreateThroughPoints(IEnumerable<!-- raw HTML omitted --> points,int uCount,int vCount,int uDegree,int vDegree,bool uClosed,bool vClosed)</dt>
+<dd>Constructs a NURBS surface from a 2D grid of points.</dd>
+<dd>Returns - A NurbsSurface on success or None on failure.</dd>
+<dt>static bool MakeCompatible(Surface surface0,Surface surface1,NurbsSurface nurb0,NurbsSurface nurb1)</dt>
+<dd>For expert use only. Makes a pair of compatible NURBS surfaces based on two input surfaces.</dd>
+<dd>Returns - True if successsful, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>void CopyFrom(NurbsSurface other)</dt>
+<dd>Copies this NURBS surface from another NURBS surface.</dd>
+<dt>bool EpsilonEquals(NurbsSurface other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool IncreaseDegreeU(int desiredDegree)</dt>
+<dd>Increase the degree of this surface in U direction.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 5.10</dd>
+<dt>bool IncreaseDegreeV(int desiredDegree)</dt>
+<dd>Increase the degree of this surface in V direction.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 5.10</dd>
+<dt>bool MakeNonRational()</dt>
+<dd>Makes this surface non-rational.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool MakeRational()</dt>
+<dd>Makes this surface rational.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool UVNDirectionsAt(double u,double v,Vector3d uDir,Vector3d vDir,Vector3d nDir)</dt>
+<dd>Calculates the U, V, and N directions of a NURBS surface at a u,v parameter similar to the method used by Rhino&rsquo;s MoveUVN command.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NurbsSurface</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

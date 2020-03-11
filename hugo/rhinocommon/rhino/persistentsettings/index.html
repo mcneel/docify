@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PersistentSettings &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino
+A dictionary of SettingValue items.
+[Serializable]public class PersistentSettings : ISerializableProperties  static PersistentSettings RhinoAppSettings  since 6.14 static string StringListRootKey Adding this string to a string list when calling SetStringList will cause the ProgramData setting to get inserted at that location in the list. ICollectionChildKeys Gets a collection containing the keys in the settings dictionary. since 6.0 bool HiddenFromUserInterface If False then values will appear in the EditOptions window since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PersistentSettings</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino</a></em></p>
+<p>A dictionary of SettingValue items.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PersistentSettings</span> : ISerializable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static PersistentSettings RhinoAppSettings</dt>
+<dd></dd>
+<dd>since 6.14</dd>
+<dt>static string StringListRootKey</dt>
+<dd>Adding this string to a string list when calling SetStringList will cause the ProgramData setting to
+get inserted at that location in the list.</dd>
+<dt>ICollection<!-- raw HTML omitted --> ChildKeys</dt>
+<dd>Gets a collection containing the keys in the settings dictionary.</dd>
+<dd>since 6.0</dd>
+<dt>bool HiddenFromUserInterface</dt>
+<dd>If False then values will appear in the EditOptions window</dd>
+<dd>since 6.0</dd>
+<dt>ICollection<!-- raw HTML omitted --> Keys</dt>
+<dd>Gets a collection containing the keys in the settings dictionary.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static PersistentSettings FromPlugInId(Guid pluginId)</dt>
+<dd></dd>
+<dt>PersistentSettings AddChild(string key)</dt>
+<dd>Call this method to add a new child key, if the key is exists then the
+existing key is returned otherwise a new empty 
+child key is added and the new settings are returned.</dd>
+<dd>Returns - If the key is exists then the existing key is returned otherwise a new
+empty  child key is added and the new
+settings are returned.</dd>
+<dd>since 6.0</dd>
+<dt>void ClearChangedFlag()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ContainsChangedValues()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ContainsModifiedValues(PersistentSettings allUserSettings)</dt>
+<dd></dd>
+<dt>void DeleteChild(string key)</dt>
+<dd>Call this method to delete a child settings key.</dd>
+<dd>since 6.0</dd>
+<dt>void DeleteItem(string key)</dt>
+<dd></dd>
+<dt>bool GetBool(string key)</dt>
+<dd></dd>
+<dt>bool GetBool(string key,bool defaultValue)</dt>
+<dd></dd>
+<dt>bool GetBool(string key,bool defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>byte GetByte(string key)</dt>
+<dd></dd>
+<dt>byte GetByte(string key,byte defaultValue)</dt>
+<dd></dd>
+<dt>byte GetByte(string key,byte defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>char GetChar(string key)</dt>
+<dd></dd>
+<dt>char GetChar(string key,char defaultValue)</dt>
+<dd></dd>
+<dt>char GetChar(string key,char defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>PersistentSettings GetChild(string key)</dt>
+<dd>Call this method to get a nested settings 
+instance, will throw a  exception if
+the key does not exist.</dd>
+<dd>Returns - Returns persistent settings for the specified key or throws an
+exception if the key is invalid.</dd>
+<dd>since 6.0</dd>
+<dt>Color GetColor(string key)</dt>
+<dd></dd>
+<dt>Color GetColor(string key,Color defaultValue)</dt>
+<dd></dd>
+<dt>Color GetColor(string key,Color defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>DateTime GetDate(string key)</dt>
+<dd></dd>
+<dt>DateTime GetDate(string key,DateTime defaultValue)</dt>
+<dd></dd>
+<dt>DateTime GetDate(string key,DateTime defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>double GetDouble(string key)</dt>
+<dd></dd>
+<dt>double GetDouble(string key,double defaultValue)</dt>
+<dd></dd>
+<dt>double GetDouble(string key,double defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>T GetEnumValue(String key)</dt>
+<dd>Get a stored enum value using a custom key.</dd>
+<dd>since 5.4</dd>
+<dt>T GetEnumValue(String key,T defaultValue)</dt>
+<dd>Gets a stored enum value using a custom key, or return default value if not found.</dd>
+<dd>since 5.4</dd>
+<dt>T GetEnumValue(T defaultValue)</dt>
+<dd>Get a stored enum value, or return default value if not found</dd>
+<dd>since 5.4</dd>
+<dt>Guid GetGuid(string key)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Guid GetGuid(string key,Guid defaultValue)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Guid GetGuid(string key,Guid defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int GetInteger(string key)</dt>
+<dd></dd>
+<dt>int GetInteger(string key,int defaultValue)</dt>
+<dd></dd>
+<dt>int GetInteger(string key,int defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int GetInteger(string key,int defaultValue,int bound,bool boundIsLower)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int GetInteger(string key,int defaultValue,int lowerBound,int upperBound)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Point GetPoint(string key)</dt>
+<dd></dd>
+<dt>System.Drawing.Point GetPoint(string key,Point defaultValue)</dt>
+<dd></dd>
+<dt>System.Drawing.Point GetPoint(string key,Point defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetPoint3d(string key)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetPoint3d(string key,Point3d defaultValue)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetPoint3d(string key,Point3d defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Rectangle GetRectangle(string key)</dt>
+<dd></dd>
+<dt>Rectangle GetRectangle(string key,Rectangle defaultValue)</dt>
+<dd></dd>
+<dt>Rectangle GetRectangle(string key,Rectangle defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool GetSettingIsHiddenFromUserInterface(string key)</dt>
+<dd>Values read from all users settings files will be marked as read-only
+which will cause any future calls to Set&hellip; to fail.</dd>
+<dd>Returns - Returns True if the setting is read-only otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetSettingIsHiddenFromUserInterface(string key,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd>Values read from all users settings files will be marked as read-only
+which will cause any future calls to Set&hellip; to fail.</dd>
+<dd>Returns - Returns True if the setting is read-only otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetSettingIsReadOnly(string key)</dt>
+<dd>Values read from all users settings files will be marked as read-only
+which will cause any future calls to Set&hellip; to fail.</dd>
+<dd>Returns - Returns True if the setting is read-only otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>Type GetSettingType(string key)</dt>
+<dd>Gets the type of the last value passed to Set&hellip; or Get&hellip; for the
+specified setting.</dd>
+<dd>Returns - Type of the last value passed to Set&hellip; or Get&hellip; for the specified
+setting.</dd>
+<dd>since 6.0</dd>
+<dt>Size GetSize(string key)</dt>
+<dd></dd>
+<dt>Size GetSize(string key,Size defaultValue)</dt>
+<dd></dd>
+<dt>Size GetSize(string key,Size defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>string GetString(string key)</dt>
+<dd></dd>
+<dt>string GetString(string key,string defaultValue)</dt>
+<dd></dd>
+<dt>string GetString(string key,string defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>KeyValuePair&lt;string, string&gt;[] GetStringDictionary(string key)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>KeyValuePair&lt;string, string&gt;[] GetStringDictionary(string key,KeyValuePair&lt;string, string&gt;[] defaultValue)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>KeyValuePair&lt;string, string&gt;[] GetStringDictionary(string key,KeyValuePair&lt;string, string&gt;[] defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>string[] GetStringList(string key)</dt>
+<dd></dd>
+<dt>string[] GetStringList(string key,string[] defaultValue)</dt>
+<dd></dd>
+<dt>string[] GetStringList(string key,string[] defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>uint GetUnsignedInteger(string key)</dt>
+<dd></dd>
+<dt>uint GetUnsignedInteger(string key,uint defaultValue)</dt>
+<dd></dd>
+<dt>uint GetUnsignedInteger(string key,uint defaultValue,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>EventHandler&lt;PersistentSettingsEventArgs<!-- raw HTML omitted -->&gt; GetValidator(string key)</dt>
+<dd>Provides a way to find a ready-to-use validator for the
+PersistentSetting class for the given the key, or obtaining null.</dd>
+<dd>Returns - A valid validator, or None if no validator was found.</dd>
+<dt>void HideSettingFromUserInterface(string key)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void RegisterSettingsValidator(string key,EventHandler&lt;PersistentSettingsEventArgs<!-- raw HTML omitted -->&gt; validator)</dt>
+<dd>Sets a validator for a given key.
+Note to implementers: parameter T should be one of the
+supported types for the PersistentSettings class and should match the type associated with the key.This method allows to use anonymous methods and lambda expressions.</dd>
+<dd>since (unknown)</dd>
+<dt>void SetBool(string key,bool value)</dt>
+<dd></dd>
+<dt>void SetByte(string key,byte value)</dt>
+<dd></dd>
+<dt>void SetChar(string key,char value)</dt>
+<dd></dd>
+<dt>void SetColor(string key,Color value)</dt>
+<dd></dd>
+<dt>void SetDate(string key,DateTime value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,bool value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,byte value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,char value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,Color value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,DateTime value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,double value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,Guid value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetDefault(string key,int value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,KeyValuePair&lt;string, string&gt;[] value)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>void SetDefault(string key,Point value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,Point3d value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,Rectangle value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,Size value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,string value)</dt>
+<dd></dd>
+<dt>void SetDefault(string key,string[] value)</dt>
+<dd></dd>
+<dt>void SetDouble(string key,double value)</dt>
+<dd></dd>
+<dt>void SetEnumValue(String key,T value)</dt>
+<dd>Set an enum value in the settings using a custom key</dd>
+<dd>since 5.4</dd>
+<dt>void SetEnumValue(T enumValue)</dt>
+<dd>Set an enum value in the settings.</dd>
+<dd>since 5.4</dd>
+<dt>void SetGuid(string key,Guid value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetInteger(string key,int value)</dt>
+<dd></dd>
+<dt>void SetPoint(string key,Point value)</dt>
+<dd></dd>
+<dt>void SetPoint3d(string key,Point3d value)</dt>
+<dd></dd>
+<dt>void SetRectangle(string key,Rectangle value)</dt>
+<dd></dd>
+<dt>void SetSize(string key,Size value)</dt>
+<dd></dd>
+<dt>void SetString(string key,string value)</dt>
+<dd></dd>
+<dt>void SetStringDictionary(string key,KeyValuePair&lt;string, string&gt;[] value)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>void SetStringList(string key,string[] value)</dt>
+<dd>Including a item with the value of StringListRootKey will cause the ProgramData value to get inserted at
+that location in the list when calling GetStringList.</dd>
+<dt>void SetUnsignedInteger(string key,uint value)</dt>
+<dd></dd>
+<dt>bool TryGetBool(string key,bool value)</dt>
+<dd></dd>
+<dt>bool TryGetBool(string key,bool value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetByte(string key,byte value)</dt>
+<dd></dd>
+<dt>bool TryGetByte(string key,byte value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetChar(string key,char value)</dt>
+<dd></dd>
+<dt>bool TryGetChar(string key,char value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetChild(string key,PersistentSettings value)</dt>
+<dd>Call this method to get a nested settings 
+instance, will return True if the key exists and value was set
+otherwise; will return False and value will be set to null.</dd>
+<dd>Returns - Returns True if the key exists and value was set otherwise; returns
+false.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetColor(string key,Color value)</dt>
+<dd></dd>
+<dt>bool TryGetColor(string key,Color value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetDate(string key,DateTime value)</dt>
+<dd></dd>
+<dt>bool TryGetDate(string key,DateTime value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetDefault(string key,bool value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,byte value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,char value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,Color value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,DateTime value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,double value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,int value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,Point3d value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,Rectangle value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,Size value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,string value)</dt>
+<dd></dd>
+<dt>bool TryGetDefault(string key,string[] value)</dt>
+<dd></dd>
+<dt>bool TryGetDouble(string key,double value)</dt>
+<dd></dd>
+<dt>bool TryGetDouble(string key,double value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetEnumValue(String key,T enumValue)</dt>
+<dd>Attempt to get the stored value for an enum setting using a custom key. Note: the enum value ALWAYS gets assigned!
+Be sure to check for success of this method to prevent erroneous use of the value.</dd>
+<dd>Returns - True if successful</dd>
+<dd>since 5.4</dd>
+<dt>bool TryGetGuid(string key,Guid value)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetGuid(string key,Guid value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetInteger(string key,int value)</dt>
+<dd></dd>
+<dt>bool TryGetInteger(string key,int value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetPoint(string key,Point value)</dt>
+<dd></dd>
+<dt>bool TryGetPoint(string key,Point value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetPoint3d(string key,Point3d value)</dt>
+<dd></dd>
+<dt>bool TryGetPoint3d(string key,Point3d value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetRectangle(string key,Rectangle value)</dt>
+<dd></dd>
+<dt>bool TryGetRectangle(string key,Rectangle value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetSettingIsHiddenFromUserInterface(string key,bool value)</dt>
+<dd>Values read from all users settings files will be marked as read-only
+which will cause any future calls to Set&hellip; to fail.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetSettingIsHiddenFromUserInterface(string key,bool value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd>Values read from all users settings files will be marked as read-only
+which will cause any future calls to Set&hellip; to fail.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetSettingIsReadOnly(string key,bool value)</dt>
+<dd>Values read from all users settings files will be marked as read-only
+which will cause any future calls to Set&hellip; to fail.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetSettingType(string key,Type type)</dt>
+<dd>Get the type of the last value passed to Set&hellip; or Get&hellip; for the
+specified setting.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetSize(string key,Size value)</dt>
+<dd></dd>
+<dt>bool TryGetSize(string key,Size value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetString(string key,string value)</dt>
+<dd></dd>
+<dt>bool TryGetString(string key,string value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetStringDictionary(string key,KeyValuePair&lt;string, string&gt;[] value)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>bool TryGetStringDictionary(string key,KeyValuePair&lt;string, string&gt;[] value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>bool TryGetStringList(string key,string[] value)</dt>
+<dd></dd>
+<dt>bool TryGetStringList(string key,string[] value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetUnsignedInteger(string key,uint value)</dt>
+<dd></dd>
+<dt>bool TryGetUnsignedInteger(string key,uint value,IEnumerable<!-- raw HTML omitted --> legacyKeyList)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PersistentSettings</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

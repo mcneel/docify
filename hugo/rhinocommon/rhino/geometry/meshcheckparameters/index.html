@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshCheckParameters &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Output of a mesh checking operations.
+Properties  bool CheckForBadNormals If true, then then look for vertex normals that are not unit vectors, are zero length or vary greatly from the general direction of the face normals. since 7.0 bool CheckForDegenerateFaces If true, then look for triangles and quads that have zero area and quads where one sub triangle has zero area. since 7.0 bool CheckForDisjointMeshes If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshCheckParameters</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Output of a mesh checking operations.</p>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool CheckForBadNormals</dt>
+<dd>If true, then then look for vertex normals that are not unit vectors,
+are zero length or vary greatly from the general direction of the
+face normals.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForDegenerateFaces</dt>
+<dd>If true, then look for triangles and quads that have zero area and quads
+where one sub triangle has zero area.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForDisjointMeshes</dt>
+<dd>If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.<br>
+(i.e. an island of faces, or many islands, that have a boundary of naked edges)</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForDuplicateFaces</dt>
+<dd>If true, then look for faces that have vertexes (not necessarily vertex indexes) that are identical.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForExtremelyShortEdges</dt>
+<dd>If true, then look for topological edges where the distance between the
+endpoints is less than ExtremelyShortEdgeDistance.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForInvalidNgons</dt>
+<dd>If true, then look for ngons that have invalid information.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForNakedEdges</dt>
+<dd>If true, then look for topological edges in the mesh topology where the
+face count is 1. Note, this check is also made if CheckForDuplicateFaces
+is True but the output is not shown if CheckForNakedEdges is false.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForNonManifoldEdges</dt>
+<dd>If true, then look for topological edges in the mesh topology where the
+face count is greater than 2. Note, this check is also made if
+CheckForDuplicateFaces is True but the output is not shown if 
+CheckForNonManifoldEdges is false.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForRandomFaceNormals</dt>
+<dd>If true, then look for adjacent faces that have the same edge orientation.
+This typically means that clockwise/counterclockwise orientation, and face normal
+are not in sync.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForSelfIntersection</dt>
+<dd>If true, then look for self intersections.</dd>
+<dd>since 7.0</dd>
+<dt>bool CheckForUnusedVertices</dt>
+<dd>If true, then look for vertices that are not referenced by any face in the mesh.</dd>
+<dd>since 7.0</dd>
+<dt>int DegenerateFaceCount</dt>
+<dd>Gets the total degenerate face count for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int DisjointMeshCount</dt>
+<dd>Gets the total count of disjoint pieces for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int DuplicateFaceCount</dt>
+<dd>Gets the total count of duplicate faces for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int ExtremelyShortEdgeCount</dt>
+<dd>Gets the total number of extremely short edges for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int InvalidNgonCount</dt>
+<dd>Gets the total number of invalid ngons for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int NakedEdgeCount</dt>
+<dd>Gets the total number of naked edges for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int NonManifoldEdgeCount</dt>
+<dd>Gets the total number of non-manifold edges for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int NonUnitVectorNormalCount</dt>
+<dd>Get the total count of normals that are not unit vectors for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int RandomFaceNormalCount</dt>
+<dd>Gets the total count of random face normals for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int SelfIntersectingPairsCount</dt>
+<dd>Gets the total count of self intersections for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int UnusedVertexCount</dt>
+<dd>Gets the total count of unused vertices for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int VertexFaceNormalsDifferCount</dt>
+<dd>Gets the total count of vertex normals that differ greatly from face 
+normals for all meshes.</dd>
+<dd>since 7.0</dd>
+<dt>int ZeroLengthNormalCount</dt>
+<dd>Gets the total count of zero length normals for all meshes.</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static MeshCheckParameters Defaults()</dt>
+<dd>Gets the default mesh check parameters.</dd>
+<dd>Returns - The default mesh check parameters.</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshCheckParameters</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

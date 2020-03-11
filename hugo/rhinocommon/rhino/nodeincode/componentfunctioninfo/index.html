@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ComponentFunctionInfo &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.NodeInCode
+Defines the base class for a function representing a component. This class is abstract.
+public class ComponentFunctionInfoProperties  Guid ComponentGuid The unique identifier of the Grasshopper component. It is the original developer&amp;rsquo;s responsibility to ensure that this ID is unique. since 6.0 Delegate Delegate Returns a delegate that can be directly invoked using a list of arguments. This flattens trees. since 6.0 Delegate DelegateNoWarnings Returns a delegate that can be directly invoked using a list of arguments.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ComponentFunctionInfo</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.NodeInCode</a></em></p>
+<p>Defines the base class for a function representing a component.
+This class is abstract.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ComponentFunctionInfo</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>Guid ComponentGuid</dt>
+<dd>The unique identifier of the Grasshopper component.
+It is the original developer&rsquo;s responsibility to ensure that this ID is unique.</dd>
+<dd>since 6.0</dd>
+<dt>Delegate Delegate</dt>
+<dd>Returns a delegate that can be directly invoked using a list of arguments.
+This flattens trees.</dd>
+<dd>since 6.0</dd>
+<dt>Delegate DelegateNoWarnings</dt>
+<dd>Returns a delegate that can be directly invoked using a list of arguments.
+This flattens trees.</dd>
+<dd>since 6.0</dd>
+<dt>Delegate DelegateTree</dt>
+<dd>Returns a delegate that can be directly invoked using a list of arguments.
+This considers trees and simplifies single-output components.</dd>
+<dd>since 6.0</dd>
+<dt>Delegate DelegateTreeNoWarnings</dt>
+<dd>Returns a delegate that can be directly invoked using a list of arguments.
+This considers trees and simplifies single-output components.</dd>
+<dd>since 6.0</dd>
+<dt>string Description</dt>
+<dd>The function description.</dd>
+<dd>since 6.0</dd>
+<dt>string FullName</dt>
+<dd>Returns the name of the component prefixed by, if existing, the namespace.</dd>
+<dd>since 6.0</dd>
+<dt>string FullScriptingName</dt>
+<dd>Shows the full name of the component, including optional periods.
+Removes spaces and common operator signs.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> InputDescriptions</dt>
+<dd>The function input parameter descriptions.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> InputNames</dt>
+<dd>The function input parameter names.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> InputsOptional</dt>
+<dd>Indications for each function input parameter whether it is optional.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> InputTypeNames</dt>
+<dd>The function input type names.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsDefault</dt>
+<dd>Determines if the component is a default one.</dd>
+<dd>since 6.0</dd>
+<dt>string Name</dt>
+<dd>The function name.</dd>
+<dd>since 6.0</dd>
+<dt>string Namespace</dt>
+<dd>The function namespace.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> OutputDescriptions</dt>
+<dd>Grasshopper returns several items in general. This property returns the output descriptions.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> OutputNames</dt>
+<dd>Grasshopper returns several items in general. This property returns the output names.</dd>
+<dd>since 6.0</dd>
+<dt>IReadOnlyList<!-- raw HTML omitted --> OutputTypeNames</dt>
+<dd>Grasshopper returns several items in general. This property returns the output type names.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>object[] Evaluate(IEnumerable args,bool keepTree,string[] warnings)</dt>
+<dd>Evaluates the component with a set of arguments.
+There needs to be an argument for each input param, and each output param gives an entry in the output array.</dd>
+<dd>Returns - An array of objects, each representing an output result.</dd>
+<dd>since 6.0</dd>
+<dt>object[] Invoke(object[] args)</dt>
+<dd>Runs  with keepTree equal to false,
+and raises an exception on the first warning.</dd>
+<dd>Returns - Items.</dd>
+<dd>since 7.0</dd>
+<dt>object[] InvokeKeepTree(object[] args)</dt>
+<dd>Runs  with keepTree equal to True and raises an exception on the first warning.</dd>
+<dd>Returns - Items.</dd>
+<dd>since 7.0</dd>
+<dt>object[] InvokeKeepTreeSilenceWarnings(object[] args)</dt>
+<dd>Runs  with keepTree equal to true,
+and discards warnings (this is a dangerous operation!).</dd>
+<dd>Returns - Array of items.</dd>
+<dd>since 7.0</dd>
+<dt>object[] InvokeSilenceWarnings(object[] args)</dt>
+<dd>Runs  with keepTree equal to false,
+then simplifies output with  and discards warnings (this is a dangerous operation!).</dd>
+<dd>Returns - Items.</dd>
+<dd>since 7.0</dd>
+<dt>string ToString()</dt>
+<dd>Returns a string representing this function.</dd>
+<dd>Returns - The namespace and the name.</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ComponentFunctionInfo</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

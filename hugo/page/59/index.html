@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/snapshottable/">
-        <h3>SnapshotTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/pointcloud/">
+        <h3>PointCloud</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/snapshottable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-All snapshots in a rhino document.
-public class SnapshotTableProperties RhinoDoc Document  (summary) Document that owns this table. (since) 6.7  string[] Names  (summary) Array of Snapshot names. (since) 6.7  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/spacemorph/">
-        <h3>SpaceMorph</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/spacemorph/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/pointcloud/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a spacial, Euclidean morph.
-public class SpaceMorphProperties bool PreserveStructure  (summary) True if the morph should be done in a way that preserves the structure of the geometry. In particular, for NURBS objects, True means that only the control points are moved. The PreserveStructure value does not affect the way meshes and points are morphed. The default is false. (since) 5.0  bool QuickPreview  (summary) True if the morph should be done as quickly as possible because the result is being used for some type of dynamic preview.
+Represents a collection of coordinates with optional normal vectors and colors.
+[Serializable]public class PointCloud : GeometryBase, IEnumerable&lt;PointCloudItem&gt;Constructors  PointCloud() Initializes a new instance of the class that is empty. PointCloud(IEnumerablepoints) Initializes a new instance of the class, copying the content from a set of points. PointCloud(PointCloud other) Initializes a new instance of the class, copying (Merge) the content of another pointcloud.  Properties  bool ContainsColors Gets a value indicating whether or not the points in this pointcloud have colors assigned to them.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/sphere/">
-        <h3>Sphere</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/pointclouditem/">
+        <h3>PointCloudItem</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/sphere/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/pointclouditem/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents the plane and radius values of a sphere.
-Constructors Sphere(Plane equatorialPlane,double radius)  (summary) Initializes a new sphere given the plane of the equator circle and radius. (since) 5.0  Sphere(Point3d center,double radius)  (summary) Initializes a new sphere given center point and radius. (since) 5.0  Properties static Sphere Unset  (summary) Gets a sphere with invalid members. (since) 5.0  BoundingBox BoundingBox  (summary) Gets the world aligned boundingbox for this Sphere.
+Represents a single item in a pointcloud. A PointCloud item always has a location, but it has an optional normal vector and color.
+public class PointCloudItemProperties  Color Color Gets or sets the color of this point cloud item. bool Hidden Gets or sets the hidden flag of this point cloud item. int Index Gets the index of this point cloud item. Point3d Location Gets or sets the location of this point cloud item.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/splopspacemorph/">
-        <h3>SplopSpaceMorph</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/polycurve/">
+        <h3>PolyCurve</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/splopspacemorph/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/polycurve/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Morphs
-Rotates, scales, and wraps objects on a surface.
-public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale,double angle)  (summary) Constructs a flow space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise.
+    Namespace: Rhino.Geometry
+Represents a curve that is the result of joining several (possibly different) types of curves.
+[Serializable]public class PolyCurve : CurveConstructors  PolyCurve() Initializes a new, empty polycurve.  Properties  bool HasGap This is a quick way to see if the curve has gaps between the sub curve segments. bool IsNested Gets a value indicating whether or not a PolyCurve contains nested PolyCurves. int SegmentCount Gets the number of segments that make up this Polycurve.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/sporphspacemorph/">
-        <h3>SporphSpaceMorph</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/polyline/">
+        <h3>Polyline</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/sporphspacemorph/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/polyline/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Morphs
-Deforms an object from a source surface to a target surface.
-public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Surface surface1)  (summary) Constructs a sporph space morph. (since) 5.9  SporphSpaceMorph(Surface surface0,Surface surface1,Point2d surface0Param,Point2d surface1Param)  (summary) Constructs a sporph space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry
+Represents an ordered set of points connected by linear segments. Polylines are closed if start and end points coincide.
+[Serializable]public class Polyline : Rhino.Collections.Point3dList, ICloneableConstructors  Polyline() Initializes a new empty polyline. Polyline(IEnumerablecollection) Initializes a new polyline from a collection of points. Polyline(int initialCapacity) Initializes a new empty polyline with an initial capacity.  Properties  bool IsClosed Gets a value that indicates whether this polyline is closed.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/stackeddialogpage/">
-        <h3>StackedDialogPage</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/polylinecurve/">
+        <h3>PolylineCurve</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/stackeddialogpage/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/polylinecurve/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Base class to inherit from for the addition of stacked dialog pages.
-public class StackedDialogPageProperties ListChildren  (summary) List of child (sub) pages of this page (since) 5.0  string EnglishPageTitle  (summary) English string used when scripting this page and a user prefixes a command option with &ldquo;_&rdquo; (since) 5.0  IntPtr Handle  (summary) When running on Windows return the window handle for the parent of this page otherwise; return IntPtr.
+    Namespace: Rhino.Geometry
+Represents the geometry of a set of linked line segments. This is fundamentally a class that derives from and internally contains a .
+[Serializable]public class PolylineCurve : CurveConstructors  PolylineCurve() Initializes a new empty polyline curve. PolylineCurve(IEnumerablepoints) Initializes a new polyline curve by copying its content from another set of points. PolylineCurve(PolylineCurve other) Initializes a new polyline curve by copying its content from another polyline curve.  Properties  int PointCount Gets the number of points in this polyline.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/statusbar/">
-        <h3>StatusBar</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/quadremeshparameters/">
+        <h3>QuadRemeshParameters</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/statusbar/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/quadremeshparameters/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Contains static methods to control the application status bar.
-public class StatusBarMethods static void ClearMessagePane()  (summary) Removes the message from the message pane. (since) 5.0 (returns) void This is some return comment  static void HideProgressMeter()  (summary) Ends, or hides, Rhino&rsquo;s status bar progress meter. (since) 5.0 (returns) void This is some return comment  static void HideProgressMeter(uint docSerialNumber)  (summary) Ends, or hides, Rhino&rsquo;s status bar progress meter.
+    Namespace: Rhino.Geometry
+Parameters for QuadRemesh method
+public class QuadRemeshParametersProperties  bool AdaptiveQuadCount Respect the original Target Quad Count value as much as possible. True returns more quads than TargetQuadCount depending on amount of high-curvature areas. since 7.0 double AdaptiveSize Larger values results in for quad sizes that adjust to match input curvature. Smaller values results in more uniform quad sizes at the risk of less feature preservation. Range [0 - 100] since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/stretchspacemorph/">
-        <h3>StretchSpaceMorph</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/quaternion/">
+        <h3>Quaternion</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/stretchspacemorph/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/quaternion/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Morphs
-Deforms objects toward or away from a specified axis.
-public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Point3d end,double length)  (summary) Constructs a stretch space morph. (since) 5.9  StretchSpaceMorph(Point3d start,Point3d end,Point3d point)  (summary) Constructs a stretch space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry
+Represents the four coefficient values in a quaternion. The first value a is the real part, while the rest multipies i, j and k, that are imaginary.quaternion = a + bi + cj + dk
+ static - Subtracts a quaternion from another one. This computes the difference of each quaternion coefficient with its correspondant and returns a new result quaternion. Returns - A new quaternion. static != Determines whether two quaternions have different values.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/stringfield/">
-        <h3>StringField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/radialdimension/">
+        <h3>RadialDimension</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/stringfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/radialdimension/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-String field value class
-public class StringFieldProperties string Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.Geometry
+Represents a dimension of a circular entity that can be measured with radius or diameter.
+[Serializable]public class RadialDimension : DimensionConstructors  RadialDimension()  since 6.0  Properties  AnnotationType AnnotationType  since 6.0 Point2d CenterPoint  since 6.0 Point2d DimlinePoint  since 6.0 bool IsDiameterDimension Gets a value indicating whether the value refers to the diameter, rather than the radius. Point2d KneePoint  since 6.0 Guid LeaderArrowBlockId  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/stringholder/">
-        <h3>StringHolder</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/ray3d/">
+        <h3>Ray3d</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/stringholder/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/ray3d/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-This class is used to pass strings back and forth between managed and unmanaged code. This should not be be needed by plug-ins. If you are just dealing with an ON_wString*, use
-public class StringHolderConstructors StringHolder()  (summary) Constructor (since) 5.8  Methods static string GetString(IntPtr pStringHolder)  (summary) Gets managed string from unmanaged ON_wString pointer. (since) 5.8 (returns) string This is some return comment  IntPtr ConstPointer()  (summary) C++ pointer used to access the ON_wString, managed plug-ins should never need this.
+    Namespace: Rhino.Geometry
+Represents an immutable ray in three dimensions, using position and direction.
+ static != Determines whether two have different values. Returns - True if position or direction (or both) in the two rays are different; otherwise false. static == Determines whether two have equal values. Returns - True if position and direction of the two rays are equal; otherwise false.  Constructors  Ray3d(Point3d position,Vector3d direction) Initializes a new Ray3d instance.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/rectangle3d/">
+        <h3>Rectangle3d</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/rectangle3d/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents the values of a plane and two intervals that form an oriented rectangle in three dimensions.
+Constructors  Rectangle3d(Plane plane,double width,double height) Initializes a new rectangle from width and height. Rectangle3d(Plane plane,Interval width,Interval height) Initializes a new rectangle from dimensions. Rectangle3d(Plane plane,Point3d cornerA,Point3d cornerB) Initializes a new rectangle from a base plane and two corner points.  Properties  static Rectangle3d Unset Gets a rectangle with Unset components.
   </div>
   
 

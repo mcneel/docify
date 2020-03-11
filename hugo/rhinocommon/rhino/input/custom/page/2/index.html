@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Input.Custom &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Input.Custom</h1>
+  <ul>
+<li><a href="commandlineoption/">CommandLineOption</a></li>
+<li><a href="coneconstraint/">ConeConstraint</a></li>
+<li><a href="cylinderconstraint/">CylinderConstraint</a></li>
+<li><a href="geometryattributefilter/">GeometryAttributeFilter</a></li>
+<li><a href="getarc/">GetArc</a></li>
+<li><a href="getbaseclass/">GetBaseClass</a></li>
+<li><a href="getcancel/">GetCancel</a></li>
+<li><a href="getcircle/">GetCircle</a></li>
+<li><a href="getcone/">GetCone</a></li>
+<li><a href="getcylinder/">GetCylinder</a></li>
+<li><a href="getellipsoid/">GetEllipsoid</a></li>
+<li><a href="getfilenamemode/">GetFileNameMode</a></li>
+<li><a href="getinteger/">GetInteger</a></li>
+<li><a href="getline/">GetLine</a></li>
+<li><a href="getlinemode/">GetLineMode</a></li>
+<li><a href="getnumber/">GetNumber</a></li>
+<li><a href="getobject/">GetObject</a></li>
+<li><a href="getoption/">GetOption</a></li>
+<li><a href="getpoint/">GetPoint</a></li>
+<li><a href="getpointdraweventargs/">GetPointDrawEventArgs</a></li>
+<li><a href="getpointmouseeventargs/">GetPointMouseEventArgs</a></li>
+<li><a href="getpolyline/">GetPolyline</a></li>
+<li><a href="getsphere/">GetSphere</a></li>
+<li><a href="getstring/">GetString</a></li>
+<li><a href="gettorus/">GetTorus</a></li>
+<li><a href="gettransform/">GetTransform</a></li>
+<li><a href="gettruncatedcone/">GetTruncatedCone</a></li>
+<li><a href="optioncolor/">OptionColor</a></li>
+<li><a href="optiondouble/">OptionDouble</a></li>
+<li><a href="optioninteger/">OptionInteger</a></li>
+<li><a href="optiontoggle/">OptionToggle</a></li>
+<li><a href="pickcontext/">PickContext</a></li>
+<li><a href="meshhitflag/">MeshHitFlag</a></li>
+<li><a href="meshpickstyle/">MeshPickStyle</a></li>
+<li><a href="pickmode/">PickMode</a></li>
+<li><a href="pickstyle/">PickStyle</a></li>
+<li><a href="taskcompleteeventargs/">TaskCompleteEventArgs</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getsphere/">
+        <div class="h2 mt-1 mb-1">GetSphere</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a sphere.
+public class GetSphere : IDisposableConstructors  GetSphere()  since 7.0  Properties  double DefaultSize Default radius or diameter (based on InDiameterMode) since 7.0 bool InDiameterMode Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter since 7.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 7.0 Commands.Result Get(Sphere sphere) Prompt for the getting of a sphere.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/getsphere/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getstring/">
+        <div class="h2 mt-1 mb-1">GetString</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Used to get strings.
+public class GetString : GetBaseClassConstructors  GetString() Constructs a new GetString.  Methods  GetResult Get() Returns the string that the user typed. By default, space stops the string input. Returns - The result type. If the user typed a string, this is . GetResult GetLiteralString() Returns the string that the user typed. By default, space does not stop input. Returns - The result type.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/getstring/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettorus/">
+        <div class="h2 mt-1 mb-1">GetTorus</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a torus.
+public class GetTorus : IDisposableConstructors  GetTorus()  since 7.0  Properties  double DefaultSize Default radius or diameter (based on InDiameterMode) since 7.0 bool FixInnerRadius Second radius opion. The first radius chosen sets the inner dimension of the torus and the second radius is constrained to be outside of the first radius. since 7.0 bool InDiameterMode Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter since 7.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettorus/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettransform/">
+        <div class="h2 mt-1 mb-1">GetTransform</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Used for getting a Transform
+public class GetTransform : GetPointProperties  bool HaveTransform  TransformObjectList ObjectList  Transform Transform   Methods  void AddTransformObjects(TransformObjectList list) Adds any objects you want transformed and grips you want transformed. Make sure no duplicates are in the list and that no grip ownwers are passed in as objects. Transform CalculateTransform(RhinoViewport viewport,Point3d point) Retrieves the final transformation. Override this virtual function to provide your own custom transformation method.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettransform/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettruncatedcone/">
+        <div class="h2 mt-1 mb-1">GetTruncatedCone</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetTruncatedCone : IDisposableConstructors  GetTruncatedCone()  since 7.0  Properties  bool Cap Gets or sets whether or not the output should be capped. since 7.0 CylinderConstraint CylinderConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl. By default the vertical cone/cyl option not available but is not selected.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettruncatedcone/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/optiondouble/">
+        <div class="h2 mt-1 mb-1">OptionDouble</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class OptionDouble : IDisposableConstructors  OptionDouble(double initialValue)  OptionDouble(double initialValue,bool setLowerLimit,double limit) Initializes a new instance of the double option class. OptionDouble(double initialValue,double lowerLimit,double upperLimit) Initializes a new instance of the class with lower and upper limits.  Properties  double CurrentValue  double InitialValue   Methods  void Dispose()   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/optiondouble/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/optioninteger/">
+        <div class="h2 mt-1 mb-1">OptionInteger</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class OptionInteger : IDisposableConstructors  OptionInteger(int initialValue)  OptionInteger(int initialValue,bool setLowerLimit,int limit) Initializes a new instance of the class. OptionInteger(int initialValue,int lowerLimit,int upperLimit) Initializes a new instance of the class wiht both lower and upper limits.  Properties  int CurrentValue  int InitialValue   Methods  void Dispose()   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/optioninteger/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/optiontoggle/">
+        <div class="h2 mt-1 mb-1">OptionToggle</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class OptionToggle : IDisposableConstructors  OptionToggle(bool initialValue,LocalizeStringPair offValue,LocalizeStringPair onValue)  OptionToggle(bool initialValue,string offValue,string onValue)   Properties  bool CurrentValue  bool InitialValue   Methods  void Dispose()   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/optiontoggle/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getarc/">
+        <div class="h2 mt-1 mb-1">GetArc</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class GetArc : IDisposableConstructors  GetArc()  since 6.0  Properties  bool AllowDeformable Allow for deformable options since 6.0 double DefaultRadius Default radius used for start and end radius since 6.0 bool Deformable Is the deformable option set since 6.0 int DeformableDegree  since 6.0 int DeformablePointCount  since 6.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 6.0 Commands.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/getarc/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getcancel/">
+        <div class="h2 mt-1 mb-1">GetCancel</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Input.Custom
+public class GetCancel : GetBaseClass TaskCompleted  since 6.0  Constructors  GetCancel()  since 6.0  Properties  IProgressProgress  since 6.0 string ProgressMessage  since 6.0 bool ProgressReporting  since 6.0 CancellationToken Token  since 6.0  Methods  Result Wait(Task task,RhinoDoc doc) Awaits a particular task to finish. Returns - A result enumeration. since 7.0 Result Wait(Tasktask,RhinoDoc doc) Awaits a particular task to finish. Returns - A result enumeration.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/input/custom/getcancel/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/page/3/">3</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

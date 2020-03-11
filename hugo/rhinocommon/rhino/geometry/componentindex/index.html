@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ComponentIndex &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents an index of an element contained in another object.
+Constructors  ComponentIndex(ComponentIndexType type,int index) Construct component index with a specific type/index combination  Properties  static ComponentIndex Unset The unset value of component index. ComponentIndexType ComponentIndexType The interpretation of Index depends on the Type value. Type m_index interpretation (0 based indices) no_type used when context makes it clear what array is being index brep_vertex Brep.m_V[] array index brep_edge Brep.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ComponentIndex</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents an index of an element contained in another object.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ComponentIndex(ComponentIndexType type,int index)</dt>
+<dd>Construct component index with a specific type/index combination</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static ComponentIndex Unset</dt>
+<dd>The unset value of component index.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/componentindextype/">ComponentIndexType</a> ComponentIndexType</dt>
+<dd>The interpretation of Index depends on the Type value.
+Type             m_index interpretation (0 based indices)
+no_type            used when context makes it clear what array is being index
+brep_vertex        Brep.m_V[] array index
+brep_edge          Brep.m_E[] array index
+brep_face          Brep.m_F[] array index
+brep_trim          Brep.m_T[] array index
+brep_loop          Brep.m_L[] array index
+mesh_vertex        Mesh.m_V[] array index
+meshtop_vertex     MeshTopology.m_topv[] array index
+meshtop_edge       MeshTopology.m_tope[] array index
+mesh_face          Mesh.m_F[] array index
+idef_part          InstanceDefinition.m_object_uuid[] array index
+polycurve_segment  PolyCurve::m_segment[] array index
+dim_linear_point   LinearDimension2::POINT_INDEX
+dim_radial_point   RadialDimension2::POINT_INDEX
+dim_angular_point  AngularDimension2::POINT_INDEX
+dim_ordinate_point OrdinateDimension2::POINT_INDEX
+dim_text_point     TextEntity2 origin point.</dd>
+<dt>int Index</dt>
+<dd>The interpretation of m_index depends on the m_type value.
+m_type             m_index interpretation (0 based indices)
+no_type            used when context makes it clear what array is being index
+brep_vertex        Brep.m_V[] array index
+brep_edge          Brep.m_E[] array index
+brep_face          Brep.m_F[] array index
+brep_trim          Brep.m_T[] array index
+brep_loop          Brep.m_L[] array index
+mesh_vertex        Mesh.m_V[] array index
+meshtop_vertex     MeshTopology.m_topv[] array index
+meshtop_edge       MeshTopology.m_tope[] array index
+mesh_face          Mesh.m_F[] array index
+idef_part          InstanceDefinition.m_object_uuid[] array index
+polycurve_segment  PolyCurve::m_segment[] array index
+dim_linear_point   LinearDimension2::POINT_INDEX
+dim_radial_point   RadialDimension2::POINT_INDEX
+dim_angular_point  AngularDimension2::POINT_INDEX
+dim_ordinate_point OrdinateDimension2::POINT_INDEX
+dim_text_point     TextEntity2 origin point.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool IsUnset()</dt>
+<dd>Return True is this component index is the same as the Unset component index</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ComponentIndex</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

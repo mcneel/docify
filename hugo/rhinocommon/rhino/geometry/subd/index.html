@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  SubD &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Subdivision surface
+[Serializable]public class SubD : GeometryBaseConstructors  SubD() Create a new instance of SubD geometry since 7.0  Properties  SubDEdgeList Edges All edges in this SubD since 7.0 SubDFaceList Faces All faces in this SubD since 7.0 bool IsSolid Test subd to see if the active level is a solid.
+A &amp;ldquo;solid&amp;rdquo; is a closed oriented manifold, or a closed oriented manifold. since 7.0 SubDVertexList Vertices All vertices in this SubD since 7.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">SubD</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Subdivision surface</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SubD</span> : GeometryBase
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>SubD()</dt>
+<dd>Create a new instance of SubD geometry</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/collections/subdedgelist/">SubDEdgeList</a> Edges</dt>
+<dd>All edges in this SubD</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/subdfacelist/">SubDFaceList</a> Faces</dt>
+<dd>All faces in this SubD</dd>
+<dd>since 7.0</dd>
+<dt>bool IsSolid</dt>
+<dd>Test subd to see if the active level is a solid.<br>
+A &ldquo;solid&rdquo; is a closed oriented manifold, or a closed oriented manifold.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/subdvertexlist/">SubDVertexList</a> Vertices</dt>
+<dd>All vertices in this SubD</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static SubD CreateFromMesh(Mesh mesh)</dt>
+<dd>Create a new SubD from a mesh</dd>
+<dd>since 7.0</dd>
+<dt>static SubD CreateFromMesh(Mesh mesh,SubDCreationOptions options)</dt>
+<dd>Create a new SubD from a mesh</dd>
+<dd>since 7.0</dd>
+<dt>void ClearEvaluationCache()</dt>
+<dd>Clear cached information that depends on the location of vertex control points</dd>
+<dd>since 7.0</dd>
+<dt>bool Subdivide(int count)</dt>
+<dd>Apply the Catmull-Clark subdivision algorithm and save the results in
+this SubD</dd>
+<dd>Returns - True on success</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep()</dt>
+<dd>Create a Brep based on this SubD geometry</dd>
+<dd>since 7.0</dd>
+<dt>uint UpdateAllTagsAndSectorCoefficients()</dt>
+<dd>Updates vertex tag, edge tag, and edge coefficient values on the active
+level. After completing custom editing operations that modify the
+topology of the SubD control net or changing values of vertex or edge
+tags, the tag and sector coefficients information on nearby components
+in the edited areas need to be updated.</dd>
+<dd>Returns - Number of vertices and edges that were changed during the update.</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>SubD</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

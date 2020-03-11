@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Quaternion &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the four coefficient values in a quaternion. The first value a is the real part, while the rest multipies i, j and k, that are imaginary.quaternion = a &#43; bi &#43; cj &#43; dk
+ static - Subtracts a quaternion from another one. This computes the difference of each quaternion coefficient with its correspondant and returns a new result quaternion. Returns - A new quaternion. static != Determines whether two quaternions have different values.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Quaternion</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the four coefficient values in a quaternion.
+The first value a is the real part,
+while the rest multipies i, j and k, that are imaginary.quaternion = a + bi + cj + dk</p>
+<dl>
+<dt>static -</dt>
+<dd>Subtracts a quaternion from another one.
+This computes the difference of each quaternion coefficient with its
+correspondant and returns a new result quaternion.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static !=</dt>
+<dd>Determines whether two quaternions have different values.</dd>
+<dd>Returns - True if the quaternions differ in any coefficient; otherwise false.</dd>
+<dt>static *</dt>
+<dd>Multiplies a quaternion with another one.
+Quaternion multiplication (Hamilton product) is not commutative.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static *</dt>
+<dd>Multiplies (scales) all quaternion coefficients by a factor and returns a new quaternion with the result.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static *</dt>
+<dd>Multiplies (scales) all quaternion coefficients by a factor and returns a new quaternion with the result.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static *</dt>
+<dd>Multiplies (scales) all quaternion coefficients by a factor and returns a new quaternion with the result.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static /</dt>
+<dd>Divides all quaternion coefficients by a factor and returns a new quaternion with the result.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static +</dt>
+<dd>Adds two quaternions.
+This sums each quaternion coefficient with its correspondant and returns
+a new result quaternion.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dd>since (unknown)</dd>
+<dt>static ==</dt>
+<dd>Determines whether two quaternions have the same value.</dd>
+<dd>Returns - True if the quaternions have exactly equal coefficients; otherwise false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Quaternion(double a,double b,double c,double d)</dt>
+<dd>Initializes a new quaternion with the provided coefficients.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Quaternion I</dt>
+<dd>Returns the (0,1,0,0) quaternion.</dd>
+<dt>static Quaternion Identity</dt>
+<dd>Returns the (1,0,0,0) quaternion.</dd>
+<dt>static Quaternion J</dt>
+<dd>Returns the (0,0,1,0) quaternion.</dd>
+<dt>static Quaternion K</dt>
+<dd>Returns the (0,0,0,1) quaternion.</dd>
+<dt>static Quaternion Zero</dt>
+<dd>Returns the dafault quaternion, where all coefficients are 0.</dd>
+<dt>double A</dt>
+<dd>Gets or sets the real part of the quaternion.</dd>
+<dt>double B</dt>
+<dd>Gets or sets the first imaginary coefficient of the quaternion.</dd>
+<dt>double C</dt>
+<dd>Gets or sets the second imaginary coefficient of the quaternion.</dd>
+<dt>Quaternion Conjugate</dt>
+<dd>Gets a new quaternion that is the conjugate of this quaternion.
+This is (a,-b,-c,-d)</dd>
+<dt>double D</dt>
+<dd>Gets or sets the third imaginary coefficient of the quaternion.</dd>
+<dt>Quaternion Inverse</dt>
+<dd>Computes a new inverted quaternion,
+(a/L2, -b/L2, -c/L2, -d/L2),where L2 = length squared = (a<em>a + b</em>b + c<em>c + d</em>d).
+This is the multiplicative inverse, i.e.,
+(a,b,c,d)*(a/L2, -b/L2, -c/L2, -d/L2) = (1,0,0,0).
+If this is the zero quaternion, then the zero quaternion is returned.</dd>
+<dt>bool IsScalar</dt>
+<dd>True if b, c, and d are all zero.</dd>
+<dt>bool IsValid</dt>
+<dd>Determines if the four coefficients are valid numbers within RhinoCommon.
+See .</dd>
+<dt>bool IsVector</dt>
+<dd>True if a = 0 and at least one of b, c, or d is not zero.</dd>
+<dt>bool IsZero</dt>
+<dd>True if a, b, c, and d are all zero.</dd>
+<dt>double Length</dt>
+<dd>Returns the length or norm of the quaternion.</dd>
+<dt>double LengthSquared</dt>
+<dd>Gets the result of (a^2 + b^2 + c^2 + d^2).</dd>
+<dt>double Scalar</dt>
+<dd>The real (scalar) part of the quaternion
+This is .</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Vector</dt>
+<dd>The imaginary part of the quaternion
+(B,C,D)</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Quaternion CrossProduct(Quaternion p,Quaternion q)</dt>
+<dd>Computes the vector cross product of p and q = (0,x,y,z),
+where (x,y,z) = CrossProduct(p.Vector,q.Vector).This is not the same as the quaternion product p*q.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static double Distance(Quaternion p,Quaternion q)</dt>
+<dd>Returns the distance or norm of the difference between two quaternions.</dd>
+<dd>Returns - (p - q).Length()</dd>
+<dt>static Quaternion Product(Quaternion p,Quaternion q)</dt>
+<dd>The quaternion product of p and q.  This is the same value as p*q.</dd>
+<dd>Returns - A transform value.</dd>
+<dt>static Quaternion Rotation(double angle,Vector3d axisOfRotation)</dt>
+<dd>Returns the unit quaternion
+cos(angle/2), sin(angle/2)*x, sin(angle/2)*y, sin(angle/2)*z
+where (x,y,z) is the unit vector parallel to axis.  This is the
+unit quaternion that represents the rotation of angle about axis.</dd>
+<dd>Returns - A new quaternion.</dd>
+<dt>static Quaternion Rotation(Plane plane0,Plane plane1)</dt>
+<dd>Returns the unit quaternion that represents the the rotation that maps
+plane0.xaxis to plane1.xaxis, plane0.yaxis to plane1.yaxis, and 
+plane0.zaxis to plane1.zaxis.</dd>
+<dd>Returns - A quaternion value.</dd>
+<dt>double DistanceTo(Quaternion q)</dt>
+<dd>Computes the distance or norm of the difference between this and another quaternion.</dd>
+<dd>Returns - (this - q).Length.</dd>
+<dt>bool EpsilonEquals(Quaternion other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether an object is a quaternion and has the same value of this quaternion.</dd>
+<dd>Returns - True if obj is a quaternion and has exactly equal coefficients; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Quaternion other)</dt>
+<dd>Determines whether this quaternion has the same value of another quaternion.</dd>
+<dd>Returns - True if the quaternions have exactly equal coefficients; otherwise false.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Gets a non-unique but repeatable hashing code for this quaternion.</dd>
+<dd>Returns - A signed number.</dd>
+<dd>since (unknown)</dd>
+<dt>bool GetRotation(double angle,Vector3d axis)</dt>
+<dd>Returns the rotation defined by the quaternion.</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool GetRotation(Plane plane)</dt>
+<dd>Returns the frame created by applying the quaternion&rsquo;s rotation
+to the canonical world frame (1,0,0),(0,1,0),(0,0,1).</dd>
+<dd>Returns - True if the operation succeeded; otherwise, false.</dd>
+<dt>bool Invert()</dt>
+<dd>Modifies this quaternion to become
+(a/L2, -b/L2, -c/L2, -d/L2),where L2 = length squared = (a<em>a + b</em>b + c<em>c + d</em>d).This is the multiplicative inverse, i.e.,
+(a,b,c,d)*(a/L2, -b/L2, -c/L2, -d/L2) = (1,0,0,0).</dd>
+<dd>Returns - True if successful. False if the quaternion is zero and cannot be inverted.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> MatrixForm()</dt>
+<dd>Returns 4x4 real valued matrix form of the quaternion
+a  b  c  d
+-b  a -d  c
+-c  d  a -b
+-d -c  b  a
+which has the same arithmetic properties as the quaternion.</dd>
+<dd>Returns - A transform value.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Rotate(Vector3d v)</dt>
+<dd>Rotates a 3d vector. This operation is also called conjugation,
+because the result is the same as
+(q.Conjugate()*(0,x,y,x)*q/q.LengthSquared).Vector.</dd>
+<dd>Returns - R<em>v, where R is the rotation defined by the unit quaternion.
+This is mathematically the same as the values
+(Inverse(q)</em>(0,x,y,z)<em>q).Vector
+and
+(q.Conjugate()</em>(0,x,y,x)*q/q.LengthSquared).Vector.</dd>
+<dt>void Set(double a,double b,double c,double d)</dt>
+<dd>Sets all coefficients of the quaternion.</dd>
+<dt>void SetRotation(double angle,Vector3d axisOfRotation)</dt>
+<dd>Sets the quaternion to cos(angle/2), sin(angle/2)*x, sin(angle/2)*y, sin(angle/2)*z
+where (x,y,z) is the unit vector parallel to axis.  This is the unit quaternion
+that represents the rotation of angle about axis.</dd>
+<dt>void SetRotation(Plane plane0,Plane plane1)</dt>
+<dd>Sets the quaternion to the unit quaternion which rotates
+plane0.xaxis to plane1.xaxis, plane0.yaxis to plane1.yaxis,
+and plane0.zaxis to plane1.zaxis.</dd>
+<dt>bool Unitize()</dt>
+<dd>Scales the quaternion&rsquo;s coordinates so that a<em>a + b</em>b + c<em>c + d</em>d = 1.</dd>
+<dd>Returns - True if successful.  False if the quaternion is zero and cannot be unitized.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Quaternion</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Sphere &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the plane and radius values of a sphere.
+Constructors  Sphere(Plane equatorialPlane,double radius) Initializes a new sphere given the plane of the equator circle and radius. Sphere(Point3d center,double radius) Initializes a new sphere given center point and radius.  Properties  static Sphere Unset Gets a sphere with invalid members. BoundingBox BoundingBox Gets the world aligned boundingbox for this Sphere. If the Sphere is Invalid, an empty box is returned.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Sphere</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the plane and radius values of a sphere.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Sphere(Plane equatorialPlane,double radius)</dt>
+<dd>Initializes a new sphere given the plane of the equator circle and radius.</dd>
+<dt>Sphere(Point3d center,double radius)</dt>
+<dd>Initializes a new sphere given center point and radius.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Sphere Unset</dt>
+<dd>Gets a sphere with invalid members.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox</dt>
+<dd>Gets the world aligned boundingbox for this Sphere. 
+If the Sphere is Invalid, an empty box is returned.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Center</dt>
+<dd>Gets or sets the center point of the sphere.</dd>
+<dt>double Diameter</dt>
+<dd>Gets or sets the diameter for this sphere.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> EquatorialPlane</dt>
+<dd>Gets or sets the Equatorial plane for this sphere.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> EquitorialPlane</dt>
+<dd>Gets or sets the Equatorial plane for this sphere.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value that indicates whether the sphere is valid.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> NorthPole</dt>
+<dd>Gets the point at the North Pole of the sphere.
+This is the parameterization singularity that can be obtained,
+at V value +Math.Pi/2.</dd>
+<dt>double Radius</dt>
+<dd>Gets or sets the Radius for this sphere.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> SouthPole</dt>
+<dd>Gets the point at the South Pole of the sphere.
+This is the parameterization singularity that can be obtained,
+at V value -Math.Pi/2.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Sphere FitSphereToPoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Attempts to fit a sphere to a collection of points.</dd>
+<dd>Returns - The Sphere that best approximates the points or Sphere.Unset on failure.</dd>
+<dt>bool ClosestParameter(Point3d testPoint,double longitudeRadians,double latitudeRadians)</dt>
+<dd>Finds the angle parameters on this sphere that are closest to a test point.</dd>
+<dd>Returns - True on success, False on failure. This function will fail if the point it coincident with the sphere center.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d testPoint)</dt>
+<dd>Returns point on sphere that is closest to given point.</dd>
+<dd>Returns - Point on sphere surface closest to testPoint.</dd>
+<dt>bool EpsilonEquals(Sphere other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/circle/">Circle</a> LatitudeDegrees(double degrees)</dt>
+<dd>Computes the parallel at a specific latitude angle.
+The angle is specified in degrees.</dd>
+<dd>Returns - A circle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/circle/">Circle</a> LatitudeRadians(double radians)</dt>
+<dd>Computes the parallel at a specific latitude angle.
+The angle is specified in radians.</dd>
+<dd>Returns - A circle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/circle/">Circle</a> LongitudeDegrees(double degrees)</dt>
+<dd>Computes the meridian at a specific longitude angle.
+The angle is specified in degrees.</dd>
+<dd>Returns - A circle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/circle/">Circle</a> LongitudeRadians(double radians)</dt>
+<dd>Computes the meridian at a specific longitude angle.
+The angle is specified in radians.</dd>
+<dd>Returns - A circle.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> NormalAt(double longitudeRadians,double latitudeRadians)</dt>
+<dd>Computes the normal at a specific angular location on the sphere.</dd>
+<dd>Returns - A vector.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double longitudeRadians,double latitudeRadians)</dt>
+<dd>Evaluates the sphere at specific longitude and latitude angles.</dd>
+<dd>Returns - A point value.</dd>
+<dt>bool Rotate(double sinAngle,double cosAngle,Vector3d axisOfRotation)</dt>
+<dd>Rotates this sphere about the center point.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+<dt>bool Rotate(double sinAngle,double cosAngle,Vector3d axisOfRotation,Point3d centerOfRotation)</dt>
+<dd>Rotates this sphere about a point and an axis.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+<dt>bool Rotate(double angleRadians,Vector3d axisOfRotation)</dt>
+<dd>Rotates the sphere about the center point.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+<dt>bool Rotate(double angleRadians,Vector3d axisOfRotation,Point3d centerOfRotation)</dt>
+<dd>Rotates this sphere about a point and an axis.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep()</dt>
+<dd>Converts this sphere is it Brep representation</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> ToNurbsSurface()</dt>
+<dd>Converts this sphere to its NurbsSurface representation. 
+This is synonymous with calling NurbsSurface.CreateFromSphere().</dd>
+<dd>Returns - A nurbs surface representation of this sphere or null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/revsurface/">RevSurface</a> ToRevSurface()</dt>
+<dd>Converts this Sphere to a RevSurface representation. 
+This is synonymous with calling RevSurface.CreateFromSphere().</dd>
+<dd>Returns - A surface of revolution representation of this sphere or null.</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transforms this sphere. Note that non-similarity preserving transformations 
+cannot be applied to a sphere as that would result in an ellipsoid.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Translate(Vector3d delta)</dt>
+<dd>Moves this sphere along a motion vector.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Sphere</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

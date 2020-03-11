@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,125 +57,129 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/customcurveobject/">
-        <h3>CustomCurveObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/bitmapentry/">
+        <h3>BitmapEntry</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/customcurveobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/bitmapentry/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class CustomCurveObjectMethods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.DocObjects
+Rhino.DocObjects.Tables.BitmapTable entry
+[Serializable]public class BitmapEntry : ModelComponentProperties  ModelComponentType ComponentType Returns . since 6.0 string FileName The name of this bitmap. since 5.1 bool IsReference Gets a value indicting whether this bitmap is a referenced bitmap. Referenced bitmaps are part of referenced documents. since 5.1  Methods  bool Save(string fileName)  since 5.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/customdisplay/">
-        <h3>CustomDisplay</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/bitmaptable/">
+        <h3>BitmapTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/customdisplay/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/bitmaptable/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+Stores the list of bitmaps in a Rhino document.
+public class BitmapTable :RhinoDocCommonTable&lt;BitmapEntry&gt;,ICollection&lt;BitmapEntry&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  int AddBitmap(string bitmapFilename,bool replaceExisting) Adds a new bitmap with specified name to the bitmap table. Returns - index of new bitmap in table on success. -1 on error. bool Delete(BitmapEntry item) Removes the bitmap from the table. Returns - True if the item could be deleted; otherwise, false.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/brepobject/">
+        <h3>BrepObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/brepobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+Represents a brep in a document.
+public class BrepObject : RhinoObjectProperties  Brep BrepGeometry Gets the brep geometry linked with this object.  Methods  Brep DuplicateBrepGeometry() Constructs a new deep copy of the brep geometry. Returns - The copy of the geometry.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/calculateboundingboxeventargs/">
+        <h3>CalculateBoundingBoxEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/display/calculateboundingboxeventargs/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Display
-Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.
-public class CustomDisplayConstructors CustomDisplay(bool enable)  (summary) Constructs a new CustomDisplay instance. You must call Dispose() when you are done with this instance, otherwise the display methods will never be switched off. (since) 5.0  Properties BoundingBox ClippingBox  (summary) Gets the clipping box of this CustomDisplay. (since) 5.0  bool Enabled  (summary) Gets or sets the Enabled state of this CustomDisplay instance.
+public class CalculateBoundingBoxEventArgs : DrawEventArgsProperties  BoundingBox BoundingBox Gets the current bounding box.  Methods  void IncludeBoundingBox(BoundingBox box) Unites a bounding box with the current display bounding box in order to ensure dynamic objects in &ldquo;box&rdquo; are drawn.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/customevent/">
-        <h3>CustomEvent</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/clippingplaneobject/">
+        <h3>ClippingPlaneObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/customevent/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/clippingplaneobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-This class contains the event for CustomEvents that are fired from RDK .
-public class CustomEventEvents static OnCustomEvent  (summary) This event is raised when a Custom Event is triggered in rdk. (since) 7.0  
+    Namespace: Rhino.DocObjects
+Represents the object of a clipping plane, stored in the Rhino document and with attributes.
+public class ClippingPlaneObject : RhinoObjectProperties  ClippingPlaneSurface ClippingPlaneGeometry Gets the clipping plane surface.  Methods  bool AddClipViewport(RhinoViewport viewport,bool commit) Adds a viewport to the list of viewports that this clipping plane clips. Returns - True if the viewport was added, False if the viewport is already in the list. since 6.1 bool RemoveClipViewport(RhinoViewport viewport,bool commit) Removes a viewport from the list of viewports that this clipping plane clips.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/customgripobject/">
-        <h3>CustomGripObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/controls/collapsiblesectionholderimpl/">
+        <h3>CollapsibleSectionHolderImpl</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/customgripobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/controls/collapsiblesectionholderimpl/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class CustomGripObjectConstructors CustomGripObject()  (summary) (since) 5.0  Properties int Index  (summary) (since) 5.0  Point3d OriginalLocation  (summary) (since) 5.0  double Weight  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  void NewLocation()  (summary) (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.UI.Controls
+public class CollapsibleSectionHolderImpl : IMPL_CALLBACKS, IDisposableConstructors  CollapsibleSectionHolderImpl(ICollapsibleSectionHolder client)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  static ICollapsibleSectionHolder Find(IntPtr cpp)  since 6.0 static ICollapsibleSectionHolder NewNativeWrapper(IntPtr cpp)  since 6.0 void Dispose()  since 6.0 bool IsSameObject(IntPtr cpp)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/custommeshobject/">
-        <h3>CustomMeshObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/controls/collapsiblesectionviewmodel/">
+        <h3>CollapsibleSectionViewModel</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/custommeshobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/controls/collapsiblesectionviewmodel/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class CustomMeshObjectMethods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.UI.Controls
+Derive from this class to implement your own view model that wraps around a built in implementation of IRdkViewModel. Use GetData etc to implement your properties.
+public class CollapsibleSectionViewModel : IRdkViewModelConstructors  CollapsibleSectionViewModel(ICollapsibleSection section) Construct from your section - the view model should be a member of the section since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void Commit(Guid uuidDataType)  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/customobjectgrips/">
-        <h3>CustomObjectGrips</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorcmyk/">
+        <h3>ColorCMYK</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/customobjectgrips/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorcmyk/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class CustomObjectGripsProperties int GripCount  (summary) (since) 5.0  bool GripsMoved  (summary) If GripsMoved is True if some of the grips have ever been moved GripObject.NewLocation() sets GripsMoved=true. (since) 5.0  bool NewLocation  (summary) True if some of the grips have been moved. GripObject.NewLocation() sets NewLocation=true. Derived classes can set NewLocation to False after updating temporary display information. (since) 5.0  Rhino.DocObjects.RhinoObject OwnerObject  (summary) Owner of the grips.
+    Namespace: Rhino.Display
+Represents a CMYK (Cyan, Magenta, Yellow, Key) color with double precision floating point channels. CMYK colors are used primarily in printing environments as they provide a good simulation of physical ink.
+Constructors  ColorCMYK(Color rgb) Initializes a new instance of ColorCMYK that is equivalent to an RGB color. ColorCMYK(double cyan,double magenta,double yellow) Initializes a new instance of ColorCMYK with custom channel values. The cyan, magenta and yellow values will be adjusted based on their combined darkness.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/custompointobject/">
-        <h3>CustomPointObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorhsl/">
+        <h3>ColorHSL</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/custompointobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorhsl/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class CustomPointObjectMethods void Dispose()  (summary) (since) 5.6 (returns) void This is some return comment  
+    Namespace: Rhino.Display
+Represents an HSL (Hue, Saturation, Luminance) color with double precision floating point channels. HSL colors are used primarily in Graphical User Interface environments as they provide a very natural approach to picking colors.
+Constructors  ColorHSL(Color rgb) Constructs a new instance of ColorHSL that is equivalent to an RGB color. ColorHSL(double hue,double saturation,double luminance) Constructs a new instance of ColorHSL with custom channel values. ColorHSL(double alpha,double hue,double saturation,double luminance) Constructs a new instance of ColorHSL with custom channel values.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/customrendercontentattribute/">
-        <h3>CustomRenderContentAttribute</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorhsv/">
+        <h3>ColorHSV</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/customrendercontentattribute/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorhsv/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class CustomRenderContentAttributeConstructors CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private)  (summary) (since) 6.0  CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private,bool is_linear,bool is_hdrcapable,bool is_normalmap)  (summary) (since) 6.16  Properties string Category  (summary) (since) 6.0  bool ImageBased  (summary) (since) 6.0  bool IsBuiltIn  (summary) (since) 6.0  bool IsElevated  (summary) (since) 6.0  bool IsHdrCapable  (summary) (since) 6.16  bool IsLinear  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/customrendermeshprovider/">
-        <h3>CustomRenderMeshProvider</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/customrendermeshprovider/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-You must call CustomRenderMeshProvider.RegisterProviders() from your plug-ins OnLoad override for each assembly containing a custom mesh provider. Only publicly exported classes derived from CustomRenderMeshProvider with a public constructor that has no parameters will get registered.
-public class CustomRenderMeshProviderProperties static Guid CurvePipingId  (summary) (since) 6.0  static Guid DisplacementId  (summary) (since) 6.0  static Guid EdgeSofteningId  (summary) (since) 6.0  static Guid ShutLiningId  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/customrendermeshprovider2/">
-        <h3>CustomRenderMeshProvider2</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/customrendermeshprovider2/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-public class CustomRenderMeshProvider2Methods BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)  (summary) (since) 6.4 (returns) BoundingBox This is some return comment  BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,RhinoDoc doc,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  (summary) (since) 6.0 (returns) BoundingBox This is some return comment  bool BuildCustomMeshes(ViewportInfo vp,RenderPrimitiveList objMeshes,Guid requestingPlugIn,bool preview)  (summary) (since) 6.4 (returns) bool This is some return comment  bool BuildCustomMeshes(ViewportInfo vp,RhinoDoc doc,RenderPrimitiveList objMeshes,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  (summary) (since) 6.
+    Namespace: Rhino.Display
+Represents an HSV (Hue, Saturation, Value) color with double precision floating point channels. HSV colors (also sometimes called HSB, where B means Brightness) are similar to HSL colors in that they represent colors in a cylindrical color space, and are intended to provide intuitive means to edit the brightness of a particular color over RGB color space where each each color channel would need to be modified to affect the color brightness.
   </div>
   
 

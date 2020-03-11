@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LicenseData &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.PlugIns
+Zoo plugin license data.
+public class LicenseDataConstructors  LicenseData() Public constructor. LicenseData(string productLicense,string serialNumber,string licenseTitle) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate) Public constructor since (unknown) LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon) Public constructor since (unknown) LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon,bool requiresOnlineValidation,bool isUpgradeFromPreviousVersion) Public constructor since (unknown)  Properties  LicenseBuildType BuildType The build of the product that this license work with.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LicenseData</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.PlugIns</a></em></p>
+<p>Zoo plugin license data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LicenseData</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>LicenseData()</dt>
+<dd>Public constructor.</dd>
+<dt>LicenseData(string productLicense,string serialNumber,string licenseTitle)</dt>
+<dd>Public constructor</dd>
+<dt>LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType)</dt>
+<dd>Public constructor</dd>
+<dt>LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount)</dt>
+<dd>Public constructor</dd>
+<dt>LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate)</dt>
+<dd>Public constructor</dd>
+<dd>since (unknown)</dd>
+<dt>LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon)</dt>
+<dd>Public constructor</dd>
+<dd>since (unknown)</dd>
+<dt>LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon,bool requiresOnlineValidation,bool isUpgradeFromPreviousVersion)</dt>
+<dd>Public constructor</dd>
+<dd>since (unknown)</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/plugins/licensebuildtype/">LicenseBuildType</a> BuildType</dt>
+<dd>The build of the product that this license work with.
+When your product requests a license from the Zoo, it
+will specify one of these build types.</dd>
+<dt>DateTime? DateToExpire</dt>
+<dd>The date and time the license is set to expire.
+This is provided by the plugin that validated the license.
+This time value should be in Coordinated Universal Time (UTC).</dd>
+<dt>string ErrorMessage</dt>
+<dd>Error message set by calls to callback functions</dd>
+<dd>since 6.0</dd>
+<dt>bool IsUpgradeFromPreviousVersion</dt>
+<dd>Set to True if this license requires a previous version license to be entered.
+Caller must also pass VerifyPreviousVersionLicenseDelegate to GetLicense/AskUserForLicense.</dd>
+<dd>since 6.0</dd>
+<dt>int LicenseCount</dt>
+<dd>The number of instances supported by this license.
+This is provided by the plugin that validated the license.</dd>
+<dt>bool LicenseExpires</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>string LicenseTitle</dt>
+<dd>The title of the license.
+This is provided by the plugin that validated the license.
+(e.g. &ldquo;Rhinoceros 6.0 Commercial&rdquo;)</dd>
+<dt>Icon ProductIcon</dt>
+<dd>The product&rsquo;s icon. This will displayed in the &ldquo;license&rdquo;
+page in the Options dialog. Note, this can be null.
+Note, LicenseData creates it&rsquo;s own copy of the icon.</dd>
+<dt>string ProductLicense</dt>
+<dd>The actual product license. 
+This is provided by the plugin that validated the license.</dd>
+<dt>bool RequiresOnlineValidation</dt>
+<dd>Set to True if this license requires online validation.
+Caller must also pass VerifyOnlineValidationCodeDelegate to GetLicense/AskUserForLicense</dd>
+<dd>since 6.0</dd>
+<dt>string SerialNumber</dt>
+<dd>The &ldquo;for display only&rdquo; product license.
+This is provided by the plugin that validated the license.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool IsNotValid(LicenseData data)</dt>
+<dd>Indicates whether a LicenseData object is either None or invalid.</dd>
+<dt>static bool IsValid(LicenseData data)</dt>
+<dd>Indicates whether a LicenseData object is not None and valid.</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>bool IsValid()</dt>
+<dd>Public validator.</dd>
+<dt>bool IsValid(bool ignoreExpirationDate)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LicenseData</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.FileIO &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.FileIO</h1>
+  <ul>
+<li><a href="binaryarchiveexception/">BinaryArchiveException</a></li>
+<li><a href="binaryarchivefile/">BinaryArchiveFile</a></li>
+<li><a href="binaryarchivemode/">BinaryArchiveMode</a></li>
+<li><a href="binaryarchivereader/">BinaryArchiveReader</a></li>
+<li><a href="binaryarchivewriter/">BinaryArchiveWriter</a></li>
+<li><a href="commoncomponenttable/">CommonComponentTable</a></li>
+<li><a href="contenthash/">ContentHash</a></li>
+<li><a href="dracocompression/">DracoCompression</a></li>
+<li><a href="dracocompressionoptions/">DracoCompressionOptions</a></li>
+<li><a href="file3dm/">File3dm</a></li>
+<li><a href="objecttypefilter/">ObjectTypeFilter</a></li>
+<li><a href="tabletypefilter/">TableTypeFilter</a></li>
+<li><a href="file3dmcommoncomponenttable/">File3dmCommonComponentTable</a></li>
+<li><a href="file3dmdimstyletable/">File3dmDimStyleTable</a></li>
+<li><a href="file3dmgrouptable/">File3dmGroupTable</a></li>
+<li><a href="file3dmhatchpatterntable/">File3dmHatchPatternTable</a></li>
+<li><a href="file3dminstancedefinitiontable/">File3dmInstanceDefinitionTable</a></li>
+<li><a href="file3dmlayertable/">File3dmLayerTable</a></li>
+<li><a href="file3dmlinetypetable/">File3dmLinetypeTable</a></li>
+<li><a href="file3dmmaterialtable/">File3dmMaterialTable</a></li>
+<li><a href="file3dmnamedconstructionplanes/">File3dmNamedConstructionPlanes</a></li>
+<li><a href="file3dmnotes/">File3dmNotes</a></li>
+<li><a href="file3dmobject/">File3dmObject</a></li>
+<li><a href="file3dmobjecttable/">File3dmObjectTable</a></li>
+<li><a href="file3dmplugindata/">File3dmPlugInData</a></li>
+<li><a href="file3dmplugindatatable/">File3dmPlugInDataTable</a></li>
+<li><a href="file3dmsettings/">File3dmSettings</a></li>
+<li><a href="file3dmstringtable/">File3dmStringTable</a></li>
+<li><a href="file3dmtypecodes/">File3dmTypeCodes</a></li>
+<li><a href="file3dmviewtable/">File3dmViewTable</a></li>
+<li><a href="file3dmwriteoptions/">File3dmWriteOptions</a></li>
+<li><a href="fileobj/">FileObj</a></li>
+<li><a href="fileobjreadoptions/">FileObjReadOptions</a></li>
+<li><a href="useobjgsas/">UseObjGsAs</a></li>
+<li><a href="fileobjwriteoptions/">FileObjWriteOptions</a></li>
+<li><a href="asciieol/">AsciiEol</a></li>
+<li><a href="curvetype/">CurveType</a></li>
+<li><a href="geometrytype/">GeometryType</a></li>
+<li><a href="objgroupnames/">ObjGroupNames</a></li>
+<li><a href="objobjectnames/">ObjObjectNames</a></li>
+<li><a href="subdmeshing/">SubDMeshing</a></li>
+<li><a href="vertexwelding/">VertexWelding</a></li>
+<li><a href="objgroupcomparer/">ObjGroupComparer</a></li>
+<li><a href="objlayercomparer/">ObjLayerComparer</a></li>
+<li><a href="objrhinoobject/">ObjRhinoObject</a></li>
+<li><a href="rhinoobjectmesh/">RhinoObjectMesh</a></li>
+<li><a href="filepdf/">FilePdf</a></li>
+<li><a href="filepdfeventargs/">FilePdfEventArgs</a></li>
+<li><a href="fileply/">FilePly</a></li>
+<li><a href="fileplywriteoptions/">FilePlyWriteOptions</a></li>
+<li><a href="filereadoptions/">FileReadOptions</a></li>
+<li><a href="filereference/">FileReference</a></li>
+<li><a href="fileslc/">FileSlc</a></li>
+<li><a href="fileslcwriteoptions/">FileSlcWriteOptions</a></li>
+<li><a href="filestp/">FileStp</a></li>
+<li><a href="filestpwriteoptions/">FileStpWriteOptions</a></li>
+<li><a href="filetype/">FileType</a></li>
+<li><a href="filewriteoptions/">FileWriteOptions</a></li>
+<li><a href="icommoncomponenttable/">ICommonComponentTable</a></li>
+<li><a href="imagefile/">ImageFile</a></li>
+<li><a href="manifesttable/">ManifestTable</a></li>
+<li><a href="namehash/">NameHash</a></li>
+<li><a href="serializationoptions/">SerializationOptions</a></li>
+<li><a href="sha1opennurbs/">SHA1OpenNURBS</a></li>
+<li><a href="textlog/">TextLog</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmgrouptable/">
+        <div class="h2 mt-1 mb-1">File3dmGroupTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to groups in the 3dm file.
+public class File3dmGroupTable :File3dmCommonComponentTable&lt;Group&gt;,IList&lt;Group&gt;Properties  ModelComponentType ComponentType Returns . since 6.5  Methods  Group FindIndex(int groupIndex) Retrieves a Group object based on an index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Group object, or None if none was found. since 6.5 Group FindName(string name) Finds a Group given its name.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmgrouptable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmhatchpatterntable/">
+        <div class="h2 mt-1 mb-1">File3dmHatchPatternTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to hatch pattern definitions in the 3dm file.
+public class File3dmHatchPatternTable :File3dmCommonComponentTable&lt;HatchPattern&gt;,IList&lt;HatchPattern&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  HatchPattern FindIndex(int index) Retrieves a HatchPattern object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A HatchPattern object, or None if none was found. since 6.0 HatchPattern FindName(string name) Finds a HatchPattern given its name.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmhatchpatterntable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/">
+        <div class="h2 mt-1 mb-1">File3dmInstanceDefinitionTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to instance (block) definitions in the 3dm file.
+public class File3dmInstanceDefinitionTable :File3dmCommonComponentTable&lt;InstanceDefinitionGeometry&gt;, IList&lt;InstanceDefinitionGeometry&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes) Adds an instance definition to the instance definition table. Returns - &gt;=0 index of instance definition in the instance definition table. -1 on failure. since 6.5 int Add(string name,string description,Point3d basePoint,IEnumerablegeometry) Adds an instance definition to the instance definition table.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlayertable/">
+        <div class="h2 mt-1 mb-1">File3dmLayerTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to layers in the 3dm file.
+public class File3dmLayerTable :File3dmCommonComponentTable&lt;Layer&gt;,IList&lt;Layer&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  Layer FindIndex(int index) Retrieves a Layer object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Layer object, or None if none was found. since 6.0 Layer FindName(string name,Guid parentId) Finds a Layer given its name.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlayertable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlinetypetable/">
+        <div class="h2 mt-1 mb-1">File3dmLinetypeTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to Linetypes in the 3dm file.
+public class File3dmLinetypeTable :File3dmCommonComponentTable&lt;Linetype&gt;,IList&lt;DocObjects.Linetype&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  Linetype FindIndex(int index) Retrieves a Linetype object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Linetype, or None if none was found. since 6.0 Linetype FindName(string name) Finds a Linetype given its name.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlinetypetable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmmaterialtable/">
+        <div class="h2 mt-1 mb-1">File3dmMaterialTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to materials in the 3dm file.
+public class File3dmMaterialTable :File3dmCommonComponentTable&lt;Material&gt;,IList&lt;DocObjects.Material&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  DocObjects.Material FindIndex(int index) Retrieves a material based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A material, or None if none was found. since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmmaterialtable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnamedconstructionplanes/">
+        <div class="h2 mt-1 mb-1">File3dmNamedConstructionPlanes</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to namned construction planes in the 3dm file.
+public class File3dmNamedConstructionPlanes :IList&lt;ConstructionPlane&gt;, Collections.IRhinoTable&lt;ConstructionPlane&gt;Properties  int Count Number of named construction planes in the table. since 6.0  Methods  void Add(ConstructionPlane cplane) Adds a named construction plane to the table. since 6.0 int Add(string name,Plane plane) Adds a named construction plane to the table. Returns - 0 based index of the named construction plane. -1 on failure.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnamedconstructionplanes/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobject/">
+        <div class="h2 mt-1 mb-1">File3dmObject</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Used to store geometry table object definition and attributes in a File3dm.
+public class File3dmObject : ModelComponent, IEquatable&lt;File3dmObject&gt;Properties  ObjectAttributes Attributes Gets the attributes that are linked with this document object. ModelComponentType ComponentType Returns . since 6.0 GeometryBase Geometry Gets the geometry that is linked with this document object. string Name Gets or sets the Name of the object. Equivalent to this.Attributes.Name.  Methods  bool Equals(File3dmObject other) Verified that two File3dmObject items refer to the same object in a document.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobject/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobjecttable/">
+        <div class="h2 mt-1 mb-1">File3dmObjectTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Represents a simple object table for a file that is open externally. This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.
+public class File3dmObjectTable :File3dmCommonComponentTable&lt;File3dmObject&gt;,IEnumerable&lt;File3dmObject&gt;Properties  ModelComponentType ComponentType Returns . since 6.0 int Count Returns the total amount of items in the object table, including lights.  Methods  void Add(File3dmObject item) Duplicates the object, then adds a copy of the object to the document.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmobjecttable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmplugindata/">
+        <div class="h2 mt-1 mb-1">File3dmPlugInData</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Custom data in the file supplied by a plug-in
+public class File3dmPlugInDataProperties  Guid PlugInId Plug-in this data is associated with  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmplugindata/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/5/">5</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

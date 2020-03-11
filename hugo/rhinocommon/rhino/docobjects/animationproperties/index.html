@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  AnimationProperties &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Contains information used by the Animation Tools to create sun, season, turntable and fly through animations.
+public class AnimationProperties : IDisposableConstructors  AnimationProperties() Initializes a new instance of the class. since 6.11 AnimationProperties(AnimationProperties source) Initialize new instance of the AnimationProperties class. since 6.11  Properties  string AnimationName Gets or sets the name of the animation sequence. since 6.11 Guid CameraPathId Gets or sets the object ID of the camera path.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">AnimationProperties</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Contains information used by the Animation Tools to create sun, season,
+turntable and fly through animations.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnimationProperties</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>AnimationProperties()</dt>
+<dd>Initializes a new instance of the  class.</dd>
+<dd>since 6.11</dd>
+<dt>AnimationProperties(AnimationProperties source)</dt>
+<dd>Initialize new instance of the AnimationProperties class.</dd>
+<dd>since 6.11</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>string AnimationName</dt>
+<dd>Gets or sets the name of the animation sequence.</dd>
+<dd>since 6.11</dd>
+<dt>Guid CameraPathId</dt>
+<dd>Gets or sets the object ID of the camera path.</dd>
+<dd>since 6.11</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] CameraPoints</dt>
+<dd>Gets or sets points of the camera path.</dd>
+<dd>since 6.11</dd>
+<dt>string CaptureMethod</dt>
+<dd>Gets or sets the capture method of the animation which is either preview or full.</dd>
+<dd>since 6.11</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/animationproperties/capturetypes/">CaptureTypes</a> CaptureType</dt>
+<dd>Gets or sets the capture type of the animation.</dd>
+<dd>since 6.11</dd>
+<dt>string[] Dates</dt>
+<dd>Gets or sets the dates that are calculated for seasonal/one day sun animations.</dd>
+<dd>since 6.11</dd>
+<dt>int DaysBetweenFrames</dt>
+<dd>Gets or sets the days between captured frames for seasonal sun animation.</dd>
+<dd>since 6.11</dd>
+<dt>Guid DisplayMode</dt>
+<dd>Gets or sets the ID of the view display mode (wireframe, shaded&hellip;).</dd>
+<dd>since 6.11</dd>
+<dt>int EndDay</dt>
+<dd>Gets or sets the end day for seasonal day sun animation in the range 1 to 31.</dd>
+<dd>since 6.11</dd>
+<dt>int EndHour</dt>
+<dd>Gets or sets the end hour for one day sun animation in the range 0 to 23.</dd>
+<dd>since 6.11</dd>
+<dt>int EndMinutes</dt>
+<dd>Gets or sets the end minutes for one day sun animation in the range 0 to 59.</dd>
+<dd>since 6.11</dd>
+<dt>int EndMonth</dt>
+<dd>Gets or sets the end month for seasonal day sun animation in the range 1 to 12.</dd>
+<dd>since 6.11</dd>
+<dt>int EndSeconds</dt>
+<dd>Gets or sets the end seconds for one day sun animation in the range 0 to 59.</dd>
+<dd>since 6.11</dd>
+<dt>int EndYear</dt>
+<dd>Gets or sets the end year for seasonal day sun animation in the range 1800 to 2199.</dd>
+<dd>since 6.11</dd>
+<dt>string FileExtension</dt>
+<dd>Gets or sets the file extension of the saved frames created by the animation.</dd>
+<dd>since 6.11</dd>
+<dt>string FolderName</dt>
+<dd>Gets or sets the location for the saved frames.</dd>
+<dd>since 6.11</dd>
+<dt>int FrameCount</dt>
+<dd>Gets or sets the number of frames to be captured.</dd>
+<dd>since 6.11</dd>
+<dt>string[] Images</dt>
+<dd>Gets or sets the full path to the saved frames of an animation.</dd>
+<dd>since 6.11</dd>
+<dt>double Latitude</dt>
+<dd>Gets or sets the latitude for sun animations in the range of -90 to +90.</dd>
+<dd>since 6.11</dd>
+<dt>int LightIndex</dt>
+<dd>Internal value used while previewing animation.</dd>
+<dd>since 6.11</dd>
+<dt>double Longitude</dt>
+<dd>Gets or sets the longitude for sun animations in the range of -180 to +180.</dd>
+<dd>since 6.11</dd>
+<dt>int MinutesBetweenFrames</dt>
+<dd>Gets or sets the minutes between captured frames for one day sun animation.</dd>
+<dd>since 6.11</dd>
+<dt>double NorthAngle</dt>
+<dd>Gets or sets the world angle corresponding to North in degrees.
+This angle is zero along the x-axis and increases anticlockwise.</dd>
+<dd>since 6.11</dd>
+<dt>bool RenderFull</dt>
+<dd>Gets or sets a value indicating whether to capture a frame in rendered mode.</dd>
+<dd>since 6.11</dd>
+<dt>bool RenderPreview</dt>
+<dd>Gets or sets a value indicating whether to capture a frame in preview rendered mode.</dd>
+<dd>since 6.11</dd>
+<dt>int StartDay</dt>
+<dd>Gets or sets the start day for seasonal/one day sun animation in the range 1 to 31.</dd>
+<dd>since 6.11</dd>
+<dt>int StartHour</dt>
+<dd>Gets or sets the start hour for seasonal/one day sun animation in the range 0 to 23.</dd>
+<dd>since 6.11</dd>
+<dt>int StartMinutes</dt>
+<dd>Gets or sets the start minutes for seasonal/one day sun animation in the range 0 to 59.</dd>
+<dd>since 6.11</dd>
+<dt>int StartMonth</dt>
+<dd>Gets or sets the start month for seasonal/one day sun animation in the range 1 to 12.</dd>
+<dd>since 6.11</dd>
+<dt>int StartSeconds</dt>
+<dd>Gets or sets the start seconds for seasonal/one day sun animation in the range 0 to 59.</dd>
+<dd>since 6.11</dd>
+<dt>int StartYear</dt>
+<dd>Gets or sets the start year for seasonal/one day sun animation in the range 1800 to 2199.</dd>
+<dd>since 6.11</dd>
+<dt>Guid TargetPathId</dt>
+<dd>Gets or sets the object ID of the target path.</dd>
+<dd>since 6.11</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] TargetPoints</dt>
+<dd>Gets or sets points of the target path.</dd>
+<dd>since 6.11</dd>
+<dt>string ViewportName</dt>
+<dd>Gets or sets the viewport that will be captured.</dd>
+<dd>since 6.11</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dd>since 6.11</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>AnimationProperties</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

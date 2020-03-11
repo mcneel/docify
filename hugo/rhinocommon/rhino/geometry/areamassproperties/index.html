@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  AreaMassProperties &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Contains static initialization methods and allows access to the computed metrics of area, area centroid and area moments in closed planar curves, in meshes, in surfaces, in hatches and in boundary representations.
+public class AreaMassProperties : IDisposableProperties  double Area Gets the area solution. double AreaError Gets the uncertainty in the area calculation. Point3d Centroid Gets the area centroid in the world coordinate system. Vector3d CentroidCoordinatesMomentsOfInertia Moments of inertia with respect to centroid coordinate system.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">AreaMassProperties</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Contains static initialization methods and allows access to the computed
+metrics of area, area centroid and area moments in closed
+planar curves, in meshes, in surfaces, in hatches and in boundary representations.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AreaMassProperties</span> : IDisposable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>double Area</dt>
+<dd>Gets the area solution.</dd>
+<dt>double AreaError</dt>
+<dd>Gets the uncertainty in the area calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Centroid</dt>
+<dd>Gets the area centroid in the world coordinate system.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CentroidCoordinatesMomentsOfInertia</dt>
+<dd>Moments of inertia with respect to centroid coordinate system.
+X = integral of ((y-y0)^2 + (z-z0)^2) dm
+Y = integral of ((z-z0)^2 + (x-x0)^2) dm
+Z = integral of ((z-z0)^2 + (y-y0)^2) dm
+where (x0,y0,z0) = centroid.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CentroidCoordinatesMomentsOfInertiaError</dt>
+<dd>Uncertainty in centroid coordinates moments of inertia calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CentroidCoordinatesRadiiOfGyration</dt>
+<dd>Radii of gyration with respect to centroid coordinate system.
+X = sqrt(integral of ((y-y0)^2 + (z-z0)^2) dm/M)
+Y = sqrt(integral of ((z-z0)^2 + (x-x0)^2) dm/M)
+Z = sqrt(integral of ((z-z0)^2 + (y-y0)^2) dm/M)
+where (x0,y0,z0) = centroid.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CentroidCoordinatesSecondMoments</dt>
+<dd>Second moments with respect to centroid coordinate system.
+X = integral of (x-x0)^2 dm
+Y = integral of (y-y0)^2 dm
+Z = integral of (z-z0)^2 dm
+where (x0,y0,z0) = centroid.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CentroidCoordinatesSecondMomentsError</dt>
+<dd>Uncertainty in centroid coordinates second moments calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CentroidError</dt>
+<dd>Gets the uncertainty in the centroid calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesFirstMoments</dt>
+<dd>Returns the world coordinate first moments if they were able to be calculated.
+X is integral of &ldquo;x dm&rdquo; over the area
+Y is integral of &ldquo;y dm&rdquo; over the area
+Z is integral of &ldquo;z dm&rdquo; over the area.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesFirstMomentsError</dt>
+<dd>Uncertainty in world coordinates first moments calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesMomentsOfInertia</dt>
+<dd>The moments of inertia about the world coordinate axes.
+X = integral of (y^2 + z^2) dm
+Y = integral of (z^2 + x^2) dm
+Z = integral of (z^2 + y^2) dm.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesMomentsOfInertiaError</dt>
+<dd>Uncertainty in world coordinates moments of inertia calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesProductMoments</dt>
+<dd>Returns the world coordinate product moments if they were able to be calculated.
+X is integral of &ldquo;xy dm&rdquo; over the area
+Y is integral of &ldquo;yz dm&rdquo; over the area
+Z is integral of &ldquo;zx dm&rdquo; over the area.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesProductMomentsError</dt>
+<dd>Uncertainty in world coordinates second moments calculation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesRadiiOfGyration</dt>
+<dd>Radii of gyration with respect to world coordinate system.
+X = sqrt(integral of (y^2 + z^2) dm/M)
+Y = sqrt(integral of (z^2 + x^2) dm/M)
+Z = sqrt(integral of (z^2 + y^2) dm/M)</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesSecondMoments</dt>
+<dd>Returns the world coordinate first moments if they were able to be calculated.
+X is integral of &ldquo;xx dm&rdquo; over the area
+Y is integral of &ldquo;yy dm&rdquo; over the area
+Z is integral of &ldquo;zz dm&rdquo; over the area.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> WorldCoordinatesSecondMomentsError</dt>
+<dd>Uncertainty in world coordinates second moments calculation.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static AreaMassProperties Compute(Brep brep)</dt>
+<dd>Computes an AreaMassProperties for a brep.</dd>
+<dd>Returns - The AreaMassProperties for the given Brep or None on failure.</dd>
+<dt>static AreaMassProperties Compute(Brep brep,bool area,bool firstMoments,bool secondMoments,bool productMoments)</dt>
+<dd>Compute the AreaMassProperties for a single Brep.</dd>
+<dd>Returns - The AreaMassProperties for the given Brep or None on failure.</dd>
+<dd>since 6.3</dd>
+<dt>static AreaMassProperties Compute(Curve closedPlanarCurve)</dt>
+<dd>Computes an AreaMassProperties for a closed planar curve.</dd>
+<dd>Returns - The AreaMassProperties for the given curve or None on failure.</dd>
+<dt>static AreaMassProperties Compute(Curve closedPlanarCurve,double planarTolerance)</dt>
+<dd>Computes an AreaMassProperties for a closed planar curve.</dd>
+<dd>Returns - The AreaMassProperties for the given curve or None on failure.</dd>
+<dt>static AreaMassProperties Compute(Hatch hatch)</dt>
+<dd>Computes an AreaMassProperties for a hatch.</dd>
+<dd>Returns - The AreaMassProperties for the given hatch or None on failure.</dd>
+<dt>static AreaMassProperties Compute(IEnumerable<!-- raw HTML omitted --> geometry)</dt>
+<dd>Computes the Area properties for a collection of geometric objects. 
+At present only Breps, Surfaces, Meshes and Planar Closed Curves are supported.</dd>
+<dd>Returns - The Area properties for the entire collection or None on failure.</dd>
+<dd>since 5.1</dd>
+<dt>static AreaMassProperties Compute(IEnumerable<!-- raw HTML omitted --> geometry,bool area,bool firstMoments,bool secondMoments,bool productMoments)</dt>
+<dd>Computes the AreaMassProperties for a collection of geometric objects. 
+At present only Breps, Surfaces, Meshes and Planar Closed Curves are supported.</dd>
+<dd>Returns - The AreaMassProperties for the entire collection or None on failure.</dd>
+<dd>since 6.3</dd>
+<dt>static AreaMassProperties Compute(Mesh mesh)</dt>
+<dd>Computes an AreaMassProperties for a mesh.</dd>
+<dd>Returns - The AreaMassProperties for the given Mesh or None on failure.</dd>
+<dt>static AreaMassProperties Compute(Mesh mesh,bool area,bool firstMoments,bool secondMoments,bool productMoments)</dt>
+<dd>Compute the AreaMassProperties for a single Mesh.</dd>
+<dd>Returns - The AreaMassProperties for the given Mesh or None on failure.</dd>
+<dd>since 6.3</dd>
+<dt>static AreaMassProperties Compute(Surface surface)</dt>
+<dd>Computes an AreaMassProperties for a surface.</dd>
+<dd>Returns - The AreaMassProperties for the given Surface or None on failure.</dd>
+<dt>static AreaMassProperties Compute(Surface surface,bool area,bool firstMoments,bool secondMoments,bool productMoments)</dt>
+<dd>Compute the AreaMassProperties for a single Surface.</dd>
+<dd>Returns - The AreaMassProperties for the given Surface or None on failure.</dd>
+<dd>since 6.3</dd>
+<dt>bool CentroidCoordinatesPrincipalMoments(double x,Vector3d xaxis,double y,Vector3d yaxis,double z,Vector3d zaxis)</dt>
+<dd>Calculates the principal moments and principal axes with repect to centroid coordinates. 
+These are simply the eigenvalues and eigenvectors of the centroid coordinate inertia matrix.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.9</dd>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dt>bool WorldCoordinatesPrincipalMoments(double x,Vector3d xaxis,double y,Vector3d yaxis,double z,Vector3d zaxis)</dt>
+<dd>Calculates the principal moments and principal axes with repect to world coordinates. 
+These are simply the eigenvalues and eigenvectors of the world coordinate inertia matrix.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.9</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>AreaMassProperties</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

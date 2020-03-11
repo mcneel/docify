@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,128 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/ordinatedimension/">
-        <h3>OrdinateDimension</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/subdcreationoptions/">
+        <h3>SubDCreationOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/ordinatedimension/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/subdcreationoptions/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents an ordinate dimension
-public class OrdinateDimensionConstructors OrdinateDimension()  (summary) (since) 6.0  Properties Point2d DefPoint  (summary) (since) 6.0  double KinkOffset1  (summary) (since) 6.0  double KinkOffset2  (summary) (since) 6.0  Point2d KinkPoint1  (summary) (since) 6.0  Point2d KinkPoint2  (summary) (since) 6.0  Point2d LeaderPoint  (summary) (since) 6.0  Methods static OrdinateDimension Create(DimensionStyle dimStyle,Plane plane,MeasuredDirection direction,Point3d basepoint,Point3d defpoint,Point3d leaderpoint,double kinkoffset1,double kinkoffset2)  (summary) Initialize Dimension parameters (since) 6.
+Options used for creating a SubD
+public class SubDCreationOptions : IDisposableConstructors  SubDCreationOptions() Create default options since 7.0  Properties  static SubDCreationOptions ConvexCornerAtMeshCorner Look for convex corners at sub-D vertices with 2 edges that have an included angle &lt;= 90 degrees. since 7.0 static SubDCreationOptions InteriorCreaseAtMeshCrease Create an interior sub-D crease along coincident input mesh edges where the vertex normal directions at one end differ by at least 30 degrees.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/ordinatedimensionobject/">
-        <h3>OrdinateDimensionObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/subdedge/">
+        <h3>SubDEdge</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/ordinatedimensionobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/subdedge/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Rhino Object that represents an ordinate dimension geometry and attributes
-public class OrdinateDimensionObjectProperties Geometry.OrdinateDimension OrdinateDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+    Namespace: Rhino.Geometry
+Single edge of a SubD
+public class SubDEdge : SubDComponentProperties  Line ControlNetLine Line representing the control net end points since 7.0 int FaceCount Number of faces for this edge since 7.0 SubDEdgeTag Tag identifies the type of subdivision edge since 7.0 SubDVertex VertexFrom Start vertex for this edge since 7.0 SubDVertex VertexTo End vertex for this edge since 7.0  Methods  SubDFace FaceAt(int index) Retrieve a SubDFace from this edge since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/pageviewspacechangeeventargs/">
-        <h3>PageViewSpaceChangeEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/subdedgelist/">
+        <h3>SubDEdgeList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/pageviewspacechangeeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/subdedgelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-public class PageViewSpaceChangeEventArgsProperties Guid NewActiveDetailId  (summary) The id of the detail object was set active. Note, if this id is equal to Guid.Empty, then the active detail object is the page view itself. (since) 5.0  Guid OldActiveDetailId  (summary) The id of the previously active detail object. Note, if this id is equal to Guid.Empty, then the active detail object was the page view itself. (since) 5.
+    Namespace: Rhino.Geometry.Collections
+All edges in a SubD
+public class SubDEdgeList : IEnumerable&lt;SubDEdge&gt;Properties  int Count Gets the number of SubD edges. since 7.0  Methods  SubDEdge Add(SubDEdgeTag tag,SubDVertex v0,SubDVertex v1) Add a new edge to the list. since 7.0 SubDEdge Find(int id) Find an edge in this SubD with a given id since 7.0 SubDEdge Find(uint id) Find an edge in this SubD with a given id since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/paneleventargs/">
-        <h3>PanelEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/subdfacelist/">
+        <h3>SubDFaceList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/paneleventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/subdfacelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Panels.Show event arguments
-public class PanelEventArgsConstructors PanelEventArgs(Guid panelId,uint documentSerialNumber)  (summary) (since) 6.0  Properties RhinoDoc Document  (summary) (since) 6.0  uint DocumentSerialNumber  (summary) (since) 6.0  Guid PanelId  (summary) Class Id for panel being shown or hidden (since) 6.0  
+    Namespace: Rhino.Geometry.Collections
+All faces in a SubD
+public class SubDFaceList : IEnumerable&lt;SubDFace&gt;Properties  int Count Gets the number of SubD faces. since 7.0  Methods  SubDFace Find(int id) Find a face in this SubD with a given id since 7.0 SubDFace Find(uint id) Find a face in this SubD with a given id since 7.0 IEnumeratorGetEnumerator() Implementation of IEnumerable since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/panelids/">
-        <h3>PanelIds</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/subdvertex/">
+        <h3>SubDVertex</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/panelids/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/subdvertex/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Standard Rhino panel Id&rsquo;s
-public class PanelIdsProperties static Guid ContextHelp  (summary) Rhino context sensitive help panel. (since) 5.0  static Guid Display  (summary) (since) 5.0  static Guid Environment  (summary) Rhino environment panel (since) 5.0  static Guid GroundPlane  (summary) Rhino ground plane panel (since) 5.0  static Guid Layers  (summary) Rhino Layer panel (since) 5.0  static Guid Libraries  (summary) Rhino render properties panel (since) 5.
+    Namespace: Rhino.Geometry
+Single vertex of a SubD
+public class SubDVertex : SubDComponentProperties  Point3d ControlNetPoint Location of the &ldquo;control net&rdquo; point that this SubDVertex represents since 7.0 int EdgeCount Number of edges for this vertex since 7.0 IEnumerableEdges All edges that this vertex is part of since 7.0 int FaceCount Number of faces for this vertex since 7.0 SubDVertex Next Next vertex in linked list of vertices on this level since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/panels/">
-        <h3>Panels</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/subdvertexlist/">
+        <h3>SubDVertexList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/panels/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/subdvertexlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Access to Rhino panels and register custom panels
-public class Panelsstatic Closed  (summary) This event is raised when a panel host is closed (since) 6.0  static Show  (summary) This event is called when a panel is shown or hidden. This event will get raised multipThis times when the active document changes in Mac Rhino. It will called with show equal to False for the prevous active document and with show equal to True for the current document.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the vertices and vertex-related functionality of a SubD
+public class SubDVertexListProperties  int Count Gets the number of SubD vertices. since 7.0 SubDVertex First First vertex in this linked list of vertices since 7.0  Methods  SubDVertex Add(SubDVertexTag tag,Point3d vertex) Add a new vertex to the end of the Vertex list. Returns - The newly added vertex. since 7.0 SubDVertex Find(int id) Find a vertex in this SubD with a given id since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/parametersnames/">
-        <h3>ParametersNames</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/sumsurface/">
+        <h3>SumSurface</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/parametersnames/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/sumsurface/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a sum surface, or an extrusion of a curve along a curved path.
+[Serializable]public class SumSurface : SurfaceMethods  static SumSurface Create(Curve curveA,Curve curveB) Constructs a new sum surface by extruding a curve A along a path B. Returns - A new sum surface on success; None on failure.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/sun/">
+        <h3>Sun</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/sun/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class ParametersNamesProperties static string AmbientOcclusion  (summary) (since) 7.0  static string Anisotropic  (summary) (since) 7.0  static string AnisotropicRotation  (summary) (since) 7.0  static string BaseColor  (summary) (since) 7.0  static string BRDF  (summary) (since) 7.0  static string Bump  (summary) (since) 7.0  static string Clearcoat  (summary) (since) 7.0  static string ClearcoatBump  (summary) (since) 7.0  static string ClearcoatRoughness  (summary) (since) 7.
+Represents the Sun on a little portion of Earth.
+public class Sun : DocumentOrFreeFloatingBase, IDisposableConstructors  Sun() Create a non-document controlled Sun  Events  static Changed This event is raised when a Sun property value is changed. since 5.10  Properties  double Altitude Get the altitude for the sun. To set use SetPosition(azimuth, altitude) double Azimuth Get the azimuth for the sun. To set use SetPosition(azimuth, altitude) bool DaylightSaving Daylight savings time since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/particle/">
-        <h3>Particle</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/supportoptions/">
+        <h3>SupportOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/particle/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/supportoptions/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class SupportOptionsMethods  static bool AlwaysShowSunPreview()  since 6.0 static int AutoSaveKeepAmount()  since 6.0 static bool AutoSaveRenderings()  since 6.0 static bool CheckSupportFilesBeforeRendering()  since 6.0 static bool CombineEditors()  since 6.0 static string CustomLibraryPath()  since 6.0 static string CustomPaths()  since 6.0 static int DarkPreviewCheckerColor()  since 6.0 static bool EnablePreviewJobLog()  since 6.0 static bool HarvestContentParameters()  since 6.0 static int LabelFormatLoc()  since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/surface/">
+        <h3>Surface</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/surface/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a simple particle. This base class only defines position and display properties (size, color, bitmap id). You will most likely create a class that derives from this particle class to perform some sort of physical simulation (movement over time or frames).
-public class ParticleConstructors Particle()  (summary) Initializes a new instance of the class. (since) 5.0  Properties System.Drawing.Color Color  (summary) (since) 5.0  int DisplayBitmapIndex  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/particlesystem/">
-        <h3>ParticleSystem</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/particlesystem/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-public class ParticleSystemProperties BoundingBox BoundingBox  (summary) (since) 5.0  bool DisplaySizesInWorldUnits  (summary) (since) 5.0  bool DrawRequiresDepthSorting  (summary) (since) 5.0  Methods bool Add(Particle particle)  (summary) Adds a particle to this ParticleSystem. A Particle can only be in one system at a time. If the Particle already exists in a different system, this function will return false. You should remove the particle from the other system first before adding it.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/pathpoint/">
-        <h3>PathPoint</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/pathpoint/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-Properties PointF Location  (summary) (since) 6.0  PointType PointType  (summary) (since) 6.0  
+Represents a base class that is common to most RhinoCommon surface types. A surface represents an entity that can be all visited by providing two independent parameters, usually called (u, v), or sometimes (s, t).
+[Serializable]public class Surface : GeometryBaseProperties  bool IsSolid Gets a values indicating whether a surface is solid.  Methods  static Surface CreateExtrusion(Curve profile,Vector3d direction) Constructs a surface by extruding a curve along a vector.
   </div>
   
 

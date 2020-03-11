@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshTextureCoordinateList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the Vertex Texture coordinates of a Mesh.
+public class MeshTextureCoordinateList : IResizableList&amp;lt;Point2f&amp;gt;, IList, IReadOnlyList&amp;lt;Point2f&amp;gt;Properties  int Capacity Gets or sets the total number of texture coordinates the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of texture coordinates.  Methods  int Add(double s,double t) Adds a new texture coordinate to the end of the Texture list.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshTextureCoordinateList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the Vertex Texture coordinates of a Mesh.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshTextureCoordinateList</span> : IResizableList&lt;Point2f&gt;, IList, IReadOnlyList&lt;Point2f&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Capacity</dt>
+<dd>Gets or sets the total number of texture coordinates the internal data structure can hold without resizing.</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Gets or sets the number of texture coordinates.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add(double s,double t)</dt>
+<dd>Adds a new texture coordinate to the end of the Texture list.</dd>
+<dd>Returns - The index of the newly added texture coordinate.</dd>
+<dt>int Add(float s,float t)</dt>
+<dd>Adds a new texture coordinate to the end of the Texture list.</dd>
+<dd>Returns - The index of the newly added texture coordinate.</dd>
+<dt>int Add(Point2f tc)</dt>
+<dd>Adds a new texture coordinate to the end of the Texture list.</dd>
+<dd>Returns - The index of the newly added texture coordinate.</dd>
+<dt>int Add(Point3d tc)</dt>
+<dd>Adds a new texture coordinate to the end of the Texture list.</dd>
+<dd>Returns - The index of the newly added texture coordinate.</dd>
+<dt>bool AddRange(Point2f[] textureCoordinates)</dt>
+<dd>Appends an array of texture coordinates.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Clear()</dt>
+<dd>Clears the Texture Coordinate list on the mesh.</dd>
+<dt>void Destroy()</dt>
+<dd>Releases all memory allocated to store texture coordinates. The list capacity will be 0 after this call.
+Subsequent calls can add new items.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that yields all texture coordinates in this collection.</dd>
+<dd>Returns - The enumerator.</dd>
+<dt>bool NormalizeTextureCoordinates()</dt>
+<dd>Scales the texture coordinates so the texture domains are [0,1] 
+and eliminate any texture rotations.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ReverseTextureCoordinates(int direction)</dt>
+<dd>Reverses one coordinate direction of the texture coordinates.
+The region of the bitmap the texture uses does not change.
+Either Us or Vs direction is flipped.</dd>
+<dd>Returns - True if operation succeeded; otherwise, false.</dd>
+<dt>bool SetTextureCoordinate(int index,double s,double t)</dt>
+<dd>Sets or adds a texture coordinate to the Texture Coordinate List.
+If [index] is less than [Count], the existing coordinate at [index] will be modified.If [index] equals [Count], a new coordinate is appended to the end of the coordinate list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetTextureCoordinate(int index,float s,float t)</dt>
+<dd>Sets or adds a texture coordinate to the Texture Coordinate List.
+If [index] is less than [Count], the existing coordinate at [index] will be modified.If [index] equals [Count], a new coordinate is appended to the end of the coordinate list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetTextureCoordinate(int index,Point2f tc)</dt>
+<dd>Sets or adds a texture coordinate to the Texture Coordinate List.
+If [index] is less than [Count], the existing coordinate at [index] will be modified.If [index] equals [Count], a new coordinate is appended to the end of the coordinate list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetTextureCoordinate(int index,Point3f tc)</dt>
+<dd>Sets or adds a texture coordinate to the Texture Coordinate List.
+If [index] is less than [Count], the existing coordinate at [index] will be modified.If [index] equals [Count], a new coordinate is appended to the end of the coordinate list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetTextureCoordinates(Point2f[] textureCoordinates)</dt>
+<dd>Sets all texture coordinates in one go.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetTextureCoordinates(TextureMapping mapping)</dt>
+<dd>Set all texture coordinates based on a texture mapping function</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>float[] ToFloatArray()</dt>
+<dd>Copies all vertices to a linear array of float in u,v order</dd>
+<dd>Returns - The float array.</dd>
+<dd>since 6.0</dd>
+<dt>bool TransposeTextureCoordinates()</dt>
+<dd>Transposes texture coordinates.
+The region of the bitmap the texture uses does not change.
+All texture coordinates rows (Us) become columns (Vs), and vice versa.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshTextureCoordinateList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

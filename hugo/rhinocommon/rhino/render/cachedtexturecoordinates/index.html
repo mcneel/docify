@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CachedTextureCoordinates &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Used for cached texture coordinates
+public class CachedTextureCoordinates : Runtime.CommonObject, IList&amp;lt;Point3d&amp;gt;Properties  int Count Number of cached coordinates. since 5.10 int Dim Coordinate dimension: 2 = UV, 3 = UVW since 5.10 bool IsReadOnly This collection is always read-only since 5.10 Guid MappingId The texture mapping Id. since 5.10  Methods  bool Contains(Point3d item) Determines whether this collection contains a specific value. since 5.10 void CopyTo(Point3d[] array,int arrayIndex) Copies the elements of the this collection to an System.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CachedTextureCoordinates</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Used for cached texture coordinates</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CachedTextureCoordinates</span> : Runtime.CommonObject, IList&lt;Point3d&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Number of cached coordinates.</dd>
+<dd>since 5.10</dd>
+<dt>int Dim</dt>
+<dd>Coordinate dimension: 2 = UV, 3 = UVW</dd>
+<dd>since 5.10</dd>
+<dt>bool IsReadOnly</dt>
+<dd>This collection is always read-only</dd>
+<dd>since 5.10</dd>
+<dt>Guid MappingId</dt>
+<dd>The texture mapping Id.</dd>
+<dd>since 5.10</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool Contains(Point3d item)</dt>
+<dd>Determines whether this collection contains a specific value.</dd>
+<dd>since 5.10</dd>
+<dt>void CopyTo(Point3d[] array,int arrayIndex)</dt>
+<dd>Copies the elements of the this collection to an System.Array,
+starting at a particular System.Array index.</dd>
+<dd>since 5.10</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Returns an enumerator that iterates through this collection.</dd>
+<dd>Returns - A enumerator that can be used to iterate through this collection.</dd>
+<dd>since 5.10</dd>
+<dt>int IndexOf(Point3d item)</dt>
+<dd>Determines the index of a specific point in this collection.</dd>
+<dd>Returns - The index of item if found in the list; otherwise, -1.</dd>
+<dd>since 5.10</dd>
+<dt>bool TryGetAt(int index,double u,double v,double w)</dt>
+<dd>Use this method to iterate the cached texture coordinate array.</dd>
+<dd>Returns - Returns True if index is valid; otherwise returns false.</dd>
+<dd>since 5.10</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CachedTextureCoordinates</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

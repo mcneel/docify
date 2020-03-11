@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BinaryArchiveReader &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
+public class BinaryArchiveReaderProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BinaryArchiveReader</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents an entity that is capable of reading a binary archive and
+instantiating strongly-typed objects.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinaryArchiveReader</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Archive3dmVersion</dt>
+<dd>If a 3dm archive is being read or written, then this is the
+version of the 3dm archive format (1, 2, 3, 4 or 5).
+0     a 3dm archive is not being read/written
+1     a version 1 3dm archive is being read/written
+2     a version 2 3dm archive is being read/written
+3     a version 3 3dm archive is being read/written
+4     a version 4 3dm archive is being read/written
+5     an old version 5 3dm archive is being read
+50    a version 5 3dm archive is being read/written.</dd>
+<dt>ulong CurrentPosition</dt>
+<dd>current offset (in bytes) into archive ( like ftell() )</dd>
+<dd>since 6.0</dd>
+<dt>bool ReadErrorOccured</dt>
+<dd>Gets or sets whether en error occurred during reading.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool AtEnd()</dt>
+<dd>True if at end of a file</dd>
+<dd>since 5.1</dd>
+<dt>bool BeginRead3dmChunk(uint expectedTypeCode,int majorVersion,int minorVersion)</dt>
+<dd>Begins reading a chunk that must be in the archive at this location.</dd>
+<dd>Returns - True if beginning of the chunk was read.  In this case you must call EndRead3dmChunk(),
+even if something goes wrong while you attempt to read the interior of the chunk.
+False if the chunk did not exist at the current location in the file.</dd>
+<dd>since 6.0</dd>
+<dt>bool BeginRead3dmChunk(uint typeCode,long value)</dt>
+<dd>Begins reading a chunk that must be in the archive at this location.</dd>
+<dd>since (unknown)</dd>
+<dt>uint Dump3dmChunk(TextLog log)</dt>
+<dd>Fnction for studying contents of a file.  The primary use is as an aid
+to help dig through files that have been damaged (bad disks, transmission
+errors, etc.) If an error is found, a line that begins with the word
+&ldquo;ERROR&rdquo; is printed.</dd>
+<dd>Returns - 0 if something went wrong, otherwise the typecode of the chunk that
+was just studied.</dd>
+<dd>since 5.1</dd>
+<dt>bool EnableCRCCalculation(bool enable)</dt>
+<dd>Expert user function to control CRC calculation while reading and writing.
+Typically this is used when seeking around and reading/writing information
+in non-serial order.</dd>
+<dd>Returns - Current state of CRC calculation.  Use the returned value to restore the
+CRC calculation setting after you are finished doing your fancy pants
+expert IO.</dd>
+<dd>since 6.0</dd>
+<dt>bool EndRead3dmChunk(bool suppressPartiallyReadChunkWarning)</dt>
+<dd>Calling this will skip rest of stuff in chunk if it was only partially read.</dd>
+<dd>since 6.0</dd>
+<dt>void Read3dmChunkVersion(int major,int minor)</dt>
+<dd>A chunk version is a single byte that encodes a major.minor
+version number.  Useful when creating I/O code for 3dm chunks
+that may change in the future.  Increment the minor version 
+number if new information is added to the end of the chunk. 
+Increment the major version if the format of the chunk changes
+in some other way.</dd>
+<dd>Returns - True on successful read.</dd>
+<dt>bool Read3dmStartSection(int version,string comment)</dt>
+<dd></dd>
+<dd>Returns - True on success</dd>
+<dd>since 5.1</dd>
+<dt>bool ReadBool()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>bool[] ReadBoolArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>Geometry.BoundingBox ReadBoundingBox()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>byte ReadByte()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>byte[] ReadByteArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>void ReadCheckSum()</dt>
+<dd>Reads a legacy ON_CheckSum, only provided to read data chunks from old
+V5 files, the CheckSum read is discarded</dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Color ReadColor()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>byte[] ReadCompressedBuffer()</dt>
+<dd>Reads an array of compressed  information from the archive and uncompresses it.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dd>since 5.9</dd>
+<dt>Rhino.Collections.ArchivableDictionary ReadDictionary()</dt>
+<dd>Reads a complete  from the archive.</dd>
+<dd>Returns - The newly instantiated object.</dd>
+<dt>double ReadDouble()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>double[] ReadDoubleArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>System.Drawing.Font ReadFont()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.GeometryBase ReadGeometry()</dt>
+<dd>Reads a -derived object from the archive.
+The  class is abstract.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.GeometryBase[] ReadGeometryArray()</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>Guid ReadGuid()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>Guid[] ReadGuidArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>int ReadInt()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>Int64 ReadInt64()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>int[] ReadIntArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>Geometry.Interval ReadInterval()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Line ReadLine()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.MeshingParameters ReadMeshingParameters()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>DocObjects.ObjRef ReadObjRef()</dt>
+<dd>Reads a  from the archive</dd>
+<dd>Returns - the element that was read</dd>
+<dd>since 5.8</dd>
+<dt>DocObjects.ObjRef[] ReadObjRefArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dd>since 5.8</dd>
+<dt>Geometry.Plane ReadPlane()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>System.Drawing.Point ReadPoint()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Point2d ReadPoint2d()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Point3d ReadPoint3d()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Point3f ReadPoint3f()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Point4d ReadPoint4d()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>System.Drawing.PointF ReadPointF()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Ray3d ReadRay3d()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>System.Drawing.Rectangle ReadRectangle()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>System.Drawing.RectangleF ReadRectangleF()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt><a href="/rhinocommon/rhino/render/rendersettings/">RenderSettings</a> ReadRenderSettings()</dt>
+<dd>Reads a -derived object from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dd>since 6.0</dd>
+<dt>sbyte ReadSByte()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>sbyte[] ReadSByteArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>short ReadShort()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>short[] ReadShortArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>float ReadSingle()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>float[] ReadSingleArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>System.Drawing.Size ReadSize()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>System.Drawing.SizeF ReadSizeF()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>string ReadString()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>string[] ReadStringArray()</dt>
+<dd>Reads an array of  from the archive.
+An array is returned even if the input was another enumerable type.</dd>
+<dd>Returns - The array that was read.</dd>
+<dt>Geometry.Transform ReadTransform()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>uint ReadUInt()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>ushort ReadUShort()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dt>string ReadUtf8String()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The value that was read.</dd>
+<dd>since 6.0</dd>
+<dt>Geometry.Vector2d ReadVector2d()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Vector3d ReadVector3d()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>Geometry.Vector3f ReadVector3f()</dt>
+<dd>Reads a  from the archive.</dd>
+<dd>Returns - The element that was read.</dd>
+<dt>bool SeekFromCurrentPosition(long byteOffset)</dt>
+<dd>seek from current position ( like fseek( ,SEEK_CUR) )</dd>
+<dd>since (unknown)</dd>
+<dt>bool SeekFromCurrentPosition(ulong byteOffset,bool forward)</dt>
+<dd>seek from current position ( like fseek( ,SEEK_CUR) )</dd>
+<dd>since (unknown)</dd>
+<dt>bool SeekFromStart(ulong byteOffset)</dt>
+<dd>seek from start position ( like fseek( ,SEEK_SET) )</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BinaryArchiveReader</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

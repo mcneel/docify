@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ManifestTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Maintains an index to every model component that is in the 3dm file. This is the &amp;ldquo;more comprehensive&amp;rdquo; table that contains all objects in all other tables.
+public class ManifestTable :ICommonComponentTable&amp;lt;ModelComponent&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0 int Count Total number of items in the manifest, including deleted items. since 6.0 long LongCount Total number of items in the manifest, including deleted items. since 6.0 object Parent Returns the parent object.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ManifestTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Maintains an index to every model component that is in the 3dm file.
+This is the &ldquo;more comprehensive&rdquo; table that contains all objects in all other tables.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ManifestTable</span> :
+    ICommonComponentTable&lt;ModelComponent&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Total number of items in the manifest, including deleted items.</dd>
+<dd>since 6.0</dd>
+<dt>long LongCount</dt>
+<dd>Total number of items in the manifest, including deleted items.</dd>
+<dd>since 6.0</dd>
+<dt>object Parent</dt>
+<dd>Returns the parent object. This is the RhinoDoc, or the File3md file.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static ModelComponentType GetModelComponentTypeFromGenericType()</dt>
+<dd>Returns the result of the ComponentType property of a ModelComponent.</dd>
+<dd>Returns - A .</dd>
+<dd>since 6.0</dd>
+<dt>int ActiveObjectCount(ModelComponentType type)</dt>
+<dd>Total number of items in the manifest, including deleted items.</dd>
+<dd>since 6.0</dd>
+<dt>void Clear()</dt>
+<dd>Marks all items as deleted.</dd>
+<dd>since 6.0</dd>
+<dt>bool Contains(ModelComponent item)</dt>
+<dd>Determines if an items is contained in this table.</dd>
+<dd>Returns - True if the item is contained; otherwise, false.</dd>
+<dd>since 6.0</dd>
+<dt>void CopyTo(ModelComponent[] array,int arrayIndex)</dt>
+<dd>Copies the content of this table to an array.</dd>
+<dd>since 6.0</dd>
+<dt>T FindId(Guid id)</dt>
+<dd>Uses the guid to find a model component. Deleted objects cannot be found by id.
+The guid is the value that is stored in the .Id property.
+In a single document, no two active objects have the same guid. If an object is
+replaced with a new object, then the guid  persists. For example, if the _Move command
+moves an object, then the moved object inherits its guid from the starting object.
+If the Copy command copies an object, then the copy gets a new guid. This guid persists
+through file saving/openning operations. This function will not find grip objects.</dd>
+<dd>Returns - Reference to the rhino object or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/modelcomponent/">ModelComponent</a> FindId(Guid id)</dt>
+<dd>Uses the guid to find a model component. Deleted objects cannot be found by id.
+The guid is the value that is stored in the .Id property.
+In a single document, no two active objects have the same guid. If an object is
+replaced with a new object, then the guid  persists. For example, if the _Move command
+moves an object, then the moved object inherits its guid from the starting object.
+If the Copy command copies an object, then the copy gets a new guid. This guid persists
+through file saving/openning operations. This function will not find grip objects.</dd>
+<dd>Returns - Reference to the rhino object with the objectId or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/modelcomponent/">ModelComponent</a> FindId(Guid id,ModelComponentType type)</dt>
+<dd>Uses the guid to find a model component. Deleted objects cannot be found by id.
+The guid is the value that is stored in the .Id property.
+In a single document, no two active objects have the same guid. If an object is
+replaced with a new object, then the guid  persists. For example, if the _Move command
+moves an object, then the moved object inherits its guid from the starting object.
+If the Copy command copies an object, then the copy gets a new guid. This guid persists
+through file saving/openning operations. This function will not find grip objects.</dd>
+<dd>Returns - Reference to the rhino object with the objectId or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt>T FindIndex(int index)</dt>
+<dd>Uses the index to find a model component.
+The index is the value that is stored in the .Index property.</dd>
+<dd>Returns - Reference to the rhino object or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/modelcomponent/">ModelComponent</a> FindIndex(int index,ModelComponentType type)</dt>
+<dd>Uses the index to find a model component.
+The index is the value that is stored in the .Index property.</dd>
+<dd>Returns - Reference to the rhino object or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt>T FindName(string name,Guid parent)</dt>
+<dd>Uses the name to find a model component.
+The name is the value that is stored in the .Name property.
+Deleted objects have no name.</dd>
+<dd>Returns - Reference to the rhino object or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/modelcomponent/">ModelComponent</a> FindName(string name,ModelComponentType type,Guid parent)</dt>
+<dd>Uses the name to find a model component.
+The name is the value that is stored in the .Name property.
+Deleted objects have no name.</dd>
+<dd>Returns - Reference to the rhino object or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt>T FindNameHash(NameHash nameHash)</dt>
+<dd>Uses the hash of the name to find a model component.
+Deleted objects have no name.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/modelcomponent/">ModelComponent</a> FindNameHash(NameHash nameHash,ModelComponentType type)</dt>
+<dd>Uses the hash of the name to find a model component.
+Deleted objects have no name.</dd>
+<dd>Returns - Reference to the rhino object or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Visits all model components in the document, including default ones.</dd>
+<dd>Returns - An enumerator.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Visits all model components in the document, including default ones.</dd>
+<dd>Returns - An enumerator.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator(ModelComponentType type)</dt>
+<dd>Returns an enumerators that yields all model components, including default ones,
+relating to a particular type.</dd>
+<dd>Returns - An enumerator.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ManifestTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

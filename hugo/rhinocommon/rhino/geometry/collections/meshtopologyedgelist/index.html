@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshTopologyEdgeList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Represents an entry point to the list of edges in a mesh topology.
+public class MeshTopologyEdgeListProperties  int Count Gets the amount of edges in this list.  Methods  bool CollapseEdge(int topologyEdgeIndex) Replaces a mesh edge with a vertex at its center and update adjacent faces as needed. Returns - True if successful. Line EdgeLine(int topologyEdgeIndex) Gets the 3d line along an edge. Returns - Line along edge.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshTopologyEdgeList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Represents an entry point to the list of edges in a mesh topology.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshTopologyEdgeList</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Gets the amount of edges in this list.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool CollapseEdge(int topologyEdgeIndex)</dt>
+<dd>Replaces a mesh edge with a vertex at its center and update adjacent faces as needed.</dd>
+<dd>Returns - True if successful.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> EdgeLine(int topologyEdgeIndex)</dt>
+<dd>Gets the 3d line along an edge.</dd>
+<dd>Returns - Line along edge. If input is not valid, an Invalid Line is returned.</dd>
+<dt>int[] GetConnectedFaces(int topologyEdgeIndex)</dt>
+<dd>Gets indices of faces connected to an edge.</dd>
+<dd>Returns - An array of face indices the edge borders. This might be empty on error.</dd>
+<dt>int[] GetConnectedFaces(int topologyEdgeIndex,bool[] faceOrientationMatchesEdgeDirection)</dt>
+<dd>Gets indices of faces connected to an edge.</dd>
+<dd>Returns - An array of face indices the edge borders. This might be empty on error.</dd>
+<dt>int GetEdgeIndex(int topologyVertex1,int topologyVertex2)</dt>
+<dd>Returns index of edge that connects topological vertices. 
+returns -1 if no edge is found.</dd>
+<dd>Returns - The edge index.</dd>
+<dt>int[] GetEdgesForFace(int faceIndex)</dt>
+<dd>Gets indices of edges that surround a given face.</dd>
+<dd>Returns - A new array of indices to the topological edges that are connected with the specified face.</dd>
+<dt>int[] GetEdgesForFace(int faceIndex,bool[] sameOrientation)</dt>
+<dd>Gets indices of edges that surround a given face.</dd>
+<dd>Returns - A new array of indices to the topological edges that are connected with the specified face.</dd>
+<dt><a href="/rhinocommon/rhino/indexpair/">IndexPair</a> GetTopologyVertices(int topologyEdgeIndex)</dt>
+<dd>Gets the two topology vertices for a given topology edge.</dd>
+<dd>Returns - The pair of vertex indices the edge connects.</dd>
+<dt>bool IsEdgeUnwelded(int topologyEdgeIndex)</dt>
+<dd>Determines if the mesh edge is unwelded, or if the mesh faces that share the edge have unique vertex indices.</dd>
+<dd>Returns - True if the edge is unwelded, False if the edge is welded.</dd>
+<dd>since 6.13</dd>
+<dt>bool IsHidden(int topologyEdgeIndex)</dt>
+<dd>Returns True if the topological edge is hidden. The mesh topology
+edge is hidden only if either of its mesh topology vertices is hidden.</dd>
+<dd>Returns - True if mesh topology edge is hidden.</dd>
+<dt>bool IsNgonInterior(int topologyEdgeIndex)</dt>
+<dd>Returns True if the topological edge is an interior ngon edge</dd>
+<dd>Returns - True if mesh topology edge is an interior ngon edge.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsSwappableEdge(int topologyEdgeIndex)</dt>
+<dd>Determines if a mesh edge index is valid input for .</dd>
+<dd>Returns - True if edge can be swapped.</dd>
+<dt>bool SplitEdge(int topologyEdgeIndex,double t)</dt>
+<dd>Divides a mesh edge to create two or more triangles</dd>
+<dd>Returns - True if successful</dd>
+<dt>bool SplitEdge(int topologyEdgeIndex,Point3d point)</dt>
+<dd>Divides a mesh edge to create two or more triangles</dd>
+<dd>Returns - True if successful</dd>
+<dt>bool SwapEdge(int topologyEdgeIndex)</dt>
+<dd>If the edge is shared by two triangular face, then the edge is swapped.</dd>
+<dd>Returns - True if successful.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshTopologyEdgeList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

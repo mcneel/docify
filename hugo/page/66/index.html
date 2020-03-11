@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/userdatalist/">
-        <h3>UserDataList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filepdfeventargs/">
+        <h3>FilePdfEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/userdatalist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/filepdfeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-Represents a collection of user data.
-public class UserDataListProperties int Count  (summary) Number of UserData objects in this list. (since) 5.0  Methods bool Add(UserData userdata)  (summary) If the userdata is already in a different UserDataList, it will be removed from that list and added to this list. (since) 5.0 (returns) bool This is some return comment  bool Contains(Guid userdataId)  (summary) Checks for the existence of a specific type of userdata in this list Both .
+    Namespace: Rhino.FileIO
+Used for events that are fired while constructing/saving a Pdf
+public class FilePdfEventArgs : EventArgsProperties  FilePdf Pdf The document that is about to be written since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/userdatalistenumerator/">
-        <h3>UserDataListEnumerator</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileply/">
+        <h3>FilePly</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/userdatalistenumerator/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileply/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-Enumerator for UserDataList
-public class UserDataListEnumeratorConstructors UserDataListEnumerator(UserDataList udl)  (summary) Create new UserDataListEnumerator (since) 6.0  Properties UserData Current  (summary) Get current UserData on the enumerator. (since) 6.0  Methods void Dispose()  (summary) Implement Dispose(). NOP. (since) 6.0 (returns) void This is some return comment  bool MoveNext()  (summary) Advance enumerator to next UserData item. (since) 6.0 (returns) bool This is some return comment  void Reset()  (summary) Reset the enumerator (since) 6.
+    Namespace: Rhino.FileIO
+Support for ply file format
+public class FilePlyMethods  static WriteFileResult Write(String filename,RhinoDoc doc,FilePlyWriteOptions options) Write a ply file based on the contents of a RhinoDoc since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/userdictionary/">
-        <h3>UserDictionary</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileplywriteoptions/">
+        <h3>FilePlyWriteOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/userdictionary/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileplywriteoptions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-Defines the storage data class for a user dictionary.
-public class UserDictionaryProperties string Description  (summary) Gets the text &ldquo;RhinoCommon UserDictionary&rdquo;. (since) 5.0  Collections.ArchivableDictionary Dictionary  (summary) Gets the dictionary that is associated with this class. This dictionary is unique. (since) 5.0  bool ShouldWrite  (summary) Writes this entity if the count is larger than 0. (since) 5.0  
+    Namespace: Rhino.FileIO
+public class FilePlyWriteOptionsConstructors  FilePlyWriteOptions(FileWriteOptions writeOptions)  since 7.0  Properties  bool ExportASCII Determines whether to export as Ascii. since 7.0 bool ExportColors Determines whether to export vertex colors. since 7.0 bool ExportMaterial Determines whether to export a material. since 7.0 bool ExportNormals Determines whether to export vertex normals. since 7.0 MeshingParameters MeshingParameters  since 7.0 bool UseSimpleDialog Determines whether to use the simple or detailed meshing dialog.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/ui/userinterfacesection/">
-        <h3>UserInterfaceSection</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileslc/">
+        <h3>FileSlc</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/ui/userinterfacesection/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileslc/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.UI
-Custom user interface section manager
-public class UserInterfaceSectionProperties RenderContent RenderContent  (summary) The RenderContent object that created this user interface object. (since) 5.1  object Window  (summary) The user control associated with this user interface object. (since) 5.1  Methods static UserInterfaceSection FromWindow(object window)  (summary) Find the UserInterfaceSection that created the specified instance of a window. (since) 6.0 (returns) UserInterfaceSection This is some return comment  void Expand(bool expand)  (summary) Expand or collapse this content section.
+    Namespace: Rhino.FileIO
+Support for writing slice (slc) file format
+public class FileSlcMethods  static bool Write(string filename,RhinoDoc doc,FileSlcWriteOptions options) Write a slc file based on the contents of a RhinoDoc Returns - True on success since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/utilities/">
-        <h3>Utilities</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileslcwriteoptions/">
+        <h3>FileSlcWriteOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/utilities/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileslcwriteoptions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class UtilitiesProperties static Guid DefaultRenderPlugInId  (summary) Get the plug-in Id for the default render plug-in (since) 5.3  static bool ShowIncompatibleEnvironments  (summary) Specifies whether incompatible content should be shown in the corresponding editor. (since) 5.3  static bool ShowIncompatibleMaterials  (summary) Specifies whether incompatible content should be shown in the corresponding editor. (since) 5.3  static bool ShowIncompatibleTextures  (summary) Specifies whether incompatible content should be shown in the corresponding editor.
+    Namespace: Rhino.FileIO
+Options used when writing a slc file
+public class FileSlcWriteOptionsProperties  double AngleBetweenSegmentsDegrees The angle that determines how smooth the polylines of the slice curves will be. When the number is small you will get a smooth final output but it will take more time to export and a larger file. since 7.0 Point3d EndPoint End of the slicing normal since 7.0 double SliceDistance The distance between the slices or layers of curves that your final output will contain.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/vector2d/">
-        <h3>Vector2d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filestp/">
+        <h3>FileStp</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/vector2d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/filestp/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the two components of a vector in two-dimensional space, using -precision floating point numbers.
-static -  (summary) Computes the opposite vector. (since) 6.0  static -  (summary) Subtracts the second vector from the first one. (since) 6.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies a vector by a number, having the effect of scaling it.
+    Namespace: Rhino.FileIO
+Support for writing step (stp) file format
+public class FileStpMethods  static bool Write(string filename,RhinoDoc doc,FileStpWriteOptions options) Write a stp file based on the contents of a RhinoDoc Returns - True on success since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/vector2dfield/">
-        <h3>Vector2dField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filestpwriteoptions/">
+        <h3>FileStpWriteOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/vector2dfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/filestpwriteoptions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-Vector2d field value class
-public class Vector2dFieldProperties Vector2d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.FileIO
+Options used when writing a stp file
+public class FileStpWriteOptionsProperties  bool Export2dCurves Some (not most, and not Rhino) importing applications can make use of the 2-D trimming curves to get a more accurate and faster import. The size of the step file will be larger since 7.0 bool ExportBlack Let importing application set color for black objects. If a Rhino object has color black, no color is assigned to the object in the step file.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/vector2f/">
-        <h3>Vector2f</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/hostutils/">
+        <h3>HostUtils</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/vector2f/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/hostutils/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the two components of a vector in two-dimensional space, using -precision floating point numbers.
-static -  (summary) Computes the difference between two vectors. (since) 6.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies two together, returning the dot (internal) product of the two. (since) 6.0  static +  (summary) Computes the sum between two vectors.
+    Namespace: Rhino.Runtime
+Contains static methods to deal with teh runtime environment.
+public class HostUtils static OnExceptionReport Is raised when an exception is reported with one of the method. static OnSendLogMessageToCloud Is raised when an exception is reported with one of the method. since 6.4  Properties  static string ComputerSerialNumber Gets the serial number of the computer running Rhino. since 6.0 static uint CurrentOSLanguage Get the current operating system language.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/vector3d/">
-        <h3>Vector3d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/imagefile/">
+        <h3>ImageFile</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/vector3d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/imagefile/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
-static -  (summary) Computes the opposite vector. (since) 5.0  static -  (summary) Subtracts the second vector from the first one. (since) 5.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies two vectors together, returning the dot product (or inner product).
+    Namespace: Rhino.FileIO
+Support functions for image files
+public class ImageFileMethods  static bool SupportsAlphaChannel(string filename) Returns True if file at given path is an image file and that file format supports an alpha channel since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/vector3dfield/">
-        <h3>Vector3dField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interop/">
+        <h3>Interop</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/vector3dfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interop/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-Vector3d field value class
-public class Vector3dFieldProperties Vector3d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.Runtime
+Contains static methods to marshal objects between RhinoCommon and legacy Rhino_DotNet or C++.
+public class InteropMethods  static Geometry.GeometryBase CreateFromNativePointer(IntPtr pGeometry) Constructs a RhinoCommon Geometry class from a given ON_Geomety*. The ON_Geometry* must be declared on the heap and its lifetime becomes controlled by RhinoCommon. Returns - The appropriate geometry class in RhinoCommon on success. static IntPtr FileReadOptionsConstPointer(FileReadOptions options) Returns the underlying const CRhinoFileReadOptions* for a Rhino.FileIO.FileReadOptions object.
   </div>
   
 

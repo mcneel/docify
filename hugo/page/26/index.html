@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,126 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/groundplane/">
-        <h3>GroundPlane</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/savefiledialog/">
+        <h3>SaveFileDialog</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/groundplane/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/savefiledialog/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Represents an infinite plane for implementation by renderers. See SupportsFeature.
-public class GroundPlaneConstructors GroundPlane()  (summary) Create an utility object not associated with any document (since) 6.0  GroundPlane(GroundPlane g)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Events static Changed  (summary) This event is raised when a GroundPlane property value is changed. (since) 5.10  Properties double Altitude  (summary) Height above world XY plane in model units.
+    Namespace: Rhino.UI
+Similar to the System.Windows.Forms.SaveFileDialog, but with customized Rhino user interface.
+public class SaveFileDialogConstructors  SaveFileDialog()   Properties  string DefaultExt The default file name extension. The returned string does not include the period. string FileName Gets or sets a string containing the file name selected in the file dialog box. string Filter Gets or sets the current file name filter string, which determines the choices that appear in the &ldquo;Save as file type&rdquo; or &ldquo;Files of type&rdquo; box in the dialog box.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/group/">
-        <h3>Group</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/selcommand/">
+        <h3>SelCommand</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/group/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/selcommand/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class GroupProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int UserStringCount  (summary) Gets the amount of user strings. (since) 6.4  Methods string GetUserString(string key)  (summary) Gets user string from this geometry. (since) 6.4 (returns) string This is some return comment  System.Collections.Specialized.NameValueCollection GetUserStrings()  (summary) Gets a copy of all (user key string, user value string) pairs attached to this geometry. (since) 6.
+    Namespace: Rhino.Commands
+For adding nestable selection commands that work like the native Rhino SelCrv command, derive your command from SelCommand and override the virtual SelFilter function.
+public class SelCommand : CommandProperties  bool BeQuiet  bool TestGrips  bool TestLights   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/grouptable/">
-        <h3>GroupTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettings/">
+        <h3>SelectionFilterSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/grouptable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-Group tables store the list of groups in a Rhino document.
-public class GroupTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  Methods int Add()  (summary) Adds a new empty group to the group table. (since) 5.0 (returns) int This is some return comment  int Add(IEnumerableobjectIds)  (summary) Adds a new group to the group table with a set of objects. (since) 5.0 (returns) int This is some return comment  int Add(string groupName)  (summary) Adds a new empty group to the group table.
+    Namespace: Rhino.ApplicationSettings
+Selection filter settings restrict any selection mode (SelWindow, SelCrossing, SelAll, etc.) to specified object types. Note, selection filter settings are not persistent.
+public class SelectionFilterSettingsProperties  static bool Enabled Enables or disables the global object selection filter. since 7.0 static ObjectType GlobalGeometryFilter The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/grouptableeventargs/">
-        <h3>GroupTableEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettingsstate/">
+        <h3>SelectionFilterSettingsState</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/grouptableeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/selectionfiltersettingsstate/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-Contains group table event data.
-public class GroupTableEventArgsProperties RhinoDoc Document  (summary) The document in which the event occurred. (since) 5.0  GroupTableEventType EventType  (summary) The event type. (since) 5.0  int GroupIndex  (summary) The index of the Group that has changed. (since) 6.10  Group NewState  (summary) The Group that has changed. (since) 6.10  Group OldState  (summary) If the event is GroupTableEventType.
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class SelectionFilterSettingsStateProperties  bool Enabled Enables or disables the global object selection filter. since 7.0 ObjectType GlobalGeometryFilter The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types. since 7.0 ObjectType OneShotGeometryFilter The one-shot geometry type filter controls which types of geometry will be be filtered for one selection.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/guidfield/">
-        <h3>GuidField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/shortcutkeysettings/">
+        <h3>ShortcutKeySettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/guidfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/shortcutkeysettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-Guid field value class
-public class GuidFieldProperties Guid Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to control keyboard shortcut keys
+public class ShortcutKeySettingsMethods  static string GetMacro(ShortcutKey key) Get macro associated with a given keyboard shortcut static void SetMacro(ShortcutKey key,string macro) Set macro associated with a keyboard shortcut  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/gumball/gumballappearancesettings/">
-        <h3>GumballAppearanceSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/showpaneleventargs/">
+        <h3>ShowPanelEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/gumball/gumballappearancesettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/showpaneleventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Gumball
-public class GumballAppearanceSettingsConstructors GumballAppearanceSettings()  (summary) (since) 5.0  Properties int ArcThickness  (summary) in pixels. (since) 5.0  int ArrowHeadLength  (summary) in pixels. (since) 5.0  int ArrowHeadWidth  (summary) in pixels. (since) 5.0  int AxisThickness  (summary) in pixels. (since) 5.0  System.Drawing.Color ColorMenuButton  (summary) (since) 5.0  System.Drawing.Color ColorX  (summary) Default is Red. (since) 5.0  System.Drawing.Color ColorY  (summary) Default is Green.
+    Namespace: Rhino.UI
+Panels.Show event arguments
+public class ShowPanelEventArgs : PanelEventArgsConstructors  ShowPanelEventArgs(Guid panelId,uint documentSerialNumber,bool show)  since 6.0  Properties  bool Show Will be True if showing or False if hiding since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/gumball/gumballdisplayconduit/">
-        <h3>GumballDisplayConduit</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettings/">
+        <h3>SmartTrackSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/gumball/gumballdisplayconduit/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Gumball
-public class GumballDisplayConduitConstructors GumballDisplayConduit()  (summary) (since) 5.0  Properties GumballObject BaseGumball  (summary) Starting location. (since) 5.0  bool Enabled  (summary) (since) 5.0  GumballObject Gumball  (summary) (since) 5.0  Transform GumballTransform  (summary) The gumball transformation is the transformation calculated by comparing the current gumball to the starting BaseGumball. (since) 5.0  bool InRelocate  (summary) (since) 5.0  GumballPickResult PickResult  (summary) The inital mouse down event sets PickResult.
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties that target the Smart Track feature behavior.
+public class SmartTrackSettingsProperties  static int ActivationDelayMilliseconds Gets or sets the activation delay in milliseconds. static Color ActivePointColor Gets or sets the active point color. static Color LineColor Gets or sets the smart track line color. static int MaxSmartPoints Gets or sets the maximum number of smart points. static Color PointColor Gets or sets the point color.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/gumball/gumballframe/">
-        <h3>GumballFrame</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettingsstate/">
+        <h3>SmartTrackSettingsState</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/gumball/gumballframe/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/smarttracksettingsstate/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Gumball
-Properties Plane Plane  (summary) (since) 5.0  Vector3d ScaleGripDistance  (summary) (since) 5.0  GumballScaleMode ScaleMode  (summary) (since) 5.0  
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class SmartTrackSettingsStateProperties  static int MaxSmartPoints Gets or sets the maximum number of smart points. int ActivationDelayMilliseconds Gets or sets the activation delay in milliseconds. Color ActivePointColor Gets or sets the active point color. Color LineColor Gets or sets the smart track line color. Color PointColor Gets or sets the point color. bool SmartOrtho Gets or sets a value indicating if the &lsquo;Smart Ortho&rsquo; feature is active.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/gumball/gumballobject/">
-        <h3>GumballObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/snapshots/snapshotsclient/">
+        <h3>SnapShotsClient</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/gumball/gumballobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/snapshots/snapshotsclient/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Gumball
-public class GumballObjectConstructors GumballObject()  (summary) (since) 5.0  Properties GumballFrame Frame  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  bool SetFromArc(Arc arc)  (summary) (since) 5.0 (returns) bool This is some return comment  bool SetFromBoundingBox(BoundingBox boundingBox)  (summary) (since) 5.0 (returns) bool This is some return comment  bool SetFromBoundingBox(Plane frame,BoundingBox frameBoundingBox)  (summary) Sets the gumball bounding box with respect to a frame.
+    Namespace: Rhino.DocObjects.SnapShots
+This is the abstract interface class for for all Snapshot clients.
+public class SnapShotsClient : IDisposableConstructors  SnapShotsClient() SnapShotsClient constructor since 6.0  Properties  IntPtr CppPointer  since 6.0 int SerialNumber  since 6.0  Methods  static string ApplicationCategory() Predefined application category since 6.0 static string DocumentCategory() Predefined document category since 6.0 static string LayersCategory() Predefined layers category since 6.0 static string LightsCategory() Predefined lights category since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/gumball/gumballpickresult/">
-        <h3>GumballPickResult</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/stackeddialogpage/">
+        <h3>StackedDialogPage</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/gumball/gumballpickresult/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/stackeddialogpage/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Gumball
-public class GumballPickResultProperties GumballMode Mode  (summary) (since) 5.0  Methods void SetToDefault()  (summary) (since) 5.0 (returns) void This is some return comment  
+    Namespace: Rhino.UI
+Base class to inherit from for the addition of stacked dialog pages.
+public class StackedDialogPageProperties  ListChildren List of child (sub) pages of this page string EnglishPageTitle English string used when scripting this page and a user prefixes a command option with &ldquo;_&rdquo; IntPtr Handle When running on Windows return the window handle for the parent of this page otherwise; return IntPtr.Zero. since 6.0 bool HasChildren Will be True if this page contains sub pages.
   </div>
   
 

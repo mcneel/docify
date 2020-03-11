@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,128 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/mesh/">
-        <h3>Mesh</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettingsstate/">
+        <h3>ModelAidSettingsState</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/mesh/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettingsstate/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class ModelAidSettingsStateProperties  bool AltPlusArrow True mean Alt+arrow is used for nudging. int ControlPolygonDisplayDensity Gets or sets the control polygon display density. double CtrlNudgeKeyStep Gets or sets the Ctrl-key based nudge step amount. bool DisplayControlPolygon Gets or sets the enabled state of Rhino&rsquo;s display control polygon. bool ExtendToApparentIntersection Gets or sets the enabled state of Rhino&rsquo;s extend to apparent intersections. bool ExtendTrimLines Gets or sets the enabled state of Rhino&rsquo;s extend trim lines.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/modelcomponent/">
+        <h3>ModelComponent</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/modelcomponent/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+Base class for all components in a model (document) and manages the index, id and other information common to this type of objects. This class parallels the C++ ON_ModelComponent.
+public class ModelComponent : CommonObjectProperties  ComponentStatus ComponentStatus Gets or sets the component status of the model component. since 6.0 ModelComponentType ComponentType Gets the for this object. Useful in switch statements. since 6.0 string DeletedName Gets the name of a component that is deleted.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/namedvalue/">
+        <h3>NamedValue</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/namedvalue/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class NamedValueConstructors  NamedValue(string name,object value)  since 5.1  Properties  string Name  since 5.1 object Value  since 5.1  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/nurbscurve/">
+        <h3>NurbsCurve</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/nurbscurve/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a geometry type that is defined by vertices and faces. This is often called a face-vertex mesh.
-public class MeshConstructors Mesh()  (summary) Initializes a new empty mesh. (since) 5.0  Properties Collections.MeshVertexStatusList ComponentStates  (summary) Gets access to the vertex hidden/visibility collection in this mesh. This is a runtime property and it is not saved in the 3dm file. (since) 6.0  int DisjointMeshCount  (summary) Gets the number of disjoint (topologically unconnected) pieces in this mesh.
+Represents a Non Uniform Rational B-Splines (NURBS) curve.
+[Serializable]public class NurbsCurve : Curve, IEpsilonComparable&lt;NurbsCurve&gt;Constructors  NurbsCurve(int dimension,bool rational,int order,int pointCount) Constructs a new NURBS curve with knot and CV memory allocated. NurbsCurve(int degree,int pointCount) Constructs a new NURBS curve with a specific degree and control point count. NurbsCurve(NurbsCurve other) Initializes a NURBS curve by copying its values from another NURBS curve.  Properties  bool HasBezierSpans Returns True if the NURBS curve has bezier spans (all distinct knots have multiplitity = degree) bool IsRational Gets a value indicating whether or not the curve is rational.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/mesh/">
-        <h3>Mesh</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbscurveknotlist/">
+        <h3>NurbsCurveKnotList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/mesh/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render.ChangeQueue
-Representation of ChangeQueue Mesh
-public class MeshProperties ObjectAttributes Attributes  (summary) Get object attributes of object associated to this mesh. This will be possible only after returning True from ChangeQueue.ProvideOriginalObject() (since) 6.0  MappingChannelCollection Mapping  (summary) Get the mapping for this mesh. (since) 6.0  RhinoObject Object   (summary) Get a copy of the original RhinoObject this Mesh is created from. Possible only after return True from ChangeQueue.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshcheckparameters/">
-        <h3>MeshCheckParameters</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshcheckparameters/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Output of a mesh checking operations.
-Properties bool CheckForBadNormals  (summary) If true, then then look for vertex normals that are not unit vectors, are zero length or vary greatly from the general direction of the face normals. (since) 7.0  bool CheckForDegenerateFaces  (summary) If true, then look for triangles and quads that have zero area and quads where one sub triangle has zero area. (since) 7.0  bool CheckForDisjointMeshes  (summary) If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/intersect/meshclash/">
-        <h3>MeshClash</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/intersect/meshclash/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Intersect
-Represents a particular instance of a clash or intersection between two meshes.
-public class MeshClashProperties Point3d ClashPoint  (summary) If valid, then the sphere centered at ClashPoint of ClashRadius distance intersects the clashing meshes. (since) 5.0  double ClashRadius  (summary) Gets the clash, or intersection, radius. (since) 5.0  Mesh MeshA  (summary) Gets the first mesh. (since) 5.0  Mesh MeshB  (summary) Gets the second mesh.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshdisplacementinfo/">
-        <h3>MeshDisplacementInfo</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshdisplacementinfo/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Contains mesh displacement information.
-public class MeshDisplacementInfoConstructors MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)  (summary) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties double Black  (summary) Value considered lowest point in the displacement. (since) 6.0  double BlackMove  (summary) The amount of displacement for the black color in the texture.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/meshdisplayattributes/">
-        <h3>MeshDisplayAttributes</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/meshdisplayattributes/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-public class MeshDisplayAttributesProperties Color AllMeshWiresColor  (summary) Color.Empty means that we are NOT using a single color for all mesh wires. (since) 5.0  bool HighlightMeshes  (summary) (since) 5.0  int MeshWireThickness  (summary) (since) 5.0  bool ShowMeshVertices  (summary) (since) 5.0  bool ShowMeshWires  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshextruder/">
-        <h3>MeshExtruder</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshextruder/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Extrudes a mesh and provides preview
-public class MeshExtruderConstructors MeshExtruder(Mesh inputMesh,IEnumerablecomponentIndices)  (summary) Construct object to extrude given mesh faces, edges and ngons. (since) 6.3  Properties bool EdgeBasedUVN  (summary) Edge based UVN defines UVN directions according to boundary edge directions (since) 6.4  MeshExtruderFaceDirectionMode FaceDirectionMode  (summary) Face direction mode determines how faces are oriented (since) 6.3  bool KeepOriginalFaces  (summary) Whether or not to keep original faces.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshface/">
-        <h3>MeshFace</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshface/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents the values of the four indices of a mesh face quad. If the third and fourth values are the same, this face represents a triangle.
-static !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Constructors MeshFace(int a,int b,int c)  (summary) Constructs a new triangular Mesh face. (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/meshfacelist/">
-        <h3>MeshFaceList</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/meshfacelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbscurveknotlist/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry.Collections
-Provides access to the faces and Face related functionality of a Mesh.
-public class MeshFaceListProperties int Capacity  (summary) Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh faces. When getting this can includes invalid faces. (since) 5.0  int QuadCount  (summary) Gets the number of faces that are valid quads (4 corners).
+Provides access to the knot vector of a nurbs curve.
+public class NurbsCurveKnotList :IEnumerable&lt;double&gt;, IRhinoTable&lt;double&gt;, IEpsilonComparable&lt;NurbsCurveKnotList&gt;,IList&lt;double&gt;Properties  int Count Total number of knots in this curve. bool IsClampedEnd Gets a value indicating whether or not the knot vector is clamped at the end of the curve. Clamped curves are coincident with the first and last control-point. This requires fully multiple knots. bool IsClampedStart Gets a value indicating whether or not the knot vector is clamped at the start of the curve.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/meshfacenormallist/">
-        <h3>MeshFaceNormalList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbscurvepointlist/">
+        <h3>NurbsCurvePointList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/meshfacenormallist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbscurvepointlist/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry.Collections
-Provides access to the Face normals of a Mesh.
-public class MeshFaceNormalListProperties int Capacity  (summary) Gets or sets the total number of face normals the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh face normals. (since) 5.0  Methods int AddFaceNormal(double x,double y,double z)  (summary) Appends a face normal to the list of mesh face normals.
+Provides access to the control points of a nurbs curve.
+public class NurbsCurvePointList :IEnumerable&lt;ControlPoint&gt;, IRhinoTable&lt;ControlPoint&gt;, IEpsilonComparable&lt;NurbsCurvePointList&gt;,IList&lt;ControlPoint&gt;Properties  double ControlPolygonLength Gets the length of the polyline connecting all control points. int Count Gets the number of control points in this curve. int PointSize Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Curve.Dimension + 1. For non-rational curves, PointSize = Curve.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/nurbssurface/">
+        <h3>NurbsSurface</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/nurbssurface/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a Non Uniform Rational B-Splines (NURBS) surface.
+[Serializable]public class NurbsSurface : Surface, IEpsilonComparable&lt;NurbsSurface&gt;Constructors  NurbsSurface(NurbsSurface other) Initializes a new NURBS surface by copying the values from another surface.  Properties  bool IsRational Gets a value indicating whether or not the nurbs surface is rational. NurbsSurfaceKnotList KnotsU The U direction knot vector. NurbsSurfaceKnotList KnotsV The V direction knot vector. int OrderU Gets the order in the U direction.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/parametersnames/">
+        <h3>ParametersNames</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/parametersnames/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class ParametersNamesProperties  static string AmbientOcclusion  since 7.0 static string Anisotropic  since 7.0 static string AnisotropicRotation  since 7.0 static string BaseColor  since 7.0 static string BRDF  since 7.0 static string Bump  since 7.0 static string Clearcoat  since 7.0 static string ClearcoatBump  since 7.0 static string ClearcoatRoughness  since 7.0 static string Displacement  since 7.0 static string Emission  since 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/physicallybasedmaterial/">
+        <h3>PhysicallyBasedMaterial</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/physicallybasedmaterial/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class PhysicallyBasedMaterialProperties  double Anisotropic  since 7.0 double AnisotropicRotation  since 7.0 Color4f BaseColor  since 7.0 BRDFs BRDF  since 7.0 double Clearcoat  since 7.0 double ClearcoatRoughness  since 7.0 Color4f Emission  since 7.0 Material Material  since 7.0 double Metallic  since 7.0 double Opacity  since 7.0 double OpacityIOR  since 7.0 double OpacityRoughness  since 7.0 double ReflectiveIOR  since 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/pixelbuffer/">
+        <h3>PixelBuffer</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/pixelbuffer/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class PixelBufferConstructors  PixelBuffer(IntPtr bufferPointer) Create a new PixelBuffer pointing to the (unmanaged) pixel data buffer behind IntPtr since 6.0  Properties  IntPtr Buffer  since 6.0  
   </div>
   
 

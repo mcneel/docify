@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Input.Custom on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/input/custom/</link>
+    <description>Recent content in Rhino.Input.Custom on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/input/custom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CommandLineOption</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/commandlineoption/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/commandlineoption/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class CommandLineOptionProperties  int CurrentListOptionIndex  string EnglishName The English command option name int Index  string LocalName The localized command option name since 6.24 string StringOptionValue Assigned by RhinoGet.Get if an option value is specified in a script or by a command window control. since 6.24  Methods  static bool IsValidOptionName(string optionName) Test a string to see if it can be used as an option name in any of the RhinoGet::AddCommandOption&amp;hellip;() functions.</description>
+    </item>
+    
+    <item>
+      <title>GetBaseClass</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getbaseclass/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getbaseclass/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a GetBaseClass but you will use its member functions after calling GetObject.Gets(), GetPoint.Get(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &amp;ldquo;get&amp;rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class GetBaseClass : IDisposableMethods  static void PostCustomMessage(object messageData)  void AcceptColor(bool enable) If you want to allow the user to be able to type in a color r,g,b or name during GetPoint.</description>
+    </item>
+    
+    <item>
+      <title>GetInteger</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getinteger/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getinteger/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Used to get integer numbers.
+public class GetInteger : GetBaseClassConstructors  GetInteger()   Methods  GetResult Get() Call to get an integer. Returns - If the user chose a number, then ; another enumeration value otherwise. int Number()  void SetLowerLimit(int lowerLimit,bool strictlyGreaterThan) Sets a lower limit on the number that can be returned. By default there is no lower limit. void SetUpperLimit(int upperLimit,bool strictlyLessThan) Sets an upper limit on the number that can be returned.</description>
+    </item>
+    
+    <item>
+      <title>GetNumber</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getnumber/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getnumber/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Used to get double precision numbers.
+public class GetNumber : GetBaseClassConstructors  GetNumber() Create a new GetNumber.  Methods  GetResult Get() Call to get a number. Returns - If the user chose a number, then ; another enumeration value otherwise. void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan) Sets a lower limit on the number that can be returned. By default there is no lower limit. void SetUpperLimit(double upperLimit,bool strictlyLessThan) Sets an upper limit on the number that can be returned.</description>
+    </item>
+    
+    <item>
+      <title>GetObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getobject/</guid>
+      <description>Namespace: Rhino.Input.Custom
+The GetObject class is the tool commands use to interactively select objects.
+public class GetObject : GetBaseClassConstructors  GetObject()   Properties  bool AlreadySelectedObjectSelect Allow selecting objects that are already selected. By default, GetObjects() disallows selection of objects that are already selected to avoid putting the same object in the selection set more than once. Calling EnableAlreadySelectedObjectSelect = true overrides that restriction and allows selected objects to be selected and returned by GetObjects.</description>
+    </item>
+    
+    <item>
+      <title>GetOption</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getoption/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getoption/</guid>
+      <description>Namespace: Rhino.Input.Custom
+If you want to explicitly get string input, then use GetString class with options. If you only want to get options, then use this class (GetOption)
+public class GetOption : GetBaseClassConstructors  GetOption()   Methods  GetResult Get() Call to get an option. A return value of &amp;ldquo;option&amp;rdquo; means the user selected a valid option. Use Option() the determine which option. Returns - If the user chose an option, then ; another enumeration value otherwise.</description>
+    </item>
+    
+    <item>
+      <title>GetPoint</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getpoint/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getpoint/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Used to interactively get a point.
+public class GetPoint : GetBaseClass DynamicDraw Event to use if you want to dynamically draw things as the mouse/digitizer moves. Every time the mouse moves, DynamicDraw will be called once per viewport. The calls to DynamicDraw happen AFTER the call to MouseMove. If you are drawing anything that takes a long time, periodically call InterruptMouseMove() to see if you should stop.</description>
+    </item>
+    
+    <item>
+      <title>GetPointDrawEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getpointdraweventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getpointdraweventargs/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Arguments for drawing during point getting.
+public class GetPointDrawEventArgs : DrawEventArgsProperties  Point3d CurrentPoint  GetPoint Source GetPoint class that this draw event originated from.  </description>
+    </item>
+    
+    <item>
+      <title>GetPointMouseEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getpointmouseeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getpointmouseeventargs/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Arguments for mouse information during point getting.
+public class GetPointMouseEventArgs : EventArgsProperties  bool ControlKeyDown  bool LeftButtonDown  bool MiddleButtonDown  Point3d Point  bool RightButtonDown  bool ShiftKeyDown  GetPoint Source  RhinoViewport Viewport  Point WindowPoint   </description>
+    </item>
+    
+    <item>
+      <title>GetPolyline</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getpolyline/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getpolyline/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Use to interactively get a polyline.
+public class GetPolyline : IDisposableConstructors  GetPolyline()  since 6.0  Properties  string FirstPointPrompt Prompt when getting first point since 6.0 string FourthPointPrompt Prompt when getting fourth point since 6.0 int MaxPointCount  since 6.0 int MinPointCount  since 6.0 string SecondPointPrompt Prompt when getting second point since 6.0 string ThirdPointPrompt Prompt when getting third point since 6.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>GetSphere</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getsphere/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getsphere/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Class provides user interface to define a sphere.
+public class GetSphere : IDisposableConstructors  GetSphere()  since 7.0  Properties  double DefaultSize Default radius or diameter (based on InDiameterMode) since 7.0 bool InDiameterMode Determines if the &amp;ldquo;size&amp;rdquo; value is reperesenting a radius or diameter since 7.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 7.0 Commands.Result Get(Sphere sphere) Prompt for the getting of a sphere.</description>
+    </item>
+    
+    <item>
+      <title>GetString</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getstring/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getstring/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Used to get strings.
+public class GetString : GetBaseClassConstructors  GetString() Constructs a new GetString.  Methods  GetResult Get() Returns the string that the user typed. By default, space stops the string input. Returns - The result type. If the user typed a string, this is . GetResult GetLiteralString() Returns the string that the user typed. By default, space does not stop input. Returns - The result type.</description>
+    </item>
+    
+    <item>
+      <title>GetTorus</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/gettorus/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/gettorus/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Class provides user interface to define a torus.
+public class GetTorus : IDisposableConstructors  GetTorus()  since 7.0  Properties  double DefaultSize Default radius or diameter (based on InDiameterMode) since 7.0 bool FixInnerRadius Second radius opion. The first radius chosen sets the inner dimension of the torus and the second radius is constrained to be outside of the first radius. since 7.0 bool InDiameterMode Determines if the &amp;ldquo;size&amp;rdquo; value is reperesenting a radius or diameter since 7.</description>
+    </item>
+    
+    <item>
+      <title>GetTransform</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/gettransform/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/gettransform/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Used for getting a Transform
+public class GetTransform : GetPointProperties  bool HaveTransform  TransformObjectList ObjectList  Transform Transform   Methods  void AddTransformObjects(TransformObjectList list) Adds any objects you want transformed and grips you want transformed. Make sure no duplicates are in the list and that no grip ownwers are passed in as objects. Transform CalculateTransform(RhinoViewport viewport,Point3d point) Retrieves the final transformation. Override this virtual function to provide your own custom transformation method.</description>
+    </item>
+    
+    <item>
+      <title>GetTruncatedCone</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/gettruncatedcone/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/gettruncatedcone/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetTruncatedCone : IDisposableConstructors  GetTruncatedCone()  since 7.0  Properties  bool Cap Gets or sets whether or not the output should be capped. since 7.0 CylinderConstraint CylinderConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl. By default the vertical cone/cyl option not available but is not selected.</description>
+    </item>
+    
+    <item>
+      <title>OptionDouble</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/optiondouble/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/optiondouble/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class OptionDouble : IDisposableConstructors  OptionDouble(double initialValue)  OptionDouble(double initialValue,bool setLowerLimit,double limit) Initializes a new instance of the double option class. OptionDouble(double initialValue,double lowerLimit,double upperLimit) Initializes a new instance of the class with lower and upper limits.  Properties  double CurrentValue  double InitialValue   Methods  void Dispose()   </description>
+    </item>
+    
+    <item>
+      <title>OptionInteger</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/optioninteger/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/optioninteger/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class OptionInteger : IDisposableConstructors  OptionInteger(int initialValue)  OptionInteger(int initialValue,bool setLowerLimit,int limit) Initializes a new instance of the class. OptionInteger(int initialValue,int lowerLimit,int upperLimit) Initializes a new instance of the class wiht both lower and upper limits.  Properties  int CurrentValue  int InitialValue   Methods  void Dispose()   </description>
+    </item>
+    
+    <item>
+      <title>OptionToggle</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/optiontoggle/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/optiontoggle/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class OptionToggle : IDisposableConstructors  OptionToggle(bool initialValue,LocalizeStringPair offValue,LocalizeStringPair onValue)  OptionToggle(bool initialValue,string offValue,string onValue)   Properties  bool CurrentValue  bool InitialValue   Methods  void Dispose()   </description>
+    </item>
+    
+    <item>
+      <title>GetArc</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getarc/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getarc/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class GetArc : IDisposableConstructors  GetArc()  since 6.0  Properties  bool AllowDeformable Allow for deformable options since 6.0 double DefaultRadius Default radius used for start and end radius since 6.0 bool Deformable Is the deformable option set since 6.0 int DeformableDegree  since 6.0 int DeformablePointCount  since 6.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 6.0 Commands.</description>
+    </item>
+    
+    <item>
+      <title>GetCancel</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getcancel/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getcancel/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class GetCancel : GetBaseClass TaskCompleted  since 6.0  Constructors  GetCancel()  since 6.0  Properties  IProgressProgress  since 6.0 string ProgressMessage  since 6.0 bool ProgressReporting  since 6.0 CancellationToken Token  since 6.0  Methods  Result Wait(Task task,RhinoDoc doc) Awaits a particular task to finish. Returns - A result enumeration. since 7.0 Result Wait(Tasktask,RhinoDoc doc) Awaits a particular task to finish. Returns - A result enumeration.</description>
+    </item>
+    
+    <item>
+      <title>GetCircle</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getcircle/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getcircle/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class GetCircle : IDisposableConstructors  GetCircle()  since 6.0  Properties  bool AllowDeformable Allow for deformable options since 6.0 double DefaultSize Default radius or diameter (based on InDiameterMode) since 6.0 bool Deformable Is the deformable option set since 6.0 int DeformableDegree  since 6.0 int DeformablePointCount  since 6.0 bool InDiameterMode Determines if the &amp;ldquo;size&amp;rdquo; value is reperesenting a radius or diameter since 6.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>GetCone</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getcone/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getcone/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Class provides user interface to define a cone.
+public class GetCone : IDisposableConstructors  GetCone()  since 6.0  Properties  bool AllowInputAngle  since 6.0 double ApexAngleDegrees  since 6.0 double BaseAngleDegrees  since 6.0 bool Cap Gets or sets whether or not the output should be capped. since 6.0 ConeConstraint ConeConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.</description>
+    </item>
+    
+    <item>
+      <title>GetCylinder</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getcylinder/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getcylinder/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Class provides user interface to define a cylinder.
+public class GetCylinder : IDisposableConstructors  GetCylinder()  since 6.0  Properties  bool BothSidesOption Determine if the &amp;ldquo;both sides&amp;rdquo; option is enabled since 6.0 bool Cap Gets or sets whether or not the output should be capped. since 6.0 CylinderConstraint CylinderConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.</description>
+    </item>
+    
+    <item>
+      <title>GetEllipsoid</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getellipsoid/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getellipsoid/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetEllipsoid : IDisposableConstructors  GetEllipsoid()  since 7.0  Properties  Point3d FirstPoint Returns the first point. If in &amp;ldquo;from foci&amp;rdquo; mode, then this is the first foci point. since 7.0 bool IsModeFromFoci Indicates the ellipsoid was created from foci. since 7.0 bool MarkFoci Indicates the user wants the ellipsoid foci marked with point objects. since 7.</description>
+    </item>
+    
+    <item>
+      <title>GetLine</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/getline/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/getline/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Use to interactively get a line. The Rhino &amp;ldquo;Line&amp;rdquo; command uses GetLine.
+public class GetLine : IDisposableConstructors  GetLine()  since 5.1  Properties  bool AcceptZeroLengthLine Controls whether or not a zero length line is acceptable. The default is to require the user to keep picking the end point until we get a point different than the start point. since 5.1 Color FeedbackColor If set, the feedback color is used to draw the dynamic line when the second point is begin picked.</description>
+    </item>
+    
+    <item>
+      <title>OptionColor</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/optioncolor/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/optioncolor/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class OptionColor : IDisposableConstructors  OptionColor(Color initialValue)   Properties  Color CurrentValue  Color InitialValue   Methods  void Dispose()   </description>
+    </item>
+    
+    <item>
+      <title>PickContext</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/pickcontext/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/pickcontext/</guid>
+      <description>Namespace: Rhino.Input.Custom
+Utility for determining if objects are picked
+public class PickContext : IDisposableConstructors  PickContext()   Properties  GetObject GetObjectUsed  bool PickGroupsEnabled Thue if GroupObjects should be added to the pick list Line PickLine pick chord starts on near clipping plane and ends on far clipping plane. PickMode PickMode  PickStyle PickStyle  bool SubObjectSelectionEnabled True if the user had activated subobject selection RhinoView View This view can be a model view or a page view.</description>
+    </item>
+    
+    <item>
+      <title>TaskCompleteEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/input/custom/taskcompleteeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/input/custom/taskcompleteeventargs/</guid>
+      <description>Namespace: Rhino.Input.Custom
+public class TaskCompleteEventArgs : EventArgsConstructors  TaskCompleteEventArgs(Task task,RhinoDoc doc)  since 6.0  Properties  RhinoDoc Doc  since 6.0 bool Redraw  since 6.0 Task Task  since 6.0  </description>
+    </item>
+    
+  </channel>
+</rss>

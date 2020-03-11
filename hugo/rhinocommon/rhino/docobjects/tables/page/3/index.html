@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.DocObjects.Tables &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.DocObjects.Tables</h1>
+  <ul>
+<li><a href="bitmaptable/">BitmapTable</a></li>
+<li><a href="dimstyletable/">DimStyleTable</a></li>
+<li><a href="dimstyletableeventargs/">DimStyleTableEventArgs</a></li>
+<li><a href="dimstyletableeventtype/">DimStyleTableEventType</a></li>
+<li><a href="fonttable/">FontTable</a></li>
+<li><a href="grouptable/">GroupTable</a></li>
+<li><a href="grouptableeventargs/">GroupTableEventArgs</a></li>
+<li><a href="grouptableeventtype/">GroupTableEventType</a></li>
+<li><a href="hatchpatterntable/">HatchPatternTable</a></li>
+<li><a href="instancedefinitiontable/">InstanceDefinitionTable</a></li>
+<li><a href="instancedefinitiontableeventargs/">InstanceDefinitionTableEventArgs</a></li>
+<li><a href="instancedefinitiontableeventtype/">InstanceDefinitionTableEventType</a></li>
+<li><a href="layertable/">LayerTable</a></li>
+<li><a href="layertableeventargs/">LayerTableEventArgs</a></li>
+<li><a href="layertableeventtype/">LayerTableEventType</a></li>
+<li><a href="lighttable/">LightTable</a></li>
+<li><a href="lighttableeventargs/">LightTableEventArgs</a></li>
+<li><a href="lighttableeventtype/">LightTableEventType</a></li>
+<li><a href="linetypetable/">LinetypeTable</a></li>
+<li><a href="materialtable/">MaterialTable</a></li>
+<li><a href="materialtableeventargs/">MaterialTableEventArgs</a></li>
+<li><a href="materialtableeventtype/">MaterialTableEventType</a></li>
+<li><a href="modifytype/">ModifyType</a></li>
+<li><a href="namedconstructionplanetable/">NamedConstructionPlaneTable</a></li>
+<li><a href="namedlayerstatetable/">NamedLayerStateTable</a></li>
+<li><a href="namedpositiontable/">NamedPositionTable</a></li>
+<li><a href="namedviewtable/">NamedViewTable</a></li>
+<li><a href="objecttable/">ObjectTable</a></li>
+<li><a href="restorelayerproperties/">RestoreLayerProperties</a></li>
+<li><a href="rhinodoccommontable/">RhinoDocCommonTable</a></li>
+<li><a href="runtimedocumentdatatable/">RuntimeDocumentDataTable</a></li>
+<li><a href="snapshottable/">SnapshotTable</a></li>
+<li><a href="stringtable/">StringTable</a></li>
+<li><a href="viewtable/">ViewTable</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptableeventargs/">
+        <div class="h2 mt-1 mb-1">GroupTableEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+Contains group table event data.
+public class GroupTableEventArgs : EventArgsProperties  RhinoDoc Document The document in which the event occurred. GroupTableEventType EventType The event type. int GroupIndex The index of the Group that has changed. since 6.10 Group NewState The Group that has changed. since 6.10 Group OldState If the event is GroupTableEventType.Modified, then the old Group. since 6.10  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptableeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertable/">
+        <div class="h2 mt-1 mb-1">LayerTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class LayerTable :RhinoDocCommonTable&lt;Layer&gt;, ICollection&lt;Layer&gt;Properties  int ActiveCount Returns number of layers in the layer table, excluding deleted layers. ModelComponentType ComponentType  since 6.0 int Count Returns number of layers in the layer table, including deleted layers. Layer CurrentLayer At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified, new objects are assigned to the current layer. The current layer is never locked, hidden, or deleted.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttable/">
+        <div class="h2 mt-1 mb-1">LightTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class LightTable :RhinoDocCommonTable&lt;LightObject&gt;Properties  ModelComponentType ComponentType  since 6.0 int Count Number of lights in the light table. Does not include Sun or Skylight. RhinoDoc Document Document that owns this light table. Skylight Skylight  since 6.0 Sun Sun Gets the Sun instance that is applied to the document. If the RDK is loaded, an instance is always returned.  Methods  int Add(Light light)  int Add(Light light,ObjectAttributes attributes)  bool Delete(int index,bool quiet)  since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttableeventargs/">
+        <div class="h2 mt-1 mb-1">LightTableEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class LightTableEventArgs : EventArgsProperties  RhinoDoc Document  since 5.3 LightTableEventType EventType  since 5.3 int LightIndex  since 5.3 LightObject NewState  since 5.3 Light OldState  since 5.3  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttableeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/linetypetable/">
+        <div class="h2 mt-1 mb-1">LinetypeTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class LinetypeTable :RhinoDocCommonTable&lt;Linetype&gt;, ICollection&lt;Linetype&gt;Properties  int ActiveCount Returns number of linetypes in the linetypes table, excluding deleted linetypes. string ByLayerLinetypeName Returns the text name of the bylayer linetype. string ByParentLinetypeName Returns the text name of the byparent linetype. since 6.0 ModelComponentType ComponentType  since 6.0 string ContinuousLinetypeName Returns the text name of the continuous linetype. int Count Returns number of linetypes in the linetypes table, including deleted linetypes.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/linetypetable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/objecttable/">
+        <div class="h2 mt-1 mb-1">ObjectTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects.Tables
+public class ObjectTable :RhinoDocCommonTable&lt;RhinoObject&gt;,ICollection&lt;RhinoObject&gt;Properties  BoundingBox BoundingBox Gets the boundingbox for all objects (normal, locked and hidden) in this document that exist in &ldquo;model&rdquo; space. This bounding box does not include objects that exist in layout space. BoundingBox BoundingBoxVisible Gets the boundingbox for all visible objects (normal and locked) in this document that exist in &ldquo;model&rdquo; space. This bounding box does not include hidden objects or any objects that exist in layout space.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/objecttable/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/2/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">3</em>
+            
+          
+      
+
+      
+      <span class="next_page disabled">Next</span>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

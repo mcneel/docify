@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/texture/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/symbols/">
+        <h3>Symbols</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/symbols/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino
+Characters used for different &lsquo;drafting style&rsquo; symbols
+public class SymbolsProperties  static char DegreeSymbol Degree symbol used for angles since 6.0 static char DiameterSymbol Diameter symbol since 6.0 static char PlusMinusSymbol Plus-Minus tolerance symbol since 6.0 static char RadiusSymbol Radius symbol since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/texture/">
         <h3>Texture</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/texture/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/texture/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
 Represents a texture that is mapped on objects.
-public class TextureConstructors Texture()  (summary) Initializes a new texture. (since) 5.0  Properties bool ApplyUvwTransform  (summary) If True then the UVW transform is applied to the texture otherwise the UVW transform is ignored. (since) 5.6  bool Enabled  (summary) If the texture is enabled then it will be visible in the rendered display otherwise it will not.
+[Serializable]public class Texture : Runtime.CommonObjectConstructors  Texture() Initializes a new texture.  Properties  bool ApplyUvwTransform If True then the UVW transform is applied to the texture otherwise the UVW transform is ignored. since 5.6 bool Enabled If the texture is enabled then it will be visible in the rendered display otherwise it will not. string FileName Gets or sets a file name that is used by this texture.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/texturedcolor/">
-        <h3>TexturedColor</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/texturedcolor/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Color4f specialization of TexturedValue.
-public class TexturedColorConstructors TexturedColor(string name,Color4f value,bool on,float amount)  (summary) (since) 6.12  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/texturedfloat/">
-        <h3>TexturedFloat</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/texturedfloat/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-float specialization of TexturedValue.
-public class TexturedFloatConstructors TexturedFloat(string name,float value,bool on,float amount)  (summary) (since) 6.12  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/texturedvalue/">
-        <h3>TexturedValue</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/texturedvalue/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Generic class to help holding on to related values. This can be used to get data from textured content fields with the HandleTexturedValue function.
-public class TexturedValueConstructors TexturedValue(string name,T value,bool on,float amount)  (summary) (since) (unknown)  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/textureevaluator/">
-        <h3>TextureEvaluator</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/textureevaluator/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-This is the interface to a lightweight object capable of evaluating texture color throughout uvw space. Derive from this class to create your own texture evaluator to return from a custom RenderTexture.
-public class TextureEvaluatorMethods static void FreeByteArray(IntPtr p)  (summary) (since) 7.0 (returns) void This is some return comment  static byte GetByteArrayValue(IntPtr p,int offset)  (summary) (since) 7.0 (returns) byte This is some return comment  static IntPtr NewByteArray(int width,int height)  (summary) (since) 7.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/texturegraphinfo/">
-        <h3>TextureGraphInfo</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/texturegraphinfo/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-public class TextureGraphInfoConstructors TextureGraphInfo()  (summary) (since) 6.3  Properties IntPtr CppPointer  (summary) (since) 6.3  Methods Axis ActiveAxis()  (summary) (since) 6.3 (returns) Axis This is some return comment  Channel ActiveChannel()  (summary) (since) 6.3 (returns) Channel This is some return comment  double AmountU()  (summary) (since) 6.3 (returns) double This is some return comment  double AmountV()  (summary) (since) 6.3 (returns) double This is some return comment  double AmountW()  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/texturemapping/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/texturemapping/">
         <h3>TextureMapping</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/texturemapping/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/texturemapping/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
 Represents a texture mapping.
-public class TextureMappingProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Guid Id  (summary) The unique Id for this texture mapping object. (since) 5.10  TextureMappingType MappingType  (summary) Texture mapping type associated with this Mapping object. (since) 5.10  Transform NormalTransform  (summary) For primitive based mappings, these transformations are used to map the world coordinate (x,y,z) point P and surface normal N before it is projected to the normalized mapping primitive.
+public class TextureMapping : ModelComponentProperties  ModelComponentType ComponentType Returns . since 6.0 Guid Id The unique Id for this texture mapping object. since 5.10 TextureMappingType MappingType Texture mapping type associated with this Mapping object. since 5.10 Transform NormalTransform For primitive based mappings, these transformations are used to map the world coordinate (x,y,z) point P and surface normal N before it is projected to the normalized mapping primitive.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/texturemappingeventargs/">
-        <h3>TextureMappingEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/unknownuserdata/">
+        <h3>UnknownUserData</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/texturemappingeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/unknownuserdata/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino
-Event arguments passed to the RhinoDoc.TextureMappingEvent.
-public class TextureMappingEventArgsProperties RhinoDoc Document  (summary) (since) 5.8  TextureMappingEventType EventType  (summary) (since) 5.8  TextureMapping NewMapping  (summary) (since) 5.8  TextureMapping OldMapping  (summary) (since) 5.8  
+    Namespace: Rhino.DocObjects.Custom
+Represents user data with unknown origin.
+public class UnknownUserData : UserDataConstructors  UnknownUserData(IntPtr pointerNativeUserData) Constructs a new unknown data entity.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbdata/">
-        <h3>ThumbData</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/vector2d/">
+        <h3>Vector2d</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbdata/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/vector2d/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls.ThumbnailUI
-public class ThumbDataPropertyChanged  (summary) (since) 6.0  Properties ListChildren  (summary) (since) 6.0  RenderContent Content  (summary) (since) 6.0  Guid Id  (summary) (since) 6.0  System.Drawing.Bitmap Image  (summary) (since) 6.0  string Intensity  (summary) (since) 6.0  bool InUse  (summary) (since) 6.0  List&lt;Display.Color4f&gt; InUseColor  (summary) (since) 6.0  string Name  (summary) (since) 6.0  ThumbData Parent  (summary) (since) 6.
+    Namespace: Rhino.Geometry
+Represents the two components of a vector in two-dimensional space, using -precision floating point numbers.
+ static - Computes the opposite vector. Returns - A new vector where all components were multiplied by -1. since 6.0 static - Subtracts the second vector from the first one. Returns - A new vector that results from the componentwise difference of vector1 - vector2. since 6.0 static != Determines whether two vectors have different values.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbnail/">
-        <h3>Thumbnail</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/vector2f/">
+        <h3>Vector2f</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbnail/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/vector2f/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls.ThumbnailUI
-public class ThumbnailConstructors Thumbnail(IntPtr pRdkThumbnail)  (summary) Constructor for Thumbnail (since) 6.0  Properties IntPtr CppPointer  (summary) Thumbnail c++ pointer (since) 6.0  Methods void Dib(Bitmap dibOut)  (summary) (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) Dispose for Thumbnail (since) 6.0 (returns) void This is some return comment  System.Drawing.Bitmap GetDib()  (summary) (since) 6.0 (returns) System.Drawing.Bitmap This is some return comment  void GetDisplayRect(RectangleF rectOut)  (summary) (since) 6.
+    Namespace: Rhino.Geometry
+Represents the two components of a vector in two-dimensional space, using -precision floating point numbers.
+ static - Computes the difference between two vectors. Returns - The difference. since 6.0 static != Determines whether two vectors have different values. Returns - True if the two vectors differ in any component; False otherwise. static * Multiplies two together, returning the dot (internal) product of the two. Returns - A value that results from the coordinatewise multiplication of point1 and point2.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/vector3d/">
+        <h3>Vector3d</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/vector3d/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
+ static - Computes the opposite vector. Returns - A new vector where all components were multiplied by -1. static - Subtracts the second vector from the first one. Returns - A new vector that results from the componentwise difference of vector1 - vector2. static != Determines whether two vectors have different values. Returns - True if any coordinate pair is different; False otherwise.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/vector3f/">
+        <h3>Vector3f</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/vector3f/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
+ static - Subtracts the second vector from the first one. Returns - A new vector that results from the componentwise difference of vector1 - vector2. since 6.0 static - Computes the opposite vector. Returns - A new vector where all components were multiplied by -1. since 6.0 static != Determines whether two vectors have different values.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/volumemassproperties/">
+        <h3>VolumeMassProperties</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/volumemassproperties/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Contains static initialization methods and allows access to the computed metrics of volume, volume centroid and volume moments in in solid meshes, in solid surfaces and in solid (closed) boundary representations.
+public class VolumeMassProperties : IDisposableProperties  Point3d Centroid Gets the volume centroid in the world coordinate system. Vector3d CentroidCoordinatesMomentsOfInertia Moments of inertia with respect to centroid coordinate system. X = integral of ((y-y0)^2 + (z-z0)^2) dm Y = integral of ((z-z0)^2 + (x-x0)^2) dm Z = integral of ((z-z0)^2 + (y-y0)^2) dm where (x0,y0,z0) = centroid.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/analytics/">
+        <h3>Analytics</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/analytics/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime
+Provides tools for sending Google Analytics events using the Measurement Protocol. See https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event for details.
+public class AnalyticsConstructors  Analytics(string TrackingID,string Name) Construct Analytics class since 6.0 Analytics(string TrackingID,string Name,string Platform,string InstallerId,string Version) Construct Analytics class since 6.0  Properties  static bool UsageStatisticsEnabled Determine if user allows automatic data collection from Rhino since 6.0 static Guid UserId Returns a GUID that allows events to be aggregated by user.
   </div>
   
 

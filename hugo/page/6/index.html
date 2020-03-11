@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,127 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/circle/">
-        <h3>Circle</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/localization/">
+        <h3>Localization</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/circle/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/localization/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a circle in 3D. The values used are a radius and an orthonormal frame of the plane containing the circle, with origin at the center.The circle is parameterized by radians from 0 to 2 Pi given byt -&gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere center, xaxis and yaxis define the orthonormal frame of the circle plane.
-Constructors Circle(Arc arc)  (summary) Initializes a circle from an arc. (since) 5.
+    Namespace: Rhino.UI
+public class LocalizationProperties  static int CurrentLanguageId  since 6.0 static bool RunningAsEnglish  since 6.0  Methods  static string FormatArea(double area,UnitSystem units,DimensionStyle dimStyle,bool alternate) Format an Area string from a number since 7.0 static string FormatDistanceAndTolerance(double distance,UnitSystem units,DimensionStyle dimStyle,bool alternate)  since 7.0 static string FormatNumber(double x,UnitSystem units,DistanceDisplayMode mode,int precision,bool appendUnitSystemName) Get a string version of a number in a given unit system / display mode.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/city/">
-        <h3>City</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/localizestringpair/">
+        <h3>LocalizeStringPair</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/city/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/localizestringpair/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-City
-public class CityProperties double Latitude  (summary) Gets latitude of city. (since) 6.0  double Longitude  (summary) Gets longitude of city. (since) 6.0  String Name  (summary) Gets name of city. (since) 6.0  double TimeZone  (summary) Gets time zone of city. (since) 6.0  Methods static int Cities()  (summary) Returns number of available cities. (since) 6.0 (returns) int This is some return comment  static City CityAt(int index)  (summary) Returns city at given index.
+    Namespace: Rhino.UI
+Pair of strings used for localization.
+public class LocalizeStringPairConstructors  LocalizeStringPair(string english,string local)   Properties  string English  string Local   Methods  string ToString()  since (unknown)  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarrayobjref/">
-        <h3>ClassArrayObjRef</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/material/">
+        <h3>Material</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarrayobjref/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Represents a wrapper to an unmanaged &ldquo;array&rdquo; (list) of CRhinoObjRef instances. Wrapper for a C++ ON_ClassArray of CRhinoObjRef
-public class ClassArrayObjRefConstructors ClassArrayObjRef()  (summary) Initializes a new instance. (since) 5.0  ClassArrayObjRef(IEnumerableobjrefs)  (summary) Initializes a new instances from a set of ObjRefs (since) 5.0  Properties int Count  (summary) Gets the number of CRhinoObjRef instances in this array. (since) 5.0  Methods void Add(ObjRef objref)  (summary) Adds an ObjRef to the list.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarrayonobjref/">
-        <h3>ClassArrayOnObjRef</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarrayonobjref/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Represents a wrapper to an unmanaged &ldquo;array&rdquo; (list) of ON_ObjRef instances. Wrapper for a C++ ON_ClassArray of ON_ObjRef
-public class ClassArrayOnObjRefConstructors ClassArrayOnObjRef()  (summary) Initializes a new instance. (since) 5.8  ClassArrayOnObjRef(IEnumerableobjrefs)  (summary) Initializes a new instances from a set of ObjRefs (since) 5.8  Properties int Count  (summary) Gets the number of ObjRef instances in this array. (since) 5.8  Methods void Add(ObjRef objref)  (summary) Adds an ObjRef to the list.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarraystring/">
-        <h3>ClassArrayString</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarraystring/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_ClassArray&lt;ON_wString&gt; If you are not writing C++ code then this class is not for you.
-public class ClassArrayStringConstructors ClassArrayString()  (summary) Initializes a new instance. (since) 6.0  Properties int Count  (summary) Gets the number of strings in this array. (since) 6.0  Methods void Add(string s)  (summary) Adds a string to the list. (since) 6.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/classidattribute/">
-        <h3>ClassIdAttribute</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/classidattribute/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Custom
-Useful for legacy UserData
-public class ClassIdAttributeConstructors ClassIdAttribute(string id)  (summary) Initializes a class id attrbute. (since) 6.0  Properties Guid Id  (summary) Gets the associated style. (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/clippingplane/">
-        <h3>ClippingPlane</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/clippingplane/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render.ChangeQueue
-ChangeQueue clipping plane
-public class ClippingPlaneProperties ObjectAttributes Attributes  (summary) Get the ClippingPlaneObject for this clipping plane (since) 6.0  Guid Id  (summary) Get Guid for this clipping plane (since) 6.0  bool IsEnabled  (summary) True if clipping plane is enabled (since) 6.0  Plane Plane  (summary) Get the plane that represents this clipping plane (since) 6.0  ListViewIds  (summary) Get list of View IDs this clipping plane is supposed to clip.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/clippingplaneobject/">
-        <h3>ClippingPlaneObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/clippingplaneobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/material/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Represents the object of a clipping plane, stored in the Rhino document and with attributes.
-public class ClippingPlaneObjectProperties Rhino.Geometry.ClippingPlaneSurface ClippingPlaneGeometry  (summary) Gets the clipping plane surface. (since) 5.0  Methods bool AddClipViewport(RhinoViewport viewport,bool commit)  (summary) Adds a viewport to the list of viewports that this clipping plane clips. (since) 6.1 (returns) bool This is some return comment  bool RemoveClipViewport(RhinoViewport viewport,bool commit)  (summary) Removes a viewport from the list of viewports that this clipping plane clips.
+[Serializable]public class Material : ModelComponentConstructors  Material()  Material(Material other)  since 6.0  Properties  static Material DefaultMaterial  static double MaxShine  bool AlphaTransparency  since 6.0 Color AmbientColor  ModelComponentType ComponentType Returns . since 6.0 Color DiffuseColor  bool DisableLighting  since 6.0 Color EmissionColor  double FresnelIndexOfRefraction Gets or sets the Fresnel index of refraction of the material, default is 1.56 since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/clippingplanesurface/">
-        <h3>ClippingPlaneSurface</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/materialrefs/">
+        <h3>MaterialRefs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/clippingplanesurface/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/materialrefs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+If you are developing a high quality plug-in renderer, and a user is assigning a custom render material to this object, then add rendering material information to the MaterialRefs dictionary.
+Note to developers: As soon as the MaterialRefs dictionary contains items rendering material queries slow down. Do not populate the MaterialRefs dictionary when setting the MaterialIndex will take care of your needs.
+public class MaterialRefs : IDictionary&lt;Guid, MaterialRef&gt;Properties  int Count Gets the number of elements contained in this dictionary since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtable/">
+        <h3>MaterialTable</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtable/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+public class MaterialTable :RhinoDocCommonTable&lt;Material&gt;, ICollection&lt;Material&gt;Properties  ModelComponentType ComponentType  since 6.0 int CurrentMaterialIndex At all times, there is a &ldquo;current&rdquo; material. Unless otherwise specified, new objects are assigned to the current material. The current material is never locked, hidden, or deleted. ObjectMaterialSource CurrentMaterialSource Gets or sets the current material source.  Methods  int Add() Adds a new material to the table based on the default material.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtableeventargs/">
+        <h3>MaterialTableEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/materialtableeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+public class MaterialTableEventArgs : EventArgsProperties  RhinoDoc Document  MaterialTableEventType EventType  int Index  Material OldSettings   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshextruder/">
+        <h3>MeshExtruder</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshextruder/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a planar surface that is used as clipping plane in viewports. A clipping plane object maintains a list of viewports that it clips against.
-public class ClippingPlaneSurfaceProperties Plane Plane  (summary) Gets or sets the clipping plane. (since) 5.0  Methods bool AddClipViewportId(Guid viewportId)  (summary) Adds a viewport id to the list of viewports that this clipping plane clips. (since) 6.1 (returns) bool This is some return comment  bool RemoveClipViewportId(Guid viewportId)  (summary) Removes a viewport id that this being clipped by this clipping plane.
+Extrudes a mesh and provides preview
+public class MeshExtruder : IDisposableConstructors  MeshExtruder(Mesh inputMesh,IEnumerablecomponentIndices) Construct object to extrude given mesh faces, edges and ngons. since 6.3  Properties  bool EdgeBasedUVN Edge based UVN defines UVN directions according to boundary edge directions since 6.4 MeshExtruderFaceDirectionMode FaceDirectionMode Face direction mode determines how faces are oriented since 6.3 bool KeepOriginalFaces Whether or not to keep original faces. since 6.3 Line[] PreviewLines Gets Line objects to preview extruded mesh.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionholderimpl/">
-        <h3>CollapsibleSectionHolderImpl</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/meshobject/">
+        <h3>MeshObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionholderimpl/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/meshobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls
-public class CollapsibleSectionHolderImplConstructors CollapsibleSectionHolderImpl(ICollapsibleSectionHolder client)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods static ICollapsibleSectionHolder Find(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSectionHolder This is some return comment  static ICollapsibleSectionHolder NewNativeWrapper(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSectionHolder This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  bool IsSameObject(IntPtr cpp)  (summary) (since) 6.
+    Namespace: Rhino.DocObjects
+public class MeshObject : RhinoObjectProperties  bool IsCustomObject  since 6.0 Mesh MeshGeometry   Methods  static bool CheckMeshes(IEnumerablemeshObjects,TextLog textLog,MeshCheckParameters parameters) Examines mesh objects and logs a description of what it finds right or wrong. The various properties the function checks for are described in MeshCheckParameters. Returns - True if successful, False otherwise. since 7.0 Mesh DuplicateMeshGeometry()   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/mousecallback/">
+        <h3>MouseCallback</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/mousecallback/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+Used for intercepting mouse events in the Rhino views.
+public class MouseCallbackProperties  bool Enabled   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/mousecallbackeventargs/">
+        <h3>MouseCallbackEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/mousecallbackeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+public class MouseCallbackEventArgs : System.ComponentModel.CancelEventArgsProperties  MouseButtons Button  bool CtrlKeyDown  since 6.0 MouseButton MouseButton  since 6.0 bool ShiftKeyDown  since 6.0 RhinoView View  Point ViewportPoint   
   </div>
   
 

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GeometryBase &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Provides a common base for most geometric classes. This class is abstract.
+[Serializable]public class GeometryBase : Runtime.CommonObjectProperties  bool HasBrepForm Returns True if the Brep.TryConvertBrep function will be successful for this object since 5.6 bool IsDeformable True if object can be accurately modified with &amp;ldquo;squishy&amp;rdquo; transformations like projections, shears, and non-uniform scaling. bool IsDocumentControlled If True this object may not be modified. Any properties or functions that attempt to modify this object when it is set to &amp;ldquo;IsReadOnly&amp;rdquo; will throw a NotSupportedException.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GeometryBase</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Provides a common base for most geometric classes. This class is abstract.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GeometryBase</span> : Runtime.CommonObject
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>bool HasBrepForm</dt>
+<dd>Returns True if the Brep.TryConvertBrep function will be successful for this object</dd>
+<dd>since 5.6</dd>
+<dt>bool IsDeformable</dt>
+<dd>True if object can be accurately modified with &ldquo;squishy&rdquo; transformations like
+projections, shears, and non-uniform scaling.</dd>
+<dt>bool IsDocumentControlled</dt>
+<dd>If True this object may not be modified. Any properties or functions that attempt
+to modify this object when it is set to &ldquo;IsReadOnly&rdquo; will throw a NotSupportedException.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objecttype/">ObjectType</a> ObjectType</dt>
+<dd>Useful for switch statements that need to differentiate between
+basic object types like points, curves, surfaces, and so on.</dd>
+<dt>int UserStringCount</dt>
+<dd>Gets the amount of user strings.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool GeometryEquals(GeometryBase first,GeometryBase second)</dt>
+<dd>Determines if two geometries equal one another, in pure geometrical shape.
+This version only compares the geometry itself and does not include any user
+data comparisons.
+This is a comparison by value: for two identical items it will be true, no matter
+where in memory they may be stored.</dd>
+<dd>Returns - The indication of equality</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/componentindex/">ComponentIndex</a> ComponentIndex()</dt>
+<dd>If this piece of geometry is a component in something larger, like a BrepEdge
+in a Brep, then this function returns the component index.</dd>
+<dd>Returns - This object&rsquo;s component index.  If this object is not a sub-piece of a larger
+geometric entity, then the returned index has 
+m_type = ComponentIndex.InvalidType
+and m_index = -1.</dd>
+<dt>GeometryBase Duplicate()</dt>
+<dd>Constructs a deep (full) copy of this object.</dd>
+<dd>Returns - An object of the same type as this, with the same properties and behavior.</dd>
+<dt>GeometryBase DuplicateShallow()</dt>
+<dd>Constructs a light copy of this object. By &ldquo;light&rdquo;, it is meant that the same
+underlying data is used until something is done to attempt to change it. For example,
+you could have a shallow copy of a very heavy mesh object and the same underlying
+data will be used when doing things like inspecting the number of faces on the mesh.
+If you modify the location of one of the mesh vertices, the shallow copy will create
+a full duplicate of the underlying mesh data and the shallow copy will become a
+deep copy.</dd>
+<dd>Returns - An object of the same type as this object.
+This behavior is overridden by implementing classes.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetBoundingBox(bool accurate)</dt>
+<dd>Boundingbox solver. Gets the world axis aligned boundingbox for the geometry.</dd>
+<dd>Returns - The boundingbox of the geometry in world coordinates or BoundingBox.Empty 
+if not bounding box could be found.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetBoundingBox(Plane plane)</dt>
+<dd>Aligned Boundingbox solver. Gets the plane aligned boundingbox.</dd>
+<dd>Returns - A BoundingBox in plane coordinates.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetBoundingBox(Plane plane,Box worldBox)</dt>
+<dd>Aligned Boundingbox solver. Gets the plane aligned boundingbox.</dd>
+<dd>Returns - A BoundingBox in plane coordinates.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetBoundingBox(Transform xform)</dt>
+<dd>Aligned Boundingbox solver. Gets the world axis aligned boundingbox for the transformed geometry.</dd>
+<dd>Returns - The accurate boundingbox of the transformed geometry in world coordinates 
+or BoundingBox.Empty if not bounding box could be found.</dd>
+<dt>string GetUserString(string key)</dt>
+<dd>Gets user string from this geometry.</dd>
+<dd>Returns - string associated with the key if successful. None if no key was found.</dd>
+<dt>System.Collections.Specialized.NameValueCollection GetUserStrings()</dt>
+<dd>Gets a copy of all (user key string, user value string) pairs attached to this geometry.</dd>
+<dd>Returns - A new collection.</dd>
+<dt>bool MakeDeformable()</dt>
+<dd>If possible, converts the object into a form that can be accurately modified
+with &ldquo;squishy&rdquo; transformations like projections, shears, an non-uniform scaling.</dd>
+<dd>Returns - False if object cannot be converted to a deformable object. True if object was
+already deformable or was converted into a deformable object.</dd>
+<dt>uint MemoryEstimate()</dt>
+<dd>Computes an estimate of the number of bytes that this object is using in memory.</dd>
+<dd>Returns - An estimated memory footprint.</dd>
+<dt>bool Rotate(double angleRadians,Vector3d rotationAxis,Point3d rotationCenter)</dt>
+<dd>Rotates the object about the specified axis. A positive rotation 
+angle results in a counter-clockwise rotation about the axis (right hand rule).</dd>
+<dd>Returns - True if geometry successfully rotated.</dd>
+<dt>bool Scale(double scaleFactor)</dt>
+<dd>Scales the object by the specified factor. The scale is centered at the origin.</dd>
+<dd>Returns - True if geometry successfully scaled.</dd>
+<dt>bool SetUserString(string key,string value)</dt>
+<dd>Attach a user string (key,value combination) to this geometry.</dd>
+<dd>Returns - True on success.</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transforms the geometry. If the input Transform has a SimilarityType of
+OrientationReversing, you may want to consider flipping the transformed
+geometry after calling this function when it makes sense. For example,
+you may want to call Flip() on a Brep after transforming it.</dd>
+<dd>Returns - True if geometry successfully transformed.</dd>
+<dt>bool Translate(double x,double y,double z)</dt>
+<dd>Translates the object along the specified vector.</dd>
+<dd>Returns - True if geometry successfully translated.</dd>
+<dt>bool Translate(Vector3d translationVector)</dt>
+<dd>Translates the object along the specified vector.</dd>
+<dd>Returns - True if geometry successfully translated.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GeometryBase</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

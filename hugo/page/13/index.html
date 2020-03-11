@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,130 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/customrendersavefiletypes/">
-        <h3>CustomRenderSaveFileTypes</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorlab/">
+        <h3>ColorLAB</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/customrendersavefiletypes/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorlab/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-public class CustomRenderSaveFileTypesMethods void RegisterFileType(IEnumerableextensions,string description,SaveFileHandler saveFileHandler)  (summary) Call this method to register a custom file save type with the render output window save dialog. (since) 5.11 (returns) void This is some return comment  
+    Namespace: Rhino.Display
+Represents a LAB (Lightness, A, B) color with double precision floating point channels. LAB colors are based on nonlinearly compressed CIE XYZ color space coordinates.
+The A and B parameters of a LAB color represent the opponents.
+Constructors  ColorLAB(Color rgb) Constructs a new instance of ColorLAB that is equivalent to an RGB color. ColorLAB(double lightness,double a,double b) Constructs a new instance of ColorLAB with custom channel values. ColorLAB(double alpha,double lightness,double a,double b) Constructs a new instance of ColorLAB with custom channel values.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/commands/customundoeventargs/">
-        <h3>CustomUndoEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorlch/">
+        <h3>ColorLCH</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/commands/customundoeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorlch/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Display
+Represents an LCH (Lightness, A, B) color with double precision floating point channels. LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, in order to approach perceptual uniformity. They are primarily used in computer graphics which deal with colored lights.
+Constructors  ColorLCH(Color rgb) Constructs a new instance of ColorLCH that is equivalent to an RGB color. ColorLCH(double lightness,double chroma,double hue) Constructs a new instance of ColorLCH with custom channel values.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorxyz/">
+        <h3>ColorXYZ</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorxyz/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Display
+Represents an XYZ (Hue, Saturation, Luminance) color with double precision floating point channels. XYZ colors are based on the CIE 1931 XYZ color space standard and they mimic the natural sensitivity of cones in the human retina.
+Constructors  ColorXYZ(Color rgb) Constructs a new instance of ColorXYZ that is equivalent to an RGB color. ColorXYZ(double x,double y,double z) Constructs a new instance of ColorXYZ with custom channel values. ColorXYZ(double alpha,double x,double y,double z) Constructs a new instance of ColorXYZ with custom channel values.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/command/">
+        <h3>Command</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/command/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Commands
-Argument package that is passed to a custom undo delegate
-public class CustomUndoEventArgsProperties string ActionDescription  (summary) (since) 5.0  Guid CommandId  (summary) (since) 5.0  bool CreatedByRedo  (summary) (since) 5.0  RhinoDoc Document  (summary) (since) 5.0  object Tag  (summary) (since) 5.0  uint UndoSerialNumber  (summary) (since) 5.0  
+Defines a base class for all commands. This class is abstract.
+public class CommandEvents  static BeginCommand Called just before command.RunCommand(). static EndCommand Called immediately after command.RunCommand(). static UndoRedo Used to monitor Rhino&rsquo;s built in undo/redo support.  Properties  static Guid LastCommandId Gets the ID of the last commands. static Result LastCommandResult Gets the result code of the last command. string EnglishName Gets the name of the command.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/cylinder/">
-        <h3>Cylinder</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/commandaliaslist/">
+        <h3>CommandAliasList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/cylinder/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/commandaliaslist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the values of a plane, a radius and two heights -on top and beneath- that define a right circular cylinder.
-Constructors Cylinder(Circle baseCircle)  (summary) Constructs a new cylinder with infinite height. (since) 5.0  Cylinder(Circle baseCircle,double height)  (summary) Constructs a new cylinder with a finite height. (since) 5.0  Properties static Cylinder Unset  (summary) Gets an invalid Cylinder. (since) 5.0  Vector3d Axis  (summary) Gets the axis direction of the cylinder.
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to access command aliases.
+public class CommandAliasListProperties  static int Count Returns the number of command alias in Rhino.  Methods  static bool Add(string alias,string macro) Adds a new command alias to Rhino. Returns - True if successful. static void Clear() Removes all aliases from the list. static bool Delete(string alias) Deletes an existing command alias from Rhino. Returns - True if successful.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/datetimefield/">
-        <h3>DateTimeField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/commandeventargs/">
+        <h3>CommandEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/datetimefield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/commandeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-DateTime field value class
-public class DateTimeFieldProperties DateTime Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.Commands
+public class CommandEventArgs : EventArgsProperties  string CommandEnglishName Gets the English name of the command that raised this event. Guid CommandId Gets the ID of the command that raised this event. string CommandLocalName Gets the name of the command that raised this event in the local language. string CommandPluginName Gets the name of the plug-in that this command belongs to. If the command is internal to Rhino, then this propert is an empty string.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/decal/">
-        <h3>Decal</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commandlinetextwriter/">
+        <h3>CommandLineTextWriter</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/decal/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/commandlinetextwriter/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino
+Provides a text writer that writes to the command line.
+public class CommandLineTextWriter : System.IO.TextWriterProperties  Encoding Encoding Returns Encoding Unicode. since 6.0  Methods  void Write(char value) Writes a char to the command line. since 6.0 void Write(char[] buffer,int index,int count) Writes a char buffer to the command line. since 6.0 void write(string str) Provided to give a simple way to IronPython to call this class.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/commandstyleattribute/">
+        <h3>CommandStyleAttribute</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/commandstyleattribute/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Commands
+Decorates commands to provide styles.
+[AttributeUsage(AttributeTargets.Class)]public class CommandStyleAttribute : AttributeConstructors  CommandStyleAttribute(Style styles) Initializes a new command style attribute class.  Properties  Style Styles Gets the associated style.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/contentcollectioniterator/">
+        <h3>ContentCollectionIterator</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/contentcollectioniterator/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-Represents a decal, or a picture that can be moved on an object.
-public class DecalProperties int CRC  (summary) The decal CRC identifies a decal by its state. Multiple decals which would be exactly the same would have the same CRC and are culled from the system. If you store this value with the intention of using it to find the decal again later, you must update your stored value whenever the decal state changes.
+public class ContentCollectionIterator : IDisposableConstructors  ContentCollectionIterator(IntPtr pCollection)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void DeleteThis()  since 6.0 void Dispose()  since 6.0 RenderContent First()  since 6.0 RenderContent Next()  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/decalcreateparams/">
-        <h3>DecalCreateParams</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/cullobjecteventargs/">
+        <h3>CullObjectEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/decalcreateparams/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/cullobjecteventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Used by RhinoObject.AddDecal() to create and add a decal
-public class DecalCreateParamsProperties DecalMapping DecalMapping  (summary) (since) 6.0  DecalProjection DecalProjection  (summary) (since) 6.0  double EndLatitude  (summary) (since) 6.0  double EndLongitude  (summary) (since) 6.0  double Height  (summary) (since) 6.0  bool MapToInside  (summary) (since) 6.0  double MaxU  (summary) (since) 6.0  double MaxV  (summary) (since) 6.0  double MinU  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/decals/">
-        <h3>Decals</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/decals/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Represents all the decals of an object.
-public class DecalsMethods uint Add(Decal decal)  (summary) Add a new Decal to the decals list, use Decal.Create to create a new decal instance to add. (since) 5.10 (returns) uint This is some return comment  void Clear()  (summary) (since) 5.10 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.10 (returns) IEnumeratorThis is some return comment  bool Remove(Decal decal)  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/defaults/">
-        <h3>Defaults</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/defaults/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class DefaultsProperties static HatchPattern Dash  (summary) (since) 6.0  static HatchPattern Grid  (summary) (since) 6.0  static HatchPattern Grid60  (summary) (since) 6.0  static HatchPattern Hatch1  (summary) (since) 6.0  static HatchPattern Hatch2  (summary) (since) 6.0  static HatchPattern Hatch3  (summary) (since) 6.0  static HatchPattern Plus  (summary) (since) 6.0  static HatchPattern Solid  (summary) (since) 6.0  static HatchPattern Squares  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/detailview/">
-        <h3>DetailView</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/detailview/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a view of the model placed on a page layout.
-public class DetailViewProperties bool IsParallelProjection  (summary) Gets or sets whether the view is parallel. (since) 5.0  bool IsPerspectiveProjection  (summary) Gets or sets whether the view is perspective. (since) 5.0  bool IsProjectionLocked  (summary) Gets or sets whether the view projection is locked. (since) 5.0  double PageToModelRatio  (summary) Gets the page units/model units quotient.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/detailviewobject/">
-        <h3>DetailViewObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/detailviewobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-A detail view object is a nested Rhino viewport placed on a page view with a 2D closed curve boundary. It can be any type of modeling view.
-public class DetailViewObjectProperties string DescriptiveTitle  (summary) Detail objects have two strings that can be used to describe the detail: 1. The name string that is part of the object&rsquo;s attributes 2. The viewport projection title that is part of the viewport This function combines these two strings to create a single &ldquo;description&rdquo; string in the form of attribute_name - projection_title.
+    Namespace: Rhino.Display
+public class CullObjectEventArgs : DrawEventArgsProperties  bool CullObject  since 5.3 RhinoObject RhinoObject  since 5.3 uint RhinoObjectSerialNumber Gets the rhino object runtime serial number. since 6.14  
   </div>
   
 

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,128 +57,129 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/datasource/eventargs/">
-        <h3>EventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getcone/">
+        <h3>GetCone</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/datasource/eventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getcone/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls.DataSource
-public class EventArgsProperties Guid DataType  (summary) (since) 6.0  
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a cone.
+public class GetCone : IDisposableConstructors  GetCone()  since 6.0  Properties  bool AllowInputAngle  since 6.0 double ApexAngleDegrees  since 6.0 double BaseAngleDegrees  since 6.0 bool Cap Gets or sets whether or not the output should be capped. since 6.0 ConeConstraint ConeConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/datasource/eventinfoargs/">
-        <h3>EventInfoArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getcylinder/">
+        <h3>GetCylinder</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/datasource/eventinfoargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getcylinder/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls.DataSource
-public class EventInfoArgsProperties Guid DataType  (summary) (since) 6.0  IntPtr EventInfoPtr  (summary) (since) 6.0  
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a cylinder.
+public class GetCylinder : IDisposableConstructors  GetCylinder()  since 6.0  Properties  bool BothSidesOption Determine if the &ldquo;both sides&rdquo; option is enabled since 6.0 bool Cap Gets or sets whether or not the output should be capped. since 6.0 CylinderConstraint CylinderConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/extrusion/">
-        <h3>Extrusion</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getellipsoid/">
+        <h3>GetEllipsoid</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/extrusion/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getellipsoid/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents an extrusion, or objects such as beams or linearly extruded elements, that can be represented by profile curves and two miter planes at the extremes.
-public class ExtrusionConstructors Extrusion()  (summary) Initializes a new instance of the class. (since) 5.0  Properties int CapCount  (summary) Gets the amount of capping surfaces. (since) 5.0  bool IsCappedAtBottom  (summary) Gets a value indicating whether the surface that fills the bottom profile is existing.
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetEllipsoid : IDisposableConstructors  GetEllipsoid()  since 7.0  Properties  Point3d FirstPoint Returns the first point. If in &ldquo;from foci&rdquo; mode, then this is the first foci point. since 7.0 bool IsModeFromFoci Indicates the ellipsoid was created from foci. since 7.0 bool MarkFoci Indicates the user wants the ellipsoid foci marked with point objects. since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/extrusionobject/">
-        <h3>ExtrusionObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getline/">
+        <h3>GetLine</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/extrusionobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getline/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input.Custom
+Use to interactively get a line. The Rhino &ldquo;Line&rdquo; command uses GetLine.
+public class GetLine : IDisposableConstructors  GetLine()  since 5.1  Properties  bool AcceptZeroLengthLine Controls whether or not a zero length line is acceptable. The default is to require the user to keep picking the end point until we get a point different than the start point. since 5.1 Color FeedbackColor If set, the feedback color is used to draw the dynamic line when the second point is begin picked.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripsdraweventargs/">
+        <h3>GripsDrawEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripsdraweventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Custom
+public class GripsDrawEventArgs : Rhino.Display.DrawEventArgsProperties  int ControlPolygonStyle What kind of line is used to display things like control polygons. 0 = no control polygon, 1 = solid control polygon, 2 = dotted control polygon. bool DrawDynamicStuff If true, then draw stuff that does not move when grips are dragged, like the control polygon of the &ldquo;original&rdquo; curve. bool DrawStaticStuff If true, then draw stuff that moves when grips are dragged, like the curve being bent by a dragged control point.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/group/">
+        <h3>Group</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/group/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-public class ExtrusionObjectProperties Extrusion ExtrusionGeometry  (summary) (since) 5.0  Methods Extrusion DuplicateExtrusionGeometry()  (summary) (since) 5.0 (returns) Extrusion This is some return comment  
+public class Group : ModelComponentProperties  ModelComponentType ComponentType Returns . since 6.0 int UserStringCount Gets the amount of user strings. since 6.4  Methods  string GetUserString(string key) Gets user string from this geometry. Returns - string associated with the key if successful. None if no key was found. since 6.4 System.Collections.Specialized.NameValueCollection GetUserStrings() Gets a copy of all (user key string, user value string) pairs attached to this geometry.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/factorybase/">
-        <h3>FactoryBase</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptable/">
+        <h3>GroupTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/factorybase/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls
-Base class for CollapsibleSection and ViewModel factories used by the RDK UI
-public class FactoryBaseMethods static Type[] Register()  (summary) Call this function during startup of current assembly to load classes with factory creation support are registed (since) 6.0 (returns) Type[] This is some return comment  static Type[] Register(PlugIn plugin)  (summary) Call this function during the startup of your plug-in to ensure that all classes that support factory creation are registed (since) 6.
+    Namespace: Rhino.DocObjects.Tables
+Group tables store the list of groups in a Rhino document.
+public class GroupTable :RhinoDocCommonTable&lt;Group&gt;, ICollection&lt;Group&gt;Properties  ModelComponentType ComponentType  since 6.0  Methods  int Add() Adds a new empty group to the group table. Returns - &gt;=0 index of new group. -1 group not added because a group with that name already exists. int Add(IEnumerableobjectIds) Adds a new group to the group table with a set of objects.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/field/">
-        <h3>Field</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptableeventargs/">
+        <h3>GroupTableEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/field/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/grouptableeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+Contains group table event data.
+public class GroupTableEventArgs : EventArgsProperties  RhinoDoc Document The document in which the event occurred. GroupTableEventType EventType The event type. int GroupIndex The index of the Group that has changed. since 6.10 Group NewState The Group that has changed. since 6.10 Group OldState If the event is GroupTableEventType.Modified, then the old Group. since 6.10  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/guidfield/">
+        <h3>GuidField</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/guidfield/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.Fields
-Generic data fields used to add publicly accessible properties to RenderContent.FieldDictionary. These should be created by calling a FieldDictaionary.Add() method on a Render content object. These are allocated after the RenderContent object&rsquo;s C++ object is created and added to the underlying C++ objects content dictionary, who ever allocates a field is responsible for deleting it so these objects clean up the C++ pointers when they are disposed of.
+Guid field value class
+public class GuidField : FieldProperties  Guid Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/fielddictionary/">
-        <h3>FieldDictionary</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballappearancesettings/">
+        <h3>GumballAppearanceSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/fielddictionary/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballappearancesettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-Dictionary containing RenderContent data fields, add fields to this dictionary in your derived RenderContent classes constructor. Get field values using the TryGetdata type methods and set them using the Set() method.
-public class FieldDictionaryMethods BoolField Add(string key,bool value)  (summary) Add a new BoolField to the dictionary. This will be a data only field and not show up in the content browsers. (since) 5.1 (returns) BoolField This is some return comment  BoolField Add(string key,bool value,string prompt)  (summary) Add a new BoolField to the dictionary.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dm/">
-        <h3>File3dm</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dm/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.FileIO
-Represents a 3dm file, which is stored using the OpenNURBS file standard. The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.
-public class File3dmConstructors File3dm()  (summary) Initializes a new instance of a 3dm file. (since) 5.0  Properties File3dmDimStyleTable AllDimStyles  (summary) Dimension Styles in this file. (since) 6.0  File3dmGroupTable AllGroups  (summary) Grpups in this file. (since) 6.5  File3dmHatchPatternTable AllHatchPatterns  (summary) Hatch patterns in this file.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmcommoncomponenttable/">
-        <h3>File3dmCommonComponentTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmcommoncomponenttable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.FileIO
-Provides a base table type that is shared among all File3dm tables.
-public class File3dmCommonComponentTableMethods void Add(T item)  (summary) Adds an item. (since) (unknown) (returns) void This is some return comment  void Delete(int index)  (summary) Flags a component as deleted. (since) (unknown) (returns) void This is some return comment  bool Delete(T item)  (summary) Flags a component as deleted. (since) (unknown) (returns) bool This is some return comment  string Dump()  (summary) Prepares a text dump of object table.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmdimstyletable/">
-        <h3>File3dmDimStyleTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmdimstyletable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.FileIO
-Provides access to annotation styles in the 3dm file.
-public class File3dmDimStyleTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods DimensionStyle FindIndex(int index)  (summary) Retrieves a DimensionStyle object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.0 (returns) DimensionStyle This is some return comment  DimensionStyle FindName(string name)  (summary) Finds a DimensionStyle given its name.
+    Namespace: Rhino.UI.Gumball
+public class GumballAppearanceSettingsConstructors  GumballAppearanceSettings()   Properties  int ArcThickness in pixels. int ArrowHeadLength in pixels. int ArrowHeadWidth in pixels. int AxisThickness in pixels. Color ColorMenuButton  Color ColorX Default is Red. Color ColorY Default is Green. Color ColorZ Default is Blue. int FreeTranslate When FreeTranslate is 1, the center translation control can be dragged in any direction and moves the object the gumball controls. When FreeTranslate is 2, the center translation control can be dragged in any direction and moves the object the gumball itself.
   </div>
   
 

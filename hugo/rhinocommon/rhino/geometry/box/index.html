@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Box &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the value of a plane and three intervals in an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.
+Constructors  Box(BoundingBox bbox) Initializes a new Box that mimics a BoundingBox struct. The orientation plane of the Box is coincident with the World XY plane. Box(Plane basePlane,BoundingBox boundingbox) Initializes a world aligned box from a base plane and a boundingbox. Box(Plane basePlane,GeometryBase geometry) Initializes a box that contains a generic piece of geometry.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Box</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the value of a plane and three intervals in
+an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Box(BoundingBox bbox)</dt>
+<dd>Initializes a new Box that mimics a BoundingBox struct. 
+The orientation plane of the Box is coincident with the 
+World XY plane.</dd>
+<dt>Box(Plane basePlane,BoundingBox boundingbox)</dt>
+<dd>Initializes a world aligned box from a base plane and a boundingbox.</dd>
+<dt>Box(Plane basePlane,GeometryBase geometry)</dt>
+<dd>Initializes a box that contains a generic piece of geometry.
+This box will be aligned with an arbitrary plane.</dd>
+<dt>Box(Plane basePlane,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Initializes the smallest box that contains a set of points.</dd>
+<dt>Box(Plane basePlane,Interval xSize,Interval ySize,Interval zSize)</dt>
+<dd>Initializes a new box from a base Plane and three Intervals.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Box Empty</dt>
+<dd>Empty Box. Empty boxes are considered to be invalid.</dd>
+<dt>static Box Unset</dt>
+<dd>Gets a Box whose base plane and axis dimensions are all Unset.</dd>
+<dt>double Area</dt>
+<dd>Gets the total surface area of this box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox</dt>
+<dd>Gets the world axis aligned Bounding box for this oriented box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Center</dt>
+<dd>Gets the point that is in the center of the box.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets the validity of this Box. Boxes are invalid when the base plane or any of 
+the dimension intervals are invalid or decreasing.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Gets or sets the orientation plane for this Box.</dd>
+<dt>double Volume</dt>
+<dd>Gets the total volume of this box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> X</dt>
+<dd>Gets or sets the Interval that describes the dimension of the 
+Box along the orientation plane X-Axis. Otherwise known as the Width of the Box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> Y</dt>
+<dd>Gets or sets the Interval that describes the dimension of the 
+Box along the orientation plane Y-Axis. Otherwise known as the Depth of the Box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> Z</dt>
+<dd>Gets or sets the Interval that describes the dimension of the 
+Box along the orientation plane Z-Axis. Otherwise known as the Height of the Box.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d point)</dt>
+<dd>Finds the closest point on or in the Box. The box should be Valid for this to work.</dd>
+<dd>Returns - The point on or in the box that is closest to the sample point.</dd>
+<dt>bool Contains(BoundingBox box)</dt>
+<dd>Test a boundingbox for Box inclusion. This is the same as calling Contains(box,false)</dd>
+<dd>Returns - True if the box is on the inside of or coincident with this Box.</dd>
+<dt>bool Contains(BoundingBox box,bool strict)</dt>
+<dd>Test a boundingbox for Box inclusion.</dd>
+<dd>Returns - True if the box is (strictly) on the inside of this Box.</dd>
+<dt>bool Contains(Box box)</dt>
+<dd>Test a box for Box inclusion. This is the same as calling Contains(box,false)</dd>
+<dd>Returns - True if the box is on the inside of or coincident with this Box.</dd>
+<dt>bool Contains(Box box,bool strict)</dt>
+<dd>Test a box for Box inclusion.</dd>
+<dd>Returns - True if the box is (strictly) on the inside of this Box.</dd>
+<dt>bool Contains(Point3d point)</dt>
+<dd>Determines whether a point is included in this box. This is the same as calling Contains(point,false)</dd>
+<dd>Returns - True if the point is on the inside of or coincident with this Box.</dd>
+<dt>bool Contains(Point3d point,bool strict)</dt>
+<dd>Determines whether a point is included in this box.</dd>
+<dd>Returns - True if the point is (strictly) on the inside of this Box.</dd>
+<dt>bool EpsilonEquals(Box other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> FurthestPoint(Point3d point)</dt>
+<dd>Finds the furthest point on the Box. The Box should be Valid for this to work properly.</dd>
+<dd>Returns - The point on the box that is furthest from the sample point.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] GetCorners()</dt>
+<dd>Gets an array of the 8 corner points of this box.</dd>
+<dd>Returns - An array of 8 corners.</dd>
+<dt>void Inflate(double amount)</dt>
+<dd>Inflates the box by a given offset in each direction.
+Inflating with negative amounts may result in decreasing boxes. 
+InValid boxes cannot be inflated.</dd>
+<dt>void Inflate(double xAmount,double yAmount,double zAmount)</dt>
+<dd>Inflates the box by a given offset in each direction.
+Inflating with negative amounts may result in decreasing boxes.
+InValid boxes cannot be inflated.</dd>
+<dt>bool MakeValid()</dt>
+<dd>Attempts to make the Box valid. This is not always possible.</dd>
+<dd>Returns - True if the box was made valid, or if it was valid to begin with. 
+False if the box remains in a differently abled state.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double x,double y,double z)</dt>
+<dd>Evaluates the box volume at the given unitized parameters.
+The box has idealized side length of 1x1x1.</dd>
+<dd>Returns - The point at (x,y,z).</dd>
+<dt>void RepositionBasePlane(Point3d origin)</dt>
+<dd>Repositions the origin of the Base plane for this box without affecting 
+the physical dimensions.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep()</dt>
+<dd>Constructs a brep representation of this box.</dd>
+<dd>Returns - A Brep representation of this box or null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/extrusion/">Extrusion</a> ToExtrusion()</dt>
+<dd>Constructs an extrusion representation of this box.</dd>
+<dd>Returns - An Extrusion representation of this box or null.</dd>
+<dd>since 6.0</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transforms this Box using a Transformation matrix. If the Transform does not preserve 
+Similarity, the dimensions of the resulting box cannot be trusted.</dd>
+<dd>Returns - True if the Box was successfully transformed, False if otherwise.</dd>
+<dt>void Union(Point3d point)</dt>
+<dd>Constructs a union between this Box and the given point. 
+This grows the box in directions so it contains the point.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Box</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

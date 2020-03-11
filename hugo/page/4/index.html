@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,129 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/brepface/">
-        <h3>BrepFace</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getpointmouseeventargs/">
+        <h3>GetPointMouseEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/brepface/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getpointmouseeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Provides strongly-typed access to brep faces. A Brep face is composed of one surface and trimming curves.
-public class BrepFaceProperties Brep Brep  (summary) Gets the Brep that owns this face. (since) 6.9  int FaceIndex  (summary) Index of face in Brep.Faces array. (since) 5.0  bool IsSurface  (summary) Gets a value indicating whether the face is synonymous with the underlying surface. If a Face has no trimming curves then it is considered a Surface.
+    Namespace: Rhino.Input.Custom
+Arguments for mouse information during point getting.
+public class GetPointMouseEventArgs : EventArgsProperties  bool ControlKeyDown  bool LeftButtonDown  bool MiddleButtonDown  Point3d Point  bool RightButtonDown  bool ShiftKeyDown  GetPoint Source  RhinoViewport Viewport  Point WindowPoint   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/brepfacelist/">
-        <h3>BrepFaceList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getpolyline/">
+        <h3>GetPolyline</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/brepfacelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getpolyline/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the Faces in a Brep object.
-public class BrepFaceListProperties int Count  (summary) Gets the number of brep faces. (since) 5.0  Methods BrepFace Add(int surfaceIndex)  (summary) Create and add a new face to this list. An incomplete face is added. The caller must create and fill in the loops used by the face. (since) 5.4 (returns) BrepFace This is some return comment  BrepFace Add(Surface surface)  (summary) Add a new face to a brep.
+    Namespace: Rhino.Input.Custom
+Use to interactively get a polyline.
+public class GetPolyline : IDisposableConstructors  GetPolyline()  since 6.0  Properties  string FirstPointPrompt Prompt when getting first point since 6.0 string FourthPointPrompt Prompt when getting fourth point since 6.0 int MaxPointCount  since 6.0 int MinPointCount  since 6.0 string SecondPointPrompt Prompt when getting second point since 6.0 string ThirdPointPrompt Prompt when getting third point since 6.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/breploop/">
-        <h3>BrepLoop</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getsphere/">
+        <h3>GetSphere</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/breploop/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getsphere/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represent a single loop in a Brep object. A loop is composed of a list of trim curves.
-public class BrepLoopProperties Brep Brep  (summary) Gets the Brep that owns this loop. (since) 5.0  BrepFace Face  (summary) BrepFace this loop belongs to. (since) 5.0  int LoopIndex  (summary) Gets the index of this loop in the Brep.Loops collection. (since) 5.0  BrepLoopType LoopType  (summary) type of loop.
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a sphere.
+public class GetSphere : IDisposableConstructors  GetSphere()  since 7.0  Properties  double DefaultSize Default radius or diameter (based on InDiameterMode) since 7.0 bool InDiameterMode Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter since 7.0  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 7.0 Commands.Result Get(Sphere sphere) Prompt for the getting of a sphere.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/breplooplist/">
-        <h3>BrepLoopList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/getstring/">
+        <h3>GetString</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/breplooplist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/getstring/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the Loops in a Brep object.
-public class BrepLoopListProperties int Count  (summary) Gets the number of brep loops. (since) 5.0  Methods BrepLoop Add(BrepLoopType loopType)  (summary) Create a new empty boundary loop. The new loop will not be part of a face and will not include any trim curves. (since) 5.4 (returns) BrepLoop This is some return comment  BrepLoop Add(BrepLoopType loopType,BrepFace face)  (summary) Create a new boundary loop on a face.
+    Namespace: Rhino.Input.Custom
+Used to get strings.
+public class GetString : GetBaseClassConstructors  GetString() Constructs a new GetString.  Methods  GetResult Get() Returns the string that the user typed. By default, space stops the string input. Returns - The result type. If the user typed a string, this is . GetResult GetLiteralString() Returns the string that the user typed. By default, space does not stop input. Returns - The result type.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/brepobject/">
-        <h3>BrepObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettorus/">
+        <h3>GetTorus</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/brepobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/gettorus/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a torus.
+public class GetTorus : IDisposableConstructors  GetTorus()  since 7.0  Properties  double DefaultSize Default radius or diameter (based on InDiameterMode) since 7.0 bool FixInnerRadius Second radius opion. The first radius chosen sets the inner dimension of the torus and the second radius is constrained to be outside of the first radius. since 7.0 bool InDiameterMode Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter since 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettransform/">
+        <h3>GetTransform</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/gettransform/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input.Custom
+Used for getting a Transform
+public class GetTransform : GetPointProperties  bool HaveTransform  TransformObjectList ObjectList  Transform Transform   Methods  void AddTransformObjects(TransformObjectList list) Adds any objects you want transformed and grips you want transformed. Make sure no duplicates are in the list and that no grip ownwers are passed in as objects. Transform CalculateTransform(RhinoViewport viewport,Point3d point) Retrieves the final transformation. Override this virtual function to provide your own custom transformation method.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/gettruncatedcone/">
+        <h3>GetTruncatedCone</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/gettruncatedcone/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Input.Custom
+Class provides user interface to define a truncated cone.
+public class GetTruncatedCone : IDisposableConstructors  GetTruncatedCone()  since 7.0  Properties  bool Cap Gets or sets whether or not the output should be capped. since 7.0 CylinderConstraint CylinderConstraint State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl. By default the vertical cone/cyl option not available but is not selected.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/gripobject/">
+        <h3>GripObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/gripobject/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Represents a brep in a document.
-public class BrepObjectProperties Brep BrepGeometry  (summary) Gets the brep geometry linked with this object. (since) 5.0  Methods Brep DuplicateBrepGeometry()  (summary) Constructs a new deep copy of the brep geometry. (since) 5.0 (returns) Brep This is some return comment  
+public class GripObject : RhinoObjectProperties  Point3d CurrentLocation  int Index  bool Moved True if the grip has moved from OriginalLocation. Point3d OriginalLocation  Guid OwnerId  double Weight The weight of a NURBS control point grip or RhinoMath.UnsetValue if the grip is not a NURBS control point grip.  Methods  bool GetCageParameters(double u,double v,double w) Retrieves the 2d parameter space values of this GripObject from the cage it&rsquo;s associated with.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/brepregion/">
-        <h3>BrepRegion</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripstatus/">
+        <h3>GripStatus</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/brepregion/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripstatus/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a brep topological region that has sides.
-public class BrepRegionProperties BoundingBox BoundingBox  (summary) Gets the region bounding box. (since) 5.0  Brep Brep  (summary) Gets a reference to the Brep this region belongs to. (since) 5.0  int Index  (summary) Gets the index of region in the RegionTopology array. (since) 5.0  bool IsFinite  (summary) Gets a value indicating whether this region is finite.
+    Namespace: Rhino.DocObjects.Custom
+public class GripStatusProperties  bool Culled  bool Visible   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/brepregionfaceside/">
-        <h3>BrepRegionFaceSide</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/hatchpattern/">
+        <h3>HatchPattern</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/brepregionfaceside/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/hatchpattern/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a side of a entity.
-public class BrepRegionFaceSideProperties Brep Brep  (summary) The brep this side belongs to. (since) 5.0  BrepFace Face  (summary) Gets the face this side belongs to. (since) 5.0  BrepRegion Region  (summary) The region this side belongs to. (since) 5.0  bool SurfaceNormalPointsIntoRegion  (summary) Gets True if BrepFace&rsquo;s surface normal points into region; False otherwise. (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/brepsurfacelist/">
-        <h3>BrepSurfaceList</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/brepsurfacelist/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the underlying surfaces in a Brep object.
-public class BrepSurfaceListProperties int Count  (summary) Gets the number of surfaces in a brep. (since) 5.4  Methods IEnumeratorGetEnumerator()  (summary) Gets an enumerator that visits all surfaces. (since) 5.4 (returns) IEnumeratorThis is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/breptrim/">
-        <h3>BrepTrim</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/breptrim/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Brep trim information is stored in BrepTrim classes. Brep.Trims is an array of all the trims in the brep. A BrepTrim is derived from CurveProxy so the trim can supply easy to use evaluation tools via the Curve virtual member functions. Note well that the domains and orientations of the curve m_C2[trim.m_c2i] and the trim as a curve may not agree.
-public class BrepTrimProperties Brep Brep  (summary) Gets the Brep that owns this trim.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/breptrimlist/">
-        <h3>BrepTrimList</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/breptrimlist/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the Trims in a Brep object
-public class BrepTrimListProperties int Count  (summary) Gets the number of brep trims. (since) 5.1  Methods BrepTrim Add(bool rev3d,BrepEdge edge,int curve2dIndex)  (summary) Add a new trim that will be part of an inner, outer, or slit loop to the brep (since) 5.4 (returns) BrepTrim This is some return comment  BrepTrim Add(bool rev3d,BrepLoop loop,int curve2dIndex)  (summary) Add a new trim that will be part of an inner, outer, or slit loop to the brep (since) 5.
+    Namespace: Rhino.DocObjects
+[Serializable]public class HatchPattern : ModelComponentConstructors  HatchPattern()   Properties  ModelComponentType ComponentType Returns . since 6.0 string Description  HatchPatternFillType FillType  int Index Index in the hatch pattern table for this pattern. -1 if not in the table. bool IsDeleted Deleted hatch patterns are kept in the runtime hatch pattern table so that undo will work with hatch patterns. Call IsDeleted to determine to determine if a hatch pattern is deleted.
   </div>
   
 

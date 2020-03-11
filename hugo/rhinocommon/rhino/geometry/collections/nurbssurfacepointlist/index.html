@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NurbsSurfacePointList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the control points of a nurbs surface.
+public class NurbsSurfacePointList : IEnumerable&amp;lt;ControlPoint&amp;gt;, IEpsilonComparable&amp;lt;NurbsSurfacePointList&amp;gt;Properties  int CountU Gets the number of control points in the U direction of this surface. int CountV Gets the number of control points in the V direction of this surface. int PointSize Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Surface.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NurbsSurfacePointList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the control points of a nurbs surface.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NurbsSurfacePointList</span> : IEnumerable&lt;ControlPoint&gt;, IEpsilonComparable&lt;NurbsSurfacePointList&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int CountU</dt>
+<dd>Gets the number of control points in the U direction of this surface.</dd>
+<dt>int CountV</dt>
+<dd>Gets the number of control points in the V direction of this surface.</dd>
+<dt>int PointSize</dt>
+<dd>Returns the control point size, or the number of doubles per control point. 
+For rational curves, PointSize = Surface.Dimension + 1. 
+For non-rational curves, PointSize = Surface.Dimension.</dd>
+<dd>since 6.9</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void EnsurePrivateCopy()</dt>
+<dd>If you want to keep a copy of this class around by holding onto it in a variable after a command
+completes, call EnsurePrivateCopy to make sure that this class is not tied to the document. You can
+call this function as many times as you want.</dd>
+<dt>bool EpsilonEquals(NurbsSurfacePointList other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/controlpoint/">ControlPoint</a> GetControlPoint(int u,int v)</dt>
+<dd>Gets the control point at the given (u, v) index.</dd>
+<dd>Returns - The control point at the given (u, v) index.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> GetGrevillePoint(int u,int v)</dt>
+<dd>Gets the 2-D Greville point associated with the control point at the given (u, v) index.</dd>
+<dd>Returns - A Surface UV coordinate on success, Point2d.Unset on failure.</dd>
+<dt>bool GetPoint(int u,int v,Point3d point)</dt>
+<dd>Gets a world 3-D, or Euclidean, control point at the given (u, v) index.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetPoint(int u,int v,Point4d point)</dt>
+<dd>Gets a homogeneous control point at the given (u, v) index, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>double GetWeight(int u,int v)</dt>
+<dd>Gets the weight of a control point at the given (u, v) index.
+Note, if the surface is non-rational, the weight will be 1.0.</dd>
+<dd>Returns - The control point weight if successful, Rhino.Math.UnsetValue otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetControlPoint(int u,int v,ControlPoint cp)</dt>
+<dd>Sets the control point at the given (u, v) index.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetControlPoint(int u,int v,Point3d cp)</dt>
+<dd>Sets the control point at the given (u, v) index.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetPoint(int u,int v,double x,double y,double z)</dt>
+<dd>Sets a world 3-D, or Euclidean, control point at the given (u, v) index.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetPoint(int u,int v,double x,double y,double z,double weight)</dt>
+<dd>Sets a homogeneous control point at the given (u, v) index, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetPoint(int u,int v,Point3d point)</dt>
+<dd>Sets a world 3-D, or Euclidean, control point at the given (u, v) index.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetPoint(int u,int v,Point3d point,double weight)</dt>
+<dd>Sets a world 3-D, or Euclidean, control point and weight at a given index.
+The 4-D representation is (x<em>w, y</em>w, z*w, w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetPoint(int u,int v,Point4d point)</dt>
+<dd>Sets a homogeneous control point at the given (u, v) index, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetWeight(int u,int v,double weight)</dt>
+<dd>Sets the weight of a control point at the given (u, v) index.
+Note, if the surface is non-rational, it will be converted to rational.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool UVNDirectionsAt(int u,int v,Vector3d uDir,Vector3d vDir,Vector3d nDir)</dt>
+<dd>Calculates the U, V, and N directions of a NURBS surface control point similar to the method used by Rhino&rsquo;s MoveUVN command.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>bool ValidateSpacing(double closeTolerance,double stackTolerance,IndexPair[] closeIndices,IndexPair[] stackedIndices)</dt>
+<dd>Simple check of distance between adjacent control points</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NurbsSurfacePointList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

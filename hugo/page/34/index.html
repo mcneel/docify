@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/mappingchannelcollection/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/linearworkflow/">
+        <h3>LinearWorkflow</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/linearworkflow/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+This is the interface to linear workflow settings.
+public class LinearWorkflow : DocumentOrFreeFloatingBaseConstructors  LinearWorkflow() Create an utility object not associated with any document since 6.0 LinearWorkflow(LinearWorkflow src) Create utility object not associated with any document from another object since 6.0  Properties  uint Hash Linear workflow CRC since 6.0 bool PostProcessFrameBuffer Linear workflow active state since 6.0 float PostProcessGamma Linear workflow gamma since 6.0 float PostProcessGammaReciprocal Linear workflow gamma since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/maelstromspacemorph/">
+        <h3>MaelstromSpaceMorph</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/maelstromspacemorph/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Deforms objects in a spiral as if they were caught in a whirlpool.
+public class MaelstromSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  MaelstromSpaceMorph(Plane plane,double radius0,double radius1,double angle) Constructs a maelstrom space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.9 Point3d MorphPoint(Point3d point) Morphs an Euclidean point.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannel/">
+        <h3>MappingChannel</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannel/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.ChangeQueue
+Mapping Channel for a ChangeQueue Mesh
+public class MappingChannelProperties  Transform Local Local transform for the mapping since 6.0 TextureMapping Mapping Return TexturMapping for this MappingChannel since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannelcollection/">
         <h3>MappingChannelCollection</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/mappingchannelcollection/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mappingchannelcollection/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.ChangeQueue
 MappingChannels for a Mesh
-public class MappingChannelCollectionProperties IEnumerableChannels  (summary) Enumerate all available channels in this mapping (since) 6.0  int Count  (summary) Get count of MappingChannels in this collection (since) 6.0  
+public class MappingChannelCollectionProperties  IEnumerableChannels Enumerate all available channels in this mapping since 6.0 int Count Get count of MappingChannels in this collection since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/mappingtag/">
-        <h3>MappingTag</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/mappingtag/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Holds texture mapping information.
-public class MappingTagProperties Guid Id  (summary) Gets or sets a map globally unique identifier. (since) 5.0  uint MappingCRC  (summary) Gets or sets the cyclic redundancy check on the mapping. See also . (since) 5.0  TextureMappingType MappingType  (summary) Gets or sets a texture mapping type: linear, cylinder, etc&hellip; (since) 5.0  Transform MeshTransform  (summary) Gets or sets a 4x4 matrix transform.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/material/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/material/">
         <h3>Material</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/material/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class MaterialConstructors Material()  (summary) (since) 5.0  Material(Material other)  (summary) (since) 6.0  Properties static Material DefaultMaterial  (summary) (since) 5.0  static double MaxShine  (summary) (since) 5.0  bool AlphaTransparency  (summary) (since) 6.0  System.Drawing.Color AmbientColor  (summary) (since) 5.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  System.Drawing.Color DiffuseColor  (summary) (since) 5.0  bool DisableLighting  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/material/">
-        <h3>Material</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/material/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/material/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.ChangeQueue
 Representation of a Material through the change queue
-public class MaterialProperties uint Id  (summary) Get the material ID (crc) (since) 6.0  int MeshIndex  (summary) Get mesh index (since) 6.0  uint MeshInstanceId  (summary) Get the material InstanceAncestry (since) 6.0  
+public class MaterialProperties  uint Id Get the material ID (crc) since 6.0 int MeshIndex Get mesh index since 6.0 uint MeshInstanceId Get the material InstanceAncestry since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/materialref/">
-        <h3>MaterialRef</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/mesh/">
+        <h3>Mesh</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/materialref/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/mesh/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class MaterialRefProperties Guid BackFaceMaterialId  (summary) The Id of the Material used to render the back of an object. (since) 5.10  int BackFaceMaterialIndex  (summary) The index of the material used to render the back of an object (since) 5.10  Guid FrontFaceMaterialId  (summary) The Id of the Material used to render the front of an object. (since) 5.10  int FrontFaceMaterialIndex  (summary) The index of the material used to render the front of an object (since) 5.
+    Namespace: Rhino.Render.ChangeQueue
+Representation of ChangeQueue Mesh
+public class MeshProperties  ObjectAttributes Attributes Get object attributes of object associated to this mesh. This will be possible only after returning True from ChangeQueue.ProvideOriginalObject() since 6.0 MappingChannelCollection Mapping Get the mapping for this mesh. since 6.0 RhinoObject Object Get a copy of the original RhinoObject this Mesh is created from. Possible only after return True from ChangeQueue.ProvideOriginalObject(). Access this only with a using(var o = mesh.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/materialrefcreateparams/">
-        <h3>MaterialRefCreateParams</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/meshinstance/">
+        <h3>MeshInstance</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/materialrefcreateparams/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/meshinstance/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Options passed to MaterialRefs.Create
-public class MaterialRefCreateParamsProperties Guid BackFaceMaterialId  (summary) The Id of the Material used to render the back of an object. (since) 5.10  int BackFaceMaterialIndex  (summary) The index of the material used to render the back of an object (since) 5.10  Guid FrontFaceMaterialId  (summary) The Id of the Material used to render the front of an object. (since) 5.10  int FrontFaceMaterialIndex  (summary) The index of the material used to render the front of an object (since) 5.
+    Namespace: Rhino.Render.ChangeQueue
+Representation of ChangeQueue MeshInstance
+public class MeshInstanceProperties  bool CastShadows Return True if mesh instance should cast shadows since 6.0 uint GroupId Get identifier that specifies the grouping of these mesh instances - usually based on the object that this originally comprised. since 6.0 uint InstanceId Get the instance identifier for this mesh instance. since 6.0 uint MaterialId The Material CRC / RenderHash since 6.0 Guid MeshId Get the mesh identifier for this mesh instance.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/materialrefs/">
-        <h3>MaterialRefs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/metadata/">
+        <h3>MetaData</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/materialrefs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/datasources/metadata/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-If you are developing a high quality plug-in renderer, and a user is assigning a custom render material to this object, then add rendering material information to the MaterialRefs dictionary.
-Note to developers: As soon as the MaterialRefs dictionary contains items rendering material queries slow down. Do not populate the MaterialRefs dictionary when setting the MaterialIndex will take care of your needs.
-public class MaterialRefsProperties int Count  (summary) Gets the number of elements contained in this dictionary (since) 5.
+    Namespace: Rhino.Render.DataSources
+public class MetaData : IDisposableConstructors  MetaData(IntPtr pMetaData)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  Guid ContentInstanceId()  since 6.7 void Dispose()  since 6.0 string Geometry()  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/materialtable/">
-        <h3>MaterialTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/metadataproxy/">
+        <h3>MetaDataProxy</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/materialtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/metadataproxy/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class MaterialTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int CurrentMaterialIndex  (summary) At all times, there is a &ldquo;current&rdquo; material. Unless otherwise specified, new objects are assigned to the current material. The current material is never locked, hidden, or deleted. (since) 5.0  ObjectMaterialSource CurrentMaterialSource  (summary) Gets or sets the current material source. (since) 5.0  Methods int Add()  (summary) Adds a new material to the table based on the default material.
+    Namespace: Rhino.Render
+ProxyClass for MetaData
+public class MetaDataProxy : IDisposableConstructors  MetaDataProxy() Constructor for MetaDataProxy since 6.8  Properties  IntPtr CppPointer MetaDataProxy c++ pointer since 6.8  Methods  void Dispose() Dispose for MetaDataProxy since 6.8 void SetContentInstanceId(Guid uuid) Set Content instance id for meta data since 6.8  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/materialtableeventargs/">
-        <h3>MaterialTableEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettings/">
+        <h3>ModelAidSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/materialtableeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/modelaidsettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class MaterialTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  MaterialTableEventType EventType  (summary) (since) 5.0  int Index  (summary) (since) 5.0  Material OldSettings  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/matrix/">
-        <h3>Matrix</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/matrix/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents an arbitrarily sized matrix of double-precision floating point numbers. If you are working with a 4x4 matrix, then you may want to use the class instead.
-public class Matrixstatic *  (summary) Multiplies two matrices and returns a new product matrix. (since) 5.0  static +  (summary) Adds two matrices and returns a new sum matrix. (since) (unknown)  Constructors Matrix(int rowCount,int columnCount)  (summary) Initializes a new instance of the matrix.
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties to modify model aid settings.
+public class ModelAidSettingsProperties  static bool AltPlusArrow True means Alt+arrow is used for nudging. static bool AutoGumballEnabled When AutoGumball is on, a gumball automatically appears when objects are prepicked. static int ControlPolygonDisplayDensity Gets or sets the control polygon display density. static double CtrlNudgeKeyStep Gets or sets the Ctrl-key based nudge step amount. static bool DisplayControlPolygon Gets or sets the enabled state of Rhino&rsquo;s display control polygon.
   </div>
   
 

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Geometry.Collections &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Geometry.Collections</h1>
+  <ul>
+<li><a href="brepcurvelist/">BrepCurveList</a></li>
+<li><a href="brepedgelist/">BrepEdgeList</a></li>
+<li><a href="brepfacelist/">BrepFaceList</a></li>
+<li><a href="breplooplist/">BrepLoopList</a></li>
+<li><a href="brepsurfacelist/">BrepSurfaceList</a></li>
+<li><a href="breptrimlist/">BrepTrimList</a></li>
+<li><a href="brepvertexlist/">BrepVertexList</a></li>
+<li><a href="meshfacelist/">MeshFaceList</a></li>
+<li><a href="meshfacenormallist/">MeshFaceNormalList</a></li>
+<li><a href="meshngonlist/">MeshNgonList</a></li>
+<li><a href="meshtexturecoordinatelist/">MeshTextureCoordinateList</a></li>
+<li><a href="meshtopologyedgelist/">MeshTopologyEdgeList</a></li>
+<li><a href="meshtopologyvertexlist/">MeshTopologyVertexList</a></li>
+<li><a href="meshvertexcolorlist/">MeshVertexColorList</a></li>
+<li><a href="meshvertexlist/">MeshVertexList</a></li>
+<li><a href="meshvertexnormallist/">MeshVertexNormalList</a></li>
+<li><a href="meshvertexstatuslist/">MeshVertexStatusList</a></li>
+<li><a href="nurbscurveknotlist/">NurbsCurveKnotList</a></li>
+<li><a href="nurbscurvepointlist/">NurbsCurvePointList</a></li>
+<li><a href="nurbssurfaceknotlist/">NurbsSurfaceKnotList</a></li>
+<li><a href="nurbssurfacepointlist/">NurbsSurfacePointList</a></li>
+<li><a href="subdedgelist/">SubDEdgeList</a></li>
+<li><a href="subdfacelist/">SubDFaceList</a></li>
+<li><a href="subdvertexlist/">SubDVertexList</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexnormallist/">
+        <div class="h2 mt-1 mb-1">MeshVertexNormalList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry.Collections
+Provides access to the Vertex Normals of a Mesh.
+public class MeshVertexNormalList : IResizableList&lt;Vector3f&gt;, IList, IReadOnlyList&lt;Vector3f&gt;Properties  int Capacity Gets or sets the amount of vertex normals that the list can hold without resizing. since 6.0 int Count Gets or sets the number of mesh vertex normals.  Methods  int Add(double x,double y,double z) Adds a new vertex normal at the end of the list. Returns - The index of the newly added vertex normal.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexnormallist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexstatuslist/">
+        <div class="h2 mt-1 mb-1">MeshVertexStatusList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry.Collections
+Provides access to status information relative to components of a mesh.
+public class MeshVertexStatusList : IResizableList&lt;bool&gt;, IList, IReadOnlyList&lt;bool&gt;Properties  int Capacity Gets or sets the total number of hidden vertex information the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of hidden vertices. For this to be a valid part of a mesh, this count should be the same as the one of mesh vertices.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshvertexstatuslist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfaceknotlist/">
+        <div class="h2 mt-1 mb-1">NurbsSurfaceKnotList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry.Collections
+Provides access to the knot vector of a nurbs surface.
+public class NurbsSurfaceKnotList : IEnumerable&lt;double&gt;, Rhino.Collections.IRhinoTable&lt;double&gt;, IEpsilonComparable&lt;NurbsSurfaceKnotList&gt;Properties  bool ClampedAtEnd Determines if a knot vector is clamped. bool ClampedAtStart Determines if a knot vector is clamped. int Count Gets the total number of knots in this curve.  Methods  bool CreatePeriodicKnots(double knotSpacing) Compute a clamped, uniform, periodic knot vector based on the current degree and control point count.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfaceknotlist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfacepointlist/">
+        <div class="h2 mt-1 mb-1">NurbsSurfacePointList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Geometry.Collections
+Provides access to the control points of a nurbs surface.
+public class NurbsSurfacePointList : IEnumerable&lt;ControlPoint&gt;, IEpsilonComparable&lt;NurbsSurfacePointList&gt;Properties  int CountU Gets the number of control points in the U direction of this surface. int CountV Gets the number of control points in the V direction of this surface. int PointSize Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Surface.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfacepointlist/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/page/2/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">3</em>
+            
+          
+      
+
+      
+      <span class="next_page disabled">Next</span>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

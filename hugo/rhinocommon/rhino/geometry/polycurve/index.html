@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PolyCurve &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a curve that is the result of joining several (possibly different) types of curves.
+[Serializable]public class PolyCurve : CurveConstructors  PolyCurve() Initializes a new, empty polycurve.  Properties  bool HasGap This is a quick way to see if the curve has gaps between the sub curve segments. bool IsNested Gets a value indicating whether or not a PolyCurve contains nested PolyCurves. int SegmentCount Gets the number of segments that make up this Polycurve.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PolyCurve</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a curve that is the result of joining several (possibly different)
+types of curves.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PolyCurve</span> : Curve
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>PolyCurve()</dt>
+<dd>Initializes a new, empty polycurve.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool HasGap</dt>
+<dd>This is a quick way to see if the curve has gaps between the sub curve segments.</dd>
+<dt>bool IsNested</dt>
+<dd>Gets a value indicating whether or not a PolyCurve contains nested PolyCurves.</dd>
+<dt>int SegmentCount</dt>
+<dd>Gets the number of segments that make up this Polycurve.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool Append(Arc arc)</dt>
+<dd>Appends and matches the start of the arc to the end of polycurve. 
+This function will fail if the polycurve is closed or if SegmentCount &gt; 0 and the arc is closed.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Append(Curve curve)</dt>
+<dd>Appends and matches the start of the curve to the end of polycurve. 
+This function will fail if the PolyCurve is closed or if SegmentCount &gt; 0 and the new segment is closed.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Append(Line line)</dt>
+<dd>Appends and matches the start of the line to the end of polycurve. 
+This function will fail if the polycurve is closed.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool AppendSegment(Curve curve)</dt>
+<dd>Appends the curve to the polycurve without changing the new segment&rsquo;s geometry. 
+This function will fail if the PolyCurve is closed or if SegmentCount &gt; 0 and the new segment is closed.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> CleanUp()</dt>
+<dd>Removes any nesting of polycurves. If this polycurve has just a single segment, the segment is returned.
+If, after nest removal, there are adjacent segments which are polylines, they are combined into a single polyline.
+The new curve may have a different domain from this polycurve. If the start and end segments of a closed input are polylines,
+the result may have a different seam location since the start and end segments will be combined.</dd>
+<dd>Returns - A new curve that is not necessarily a polycurve if succesful, None otherwise.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/geometrybase/">GeometryBase</a> Duplicate()</dt>
+<dd>Duplicates this polycurve.
+When not overridden in a derived class, this calls .</dd>
+<dd>Returns - An exact duplicate of this curve.</dd>
+<dt>PolyCurve DuplicatePolyCurve()</dt>
+<dd>Duplicates this polycurve.
+This is the same as .</dd>
+<dd>Returns - An exact duplicate of this curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a>[] Explode()</dt>
+<dd>Explodes this PolyCurve into a list of Curve segments. This will not explode nested polycurves. 
+Call  first if you need all individual segments.</dd>
+<dd>Returns - An array of polycurve segments.</dd>
+<dt>double PolyCurveParameter(int segmentIndex,double segmentCurveParameter)</dt>
+<dd>Converts a segment curve parameter to a polycurve parameter.</dd>
+<dd>Returns - Polycurve evaluation parameter or UnsetValue if the polycurve curve parameter could not be computed.</dd>
+<dt>bool RemoveNesting()</dt>
+<dd>Explodes nested polycurve segments and reconstructs this curve from the shattered remains. 
+The result will have not have any PolyCurves as segments but it will have identical 
+locus and parameterization.</dd>
+<dd>Returns - True if any nested PolyCurve was found and absorbed, False if no PolyCurve segments could be found.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> SegmentCurve(int index)</dt>
+<dd>Gets the segment curve at the given index.</dd>
+<dd>Returns - The segment at the given index or None on failure.</dd>
+<dt>double SegmentCurveParameter(double polycurveParameter)</dt>
+<dd>Converts a polycurve parameter to a segment curve parameter.</dd>
+<dd>Returns - Segment curve evaluation parameter or UnsetValue if the 
+segment curve parameter could not be computed.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> SegmentDomain(int segmentIndex)</dt>
+<dd>Returns the polycurve subdomain assigned to a segment curve.</dd>
+<dd>Returns - The polycurve subdomain assigned to a segment curve. 
+Returns Interval.Unset if segment_index &lt; 0 or segment_index &gt;= Count().</dd>
+<dt>int SegmentIndex(double polycurveParameter)</dt>
+<dd>Finds the segment used for evaluation at polycurve_parameter.</dd>
+<dd>Returns - Index of the segment used for evaluation at polycurve_parameter. 
+If polycurve_parameter &lt; Domain.Min(), then 0 is returned. 
+If polycurve_parameter &gt; Domain.Max(), then Count()-1 is returned.</dd>
+<dt>int SegmentIndexes(Interval subdomain,int segmentIndex0,int segmentIndex1)</dt>
+<dd>Finds the segments that overlap the Polycurve sub domain.</dd>
+<dd>Returns - Number of segments that overlap the subdomain.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PolyCurve</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

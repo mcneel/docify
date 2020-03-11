@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Plane &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the value of a center point and two axes in a plane in three dimensions.
+ static != Determines if two planes are different. Returns - True if the two planes have any different componet components; False otherwise. static == Determines if two planes are equal. Returns - True if the two planes have all equal components; False otherwise.  Constructors  Plane(double a,double b,double c,double d) Constructs a plane from an equation Ax&#43;By&#43;Cz&#43;D=0.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Plane</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the value of a center point and two axes in a plane in three dimensions.</p>
+<dl>
+<dt>static !=</dt>
+<dd>Determines if two planes are different.</dd>
+<dd>Returns - True if the two planes have any different componet components; False otherwise.</dd>
+<dt>static ==</dt>
+<dd>Determines if two planes are equal.</dd>
+<dd>Returns - True if the two planes have all equal components; False otherwise.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Plane(double a,double b,double c,double d)</dt>
+<dd>Constructs a plane from an equation
+Ax+By+Cz+D=0.</dd>
+<dt>Plane(Plane other)</dt>
+<dd>Copy constructor.
+This is nothing special and performs the same as assigning to another variable.</dd>
+<dt>Plane(Point3d origin,Point3d xPoint,Point3d yPoint)</dt>
+<dd>Initializes a plane from three non-colinear points.</dd>
+<dt>Plane(Point3d origin,Vector3d normal)</dt>
+<dd>Constructs a plane from a point and a normal vector.</dd>
+<dt>Plane(Point3d origin,Vector3d xDirection,Vector3d yDirection)</dt>
+<dd>Constructs a plane from a point and two vectors in the plane.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Plane Unset</dt>
+<dd>Gets a plane that contains Unset origin and axis vectors.</dd>
+<dt>static Plane WorldXY</dt>
+<dd>plane coincident with the World XY plane.</dd>
+<dt>static Plane WorldYZ</dt>
+<dd>plane coincident with the World YZ plane.</dd>
+<dt>static Plane WorldZX</dt>
+<dd>plane coincident with the World ZX plane.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether or not this is a valid plane. 
+A plane is considered to be valid when all fields contain reasonable 
+information and the equation jibes with point and zaxis.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Normal</dt>
+<dd>Gets the normal of this plane. This is essentially the ZAxis of the plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Origin</dt>
+<dd>Gets or sets the origin point of this plane.</dd>
+<dt>double OriginX</dt>
+<dd>Gets or sets the X coordinate of the origin of this plane.</dd>
+<dt>double OriginY</dt>
+<dd>Gets or sets the Y coordinate of the origin of this plane.</dd>
+<dt>double OriginZ</dt>
+<dd>Gets or sets the Z coordinate of the origin of this plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> XAxis</dt>
+<dd>Gets or sets the X axis vector of this plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> YAxis</dt>
+<dd>Gets or sets the Y axis vector of this plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> ZAxis</dt>
+<dd>Gets or sets the Z axis vector of this plane.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/geometry/planefitresult/">PlaneFitResult</a> FitPlaneToPoints(IEnumerable<!-- raw HTML omitted --> points,Plane plane)</dt>
+<dd>Fit a plane through a collection of points.</dd>
+<dd>Returns - A value indicating the result of the operation.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/planefitresult/">PlaneFitResult</a> FitPlaneToPoints(IEnumerable<!-- raw HTML omitted --> points,Plane plane,double maximumDeviation)</dt>
+<dd>Fit a plane through a collection of points.</dd>
+<dd>Returns - A value indicating the result of the operation.</dd>
+<dt>Plane Clone()</dt>
+<dd>Returns a deep of this instance.</dd>
+<dd>Returns - A plane with the same values as this item.</dd>
+<dd>since 6.0</dd>
+<dt>bool ClosestParameter(Point3d testPoint,double s,double t)</dt>
+<dd>Gets the parameters of the point on the plane closest to a test point.</dd>
+<dd>Returns - True if a parameter could be found, 
+False if the point could not be projected successfully.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d testPoint)</dt>
+<dd>Gets the point on the plane closest to a test point.</dd>
+<dd>Returns - The point on the plane that is closest to testPoint, 
+or Point3d.Unset on failure.</dd>
+<dt>bool DistanceTo(BoundingBox bbox,double min,double max)</dt>
+<dd>Returns the signed minimum and maximum distances from bbox to this plane.</dd>
+<dd>Returns - False if plane has zero length normal</dd>
+<dd>since 6.0</dd>
+<dt>double DistanceTo(Point3d testPoint)</dt>
+<dd>Returns the signed distance from testPoint to its projection onto this plane. 
+If the point is below the plane, a negative distance is returned.</dd>
+<dd>Returns - Signed distance from this plane to testPoint.</dd>
+<dt>bool EpsilonEquals(Plane other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines if an object is a plane and has the same components as this plane.</dd>
+<dd>Returns - True if obj is a plane and has the same components as this plane; False otherwise.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Plane plane)</dt>
+<dd>Determines if another plane has the same components as this plane.</dd>
+<dd>Returns - True if plane has the same components as this plane; False otherwise.</dd>
+<dt>bool ExtendThroughBox(BoundingBox box,Interval s,Interval t)</dt>
+<dd>Extends this plane through a bounding box.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ExtendThroughBox(Box box,Interval s,Interval t)</dt>
+<dd>Extend this plane through a Box.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Flip()</dt>
+<dd>Flip this plane by swapping out the X and Y axes and inverting the Z axis.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Gets a non-unique hashing code for this entity.</dd>
+<dd>Returns - A particular number for a specific instance of plane.</dd>
+<dd>since (unknown)</dd>
+<dt>double[] GetPlaneEquation()</dt>
+<dd>Gets the plane equation for this plane in the format of Ax+By+Cz+D=0.</dd>
+<dd>Returns - Array of four values.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double u,double v)</dt>
+<dd>Evaluate a point on the plane.</dd>
+<dd>Returns - plane.origin + u<em>plane.xaxis + v</em>plane.yaxis.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double u,double v,double w)</dt>
+<dd>Evaluate a point on the plane.</dd>
+<dd>Returns - plane.origin + u<em>plane.xaxis + v</em>plane.yaxis + z*plane.zaxis.</dd>
+<dt>bool RemapToPlaneSpace(Point3d ptSample,Point3d ptPlane)</dt>
+<dd>Convert a point from World space coordinates into Plane space coordinates.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Rotate(double sinAngle,double cosAngle,Vector3d axis)</dt>
+<dd>Rotate the plane about its origin point.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Rotate(double sinAngle,double cosAngle,Vector3d axis,Point3d centerOfRotation)</dt>
+<dd>Rotate the plane about a custom anchor point.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Rotate(double angle,Vector3d axis)</dt>
+<dd>Rotate the plane about its origin point.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Rotate(double angle,Vector3d axis,Point3d centerOfRotation)</dt>
+<dd>Rotate the plane about a custom anchor point.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>string ToString()</dt>
+<dd>Constructs the string representation of this plane.</dd>
+<dd>Returns - Text.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transform the plane with a Transformation matrix.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Translate(Vector3d delta)</dt>
+<dd>Translate (move) the plane along a vector.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool UpdateEquation()</dt>
+<dd>Update Equations</dd>
+<dd>Returns - bool</dd>
+<dd>since 6.0</dd>
+<dt>double ValueAt(Point3d p)</dt>
+<dd>Get the value of the plane equation at the point.</dd>
+<dd>Returns - returns pe[0]*p.X + pe[1]*p.Y + pe[2]*p.Z + pe[3] where
+pe[0], pe[1], pe[2] and pe[3] are the coeeficients of the plane equation.</dd>
+<dd>since 5.7</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Plane</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

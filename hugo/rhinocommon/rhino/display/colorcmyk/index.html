@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ColorCMYK &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Represents a CMYK (Cyan, Magenta, Yellow, Key) color with double precision floating point channels. CMYK colors are used primarily in printing environments as they provide a good simulation of physical ink.
+Constructors  ColorCMYK(Color rgb) Initializes a new instance of ColorCMYK that is equivalent to an RGB color. ColorCMYK(double cyan,double magenta,double yellow) Initializes a new instance of ColorCMYK with custom channel values. The cyan, magenta and yellow values will be adjusted based on their combined darkness.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ColorCMYK</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Represents a CMYK (Cyan, Magenta, Yellow, Key) color with double precision floating point channels. 
+CMYK colors are used primarily in printing environments as they provide a good simulation of physical ink.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ColorCMYK(Color rgb)</dt>
+<dd>Initializes a new instance of ColorCMYK that is equivalent to an RGB color.</dd>
+<dt>ColorCMYK(double cyan,double magenta,double yellow)</dt>
+<dd>Initializes a new instance of ColorCMYK with custom channel values. 
+The cyan, magenta and yellow values will be adjusted based on their 
+combined darkness.</dd>
+<dt>ColorCMYK(double cyan,double magenta,double yellow,double key)</dt>
+<dd>Initializes a new instance of ColorCMYK with custom channel values.</dd>
+<dt>ColorCMYK(double alpha,double cyan,double magenta,double yellow,double key)</dt>
+<dd>Initializes a new instance of ColorCMYK with custom channel values.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double A</dt>
+<dd>Gets or sets the Alpha channel value. 
+Alpha channels are limited to the 0~1 range.</dd>
+<dt>double C</dt>
+<dd>Gets or sets the Cyan channel value. 
+Cyan channels are limited to the 0~1 range.</dd>
+<dt>double K</dt>
+<dd>Gets or sets the Key channel value. 
+Key channels are limited to the 0~1 range.</dd>
+<dt>double M</dt>
+<dd>Gets or sets the Magenta channel value. 
+Magenta channels are limited to the 0~1 range.</dd>
+<dt>double Y</dt>
+<dd>Gets or sets the Yellow channel value. 
+Yellow channels are limited to the 0~1 range.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static ColorCMYK CreateFromHSL(ColorHSL hsl)</dt>
+<dd>Constructs the nearest CMYK equivalent of an HSL color.</dd>
+<dd>Returns - The CMYK equivalent of the HSL color.</dd>
+<dt>static ColorCMYK CreateFromHSV(ColorHSV hsv)</dt>
+<dd>Constructs the nearest CMYK equivalent of an HSV color.</dd>
+<dd>Returns - The CMYK equivalent of the HSV color.</dd>
+<dd>since 6.0</dd>
+<dt>static ColorCMYK CreateFromLAB(ColorLAB lab)</dt>
+<dd>Constructs the nearest CMYK equivalent of a LAB color.</dd>
+<dd>Returns - The CMYK equivalent of the LAB color.</dd>
+<dt>static ColorCMYK CreateFromLCH(ColorLCH lch)</dt>
+<dd>Constructs the nearest CMYK equivalent of a LCH color.</dd>
+<dd>Returns - The CMYK equivalent of the LCH color.</dd>
+<dt>static ColorCMYK CreateFromXYZ(ColorXYZ xyz)</dt>
+<dd>Constructs the nearest CMYK equivalent of an XYZ color.</dd>
+<dd>Returns - The CMYK equivalent of the XYZ color.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ColorCMYK</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RenderMaterial &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+public class RenderMaterial : RenderContentProperties  static Guid GemMaterialGuid  since 6.0 static Guid GlassMaterialGuid  since 6.0 static Guid MetalMaterialGuid  since 6.0 static Guid PaintMaterialGuid  since 6.0 static Guid PictureMaterialGuid  since 6.0 static Guid PlasterMaterialGuid  since 6.0 static Guid PlasticMaterialGuid  since 6.0 PreviewBackgroundType DefaultPreviewBackgroundType Set or get the default scene background for the image that appears in preview panes since 5.11 PreviewGeometryType DefaultPreviewGeometryType Set or get the default geometry that appears in preview panes since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RenderMaterial</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderMaterial</span> : RenderContent
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static Guid GemMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid GlassMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid MetalMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid PaintMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid PictureMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid PlasterMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid PlasticMaterialGuid</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/previewbackgroundtype/">PreviewBackgroundType</a> DefaultPreviewBackgroundType</dt>
+<dd>Set or get the default scene background for the image that appears in
+preview panes</dd>
+<dd>since 5.11</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/previewgeometrytype/">PreviewGeometryType</a> DefaultPreviewGeometryType</dt>
+<dd>Set or get the default geometry that appears in preview panes</dd>
+<dd>since 5.11</dd>
+<dt>double DefaultPreviewSize</dt>
+<dd>The default preview geometry size</dd>
+<dd>since 5.11</dd>
+<dt>bool SmellsLikeGem</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeGlass</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeMetal</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikePaint</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikePlaster</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikePlastic</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeTexturedGem</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeTexturedGlass</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeTexturedMetal</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeTexturedPaint</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeTexturedPlaster</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SmellsLikeTexturedPlastic</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static RenderMaterial CreateBasicMaterial(Material material)</dt>
+<dd>Constructs a new basic material from a Material.</dd>
+<dd>Returns - A new basic material.</dd>
+<dd>since 5.1</dd>
+<dt>static RenderMaterial CreateBasicMaterial(Material material,RhinoDoc doc)</dt>
+<dd></dd>
+<dd>since 6.4</dd>
+<dt>static RenderMaterial CreateImportedMaterial(Material material,RhinoDoc doc,bool bReference)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>double GetTextureAmountFromUsage(StandardChildSlots which)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendertexture/">RenderTexture</a> GetTextureFromUsage(StandardChildSlots which)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool GetTextureOnFromUsage(StandardChildSlots which)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool HandleTexturedValue(string slotname,TexturedValue<!-- raw HTML omitted --> tc)</dt>
+<dd>Handle a textured content field. Values will be read into an
+instance of TexturedColor</dd>
+<dd>Returns - True if reading the base value succeeded</dd>
+<dd>since 6.12</dd>
+<dt>DocObjects.Material SimulatedMaterial(bool isForDataOnly)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>DocObjects.Material SimulatedMaterial(TextureGeneration tg)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>Rhino.Render.PhysicallyBasedMaterial SimulatedPhysicallyBasedMaterial(TextureGeneration tg)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>DocObjects.Material SimulateMaterial(bool isForDataOnly)</dt>
+<dd>Call this function to receive the simulation for a RenderMaterial used by the display and other rendering engines.</dd>
+<dd>Returns - The simulation of the render material</dd>
+<dd>since 6.0</dd>
+<dt>void SimulateMaterial(Material simulation,bool isForDataOnly)</dt>
+<dd>Override this function to provide a Rhino.DocObjects.Material definition for this material
+to be used by other rendering engines including the display.</dd>
+<dd>since 5.1</dd>
+<dt>void SimulateMaterial(Material simulation,TextureGeneration tg)</dt>
+<dd>Override this function to provide a Rhino.DocObjects.Material definition for this material
+to be used by other rendering engines including the display.</dd>
+<dd>since 7.0</dd>
+<dt>string TextureChildSlotName(StandardChildSlots slot)</dt>
+<dd>Override this function to provide information about which texture is used for
+the standard (ie - defined in ON_Texture) texture channels.</dd>
+<dd>Returns - The texture used for the channel.</dd>
+<dd>since 5.1</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RenderMaterial</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

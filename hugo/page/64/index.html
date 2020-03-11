@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,126 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/">
-        <h3>ThumbnailList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/animationproperties/">
+        <h3>AnimationProperties</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/animationproperties/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls.Thumbnaillist
-public class ThumbnailListConstructors ThumbnailList()  (summary) (since) (unknown)  Properties ContentEditingContext CEC  (summary) (since) (unknown)  bool Created  (summary) (since) (unknown)  bool Enabled  (summary) (since) (unknown)  string EnglishCaption  (summary) (since) (unknown)  bool Hidden  (summary) (since) (unknown)  IntPtr HolderParent  (summary) (since) (unknown)  string LocalCaption  (summary) (since) (unknown)  bool Shown  (summary) (since) (unknown)  RdkThumbnaillistViewModel ViewModel  (summary) (since) (unknown)  Methods void Add(IRhRdkThumbnail t)  (summary) (since) (unknown) (returns) void This is some return comment  void Clear()  (summary) (since) (unknown) (returns) void This is some return comment  Rhino.
+    Namespace: Rhino.DocObjects
+Contains information used by the Animation Tools to create sun, season, turntable and fly through animations.
+public class AnimationProperties : IDisposableConstructors  AnimationProperties() Initializes a new instance of the class. since 6.11 AnimationProperties(AnimationProperties source) Initialize new instance of the AnimationProperties class. since 6.11  Properties  string AnimationName Gets or sets the name of the animation sequence. since 6.11 Guid CameraPathId Gets or sets the object ID of the camera path.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbnailviewmodelfactory/">
-        <h3>ThumbnailViewModelFactory</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/annotationbase/">
+        <h3>AnnotationBase</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbnailviewmodelfactory/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI.Controls.ThumbnailUI
-public class ThumbnailViewModelFactoryConstructors ThumbnailViewModelFactory()  (summary) (since) 6.0  Methods IntPtr Get(Guid id)  (summary) (since) 6.0 (returns) IntPtr This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/timezone/">
-        <h3>TimeZone</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/timezone/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-TimeZone
-public class TimeZoneProperties double Hours  (summary) Gets hours of a time zone. (since) 6.0  double Latitude  (summary) Returns the latitude of a major city nearby (since) 6.15  double Longitude  (summary) Returns the Longitude of a major city nearby (since) 6.15  String Name  (summary) Gets name of a time zone. (since) 6.0  Methods static TimeZone TimeZoneAt(int index)  (summary) Returns a time zone at given index.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/toolbar/">
-        <h3>Toolbar</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/toolbar/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-public class ToolbarProperties static Size BitmapSize  (summary) (since) 6.0  static Size TabSize  (summary) (since) 6.0  Guid Id  (summary) (since) 5.0  string Name  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/toolbarfile/">
-        <h3>ToolbarFile</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/toolbarfile/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-public class ToolbarFileProperties int GroupCount  (summary) (since) 5.0  Guid Id  (summary) (since) 5.0  string Name  (summary) (since) 5.0  string Path  (summary) Full path to this file on disk (since) 5.0  int ToolbarCount  (summary) (since) 5.0  Methods bool Close(bool prompt)  (summary) (since) 5.0 (returns) bool This is some return comment  ToolbarGroup GetGroup(int index)  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/toolbarfilecollection/">
-        <h3>ToolbarFileCollection</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/toolbarfilecollection/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-public class ToolbarFileCollectionProperties static bool MruSidebarIsVisible  (summary) (since) 5.0  static bool SidebarIsVisible  (summary) (since) 5.0  int Count  (summary) Number of open toolbar files (since) 5.0  Methods ToolbarFile FindByName(string name,bool ignoreCase)  (summary) (since) 5.0 (returns) ToolbarFile This is some return comment  ToolbarFile FindByPath(string path)  (summary) (since) 5.0 (returns) ToolbarFile This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/toolbargroup/">
-        <h3>ToolbarGroup</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/toolbargroup/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-public class ToolbarGroupProperties Guid Id  (summary) (since) 5.0  bool IsDocked  (summary) (since) 5.0  string Name  (summary) (since) 5.0  bool Visible  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/torus/">
-        <h3>Torus</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/torus/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/annotationbase/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents the value of a plane and two radii in a torus that is oriented in three-dimensional space.
-Constructors Torus(Plane basePlane,double majorRadius,double minorRadius)  (summary) Initializes a new Torus from base pane and two radii. (since) 5.0  Properties static Torus Unset  (summary) Gets an invalid Torus. (since) 5.0  bool IsValid  (summary) Gets a value indicating whether this torus is valid. (since) 5.0  double MajorRadius  (summary) Gets or sets the radius of the circle that lies at the heart of the torus.
+Provides a common base class to all annotation geometry. This class refers to the geometric element that is independent from the document.
+[Serializable]public class AnnotationBase : GeometryBaseProperties  LengthDisplay AlternateDimensionLengthDisplay Alternate length display units and format since 6.0 AnnotationType AnnotationType Type of annotation since 6.0 char DecimalSeparator Set or get the decimal separator c since 7.0 LengthDisplay DimensionLengthDisplay Length display units and format since 6.0 double DimensionScale Gets or sets the dimension scale since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/transform/">
-        <h3>Transform</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/arccurve/">
+        <h3>ArcCurve</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/transform/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/arccurve/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents the values in a 4x4 transform matrix. This is parallel to C++ ON_Xform.
-static !=  (summary) Determines if two transformations are different in value. (since) 5.0  static *  (summary) Multiplies (combines) two transformations. (since) 5.0  static *  (summary) Multiplies a transformation by a point and gets a new point. (since) 5.0  static *  (summary) Multiplies a transformation by a vector and gets a new vector.
+Represent arcs and circles. ArcCurve.IsCircle returns True if the curve is a complete circle.
+[Serializable]public class ArcCurve : CurveConstructors  ArcCurve() Initializes a new instance. Radius is set to 1, position to Origin and Domain to full span (circle). ArcCurve(Arc arc) Initializes a new instance, copying values from another . ArcCurve(Arc arc,double t0,double t1) Initializes a new instance, copying values from another and specifying the needed parametrization of the arc.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/transformfield/">
-        <h3>TransformField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/archivabledictionary/">
+        <h3>ArchivableDictionary</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/transformfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/collections/archivabledictionary/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-Transform field value class
-public class TransformFieldProperties Transform Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+[Serializable]public class ArchivableDictionary : ICloneable, IDictionary&lt;string, object&gt;, ISerializableConstructors  ArchivableDictionary() Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version) Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version,string name) Initializes an instance of a dictionary for writing to a 3dm archive.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/assemblyresolver/">
+        <h3>AssemblyResolver</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/assemblyresolver/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime
+Assembly Resolver for the Rhino App Domain.
+public class AssemblyResolverMethods  static void AddSearchFile(string file) Register another file with the Assembly Resolver. File must be a .NET assembly, so it should probably be a dll, rhp or exe. static void AddSearchFolder(string folder) Register a custom folder with the Assembly Resolver. Folders will be searched recursively, so this could potentially be a very expensive operation. If at all possible, you should consider only registering individual files.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchiveexception/">
+        <h3>BinaryArchiveException</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchiveexception/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.FileIO
+Thrown by BinaryArchiveReader and BinaryArchiveWriter classes when an IO error has occured.
+public class BinaryArchiveException : System.IO.IOExceptionConstructors  BinaryArchiveException(string message) Initializes a new instance of the class.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivereader/">
+        <h3>BinaryArchiveReader</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivereader/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.FileIO
+Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
+public class BinaryArchiveReaderProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivewriter/">
+        <h3>BinaryArchiveWriter</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivewriter/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.FileIO
+Represents an entity that is able to write data to an archive.
+public class BinaryArchiveWriterProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/nodeincode/componentfunctioninfo/">
+        <h3>ComponentFunctionInfo</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/nodeincode/componentfunctioninfo/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.NodeInCode
+Defines the base class for a function representing a component. This class is abstract.
+public class ComponentFunctionInfoProperties  Guid ComponentGuid The unique identifier of the Grasshopper component. It is the original developer&rsquo;s responsibility to ensure that this ID is unique. since 6.0 Delegate Delegate Returns a delegate that can be directly invoked using a list of arguments. This flattens trees. since 6.0 Delegate DelegateNoWarnings Returns a delegate that can be directly invoked using a list of arguments.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/nodeincode/components/">
+        <h3>Components</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/nodeincode/components/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.NodeInCode
+Provides access to all Grasshopper runtime components.
+public class ComponentsProperties  static NodeInCodeTable NodeInCodeFunctions Returns a collection with all component functions. since 6.0  Methods  static ComponentFunctionInfo FindComponent(string fullName) Finds a component given its full name. since 6.0  
   </div>
   
 

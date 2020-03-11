@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.FileIO &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.FileIO</h1>
+  <ul>
+<li><a href="binaryarchiveexception/">BinaryArchiveException</a></li>
+<li><a href="binaryarchivefile/">BinaryArchiveFile</a></li>
+<li><a href="binaryarchivemode/">BinaryArchiveMode</a></li>
+<li><a href="binaryarchivereader/">BinaryArchiveReader</a></li>
+<li><a href="binaryarchivewriter/">BinaryArchiveWriter</a></li>
+<li><a href="commoncomponenttable/">CommonComponentTable</a></li>
+<li><a href="contenthash/">ContentHash</a></li>
+<li><a href="dracocompression/">DracoCompression</a></li>
+<li><a href="dracocompressionoptions/">DracoCompressionOptions</a></li>
+<li><a href="file3dm/">File3dm</a></li>
+<li><a href="objecttypefilter/">ObjectTypeFilter</a></li>
+<li><a href="tabletypefilter/">TableTypeFilter</a></li>
+<li><a href="file3dmcommoncomponenttable/">File3dmCommonComponentTable</a></li>
+<li><a href="file3dmdimstyletable/">File3dmDimStyleTable</a></li>
+<li><a href="file3dmgrouptable/">File3dmGroupTable</a></li>
+<li><a href="file3dmhatchpatterntable/">File3dmHatchPatternTable</a></li>
+<li><a href="file3dminstancedefinitiontable/">File3dmInstanceDefinitionTable</a></li>
+<li><a href="file3dmlayertable/">File3dmLayerTable</a></li>
+<li><a href="file3dmlinetypetable/">File3dmLinetypeTable</a></li>
+<li><a href="file3dmmaterialtable/">File3dmMaterialTable</a></li>
+<li><a href="file3dmnamedconstructionplanes/">File3dmNamedConstructionPlanes</a></li>
+<li><a href="file3dmnotes/">File3dmNotes</a></li>
+<li><a href="file3dmobject/">File3dmObject</a></li>
+<li><a href="file3dmobjecttable/">File3dmObjectTable</a></li>
+<li><a href="file3dmplugindata/">File3dmPlugInData</a></li>
+<li><a href="file3dmplugindatatable/">File3dmPlugInDataTable</a></li>
+<li><a href="file3dmsettings/">File3dmSettings</a></li>
+<li><a href="file3dmstringtable/">File3dmStringTable</a></li>
+<li><a href="file3dmtypecodes/">File3dmTypeCodes</a></li>
+<li><a href="file3dmviewtable/">File3dmViewTable</a></li>
+<li><a href="file3dmwriteoptions/">File3dmWriteOptions</a></li>
+<li><a href="fileobj/">FileObj</a></li>
+<li><a href="fileobjreadoptions/">FileObjReadOptions</a></li>
+<li><a href="useobjgsas/">UseObjGsAs</a></li>
+<li><a href="fileobjwriteoptions/">FileObjWriteOptions</a></li>
+<li><a href="asciieol/">AsciiEol</a></li>
+<li><a href="curvetype/">CurveType</a></li>
+<li><a href="geometrytype/">GeometryType</a></li>
+<li><a href="objgroupnames/">ObjGroupNames</a></li>
+<li><a href="objobjectnames/">ObjObjectNames</a></li>
+<li><a href="subdmeshing/">SubDMeshing</a></li>
+<li><a href="vertexwelding/">VertexWelding</a></li>
+<li><a href="objgroupcomparer/">ObjGroupComparer</a></li>
+<li><a href="objlayercomparer/">ObjLayerComparer</a></li>
+<li><a href="objrhinoobject/">ObjRhinoObject</a></li>
+<li><a href="rhinoobjectmesh/">RhinoObjectMesh</a></li>
+<li><a href="filepdf/">FilePdf</a></li>
+<li><a href="filepdfeventargs/">FilePdfEventArgs</a></li>
+<li><a href="fileply/">FilePly</a></li>
+<li><a href="fileplywriteoptions/">FilePlyWriteOptions</a></li>
+<li><a href="filereadoptions/">FileReadOptions</a></li>
+<li><a href="filereference/">FileReference</a></li>
+<li><a href="fileslc/">FileSlc</a></li>
+<li><a href="fileslcwriteoptions/">FileSlcWriteOptions</a></li>
+<li><a href="filestp/">FileStp</a></li>
+<li><a href="filestpwriteoptions/">FileStpWriteOptions</a></li>
+<li><a href="filetype/">FileType</a></li>
+<li><a href="filewriteoptions/">FileWriteOptions</a></li>
+<li><a href="icommoncomponenttable/">ICommonComponentTable</a></li>
+<li><a href="imagefile/">ImageFile</a></li>
+<li><a href="manifesttable/">ManifestTable</a></li>
+<li><a href="namehash/">NameHash</a></li>
+<li><a href="serializationoptions/">SerializationOptions</a></li>
+<li><a href="sha1opennurbs/">SHA1OpenNURBS</a></li>
+<li><a href="textlog/">TextLog</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filereadoptions/">
+        <div class="h2 mt-1 mb-1">FileReadOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FileReadOptions : IDisposableConstructors  FileReadOptions()   Properties  bool BatchMode True means you cannot ask questions during reading. (no dialogs, no &ldquo;getters&rdquo;, etc.) bool ImportMode True means we are merging whatever is being read into an existing document. This means you need to consider things like: If the information being read is in a different unit system, it should be scaled if UseScaleGeometry is true.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/filereadoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filewriteoptions/">
+        <div class="h2 mt-1 mb-1">FileWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FileWriteOptions : IDisposableConstructors  FileWriteOptions()   Properties  string DestinationFileName For use on Apple frameworks only. Retrns the final destination file name. since 6.3 int FileVersion  bool IncludeBitmapTable The file written should include the bitmap table if your File Writing Plug-in supports it. bool IncludeHistory The file written should include history information if your File Writing Plug-In supports it. bool IncludePreviewImage The file written should include a preview image if your File Writing Plug-in supports it.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/filewriteoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filetype/">
+        <div class="h2 mt-1 mb-1">FileType</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FileTypeConstructors  FileType(string extension,string description)   Properties  string Description  string Extension   
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/filetype/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/textlog/">
+        <div class="h2 mt-1 mb-1">TextLog</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Used for collecting text data
+public class TextLog : IDisposableConstructors  TextLog() Creates a text log that stores all text in memory. Use ToString on this version of the TextLog to get the text that we written since 5.1 TextLog(IntPtr ptr)  since 6.0 TextLog(string filename) Creates a text log that writes all text to a file. If no filename is provided, then text is written to StdOut since 5.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/textlog/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivefile/">
+        <div class="h2 mt-1 mb-1">BinaryArchiveFile</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class BinaryArchiveFile : IDisposableConstructors  BinaryArchiveFile(string filename,BinaryArchiveMode mode)  since 5.1  Properties  BinaryArchiveReader Reader  since 5.1 BinaryArchiveWriter Writer  since 5.1  Methods  void Close()  since 5.1 void Dispose() Actively reclaims unmanaged resources that this instance uses. since 5.1 bool Open()  since 5.1  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivefile/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/commoncomponenttable/">
+        <div class="h2 mt-1 mb-1">CommonComponentTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.
+public class CommonComponentTable :ICommonComponentTable&lt;T&gt;,IList&lt;T&gt;, IReadOnlyList&lt;T&gt;Properties  ModelComponentType ComponentType Returns the actual component type of a table. since (unknown) int Count Returns the count of all items, including deleted ones. since (unknown)  Methods  void Clear() Marks all items as deleted. since (unknown) bool Delete(T item) Deletes an item. Items that are deleted are still keeping their space, but the &lsquo;IsDeleted&rsquo; flag is checked.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/commoncomponenttable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/contenthash/">
+        <div class="h2 mt-1 mb-1">ContentHash</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Contains information that is useful to uniquly identify an object. This object is immutable.
+public class ContentHash : ICloneable, IEquatable&lt;ContentHash&gt; static != Determines if two ContentHash instances are different by value. Returns - True if they are different by value, otherwise false. since 6.0 static == Determines if two ContentHash instances are equal by value. Returns - True if they are equal by value, otherwise false. since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/contenthash/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dm/">
+        <div class="h2 mt-1 mb-1">File3dm</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Represents a 3dm file, which is stored using the OpenNURBS file standard. The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.
+public class File3dm : IDisposableConstructors  File3dm() Initializes a new instance of a 3dm file.  Properties  File3dmDimStyleTable AllDimStyles Dimension Styles in this file. since 6.0 File3dmGroupTable AllGroups Grpups in this file. since 6.5 File3dmHatchPatternTable AllHatchPatterns Hatch patterns in this file. since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dm/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmcommoncomponenttable/">
+        <div class="h2 mt-1 mb-1">File3dmCommonComponentTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides a base table type that is shared among all File3dm tables.
+public class File3dmCommonComponentTable : CommonComponentTable&lt;T&gt;, ICollection&lt;T&gt;Methods  void Add(T item) Adds an item. since (unknown) void Delete(int index) Flags a component as deleted. Returns - True on success. since (unknown) bool Delete(T item) Flags a component as deleted. Returns - True on success. since (unknown) string Dump() Prepares a text dump of object table. Returns - A string containing the dump.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmcommoncomponenttable/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmdimstyletable/">
+        <div class="h2 mt-1 mb-1">File3dmDimStyleTable</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Provides access to annotation styles in the 3dm file.
+public class File3dmDimStyleTable :File3dmCommonComponentTable&lt;DimensionStyle&gt;,IList&lt;DimensionStyle&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  DimensionStyle FindIndex(int index) Retrieves a DimensionStyle object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A DimensionStyle object, or None if none was found. since 6.0 DimensionStyle FindName(string name) Finds a DimensionStyle given its name.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmdimstyletable/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <span class="previous_page disabled">Prev</span>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">1</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/5/">5</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/2/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

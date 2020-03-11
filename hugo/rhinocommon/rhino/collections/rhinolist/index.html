@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Collections
+Provides helper methods to work with and other collections.
+[Serializable,DebuggerTypeProxy(typeof(ListDebuggerDisplayProxy&amp;lt;&amp;gt;)),DebuggerDisplay(&amp;#34;Count = {Count}&amp;#34;)]public class RhinoList : IList&amp;lt;T&amp;gt;, IList, ICloneableConstructors  RhinoList() Initializes a new, empty list. since (unknown) RhinoList(IEnumerablecollection) Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T. since (unknown) RhinoList(int initialCapacity) Initializes an empty list with a certain capacity. since (unknown) RhinoList(int amount,T defaultValue) Initializes a new list with a specified amount of values.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Collections</a></em></p>
+<p>Provides helper methods to work with  and other collections.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable,
+</span><span style="color:#a6e22e">  DebuggerTypeProxy(typeof(ListDebuggerDisplayProxy&lt;&gt;)),
+</span><span style="color:#a6e22e">  DebuggerDisplay(&#34;Count = {Count}&#34;)]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoList</span> : IList&lt;T&gt;, IList, ICloneable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>RhinoList()</dt>
+<dd>Initializes a new, empty list.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList(IEnumerable<!-- raw HTML omitted --> collection)</dt>
+<dd>Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList(int initialCapacity)</dt>
+<dd>Initializes an empty list with a certain capacity.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList(int amount,T defaultValue)</dt>
+<dd>Initializes a new list with a specified amount of values.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList(RhinoList<!-- raw HTML omitted --> list)</dt>
+<dd>Initializes an new list by shallow duplicating another list.</dd>
+<dd>since (unknown)</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>int Capacity</dt>
+<dd>Gets or sets the total number of elements the internal data structure can hold without resizing.</dd>
+<dd>since (unknown)</dd>
+<dt>int Count</dt>
+<dd>Gets the number of elements actually contained in the List.</dd>
+<dd>since (unknown)</dd>
+<dt>T First</dt>
+<dd>Gets or sets the first item in the list. This is synonymous to calling List[0].</dd>
+<dd>since (unknown)</dd>
+<dt>T Last</dt>
+<dd>Gets or sets the last item in the list. This is synonymous to calling List[Count-1].</dd>
+<dd>since (unknown)</dd>
+<dt>int NullCount</dt>
+<dd>Gets the number of None references (Nothing in Visual Basic) in this list. 
+If T is a ValueType, this property always return zero.</dd>
+<dd>since (unknown)</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static IEnumerable&lt;int[]&gt; Point2dKNeighbors(IEnumerable<!-- raw HTML omitted --> hayPoints,IEnumerable<!-- raw HTML omitted --> needlePoints,int amount)</dt>
+<dd>Finds a certain amout of points in a list of single-precision 2D points that are the k-closest to a test point.
+This method searches needlePoints by computing all distances from each pointcloud point and keeping a &ldquo;short list&rdquo;.</dd>
+<dd>Returns - An enumerable of arrays of indices; each array contains the indices for each of the needlePts.</dd>
+<dd>since 6.0</dd>
+<dt>static IEnumerable&lt;int[]&gt; Point2fKNeighbors(IEnumerable<!-- raw HTML omitted --> hayPoints,IEnumerable<!-- raw HTML omitted --> needlePoints,int amount)</dt>
+<dd>Finds a certain amout of points in a list of single-precision 2D points that are the k-closest to a test point.
+This method searches needlePoints by computing all distances from each pointcloud point and keeping a &ldquo;short list&rdquo;.</dd>
+<dd>Returns - An enumerable of arrays of indices; each array contains the indices for each of the needlePts.</dd>
+<dd>since 6.0</dd>
+<dt>static IEnumerable&lt;int[]&gt; Point3dKNeighbors(IEnumerable<!-- raw HTML omitted --> hayPoints,IEnumerable<!-- raw HTML omitted --> needlePoints,int amount)</dt>
+<dd>Finds a certain amout of points in a list of 3D points that are the k-closest to a test point.
+This method searches needlePoints by computing all distances from each pointcloud point and keeping a &ldquo;short list&rdquo;.
+See RTree KNeighbors for alternatives.</dd>
+<dd>Returns - An enumerable of arrays of indices; each array contains the indices for each of the needlePts.</dd>
+<dd>since 6.0</dd>
+<dt>static IEnumerable&lt;int[]&gt; Point3fKNeighbors(IEnumerable<!-- raw HTML omitted --> hayPoints,IEnumerable<!-- raw HTML omitted --> needlePoints,int amount)</dt>
+<dd>Finds a certain amout of points in a list of single-precision 3D points that are the k-closest to a test point.
+This method searches needlePoints by computing all distances from each pointcloud point and keeping a &ldquo;short list&rdquo;.</dd>
+<dd>Returns - An enumerable of arrays of indices; each array contains the indices for each of the needlePts.</dd>
+<dd>since 6.0</dd>
+<dt>static IEnumerable&lt;int[]&gt; PointCloudKNeighbors(PointCloud pointcloud,IEnumerable<!-- raw HTML omitted --> needlePoints,int amount)</dt>
+<dd>Finds a certain amout of points in a list of 3D points that are the k-closest to a test point.
+This method searches needlePoints by computing all distances from each pointcloud point and keeping a short list.</dd>
+<dd>Returns - An enumerable of arrays of indices; each array contains the indices for each of the needlePts.</dd>
+<dd>since 6.0</dd>
+<dt>void Add(T item)</dt>
+<dd>Adds an object to the end of the List.</dd>
+<dd>since (unknown)</dd>
+<dt>void AddRange(IEnumerable collection)</dt>
+<dd>Adds the elements of the specified collection to the end of the List.</dd>
+<dd>since (unknown)</dd>
+<dt>void AddRange(IEnumerable<!-- raw HTML omitted --> collection)</dt>
+<dd>Adds the elements of the specified collection to the end of the List.</dd>
+<dd>since (unknown)</dd>
+<dt>ReadOnlyCollection<!-- raw HTML omitted --> AsReadOnly()</dt>
+<dd>Constructs a read-only wrapper of this class.</dd>
+<dd>Returns - A wrapper.</dd>
+<dd>since (unknown)</dd>
+<dt>int BinarySearch(int index,int count,T item,IComparer<!-- raw HTML omitted --> comparer)</dt>
+<dd>Searches the entire sorted List for an element using the specified 
+comparer and returns the zero-based index of the element.</dd>
+<dd>Returns - The zero-based index of item in the sorted List, if item is found; 
+otherwise, a negative number that is the bitwise complement of the index 
+of the next element that is larger than item or, if there is no larger element, 
+the bitwise complement of Count.</dd>
+<dd>since (unknown)</dd>
+<dt>int BinarySearch(T item)</dt>
+<dd>Searches the entire sorted List for an element using the default comparer 
+and returns the zero-based index of the element.</dd>
+<dd>Returns - The zero-based index of item in the sorted List, if item is found; 
+otherwise, a negative number that is the bitwise complement of the index 
+of the next element that is larger than item or, if there is no larger element, 
+the bitwise complement of Count.</dd>
+<dd>since (unknown)</dd>
+<dt>int BinarySearch(T item,IComparer<!-- raw HTML omitted --> comparer)</dt>
+<dd>Searches the entire sorted List for an element using the specified 
+comparer and returns the zero-based index of the element.</dd>
+<dd>Returns - The zero-based index of item in the sorted List, if item is found; 
+otherwise, a negative number that is the bitwise complement of the index 
+of the next element that is larger than item or, if there is no larger element, 
+the bitwise complement of Count.</dd>
+<dd>since (unknown)</dd>
+<dt>void Clear()</dt>
+<dd>Removes all elements from the List.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Contains(T item)</dt>
+<dd>Determines whether an element is in the List.</dd>
+<dd>Returns - True if item is found in the List; otherwise, false.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList<!-- raw HTML omitted --> ConvertAll(Converter&lt;T, TOutput&gt; converter)</dt>
+<dd>Aggregates all results of a conversion function over this table into a new list.</dd>
+<dd>Returns - The new list.</dd>
+<dd>since (unknown)</dd>
+<dt>void CopyTo(int index,T[] array,int arrayIndex,int count)</dt>
+<dd>Copies a range of elements from the List to a compatible one-dimensional array, 
+starting at the specified index of the target array.</dd>
+<dd>since (unknown)</dd>
+<dt>void CopyTo(T[] array)</dt>
+<dd>Copies the entire List to a compatible one-dimensional array, 
+starting at the beginning of the target array.</dd>
+<dd>since (unknown)</dd>
+<dt>void CopyTo(T[] array,int arrayIndex)</dt>
+<dd>Copies the entire List to a compatible one-dimensional array, 
+starting at the specified index of the target array.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList<!-- raw HTML omitted --> Duplicate()</dt>
+<dd>Returns a shallow copy of this instance.
+If the generic type is comprised of only value types (struct, enum, ptr), then the result will be a deep copy.</dd>
+<dd>Returns - The duplicated list.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Exists(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Determines whether the List contains elements that match the 
+conditions defined by the specified predicate.</dd>
+<dd>Returns - True if the List contains one or more elements that match the 
+conditions defined by the specified predicate; otherwise, false.</dd>
+<dd>since (unknown)</dd>
+<dt>T Find(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the first occurrence within the entire List.</dd>
+<dd>Returns - The first element that matches the conditions defined by the specified predicate, 
+if found; otherwise, the default value for type T.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList<!-- raw HTML omitted --> FindAll(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Retrieves all the elements that match the conditions defined by the specified predicate.</dd>
+<dd>Returns - A ON_List(T) containing all the elements that match the conditions 
+defined by the specified predicate, if found; otherwise, an empty ON_List(T).</dd>
+<dd>since (unknown)</dd>
+<dt>int FindIndex(int startIndex,int count,Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the specified predicate, 
+and returns the zero-based index of the first occurrence within the range of elements 
+in the List that extends from the specified index to the last element.</dd>
+<dd>Returns - The zero-based index of the first occurrence of an element that 
+matches the conditions defined by match, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int FindIndex(int startIndex,Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the zero-based index of the first 
+occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the first occurrence of an element that 
+matches the conditions defined by match, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int FindIndex(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the zero-based index of the first 
+occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the first occurrence of an element that 
+matches the conditions defined by match, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>T FindLast(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the last occurrence within the entire List.</dd>
+<dd>Returns - The last element that matches the conditions defined by the specified predicate, 
+if found; otherwise, the default value for type T.</dd>
+<dd>since (unknown)</dd>
+<dt>int FindLastIndex(int startIndex,int count,Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the zero-based index of the last 
+occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the last occurrence of an element that matches 
+the conditions defined by match, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int FindLastIndex(int startIndex,Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the zero-based index of the last 
+occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the last occurrence of an element that matches 
+the conditions defined by match, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int FindLastIndex(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Searches for an element that matches the conditions defined by the 
+specified predicate, and returns the zero-based index of the last 
+occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the last occurrence of an element that matches 
+the conditions defined by match, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>void ForEach(Action<!-- raw HTML omitted --> action)</dt>
+<dd>Performs the specified action on each element of the List.</dd>
+<dd>since (unknown)</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Constructs an enumerator that is capable of iterating over all items in this list.</dd>
+<dd>Returns - The new enumerator.</dd>
+<dd>since (unknown)</dd>
+<dt>RhinoList<!-- raw HTML omitted --> GetRange(int index,int count)</dt>
+<dd>Constructs a shallow copy of a range of elements in the source List.</dd>
+<dd>Returns - A shallow copy of a range of elements in the source List.</dd>
+<dd>since (unknown)</dd>
+<dt>int IndexOf(T item)</dt>
+<dd>Searches for the specified object and returns the zero-based index of the 
+first occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the first occurrence of item within 
+the entire List, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int IndexOf(T item,int index)</dt>
+<dd>Searches for the specified object and returns the zero-based index of 
+the first occurrence within the range of elements in the List that 
+extends from the specified index to the last element.</dd>
+<dd>Returns - The zero-based index of the first occurrence of item within 
+the entire List, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int IndexOf(T item,int index,int count)</dt>
+<dd>Searches for the specified object and returns the zero-based index of the first 
+occurrence within the range of elements in the List that starts at the specified 
+index and contains the specified number of elements.</dd>
+<dd>Returns - The zero-based index of the first occurrence of item within 
+the entire List, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>void Insert(int index,T item)</dt>
+<dd>Inserts an element into the List at the specified index.</dd>
+<dd>since (unknown)</dd>
+<dt>void InsertRange(int index,IEnumerable<!-- raw HTML omitted --> collection)</dt>
+<dd>Inserts the elements of a collection into the List at the specified index.</dd>
+<dd>since (unknown)</dd>
+<dt>int LastIndexOf(T item)</dt>
+<dd>Searches for the specified object and returns the zero-based 
+index of the last occurrence within the entire List.</dd>
+<dd>Returns - The zero-based index of the last occurrence of item within 
+the entire the List, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int LastIndexOf(T item,int index)</dt>
+<dd>Searches for the specified object and returns the zero-based index 
+of the last occurrence within the range of elements in the List 
+that extends from the first element to the specified index.</dd>
+<dd>Returns - The zero-based index of the last occurrence of item within 
+the entire the List, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int LastIndexOf(T item,int index,int count)</dt>
+<dd>Searches for the specified object and returns the zero-based index of the 
+last occurrence within the range of elements in the List that contains 
+the specified number of elements and ends at the specified index.</dd>
+<dd>Returns - The zero-based index of the last occurrence of item within 
+the entire the List, if found; otherwise, -1.</dd>
+<dd>since (unknown)</dd>
+<dt>int RemapIndex(int index)</dt>
+<dd>Remap an index in the infinite range onto the List index range.</dd>
+<dd>Returns - Remapped index.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Remove(T item)</dt>
+<dd>Removes the first occurrence of a specific object from the List.</dd>
+<dd>Returns - True if item is successfully removed; otherwise, false. 
+This method also returns False if item was not found in the List.</dd>
+<dd>since (unknown)</dd>
+<dt>int RemoveAll(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Removes the all the elements that match the conditions defined by the specified predicate.</dd>
+<dd>Returns - The number of elements removed from the List.</dd>
+<dd>since (unknown)</dd>
+<dt>void RemoveAt(int index)</dt>
+<dd>Removes the element at the specified index of the List.</dd>
+<dd>since (unknown)</dd>
+<dt>int RemoveNulls()</dt>
+<dd>Removes all elements from the List that are None references (Nothing in Visual Basic). 
+This function will not do anything if T is not a Reference type.</dd>
+<dd>Returns - The number of nulls removed from the List.</dd>
+<dd>since (unknown)</dd>
+<dt>void RemoveRange(int index,int count)</dt>
+<dd>Removes a range of elements from the List.</dd>
+<dd>since (unknown)</dd>
+<dt>void Reverse()</dt>
+<dd>Reverses the order of the elements in the entire List.</dd>
+<dd>since (unknown)</dd>
+<dt>void Reverse(int index,int count)</dt>
+<dd>Reverses the order of the elements in the specified range.</dd>
+<dd>since (unknown)</dd>
+<dt>void Sort()</dt>
+<dd>Sorts the elements in the entire List using the default comparer.</dd>
+<dd>since (unknown)</dd>
+<dt>void Sort(Comparison<!-- raw HTML omitted --> comparison)</dt>
+<dd>Sorts the elements in the entire list using the specified comparer.</dd>
+<dd>since (unknown)</dd>
+<dt>void Sort(double[] keys)</dt>
+<dd>Sort this list based on a list of numeric keys of equal length. 
+The keys array will not be altered.</dd>
+<dd>since (unknown)</dd>
+<dt>void Sort(IComparer<!-- raw HTML omitted --> comparer)</dt>
+<dd>Sorts the elements in the entire list using the specified System.Comparison(T)</dd>
+<dd>since (unknown)</dd>
+<dt>void Sort(int index,int count,IComparer<!-- raw HTML omitted --> comparer)</dt>
+<dd>Sorts the elements in a range of elements in list using the specified comparer.</dd>
+<dd>since (unknown)</dd>
+<dt>void Sort(int[] keys)</dt>
+<dd>Sort this list based on a list of numeric keys of equal length. 
+The keys array will not be altered.</dd>
+<dd>since (unknown)</dd>
+<dt>T[] ToArray()</dt>
+<dd>Constructs an array that contains all items in this list.</dd>
+<dd>Returns - An array containing all items in this list.</dd>
+<dd>since (unknown)</dd>
+<dt>void TrimExcess()</dt>
+<dd>Sets the capacity to the actual number of elements in the List, 
+if that number is less than a threshold value.</dd>
+<dd>since (unknown)</dd>
+<dt>bool TrueForAll(Predicate<!-- raw HTML omitted --> match)</dt>
+<dd>Determines whether every element in the List matches the conditions defined by the specified predicate.</dd>
+<dd>Returns - True if every element in the List matches the conditions defined by 
+the specified predicate; otherwise, false. If the list has no elements, the return value is true.</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

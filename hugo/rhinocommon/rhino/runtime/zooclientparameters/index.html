@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ZooClientParameters &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime
+ZooClientParameters is a read-only set of parameters that control the flow of licensing inside ZooClient. Because this class flows through a number of other classes, functions, and UI, it is read-only so that inadvertent changes are not made to the data as it propagates from the caller.
+public class ZooClientParametersConstructors  ZooClientParameters(Guid productGuid,Guid licenseGuid,string productTitle,int productBuildType,LicenseCapabilities capabilities,string licenseEntryTextMask,string productPath,object parentWindow,LicenseTypes selectedLicenseType,ValidateProductKeyDelegate validateProductKey,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate) ZooClientParameters Constructor since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ZooClientParameters</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime</a></em></p>
+<p>ZooClientParameters is a read-only set of parameters that control
+the flow of licensing inside ZooClient. Because this class flows through a number of
+other classes, functions, and UI, it is read-only so that inadvertent changes are not
+made to the data as it propagates from the caller.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ZooClientParameters</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ZooClientParameters(Guid productGuid,Guid licenseGuid,string productTitle,int productBuildType,LicenseCapabilities capabilities,string licenseEntryTextMask,string productPath,object parentWindow,LicenseTypes selectedLicenseType,ValidateProductKeyDelegate validateProductKey,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate)</dt>
+<dd>ZooClientParameters Constructor</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/plugins/licensecapabilities/">LicenseCapabilities</a> Capabilities</dt>
+<dd>LicenseCapabilities flags that set options for how licenses can be obtained for this product</dd>
+<dd>since 6.0</dd>
+<dt>string LicenseEntryTextMask</dt>
+<dd>Text mask in the form @&ldquo;RH4A-AAAA-AAAA-AAAA-AAAA-AAAA&rdquo; that informs the user what numbers they are looking for</dd>
+<dd>since 6.0</dd>
+<dt>Guid LicenseGuid</dt>
+<dd>Guid used by ZooClient to identify the license saved by ZooClient. This differs from ProductGuid because different versions of a plug-in
+with the same Plug-in ID may need different licenses.</dd>
+<dd>since 6.0</dd>
+<dt>OnLeaseChangedDelegate OnLeaseChanged</dt>
+<dd>Delegate called by ZooClient when a cloud zoo lease is changed</dd>
+<dd>since 6.0</dd>
+<dt>object ParentWindow</dt>
+<dd>Parent window assigned to any licensing dialogs that appear. If null, the Rhino main window is used.</dd>
+<dd>since 6.0</dd>
+<dt>int ProductBuildType</dt>
+<dd>Product build type. Must be one of LicenseBuildType values.</dd>
+<dd>since 6.0</dd>
+<dt>Guid ProductGuid</dt>
+<dd>Guid used by ZooClient to identify the plug-in requesting a license from ZooClient. This Guid may be used by different versions of the
+plug-in. If different licenses are used by different versions of the plug-in, the plug-in must also specify a LicenseGuid.</dd>
+<dd>since 6.0</dd>
+<dt>string ProductPath</dt>
+<dd>Path to the application calling ZooClient</dd>
+<dd>since 6.0</dd>
+<dt>string ProductTitle</dt>
+<dd>Title of the product, &ldquo;Rhinoceros 6&rdquo; for example.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/runtime/licensetypes/">LicenseTypes</a> SelectedLicenseType</dt>
+<dd>License type selected by default when user is prompted to enter a license key</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/plugins/validateresult/">ValidateResult</a> VerifyLicenseKey(string licenseKey,string validationCode,DateTime validationCodeInstallDate,bool gracePeriodExpired,LicenseData licenseData)</dt>
+<dd>Called by GetLicense to ensure that the license key entered by the user is legitimate and can be used.</dd>
+<dd>since 6.0</dd>
+<dt>bool VerifyPreviousVersionLicense(string license,string previousVersionLicense,string errorMessage)</dt>
+<dd>When a caller calls GetLicense, ZooClient may call VerifyPreviousVersionLicense to ensure 
+previousVersionLicense is legitimate and can be used to upgrade license.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ZooClientParameters</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

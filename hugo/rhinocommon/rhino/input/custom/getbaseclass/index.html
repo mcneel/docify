@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GetBaseClass &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input.Custom
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a GetBaseClass but you will use its member functions after calling GetObject.Gets(), GetPoint.Get(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &amp;ldquo;get&amp;rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class GetBaseClass : IDisposableMethods  static void PostCustomMessage(object messageData)  void AcceptColor(bool enable) If you want to allow the user to be able to type in a color r,g,b or name during GetPoint.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GetBaseClass</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input.Custom</a></em></p>
+<p>Base class for GetObject, GetPoint, GetSphere, etc.</p>
+<p>You will never directly create a GetBaseClass but you will use its member
+functions after calling GetObject.Gets(), GetPoint.Get(), and so on.</p>
+<p>Provides tools to set command prompt, set command options, and specify
+if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter),
+and undo.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GetBaseClass</span> : IDisposable
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static void PostCustomMessage(object messageData)</dt>
+<dd></dd>
+<dt>void AcceptColor(bool enable)</dt>
+<dd>If you want to allow the user to be able to type in a color r,g,b or name
+during GetPoint.Get(), GetObject::GetObjects(), etc., then call AcceptColor(true)
+before calling GetPoint()/GetObject(). If the user chooses to type in a color,
+then the result code GetResult.Color is returned and you can use RhinoGet.Color()
+to get the value of the color.  If the get accepts points, then the user will not
+be able to type in r,g,b colors but will be able to type color names.</dd>
+<dt>void AcceptCustomMessage(bool enable)</dt>
+<dd></dd>
+<dt>void AcceptEnterWhenDone(bool enable)</dt>
+<dd>There are instances of RhinoGet that prompt with &ldquo;Press Enter when Done.&rdquo; yet do not call AcceptNothing().
+On the Mac, these instances need an additional call to AcceptEnterWhenDone() so the GetPointOptions dialog
+can correctly enable the Done button.</dd>
+<dd>since 6.0</dd>
+<dt>void AcceptNothing(bool enable)</dt>
+<dd>If you want to allow the user to be able to press enter in order to
+skip selecting a something in GetPoint.Get(), GetObject::GetObjects(),
+etc., then call AcceptNothing( True ) beforehand.</dd>
+<dt>void AcceptNumber(bool enable,bool acceptZero)</dt>
+<dd>If you want to allow the user to be able to type in a number during GetPoint.Get(),
+GetObject::GetObjects(), etc., then call AcceptNumber() beforehand.
+If the user chooses to type in a number, then the result code GetResult.Number is
+returned and you can use RhinoGet.Number() to get the value of the number. If you
+are using GetPoint and you want &ldquo;0&rdquo; to return (0,0,0) instead of the number zero, 
+then set acceptZero = false.</dd>
+<dt>void AcceptPoint(bool enable)</dt>
+<dd>If you want to allow the user to be able to type in a point then call AcceptPoint(true)
+before calling GetPoint()/GetObject(). If the user chooses to type in a number, then
+the result code GetResult.Point is returned and you can use RhinoGet.Point()
+to get the value of the point.</dd>
+<dt>void AcceptString(bool enable)</dt>
+<dd>If you want to allow the user to be able to type in a string during GetPoint.Get(),
+GetObject::GetObjects(), etc., then call AcceptString(true) before calling
+GetPoint()/GetObject(). If the user chooses to type in a string, then the result code
+GetResult.String is returned and you can use RhinoGet.String() to get the value of the string.</dd>
+<dt>void AcceptUndo(bool enable)</dt>
+<dd>If you want to allow the user to have an &lsquo;undo&rsquo; option in GetPoint.Get(),
+GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.</dd>
+<dt>int AddOption(LocalizeStringPair optionName)</dt>
+<dd>Adds a command line option.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOption(LocalizeStringPair optionName,LocalizeStringPair optionValue)</dt>
+<dd>Adds a command line option.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOption(LocalizeStringPair optionName,LocalizeStringPair optionValue,bool hiddenOption)</dt>
+<dd>Adds a command line option.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dd>since 6.9</dd>
+<dt>int AddOption(string englishOption)</dt>
+<dd>Adds a command line option.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOption(string englishOption,string englishOptionValue)</dt>
+<dd>Adds a command line option.</dd>
+<dd>Returns - Option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOption(string englishOption,string englishOptionValue,bool hiddenOption)</dt>
+<dd>Adds a command line option.</dd>
+<dd>Returns - Option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dd>since 6.9</dd>
+<dt>int AddOptionColor(LocalizeStringPair optionName,OptionColor colorValue)</dt>
+<dd>Add a command line option to get colors and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionColor(LocalizeStringPair optionName,OptionColor colorValue,string prompt)</dt>
+<dd>Add a command line option to get colors and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionColor(string englishName,OptionColor colorValue)</dt>
+<dd>Add a command line option to get colors and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionColor(string englishName,OptionColor colorValue,string prompt)</dt>
+<dd>Add a command line option to get colors and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue)</dt>
+<dd>Adds a command line option to get numbers and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue,string prompt)</dt>
+<dd>Adds a command line option to get numbers and automatically saves the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionDouble(string englishName,OptionDouble numberValue)</dt>
+<dd>Adds a command line option to get numbers and automatically save the value.</dd>
+<dd>Returns - Option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionDouble(string englishName,OptionDouble numberValue,string prompt)</dt>
+<dd>Adds a command line option to get numbers and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionEnumList(string englishOptionName,T defaultValue)</dt>
+<dd>Adds a choice of enum values as list option</dd>
+<dd>Returns - Option index</dd>
+<dd>since 5.4</dd>
+<dt>int AddOptionEnumList(string englishOptionName,T defaultValue,T[] include)</dt>
+<dd>Adds a choice of enum values as list option. Allows to include only some enum values.</dd>
+<dd>Returns - Option index</dd>
+<dd>since 6.0</dd>
+<dt>int AddOptionEnumSelectionList(string englishOptionName,IEnumerable<!-- raw HTML omitted --> enumSelection,int listCurrentIndex)</dt>
+<dd>Adds a list of enum values as option list. Use enumSelection[go.Option.CurrentListOptionIndex] to retrieve selection.</dd>
+<dd>since 5.4</dd>
+<dt>int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue)</dt>
+<dd>Adds a command line option to get integers and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue,string prompt)</dt>
+<dd>Adds a command line option to get integers and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionInteger(string englishName,OptionInteger intValue)</dt>
+<dd>Adds a command line option to get integers and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionInteger(string englishName,OptionInteger intValue,string prompt)</dt>
+<dd>Adds a command line option to get integers and automatically save the value.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionList(LocalizeStringPair optionName,IEnumerable<!-- raw HTML omitted --> listValues,int listCurrentIndex)</dt>
+<dd>Adds a command line list option.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionList(string englishOptionName,IEnumerable<!-- raw HTML omitted --> listValues,int listCurrentIndex)</dt>
+<dd>Adds a command line list option.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionToggle(LocalizeStringPair optionName,OptionToggle toggleValue)</dt>
+<dd>Adds a command line option to toggle a setting.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>int AddOptionToggle(string englishName,OptionToggle toggleValue)</dt>
+<dd>Adds a command line option to toggle a setting.</dd>
+<dd>Returns - option index value (&gt;0) or 0 if option cannot be added.</dd>
+<dt>void ClearCommandOptions()</dt>
+<dd>Clear all command options.</dd>
+<dt>void ClearDefault()</dt>
+<dd>Clears any defaults set using SetDefaultPoint, SetDefaultNumber, SetDefaultString, or SetCommandPromptDefault.</dd>
+<dt>Color Color()</dt>
+<dd>Gets a color if Get*() returns GetResult.Color.</dd>
+<dd>Returns - The color chosen by the user.</dd>
+<dt><a href="/rhinocommon/rhino/commands/result/">Result</a> CommandResult()</dt>
+<dd>Helper method for getting command result value from getter results.</dd>
+<dd>Returns - The converted command result.</dd>
+<dt>object CustomMessage()</dt>
+<dd></dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>void EnableTransparentCommands(bool enable)</dt>
+<dd>Control the availability of transparent commands during the get.</dd>
+<dt>T GetSelectedEnumValue()</dt>
+<dd>Returns the selected enum value. Use this in combination with .
+This must be called directly after having called a Get method, and having obtained a  value.</dd>
+<dd>since 5.4</dd>
+<dt>T GetSelectedEnumValueFromSelectionList(IEnumerable<!-- raw HTML omitted --> selectionList)</dt>
+<dd>Returns the selected enum value by looking at the list of values from which to select.
+Use this in combination with</dd>
+<dd>since 5.4</dd>
+<dt>bool GotDefault()</dt>
+<dd>Returns True if user pressed Enter to accept a default point, number,
+or string set using SetDefaultPoint, SetDefaultNumber, or SetDefaultString.</dd>
+<dd>Returns - True if the result if the default point, number or string set. Otherwise, false.</dd>
+<dt>System.Drawing.Point[] Line2d()</dt>
+<dd>Returns two points defining the location in the view window of the 2d line selected
+in GetPoint::Get2dLine().
+(0,0) = upper left corner of window.</dd>
+<dd>Returns - An array with two 2D points.</dd>
+<dt>double Number()</dt>
+<dd>Gets a number if GetPoint.Get(), GetObject.GetObjects(), etc., returns GetResult.Number.</dd>
+<dd>Returns - The number chosen by the user.</dd>
+<dt><a href="/rhinocommon/rhino/input/custom/commandlineoption/">CommandLineOption</a> Option()</dt>
+<dd></dd>
+<dt>int OptionIndex()</dt>
+<dd></dd>
+<dt>Rectangle PickRectangle()</dt>
+<dd>If the get was a GetObjects() and the mouse was used to select the objects,
+then the returned rect has left &lt; right and top &lt; bottom. This rect
+is the Windows GDI screen coordinates of the picking rectangle.
+RhinoViewport.GetPickXform( pick_rect, pick_xform )
+will calculate the picking transformation that was used.
+In all other cases, left=right=top=bottom=0;</dd>
+<dd>Returns - The picking rectangle; or 0 in the specified cases.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Point()</dt>
+<dd>Gets a point if Get*() returns GetResult.Point.</dd>
+<dd>Returns - The point chosen by the user.</dd>
+<dt>System.Drawing.Point Point2d()</dt>
+<dd>Returns location in view of point in selected in GetPoint::Get() or GetPoint::Get2dPoint().
+(0,0) = upper left corner of window.</dd>
+<dd>Returns - The location.</dd>
+<dt>Rectangle Rectangle2d()</dt>
+<dd>Returns the location in the view of the 2d rectangle selected in GetPoint::Get2dRectangle().
+rect.left &lt; rect.right and rect.top &lt; rect.bottom
+(0,0) = upper left corner of window.</dd>
+<dd>Returns - The rectangle.</dd>
+<dt><a href="/rhinocommon/rhino/input/getresult/">GetResult</a> Result()</dt>
+<dd>Returns result of the Get*() call.</dd>
+<dd>Returns - The result of the last Get*() call.</dd>
+<dt>void SetCommandPrompt(string prompt)</dt>
+<dd>Sets prompt message that appears in the command prompt window.</dd>
+<dt>void SetCommandPromptDefault(string defaultValue)</dt>
+<dd>Sets message that describes what default value will be used if the user presses enter.
+This description appears in angle brackets &lt;&gt; in the command prompt window. You do
+not need to provide a default value description unless you explicity enable AcceptNothing.</dd>
+<dt>void SetDefaultColor(Color defaultColor)</dt>
+<dd>Sets a color as default value that will be returned if the user presses ENTER key during the get.</dd>
+<dt>void SetDefaultInteger(int defaultValue)</dt>
+<dd>Sets a number as default value that will be returned if the user presses ENTER key during the get.</dd>
+<dt>void SetDefaultNumber(double defaultNumber)</dt>
+<dd>Sets a number as default value that will be returned if the user presses ENTER key during the get.</dd>
+<dt>void SetDefaultPoint(Point3d point)</dt>
+<dd>Sets a point as default value that will be returned if the user presses the ENTER key during the get.</dd>
+<dt>void SetDefaultString(string defaultValue)</dt>
+<dd>Sets a string as default value that will be returned
+if the user presses ENTER key during the get.</dd>
+<dt>void SetWaitDuration(int milliseconds)</dt>
+<dd>Sets the wait duration (in milliseconds) of the getter. If the duration passes without 
+the user making a decision, the GetResult.Timeout code is returned.</dd>
+<dt>string StringResult()</dt>
+<dd>Gets a string if GetPoint.Get(), GetObject.GetObjects(), etc., returns GetResult.String.</dd>
+<dd>Returns - The string chosen by the user.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Vector()</dt>
+<dd>Gets a direction if Get*() returns GetResult.Point (Set by some digitizers, but in general it&rsquo;s (0,0,0).</dd>
+<dd>Returns - The vector chosen by the user.</dd>
+<dt><a href="/rhinocommon/rhino/display/rhinoview/">RhinoView</a> View()</dt>
+<dd>Gets a view the user clicked in during GetPoint.Get(), GetObject.GetObjects(), etc.</dd>
+<dd>Returns - The view chosen by the user.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GetBaseClass</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

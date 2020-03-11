@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/collections/point3dlist/">
-        <h3>Point3dList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalist/">
+        <h3>UserDataList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/collections/point3dlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Collections
-Represents a list of .
-public class Point3dListConstructors Point3dList()  (summary) Initializes a new empty list with default capacity. (since) 5.0  Point3dList(IEnumerablecollection)  (summary) Initializes a new point list by copying the values from another set. (since) 5.0  Point3dList(int initialCapacity)  (summary) Initializes a new point list with a preallocated initial capacity. (since) 5.0  Point3dList(Point3d[] initialPoints)  (summary) Constructs a new point list from values in a point array.
+    Namespace: Rhino.DocObjects.Custom
+Represents a collection of user data.
+public class UserDataList : IEnumerable&lt;UserData&gt;Properties  int Count Number of UserData objects in this list.  Methods  bool Add(UserData userdata) If the userdata is already in a different UserDataList, it will be removed from that list and added to this list. Returns - Whether this operation succeeded. bool Contains(Guid userdataId) Checks for the existence of a specific type of userdata in this list Both .
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/point3f/">
-        <h3>Point3f</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalistenumerator/">
+        <h3>UserDataListEnumerator</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/point3f/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalistenumerator/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the three coordinates of a point in three-dimensional space, using -precision floating point numbers.
-static -  (summary) Subtracts a point from another point. (since) 5.0  static !=  (summary) Determines whether two points have different values. (since) 5.0  static *  (summary) Multiplies a point by a factor. (since) 6.0  static *  (summary) Multiplies a point by a factor. (since) 6.0  static +  (summary) Adds a point to another point.
+    Namespace: Rhino.DocObjects.Custom
+Enumerator for UserDataList
+public class UserDataListEnumerator : IEnumerator&lt;UserData&gt;Constructors  UserDataListEnumerator(UserDataList udl) Create new UserDataListEnumerator since 6.0  Properties  UserData Current Get current UserData on the enumerator. since 6.0  Methods  void Dispose() Implement Dispose(). NOP. since 6.0 bool MoveNext() Advance enumerator to next UserData item. Returns - True if there is a next item. since 6.0 void Reset() Reset the enumerator since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/point4d/">
-        <h3>Point4d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdictionary/">
+        <h3>UserDictionary</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/point4d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdictionary/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the four coordinates of a point in four-dimensional space. The W (fourth) dimension is often considered the weight of the point as seen in 3D space.
-static -  (summary) Subtracts the second point from the first point. (since) 5.0  static !=  (summary) Determines whether two Point4d have different values. (since) 5.0  static *  (summary) Multiplies a point by a number. (since) 5.0  static *  (summary) Multiplies two together, returning the dot (internal) product of the two.
+    Namespace: Rhino.DocObjects.Custom
+Defines the storage data class for a user dictionary.
+[System.Runtime.InteropServices.Guid(&#34;171E831F-7FEF-40E2-9857-E5CCD39446F0&#34;)]public class UserDictionary : UserDataProperties  string Description Gets the text &ldquo;RhinoCommon UserDictionary&rdquo;. ArchivableDictionary Dictionary Gets the dictionary that is associated with this class. This dictionary is unique. bool ShouldWrite Writes this entity if the count is larger than 0.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/point4dfield/">
-        <h3>Point4dField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/ui/userinterfacesection/">
+        <h3>UserInterfaceSection</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/point4dfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/ui/userinterfacesection/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.UI
+Custom user interface section manager
+[Obsolete]public class UserInterfaceSectionProperties  RenderContent RenderContent The RenderContent object that created this user interface object. since 5.1 object Window The user control associated with this user interface object. since 5.1  Methods  static UserInterfaceSection FromWindow(object window) Find the UserInterfaceSection that created the specified instance of a window. Returns - If a UserInterfaceSection object is found containing a reference to the requested window then return the object otherwise return null.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/utilities/">
+        <h3>Utilities</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/utilities/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class UtilitiesProperties  static Guid DefaultRenderPlugInId Get the plug-in Id for the default render plug-in since 5.3 static bool ShowIncompatibleEnvironments Specifies whether incompatible content should be shown in the corresponding editor. since 5.3 static bool ShowIncompatibleMaterials Specifies whether incompatible content should be shown in the corresponding editor. since 5.3 static bool ShowIncompatibleTextures Specifies whether incompatible content should be shown in the corresponding editor. since 5.3 static UiFrameworks UiFramework  since 7.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/vector2dfield/">
+        <h3>Vector2dField</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/vector2dfield/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.Fields
-Point4d field value class
-public class Point4dFieldProperties Point4d Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+Vector2d field value class
+public class Vector2dField : FieldProperties  Vector2d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/pointcloud/">
-        <h3>PointCloud</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/vector3dfield/">
+        <h3>Vector3dField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/pointcloud/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/vector3dfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a collection of coordinates with optional normal vectors and colors.
-public class PointCloudConstructors PointCloud()  (summary) Initializes a new instance of the class that is empty. (since) 5.0  PointCloud(IEnumerablepoints)  (summary) Initializes a new instance of the class, copying the content from a set of points. (since) 5.0  PointCloud(PointCloud other)  (summary) Initializes a new instance of the class, copying (Merge) the content of another pointcloud.
+    Namespace: Rhino.Render.Fields
+Vector3d field value class
+public class Vector3dField : FieldProperties  Vector3d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/pointclouditem/">
-        <h3>PointCloudItem</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/viewportinfo/">
+        <h3>ViewportInfo</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/pointclouditem/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a single item in a pointcloud. A PointCloud item always has a location, but it has an optional normal vector and color.
-public class PointCloudItemProperties Color Color  (summary) Gets or sets the color of this point cloud item. (since) 5.0  bool Hidden  (summary) Gets or sets the hidden flag of this point cloud item. (since) 5.0  int Index  (summary) Gets the index of this point cloud item.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/pointcloudobject/">
-        <h3>PointCloudObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/pointcloudobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/viewportinfo/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-public class PointCloudObjectProperties PointCloud PointCloudGeometry  (summary) (since) 5.0  Methods PointCloud DuplicatePointCloudGeometry()  (summary) (since) 5.0 (returns) PointCloud This is some return comment  
+Represents a viewing frustum.
+[Serializable]public class ViewportInfo : Runtime.CommonObjectConstructors  ViewportInfo() Initializes a new instance. ViewportInfo(RhinoViewport rhinoViewport) Copies all of the ViewportInfo data from an existing RhinoViewport. ViewportInfo(ViewportInfo other) Initializes a new instance by copying values from another instance.  Properties  static Vector3d DefaultCameraDirection Default z=up perspective camera direction since 6.0 double Camera35mmLensLength This property assumes the camera is horizontal and crop the film rather than the image when the aspect of the frustum is not 36/24.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/pointobject/">
-        <h3>PointObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettingsstate/">
+        <h3>ViewSettingsState</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/pointobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/viewsettingsstate/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class PointObjectProperties Point PointGeometry  (summary) (since) 5.0  Methods Point DuplicatePointGeometry()  (summary) (since) 5.0 (returns) Point This is some return comment  
+    Namespace: Rhino.ApplicationSettings
+Represents a snapshot of .
+public class ViewSettingsStateProperties  bool AlwaysPanParallelViews Gets or sets the &lsquo;always pan parallel views&rsquo; value. If the view is not looking straight at the construction plane, then sets parallel viewports so they will not rotate. bool DefinedViewSetCPlane Gets or sets the &lsquo;named views set CPlane&rsquo; value. When true, restoring a named view causes the construction plane saved with that view to also restore.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/polycurve/">
-        <h3>PolyCurve</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/visualanalysismode/">
+        <h3>VisualAnalysisMode</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/polycurve/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/visualanalysismode/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a curve that is the result of joining several (possibly different) types of curves.
-public class PolyCurveConstructors PolyCurve()  (summary) Initializes a new, empty polycurve. (since) 5.0  Properties bool HasGap  (summary) This is a quick way to see if the curve has gaps between the sub curve segments. (since) 5.0  bool IsNested  (summary) Gets a value indicating whether or not a PolyCurve contains nested PolyCurves.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/polyline/">
-        <h3>Polyline</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/polyline/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents an ordered set of points connected by linear segments. Polylines are closed if start and end points coincide.
-public class PolylineConstructors Polyline()  (summary) Initializes a new empty polyline. (since) 5.0  Polyline(IEnumerablecollection)  (summary) Initializes a new polyline from a collection of points. (since) 5.0  Polyline(int initialCapacity)  (summary) Initializes a new empty polyline with an initial capacity. (since) 5.0  Properties bool IsClosed  (summary) Gets a value that indicates whether this polyline is closed.
+    Namespace: Rhino.Display
+Represents a base class for visual analysis modes. This class is abstract.
+public class VisualAnalysisModeProperties  static Guid RhinoCurvatureColorAnalyisModeId Id for Rhino&rsquo;s built-in curvature color analysis mode. Surface curvature is shown using False color mapping. static Guid RhinoCurvatureGraphAnalysisModeId Id for Rhino&rsquo;s built-in curvature graphs analysis mode. Curvature hair is shown on curves and surfaces. static Guid RhinoDraftAngleAnalysisModeId Id for Rhino&rsquo;s built-in draft angle analysis mode. Draft angle is displayed using False colors.
   </div>
   
 

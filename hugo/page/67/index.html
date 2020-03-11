@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/vector3f/">
-        <h3>Vector3f</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/licensestatechangedeventargs/">
+        <h3>LicenseStateChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/vector3f/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
-static -  (summary) Subtracts the second vector from the first one. (since) 6.0  static -  (summary) Computes the opposite vector. (since) 6.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies a vector by a number, having the effect of scaling it.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/viewcapture/">
-        <h3>ViewCapture</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/viewcapture/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-public class ViewCaptureConstructors ViewCapture()  (summary) (since) 6.0  Properties bool DrawAxes  (summary) (since) 6.0  bool DrawGrid  (summary) (since) 6.0  bool DrawGridAxes  (summary) (since) 6.0  int Height  (summary) Height of capture in Pixels (since) 6.0  bool Preview  (summary) (since) 6.0  int RealtimeRenderPasses  (summary) (since) 6.0  bool ScaleScreenItems  (summary) (since) 6.0  bool TransparentBackground  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/viewcapturesettings/">
-        <h3>ViewCaptureSettings</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/viewcapturesettings/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-Used to hold the information required to generate high resolution output of a RhinoViewport. This is used for generating paper prints or image files
-public class ViewCaptureSettingsConstructors ViewCaptureSettings()  (summary) (since) 6.0  ViewCaptureSettings(RhinoPageView sourcePageView,double dpi)  (summary) (since) 6.0  ViewCaptureSettings(RhinoView sourceView,Size mediaSize,double dpi)  (summary) (since) 6.0  Properties double ArrowheadSizeMillimeters  (summary) arrowhead size in millimeters (since) 6.15  Rectangle CropRectangle  (summary) Actual area of output rectangle that view capture is sent to.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/viewcapturewriter/">
-        <h3>ViewCaptureWriter</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/viewcapturewriter/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/licensestatechangedeventargs/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Runtime
-Callback system used by SVG and PDF exporter to generate documents
-public class ViewCaptureWriterConstructors ViewCaptureWriter(double dpi,Size pageSize)  (summary) (since) 6.0  Methods void Draw(IntPtr constPtrPrintInfo,RhinoDoc doc)  (summary) (since) 6.15 (returns) void This is some return comment  
+Passed to LicenseStateChanged event on RhinoApp
+public class LicenseStateChangedEventArgs : EventArgsConstructors  LicenseStateChangedEventArgs(bool callingRhinoCommonAllowed) LicenseStateChangedEventArgs constructor since 7.0  Properties  bool CallingRhinoCommonAllowed True if RhinoCommon calls will never raise Rhino.Runtime.NotLicensedException. False otherwise since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/viewdisplayattributes/">
-        <h3>ViewDisplayAttributes</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/namedparameterseventargs/">
+        <h3>NamedParametersEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/viewdisplayattributes/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/namedparameterseventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-public class ViewDisplayAttributesProperties bool BlendGrid  (summary) (since) 5.0  bool DrawGrid  (summary) (since) 5.0  bool DrawGridAxes  (summary) (since) 5.0  bool DrawTransparentGridPlane  (summary) (since) 5.0  bool DrawWorldAxes  (summary) (since) 5.0  bool DrawZAxis  (summary) (since) 5.0  double HorizontalViewportScale  (summary) (since) 5.0  bool ShowGridOnTop  (summary) (since) 5.0  bool UseDocumentGrid  (summary) (since) 5.0  double VerticalViewportScale  (summary) (since) 5.
+    Namespace: Rhino.Runtime
+Dictionary style class used for named callbacks from C++ -&gt; .NET
+public class NamedParametersEventArgs : EventArgs, IDisposableConstructors  NamedParametersEventArgs() Construct a new named parameter even args. You should dispose this class when you are done with it since 7.0  Methods  void Dispose() Dispose native resources since 7.0 void Set(string name,bool value) Set a bool value for a given key name since 7.0 void Set(string name,double value) Set a double value for a given key name since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/vieweventargs/">
-        <h3>ViewEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notificationbuttonclickedargs/">
+        <h3>NotificationButtonClickedArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/vieweventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/notifications/notificationbuttonclickedargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-public class ViewEventArgsProperties RhinoView View  (summary) (since) 5.0  
+    Namespace: Rhino.Runtime.Notifications
+Used when a button is clicked for a notification.
+public class NotificationButtonClickedArgs : EventArgsConstructors  NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked) Creates a new instance. since 6.0  Properties  ButtonType ButtonClicked The button that was clicked. since 6.0 Notification Notification The notification whose button was clicked. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/viewinfo/">
-        <h3>ViewInfo</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/notlicensedexception/">
+        <h3>NotLicensedException</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/viewinfo/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/notlicensedexception/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Represents the name and orientation of a View (and named view). views can be thought of as cameras.
-public class ViewInfoConstructors ViewInfo(RhinoViewport rhinoViewPort)  (summary) Access to the ViewInfo for given RhinoViewport (since) 6.0  ViewInfo(uint docRuntimeSerialNumber)  (summary) Construct the ViewInfo for active viewport of given doc. (since) 6.0  Properties double FocalBlurAperture  (summary) Gets or sets the Focal blur aperture of the active viewport (since) 6.
+    Namespace: Rhino.Runtime
+Exception thrown when calling functions in RhinoCommon and the application is executing without a license
+public class NotLicensedException : ExceptionConstructors  NotLicensedException() Default constructor since 7.0 NotLicensedException(string message) Create a new instance with a custom message since 7.0 NotLicensedException(string message,Exception inner) Create a new instance with a custom message and an inner exception since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/viewportinfo/">
-        <h3>ViewportInfo</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/pythoncompiledcode/">
+        <h3>PythonCompiledCode</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/viewportinfo/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/pythoncompiledcode/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Represents a viewing frustum.
-public class ViewportInfoConstructors ViewportInfo()  (summary) Initializes a new instance. (since) 5.0  ViewportInfo(RhinoViewport rhinoViewport)  (summary) Copies all of the ViewportInfo data from an existing RhinoViewport. (since) 5.0  ViewportInfo(ViewportInfo other)  (summary) Initializes a new instance by copying values from another instance. (since) 5.0  Properties static Vector3d DefaultCameraDirection  (summary) Default z=up perspective camera direction (since) 6.0  double Camera35mmLensLength  (summary) This property assumes the camera is horizontal and crop the film rather than the image when the aspect of the frustum is not 36/24.
+    Namespace: Rhino.Runtime
+Represents scripting compiled code.
+public class PythonCompiledCodeMethods  void Execute(PythonScript scope) Executes the script in a specific scope.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/viewsettings/">
-        <h3>ViewSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/pythonscript/">
+        <h3>PythonScript</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/viewsettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/pythonscript/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties to control view settings.
-public class ViewSettingsProperties static bool AlwaysPanParallelViews  (summary) Gets or sets the &lsquo;always pan parallel views&rsquo; value. If the view is not looking straight at the construction plane, then sets parallel viewports so they will not rotate. (since) 5.0  static bool DefinedViewSetCPlane  (summary) Gets or sets the &lsquo;named views set CPlane&rsquo; value. When true, restoring a named view causes the construction plane saved with that view to also restore.
+    Namespace: Rhino.Runtime
+Represents a Python script.
+public class PythonScriptProperties  int ContextId Gets or sets a context unique identified. ActionOutput Gets or sets the Python script &ldquo;print()&rdquo; target. By default string output goes to the Rhino.RhinoApp.Write function. Set Output if you want to redirect the output from python to a different function while this script executes. Command ScriptContextCommand Command associated with this script. Used for localiation since 6.0 object ScriptContextDoc object set to variable held in scriptcontext.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/viewsettingsstate/">
-        <h3>ViewSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/rdknotloadedexception/">
+        <h3>RdkNotLoadedException</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/viewsettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/rdknotloadedexception/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class ViewSettingsStateProperties bool AlwaysPanParallelViews  (summary) Gets or sets the &lsquo;always pan parallel views&rsquo; value. If the view is not looking straight at the construction plane, then sets parallel viewports so they will not rotate. (since) 5.0  bool DefinedViewSetCPlane  (summary) Gets or sets the &lsquo;named views set CPlane&rsquo; value. When true, restoring a named view causes the construction plane saved with that view to also restore.
+    Namespace: Rhino.Runtime
+Is thrown when the RDK is not loaded.
+[Serializable]public class RdkNotLoadedException : ExceptionConstructors  RdkNotLoadedException() Initializes a new instance of the RDK not loaded exception with a standard message.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/rendersettings/">
+        <h3>RenderSettings</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/rendersettings/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Contains settings used in rendering.
+public class RenderSettings : Runtime.CommonObjectConstructors  RenderSettings() Initialize a new instance of the RenderSettings class. RenderSettings(RenderSettings source) Initialize new instance of the RenderSettings class. since 6.0  Properties  Color AmbientLight Gets or sets the ambient light color used in rendering. AntialiasLevel AntialiasLevel Gets or sets antialias level, used for render quality Color BackgroundColorBottom Gets or sets the background bottom color used in rendering.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/inprocess/rhinocore/">
+        <h3>RhinoCore</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/inprocess/rhinocore/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InProcess
+Represents an instance of RhinoCore.DLL.
+public class RhinoCore : IDisposableConstructors  RhinoCore() Initializes a new instance of the class. since 7.0 RhinoCore(string[] args) Initializes a new instance of the class. since 7.0 RhinoCore(string[] args,WindowStyle windowStyle) Initializes a new instance of the class. since 7.0 RhinoCore(string[] args,WindowStyle windowStyle,IntPtr hostWnd) Initializes a new instance of the class. since 7.0  Methods  void Dispose() IDisposable implementation since 7.0 bool DoEvents() If a Rhino owned window is active processes all Windows messages currently in the message queue.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/riskyaction/">
+        <h3>RiskyAction</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/riskyaction/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime
+Defines risky actions that need to be reported in crash exceptions
+public class RiskyAction : IDisposableConstructors  RiskyAction(string description,string file,string member,int line) Always create this in a using block since 6.0  Methods  void Dispose() IDisposable implementation since 6.0  
   </div>
   
 

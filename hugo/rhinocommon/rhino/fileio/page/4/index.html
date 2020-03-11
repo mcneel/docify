@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.FileIO &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.FileIO</h1>
+  <ul>
+<li><a href="binaryarchiveexception/">BinaryArchiveException</a></li>
+<li><a href="binaryarchivefile/">BinaryArchiveFile</a></li>
+<li><a href="binaryarchivemode/">BinaryArchiveMode</a></li>
+<li><a href="binaryarchivereader/">BinaryArchiveReader</a></li>
+<li><a href="binaryarchivewriter/">BinaryArchiveWriter</a></li>
+<li><a href="commoncomponenttable/">CommonComponentTable</a></li>
+<li><a href="contenthash/">ContentHash</a></li>
+<li><a href="dracocompression/">DracoCompression</a></li>
+<li><a href="dracocompressionoptions/">DracoCompressionOptions</a></li>
+<li><a href="file3dm/">File3dm</a></li>
+<li><a href="objecttypefilter/">ObjectTypeFilter</a></li>
+<li><a href="tabletypefilter/">TableTypeFilter</a></li>
+<li><a href="file3dmcommoncomponenttable/">File3dmCommonComponentTable</a></li>
+<li><a href="file3dmdimstyletable/">File3dmDimStyleTable</a></li>
+<li><a href="file3dmgrouptable/">File3dmGroupTable</a></li>
+<li><a href="file3dmhatchpatterntable/">File3dmHatchPatternTable</a></li>
+<li><a href="file3dminstancedefinitiontable/">File3dmInstanceDefinitionTable</a></li>
+<li><a href="file3dmlayertable/">File3dmLayerTable</a></li>
+<li><a href="file3dmlinetypetable/">File3dmLinetypeTable</a></li>
+<li><a href="file3dmmaterialtable/">File3dmMaterialTable</a></li>
+<li><a href="file3dmnamedconstructionplanes/">File3dmNamedConstructionPlanes</a></li>
+<li><a href="file3dmnotes/">File3dmNotes</a></li>
+<li><a href="file3dmobject/">File3dmObject</a></li>
+<li><a href="file3dmobjecttable/">File3dmObjectTable</a></li>
+<li><a href="file3dmplugindata/">File3dmPlugInData</a></li>
+<li><a href="file3dmplugindatatable/">File3dmPlugInDataTable</a></li>
+<li><a href="file3dmsettings/">File3dmSettings</a></li>
+<li><a href="file3dmstringtable/">File3dmStringTable</a></li>
+<li><a href="file3dmtypecodes/">File3dmTypeCodes</a></li>
+<li><a href="file3dmviewtable/">File3dmViewTable</a></li>
+<li><a href="file3dmwriteoptions/">File3dmWriteOptions</a></li>
+<li><a href="fileobj/">FileObj</a></li>
+<li><a href="fileobjreadoptions/">FileObjReadOptions</a></li>
+<li><a href="useobjgsas/">UseObjGsAs</a></li>
+<li><a href="fileobjwriteoptions/">FileObjWriteOptions</a></li>
+<li><a href="asciieol/">AsciiEol</a></li>
+<li><a href="curvetype/">CurveType</a></li>
+<li><a href="geometrytype/">GeometryType</a></li>
+<li><a href="objgroupnames/">ObjGroupNames</a></li>
+<li><a href="objobjectnames/">ObjObjectNames</a></li>
+<li><a href="subdmeshing/">SubDMeshing</a></li>
+<li><a href="vertexwelding/">VertexWelding</a></li>
+<li><a href="objgroupcomparer/">ObjGroupComparer</a></li>
+<li><a href="objlayercomparer/">ObjLayerComparer</a></li>
+<li><a href="objrhinoobject/">ObjRhinoObject</a></li>
+<li><a href="rhinoobjectmesh/">RhinoObjectMesh</a></li>
+<li><a href="filepdf/">FilePdf</a></li>
+<li><a href="filepdfeventargs/">FilePdfEventArgs</a></li>
+<li><a href="fileply/">FilePly</a></li>
+<li><a href="fileplywriteoptions/">FilePlyWriteOptions</a></li>
+<li><a href="filereadoptions/">FileReadOptions</a></li>
+<li><a href="filereference/">FileReference</a></li>
+<li><a href="fileslc/">FileSlc</a></li>
+<li><a href="fileslcwriteoptions/">FileSlcWriteOptions</a></li>
+<li><a href="filestp/">FileStp</a></li>
+<li><a href="filestpwriteoptions/">FileStpWriteOptions</a></li>
+<li><a href="filetype/">FileType</a></li>
+<li><a href="filewriteoptions/">FileWriteOptions</a></li>
+<li><a href="icommoncomponenttable/">ICommonComponentTable</a></li>
+<li><a href="imagefile/">ImageFile</a></li>
+<li><a href="manifesttable/">ManifestTable</a></li>
+<li><a href="namehash/">NameHash</a></li>
+<li><a href="serializationoptions/">SerializationOptions</a></li>
+<li><a href="sha1opennurbs/">SHA1OpenNURBS</a></li>
+<li><a href="textlog/">TextLog</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivereader/">
+        <div class="h2 mt-1 mb-1">BinaryArchiveReader</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Represents an entity that is capable of reading a binary archive and instantiating strongly-typed objects.
+public class BinaryArchiveReaderProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivereader/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivewriter/">
+        <div class="h2 mt-1 mb-1">BinaryArchiveWriter</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Represents an entity that is able to write data to an archive.
+public class BinaryArchiveWriterProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/binaryarchivewriter/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/dracocompression/">
+        <div class="h2 mt-1 mb-1">DracoCompression</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Google draco compression for mesh and point cloud data
+public class DracoCompression : IDisposableMethods  static DracoCompression Compress(Mesh mesh) Compress a mesh using default compression options. Returns - instance of class representing the compressed data since 7.0 static DracoCompression Compress(Mesh mesh,DracoCompressionOptions options) Compress a mesh Returns - instance of class representing the compressed data since 7.0 static Rhino.Geometry.GeometryBase DecompressBase64String(string encoded) Decompress base64 encoded version of draco data into either a mesh or point cloud Returns - Mesh or point cloud on success.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/dracocompression/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/dracocompressionoptions/">
+        <div class="h2 mt-1 mb-1">DracoCompressionOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Options for applying drac compression
+public class DracoCompressionOptionsConstructors  DracoCompressionOptions() Initializes to default options since 7.0  Properties  int CompressionLevel Compression level. 0 if fastest, but least compression. 10 is slowest, but best compression since 7.0 int NormalQuantizationBits Sets the quantization compression options for normal values. The values will be quantized in a box defined by the maximum extent of the values. I.e., the actual precision of this option depends on the scale of the attribute values.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/dracocompressionoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnotes/">
+        <div class="h2 mt-1 mb-1">File3dmNotes</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Represents the notes information stored in a 3dm file.
+public class File3dmNotesConstructors  File3dmNotes() Creates empty default notes  Properties  bool IsHtml Gets or sets the text format. If the format is HTML, true; False otherwise. bool IsVisible Gets or sets the notes visibility. If the notes are visible, true; False otherwise. string Notes Gets or sets the text content of the notes. Rectangle WindowRectangle Gets or sets the position of the Notes when they were saved.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnotes/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmsettings/">
+        <div class="h2 mt-1 mb-1">File3dmSettings</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+General settings in a 3dm file.
+public class File3dmSettingsProperties  double ModelAbsoluteTolerance Gets or sets the model space absolute tolerance. double ModelAngleToleranceDegrees Gets or sets the model space angle tolerance. double ModelAngleToleranceRadians Gets or sets the model space angle tolerance. Point3d ModelBasepoint Gets or sets the model basepoint that is used when the file is read as an instance definition. This point is mapped to the origin in the instance definition.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmsettings/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobj/">
+        <div class="h2 mt-1 mb-1">FileObj</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for obj file format
+public class FileObjMethods  static bool Read(String filename,RhinoDoc doc,FileObjReadOptions options)  since 6.0 static WriteFileResult Write(StreamWriter stream,RhinoDoc doc,FileObjWriteOptions options) Write an obj stream based on the contents of a RhinoDoc since 7.0 static WriteFileResult Write(String filename,Mesh[] meshes,FileObjWriteOptions options) Write an obj file with an array of meshes since 7.0 static WriteFileResult Write(String filename,RhinoDoc doc,FileObjWriteOptions options) Write an obj file based on the contents of a RhinoDoc since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobj/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobjreadoptions/">
+        <div class="h2 mt-1 mb-1">FileObjReadOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Options used when reading an obj file.
+public class FileObjReadOptionsConstructors  FileObjReadOptions(FileReadOptions readOptions)  since 6.0  Properties  bool DisplayColorFromObjMaterial Determines whether textures are read from the .mtl file, if it exists. since 6.5 bool IgnoreTextures Determines whether textures are read from the .mtl file, if it exists. since 6.0 bool MapYtoZ Setting to transform OBJ&rsquo;s Y axis to Rhino&rsquo;s Z axis since 6.0 bool MorphTargetOnly TODO since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobjreadoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobjwriteoptions/">
+        <div class="h2 mt-1 mb-1">FileObjWriteOptions</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+public class FileObjWriteOptionsConstructors  FileObjWriteOptions(FileWriteOptions writeOptions)  since 6.0  Properties  string ActualFilePathOnMac  since 6.3 bool CreateNgons Setting to enable/diable the creation of ngons for the output since 6.0 bool CullUnnecessaryVertexesInNgons Setting to determine whether interior colinear vertexes are part of the ngon. since 6.0 AsciiEol EolType  since 6.0 ObjGroupNames ExportGroupNameLayerNames Setting to determine whether object, group or layer names will become &ldquo;g&quot;s in the OBJ output file since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobjwriteoptions/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filepdf/">
+        <div class="h2 mt-1 mb-1">FilePdf</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.FileIO
+Support for PDF file format
+public class FilePdf static PreWrite Fired immediately before a Pdf is written since 6.0  Methods  static FilePdf Create() Create a new instance of a FilePdf class since 6.0 int AddPage(int widthInDots,int heightInDots,int dotsPerInch) Add a blank page to this document Returns - page number on success since 6.5 int AddPage(ViewCaptureSettings settings) Add a new page to this document and draw a viewport into it based on provided ViewCaptureSettings Returns - page number on success since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/fileio/filepdf/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/3/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">4</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/5/">5</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/page/5/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

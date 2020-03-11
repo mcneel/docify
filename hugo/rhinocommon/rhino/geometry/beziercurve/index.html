@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BezierCurve &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a Bezier curve. Note: as an exception, the bezier curve is not derived from .
+[Serializable]public class BezierCurve : IDisposable, ISerializableConstructors  BezierCurve(IEnumerablecontrolPoints) Create bezier curve with controls defined by a list of 2d points BezierCurve(IEnumerablecontrolPoints) Create bezier curve with controls defined by a list of 3d points BezierCurve(IEnumerablecontrolPoints) Create bezier curve with controls defined by a list of 4d points  Properties  int ControlVertexCount Number of control vertices in this curve int Dimension Dimension of Bezier since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BezierCurve</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a Bezier curve.
+Note: as an exception, the bezier curve is not derived from .</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BezierCurve</span> : IDisposable, ISerializable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>BezierCurve(IEnumerable<!-- raw HTML omitted --> controlPoints)</dt>
+<dd>Create bezier curve with controls defined by a list of 2d points</dd>
+<dt>BezierCurve(IEnumerable<!-- raw HTML omitted --> controlPoints)</dt>
+<dd>Create bezier curve with controls defined by a list of 3d points</dd>
+<dt>BezierCurve(IEnumerable<!-- raw HTML omitted --> controlPoints)</dt>
+<dd>Create bezier curve with controls defined by a list of 4d points</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>int ControlVertexCount</dt>
+<dd>Number of control vertices in this curve</dd>
+<dt>int Dimension</dt>
+<dd>Dimension of Bezier</dd>
+<dd>since 6.3</dd>
+<dt>bool IsRational</dt>
+<dd>Gets a value indicating whether or not the curve is rational. 
+Rational curves have control-points with custom weights.</dd>
+<dt>bool IsValid</dt>
+<dd>Tests an object to see if it is valid.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static BezierCurve[] CreateBeziers(Curve sourceCurve)</dt>
+<dd>Create an array of Bezier curves that fit to an existing curve. Please note, these
+Beziers can be of any order and may be rational.</dd>
+<dd>Returns - A new array of Bezier curves</dd>
+<dd>since 6.0</dd>
+<dt>static BezierCurve[] CreateCubicBeziers(Curve sourceCurve,double distanceTolerance,double kinkTolerance)</dt>
+<dd>Constructs an array of cubic, non-rational beziers that fit a curve to a tolerance.</dd>
+<dd>Returns - A new array of bezier curves. The array can be empty and might contain None items.</dd>
+<dt>static BezierCurve CreateLoftedBezier(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Loft a bezier through a list of points</dd>
+<dd>Returns - new bezier curve if successful</dd>
+<dt>static BezierCurve CreateLoftedBezier(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Loft a bezier through a list of points</dd>
+<dd>Returns - new bezier curve if successful</dd>
+<dt>bool ChangeDimension(int desiredDimension)</dt>
+<dd>Change dimension of bezier.</dd>
+<dd>Returns - True if successful.  False if desired_dimension &lt; 1</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CurvatureAt(double t)</dt>
+<dd>Evaluate the curvature vector at a curve parameter.</dd>
+<dd>Returns - Curvature vector of the curve at the parameter t.</dd>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetBoundingBox(bool accurate)</dt>
+<dd>Boundingbox solver. Gets the world axis aligned boundingbox for the curve.</dd>
+<dd>Returns - The boundingbox of the geometry in world coordinates or BoundingBox.Empty 
+if not bounding box could be found.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> GetControlVertex2d(int index)</dt>
+<dd>Get location of a control vertex.</dd>
+<dd>Returns - If the bezier is rational, the euclidean location is returned.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetControlVertex3d(int index)</dt>
+<dd>Get location of a control vertex.</dd>
+<dd>Returns - If the bezier is rational, the euclidean location is returned.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point4d/">Point4d</a> GetControlVertex4d(int index)</dt>
+<dd>Get location of a control vertex.</dd>
+<dd>Returns - Homogenous value of control vertex. If the bezier is not
+rational, the weight is 1.</dd>
+<dt>void GetObjectData(SerializationInfo info,StreamingContext context)</dt>
+<dd>Populates a System.Runtime.Serialization.SerializationInfo with the data needed to serialize the target object.</dd>
+<dd>since 6.3</dd>
+<dt>bool IncreaseDegree(int desiredDegree)</dt>
+<dd>Increase degree of bezier</dd>
+<dd>Returns - True if successful.  False if desiredDegree &lt; current degree.</dd>
+<dt>bool MakeNonRational()</dt>
+<dd>Make bezier non-rational</dd>
+<dd>Returns - treu if successful</dd>
+<dt>bool MakeRational()</dt>
+<dd>Make bezier rational</dd>
+<dd>Returns - True if successful</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double t)</dt>
+<dd>Evaluates point at a curve parameter.</dd>
+<dd>Returns - Point (location of curve at the parameter t).</dd>
+<dt>bool Split(double t,BezierCurve left,BezierCurve right)</dt>
+<dd>Divides the Bezier curve at the specified parameter.</dd>
+<dd>Returns - True on success</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> TangentAt(double t)</dt>
+<dd>Evaluates the unit tangent vector at a curve parameter.</dd>
+<dd>Returns - Unit tangent vector of the curve at the parameter t.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve()</dt>
+<dd>Constructs a NURBS curve representation of this curve.</dd>
+<dd>Returns - NURBS representation of the curve on success, None on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BezierCurve</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

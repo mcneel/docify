@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  DisplayPipeline &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+The display pipeline calls events during specific phases of drawing During the drawing of a single frame the events are called in the following order.
+[Begin Drawing of a Frame] CalculateBoundingBoxCalculateClippingPanesSetupFrustumSetupLightingInitializeFrameBufferDrawBackgroundIf this is a layout and detail objects exist the channels are called in the same order for each detail object (drawn as a nested viewport)PreDrawObjectsFor Each Visible Non Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostDrawObjects - depth writing/testing onDrawForeGround - depth writing/testing offFor Each Visible Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostProcessFrameBuffer (If a delegate exists that requires this)DrawOverlay (if Rhino is in a feedback mode) [End of Drawing of a Frame]|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">DisplayPipeline</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>The display pipeline calls events during specific phases of drawing
+During the drawing of a single frame the events are called in the following order.</p>
+<p>[Begin Drawing of a Frame]
+CalculateBoundingBoxCalculateClippingPanesSetupFrustumSetupLightingInitializeFrameBufferDrawBackgroundIf this is a layout and detail objects exist the channels are called in the
+same order for each detail object (drawn as a nested viewport)PreDrawObjectsFor Each Visible Non Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostDrawObjects - depth writing/testing onDrawForeGround - depth writing/testing offFor Each Visible Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostProcessFrameBuffer (If a delegate exists that requires this)DrawOverlay (if Rhino is in a feedback mode)
+[End of Drawing of a Frame]</p>
+<p>NOTE: There may be multiple DrawObject calls for a single object. An example of when this could
+happen would be with a shaded sphere. The shaded mesh is first drawn and these channels would
+be processed; then at a later time the isocurves for the sphere would be drawn.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisplayPipeline</span>
+</code></pre></div><h2 id="events">Events</h2>
+<dl>
+<dt>static CalculateBoundingBox</dt>
+<dd></dd>
+<dt>static CalculateBoundingBoxZoomExtents</dt>
+<dd>Calculate a bounding to include in the Zoom Extents command.</dd>
+<dt>static DisplayModeChanged</dt>
+<dd></dd>
+<dd>since 6.18</dd>
+<dt>static DrawForeground</dt>
+<dd>Called after all non-highlighted objects have been drawn and PostDrawObjects has been called.
+Depth writing and testing are turned OFF. If you want to draw with depth writing/testing,
+see PostDrawObjects.</dd>
+<dt>static DrawOverlay</dt>
+<dd>If Rhino is in a feedback mode, the draw overlay call allows for temporary geometry to be drawn on top of
+everything in the scene. This is similar to the dynamic draw routine that occurs with custom get point.</dd>
+<dt>static InitFrameBuffer</dt>
+<dd></dd>
+<dd>since 6.18</dd>
+<dt>static ObjectCulling</dt>
+<dd></dd>
+<dd>since 5.3</dd>
+<dt>static PostDrawObjects</dt>
+<dd>Called after all non-highlighted objects have been drawn. Depth writing and testing are
+still turned on. If you want to draw without depth writing/testing, see DrawForeground.</dd>
+<dt>static PreDrawObject</dt>
+<dd>Called right before an individual object is being drawn. NOTE: Do not use this event
+unless you absolutely need to.  It is called for every object in the document and can
+slow disply down if a large number of objects exist in the document</dd>
+<dt>static PreDrawObjects</dt>
+<dd>Called before objects are been drawn. Depth writing and testing are on.</dd>
+<dt>static PreDrawTransparentObjects</dt>
+<dd>Called before transparent objects have been drawn. Depth writing and testing are on.</dd>
+<dd>since 6.12</dd>
+<dt>static ViewportProjectionChanged</dt>
+<dd>Called when the projection changes for a viewport being drawn.</dd>
+<dd>since 6.18</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> ActiveObject</dt>
+<dd></dd>
+<dd>since 6.7</dd>
+<dt>int ActiveObjectNestingLevel</dt>
+<dd></dd>
+<dd>since 6.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] ActiveObjectNestingStack</dt>
+<dd></dd>
+<dd>since 6.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> ActiveTopLevelObject</dt>
+<dd></dd>
+<dd>since 6.7</dd>
+<dt>int DefaultCurveThickness</dt>
+<dd>Gets the curve thickness as defined by the current display mode. 
+Note: this only applies to curve objects, Brep and Mesh wires may have different settings.</dd>
+<dt><a href="/rhinocommon/rhino/display/depthmode/">DepthMode</a> DepthMode</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/">DisplayPipelineAttributes</a> DisplayPipelineAttributes</dt>
+<dd></dd>
+<dd>since 5.3</dd>
+<dt>float DpiScale</dt>
+<dd>Scale factor used for high resolution displays. When a monitor that this
+pipeline is drawing to is at a DPI of 96, this value is one. On high
+DPI monitors, this value will commonly be greater than one.</dd>
+<dd>since 6.0</dd>
+<dt>bool DrawingGrips</dt>
+<dd>Gets a value that indicates whether the pipeline is currently in a grip drawing operation.</dd>
+<dt>bool DrawingSurfaces</dt>
+<dd>Gets a value that indicates whether the pipeline is currently in a surface
+drawing operation.  Surface drawing means draw the shaded triangles of a mesh
+representing the surface (mesh, extrusion, or brep).  This is useful when
+inside of a draw event or display conduit to check and see if the geometry is
+about to be drawn as a shaded set of triangles representing the geometry.
+See DrawingWires to check and see if the wireframe representation of the
+geometry is going to be drawn.</dd>
+<dt>bool DrawingWires</dt>
+<dd>Gets a value that indicates whether the pipeline is currently in a curve
+drawing operation. This is useful when inside of a draw event or display
+conduit to check and see if the geometry is about to be drawn is going to
+be drawing the wire representation of the geometry (mesh, extrusion, or
+brep).  See DrawingSurfaces to check and see if the shaded mesh representation
+of the geometry is going to be drawn.</dd>
+<dt>Bitmap FrameBuffer</dt>
+<dd>Gets the contents of the framebuffer that this pipeline is drawing to.</dd>
+<dd>since 6.0</dd>
+<dt>Size FrameSize</dt>
+<dd>Gets the size of the framebuffer that this pipeline is drawing to.</dd>
+<dt>bool IsDynamicDisplay</dt>
+<dd>Gets a value that indicates whether the viewport is in Dynamic Display state. 
+Dynamic display is the state a viewport is in when it is rapidly redrawing because of
+an operation like panning or rotating. The pipeline will drop some level of detail
+while inside a dynamic display state to keep the frame rate as high as possible.</dd>
+<dt>bool IsInViewCapture</dt>
+<dd>Gets a value that indicates whether this pipeline is currently drawing
+for ViewCaptureToFile or ViewCaptureToClipboard</dd>
+<dd>since 6.0</dd>
+<dt>bool IsOpen</dt>
+<dd>Is True of the pipeline is open, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>bool IsOpenGL</dt>
+<dd>Gets a value indicating whether or not this pipeline is drawing into an OpenGL context.</dd>
+<dt>bool IsPrinting</dt>
+<dd>Gets a value that indicates whether this pipeline 
+is currently drawing for printing purposes.</dd>
+<dt>bool IsStereoMode</dt>
+<dd>Gets a value that indicates whether this pipeline is currently using an 
+engine that is performing stereo style drawing. Stereo drawing is for 
+providing an &ldquo;enhanced 3-D&rdquo; effect through stereo viewing devices.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> ModelTransform</dt>
+<dd>Gets or sets the current model transformation that is applied to vertices when drawing.</dd>
+<dt>bool ModelTransformIsIdentity</dt>
+<dd>Gets a value that indicates whether the Model Transform is an Identity transformation.</dd>
+<dt>int NestLevel</dt>
+<dd>Gets the current nested viewport drawing level. 
+This is used to know if you are currently inside the drawing of a nested viewport (detail object in Rhino). 
+Nest level = 0 Drawing is occuring in a standard Rhino viewport or on the page viewport.Nest level = 1 Drawing is occuring inside a detail view object.</dd>
+<dt>int RenderPass</dt>
+<dd>Gets the current pass that the pipeline is in for drawing a frame. 
+Typically drawing a frame requires a single pass through the DrawFrameBuffer 
+function, but some special display effects can be achieved through 
+drawing with multiple passes.</dd>
+<dt>bool ShadingRequired</dt>
+<dd>Gets or sets the &ldquo;ShadingRequired&rdquo; flag. This flag gets set inside the pipeline when a request is 
+made to draw a shaded mesh but the current render engine doesn&rsquo;t support shaded 
+mesh drawing&hellip;at this point the redraw mechanism will make sure everything will 
+work the next time around.</dd>
+<dt>int StereoProjection</dt>
+<dd>Gets the current stereo projection if stereo mode is on.
+0 = left1 = right
+If stereo mode is not enables, this property always returns 0.</dd>
+<dt>bool SupportsShading</dt>
+<dd>Gets whether or not this pipeline supports shaded meshes.</dd>
+<dt><a href="/rhinocommon/rhino/display/rhinoviewport/">RhinoViewport</a> Viewport</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/display/zbiasmode/">ZBiasMode</a> ZBiasMode</dt>
+<dd></dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static uint AvailableOpenGLVersion(bool coreProfile)</dt>
+<dd>If Rhino is using OpenGL for display, this function will return
+major.minor version of OpenGL available for this instance of Rhino</dd>
+<dd>Returns - major version * 10 + minor version
+For example, OpenGL 4.5 returns 45</dd>
+<dd>since 6.21</dd>
+<dt>static string CrossCompileHLSL(string hlsl,string functionName,ShaderLanguage targetLanguage)</dt>
+<dd>Convert HLSL code to a different shading language</dd>
+<dd>since 7.0</dd>
+<dt>static bool CullControlPolygon()</dt>
+<dd>Returns a value indicating if only points on the side of the surface that
+face the camera are displayed.</dd>
+<dd>Returns - True if backfaces of surface and mesh control polygons are culled.
+This value is determined by the _CullControlPolygon command.</dd>
+<dt>static System.Drawing.Bitmap DrawToBitmap(RhinoViewport viewport,int width,int height)</dt>
+<dd>Draw a given viewport to an off-screen bitmap.</dd>
+<dd>Returns - A bitmap containing the given view, or None on error.</dd>
+<dt>static void GetDrawListSerialNumbers(uint modelSerialNumber,uint pageSerialNumber)</dt>
+<dd>Gets the current model and page view draw list serial numbers, which can
+be used to determine if a model or page view needs to be redrawn.</dd>
+<dd>since 7.0</dd>
+<dt>static bool MakeDefaultOpenGLContextCurrent()</dt>
+<dd>Make a &ldquo;default&rdquo; OpenGL context current</dd>
+<dd>since 7.0</dd>
+<dt>int AddClippingPlane(Point3d point,Vector3d normal)</dt>
+<dd>Add a clipping plane to be used during the drawing of this frame</dd>
+<dd>Returns - index for the added clipping plane</dd>
+<dd>since 6.3</dd>
+<dt>DisplayPipeline Clone(RhinoViewport viewport)</dt>
+<dd>Clones the pipeline. Creates an identical copy of &ldquo;this&rdquo; pipeline.
+Copies all conduits from &ldquo;this&rdquo; pipeline to the new pipeline.</dd>
+<dd>Returns - The newly cloned pipeline if successful, None otherwise.
+or failed to close.</dd>
+<dd>since 7.0</dd>
+<dt>bool Close()</dt>
+<dd>Closes the pipeline.</dd>
+<dd>Returns - True if the pipeline was closed, False if it was already closed
+or failed to close.</dd>
+<dd>since 7.0</dd>
+<dt>void Draw2dLine(Point from,Point to,Color color,float thickness)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Draw2dLine(PointF from,PointF to,Color color,float thickness)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Draw2dRectangle(Rectangle rectangle,Color strokeColor,int thickness,Color fillColor)</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>void Draw2dText(string text,Color color,Point2d screenCoordinate,bool middleJustified)</dt>
+<dd>Draws 2D text on the viewport.</dd>
+<dt>void Draw2dText(string text,Color color,Point2d screenCoordinate,bool middleJustified,int height)</dt>
+<dd>Draws 2D text on the viewport.</dd>
+<dt>void Draw2dText(string text,Color color,Point2d screenCoordinate,bool middleJustified,int height,string fontface)</dt>
+<dd>Draws 2D text on the viewport.</dd>
+<dt>void Draw2dText(string text,Color color,Point3d worldCoordinate,bool middleJustified)</dt>
+<dd>Draws 2D text on the viewport.</dd>
+<dt>void Draw2dText(string text,Color color,Point3d worldCoordinate,bool middleJustified,int height)</dt>
+<dd>Draws 2D text on the viewport.</dd>
+<dt>void Draw2dText(string text,Color color,Point3d worldCoordinate,bool middleJustified,int height,string fontface)</dt>
+<dd>Draws 2D text on the viewport.</dd>
+<dt>void Draw3dText(string text,Color color,Plane textPlane,double height,string fontface)</dt>
+<dd></dd>
+<dt>void Draw3dText(string text,Color color,Plane textPlane,double height,string fontface,bool bold,bool italic)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Draw3dText(string text,Color color,Plane textPlane,double height,string fontface,bool bold,bool italic,TextHorizontalAlignment horizontalAlignment,TextVerticalAlignment verticalAlignment)</dt>
+<dd></dd>
+<dd>since 6.4</dd>
+<dt>void Draw3dText(Text3d text,Color color)</dt>
+<dd></dd>
+<dt>void Draw3dText(Text3d text,Color color,Plane textPlane)</dt>
+<dd>Draws 3d text with a different plane than what is defined in the Text3d class.</dd>
+<dt>void Draw3dText(Text3d text,Color color,Point3d textPlaneOrigin)</dt>
+<dd>Draws 3d text using the Text3d plane with an adjusted origin.</dd>
+<dt>void DrawActivePoint(Point3d point)</dt>
+<dd>Draws a point in style used during &ldquo;GetPoint&rdquo; operations</dd>
+<dd>since 6.0</dd>
+<dt>void DrawAnnotation(AnnotationBase annotation,Color color)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawAnnotationArrowhead(Arrowhead arrowhead,Transform xform,Color color)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawArc(Arc arc,Color color)</dt>
+<dd>Draw a single arc object.</dd>
+<dt>void DrawArc(Arc arc,Color color,int thickness)</dt>
+<dd>Draw a single arc object.</dd>
+<dt>void DrawArrow(Line line,Color color)</dt>
+<dd>Draws a single arrow object. An arrow consists of a Shaft and an Arrow head at the end of the shaft.</dd>
+<dt>void DrawArrow(Line line,Color color,double screenSize,double relativeSize)</dt>
+<dd>Draws a single arrow object. 
+An arrow consists of a Shaft and an Arrow head at the end of the shaft.</dd>
+<dt>void DrawArrowHead(Point3d tip,Vector3d direction,Color color,double screenSize,double worldSize)</dt>
+<dd>Draws a single arrow head.</dd>
+<dt>void DrawArrows(IEnumerable<!-- raw HTML omitted --> lines,Color color)</dt>
+<dd>Draws a collection of arrow objects. An arrow consists of a Shaft and an Arrow head at the end of the shaft.</dd>
+<dt>void DrawArrows(Line[] lines,Color color)</dt>
+<dd>Draws a collection of arrow objects. An arrow consists of a Shaft and an Arrow head at the end of the shaft.</dd>
+<dt>void DrawBitmap(DisplayBitmap bitmap,int left,int top)</dt>
+<dd>Draws a bitmap in screen coordinates</dd>
+<dd>since 5.10</dd>
+<dt>void DrawBox(BoundingBox box,Color color)</dt>
+<dd>Draws the edges of a BoundingBox.</dd>
+<dt>void DrawBox(BoundingBox box,Color color,int thickness)</dt>
+<dd>Draws the edges of a BoundingBox.</dd>
+<dt>void DrawBox(Box box,Color color)</dt>
+<dd>Draws the edges of a Box object.</dd>
+<dt>void DrawBox(Box box,Color color,int thickness)</dt>
+<dd>Draws the edges of a Box object.</dd>
+<dt>void DrawBoxCorners(BoundingBox box,Color color)</dt>
+<dd>Draws corner widgets of a world aligned boundingbox. 
+Widget size will be 5% of the Box diagonal.</dd>
+<dt>void DrawBoxCorners(BoundingBox box,Color color,double size)</dt>
+<dd>Draws corner widgets of a world aligned boundingbox.</dd>
+<dt>void DrawBoxCorners(BoundingBox box,Color color,double size,int thickness)</dt>
+<dd>Draws corner widgets of a world aligned boundingbox.</dd>
+<dt>void DrawBrepShaded(Brep brep,DisplayMaterial material)</dt>
+<dd>Draws a shaded mesh representation of a brep.</dd>
+<dt>void DrawBrepWires(Brep brep,Color color)</dt>
+<dd>Draws all the wireframe curves of a brep object.</dd>
+<dt>void DrawBrepWires(Brep brep,Color color,int wireDensity)</dt>
+<dd>Draws all the wireframe curves of a brep object.</dd>
+<dt>void DrawCircle(Circle circle,Color color)</dt>
+<dd>Draw a single circle object.</dd>
+<dt>void DrawCircle(Circle circle,Color color,int thickness)</dt>
+<dd>Draw a single circle object.</dd>
+<dt>void DrawCone(Cone cone,Color color)</dt>
+<dd>Draw a wireframe cone.</dd>
+<dt>void DrawCone(Cone cone,Color color,int thickness)</dt>
+<dd>Draw a wireframe cone.</dd>
+<dt>void DrawConstructionPlane(ConstructionPlane constructionPlane)</dt>
+<dd></dd>
+<dt>void DrawCurvatureGraph(Curve curve,Color color)</dt>
+<dd>Draw a typical Rhino Curvature Graph.</dd>
+<dt>void DrawCurvatureGraph(Curve curve,Color color,int hairScale)</dt>
+<dd>Draw a typical Rhino Curvature Graph.</dd>
+<dt>void DrawCurvatureGraph(Curve curve,Color color,int hairScale,int hairDensity,int sampleDensity)</dt>
+<dd>Draw a typical Rhino Curvature Graph.</dd>
+<dt>void DrawCurve(Curve curve,Color color)</dt>
+<dd>Draw a single Curve object.</dd>
+<dt>void DrawCurve(Curve curve,Color color,int thickness)</dt>
+<dd>Draw a single Curve object.</dd>
+<dt>void DrawCylinder(Cylinder cylinder,Color color)</dt>
+<dd>Draw a wireframe cylinder.</dd>
+<dt>void DrawCylinder(Cylinder cylinder,Color color,int thickness)</dt>
+<dd>Draw a wireframe cylinder.</dd>
+<dt>void DrawDirectionArrow(Point3d location,Vector3d direction,Color color)</dt>
+<dd></dd>
+<dt>void DrawDot(float screenX,float screenY,string text)</dt>
+<dd>Draws a text dot in screen coordinates.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawDot(float screenX,float screenY,string text,Color dotColor,Color textColor)</dt>
+<dd>Draws a text dot in screen coordinates.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawDot(Point3d worldPosition,string text)</dt>
+<dd>Draws a text dot in world coordinates.</dd>
+<dt>void DrawDot(Point3d worldPosition,string text,Color dotColor,Color textColor)</dt>
+<dd>Draw a text dot in world coordinates.</dd>
+<dt>void DrawDot(TextDot dot,Color fillColor,Color textColor,Color borderColor)</dt>
+<dd>Draw a text dot as defined by the text dot class</dd>
+<dd>since 6.0</dd>
+<dt>void DrawDottedLine(Line line,Color color)</dt>
+<dd>Draws a single dotted line.</dd>
+<dt>void DrawDottedLine(Point3d from,Point3d to,Color color)</dt>
+<dd>Draws a single dotted line.</dd>
+<dt>void DrawDottedPolyline(IEnumerable<!-- raw HTML omitted --> points,Color color,bool close)</dt>
+<dd>Draws a set of connected lines (polyline) in a dotted pattern (0x00001111).</dd>
+<dt>void DrawExtrusionWires(Extrusion extrusion,Color color)</dt>
+<dd>Draws all the wireframe curves of an extrusion object.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawExtrusionWires(Extrusion extrusion,Color color,int wireDensity)</dt>
+<dd>Draws all the wireframe curves of an extrusion object.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawGradientHatch(Hatch hatch,Color color1,Color color2,Point3d point1,Point3d point2,bool linearGradient,float boundaryThickness,Color boundaryColor)</dt>
+<dd>Draw a two point gradient filled hatch</dd>
+<dd>since 7.0</dd>
+<dt>void DrawGradientHatch(Hatch hatch,IEnumerable<!-- raw HTML omitted --> stops,Point3d point1,Point3d point2,bool linearGradient,float repeat,float boundaryThickness,Color boundaryColor)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void DrawGradientLines(IEnumerable<!-- raw HTML omitted --> lines,float strokeWidth,IEnumerable<!-- raw HTML omitted --> stops,Point3d point1,Point3d point2,bool linearGradient,float repeat)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void DrawGradientMesh(Mesh mesh,IEnumerable<!-- raw HTML omitted --> stops,Point3d point1,Point3d point2,bool linearGradient,float repeat)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void DrawHatch(Hatch hatch,Color hatchColor,Color boundaryColor)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawLine(Line line,Color color)</dt>
+<dd>Draws a single line object.</dd>
+<dt>void DrawLine(Line line,Color color,int thickness)</dt>
+<dd>Draws a single line object.</dd>
+<dt>void DrawLine(Point3d from,Point3d to,Color color)</dt>
+<dd>Draws a single line object.</dd>
+<dt>void DrawLine(Point3d from,Point3d to,Color color,int thickness)</dt>
+<dd>Draws a single line object.</dd>
+<dt>void DrawLineArrow(Line line,Color color,int thickness,double size)</dt>
+<dd>Draws an arrow made up of three line segments.</dd>
+<dt>void DrawLines(IEnumerable<!-- raw HTML omitted --> lines,Color color)</dt>
+<dd>Draws a set of lines with a given color and thickness. If you want the fastest possible set of lines
+to be drawn, pass a Line[] for lines.</dd>
+<dt>void DrawLines(IEnumerable<!-- raw HTML omitted --> lines,Color color,int thickness)</dt>
+<dd>Draws a set of lines with a given color and thickness. If you want the fastest possible set of lines
+to be drawn, pass a Line[] for lines.</dd>
+<dt>void DrawMarker(Point3d tip,Vector3d direction,Color color)</dt>
+<dd>Draws an arrow marker as a view-aligned widget.</dd>
+<dt>void DrawMarker(Point3d tip,Vector3d direction,Color color,int thickness)</dt>
+<dd>Draws an arrow marker as a view-aligned widget.</dd>
+<dt>void DrawMarker(Point3d tip,Vector3d direction,Color color,int thickness,double size)</dt>
+<dd>Draws an arrow marker as a view-aligned widget.</dd>
+<dt>void DrawMarker(Point3d tip,Vector3d direction,Color color,int thickness,double size,double rotation)</dt>
+<dd>Draws an arrow marker as a view-aligned widget.</dd>
+<dt>void DrawMeshFalseColors(Mesh mesh)</dt>
+<dd>Draws the mesh faces as False color patches. 
+The mesh must have Vertex Colors defined for this to work.</dd>
+<dt>void DrawMeshShaded(Mesh mesh,DisplayMaterial material)</dt>
+<dd>Draws the shaded faces of a given mesh.</dd>
+<dt>void DrawMeshShaded(Mesh mesh,DisplayMaterial material,int[] faceIndices)</dt>
+<dd>Draws the shaded faces of a given mesh.</dd>
+<dt>void DrawMeshVertices(Mesh mesh,Color color)</dt>
+<dd>Draws all the vertices in a given mesh.</dd>
+<dt>void DrawMeshWires(Mesh mesh,Color color)</dt>
+<dd>Draws all the wires in a given mesh.</dd>
+<dt>void DrawMeshWires(Mesh mesh,Color color,int thickness)</dt>
+<dd>Draws all the wires in a given mesh.</dd>
+<dt>void DrawObject(RhinoObject rhinoObject)</dt>
+<dd></dd>
+<dt>void DrawObject(RhinoObject rhinoObject,Transform xform)</dt>
+<dd>Draws a RhinoObject with an applied transformation.</dd>
+<dt>void DrawParticles(ParticleSystem particles)</dt>
+<dd></dd>
+<dt>void DrawParticles(ParticleSystem particles,DisplayBitmap bitmap)</dt>
+<dd></dd>
+<dt>void DrawParticles(ParticleSystem particles,DisplayBitmap[] bitmaps)</dt>
+<dd></dd>
+<dt>void DrawPatternedLine(Line line,Color color,int pattern,int thickness)</dt>
+<dd>Draws a single line with specified pattern.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPatternedLine(Point3d from,Point3d to,Color color,int pattern,int thickness)</dt>
+<dd>Draws a single line with specified pattern.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPatternedPolyline(IEnumerable<!-- raw HTML omitted --> points,Color color,int pattern,int thickness,bool close)</dt>
+<dd>Draws a set of connected lines (polyline) with specified pattern.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPoint(Point3d point)</dt>
+<dd>Draws a point using the current display attribute size, style and color</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPoint(Point3d point,Color color)</dt>
+<dd>Draws a point with a given radius, style and color.</dd>
+<dt>void DrawPoint(Point3d point,PointStyle style,Color strokeColor,Color fillColor,float radius,float strokeWidth,float secondarySize,float rotationRadians,bool diameterIsInPixels,bool autoScaleForDpi)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawPoint(Point3d point,PointStyle style,float radius,Color color)</dt>
+<dd>Draws a point with a given radius, style and color.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPoint(Point3d point,PointStyle style,int radius,Color color)</dt>
+<dd>Draws a point with a given radius, style and color.</dd>
+<dt>void DrawPointCloud(PointCloud cloud,float size)</dt>
+<dd>Draws a point cloud.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPointCloud(PointCloud cloud,float size,Color color)</dt>
+<dd>Draws a point cloud.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPointCloud(PointCloud cloud,int size)</dt>
+<dd>Draws a point cloud.</dd>
+<dt>void DrawPointCloud(PointCloud cloud,int size,Color color)</dt>
+<dd>Draws a point cloud.</dd>
+<dt>void DrawPoints(IEnumerable<!-- raw HTML omitted --> points,PointStyle style,Color strokeColor,Color fillColor,float radius,float strokeWidth,float secondarySize,float rotationRadians,bool diameterIsInPixels,bool autoScaleForDpi)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawPoints(IEnumerable<!-- raw HTML omitted --> points,PointStyle style,float radius,Color color)</dt>
+<dd>Draw a set of points with a given radius, style and color.</dd>
+<dd>since 6.0</dd>
+<dt>void DrawPoints(IEnumerable<!-- raw HTML omitted --> points,PointStyle style,int radius,Color color)</dt>
+<dd>Draw a set of points with a given radius, style and color.</dd>
+<dt>void DrawPolygon(IEnumerable<!-- raw HTML omitted --> points,Color color,bool filled)</dt>
+<dd>Draws a filled, convex polygon from a collection of points.</dd>
+<dt>void DrawPolyline(IEnumerable<!-- raw HTML omitted --> polyline,Color color)</dt>
+<dd>Draws a single Polyline object.</dd>
+<dt>void DrawPolyline(IEnumerable<!-- raw HTML omitted --> polyline,Color color,int thickness)</dt>
+<dd>Draws a single Polyline object.</dd>
+<dt>void DrawRoundedRectangle(PointF center,float pixelWidth,float pixelHeight,float cornerRadius,Color strokeColor,float strokeWidth,Color fillColor)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawSphere(Sphere sphere,Color color)</dt>
+<dd>Draw a wireframe sphere.</dd>
+<dt>void DrawSphere(Sphere sphere,Color color,int thickness)</dt>
+<dd>Draw a wireframe sphere.</dd>
+<dt>void DrawSprite(DisplayBitmap bitmap,Point2d screenLocation,float size)</dt>
+<dd></dd>
+<dt>void DrawSprite(DisplayBitmap bitmap,Point2d screenLocation,float size,Color blendColor)</dt>
+<dd></dd>
+<dt>void DrawSprite(DisplayBitmap bitmap,Point3d worldLocation,float size,bool sizeInWorldSpace)</dt>
+<dd></dd>
+<dt>void DrawSprite(DisplayBitmap bitmap,Point3d worldLocation,float size,Color blendColor,bool sizeInWorldSpace)</dt>
+<dd></dd>
+<dt>void DrawSprites(DisplayBitmap bitmap,DisplayBitmapDrawList items,float size,bool sizeInWorldSpace)</dt>
+<dd></dd>
+<dt>void DrawSprites(DisplayBitmap bitmap,DisplayBitmapDrawList items,float size,Vector3d translation,bool sizeInWorldSpace)</dt>
+<dd></dd>
+<dt>bool DrawStereoFrameBuffer(ViewportInfo viewportLeft,ViewportInfo viewportRight,uint handleLeft,uint handleRight)</dt>
+<dd>Draws the viewport as seen from the left and the right eye viewports
+and returns the result as OpenGL texture handles.</dd>
+<dd>Returns - True if drawing succedded, False otherwise.</dd>
+<dd>since 6.8</dd>
+<dt>void DrawSubDShaded(SubD subd,DisplayMaterial material)</dt>
+<dd>Draw a shaded mesh representation of a SubD</dd>
+<dd>since 7.0</dd>
+<dt>void DrawSubDWires(SubD subd,Color color,float thickness)</dt>
+<dd>Draws all the wireframe curves of a SubD object</dd>
+<dd>since 7.0</dd>
+<dt>void DrawSurface(Surface surface,Color wireColor,int wireDensity)</dt>
+<dd>Draw wireframe display for a single surface.</dd>
+<dt>void DrawText(TextEntity text,Color color)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawText(TextEntity text,Color color,double scale)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawText(TextEntity text,Color color,Transform xform)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void DrawTorus(Torus torus,Color color)</dt>
+<dd>Draw a wireframe torus.</dd>
+<dt>void DrawTorus(Torus torus,Color color,int thickness)</dt>
+<dd>Draw a wireframe torus.</dd>
+<dt>void DrawZebraPreview(Brep brep,Color color)</dt>
+<dd>Draws a shaded Brep with Zebra stripe preview.</dd>
+<dd>since 6.16</dd>
+<dt>void EnableClippingPlanes(bool enable)</dt>
+<dd>Enable or disable the Clipping Plane logic of the engine.</dd>
+<dt>void EnableColorWriting(bool enable)</dt>
+<dd>Enable or disable the ColorWriting behaviour of the engine.</dd>
+<dt>void EnableDepthTesting(bool enable)</dt>
+<dd>Enable or disable the DepthTesting behaviour of the engine. 
+When DepthTesting is disabled, objects in front will no 
+longer occlude objects behind them.</dd>
+<dt>void EnableDepthWriting(bool enable)</dt>
+<dd>Enable or disable the DepthWriting behaviour of the engine. 
+When DepthWriting is disabled, drawn geometry does not affect the Z-Buffer.</dd>
+<dt>void EnableLighting(bool enable)</dt>
+<dd>Enable or disable the Lighting logic of the engine.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/light/">Light</a>[] GetLights()</dt>
+<dd>Get lights that this pipeline is current using</dd>
+<dd>since 6.3</dd>
+<dt>float[] GetOpenGLCameraToClip()</dt>
+<dd>Get an array of 16 floats that represents the &ldquo;camera&rdquo; to &ldquo;clip&rdquo; coordinate
+transformation in OpenGL&rsquo;s right handed coordinate system</dd>
+<dd>since 6.0</dd>
+<dt>float[] GetOpenGLWorldToCamera(bool includeModelTransform)</dt>
+<dd>Get an array of 16 floats that represents the &ldquo;world&rdquo; to &ldquo;camera&rdquo; coordinate
+transformation in OpenGL&rsquo;s right handed coordinate system</dd>
+<dd>since 6.0</dd>
+<dt>float[] GetOpenGLWorldToClip(bool includeModelTransform)</dt>
+<dd>Get an array of 16 floats that represents the &ldquo;world&rdquo; to &ldquo;clip&rdquo; coordinate
+transformation in OpenGL&rsquo;s right handed coordinate system</dd>
+<dd>since 6.0</dd>
+<dt>bool InterruptDrawing()</dt>
+<dd>Tests to see if the pipeline should stop drawing more geometry and just show what it has so far. 
+If a drawing operation is taking a long time, this function will return True and tell Rhino it should just 
+finish up and show the frame buffer. This is used in dynamic drawing operations.</dd>
+<dd>Returns - True if the pipeline should stop attempting to draw more geometry and just show the frame buffer.</dd>
+<dt>bool IsActive(RhinoObject rhinoObject)</dt>
+<dd>Determines if an object can be visible in this viewport based on it&rsquo;s object type and display attributes. 
+This test does not check for visibility based on location of the object. 
+NOTE: Use CRhinoDisplayPipeline::IsVisible() to perform &ldquo;visibility&rdquo; 
+tests based on location (is some part of the object in the view frustum). 
+Use CRhinoDisplayPipeline::IsActive() to perform &ldquo;visibility&rdquo; 
+tests based on object type.</dd>
+<dd>Returns - True if this object can be drawn in the pipeline&rsquo;s viewport based on it&rsquo;s object type and display attributes.</dd>
+<dt>bool IsVisible(BoundingBox bbox)</dt>
+<dd>Test a given box for visibility inside the view frustum under the current 
+viewport and model transformation settings.</dd>
+<dd>Returns - True if at least some portion of the box is visible, False if not.</dd>
+<dt>bool IsVisible(Point3d worldCoordinate)</dt>
+<dd>Test a given 3d world coordinate point for visibility inside the view 
+frustum under the current viewport and model transformation settings.</dd>
+<dd>Returns - True if the point is visible, False if it is not.</dd>
+<dt>bool IsVisible(RhinoObject rhinoObject)</dt>
+<dd>Test a given object for visibility inside the view frustum under the current viewport and model 
+transformation settings. This function calls a virtual IsVisibleFinal function that 
+subclassed pipelines can add extra tests to. In the base class, this test only tests 
+visibility based on the objects world coordinates location and does not pay attention 
+to the object&rsquo;s attributes.
+<p>NOTE: Use CRhinoDisplayPipeline::IsVisible() to perform &ldquo;visibility&rdquo; 
+tests based on location (is some part of the object in the view frustum). 
+Use CRhinoDisplayPipeline::IsActive() to perform &ldquo;visibility&rdquo; 
+tests based on object type.</p>
+</dd>
+<dd>Returns - True if the object is visible, False if not.</dd>
+<dt>System.Drawing.Rectangle Measure2dText(string text,Point2d definitionPoint,bool middleJustified,double rotationRadians,int height,string fontFace)</dt>
+<dd>Determines screen rectangle that would be drawn to using the Draw2dText(..) function
+with the same parameters.</dd>
+<dd>Returns - rectangle in the viewport&rsquo;s screen coordinates on success.</dd>
+<dd>since 5.10</dd>
+<dt>bool Open()</dt>
+<dd>Opens the pipeline.</dd>
+<dd>Returns - True if the pipeline was opened, False if it was already open
+or failed to open.</dd>
+<dd>since 7.0</dd>
+<dt>void PopClipTesting()</dt>
+<dd>Pop a ClipTesting flag off the engine&rsquo;s stack.</dd>
+<dt>void PopCullFaceMode()</dt>
+<dd>Pop a FaceCull flag off the engine&rsquo;s stack.</dd>
+<dt>void PopDepthTesting()</dt>
+<dd>Pop a DepthTesting flag off the engine&rsquo;s stack.</dd>
+<dt>void PopDepthWriting()</dt>
+<dd>Pop a DepthWriting flag off the engine&rsquo;s stack.</dd>
+<dt>void PopModelTransform()</dt>
+<dd>Pop a model transformation off the engine&rsquo;s model transform stack.</dd>
+<dt>void PushClipTesting(bool enable)</dt>
+<dd>Push a ClipTesting flag on the engine&rsquo;s stack.</dd>
+<dt>void PushCullFaceMode(CullFaceMode mode)</dt>
+<dd>Push a FaceCull flag on the engine&rsquo;s stack.</dd>
+<dt>void PushDepthTesting(bool enable)</dt>
+<dd>Push a DepthTesting flag on the engine&rsquo;s stack.</dd>
+<dt>void PushDepthWriting(bool enable)</dt>
+<dd>Push a DepthWriting flag on the engine&rsquo;s stack.</dd>
+<dt>void PushModelTransform(Transform xform)</dt>
+<dd>Push a model transformation on the engine&rsquo;s model transform stack.</dd>
+<dt>void RemoveClippingPlane(int index)</dt>
+<dd>Remove a clipping plane from the pipeline for this frame</dd>
+<dd>since 6.3</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>DisplayPipeline</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

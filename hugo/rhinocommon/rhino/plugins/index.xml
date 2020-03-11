@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.PlugIns on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/plugins/</link>
+    <description>Recent content in Rhino.PlugIns on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FileTypeList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/filetypelist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/filetypelist/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class FileTypeListConstructors  FileTypeList()  FileTypeList(string description,string extension)  since 6.0 FileTypeList(string description,string extension,bool showOptionsButtonInFileDialog)  since 6.0  Methods  int AddFileType(string description,IEnumerableextensions)  int AddFileType(string description,IEnumerableextensions,bool showOptionsButtonInFileDialog)  since 6.0 int AddFileType(string description,string extension)  int AddFileType(string description,string extension,bool showOptionsButtonInFileDialog)  since 6.0 int AddFileType(string description,string extension1,string extension2)  int AddFileType(string description,string extension1,string extension2,bool showOptionsButtonInFileDialog)  since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>PlugInInfo</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/plugininfo/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/plugininfo/</guid>
+      <description>Namespace: Rhino.PlugIns
+Contains detailed information about a Rhino plug-in.
+public class PlugInInfoProperties  string Address Returns the address of the organization or company that created the plug-in. since 6.0 string[] CommandNames Returns a plug-in&amp;rsquo;s English command names. since 6.0 string Country Returns the country of the organization or company that created the plug-in. since 6.0 string Description Returns the plug-in&amp;rsquo;s description. since 6.0 string Email Returns the email address of the organization or company that created the plug-in.</description>
+    </item>
+    
+    <item>
+      <title>CustomRenderSaveFileTypes</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/customrendersavefiletypes/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/customrendersavefiletypes/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class CustomRenderSaveFileTypesMethods  void RegisterFileType(IEnumerableextensions,string description,SaveFileHandler saveFileHandler) Call this method to register a custom file save type with the render output window save dialog. since 5.11  </description>
+    </item>
+    
+    <item>
+      <title>DigitizerPlugIn</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/digitizerplugin/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/digitizerplugin/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class DigitizerPlugIn : PlugInMethods  void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey) If the digitizer is enabled, call this function to send a point to Rhino. Call this function as much as you like. The digitizers that Rhino currently supports send a point every 15 milliseconds or so. This function should be called when users press or release any digitizer button. since 6.0 void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey) If the digitizer is enabled, call this function to send a point and direction to Rhino.</description>
+    </item>
+    
+    <item>
+      <title>LicenseData</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/licensedata/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/licensedata/</guid>
+      <description>Namespace: Rhino.PlugIns
+Zoo plugin license data.
+public class LicenseDataConstructors  LicenseData() Public constructor. LicenseData(string productLicense,string serialNumber,string licenseTitle) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate) Public constructor since (unknown) LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon) Public constructor since (unknown) LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon,bool requiresOnlineValidation,bool isUpgradeFromPreviousVersion) Public constructor since (unknown)  Properties  LicenseBuildType BuildType The build of the product that this license work with.</description>
+    </item>
+    
+    <item>
+      <title>LicenseIdAttribute</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/licenseidattribute/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/licenseidattribute/</guid>
+      <description>Namespace: Rhino.PlugIns
+[AttributeUsage(AttributeTargets.Assembly)]public class LicenseIdAttribute : AttributeConstructors  LicenseIdAttribute(string value)  since 6.0  Properties  string Value  since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>LicenseLease</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/licenselease/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/licenselease/</guid>
+      <description>Namespace: Rhino.PlugIns
+LicenseLease represents a lease returned from the Cloud Zoo
+public class LicenseLeaseConstructors  LicenseLease(IntPtr unmanagedPointer)  since 6.0 LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp)  since 6.0 LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp,DateTime renewable_until)  since 6.4  Properties  DateTime Expiration The date when this lease will expire since 6.0 string GroupId ID of Rhino Accounts group that this lease came from since 6.</description>
+    </item>
+    
+    <item>
+      <title>LicenseLeaseChangedEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/licenseleasechangedeventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/licenseleasechangedeventargs/</guid>
+      <description>Namespace: Rhino.PlugIns
+Arguments for OnLeaseChangedDelegate
+public class LicenseLeaseChangedEventArgsConstructors  LicenseLeaseChangedEventArgs(LicenseLease lease)  since 6.0  Properties  LicenseLease Lease The lease returned by Rhino Accounts server since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>LicenseStatus</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/licensestatus/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/licensestatus/</guid>
+      <description>Namespace: Rhino.PlugIns
+LicenseStatus class.
+public class LicenseStatusConstructors  LicenseStatus() Public constructor.  Properties  LicenseBuildType BuildType The build contentType of the product, where: 100 = A release build, either commercical, education, nfr, etc. 200 = A evaluation build 300 = A beta build, such as a wip. DateTime? CheckOutExpirationDate The date and time the checked out license will expire. Note, this is only set if m_license_type = Standalone or CloudZoo and if &amp;ldquo;limited license checkout&amp;rdquo; was enabled on the Zoo server in the case of Standalone.</description>
+    </item>
+    
+    <item>
+      <title>LicenseUtils</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/licenseutils/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/licenseutils/</guid>
+      <description>Namespace: Rhino.PlugIns
+License Manager Utilities.
+public class LicenseUtilsMethods  static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities) This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense is used by Rhino C++ plug-ins. since 6.0 static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  since 6.0 static bool CheckInLicense(Guid productId) Checks in a previously checked out license to the Zoo server from which it was checked out.</description>
+    </item>
+    
+    <item>
+      <title>PlugIn</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/plugin/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/plugin/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class PlugIn SettingsSaved This event is raised when an instance of Rhino has modified the external settings file associated with this plug-in&amp;rsquo;s property. since 6.0  Properties  static bool AskOnLoadProtection If true, Rhino will display a warning dialog when load-protected plug-ins are attempting to load. If false, load-protected plug-ins will silently not load. since 6.0 static int InstalledPlugInCount Returns the number of installed Rhino plug-ins. Assembly Assembly Source assembly for this plug-in.</description>
+    </item>
+    
+    <item>
+      <title>PlugInDescriptionAttribute</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/plugindescriptionattribute/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/plugindescriptionattribute/</guid>
+      <description>Namespace: Rhino.PlugIns
+[AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]public class PlugInDescriptionAttribute : AttributeConstructors  PlugInDescriptionAttribute(DescriptionType descriptionType,string value)   Properties  DescriptionType DescriptionType  string Value   </description>
+    </item>
+    
+    <item>
+      <title>PreviewNotification</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/previewnotification/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/previewnotification/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class PreviewNotificationMethods  void NotifyIntermediateUpdate(RenderWindow rw)  since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>RenderPlugIn</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/plugins/renderplugin/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/plugins/renderplugin/</guid>
+      <description>Namespace: Rhino.PlugIns
+public class RenderPlugIn : PlugInProperties  bool PerferBasicContent Set to True if you would like Rhino to quickly create a basic render content in response to &amp;lsquo;Create New&amp;rsquo; commands. Set to False if you would prefer Rhino to display the render content chooser dialog. since 5.12  Methods  static bool CurrentRendererSupportsFeature(RenderFeature feature)  since 6.1 bool EnableAssignMaterialButton() Called to enable/disable the &amp;ldquo;Material&amp;rdquo; button located on the &amp;ldquo;Material&amp;rdquo; tab in the Properties and Layer dialog boxes.</description>
+    </item>
+    
+  </channel>
+</rss>

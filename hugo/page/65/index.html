@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/collections/transformobjectlist/">
-        <h3>TransformObjectList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/constructionplane/">
+        <h3>ConstructionPlane</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/collections/transformobjectlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/constructionplane/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Collections
-Used by the TransformCommand and GetTransform classes.
-public class TransformObjectListConstructors TransformObjectList()  (summary) (since) 5.0  Properties int Count  (summary) Number of elements in this list (since) 5.10  bool DisplayFeedbackEnabled  (summary) (since) 5.0  int GripCount  (summary) Number of elements in grip list (since) 6.0  int GripOwnerCount  (summary) Number of elements in grip owner list (since) 6.0  Methods void Add(ObjRef objref)  (summary) Add an ObjRef to this list.
+    Namespace: Rhino.DocObjects
+Represents a contruction plane inside the document. Use Rhino.DocObjects.Tables.NamedConstructionPlaneTable methods and indexers to add and access a .
+public class ConstructionPlaneConstructors  ConstructionPlane() Initializes a new instance of .  Properties  bool DepthBuffered Gets or sets whether the grid is drawn on top of geometry. false=grid is always drawn behind 3d geometrytrue=grid is drawn at its depth as a 3d plane and grid lines obscure things behind the grid.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/notifications/trulyobservableorderedset/">
-        <h3>TrulyObservableOrderedSet</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/dracocompression/">
+        <h3>DracoCompression</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/notifications/trulyobservableorderedset/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/dracocompression/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.Notifications
-An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.
-public class TrulyObservableOrderedSetCollectionChanged  (summary) Triggered whenever the set changes or when one of its elements has its PropertyChanged event triggered. (since) (unknown)  Constructors TrulyObservableOrderedSet()  (summary) Creates an empty instance. (since) (unknown)  TrulyObservableOrderedSet(IEnumerableitems)  (summary) Creates an instance with the given items. (since) (unknown)  Properties int Count  (summary) Returns the total number of items in the set.
+    Namespace: Rhino.FileIO
+Google draco compression for mesh and point cloud data
+public class DracoCompression : IDisposableMethods  static DracoCompression Compress(Mesh mesh) Compress a mesh using default compression options. Returns - instance of class representing the compressed data since 7.0 static DracoCompression Compress(Mesh mesh,DracoCompressionOptions options) Compress a mesh Returns - instance of class representing the compressed data since 7.0 static Rhino.Geometry.GeometryBase DecompressBase64String(string encoded) Decompress base64 encoded version of draco data into either a mesh or point cloud Returns - Mesh or point cloud on success.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/twistspacemorph/">
-        <h3>TwistSpaceMorph</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/dracocompressionoptions/">
+        <h3>DracoCompressionOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/twistspacemorph/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/dracocompressionoptions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Morphs
-Deforms objects by rotating them around an axis.
-public class TwistSpaceMorphConstructors TwistSpaceMorph()  (summary) Constructs a twist space morph. (since) 5.1  Properties bool InfiniteTwist  (summary) If true, the deformation is constant throughout the object, even if the axis is shorter than the object. If false, the deformation takes place only the length of the axis. (since) 5.1  double TwistAngleRadians  (summary) Twist angle in radians.
+    Namespace: Rhino.FileIO
+Options for applying drac compression
+public class DracoCompressionOptionsConstructors  DracoCompressionOptions() Initializes to default options since 7.0  Properties  int CompressionLevel Compression level. 0 if fastest, but least compression. 10 is slowest, but best compression since 7.0 int NormalQuantizationBits Sets the quantization compression options for normal values. The values will be quantized in a box defined by the maximum extent of the values. I.e., the actual precision of this option depends on the scale of the attribute values.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/twocolorrendertexture/">
-        <h3>TwoColorRenderTexture</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/earthanchorpoint/">
+        <h3>EarthAnchorPoint</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/twocolorrendertexture/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/earthanchorpoint/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class TwoColorRenderTextureProperties Display.Color4f Color1  (summary) (since) 5.1  Display.Color4f Color2  (summary) (since) 5.1  bool SuperSample  (summary) (since) 5.1  bool SwapColors  (summary) (since) 5.1  double Texture1Amount  (summary) (since) 5.1  bool Texture1On  (summary) (since) 5.1  double Texture2Amount  (summary) (since) 5.1  bool Texture2On  (summary) (since) 5.1  
+    Namespace: Rhino.DocObjects
+Contains information about the model&rsquo;s position in latitude, longitude, and elevation for GIS mapping applications.
+public class EarthAnchorPoint : IDisposableConstructors  EarthAnchorPoint() Initializes a new instance of the class.  Properties  string Description Gets or sets the long form of the identifying information about this location. double EarthBasepointElevation Gets or sets the point elevation on earth, in meters. BasepointZero EarthBasepointElevationZero Gets or sets a value indicating the zero level convention relating to a location on Earth.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/undorecord/">
-        <h3>UndoRecord</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnotes/">
+        <h3>File3dmNotes</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/undorecord/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmnotes/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls
-Undo Record
-public class UndoRecordConstructors UndoRecord(string description,IRdkViewModel viewModel)  (summary) UndoRecord Constructor (since) 6.0  Methods void Dispose()  (summary) UndoRecord Dispose (since) 6.0 (returns) void This is some return comment  
+    Namespace: Rhino.FileIO
+Represents the notes information stored in a 3dm file.
+public class File3dmNotesConstructors  File3dmNotes() Creates empty default notes  Properties  bool IsHtml Gets or sets the text format. If the format is HTML, true; False otherwise. bool IsVisible Gets or sets the notes visibility. If the notes are visible, true; False otherwise. string Notes Gets or sets the text content of the notes. Rectangle WindowRectangle Gets or sets the position of the Notes when they were saved.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/undoredo/">
-        <h3>UndoRedo</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmsettings/">
+        <h3>File3dmSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/undoredo/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmsettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-This class contains the event for UndoRedoChanged that is fired from RDK .
-public class UndoRedoEvents static UndoRedoChanged  (summary) Called after undo or redo has occurred for document settings. (since) 6.0  static UndoRedoEndedChanged  (summary) This event is raised when undo/redo ends in rdk. (since) 7.0  
+    Namespace: Rhino.FileIO
+General settings in a 3dm file.
+public class File3dmSettingsProperties  double ModelAbsoluteTolerance Gets or sets the model space absolute tolerance. double ModelAngleToleranceDegrees Gets or sets the model space angle tolerance. double ModelAngleToleranceRadians Gets or sets the model space angle tolerance. Point3d ModelBasepoint Gets or sets the model basepoint that is used when the file is read as an instance definition. This point is mapped to the origin in the instance definition.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/commands/undoredoeventargs/">
-        <h3>UndoRedoEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobj/">
+        <h3>FileObj</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/commands/undoredoeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileobj/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Commands
-public class UndoRedoEventArgsProperties Guid CommandId  (summary) (since) 5.0  bool IsBeginRecording  (summary) (since) 5.0  bool IsBeginRedo  (summary) (since) 5.0  bool IsBeginUndo  (summary) (since) 5.0  bool IsEndRecording  (summary) (since) 5.0  bool IsEndRedo  (summary) (since) 5.0  bool IsEndUndo  (summary) (since) 5.0  bool IsPurgeRecord  (summary) (since) 5.0  uint UndoSerialNumber  (summary) (since) 5.0  
+    Namespace: Rhino.FileIO
+Support for obj file format
+public class FileObjMethods  static bool Read(String filename,RhinoDoc doc,FileObjReadOptions options)  since 6.0 static WriteFileResult Write(StreamWriter stream,RhinoDoc doc,FileObjWriteOptions options) Write an obj stream based on the contents of a RhinoDoc since 7.0 static WriteFileResult Write(String filename,Mesh[] meshes,FileObjWriteOptions options) Write an obj file with an array of meshes since 7.0 static WriteFileResult Write(String filename,RhinoDoc doc,FileObjWriteOptions options) Write an obj file based on the contents of a RhinoDoc since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/unknownuserdata/">
-        <h3>UnknownUserData</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobjreadoptions/">
+        <h3>FileObjReadOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/unknownuserdata/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileobjreadoptions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-Represents user data with unknown origin.
-public class UnknownUserDataConstructors UnknownUserData(IntPtr pointerNativeUserData)  (summary) Constructs a new unknown data entity. (since) 5.0  
+    Namespace: Rhino.FileIO
+Options used when reading an obj file.
+public class FileObjReadOptionsConstructors  FileObjReadOptions(FileReadOptions readOptions)  since 6.0  Properties  bool DisplayColorFromObjMaterial Determines whether textures are read from the .mtl file, if it exists. since 6.5 bool IgnoreTextures Determines whether textures are read from the .mtl file, if it exists. since 6.0 bool MapYtoZ Setting to transform OBJ&rsquo;s Y axis to Rhino&rsquo;s Z axis since 6.0 bool MorphTargetOnly TODO since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/unroller/">
-        <h3>Unroller</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/fileobjwriteoptions/">
+        <h3>FileObjWriteOptions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/unroller/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/fileobjwriteoptions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents the operation of unrolling a single surface.
-public class UnrollerConstructors Unroller(Brep brep)  (summary) Initializes a new instance of the class with a brep. (since) 5.0  Unroller(Surface surface)  (summary) Initializes a new instance of the class with surface. (since) 5.0  Properties double AbsoluteTolerance  (summary) Gets or sets the absolute tolerance for the unrolling operation. Absolute tolerance is used in the evaluation of new entities, such as intersections, reprojections and splits.
+    Namespace: Rhino.FileIO
+public class FileObjWriteOptionsConstructors  FileObjWriteOptions(FileWriteOptions writeOptions)  since 6.0  Properties  string ActualFilePathOnMac  since 6.3 bool CreateNgons Setting to enable/diable the creation of ngons for the output since 6.0 bool CullUnnecessaryVertexesInNgons Setting to determine whether interior colinear vertexes are part of the ngon. since 6.0 AsciiEol EolType  since 6.0 ObjGroupNames ExportGroupNameLayerNames Setting to determine whether object, group or layer names will become &ldquo;g&quot;s in the OBJ output file since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/userdata/">
-        <h3>UserData</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/filepdf/">
+        <h3>FilePdf</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/userdata/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/filepdf/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-Provides a base class for custom classes of information which may be attached to geometry or attribute classes.
-public class UserDataProperties string Description  (summary) Descriptive name of the user data. (since) 5.0  bool ShouldWrite  (summary) If you want to save this user data in a 3dm file, override ShouldWrite and return true. If you do support serialization, you must also override the Read and Write functions.
+    Namespace: Rhino.FileIO
+Support for PDF file format
+public class FilePdf static PreWrite Fired immediately before a Pdf is written since 6.0  Methods  static FilePdf Create() Create a new instance of a FilePdf class since 6.0 int AddPage(int widthInDots,int heightInDots,int dotsPerInch) Add a blank page to this document Returns - page number on success since 6.5 int AddPage(ViewCaptureSettings settings) Add a new page to this document and draw a viewport into it based on provided ViewCaptureSettings Returns - page number on success since 6.
   </div>
   
 

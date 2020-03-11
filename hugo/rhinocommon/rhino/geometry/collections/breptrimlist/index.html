@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BrepTrimList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to all the Trims in a Brep object
+public class BrepTrimList : IEnumerable&amp;lt;BrepTrim&amp;gt;, Rhino.Collections.IRhinoTable&amp;lt;BrepTrim&amp;gt;Properties  int Count Gets the number of brep trims. since 5.1  Methods  BrepTrim Add(bool rev3d,BrepEdge edge,int curve2dIndex) Add a new trim that will be part of an inner, outer, or slit loop to the brep Returns - new trim since 5.4 BrepTrim Add(bool rev3d,BrepLoop loop,int curve2dIndex) Add a new trim that will be part of an inner, outer, or slit loop to the brep Returns - new trim since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BrepTrimList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to all the Trims in a Brep object</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BrepTrimList</span> : IEnumerable&lt;BrepTrim&gt;, Rhino.Collections.IRhinoTable&lt;BrepTrim&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Gets the number of brep trims.</dd>
+<dd>since 5.1</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> Add(bool rev3d,BrepEdge edge,int curve2dIndex)</dt>
+<dd>Add a new trim that will be part of an inner, outer, or slit loop
+to the brep</dd>
+<dd>Returns - new trim</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> Add(bool rev3d,BrepLoop loop,int curve2dIndex)</dt>
+<dd>Add a new trim that will be part of an inner, outer, or slit loop
+to the brep</dd>
+<dd>Returns - new trim</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> Add(BrepEdge edge,bool rev3d,BrepLoop loop,int curve2dIndex)</dt>
+<dd>Add a new trim that will be part of an inner, outer, or slit loop
+to the brep.</dd>
+<dd>Returns - new trim</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> Add(int curve2dIndex)</dt>
+<dd>Add a new trim that will be part of an inner, outer, or slit loop
+to the brep.</dd>
+<dd>Returns - New Trim</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> AddCurveOnFace(BrepFace face,BrepEdge edge,bool rev3d,int curve2dIndex)</dt>
+<dd>Add a new curve on face to the brep</dd>
+<dd>Returns - new trim that represents the curve on surface</dd>
+<dd>since 5.4</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breptrim/">BrepTrim</a> AddSingularTrim(BrepVertex vertex,BrepLoop loop,IsoStatus iso,int curve2dIndex)</dt>
+<dd>Add a new singular trim to the brep.</dd>
+<dd>Returns - new trim</dd>
+<dd>since 5.4</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that visits all edges.</dd>
+<dd>Returns - The enumerator.</dd>
+<dd>since 5.1</dd>
+<dt>bool MatchEnds()</dt>
+<dd>Matches the endpoints of all trims in the Brep.</dd>
+<dd>Returns - True if any trim&rsquo;s 2d curve is changed, False otherwise.</dd>
+<dd>since 6.19</dd>
+<dt>bool MatchEnds(BrepLoop loop)</dt>
+<dd>Match the endpoints of all trims in a loop.</dd>
+<dd>Returns - True if any trim&rsquo;s 2d curve is changed, False otherwise.</dd>
+<dd>since 6.19</dd>
+<dt>bool MatchEnds(BrepTrim trim0,BrepTrim trim1)</dt>
+<dd>Match the end of a trim to the start of the next trim.</dd>
+<dd>Returns - True if either trim&rsquo;s 2d curve is changed, False otherwise.</dd>
+<dd>since 6.19</dd>
+<dt>bool MatchEnds(int trimIndex)</dt>
+<dd>Match the endpoints of a trim to the next and previous trim.</dd>
+<dd>Returns - True if any trim&rsquo;s 2d curve is changed, False otherwise.</dd>
+<dd>since 6.19</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BrepTrimList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

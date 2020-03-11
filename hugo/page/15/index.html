@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,127 +57,126 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displayconduit/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/commands/customundoeventargs/">
+        <h3>CustomUndoEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/commands/customundoeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Commands
+Argument package that is passed to a custom undo delegate
+public class CustomUndoEventArgs : EventArgsProperties  string ActionDescription  Guid CommandId  bool CreatedByRedo  RhinoDoc Document  object Tag  uint UndoSerialNumber   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/detailviewobject/">
+        <h3>DetailViewObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/detailviewobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+A detail view object is a nested Rhino viewport placed on a page view with a 2D closed curve boundary. It can be any type of modeling view.
+public class DetailViewObject : RhinoObjectProperties  string DescriptiveTitle Detail objects have two strings that can be used to describe the detail: 1. The name string that is part of the object&rsquo;s attributes 2. The viewport projection title that is part of the viewport This function combines these two strings to create a single &ldquo;description&rdquo; string in the form of attribute_name - projection_title.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/digitizerplugin/">
+        <h3>DigitizerPlugIn</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/digitizerplugin/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.PlugIns
+public class DigitizerPlugIn : PlugInMethods  void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey) If the digitizer is enabled, call this function to send a point to Rhino. Call this function as much as you like. The digitizers that Rhino currently supports send a point every 15 milliseconds or so. This function should be called when users press or release any digitizer button. since 6.0 void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey) If the digitizer is enabled, call this function to send a point and direction to Rhino.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaybitmap/">
+        <h3>DisplayBitmap</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displaybitmap/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Display
+A bitmap resource that can be used by the display pipeline (currently only in OpenGL display). Reuse DisplayBitmaps for drawing if possible; it is much more expensive to construct new DisplayBitmaps than it is to reuse existing DisplayBitmaps.
+public class DisplayBitmap : IDisposableConstructors  DisplayBitmap(Bitmap bitmap) Constructs a DisplayBitmap from an existing bitmap.  Methods  static DisplayBitmap Load(string path) Load a DisplayBitmap from and image file on disk.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaybitmapdrawlist/">
+        <h3>DisplayBitmapDrawList</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displaybitmapdrawlist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Display
+public class DisplayBitmapDrawListConstructors  DisplayBitmapDrawList()   Properties  BoundingBox BoundingBox  int MaximumCachedSortLists Maximum number of cached sort order index lists stored on this class. Default is 10, but depending on the number of points in this list you may get better performance by setting this value to a certain percentage of the point count. double SortAngleTolerance Angle in radians used to determine if an index list is &ldquo;parallel enough&rdquo; to a viewports camera angle.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displayconduit/">
         <h3>DisplayConduit</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/displayconduit/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displayconduit/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Display
-public class DisplayConduitProperties bool Enabled  (summary) (since) 5.0  DocObjects.ActiveSpace SpaceFilter  (summary) If you want this conduit to only work in a specific space (model or page), then set this filter to that specific space. The default is None meaning no filter is applied (since) 6.0  
+public class DisplayConduitProperties  bool Enabled  ActiveSpace SpaceFilter If you want this conduit to only work in a specific space (model or page), then set this filter to that specific space. The default is None meaning no filter is applied since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displayengine/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displayengine/">
         <h3>DisplayEngine</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/displayengine/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displayengine/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Display
-public class DisplayEngineMethods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 6.0 (returns) void This is some return comment  
+public class DisplayEngine : IDisposableMethods  void Dispose() Actively reclaims unmanaged resources that this instance uses. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaymaterial/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaymaterial/">
         <h3>DisplayMaterial</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaymaterial/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displaymaterial/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Display
-public class DisplayMaterialConstructors DisplayMaterial()  (summary) Constructs a default material. (since) 5.0  DisplayMaterial(Color diffuse)  (summary) Constructs a default material with a specific diffuse color. (since) 5.0  DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency)  (summary) Constructs a material with custom properties. (since) 5.0  DisplayMaterial(Color diffuse,double transparency)  (summary) Constructs a default material with a specific diffuse color and transparency. (since) 5.0  DisplayMaterial(DisplayMaterial other)  (summary) Duplicate another material.
+public class DisplayMaterial : IDisposableConstructors  DisplayMaterial() Constructs a default material. DisplayMaterial(Color diffuse) Constructs a default material with a specific diffuse color. DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency) Constructs a material with custom properties. DisplayMaterial(Color diffuse,double transparency) Constructs a default material with a specific diffuse color and transparency. DisplayMaterial(DisplayMaterial other) Duplicate another material. DisplayMaterial(Material material)   Properties  Color Ambient Gets or sets the Ambient color of the Material.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaymodechangedeventargs/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaymodechangedeventargs/">
         <h3>DisplayModeChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaymodechangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displaymodechangedeventargs/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Display
-public class DisplayModeChangedEventArgsProperties Guid ChangedDisplayModeId  (summary) (since) 6.18  Guid OldDisplayModeId  (summary) (since) 6.18  RhinoDoc RhinoDoc  (summary) (since) 6.18  RhinoViewport Viewport  (summary) (since) 6.18  
+public class DisplayModeChangedEventArgs : EventArgsProperties  Guid ChangedDisplayModeId  since 6.18 Guid OldDisplayModeId  since 6.18 RhinoDoc RhinoDoc  since 6.18 RhinoViewport Viewport  since 6.18  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaymodedescription/">
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/displaymodedescription/">
         <h3>DisplayModeDescription</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaymodedescription/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/displaymodedescription/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Display
 Description of a how Rhino will display in a viewport. These are the modes that are listed under &ldquo;Advanced display&rdquo; in the options dialog.
-public class DisplayModeDescriptionProperties static Guid AmbientOcclusionId  (summary) (since) 6.0  static Guid GhostedId  (summary) (since) 6.0  static Guid PenId  (summary) (since) 6.0  static Guid RaytracedId  (summary) (since) 6.0  static Guid RenderedId  (summary) (since) 6.0  static Guid RenderedShadowsId  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaypipeline/">
-        <h3>DisplayPipeline</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaypipeline/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-The display pipeline calls events during specific phases of drawing During the drawing of a single frame the events are called in the following order.
-[Begin Drawing of a Frame] CalculateBoundingBoxCalculateClippingPanesSetupFrustumSetupLightingInitializeFrameBufferDrawBackgroundIf this is a layout and detail objects exist the channels are called in the same order for each detail object (drawn as a nested viewport)PreDrawObjectsFor Each Visible Non Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostDrawObjects - depth writing/testing onDrawForeGround - depth writing/testing offFor Each Visible Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostProcessFrameBuffer (If a delegate exists that requires this)DrawOverlay (if Rhino is in a feedback mode) [End of Drawing of a Frame]
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/displaypipelineattributes/">
-        <h3>DisplayPipelineAttributes</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/displaypipelineattributes/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-Represents display pipeline settings, such as &ldquo;show transparency&rdquo; and &ldquo;show grips&rdquo;.
-public class DisplayPipelineAttributesProperties Color AmbientLightingColor  (summary) (since) 6.3  BoundingBoxDisplayMode BoundingBoxMode  (summary) (since) 6.1  bool CastShadows  (summary) Cast shadows. (since) 6.4  ContextsForDraw ContextForDraw  (summary) (since) 6.5  System.Drawing.Color CurveColor  (summary) Color used for drawing curves (since) 5.1  int CurveThickness  (summary) Pixel thickness for curves (since) 5.1  bool DisableConduits  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/">
-        <h3>DisplayPipelineSettingsChangedEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-public class DisplayPipelineSettingsChangedEventArgsConstructors DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)  (summary) (since) 6.0  Properties DisplayPipelineAttributes Attributes  (summary) (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/displayrendersettings/">
-        <h3>DisplayRenderSettings</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/displayrendersettings/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render.ChangeQueue
-ChangeQueue DisplayRenderSettings
-public class DisplayRenderSettingsProperties bool CullBackFaces  (summary) True if backfaces should be culled (since) 6.0  bool ForceFlatShading  (summary) True if flat shading is forced (since) 6.0  bool SceneLightingOn  (summary) True if scene lighting is enabled (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/dithering/">
-        <h3>Dithering</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/dithering/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-This is the interface to linear workflow settings.
-public class DitheringConstructors Dithering()  (summary) Create an utility object not associated with any document (since) 6.0  Dithering(Dithering d)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Properties Methods Method  (summary) (since) 6.0  Methods void CopyFrom(FreeFloatingBase src)  (summary) (since) 6.0 (returns) void This is some return comment  
+[Serializable]public class DisplayModeDescription : IDisposable, ISerializableProperties  static Guid AmbientOcclusionId  since 6.0 static Guid GhostedId  since 6.0 static Guid PenId  since 6.0 static Guid RaytracedId  since 6.0 static Guid RenderedId  since 6.0 static Guid RenderedShadowsId  since 6.
   </div>
   
 

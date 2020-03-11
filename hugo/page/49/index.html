@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,131 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontenteventargs/">
-        <h3>RenderContentEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/clippingplanesurface/">
+        <h3>ClippingPlaneSurface</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontenteventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/clippingplanesurface/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderContentEventArgsProperties RenderContent Content  (summary) (since) 5.7  RhinoDoc Document  (summary) (since) 6.0  RenderEnvironment.Usage EnvironmentUsage   (summary) Meaningful for CurrentEnvironmentChanged event. Will be one of Background, ReflectionAndRefraction or Skylighting.
-Since 6.11
-  (since) 6.11
-  RenderContentChangeReason Reason  (summary) Not when used in CurrentEnvironmentChanged (defaults to None). (since) 6.0  
+    Namespace: Rhino.Geometry
+Represents a planar surface that is used as clipping plane in viewports. A clipping plane object maintains a list of viewports that it clips against.
+[Serializable]public class ClippingPlaneSurface : PlaneSurfaceProperties  Plane Plane Gets or sets the clipping plane.  Methods  bool AddClipViewportId(Guid viewportId) Adds a viewport id to the list of viewports that this clipping plane clips. Returns - True if the viewport was added, False if the viewport is already in the list.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/">
-        <h3>RenderContentFieldChangedEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorgradient/">
+        <h3>ColorGradient</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorgradient/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderContentFieldChangedEventArgsProperties string FieldName  (summary) (since) 5.11  
+    Namespace: Rhino.Display
+public class ColorGradientProperties  Point3d EndPoint End point of gradient since 7.0 GradientType GradientType Gradient fill type associated with this hatch since 7.0 double Repeat Repeat factor for gradient. Factors greater than 1 define a reflected repeat factor while values less than -1 define a wrapped repeat factor. since 7.0 Point3d StartPoint Start point of gradient since 7.0  Methods  ColorStop[] GetColorStops() Get sorted list of colors / positions that a gradient is defined over since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontentkindlist/">
-        <h3>RenderContentKindList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/colorstop/">
+        <h3>ColorStop</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontentkindlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/colorstop/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderContentKindListConstructors RenderContentKindList()  (summary) (since) 6.7  RenderContentKindList(IntPtr pRdkRenderContentKindList)  (summary) (since) 6.1  RenderContentKindList(RenderContentKindList kind_list)  (summary) (since) 6.7  Properties IntPtr CppPointer  (summary) (since) 6.1  Methods void Add(RenderContentKind kind)  (summary) (since) 6.7 (returns) void This is some return comment  bool Contains(RenderContentKind kind)  (summary) (since) 6.3 (returns) bool This is some return comment  int Count()  (summary) (since) 6.
+    Namespace: Rhino.Display
+Combination of a color and position. Used in defining gradient fills
+Constructors  ColorStop(Color color,double t) Create color stop from a color and position since 7.0  Properties  Color Color  since 7.0 double Position Parameter that Color is defined at since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontentmanager/">
-        <h3>RenderContentManager</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/commoncomponenttable/">
+        <h3>CommonComponentTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontentmanager/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/commoncomponenttable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-RenderContentManager&rsquo;s RestoreRenderContents method unpacks the default render contents from the from the application and places them in the User&rsquo;s folder. Only available on Mac at the moment.
-public class RenderContentManagerProperties static string UserRenderContentPath  (summary) Get the path to: Windows: C:\Users\user\AppData\Roaming\McNeel\Rhinoceros\6.0\Localization\en-US\Render Content macOS: ~/Library/Application Support/McNeel/Rhinoceros/6.0/Render Content If a CustomLibraryPath is set, this is returned (since) 6.10  Methods static bool RestoreRenderContent()  (summary) Unpacks the default render contents from the from the application and places them in the User&rsquo;s folder.
+    Namespace: Rhino.FileIO
+Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.
+public class CommonComponentTable :ICommonComponentTable&lt;T&gt;,IList&lt;T&gt;, IReadOnlyList&lt;T&gt;Properties  ModelComponentType ComponentType Returns the actual component type of a table. since (unknown) int Count Returns the count of all items, including deleted ones. since (unknown)  Methods  void Clear() Marks all items as deleted. since (unknown) bool Delete(T item) Deletes an item. Items that are deleted are still keeping their space, but the &lsquo;IsDeleted&rsquo; flag is checked.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontentserializer/">
-        <h3>RenderContentSerializer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/commonobject/">
+        <h3>CommonObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontentserializer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/commonobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Used to import and export custom render content types such as materials, environments and textures. You must override RenderPlugIn.RenderContentSerializers() and return an array of derived RenderContentSerializer class types to add to the content browsers.
-public class RenderContentSerializerProperties bool CanRead  (summary) If True then the file type can be imported and will be included in the file open box when importing the specified render content type. (since) 5.
+    Namespace: Rhino.Runtime
+Base class for .NET classes that wrap C++ unmanaged Rhino classes.
+[Serializable]public class CommonObject : IDisposable, ISerializableProperties  static bool PerformCorruptionTesting Used to test ON_Object* pointers to see if they are a brep or mesh that is corrupt enough to crash Rhino. since 6.10 bool Disposed Indicates if this object has been disposed or the document it originally belonged to has been disposed. since 6.0 bool HasUserData Gets True if this class has any custom information attached to it through UserData.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/rendercontenttableeventargs/">
-        <h3>RenderContentTableEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/componentindex/">
+        <h3>ComponentIndex</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/rendercontenttableeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/componentindex/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino
-Passed to the , and the events.
-public class RenderContentTableEventArgsProperties RhinoDoc Document  (summary) Document the table belongs to (since) 5.7  RenderContentTableEventType EventType  (summary) Event type (since) 5.7  
+    Namespace: Rhino.Geometry
+Represents an index of an element contained in another object.
+Constructors  ComponentIndex(ComponentIndexType type,int index) Construct component index with a specific type/index combination  Properties  static ComponentIndex Unset The unset value of component index. ComponentIndexType ComponentIndexType The interpretation of Index depends on the Type value. Type m_index interpretation (0 based indices) no_type used when context makes it clear what array is being index brep_vertex Brep.m_V[] array index brep_edge Brep.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontenttype/">
-        <h3>RenderContentType</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/componentstatus/">
+        <h3>ComponentStatus</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontenttype/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/componentstatus/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Represents one of the render content types registered with Rhino.
-public class RenderContentTypeConstructors RenderContentType(Guid typeId)  (summary) (since) 6.0  Properties Guid Id  (summary) Returns the type identifier associated with this type. (since) 6.0  String InternalName  (summary) Returns the internal name identifier associated with this type. (since) 6.0  Guid PlugInId  (summary) (since) 6.0  Guid RenderEngineId  (summary) (since) 6.0  Methods static RenderContentType[] GetAllAvailableTypes()  (summary) Gets an array of all available render content types registered with Rhino.
+    Namespace: Rhino.Geometry
+Provides information about selection, highlighting, visibility, editability and integrity states of a component. This structure is immutable.
+ static != Determines if two ComponentStatus objects differ. Returns - True if they are in any way different. False otherwise. since 6.0 static + Sets flags from both component states and returns a new ComponentStatus. Returns - A new ComponentStatus. since (unknown) static == Determines if two ComponentStatus objects are equal.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercustomeventargs/">
-        <h3>RenderCustomEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/cone/">
+        <h3>Cone</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercustomeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/cone/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Used as Rhino.Render Custom Events args.
-public class RenderCustomEventArgsProperties IntPtr Argument  (summary) The pointer to the custom event args. (since) 7.0  Guid EventType  (summary) The type of the event. (since) 7.0  
+    Namespace: Rhino.Geometry
+Represents the center plane, radius and height values in a right circular cone.
+Constructors  Cone(Plane plane,double height,double radius) Initializes a new cone with a specified base plane, height and radius.  Properties  static Cone Unset Gets an invalid Cone. Point3d ApexPoint Point at tip of the cone. Vector3d Axis Unit vector axis of cone. Point3d BasePoint Center of base circle. double Height Gets or sets the height of the circular right cone.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderenvironment/">
-        <h3>RenderEnvironment</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/contenthash/">
+        <h3>ContentHash</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderenvironment/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/contenthash/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderEnvironmentProperties static RenderEnvironment CurrentEnvironment  (summary) (since) 5.1  String TextureChildSlotName  (summary) (since) 6.0  Methods static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment)  (summary) Constructs a new from a . (since) 5.3 (returns) RenderEnvironment This is some return comment  static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment,RhinoDoc doc)  (summary) (since) 6.4 (returns) RenderEnvironment This is some return comment  SimulatedEnvironment SimulateEnvironment(bool isForDataOnly)  (summary) (since) 6.0 (returns) SimulatedEnvironment This is some return comment  void SimulateEnvironment(SimulatedEnvironment simulation,bool isForDataOnly)  (summary) (since) 5.
+    Namespace: Rhino.FileIO
+Contains information that is useful to uniquly identify an object. This object is immutable.
+public class ContentHash : ICloneable, IEquatable&lt;ContentHash&gt; static != Determines if two ContentHash instances are different by value. Returns - True if they are different by value, otherwise false. since 6.0 static == Determines if two ContentHash instances are equal by value. Returns - True if they are equal by value, otherwise false. since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderenvironmenttable/">
-        <h3>RenderEnvironmentTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/corruptgeometryexception/">
+        <h3>CorruptGeometryException</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderenvironmenttable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/corruptgeometryexception/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderEnvironmentTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderEnvironment c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderEnvironment c)  (summary) (since) 6.
+    Namespace: Rhino.Runtime
+Thrown when Rhino finds a brep or mesh that will cause a crash if used for calculations.
+public class CorruptGeometryException : ExceptionProperties  CommonObject CommonObject Corrupt geometry .NET class since 6.10 IntPtr Pointer pointer to base geometry (ON_Object*) since 6.10  
   </div>
   
 

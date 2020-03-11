@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PythonScript &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime
+Represents a Python script.
+public class PythonScriptProperties  int ContextId Gets or sets a context unique identified. ActionOutput Gets or sets the Python script &amp;ldquo;print()&amp;rdquo; target. By default string output goes to the Rhino.RhinoApp.Write function. Set Output if you want to redirect the output from python to a different function while this script executes. Command ScriptContextCommand Command associated with this script. Used for localiation since 6.0 object ScriptContextDoc object set to variable held in scriptcontext.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PythonScript</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime</a></em></p>
+<p>Represents a Python script.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PythonScript</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int ContextId</dt>
+<dd>Gets or sets a context unique identified.</dd>
+<dt>Action<!-- raw HTML omitted --> Output</dt>
+<dd>Gets or sets the Python script &ldquo;print()&rdquo; target.
+By default string output goes to the Rhino.RhinoApp.Write function.
+Set Output if you want to redirect the output from python to a different function
+while this script executes.</dd>
+<dt><a href="/rhinocommon/rhino/commands/command/">Command</a> ScriptContextCommand</dt>
+<dd>Command associated with this script. Used for localiation</dd>
+<dd>since 6.0</dd>
+<dt>object ScriptContextDoc</dt>
+<dd>object set to variable held in scriptcontext.doc.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static void AddRuntimeAssembly(Assembly assembly)</dt>
+<dd>Add assembly to list of assemblies used by python</dd>
+<dd>since 7.0</dd>
+<dt>static PythonScript Create()</dt>
+<dd>Constructs a new Python script context.</dd>
+<dd>Returns - A new Python script, or None if none could be created. Rhino 4 always returns null.</dd>
+<dt>static System.Reflection.Assembly[] RuntimeAssemblies()</dt>
+<dd>Get list of assemblies used by python for library browser and
+inclusion into the runtime</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/runtime/pythoncompiledcode/">PythonCompiledCode</a> Compile(string script)</dt>
+<dd>Compiles a class in a quick-to-execute proxy.</dd>
+<dd>Returns - A Python compiled code instance.</dd>
+<dt>bool ContainsVariable(string name)</dt>
+<dd>Determines if the main scripting context has a variable with a name.</dd>
+<dd>Returns - True if the variable is present.</dd>
+<dt>object CreateTextEditorControl(string script,Action<!-- raw HTML omitted --> helpcallback)</dt>
+<dd>Creates a control where the user is able to type Python code.</dd>
+<dd>Returns - A Windows Forms control.</dd>
+<dt>object EvaluateExpression(string statements,string expression)</dt>
+<dd>Evaluates statements and an expression in the main scripting context.</dd>
+<dd>Returns - The expression result.</dd>
+<dt>bool ExecuteFile(string path)</dt>
+<dd>Executes a Python file. The file is executed in a new, <strong>main</strong> scope.</dd>
+<dd>Returns - True if the file executed. This method can throw scripting-runtime based exceptions.</dd>
+<dt>bool ExecuteFileInScope(string path)</dt>
+<dd>Executes a Python file in the calling script scope. All old variables are kept.</dd>
+<dd>Returns - True if the file executed. This method can throw scripting-runtime based exceptions.</dd>
+<dd>since 7.0</dd>
+<dt>bool ExecuteScript(string script)</dt>
+<dd>Executes a Python string.</dd>
+<dd>Returns - True if the file executed. This method can throw scripting-runtime based exceptions.</dd>
+<dt>string GetStackTraceFromException(Exception ex)</dt>
+<dd>Retrieves a meaningful representation of the call stack.</dd>
+<dd>Returns - A string that represents the Python exception.</dd>
+<dt>object GetVariable(string name)</dt>
+<dd>Gets the object associated with a variable name in the main scripting context.</dd>
+<dd>Returns - The variable object.</dd>
+<dt>System.Collections.Generic.IEnumerable<!-- raw HTML omitted --> GetVariableNames()</dt>
+<dd>Retrieves all variable names in the script.</dd>
+<dd>Returns - An enumerable set with all names of the variables.</dd>
+<dt>void RemoveVariable(string name)</dt>
+<dd>Removes a defined variable from the main scripting context.</dd>
+<dt>void SetIntellisenseVariable(string name,object value)</dt>
+<dd>Sets a variable for runtime introspection.</dd>
+<dt>void SetupScriptContext(object doc)</dt>
+<dd>Setups the script context. Use a RhinoDoc instance unless unsure.</dd>
+<dd>since 6.0</dd>
+<dt>void SetVariable(string name,object value)</dt>
+<dd>Sets a variable with a name and an object. Object can be None (Nothing in Visual Basic).</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PythonScript</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

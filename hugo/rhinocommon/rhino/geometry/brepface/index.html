@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BrepFace &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Provides strongly-typed access to brep faces. A Brep face is composed of one surface and trimming curves.
+public class BrepFace : SurfaceProxyProperties  Brep Brep Gets the Brep that owns this face. since 6.9 int FaceIndex Index of face in Brep.Faces array. bool IsSurface Gets a value indicating whether the face is synonymous with the underlying surface. If a Face has no trimming curves then it is considered a Surface.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BrepFace</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Provides strongly-typed access to brep faces.
+A Brep face is composed of one surface and trimming curves.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BrepFace</span> : SurfaceProxy
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> Brep</dt>
+<dd>Gets the Brep that owns this face.</dd>
+<dd>since 6.9</dd>
+<dt>int FaceIndex</dt>
+<dd>Index of face in Brep.Faces array.</dd>
+<dt>bool IsSurface</dt>
+<dd>Gets a value indicating whether the face is synonymous with the underlying surface. 
+If a Face has no trimming curves then it is considered a Surface.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/breplooplist/">BrepLoopList</a> Loops</dt>
+<dd>Loops in this face.</dd>
+<dt>bool OrientationIsReversed</dt>
+<dd>True if face orientation is opposite of natural surface orientation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/breploop/">BrepLoop</a> OuterLoop</dt>
+<dd>Every face has a single outer loop.</dd>
+<dt>int SurfaceIndex</dt>
+<dd>Surface index of the 3d surface geometry used by this face or -1</dd>
+<dd>since 5.6</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int[] AdjacentEdges()</dt>
+<dd>Gets the indices of all the BrepEdges that delineate this Face.</dd>
+<dt>int[] AdjacentFaces()</dt>
+<dd>Gets the indices of all the BrepFaces that surround (are adjacent to) this face.</dd>
+<dt>bool ChangeSurface(int surfaceIndex)</dt>
+<dd>Expert user tool that replaces the 3d surface geometry use by the face.</dd>
+<dd>Returns - True if successful.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> CreateExtrusion(Curve pathCurve,bool cap)</dt>
+<dd>Extrude a face in a Brep.</dd>
+<dd>Returns - A Brep on success or None on failure.</dd>
+<dd>since 5.3</dd>
+<dt>bool DraftAnglePoint(Point2d testPoint,double testAngle,Vector3d pullDirection,bool edge,Point3d draftPoint,double draftAngle)</dt>
+<dd>Returns the surface draft angle and point at a parameter.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> DuplicateFace(bool duplicateMeshes)</dt>
+<dd>Duplicate a face from the brep to create new single face brep.</dd>
+<dd>Returns - A new single-face brep synonymous with the current Face.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/surface/">Surface</a> DuplicateSurface()</dt>
+<dd>Gets a copy to the untrimmed surface that this face is based on.</dd>
+<dd>Returns - A copy of this face&rsquo;s underlying surface.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> GetMesh(MeshType meshType)</dt>
+<dd>Obtains a reference to a specified type of mesh for this brep face.</dd>
+<dd>Returns - A mesh.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointfacerelation/">PointFaceRelation</a> IsPointOnFace(double u,double v)</dt>
+<dd>Tests if a parameter space point is on the interior of a trimmed face.</dd>
+<dd>Returns - A value describing the spatial relationship between the point and the face.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] PullPointsToFace(IEnumerable<!-- raw HTML omitted --> points,double tolerance)</dt>
+<dd>Pulls one or more points to a brep face.</dd>
+<dd>Returns - An array of pulled points.</dd>
+<dt>bool RebuildEdges(double tolerance,bool rebuildSharedEdges,bool rebuildVertices)</dt>
+<dd>Rebuild the edges used by a face so they lie on the surface.</dd>
+<dd>Returns - True on success.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> RemoveHoles(double tolerance)</dt>
+<dd>Remove all inner loops, or holes, from a Brep face.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetDomain(int direction,Interval domain)</dt>
+<dd>Sets the surface domain of this face.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetMesh(MeshType meshType,Mesh mesh)</dt>
+<dd>Sets a reference to a specified type of mesh for this brep face.</dd>
+<dd>Returns - True if the operation succeeded; otherwise false.</dd>
+<dt>bool ShrinkFace(ShrinkDisableSide disableSide)</dt>
+<dd>Shrinks the underlying untrimmed surface of this Brep face close to trimming boundaries.
+Shrinking a surface is like extending smoothly, only backwards. knot of full multiplicity
+are added where you want the surface to be cut off. Then the remaining control points are
+thrown away.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool ShrinkSurfaceToEdge()</dt>
+<dd>Shrinks the underlying untrimmed surface of this Brep face right to the trimming boundaries.
+Note, shrinking the trimmed surface can sometimes cause problems later since having
+the edges so close to the trimming boundaries can cause commands that use the surface
+edges as input to fail.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.16</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> Split(IEnumerable<!-- raw HTML omitted --> curves,double tolerance)</dt>
+<dd>Split this face using 3D trimming curves.</dd>
+<dd>Returns - A brep consisting of all the split fragments, or None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a>[] TrimAwareIsoCurve(int direction,double constantParameter)</dt>
+<dd>Similar to IsoCurve function, except this function pays attention to trims on faces 
+and may return multiple curves.</dd>
+<dd>Returns - Isoparametric curves connecting all points with the constantParameter value.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a>[] TrimAwareIsoIntervals(int direction,double constantParameter)</dt>
+<dd>Gets intervals where the iso curve exists on a BrepFace (trimmed surface)</dd>
+<dd>Returns - If direction = 0, the parameter space iso interval connects the 2d points
+(intervals[i][0],iso_constant) and (intervals[i][1],iso_constant).
+If direction = 1, the parameter space iso interval connects the 2d points
+(iso_constant,intervals[i][0]) and (iso_constant,intervals[i][1]).</dd>
+<dt><a href="/rhinocommon/rhino/geometry/surface/">Surface</a> UnderlyingSurface()</dt>
+<dd>Gets the untrimmed surface that is the base of this face.</dd>
+<dd>Returns - A surface, or None on error.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BrepFace</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

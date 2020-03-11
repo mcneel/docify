@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoGet &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input
+Base class for GetObject, GetPoint, GetSphere, etc.
+You will never directly create a RhinoGet but you will use its member functions after calling GetObject::GetObjects(), GetPoint::GetPoint(), and so on.
+Provides tools to set command prompt, set command options, and specify if the &amp;ldquo;get&amp;rdquo; can optionally accept numbers, nothing (pressing enter), and undo.
+public class RhinoGetProperties  static BitmapFileTypes AllBitmapFileTypes  since 6.0  Methods  static Result Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView) Gets a rectangle in view window coordinates.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoGet</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input</a></em></p>
+<p>Base class for GetObject, GetPoint, GetSphere, etc.</p>
+<p>You will never directly create a RhinoGet but you will use its member
+functions after calling GetObject::GetObjects(), GetPoint::GetPoint(), and so on.</p>
+<p>Provides tools to set command prompt, set command options, and specify
+if the &ldquo;get&rdquo; can optionally accept numbers, nothing (pressing enter),
+and undo.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoGet</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/input/rhinoget/bitmapfiletypes/">BitmapFileTypes</a> AllBitmapFileTypes</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView)</dt>
+<dd>Gets a rectangle in view window coordinates.</dd>
+<dd>Returns - Success or Cancel.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetAngle(string commandPrompt,Point3d basePoint,Point3d referencePoint,double defaultAngleRadians,double angleRadians)</dt>
+<dd>Allows user to interactively pick an angle</dd>
+<dd>since 5.2</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetArc(Arc arc)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetBool(string prompt,bool acceptNothing,string offPrompt,string onPrompt,bool boolValue)</dt>
+<dd>Easy to use bool getter.</dd>
+<dd>Returns - The getter result based on user choice.
+Commands.Result.Success - got value.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user cancelled value getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetBox(Box box)</dt>
+<dd>Asks the user to select a Box in the viewport.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetBox(Box box,GetBoxMode mode,Point3d basePoint,string prompt1,string prompt2,string prompt3)</dt>
+<dd>Asks the user to select a Box in the viewport.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetBoxWithCounts(int xMin,int xCount,int yMin,int yCount,int zMin,int zCount,Point3d[] corners)</dt>
+<dd>Gets a 3d box with prompts for counts in X, Y and Z directions.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetCircle(Circle circle)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetColor(string prompt,bool acceptNothing,Color color)</dt>
+<dd>Easy to use color getter.</dd>
+<dd>Returns - Commands.Result.Success - got color.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user cancel color getting.</dd>
+<dt>static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent,BitmapFileTypes fileTypes)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static string GetFileNameScripted(GetFileNameMode mode,string defaultName)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetGrip(GripObject grip,string prompt)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetGrips(GripObject[] grips,string prompt)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetHelix(NurbsCurve helix)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetInteger(string prompt,bool acceptNothing,int outputNumber)</dt>
+<dd>Easy to use number getter.</dd>
+<dd>Returns - Commands.Result.Success - got number
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel number getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetInteger(string prompt,bool acceptNothing,int outputNumber,int lowerLimit,int upperLimit)</dt>
+<dd>Easy to use number getter.</dd>
+<dd>Returns - Commands.Result.Success - got number
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel number getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetLine(Line line)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetLinearDimension(LinearDimension dimension)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetMultipleObjects(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef[] rhObjects)</dt>
+<dd>Easy to use object getter for getting multiple objects.</dd>
+<dd>Returns - Commands.Result.Success - got object
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel object getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,ObjRef[] rhObjects)</dt>
+<dd>Easy to use object getter for getting multiple objects.</dd>
+<dd>Returns - Commands.Result.Success - got object
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel object getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetNumber(string prompt,bool acceptNothing,double outputNumber)</dt>
+<dd>Easy to use number getter.</dd>
+<dd>Returns - Commands.Result.Success - got number
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel number getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetNumber(string prompt,bool acceptNothing,double outputNumber,double lowerLimit,double upperLimit)</dt>
+<dd>Easy to use number getter.</dd>
+<dd>Returns - Commands.Result.Success - got number.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user cancel number getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetOneObject(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef objref)</dt>
+<dd>Easy to use object getter.</dd>
+<dd>Returns - Commands.Result.Success - got object
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel object getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetOneObject(string prompt,bool acceptNothing,ObjectType filter,ObjRef rhObject)</dt>
+<dd>Easy to use object getter.</dd>
+<dd>Returns - Commands.Result.Success - got object
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel object getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPlane(Plane plane)</dt>
+<dd>Gets an oriented infinite plane.</dd>
+<dd>Returns - Commands.Result.Success - got plane.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user cancel number getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPoint(string prompt,bool acceptNothing,Point3d point)</dt>
+<dd>Gets a point coordinate from the document.</dd>
+<dd>Returns - Commands.Result.Success - got point
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel point getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPointOnMesh(Guid meshObjectId,string prompt,bool acceptNothing,Point3d point)</dt>
+<dd>Gets a point constrained to an existing mesh in the document.</dd>
+<dd>Returns - A command result based on user choice.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPointOnMesh(MeshObject meshObject,string prompt,bool acceptNothing,Point3d point)</dt>
+<dd>Gets a point constrained to an existing mesh in the document.</dd>
+<dd>Returns - The command result based on user choice.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPolygon(int numberSides,bool inscribed,Polyline polyline)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPolyline(Polyline polyline)</dt>
+<dd></dd>
+<dd>since 5.9</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetPrintWindow(ViewCaptureSettings settings)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetRectangle(GetBoxMode mode,Point3d firstPoint,IEnumerable<!-- raw HTML omitted --> prompts,Point3d[] corners)</dt>
+<dd>Gets a 3d rectangle made up of four points.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetRectangle(Point3d[] corners)</dt>
+<dd>Gets a 3d rectangle.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetRectangle(string firstPrompt,Point3d[] corners)</dt>
+<dd>Gets a 3d rectangle.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetRectangleWithCounts(int xMin,int xCount,int yMin,int yCount,Point3d[] corners)</dt>
+<dd>Gets a 3d rectangle with prompts for counts in X and Y directions.</dd>
+<dd>Returns - Commands.Result.Success if successful.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetSpiral(NurbsCurve spiral)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetString(string prompt,bool acceptNothing,string outputString)</dt>
+<dd>Easy to use string getter.</dd>
+<dd>Returns - Commands.Result.Success - got string
+Commands.Result.Nothing - user pressed enter
+Commands.Result.Cancel - user cancel string getting.</dd>
+<dt>static <a href="/rhinocommon/rhino/commands/result/">Result</a> GetView(string commandPrompt,RhinoView view)</dt>
+<dd>Allows the user to interactively pick a viewport.</dd>
+<dd>Returns - The result based on user choice.</dd>
+<dt>static bool InGet(RhinoDoc doc)</dt>
+<dd>Returns True if the document is current in a &ldquo;Get&rdquo; operation.</dd>
+<dd>Returns - True if a getter is currently active.</dd>
+<dt>static bool InGetObject(RhinoDoc doc)</dt>
+<dd>Returns True if currently in a GetObject.GetObjects()</dd>
+<dd>since 6.0</dd>
+<dt>static bool InGetPoint(RhinoDoc doc)</dt>
+<dd>Returns True if currently in a GetPoint.Get()</dd>
+<dd>since 6.0</dd>
+<dt>static string StringToCommandOptionName(string stringToConvert)</dt>
+<dd>Convert some arbitrary string value to a valid command option name
+removing any invalid characters.</dd>
+<dd>Returns - Returns None if the string is None or empty or if it contains nothing
+but invalid characters.  If the converted string is one or more
+characters in length then the converted value is returned.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/ui/localizestringpair/">LocalizeStringPair</a> StringToCommandOptionName(string englishString,string localizedString)</dt>
+<dd>Convert some arbitrary string value to a valid command option name
+removing any invalid characters.</dd>
+<dd>Returns - Returns None if the strings are None or empty or if they contain
+nothing but invalid characters.  If the converted string is one or more
+charcters in length then a  is returned
+characters the converted string values.  If the localized string is
+None or empty then the English string is used as the localized value.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoGet</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

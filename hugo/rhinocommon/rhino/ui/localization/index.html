@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Localization &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.UI
+public class LocalizationProperties  static int CurrentLanguageId  since 6.0 static bool RunningAsEnglish  since 6.0  Methods  static string FormatArea(double area,UnitSystem units,DimensionStyle dimStyle,bool alternate) Format an Area string from a number since 7.0 static string FormatDistanceAndTolerance(double distance,UnitSystem units,DimensionStyle dimStyle,bool alternate)  since 7.0 static string FormatNumber(double x,UnitSystem units,DistanceDisplayMode mode,int precision,bool appendUnitSystemName) Get a string version of a number in a given unit system / display mode.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Localization</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.UI</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Localization</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static int CurrentLanguageId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static bool RunningAsEnglish</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static string FormatArea(double area,UnitSystem units,DimensionStyle dimStyle,bool alternate)</dt>
+<dd>Format an Area string from a number</dd>
+<dd>since 7.0</dd>
+<dt>static string FormatDistanceAndTolerance(double distance,UnitSystem units,DimensionStyle dimStyle,bool alternate)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>static string FormatNumber(double x,UnitSystem units,DistanceDisplayMode mode,int precision,bool appendUnitSystemName)</dt>
+<dd>Get a string version of a number in a given unit system / display mode.</dd>
+<dd>Returns - The formatted number.</dd>
+<dt>static string FormatVolume(double volume,UnitSystem units,DimensionStyle dimStyle,bool alternate)</dt>
+<dd>Format a Volume string from a number</dd>
+<dd>since 7.0</dd>
+<dt>static string LocalizeCommandName(string english)</dt>
+<dd>Commands that need to be localized should call this function.</dd>
+<dt>static string LocalizeCommandName(string english,object assemblyOrObject)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/ui/localizestringpair/">LocalizeStringPair</a> LocalizeCommandOptionName(string english,int contextId)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/ui/localizestringpair/">LocalizeStringPair</a> LocalizeCommandOptionName(string english,object assemblyOrObject,int contextId)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/ui/localizestringpair/">LocalizeStringPair</a> LocalizeCommandOptionValue(string english,int contextId)</dt>
+<dd></dd>
+<dt>static <a href="/rhinocommon/rhino/ui/localizestringpair/">LocalizeStringPair</a> LocalizeCommandOptionValue(string english,object assemblyOrObject,int contextId)</dt>
+<dd></dd>
+<dt>static string LocalizeDialogItem(object assemblyOrObject,string key,string english)</dt>
+<dd>Look in the dialog item list for the specified key and return the translated
+localized string if the key is found otherwise return the English string.</dd>
+<dd>Returns - Look in the dialog item list for the specified key and return the translated
+localized string if the key is found otherwise return the English string.</dd>
+<dd>since 5.5</dd>
+<dt>static void LocalizeForm(object formOrUserControl)</dt>
+<dd>Look in the dialog item list for the specified key and return the translated
+localized string if the key is found otherwise return the English string.</dd>
+<dd>since 6.0</dd>
+<dt>static string LocalizeString(string english,int contextId)</dt>
+<dd>Returns localized version of a given English string. This function should be autogenerated by the
+RmaLDotNetLocalizationProcessor application for every function that uses RMASTR.</dd>
+<dd>Returns - The localized string.</dd>
+<dt>static string LocalizeString(string english,object assemblyOrObject,int contextId)</dt>
+<dd>Returns localized version of a given English string. This function should be autogenerated by the
+RmaLDotNetLocalizationProcessor application for every function that uses RMASTR.</dd>
+<dd>Returns - The localized string.</dd>
+<dt>static bool SetLanguageId(int id)</dt>
+<dd>Sets the Id used for Localization in RhinoCommon.  Only useful for when
+using RhinoCommon outside of the Rhino process</dd>
+<dd>Returns - True if the language id could be set</dd>
+<dt>static string UnitSystemName(UnitSystem units,bool capitalize,bool singular,bool abbreviate)</dt>
+<dd>Gets localized unit system name.  Uses current application locale id.</dd>
+<dd>Returns - The unit system name.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Localization</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

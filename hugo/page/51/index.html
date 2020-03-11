@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderpropertychangedevent/">
-        <h3>RenderPropertyChangedEvent</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/ellipse/">
+        <h3>Ellipse</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderpropertychangedevent/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/ellipse/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Used by Rhino.Render object property value has changed events.
-public class RenderPropertyChangedEventProperties int Context  (summary) Optional argument which may specify the property being modified. (since) 5.10  RhinoDoc Document  (summary) The document triggering the event. (since) 5.10  
+    Namespace: Rhino.Geometry
+Represents the values of a plane and the two semiaxes radii in an ellipse.
+Constructors  Ellipse(Plane plane,double radius1,double radius2) Initializes a new ellipse from base plane and both principal radii. Ellipse(Point3d center,Point3d second,Point3d third) Initializes a new ellipse from a center point and the two semiaxes intersections.  Properties  bool IsValid Returns an indication of the validity of this ellipse. since 6.0 Plane Plane Gets or sets the base plane of the ellipse.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendersettings/">
-        <h3>RenderSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/extrusion/">
+        <h3>Extrusion</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendersettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/extrusion/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Contains settings used in rendering.
-public class RenderSettingsConstructors RenderSettings()  (summary) Initialize a new instance of the RenderSettings class. (since) 5.0  RenderSettings(RenderSettings source)  (summary) Initialize new instance of the RenderSettings class. (since) 6.0  Properties System.Drawing.Color AmbientLight  (summary) Gets or sets the ambient light color used in rendering. (since) 5.0  AntialiasLevel AntialiasLevel  (summary) Gets or sets antialias level, used for render quality (since) 5.
+    Namespace: Rhino.Geometry
+Represents an extrusion, or objects such as beams or linearly extruded elements, that can be represented by profile curves and two miter planes at the extremes.
+[Serializable]public class Extrusion : SurfaceConstructors  Extrusion() Initializes a new instance of the class.  Properties  int CapCount Gets the amount of capping surfaces. bool IsCappedAtBottom Gets a value indicating whether the surface that fills the bottom profile is existing.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendersourceview/">
-        <h3>RenderSourceView</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dm/">
+        <h3>File3dm</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendersourceview/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dm/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Helper class to get the correct view from the Render View Source settings.
-An instance of this class is supposed to be used with the using() {} construct.
-public class RenderSourceViewConstructors RenderSourceView(RhinoDoc doc)   (summary) Create a new RenderSourceView for the given doc.
-Note that this should be done with using(var rsv = new RenderSourceView(doc)) {}
-If the RenderSettings have the source view set to for instance a SnapShot this construct will ensure that the (active) view is set to the correct snapshot, and reverted back to the original once this instance goes out of scope.
+    Namespace: Rhino.FileIO
+Represents a 3dm file, which is stored using the OpenNURBS file standard. The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.
+public class File3dm : IDisposableConstructors  File3dm() Initializes a new instance of a 3dm file.  Properties  File3dmDimStyleTable AllDimStyles Dimension Styles in this file. since 6.0 File3dmGroupTable AllGroups Grpups in this file. since 6.5 File3dmHatchPatternTable AllHatchPatterns Hatch patterns in this file. since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendertabs/">
-        <h3>RenderTabs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmcommoncomponenttable/">
+        <h3>File3dmCommonComponentTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendertabs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmcommoncomponenttable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderTabsMethods static object FromRenderSessionId(PlugIn plugIn,Type tabType,Guid renderSessionId)  (summary) Get the instance of a render tab associated with a specific render session, this is useful when it is necessary to update a control from a (since) 5.11 (returns) object This is some return comment  static Guid SessionIdFromTab(object tab)  (summary) Get the session Id that created the specified tab object. (since) 5.11 (returns) Guid This is some return comment  void RegisterTab(PlugIn plugin,Type tabType,string caption,Icon icon)  (summary) Register custom render user interface with Rhino.
+    Namespace: Rhino.FileIO
+Provides a base table type that is shared among all File3dm tables.
+public class File3dmCommonComponentTable : CommonComponentTable&lt;T&gt;, ICollection&lt;T&gt;Methods  void Add(T item) Adds an item. since (unknown) void Delete(int index) Flags a component as deleted. Returns - True on success. since (unknown) bool Delete(T item) Flags a component as deleted. Returns - True on success. since (unknown) string Dump() Prepares a text dump of object table. Returns - A string containing the dump.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendertexture/">
-        <h3>RenderTexture</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmdimstyletable/">
+        <h3>File3dmDimStyleTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendertexture/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmdimstyletable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderTextureProperties Transform LocalMappingTransform  (summary) Gets the transformation that can be applied to the UVW vector to convert it from normalized texture space into locally mapped space (ie - with repeat, offset and rotation applied.) (since) 5.1  uint RenderHashWithoutLocalMapping  (summary) Render hash for texture excluding local mapping. (since) 6.0  Methods static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)  (summary) (since) 5.7 (returns) bool This is some return comment  static Point3d GetWcsBoxMapping(Point3d worldXyz,Vector3d normal)  (summary) (since) 5.
+    Namespace: Rhino.FileIO
+Provides access to annotation styles in the 3dm file.
+public class File3dmDimStyleTable :File3dmCommonComponentTable&lt;DimensionStyle&gt;,IList&lt;DimensionStyle&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  DimensionStyle FindIndex(int index) Retrieves a DimensionStyle object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A DimensionStyle object, or None if none was found. since 6.0 DimensionStyle FindName(string name) Finds a DimensionStyle given its name.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendertexturetable/">
-        <h3>RenderTextureTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmgrouptable/">
+        <h3>File3dmGroupTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendertexturetable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmgrouptable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderTextureTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderTexture c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderTexture c)  (summary) (since) 6.
+    Namespace: Rhino.FileIO
+Provides access to groups in the 3dm file.
+public class File3dmGroupTable :File3dmCommonComponentTable&lt;Group&gt;,IList&lt;Group&gt;Properties  ModelComponentType ComponentType Returns . since 6.5  Methods  Group FindIndex(int groupIndex) Retrieves a Group object based on an index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Group object, or None if none was found. since 6.5 Group FindName(string name) Finds a Group given its name.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderwindow/">
-        <h3>RenderWindow</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmhatchpatterntable/">
+        <h3>File3dmHatchPatternTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderwindow/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmhatchpatterntable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderWindowEvents static Cloned  (summary) (since) 5.11  Properties Guid SessionId  (summary) (since) 5.11  Methods static Guid ChannelId(StandardChannels ch)  (summary) (since) 5.0 (returns) Guid This is some return comment  static RenderWindow Create(Size szSize)  (summary) (since) 6.0 (returns) RenderWindow This is some return comment  static RenderWindow FromSessionId(Guid sessionId)  (summary) (since) 5.11 (returns) RenderWindow This is some return comment  bool AddChannel(StandardChannels channel)  (summary) Add a channel to the frame buffer in addition to the fixed Red, Green, Blue and Alpha channels.
+    Namespace: Rhino.FileIO
+Provides access to hatch pattern definitions in the 3dm file.
+public class File3dmHatchPatternTable :File3dmCommonComponentTable&lt;HatchPattern&gt;,IList&lt;HatchPattern&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  HatchPattern FindIndex(int index) Retrieves a HatchPattern object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A HatchPattern object, or None if none was found. since 6.0 HatchPattern FindName(string name) Finds a HatchPattern given its name.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderwindowclonedeventargs/">
-        <h3>RenderWindowClonedEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/">
+        <h3>File3dmInstanceDefinitionTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderwindowclonedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderWindowClonedEventArgsProperties RenderWindow NewRenderWindow  (summary) (since) 5.11  Guid NewSessionId  (summary) (since) 5.11  RenderWindow OldRenderWindow  (summary) (since) 5.11  Guid OldSessionId  (summary) (since) 5.11  
+    Namespace: Rhino.FileIO
+Provides access to instance (block) definitions in the 3dm file.
+public class File3dmInstanceDefinitionTable :File3dmCommonComponentTable&lt;InstanceDefinitionGeometry&gt;, IList&lt;InstanceDefinitionGeometry&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes) Adds an instance definition to the instance definition table. Returns - &gt;=0 index of instance definition in the instance definition table. -1 on failure. since 6.5 int Add(string name,string description,Point3d basePoint,IEnumerablegeometry) Adds an instance definition to the instance definition table.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/replayhistorydata/">
-        <h3>ReplayHistoryData</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlayertable/">
+        <h3>File3dmLayerTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/replayhistorydata/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlayertable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Provides history information to commands that will repeat history construction. Generally, a developer using this class will not construct a new instance, but receive one.
-public class ReplayHistoryDataProperties RhinoDoc Document  (summary) The document this record belongs to (since) 5.0  int HistoryVersion  (summary) ReplayHistory overrides check the version number to ensure the information saved in the history record is compatible with the current implementation of ReplayHistory (since) 5.
+    Namespace: Rhino.FileIO
+Provides access to layers in the 3dm file.
+public class File3dmLayerTable :File3dmCommonComponentTable&lt;Layer&gt;,IList&lt;Layer&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  Layer FindIndex(int index) Retrieves a Layer object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Layer object, or None if none was found. since 6.0 Layer FindName(string name,Guid parentId) Finds a Layer given its name.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/replayhistoryresult/">
-        <h3>ReplayHistoryResult</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlinetypetable/">
+        <h3>File3dmLinetypeTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/replayhistoryresult/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/file3dmlinetypetable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class ReplayHistoryResultProperties RhinoObject ExistingObject  (summary) The previously existing object. Do not attempt to edit this object. It might have been already deleted by, for example, dragging. (since) 5.0  Methods bool UpdateToAngularDimension(AngularDimension dimension,ObjectAttributes attributes)  (summary) (since) 5.0 (returns) bool This is some return comment  bool UpdateToArc(Arc arc,ObjectAttributes attributes)  (summary) (since) 5.0 (returns) bool This is some return comment  bool UpdateToBrep(Brep brep,ObjectAttributes attributes)  (summary) (since) 5.
+    Namespace: Rhino.FileIO
+Provides access to Linetypes in the 3dm file.
+public class File3dmLinetypeTable :File3dmCommonComponentTable&lt;Linetype&gt;,IList&lt;DocObjects.Linetype&gt;Properties  ModelComponentType ComponentType Returns . since 6.0  Methods  Linetype FindIndex(int index) Retrieves a Linetype object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. Returns - A Linetype, or None if none was found. since 6.0 Linetype FindName(string name) Finds a Linetype given its name.
   </div>
   
 

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RenderPipeline &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Provides facilities to a render plug-in for integrating with the standard Rhino render window. Also adds helper functions for processing a render scene. This is the suggested class to use when integrating a renderer with Rhino and maintaining a &amp;ldquo;standard&amp;rdquo; user interface that users will expect.
+public class RenderPipeline : IDisposableProperties  int ConfirmationSeconds Sets the number of seconds that need to elapse during rendering before the user is asked if the rendered image should be saved.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RenderPipeline</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Provides facilities to a render plug-in for integrating with the standard
+Rhino render window. Also adds helper functions for processing a render
+scene. This is the suggested class to use when integrating a renderer with
+Rhino and maintaining a &ldquo;standard&rdquo; user interface that users will expect.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderPipeline</span> : IDisposable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int ConfirmationSeconds</dt>
+<dd>Sets the number of seconds that need to elapse during rendering before
+the user is asked if the rendered image should be saved.</dd>
+<dt><a href="/rhinocommon/rhino/plugins/plugin/">PlugIn</a> PlugIn</dt>
+<dd></dd>
+<dt>Guid RenderSessionId</dt>
+<dd>Get the Id associated with this render session, this is useful when
+looking up Rhino.Render.RenderPanels.</dd>
+<dd>since 5.11</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Size RenderSize()</dt>
+<dd></dd>
+<dt>static Size RenderSize(RhinoDoc doc)</dt>
+<dd>Get the render size as specified in the ON_3dmRenderSettings. Will automatically return the correct size based on the ActiveView or custom settings.</dd>
+<dd>Returns - The render size.</dd>
+<dd>since 6.0</dd>
+<dt>static Size RenderSize(RhinoDoc doc,bool fromRenderSources)</dt>
+<dd>Get the render size as specified in the ON_3dmRenderSettings, and from RenderSources when
+fromRenderSources is true.</dd>
+<dd>Returns - The render size.</dd>
+<dd>since 6.0</dd>
+<dt>bool CloseWindow()</dt>
+<dd>Closes the render window associated with this render instance.</dd>
+<dd>Returns - Return True if successful or False if not.</dd>
+<dd>since 5.11</dd>
+<dt>Rhino.Commands.Result CommandResult()</dt>
+<dd></dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/render/renderwindow/">RenderWindow</a> GetRenderWindow()</dt>
+<dd>Get the RenderWindow associated with this RenderPipeline instance.  This is virtual rather than abstract for V5 compat</dd>
+<dd>Returns - RenderWindow if one exists, None otherwise (i.e. rendering
+has already completed).</dd>
+<dt><a href="/rhinocommon/rhino/render/renderwindow/">RenderWindow</a> GetRenderWindow(bool withWireframeChannel)</dt>
+<dd>As GetRenderWindow(), but if withWireframeChannel is true
+the returned RenderWindow will have the channel added.</dd>
+<dd>Returns - RenderWindow with wireframe channel enabled, or null
+if no RenderWindow can be found (i.e. rendering has completed
+already)</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/renderwindow/">RenderWindow</a> GetRenderWindow(bool withWireframeChannel,bool fromRenderViewSource)</dt>
+<dd>As GetRenderWindow().
+The parameter withWireframeChannel controls whether
+the returned RenderWindow will have the channel added.
+The parameter fromRenderViewSource controls from where
+the RenderSize is queried.</dd>
+<dd>Returns - RenderWindow if one exists, None otherwise (i.e. rendering
+has already completed).</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/renderwindow/">RenderWindow</a> GetRenderWindowFromRenderViewSource(bool fromRenderViewSource)</dt>
+<dd>Like GetRenderWindow(), but with the size for RenderWindow
+set from RenderViewSources if fromRenderViewSource is set to true</dd>
+<dd>Returns - RenderWindow if one exists, None otherwise (i.e. rendering
+has already completed).</dd>
+<dd>since 6.0</dd>
+<dt>void PauseRendering()</dt>
+<dd>Implement to pause the current render session</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/renderpipeline/renderreturncode/">RenderReturnCode</a> Render()</dt>
+<dd>Call this function to render the scene normally. The function returns when rendering is complete (or cancelled).</dd>
+<dd>Returns - A code that explains how rendering completed.</dd>
+<dt><a href="/rhinocommon/rhino/render/renderpipeline/renderreturncode/">RenderReturnCode</a> RenderWindow(RhinoView view,Rectangle rect,bool inWindow)</dt>
+<dd>Call this function to render the scene in a view window. The function returns when rendering is complete (or cancelled).</dd>
+<dd>Returns - A code that explains how rendering completed.</dd>
+<dt>void ResumeRendering()</dt>
+<dd>Implement to resume current render session</dd>
+<dd>since 6.0</dd>
+<dt>bool SaveImage(string fileName,bool saveAlpha)</dt>
+<dd>Saves the rendered image to a file. Does not prompt the user in any way.</dd>
+<dd>since 5.14</dd>
+<dt>void SetAsyncRenderContext(AsyncRenderContext aRC)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SupportsPause()</dt>
+<dd>Override and return True if the renderer supports pausing</dd>
+<dd>Returns - True if pausing is supported, False otherwise</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RenderPipeline</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

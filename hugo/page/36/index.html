@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshingparameters/">
-        <h3>MeshingParameters</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point2d/">
+        <h3>Point2d</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshingparameters/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point2d/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents settings used for creating a mesh representation of a brep or surface.
-public class MeshingParametersConstructors MeshingParameters()  (summary) Initializes a new instance with default values. Initial values are same as . (since) 5.0  MeshingParameters(double density)  (summary) Initializes a new instance with simple values, similar to that of Rhino&rsquo;s meshing slider interface. (since) 6.0  MeshingParameters(double density,double minimumEdgeLength)  (summary) Initializes a new instance with simple values, similar to that of Rhino&rsquo;s meshing slider interface.
+Represents the two coordinates of a point in two-dimensional space, using -precision floating point numbers.
+ static - Subtracts point2 from point1. Returns - A new vector that is point1 coordinatewise subtracted by point2. static - Subtracts a vector from a point. Returns - A new point that is coordinatewise subtracted by vector. static != Determines whether two have different values. Returns - True if the two points differ in any coordinate; False otherwise.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/meshinstance/">
-        <h3>MeshInstance</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/point2dfield/">
+        <h3>Point2dField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/meshinstance/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/point2dfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.ChangeQueue
-Representation of ChangeQueue MeshInstance
-public class MeshInstanceProperties bool CastShadows  (summary) Return True if mesh instance should cast shadows (since) 6.0  uint GroupId  (summary) Get identifier that specifies the grouping of these mesh instances - usually based on the object that this originally comprised. (since) 6.0  uint InstanceId  (summary) Get the instance identifier for this mesh instance. (since) 6.0  uint MaterialId  (summary) The Material CRC / RenderHash (since) 6.
+    Namespace: Rhino.Render.Fields
+Point2d field value class
+public class Point2dField : FieldProperties  Point2d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/intersect/meshinterference/">
-        <h3>MeshInterference</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point3d/">
+        <h3>Point3d</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/intersect/meshinterference/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Intersect
-Represents an element which is part of a curve region boundary.
-Properties Point3d[] HitPoints  (summary) Array of hit points where the objects of IndexA and IndexB interfere. (since) 7.0  int IndexA  (summary) The index of the first clashing, or interfering object. (since) 7.0  int IndexB  (summary) The index of the second clashing, or interfering object. (since) 7.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshngon/">
-        <h3>MeshNgon</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshngon/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point3d/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a mesh ngon. When retrieved from the Ngon property of a mesh, this contains faces that have edge valence strictly higher than 4.When retrieving Ngons from , this might contain also triangles and quads.
-public class MeshNgonstatic !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Properties static MeshNgon Empty  (summary) Gets an empty MeshNgon.
+Represents the three coordinates of a point in three-dimensional space, using -precision floating point values.
+ static - Computes the additive inverse of all coordinates in the point, and returns the new point. Returns - A point value that, when summed with the point input, yields the . static - Subtracts a point from another point. Returns - A new vector that is the difference of point minus vector.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/meshngonlist/">
-        <h3>MeshNgonList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/point3dfield/">
+        <h3>Point3dField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/meshngonlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/point3dfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the ngons and n-gon related functionality of a Mesh. See also the property for Ngon functionality details.
-public class MeshNgonListProperties int Count  (summary) Gets or sets the number of mesh ngons. (since) 6.0  uint UnsignedCount  (summary) Gets or sets the number of mesh ngons. (since) 6.0  Methods int AddNgon(MeshNgon ngon)  (summary) Appends a new ngon to the end of the mesh ngon list.
+    Namespace: Rhino.Render.Fields
+Point3d field value class
+public class Point3dField : FieldProperties  Point3d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/meshobject/">
-        <h3>MeshObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/point4dfield/">
+        <h3>Point4dField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/meshobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/point4dfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class MeshObjectProperties bool IsCustomObject  (summary) (since) 6.0  Mesh MeshGeometry  (summary) (since) 5.0  Methods static bool CheckMeshes(IEnumerablemeshObjects,TextLog textLog,MeshCheckParameters parameters)  (summary) Examines mesh objects and logs a description of what it finds right or wrong. The various properties the function checks for are described in MeshCheckParameters. (since) 7.0 (returns) bool This is some return comment  Mesh DuplicateMeshGeometry()  (summary) (since) 5.0 (returns) Mesh This is some return comment  
+    Namespace: Rhino.Render.Fields
+Point4d field value class
+public class Point4dField : FieldProperties  Point4d Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshpart/">
-        <h3>MeshPart</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/previewappearance/">
+        <h3>PreviewAppearance</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshpart/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/previewappearance/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a portion of a mesh for partitioning
-public class MeshPartProperties int EndFaceIndex  (summary) End of subinterval of parent mesh face array (since) 5.6  int EndVertexIndex  (summary) End of subinterval of parent mesh vertex array (since) 5.6  int StartFaceIndex  (summary) Start of subinterval of parent mesh face array (since) 5.6  int StartVertexIndex  (summary) Start of subinterval of parent mesh vertex array (since) 5.
+    Namespace: Rhino.Render
+PreviewAppearance class
+public class PreviewAppearance : IDisposableConstructors  PreviewAppearance(IntPtr pRenderContent) Constructor for previewappearance since 6.0  Properties  IntPtr CppPointer Previewappearances c++ pointer since 6.0 MetaData MetaData Previewappearance MetaData since 6.0  Methods  PreviewBackground Background() Background since 6.0 void Dispose() Dispose for previewappearance since 6.0 void FromMetaData(MetaData md) Copy data from MetaData to PreviewAppearance since 6.0 PreviewGeometry Geometry() Geometry since 6.0 PreviewLighting Lighting() Lighting since 6.0 IRhRdkPreviewSceneServer_eRotationType RotationType() RotationType since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshpoint/">
-        <h3>MeshPoint</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/previewbackground/">
+        <h3>PreviewBackground</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshpoint/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/previewbackground/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a point that is found on a mesh.
-public class MeshPointProperties ComponentIndex ComponentIndex  (summary) Gets the component index of the intersecting element in the mesh. (since) 5.0  int EdgeIndex  (summary) When set, EdgeIndex is an index of an edge in the mesh&rsquo;s edge list. (since) 5.0  double EdgeParameter  (summary) Edge parameter when found. (since) 5.0  int FaceIndex  (summary) FaceIndex is an index of a face in mesh.
+    Namespace: Rhino.Render
+PreviewBackGround takes care of constucting and desctrutction of PreviewLight
+public class PreviewBackgroundConstructors  PreviewBackground(IntPtr pPreviewBackground) Constructor for PreivewLighting since 6.0  Properties  IntPtr CppPointer CppPointer for PreivewLighting since 6.0  Methods  string ElementKind() ElementKind since 6.0 Guid EnvironmentInstanceId() EnvironmentInstanceId since 6.0 void SetEnvironmentInstanceId(Guid guid) SetEnvironmentInstanceId since 6.0 void SetUpPreview(IntPtr sceneServerPointer,Guid guid) SetUpPreview since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/">
-        <h3>MeshTextureCoordinateList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/previewgeometry/">
+        <h3>PreviewGeometry</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/previewgeometry/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the Vertex Texture coordinates of a Mesh.
-public class MeshTextureCoordinateListProperties int Capacity  (summary) Gets or sets the total number of texture coordinates the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of texture coordinates. (since) 5.0  Methods int Add(double s,double t)  (summary) Adds a new texture coordinate to the end of the Texture list.
+    Namespace: Rhino.Render
+PreviewAppearance takes care of constucting and desctrutction of PreivewGeometry
+public class PreviewGeometryConstructors  PreviewGeometry(IntPtr pPreviewGeometry) Constructor for PreviewGeometry since 6.0  Properties  IntPtr CppPointer CppPointer for PreviewGeometry since 6.0  Methods  string ElementKind() ElementKind since 6.0 void SetUpPreview(IntPtr sceneServerPointer,IntPtr pRenderContent,bool bCopy) SetUpPreview since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshthicknessmeasurement/">
-        <h3>MeshThicknessMeasurement</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/previewlighting/">
+        <h3>PreviewLighting</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshthicknessmeasurement/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/previewlighting/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Thickness measurement used in the mesh thickness solver.
-Constructors MeshThicknessMeasurement(int meshIndex,int vertexIndex,double thickness,Point3d point,Point3d oppositePoint)  (summary) Create a new thickness measurement. (since) 6.0  Properties int MeshIndex  (summary) Gets the index of the mesh associated with this thickness measurement. (since) 6.0  Point3d OppositePoint  (summary) Gets the point opposite to the measurement point. (since) 6.0  Point3d Point  (summary) Gets the location of the thickness measurement.
+    Namespace: Rhino.Render
+PreviewAppearance takes care of constucting and desctrutction of PreviewLight
+public class PreviewLightingConstructors  PreviewLighting(IntPtr pPreviewLighting) Constructor for PreivewLighting since 6.0  Properties  IntPtr CppPointer CppPointer for PreivewLighting since 6.0  Methods  string ElementKind() ElementKind since 6.0 void SetUpPreview(IntPtr sceneServerPointer) SetUpPreview since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/previewsceneserver/">
+        <h3>PreviewSceneServer</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/previewsceneserver/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+PreviewSceneServer
+public class PreviewSceneServerConstructors  PreviewSceneServer(IntPtr pPreviewSceneServer) Constructor for PreviewSceneServer since 6.0  Properties  IntPtr CppPointer The CppPointer of PreviewSceneServer since 6.0  Methods  void ApplyRotation(double X,double Y,IRhRdkPreviewSceneServer_eRotationType type) Set Scene Server Rotation since 6.0 void Dispose() Dispose for PreviewSceneServer since 6.0  
   </div>
   
 

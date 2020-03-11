@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.DocObjects &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.DocObjects</h1>
+  <ul>
+<li><a href="activespace/">ActiveSpace</a></li>
+<li><a href="angledisplaymode/">AngleDisplayMode</a></li>
+<li><a href="angulardimensionobject/">AngularDimensionObject</a></li>
+<li><a href="animationproperties/">AnimationProperties</a></li>
+<li><a href="capturetypes/">CaptureTypes</a></li>
+<li><a href="annotationobjectbase/">AnnotationObjectBase</a></li>
+<li><a href="basepointzero/">BasepointZero</a></li>
+<li><a href="bitmapentry/">BitmapEntry</a></li>
+<li><a href="brepobject/">BrepObject</a></li>
+<li><a href="centermarkobject/">CentermarkObject</a></li>
+<li><a href="clippingplaneobject/">ClippingPlaneObject</a></li>
+<li><a href="constructionplane/">ConstructionPlane</a></li>
+<li><a href="coordinatesystem/">CoordinateSystem</a></li>
+<li><a href="curveobject/">CurveObject</a></li>
+<li><a href="detailviewobject/">DetailViewObject</a></li>
+<li><a href="scaleformat/">ScaleFormat</a></li>
+<li><a href="dimensionobject/">DimensionObject</a></li>
+<li><a href="dimensionstyle/">DimensionStyle</a></li>
+<li><a href="displaymode/">DisplayMode</a></li>
+<li><a href="distancedisplaymode/">DistanceDisplayMode</a></li>
+<li><a href="earthanchorpoint/">EarthAnchorPoint</a></li>
+<li><a href="extrusionobject/">ExtrusionObject</a></li>
+<li><a href="font/">Font</a></li>
+<li><a href="fontquartet/">FontQuartet</a></li>
+<li><a href="gripobject/">GripObject</a></li>
+<li><a href="group/">Group</a></li>
+<li><a href="hatchobject/">HatchObject</a></li>
+<li><a href="hatchpattern/">HatchPattern</a></li>
+<li><a href="defaults/">Defaults</a></li>
+<li><a href="hatchpatternfilltype/">HatchPatternFillType</a></li>
+<li><a href="historyrecord/">HistoryRecord</a></li>
+<li><a href="instancedefinition/">InstanceDefinition</a></li>
+<li><a href="instancedefinitionarchivefilestatus/">InstanceDefinitionArchiveFileStatus</a></li>
+<li><a href="instancedefinitionlayerstyle/">InstanceDefinitionLayerStyle</a></li>
+<li><a href="instancedefinitionupdatetype/">InstanceDefinitionUpdateType</a></li>
+<li><a href="instanceobject/">InstanceObject</a></li>
+<li><a href="layer/">Layer</a></li>
+<li><a href="leaderobject/">LeaderObject</a></li>
+<li><a href="lightobject/">LightObject</a></li>
+<li><a href="lineardimensionobject/">LinearDimensionObject</a></li>
+<li><a href="linetype/">Linetype</a></li>
+<li><a href="material/">Material</a></li>
+<li><a href="materialref/">MaterialRef</a></li>
+<li><a href="materialrefcreateparams/">MaterialRefCreateParams</a></li>
+<li><a href="materialrefs/">MaterialRefs</a></li>
+<li><a href="meshobject/">MeshObject</a></li>
+<li><a href="modelcomponent/">ModelComponent</a></li>
+<li><a href="morphcontrolobject/">MorphControlObject</a></li>
+<li><a href="objectattributes/">ObjectAttributes</a></li>
+<li><a href="objectcolorsource/">ObjectColorSource</a></li>
+<li><a href="objectdecoration/">ObjectDecoration</a></li>
+<li><a href="objectenumeratorsettings/">ObjectEnumeratorSettings</a></li>
+<li><a href="objectlinetypesource/">ObjectLinetypeSource</a></li>
+<li><a href="objectmaterialsource/">ObjectMaterialSource</a></li>
+<li><a href="objectmode/">ObjectMode</a></li>
+<li><a href="objectplotcolorsource/">ObjectPlotColorSource</a></li>
+<li><a href="objectplotweightsource/">ObjectPlotWeightSource</a></li>
+<li><a href="objecttype/">ObjectType</a></li>
+<li><a href="objref/">ObjRef</a></li>
+<li><a href="ordinatedimensionobject/">OrdinateDimensionObject</a></li>
+<li><a href="pointcloudobject/">PointCloudObject</a></li>
+<li><a href="pointobject/">PointObject</a></li>
+<li><a href="proxyobject/">ProxyObject</a></li>
+<li><a href="radialdimensionobject/">RadialDimensionObject</a></li>
+<li><a href="replayhistorydata/">ReplayHistoryData</a></li>
+<li><a href="replayhistoryresult/">ReplayHistoryResult</a></li>
+<li><a href="rhinodeselectallobjectseventargs/">RhinoDeselectAllObjectsEventArgs</a></li>
+<li><a href="rhinomodifyobjectattributeseventargs/">RhinoModifyObjectAttributesEventArgs</a></li>
+<li><a href="rhinoobject/">RhinoObject</a></li>
+<li><a href="rhinoobjecteventargs/">RhinoObjectEventArgs</a></li>
+<li><a href="rhinoobjectselectioneventargs/">RhinoObjectSelectionEventArgs</a></li>
+<li><a href="rhinoreplaceobjecteventargs/">RhinoReplaceObjectEventArgs</a></li>
+<li><a href="rhinotransformobjectseventargs/">RhinoTransformObjectsEventArgs</a></li>
+<li><a href="selectionmethod/">SelectionMethod</a></li>
+<li><a href="subdobject/">SubDObject</a></li>
+<li><a href="surfaceobject/">SurfaceObject</a></li>
+<li><a href="textdisplayalignment/">TextDisplayAlignment</a></li>
+<li><a href="textdotobject/">TextDotObject</a></li>
+<li><a href="textobject/">TextObject</a></li>
+<li><a href="texture/">Texture</a></li>
+<li><a href="texturecombinemode/">TextureCombineMode</a></li>
+<li><a href="texturetype/">TextureType</a></li>
+<li><a href="textureuvwwrapping/">TextureUvwWrapping</a></li>
+<li><a href="viewinfo/">ViewInfo</a></li>
+<li><a href="viewinfofocalblurmodes/">ViewInfoFocalBlurModes</a></li>
+<li><a href="viewportinfo/">ViewportInfo</a></li>
+<li><a href="worksession/">Worksession</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/dimensionobject/">
+        <div class="h2 mt-1 mb-1">DimensionObject</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Rhino Object that represents dimension geometry and attributes
+public class DimensionObject : AnnotationObjectBaseProperties  DimensionStyle DimensionStyle Gets the associated with this OrdinateDimensionObject. since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/dimensionobject/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/modelcomponent/">
+        <div class="h2 mt-1 mb-1">ModelComponent</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Base class for all components in a model (document) and manages the index, id and other information common to this type of objects. This class parallels the C++ ON_ModelComponent.
+public class ModelComponent : CommonObjectProperties  ComponentStatus ComponentStatus Gets or sets the component status of the model component. since 6.0 ModelComponentType ComponentType Gets the for this object. Useful in switch statements. since 6.0 string DeletedName Gets the name of a component that is deleted.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/modelcomponent/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/viewportinfo/">
+        <div class="h2 mt-1 mb-1">ViewportInfo</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Represents a viewing frustum.
+[Serializable]public class ViewportInfo : Runtime.CommonObjectConstructors  ViewportInfo() Initializes a new instance. ViewportInfo(RhinoViewport rhinoViewport) Copies all of the ViewportInfo data from an existing RhinoViewport. ViewportInfo(ViewportInfo other) Initializes a new instance by copying values from another instance.  Properties  static Vector3d DefaultCameraDirection Default z=up perspective camera direction since 6.0 double Camera35mmLensLength This property assumes the camera is horizontal and crop the film rather than the image when the aspect of the frustum is not 36/24.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/viewportinfo/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/texture/">
+        <div class="h2 mt-1 mb-1">Texture</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Represents a texture that is mapped on objects.
+[Serializable]public class Texture : Runtime.CommonObjectConstructors  Texture() Initializes a new texture.  Properties  bool ApplyUvwTransform If True then the UVW transform is applied to the texture otherwise the UVW transform is ignored. since 5.6 bool Enabled If the texture is enabled then it will be visible in the rendered display otherwise it will not. string FileName Gets or sets a file name that is used by this texture.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/texture/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/animationproperties/">
+        <div class="h2 mt-1 mb-1">AnimationProperties</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Contains information used by the Animation Tools to create sun, season, turntable and fly through animations.
+public class AnimationProperties : IDisposableConstructors  AnimationProperties() Initializes a new instance of the class. since 6.11 AnimationProperties(AnimationProperties source) Initialize new instance of the AnimationProperties class. since 6.11  Properties  string AnimationName Gets or sets the name of the animation sequence. since 6.11 Guid CameraPathId Gets or sets the object ID of the camera path.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/animationproperties/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/constructionplane/">
+        <div class="h2 mt-1 mb-1">ConstructionPlane</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Represents a contruction plane inside the document. Use Rhino.DocObjects.Tables.NamedConstructionPlaneTable methods and indexers to add and access a .
+public class ConstructionPlaneConstructors  ConstructionPlane() Initializes a new instance of .  Properties  bool DepthBuffered Gets or sets whether the grid is drawn on top of geometry. false=grid is always drawn behind 3d geometrytrue=grid is drawn at its depth as a 3d plane and grid lines obscure things behind the grid.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/constructionplane/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/earthanchorpoint/">
+        <div class="h2 mt-1 mb-1">EarthAnchorPoint</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Contains information about the model&rsquo;s position in latitude, longitude, and elevation for GIS mapping applications.
+public class EarthAnchorPoint : IDisposableConstructors  EarthAnchorPoint() Initializes a new instance of the class.  Properties  string Description Gets or sets the long form of the identifying information about this location. double EarthBasepointElevation Gets or sets the point elevation on earth, in meters. BasepointZero EarthBasepointElevationZero Gets or sets a value indicating the zero level convention relating to a location on Earth.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/earthanchorpoint/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/viewinfo/">
+        <div class="h2 mt-1 mb-1">ViewInfo</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.DocObjects
+Represents the name and orientation of a View (and named view). views can be thought of as cameras.
+public class ViewInfo : IDisposableConstructors  ViewInfo(RhinoViewport rhinoViewPort) Access to the ViewInfo for given RhinoViewport since 6.0 ViewInfo(uint docRuntimeSerialNumber) Construct the ViewInfo for active viewport of given doc. since 6.0  Properties  double FocalBlurAperture Gets or sets the Focal blur aperture of the active viewport since 6.0 double FocalBlurDistance Gets or sets the Focal blur distance of the active viewport since 6.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/docobjects/viewinfo/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/page/5/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/page/5/">5</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">6</em>
+            
+          
+      
+
+      
+      <span class="next_page disabled">Next</span>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

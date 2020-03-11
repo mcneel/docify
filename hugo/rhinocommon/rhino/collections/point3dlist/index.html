@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Point3dList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Collections
+Represents a list of .
+[Serializable]public class Point3dList : RhinoList&amp;lt;Point3d&amp;gt;, ICloneableConstructors  Point3dList() Initializes a new empty list with default capacity. Point3dList(IEnumerablecollection) Initializes a new point list by copying the values from another set. Point3dList(int initialCapacity) Initializes a new point list with a preallocated initial capacity. Point3dList(Point3d[] initialPoints) Constructs a new point list from values in a point array.  Properties  BoundingBox BoundingBox Even though this is a property, it is not a &amp;ldquo;fast&amp;rdquo; calculation.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Point3dList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Collections</a></em></p>
+<p>Represents a list of .</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Point3dList</span> : RhinoList&lt;Point3d&gt;, ICloneable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Point3dList()</dt>
+<dd>Initializes a new empty list with default capacity.</dd>
+<dt>Point3dList(IEnumerable<!-- raw HTML omitted --> collection)</dt>
+<dd>Initializes a new point list by copying the values from another set.</dd>
+<dt>Point3dList(int initialCapacity)</dt>
+<dd>Initializes a new point list with a preallocated initial capacity.</dd>
+<dt>Point3dList(Point3d[] initialPoints)</dt>
+<dd>Constructs a new point list from values in a point array.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox</dt>
+<dd>Even though this is a property, it is not a &ldquo;fast&rdquo; calculation. Every point is
+evaluated in order to get the bounding box of the list.</dd>
+<dt><a href="/rhinocommon/rhino/collections/point3dlist/xaccess/">XAccess</a> X</dt>
+<dd>Returns an indexer with all X coordinates in this list.</dd>
+<dt><a href="/rhinocommon/rhino/collections/point3dlist/yaccess/">YAccess</a> Y</dt>
+<dd>Returns an indexer with all Y coordinates in this list.</dd>
+<dt><a href="/rhinocommon/rhino/collections/point3dlist/zaccess/">ZAccess</a> Z</dt>
+<dd>Returns an indexer with all Z coordinates in this list.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static int ClosestIndexInList(IList<!-- raw HTML omitted --> list,Point3d testPoint)</dt>
+<dd>Finds the index of the point in a list of points that is closest to a test point.</dd>
+<dd>Returns - Index of closest point in the list on success or -1 on error.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPointInList(IList<!-- raw HTML omitted --> list,Point3d testPoint)</dt>
+<dd>Finds the point in a list of points that is closest to a test point.</dd>
+<dd>Returns - A point.</dd>
+<dt>void Add(double x,double y,double z)</dt>
+<dd>Adds a Point3d to the end of the list with given x,y,z coordinates.</dd>
+<dt>int ClosestIndex(Point3d testPoint)</dt>
+<dd>Finds the index of the point that is closest to a test point in this list.</dd>
+<dd>Returns - index of closest point in the list on success. -1 on error.</dd>
+<dt>Point3dList Duplicate()</dt>
+<dd>Returns a deep copy of this point list instance.</dd>
+<dd>Returns - The duplicated list.</dd>
+<dd>since 6.0</dd>
+<dt>void SetAllX(double xValue)</dt>
+<dd>Set all the X values for the points to a single value</dd>
+<dd>since 5.6</dd>
+<dt>void SetAllY(double yValue)</dt>
+<dd>Set all the Y values for the points to a single value</dd>
+<dd>since 5.6</dd>
+<dt>void SetAllZ(double zValue)</dt>
+<dd>Set all the Z values for the points to a single value</dd>
+<dd>since 5.6</dd>
+<dt>void Transform(Transform xform)</dt>
+<dd>Applies a transform to all the points in the list.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Point3dList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

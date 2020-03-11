@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RenderContent &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+public class RenderContent : IDisposableEvents  static ContentAdded Used to monitor render content addition to the document. since 5.7 static ContentChanged Used to monitor render content modifications. since 5.7 static ContentDeleted Used to monitor render content deletion from the document. since 6.0 static ContentDeleting Used to monitor render content deletion from the document. since 5.7 static ContentFieldChanged This event is raised when a field value is modified. since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RenderContent</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RenderContent</span> : IDisposable
+</code></pre></div><h2 id="events">Events</h2>
+<dl>
+<dt>static ContentAdded</dt>
+<dd>Used to monitor render content addition to the document.</dd>
+<dd>since 5.7</dd>
+<dt>static ContentChanged</dt>
+<dd>Used to monitor render content modifications.</dd>
+<dd>since 5.7</dd>
+<dt>static ContentDeleted</dt>
+<dd>Used to monitor render content deletion from the document.</dd>
+<dd>since 6.0</dd>
+<dt>static ContentDeleting</dt>
+<dd>Used to monitor render content deletion from the document.</dd>
+<dd>since 5.7</dd>
+<dt>static ContentFieldChanged</dt>
+<dd>This event is raised when a field value is modified.</dd>
+<dd>since 5.11</dd>
+<dt>static ContentRenamed</dt>
+<dd>Used to monitor render content renaming in the document.</dd>
+<dd>since 5.7</dd>
+<dt>static ContentReplaced</dt>
+<dd>Used to monitor render content replacing in the document.</dd>
+<dd>since 5.7</dd>
+<dt>static ContentReplacing</dt>
+<dd>Used to monitor render content replacing in the document.</dd>
+<dd>since 5.7</dd>
+<dt>static ContentUpdatePreview</dt>
+<dd>Used to monitor render content preview updates.</dd>
+<dd>since 5.7</dd>
+<dt>static CurrentEnvironmentChanged</dt>
+<dd>Event fired when changes to current environments have been made.
+This will be one of Background, ReflectionAndRefraction or Skylighting
+Since 6.11</dd>
+<dd>since 6.11</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool CanBeEdited</dt>
+<dd>Determines if the content can be edited.</dd>
+<dd>since 6.0</dd>
+<dt>String Category</dt>
+<dd>Category for this content.</dd>
+<dd>since 6.7</dd>
+<dt>String ChildSlotDisplayName</dt>
+<dd>Returns the localized display name of the child slot name</dd>
+<dd>since 7.0</dd>
+<dt>String ChildSlotName</dt>
+<dd></dd>
+<dd>since 5.1</dd>
+<dt>IntPtr CppPointer</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>If this content is in a document content list, the document will be returned.  Otherwise null.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> DocumentAssoc</dt>
+<dd>If this content is associated by a document in any way, the document will be returned.  This includes copies of
+contents that were initially in the document. Otherwise null.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> DocumentRegistered</dt>
+<dd>If this content is used by a document, including not in the content lists (for example, as a decal),
+the document will be returned.  Otherwise null.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/fielddictionary/">FieldDictionary</a> Fields</dt>
+<dd>Rhino.Render.Fields FieldDictionary which provides access to setting
+and retrieving field values.</dd>
+<dd>since 5.1</dd>
+<dt>IEnumerable<!-- raw HTML omitted --> FilesToEmbed</dt>
+<dd>A string array of full paths to files used by the content that may be
+embedded in .3dm files and library files (.rmtl, .renv, .rtex). The
+default implementation returns an empty string list. Override this to
+return the file name or file names used by your content. This is
+typically used by textures that reference files containing the texture
+imagery.</dd>
+<dd>since 5.12</dd>
+<dt>RenderContent FirstChild</dt>
+<dd>Return First child of this content or nullptr if none.</dd>
+<dd>since 6.0</dd>
+<dt>bool Hidden</dt>
+<dd>Determines if the content has the hidden flag set.</dd>
+<dd>since 5.1</dd>
+<dt>Guid Id</dt>
+<dd>Instance identifier for this content.</dd>
+<dd>since 5.1</dd>
+<dt>bool IsDefaultInstance</dt>
+<dd>Checks if render content is default instance.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsHiddenByAutoDelete</dt>
+<dd>Contents can be created as &lsquo;auto-delete&rsquo; by certain commands such as &lsquo;PictureFrame&rsquo;.
+These contents are automatically hidden from the user when the associated Rhino object
+is deleted. They are later deleted when the document is saved.</dd>
+<dd>since 6.15</dd>
+<dt>bool IsLocked</dt>
+<dd>Set this property to True prior to adding content to the document to
+lock the content browser editing UI methods.  Setting this to True will
+keep the browser from allowing things like deleting, renaming or
+changing content.  This is useful for custom child content that you
+want to be editable but persistent.  Setting this after adding content
+to the document will cause an exception to be thrown.</dd>
+<dd>since 5.12</dd>
+<dt>String Name</dt>
+<dd>Instance name for this content.</dd>
+<dd>since 5.1</dd>
+<dt>RenderContent NextSibling</dt>
+<dd>Return First sibling of this content or nullptr if none.</dd>
+<dd>since 6.0</dd>
+<dt>String Notes</dt>
+<dd>Notes for this content.</dd>
+<dd>since 5.1</dd>
+<dt>RenderContent Parent</dt>
+<dd>Returns the top content in this parent/child chain.</dd>
+<dd>since 5.11</dd>
+<dt><a href="/rhinocommon/rhino/render/proxytypes/">ProxyTypes</a> ProxyType</dt>
+<dd>Gets the proxy type of the render content</dd>
+<dd>since 6.0</dd>
+<dt>uint RenderHash</dt>
+<dd>Render hash for the content hierarchy. It iterates children and includes
+a caching mechanism which means the hash value can be retrieved quickly
+if it hasn&rsquo;t changed. The cache is invalidated when Changed() is called.
+<p>You can override the  method to provide
+a custom hash value.</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>String Tags</dt>
+<dd>Tags for this content.</dd>
+<dd>since 6.4</dd>
+<dt>bool TopLevel</dt>
+<dd>Returns True if this content has no parent, False if it is the child of another content.</dd>
+<dd>since 5.1</dd>
+<dt>RenderContent TopLevelParent</dt>
+<dd>Returns the top content in this parent/child chain.</dd>
+<dd>since 5.1</dd>
+<dt>String TypeDescription</dt>
+<dd>Description for your content type.  ie.  &ldquo;Procedural checker pattern&rdquo;</dd>
+<dd>since 5.1</dd>
+<dt>Guid TypeId</dt>
+<dd>Type identifier for this content</dd>
+<dd>since 6.0</dd>
+<dt>String TypeName</dt>
+<dd>Name for your content type.  ie. &ldquo;My .net Texture&rdquo;</dd>
+<dd>since 5.1</dd>
+<dt>String Xml</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool AddPersistentRenderContent(RenderContent renderContent)</dt>
+<dd>Add a material, environment or texture to the internal RDK document lists as
+top level content.  The content must have been returned from
+RenderContent::MakeCopy, NewContentFromType or a similar function that returns
+a non-document content.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 5.1</dd>
+<dt>static bool AddPersistentRenderContent(RhinoDoc document,RenderContent renderContent)</dt>
+<dd>Add a material, environment or texture to the internal RDK document lists as
+top level content.  The content must have been returned from
+RenderContent::MakeCopy, NewContentFromType or a similar function that returns
+a non-document content.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.0</dd>
+<dt>static RenderContent Create(Guid type,RenderContent parent,String childSlotName,ShowContentChooserFlags flags,RhinoDoc doc)</dt>
+<dd>Constructs a new content of the specified type and add it to the persistent content list.
+This function cannot be used to create temporary content that you delete after use.
+Content created by this function is owned by RDK and appears in the content editor.
+To create a temporary content which is owned by you, call RenderContentType.NewContentFromType().</dd>
+<dd>Returns - A new persistent render content.</dd>
+<dd>since 5.1</dd>
+<dt>static RenderContent Create(Guid type,ShowContentChooserFlags flags,RhinoDoc doc)</dt>
+<dd>Constructs a new content of the specified type and add it to the persistent content list.
+This function cannot be used to create temporary content that you delete after use.
+Content created by this function is owned by RDK and appears in the content editor.
+To create a temporary content which is owned by you, call RenderContentType.NewContentFromType().</dd>
+<dd>Returns - A new persistent render content.</dd>
+<dd>since 5.1</dd>
+<dt>static RenderContent Create(Type type,RenderContent parent,String childSlotName,ShowContentChooserFlags flags,RhinoDoc doc)</dt>
+<dd>Constructs a new content of the specified type and add it to the persistent content list.
+This function cannot be used to create temporary content that you delete after use.
+Content created by this function is owned by RDK and appears in the content editor.
+To create a temporary content which is owned by you, call RenderContentType.NewContentFromType().</dd>
+<dd>Returns - A new persistent render content.</dd>
+<dd>since 5.1</dd>
+<dt>static RenderContent Create(Type type,ShowContentChooserFlags flags,RhinoDoc doc)</dt>
+<dd>Constructs a new content of the specified type and add it to the persistent content list.
+This function cannot be used to create temporary content that you delete after use.
+Content created by this function is owned by RDK and appears in the content editor.
+To create a temporary content which is owned by you, call RenderContentType.NewContentFromType().</dd>
+<dd>Returns - A new persistent render content.</dd>
+<dd>since 5.1</dd>
+<dt>static RenderContent FromId(RhinoDoc document,Guid id)</dt>
+<dd>Search for a content object based on its Id</dd>
+<dd>Returns - Returns the content object with the specified Id if it is found
+otherwise it returns null.</dd>
+<dd>since 5.7</dd>
+<dt>static RenderContent FromXml(String xml)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static RenderContent FromXml(String xml,RhinoDoc doc)</dt>
+<dd></dd>
+<dd>since 6.4</dd>
+<dt>static RenderContent LoadFromFile(String filename)</dt>
+<dd>Loads content from a library file.  Does not add the content to the persistent content list.
+Use AddPersistantContent to add it to the list.</dd>
+<dd>Returns - The loaded content or None if an error occurred.</dd>
+<dd>since 5.1</dd>
+<dt>static Type[] RegisterContent(Assembly assembly,Guid pluginId)</dt>
+<dd>Call RegisterContent in your plug-in&rsquo;s OnLoad function in order to register all of the
+custom RenderContent classes in your assembly.</dd>
+<dd>Returns - array of render content types registered on success. None on error.</dd>
+<dd>since 5.1</dd>
+<dt>static Type[] RegisterContent(PlugIn plugin)</dt>
+<dd>Call RegisterContent in your plug-in&rsquo;s OnLoad function in order to register all of the
+custom RenderContent classes in your assembly.</dd>
+<dd>Returns - array of render content types registered on success. None on error.</dd>
+<dd>since 5.1</dd>
+<dt>bool AddAutomaticUserInterfaceSection(string caption,int id)</dt>
+<dd>Add a new automatic user interface section, Field values which include
+prompts will be automatically added to this section.</dd>
+<dd>Returns - Returns True if the automatic tab section was added otherwise; returns
+False on error.</dd>
+<dd>since 5.1</dd>
+<dt>bool AddChild(RenderContent renderContent)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>bool AddChild(RenderContent renderContent,String childSlotName)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool AddUserInterfaceSection(ICollapsibleSection section)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>UI.UserInterfaceSection AddUserInterfaceSection(Type classType,string caption,bool createExpanded,bool createVisible)</dt>
+<dd>Add a new .NET control to an content expandable tab section, the height
+of the createExpanded tabs client area will be the initial height of the
+specified control.</dd>
+<dd>Returns - Returns the UserInterfaceSection object used to manage the new 
+user control object.</dd>
+<dd>since 5.1</dd>
+<dt>void BeginChange(ChangeContexts changeContext)</dt>
+<dd>Begins a change or batch of changes. This returns a reference to the
+content which you should use to make your changes. It may also make a
+copy of the content state allowing  to send an
+event with the old and new contents. Calls to this method are counted;
+you must call EndChange() once for every call to BeginChange().
+Note:
+If Changed() was called between the calls to BeginChange() and
+EndChange(), the last call to EndChange() may cause the ContentChanged
+event to be sent.</dd>
+<dd>since 6.0</dd>
+<dt>void BindParameterToField(string parameterName,Field field,ChangeContexts setEvent)</dt>
+<dd>Use bindings to automatically wire parameters to fields</dd>
+<dd>since 5.7</dd>
+<dt>void BindParameterToField(string parameterName,string childSlotName,Field field,ChangeContexts setEvent)</dt>
+<dd>Use bindings to automatically wire parameters to fields</dd>
+<dd>since 5.7</dd>
+<dt>bool ChangeChild(RenderContent oldContent,RenderContent newContent)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>double ChildSlotAmount(String childSlotName)</dt>
+<dd>Gets the amount property for the texture in the specified child slot.  Values are typically from 0.0 - 100.0</dd>
+<dd>since 5.7</dd>
+<dt>string ChildSlotNameFromParamName(String paramName)</dt>
+<dd>A &ldquo;child slot&rdquo; is the specific &ldquo;slot&rdquo; that a child (usually a texture) occupies.
+This is generally the &ldquo;use&rdquo; of the child - in other words, the thing the child
+operates on.  Some examples are &ldquo;color&rdquo;, &ldquo;transparency&rdquo;.</dd>
+<dd>Returns - The default behavior for these functions is to return the input string.
+Sub-classes may (in the future) override these functions to provide different mappings.</dd>
+<dd>since 5.1</dd>
+<dt>bool ChildSlotOn(String childSlotName)</dt>
+<dd>Gets the on-ness property for the texture in the specified child slot.</dd>
+<dd>since 5.7</dd>
+<dt>void DeleteAllChildren(ChangeContexts changeContexts)</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>bool DeleteChild(string childSlotName,ChangeContexts changeContexts)</dt>
+<dd></dd>
+<dd>since 5.10</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dd>since 5.1</dd>
+<dt>bool DynamicIcon(Size size,Bitmap bitmap,DynamicIconUsage usage)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>RenderContent Edit()</dt>
+<dd>Call this method to open the content in the a modal version of the editor.
+The content must be in the document or the call will fail.</dd>
+<dd>Returns - Returns the edited content on succees or None on error.</dd>
+<dd>since 6.13</dd>
+<dt>void EndChange()</dt>
+<dd>Ends a change or batch of changes. Calls to this method are counted;
+you must call this method once for every call to .
+Note:
+If  was called with ChangeContexts.UI,
+ChangeContexts.Program, ChangeContexts.Drop or ChangeContexts.UI.Tree
+and Changed() was called between the calls to  and
+EndChange(), the last call to EndChange() will raise the
+event.</dd>
+<dd>since 6.0</dd>
+<dt>DataSources.ContentFactory Factory()</dt>
+<dd></dd>
+<dd>since 6.10</dd>
+<dt>RenderContent FindChild(String childSlotName)</dt>
+<dd></dd>
+<dd>since 5.1</dd>
+<dt>RenderContent ForDisplay()</dt>
+<dd>**** This method is for proxies and will be marked obsolete in V7 ****
+<p>The only place a single proxy can be displayed is in the
+New Content Control main thumbnail. All other attempts to
+use a single proxy in a UI require it to be replaced with
+the corresponding multi proxy. Single proxies override this
+to find the corresponding multi proxy.</p>
+</dd>
+<dd>Returns - The cotnent.</dd>
+<dd>since 6.9</dd>
+<dt>object GetChildSlotParameter(String parameterName,String childSlotName)</dt>
+<dd>Extra requirements are a way of specifying extra functionality on parameters in the automatic UI.
+Implement this function to specify additional functionality for automatic UI sections or the texture summary.
+See IAutoUIExtraRequirements.h in the C++ RDK for string definitions for the parameter names.</dd>
+<dd>Returns - Call the base class if you do not support the extra requirement parameter.
+Current supported return values are (int, bool, float, double, string, Guid, Color, Vector3d, Point3d, DateTime)</dd>
+<dd>since 5.7</dd>
+<dt>string[] GetEmbeddedFilesList()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>object GetParameter(String parameterName)</dt>
+<dd>Query the content instance for the value of a given named parameter.
+If you do not support this parameter, call the base class.</dd>
+<dd>Returns - IConvertible. Note that you can&rsquo;t directly cast from object, instead you have to use the Convert mechanism.</dd>
+<dd>since 5.7</dd>
+<dt>bool GetUnderlyingInstances(RenderContentCollection collection)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>bool Icon(Size size,Bitmap bitmap)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool Initialize()</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>bool IsCompatible(Guid renderEngineId)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsContentTypeAcceptableAsChild(Guid type,String childSlotName)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsFactoryProductAcceptableAsChild(ContentFactory factory,String childSlotName)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>bool IsFactoryProductAcceptableAsChild(Guid kindId,string factoryKind,string childSlotName)</dt>
+<dd>Override this method to restrict the type of acceptable child content.
+The default implementation of this method just returns true.</dd>
+<dd>Returns - Return True only if content with the specified kindId can be  accepted
+as a child in the specified child slot.</dd>
+<dd>since 5.11</dd>
+<dt>bool IsReference()</dt>
+<dd>Query whether or not the content or any of its ancestors is a reference content.</dd>
+<dd>Returns - True if the content is a reference, else false</dd>
+<dd>since 6.9</dd>
+<dt>bool IsRenderHashCached()</dt>
+<dd>This method is deprecated and no longer called. For more information
+see</dd>
+<dd>Returns - bool</dd>
+<dd>since 6.0</dd>
+<dt>RenderContent MakeCopy()</dt>
+<dd>Create a copy of the render content. All content is the same, except for the
+instance Id.</dd>
+<dd>Returns - The new RenderContent</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendercontent/matchdataresult/">MatchDataResult</a> MatchData(RenderContent oldContent)</dt>
+<dd>Implement to transfer data from another content to this content during creation.</dd>
+<dd>Returns - Information about how much data was matched.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/previewsceneserver/">PreviewSceneServer</a> NewPreviewSceneServer(SceneServerData ssd)</dt>
+<dd>Gets the PreviewSceneServer of the content</dd>
+<dd>since 6.0</dd>
+<dt>bool OpenInEditor()</dt>
+<dd>Call this method to open the content in the relevant thumbnail editor
+and select it for editing by the user. The content must be in the
+document or the call will fail.</dd>
+<dd>Returns - Returns True on success or False on error.</dd>
+<dd>since 5.7</dd>
+<dt>bool OpenInModalEditor()</dt>
+<dd>Call this method to open the content in the a modal version of the editor.
+The content must be in the document or the call will fail.</dd>
+<dd>Returns - Returns True on success or False on error.</dd>
+<dd>since 5.7</dd>
+<dt>string ParamNameFromChildSlotName(String childSlotName)</dt>
+<dd>A &ldquo;child slot&rdquo; is the specific &ldquo;slot&rdquo; that a child (usually a texture) occupies.
+This is generally the &ldquo;use&rdquo; of the child - in other words, the thing the child
+operates on.  Some examples are &ldquo;color&rdquo;, &ldquo;transparency&rdquo;.</dd>
+<dd>Returns - The default behavior for these functions is to return the input string.  Sub-classes may (in the future) override these functions to provide different mappings.</dd>
+<dd>since 5.1</dd>
+<dt>uint RenderHashExclude(CrcRenderHashFlags flags,string excludeParameterNames)</dt>
+<dd>As RenderHash, but ignore parameter names given.</dd>
+<dd>Returns - Render hash</dd>
+<dd>since 6.2</dd>
+<dt>uint RenderHashExclude(TextureRenderHashFlags flags,string excludeParameterNames)</dt>
+<dd>As RenderHash, but ignore parameter names given.</dd>
+<dd>Returns - Render hash</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(RenderContent newcontent)</dt>
+<dd></dd>
+<dd>since 6.13</dd>
+<dt>bool SetChild(RenderContent renderContent,String childSlotName)</dt>
+<dd>Set another content as a child of this content. This content may or may
+not be attached to a document.  If this content already has a child
+with the specified child slot name, that child will be deleted.  If
+this content is not attached to a document, the child will be added
+without sending any events.  If this content is attached to a document,
+the necessary events will be sent to update the UI.
+Note:
+Do not call this method to add children in your constructor. If you
+want to add default children, you should override Initialize() and add
+them there.</dd>
+<dd>Returns - Returns True if the content was added or the child slot with this name
+was modified otherwise; returns false.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetChild(RenderContent renderContent,String childSlotName,ChangeContexts changeContexts)</dt>
+<dd>Set another content as a child of this content. This content may or may
+not be attached to a document.  If this content already has a child
+with the specified child slot name, that child will be deleted.  If
+this content is not attached to a document, the child will be added
+without sending any events.  If this content is attached to a document,
+the necessary events will be sent to update the UI.
+Note:
+Do not call this method to add children in your constructor. If you
+want to add default children, you should override Initialize() and add
+them there.</dd>
+<dd>Returns - Returns True if the content was added or the child slot with this name
+was modified otherwise; returns false.</dd>
+<dd>since 5.10</dd>
+<dt>void SetChildSlotAmount(String childSlotName,double amount,ChangeContexts cc)</dt>
+<dd>Sets the amount property for the texture in the specified child slot.  Values are typically from 0.0 - 100.0</dd>
+<dd>since 5.7</dd>
+<dt>void SetChildSlotOn(String childSlotName,bool bOn,ChangeContexts cc)</dt>
+<dd>Sets the on-ness property for the texture in the specified child slot.</dd>
+<dd>since 5.7</dd>
+<dt>bool SetChildSlotParameter(String parameterName,String childSlotName,object value,ExtraRequirementsSetContexts sc)</dt>
+<dd>Extra requirements are a way of specifying extra functionality on parameters in the automatic UI.
+Implement this function to support values being set from automatic UI sections or the texture summary.
+See IAutoUIExtraRequirements.h in the C++ RDK for string definitions for the parameter names.</dd>
+<dd>Returns - Null variant if not supported.  Call the base class if you do not support the extra requirement paramter.</dd>
+<dd>since 5.7</dd>
+<dt>void SetName(string name,bool bRenameEvents,bool bEnsureNameUnique)</dt>
+<dd>Set instance name for this content</dd>
+<dd>since 7.0</dd>
+<dt>bool SetParameter(String parameterName,object value)</dt>
+<dd>Set the named parameter value for this content instance.
+If you do not support this parameter, call the base class.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetParameter(String parameterName,object value,ChangeContexts changeContext)</dt>
+<dd>Set the named parameter value for this content instance.
+If you do not support this parameter, call the base class.</dd>
+<dd>since 5.7</dd>
+<dt>void SetRenderHash(uint hash)</dt>
+<dd>This method is deprecated and no longer called. For more information
+see</dd>
+<dd>since 6.0</dd>
+<dt>void Uninitialize()</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>int UseCount()</dt>
+<dd>UseCount returns how many times the content is used</dd>
+<dd>since 6.9</dd>
+<dt>bool VirtualIcon(Size size,Bitmap bitmap)</dt>
+<dd>Icon to display in the content browser, this bitmap needs to be valid for
+the life of this content object, the content object that returns the bitmap
+is responsible for disposing of the bitmap.</dd>
+<dd>Returns - Return Icon to display in the content browser.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RenderContent</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

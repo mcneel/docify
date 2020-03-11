@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Collections &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Collections</h1>
+  <ul>
+<li><a href="archivabledictionary/">ArchivableDictionary</a></li>
+<li><a href="curvelist/">CurveList</a></li>
+<li><a href="iresizablelist/">IResizableList</a></li>
+<li><a href="point3dlist/">Point3dList</a></li>
+<li><a href="xaccess/">XAccess</a></li>
+<li><a href="yaccess/">YAccess</a></li>
+<li><a href="zaccess/">ZAccess</a></li>
+<li><a href="rhinolist/">RhinoList</a></li>
+<li><a href="transformobjectlist/">TransformObjectList</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/transformobjectlist/">
+        <div class="h2 mt-1 mb-1">TransformObjectList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Collections
+Used by the TransformCommand and GetTransform classes.
+public class TransformObjectList : IDisposableConstructors  TransformObjectList()   Properties  int Count Number of elements in this list since 5.10 bool DisplayFeedbackEnabled  int GripCount Number of elements in grip list since 6.0 int GripOwnerCount Number of elements in grip owner list since 6.0  Methods  void Add(ObjRef objref) Add an ObjRef to this list. Use this to add Polyedges so the references are properly counted since 5.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/collections/transformobjectlist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/curvelist/">
+        <div class="h2 mt-1 mb-1">CurveList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Collections
+Represents a list of curves.
+public class CurveList : RhinoList&lt;Curve&gt;Constructors  CurveList() Initializes a new empty list of curves. CurveList(IEnumerablecollection) Initializes a new list that is filled with all items of the input enumerable. Input items are not explicitly duplicated (this is a shallow copy). CurveList(int initialCapacity) Initializes a new empty list of curves with a predefined capacity. This is the amount of items the list will accept before resizing.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/collections/curvelist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/point3dlist/">
+        <div class="h2 mt-1 mb-1">Point3dList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Collections
+Represents a list of .
+[Serializable]public class Point3dList : RhinoList&lt;Point3d&gt;, ICloneableConstructors  Point3dList() Initializes a new empty list with default capacity. Point3dList(IEnumerablecollection) Initializes a new point list by copying the values from another set. Point3dList(int initialCapacity) Initializes a new point list with a preallocated initial capacity. Point3dList(Point3d[] initialPoints) Constructs a new point list from values in a point array.  Properties  BoundingBox BoundingBox Even though this is a property, it is not a &ldquo;fast&rdquo; calculation.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/collections/point3dlist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/rhinolist/">
+        <div class="h2 mt-1 mb-1">RhinoList</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Collections
+Provides helper methods to work with and other collections.
+[Serializable,DebuggerTypeProxy(typeof(ListDebuggerDisplayProxy&lt;&gt;)),DebuggerDisplay(&#34;Count = {Count}&#34;)]public class RhinoList : IList&lt;T&gt;, IList, ICloneableConstructors  RhinoList() Initializes a new, empty list. since (unknown) RhinoList(IEnumerablecollection) Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T. since (unknown) RhinoList(int initialCapacity) Initializes an empty list with a certain capacity. since (unknown) RhinoList(int amount,T defaultValue) Initializes a new list with a specified amount of values.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/collections/rhinolist/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/archivabledictionary/">
+        <div class="h2 mt-1 mb-1">ArchivableDictionary</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Collections
+Represents a dictionary class that can be attached to objects and can be serialized (saved) at necessity.See remarks for layout.
+[Serializable]public class ArchivableDictionary : ICloneable, IDictionary&lt;string, object&gt;, ISerializableConstructors  ArchivableDictionary() Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version) Initializes an instance of a dictionary for writing to a 3dm archive. ArchivableDictionary(int version,string name) Initializes an instance of a dictionary for writing to a 3dm archive.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/collections/archivabledictionary/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

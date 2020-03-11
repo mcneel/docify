@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  SelectionFilterSettings &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.ApplicationSettings
+Selection filter settings restrict any selection mode (SelWindow, SelCrossing, SelAll, etc.) to specified object types. Note, selection filter settings are not persistent.
+public class SelectionFilterSettingsProperties  static bool Enabled Enables or disables the global object selection filter. since 7.0 static ObjectType GlobalGeometryFilter The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">SelectionFilterSettings</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.ApplicationSettings</a></em></p>
+<p>Selection filter settings restrict any selection mode (SelWindow, SelCrossing, SelAll, etc.) to specified object types.
+Note, selection filter settings are not persistent.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SelectionFilterSettings</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static bool Enabled</dt>
+<dd>Enables or disables the global object selection filter.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/docobjects/objecttype/">ObjectType</a> GlobalGeometryFilter</dt>
+<dd>The global geometry type filter controls which types of geometry will be be filtered.
+Note, the filter can be a bitwise combination of multiple object types.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/docobjects/objecttype/">ObjectType</a> OneShotGeometryFilter</dt>
+<dd>The one-shot geometry type filter controls which types of geometry will be be filtered for one selection.
+Note, the filter can be a bitwise combination of multiple object types.</dd>
+<dd>since 7.0</dd>
+<dt>static bool SubObjectSelect</dt>
+<dd>Enables or disabled sub-object selection.</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/selectionfiltersettingsstate/">SelectionFilterSettingsState</a> GetCurrentState()</dt>
+<dd>Gets the current settings of the application.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/selectionfiltersettingsstate/">SelectionFilterSettingsState</a> GetDefaultState()</dt>
+<dd>Gets the factory settings of the application.</dd>
+<dd>since 7.0</dd>
+<dt>static void RestoreDefaults()</dt>
+<dd>Commits the default settings as the current settings.</dd>
+<dd>since 7.0</dd>
+<dt>static void UpdateFromState(SelectionFilterSettingsState state)</dt>
+<dd>Sets all settings to a particular defined joined state.</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>SelectionFilterSettings</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

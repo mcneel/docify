@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rdkundo/">
-        <h3>RdkUndo</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/breptrim/">
+        <h3>BrepTrim</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rdkundo/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-RdkUndo class, which is used to get the RdkUndoRecord
-public class RdkUndoConstructors RdkUndo(IntPtr pUndoRecord)  (summary) Constructor for RdkUndo (since) 6.11  Methods void Dispose()  (summary) Dispose for RdkUndo (since) 6.11 (returns) void This is some return comment  RdkUndoRecord NewUndoRecord()  (summary) Get a new UndoRecord (since) 6.11 (returns) RdkUndoRecord This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rdkundorecord/">
-        <h3>RdkUndoRecord</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/rdkundorecord/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-RdkUndoRecord class
-public class RdkUndoRecordConstructors RdkUndoRecord(IntPtr pUndoRecord)  (summary) Constructor for RdkUndoRecord (since) 6.0  Methods void Dispose()  (summary) Dispose for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  void SetDescription(String description)  (summary) Set description for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/realtimedisplaymode/">
-        <h3>RealtimeDisplayMode</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/realtimedisplaymode/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Base class for implementing real-time display modes in .NET.
-Pay special attention that in StartRenderer the RenderWindow.SetSize() function is called if the implementation relies on the RenderWindow to do the drawing to the viewport. If i.e. OpenGL is used to draw render results to the viewport then SetSize() doesn&rsquo;t have to be called, nor should the implementation then access channels on the RenderWindow, as those then don&rsquo;t exist. For OpenGL-based drawing the RenderWindow is used as a container for ViewInfo management, nothing else.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/">
-        <h3>RealtimeDisplayModeClassInfo</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Class information obligatory for registering RealtimeDisplayMode implementations.
-public class RealtimeDisplayModeClassInfoProperties bool DontRegisterAttributesOnStart  (summary) Override and return True when you don&rsquo;t want your class info to cause display attributes to be registered with the system. (since) 6.0  bool DrawOpenGl  (summary) Return True if the RealtimeDisplayMode draws its result using OpenGL. RenderWindow usage will then be skipped. (since) 6.0  Guid GUID  (summary) Get the RealtimeDisplayMode implementation GUID (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/rectangle3d/">
-        <h3>Rectangle3d</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/rectangle3d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/breptrim/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents the values of a plane and two intervals that form an oriented rectangle in three dimensions.
-Constructors Rectangle3d(Plane plane,double width,double height)  (summary) Initializes a new rectangle from width and height. (since) 5.0  Rectangle3d(Plane plane,Interval width,Interval height)  (summary) Initializes a new rectangle from dimensions. (since) 5.0  Rectangle3d(Plane plane,Point3d cornerA,Point3d cornerB)  (summary) Initializes a new rectangle from a base plane and two corner points. (since) 5.
+Brep trim information is stored in BrepTrim classes. Brep.Trims is an array of all the trims in the brep. A BrepTrim is derived from CurveProxy so the trim can supply easy to use evaluation tools via the Curve virtual member functions. Note well that the domains and orientations of the curve m_C2[trim.m_c2i] and the trim as a curve may not agree.
+public class BrepTrim : CurveProxyProperties  Brep Brep Gets the Brep that owns this trim.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/reducemeshparameters/">
-        <h3>ReduceMeshParameters</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/breptrimlist/">
+        <h3>BrepTrimList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/reducemeshparameters/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/breptrimlist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the Trims in a Brep object
+public class BrepTrimList : IEnumerable&lt;BrepTrim&gt;, Rhino.Collections.IRhinoTable&lt;BrepTrim&gt;Properties  int Count Gets the number of brep trims. since 5.1  Methods  BrepTrim Add(bool rev3d,BrepEdge edge,int curve2dIndex) Add a new trim that will be part of an inner, outer, or slit loop to the brep Returns - new trim since 5.4 BrepTrim Add(bool rev3d,BrepLoop loop,int curve2dIndex) Add a new trim that will be part of an inner, outer, or slit loop to the brep Returns - new trim since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/brepvertex/">
+        <h3>BrepVertex</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/brepvertex/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Parameters for Reduce method
-public class ReduceMeshParametersConstructors ReduceMeshParameters()  (summary) Constructs a polygon reduction parameter object with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties int Accuracy  (summary) Integer from 1 to 10 telling how accurate reduction algorithm to use. Greater number gives more accurate results (since) 6.0  bool AllowDistortion  (summary) If True mesh appearance is not changed even if the target polygon count is not reached (since) 6.
+Brep vertex information
+public class BrepVertex : PointProperties  Brep Brep Gets the Brep that owns this vertex. since 5.4 int VertexIndex Gets the index of this vertex in the Brep.Vertices collection. since 5.4  Methods  int[] EdgeIndices() Gets the indices of all edges associated with this vertex. Returns - Empty array on failure. since 5.12  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/meshrefinements/refinementsettings/">
-        <h3>RefinementSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepvertexlist/">
+        <h3>BrepVertexList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/meshrefinements/refinementsettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/brepvertexlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.MeshRefinements
-Defines the way a mesh refinement modifier works.
-public class RefinementSettingsConstructors RefinementSettings()  (summary) Creates a default operation settings object. (since) 6.0  Properties CancellationToken ContinueRequest  (summary) A token to request computation termination. (since) 6.0  bool HasPull  (summary) Gets a value indicating whether this subdivision should create a result on a specific surface. (since) 6.0  int Level  (summary) The level of subdivision to achieve.
+    Namespace: Rhino.Geometry.Collections
+Provides access to all the Vertices in a Brep object
+public class BrepVertexList : IEnumerable&lt;BrepVertex&gt;, Rhino.Collections.IRhinoTable&lt;BrepVertex&gt;Properties  int Count Gets the number of brep vertices. since 5.4  Methods  BrepVertex Add() Create and add a new vertex to this list since 5.4 BrepVertex Add(Point3d point,double vertexTolerance) Create and add a new vertex to this list since 5.4 BrepVertex AddPointOnFace(BrepFace face,double s,double t) Adds a new point on face to the brep Returns - new vertex that represents the point on face since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontent/">
-        <h3>RenderContent</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/cachedtexturecoordinates/">
+        <h3>CachedTextureCoordinates</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontent/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-public class RenderContentEvents static ContentAdded  (summary) Used to monitor render content addition to the document. (since) 5.7  static ContentChanged  (summary) Used to monitor render content modifications. (since) 5.7  static ContentDeleted  (summary) Used to monitor render content deletion from the document. (since) 6.0  static ContentDeleting  (summary) Used to monitor render content deletion from the document. (since) 5.7  static ContentFieldChanged  (summary) This event is raised when a field value is modified.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontentchangedeventargs/">
-        <h3>RenderContentChangedEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontentchangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/cachedtexturecoordinates/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class RenderContentChangedEventArgsProperties RenderContent.ChangeContexts ChangeContext  (summary) (since) 5.7  RenderContent OldContent  (summary) (since) 6.0  
+Used for cached texture coordinates
+public class CachedTextureCoordinates : Runtime.CommonObject, IList&lt;Point3d&gt;Properties  int Count Number of cached coordinates. since 5.10 int Dim Coordinate dimension: 2 = UV, 3 = UVW since 5.10 bool IsReadOnly This collection is always read-only since 5.10 Guid MappingId The texture mapping Id. since 5.10  Methods  bool Contains(Point3d item) Determines whether this collection contains a specific value. since 5.10 void CopyTo(Point3d[] array,int arrayIndex) Copies the elements of the this collection to an System.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendercontentcollection/">
-        <h3>RenderContentCollection</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/centermark/">
+        <h3>Centermark</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendercontentcollection/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/centermark/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderContentCollectionConstructors RenderContentCollection()  (summary) (since) 6.0  RenderContentCollection(IntPtr nativePtr)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Add(RenderContentCollection collection)  (summary) (since) 6.0 (returns) void This is some return comment  void Append(RenderContent content)  (summary) (since) 6.0 (returns) void This is some return comment  void Clear()  (summary) (since) 6.0 (returns) void This is some return comment  RenderContent ContentAt(int index)  (summary) (since) 6.
+    Namespace: Rhino.Geometry
+Represents a centermark
+[Serializable]public class Centermark : DimensionConstructors  Centermark()  since 6.0  Methods  static Centermark Create(DimensionStyle dimStyle,Plane plane,Point3d centerpoint,double radius) Create a new centermark since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/circle/">
+        <h3>Circle</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/circle/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a circle in 3D. The values used are a radius and an orthonormal frame of the plane containing the circle, with origin at the center.The circle is parameterized by radians from 0 to 2 Pi given byt -&gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere center, xaxis and yaxis define the orthonormal frame of the circle plane.
+Constructors  Circle(Arc arc) Initializes a circle from an arc. Circle(double radius) Initializes a circle with center (0,0,0) in the world XY plane.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayobjref/">
+        <h3>ClassArrayObjRef</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayobjref/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged &ldquo;array&rdquo; (list) of CRhinoObjRef instances. Wrapper for a C++ ON_ClassArray of CRhinoObjRef
+public class ClassArrayObjRef : IDisposableConstructors  ClassArrayObjRef() Initializes a new instance. ClassArrayObjRef(IEnumerableobjrefs) Initializes a new instances from a set of ObjRefs  Properties  int Count Gets the number of CRhinoObjRef instances in this array.  Methods  void Add(ObjRef objref) Adds an ObjRef to the list. IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayonobjref/">
+        <h3>ClassArrayOnObjRef</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayonobjref/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged &ldquo;array&rdquo; (list) of ON_ObjRef instances. Wrapper for a C++ ON_ClassArray of ON_ObjRef
+public class ClassArrayOnObjRef : IDisposableConstructors  ClassArrayOnObjRef() Initializes a new instance. since 5.8 ClassArrayOnObjRef(IEnumerableobjrefs) Initializes a new instances from a set of ObjRefs since 5.8  Properties  int Count Gets the number of ObjRef instances in this array. since 5.8  Methods  void Add(ObjRef objref) Adds an ObjRef to the list.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarraystring/">
+        <h3>ClassArrayString</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarraystring/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_ClassArray&lt;ON_wString&gt; If you are not writing C++ code then this class is not for you.
+public class ClassArrayString : IDisposableConstructors  ClassArrayString() Initializes a new instance. since 6.0  Properties  int Count Gets the number of strings in this array. since 6.0  Methods  void Add(string s) Adds a string to the list. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
   </div>
   
 

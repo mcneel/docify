@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/silhouette/">
-        <h3>Silhouette</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshingparameters/">
+        <h3>MeshingParameters</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/silhouette/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshingparameters/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Information about silhouette curves that are generated from geometry (surfaces, brep faces, meshes)
-public class SilhouetteProperties Curve Curve  (summary) 3D curve representing the shape of the silhouette. (since) 6.0  ComponentIndex GeometryComponentIndex  (summary) Gets the component index corresponding with this silhouette curve. This field is only set when the entire silhouette curve is part of some geometry component. (since) 6.0  SilhouetteType SilhouetteType  (summary) Gets the type of this silhouette curve.
+Represents settings used for creating a mesh representation of a brep or surface.
+public class MeshingParameters : IDisposableConstructors  MeshingParameters() Initializes a new instance with default values. Initial values are same as . MeshingParameters(double density) Initializes a new instance with simple values, similar to that of Rhino&rsquo;s meshing slider interface. since 6.0 MeshingParameters(double density,double minimumEdgeLength) Initializes a new instance with simple values, similar to that of Rhino&rsquo;s meshing slider interface.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearray2dex/">
-        <h3>SimpleArray2dex</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshinterference/">
+        <h3>MeshInterference</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearray2dex/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshinterference/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_2dex&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArray2dexConstructors SimpleArray2dex()  (summary) Initializes a new class. (since) 6.0  SimpleArray2dex(IEnumerablevalues)  (summary) Initializes a new class (since) 6.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 6.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry.Intersect
+Represents an element which is part of a curve region boundary.
+Properties  Point3d[] HitPoints Array of hit points where the objects of IndexA and IndexB interfere. since 7.0 int IndexA The index of the first clashing, or interfering object. since 7.0 int IndexB The index of the second clashing, or interfering object. since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayarraypoint3d/">
-        <h3>SimpleArrayArrayPoint3d</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshngon/">
+        <h3>MeshNgon</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayarraypoint3d/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshngon/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_PolyLine&gt;, ON_SimpleArray&lt;ON_3dPointArray&gt; If you are not writing C++ code then this class is not for you.
-public class SimpleArrayArrayPoint3dConstructors SimpleArrayArrayPoint3d()  (summary) Initializes a new empty instance. (since) 7.0  Properties int Count  (summary) Gets the amount of polylines in this array. (since) 7.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 7.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry
+Represents a mesh ngon. When retrieved from the Ngon property of a mesh, this contains faces that have edge valence strictly higher than 4.When retrieving Ngons from , this might contain also triangles and quads.
+public class MeshNgon : IEquatable&lt;MeshNgon&gt;, IComparable&lt;MeshNgon&gt;, IComparable static != Determines whether two structures have different values. Returns - True if the vertex or face index lists are different in any way; otherwise false.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/">
-        <h3>SimpleArrayBinaryArchiveReader</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshngonlist/">
+        <h3>MeshNgonList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshngonlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray&lt;ON_BinaryArchive&gt;. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayBinaryArchiveReaderConstructors SimpleArrayBinaryArchiveReader()  (summary) Initializes a new class. (since) 6.0  SimpleArrayBinaryArchiveReader(IntPtr p)  (summary) Initializes a new class. (since) 6.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 6.0  Methods void Add(BinaryArchiveReader reader)  (summary) Adds a new at the end of this array.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the ngons and n-gon related functionality of a Mesh. See also the property for Ngon functionality details.
+public class MeshNgonList : IResizableList&lt;MeshNgon&gt;, IList, IReadOnlyList&lt;MeshNgon&gt;Properties  int Count Gets or sets the number of mesh ngons. since 6.0 uint UnsignedCount Gets or sets the number of mesh ngons. since 6.0  Methods  int AddNgon(MeshNgon ngon) Appends a new ngon to the end of the mesh ngon list.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraybreppointer/">
-        <h3>SimpleArrayBrepPointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshpart/">
+        <h3>MeshPart</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraybreppointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshpart/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_SimpleArray&lt;ON_Brep&gt; or ON_SimpleArray&lt;const ON_Brep&gt; If you are not writing C++ code then this class is not for you.
-public class SimpleArrayBrepPointerConstructors SimpleArrayBrepPointer()  (summary) Initializes a new instance. (since) 5.0  Properties int Count  (summary) Gets the amount of breps in this array. (since) 5.0  Methods void Add(Brep brep,bool asConst)  (summary) Adds a brep to the list. (since) 5.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry
+Represents a portion of a mesh for partitioning
+public class MeshPartProperties  int EndFaceIndex End of subinterval of parent mesh face array since 5.6 int EndVertexIndex End of subinterval of parent mesh vertex array since 5.6 int StartFaceIndex Start of subinterval of parent mesh face array since 5.6 int StartVertexIndex Start of subinterval of parent mesh vertex array since 5.6 int TriangleCount  since 5.6 int VertexCount EndVertexIndex - StartVertexIndex since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/">
-        <h3>SimpleArrayClippingPlaneObjectPointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshpoint/">
+        <h3>MeshPoint</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshpoint/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-ON_SimpleArray of CRhinoClippingPlaneObject*
-public class SimpleArrayClippingPlaneObjectPointerConstructors SimpleArrayClippingPlaneObjectPointer()  (summary) Initializes a new instance. (since) 6.7  Properties int Count  (summary) Gets the amount of clipping planes in this array. (since) 6.7  Methods void Add(ClippingPlaneObject clippingplane,bool asConst)  (summary) Adds a clipping plane to the list. (since) 6.7 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry
+Represents a point that is found on a mesh.
+public class MeshPointProperties  ComponentIndex ComponentIndex Gets the component index of the intersecting element in the mesh. int EdgeIndex When set, EdgeIndex is an index of an edge in the mesh&rsquo;s edge list. double EdgeParameter Edge parameter when found. int FaceIndex FaceIndex is an index of a face in mesh.Faces. When ComponentIndex refers to a vertex, any face that uses the vertex may appear as FaceIndex.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraycurvepointer/">
-        <h3>SimpleArrayCurvePointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshtexturecoordinatelist/">
+        <h3>MeshTextureCoordinateList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraycurvepointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshtexturecoordinatelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_SimpleArray of ON_Curve* or const ON_Curve*. If you are not writing C++ code, then you can ignore this class.
-public class SimpleArrayCurvePointerConstructors SimpleArrayCurvePointer()  (summary) Initializes a new instance. (since) 5.0  SimpleArrayCurvePointer(IEnumerablecurves)  (summary) Initializes a new instance, from a set of input curves. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 5.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the Vertex Texture coordinates of a Mesh.
+public class MeshTextureCoordinateList : IResizableList&lt;Point2f&gt;, IList, IReadOnlyList&lt;Point2f&gt;Properties  int Capacity Gets or sets the total number of texture coordinates the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of texture coordinates.  Methods  int Add(double s,double t) Adds a new texture coordinate to the end of the Texture list.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraydouble/">
-        <h3>SimpleArrayDouble</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshthicknessmeasurement/">
+        <h3>MeshThicknessMeasurement</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraydouble/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshthicknessmeasurement/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray. If you are not writing C++ code, then this class is not for you.
-public class SimpleArrayDoubleConstructors SimpleArrayDouble()  (summary) Initializes a new instance. (since) 5.0  SimpleArrayDouble(IEnumerableitems)  (summary) Initializes a new instance, with items. (since) 5.0  Properties int Count  (summary) Gets the amount of elements in this array. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry
+Thickness measurement used in the mesh thickness solver.
+Constructors  MeshThicknessMeasurement(int meshIndex,int vertexIndex,double thickness,Point3d point,Point3d oppositePoint) Create a new thickness measurement. since 6.0  Properties  int MeshIndex Gets the index of the mesh associated with this thickness measurement. since 6.0 Point3d OppositePoint Gets the point opposite to the measurement point. since 6.0 Point3d Point Gets the location of the thickness measurement. since 6.0 double Thickness Gets the local thickness of the mesh.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayextrusionpointer/">
-        <h3>SimpleArrayExtrusionPointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshtopologyedgelist/">
+        <h3>MeshTopologyEdgeList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayextrusionpointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshtopologyedgelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_SimpleArray&lt;ON_Extrusion&gt; or ON_SimpleArray&lt;const ON_Extrusion&gt; If you are not writing C++ code then this class is not for you.
-public class SimpleArrayExtrusionPointerConstructors SimpleArrayExtrusionPointer()  (summary) Initializes a new instance. (since) 6.0  Properties int Count  (summary) Gets the amount of Extrusions in this array. (since) 6.0  Methods void Add(Extrusion extrusion,bool asConst)  (summary) Adds a extrusion to the list. (since) 6.0 (returns) void This is some return comment  IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry.Collections
+Represents an entry point to the list of edges in a mesh topology.
+public class MeshTopologyEdgeListProperties  int Count Gets the amount of edges in this list.  Methods  bool CollapseEdge(int topologyEdgeIndex) Replaces a mesh edge with a vertex at its center and update adjacent faces as needed. Returns - True if successful. Line EdgeLine(int topologyEdgeIndex) Gets the 3d line along an edge. Returns - Line along edge.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraygeometrypointer/">
-        <h3>SimpleArrayGeometryPointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshtopologyvertexlist/">
+        <h3>MeshTopologyVertexList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraygeometrypointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshtopologyvertexlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_SimpleArray&lt;ON_Geometry&gt; or ON_SimpleArray&lt;const ON_Geometry*&gt;. If you are not writing C++ code, then this class is not for you.
-public class SimpleArrayGeometryPointerConstructors SimpleArrayGeometryPointer()  (summary) Initializes a new instance. (since) 5.0  SimpleArrayGeometryPointer(IEnumerable geometry)  (summary) Expects all of the items in the IEnumerable to be GeometryBase types (since) 5.0  SimpleArrayGeometryPointer(IEnumerablegeometry)  (summary) Create an ON_SimpleArray&lt;ON_Geometry*&gt; filled with items in geometry (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the mesh topology vertices of a mesh. Topology vertices are sets of vertices in the MeshVertexList that can topologically be considered the same vertex.
+public class MeshTopologyVertexList : IEnumerable&lt;Point3f&gt;, IList&lt;Point3f&gt;, IList, IReadOnlyList&lt;Point3f&gt;Properties  int Count Gets or sets the number of mesh topology vertices.  Methods  int ConnectedEdge(int topologyVertexIndex,int edgeAtVertexIndex) Gets a particular edge that is connected to a topological vertex. Call TopologyVertices.SortVertices before this if you are interested in ordered edges.
   </div>
   
 

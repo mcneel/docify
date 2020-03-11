@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshFace &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the values of the four indices of a mesh face quad. If the third and fourth values are the same, this face represents a triangle.
+ static != Determines whether two structures have different values. Returns - True if the indices of the two points are in any way different; otherwise false. since 6.0 static == Determines whether two structures have equal values. Returns - True if the indices of the two points are exactly equal; otherwise false.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshFace</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the values of the four indices of a mesh face quad.
+If the third and fourth values are the same, this face represents a
+triangle.</p>
+<dl>
+<dt>static !=</dt>
+<dd>Determines whether two  structures have different values.</dd>
+<dd>Returns - True if the indices of the two points are in any way different; otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>static ==</dt>
+<dd>Determines whether two  structures have equal values.</dd>
+<dd>Returns - True if the indices of the two points are exactly equal; otherwise false.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>MeshFace(int a,int b,int c)</dt>
+<dd>Constructs a new triangular Mesh face.</dd>
+<dt>MeshFace(int a,int b,int c,int d)</dt>
+<dd>Constructs a new quadrangular Mesh face.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static MeshFace Unset</dt>
+<dd>Gets an Unset MeshFace. Unset faces have Int32.MinValue for all corner indices.</dd>
+<dt>int A</dt>
+<dd>Gets or sets the first corner index of the mesh face.</dd>
+<dt>int B</dt>
+<dd>Gets or sets the second corner index of the mesh face.</dd>
+<dt>int C</dt>
+<dd>Gets or sets the third corner index of the mesh face.</dd>
+<dt>int D</dt>
+<dd>Gets or sets the fourth corner index of the mesh face. 
+If D equals C, the mesh face is considered to be a triangle 
+rather than a quad.</dd>
+<dt>bool IsQuad</dt>
+<dd>Gets a value indicating whether or not this mesh face is a quad. 
+A mesh face is considered to be a triangle when C does not equal D, 
+thus it is possible for an Invalid mesh face to also be a quad.</dd>
+<dt>bool IsTriangle</dt>
+<dd>Gets a value indicating whether or not this mesh face is a triangle. 
+A mesh face is considered to be a triangle when C equals D, thus it is 
+possible for an Invalid mesh face to also be a triangle.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int CompareTo(MeshFace other)</dt>
+<dd>Compares this  with another 
+and returns a value of 1, 0, or -1, referring to dictionary order.
+Index evaluation priority is first A, then B, then C, then D.</dd>
+<dd>Returns - 0: if this is identical to other-1: if this &lt; other. Priority is for index of corner A first, then B, then C, then D.+1: otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool Equals(MeshFace other)</dt>
+<dd>Returns a value indicating whether the other mesh face
+has precisely the same value as the current one.</dd>
+<dd>Returns - True if the other face is, also orderly, equal
+to the present one; otherwise false.</dd>
+<dd>since 6.0</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Returns a value indicating whether the other object obj
+has precisely the same value as the current one.</dd>
+<dd>Returns - True if obj is a mesh face that, also orderly, equals
+to the present one; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>MeshFace Flip()</dt>
+<dd>Reverses the orientation of the face by swapping corners. 
+The first corner is always maintained.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Returns a runtime-stable hashcode for the current mesh face.
+You are not allowed to rely on persistance of this hashcode in
+serialization, but for each version of RhinoCommon, this hashcode
+will be the same for each mesh face.</dd>
+<dd>Returns - A non-unique integer that represents this mesh face.</dd>
+<dd>since (unknown)</dd>
+<dt>bool IsValid()</dt>
+<dd>Gets a value indicating whether or not this mesh face 
+is considered to be valid. Note that even valid mesh faces 
+could potentially be invalid in the context of a specific Mesh, 
+if one or more of the corner indices exceeds the number of 
+vertices on the mesh. If you want to perform a complete 
+validity check, use IsValid(int) instead.</dd>
+<dt>bool IsValid(int vertexCount)</dt>
+<dd>Gets a value indicating whether or not this mesh face 
+is considered to be valid. Unlike the simple IsValid function, 
+this function takes upper bound indices into account.</dd>
+<dd>Returns - True if the face is considered valid, False if not.</dd>
+<dt>bool IsValid(Point3d[] points)</dt>
+<dd>Gets a value indicating whether or not this mesh face 
+is considered to be valid. Unlike the simple IsValid function, 
+this function takes actual point locations into account.</dd>
+<dd>Returns - True if the face is considered valid, False if not.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsValidEx(Point3d[] points)</dt>
+<dd>Gets a value indicating whether or not this mesh face 
+is considered to be valid. Unlike the simple IsValid function, 
+this function takes actual point locations into account.</dd>
+<dd>Returns - True if the face is considered valid, False if not.</dd>
+<dd>since 6.5</dd>
+<dt>bool Repair(Point3d[] points)</dt>
+<dd>Attempts to repair this mesh face by taking both face indexes and 
+actual vertex locations into account.</dd>
+<dd>Returns - True if the face was repaired, False if not.</dd>
+<dd>since 6.0</dd>
+<dt>bool RepairEx(Point3d[] points)</dt>
+<dd>Attempts to repair this mesh face by taking both face indexes and 
+actual vertex locations into account.</dd>
+<dd>Returns - True if the face was repaired, False if not.</dd>
+<dd>since 6.5</dd>
+<dt>void Set(int a,int b,int c)</dt>
+<dd>Sets all the corners for this face as a triangle.</dd>
+<dt>void Set(int a,int b,int c,int d)</dt>
+<dd>Sets all the corners for this face as a quad.</dd>
+<dt>string ToString()</dt>
+<dd>Returns a string representation for this .
+This is to provide a meaningful visualization of this structure
+and is subject to change in newer releases.</dd>
+<dd>Returns - The string representation.</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshFace</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

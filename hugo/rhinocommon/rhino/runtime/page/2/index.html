@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rhino.Runtime &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Rhino.Runtime</h1>
+  <ul>
+<li><a href="analytics/">Analytics</a></li>
+<li><a href="assemblyresolver/">AssemblyResolver</a></li>
+<li><a href="commonobject/">CommonObject</a></li>
+<li><a href="corruptgeometryexception/">CorruptGeometryException</a></li>
+<li><a href="documentcollectedexception/">DocumentCollectedException</a></li>
+<li><a href="hostutils/">HostUtils</a></li>
+<li><a href="logmessagetype/">LogMessageType</a></li>
+<li><a href="interop/">Interop</a></li>
+<li><a href="iplatformservicelocator/">IPlatformServiceLocator</a></li>
+<li><a href="izooclientutilities/">IZooClientUtilities</a></li>
+<li><a href="licensestatechangedeventargs/">LicenseStateChangedEventArgs</a></li>
+<li><a href="licensetypes/">LicenseTypes</a></li>
+<li><a href="namedparameterseventargs/">NamedParametersEventArgs</a></li>
+<li><a href="notlicensedexception/">NotLicensedException</a></li>
+<li><a href="pythoncompiledcode/">PythonCompiledCode</a></li>
+<li><a href="pythonscript/">PythonScript</a></li>
+<li><a href="rdknotloadedexception/">RdkNotLoadedException</a></li>
+<li><a href="riskyaction/">RiskyAction</a></li>
+<li><a href="skin/">Skin</a></li>
+<li><a href="textfields/">TextFields</a></li>
+<li><a href="instanceattributefield/">InstanceAttributeField</a></li>
+<li><a href="viewcapturewriter/">ViewCaptureWriter</a></li>
+<li><a href="pathpoint/">PathPoint</a></li>
+<li><a href="pen/">Pen</a></li>
+<li><a href="pointtype/">PointType</a></li>
+<li><a href="zooclientparameters/">ZooClientParameters</a></li>
+</ul>
+
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/hostutils/">
+        <div class="h2 mt-1 mb-1">HostUtils</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Contains static methods to deal with teh runtime environment.
+public class HostUtils static OnExceptionReport Is raised when an exception is reported with one of the method. static OnSendLogMessageToCloud Is raised when an exception is reported with one of the method. since 6.4  Properties  static string ComputerSerialNumber Gets the serial number of the computer running Rhino. since 6.0 static uint CurrentOSLanguage Get the current operating system language.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/hostutils/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interop/">
+        <div class="h2 mt-1 mb-1">Interop</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Contains static methods to marshal objects between RhinoCommon and legacy Rhino_DotNet or C++.
+public class InteropMethods  static Geometry.GeometryBase CreateFromNativePointer(IntPtr pGeometry) Constructs a RhinoCommon Geometry class from a given ON_Geomety*. The ON_Geometry* must be declared on the heap and its lifetime becomes controlled by RhinoCommon. Returns - The appropriate geometry class in RhinoCommon on success. static IntPtr FileReadOptionsConstPointer(FileReadOptions options) Returns the underlying const CRhinoFileReadOptions* for a Rhino.FileIO.FileReadOptions object.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/interop/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/licensestatechangedeventargs/">
+        <div class="h2 mt-1 mb-1">LicenseStateChangedEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Passed to LicenseStateChanged event on RhinoApp
+public class LicenseStateChangedEventArgs : EventArgsConstructors  LicenseStateChangedEventArgs(bool callingRhinoCommonAllowed) LicenseStateChangedEventArgs constructor since 7.0  Properties  bool CallingRhinoCommonAllowed True if RhinoCommon calls will never raise Rhino.Runtime.NotLicensedException. False otherwise since 7.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/licensestatechangedeventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/namedparameterseventargs/">
+        <div class="h2 mt-1 mb-1">NamedParametersEventArgs</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Dictionary style class used for named callbacks from C++ -&gt; .NET
+public class NamedParametersEventArgs : EventArgs, IDisposableConstructors  NamedParametersEventArgs() Construct a new named parameter even args. You should dispose this class when you are done with it since 7.0  Methods  void Dispose() Dispose native resources since 7.0 void Set(string name,bool value) Set a bool value for a given key name since 7.0 void Set(string name,double value) Set a double value for a given key name since 7.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/namedparameterseventargs/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/notlicensedexception/">
+        <div class="h2 mt-1 mb-1">NotLicensedException</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Exception thrown when calling functions in RhinoCommon and the application is executing without a license
+public class NotLicensedException : ExceptionConstructors  NotLicensedException() Default constructor since 7.0 NotLicensedException(string message) Create a new instance with a custom message since 7.0 NotLicensedException(string message,Exception inner) Create a new instance with a custom message and an inner exception since 7.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/notlicensedexception/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/pythoncompiledcode/">
+        <div class="h2 mt-1 mb-1">PythonCompiledCode</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Represents scripting compiled code.
+public class PythonCompiledCodeMethods  void Execute(PythonScript scope) Executes the script in a specific scope.  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/pythoncompiledcode/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/pythonscript/">
+        <div class="h2 mt-1 mb-1">PythonScript</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Represents a Python script.
+public class PythonScriptProperties  int ContextId Gets or sets a context unique identified. ActionOutput Gets or sets the Python script &ldquo;print()&rdquo; target. By default string output goes to the Rhino.RhinoApp.Write function. Set Output if you want to redirect the output from python to a different function while this script executes. Command ScriptContextCommand Command associated with this script. Used for localiation since 6.0 object ScriptContextDoc object set to variable held in scriptcontext.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/pythonscript/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/rdknotloadedexception/">
+        <div class="h2 mt-1 mb-1">RdkNotLoadedException</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Is thrown when the RDK is not loaded.
+[Serializable]public class RdkNotLoadedException : ExceptionConstructors  RdkNotLoadedException() Initializes a new instance of the RDK not loaded exception with a standard message.  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/rdknotloadedexception/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/riskyaction/">
+        <div class="h2 mt-1 mb-1">RiskyAction</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Defines risky actions that need to be reported in crash exceptions
+public class RiskyAction : IDisposableConstructors  RiskyAction(string description,string file,string member,int line) Always create this in a using block since 6.0  Methods  void Dispose() IDisposable implementation since 6.0  
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/riskyaction/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/skin/">
+        <div class="h2 mt-1 mb-1">Skin</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+
+
+
+      <div class="float-md-right">
+        <span>2020-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Namespace: Rhino.Runtime
+Represents a customized environment that changes the appearance of Rhino. Skin DLLs must contain a single class that derives from the Skin class.
+public class SkinProperties  static Skin ActiveSkin Any time Rhino is running there is at most one skin being used (and possibly no skin). If a RhinoCommon based Skin class is being used, use ActiveSkin to get at the instance of this Skin class. May return null if no Skin is being used or if the skin is not a RhinoCommon based skin.
+    <a class="muted-link" href="/apidocs/hugo/rhinocommon/rhino/runtime/skin/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/runtime/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              
+              <a href="/apidocs/hugo/rhinocommon/rhino/runtime/page/3/">3</a>
+            
+          
+      
+
+      
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/apidocs/hugo/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/apidocs/hugo/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+  </div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

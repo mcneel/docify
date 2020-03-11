@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ChangeQueue &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render.ChangeQueue
+Base class for ChangeQueue.
+Generally used by render plugins to build interactive updating of scenes that are being rendered.
+public class ChangeQueue : IDisposableProperties  DisplayPipelineAttributes DisplayPipelineAttributes Get the DisplayPipelineAttributes if available, None otherwise since 6.0 bool IsPreview Return True if this ChangeQueue is created for preview rendering. No view was set for preview rendering.
+ since 6.0 Guid ViewId Return view ID for a RhinoDoc based ChangeQueue.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ChangeQueue</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render.ChangeQueue</a></em></p>
+<p>Base class for ChangeQueue.</p>
+<p>Generally used by render plugins to build interactive updating of scenes that are being rendered.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChangeQueue</span> : IDisposable
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/display/displaypipelineattributes/">DisplayPipelineAttributes</a> DisplayPipelineAttributes</dt>
+<dd>Get the DisplayPipelineAttributes if available, None otherwise</dd>
+<dd>since 6.0</dd>
+<dt>bool IsPreview</dt>
+<dd>Return True if this ChangeQueue is created for preview rendering.
+<p>No view was set for preview rendering.</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>Guid ViewId</dt>
+<dd>Return view ID for a RhinoDoc based ChangeQueue.
+<p>Returns Guid.Empty if no view was associated with the changequeue,
+i.e. preview rendering.</p>
+</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static void ConvertCameraBasedLightToWorld(ChangeQueue changequeue,Light light,ViewInfo vp)</dt>
+<dd>Convert given (camera-based) light to a world-based light (in-place)</dd>
+<dd>since 6.0</dd>
+<dt>static uint CrcFromGuid(Guid guid)</dt>
+<dd>Helper function to get a CRC from a Guid.</dd>
+<dd>since 6.0</dd>
+<dt>bool AreViewsEqual(ViewInfo aView,ViewInfo bView)</dt>
+<dd>Compare to ViewInfo instances and decide whether they are equal or not.
+<p>If you need to change the way the comparison is done you can override
+this function and implement your custom comparison.</p>
+</dd>
+<dd>Returns - True if the views are considered equal</dd>
+<dd>since 6.0</dd>
+<dt>void CreateWorld()</dt>
+<dd>Calls CreateWorld with True passed.</dd>
+<dd>since 6.0</dd>
+<dt>void CreateWorld(bool bFlushWhenReady)</dt>
+<dd>Signal the queue to do the initialisation of the queue, seeding it with the content currently available.</dd>
+<dd>since 6.0</dd>
+<dt>void Dispose()</dt>
+<dd>Dispose our ChangeQueue</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/renderenvironment/">RenderEnvironment</a> EnvironmentForid(uint crc)</dt>
+<dd>Get RenderEnvironment for given RenderHash</dd>
+<dd>since 6.0</dd>
+<dt>uint EnvironmentIdForUsage(Usage usage)</dt>
+<dd>Get RenderEnvironment RenderHash for given usage.</dd>
+<dd>since 6.0</dd>
+<dt>void Flush()</dt>
+<dd>Tell the ChangeQueue to flush all collected events.
+<p>This can trigger a host of Apply* calls.</p>
+<p>The following is the order in which those calls get
+made if there are changes for that specific data type:</p>
+<p>ApplyViewChange
+ApplyLinearWorkflowChanges
+ApplyDynamicObjectTransforms
+ApplyDynamicLightChanges
+ApplyRenderSettingsChanges
+ApplyEnvironmentChanges (background)
+ApplyEnvironmentChanges (refl)
+ApplyEnvironmentChanges (sky)
+ApplySkylightChanges
+ApplySunChanges
+ApplyLightChanges
+ApplyMaterialChanges
+ApplyMeshChanges
+ApplyMeshInstanceChanges
+ApplyGroundPlaneChanges
+ApplyClippingPlaneChanges</p>
+</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/groundplane/">GroundPlane</a> GetQueueGroundPlane()</dt>
+<dd>Get groundplane known to the queue at the time of the Flush</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendersettings/">RenderSettings</a> GetQueueRenderSettings()</dt>
+<dd>Get render settings known to the queue at the time of the Flush</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetQueueSceneBoundingBox()</dt>
+<dd>Get the scene bounding box</dd>
+<dd>Returns - Scene bounding box</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/changequeue/skylight/">Skylight</a> GetQueueSkylight()</dt>
+<dd>Get skylight known to the queue at the time of the Flush</dd>
+<dd>since 6.0</dd>
+<dt>Geometry.Light GetQueueSun()</dt>
+<dd>Get sun known to the queue at the time of the Flush</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/viewinfo/">ViewInfo</a> GetQueueView()</dt>
+<dd>Get view known to the queue at the time of the Flush</dd>
+<dd>Returns - ViewInfo</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> MaterialFromId(uint crc)</dt>
+<dd>Get the RenderMaterial from the ChangeQueue material cache based on RenderHash</dd>
+<dd>Returns - RenderMaterial</dd>
+<dd>since 6.0</dd>
+<dt>void OneShot()</dt>
+<dd>Call Flush() once, after that automatically dispose the queue.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ChangeQueue</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

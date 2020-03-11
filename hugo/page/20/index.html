@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,128 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmplugindata/">
-        <h3>File3dmPlugInData</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/leaderobject/">
+        <h3>LeaderObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmplugindata/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/leaderobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Custom data in the file supplied by a plug-in
-public class File3dmPlugInDataProperties Guid PlugInId  (summary) Plug-in this data is associated with (since) 5.0  
+    Namespace: Rhino.DocObjects
+Rhino Object that represents leader geometry and attributes
+public class LeaderObject : AnnotationObjectBaseProperties  Leader LeaderGeometry Get the leader geometry for this object. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmplugindatatable/">
-        <h3>File3dmPlugInDataTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/licensedata/">
+        <h3>LicenseData</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmplugindatatable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/licensedata/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Table of custom data provided by plug-ins
-public class File3dmPlugInDataTableProperties int Count  (summary) Gets the number of File3dmPlugInData in this table. (since) 5.0  Methods void Clear()  (summary) Remove all entries from this table (since) 5.0 (returns) void This is some return comment  string Dump()  (summary) Prepares a text dump of table. (since) 5.0 (returns) string This is some return comment  IEnumeratorGetEnumerator()  (summary) Gets the enumerator that visits any in this table.
+    Namespace: Rhino.PlugIns
+Zoo plugin license data.
+public class LicenseDataConstructors  LicenseData() Public constructor. LicenseData(string productLicense,string serialNumber,string licenseTitle) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount) Public constructor LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate) Public constructor since (unknown) LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon) Public constructor since (unknown) LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate,Icon productIcon,bool requiresOnlineValidation,bool isUpgradeFromPreviousVersion) Public constructor since (unknown)  Properties  LicenseBuildType BuildType The build of the product that this license work with.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmsettings/">
-        <h3>File3dmSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/licenseidattribute/">
+        <h3>LicenseIdAttribute</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmsettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/licenseidattribute/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-General settings in a 3dm file.
-public class File3dmSettingsProperties double ModelAbsoluteTolerance  (summary) Gets or sets the model space absolute tolerance. (since) 5.0  double ModelAngleToleranceDegrees  (summary) Gets or sets the model space angle tolerance. (since) 5.0  double ModelAngleToleranceRadians  (summary) Gets or sets the model space angle tolerance. (since) 5.0  Point3d ModelBasepoint  (summary) Gets or sets the model basepoint that is used when the file is read as an instance definition.
+    Namespace: Rhino.PlugIns
+[AttributeUsage(AttributeTargets.Assembly)]public class LicenseIdAttribute : AttributeConstructors  LicenseIdAttribute(string value)  since 6.0  Properties  string Value  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmstringtable/">
-        <h3>File3dmStringTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/licenselease/">
+        <h3>LicenseLease</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmstringtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/licenselease/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to document strings in the 3dm file.
-public class File3dmStringTableProperties int Count  (summary) Returns the number of document strings in the 3dm file. (since) 6.0  int DocumentUserTextCount  (summary) Returns the number of Section/Entry-style key values. (since) 6.0  Methods void Delete(string key)  (summary) Removes a document string from the 3dm file. (since) 6.0 (returns) void This is some return comment  void Delete(string section,string entry)  (summary) Removes document strings from the 3dm file.
+    Namespace: Rhino.PlugIns
+LicenseLease represents a lease returned from the Cloud Zoo
+public class LicenseLeaseConstructors  LicenseLease(IntPtr unmanagedPointer)  since 6.0 LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp)  since 6.0 LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp,DateTime renewable_until)  since 6.4  Properties  DateTime Expiration The date when this lease will expire since 6.0 string GroupId ID of Rhino Accounts group that this lease came from since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmviewtable/">
-        <h3>File3dmViewTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/licenseleasechangedeventargs/">
+        <h3>LicenseLeaseChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmviewtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/licenseleasechangedeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to views in the 3dm file.
-public class File3dmViewTableProperties int Count  (summary) Gets the amount of items in the table. (since) 6.0  Methods void Add(ViewInfo item)  (summary) Adds a (since) 6.0 (returns) void This is some return comment  void Clear()  (summary) Removes all items from the table. (since) 6.0 (returns) void This is some return comment  bool Contains(ViewInfo item)  (summary) Returns an indication of the presence of a view in the table.
+    Namespace: Rhino.PlugIns
+Arguments for OnLeaseChangedDelegate
+public class LicenseLeaseChangedEventArgsConstructors  LicenseLeaseChangedEventArgs(LicenseLease lease)  since 6.0  Properties  LicenseLease Lease The lease returned by Rhino Accounts server since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmwriteoptions/">
-        <h3>File3dmWriteOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/licensestatus/">
+        <h3>LicenseStatus</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmwriteoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/licensestatus/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Options used by File3dm.Write
-public class File3dmWriteOptionsConstructors File3dmWriteOptions()  (summary) Initializes properties to defaults. (since) 5.9  Properties bool SaveAnalysisMeshes  (summary) Include analysis meshes in the file. Default is true (since) 5.9  bool SaveRenderMeshes  (summary) Include Render meshes in the file. Default is true (since) 5.9  bool SaveUserData  (summary) Include custom user data in the file. Default is true (since) 5.9  int Version  (summary) File version.
+    Namespace: Rhino.PlugIns
+LicenseStatus class.
+public class LicenseStatusConstructors  LicenseStatus() Public constructor.  Properties  LicenseBuildType BuildType The build contentType of the product, where: 100 = A release build, either commercical, education, nfr, etc. 200 = A evaluation build 300 = A beta build, such as a wip. DateTime? CheckOutExpirationDate The date and time the checked out license will expire. Note, this is only set if m_license_type = Standalone or CloudZoo and if &ldquo;limited license checkout&rdquo; was enabled on the Zoo server in the case of Standalone.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileobj/">
-        <h3>FileObj</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/plugins/licenseutils/">
+        <h3>LicenseUtils</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileobj/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/plugins/licenseutils/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Support for obj file format
-public class FileObjMethods static bool Read(String filename,RhinoDoc doc,FileObjReadOptions options)  (summary) (since) 6.0 (returns) bool This is some return comment  static WriteFileResult Write(StreamWriter stream,RhinoDoc doc,FileObjWriteOptions options)  (summary) Write an obj stream based on the contents of a RhinoDoc (since) 7.0 (returns) WriteFileResult This is some return comment  static WriteFileResult Write(String filename,Mesh[] meshes,FileObjWriteOptions options)  (summary) Write an obj file with an array of meshes (since) 7.
+    Namespace: Rhino.PlugIns
+License Manager Utilities.
+public class LicenseUtilsMethods  static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities) This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense is used by Rhino C++ plug-ins. since 6.0 static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  since 6.0 static bool CheckInLicense(Guid productId) Checks in a previously checked out license to the Zoo server from which it was checked out.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileobjreadoptions/">
-        <h3>FileObjReadOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/lightobject/">
+        <h3>LightObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileobjreadoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/lightobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Options used when reading an obj file.
-public class FileObjReadOptionsConstructors FileObjReadOptions(FileReadOptions readOptions)  (summary) (since) 6.0  Properties bool DisplayColorFromObjMaterial  (summary) Determines whether textures are read from the .mtl file, if it exists. (since) 6.5  bool IgnoreTextures  (summary) Determines whether textures are read from the .mtl file, if it exists. (since) 6.0  bool MapYtoZ  (summary) Setting to transform OBJ&rsquo;s Y axis to Rhino&rsquo;s Z axis (since) 6.
+    Namespace: Rhino.DocObjects
+public class LightObject : RhinoObjectProperties  ModelComponentType ComponentType  since 6.0 Light LightGeometry   Methods  Light DuplicateLightGeometry()   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/fileobjwriteoptions/">
-        <h3>FileObjWriteOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttable/">
+        <h3>LightTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/fileobjwriteoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-public class FileObjWriteOptionsConstructors FileObjWriteOptions(FileWriteOptions writeOptions)  (summary) (since) 6.0  Properties string ActualFilePathOnMac  (summary) (since) 6.3  bool CreateNgons  (summary) Setting to enable/diable the creation of ngons for the output (since) 6.0  bool CullUnnecessaryVertexesInNgons  (summary) Setting to determine whether interior colinear vertexes are part of the ngon. (since) 6.0  AsciiEol EolType  (summary) (since) 6.0  ObjGroupNames ExportGroupNameLayerNames  (summary) Setting to determine whether object, group or layer names will become &ldquo;g&quot;s in the OBJ output file (since) 6.
+    Namespace: Rhino.DocObjects.Tables
+public class LightTable :RhinoDocCommonTable&lt;LightObject&gt;Properties  ModelComponentType ComponentType  since 6.0 int Count Number of lights in the light table. Does not include Sun or Skylight. RhinoDoc Document Document that owns this light table. Skylight Skylight  since 6.0 Sun Sun Gets the Sun instance that is applied to the document. If the RDK is loaded, an instance is always returned.  Methods  int Add(Light light)  int Add(Light light,ObjectAttributes attributes)  bool Delete(int index,bool quiet)  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/filepdf/">
-        <h3>FilePdf</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttableeventargs/">
+        <h3>LightTableEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/filepdf/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/lighttableeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Support for PDF file format
-public class FilePdfstatic PreWrite  (summary) Fired immediately before a Pdf is written (since) 6.0  Methods static FilePdf Create()  (summary) Create a new instance of a FilePdf class (since) 6.0 (returns) FilePdf This is some return comment  int AddPage(int widthInDots,int heightInDots,int dotsPerInch)  (summary) Add a blank page to this document (since) 6.5 (returns) int This is some return comment  int AddPage(ViewCaptureSettings settings)  (summary) Add a new page to this document and draw a viewport into it based on provided ViewCaptureSettings (since) 6.
+    Namespace: Rhino.DocObjects.Tables
+public class LightTableEventArgs : EventArgsProperties  RhinoDoc Document  since 5.3 LightTableEventType EventType  since 5.3 int LightIndex  since 5.3 LightObject NewState  since 5.3 Light OldState  since 5.3  
   </div>
   
 

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  InstanceDefinitionTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTable :RhinoDocCommonTable&amp;lt;InstanceDefinition&amp;gt;Properties  int ActiveCount Number of items in the instance definitions table, excluding deleted definitions. ModelComponentType ComponentType  since 6.0 int Count Number of items in the instance definitions table. RhinoDoc Document Document that owns this table.  Methods  int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes) Adds an instance definition to the instance definition table. Returns - &amp;gt;=0 index of instance definition in the instance definition table.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">InstanceDefinitionTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceDefinitionTable</span> :
+    RhinoDocCommonTable&lt;InstanceDefinition&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int ActiveCount</dt>
+<dd>Number of items in the instance definitions table, excluding deleted definitions.</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Number of items in the instance definitions table.</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Document that owns this table.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes)</dt>
+<dd>Adds an instance definition to the instance definition table.</dd>
+<dd>Returns - &gt;=0  index of instance definition in the instance definition table. -1 on failure.</dd>
+<dt>int Add(string name,string description,Point3d basePoint,IEnumerable<!-- raw HTML omitted --> geometry)</dt>
+<dd>Adds an instance definition to the instance definition table.</dd>
+<dd>Returns - &gt;=0  index of instance definition in the instance definition table. -1 on failure.</dd>
+<dt>int Add(string name,string description,Point3d basePoint,IEnumerable<!-- raw HTML omitted --> geometry,IEnumerable<!-- raw HTML omitted --> attributes)</dt>
+<dd>Adds an instance definition to the instance definition table.</dd>
+<dd>Returns - &gt;=0  index of instance definition in the instance definition table. -1 on failure.</dd>
+<dt>void Compact(bool ignoreUndoReferences)</dt>
+<dd>Purge deleted instance definition information that is not in use.
+This function is time consuming and should be used in a thoughtful manner.</dd>
+<dd>since 5.9</dd>
+<dt>bool Delete(InstanceDefinition item)</dt>
+<dd>Deletes the instance definition. This deletes all references too.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(int idefIndex,bool deleteReferences,bool quiet)</dt>
+<dd>Deletes the instance definition.</dd>
+<dd>Returns - True if successful. False if the instance definition has active references and bDeleteReferences is false.</dd>
+<dt>bool DestroySourceArchive(InstanceDefinition definition,bool quiet)</dt>
+<dd>Destroys all source archive information.
+Specifically:
+<ul>
+<li>is set to the empty string.</li>
+<li>SourceRelativePath is set to false</li>
+<li>The alternative source archive path is set to the empty string.</li>
+<li>Checksum.Zero() is used to private destroy all checksum information.</li>
+<li>is set to .</li>
+</ul>
+</dd>
+<dd>Returns - Returns True if the definition was successfully modified otherwise returns false.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinition/">InstanceDefinition</a> Find(Guid instanceId,bool ignoreDeletedInstanceDefinitions)</dt>
+<dd>Finds the instance definition with a given id.</dd>
+<dd>Returns - The specified instance definition, or None if nothing matching was found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinition/">InstanceDefinition</a> Find(string instanceDefinitionName)</dt>
+<dd>Finds the instance definition with a given name.</dd>
+<dd>Returns - The specified instance definition, or None if nothing matching was found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinition/">InstanceDefinition</a> Find(string instanceDefinitionName,bool ignoreDeletedInstanceDefinitions)</dt>
+<dd>Finds the instance definition with a given name.</dd>
+<dd>Returns - The specified instance definition, or None if nothing matching was found.</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/instancedefinition/">InstanceDefinition</a>[] GetList(bool ignoreDeleted)</dt>
+<dd>Gets an array of instance definitions.</dd>
+<dd>Returns - An array of instance definitions. This can be empty, but not null.</dd>
+<dt>string GetUnusedInstanceDefinitionName()</dt>
+<dd>Gets unsed instance definition name used as default when creating
+new instance definitions.</dd>
+<dd>Returns - An unused instance definition name string.</dd>
+<dt>string GetUnusedInstanceDefinitionName(string root)</dt>
+<dd>Gets unsed instance definition name used as default when creating
+new instance definitions.</dd>
+<dd>Returns - An unused instance definition name string.</dd>
+<dt>string GetUnusedInstanceDefinitionName(string root,uint defaultSuffix)</dt>
+<dd>Gets unsed instance definition name used as default when creating
+new instance definitions.</dd>
+<dd>Returns - An unused instance definition name string.</dd>
+<dt>int InstanceDefinitionIndex(Guid instanceId,bool ignoreDeletedInstanceDefinitions)</dt>
+<dd>Get the index of the instance definition with a given id.</dd>
+<dd>Returns - index &gt; -1 if instance definition was found.</dd>
+<dd>since 6.0</dd>
+<dt>bool MakeSourcePathRelative(InstanceDefinition idef,bool relative,bool quiet)</dt>
+<dd>Obsolete method that always returns false.
+Marks the source path for a linked instance definition as relative or absolute.</dd>
+<dd>Returns - True if the instance definition could be modified.</dd>
+<dt>bool Modify(InstanceDefinition idef,string newName,string newDescription,bool quiet)</dt>
+<dd>Modifies the instance definition name and description.
+Does not change instance definition ID or geometry.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Modify(int idefIndex,string newName,string newDescription,bool quiet)</dt>
+<dd>Modifies the instance definition name and description.
+Does not change instance definition ID or geometry.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool ModifyGeometry(int idefIndex,GeometryBase newGeometry,ObjectAttributes newAttributes)</dt>
+<dd></dd>
+<dt>bool ModifyGeometry(int idefIndex,IEnumerable<!-- raw HTML omitted --> newGeometry)</dt>
+<dd></dd>
+<dt>bool ModifyGeometry(int idefIndex,IEnumerable<!-- raw HTML omitted --> newGeometry,IEnumerable<!-- raw HTML omitted --> newAttributes)</dt>
+<dd>Modifies the instance definition geometry and replaces all references
+to the current definition with references to the new definition.</dd>
+<dd>Returns - True if operation succeeded.</dd>
+<dt>bool ModifySourceArchive(int idefIndex,FileReference sourceArchive,InstanceDefinitionUpdateType updateType,bool quiet)</dt>
+<dd>If the instance definition is linked or embedded, use SetSource to
+specify the source archive.</dd>
+<dd>Returns - Returns True if the definition was successfully modified otherwise returns false.</dd>
+<dd>since 6.0</dd>
+<dt>bool ModifySourceArchive(int idefIndex,string sourceArchive,InstanceDefinitionUpdateType updateType,bool quiet)</dt>
+<dd>If the instance definition is linked or embedded, use SetSource to
+specify the source archive.</dd>
+<dd>Returns - Returns True if the definition was successfully modified otherwise returns false.</dd>
+<dd>since 6.0</dd>
+<dt>bool Purge(int idefIndex)</dt>
+<dd>Purges an instance definition and its definition geometry.</dd>
+<dd>Returns - True if successful. False if the instance definition cannot be purged
+because it is in use by reference objects or undo information.</dd>
+<dd>since 5.9</dd>
+<dt>bool RefreshLinkedBlock(InstanceDefinition definition)</dt>
+<dd>Reload linked block definitions and update the Rhino display.</dd>
+<dd>Returns - Returns True if the linked file was successfully read and updated.</dd>
+<dd>since 6.0</dd>
+<dt>bool Undelete(int idefIndex)</dt>
+<dd>Undeletes an instance definition that has been deleted by Delete()</dd>
+<dd>Returns - True if successful</dd>
+<dd>since 5.9</dd>
+<dt>bool UndoModify(int idefIndex)</dt>
+<dd>Restores the instance definition to its previous state,
+if the instance definition has been modified and the modification can be undone.</dd>
+<dd>Returns - True if operation succeeded.</dd>
+<dt>bool UpdateLinkedInstanceDefinition(int idefIndex,string filename,bool updateNestedLinks,bool quiet)</dt>
+<dd>Read the objects from a file and use them as the instance&rsquo;s definition geometry.</dd>
+<dd>since 5.9</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>InstanceDefinitionTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,124 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendermaterial/">
-        <h3>RenderMaterial</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/curve/">
+        <h3>Curve</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendermaterial/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/curve/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderMaterialProperties static Guid GemMaterialGuid  (summary) (since) 6.0  static Guid GlassMaterialGuid  (summary) (since) 6.0  static Guid MetalMaterialGuid  (summary) (since) 6.0  static Guid PaintMaterialGuid  (summary) (since) 6.0  static Guid PictureMaterialGuid  (summary) (since) 6.0  static Guid PlasterMaterialGuid  (summary) (since) 6.0  static Guid PlasticMaterialGuid  (summary) (since) 6.0  PreviewBackgroundType DefaultPreviewBackgroundType  (summary) Set or get the default scene background for the image that appears in preview panes (since) 5.
+    Namespace: Rhino.Geometry
+Represents a base class that is common to most RhinoCommon curve types. A curve represents an entity that can be all visited by providing a single parameter, usually called t.
+[Serializable]public class Curve : GeometryBaseProperties  int Degree Gets the maximum algebraic degree of any span or a good estimate if curve spans are not algebraic. int Dimension Gets the dimension of the object. The dimension is typically three.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/rendermaterialassignmentchangedeventargs/">
-        <h3>RenderMaterialAssignmentChangedEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/curvebooleanregions/">
+        <h3>CurveBooleanRegions</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/rendermaterialassignmentchangedeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/curvebooleanregions/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino
-public class RenderMaterialAssignmentChangedEventArgsProperties bool IsLayer  (summary) (since) 5.10  bool IsObject  (summary) (since) 5.10  Guid LayerId  (summary) (since) 5.10  Guid NewRenderMaterial  (summary) (since) 5.10  Guid ObjectId  (summary) (since) 5.10  Guid OldRenderMaterial  (summary) (since) 5.10  
+    Namespace: Rhino.Geometry
+Represents the results of a Curve.CreateBooleanRegions calculation.
+[Serializable]public class CurveBooleanRegions : IDisposableProperties  int PlanarCurveCount Returns number of planar curves that were calculated by Curve.CreateBooleanRegions. since 7.0 int PointCount If this object were created using the Curve.CreateBooleanRegions override that accepts a collection of points as input, then this value will be equal to the length of the points collection. since 7.0 int RegionCount Returns the number of curve regions.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/rendermaterialtable/">
-        <h3>RenderMaterialTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/intersect/curveintersections/">
+        <h3>CurveIntersections</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/rendermaterialtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/curveintersections/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderMaterialTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderMaterial c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderMaterial c)  (summary) (since) 6.
+    Namespace: Rhino.Geometry.Intersect
+Maintains an ordered list of Curve Intersection results.
+public class CurveIntersections : IDisposable, IList&lt;IntersectionEvent&gt;Properties  int Count Gets the number of recorded intersection events.  Methods  void CopyTo(IntersectionEvent[] array,int arrayIndex) Copies all intersection results into another array, departing at an index in the target array. void Dispose() Actively reclaims unmanaged resources that this instance uses. IEnumeratorGetEnumerator() Returns an enumerator that is capable of yielding all IntersectionEvents in the collection.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderpanels/">
-        <h3>RenderPanels</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/curvelist/">
+        <h3>CurveList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderpanels/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/collections/curvelist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-This class is used to extend the standard Render user interface
-public class RenderPanelsMethods static object FromRenderSessionId(PlugIn plugIn,Type panelType,Guid renderSessionId)  (summary) Get the instance of a render panel associated with a specific render session, this is useful when it is necessary to update a control from a (since) 5.11 (returns) object This is some return comment  void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)  (summary) Register custom render user interface with Rhino.
+    Namespace: Rhino.Collections
+Represents a list of curves.
+public class CurveList : RhinoList&lt;Curve&gt;Constructors  CurveList() Initializes a new empty list of curves. CurveList(IEnumerablecollection) Initializes a new list that is filled with all items of the input enumerable. Input items are not explicitly duplicated (this is a shallow copy). CurveList(int initialCapacity) Initializes a new empty list of curves with a predefined capacity. This is the amount of items the list will accept before resizing.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderpipeline/">
-        <h3>RenderPipeline</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/curveproxy/">
+        <h3>CurveProxy</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderpipeline/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/curveproxy/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Provides facilities to a render plug-in for integrating with the standard Rhino render window. Also adds helper functions for processing a render scene. This is the suggested class to use when integrating a renderer with Rhino and maintaining a &ldquo;standard&rdquo; user interface that users will expect.
-public class RenderPipelineProperties int ConfirmationSeconds  (summary) Sets the number of seconds that need to elapse during rendering before the user is asked if the rendered image should be saved.
+    Namespace: Rhino.Geometry
+Provides strongly-typed access to Brep edges.
+public class CurveProxy : CurveProperties  bool ProxyCurveIsReversed True if &ldquo;this&rdquo; is a curve is reversed from the &ldquo;real&rdquo; curve geometry since 5.10  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/plugins/renderplugin/">
-        <h3>RenderPlugIn</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/curvesegment/">
+        <h3>CurveSegment</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/plugins/renderplugin/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/curvesegment/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.PlugIns
-public class RenderPlugInProperties bool PerferBasicContent  (summary) Set to True if you would like Rhino to quickly create a basic render content in response to &lsquo;Create New&rsquo; commands. Set to False if you would prefer Rhino to display the render content chooser dialog. (since) 5.12  Methods static bool CurrentRendererSupportsFeature(RenderFeature feature)  (summary) (since) 6.1 (returns) bool This is some return comment  bool EnableAssignMaterialButton()  (summary) Called to enable/disable the &ldquo;Material&rdquo; button located on the &ldquo;Material&rdquo; tab in the Properties and Layer dialog boxes.
+    Namespace: Rhino.Runtime.InteropWrappers
+For internal use only.
+Properties  int Index The index of the curve used by this boundary element. since 7.0 bool Reversed True if this piece of the curve should be reversed. since 7.0 Interval SubDomain The subdomain of the curve used by this boundary element. since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderplugininfo/">
-        <h3>RenderPlugInInfo</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/cylinder/">
+        <h3>Cylinder</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderplugininfo/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/cylinder/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderPlugInInfoProperties string Name  (summary) (since) 6.0  Guid PlugInId  (summary) (since) 6.0  
+    Namespace: Rhino.Geometry
+Represents the values of a plane, a radius and two heights -on top and beneath- that define a right circular cylinder.
+Constructors  Cylinder(Circle baseCircle) Constructs a new cylinder with infinite height. Cylinder(Circle baseCircle,double height) Constructs a new cylinder with a finite height.  Properties  static Cylinder Unset Gets an invalid Cylinder. Vector3d Axis Gets the axis direction of the cylinder. Plane BasePlane Gets or sets the base plane of the cylinder.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderpluginlist/">
-        <h3>RenderPlugInList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/detailview/">
+        <h3>DetailView</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderpluginlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/detailview/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderPlugInListConstructors RenderPlugInList()  (summary) (since) 6.0  
+    Namespace: Rhino.Geometry
+Represents a view of the model placed on a page layout.
+[Serializable]public class DetailView : GeometryBaseProperties  bool IsParallelProjection Gets or sets whether the view is parallel. bool IsPerspectiveProjection Gets or sets whether the view is perspective. bool IsProjectionLocked Gets or sets whether the view projection is locked. double PageToModelRatio Gets the page units/model units quotient.  Methods  bool SetScale(double modelLength,UnitSystem modelUnits,double pageLength,UnitSystem pageUnits) Sets the detail viewport&rsquo;s projection so geometry is displayed at a certain scale.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderprimitive/">
-        <h3>RenderPrimitive</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/dimension/">
+        <h3>Dimension</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderprimitive/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/dimension/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderPrimitiveProperties BoundingBox BoundingBox  (summary) The bounding box for this primitive. (since) 5.7  Transform InstanceTransform  (summary) Instance reference transform or Identity if not an instance reference. (since) 5.7  RenderPrimitiveType PrimitiveType  (summary) Call this before extracting meshes if you support render primitives to get the of this mesh then call the associated , , , or method. Calling the property will mesh the primitive and return a mesh always.
+    Namespace: Rhino.Geometry
+Base class for dimensions
+[Serializable]public class Dimension : AnnotationBaseProperties  bool AlternateBelowLine  since 6.0 double AltLengthFactor  since 6.0 int AltLengthResolution  since 6.0 double AltLengthRoundoff  since 6.0 string AltPrefix  since 6.0 string AltSuffix  since 6.0 int AltToleranceResolution  since 6.0 bool AltUnitsDisplay  since 6.0 ZeroSuppression AltZeroSuppression  since 6.0 Guid ArrowBlockId1  since 6.0 Guid ArrowBlockId2  since 6.0 ArrowFit ArrowFit  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/renderprimitivelist/">
-        <h3>RenderPrimitiveList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/documentcollectedexception/">
+        <h3>DocumentCollectedException</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/renderprimitivelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/documentcollectedexception/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class RenderPrimitiveListProperties int Count  (summary) Number of meshes in this list (since) 5.7  RhinoObject RhinoObject  (summary) The Rhino object associated with this list (since) 5.7  bool UseObjectsMappingChannels  (summary) Returns True if the texture mapping will be taken from the Rhino object otherwise; the texture mapping will use the texture coordinates on the mesh only. (since) 5.7  Methods void Add(Box box,RenderMaterial material)  (summary) Add primitive box and material.
+    Namespace: Rhino.Runtime
+Represents the error that happen when a class user attempts to execute a modifying operation on an object that has been added to a document.
+[Serializable]public class DocumentCollectedException : ExceptionConstructors  DocumentCollectedException() Initializes a new instance of the document controlled exception class. DocumentCollectedException(string message) Initializes a new instance of the document collected exception class. since 6.0  
   </div>
   
 

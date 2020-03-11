@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ConstructionPlane &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Represents a contruction plane inside the document. Use Rhino.DocObjects.Tables.NamedConstructionPlaneTable methods and indexers to add and access a .
+public class ConstructionPlaneConstructors  ConstructionPlane() Initializes a new instance of .  Properties  bool DepthBuffered Gets or sets whether the grid is drawn on top of geometry. false=grid is always drawn behind 3d geometrytrue=grid is drawn at its depth as a 3d plane and grid lines obscure things behind the grid.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ConstructionPlane</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Represents a contruction plane inside the document.
+Use Rhino.DocObjects.Tables.NamedConstructionPlaneTable
+methods and indexers to add and access a .</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConstructionPlane</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ConstructionPlane()</dt>
+<dd>Initializes a new instance of .</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool DepthBuffered</dt>
+<dd>Gets or sets whether the grid is drawn on top of geometry.
+false=grid is always drawn behind 3d geometrytrue=grid is drawn at its depth as a 3d plane and grid lines obscure things behind the grid.</dd>
+<dt>int GridLineCount</dt>
+<dd>Gets or sets the total amount of grid lines in each direction.</dd>
+<dt>double GridSpacing</dt>
+<dd>Gets or sets the distance between grid lines.</dd>
+<dt>Color GridXColor</dt>
+<dd>Gets or sets the color of the grid X-axis mark.</dd>
+<dt>Color GridYColor</dt>
+<dd>Gets or sets the color of the grid Y-axis mark.</dd>
+<dt>Color GridZColor</dt>
+<dd>Gets or sets the color of the grid Z-axis mark.</dd>
+<dt>string Name</dt>
+<dd>Gets or sets the name of the construction plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Gets or sets the geometric plane to use for construction.</dd>
+<dt>bool ShowAxes</dt>
+<dd>Gets or sets whether the axes of the grid shuld be visible.</dd>
+<dt>bool ShowGrid</dt>
+<dd>Gets or sets whether the grid itself should be visible.</dd>
+<dt>bool ShowZAxis</dt>
+<dd>Gets or sets whether the Z axis of the grid shuld be visible.</dd>
+<dd>since 6.0</dd>
+<dt>double SnapSpacing</dt>
+<dd>when &ldquo;grid snap&rdquo; is enabled, the distance between snap points.
+Typically this is the same distance as grid spacing.</dd>
+<dt>Color ThickLineColor</dt>
+<dd>Gets or sets the color of the thicker, wider line.</dd>
+<dt>int ThickLineFrequency</dt>
+<dd>Gets or sets the recurrence of a wider line on the grid.
+0: No lines are thick, all are drawn thin.1: All lines are thick.2: Every other line is thick.3: One line in three lines is thick (and two are thin).4: &hellip;</dd>
+<dt>Color ThinLineColor</dt>
+<dd>Gets or sets the color of the thinner, less prominent line.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ConstructionPlane</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

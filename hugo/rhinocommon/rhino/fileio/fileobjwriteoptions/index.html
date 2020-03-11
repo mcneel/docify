@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  FileObjWriteOptions &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+public class FileObjWriteOptionsConstructors  FileObjWriteOptions(FileWriteOptions writeOptions)  since 6.0  Properties  string ActualFilePathOnMac  since 6.3 bool CreateNgons Setting to enable/diable the creation of ngons for the output since 6.0 bool CullUnnecessaryVertexesInNgons Setting to determine whether interior colinear vertexes are part of the ngon. since 6.0 AsciiEol EolType  since 6.0 ObjGroupNames ExportGroupNameLayerNames Setting to determine whether object, group or layer names will become &amp;ldquo;g&amp;quot;s in the OBJ output file since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">FileObjWriteOptions</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileObjWriteOptions</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>FileObjWriteOptions(FileWriteOptions writeOptions)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>string ActualFilePathOnMac</dt>
+<dd></dd>
+<dd>since 6.3</dd>
+<dt>bool CreateNgons</dt>
+<dd>Setting to enable/diable the creation of ngons for the output</dd>
+<dd>since 6.0</dd>
+<dt>bool CullUnnecessaryVertexesInNgons</dt>
+<dd>Setting to determine whether interior colinear vertexes are part of the 
+ngon.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/asciieol/">AsciiEol</a> EolType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/objgroupnames/">ObjGroupNames</a> ExportGroupNameLayerNames</dt>
+<dd>Setting to determine whether object, group or layer names
+will become &ldquo;g&quot;s in the OBJ output file</dd>
+<dd>since 6.0</dd>
+<dt>bool ExportMaterialDefinitions</dt>
+<dd>Setting to write an .mtl file and &ldquo;usemtl&quot;s in the obj file</dd>
+<dd>since 6.0</dd>
+<dt>bool ExportNormals</dt>
+<dd>Enable/disable export of vertex normals, if they exist.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/objobjectnames/">ObjObjectNames</a> ExportObjectNames</dt>
+<dd>Setting to determine what object names in Rhino 
+will become in the OBJ output file</dd>
+<dd>since 6.0</dd>
+<dt>bool ExportOpenMeshes</dt>
+<dd>Enable/Disable bailing when an open mesh is encountered.</dd>
+<dd>since 6.0</dd>
+<dt>bool ExportTcs</dt>
+<dd>Enable/disable export of texture coordinates, if they exist.</dd>
+<dd>since 6.0</dd>
+<dt>bool ExportVcs</dt>
+<dd>Enable/disable export of vertex colors, if they exist.</dd>
+<dd>since 6.0</dd>
+<dt>bool IncludeUnweldedEdgesInNgons</dt>
+<dd>Setting to determine whether unwelded edges are ignored in the 
+creation of an ngon.</dd>
+<dd>since 6.0</dd>
+<dt>bool MapZtoY</dt>
+<dd>Setting to transform Rhino&rsquo;s Z axis to OBJ&rsquo;s Y axis</dd>
+<dd>since 6.0</dd>
+<dt>bool MergeNestedGroupingNames</dt>
+<dd>Setting to merge nested layer or group names into a single OBJ group name</dd>
+<dd>since 6.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparameters/">MeshingParameters</a> MeshParameters</dt>
+<dd>Mesh parameters to use when meshing geometry that is not already a mesh.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/vertexwelding/">VertexWelding</a> MeshType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int MinNgonFaceCount</dt>
+<dd>Minimum number of faces to consider creation of ngon</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/geometrytype/">GeometryType</a> ObjectType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>int SignificantDigits</dt>
+<dd>Number of significant digits to write out for floating point numbers</dd>
+<dd>since 6.0</dd>
+<dt>bool SortObjGroups</dt>
+<dd>Setting to enable/disable sorting of OBJ groups</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/subdmeshing/">SubDMeshing</a> SubDMeshType</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>int SubDSurfaceMeshingDensity</dt>
+<dd>Determines how coarse the mesh output
+will be when surface meshing subd objects
+<p>See comments for ON_SubDDisplayParameters in opennurbs_mesh.h
+for details regarding numbers used.</p>
+</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/fileobjwriteoptions/curvetype/">CurveType</a> TrimCurveType</dt>
+<dd>trimming curve option</dd>
+<dd>since 6.0</dd>
+<dt>bool UnderbarMaterialNames</dt>
+<dd>Enable/disable replacing white space with underbars in material names.</dd>
+<dd>since 6.0</dd>
+<dt>bool UseRelativeIndexing</dt>
+<dd>Determines whether to use relative indexing.
+<p>TRUE = use relative (negative) indexing
+FALSE = use absolute (positive) indexing</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>bool UseSimpleDialog</dt>
+<dd>Determines whether to use the simple or detailed meshing dialog.</dd>
+<dd>since 6.0</dd>
+<dt>bool WrapLongLines</dt>
+<dd>Setting to enable/disable line wrapping with &ldquo;&quot;s</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetTransform()</dt>
+<dd>Calculates the transform combination of ZToY and
+any the translation that might occur in a SavewithOrigin.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>FileObjWriteOptions</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  EarthAnchorPoint &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Contains information about the model&amp;rsquo;s position in latitude, longitude, and elevation for GIS mapping applications.
+public class EarthAnchorPoint : IDisposableConstructors  EarthAnchorPoint() Initializes a new instance of the class.  Properties  string Description Gets or sets the long form of the identifying information about this location. double EarthBasepointElevation Gets or sets the point elevation on earth, in meters. BasepointZero EarthBasepointElevationZero Gets or sets a value indicating the zero level convention relating to a location on Earth.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">EarthAnchorPoint</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Contains information about the model&rsquo;s position in latitude, longitude,
+and elevation for GIS mapping applications.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EarthAnchorPoint</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>EarthAnchorPoint()</dt>
+<dd>Initializes a new instance of the  class.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>string Description</dt>
+<dd>Gets or sets the long form of the identifying information about this location.</dd>
+<dt>double EarthBasepointElevation</dt>
+<dd>Gets or sets the point elevation on earth, in meters.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/basepointzero/">BasepointZero</a> EarthBasepointElevationZero</dt>
+<dd>Gets or sets a value indicating the zero level convention relating to a location on Earth.</dd>
+<dt>double EarthBasepointLatitude</dt>
+<dd>Gets or sets a point latitude on earth, in decimal degrees.
++90 = north pole, 0 = equator, -90 = south pole.</dd>
+<dt>double EarthBasepointLongitude</dt>
+<dd>Gets or sets the point longitude on earth, in decimal degrees.
+0 = prime meridian (Greenwich meridian)Values increase towards West</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ModelBasePoint</dt>
+<dd>Corresponding model point in model coordinates.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> ModelEast</dt>
+<dd>Earth directions in model coordinates.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> ModelNorth</dt>
+<dd>Earth directions in model coordinates.</dd>
+<dt>string Name</dt>
+<dd>Gets or sets the short form of the identifying information about this location.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dt>bool EarthLocationIsSet()</dt>
+<dd>Checks if the earth location is set or not.</dd>
+<dd>Returns - Bool value, True if set else false</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> GetEarthAnchorPlane(Vector3d anchorNorth)</dt>
+<dd>Returns the earth anchor plane</dd>
+<dd>Returns - A plane value.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> GetModelCompass()</dt>
+<dd>Returns a plane in model coordinates whose X axis points East,
+Y axis points North and Z axis points Up. The origin
+is set to ModelBasepoint.</dd>
+<dd>Returns - A plane value. This might be invalid on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> GetModelToEarthTransform(UnitSystem modelUnitSystem)</dt>
+<dd>Gets a transformation from model coordinates to earth coordinates.
+This transformation assumes the model is small enough that
+the curvature of the earth can be ignored.</dd>
+<dd>Returns - Transform on success. Inalid Transform on error.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>EarthAnchorPoint</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

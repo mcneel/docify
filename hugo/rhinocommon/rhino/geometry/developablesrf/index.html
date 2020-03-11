@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  DevelopableSrf &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Helpers for developable surface functions
+public class DevelopableSrfMethods  static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out) Finds minimum twist ruling between 2 curves at local domains Returns - -1: Error 0: Exact non-twisting ruling found between t0_out and t1_out 1: Ruling found between t0_out and t1_out that has less twist the ruling between t0 and t1 since 6.0 static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out,double cos_twist_out) Find a ruling from rail0(t0_out) to rail1(t1_out) that has the least twist across the ruling with t0_out in domain0 and t1_out in domain1.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">DevelopableSrf</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Helpers for developable surface functions</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DevelopableSrf</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out)</dt>
+<dd>Finds minimum twist ruling between 2 curves at local domains</dd>
+<dd>Returns - -1: Error
+0: Exact non-twisting ruling found between t0_out and t1_out
+1: Ruling found between t0_out and t1_out that has less twist 
+the ruling between t0 and t1</dd>
+<dd>since 6.0</dd>
+<dt>static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out,double cos_twist_out)</dt>
+<dd>Find a ruling from rail0(t0_out) to rail1(t1_out) that has the least twist
+across the ruling with t0_out in domain0 and t1_out in domain1.
+max_cos_twist is cos(twist) for the returned ruling</dd>
+<dd>since 6.0</dd>
+<dt>static bool RulingMinTwist(NurbsCurve rail0,double t0,NurbsCurve rail1,double t1,Interval dom1,double t1_out,double cos_twist_out)</dt>
+<dd>Find a ruling from rail0(t0) to rail1(t1_out) that has the least twist
+across the ruling with t1_out in domain1.
+max_cos_twist is cos(twist) for the returned ruling</dd>
+<dd>since 6.0</dd>
+<dt>static bool UntwistRulings(NurbsCurve rail0,NurbsCurve rail1,IEnumerable<!-- raw HTML omitted --> rulings)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>DevelopableSrf</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

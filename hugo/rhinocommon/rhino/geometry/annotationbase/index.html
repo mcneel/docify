@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  AnnotationBase &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Provides a common base class to all annotation geometry. This class refers to the geometric element that is independent from the document.
+[Serializable]public class AnnotationBase : GeometryBaseProperties  LengthDisplay AlternateDimensionLengthDisplay Alternate length display units and format since 6.0 AnnotationType AnnotationType Type of annotation since 6.0 char DecimalSeparator Set or get the decimal separator c since 7.0 LengthDisplay DimensionLengthDisplay Length display units and format since 6.0 double DimensionScale Gets or sets the dimension scale since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">AnnotationBase</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Provides a common base class to all annotation geometry.
+This class refers to the geometric element that is independent from the document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnnotationBase</span> : GeometryBase
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>LengthDisplay AlternateDimensionLengthDisplay</dt>
+<dd>Alternate length display units and format</dd>
+<dd>since 6.0</dd>
+<dt>AnnotationType AnnotationType</dt>
+<dd>Type of annotation</dd>
+<dd>since 6.0</dd>
+<dt>char DecimalSeparator</dt>
+<dd>Set or get the decimal separator c</dd>
+<dd>since 7.0</dd>
+<dt>LengthDisplay DimensionLengthDisplay</dt>
+<dd>Length display units and format</dd>
+<dd>since 6.0</dd>
+<dt>double DimensionScale</dt>
+<dd>Gets or sets the dimension scale</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> DimensionStyle</dt>
+<dd>If there are no overrides then the parent style is returned otherwise the dimension style saved with the annotation is returned.</dd>
+<dd>since 6.0</dd>
+<dt>Guid DimensionStyleId</dt>
+<dd>Id of this annotation&rsquo;s parent dimstyle
+If this annotation has overrides to dimstyle properties, 
+those overrides will be represented in the DimensionStyle
+returned by DimensionStyle(ParentStyle)</dd>
+<dd>since 6.0</dd>
+<dt>bool DrawForward</dt>
+<dd>Gets or sets whether the text is oriented towards the reader when viewed from behind</dd>
+<dd>since 6.0</dd>
+<dt>bool DrawTextFrame</dt>
+<dd>Gets or sets whether to draw a frame around a text mask</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/font/">Font</a> FirstCharFont</dt>
+<dd>Returns the font used by the first run of text in an annotation</dd>
+<dd>since 6.5</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/font/">Font</a> Font</dt>
+<dd>The base Font for the text of the annotation.  The text string is rich text and therefore a different font that the base font can be associated with sub strings of the text</dd>
+<dd>since 6.0</dd>
+<dt>int FontIndex</dt>
+<dd>Obsolete; use Font property instead</dd>
+<dd>since 6.1</dd>
+<dt>double FormatWidth</dt>
+<dd>Text format width (Wrapping rectangle)</dd>
+<dd>since 6.0</dd>
+<dt>bool HasPropertyOverrides</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Color MaskColor</dt>
+<dd>Color to use for drawing a text mask when it is enabled. If the mask is
+enabled and MaskColor is System.Drawing.Color.Transparent, then the
+viewport&rsquo;s color will be used for the MaskColor</dd>
+<dd>since 6.0</dd>
+<dt>MaskType MaskColorSource</dt>
+<dd>Gets or sets whether the mask background color is from the background or from a color</dd>
+<dd>since 6.0</dd>
+<dt>bool MaskEnabled</dt>
+<dd>Determines whether or not to draw a Text Mask</dd>
+<dd>since 6.0</dd>
+<dt>MaskFrame MaskFrame</dt>
+<dd>Gets or sets whether to draw a frame around a text mask</dd>
+<dd>since 7.0</dd>
+<dt>double MaskOffset</dt>
+<dd>Offset for the border around text of the rectangle used to draw the mask.  This 
+value multiplied by TextHeight is the offset on each side of the tight rectangle 
+around the text characters to the mask rectangle. The default value is 0.1.</dd>
+<dd>since 6.0</dd>
+<dt>bool MaskUsesViewportColor</dt>
+<dd>If true, the viewport&rsquo;s color is used for the mask color. If
+false, the color defined by MaskColor is used</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> ParentDimensionStyle</dt>
+<dd>The parent dimension style associated with this annotation</dd>
+<dd>since 6.0</dd>
+<dt>string PlainText</dt>
+<dd>Text stripped of RTF formatting information</dd>
+<dd>since 6.0</dd>
+<dt>string PlainTextWithFields</dt>
+<dd>Text stripped of RTF formatting information and with field expressions intact</dd>
+<dd>since 6.19</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Plane that this annotation lies on</dd>
+<dt>string RichText</dt>
+<dd>Text including additional RTF formatting information</dd>
+<dd>since 6.0</dd>
+<dt>string Text</dt>
+<dd>Text including additional RTF formatting information</dd>
+<dt>string TextFormula</dt>
+<dd>See RichText</dd>
+<dt>bool TextHasRtfFormatting</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>double TextHeight</dt>
+<dd>AnnotationBase.TextHeight
+Gets the parent dimstyle for the annotation and 
+gets or sets the text height in the dimstyle</dd>
+<dt>bool TextIsWrapped</dt>
+<dd>Is text wrapping on</dd>
+<dd>since 6.0</dd>
+<dt>double TextModelWidth</dt>
+<dd>Width of text in the model</dd>
+<dd>since 6.0</dd>
+<dt>double TextRotationDegrees</dt>
+<dd>Rotation of text in degrees</dd>
+<dd>since 6.0</dd>
+<dt>double TextRotationRadians</dt>
+<dd>Rotation of text in radians</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool FirstCharProperties(string rtf_str,bool bold,bool italic,bool underline,string facename)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static string FormatRtfString(string rtf_in,bool clear_bold,bool set_bold,bool clear_italic,bool set_italic,bool clear_underline,bool set_underline,bool clear_facename,bool set_facename,string facename)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static double GetDimensionScale(RhinoDoc doc,DimensionStyle dimstyle,RhinoViewport vport)</dt>
+<dd>Get view dependent dimension scale</dd>
+<dd>since 6.0</dd>
+<dt>static string PlainTextToRtf(string str)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ClearPropertyOverrides()</dt>
+<dd>Clears all overriden properties for this annotation</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetBoundingBox(Transform xform)</dt>
+<dd>Aligned Boundingbox solver. Gets the world axis aligned boundingbox for the transformed geometry.</dd>
+<dd>Returns - The boundingbox of the transformed geometry in world coordinates 
+or BoundingBox.Empty if not bounding box could be found.</dd>
+<dd>since 6.10</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a> GetDimensionStyle(DimensionStyle parentDimStyle)</dt>
+<dd>Return the proper dimension style from which to get properties
+for this annotation object
+If this object has style overrides, those will be included in the 
+returned dimension style and the style will be updated to include
+the current state of the parent style for non-overridden fields</dd>
+<dd>since 6.0</dd>
+<dt>string GetPlainTextWithRunMap(int[] map)</dt>
+<dd>Return plain text string for this annotation with field expressions unevaluated 
+intrunmap is an array of ints in groups of 3: run index, char pos start, length</dd>
+<dd>since 7.0</dd>
+<dt>bool IsAllBold()</dt>
+<dd>Returns True if all of the text in the annotation is Bold, otherwise returns false</dd>
+<dd>since 6.22</dd>
+<dt>bool IsAllItalic()</dt>
+<dd>Returns True if all of the text in the annotation is Italic, otherwise returns false</dd>
+<dd>since 6.22</dd>
+<dt>bool IsAllUnderlined()</dt>
+<dd>Returns True if all of the text in the annotation is Underlined, otherwise returns false</dd>
+<dd>since 6.22</dd>
+<dt>bool IsPropertyOverridden(Field field)</dt>
+<dd>Returns True if a property is overridden</dd>
+<dd>since 6.0</dd>
+<dt>bool RunReplace(string repl_string,int start_run_idx,int start_run_pos,int end_run_idx,int end_run_pos)</dt>
+<dd>Replace text within a formatted string</dd>
+<dd>since 7.0</dd>
+<dt>bool SetBold(bool set_on)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SetFacename(bool set_on,string facename)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SetItalic(bool set_on)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SetOverrideDimStyle(DimensionStyle OverrideStyle)</dt>
+<dd>Set a style including overrides for this annotation object.
+The DimensionStyle OverrideStyle must have the override fields marked 
+as overridden and must have it&rsquo;s Id set to nil.
+Use DimensinoStyle.SetFieldOverride(Field field) and related functions
+to manage override settings. To override a field, the field value must be set
+and the field must be marked as an override. 
+The DimensionStyle passed in here must not be in the dimstyle table</dd>
+<dd>since 6.0</dd>
+<dt>void SetRichText(string rtfText,DimensionStyle dimstyle)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool SetUnderline(bool set_on)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void WrapText()</dt>
+<dd>Wrap text</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>AnnotationBase</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

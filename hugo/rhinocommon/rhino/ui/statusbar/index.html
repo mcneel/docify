@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  StatusBar &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.UI
+Contains static methods to control the application status bar.
+public class StatusBarMethods  static void ClearMessagePane() Removes the message from the message pane. static void HideProgressMeter() Ends, or hides, Rhino&amp;rsquo;s status bar progress meter. static void HideProgressMeter(uint docSerialNumber) Ends, or hides, Rhino&amp;rsquo;s status bar progress meter. since 6.12 static void SetDistancePane(double distance) Sets the distance pane to a distance value. static void SetMessagePane(string message) Sets the message pane to a message.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">StatusBar</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.UI</a></em></p>
+<p>Contains static methods to control the application status bar.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StatusBar</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static void ClearMessagePane()</dt>
+<dd>Removes the message from the message pane.</dd>
+<dt>static void HideProgressMeter()</dt>
+<dd>Ends, or hides, Rhino&rsquo;s status bar progress meter.</dd>
+<dt>static void HideProgressMeter(uint docSerialNumber)</dt>
+<dd>Ends, or hides, Rhino&rsquo;s status bar progress meter.</dd>
+<dd>since 6.12</dd>
+<dt>static void SetDistancePane(double distance)</dt>
+<dd>Sets the distance pane to a distance value.</dd>
+<dt>static void SetMessagePane(string message)</dt>
+<dd>Sets the message pane to a message.</dd>
+<dt>static void SetNumberPane(double number)</dt>
+<dd>Sets the number pane to a number value</dd>
+<dd>since 6.0</dd>
+<dt>static void SetPointPane(Point3d point)</dt>
+<dd>Sets the point pane to a point value.</dd>
+<dt>static int ShowProgressMeter(int lowerLimit,int upperLimit,string label,bool embedLabel,bool showPercentComplete)</dt>
+<dd>Starts, or shows, Rhino&rsquo;s status bar progress meter.</dd>
+<dd>Returns - 1 - The progress meter was created successfully.
+0 - The progress meter was not created.
+-1 - The progress meter was not created because some other process has already created it.</dd>
+<dt>static int ShowProgressMeter(uint docSerialNumber,int lowerLimit,int upperLimit,string label,bool embedLabel,bool showPercentComplete)</dt>
+<dd>Starts, or shows, Rhino&rsquo;s status bar progress meter.</dd>
+<dd>Returns - 1 - The progress meter was created successfully.
+0 - The progress meter was not created.
+-1 - The progress meter was not created because some other process has already created it.</dd>
+<dd>since 6.12</dd>
+<dt>static int UpdateProgressMeter(int position,bool absolute)</dt>
+<dd>Sets the current position of Rhino&rsquo;s status bar progress meter.</dd>
+<dd>Returns - The previous position if successful.</dd>
+<dt>static int UpdateProgressMeter(uint docSerialNumber,int position,bool absolute)</dt>
+<dd>Sets the current position of Rhino&rsquo;s status bar progress meter.</dd>
+<dd>Returns - The previous position if successful.</dd>
+<dd>since 6.12</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>StatusBar</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

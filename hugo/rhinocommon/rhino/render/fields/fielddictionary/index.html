@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  FieldDictionary &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render.Fields
+Dictionary containing RenderContent data fields, add fields to this dictionary in your derived RenderContent classes constructor. Get field values using the TryGetdata type methods and set them using the Set() method.
+public class FieldDictionary : IEnumerableMethods  BoolField Add(string key,bool value) Add a new BoolField to the dictionary. This will be a data only field and not show up in the content browsers. since 5.1 BoolField Add(string key,bool value,string prompt) Add a new BoolField to the dictionary.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">FieldDictionary</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render.Fields</a></em></p>
+<p>Dictionary containing RenderContent data fields, add fields to this
+dictionary in your derived RenderContent classes constructor.  Get field
+values using the TryGet<a href="">data type</a> methods and set them using the Set()
+method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FieldDictionary</span> : IEnumerable
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/render/fields/boolfield/">BoolField</a> Add(string key,bool value)</dt>
+<dd>Add a new BoolField to the dictionary. This will be a data only field
+and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/boolfield/">BoolField</a> Add(string key,bool value,string prompt)</dt>
+<dd>Add a new BoolField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/bytearrayfield/">ByteArrayField</a> Add(string key,byte[] value)</dt>
+<dd>AddField a new ByteArrayField to the dictionary. This will be a data
+only field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> Add(string key,Color value)</dt>
+<dd>Add a new Color4fField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> Add(string key,Color value,string prompt)</dt>
+<dd>Add a new Color4fField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> Add(string key,Color4f value)</dt>
+<dd>Add a new Color4fField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> Add(string key,Color4f value,string prompt)</dt>
+<dd>Add a new Color4fField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/datetimefield/">DateTimeField</a> Add(string key,DateTime value)</dt>
+<dd>Add a new DateTimeField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/datetimefield/">DateTimeField</a> Add(string key,DateTime value,string prompt)</dt>
+<dd>Add a new DateTimeField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/doublefield/">DoubleField</a> Add(string key,double value)</dt>
+<dd>AddField a new DoubleField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/doublefield/">DoubleField</a> Add(string key,double value,string prompt)</dt>
+<dd>Add a new DoubleField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/floatfield/">FloatField</a> Add(string key,float value)</dt>
+<dd>Add a new FloatField to the dictionary. This will be a data only field
+and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/floatfield/">FloatField</a> Add(string key,float value,string prompt)</dt>
+<dd>AddField a new FloatField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/guidfield/">GuidField</a> Add(string key,Guid value)</dt>
+<dd>Add a new GuidField to the dictionary. This will be a data only field
+and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/guidfield/">GuidField</a> Add(string key,Guid value,string prompt)</dt>
+<dd>Add a new GuidField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/intfield/">IntField</a> Add(string key,int value)</dt>
+<dd>Add a new IntField to the dictionary. This will be a data only field
+and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/intfield/">IntField</a> Add(string key,int value,string prompt)</dt>
+<dd>Add a new IntField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point2dfield/">Point2dField</a> Add(string key,Point2d value)</dt>
+<dd>Add a new Point2dField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point2dfield/">Point2dField</a> Add(string key,Point2d value,string prompt)</dt>
+<dd>Add a new Point2dField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point3dfield/">Point3dField</a> Add(string key,Point3d value)</dt>
+<dd>Add a new Point3dField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point3dfield/">Point3dField</a> Add(string key,Point3d value,string prompt)</dt>
+<dd>Add a new Point3dField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point4dfield/">Point4dField</a> Add(string key,Point4d value)</dt>
+<dd>Add a new Point4dField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point4dfield/">Point4dField</a> Add(string key,Point4d value,string prompt)</dt>
+<dd>Add a new Point4dField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/stringfield/">StringField</a> Add(string key,string value)</dt>
+<dd>Add a new StringField to the dictionary.  This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/stringfield/">StringField</a> Add(string key,string value,string prompt)</dt>
+<dd>Add a new StringField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/transformfield/">TransformField</a> Add(string key,Transform value)</dt>
+<dd>Add a new TransformField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/transformfield/">TransformField</a> Add(string key,Transform value,string prompt)</dt>
+<dd>Add a new TransformField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector2dfield/">Vector2dField</a> Add(string key,Vector2d value)</dt>
+<dd>Add a new Vector2dField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector2dfield/">Vector2dField</a> Add(string key,Vector2d value,string prompt)</dt>
+<dd>Add a new Vector2dField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector3dfield/">Vector3dField</a> Add(string key,Vector3d value)</dt>
+<dd>Add a new Vector3dField to the dictionary. This will be a data only
+field and not show up in the content browsers.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector3dfield/">Vector3dField</a> Add(string key,Vector3d value,string prompt)</dt>
+<dd>Add a new Vector3dField to the dictionary.</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/boolfield/">BoolField</a> AddTextured(string key,bool value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/boolfield/">BoolField</a> AddTextured(string key,bool value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new BoolField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> AddTextured(string key,Color value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> AddTextured(string key,Color value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Color4fField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> AddTextured(string key,Color4f value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/color4ffield/">Color4fField</a> AddTextured(string key,Color4f value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Color4fField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/datetimefield/">DateTimeField</a> AddTextured(string key,DateTime value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/datetimefield/">DateTimeField</a> AddTextured(string key,DateTime value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new DateTimeField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/doublefield/">DoubleField</a> AddTextured(string key,double value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/doublefield/">DoubleField</a> AddTextured(string key,double value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new DoubleField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/floatfield/">FloatField</a> AddTextured(string key,float value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/floatfield/">FloatField</a> AddTextured(string key,float value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new FloatField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/guidfield/">GuidField</a> AddTextured(string key,Guid value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/guidfield/">GuidField</a> AddTextured(string key,Guid value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new GuidField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/intfield/">IntField</a> AddTextured(string key,int value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/intfield/">IntField</a> AddTextured(string key,int value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new IntField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point2dfield/">Point2dField</a> AddTextured(string key,Point2d value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point2dfield/">Point2dField</a> AddTextured(string key,Point2d value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Point2dField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point3dfield/">Point3dField</a> AddTextured(string key,Point3d value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point3dfield/">Point3dField</a> AddTextured(string key,Point3d value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Point3dField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point4dfield/">Point4dField</a> AddTextured(string key,Point4d value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/point4dfield/">Point4dField</a> AddTextured(string key,Point4d value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Point4dField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/stringfield/">StringField</a> AddTextured(string key,string value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/stringfield/">StringField</a> AddTextured(string key,string value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new StringField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/transformfield/">TransformField</a> AddTextured(string key,Transform value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/transformfield/">TransformField</a> AddTextured(string key,Transform value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new TransformField to the dictionary. This overload will cause
+the field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will
+appear in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector2dfield/">Vector2dField</a> AddTextured(string key,Vector2d value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector2dfield/">Vector2dField</a> AddTextured(string key,Vector2d value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Vector2dField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector3dfield/">Vector3dField</a> AddTextured(string key,Vector3d value,string prompt)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/vector3dfield/">Vector3dField</a> AddTextured(string key,Vector3d value,string prompt,bool treatAsLinear)</dt>
+<dd>Add a new Vector3dField to the dictionary. This overload will cause the
+field to be tagged as &ldquo;textured&rdquo; so that the texturing UI will appear
+in automatic UIs.</dd>
+<dd>since 7.0</dd>
+<dt>bool ContainsField(string fieldName)</dt>
+<dd>Call this method to determine if a this FieldsList contains a field
+with the specified field name.</dd>
+<dd>Returns - Returns True if a field with that matches fieldName is found or false
+if it is not found.</dd>
+<dd>since 5.1</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/fields/field/">Field</a> GetField(string fieldName)</dt>
+<dd>Call this method to get the field with the matching name.</dd>
+<dd>Returns - If the field exists in the Fields dictionary then the field is returned
+otherwise; None is returned.</dd>
+<dd>since 5.3</dd>
+<dt>void RemoveField(string fieldName)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Set(string key,bool value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,bool value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,byte[] value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,byte[] value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Color value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Color value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Color4f value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Color4f value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,DateTime value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,DateTime value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,double value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,double value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,float value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,float value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Guid value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Guid value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,int value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,int value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Point2d value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Point2d value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Point3d value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Point3d value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Point4d value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Point4d value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,string value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,string value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Transform value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Transform value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Vector2d value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Vector2d value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Vector3d value)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>void Set(string key,Vector3d value,ChangeContexts changeContext)</dt>
+<dd>Set the field value and send the appropriate change notification to the
+render SDK.  Will throw a InvalidOperationException exception if the key
+name is not valid.</dd>
+<dd>since 5.1</dd>
+<dt>bool SetTag(string key,object tag)</dt>
+<dd>Sets an object that contains data to associate with the field.  THIS IS NOW OBSOLETE - if you were using this, please email <a href="mailto:andy@mcneel.com">andy@mcneel.com</a> and let me know why.</dd>
+<dd>Returns - True if the field is found and the tag was set otherwise False is returned.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetTag(string key,object tag)</dt>
+<dd>Gets object that contains data associate with a field. THIS IS NOW OBSOLETE - if you were using this, please email <a href="mailto:andy@mcneel.com">andy@mcneel.com</a> and let me know why.</dd>
+<dd>Returns - Returns True if the field is found and its tag was retrieved otherwise;
+returns false.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,bool value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,byte[] value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Color value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Color4f value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,DateTime value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,double value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,float value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Guid value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,int value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Point2d value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Point3d value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Point4d value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,string value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,T value)</dt>
+<dd>Parametrized version of TryGetValue.</dd>
+<dd>Returns - True if field was found. If False out parameter value will be set to default(T).</dd>
+<dd>since 6.12</dd>
+<dt>bool TryGetValue(string key,Transform value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Vector2d value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+<dt>bool TryGetValue(string key,Vector3d value)</dt>
+<dd>Find a field with the specified key and get its value if found.</dd>
+<dd>Returns - Returns True if the key is found and the value parameter is set to the
+field value.  Returns False if the field was not found.</dd>
+<dd>since 5.1</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>FieldDictionary</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

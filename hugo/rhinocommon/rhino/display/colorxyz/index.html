@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ColorXYZ &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Represents an XYZ (Hue, Saturation, Luminance) color with double precision floating point channels. XYZ colors are based on the CIE 1931 XYZ color space standard and they mimic the natural sensitivity of cones in the human retina.
+Constructors  ColorXYZ(Color rgb) Constructs a new instance of ColorXYZ that is equivalent to an RGB color. ColorXYZ(double x,double y,double z) Constructs a new instance of ColorXYZ with custom channel values. ColorXYZ(double alpha,double x,double y,double z) Constructs a new instance of ColorXYZ with custom channel values.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ColorXYZ</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Represents an XYZ (Hue, Saturation, Luminance) color with double precision floating point channels. 
+XYZ colors are based on the CIE 1931 XYZ color space standard and they mimic the natural 
+sensitivity of cones in the human retina.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ColorXYZ(Color rgb)</dt>
+<dd>Constructs a new instance of ColorXYZ that is equivalent to an RGB color.</dd>
+<dt>ColorXYZ(double x,double y,double z)</dt>
+<dd>Constructs a new instance of ColorXYZ with custom channel values.</dd>
+<dt>ColorXYZ(double alpha,double x,double y,double z)</dt>
+<dd>Constructs a new instance of ColorXYZ with custom channel values.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double A</dt>
+<dd>Gets or set the Alpha channel value. Channel will be limited to 0~1.</dd>
+<dt>double X</dt>
+<dd>Gets or set the X channel value. Channel will be limited to 0~1.</dd>
+<dt>double Y</dt>
+<dd>Gets or set the Y channel value. Channel will be limited to 0~1.</dd>
+<dt>double Z</dt>
+<dd>Gets or set the Z channel value. Channel will be limited to 0~1.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static ColorXYZ CreateFromCMYK(ColorCMYK cmyk)</dt>
+<dd>Create the nearest XYZ equivalent of a CMYK color.</dd>
+<dd>Returns - The XYZ equivalent of the CMYK color.</dd>
+<dt>static ColorXYZ CreateFromHSL(ColorHSL hsl)</dt>
+<dd>Create the nearest XYZ equivalent of an HSL color.</dd>
+<dd>Returns - The XYZ equivalent of the HSL color.</dd>
+<dt>static ColorXYZ CreateFromHSV(ColorHSV hsv)</dt>
+<dd>Constructs the nearest XYZ equivalent of an HSV color.</dd>
+<dd>Returns - The XYZ equivalent of the HSV color.</dd>
+<dd>since 6.0</dd>
+<dt>static ColorXYZ CreateFromLAB(ColorLAB lab)</dt>
+<dd>Create the nearest XYZ equivalent of a Lab color.</dd>
+<dd>Returns - The XYZ equivalent of the LAB color.</dd>
+<dt>static ColorXYZ CreateFromLCH(ColorLCH lch)</dt>
+<dd>Create the nearest XYZ equivalent of an LCH color.</dd>
+<dd>Returns - The XYZ equivalent of the LCH color.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ColorXYZ</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

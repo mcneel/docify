@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  TextFields &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime
+This Class Processes Text Field Functions
+public class TextFieldsMethods  static double Area(string id) Returns the area value for a selected object id since 7.0 static double Area(string id,string unitSystem) Returns the area value for a selected object id in a specified unit system since 7.0 static string BlockAttributeText(string key,string prompt,string defaultValue) User text associated with a block since 7.0 static int BlockInstanceCount(string instanceDefinitionNameOrId) Returns the number of block instances found in the document with the specified block definition name or the instance reference id.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">TextFields</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime</a></em></p>
+<p>This Class Processes Text Field Functions</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextFields</span>
+</code></pre></div><h2 id="methods">Methods</h2>
+<dl>
+<dt>static double Area(string id)</dt>
+<dd>Returns the area value for a selected object id</dd>
+<dd>since 7.0</dd>
+<dt>static double Area(string id,string unitSystem)</dt>
+<dd>Returns the area value for a selected object id in a specified unit system</dd>
+<dd>since 7.0</dd>
+<dt>static string BlockAttributeText(string key,string prompt,string defaultValue)</dt>
+<dd>User text associated with a block</dd>
+<dd>since 7.0</dd>
+<dt>static int BlockInstanceCount(string instanceDefinitionNameOrId)</dt>
+<dd>Returns the number of block instances found in the document
+with the specified block definition name or the instance reference id.</dd>
+<dd>since 7.0</dd>
+<dt>static string BlockInstanceName(string blockId)</dt>
+<dd>Returns the block definition name of a block instance</dd>
+<dd>since 7.0</dd>
+<dt>static double CurveLength(string id)</dt>
+<dd>Get length of a curve given a string id</dd>
+<dd>since 7.0</dd>
+<dt>static double CurveLength(string id,string unitSystem)</dt>
+<dd>Get length of a curve given a string id in a specified unit system.
+UnitSystem enum as string</dd>
+<dd>since 7.0</dd>
+<dt>static string Date()</dt>
+<dd>Current date</dd>
+<dd>since 7.0</dd>
+<dt>static string Date(string dateFormat)</dt>
+<dd>Current date in a specified format</dd>
+<dd>since 7.0</dd>
+<dt>static string Date(string dateFormat,string languageId)</dt>
+<dd>Current Date in a specific format and language</dd>
+<dd>since 7.0</dd>
+<dt>static string DateModified()</dt>
+<dd>Date the document was last edited</dd>
+<dd>since 7.0</dd>
+<dt>static string DateModified(string dateFormat)</dt>
+<dd>Date the document was last edited in a specified format</dd>
+<dd>since 7.0</dd>
+<dt>static string DateModified(string dateFormat,string languageId)</dt>
+<dd>Date the document was last edited in a specific format and language</dd>
+<dd>since 7.0</dd>
+<dt>static string DetailScale(string detailId,string scaleFormat)</dt>
+<dd>Returns a detail views scale</dd>
+<dd>since 7.0</dd>
+<dt>static string DocumentText(string key)</dt>
+<dd>Return document user string for a given key</dd>
+<dd>since 7.0</dd>
+<dt>static string FileName()</dt>
+<dd>Return full path to the document</dd>
+<dd>since 7.0</dd>
+<dt>static string FileName(string options)</dt>
+<dd>Return path to the document</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/runtime/textfields/instanceattributefield/">InstanceAttributeField</a>[] GetInstanceAttributeFields(InstanceDefinition idef)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/runtime/textfields/instanceattributefield/">InstanceAttributeField</a>[] GetInstanceAttributeFields(string str)</dt>
+<dd>Gets an array of block attribute definitions associated with a
+TextObject.</dd>
+<dd>Returns - Will return a empty array if text is None or there is no attributes
+otherwise; returns a list of one or more attribute definitions embedded
+in the text string.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/runtime/textfields/instanceattributefield/">InstanceAttributeField</a>[] GetInstanceAttributeFields(TextObject text)</dt>
+<dd>Gets an array of block attribute definitions associated with a
+TextObject.</dd>
+<dd>Returns - Will return a empty array if text is None or there is no attributes
+otherwise; returns a list of one or more attribute definitions embedded
+in the text string.</dd>
+<dd>since 7.0</dd>
+<dt>static string LayerName(string layerId)</dt>
+<dd>Returns the name of a layer based on the layers guid</dd>
+<dd>since 7.0</dd>
+<dt>static string LayoutUserText(string key)</dt>
+<dd>Returns a value from the active layouts user text strings for the specified key.</dd>
+<dd>since 7.0</dd>
+<dt>static string LayoutUserText(string layoutId,string key)</dt>
+<dd>Returns user text value from a layout id Key</dd>
+<dd>since 7.0</dd>
+<dt>static string ModelUnits()</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>static string Notes()</dt>
+<dd>Notes for a RhinoDoc</dd>
+<dd>since 7.0</dd>
+<dt>static int NumPages()</dt>
+<dd>Number of layout pages in a document</dd>
+<dd>since 7.0</dd>
+<dt>static string ObjectLayer(string id)</dt>
+<dd>Return an object&rsquo;s layer name</dd>
+<dd>since 7.0</dd>
+<dt>static string ObjectName(string id)</dt>
+<dd>Return an object&rsquo;s name</dd>
+<dd>since 7.0</dd>
+<dt>static double PageHeight()</dt>
+<dd>Return the current layout page height in the layout units</dd>
+<dd>since 7.0</dd>
+<dt>static string PageName()</dt>
+<dd>Return the current layout page name</dd>
+<dd>since 7.0</dd>
+<dt>static string PageName(string id)</dt>
+<dd>Return the page name for the specified View ID</dd>
+<dd>since 7.0</dd>
+<dt>static int PageNumber()</dt>
+<dd>Returns the current layouts page number</dd>
+<dd>since 7.0</dd>
+<dt>static double PageWidth()</dt>
+<dd>Return the current layout page width in the layout units</dd>
+<dd>since 7.0</dd>
+<dt>static string PaperName()</dt>
+<dd>Returns the layouts selected paper name
+example Letter / A4 / A6</dd>
+<dd>since 7.0</dd>
+<dt>static string PointCoordinate(string pointId,string axis)</dt>
+<dd>returns the location of a 3d point</dd>
+<dd>since 7.0</dd>
+<dt>static string UserText(string id,string key)</dt>
+<dd>User text associated with an object, block or layout</dd>
+<dd>since 7.0</dd>
+<dt>static string UserText(string id,string key,string prompt)</dt>
+<dd>User text associated with an object, block or layout</dd>
+<dd>since 7.0</dd>
+<dt>static string UserText(string id,string key,string prompt,string defaultValue)</dt>
+<dd>User text associated with an object, block or layout</dd>
+<dd>since 7.0</dd>
+<dt>static double Volume(string id)</dt>
+<dd>Returns the volume for the selected object id</dd>
+<dd>since 7.0</dd>
+<dt>static double Volume(string id,string unitSystem)</dt>
+<dd>Returns volume for selected object id in the specified unit system</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>TextFields</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/sceneobject/">
-        <h3>SceneObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/manifesttable/">
+        <h3>ManifestTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/sceneobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-public class SceneObjectProperties Rhino.Render.RenderMaterial Material  (summary) (since) 5.1  Rhino.Geometry.Mesh Mesh  (summary) (since) 5.1  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/sceneserverdata/">
-        <h3>SceneServerData</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/sceneserverdata/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-The Scene Server Data used by the PreviewSceneServer
-public class SceneServerDataConstructors SceneServerData(PreviewGeometry geo,PreviewBackground back,PreviewLighting light,SceneServerDataUsage usage)  (summary) Constructor for SceneServerData (since) 6.0  Properties IntPtr CppPointer  (summary) The CppPointer of SceneServerData (since) 6.0  Methods void Dispose()  (summary) Dispose for SceneServerData (since) 6.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/commands/selcommand/">
-        <h3>SelCommand</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/commands/selcommand/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Commands
-For adding nestable selection commands that work like the native Rhino SelCrv command, derive your command from SelCommand and override the virtual SelFilter function.
-public class SelCommandProperties bool BeQuiet  (summary) (since) 5.0  bool TestGrips  (summary) (since) 5.0  bool TestLights  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/selectionfiltersettings/">
-        <h3>SelectionFilterSettings</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/selectionfiltersettings/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.ApplicationSettings
-Selection filter settings restrict any selection mode (SelWindow, SelCrossing, SelAll, etc.) to specified object types. Note, selection filter settings are not persistent.
-public class SelectionFilterSettingsProperties static bool Enabled  (summary) Enables or disables the global object selection filter. (since) 7.0  static Rhino.DocObjects.ObjectType GlobalGeometryFilter  (summary) The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/selectionfiltersettingsstate/">
-        <h3>SelectionFilterSettingsState</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/selectionfiltersettingsstate/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class SelectionFilterSettingsStateProperties bool Enabled  (summary) Enables or disables the global object selection filter. (since) 7.0  Rhino.DocObjects.ObjectType GlobalGeometryFilter  (summary) The global geometry type filter controls which types of geometry will be be filtered. Note, the filter can be a bitwise combination of multiple object types. (since) 7.0  Rhino.DocObjects.ObjectType OneShotGeometryFilter  (summary) The one-shot geometry type filter controls which types of geometry will be be filtered for one selection.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/serializationoptions/">
-        <h3>SerializationOptions</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/serializationoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/manifesttable/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.FileIO
-Contains options for serializing -or storing- data, such as Rhino version and user data.
-public class SerializationOptionsConstructors SerializationOptions()  (summary) Initializes a new instance of the class. (since) 5.0  Properties int RhinoVersion  (summary) Gets or sets a value indicating the Rhino version. (since) 5.0  bool WriteUserData  (summary) Gets or sets a value indicating whether to write user data. (since) 5.0  
+Maintains an index to every model component that is in the 3dm file. This is the &ldquo;more comprehensive&rdquo; table that contains all objects in all other tables.
+public class ManifestTable :ICommonComponentTable&lt;ModelComponent&gt;Properties  ModelComponentType ComponentType Returns . since 6.0 int Count Total number of items in the manifest, including deleted items. since 6.0 long LongCount Total number of items in the manifest, including deleted items. since 6.0 object Parent Returns the parent object.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/sha1opennurbs/">
-        <h3>SHA1OpenNURBS</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/mappingtag/">
+        <h3>MappingTag</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/sha1opennurbs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/mappingtag/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides the OpenNURBS implementation of SHA1.
-This class is provided only with the purpose of hashing. It is not meant to be used for any cryptographic purpose.
-public class SHA1OpenNURBSConstructors SHA1OpenNURBS()  (summary) Constructs a new instance of the SHA1 algorithm. (since) 6.0  Methods static byte[] FileSystemPathHash(string path,bool? ignoreCase)  (summary) Computes the SHA1 hash of a file system path, converted to UTF8. These file system paths have identical values of FileSystemPathHash():/x/y/z/name.
+    Namespace: Rhino.Render
+Holds texture mapping information.
+public class MappingTagProperties  Guid Id Gets or sets a map globally unique identifier. uint MappingCRC Gets or sets the cyclic redundancy check on the mapping. See also . TextureMappingType MappingType Gets or sets a texture mapping type: linear, cylinder, etc&hellip; Transform MeshTransform Gets or sets a 4x4 matrix transform.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/shortcutkeysettings/">
-        <h3>ShortcutKeySettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/matrix/">
+        <h3>Matrix</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/shortcutkeysettings/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties to control keyboard shortcut keys
-public class ShortcutKeySettingsMethods static string GetMacro(ShortcutKey key)  (summary) Get macro associated with a given keyboard shortcut (since) 5.0 (returns) string This is some return comment  static void SetMacro(ShortcutKey key,string macro)  (summary) Set macro associated with a keyboard shortcut (since) 5.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/showpaneleventargs/">
-        <h3>ShowPanelEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/showpaneleventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-Panels.Show event arguments
-public class ShowPanelEventArgsConstructors ShowPanelEventArgs(Guid panelId,uint documentSerialNumber,bool show)  (summary) (since) 6.0  Properties bool Show  (summary) Will be True if showing or False if hiding (since) 6.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/shutliningcurveinfo/">
-        <h3>ShutLiningCurveInfo</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/shutliningcurveinfo/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/matrix/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Contains shutlining curve information. This is used in .
-public class ShutLiningCurveInfoConstructors ShutLiningCurveInfo(Curve curve,double radius,int profile,bool pull,bool isBump,IEnumerablecurveIntervals,bool enabled)  (summary) Creates a new instance of the ShutLining curve information class. (since) 6.0  Properties Curve Curve  (summary) The profile curve. (since) 6.0  ReadOnlyCollectionCurveIntervals  (summary) The parts of the curve to use as profiles. (since) 6.0  bool Enabled  (summary) If true, this curve is active.
+Represents an arbitrarily sized matrix of double-precision floating point numbers. If you are working with a 4x4 matrix, then you may want to use the class instead.
+public class Matrix : IDisposable static * Multiplies two matrices and returns a new product matrix. Returns - The product matrix. static + Adds two matrices and returns a new sum matrix. Returns - The sum matrix. since (unknown)  Constructors  Matrix(int rowCount,int columnCount) Initializes a new instance of the matrix.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/mesh/">
+        <h3>Mesh</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/mesh/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a geometry type that is defined by vertices and faces. This is often called a face-vertex mesh.
+[Serializable]public class Mesh : GeometryBaseConstructors  Mesh() Initializes a new empty mesh.  Properties  MeshVertexStatusList ComponentStates Gets access to the vertex hidden/visibility collection in this mesh. This is a runtime property and it is not saved in the 3dm file. since 6.0 int DisjointMeshCount Gets the number of disjoint (topologically unconnected) pieces in this mesh.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshcheckparameters/">
+        <h3>MeshCheckParameters</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshcheckparameters/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Output of a mesh checking operations.
+Properties  bool CheckForBadNormals If true, then then look for vertex normals that are not unit vectors, are zero length or vary greatly from the general direction of the face normals. since 7.0 bool CheckForDegenerateFaces If true, then look for triangles and quads that have zero area and quads where one sub triangle has zero area. since 7.0 bool CheckForDisjointMeshes If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshclash/">
+        <h3>MeshClash</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshclash/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Intersect
+Represents a particular instance of a clash or intersection between two meshes.
+public class MeshClashProperties  Point3d ClashPoint If valid, then the sphere centered at ClashPoint of ClashRadius distance intersects the clashing meshes. double ClashRadius Gets the clash, or intersection, radius. Mesh MeshA Gets the first mesh. Mesh MeshB Gets the second mesh.  Methods  static Mesh[] FindDetail(RhinoObject objA,RhinoObject objB,double distance) Finds all of the mesh faces on each of two Rhino objects that interfere within a clash distance.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshdisplacementinfo/">
+        <h3>MeshDisplacementInfo</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshdisplacementinfo/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Contains mesh displacement information.
+public class MeshDisplacementInfoConstructors  MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. since 6.0  Properties  double Black Value considered lowest point in the displacement. since 6.0 double BlackMove The amount of displacement for the black color in the texture. since 6.0 int ChannelNumber Mapping channel number for the displacement mapping.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/meshface/">
+        <h3>MeshFace</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/meshface/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents the values of the four indices of a mesh face quad. If the third and fourth values are the same, this face represents a triangle.
+ static != Determines whether two structures have different values. Returns - True if the indices of the two points are in any way different; otherwise false. since 6.0 static == Determines whether two structures have equal values. Returns - True if the indices of the two points are exactly equal; otherwise false.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshfacelist/">
+        <h3>MeshFaceList</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshfacelist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the faces and Face related functionality of a Mesh.
+public class MeshFaceList : IResizableList&lt;MeshFace&gt;, IList, IReadOnlyList&lt;MeshFace&gt;Properties  int Capacity Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh faces. When getting this can includes invalid faces. int QuadCount Gets the number of faces that are valid quads (4 corners).
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshfacenormallist/">
+        <h3>MeshFaceNormalList</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/meshfacenormallist/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Collections
+Provides access to the Face normals of a Mesh.
+public class MeshFaceNormalList : IResizableList&lt;Vector3f&gt;, IList, IReadOnlyList&lt;Vector3f&gt;Properties  int Capacity Gets or sets the total number of face normals the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh face normals.  Methods  int AddFaceNormal(double x,double y,double z) Appends a face normal to the list of mesh face normals.
   </div>
   
 

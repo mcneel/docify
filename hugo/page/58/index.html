@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraysurfacepointer/">
-        <h3>SimpleArraySurfacePointer</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfacepointlist/">
+        <h3>NurbsSurfacePointList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraysurfacepointer/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/collections/nurbssurfacepointlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for a C++ ON_SimpleArray of ON_Surface* or const ON_Surface*. If you are not writing C++ code then this class is not for you.
-public class SimpleArraySurfacePointerConstructors SimpleArraySurfacePointer()  (summary) Initializes a new instance. (since) 5.0  Methods IntPtr ConstPointer()  (summary) Gets the const (immutable) pointer of this array. (since) 5.0 (returns) IntPtr This is some return comment  void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
+    Namespace: Rhino.Geometry.Collections
+Provides access to the control points of a nurbs surface.
+public class NurbsSurfacePointList : IEnumerable&lt;ControlPoint&gt;, IEpsilonComparable&lt;NurbsSurfacePointList&gt;Properties  int CountU Gets the number of control points in the U direction of this surface. int CountV Gets the number of control points in the V direction of this surface. int PointSize Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Surface.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayuint/">
-        <h3>SimpleArrayUint</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/ordinatedimension/">
+        <h3>OrdinateDimension</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayuint/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/ordinatedimension/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime.InteropWrappers
-Wrapper for ON_SimpleArray. If you are not writing C++ code then this class is not for you.
-public class SimpleArrayUintConstructors SimpleArrayUint()  (summary) Initializes a new class. (since) 6.0  SimpleArrayUint(IEnumerablevalues)  (summary) Initializes a new class. (since) 6.0  Properties int Count  (summary) Gets the number of elements in this array. (since) 6.0  uint UnsignedCount  (summary) Gets the number of elements in this array.
+    Namespace: Rhino.Geometry
+Represents an ordinate dimension
+[Serializable]public class OrdinateDimension : DimensionConstructors  OrdinateDimension()  since 6.0  Properties  Point2d DefPoint  since 6.0 double KinkOffset1  since 6.0 double KinkOffset2  since 6.0 Point2d KinkPoint1  since 6.0 Point2d KinkPoint2  since 6.0 Point2d LeaderPoint  since 6.0  Methods  static OrdinateDimension Create(DimensionStyle dimStyle,Plane plane,MeasuredDirection direction,Point3d basepoint,Point3d defpoint,Point3d leaderpoint,double kinkoffset1,double kinkoffset2) Initialize Dimension parameters since 6.0 bool AdjustFromPoints(Plane plane,MeasuredDirection direction,Point3d basepoint,Point3d defpoint,Point3d leaderpoint,double kinkoffset1,double kinkoffset2) Update Dimension geometry from point locations since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/simulatedenvironment/">
-        <h3>SimulatedEnvironment</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/plane/">
+        <h3>Plane</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/simulatedenvironment/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/plane/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary) (since) 5.1  Properties System.Drawing.Color BackgroundColor  (summary) (since) 5.1  Rhino.Render.SimulatedTexture BackgroundImage  (summary) (since) 5.1  BackgroundProjections BackgroundProjection  (summary) (since) 5.1  Methods static BackgroundProjections ProjectionFromString(String projection)  (summary) (since) 5.1 (returns) BackgroundProjections This is some return comment  static string StringFromProjection(BackgroundProjections projection)  (summary) (since) 5.1 (returns) string This is some return comment  IntPtr ConstPointer()  (summary) (since) 5.
+    Namespace: Rhino.Geometry
+Represents the value of a center point and two axes in a plane in three dimensions.
+ static != Determines if two planes are different. Returns - True if the two planes have any different componet components; False otherwise. static == Determines if two planes are equal. Returns - True if the two planes have all equal components; False otherwise.  Constructors  Plane(double a,double b,double c,double d) Constructs a plane from an equation Ax+By+Cz+D=0.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/simulatedtexture/">
-        <h3>SimulatedTexture</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/planesurface/">
+        <h3>PlaneSurface</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/simulatedtexture/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/planesurface/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class SimulatedTextureConstructors SimulatedTexture()  (summary) (since) 5.1  Properties static int BitmapSize  (summary) (since) 5.1  String Filename  (summary) (since) 5.1  bool Filtered  (summary) (since) 5.1  bool HasTransparentColor  (summary) (since) 5.1  Rhino.Geometry.Transform LocalMappingTransform  (summary) (since) 5.1  int MappingChannel  (summary) (since) 5.1  Rhino.Geometry.Vector2d Offset  (summary) (since) 5.1  String OriginalFilename  (summary) (since) 5.1  ProjectionModes ProjectionMode  (summary) (since) 5.
+    Namespace: Rhino.Geometry
+Represents a plane surface, with plane and two intervals.
+[Serializable]public class PlaneSurface : SurfaceConstructors  PlaneSurface(Plane plane,Interval xExtents,Interval yExtents) Initializes a plane surface with x and y intervals.  Methods  static PlaneSurface CreateThroughBox(Line lineInPlane,Vector3d vectorInPlane,BoundingBox box) Makes a plane that includes a line and a vector and goes through a bounding box. Returns - A new plane surface on success, or None on error. static PlaneSurface CreateThroughBox(Plane plane,BoundingBox box) Extends a plane into a plane surface so that the latter goes through a bounding box.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/skin/">
-        <h3>Skin</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point/">
+        <h3>Point</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/skin/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Represents a customized environment that changes the appearance of Rhino. Skin DLLs must contain a single class that derives from the Skin class.
-public class SkinProperties static Skin ActiveSkin  (summary) Any time Rhino is running there is at most one skin being used (and possibly no skin). If a RhinoCommon based Skin class is being used, use ActiveSkin to get at the instance of this Skin class.
+    Namespace: Rhino.Geometry
+Represents a geometric point. This is fundamentally a class that derives from and contains a single location.
+[Serializable]public class Point : GeometryBaseConstructors  Point(Point3d location) Initializes a new point instance with a location.  Properties  Point3d Location Gets or sets the location (position) of this point.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/skylight/">
-        <h3>Skylight</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point2f/">
+        <h3>Point2f</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/skylight/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point2f/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.ChangeQueue
-ChangeQueue skylight
-public class SkylightProperties bool Enabled  (summary) Return True if skylight is enabled (since) 6.0  double ShadowIntensity  (summary) Get shadow intensity for skylight (since) 6.0  bool UsesCustomEnvironment  (summary) Return True if skylight uses custom environment (since) 6.0  Methods string ToString()  (summary) Textual representation of Skylight (since) (unknown) (returns) string This is some return comment  
+    Namespace: Rhino.Geometry
+Represents the two coordinates of a point in two-dimensional space, using -precision floating point numbers.
+ static - Subtracts two s. Returns - A subtracted Vector2f. since 6.0 static != Determines whether two have different values. Returns - True if the two points differ in any coordinate; False otherwise. static * Multiplies a by a scalar. Returns - A multiplied Point2f. since 6.0 static / Divides a by a scalar.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/skylight/">
-        <h3>Skylight</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point3dgrid/">
+        <h3>Point3dGrid</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/skylight/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point3dgrid/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class SkylightConstructors Skylight()  (summary) Create an utility object not associated with any document (since) 6.0  Skylight(Skylight src)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Events static Changed  (summary) This event is raised when a Skylight property value is changed. (since) 6.0  Properties Guid CustomEnvironment  (summary) (since) 6.0  bool CustomEnvironmentOn  (summary) (since) 6.
+    Namespace: Rhino.Geometry
+Represents a rectangular grid of 3D points.
+[Serializable]public class Point3dGrid : GeometryBaseConstructors  Point3dGrid() Initializes a rectangular grid of points, with no points in it. Point3dGrid(int rows,int columns) Initializes a rectangular grid of points with a given number of columns and rows.  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/smarttracksettings/">
-        <h3>SmartTrackSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/point3dlist/">
+        <h3>Point3dList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/smarttracksettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/collections/point3dlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Contains static methods and properties that target the Smart Track feature behavior.
-public class SmartTrackSettingsProperties static int ActivationDelayMilliseconds  (summary) Gets or sets the activation delay in milliseconds. (since) 5.0  static Color ActivePointColor  (summary) Gets or sets the active point color. (since) 5.0  static Color LineColor  (summary) Gets or sets the smart track line color. (since) 5.0  static int MaxSmartPoints  (summary) Gets or sets the maximum number of smart points.
+    Namespace: Rhino.Collections
+Represents a list of .
+[Serializable]public class Point3dList : RhinoList&lt;Point3d&gt;, ICloneableConstructors  Point3dList() Initializes a new empty list with default capacity. Point3dList(IEnumerablecollection) Initializes a new point list by copying the values from another set. Point3dList(int initialCapacity) Initializes a new point list with a preallocated initial capacity. Point3dList(Point3d[] initialPoints) Constructs a new point list from values in a point array.  Properties  BoundingBox BoundingBox Even though this is a property, it is not a &ldquo;fast&rdquo; calculation.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/applicationsettings/smarttracksettingsstate/">
-        <h3>SmartTrackSettingsState</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point3f/">
+        <h3>Point3f</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/applicationsettings/smarttracksettingsstate/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point3f/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.ApplicationSettings
-Represents a snapshot of .
-public class SmartTrackSettingsStateProperties static int MaxSmartPoints  (summary) Gets or sets the maximum number of smart points. (since) 5.0  int ActivationDelayMilliseconds  (summary) Gets or sets the activation delay in milliseconds. (since) 5.0  Color ActivePointColor  (summary) Gets or sets the active point color. (since) 5.0  Color LineColor  (summary) Gets or sets the smart track line color. (since) 5.
+    Namespace: Rhino.Geometry
+Represents the three coordinates of a point in three-dimensional space, using -precision floating point numbers.
+ static - Subtracts a point from another point. Returns - A new vector that is the difference of point minus vector. static != Determines whether two points have different values. Returns - True if the two points differ in any coordinate; False otherwise. static * Multiplies a point by a factor. Returns - A new vector that is the multiplication of point by value.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/snapshots/snapshotsclient/">
-        <h3>SnapShotsClient</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/point4d/">
+        <h3>Point4d</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/snapshots/snapshotsclient/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/point4d/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.SnapShots
-This is the abstract interface class for for all Snapshot clients.
-public class SnapShotsClientConstructors SnapShotsClient()  (summary) SnapShotsClient constructor (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  int SerialNumber  (summary) (since) 6.0  Methods static string ApplicationCategory()  (summary) Predefined application category (since) 6.0 (returns) string This is some return comment  static string DocumentCategory()  (summary) Predefined document category (since) 6.0 (returns) string This is some return comment  static string LayersCategory()  (summary) Predefined layers category (since) 6.
+    Namespace: Rhino.Geometry
+Represents the four coordinates of a point in four-dimensional space. The W (fourth) dimension is often considered the weight of the point as seen in 3D space.
+ static - Subtracts the second point from the first point. Returns - A new point that results from the weighted subtraction of point2 from point1. static != Determines whether two Point4d have different values. Returns - True if the two points differ in any coordinate; False otherwise.
   </div>
   
 

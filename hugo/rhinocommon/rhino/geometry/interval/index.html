@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Interval &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents an interval in one-dimensional space, that is defined as two extrema or bounds.
+ static - Shifts an interval by a specific amount (subtraction). Returns - A new interval with [T0-number, T1-number]. static - Shifts an interval by a specific amount (subtraction). Returns - A new interval with [number-T0, number-T1]. static != Determines whether the two Intervals have different values. Returns - True if the two intervals are different in any value; False if they are equal.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Interval</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents an interval in one-dimensional space,
+that is defined as two extrema or bounds.</p>
+<dl>
+<dt>static -</dt>
+<dd>Shifts an interval by a specific amount (subtraction).</dd>
+<dd>Returns - A new interval with [T0-number, T1-number].</dd>
+<dt>static -</dt>
+<dd>Shifts an interval by a specific amount (subtraction).</dd>
+<dd>Returns - A new interval with [number-T0, number-T1].</dd>
+<dt>static !=</dt>
+<dd>Determines whether the two Intervals have different values.</dd>
+<dd>Returns - True if the two intervals are different in any value; False if they are equal.</dd>
+<dt>static +</dt>
+<dd>Shifts a  by a specific amount (addition).</dd>
+<dd>Returns - A new interval where T0 and T1 are summed with number.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Shifts an interval by a specific amount (addition).</dd>
+<dd>Returns - A new interval where T0 and T1 are summed with number.</dd>
+<dd>since (unknown)</dd>
+<dt>static &lt;</dt>
+<dd>Determines whether the first specified  comes before
+(has inferior sorting value than) the second Interval.
+The lower bound has first evaluation priority.</dd>
+<dd>Returns - True if a[0] is smaller than b[0], or a[0] == b[0] and a[1] is smaller than b[1]; otherwise, false.</dd>
+<dt>static &lt;=</dt>
+<dd>Determines whether the first specified  comes before
+(has inferior sorting value than) the second Interval, or is equal to it.
+The lower bound has first evaluation priority.</dd>
+<dd>Returns - True if a[0] is smaller than b[0], or a[0] == b[0] and a[1] is smaller than or equal to b[1]; otherwise, false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether the two Intervals have equal values.</dd>
+<dd>Returns - True if the components of the two intervals are exactly equal; otherwise false.</dd>
+<dt>static &gt;</dt>
+<dd>Determines whether the first specified  comes after
+(has superior sorting value than) the second Interval.
+The lower bound has first evaluation priority.</dd>
+<dd>Returns - True if a[0] is larger than b[0], or a[0] == b[0] and a[1] is larger than b[1]; otherwise, false.</dd>
+<dt>static &gt;=</dt>
+<dd>Determines whether the first specified  comes after
+(has superior sorting value than) the second Interval, or is equal to it.
+The lower bound has first evaluation priority.</dd>
+<dd>Returns - True if a[0] is larger than b[0], or a[0] == b[0] and a[1] is larger than or equal to b[1]; otherwise, false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Interval(double t0,double t1)</dt>
+<dd>Initializes a new instance of the Rhino.Geometry.Interval class.</dd>
+<dt>Interval(Interval other)</dt>
+<dd>Initializes a new instance copying the other instance values.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Interval Unset</dt>
+<dd>Gets an Interval whose limits are RhinoMath.UnsetValue.</dd>
+<dt>bool IsDecreasing</dt>
+<dd>Returns True if T[0] &gt; T[1].</dd>
+<dt>bool IsIncreasing</dt>
+<dd>Returns True if T0 &lt; T1.</dd>
+<dt>bool IsSingleton</dt>
+<dd>Returns True if T0 == T1 != ON.UnsetValue.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether or not this Interval is valid. 
+Valid intervals must contain valid numbers.</dd>
+<dt>double Length</dt>
+<dd>Gets the signed length of the numeric range. 
+If the interval is decreasing, a negative length will be returned.</dd>
+<dt>double Max</dt>
+<dd>Gets the larger of T0 and T1.</dd>
+<dt>double Mid</dt>
+<dd>Gets the average of T0 and T1.</dd>
+<dt>double Min</dt>
+<dd>Gets the smaller of T0 and T1.</dd>
+<dt>double T0</dt>
+<dd>Gets or sets the lower bound of the Interval.</dd>
+<dt>double T1</dt>
+<dd>Gets or sets the upper bound of the Interval.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Interval FromIntersection(Interval a,Interval b)</dt>
+<dd>Returns a new Interval that is the Intersection of the two input Intervals.</dd>
+<dd>Returns - If the intersection is not empty, then 
+intersection = [max(a.Min(),b.Min()), min(a.Max(),b.Max())]
+The interval [ON.UnsetValue,ON.UnsetValue] is considered to be
+the empty set interval.  The result of any intersection involving an
+empty set interval or disjoint intervals is the empty set interval.</dd>
+<dt>static Interval FromUnion(Interval a,Interval b)</dt>
+<dd>Returns a new Interval which contains both inputs.</dd>
+<dd>Returns - The union of an empty set and an increasing interval is the increasing interval.
+The union of two empty sets is empty.The union of an empty set an a non-empty interval is the non-empty interval.The union of two non-empty intervals is [min(a.Min(),b.Min()), max(a.Max(),b.Max())]</dd>
+<dt>int CompareTo(Interval other)</dt>
+<dd>Compares this  with another interval.
+The lower bound has first evaluation priority.</dd>
+<dd>Returns - 0: if this is identical to other-1: if this[0] &lt; other[0]+1: if this[0] &gt; other[0]-1: if this[0] == other[0] and this[1] &lt; other[1]+1: if this[0] == other[0] and this[1] &gt; other[1].</dd>
+<dt>bool EpsilonEquals(Interval other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(Interval other)</dt>
+<dd>Determines whether the specified  is equal to the current ,
+comparing by value.</dd>
+<dd>Returns - True if obj is an  and has the same bounds; False otherwise.</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether the specified  is equal to the current ,
+comparing by value.</dd>
+<dd>Returns - True if obj is an  and has the same bounds; False otherwise.</dd>
+<dd>since (unknown)</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes the hash code for this  object.</dd>
+<dd>Returns - A hash value that might be equal for two different  values.</dd>
+<dd>since (unknown)</dd>
+<dt>void Grow(double value)</dt>
+<dd>Grows the  to include the given number.</dd>
+<dt>bool IncludesInterval(Interval interval)</dt>
+<dd>Tests another interval for Interval inclusion.</dd>
+<dd>Returns - True if the other interval is contained within or is coincident with the limits of this Interval; otherwise false.</dd>
+<dt>bool IncludesInterval(Interval interval,bool strict)</dt>
+<dd>Tests another interval for Interval inclusion.</dd>
+<dd>Returns - True if the other interval is contained within the limits of this Interval; otherwise false.</dd>
+<dt>bool IncludesParameter(double t)</dt>
+<dd>Tests a parameter for Interval inclusion.</dd>
+<dd>Returns - True if t is contained within or is coincident with the limits of this Interval.</dd>
+<dt>bool IncludesParameter(double t,bool strict)</dt>
+<dd>Tests a parameter for Interval inclusion.</dd>
+<dd>Returns - True if t is contained within the limits of this Interval.</dd>
+<dt>void MakeIncreasing()</dt>
+<dd>Ensures this  is either singleton or increasing.</dd>
+<dt>Interval NormalizedIntervalAt(Interval intervalParameter)</dt>
+<dd>Converts interval value, or pair of values, to normalized parameter.</dd>
+<dd>Returns - Normalized parameter x so that min*(1.0-x) + max*x = intervalParameter.</dd>
+<dt>double NormalizedParameterAt(double intervalParameter)</dt>
+<dd>Converts interval value, or pair of values, to normalized parameter.</dd>
+<dd>Returns - Normalized parameter x so that min*(1.0-x) + max*x = intervalParameter.</dd>
+<dt>double ParameterAt(double normalizedParameter)</dt>
+<dd>Converts normalized parameter to interval value, or pair of values.</dd>
+<dd>Returns - Interval parameter min*(1.0-normalizedParameter) + max*normalizedParameter.</dd>
+<dt>Interval ParameterIntervalAt(Interval normalizedInterval)</dt>
+<dd>Converts normalized parameter to interval value, or pair of values.</dd>
+<dd>Returns - Interval parameter min*(1.0-normalizedParameter) + max*normalized_paramete.</dd>
+<dt>void Reverse()</dt>
+<dd>Changes interval to [-T1, -T0].</dd>
+<dt>void Swap()</dt>
+<dd>Exchanges T0 and T1.</dd>
+<dt>string ToString()</dt>
+<dd>Returns a string representation of this .</dd>
+<dd>Returns - A string with T0,T1.</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Interval</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

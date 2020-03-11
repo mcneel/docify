@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,133 +57,126 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/brepvertex/">
-        <h3>BrepVertex</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/hatchpatterntable/">
+        <h3>HatchPatternTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/brepvertex/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/hatchpatterntable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Brep vertex information
-public class BrepVertexProperties Brep Brep  (summary) Gets the Brep that owns this vertex. (since) 5.4  int VertexIndex  (summary) Gets the index of this vertex in the Brep.Vertices collection. (since) 5.4  Methods int[] EdgeIndices()  (summary) Gets the indices of all edges associated with this vertex. (since) 5.12 (returns) int[] This is some return comment  
+    Namespace: Rhino.DocObjects.Tables
+All of the hatch pattern definitions contained in a rhino document.
+public class HatchPatternTable :RhinoDocCommonTable&lt;HatchPattern&gt;, ICollection&lt;HatchPattern&gt;Properties  ModelComponentType ComponentType  since 6.0 int CurrentHatchPatternIndex At all times, there is a &ldquo;current&rdquo; hatch pattern. Unless otherwise specified, new objects are assigned to the current hatch pattern. The current hatch pattern is never locked, hidden, or deleted.  Methods  int Add(HatchPattern pattern) Adds a new hatch pattern with specified definition to the table.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/brepvertexlist/">
-        <h3>BrepVertexList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/historysettings/">
+        <h3>HistorySettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/brepvertexlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/historysettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to all the Vertices in a Brep object
-public class BrepVertexListProperties int Count  (summary) Gets the number of brep vertices. (since) 5.4  Methods BrepVertex Add()  (summary) Create and add a new vertex to this list (since) 5.4 (returns) BrepVertex This is some return comment  BrepVertex Add(Point3d point,double vertexTolerance)  (summary) Create and add a new vertex to this list (since) 5.4 (returns) BrepVertex This is some return comment  BrepVertex AddPointOnFace(BrepFace face,double s,double t)  (summary) Adds a new point on face to the brep (since) 5.
+    Namespace: Rhino.ApplicationSettings
+Provides static (Shared in Vb.Net) properties to modify Rhino History settings.
+public class HistorySettingsProperties  static bool BrokenRecordWarningEnabled Displays a warning dialog when an action is taken that breaks the link between the output and input objects. since 6.10 static bool ObjectLockingEnabled When history object locking is enabled, objects with history on them act as if they were locked and the only way to modify these objects is to edit their inputs.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/bytearrayfield/">
-        <h3>ByteArrayField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/instanceattributefield/">
+        <h3>InstanceAttributeField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/bytearrayfield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/instanceattributefield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-ByteArray field value class
-public class ByteArrayFieldProperties byte[] Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.Runtime
+public class InstanceAttributeFieldConstructors  InstanceAttributeField(string key,string prompt,string defaultValue) Block attribute defintion. since 7.0  Properties  string DefaultValue Default value used when inserting a block since 7.0 string Key Attribute key since 7.0 string Prompt Prompt displayed by the UI when inserting a block since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/cachedtexturecoordinates/">
-        <h3>CachedTextureCoordinates</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/instancedefinition/">
+        <h3>InstanceDefinition</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/cachedtexturecoordinates/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render
-Used for cached texture coordinates
-public class CachedTextureCoordinatesProperties int Count  (summary) Number of cached coordinates. (since) 5.10  int Dim  (summary) Coordinate dimension: 2 = UV, 3 = UVW (since) 5.10  bool IsReadOnly  (summary) This collection is always read-only (since) 5.10  Guid MappingId  (summary) The texture mapping Id. (since) 5.10  Methods bool Contains(Point3d item)  (summary) Determines whether this collection contains a specific value.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/calculateboundingboxeventargs/">
-        <h3>CalculateBoundingBoxEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/calculateboundingboxeventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-public class CalculateBoundingBoxEventArgsProperties BoundingBox BoundingBox  (summary) Gets the current bounding box. (since) 5.0  Methods void IncludeBoundingBox(BoundingBox box)  (summary) Unites a bounding box with the current display bounding box in order to ensure dynamic objects in &ldquo;box&rdquo; are drawn. (since) 5.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/centermark/">
-        <h3>Centermark</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/centermark/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a centermark
-public class CentermarkConstructors Centermark()  (summary) (since) 6.0  Methods static Centermark Create(DimensionStyle dimStyle,Plane plane,Point3d centerpoint,double radius)  (summary) Create a new centermark (since) 6.0 (returns) Centermark This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/centermarkobject/">
-        <h3>CentermarkObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/centermarkobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/instancedefinition/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-Rhino Object that represents a centermark geometry and attributes
-public class CentermarkObjectProperties Geometry.Centermark CentermarkGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+This is the same as , but in a Rhino document.
+public class InstanceDefinition : InstanceDefinitionGeometryProperties  InstanceDefinitionArchiveFileStatus ArchiveFileStatus Returns the archive file status of a linked instance definition. since 5.2 ModelComponentType ComponentType Returns . since 6.0 string Description  Guid Id  int Index Index of this instance definition in the index definition table. bool IsDeleted  bool IsReference An object from a work session reference model is reference a reference object and cannot be modified.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/changequeue/">
-        <h3>ChangeQueue</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontable/">
+        <h3>InstanceDefinitionTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/changequeue/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.ChangeQueue
-Base class for ChangeQueue.
-Generally used by render plugins to build interactive updating of scenes that are being rendered.
-public class ChangeQueueProperties Display.DisplayPipelineAttributes DisplayPipelineAttributes  (summary) Get the DisplayPipelineAttributes if available, None otherwise (since) 6.0  bool IsPreview   (summary) Return True if this ChangeQueue is created for preview rendering.
-No view was set for preview rendering.
-  (since) 6.0
-  Guid ViewId   (summary) Return view ID for a RhinoDoc based ChangeQueue.
+    Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTable :RhinoDocCommonTable&lt;InstanceDefinition&gt;Properties  int ActiveCount Number of items in the instance definitions table, excluding deleted definitions. ModelComponentType ComponentType  since 6.0 int Count Number of items in the instance definitions table. RhinoDoc Document Document that owns this table.  Methods  int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes) Adds an instance definition to the instance definition table. Returns - &gt;=0 index of instance definition in the instance definition table.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/channel/">
-        <h3>Channel</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontableeventargs/">
+        <h3>InstanceDefinitionTableEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/channel/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/instancedefinitiontableeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class ChannelMethods void AddValue(int x,int y,Color4f value)  (summary) Add value to existing values at point x, y. If x or y are out of range, the function will fail and may crash Rhino. (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  int PixelSize()  (summary) Returns the size of the data in one pixel in the channel.
+    Namespace: Rhino.DocObjects.Tables
+public class InstanceDefinitionTableEventArgs : EventArgsProperties  RhinoDoc Document  since 5.3 InstanceDefinitionTableEventType EventType  since 5.3 int InstanceDefinitionIndex  since 5.3 InstanceDefinition NewState  since 5.3 InstanceDefinitionGeometry OldState  since 5.3  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/childslotnames/">
-        <h3>ChildSlotNames</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/instanceobject/">
+        <h3>InstanceObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/childslotnames/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/instanceobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class ChildSlotNamesProperties static string AmbientOcclusion  (summary) (since) 7.0  static string Anisotropic  (summary) (since) 7.0  static string AnisotropicRotation  (summary) (since) 7.0  static string BaseColor  (summary) (since) 7.0  static string Bump  (summary) (since) 7.0  static string Clearcoat  (summary) (since) 7.0  static string ClearcoatBump  (summary) (since) 7.0  static string ClearcoatRoughness  (summary) (since) 7.0  static string Displacement  (summary) (since) 7.
+    Namespace: Rhino.DocObjects
+public class InstanceObject : RhinoObjectProperties  Point3d InsertionPoint Basepoint coordinates of a block. InstanceDefinition InstanceDefinition instance definition that this object uses. Transform InstanceXform transformation applied to an instance definition for this object.  Methods  void Explode(bool explodeNestedInstances,RhinoObject[] pieces,ObjectAttributes[] pieceAttributes,Transform[] pieceTransforms) Explodes the instance reference into pieces. bool UsesDefinition(int definitionIndex,int nestingLevel) Determine if this reference uses an instance definition Returns - True or False depending on if the deifinition is used since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/layer/">
+        <h3>Layer</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/layer/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+[Serializable]public class Layer : ModelComponent, IEquatable&lt;Layer&gt; static !=  since 6.0 static ==  since 6.0  Constructors  Layer()   Properties  static string PathSeparator The string &ldquo;::&rdquo; (colon,colon) is used to separate parent and child layer names. since 6.0 Color Color Gets or sets the display color for this layer. ComponentStatus ComponentStatus Gets or sets the status of the layer. since 6.0 ModelComponentType ComponentType Returns .
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertableeventargs/">
+        <h3>LayerTableEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertableeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects.Tables
+public class LayerTableEventArgs : EventArgsProperties  RhinoDoc Document  LayerTableEventType EventType  int LayerIndex  Layer NewState  Layer OldState   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/loc/">
+        <h3>LOC</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/loc/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+Used a placeholded which is used by LocalizationProcessor application to create contextId mapped localized strings.
+public class LOCMethods  static string COMMANDNAME(string english) Command names that need to be localized should call this function. The COMMANDNAME function doesn&rsquo;t actually do anything but return the original string. The LocalizationProcessor application walks through the source code of a project and looks for LOC.COMMANDNAME and builds a record for each command name for the translators that can be used by developers in a commands overridden Rhino.
   </div>
   
 

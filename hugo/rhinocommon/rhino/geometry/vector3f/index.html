@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Vector3f &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
+ static - Subtracts the second vector from the first one. Returns - A new vector that results from the componentwise difference of vector1 - vector2. since 6.0 static - Computes the opposite vector. Returns - A new vector where all components were multiplied by -1. since 6.0 static != Determines whether two vectors have different values.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Vector3f</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the three components of a vector in three-dimensional space,
+using -precision floating point numbers.</p>
+<dl>
+<dt>static -</dt>
+<dd>Subtracts the second vector from the first one.</dd>
+<dd>Returns - A new vector that results from the componentwise difference of vector1 - vector2.</dd>
+<dd>since 6.0</dd>
+<dt>static -</dt>
+<dd>Computes the opposite vector.</dd>
+<dd>Returns - A new vector where all components were multiplied by -1.</dd>
+<dd>since 6.0</dd>
+<dt>static !=</dt>
+<dd>Determines whether two vectors have different values.</dd>
+<dd>Returns - True if the two vectors differ in any component; False otherwise.</dd>
+<dt>static *</dt>
+<dd>Multiplies a vector by a number, having the effect of scaling it.</dd>
+<dd>Returns - A new vector that is the original vector coordinatewise multiplied by t.</dd>
+<dt>static *</dt>
+<dd>Multiplies two  together, returning the dot (internal) product of the two.
+This is not the cross product.</dd>
+<dd>Returns - A value that results from the coordinatewise multiplication of point1 and point2.</dd>
+<dt>static *</dt>
+<dd>Multiplies a vector by a number, having the effect of scaling it.</dd>
+<dd>Returns - A new vector that is the original vector coordinatewise multiplied by t.</dd>
+<dt>static /</dt>
+<dd>Divides a  by a number, having the effect of shrinking it, t times.</dd>
+<dd>Returns - A new vector that is componentwise divided by t.</dd>
+<dd>since 6.0</dd>
+<dt>static /</dt>
+<dd>Divides a  by a number, having the effect of shrinking it, t times.</dd>
+<dd>Returns - A new vector that is componentwise divided by t.</dd>
+<dd>since 6.0</dd>
+<dt>static +</dt>
+<dd>Sums up a point and a vector, and returns a new point.</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Sums up two vectors.</dd>
+<dd>Returns - A new vector that results from the componentwise addition of the two vectors.</dd>
+<dd>since (unknown)</dd>
+<dt>static &lt;</dt>
+<dd>Determines whether the first specified vector comes before
+(has inferior sorting value than) the second vector.
+Components evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is smaller than b.X,
+or a.X == b.X and a.Y is smaller than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z is smaller than b.Z;
+otherwise, false.</dd>
+<dt>static &lt;=</dt>
+<dd>Determines whether the first specified vector comes before
+(has inferior sorting value than) the second vector, or it is equal to it.
+Components evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is smaller than b.X,
+or a.X == b.X and a.Y is smaller than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z &lt;= b.Z;
+otherwise, false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether two vectors have equal values.</dd>
+<dd>Returns - True if the components of the two vectors are exactly equal; otherwise false.</dd>
+<dt>static &gt;</dt>
+<dd>Determines whether the first specified vector comes after (has superior sorting value than)
+the second vector.
+Components evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is larger than b.X,
+or a.X == b.X and a.Y is larger than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z is larger than b.Z;
+otherwise, false.</dd>
+<dt>static &gt;=</dt>
+<dd>Determines whether the first specified vector comes after (has superior sorting value than)
+the second vector, or it is equal to it.
+Components evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is larger than b.X,
+or a.X == b.X and a.Y is larger than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z &gt;= b.Z;
+otherwise, false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Vector3f(float x,float y,float z)</dt>
+<dd>Constructs a new vector from 3 single precision numbers.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Vector3f Unset</dt>
+<dd>Gets the value of the vector with each component set to RhinoMath.UnsetValue.</dd>
+<dt>static Vector3f XAxis</dt>
+<dd>Gets the value of the vector with components 1,0,0.</dd>
+<dt>static Vector3f YAxis</dt>
+<dd>Gets the value of the vector with components 0,1,0.</dd>
+<dt>static Vector3f ZAxis</dt>
+<dd>Gets the value of the vector with components 0,0,1.</dd>
+<dt>static Vector3f Zero</dt>
+<dd>Gets the value of the vector with components 0,0,0.</dd>
+<dt>bool IsUnitVector</dt>
+<dd>Gets a value indicating whether or not this is a unit vector. 
+A unit vector has length 1.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsValid</dt>
+<dd>Returns an indication regarding the validity of this vector.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsZero</dt>
+<dd>Gets a value indicating whether the X, Y, and Z values are all equal to 0.0.</dd>
+<dd>since 6.0</dd>
+<dt>float Length</dt>
+<dd>Computes the length (or magnitude, or size) of this vector.
+This is an application of Pythagoras&rsquo; theorem.
+If this vector is invalid, its length is considered 0.</dd>
+<dt>float SquareLength</dt>
+<dd>Returns the square length of the vector.
+This property does not check for the validity of the inputs.</dd>
+<dd>since 6.0</dd>
+<dt>float X</dt>
+<dd>Gets or sets the X (first) component of this vector.</dd>
+<dt>float Y</dt>
+<dd>Gets or sets the Y (second) component of this vector.</dd>
+<dt>float Z</dt>
+<dd>Gets or sets the Z (third) component of this vector.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3f/">Point3f</a> Add(Point3f point,Vector3f vector)</dt>
+<dd>Sums up a point and a vector, and returns a new point.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that results from the addition of point and vector.</dd>
+<dt>static Vector3f Add(Vector3f vector1,Vector3f vector2)</dt>
+<dd>Sums up two vectors.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new vector that results from the componentwise addition of the two vectors.</dd>
+<dd>since 6.0</dd>
+<dt>static Vector3f CrossProduct(Vector3f a,Vector3f b)</dt>
+<dd>Computes the cross product (or vector product, or exterior product) of two vectors.
+This operation is not commutative.</dd>
+<dd>Returns - A new vector that is perpendicular to both a and b,
+has Length == a.Length * b.Length andwith a result that is oriented following the right hand rule.</dd>
+<dt>static Vector3f Divide(Vector3f vector,double t)</dt>
+<dd>Divides a  by a number, having the effect of shrinking it, t times.
+(Provided for languages that do not support operator overloading. You can use the / operator otherwise)</dd>
+<dd>Returns - A new vector that is componentwise divided by t.</dd>
+<dd>since 6.0</dd>
+<dt>static Vector3f Divide(Vector3f vector,float t)</dt>
+<dd>Divides a  by a number, having the effect of shrinking it, t times.
+(Provided for languages that do not support operator overloading. You can use the / operator otherwise)</dd>
+<dd>Returns - A new vector that is componentwise divided by t.</dd>
+<dd>since 6.0</dd>
+<dt>static Vector3f Multiply(float t,Vector3f vector)</dt>
+<dd>Multiplies a vector by a number, having the effect of scaling it.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new vector that is the original vector coordinatewise multiplied by t.</dd>
+<dt>static Vector3f Multiply(Vector3f vector,float t)</dt>
+<dd>Multiplies a vector by a number, having the effect of scaling it.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new vector that is the original vector coordinatewise multiplied by t.</dd>
+<dt>static double Multiply(Vector3f point1,Vector3f point2)</dt>
+<dd>Multiplies two  together, returning the dot (internal) product of the two.
+This is not the cross product.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A value that results from the coordinatewise multiplication of point1 and point2.</dd>
+<dd>since 6.0</dd>
+<dt>static Vector3f Negate(Vector3f vector)</dt>
+<dd>Computes the reversed vector.
+(Provided for languages that do not support operator overloading. You can use the - unary operator otherwise)</dd>
+<dd>Returns - A new vector where all components were multiplied by -1.</dd>
+<dd>since 6.0</dd>
+<dt>static Vector3f Subtract(Vector3f vector1,Vector3f vector2)</dt>
+<dd>Subtracts the second vector from the first one.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new vector that results from the componentwise difference of vector1 - vector2.</dd>
+<dd>since 6.0</dd>
+<dt>int CompareTo(Vector3f other)</dt>
+<dd>Compares this  with another .
+Component evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - 0: if this is identical to other-1: if this.X &lt; other.X-1: if this.X == other.X and this.Y &lt; other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z &lt; other.Z+1: otherwise.</dd>
+<dt>bool EpsilonEquals(Vector3f other,float epsilon)</dt>
+<dd>Check that all values in other are withing epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether the specified System.Object is a Vector3f and has the same values as the present vector.</dd>
+<dd>Returns - True if obj is Vector3f and has the same components as this; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Vector3f vector)</dt>
+<dd>Determines whether the specified vector has the same values as the present vector.</dd>
+<dd>Returns - True if vector has the same components as this; otherwise false.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes a hash number that represents the current vector.</dd>
+<dd>Returns - A hash code that is not unique for each vector.</dd>
+<dd>since (unknown)</dd>
+<dt>bool PerpendicularTo(Vector3f other)</dt>
+<dd>Sets this vector to be perpendicular to another vector. 
+Result is not unitized.</dd>
+<dd>Returns - True on success, False if input vector is zero or invalid.</dd>
+<dt>bool Reverse()</dt>
+<dd>Reverses this vector in place (reverses the direction).
+If this vector contains RhinoMath.UnsetValue, the 
+reverse will also be invalid and False will be returned.</dd>
+<dd>Returns - True on success or False if the vector is invalid.</dd>
+<dt>bool Rotate(double angleRadians,Vector3f rotationAxis)</dt>
+<dd>Rotates this vector around a given axis.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>string ToString()</dt>
+<dd>Constructs the string representation of the current vector.</dd>
+<dd>Returns - The vector representation in the form X,Y,Z.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void Transform(Transform transformation)</dt>
+<dd>Transforms the vector in place.
+The transformation matrix acts on the left of the vector; i.e.,result = transformation*vector</dd>
+<dt>bool Unitize()</dt>
+<dd>Unitizes the vector in place. A unit vector has length 1 unit. 
+An invalid or zero length vector cannot be unitized.</dd>
+<dd>Returns - True on success or False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Vector3f</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

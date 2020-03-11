@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  StringParserSettings &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input
+Parameters for parsing strings
+public class StringParserSettings : IDisposableConstructors  StringParserSettings()  since 6.0  Properties  static StringParserSettings DefaultParseSettings  The default settings parse just about everything in a reasonable way.  Any angle values with unspecified units will be treated as radians. Angles without units can be encountered while parsing formulas, lengths and points and need to be thoughtfully considered in most parsing situations.     since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">StringParserSettings</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input</a></em></p>
+<p>Parameters for parsing strings</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringParserSettings</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>StringParserSettings()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static StringParserSettings DefaultParseSettings</dt>
+<dd><ul>
+<li>The default settings parse just about everything in
+a reasonable way.
+<ul>
+<li>Any angle values with unspecified units will be
+treated as radians. Angles without units can be
+encountered while parsing formulas, lengths and 
+points and need to be thoughtfully considered in
+most parsing situations.</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsDegrees</dt>
+<dd><ul>
+<li>The default settings parse just about everything in
+a reasonable way.
+<ul>
+<li>Any angle values with unspecified units will be
+treated as degrees.Angles without units can be
+encountered while parsing formulas, lengths and
+points and need to be thoughtfully considered in
+most parsing situations.</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsDoubleNumber</dt>
+<dd><ul>
+<li>The double number settings parse and optional unary + or unary -
+and then parse a number that can be integer, decimal, or
+scientific e notation.</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsEmpty</dt>
+<dd><ul>
+<li>ON_ParseSetting::FalseSettings has all parsing options
+set to false.
+<ul>
+<li>A common use of ON_ParseSettings FalseSettings is to intialize
+ON_ParseSettings classes that are used to report what happened
+during parsing.Any parsing results value set to True after
+parsing indicates that type of parsing occured.</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsIntegerNumber</dt>
+<dd><ul>
+<li>The integer settings parse and optional unary + or unary - and
+then parses one or more digits.Parsing stops after the last digit.</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsRadians</dt>
+<dd><ul>
+<li>The default settings parse just about everything in
+a reasonable way.
+<ul>
+<li>Any angle values with unspecified units will be
+treated as radians.Angles without units can be
+encountered while parsing formulas, lengths and
+points and need to be thoughtfully considered in
+most parsing situations.</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsRationalNumber</dt>
+<dd><ul>
+<li>The rational number settings parse and optional unary + or unary -
+and then parse one or more digits.If a rational number fraction
+bar follows the last digit in the numerator, then it is parsed
+and an integer denominator is parsed.The denominator cannot
+have a unary + or - preceding the digits.Parsing stops after
+the last digit in the denominator.</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>static StringParserSettings ParseSettingsRealNumber</dt>
+<dd><ul>
+<li>The real number settings parse and optional unary + or unary -
+and then parse a number that can be integer, decimal, 
+scientific e notation or pi.</li>
+</ul>
+</dd>
+<dd>since 6.0</dd>
+<dt>AngleUnitSystem DefaultAngleUnitSystem</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>UnitSystem DefaultLengthUnitSystem</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseAddition</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseArcDegreesMinutesSeconds</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseArithmeticExpression</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseCommaAsDecimalPoint</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseCommaAsDigitSeparator</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseDAsExponentInScientificENotation</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseDivision</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseExplicitFormulaExpression</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseFeetInches</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseFullStopAsDecimalPoint</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseFullStopAsDigitSeparator</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseHyphenAsNumberDash</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseHyphenMinusAsNumberDash</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseIntegerDashFraction</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseLeadingWhiteSpace</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseMathFunctions</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseMultiplication</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParsePairedParentheses</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParsePi</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseRationalNumber</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseScientificENotation</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseSignificandDigitSeparators</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseSignificandFractionalPart</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseSignificandIntegerPart</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseSpaceAsDigitSeparator</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseSubtraction</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseSurveyorsNotation</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseUnaryMinus</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool ParseUnaryPlus</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>uint PreferedLocaleId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetAllExpressionSettingsToFalse()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetAllFieldsToFalse()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>StringParserSettings</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

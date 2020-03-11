@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.NodeInCode on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/nodeincode/</link>
+    <description>Recent content in Rhino.NodeInCode on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/nodeincode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NodeInCodeTable</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/nodeincode/nodeincodetable/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/nodeincode/nodeincodetable/</guid>
+      <description>Namespace: Rhino.NodeInCode
+Permits rapid access to references to all Grasshopper functions.
+public class NodeInCodeTable : DynamicObjectConstructors  NodeInCodeTable(IEnumerableitems) Instantiates the table. Users of RhinoCommon do not typically need to call this constructor. since 6.0  Properties  int Count Returns the amount of items in this table. since 6.0  Methods  void Add(ComponentFunctionInfo item) Adds, or replaces a new instance of component function information. since 6.0 IEnumerableGetDynamicMemberNames() Returns all additional names in the table.</description>
+    </item>
+    
+    <item>
+      <title>ComponentFunctionInfo</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/nodeincode/componentfunctioninfo/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/nodeincode/componentfunctioninfo/</guid>
+      <description>Namespace: Rhino.NodeInCode
+Defines the base class for a function representing a component. This class is abstract.
+public class ComponentFunctionInfoProperties  Guid ComponentGuid The unique identifier of the Grasshopper component. It is the original developer&amp;rsquo;s responsibility to ensure that this ID is unique. since 6.0 Delegate Delegate Returns a delegate that can be directly invoked using a list of arguments. This flattens trees. since 6.0 Delegate DelegateNoWarnings Returns a delegate that can be directly invoked using a list of arguments.</description>
+    </item>
+    
+    <item>
+      <title>Components</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/nodeincode/components/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/nodeincode/components/</guid>
+      <description>Namespace: Rhino.NodeInCode
+Provides access to all Grasshopper runtime components.
+public class ComponentsProperties  static NodeInCodeTable NodeInCodeFunctions Returns a collection with all component functions. since 6.0  Methods  static ComponentFunctionInfo FindComponent(string fullName) Finds a component given its full name. since 6.0  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Curve &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a base class that is common to most RhinoCommon curve types. A curve represents an entity that can be all visited by providing a single parameter, usually called t.
+[Serializable]public class Curve : GeometryBaseProperties  int Degree Gets the maximum algebraic degree of any span or a good estimate if curve spans are not algebraic. int Dimension Gets the dimension of the object. The dimension is typically three.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Curve</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a base class that is common to most RhinoCommon curve types.
+A curve represents an entity that can be all visited by providing
+a single parameter, usually called t.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Curve</span> : GeometryBase
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Degree</dt>
+<dd>Gets the maximum algebraic degree of any span
+or a good estimate if curve spans are not algebraic.</dd>
+<dt>int Dimension</dt>
+<dd>Gets the dimension of the object.
+The dimension is typically three. For parameter space trimming
+curves the dimension is two. In rare cases the dimension can
+be one or greater than three.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> Domain</dt>
+<dd>Gets or sets the domain of the curve.</dd>
+<dt>bool IsClosed</dt>
+<dd>Gets a value indicating whether or not this curve is a closed curve.</dd>
+<dt>bool IsPeriodic</dt>
+<dd>Gets a value indicating whether or not this curve is considered to be Periodic.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAtEnd</dt>
+<dd>Evaluates point at the end of the curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAtStart</dt>
+<dd>Evaluates point at the start of the curve.</dd>
+<dt>int SpanCount</dt>
+<dd>Gets the number of non-empty smooth (c-infinity) spans in the curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> TangentAtEnd</dt>
+<dd>Evaluate unit tangent vector at the end of the curve.</dd>
+<dd>Returns - Unit tangent vector of the curve at the end point.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> TangentAtStart</dt>
+<dd>Evaluates the unit tangent vector at the start of the curve.</dd>
+<dd>Returns - Unit tangent vector of the curve at the start point.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Curve CreateArcBlend(Point3d startPt,Vector3d startDir,Point3d endPt,Vector3d endDir,double controlPointLengthRatio)</dt>
+<dd>Creates a polycurve consisting of two tangent arc segments that connect two points and two directions.</dd>
+<dd>Returns - The arc blend curve, or None on error.</dd>
+<dd>since 6.1</dd>
+<dt>static Curve CreateBlendCurve(Curve curveA,Curve curveB,BlendContinuity continuity)</dt>
+<dd>Create a Blend curve between two existing curves.</dd>
+<dd>Returns - A curve representing the blend between A and B or None on failure.</dd>
+<dt>static Curve CreateBlendCurve(Curve curveA,Curve curveB,BlendContinuity continuity,double bulgeA,double bulgeB)</dt>
+<dd>Create a Blend curve between two existing curves.</dd>
+<dd>Returns - A curve representing the blend between A and B or None on failure.</dd>
+<dt>static Curve CreateBlendCurve(Curve curve0,double t0,bool reverse0,BlendContinuity continuity0,Curve curve1,double t1,bool reverse1,BlendContinuity continuity1)</dt>
+<dd>Makes a curve blend between 2 curves at the parameters specified
+with the directions and continuities specified</dd>
+<dd>Returns - The blend curve on success. None on failure</dd>
+<dt>static Curve[] CreateBooleanDifference(Curve curveA,Curve curveB)</dt>
+<dd>Calculates the boolean difference between two closed, planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no difference could be calculated.</dd>
+<dt>static Curve[] CreateBooleanDifference(Curve curveA,Curve curveB,double tolerance)</dt>
+<dd>Calculates the boolean difference between two closed, planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no difference could be calculated.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateBooleanDifference(Curve curveA,IEnumerable<!-- raw HTML omitted --> subtractors)</dt>
+<dd>Calculates the boolean difference between a closed planar curve, and a list of closed planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no difference could be calculated.</dd>
+<dt>static Curve[] CreateBooleanDifference(Curve curveA,IEnumerable<!-- raw HTML omitted --> subtractors,double tolerance)</dt>
+<dd>Calculates the boolean difference between a closed planar curve, and a list of closed planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no difference could be calculated.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateBooleanIntersection(Curve curveA,Curve curveB)</dt>
+<dd>Calculates the boolean intersection of two closed, planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no intersection could be calculated.</dd>
+<dt>static Curve[] CreateBooleanIntersection(Curve curveA,Curve curveB,double tolerance)</dt>
+<dd>Calculates the boolean intersection of two closed, planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no intersection could be calculated.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/curvebooleanregions/">CurveBooleanRegions</a> CreateBooleanRegions(IEnumerable<!-- raw HTML omitted --> curves,Plane plane,bool combineRegions,double tolerance)</dt>
+<dd>Calculates curve Boolean regions, which trims and splits curves based on their overlapping regions.</dd>
+<dd>Returns - The curve Boolean regions if successful, None of no successful.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/curvebooleanregions/">CurveBooleanRegions</a> CreateBooleanRegions(IEnumerable<!-- raw HTML omitted --> curves,Plane plane,IEnumerable<!-- raw HTML omitted --> points,bool combineRegions,double tolerance)</dt>
+<dd>Curve Boolean method, which trims and splits curves based on their overlapping regions.</dd>
+<dd>Returns - The curve Boolean regions if successful, None of no successful.</dd>
+<dd>since 7.0</dd>
+<dt>static Curve[] CreateBooleanUnion(IEnumerable<!-- raw HTML omitted --> curves)</dt>
+<dd>Calculates the boolean union of two or more closed, planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no union could be calculated.</dd>
+<dt>static Curve[] CreateBooleanUnion(IEnumerable<!-- raw HTML omitted --> curves,double tolerance)</dt>
+<dd>Calculates the boolean union of two or more closed, planar curves. 
+Note, curves must be co-planar.</dd>
+<dd>Returns - Result curves on success, empty array if no union could be calculated.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve CreateControlPointCurve(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Constructs a control-point of degree=3 (or less).</dd>
+<dt>static Curve CreateControlPointCurve(IEnumerable<!-- raw HTML omitted --> points,int degree)</dt>
+<dd>Constructs a curve from a set of control-point locations.</dd>
+<dt>static Curve[] CreateCurve2View(Curve curveA,Curve curveB,Vector3d vectorA,Vector3d vectorB,double tolerance,double angleTolerance)</dt>
+<dd>Creates a third curve from two curves that are planar in different construction planes. 
+The new curve looks the same as each of the original curves when viewed in each plane.</dd>
+<dd>Returns - An array containing one or more curves if successful.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/arc/">Arc</a> CreateFillet(Curve curve0,Curve curve1,double radius,double t0Base,double t1Base)</dt>
+<dd>Computes the fillet arc for a curve filleting operation.</dd>
+<dd>Returns - The fillet arc on success, or Arc.Unset on failure.</dd>
+<dt>static Curve CreateFilletCornersCurve(Curve curve,double radius,double tolerance,double angleTolerance)</dt>
+<dd>Rounds the corners of a kinked curve with arcs of a single, specified radius.</dd>
+<dd>Returns - The filleted curve if successful. None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateFilletCurves(Curve curve0,Point3d point0,Curve curve1,Point3d point1,double radius,bool join,bool trim,bool arcExtension,double tolerance,double angleTolerance)</dt>
+<dd>Creates a tangent arc between two curves and trims or extends the curves to the arc.</dd>
+<dd>Returns - The results of the fillet operation. The number of output curves depends
+on the input curves and the values of the parameters that were used
+during the fillet operation. In most cases, the output array will contain
+either one or three curves, although two curves can be returned if the
+radius is zero and join = false.
+For example, if both join and trim = true, then the output curve
+will be a polycurve containing the fillet curve joined with trimmed copies
+of the input curves. If join = False and trim = true, then three curves,
+the fillet curve and trimmed copies of the input curves, will be returned.
+If both join and trim = false, then just the fillet curve is returned.</dd>
+<dd>since 5.10</dd>
+<dt>static Curve CreateInterpolatedCurve(IEnumerable<!-- raw HTML omitted --> points,int degree)</dt>
+<dd>Interpolates a sequence of points. Used by InterpCurve Command
+This routine works best when degree=3.</dd>
+<dd>Returns - interpolated curve on success. None on failure.</dd>
+<dt>static Curve CreateInterpolatedCurve(IEnumerable<!-- raw HTML omitted --> points,int degree,CurveKnotStyle knots)</dt>
+<dd>Interpolates a sequence of points. Used by InterpCurve Command
+This routine works best when degree=3.</dd>
+<dd>Returns - interpolated curve on success. None on failure.</dd>
+<dt>static Curve CreateInterpolatedCurve(IEnumerable<!-- raw HTML omitted --> points,int degree,CurveKnotStyle knots,Vector3d startTangent,Vector3d endTangent)</dt>
+<dd>Interpolates a sequence of points. Used by InterpCurve Command
+This routine works best when degree=3.</dd>
+<dd>Returns - interpolated curve on success. None on failure.</dd>
+<dt>static Curve CreateMeanCurve(Curve curveA,Curve curveB)</dt>
+<dd>Constructs a mean, or average, curve from two curves.</dd>
+<dd>Returns - The average curve, or None on error.</dd>
+<dt>static Curve CreateMeanCurve(Curve curveA,Curve curveB,double angleToleranceRadians)</dt>
+<dd>Constructs a mean, or average, curve from two curves.</dd>
+<dd>Returns - The average curve, or None on error.</dd>
+<dt>static Curve CreatePeriodicCurve(Curve curve)</dt>
+<dd>Removes kinks from a curve. Periodic curves deform smoothly without kinks.</dd>
+<dd>Returns - The resulting curve if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve CreatePeriodicCurve(Curve curve,bool smooth)</dt>
+<dd>Removes kinks from a curve. Periodic curves deform smoothly without kinks.</dd>
+<dd>Returns - The resulting curve if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve CreateSoftEditCurve(Curve curve,double t,Vector3d delta,double length,bool fixEnds)</dt>
+<dd>Creates a soft edited curve from an exising curve using a smooth field of influence.</dd>
+<dd>Returns - The soft edited curve if successful. None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateTextOutlines(string text,string font,double textHeight,int textStyle,bool closeLoops,Plane plane,double smallCapsScale,double tolerance)</dt>
+<dd>Creates outline curves created from a text string. The functionality is similar to what you find in Rhino&rsquo;s TextObject command or TextEntity.Explode() in RhinoCommon.</dd>
+<dd>Returns - An array containing one or more curves if successful.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateTweenCurves(Curve curve0,Curve curve1,int numCurves)</dt>
+<dd>Creates curves between two open or closed input curves. Uses the control points of the curves for finding tween curves.
+That means the first control point of first curve is matched to first control point of the second curve and so on.
+There is no matching of curves direction. Caller must match input curves direction before calling the function.</dd>
+<dd>Returns - An array of joint curves. This array can be empty.</dd>
+<dd>since 5.2</dd>
+<dt>static Curve[] CreateTweenCurves(Curve curve0,Curve curve1,int numCurves,double tolerance)</dt>
+<dd>Creates curves between two open or closed input curves. Uses the control points of the curves for finding tween curves.
+That means the first control point of first curve is matched to first control point of the second curve and so on.
+There is no matching of curves direction. Caller must match input curves direction before calling the function.</dd>
+<dd>Returns - An array of joint curves. This array can be empty.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateTweenCurvesWithMatching(Curve curve0,Curve curve1,int numCurves)</dt>
+<dd>Creates curves between two open or closed input curves. Make the structure of input curves compatible if needed.
+Refits the input curves to have the same structure. The resulting curves are usually more complex than input unless
+input curves are compatible and no refit is needed. There is no matching of curves direction.
+Caller must match input curves direction before calling the function.</dd>
+<dd>Returns - An array of joint curves. This array can be empty.</dd>
+<dd>since 5.2</dd>
+<dt>static Curve[] CreateTweenCurvesWithMatching(Curve curve0,Curve curve1,int numCurves,double tolerance)</dt>
+<dd>Creates curves between two open or closed input curves. Make the structure of input curves compatible if needed.
+Refits the input curves to have the same structure. The resulting curves are usually more complex than input unless
+input curves are compatible and no refit is needed. There is no matching of curves direction.
+Caller must match input curves direction before calling the function.</dd>
+<dd>Returns - An array of joint curves. This array can be empty.</dd>
+<dd>since 6.0</dd>
+<dt>static Curve[] CreateTweenCurvesWithSampling(Curve curve0,Curve curve1,int numCurves,int numSamples)</dt>
+<dd>Creates curves between two open or closed input curves. Use sample points method to make curves compatible.
+This is how the algorithm workd: Divides the two curves into an equal number of points, finds the midpoint between the 
+corresponding points on the curves and interpolates the tween curve through those points. There is no matching of curves
+direction. Caller must match input curves direction before calling the function.</dd>
+<dd>Returns - &gt;An array of joint curves. This array can be empty.</dd>
+<dd>since 5.2</dd>
+<dt>static Curve[] CreateTweenCurvesWithSampling(Curve curve0,Curve curve1,int numCurves,int numSamples,double tolerance)</dt>
+<dd>Creates curves between two open or closed input curves. Use sample points method to make curves compatible.
+This is how the algorithm workd: Divides the two curves into an equal number of points, finds the midpoint between the 
+corresponding points on the curves and interpolates the tween curve through those points. There is no matching of curves
+direction. Caller must match input curves direction before calling the function.</dd>
+<dd>Returns - &gt;An array of joint curves. This array can be empty.</dd>
+<dd>since 6.0</dd>
+<dt>static bool DoDirectionsMatch(Curve curveA,Curve curveB)</dt>
+<dd>Determines whether two curves travel more or less in the same direction.</dd>
+<dd>Returns - True if both curves more or less point in the same direction, 
+False if they point in the opposite directions.</dd>
+<dt>static bool GetDistancesBetweenCurves(Curve curveA,Curve curveB,double tolerance,double maxDistance,double maxDistanceParameterA,double maxDistanceParameterB,double minDistance,double minDistanceParameterA,double minDistanceParameterB)</dt>
+<dd>Computes the distances between two arbitrary curves that overlap.</dd>
+<dd>Returns - True if the operation succeeded; otherwise false.</dd>
+<dt>static bool GetFilletPoints(Curve curve0,Curve curve1,double radius,double t0Base,double t1Base,double t0,double t1,Plane filletPlane)</dt>
+<dd>Finds points at which to cut a pair of curves so that a fillet of given radius can be inserted.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static Curve[] JoinCurves(IEnumerable<!-- raw HTML omitted --> inputCurves)</dt>
+<dd>Joins a collection of curve segments together.</dd>
+<dd>Returns - An array of curves which contains.</dd>
+<dt>static Curve[] JoinCurves(IEnumerable<!-- raw HTML omitted --> inputCurves,double joinTolerance)</dt>
+<dd>Joins a collection of curve segments together.</dd>
+<dd>Returns - An array of joint curves. This array can be empty.</dd>
+<dt>static Curve[] JoinCurves(IEnumerable<!-- raw HTML omitted --> inputCurves,double joinTolerance,bool preserveDirection)</dt>
+<dd>Joins a collection of curve segments together.</dd>
+<dd>Returns - An array of joint curves. This array can be empty.</dd>
+<dt>static bool MakeEndsMeet(Curve curveA,bool adjustStartCurveA,Curve curveB,bool adjustStartCurveB)</dt>
+<dd>Makes adjustments to the ends of one or both input curves so that they meet at a point.</dd>
+<dd>Returns - True on success.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/regioncontainment/">RegionContainment</a> PlanarClosedCurveRelationship(Curve curveA,Curve curveB,Plane testPlane,double tolerance)</dt>
+<dd>Determines whether two coplanar simple closed curves are disjoint or intersect;
+otherwise, if the regions have a containment relationship, discovers
+which curve encloses the other.</dd>
+<dd>Returns - A value indicating the relationship between the first and the second curve.</dd>
+<dt>static bool PlanarCurveCollision(Curve curveA,Curve curveB,Plane testPlane,double tolerance)</dt>
+<dd>Determines if two coplanar curves collide (intersect).</dd>
+<dd>Returns - True if the curves intersect, otherwise false</dd>
+<dt>static Curve[] ProjectToBrep(Curve curve,Brep brep,Vector3d direction,double tolerance)</dt>
+<dd>Projects a Curve onto a Brep along a given direction.</dd>
+<dd>Returns - An array of projected curves or empty array if the projection set is empty.</dd>
+<dt>static Curve[] ProjectToBrep(Curve curve,IEnumerable<!-- raw HTML omitted --> breps,Vector3d direction,double tolerance)</dt>
+<dd>Projects a Curve onto a collection of Breps along a given direction.</dd>
+<dd>Returns - An array of projected curves or empty array if the projection set is empty.</dd>
+<dt>static Curve[] ProjectToBrep(Curve curve,IEnumerable<!-- raw HTML omitted --> breps,Vector3d direction,double tolerance,int[] brepIndices)</dt>
+<dd>Projects a Curve onto a collection of Breps along a given direction.</dd>
+<dd>Returns - An array of projected curves or None if the projection set is empty.</dd>
+<dt>static Curve[] ProjectToBrep(IEnumerable<!-- raw HTML omitted --> curves,IEnumerable<!-- raw HTML omitted --> breps,Vector3d direction,double tolerance)</dt>
+<dd>Projects a collection of Curves onto a collection of Breps along a given direction.</dd>
+<dd>Returns - An array of projected curves or empty array if the projection set is empty.</dd>
+<dt>static Curve[] ProjectToBrep(IEnumerable<!-- raw HTML omitted --> curves,IEnumerable<!-- raw HTML omitted --> breps,Vector3d direction,double tolerance,int[] curveIndices,int[] brepIndices)</dt>
+<dd>Projects a collection of Curves onto a collection of Breps along a given direction.</dd>
+<dd>Returns - An array of projected curves. Array is empty if the projection set is empty.</dd>
+<dt>static Curve[] ProjectToMesh(Curve curve,IEnumerable<!-- raw HTML omitted --> meshes,Vector3d direction,double tolerance)</dt>
+<dd>Projects a curve to a set of meshes using a direction and tolerance.</dd>
+<dd>Returns - A curve array.</dd>
+<dt>static Curve[] ProjectToMesh(Curve curve,Mesh mesh,Vector3d direction,double tolerance)</dt>
+<dd>Projects a curve to a mesh using a direction and tolerance.</dd>
+<dd>Returns - A curve array.</dd>
+<dt>static Curve[] ProjectToMesh(IEnumerable<!-- raw HTML omitted --> curves,IEnumerable<!-- raw HTML omitted --> meshes,Vector3d direction,double tolerance)</dt>
+<dd>Projects a curve to a set of meshes using a direction and tolerance.</dd>
+<dd>Returns - A curve array.</dd>
+<dt>static Curve ProjectToPlane(Curve curve,Plane plane)</dt>
+<dd>Constructs a curve by projecting an existing curve to a plane.</dd>
+<dd>Returns - The projected curve on success; None on failure.</dd>
+<dt>static Curve[] PullToBrepFace(Curve curve,BrepFace face,double tolerance)</dt>
+<dd>Pull a curve to a BrepFace using closest point projection.</dd>
+<dd>Returns - An array of pulled curves, or an empty array on failure.</dd>
+<dt>bool ChangeClosedCurveSeam(double t)</dt>
+<dd>If this curve is closed, then modify it so that the start/end point is at curve parameter t.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ChangeDimension(int desiredDimension)</dt>
+<dd>Changes the dimension of a curve.</dd>
+<dd>Returns - True if the curve&rsquo;s dimension was already desiredDimension
+or if the curve&rsquo;s dimension was successfully changed to desiredDimension;
+otherwise false.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curveorientation/">CurveOrientation</a> ClosedCurveOrientation()</dt>
+<dd>Determines the orientation (counterclockwise or clockwise) of a closed, planar curve in the world xy plane.
+Only works with simple (no self intersections) closed, planar curves.</dd>
+<dd>Returns - The orientation of this curve with respect to world xy plane.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curveorientation/">CurveOrientation</a> ClosedCurveOrientation(Plane plane)</dt>
+<dd>Determines the orientation (counterclockwise or clockwise) of a closed, planar curve in a given plane.
+Only works with simple (no self intersections) closed, planar curves.</dd>
+<dd>Returns - The orientation of this curve in the given plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curveorientation/">CurveOrientation</a> ClosedCurveOrientation(Transform xform)</dt>
+<dd>Determines the orientation (counterclockwise or clockwise) of a closed, planar curve.
+Only works with simple (no self intersections) closed, planar curves.</dd>
+<dd>Returns - The orientation of this curve in the world xy-plane.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curveorientation/">CurveOrientation</a> ClosedCurveOrientation(Vector3d upDirection)</dt>
+<dd>Determines the orientation (counterclockwise or clockwise) of a closed, planar curve in a given plane.
+Only works with simple (no self intersections) closed, planar curves.</dd>
+<dd>Returns - The orientation of this curve with respect to a defined up direction.</dd>
+<dt>bool ClosestPoint(Point3d testPoint,double t)</dt>
+<dd>Finds parameter of the point on a curve that is closest to testPoint.
+If the maximumDistance parameter is &gt; 0, then only points whose distance
+to the given point is &lt;= maximumDistance will be returned.  Using a 
+positive value of maximumDistance can substantially speed up the search.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ClosestPoint(Point3d testPoint,double t,double maximumDistance)</dt>
+<dd>Finds the parameter of the point on a curve that is closest to testPoint.
+If the maximumDistance parameter is &gt; 0, then only points whose distance
+to the given point is &lt;= maximumDistance will be returned.  Using a 
+positive value of maximumDistance can substantially speed up the search.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ClosestPoints(Curve otherCurve,Point3d pointOnThisCurve,Point3d pointOnOtherCurve)</dt>
+<dd>Gets closest points between this and another curves.</dd>
+<dd>Returns - True on success; False on error.</dd>
+<dt>bool ClosestPoints(IEnumerable<!-- raw HTML omitted --> geometry,Point3d pointOnCurve,Point3d pointOnObject,int whichGeometry)</dt>
+<dd>Finds the object (and the closest point in that object) that is closest to
+this curve. Breps, surfaces,
+curves and point clouds are examples of
+objects that can be passed to this function.</dd>
+<dd>Returns - True on success; False if no object was found or selected.</dd>
+<dt>bool ClosestPoints(IEnumerable<!-- raw HTML omitted --> geometry,Point3d pointOnCurve,Point3d pointOnObject,int whichGeometry,double maximumDistance)</dt>
+<dd>Finds the object (and the closest point in that object) that is closest to
+this curve. Breps, surfaces,
+curves and point clouds are examples of
+objects that can be passed to this function.</dd>
+<dd>Returns - True on success; False if no object was found or selected.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointcontainment/">PointContainment</a> Contains(Point3d testPoint)</dt>
+<dd>Computes the relationship between a point and a closed curve region. 
+This curve must be closed or the return value will be Unset.
+Both curve and point are projected to the World XY plane.</dd>
+<dd>Returns - Relationship between point and curve region.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointcontainment/">PointContainment</a> Contains(Point3d testPoint,Plane plane)</dt>
+<dd>Computes the relationship between a point and a closed curve region. 
+This curve must be closed or the return value will be Unset.</dd>
+<dd>Returns - Relationship between point and curve region.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/pointcontainment/">PointContainment</a> Contains(Point3d testPoint,Plane plane,double tolerance)</dt>
+<dd>Computes the relationship between a point and a closed curve region. 
+This curve must be closed or the return value will be Unset.</dd>
+<dd>Returns - Relationship between point and curve region.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> CurvatureAt(double t)</dt>
+<dd>Evaluate the curvature vector at a curve parameter.</dd>
+<dd>Returns - Curvature vector of the curve at the parameter t.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a>[] DerivativeAt(double t,int derivativeCount)</dt>
+<dd>Evaluate the derivatives at the specified curve parameter.</dd>
+<dd>Returns - An array of vectors that represents all the derivatives starting at zero.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a>[] DerivativeAt(double t,int derivativeCount,CurveEvaluationSide side)</dt>
+<dd>Evaluate the derivatives at the specified curve parameter.</dd>
+<dd>Returns - An array of vectors that represents all the derivatives starting at zero.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] DivideAsContour(Point3d contourStart,Point3d contourEnd,double interval)</dt>
+<dd>Divides this curve at fixed steps along a defined contour line.</dd>
+<dd>Returns - An array of points; or None on error.</dd>
+<dt>double[] DivideByCount(int segmentCount,bool includeEnds)</dt>
+<dd>Divide the curve into a number of equal-length segments.</dd>
+<dd>Returns - List of curve parameters at the division points on success, None on failure.</dd>
+<dt>double[] DivideByCount(int segmentCount,bool includeEnds,Point3d[] points)</dt>
+<dd>Divide the curve into a number of equal-length segments.</dd>
+<dd>Returns - Array containing division curve parameters on success, None on failure.</dd>
+<dt>double[] DivideByLength(double segmentLength,bool includeEnds)</dt>
+<dd>Divide the curve into specific length segments.</dd>
+<dd>Returns - Array containing division curve parameters if successful, None on failure.</dd>
+<dt>double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse)</dt>
+<dd>Divide the curve into specific length segments.</dd>
+<dd>Returns - Array containing division curve parameters if successful, None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse,Point3d[] points)</dt>
+<dd>Divide the curve into specific length segments.</dd>
+<dd>Returns - Array containing division curve parameters if successful, None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>double[] DivideByLength(double segmentLength,bool includeEnds,Point3d[] points)</dt>
+<dd>Divide the curve into specific length segments.</dd>
+<dd>Returns - Array containing division curve parameters if successful, None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] DivideEquidistant(double distance)</dt>
+<dd>Calculates 3d points on a curve where the linear distance between the points is equal.</dd>
+<dd>Returns - An array of equidistant points, or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/geometrybase/">GeometryBase</a> Duplicate()</dt>
+<dd>Constructs an exact duplicate of this Curve.</dd>
+<dt>Curve DuplicateCurve()</dt>
+<dd>Constructs an exact duplicate of this curve.</dd>
+<dd>Returns - An exact copy of this curve.</dd>
+<dt>Curve[] DuplicateSegments()</dt>
+<dd>Polylines will be exploded into line segments. ExplodeCurves will
+return the curves in topological order.</dd>
+<dd>Returns - An array of all the segments that make up this curve.</dd>
+<dt>Curve Extend(CurveEnd side,CurveExtensionStyle style,IEnumerable<!-- raw HTML omitted --> geometry)</dt>
+<dd>Extends a curve until it intersects a collection of objects.</dd>
+<dd>Returns - New extended curve result on success, None on failure.</dd>
+<dt>Curve Extend(CurveEnd side,CurveExtensionStyle style,Point3d endPoint)</dt>
+<dd>Extends a curve to a point.</dd>
+<dd>Returns - New extended curve result on success, None on failure.</dd>
+<dt>Curve Extend(CurveEnd side,double length,CurveExtensionStyle style)</dt>
+<dd>Extends a curve by a specific length.</dd>
+<dd>Returns - A curve with extended ends or None on failure.</dd>
+<dt>Curve Extend(double t0,double t1)</dt>
+<dd>Where possible, analytically extends curve to include the given domain. 
+This will not work on closed curves. The original curve will be identical to the 
+restriction of the resulting curve to the original curve domain.</dd>
+<dd>Returns - Extended curve on success, None on failure.</dd>
+<dt>Curve Extend(Interval domain)</dt>
+<dd>Where possible, analytically extends curve to include the given domain. 
+This will not work on closed curves. The original curve will be identical to the 
+restriction of the resulting curve to the original curve domain.</dd>
+<dd>Returns - Extended curve on success, None on failure.</dd>
+<dt>Curve ExtendByArc(CurveEnd side,IEnumerable<!-- raw HTML omitted --> geometry)</dt>
+<dd>Extends a curve by an Arc until it intersects a collection of objects.</dd>
+<dd>Returns - New extended curve result on success, None on failure.</dd>
+<dt>Curve ExtendByLine(CurveEnd side,IEnumerable<!-- raw HTML omitted --> geometry)</dt>
+<dd>Extends a curve by a line until it intersects a collection of objects.</dd>
+<dd>Returns - New extended curve result on success, None on failure.</dd>
+<dt>Curve ExtendOnSurface(CurveEnd side,BrepFace face)</dt>
+<dd>Extends a curve on a surface.</dd>
+<dd>Returns - New extended curve result on success, None on failure.</dd>
+<dt>Curve ExtendOnSurface(CurveEnd side,Surface surface)</dt>
+<dd>Extends a curve on a surface.</dd>
+<dd>Returns - New extended curve result on success, None on failure.</dd>
+<dt>double[] ExtremeParameters(Vector3d direction)</dt>
+<dd>Returns the parameter values of all local extrema. 
+Parameter values are in increasing order so consecutive extrema 
+define an interval on which each component of the curve is monotone. 
+Note, non-periodic curves always return the end points.</dd>
+<dd>Returns - The parameter values of all local extrema.</dd>
+<dd>since 6.0</dd>
+<dt>Curve Fair(double distanceTolerance,double angleTolerance,int clampStart,int clampEnd,int iterations)</dt>
+<dd>Fairs a curve object. Fair works best on degree 3 (cubic) curves. Attempts to 
+remove large curvature variations while limiting the geometry changes to be no 
+more than the specified tolerance.</dd>
+<dd>Returns - Returns new faired Curve on success, None on failure.</dd>
+<dt>Curve Fit(int degree,double fitTolerance,double angleTolerance)</dt>
+<dd>Fits a new curve through an existing curve.</dd>
+<dd>Returns - Returns a new fitted Curve if successful, None on failure.</dd>
+<dt>bool FrameAt(double t,Plane plane)</dt>
+<dd>Returns a 3d frame at a parameter.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/conicsectiontype/">ConicSectionType</a> GetConicSectionType()</dt>
+<dd>Returns the type of conic section based on the curve&rsquo;s shape.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/conicsectiontype/">ConicSectionType</a> GetConicSectionType(Point3d focus1,Point3d focus2,Point3d center)</dt>
+<dd>Returns the type of conic section based on the curve&rsquo;s shape.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetCurveParameterFromNurbsFormParameter(double nurbsParameter,double curveParameter)</dt>
+<dd>Convert a NURBS curve parameter to a curve parameter.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>double GetLength()</dt>
+<dd>Gets the length of the curve with a fractional tolerance of 1.0e-8.</dd>
+<dd>Returns - The length of the curve on success, or zero on failure.</dd>
+<dt>double GetLength(double fractionalTolerance)</dt>
+<dd>Get the length of the curve.</dd>
+<dd>Returns - The length of the curve on success, or zero on failure.</dd>
+<dt>double GetLength(double fractionalTolerance,Interval subdomain)</dt>
+<dd>Get the length of a sub-section of the curve.</dd>
+<dd>Returns - The length of the sub-curve on success, or zero on failure.</dd>
+<dt>double GetLength(Interval subdomain)</dt>
+<dd>Get the length of a sub-section of the curve with a fractional tolerance of 1e-8.</dd>
+<dd>Returns - The length of the sub-curve on success, or zero on failure.</dd>
+<dt>bool GetLocalPerpPoint(Point3d testPoint,double seedParmameter,double curveParameter)</dt>
+<dd>Search for a location on the curve, near seedParmameter, that is perpendicular to a test point.</dd>
+<dd>Returns - True if a solution is found, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetLocalPerpPoint(Point3d testPoint,double seedParmameter,Interval subDomain,double curveParameter)</dt>
+<dd>Search for a location on the curve, near seedParmameter, that is perpendicular to a test point.</dd>
+<dd>Returns - True if a solution is found, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetLocalTangentPoint(Point3d testPoint,double seedParmameter,double curveParameter)</dt>
+<dd>Search for a location on the curve, near seedParmameter, that is tangent to a test point.</dd>
+<dd>Returns - True if a solution is found, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetLocalTangentPoint(Point3d testPoint,double seedParmameter,Interval subDomain,double curveParameter)</dt>
+<dd>Search for a location on the curve, near seedParmameter, that is tangent to a test point.</dd>
+<dd>Returns - True if a solution is found, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetNextDiscontinuity(Continuity continuityType,double t0,double t1,double t)</dt>
+<dd>Searches for a derivative, tangent, or curvature discontinuity.</dd>
+<dd>Returns - Parametric continuity tests c = (C0_continuous, &hellip;, G2_continuous):
+True if a parametric discontinuity was found strictly between t0 and t1. Note well that
+all curves are parametrically continuous at the ends of their domains.
+<p>Locus continuity tests c = (C0_locus_continuous, &hellip;,G2_locus_continuous):
+True if a locus discontinuity was found strictly between t0 and t1 or at t1 is the at the end
+of a curve. Note well that all open curves (IsClosed()=false) are locus discontinuous at the
+ends of their domains.  All closed curves (IsClosed()=true) are at least C0_locus_continuous at 
+the ends of their domains.</p>
+</dd>
+<dt>bool GetNurbsFormParameterFromCurveParameter(double curveParameter,double nurbsParameter)</dt>
+<dd>Convert a curve parameter to a NURBS curve parameter.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a>[] GetPerpendicularFrames(IEnumerable<!-- raw HTML omitted --> parameters)</dt>
+<dd>Gets a collection of perpendicular frames along the curve. Perpendicular frames 
+are also known as &lsquo;Zero-twisting frames&rsquo; and they minimize rotation from one frame to the next.</dd>
+<dd>Returns - An array of perpendicular frames on success or None on failure.</dd>
+<dt>int HasNurbsForm()</dt>
+<dd>Does a NURBS curve representation of this curve exist?</dd>
+<dd>Returns - 0   unable to create NURBS representation with desired accuracy.
+1   success - NURBS parameterization matches the curve&rsquo;s to the desired accuracy
+2   success - NURBS point locus matches the curve&rsquo;s and the domain of the NURBS
+curve is correct. However, This curve&rsquo;s parameterization and the
+NURBS curve parameterization may not match. This situation happens
+when getting NURBS representations of curves that have a
+transendental parameterization like circles.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] InflectionPoints()</dt>
+<dd>Returns a curve&rsquo;s inflection points. An inflection point is a location on
+a curve at which the sign of the curvature (i.e., the concavity) changes. 
+The curvature at these locations is always 0.</dd>
+<dd>Returns - An array of points if successful, None if not successful or on error.</dd>
+<dd>since 7.0</dd>
+<dt>bool IsArc()</dt>
+<dd>Test a curve to see if it can be represented by an arc or circle within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the curve can be represented by an arc or a circle within tolerance.</dd>
+<dt>bool IsArc(double tolerance)</dt>
+<dd>Test a curve to see if it can be represented by an arc or circle within the given tolerance.</dd>
+<dd>Returns - True if the curve can be represented by an arc or a circle within tolerance.</dd>
+<dt>bool IsCircle()</dt>
+<dd>Test a curve to see if it can be represented by a circle within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the Curve can be represented by a circle within tolerance.</dd>
+<dt>bool IsCircle(double tolerance)</dt>
+<dd>Test a curve to see if it can be represented by a circle within the given tolerance.</dd>
+<dd>Returns - True if the curve can be represented by a circle to within tolerance.</dd>
+<dt>bool IsClosable(double tolerance)</dt>
+<dd>Decide if it makes sense to close off this curve by moving the endpoint 
+to the start based on start-end gap size and length of curve as 
+approximated by chord defined by 6 points.</dd>
+<dd>Returns - True if start and end points are close enough based on above conditions.</dd>
+<dt>bool IsClosable(double tolerance,double minimumAbsoluteSize,double minimumRelativeSize)</dt>
+<dd>Decide if it makes sense to close off this curve by moving the endpoint
+to the start based on start-end gap size and length of curve as
+approximated by chord defined by 6 points.</dd>
+<dd>Returns - True if start and end points are close enough based on above conditions.</dd>
+<dt>bool IsContinuous(Continuity continuityType,double t)</dt>
+<dd>Test continuity at a curve parameter value.</dd>
+<dd>Returns - True if the curve has at least the c type continuity at the parameter t.</dd>
+<dt>bool IsEllipse()</dt>
+<dd>Test a curve to see if it can be represented by an ellipse within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the Curve can be represented by an ellipse within tolerance.</dd>
+<dt>bool IsEllipse(double tolerance)</dt>
+<dd>Test a curve to see if it can be represented by an ellipse within a given tolerance.</dd>
+<dd>Returns - True if the Curve can be represented by an ellipse within tolerance.</dd>
+<dt>bool IsInPlane(Plane testPlane)</dt>
+<dd>Test a curve to see if it lies in a specific plane.</dd>
+<dd>Returns - True if the maximum distance from the curve to the testPlane is &lt;= RhinoMath.ZeroTolerance.</dd>
+<dt>bool IsInPlane(Plane testPlane,double tolerance)</dt>
+<dd>Test a curve to see if it lies in a specific plane.</dd>
+<dd>Returns - True if the maximum distance from the curve to the testPlane is &lt;= tolerance.</dd>
+<dt>bool IsLinear()</dt>
+<dd>Test a curve to see if it is linear to within RhinoMath.ZeroTolerance units (1e-12).</dd>
+<dd>Returns - True if the curve is linear.</dd>
+<dt>bool IsLinear(double tolerance)</dt>
+<dd>Test a curve to see if it is linear to within the custom tolerance.</dd>
+<dd>Returns - True if the ends of the curve are farther than tolerance apart
+and the maximum distance from any point on the curve to
+the line segment connecting the curve ends is &lt;= tolerance.</dd>
+<dt>bool IsPlanar()</dt>
+<dd>Test a curve for planarity.</dd>
+<dd>Returns - True if the curve is planar (flat) to within RhinoMath.ZeroTolerance units (1e-12).</dd>
+<dt>bool IsPlanar(double tolerance)</dt>
+<dd>Test a curve for planarity.</dd>
+<dd>Returns - True if there is a plane such that the maximum distance from the curve to the plane is &lt;= tolerance.</dd>
+<dt>bool IsPolyline()</dt>
+<dd>Several types of Curve can have the form of a polyline
+including a degree 1 NurbsCurve, a PolylineCurve,
+and a PolyCurve all of whose segments are some form of
+polyline. IsPolyline tests a curve to see if it can be
+represented as a polyline.</dd>
+<dd>Returns - True if this curve can be represented as a polyline; otherwise, false.</dd>
+<dt>bool IsShort(double tolerance)</dt>
+<dd>Used to quickly find short curves.</dd>
+<dd>Returns - True if the length of the curve is &lt;= tolerance.</dd>
+<dt>bool IsShort(double tolerance,Interval subdomain)</dt>
+<dd>Used to quickly find short curves.</dd>
+<dd>Returns - True if the length of the curve is &lt;= tolerance.</dd>
+<dt>bool LcoalClosestPoint(Point3d testPoint,double seed,double t)</dt>
+<dd>Find parameter of the point on a curve that is locally closest to 
+the testPoint.  The search for a local close point starts at
+a seed parameter.</dd>
+<dd>Returns - True if the search is successful, False if the search fails.</dd>
+<dd>since 6.3</dd>
+<dt>bool LengthParameter(double segmentLength,double t)</dt>
+<dd>Gets the parameter along the curve which coincides with a given length along the curve. 
+A fractional tolerance of 1e-8 is used in this version of the function.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool LengthParameter(double segmentLength,double t,double fractionalTolerance)</dt>
+<dd>Gets the parameter along the curve which coincides with a given length along the curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool LengthParameter(double segmentLength,double t,double fractionalTolerance,Interval subdomain)</dt>
+<dd>Gets the parameter along the curve which coincides with a given length along the curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool LengthParameter(double segmentLength,double t,Interval subdomain)</dt>
+<dd>Gets the parameter along the curve which coincides with a given length along the curve. 
+A fractional tolerance of 1e-8 is used in this version of the function.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool LocalClosestPoint(Point3d testPoint,double seed,double t)</dt>
+<dd>Find parameter of the point on a curve that is locally closest to 
+the testPoint.  The search for a local close point starts at
+a seed parameter.</dd>
+<dd>Returns - True if the search is successful, False if the search fails.</dd>
+<dd>since 6.18</dd>
+<dt>bool MakeClosed(double tolerance)</dt>
+<dd>If IsClosed, just return true. Otherwise, decide if curve can be closed as 
+follows: Linear curves polylinear curves with 2 segments, Nurbs with 3 or less 
+control points cannot be made closed. Also, if tolerance &gt; 0 and the gap between 
+start and end is larger than tolerance, curve cannot be made closed. 
+Adjust the curve&rsquo;s endpoint to match its start point.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] MaxCurvaturePoints()</dt>
+<dd>Returns a curve&rsquo;s maximum curvature points. The maximum curvature points identify
+where the curvature starts to decrease in both directions from the points.</dd>
+<dd>Returns - An array of points if successful, None if not successful or on error.</dd>
+<dd>since 7.0</dd>
+<dt>bool NormalizedLengthParameter(double s,double t)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve. 
+A fractional tolerance of 1e-8 is used in this version of the function.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool NormalizedLengthParameter(double s,double t,double fractionalTolerance)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool NormalizedLengthParameter(double s,double t,double fractionalTolerance,Interval subdomain)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool NormalizedLengthParameter(double s,double t,Interval subdomain)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve. 
+A fractional tolerance of 1e-8 is used in this version of the function.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>double[] NormalizedLengthParameters(double[] s,double absoluteTolerance)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve. 
+A fractional tolerance of 1e-8 is used in this version of the function.</dd>
+<dd>Returns - If successful, array of curve parameters such that the length of the curve from its start to t[i] is s[i]*curve_length. 
+Null on failure.</dd>
+<dt>double[] NormalizedLengthParameters(double[] s,double absoluteTolerance,double fractionalTolerance)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.</dd>
+<dd>Returns - If successful, array of curve parameters such that the length of the curve from its start to t[i] is s[i]*curve_length. 
+Null on failure.</dd>
+<dt>double[] NormalizedLengthParameters(double[] s,double absoluteTolerance,double fractionalTolerance,Interval subdomain)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.</dd>
+<dd>Returns - If successful, array of curve parameters such that the length of the curve from its start to t[i] is s[i]*curve_length. 
+Null on failure.</dd>
+<dt>double[] NormalizedLengthParameters(double[] s,double absoluteTolerance,Interval subdomain)</dt>
+<dd>Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve. 
+A fractional tolerance of 1e-8 is used in this version of the function.</dd>
+<dd>Returns - If successful, array of curve parameters such that the length of the curve from its start to t[i] is s[i]*curve_length. 
+Null on failure.</dd>
+<dt>Curve[] Offset(Plane plane,double distance,double tolerance,CurveOffsetCornerStyle cornerStyle)</dt>
+<dd>Offsets this curve. If you have a nice offset, then there will be one entry in 
+the array. If the original curve had kinks or the offset curve had self 
+intersections, you will get multiple segments in the offset_curves[] array.</dd>
+<dd>Returns - Offset curves on success, None on failure.</dd>
+<dt>Curve[] Offset(Point3d directionPoint,Vector3d normal,double distance,double tolerance,CurveOffsetCornerStyle cornerStyle)</dt>
+<dd>Offsets this curve. If you have a nice offset, then there will be one entry in 
+the array. If the original curve had kinks or the offset curve had self 
+intersections, you will get multiple segments in the offset_curves[] array.</dd>
+<dd>Returns - Offset curves on success, None on failure.</dd>
+<dt>Curve OffsetNormalToSurface(Surface surface,double height)</dt>
+<dd>Finds a curve by offsetting an existing curve normal to a surface.
+The caller is responsible for ensuring that the curve lies on the input surface.</dd>
+<dd>Returns - Offset curve at distance height from the surface.  The offset curve is
+interpolated through a small number of points so if the surface is irregular
+or complicated, the result will not be a very accurate offset.</dd>
+<dt>Curve[] OffsetOnSurface(BrepFace face,double distance,double fittingTolerance)</dt>
+<dd>Offset this curve on a brep face surface. This curve must lie on the surface.</dd>
+<dd>Returns - Offset curves on success, or None on failure.</dd>
+<dt>Curve[] OffsetOnSurface(BrepFace face,double[] curveParameters,double[] offsetDistances,double fittingTolerance)</dt>
+<dd>Offset a curve on a brep face surface. This curve must lie on the surface.
+This overload allows to specify different offsets for different curve parameters.</dd>
+<dd>Returns - Offset curves on success, or None on failure.</dd>
+<dt>Curve[] OffsetOnSurface(BrepFace face,Point2d throughPoint,double fittingTolerance)</dt>
+<dd>Offset a curve on a brep face surface. This curve must lie on the surface.
+This overload allows to specify a surface point at which the offset will pass.</dd>
+<dd>Returns - Offset curves on success, or None on failure.</dd>
+<dt>Curve[] OffsetOnSurface(Surface surface,double distance,double fittingTolerance)</dt>
+<dd>Offset a curve on a surface. This curve must lie on the surface.</dd>
+<dd>Returns - Offset curves on success, or None on failure.</dd>
+<dt>Curve[] OffsetOnSurface(Surface surface,double[] curveParameters,double[] offsetDistances,double fittingTolerance)</dt>
+<dd>Offset this curve on a surface. This curve must lie on the surface.
+This overload allows to specify different offsets for different curve parameters.</dd>
+<dd>Returns - Offset curves on success, or None on failure.</dd>
+<dt>Curve[] OffsetOnSurface(Surface surface,Point2d throughPoint,double fittingTolerance)</dt>
+<dd>Offset a curve on a surface. This curve must lie on the surface.
+This overload allows to specify a surface point at which the offset will pass.</dd>
+<dd>Returns - Offset curves on success, or None on failure.</dd>
+<dt>bool PerpendicularFrameAt(double t,Plane plane)</dt>
+<dd>Return a 3d frame at a parameter. This is slightly different than FrameAt in
+that the frame is computed in a way so there is minimal rotation from one
+frame to the next.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double t)</dt>
+<dd>Evaluates point at a curve parameter.</dd>
+<dd>Returns - Point (location of curve at the parameter t).</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAtLength(double length)</dt>
+<dd>Gets a point at a certain length along the curve. The length must be 
+non-negative and less than or equal to the length of the curve. 
+Lengths will not be wrapped when the curve is closed or periodic.</dd>
+<dd>Returns - Point on the curve at the specified length from the start point or Poin3d.Unset on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAtNormalizedLength(double length)</dt>
+<dd>Gets a point at a certain normalized length along the curve. The length must be 
+between or including 0.0 and 1.0, where 0.0 equals the start of the curve and 
+1.0 equals the end of the curve.</dd>
+<dd>Returns - Point on the curve at the specified normalized length from the start point or Poin3d.Unset on failure.</dd>
+<dt>Curve[] PullToBrepFace(BrepFace face,double tolerance)</dt>
+<dd>Pulls this curve to a brep face and returns the result of that operation.</dd>
+<dd>Returns - An array containing the resulting curves after pulling. This array could be empty.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polylinecurve/">PolylineCurve</a> PullToMesh(Mesh mesh,double tolerance)</dt>
+<dd>Makes a polyline approximation of the curve and gets the closest point on the mesh for each point on the curve. 
+Then it &ldquo;connects the points&rdquo; so that you have a polyline on the mesh.</dd>
+<dd>Returns - A polyline curve on success, None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> Rebuild(int pointCount,int degree,bool preserveTangents)</dt>
+<dd>Rebuild a curve with a specific point count.</dd>
+<dd>Returns - A Nurbs curve on success or None on failure.</dd>
+<dt>bool RemoveShortSegments(double tolerance)</dt>
+<dd>Looks for segments that are shorter than tolerance that can be removed. 
+Does not change the domain, but it will change the relative parameterization.</dd>
+<dd>Returns - True if removable short segments were found. 
+False if no removable short segments were found.</dd>
+<dt>bool Reverse()</dt>
+<dd>Reverses the direction of the curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance)</dt>
+<dd>Offsets a closed curve in the following way: pProject the curve to a plane with given normal.
+Then, loose Offset the projection by distance + blend_radius and trim off self-intersection.
+THen, Offset the remaining curve back in the opposite direction by blend_radius, filling gaps with blends.
+Finally, use the elevations of the input curve to get the correct elevations of the result.</dd>
+<dd>Returns - The offset curve if successful.</dd>
+<dd>since 7.0</dd>
+<dt>Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance,Curve[] crossSections,Surface[] ruledSurfaces)</dt>
+<dd>Offsets a closed curve in the following way: pProject the curve to a plane with given normal.
+Then, loose Offset the projection by distance + blend_radius and trim off self-intersection.
+THen, Offset the remaining curve back in the opposite direction by blend_radius, filling gaps with blends.
+Finally, use the elevations of the input curve to get the correct elevations of the result.</dd>
+<dd>Returns - The offset curve if successful.</dd>
+<dd>since 7.0</dd>
+<dt>Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance,double[] outputParameters,double[] curveParameters)</dt>
+<dd>Offsets a closed curve in the following way: pProject the curve to a plane with given normal.
+Then, loose Offset the projection by distance + blend_radius and trim off self-intersection.
+THen, Offset the remaining curve back in the opposite direction by blend_radius, filling gaps with blends.
+Finally, use the elevations of the input curve to get the correct elevations of the result.</dd>
+<dd>Returns - The offset curve if successful.</dd>
+<dd>since 7.0</dd>
+<dt>bool SetEndPoint(Point3d point)</dt>
+<dd>Forces the curve to end at a specified point. 
+Not all curve types support this operation.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetStartPoint(Point3d point)</dt>
+<dd>Forces the curve to start at a specified point. 
+Not all curve types support this operation.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>Curve Simplify(CurveSimplifyOptions options,double distanceTolerance,double angleToleranceRadians)</dt>
+<dd>Returns a geometrically equivalent PolyCurve.
+The PolyCurve has the following properties
+<ol>
+<li>
+<p>All the PolyCurve segments are LineCurve, PolylineCurve, ArcCurve, or NurbsCurve.</p>
+</li>
+<li>
+<p>The Nurbs Curves segments do not have fully multiple interior knots.</p>
+</li>
+<li>
+<p>Rational Nurbs curves do not have constant weights.</p>
+</li>
+<li>
+<p>Any segment for which IsLinear() or IsArc() is True is a Line, 
+Polyline segment, or an Arc.</p>
+</li>
+<li>
+<p>Adjacent Colinear or Cocircular segments are combined.</p>
+</li>
+<li>
+<p>Segments that meet with G1-continuity have there ends tuned up so
+that they meet with G1-continuity to within machine precision.</p>
+</li>
+</ol>
+</dd>
+<dd>Returns - New simplified curve on success, None on failure.</dd>
+<dt>Curve SimplifyEnd(CurveEnd end,CurveSimplifyOptions options,double distanceTolerance,double angleToleranceRadians)</dt>
+<dd>Same as SimplifyCurve, but simplifies only the last two segments at &ldquo;side&rdquo; end.</dd>
+<dd>Returns - New simplified curve on success, None on failure.</dd>
+<dt>Curve Smooth(double smoothFactor,bool bXSmooth,bool bYSmooth,bool bZSmooth,bool bFixBoundaries,SmoothingCoordinateSystem coordinateSystem)</dt>
+<dd>Smooths a curve by averaging the positions of control points in a specified region.</dd>
+<dd>Returns - The smoothed curve if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>Curve Smooth(double smoothFactor,bool bXSmooth,bool bYSmooth,bool bZSmooth,bool bFixBoundaries,SmoothingCoordinateSystem coordinateSystem,Plane plane)</dt>
+<dd>Smooths a curve by averaging the positions of control points in a specified region.</dd>
+<dd>Returns - The smoothed curve if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> SpanDomain(int spanIndex)</dt>
+<dd>Get the domain of the curve span with the given index. 
+Use the SpanCount property to test how many spans there are.</dd>
+<dd>Returns - Interval of the span with the given index.</dd>
+<dt>Curve[] Split(Brep cutter,double tolerance)</dt>
+<dd>Splits a curve into pieces using a polysurface.</dd>
+<dd>Returns - An array of curves. This array can be empty.</dd>
+<dt>Curve[] Split(Brep cutter,double tolerance,double angleToleranceRadians)</dt>
+<dd>Splits a curve into pieces using a polysurface.</dd>
+<dd>Returns - An array of curves. This array can be empty.</dd>
+<dd>since 6.0</dd>
+<dt>Curve[] Split(double t)</dt>
+<dd>Splits (divides) the curve at the specified parameter. 
+The parameter must be in the interior of the curve&rsquo;s domain.</dd>
+<dd>Returns - Two curves on success, None on failure.</dd>
+<dt>Curve[] Split(IEnumerable<!-- raw HTML omitted --> t)</dt>
+<dd>Splits (divides) the curve at a series of specified parameters. 
+The parameter must be in the interior of the curve domain.</dd>
+<dd>Returns - Multiple curves on success, None on failure.</dd>
+<dt>Curve[] Split(Surface cutter,double tolerance)</dt>
+<dd>Splits a curve into pieces using a surface.</dd>
+<dd>Returns - An array of curves. This array can be empty.</dd>
+<dt>Curve[] Split(Surface cutter,double tolerance,double angleToleranceRadians)</dt>
+<dd>Splits a curve into pieces using a surface.</dd>
+<dd>Returns - An array of curves. This array can be empty.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> TangentAt(double t)</dt>
+<dd>Evaluates the unit tangent vector at a curve parameter.</dd>
+<dd>Returns - Unit tangent vector of the curve at the parameter t.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polycurve/">PolyCurve</a> ToArcsAndLines(double tolerance,double angleTolerance,double minimumLength,double maximumLength)</dt>
+<dd>Converts a curve into polycurve consisting of arc segments. Sections of the input curves that are nearly straight are converted to straight-line segments.</dd>
+<dd>Returns - PolyCurve on success, None on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve()</dt>
+<dd>Constructs a NURBS curve representation of this curve.</dd>
+<dd>Returns - NURBS representation of the curve on success, None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve(Interval subdomain)</dt>
+<dd>Constructs a NURBS curve representation of this curve.</dd>
+<dd>Returns - NURBS representation of the curve on success, None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polylinecurve/">PolylineCurve</a> ToPolyline(double tolerance,double angleTolerance,double minimumLength,double maximumLength)</dt>
+<dd>Gets a polyline approximation of a curve.</dd>
+<dd>Returns - PolyCurve on success, None on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polylinecurve/">PolylineCurve</a> ToPolyline(int mainSegmentCount,int subSegmentCount,double maxAngleRadians,double maxChordLengthRatio,double maxAspectRatio,double tolerance,double minEdgeLength,double maxEdgeLength,bool keepStartPoint)</dt>
+<dd>Gets a polyline approximation of a curve.</dd>
+<dd>Returns - PolylineCurve on success, None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/polylinecurve/">PolylineCurve</a> ToPolyline(int mainSegmentCount,int subSegmentCount,double maxAngleRadians,double maxChordLengthRatio,double maxAspectRatio,double tolerance,double minEdgeLength,double maxEdgeLength,bool keepStartPoint,Interval curveDomain)</dt>
+<dd>Gets a polyline approximation of a curve.</dd>
+<dd>Returns - PolylineCurve on success, None on error.</dd>
+<dt>Curve Trim(CurveEnd side,double length)</dt>
+<dd>Shortens a curve by a given length</dd>
+<dd>Returns - Trimmed curve if successful, None on failure.</dd>
+<dd>since 5.1</dd>
+<dt>Curve Trim(double t0,double t1)</dt>
+<dd>Removes portions of the curve outside the specified interval.</dd>
+<dd>Returns - Trimmed portion of this curve is successfull, None on failure.</dd>
+<dt>Curve Trim(Interval domain)</dt>
+<dd>Removes portions of the curve outside the specified interval.</dd>
+<dd>Returns - Trimmed curve if successful, None on failure.</dd>
+<dt>bool TryGetArc(Arc arc)</dt>
+<dd>Try to convert this curve into an Arc using RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the curve could be converted into an arc.</dd>
+<dt>bool TryGetArc(Arc arc,double tolerance)</dt>
+<dd>Try to convert this curve into an Arc using a custom tolerance.</dd>
+<dd>Returns - True if the curve could be converted into an arc.</dd>
+<dt>bool TryGetArc(Plane plane,Arc arc)</dt>
+<dd>Try to convert this curve into an Arc using RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the curve could be converted into an arc within the given plane.</dd>
+<dt>bool TryGetArc(Plane plane,Arc arc,double tolerance)</dt>
+<dd>Try to convert this curve into an Arc using a custom tolerance.</dd>
+<dd>Returns - True if the curve could be converted into an arc within the given plane.</dd>
+<dt>bool TryGetCircle(Circle circle)</dt>
+<dd>Try to convert this curve into a circle using RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the curve could be converted into a Circle.</dd>
+<dt>bool TryGetCircle(Circle circle,double tolerance)</dt>
+<dd>Try to convert this curve into a Circle using a custom tolerance.</dd>
+<dd>Returns - True if the curve could be converted into a Circle within tolerance.</dd>
+<dt>bool TryGetEllipse(Ellipse ellipse)</dt>
+<dd>Try to convert this curve into an Ellipse within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the curve could be converted into an Ellipse.</dd>
+<dt>bool TryGetEllipse(Ellipse ellipse,double tolerance)</dt>
+<dd>Try to convert this curve into an Ellipse using a custom tolerance.</dd>
+<dd>Returns - True if the curve could be converted into an Ellipse.</dd>
+<dt>bool TryGetEllipse(Plane plane,Ellipse ellipse)</dt>
+<dd>Try to convert this curve into an Ellipse within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the curve could be converted into an Ellipse within the given plane.</dd>
+<dt>bool TryGetEllipse(Plane plane,Ellipse ellipse,double tolerance)</dt>
+<dd>Try to convert this curve into an Ellipse using a custom tolerance.</dd>
+<dd>Returns - True if the curve could be converted into an Ellipse within the given plane.</dd>
+<dt>bool TryGetPlane(Plane plane)</dt>
+<dd>Test a curve for planarity and return the plane.</dd>
+<dd>Returns - True if there is a plane such that the maximum distance from the curve to the plane is &lt;= RhinoMath.ZeroTolerance.</dd>
+<dt>bool TryGetPlane(Plane plane,double tolerance)</dt>
+<dd>Test a curve for planarity and return the plane.</dd>
+<dd>Returns - True if there is a plane such that the maximum distance from the curve to the plane is &lt;= tolerance.</dd>
+<dt>bool TryGetPolyline(Polyline polyline)</dt>
+<dd>Several types of Curve can have the form of a polyline 
+including a degree 1 NurbsCurve, a PolylineCurve, 
+and a PolyCurve all of whose segments are some form of 
+polyline. IsPolyline tests a curve to see if it can be 
+represented as a polyline.</dd>
+<dd>Returns - True if this curve can be represented as a polyline; otherwise, false.</dd>
+<dt>bool TryGetPolyline(Polyline polyline,double[] parameters)</dt>
+<dd>Several types of Curve can have the form of a polyline 
+including a degree 1 NurbsCurve, a PolylineCurve, 
+and a PolyCurve all of whose segments are some form of 
+polyline. IsPolyline tests a curve to see if it can be 
+represented as a polyline.</dd>
+<dd>Returns - True if this curve can be represented as a polyline; otherwise, false.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Curve</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

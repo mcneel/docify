@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,127 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/rhinomath/">
-        <h3>RhinoMath</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/geometrybase/">
+        <h3>GeometryBase</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/rhinomath/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/geometrybase/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Provides a common base for most geometric classes. This class is abstract.
+[Serializable]public class GeometryBase : Runtime.CommonObjectProperties  bool HasBrepForm Returns True if the Brep.TryConvertBrep function will be successful for this object since 5.6 bool IsDeformable True if object can be accurately modified with &ldquo;squishy&rdquo; transformations like projections, shears, and non-uniform scaling. bool IsDocumentControlled If True this object may not be modified. Any properties or functions that attempt to modify this object when it is set to &ldquo;IsReadOnly&rdquo; will throw a NotSupportedException.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hatch/">
+        <h3>Hatch</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hatch/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a hatch in planar boundary loop or loops. This is a 2d entity with a plane defining a local coordinate system. The loops, patterns, angles, etc are all in this local coordinate system. The Hatch object manages the plane and loop array Fill definitions are in the HatchPattern or class derived from HatchPattern Hatch has an index to get the pattern definition from the pattern table.
+[Serializable]public class Hatch : GeometryBaseProperties  Point3d BasePoint Gets or sets the hatchpattern basepoint since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hermitesurface/">
+        <h3>HermiteSurface</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hermitesurface/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.
+public class HermiteSurface : IDisposableConstructors  HermiteSurface() Initializes a new instance. since 7.0 HermiteSurface(int uCount,int vCount) Initializes a new instance. since 7.0  Properties  bool IsValid Returns True if the all of values in all of the internal data structues contain valid values, False otherwise. since 7.0 int UCount Gets the number of parameters in the &ldquo;u&rdquo; direction.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawing/">
+        <h3>HiddenLineDrawing</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawing/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a hidden line drawing object. A hidden line drawing consists of curves generated from source objects. The curves correspond to edges, and silhouettes of source objects and intersections with cutting planes.
+public class HiddenLineDrawing : IDisposableProperties  IEnumerablePoints Point objects calculated by the hidden line drawing. since 6.8 IEnumerableSegments Subcurve objects calculated by the hidden line drawing. since 6.0 ViewportInfo Viewport Returns the ViewportInfo used by the hidden line drawing.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingobject/">
+        <h3>HiddenLineDrawingObject</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingobject/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents an object added to a HiddenLineDrawing
+public class HiddenLineDrawingObjectProperties  GeometryBase Geometry Returns the geometry in world coordinates if UseXform is false. Otherwise, the geometry in object space coordinates is returned. since 6.0 object Tag Returns the extra data used to cross-reference the object specified in HiddenLineDrawing.AddObject. since 6.0 Transform Transform Returns the transformation passed into the Add&hellip; function when setting up the hidden line drawing parameters.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingobjectcurve/">
+        <h3>HiddenLineDrawingObjectCurve</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingobjectcurve/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Curves generated from source objects which correspond to edges, and silhouettes of source objects and intersections with cutting planes. A HiddenLineDrawingObjectCurve is partitioned into hidden and visible segments called HiddenLineDrawingSegment
+public class HiddenLineDrawingObjectCurveProperties  int ClippingPlaneIndex Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. since 6.0 int Index Index of this object in HiddenLineDrawing.FullCurves. since 6.0 bool IsProjecting Returns True if all the non clipped portions of this curve are projecting.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingparameters/">
+        <h3>HiddenLineDrawingParameters</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingparameters/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Input used for computing a hidden line drawing
+public class HiddenLineDrawingParametersConstructors  HiddenLineDrawingParameters() default constructor since 6.0  Properties  double AbsoluteTolerance Absolute tolerance is used to decide if curves overlap or intersect. A suggested value is to use RhinoDoc.AbsoluteTolerance since 6.0 bool Flatten Flatten the computed geometry since 6.0 bool IncludeHiddenCurves Include hidden curves in hidden line drawing (default is true) since 6.0 bool IncludeTangentEdges Include tangent edges in hidden line drawing (default is true) since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingpoint/">
+        <h3>HiddenLineDrawingPoint</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingpoint/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Points generated from source objects which coorespond to point and point cloud source objects.
+public class HiddenLineDrawingPointProperties  int ClippingPlaneIndex Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. since 6.8 int Index Index of this object in HiddenLineDrawing.Points. since 6.8 Point3d Location Returns the location of this object in HiddenLineDrawing coordinates. since 6.8 Visibility PointVisibility Returns the point&rsquo;s visibility since 6.8 HiddenLineDrawingObject SourceObject Return the source object that this point came from.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingsegment/">
+        <h3>HiddenLineDrawingSegment</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/hiddenlinedrawingsegment/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+The results of HiddenLineDrawing calculation are a collection of segments. A segment is a subcurve of a HiddenLineDrawingObjectCurve.
+public class HiddenLineDrawingSegmentProperties  Curve CurveGeometry The actual curve geometry since 6.0 SideFill[] CurveSideFills The SideFill fields are only valid for visible curves. With respect to the HiddenLineDrawing, the region to the left (or right respecively) of this curve is described by CurveSideFills[0] or CurveSideFills[1], respectively. If exactly one of these regions is empty this is a scene silhouette.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/indexpair/">
+        <h3>IndexPair</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/indexpair/</small>
+      2020-03-11
     </div>
     Namespace: Rhino
-Provides constants and static methods that are additional to .
-public class RhinoMathMethods static double Clamp(double value,double bound1,double bound2)  (summary) Restricts a to be specified within an interval of two numbers. (since) 5.0 (returns) double This is some return comment  static int Clamp(int value,int bound1,int bound2)  (summary) Restricts a to be specified within an interval of two integers. (since) 5.0 (returns) int This is some return comment  static uint CRC32(uint currentRemainder,byte[] buffer)  (summary) Advances the cyclic redundancy check value remainder given a byte array.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/">
-        <h3>RhinoModifyObjectAttributesEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class RhinoModifyObjectAttributesEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  ObjectAttributes NewAttributes  (summary) (since) 5.0  ObjectAttributes OldAttributes  (summary) (since) 5.0  RhinoObject RhinoObject  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/rhinoobject/">
-        <h3>RhinoObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/rhinoobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-Represents an object in the document. RhinoObjects should only ever be creatable by the RhinoDoc.
-public class RhinoObjectProperties static uint NextRuntimeSerialNumber  (summary) Gets the runtime serial number that will be assigned to the next Rhino Object that is created. (since) 5.0  ObjectAttributes Attributes  (summary) Gets or sets the object attributes. (since) 5.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  RhinoDoc Document  (summary) Gets the document that owns this object.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/rhinoobjecteventargs/">
-        <h3>RhinoObjectEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class RhinoObjectEventArgsProperties Guid ObjectId  (summary) (since) 5.0  RhinoObject TheObject  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/">
-        <h3>RhinoObjectSelectionEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class RhinoObjectSelectionEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  RhinoObject[] RhinoObjects  (summary) (since) 5.0  bool Selected  (summary) Returns True if objects are being selected. Returns False if objects are being deseleced. (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/rhinopageinterop/">
-        <h3>RhinoPageInterop</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/rhinopageinterop/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-For internal use only, provides access to unmanaged core Rhino.
-public class RhinoPageInteropMethods static IntPtr NewPropertiesPanelPagePointer(ObjectPropertiesPage page,uint rhinoDocRuntimeSn)  (summary) For internal use only, provides access to unmanaged core (since) 6.0 (returns) IntPtr This is some return comment  static StackedDialogPage StackedDialogPageFromUnmanagedPointer(IntPtr pointer)  (summary) For internal use only, provides access to unmanaged core (since) 6.4 (returns) StackedDialogPage This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/rhinopageview/">
-        <h3>RhinoPageView</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/rhinopageview/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-A window that contains a single layout &lsquo;page&rsquo;
-public class RhinoPageViewEvents static PageViewSpaceChange  (summary) (since) 5.0  Properties RhinoViewport ActiveViewport  (summary) The ActiveViewport is the same as the MainViewport for standard RhinoViews. In a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object. Most of the time, you will use ActiveViewport unless you explicitly need to work with the main viewport. (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/">
-        <h3>RhinoReplaceObjectEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class RhinoReplaceObjectEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  RhinoObject NewRhinoObject  (summary) (since) 5.0  Guid ObjectId  (summary) (since) 5.0  RhinoObject OldRhinoObject  (summary) (since) 5.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/datasources/rhinosettings/">
-        <h3>RhinoSettings</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/datasources/rhinosettings/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Render.DataSources
-public class RhinoSettingsConstructors RhinoSettings(IntPtr pRhinoSettings)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods RhinoView ActiveView()  (summary) (since) 6.0 (returns) RhinoView This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  List&lt;System.Drawing.Size&gt; GetCustomRenderSizes()  (summary) (since) 6.0 (returns) List&lt;System.Drawing.Size&gt; This is some return comment  RenderSettings GetRenderSettings()  (summary) (since) 6.0 (returns) RenderSettings This is some return comment  bool GroundPlaneOnInViewDisplayMode(RhinoView view)  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/">
-        <h3>RhinoTransformObjectsEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-EventArgs passed to RhinoDoc.BeforeTransform.
-public class RhinoTransformObjectsEventArgsProperties int ObjectCount  (summary) (since) 5.10  RhinoObject[] Objects  (summary) (since) 5.10  bool ObjectsWillBeCopied  (summary) (since) 5.10  Transform Transform  (summary) (since) 5.10  
+Represents two indices: I and J.
+Constructors  IndexPair(int i,int j) Initializes a new instance of with two indices.  Properties  int Count Returns the amount of elements in this pair of indices, which is always 2. since 6.0 int I Gets or sets the first, I index. int J Gets or sets the second, J index.  Methods  bool Contains(int item) Determines whether the contains a specific value.
   </div>
   
 

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ControlPoint &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents control point geometry with three-dimensional position and weight.
+Constructors  ControlPoint(double x,double y,double z) Constructs a new world 3-D, or Euclidean, control point. The 4-D representation is (x, y, z, 1.0). ControlPoint(double x,double y,double z,double weight) Constructs a new homogeneous control point, where the 4-D representation is (x, y, z, w). The world 3-D, or Euclidean, representation is (x/w, y/w, z/w). ControlPoint(Point3d pt) Constructs a new world 3-D, or Euclidean, control point.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ControlPoint</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents control point geometry with three-dimensional position and weight.</p>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ControlPoint(double x,double y,double z)</dt>
+<dd>Constructs a new world 3-D, or Euclidean, control point.
+The 4-D representation is (x, y, z, 1.0).</dd>
+<dt>ControlPoint(double x,double y,double z,double weight)</dt>
+<dd>Constructs a new homogeneous control point, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dt>ControlPoint(Point3d pt)</dt>
+<dd>Constructs a new world 3-D, or Euclidean, control point.
+The 4-D representation of this is (x, y, z, 1.0).</dd>
+<dt>ControlPoint(Point3d euclideanPt,double weight)</dt>
+<dd>Constructs a control point from a world 3-D, or Euclidean, location and a weight.
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+<dt>ControlPoint(Point4d pt)</dt>
+<dd>Constructs a new homogeneous control point, where the 4-D representation is (x, y, z, w).
+The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static ControlPoint Unset</dt>
+<dd>Gets the predefined, unset control point.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Location</dt>
+<dd>Gets or sets world 3-D, or Euclidean location of the control point.</dd>
+<dt>double Weight</dt>
+<dd>Gets or sets the weight of this control point.</dd>
+<dt>double X</dt>
+<dd>Gets or sets the X coordinate of the control point.</dd>
+<dd>since 6.0</dd>
+<dt>double Y</dt>
+<dd>Gets or sets the Y coordinate of the control point.</dd>
+<dd>since 6.0</dd>
+<dt>double Z</dt>
+<dd>Gets or sets the Z coordinate of the control point.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool EpsilonEquals(ControlPoint other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(ControlPoint other)</dt>
+<dd>Determines if two points exactly match.</dd>
+<dd>Returns - True if the other control point exactly matches this one.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ControlPoint</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

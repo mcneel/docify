@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CustomRenderMeshProvider &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+You must call CustomRenderMeshProvider.RegisterProviders() from your plug-ins OnLoad override for each assembly containing a custom mesh provider. Only publicly exported classes derived from CustomRenderMeshProvider with a public constructor that has no parameters will get registered.
+[Obsolete]public class CustomRenderMeshProviderProperties  static Guid CurvePipingId  since 6.0 static Guid DisplacementId  since 6.0 static Guid EdgeSofteningId  since 6.0 static Guid ShutLiningId  since 6.0 static Guid ThickeningId  since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CustomRenderMeshProvider</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>You must call CustomRenderMeshProvider.RegisterProviders() from your
+plug-ins OnLoad override for each assembly containing a custom mesh
+provider.  Only publicly exported classes derived from
+CustomRenderMeshProvider with a public constructor that has no parameters
+will get registered.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Obsolete]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomRenderMeshProvider</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static Guid CurvePipingId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid DisplacementId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid EdgeSofteningId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid ShutLiningId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Guid ThickeningId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>String Name</dt>
+<dd>The name of the provider for UI display.</dd>
+<dd>since 5.7</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static void AllObjectsChanged()</dt>
+<dd>Call this method if your render meshes change.</dd>
+<dd>since 5.7</dd>
+<dt>static void AllObjectsChanged(RhinoDoc doc)</dt>
+<dd>Call this method if your render meshes change.</dd>
+<dd>since 6.0</dd>
+<dt>static void DocumentBasedMeshesChanged(RhinoDoc doc)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static void ObjectChanged(RhinoDoc doc,RhinoObject obj)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static void RegisterProviders(Assembly assembly,Guid pluginId)</dt>
+<dd>Call this method once from your plug-ins OnLoad override for each
+assembly containing a custom mesh provider.  Only publicly exported
+classes derived from CustomRenderMeshProvider with a public constructor
+that has no parameters will get registered.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)</dt>
+<dd>Returns a bounding box for the custom render meshes for the given object.</dd>
+<dd>Returns - A bounding box value.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox(ViewportInfo vp,RhinoObject obj,RhinoDoc doc,Guid requestingPlugIn,DisplayPipelineAttributes attrs)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool BuildCustomMeshes(ViewportInfo vp,RenderPrimitiveList objMeshes,Guid requestingPlugIn,bool meshType)</dt>
+<dd>Build custom render mesh(es).</dd>
+<dd>Returns - True if operation was successful.</dd>
+<dd>since 5.7</dd>
+<dt>bool WillBuildCustomMeshes(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)</dt>
+<dd>Determines if custom render meshes will be built for a particular object.</dd>
+<dd>Returns - True if custom meshes will be built.</dd>
+<dd>since 5.7</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CustomRenderMeshProvider</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

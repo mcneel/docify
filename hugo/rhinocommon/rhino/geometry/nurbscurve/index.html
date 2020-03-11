@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  NurbsCurve &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a Non Uniform Rational B-Splines (NURBS) curve.
+[Serializable]public class NurbsCurve : Curve, IEpsilonComparable&amp;lt;NurbsCurve&amp;gt;Constructors  NurbsCurve(int dimension,bool rational,int order,int pointCount) Constructs a new NURBS curve with knot and CV memory allocated. NurbsCurve(int degree,int pointCount) Constructs a new NURBS curve with a specific degree and control point count. NurbsCurve(NurbsCurve other) Initializes a NURBS curve by copying its values from another NURBS curve.  Properties  bool HasBezierSpans Returns True if the NURBS curve has bezier spans (all distinct knots have multiplitity = degree) bool IsRational Gets a value indicating whether or not the curve is rational.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">NurbsCurve</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a Non Uniform Rational B-Splines (NURBS) curve.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NurbsCurve</span> : Curve, IEpsilonComparable&lt;NurbsCurve&gt;
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>NurbsCurve(int dimension,bool rational,int order,int pointCount)</dt>
+<dd>Constructs a new NURBS curve with knot and CV memory allocated.</dd>
+<dt>NurbsCurve(int degree,int pointCount)</dt>
+<dd>Constructs a new NURBS curve with a specific degree and control point count.</dd>
+<dt>NurbsCurve(NurbsCurve other)</dt>
+<dd>Initializes a NURBS curve by copying its values from another NURBS curve.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool HasBezierSpans</dt>
+<dd>Returns True if the NURBS curve has bezier spans (all distinct knots have multiplitity = degree)</dd>
+<dt>bool IsRational</dt>
+<dd>Gets a value indicating whether or not the curve is rational. 
+Rational curves have control-points with custom weights.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/nurbscurveknotlist/">NurbsCurveKnotList</a> Knots</dt>
+<dd>Gets access to the knots (or &ldquo;knot vector&rdquo;) of this nurbs curve.</dd>
+<dt>int Order</dt>
+<dd>Gets the order of the curve. Order = Degree + 1.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/collections/nurbscurvepointlist/">NurbsCurvePointList</a> Points</dt>
+<dd>Gets access to the control points of this nurbs curve.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static NurbsCurve Create(bool periodic,int degree,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Constructs a 3D NURBS curve from a list of control points.</dd>
+<dd>Returns - new NURBS curve on success
+None on error.</dd>
+<dt>static NurbsCurve CreateFromArc(Arc arc)</dt>
+<dd>Gets a rational degree 2 NURBS curve representation
+of the arc. Note that the parameterization of NURBS curve
+does not match arc&rsquo;s transcendental paramaterization.</dd>
+<dd>Returns - Curve on success, None on failure.</dd>
+<dt>static NurbsCurve CreateFromArc(Arc arc,int degree,int cvCount)</dt>
+<dd>Create a uniform non-ratonal cubic NURBS approximation of an arc.</dd>
+<dd>Returns - NURBS curve approximation of an arc on success</dd>
+<dd>since 6.0</dd>
+<dt>static NurbsCurve CreateFromCircle(Circle circle)</dt>
+<dd>Gets a rational degree 2 NURBS curve representation
+of the circle. Note that the parameterization of NURBS curve
+does not match circle&rsquo;s transcendental paramaterization.<br>
+Use GetRadianFromNurbFormParameter() and
+GetParameterFromRadian() to convert between the NURBS curve 
+parameter and the transcendental parameter.</dd>
+<dd>Returns - Curve on success, None on failure.</dd>
+<dt>static NurbsCurve CreateFromCircle(Circle circle,int degree,int cvCount)</dt>
+<dd>Create a uniform non-ratonal cubic NURBS approximation of a circle.</dd>
+<dd>Returns - NURBS curve approximation of a circle on success</dd>
+<dd>since 6.0</dd>
+<dt>static NurbsCurve CreateFromEllipse(Ellipse ellipse)</dt>
+<dd>Gets a rational degree 2 NURBS curve representation of the ellipse.
+Note that the parameterization of the NURBS curve does not match
+with the transcendental paramaterization of the ellipsis.</dd>
+<dd>Returns - A nurbs curve representation of this ellipse or None if no such representation could be made.</dd>
+<dt>static NurbsCurve CreateFromLine(Line line)</dt>
+<dd>Gets a non-rational, degree 1 Nurbs curve representation of the line.</dd>
+<dd>Returns - Curve on success, None on failure.</dd>
+<dt>static NurbsCurve CreateHSpline(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Construct an H-spline from a sequence of interpolation points</dd>
+<dd>since 7.0</dd>
+<dt>static NurbsCurve CreateHSpline(IEnumerable<!-- raw HTML omitted --> points,Vector3d startTangent,Vector3d endTangent)</dt>
+<dd>Construct an H-spline from a sequence of interpolation points and
+optional start and end derivative information</dd>
+<dd>since 7.0</dd>
+<dt>static NurbsCurve CreateParabolaFromFocus(Point3d focus,Point3d startPoint,Point3d endPoint)</dt>
+<dd>Creates a parabola from focus and end points.</dd>
+<dd>Returns - A 2 degree NURBS curve if successful, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>static NurbsCurve CreateParabolaFromVertex(Point3d vertex,Point3d startPoint,Point3d endPoint)</dt>
+<dd>Createsa a parabola from vertex and end points.</dd>
+<dd>Returns - A 2 degree NURBS curve if successful, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>static NurbsCurve CreateSpiral(Curve railCurve,double t0,double t1,Point3d radiusPoint,double pitch,double turnCount,double radius0,double radius1,int pointsPerTurn)</dt>
+<dd>Create a C2 non-rational uniform cubic NURBS approximation of a swept helix or spiral.</dd>
+<dd>Returns - NurbsCurve on success, None on failure.</dd>
+<dd>since 5.2</dd>
+<dt>static NurbsCurve CreateSpiral(Point3d axisStart,Vector3d axisDir,Point3d radiusPoint,double pitch,double turnCount,double radius0,double radius1)</dt>
+<dd>Creates a C1 cubic NURBS approximation of a helix or spiral. For a helix,
+you may have radius0 == radius1. For a spiral radius0 == radius0 produces
+a circle. Zero and negative radii are permissible.</dd>
+<dd>Returns - NurbsCurve on success, None on failure.</dd>
+<dd>since 5.2</dd>
+<dt>static bool IsDuplicate(NurbsCurve curveA,NurbsCurve curveB,bool ignoreParameterization,double tolerance)</dt>
+<dd>Determines if two curves are similar.</dd>
+<dd>Returns - True if curves are similar within tolerance.</dd>
+<dt>static NurbsCurve[] MakeCompatible(IEnumerable<!-- raw HTML omitted --> curves,Point3d startPt,Point3d endPt,int simplifyMethod,int numPoints,double refitTolerance,double angleTolerance)</dt>
+<dd>For expert use only. From the input curves, make an array of compatible NURBS curves.</dd>
+<dd>Returns - The output NURBS surfaces if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool EpsilonEquals(NurbsCurve other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>double GrevilleParameter(int index)</dt>
+<dd>Gets the greville (edit point) parameter that belongs 
+to the control point at the specified index.</dd>
+<dt>double[] GrevilleParameters()</dt>
+<dd>Gets all Greville parameters for this curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GrevillePoint(int index)</dt>
+<dd>Gets the Greville parameter that belongs 
+to the control point at the specified index.</dd>
+<dt><a href="/rhinocommon/rhino/collections/point3dlist/">Point3dList</a> GrevillePoints()</dt>
+<dd>Gets all Greville points for this curve.</dd>
+<dt><a href="/rhinocommon/rhino/collections/point3dlist/">Point3dList</a> GrevillePoints(bool all)</dt>
+<dd>Gets Greville points for this curve.</dd>
+<dd>Returns - A list of points if successful, None otherwise.</dd>
+<dd>since 6.18</dd>
+<dt>bool IncreaseDegree(int desiredDegree)</dt>
+<dd>Increase the degree of this curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool MakePiecewiseBezier(bool setEndWeightsToOne)</dt>
+<dd>Clamps ends and adds knots so the NURBS curve has bezier spans 
+(all distinct knots have multiplitity = degree).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Reparameterize(double c)</dt>
+<dd>Use a linear fractional transformation to reparameterize the NURBS curve.
+This does not change the curve&rsquo;s domain.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool SetEndCondition(bool bSetEnd,NurbsCurveEndConditionType continuity,Point3d point,Vector3d tangent)</dt>
+<dd>Set end condition of a nurbs curve to point, tangent and curvature.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetEndCondition(bool bSetEnd,NurbsCurveEndConditionType continuity,Point3d point,Vector3d tangent,Vector3d curvature)</dt>
+<dd>Set end condition of a nurbs curve to point, tangent and curvature.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetGrevillePoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Sets all Greville edit points for this curve.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 6.4</dd>
+<dt>bool UVNDirectionsAt(double t,Vector3d uDir,Vector3d vDir,Vector3d nDir)</dt>
+<dd>Calculates the u, V, and N directions of a NURBS curve at a parameter similar to the method used by Rhino&rsquo;s MoveUVN command.</dd>
+<dd>Returns - True if successful, False otherwise.</dd>
+<dd>since 7.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>NurbsCurve</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

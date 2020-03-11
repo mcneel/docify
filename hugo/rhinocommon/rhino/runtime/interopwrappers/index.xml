@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Runtime.InteropWrappers on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/</link>
+    <description>Recent content in Rhino.Runtime.InteropWrappers on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>StringWrapper</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringwrapper/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringwrapper/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged OpenNurbs string. Wraps a C++ ON_wString*.
+public class StringWrapper : IDisposableConstructors  StringWrapper() Initializes a new empty unmanaged string (ON_wString*). StringWrapper(string s) Initializes a new unmanaged string with an initial value. The string s can be null.  Properties  IntPtr ConstPointer Gets the const pointer (const ON_wString*). Returns - The const pointer. IntPtr NonConstPointer Gets the non-const pointer (ON_wString*). Returns - The non-const pointer.</description>
+    </item>
+    
+    <item>
+      <title>ClassArrayObjRef</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayobjref/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayobjref/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged &amp;ldquo;array&amp;rdquo; (list) of CRhinoObjRef instances. Wrapper for a C++ ON_ClassArray of CRhinoObjRef
+public class ClassArrayObjRef : IDisposableConstructors  ClassArrayObjRef() Initializes a new instance. ClassArrayObjRef(IEnumerableobjrefs) Initializes a new instances from a set of ObjRefs  Properties  int Count Gets the number of CRhinoObjRef instances in this array.  Methods  void Add(ObjRef objref) Adds an ObjRef to the list. IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>ClassArrayOnObjRef</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayonobjref/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarrayonobjref/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged &amp;ldquo;array&amp;rdquo; (list) of ON_ObjRef instances. Wrapper for a C++ ON_ClassArray of ON_ObjRef
+public class ClassArrayOnObjRef : IDisposableConstructors  ClassArrayOnObjRef() Initializes a new instance. since 5.8 ClassArrayOnObjRef(IEnumerableobjrefs) Initializes a new instances from a set of ObjRefs since 5.8  Properties  int Count Gets the number of ObjRef instances in this array. since 5.8  Methods  void Add(ObjRef objref) Adds an ObjRef to the list.</description>
+    </item>
+    
+    <item>
+      <title>ClassArrayString</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarraystring/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/classarraystring/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_ClassArray&amp;lt;ON_wString&amp;gt; If you are not writing C++ code then this class is not for you.
+public class ClassArrayString : IDisposableConstructors  ClassArrayString() Initializes a new instance. since 6.0  Properties  int Count Gets the number of strings in this array. since 6.0  Methods  void Add(string s) Adds a string to the list. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>CurveSegment</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/curvesegment/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/curvesegment/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+For internal use only.
+Properties  int Index The index of the curve used by this boundary element. since 7.0 bool Reversed True if this piece of the curve should be reversed. since 7.0 Interval SubDomain The subdomain of the curve used by this boundary element. since 7.0  </description>
+    </item>
+    
+    <item>
+      <title>SimpleArray2dex</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearray2dex/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearray2dex/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_2dex&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArray2dex : IDisposableConstructors  SimpleArray2dex() Initializes a new class. since 6.0 SimpleArray2dex(IEnumerablevalues) Initializes a new class since 6.0  Properties  int Count Gets the amount of elements in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayArrayPoint3d</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayarraypoint3d/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayarraypoint3d/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_PolyLine&amp;gt;, ON_SimpleArray&amp;lt;ON_3dPointArray&amp;gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayArrayPoint3d : IDisposableConstructors  SimpleArrayArrayPoint3d() Initializes a new empty instance. since 7.0  Properties  int Count Gets the amount of polylines in this array. since 7.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 7.0 void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayBinaryArchiveReader</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_BinaryArchive&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayBinaryArchiveReader : IDisposableConstructors  SimpleArrayBinaryArchiveReader() Initializes a new class. since 6.0 SimpleArrayBinaryArchiveReader(IntPtr p) Initializes a new class. since 6.0  Properties  int Count Gets the amount of elements in this array. since 6.0  Methods  void Add(BinaryArchiveReader reader) Adds a new at the end of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayBrepPointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybreppointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybreppointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&amp;lt;ON_Brep&amp;gt; or ON_SimpleArray&amp;lt;const ON_Brep&amp;gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayBrepPointer : IDisposableConstructors  SimpleArrayBrepPointer() Initializes a new instance.  Properties  int Count Gets the amount of breps in this array.  Methods  void Add(Brep brep,bool asConst) Adds a brep to the list. IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayClippingPlaneObjectPointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray of CRhinoClippingPlaneObject*
+public class SimpleArrayClippingPlaneObjectPointer : IDisposableConstructors  SimpleArrayClippingPlaneObjectPointer() Initializes a new instance. since 6.7  Properties  int Count Gets the amount of clipping planes in this array. since 6.7  Methods  void Add(ClippingPlaneObject clippingplane,bool asConst) Adds a clipping plane to the list. since 6.7 IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.7 void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayCurvePointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraycurvepointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraycurvepointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray of ON_Curve* or const ON_Curve*. If you are not writing C++ code, then you can ignore this class.
+public class SimpleArrayCurvePointer : IDisposableConstructors  SimpleArrayCurvePointer() Initializes a new instance. SimpleArrayCurvePointer(IEnumerablecurves) Initializes a new instance, from a set of input curves.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayDouble</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraydouble/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraydouble/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray. If you are not writing C++ code, then this class is not for you.
+public class SimpleArrayDouble : IDisposableConstructors  SimpleArrayDouble() Initializes a new instance. SimpleArrayDouble(IEnumerableitems) Initializes a new instance, with items.  Properties  int Count Gets the amount of elements in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayExtrusionPointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayextrusionpointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayextrusionpointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&amp;lt;ON_Extrusion&amp;gt; or ON_SimpleArray&amp;lt;const ON_Extrusion&amp;gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayExtrusionPointer : IDisposableConstructors  SimpleArrayExtrusionPointer() Initializes a new instance. since 6.0  Properties  int Count Gets the amount of Extrusions in this array. since 6.0  Methods  void Add(Extrusion extrusion,bool asConst) Adds a extrusion to the list. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayGeometryPointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraygeometrypointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraygeometrypointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&amp;lt;ON_Geometry&amp;gt; or ON_SimpleArray&amp;lt;const ON_Geometry*&amp;gt;. If you are not writing C++ code, then this class is not for you.
+public class SimpleArrayGeometryPointer : IDisposableConstructors  SimpleArrayGeometryPointer() Initializes a new instance. SimpleArrayGeometryPointer(IEnumerable geometry) Expects all of the items in the IEnumerable to be GeometryBase types SimpleArrayGeometryPointer(IEnumerablegeometry) Create an ON_SimpleArray&amp;lt;ON_Geometry*&amp;gt; filled with items in geometry  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayGuid</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguid/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguid/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_UUID&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayGuid : IDisposableConstructors  SimpleArrayGuid() Initializes a new class.  Properties  int Count Gets the amount of elements in this array.  Methods  void Append(Guid uuid) Appends a new at the end of this array. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayInterval</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayinterval/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayinterval/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_Interval&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayInterval : IDisposableConstructors  SimpleArrayInterval() Initializes a new class.  Properties  int Count Gets the amount of elements in this array.  Methods  void Add(Interval interval) Adds a new at the end of this array. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayLine</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayline/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayline/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_Line&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayLine : IDisposableConstructors  SimpleArrayLine() Initializes a new instance.  Properties  int Count Gets the amount of lines in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayLinetypePointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraylinetypepointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraylinetypepointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&amp;lt;ON_Linetype*&amp;gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayLinetypePointer : IDisposableConstructors  SimpleArrayLinetypePointer() Initializes a new instance. since 6.6  Properties  int Count Gets the amount of linetypes in this array. since 6.6  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.6 void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayMeshPointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraymeshpointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraymeshpointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Represents a wrapper to an unmanaged array of mesh pointers. Wrapper for a C++ ON_SimpleArray of ON_Mesh* or const ON_Mesh*. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayMeshPointer : IDisposableConstructors  SimpleArrayMeshPointer() Initializes a new instance.  Properties  int Count Gets the amount of meshes in this array.  Methods  void Add(Mesh mesh,bool asConst) Adds a mesh to the list.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayPlane</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayplane/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayplane/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_Plane&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayPlane : IDisposableConstructors  SimpleArrayPlane() Initializes a new instance. since 6.0  Properties  int Count Gets the amount of lines in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.0 void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayPoint2d</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint2d/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint2d/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray&amp;lt;ON_2dPoint&amp;gt; class wrapper. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayPoint2d : IDisposableConstructors  SimpleArrayPoint2d() Initializes a new empty instance. since 5.6  Properties  int Count Gets the amount of points in this array. since 5.6  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 5.6 void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayPoint3d</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint3d/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraypoint3d/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray&amp;lt;ON_3dPoint&amp;gt;, ON_3dPointArray, ON_PolyLine all have the same size This class wraps all of these C++ versions. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayPoint3d : IDisposableConstructors  SimpleArrayPoint3d() Initializes a new empty instance.  Properties  int Count Gets the amount of points in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArraySurfacePointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraysurfacepointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraysurfacepointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray of ON_Surface* or const ON_Surface*. If you are not writing C++ code then this class is not for you.
+public class SimpleArraySurfacePointer : IDisposableConstructors  SimpleArraySurfacePointer() Initializes a new instance.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses. IntPtr NonConstPointer() Gets the non-const pointer (for modification) of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayUint</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayuint/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayuint/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayUint : IDisposableConstructors  SimpleArrayUint() Initializes a new class. since 6.0 SimpleArrayUint(IEnumerablevalues) Initializes a new class. since 6.0  Properties  int Count Gets the number of elements in this array. since 6.0 uint UnsignedCount Gets the number of elements in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayGuidPointer</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguidpointer/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguidpointer/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&amp;lt;ON_UUID&amp;gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayGuidPointer : IDisposableConstructors  SimpleArrayGuidPointer() Initializes a new class. since 6.0  Properties  int Count Gets the amount of elements in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.0 void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>SimpleArrayInt</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayint/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayint/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayInt : IDisposableConstructors  SimpleArrayInt() Initializes a new class. SimpleArrayInt(IEnumerablevalues) Initializes a new class since 5.9  Properties  int Count Gets the amount of elements in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.</description>
+    </item>
+    
+    <item>
+      <title>StringHolder</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringholder/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/stringholder/</guid>
+      <description>Namespace: Rhino.Runtime.InteropWrappers
+This class is used to pass strings back and forth between managed and unmanaged code. This should not be be needed by plug-ins. If you are just dealing with an ON_wString*, use
+public class StringHolder : IDisposableConstructors  StringHolder() Constructor since 5.8  Methods  static string GetString(IntPtr pStringHolder) Gets managed string from unmanaged ON_wString pointer. Returns - Null if pStringHolder has no reference, otherwise, the string. This may be an empty string, if setting an empty string is possible.</description>
+    </item>
+    
+  </channel>
+</rss>

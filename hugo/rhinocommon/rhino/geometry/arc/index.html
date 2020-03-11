@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Arc &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the value of a plane, two angles and a radius in a subcurve of a three-dimensional circle.
+The curve is parameterized by an angle expressed in radians. For an IsValid arc the total subtended angle AngleRadians() = Domain()(1) - Domain()(0) must satisfy 0 &amp;lt; AngleRadians() &amp;lt; 2*PiThe parameterization of the Arc is inherited from the Circle it is derived from. In particulart -&amp;gt; center &#43; cos(t)radiusxaxis &#43; sin(t)radiusyaxiswhere xaxis and yaxis, (part of Circle.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Arc</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the value of a plane, two angles and a radius in
+a subcurve of a three-dimensional circle.</p>
+<p>The curve is parameterized by an angle expressed in radians. For an IsValid arc
+the total subtended angle AngleRadians() = Domain()(1) - Domain()(0) must satisfy
+0 &lt; AngleRadians() &lt; 2*PiThe parameterization of the Arc is inherited from the Circle it is derived from.
+In particulart -&gt; center + cos(t)<em>radius</em>xaxis + sin(t)<em>radius</em>yaxiswhere xaxis and yaxis, (part of Circle.Plane) form an othonormal frame of the plane
+containing the circle.</p>
+<dl>
+<dt>static !=</dt>
+<dd>Determines whether two arcs have different values.</dd>
+<dd>Returns - True if any value of the two arcs differ; otherwise false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether two arcs have equal values.</dd>
+<dd>Returns - True if all values of the two arcs are exactly equal; otherwise false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Arc(Circle circle,double angleRadians)</dt>
+<dd>Initializes a new instance of an arc from a base circle and an angle.</dd>
+<dt>Arc(Circle circle,Interval angleIntervalRadians)</dt>
+<dd>Initializes a new instance of an arc from a base circle and an interval of angles.</dd>
+<dt>Arc(Plane plane,double radius,double angleRadians)</dt>
+<dd>Initializes a new arc from a base plane, a radius value and an angle.</dd>
+<dt>Arc(Plane plane,Point3d center,double radius,double angleRadians)</dt>
+<dd>Initializes a new aligned arc at the given center point, with a custom radius and angle.</dd>
+<dt>Arc(Point3d center,double radius,double angleRadians)</dt>
+<dd>Initializes a new horizontal arc at the given center point, with a custom radius and angle.</dd>
+<dt>Arc(Point3d startPoint,Point3d pointOnInterior,Point3d endPoint)</dt>
+<dd>Initializes a new arc through three points. If the points are coincident 
+or colinear, this will result in an Invalid arc.</dd>
+<dt>Arc(Point3d pointA,Vector3d tangentA,Point3d pointB)</dt>
+<dd>Initializes a new arc from end points and a tangent vector. 
+If the tangent is parallel with the endpoints this will result in an Invalid arc.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Arc Unset</dt>
+<dd>Gets an Arc with Unset components.</dd>
+<dt>double Angle</dt>
+<dd>Gets or sets the sweep -or subtended- angle (in Radians) for this arc segment.</dd>
+<dt>double AngleDegrees</dt>
+<dd>Gets or sets the sweep -or subtended- angle (in Radians) for this arc segment.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> AngleDomain</dt>
+<dd>Gets or sets the angle domain (in Radians) of this arc.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Center</dt>
+<dd>Gets or sets the center point for this arc.</dd>
+<dt>double Circumference</dt>
+<dd>Gets the circumference of the circle that is coincident with this arc.</dd>
+<dt>double Diameter</dt>
+<dd>Gets or sets the Diameter of this arc.</dd>
+<dt>double EndAngle</dt>
+<dd>Gets or sets the end angle (in Radians) for this arc segment.</dd>
+<dt>double EndAngleDegrees</dt>
+<dd>Gets or sets the end angle (in Radians) for this arc segment.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> EndPoint</dt>
+<dd>Gets the end point of the arc.</dd>
+<dt>bool IsCircle</dt>
+<dd>Gets a value indicating whether or not this arc is a complete circle.</dd>
+<dt>bool IsValid</dt>
+<dd>Gets a value indicating whether or not this arc is valid.
+Detail:
+Radius&gt;0 and 0&lt;AngleRadians()&lt;=2*Math.Pi.</dd>
+<dd>Returns - True if the arc is valid.</dd>
+<dt>double Length</dt>
+<dd>Gets the length of the arc. (Length = Radius * (subtended angle in radians)).</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> MidPoint</dt>
+<dd>Gets the mid-point of the arc.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/plane/">Plane</a> Plane</dt>
+<dd>Gets or sets the plane in which this arc lies.</dd>
+<dt>double Radius</dt>
+<dd>Gets or sets the radius of this arc.</dd>
+<dt>double StartAngle</dt>
+<dd>Gets or sets the start angle (in Radians) for this arc segment.</dd>
+<dt>double StartAngleDegrees</dt>
+<dd>Gets or sets the start angle (in Radians) for this arc segment.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> StartPoint</dt>
+<dd>Gets the start point of the arc.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox()</dt>
+<dd>Computes the 3D axis aligned bounding box for this arc.</dd>
+<dd>Returns - Bounding box of arc.</dd>
+<dt>double ClosestParameter(Point3d testPoint)</dt>
+<dd>Gets parameter on the arc closest to a test point.</dd>
+<dd>Returns - Parameter (in radians) of the point on the arc that
+is closest to the test point. If testPoint is the center
+of the arc, then the starting point of the arc is
+(arc.Domain()[0]) returned. If no parameter could be found, 
+RhinoMath.UnsetValue is returned.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> ClosestPoint(Point3d testPoint)</dt>
+<dd>Computes the point on an arc that is closest to a test point.</dd>
+<dd>Returns - The point on the arc that is closest to testPoint. If testPoint is
+the center of the arc, then the starting point of the arc is returned.
+UnsetPoint on failure.</dd>
+<dt>bool EpsilonEquals(Arc other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(Arc other)</dt>
+<dd>Determines whether another arc has the same value as this arc.</dd>
+<dd>Returns - True if obj is equal to this arc; otherwise false.</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether another object is an arc and has the same value as this arc.</dd>
+<dd>Returns - True if obj is an arc and is exactly equal to this arc; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes a hash code for the present arc.</dd>
+<dd>Returns - A non-unique integer that represents this arc.</dd>
+<dd>since (unknown)</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double t)</dt>
+<dd>Gets the point at the given arc parameter.</dd>
+<dd>Returns - The point at the given parameter.</dd>
+<dt>void Reverse()</dt>
+<dd>Reverses the orientation of the arc. Changes the domain from [a,b]
+to [-b,-a].</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> TangentAt(double t)</dt>
+<dd>Gets the tangent at the given parameter.</dd>
+<dd>Returns - The tangent at the arc at the given parameter.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve()</dt>
+<dd>Initializes a nurbs curve representation of this arc. 
+This amounts to the same as calling NurbsCurve.CreateFromArc().</dd>
+<dd>Returns - A nurbs curve representation of this arc or None if no such representation could be made.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> ToNurbsCurve(int degree,int cvCount)</dt>
+<dd>Create a uniform non-ratonal cubic NURBS approximation of an arc.</dd>
+<dd>Returns - NURBS curve approximation of an arc on success</dd>
+<dd>since 6.0</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Transforms the arc using a Transformation matrix.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Trim(Interval domain)</dt>
+<dd>Sets arc&rsquo;s angle domain (in radians) as a subdomain of the circle.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Arc</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

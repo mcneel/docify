@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoApp &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino
+.NET RhinoApp is parallel to C&#43;&#43; CRhinoApp.
+public class RhinoApp static LicenseStateChanged Fires when the license state has changed since 7.0  Events  static AppSettingsChanged Is raised when settings are changed. static Closing Is raised when the application is about to close. static EscapeKeyPressed Can add or removed delegates that are raised when the escape key is clicked. static Idle Occurs when the application finishes processing and is about to enter the idle state since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoApp</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino</a></em></p>
+<p>.NET RhinoApp is parallel to C++ CRhinoApp.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoApp</span>
+</code></pre></div><dl>
+<dt>static LicenseStateChanged</dt>
+<dd>Fires when the license state has changed</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="events">Events</h2>
+<dl>
+<dt>static AppSettingsChanged</dt>
+<dd>Is raised when settings are changed.</dd>
+<dt>static Closing</dt>
+<dd>Is raised when the application is about to close.</dd>
+<dt>static EscapeKeyPressed</dt>
+<dd>Can add or removed delegates that are raised when the escape key is clicked.</dd>
+<dt>static Idle</dt>
+<dd>Occurs when the application finishes processing and is about to enter the idle state</dd>
+<dd>since 5.1</dd>
+<dt>static Initialized</dt>
+<dd>Is raised when the apllication is fully initialized.</dd>
+<dt>static KeyboardEvent</dt>
+<dd>Can add or removed delegates that are raised by a keyboard event.</dd>
+<dd>since 5.2</dd>
+<dt>static MainLoop</dt>
+<dd>Gets called every loop iteration inside Rhino&rsquo;s main message loop.</dd>
+<dd>since 7.0</dd>
+<dt>static RdkCacheImageChanged</dt>
+<dd>Monitors when the RDK thumbnail cache images are changed.</dd>
+<dd>since 5.1</dd>
+<dt>static RdkGlobalSettingsChanged</dt>
+<dd>Monitors when RDK global settings are modified.</dd>
+<dd>since 5.1</dd>
+<dt>static RdkNewDocument</dt>
+<dd>Monitors when RDK document information is rebuilt.</dd>
+<dd>since 5.1</dd>
+<dt>static RdkPlugInUnloading</dt>
+<dd>Monitors when RDK client plugins are unloaded.</dd>
+<dd>since 5.1</dd>
+<dt>static RdkUpdateAllPreviews</dt>
+<dd>Monitors when RDK thumbnails are updated.</dd>
+<dd>since 5.1</dd>
+<dt>static RendererChanged</dt>
+<dd>Monitors when Rhino&rsquo;s current renderer changes.</dd>
+<dd>since 5.1</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static DateTime BuildDate</dt>
+<dd>Gets the build date.</dd>
+<dt>static bool CanSave</dt>
+<dd>Returns True when Rhino is allowed to save, False otherwise
+Conditions where Rhino is not allowed to save are: when evaluation licenses are expired;
+when a Cloud Zoo lease is expired; when a license is shared by a single user on multiple
+computers, and the current computer is not active.</dd>
+<dd>since 7.0</dd>
+<dt>static string CommandHistoryWindowText</dt>
+<dd>Text in Rhino&rsquo;s command history window.</dd>
+<dt>static <a href="/rhinocommon/rhino/rhinoapp/commandlinetextwriter/">CommandLineTextWriter</a> CommandLineOut</dt>
+<dd>Provides a TextWriter that can write to the command line.</dd>
+<dd>since 6.0</dd>
+<dt>static string CommandPrompt</dt>
+<dd>Rhino command prompt.</dd>
+<dt>static bool CommandWindowCaptureEnabled</dt>
+<dd>Enable or disable capturing of the strings sent to the CommandWindow through
+Write and WriteLine calls</dd>
+<dd>since 7.0</dd>
+<dt>static Guid CurrentRhinoId</dt>
+<dd>Gets the current ID of Rhino.</dd>
+<dt>static int DaysUntilExpiration</dt>
+<dd>Returns number of days until license expires. Zero when
+license is expired.
+Raises InvalidLicenseTypeException if LicenseExpires
+would return false.</dd>
+<dd>since 5.6</dd>
+<dt>static <a href="/rhinocommon/rhino/docobjects/font/">Font</a> DefaultUiFont</dt>
+<dd>Default font used to render user interface</dd>
+<dd>since 6.0</dd>
+<dt>static int ExeServiceRelease</dt>
+<dd>Service release version of Rhino executable (0, 1, 2, &hellip;)<br>
+The integer is the service release number of Rhino.  For example,
+this function returns &ldquo;0&rdquo; if Rhino V4SR0 is running and returns
+&ldquo;1&rdquo; if Rhino V4SR1 is running.</dd>
+<dt>static int ExeVersion</dt>
+<dd>Major version of Rhino executable 4, 5, &hellip;</dd>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/installation/">Installation</a> InstallationType</dt>
+<dd>Gets the product installation type, as seen in Rhino&rsquo;s ABOUT dialog box.</dd>
+<dt>static string InstallationTypeString</dt>
+<dd>Gets the type of installation (product edition) of the license or lease.</dd>
+<dd>since 6.0</dd>
+<dt>static bool InvokeRequired</dt>
+<dd>Returns True if we are currently not running on the main user interface thread</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsClosing</dt>
+<dd>Returns True if Rhino is in the process of closing, False otherwise.
+This can be True even before the Closing event fires, such as when RhinoDoc.CloseDocument event is called.</dd>
+<dd>since (unknown)</dd>
+<dt>static bool IsCloudZooNode</dt>
+<dd>Returns 
+True if rhino is currently using the Cloud Zoo
+False otherwise</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsExiting</dt>
+<dd>Returns True if Rhino is in the process of exiting, False otherwise.
+This can be True even before the Closing event fires, such as when RhinoDoc.CloseDocument event is called.</dd>
+<dd>since (unknown)</dd>
+<dt>static bool IsInternetAccessAllowed</dt>
+<dd>Returns True when Rhino is allowed to access the internet, False otherwise</dd>
+<dd>since 6.15</dd>
+<dt>static bool IsLicenseValidated</dt>
+<dd>Returns 
+True if the license is validated
+False otherwise</dd>
+<dd>since 5.6</dd>
+<dt>static bool IsPreRelease</dt>
+<dd>Returns
+True if Rhino is compiled a s Pre-release build (Beta, WIP)
+False otherwise</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsRunningAutomated</dt>
+<dd>Is Rhino currently being executed through automation</dd>
+<dt>static bool IsRunningHeadless</dt>
+<dd>Is Rhino currently being executed in headless mode</dd>
+<dd>since 6.1</dd>
+<dt>static bool IsSkinned</dt>
+<dd>Is Rhino currently using custom, user-interface Skin.</dd>
+<dd>since 6.2</dd>
+<dt>static bool LicenseExpires</dt>
+<dd>Returns 
+True if the license will expire
+False otherwise</dd>
+<dd>since 5.6</dd>
+<dt>static string LicenseUserName</dt>
+<dd>Gets the name of the user that owns the license or lease.</dd>
+<dd>since 6.0</dd>
+<dt>static string LicenseUserOrganization</dt>
+<dd>Gets the name of the organization of the user that owns the license or lease.</dd>
+<dd>since 6.0</dd>
+<dt>static Image LoggedInUserAvatar</dt>
+<dd>Returns the logged in user&rsquo;s avatar picture. 
+Returns a default avatar if the user does not have an avatar or if the avatar could not be fetched.</dd>
+<dd>since 6.0</dd>
+<dt>static string LoggedInUserName</dt>
+<dd>Returns the name of the logged in user, or None if the user is not logged in.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/rhinowindow/">RhinoWindow</a> MainApplicationWindow</dt>
+<dd>Same as MainWindow function, but provides the concrete class instead of an interface</dd>
+<dt>static string Name</dt>
+<dd>Gets the application name.</dd>
+<dt>static <a href="/rhinocommon/rhino/applicationsettings/licensenode/">LicenseNode</a> NodeType</dt>
+<dd>Gets license the node type.</dd>
+<dt>static Guid Rhino2Id</dt>
+<dd>Gets the ID of Rhino 2.</dd>
+<dt>static Guid Rhino3Id</dt>
+<dd>Gets the ID of Rhino 3.</dd>
+<dt>static Guid Rhino4Id</dt>
+<dd>Gets the ID of Rhino 4.</dd>
+<dt>static Guid Rhino5Id</dt>
+<dd>Gets the ID of Rhino 5.</dd>
+<dt>static Guid Rhino6Id</dt>
+<dd>Gets the ID of Rhino 6.</dd>
+<dd>since 7.0</dd>
+<dt>static string SchemeName</dt>
+<dd>Gets the current Registry scheme name.</dd>
+<dd>since 6.0</dd>
+<dt>static int SdkServiceRelease</dt>
+<dd>Rhino SDK 9 digit SDK service release number in the form YYYYMMDDn
+<p>Service service release of the Rhino SDK supported by this executable. Rhino will only
+load plug-ins that require a service release of &lt;= this release number.
+For example, SR1 will load all plug-ins made with any SDK released up through and including
+the SR1 SDK. But, SR1 will not load a plug-in built using the SR2 SDK. If an &ldquo;old&rdquo; Rhino
+tries to load a &ldquo;new&rdquo; plug-in, the user is told that they have to get a free Rhino.exe
+update in order for the plug-in to load. Rhino.exe updates are available from <a href="http://www.rhino3d.com">http://www.rhino3d.com</a>.</p>
+</dd>
+<dt>static int SdkVersion</dt>
+<dd>Rhino SDK 9 digit SDK version number in the form YYYYMMDDn
+<p>Rhino will only load plug-ins that were build with exactly the
+same version of the SDK.</p>
+</dd>
+<dt>static string SerialNumber</dt>
+<dd>Gets the product serial number, as seen in Rhino&rsquo;s ABOUT dialog box.</dd>
+<dt>static <a href="/rhinocommon/rhino/ui/toolbarfilecollection/">ToolbarFileCollection</a> ToolbarFiles</dt>
+<dd>Collection of currently open toolbar files in the application</dd>
+<dt>static int UpdatesAndStatisticsStatus</dt>
+<dd>Returns True when Rhino is allowed to access the internet, False otherwise</dd>
+<dd>since 6.15</dd>
+<dt>static bool UserIsLoggedIn</dt>
+<dd>Returns True if the user is logged in; else returns false.
+A logged in user does not guarantee that the auth tokens managed by the CloudZooManager instance are valid.</dd>
+<dd>since 6.0</dd>
+<dt>static int ValidationGracePeriodDaysLeft</dt>
+<dd>Returns number of days within which validation must occur. Zero when
+validation grace period has expired.
+Raises InvalidLicenseTypeException if LicenseType is one of:
+EvaluationSaveLimited
+EvaluationTimeLimited
+Viewer
+Unknown</dd>
+<dd>since 5.6</dd>
+<dt>static Version Version</dt>
+<dd>File version of the main Rhino process</dd>
+<dd>since 5.9</dd>
+<dt>static string VersionControlRevision</dt>
+<dd>McNeel version control revision identifier at the time this version
+of Rhino was built.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool AskUserForRhinoLicense(bool standAlone,object parentWindow)</dt>
+<dd>Display UI asking the user to enter a license for Rhino or use one from the Zoo.</dd>
+<dd>since 6.0</dd>
+<dt>static string[] CapturedCommandWindowStrings(bool clearBuffer)</dt>
+<dd>Get list of strings sent to the command window through calls to Write or WriteLine
+when capturing has been enabled</dd>
+<dd>Returns - array of captured strings</dd>
+<dd>since 7.0</dd>
+<dt>static bool ChangeLicenseKey(Guid pluginId)</dt>
+<dd>Display UI asking the user to enter a license for the product specified by licenseId.</dd>
+<dd>Returns - True on success, False otherwise</dd>
+<dd>since 6.0</dd>
+<dt>static void ClearCommandHistoryWindow()</dt>
+<dd>Clear the text in Rhino&rsquo;s command history window.</dd>
+<dt>static void DisableContinuousMainLoop()</dt>
+<dd>This function makes it so that Rhino&rsquo;s main loop is not executed continuously.
+This is default behavior.</dd>
+<dd>since 7.0</dd>
+<dt>static bool EnableContinuousMainLoop()</dt>
+<dd>This function makes it so that Rhino&rsquo;s main loop is executed continuously.
+This is useful when Rhino needs to be doing something as often as possible, 
+such as rendering a view at interactive frame rates.</dd>
+<dd>Returns - True if the functionality was enabled successfully, False otherwise.</dd>
+<dd>since 7.0</dd>
+<dt>static Commands.Result ExecuteCommand(RhinoDoc document,string commandName)</dt>
+<dd>Execute a Rhino command.</dd>
+<dd>Returns - Returns the reult of the command.</dd>
+<dd>since 6.0</dd>
+<dt>static void Exit()</dt>
+<dd>Exits, or closes, Rhino.</dd>
+<dt>static string GetDataDirectory(bool localUser,bool forceDirectoryCreation)</dt>
+<dd>Gets the data directory.</dd>
+<dd>Returns - The data directory.</dd>
+<dd>since 6.0</dd>
+<dt>static string GetDataDirectory(bool localUser,bool forceDirectoryCreation,string subDirectory)</dt>
+<dd>Gets the data directory.</dd>
+<dd>Returns - The data directory.</dd>
+<dd>since 6.0</dd>
+<dt>static System.IO.DirectoryInfo GetExecutableDirectory()</dt>
+<dd>directory</dd>
+<dd>since 6.7</dd>
+<dt>static object GetPlugInObject(Guid pluginId)</dt>
+<dd>Gets the object that is returned by PlugIn.GetPlugInObject for a given
+plug-in. This function attempts to find and load a plug-in with a given Id.
+When a plug-in is found, it&rsquo;s GetPlugInObject function is called and the
+result is returned here.
+Note the plug-in must have already been installed in Rhino or the plug-in manager
+will not know where to look for a plug-in with a matching id.</dd>
+<dd>Returns - Result of PlugIn.GetPlugInObject for a given plug-in on success.</dd>
+<dt>static object GetPlugInObject(string plugin)</dt>
+<dd>Gets the object that is returned by PlugIn.GetPlugInObject for a given
+plug-in. This function attempts to find and load a plug-in with a given name.
+When a plug-in is found, it&rsquo;s GetPlugInObject function is called and the
+result is returned here.
+Note the plug-in must have already been installed in Rhino or the plug-in manager
+will not know where to look for a plug-in with a matching name.</dd>
+<dd>Returns - Result of PlugIn.GetPlugInObject for a given plug-in on success.</dd>
+<dt>static bool InFullScreen()</dt>
+<dd>Verifies that Rhino is running in full screen mode.</dd>
+<dd>Returns - True if Rhino is running full screen, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>static void InvokeAndWait(Action action)</dt>
+<dd>Work-In-Progess. Testing this with our unit test framework</dd>
+<dd>since 6.0</dd>
+<dt>static void InvokeOnUiThread(Delegate method,object[] args)</dt>
+<dd>Execute a function on the main UI thread.</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsInstallationBeta(Installation licenseType)</dt>
+<dd>If licenseType is a beta license, returns true. A beta license grants
+full use of the product during the pre-release development period.</dd>
+<dd>Returns - True if licenseType is a beta license. False otherwise</dd>
+<dd>since 5.6</dd>
+<dt>static bool IsInstallationCommercial(Installation licenseType)</dt>
+<dd>If licenseType is a commercial license, returns true. A commercial license grants
+full use of the product.</dd>
+<dd>Returns - True if licenseType is a commercial license. False otherwise</dd>
+<dd>since 5.6</dd>
+<dt>static bool IsInstallationEvaluation(Installation licenseType)</dt>
+<dd>If licenseType is an evaluation license, returns true. An evaluation license limits the ability of
+Rhino to save based on either the number of saves or a fixed period of time.</dd>
+<dd>Returns - True if licenseType is an evaluation license. False otherwise</dd>
+<dd>since 5.6</dd>
+<dt>static bool LoginToCloudZoo()</dt>
+<dd>Logs in to the cloud zoo.</dd>
+<dd>since 6.0</dd>
+<dt>static System.Windows.Forms.IWin32Window MainWindow()</dt>
+<dd>Main Rhino Window</dd>
+<dt>static IntPtr MainWindowHandle()</dt>
+<dd>Gets the HWND of the Rhino main window.</dd>
+<dt>static void OutputDebugString(string str)</dt>
+<dd>Print a string to the Visual Studio Output window, if a debugger is attached.
+<p>Note that the developer needs to add a newline manually if the next output should
+come on a separate line.</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>static string ParseTextField(string formula,RhinoObject obj,RhinoObject topParentObject)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static bool RefreshRhinoLicense()</dt>
+<dd>Refresh the license used by Rhino. This allows any part of Rhino to ensure that the most current version of the license file on disk is in use.</dd>
+<dd>since 6.0</dd>
+<dt>static bool ReleaseMouseCapture()</dt>
+<dd>Releases the mouse capture.</dd>
+<dt>static bool RunMenuScript(string script)</dt>
+<dd>Run a Rhino menu item script.  Will add the selected menu string to the MRU command menu.</dd>
+<dd>since 6.0</dd>
+<dt>static bool RunningInRdp()</dt>
+<dd>Find out if Rhino is running in a remote session</dd>
+<dd>Returns - True if Rhino is running in a RDP session, False otherwise</dd>
+<dd>since 6.0</dd>
+<dt>static bool RunningOnVMWare()</dt>
+<dd>Verifies that Rhino is running on VMWare</dd>
+<dd>Returns - True if Rhino is running in Windows on VMWare, False otherwise</dd>
+<dd>since 6.0</dd>
+<dt>static bool RunScript(string script,bool echo)</dt>
+<dd>Runs a Rhino command script.</dd>
+<dt>static bool RunScript(string script,string mruDisplayString,bool echo)</dt>
+<dd>Runs a Rhino command script.</dd>
+<dt>static void SendKeystrokes(string characters,bool appendReturn)</dt>
+<dd>Sends a string of printable characters, including spaces, to Rhino&rsquo;s command line.</dd>
+<dt>static void SetCommandPrompt(string prompt)</dt>
+<dd>Set Rhino command prompt.</dd>
+<dt>static void SetCommandPrompt(string prompt,string promptDefault)</dt>
+<dd>Sets the command prompt in Rhino.</dd>
+<dt>static void SetCommandPromptMessage(string prompt)</dt>
+<dd>Set the text that appears in the Rhino command prompt.
+In general, you should use the SetCommandPrompt functions. 
+In rare cases, like worker thread messages, the message that 
+appears in the prompt has non-standard formatting. In these 
+rare cases, SetCommandPromptMessage can be used to literally 
+specify the text that appears in the command prompt window.</dd>
+<dd>since 6.0</dd>
+<dt>static void SetFocusToMainWindow()</dt>
+<dd>Sets the focus to the main window. This function attempts to use the
+ActiveDoc on Mac to figure out which window to set focus to.</dd>
+<dt>static void SetFocusToMainWindow(RhinoDoc doc)</dt>
+<dd>Sets the focus to the main windows for a given document</dd>
+<dd>since 6.16</dd>
+<dt>static void Wait()</dt>
+<dd>Pauses to keep Windows message pump alive so views will update
+and windows will repaint.</dd>
+<dt>static void Write(string message)</dt>
+<dd>Print formatted text in the command window.</dd>
+<dt>static void Write(string format,object arg0)</dt>
+<dd>Print formatted text in the command window.</dd>
+<dt>static void Write(string format,object arg0,object arg1)</dt>
+<dd>Print formatted text in the command window.</dd>
+<dt>static void Write(string format,object arg0,object arg1,object arg2)</dt>
+<dd>Print formatted text in the command window.</dd>
+<dt>static void WriteLine()</dt>
+<dd>Print a newline in the command window.</dd>
+<dt>static void WriteLine(string message)</dt>
+<dd>Print text in the command window.</dd>
+<dt>static void WriteLine(string format,object arg0)</dt>
+<dd>Print formatted text with a newline in the command window.</dd>
+<dt>static void WriteLine(string format,object arg0,object arg1)</dt>
+<dd>Print formatted text with a newline in the command window.</dd>
+<dt>static void WriteLine(string format,object arg0,object arg1,object arg2)</dt>
+<dd>Print formatted text with a newline in the command window.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoApp</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

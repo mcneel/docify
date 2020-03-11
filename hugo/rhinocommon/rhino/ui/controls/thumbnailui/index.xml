@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.UI.Controls.ThumbnailUI on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/</link>
+    <description>Recent content in Rhino.UI.Controls.ThumbnailUI on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thumbnail</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbnail/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbnail/</guid>
+      <description>Namespace: Rhino.UI.Controls.ThumbnailUI
+[Obsolete(&amp;#34;Thumbnail is obsolete&amp;#34;, false)]public class Thumbnail : IRhRdkThumbnail, IDisposableConstructors  Thumbnail(IntPtr pRdkThumbnail) Constructor for Thumbnail since 6.0  Properties  IntPtr CppPointer Thumbnail c++ pointer since 6.0  Methods  void Dib(Bitmap dibOut)  since 6.0 void Dispose() Dispose for Thumbnail since 6.0 System.Drawing.Bitmap GetDib()  since 6.0 void GetDisplayRect(RectangleF rectOut)  since 6.0 Guid Id()  since 6.0 bool IsHot()  since 6.0 bool IsSelected()  since 6.</description>
+    </item>
+    
+    <item>
+      <title>ThumbData</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbdata/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbdata/</guid>
+      <description>Namespace: Rhino.UI.Controls.ThumbnailUI
+[Obsolete(&amp;#34;ThumbData is obsolete&amp;#34;, false)]public class ThumbData PropertyChanged  since 6.0  Properties  ListChildren  since 6.0 RenderContent Content  since 6.0 Guid Id  since 6.0 Bitmap Image  since 6.0 string Intensity  since 6.0 bool InUse  since 6.0 Color4f&amp;gt; InUseColor  since 6.0 string Name  since 6.0 ThumbData Parent  since 6.0 PreviewAppearance PreviewAppearance  since 6.0 bool Selected  since 6.</description>
+    </item>
+    
+    <item>
+      <title>ThumbnailViewModelFactory</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbnailviewmodelfactory/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/ui/controls/thumbnailui/thumbnailviewmodelfactory/</guid>
+      <description>Namespace: Rhino.UI.Controls.ThumbnailUI
+[Obsolete(&amp;#34;ThumbnailViewModelFactory is obsolete&amp;#34;, false)]public class ThumbnailViewModelFactory : InternalRdkViewModelFactoryConstructors  ThumbnailViewModelFactory()  since 6.0  Methods  IntPtr Get(Guid id)  since 6.0  </description>
+    </item>
+    
+  </channel>
+</rss>

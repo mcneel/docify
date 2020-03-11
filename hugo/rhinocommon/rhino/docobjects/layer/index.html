@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Layer &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+[Serializable]public class Layer : ModelComponent, IEquatable&amp;lt;Layer&amp;gt; static !=  since 6.0 static ==  since 6.0  Constructors  Layer()   Properties  static string PathSeparator The string &amp;ldquo;::&amp;rdquo; (colon,colon) is used to separate parent and child layer names. since 6.0 Color Color Gets or sets the display color for this layer. ComponentStatus ComponentStatus Gets or sets the status of the layer. since 6.0 ModelComponentType ComponentType Returns .|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Layer</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Layer</span> : ModelComponent, IEquatable&lt;Layer&gt;
+</code></pre></div><dl>
+<dt>static !=</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static ==</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Layer()</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static string PathSeparator</dt>
+<dd>The string &ldquo;::&rdquo; (colon,colon) is used to
+separate parent and child layer names.</dd>
+<dd>since 6.0</dd>
+<dt>Color Color</dt>
+<dd>Gets or sets the display color for this layer.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/componentstatus/">ComponentStatus</a> ComponentStatus</dt>
+<dd>Gets or sets the status of the layer.</dd>
+<dd>since 6.0</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt>string FullPath</dt>
+<dd>Gets the full path to this layer. The full path includes nesting information.</dd>
+<dt>Guid Id</dt>
+<dd>Gets or sets the ID of this layer object. 
+You typically do not need to assign a custom ID.</dd>
+<dt>int IgesLevel</dt>
+<dd>Gets or sets the IGES level for this layer.</dd>
+<dt>bool IsDeleted</dt>
+<dd>Gets a value indicating whether this layer has been deleted and is 
+currently in the Undo buffer.</dd>
+<dt>bool IsExpanded</dt>
+<dd>Gets or sets a value indicating whether this layer is expanded in the Rhino Layer dialog.</dd>
+<dt>bool IsLocked</dt>
+<dd>Gets or sets a value indicating the locked state of this layer.</dd>
+<dt>bool IsReference</dt>
+<dd>Gets a value indicting whether this layer is a referenced layer. 
+Referenced layers are part of referenced documents.</dd>
+<dt>bool IsVisible</dt>
+<dd>Gets or sets the visibility of this layer.</dd>
+<dt>int LayerIndex</dt>
+<dd>Gets or sets the index of this layer.</dd>
+<dt>int LinetypeIndex</dt>
+<dd>Gets or sets the line-type index for this layer.</dd>
+<dt>string Name</dt>
+<dd>Gets or sets the name of this layer.</dd>
+<dt>Guid ParentLayerId</dt>
+<dd>Gets the ID of the parent layer. Layers can be origanized in a hierarchical structure, 
+in which case this returns the parent layer ID. If the layer has no parent, 
+Guid.Empty will be returned.</dd>
+<dt>Color PlotColor</dt>
+<dd>Gets or sets the plot color for this layer.</dd>
+<dt>double PlotWeight</dt>
+<dd>Gets or sets the weight of the plotting pen in millimeters. 
+A weight of 0.0 indicates the &ldquo;default&rdquo; pen weight should be used.
+A weight of -1.0 indicates the layer should not be printed.</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> RenderMaterial</dt>
+<dd>Gets or sets the  for objects on
+this layer that have MaterialSource() == MaterialFromLayer.
+A None result indicates that no  has
+been assigned  and the material created by the default Material
+constructor or the  should be used.</dd>
+<dd>since 5.7</dd>
+<dt>int RenderMaterialIndex</dt>
+<dd>Gets or sets the index of render material for objects on this layer that have
+MaterialSource() == MaterialFromLayer. 
+A material index of -1 indicates no material has been assigned 
+and the material created by the default Material constructor 
+should be used.</dd>
+<dt>int SortIndex</dt>
+<dd>Runtime index used to sort layers in layer dialog.</dd>
+<dt>int UserStringCount</dt>
+<dd>Gets the amount of user strings.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Layer GetDefaultLayerProperties()</dt>
+<dd>Constructs a layer with the current default properties.
+The default layer properties are:
+color = Rhino.ApplicationSettings.AppearanceSettings.DefaultLayerColorline style = Rhino.ApplicationSettings.AppearanceSettings.DefaultLayerLineStylematerial index = -1iges level = -1mode = NormalLayername = emptylayer index = 0 (ignored by AddLayer)</dd>
+<dd>Returns - A new layer instance.</dd>
+<dt>static string GetLeafName(Layer layer)</dt>
+<dd>Get a layer name&rsquo;s &ldquo;leaf&rdquo; level name</dd>
+<dd>Returns - leaf name or String.Empty if fullPath does not contain a leaf</dd>
+<dd>since 6.0</dd>
+<dt>static string GetLeafName(string fullPath)</dt>
+<dd>Get a layer name&rsquo;s &ldquo;leaf&rdquo; level name</dd>
+<dd>Returns - leaf name or String.Empty if fullPath does not contain a leaf</dd>
+<dd>since 6.0</dd>
+<dt>static string GetParentName(Layer layer)</dt>
+<dd>Get a layer&rsquo;s &ldquo;parent&rdquo; path name</dd>
+<dd>Returns - parent name or String.Empty</dd>
+<dd>since 6.0</dd>
+<dt>static string GetParentName(string fullPath)</dt>
+<dd>Get a layer&rsquo;s &ldquo;parent&rdquo; path name</dd>
+<dd>Returns - parent name or String.Empty</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsValidName(string name)</dt>
+<dd>Determines if a given string is valid for a layer name.</dd>
+<dd>Returns - True if the name is valid for a layer name; otherwise, false.</dd>
+<dt>bool CommitChanges()</dt>
+<dd></dd>
+<dt>void CopyAttributesFrom(Layer otherLayer)</dt>
+<dd>Copy typical attributes from another layer</dd>
+<dd>since 6.0</dd>
+<dt>void Default()</dt>
+<dd>Sets layer to default settings.</dd>
+<dt>void DeletePerViewportColor(Guid viewportId)</dt>
+<dd>Remove any per viewport layer color setting so the layer&rsquo;s overall setting will be used for all viewports.</dd>
+<dd>since 6.0</dd>
+<dt>void DeletePerViewportPlotColor(Guid viewportId)</dt>
+<dd>Remove any per viewport layer plot color setting so the layer&rsquo;s overall setting will be used for all viewports.</dd>
+<dd>since 6.0</dd>
+<dt>void DeletePerViewportPlotWeight(Guid viewportId)</dt>
+<dd>Remove any per viewport layer plot weight setting so the layer&rsquo;s overall setting will be used for all viewports.</dd>
+<dd>since 6.0</dd>
+<dt>void DeletePerViewportSettings(Guid viewportId)</dt>
+<dd>Deletes per viewport layer settings.</dd>
+<dd>since 6.0</dd>
+<dt>void DeletePerViewportVisible(Guid viewportId)</dt>
+<dd>Remove any per viewport visibility setting so the layer&rsquo;s overall setting will be used for all viewports.</dd>
+<dd>since 6.0</dd>
+<dt>bool Equals(Layer other)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool Equals(object obj)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>Layer[] GetChildren()</dt>
+<dd>Gets immediate children of this layer. Note that child layers may have their own children.</dd>
+<dd>Returns - Array of child layers. None if this layer does not have any children.</dd>
+<dt>int GetHashCode()</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>bool GetPersistentLocking()</dt>
+<dd>The persistent locking setting is used for layers that can be locked by
+a &ldquo;parent&rdquo; object. A common case is when a layer is a child layer
+(Layer.ParentI is not nil). In this case, when a parent layer is locked,
+then child layers are also locked. The persistent locking setting
+determines what happens when the parent is unlocked again.</dd>
+<dd>since 5.5</dd>
+<dt>bool GetPersistentVisibility()</dt>
+<dd>The persistent visbility setting is used for layers whose visibilty can
+be changed by a &ldquo;parent&rdquo; object. A common case is when a layer is a
+child layer (ParentId is not nil). In this case, when a parent layer is
+turned off, then child layers are also turned off. The persistent
+visibility setting determines what happens when the parent is turned on
+again.</dd>
+<dd>since 5.5</dd>
+<dt>string GetUserString(string key)</dt>
+<dd>Gets user string from this geometry.</dd>
+<dd>Returns - string associated with the key if successful. None if no key was found.</dd>
+<dt>System.Collections.Specialized.NameValueCollection GetUserStrings()</dt>
+<dd>Gets a copy of all (user key string, user value string) pairs attached to this geometry.</dd>
+<dd>Returns - A new collection.</dd>
+<dt>bool HasPerViewportSettings(Guid viewportId)</dt>
+<dd>Verifies that a layer has per viewport settings.</dd>
+<dd>Returns - True if the layer has per viewport settings, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsChildOf(Guid otherlayerId)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsChildOf(int layerIndex)</dt>
+<dd></dd>
+<dt>bool IsChildOf(Layer otherLayer)</dt>
+<dd></dd>
+<dt>bool IsParentOf(Guid otherLayer)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsParentOf(int layerIndex)</dt>
+<dd></dd>
+<dt>bool IsParentOf(Layer otherLayer)</dt>
+<dd></dd>
+<dt>System.Drawing.Color PerViewportColor(Guid viewportId)</dt>
+<dd>Gets the display color for this layer.</dd>
+<dd>Returns - The display color.</dd>
+<dd>since 6.0</dd>
+<dt>bool PerViewportIsVisible(Guid viewportId)</dt>
+<dd>Gets the per viewport visibility of this layer.</dd>
+<dd>Returns - Returns True if objects on layer are visible.</dd>
+<dd>since 6.0</dd>
+<dt>bool PerViewportPersistentVisibility(Guid viewportId)</dt>
+<dd>Gets the per layer persistent visibility. The persistent visbility setting is used for layers whose visibilty can be changed by a parent layer. 
+In this case, when a parent layer is turned off, then child layers are also turned off.
+The persistent visibility setting determines what happens when the parent is turned on again.</dd>
+<dd>Returns - Return True if this layer&rsquo;s visibility in the specified viewport is controlled by a parent object and the parent is turned on (after being off), 
+then this layer will also be turned on in the specified viewport.
+Returns False if this layer&rsquo;s visibility in the specified viewport is controlled by a parent object and the parent layer is turned on(after being off),
+then this layer will continue to be off in the specified viewport.</dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Color PerViewportPlotColor(Guid viewportId)</dt>
+<dd>Gets the plot color for this layer.</dd>
+<dd>Returns - The plot color.</dd>
+<dd>since 6.0</dd>
+<dt>double PerViewportPlotWeight(Guid viewportId)</dt>
+<dd>Gets the plot weight, in millimeters, for this layer.</dd>
+<dd>Returns - The plot color.</dd>
+<dd>since 6.0</dd>
+<dt>void SetPersistentLocking(bool persistentLocking)</dt>
+<dd>Set the persistent locking setting for this layer</dd>
+<dd>since 5.5</dd>
+<dt>void SetPersistentVisibility(bool persistentVisibility)</dt>
+<dd>Set the persistent visibility setting for this layer</dd>
+<dd>since 5.5</dd>
+<dt>void SetPerViewportColor(Guid viewportId,Color color)</dt>
+<dd>Sets the display color for this layer.</dd>
+<dd>since 6.0</dd>
+<dt>void SetPerViewportPersistentVisibility(Guid viewportId,bool persistentVisibility)</dt>
+<dd>Sets the per layer persistent visibility. The persistent visbility setting is used for layers whose visibilty can be changed by a parent layer. 
+In this case, when a parent layer is turned off, then child layers are also turned off.
+The persistent visibility setting determines what happens when the parent is turned on again.</dd>
+<dd>since 6.0</dd>
+<dt>void SetPerViewportPlotColor(Guid viewportId,Color color)</dt>
+<dd>Sets the plot color for this layer.</dd>
+<dd>since 6.0</dd>
+<dt>void SetPerViewportPlotWeight(Guid viewportId,double plotWeight)</dt>
+<dd>Sets the plot weight, in millimeters, for this layer.</dd>
+<dd>since 6.0</dd>
+<dt>void SetPerViewportVisible(Guid viewportId,bool visible)</dt>
+<dd>Controls layer visibility in specific viewports.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetUserString(string key,string value)</dt>
+<dd>Attach a user string (key,value combination) to this geometry.</dd>
+<dd>Returns - True on success.</dd>
+<dt>string ToString()</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>void UnsetPersistentLocking()</dt>
+<dd>Remove any explicity persistent locking settings from this layer</dd>
+<dd>since 5.5</dd>
+<dt>void UnsetPersistentVisibility()</dt>
+<dd>Remove any explicit persistent visibility setting from this layer</dd>
+<dd>since 5.5</dd>
+<dt>void UnsetPerViewportPersistentVisibility(Guid viewportId)</dt>
+<dd>Remove any per viewport persistent visibility setting so the layer&rsquo;s overall setting will be used for all viewports.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Layer</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

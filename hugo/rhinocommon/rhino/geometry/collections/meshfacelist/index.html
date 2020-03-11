@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshFaceList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the faces and Face related functionality of a Mesh.
+public class MeshFaceList : IResizableList&amp;lt;MeshFace&amp;gt;, IList, IReadOnlyList&amp;lt;MeshFace&amp;gt;Properties  int Capacity Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh faces. When getting this can includes invalid faces. int QuadCount Gets the number of faces that are valid quads (4 corners).|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshFaceList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the faces and Face related functionality of a Mesh.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshFaceList</span> : IResizableList&lt;MeshFace&gt;, IList, IReadOnlyList&lt;MeshFace&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Capacity</dt>
+<dd>Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing.</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Gets or sets the number of mesh faces. When getting this can includes invalid faces.</dd>
+<dt>int QuadCount</dt>
+<dd>Gets the number of faces that are valid quads (4 corners).</dd>
+<dt>int TriangleCount</dt>
+<dd>Gets the number of faces that are valid triangles (3 corners).</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int AddFace(int vertex1,int vertex2,int vertex3)</dt>
+<dd>Appends a new triangular face to the end of the mesh face list.</dd>
+<dd>Returns - The index of the newly added triangle.</dd>
+<dt>int AddFace(int vertex1,int vertex2,int vertex3,int vertex4)</dt>
+<dd>Appends a new quadragular face to the end of the mesh face list.</dd>
+<dd>Returns - The index of the newly added quad.</dd>
+<dt>int AddFace(MeshFace face)</dt>
+<dd>Appends a new mesh face to the end of the mesh face list.</dd>
+<dd>Returns - The index of the newly added face.</dd>
+<dt>int[] AddFaces(IEnumerable<!-- raw HTML omitted --> faces)</dt>
+<dd>Appends a list of faces to the end of the mesh face list.</dd>
+<dd>Returns - Indices of the newly created faces</dd>
+<dt>int[] AdjacentFaces(int faceIndex)</dt>
+<dd>Gets all faces that share a topological edge with a given face.</dd>
+<dd>Returns - All indices that share an edge.</dd>
+<dt>void Clear()</dt>
+<dd>Clears the Face list on the mesh.</dd>
+<dt>int ConvertNonPlanarQuadsToTriangles(double planarTolerance,double angleToleranceRadians,int splitMethod)</dt>
+<dd>Splits non-planar quads into two triangles based on given params.</dd>
+<dd>Returns - Number of quads that were converted to triangles.</dd>
+<dd>since 6.0</dd>
+<dt>bool ConvertQuadsToTriangles()</dt>
+<dd>Splits all quads along the short diagonal.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool ConvertTrianglesToQuads(double angleToleranceRadians,double minimumDiagonalLengthRatio)</dt>
+<dd>Joins adjacent triangles into quads if the resulting quad is &lsquo;nice&rsquo;.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>int CullDegenerateFaces()</dt>
+<dd>Attempts to removes degenerate faces from the mesh.
+Degenerate faces are faces that contains such a combination of indices,
+that their final shape collapsed in a line or point.Before returning, this method also attempts to repair faces by juggling
+vertex indices.</dd>
+<dd>Returns - The number of degenerate faces that were removed.</dd>
+<dt>int DeleteFaces(IEnumerable<!-- raw HTML omitted --> faceIndexes)</dt>
+<dd>Removes a collection of faces from the mesh without affecting the remaining geometry.</dd>
+<dd>Returns - The number of faces deleted on success.</dd>
+<dt>int DeleteFaces(IEnumerable<!-- raw HTML omitted --> faceIndexes,bool compact)</dt>
+<dd>Removes a collection of faces from the mesh without affecting the remaining geometry.</dd>
+<dd>Returns - The number of faces deleted on success.</dd>
+<dd>since 6.6</dd>
+<dt>void Destroy()</dt>
+<dd>Releases all memory allocated to store faces. The list capacity will be 0 after this call.
+Subsequent calls can add new items.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> ExtractDuplicateFaces()</dt>
+<dd>Extracts, or removes, duplicate faces.</dd>
+<dd>Returns - A mesh containing the extracted duplicate faces if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a> ExtractFaces(IEnumerable<!-- raw HTML omitted --> faceIndices)</dt>
+<dd>Extracts, or removes, faces.</dd>
+<dd>Returns - A mesh containing the extracted faces if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/indexpair/">IndexPair</a>[] GetClashingFacePairs(int maxPairCount)</dt>
+<dd>Gets an array of pairs of mesh faces that clash.</dd>
+<dd>Returns - Array of pairs of mesh face indices.</dd>
+<dd>since 6.0</dd>
+<dt>int[] GetConnectedFaces(int faceIndex,double angleRadians,bool greaterThanAngle)</dt>
+<dd>Find all connected face indices where adjacent face normals meet
+the criteria of angleRadians and greaterThanAngle</dd>
+<dd>Returns - list of connected face indices</dd>
+<dd>since 5.6</dd>
+<dt>int[] GetConnectedFacesToEdges(int startFaceIndex,bool treatNonmanifoldLikeUnwelded)</dt>
+<dd>Uses startFaceIndex and finds all connected face indexes up to unwelded
+or naked edges. If treatNonmanifoldLikeUnwelded is True then non-manifold
+edges will be considered as unwelded or naked</dd>
+<dd>Returns - Array of connected face indexes</dd>
+<dd>since 5.6</dd>
+<dt>int[] GetDuplicateFaces()</dt>
+<dd>Finds all of the duplicate faces.</dd>
+<dd>Returns - The indexes that are duplicates of other indexes if successful. 
+If there are no duplicate, then an empty array is returned.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that yields all faces in this collection.</dd>
+<dd>Returns - The enumerator.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshface/">MeshFace</a> GetFace(int index)</dt>
+<dd>Returns the mesh face at the given index.</dd>
+<dd>Returns - The mesh face at the given index on success or MeshFace.Unset if the index is out of range.</dd>
+<dt>double GetFaceAspectRatio(int index)</dt>
+<dd>Returns the mesh face at the given index.</dd>
+<dd>Returns - The mesh face at the given index on success or MeshFace.Unset if the index is out of range.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetFaceBoundingBox(int faceIndex)</dt>
+<dd>Gets the bounding box of a face.</dd>
+<dd>Returns - A new bounding box, or  on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetFaceCenter(int faceIndex)</dt>
+<dd>Gets the center point of a face.
+For a triangular face, this is the centroid or barycenter.For a quad, this is the avarage of four coner points.</dd>
+<dd>Returns - The center point.</dd>
+<dt>bool GetFaceVertices(int faceIndex,Point3f a,Point3f b,Point3f c,Point3f d)</dt>
+<dd>Gets the 3D location of the vertices forming a face.</dd>
+<dd>Returns - True if the operation succeeded, otherwise false.</dd>
+<dt>int[] GetTopologicalVertices(int faceIndex)</dt>
+<dd>Gets the topology vertex indices of a face.</dd>
+<dd>Returns - An array of integers.</dd>
+<dt>bool GetZeroAreaFaces(int[] whollyDegenerateFaces,int[] partiallyDegenerateFaces)</dt>
+<dd>Examines and adds face indexes to whollyDegenerateFaces if the face is a triangle with zero area or a quad both triangles have zero area.
+Face indexes are added to partiallyDegenerateFaces when a quad has one triangle with zero area.</dd>
+<dd>Returns - Returns True if the mesh has wholly or partially degenerate faces, False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>bool HasNakedEdges(int faceIndex)</dt>
+<dd>Returns True if at least one of the face edges are not topologically
+connected to any other faces.</dd>
+<dd>Returns - True if that face makes the mesh open, otherwise false.</dd>
+<dt>void Insert(int index,MeshFace face)</dt>
+<dd>Inserts a mesh face at a defined index in this list.</dd>
+<dt>bool IsHidden(int faceIndex)</dt>
+<dd>Gets a value indicating whether a face is hidden.
+A face is hidden if, and only if, at least one of its vertices is hidden.</dd>
+<dd>Returns - True if hidden, False if fully visible.</dd>
+<dt>void RemoveAt(int index)</dt>
+<dd>Removes a face from the mesh.</dd>
+<dt>void RemoveAt(int index,bool compact)</dt>
+<dd>Removes a face from the mesh.</dd>
+<dd>since 6.6</dd>
+<dt>int RemoveZeroAreaFaces(int fixedFaceCount)</dt>
+<dd>Deletes or fixes mesh faces that have zero area.</dd>
+<dd>Returns - Number of removed wholly degenerate faces.</dd>
+<dd>since 6.0</dd>
+<dt>bool SetFace(int index,int vertex1,int vertex2,int vertex3)</dt>
+<dd>Sets a triangular face at a specific index of the mesh.</dd>
+<dd>Returns - True if the operation succeeded, otherwise false.</dd>
+<dt>bool SetFace(int index,int vertex1,int vertex2,int vertex3,int vertex4)</dt>
+<dd>Sets a quadrangular face at a specific index of the mesh.</dd>
+<dd>Returns - True if the operation succeeded, otherwise false.</dd>
+<dt>bool SetFace(int index,MeshFace face)</dt>
+<dd>Sets a face at a specific index of the mesh.</dd>
+<dd>Returns - True if the operation succeeded, otherwise false.</dd>
+<dt>int[] ToIntArray(bool asTriangles)</dt>
+<dd>Copies all of the face indices to a linear array of indices per face.
+<p>Note that this includes indices from invalid faces too.</p>
+</dd>
+<dd>Returns - The int array. This method never returns null.</dd>
+<dd>since 5.9</dd>
+<dt>int[] ToIntArray(bool asTriangles,List<!-- raw HTML omitted --> replacedIndices)</dt>
+<dd>Copies all of the faces to a linear array of indices.
+<p>Clean-up of vertex indices if replacedIndices is a valid List<!-- raw HTML omitted --></p>
+</dd>
+<dd>Returns - The int array. This method never returns null.</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshFaceList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

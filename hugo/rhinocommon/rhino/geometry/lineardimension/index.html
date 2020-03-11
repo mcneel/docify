@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  LinearDimension &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a linear dimension
+[Serializable]public class LinearDimension : DimensionConstructors  LinearDimension()  LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)   Properties  bool Aligned Gets or sets a value indicating whether this annotation is aligned. AnnotationType AnnotationType  since 6.0 Point2d Arrowhead1End Gets the arrow head end of the first extension line. Point2d Arrowhead2End Gets the arrow head end of the second extension line. Point2d DimensionLinePoint Point on annotation plane where dimension line starts since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">LinearDimension</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a linear dimension</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinearDimension</span> : Dimension
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>LinearDimension()</dt>
+<dd></dd>
+<dt>LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool Aligned</dt>
+<dd>Gets or sets a value indicating whether this annotation is aligned.</dd>
+<dt>AnnotationType AnnotationType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> Arrowhead1End</dt>
+<dd>Gets the arrow head end of the first extension line.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> Arrowhead2End</dt>
+<dd>Gets the arrow head end of the second extension line.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> DimensionLinePoint</dt>
+<dd>Point on annotation plane where dimension line starts</dd>
+<dd>since 6.0</dd>
+<dt>double DistanceBetweenArrowTips</dt>
+<dd>Gets the distance between arrow tips.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> ExtensionLine1End</dt>
+<dd>End of the first extension line.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point2d/">Point2d</a> ExtensionLine2End</dt>
+<dd>End of the second extension line.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static LinearDimension Create(AnnotationType dimtype,DimensionStyle dimStyle,Plane plane,Vector3d horizontal,Point3d defpoint1,Point3d defpoint2,Point3d dimlinepoint,double rotationInPlane)</dt>
+<dd>Initialize Dimension parameters</dd>
+<dd>since 6.0</dd>
+<dt>static LinearDimension FromPoints(Point3d extensionLine1End,Point3d extensionLine2End,Point3d pointOnDimensionLine)</dt>
+<dd>Initializes a new instance of the  class, based on three points.</dd>
+<dt>bool Get3dPoints(Point3d extensionLine1End,Point3d extensionLine2End,Point3d arrowhead1End,Point3d arrowhead2End,Point3d dimlinepoint,Point3d textpoint)</dt>
+<dd>Get locations of dimension&rsquo;s 3d points</dd>
+<dd>Returns - True = success</dd>
+<dd>since 6.0</dd>
+<dt>bool GetDisplayLines(DimensionStyle style,double scale,IEnumerable<!-- raw HTML omitted --> lines)</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>string GetDistanceDisplayText(UnitSystem unitsystem,DimensionStyle style)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool GetTextRectangle(Point3d[] corners)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetLocations(Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)</dt>
+<dd>Sets the three locations of the point, using two-dimensional points
+that refer to the plane of the annotation.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>LinearDimension</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

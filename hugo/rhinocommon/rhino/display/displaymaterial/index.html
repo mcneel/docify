@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  DisplayMaterial &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+public class DisplayMaterial : IDisposableConstructors  DisplayMaterial() Constructs a default material. DisplayMaterial(Color diffuse) Constructs a default material with a specific diffuse color. DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency) Constructs a material with custom properties. DisplayMaterial(Color diffuse,double transparency) Constructs a default material with a specific diffuse color and transparency. DisplayMaterial(DisplayMaterial other) Duplicate another material. DisplayMaterial(Material material)   Properties  Color Ambient Gets or sets the Ambient color of the Material.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">DisplayMaterial</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DisplayMaterial</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>DisplayMaterial()</dt>
+<dd>Constructs a default material.</dd>
+<dt>DisplayMaterial(Color diffuse)</dt>
+<dd>Constructs a default material with a specific diffuse color.</dd>
+<dt>DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency)</dt>
+<dd>Constructs a material with custom properties.</dd>
+<dt>DisplayMaterial(Color diffuse,double transparency)</dt>
+<dd>Constructs a default material with a specific diffuse color and transparency.</dd>
+<dt>DisplayMaterial(DisplayMaterial other)</dt>
+<dd>Duplicate another material.</dd>
+<dt>DisplayMaterial(Material material)</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>Color Ambient</dt>
+<dd>Gets or sets the Ambient color of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>Color BackAmbient</dt>
+<dd>Gets or sets the Ambient color of the back side of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>Color BackDiffuse</dt>
+<dd>Gets or sets the Diffuse color of the back side of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>Color BackEmission</dt>
+<dd>Gets or sets the Emissive color of the back side of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>double BackShine</dt>
+<dd>Gets or sets the shine factor of the back side of the material (0.0 to 1.0)</dd>
+<dt>Color BackSpecular</dt>
+<dd>Gets or sets the Specular color of the back side of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>double BackTransparency</dt>
+<dd>Gets or sets the transparency of the back side material (0.0 = opaque to 1.0 = transparent)</dd>
+<dt>Color Diffuse</dt>
+<dd>Gets or sets the Diffuse color of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>Color Emission</dt>
+<dd>Gets or sets the Emissive color of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>bool IsTwoSided</dt>
+<dd></dd>
+<dt>double Shine</dt>
+<dd>Gets or sets the shine factor of the material (0.0 to 1.0)</dd>
+<dt>Color Specular</dt>
+<dd>Gets or sets the Specular color of the Material. 
+The alpha component of the color will be ignored.</dd>
+<dt>double Transparency</dt>
+<dd>Gets or sets the transparency of the material (0.0 = opaque to 1.0 = transparent)</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>Rhino.DocObjects.Texture GetBitmapTexture(bool front)</dt>
+<dd></dd>
+<dt>Rhino.DocObjects.Texture GetBumpTexture(bool front)</dt>
+<dd>Gets the bump texture for this display material.</dd>
+<dd>Returns - The texture, or None if no bump texture has been added to this material.</dd>
+<dt>Rhino.DocObjects.Texture GetEnvironmentTexture(bool front)</dt>
+<dd></dd>
+<dt>Rhino.DocObjects.Texture GetTransparencyTexture(bool front)</dt>
+<dd></dd>
+<dt>bool SetBitmapTexture(string filename,bool front)</dt>
+<dd></dd>
+<dt>bool SetBitmapTexture(Texture texture,bool front)</dt>
+<dd></dd>
+<dt>bool SetBumpTexture(string filename,bool front)</dt>
+<dd></dd>
+<dt>bool SetBumpTexture(Texture texture,bool front)</dt>
+<dd></dd>
+<dt>bool SetEnvironmentTexture(string filename,bool front)</dt>
+<dd></dd>
+<dt>bool SetEnvironmentTexture(Texture texture,bool front)</dt>
+<dd></dd>
+<dt>bool SetTransparencyTexture(string filename,bool front)</dt>
+<dd></dd>
+<dt>bool SetTransparencyTexture(Texture texture,bool front)</dt>
+<dd></dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>DisplayMaterial</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

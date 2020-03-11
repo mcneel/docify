@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  HostUtils &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime
+Contains static methods to deal with teh runtime environment.
+public class HostUtils static OnExceptionReport Is raised when an exception is reported with one of the method. static OnSendLogMessageToCloud Is raised when an exception is reported with one of the method. since 6.4  Properties  static string ComputerSerialNumber Gets the serial number of the computer running Rhino. since 6.0 static uint CurrentOSLanguage Get the current operating system language.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">HostUtils</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime</a></em></p>
+<p>Contains static methods to deal with teh runtime environment.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HostUtils</span>
+</code></pre></div><dl>
+<dt>static OnExceptionReport</dt>
+<dd>Is raised when an exception is reported with one of the  method.</dd>
+<dt>static OnSendLogMessageToCloud</dt>
+<dd>Is raised when an exception is reported with one of the  method.</dd>
+<dd>since 6.4</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static string ComputerSerialNumber</dt>
+<dd>Gets the serial number of the computer running Rhino.</dd>
+<dd>since 6.0</dd>
+<dt>static uint CurrentOSLanguage</dt>
+<dd>Get the current operating system language.</dd>
+<dd>Returns - A Windows LCID (on Windows and macOS).  On Windows, this will be 
+LCID value regardless of those languages that Rhino supports.  On macOS, this only
+returns LCID values for languages that Rhino does support.</dd>
+<dd>since 6.8</dd>
+<dt>static Guid DeviceId</dt>
+<dd>The DeviceId is a unique, stable ID that anonymously identifies the device
+that Rhino is running on. It is computed based on hardware information that
+should not change when the OS is upgraded, or if commonly modified hardware
+are added or removed from the computer. The machine-specific information is
+hashed using a cryptographic hash to make it anonymous.</dd>
+<dd>since 6.0</dd>
+<dt>static string DeviceName</dt>
+<dd>Name of the computer running Rhino. If the computer is part of a
+Windows Domain, the computer name has &ldquo;@[DOMAIN]&rdquo; appended.</dd>
+<dd>since 6.0</dd>
+<dt>static string OperatingSystemBuildNumber</dt>
+<dd>Returns Operating System Build Number &ldquo;11763&rdquo; | &ldquo;7601&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</dd>
+<dd>since 6.15</dd>
+<dt>static string OperatingSystemEdition</dt>
+<dd>Returns Operating System Edition: &ldquo;Professional&rdquo; | &ldquo;ServerDatacenter&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</dd>
+<dd>since 6.15</dd>
+<dt>static string OperatingSystemInstallationType</dt>
+<dd>Returns Operating System Installation Type: &ldquo;Client&rdquo; | &ldquo;Server&rdquo; | &ldquo;Unknown&rdquo;</dd>
+<dd>since 6.15</dd>
+<dt>static string OperatingSystemProductName</dt>
+<dd>Returns Operating System Edition: &ldquo;Professional&rdquo; | &ldquo;ServerDatacenter&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</dd>
+<dd>since 6.15</dd>
+<dt>static string OperatingSystemVersion</dt>
+<dd>Returns Operating System Version &ldquo;6.1&rdquo; | &ldquo;6.3&rdquo; | &hellip; | &ldquo;Unknown&rdquo;</dd>
+<dd>since 6.15</dd>
+<dt>static bool RunningInDarkMode</dt>
+<dd>Returns True if the host operating system is in dark mode and Rhino
+supports dark mode.</dd>
+<dd>since 6.19</dd>
+<dt>static bool RunningInMono</dt>
+<dd>Tests if this process is currently executing under the Mono runtime.</dd>
+<dt>static bool RunningInRhino</dt>
+<dd>Tests if RhinoCommon is currently executing inside of the Rhino.exe process.
+There are other cases where RhinoCommon could be running; specifically inside
+of Visual Studio when something like a windows form is being worked on in the
+resource editor or running stand-alone when compiled to be used as a version
+of OpenNURBS.</dd>
+<dt>static bool RunningOnOSX</dt>
+<dd>Tests if this process is currently executing on the Mac OSX platform.</dd>
+<dt>static bool RunningOnWindows</dt>
+<dd>Tests if this process is currently executing on the Windows platform.</dd>
+<dt>static bool SendDebugToCommandLine</dt>
+<dd>Gets or sets whether debug messages are printed to the command line.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static string AutoInstallPlugInFolder(bool currentUser)</dt>
+<dd>Gets the auto install plug-in folder for machine or current user.</dd>
+<dd>Returns - The full path to the revelant auto install plug-in directory.</dd>
+<dd>since 6.0</dd>
+<dt>static int CallFromCoreRhino(string task)</dt>
+<dd>Don&rsquo;t change this function in ANY way unless you chat with Steve first!
+This function is called by Rhino on initial startup and the signature
+must be exact</dd>
+<dd>since 6.0</dd>
+<dt>static bool CheckForRdk(bool throwOnFalse,bool usePreviousResult)</dt>
+<dd>Determines if the RDK is loaded.</dd>
+<dd>Returns - True if the RDK is loaded; False if the RDK is not loaded. Note that the
+will hinder the retrieval of any return value.</dd>
+<dt>static void ClearFpuExceptionStatus()</dt>
+<dd>Clear FPU exception and busy flags (Intel assembly fnclex)</dd>
+<dd>since 6.0</dd>
+<dt>static int CreateCommands(IntPtr pPlugIn,Assembly pluginAssembly)</dt>
+<dd>Parses a plugin and create all the commands defined therein.</dd>
+<dd>Returns - The number of newly created commands.</dd>
+<dt>static void CreateCommands(PlugIn plugin)</dt>
+<dd>Parses a plugin and create all the commands defined therein.</dd>
+<dt>static <a href="/rhinocommon/rhino/plugins/plugin/">PlugIn</a> CreatePlugIn(Type pluginType,bool printDebugMessages)</dt>
+<dd>Instantiates a plug-in type and registers the associated commands and classes.</dd>
+<dd>Returns - A new plug-in instance.</dd>
+<dt>static string DebugDumpToString(BezierCurve bezierCurve)</dt>
+<dd>Gets the debug dumps. This is a text description of the geometric contents.
+DebugDump() is intended for debugging and is not suitable for creating high
+quality text descriptions of an object.</dd>
+<dd>Returns - A debug dump text.</dd>
+<dt>static string DebugDumpToString(GeometryBase geometry)</dt>
+<dd>Gets the debug dumps. This is a text description of the geometric contents.
+DebugDump() is intended for debugging and is not suitable for creating high
+quality text descriptions of an object.</dd>
+<dd>Returns - A debug dump text.</dd>
+<dt>static void DebugString(string msg)</dt>
+<dd>Prints a debug message to the Rhino Command Line.
+The message will only appear if the SendDebugToCommandLine property is set to true.</dd>
+<dt>static void DebugString(string format,object[] args)</dt>
+<dd>Prints a debug message to the Rhino Command Line.
+The message will only appear if the SendDebugToCommandLine property is set to true.</dd>
+<dt>static void DisplayOleAlerts(bool display)</dt>
+<dd>Defines if Ole alerts (&ldquo;Server busy&rdquo;) alerts should be visualized.
+This function makes no sense on Mono.</dd>
+<dt>static void ExceptionReport(Exception ex)</dt>
+<dd>Informs RhinoCommon of an exception that has been handled but that the developer wants to screen.</dd>
+<dt>static void ExceptionReport(string source,Exception ex)</dt>
+<dd>Informs RhinoCommon of an exception that has been handled but that the developer wants to screen.</dd>
+<dt>static void ExecuteNamedCallback(string name,NamedParametersEventArgs args)</dt>
+<dd>Execute a named callback</dd>
+<dd>since 7.0</dd>
+<dt>static bool FileNameEndsWithRhinoBackupExtension(string fileName)</dt>
+<dd>Strip file extension from file name and check to see if it is a valid
+Rhino backup file extension.</dd>
+<dd>Returns - Returns True if the file name has an extension like 3dmbak.</dd>
+<dd>since 6.0</dd>
+<dt>static bool FileNameEndsWithRhinoExtension(string fileName)</dt>
+<dd>Strip file extension from file name and check to see if it is a valid
+Rhino file extension.</dd>
+<dd>Returns - Returns True if the file name has an extension like 3dm.</dd>
+<dd>since 6.0</dd>
+<dt>static bool GetAbsolutePath(string relativePath,bool bRelativePathisFileName,string relativeTo,bool bRelativeToIsFileName,string pathOut)</dt>
+<dd>Call this method to convert a relative path to an absolute path
+relative to the specified path.</dd>
+<dd>Returns - Returns True if parameters are valid and lpsRelativePath is indeed
+relative to lpsRelativeTo otherwise returns false</dd>
+<dd>since 6.0</dd>
+<dt>static IEnumerable&lt;System.IO.DirectoryInfo&gt; GetActivePlugInVersionFolders(bool currentUser)</dt>
+<dd>Recurses through the auto install plug-in folders and returns the directories containing &ldquo;active&rdquo; versions of plug-ins.</dd>
+<dd>since 6.0</dd>
+<dt>static string[] GetAssemblySearchPaths()</dt>
+<dd>Returns list of directory names where additional assemblies (plug-ins, DLLs, Grasshopper components)
+may be located</dd>
+<dt>static void GetCurrentProcessInfo(string processName,Version processVersion)</dt>
+<dd>Returns information about the current process. If Rhino is the top level process,
+processName is &ldquo;Rhino&rdquo;. Otherwise, processName is the name, without extension, of the main
+module that is executing. For example, &ldquo;compute.backend&rdquo; or &ldquo;Revit&rdquo;.
+<p>processVersion is the System.Version of the running process. It is the FileVersion
+of the executable.</p>
+</dd>
+<dd>since 6.15</dd>
+<dt>static Tuple&lt;string, Type&gt;[] GetCustomComputeEndpoints()</dt>
+<dd>Used by compute to define custom endpoints</dd>
+<dd>since 7.0</dd>
+<dt>static T GetPlatformService(string assemblyPath,string typeFullName)</dt>
+<dd>For internal use only. Loads an assembly for dependency injection via IPlatformServiceLocator.</dd>
+<dd>Returns - An instance, or null.</dd>
+<dd>since 6.0</dd>
+<dt>static System.Reflection.Assembly GetRhinoDotNetAssembly()</dt>
+<dd>Only works on Windows. Returns None on Mac.</dd>
+<dd>Returns - An assembly.</dd>
+<dt>static void InitializeRhinoCommon()</dt>
+<dd>Makes sure all static RhinoCommon components is set up correctly.
+This happens automatically when a plug-in is loaded, so you probably won&rsquo;t
+have to call this method.</dd>
+<dt>static void InitializeRhinoCommon_RDK()</dt>
+<dd>Makes sure all static RhinoCommon RDK components are set up correctly.
+This happens automatically when the RDK is loaded, so you probably won&rsquo;t
+have to call this method.</dd>
+<dd>since 6.0</dd>
+<dt>static void InitializeZooClient()</dt>
+<dd>Initializes the ZooClient and Rhino license manager, this should get
+called automatically when RhinoCommon is loaded so you probably won&rsquo;t
+have to call this method.</dd>
+<dd>since 5.6</dd>
+<dt>static void InPlaceConstCast(GeometryBase geometry,bool makeNonConst)</dt>
+<dd>DO NOT USE UNLESS YOU ARE CERTAIN ABOUT THE IMPLICATIONS.
+This is an expert user function which should not be needed in most
+cases. This function is similar to a const_cast in C++ to allow an object
+to be made temporarily modifiable without causing RhinoCommon to convert
+the class from const to non-const by creating a duplicate.You must call this function with a True parameter, make your
+modifications, and then restore the const flag by calling this function
+again with a False parameter. If you have any questions, please
+contact McNeel developer support before using!</dd>
+<dt>static bool IsManagedDll(string path)</dt>
+<dd>Inspects a dll to see if it is compiled as native code or as a .NET assembly</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsRhinoBackupFileExtension(string fileExtension)</dt>
+<dd>Check to see if the file extension is a valid Rhino file extension.</dd>
+<dd>Returns - Return True if fileExtension is &ldquo;.3dmbak&rdquo;, &ldquo;3dmbak&rdquo;, &ldquo;.3dm.bak&rdquo;, &ldquo;3dm.bak&rdquo;,
+&ldquo;.3dx.bak&rdquo; or &ldquo;3dx.bak&rdquo;, ignoring case.</dd>
+<dd>since 6.0</dd>
+<dt>static bool IsRhinoFileExtension(string fileExtension)</dt>
+<dd>Check to see if the file extension is a valid Rhino file extension.</dd>
+<dd>Returns - Returns True if fileExtension is &ldquo;.3dm&rdquo;, &ldquo;3dm&rdquo;, &ldquo;.3dx&rdquo; or &ldquo;3dx&rdquo;,
+ignoring case.</dd>
+<dd>since 6.0</dd>
+<dt>static void RecordInitInstanceTime(string description)</dt>
+<dd>Used to help record times at startup with the -stopwatch flag to help
+determine bottlenecks in start up speed</dd>
+<dd>since 6.0</dd>
+<dt>static void RegisterComputeEndpoint(string endpointPath,Type t)</dt>
+<dd>Register a class that can participate as a compute endpoint</dd>
+<dd>since 7.0</dd>
+<dt>static bool RegisterDynamicCommand(PlugIn plugin,Command cmd)</dt>
+<dd>Adds a new dynamic command to Rhino.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static void RegisterNamedCallback(string name,EventHandler<!-- raw HTML omitted --> callback)</dt>
+<dd>Register a named callback</dd>
+<dd>since 6.15</dd>
+<dt>static void RhinoCommonExceptionHandler(string title,object sender,Exception ex)</dt>
+<dd>For internal use only!!!
+Unhanded exception handler, writes stack trace to RhinoDotNet.txt file</dd>
+<dd>since 6.0</dd>
+<dt>static void SendLogMessageToCloudCallbackProc(LogMessageType msg_type,IntPtr pwStringClass,IntPtr pwStringDesc,IntPtr pwStringMessage)</dt>
+<dd>Informs RhinoCommon of an message that has been handled but that the developer wants to screen.</dd>
+<dd>since 6.4</dd>
+<dt>static void SetInShutDown()</dt>
+<dd>Informs the runtime that the application is shutting down.</dd>
+<dt>static void ShutDownRhinoCommon_RDK()</dt>
+<dd>Makes sure all static RhinoCommon RDK components are de-initialized so they aren&rsquo;t calling into space when the RDK is unloaded.</dd>
+<dd>since 6.0</dd>
+<dt>static void UnhandledThreadException(object sender,ThreadExceptionEventArgs e)</dt>
+<dd>Exception handler for exceptions occurring on the UI thread</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>HostUtils</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

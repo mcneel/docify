@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Intersection &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Intersect
+Provides static methods for the computation of intersections, projections, sections and similar.
+public class IntersectionProperties  static double MeshIntersectionsTolerancesCoefficient Offers a requested adjustment coefficient for mesh-mesh intersections tolerances. The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs. since 7.0  Methods  static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints) Intersects two Breps.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Intersection</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Intersect</a></em></p>
+<p>Provides static methods for the computation of intersections, projections, sections and similar.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Intersection</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static double MeshIntersectionsTolerancesCoefficient</dt>
+<dd>Offers a requested adjustment coefficient for mesh-mesh intersections tolerances.
+The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs.</dd>
+<dd>since 7.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</dt>
+<dd>Intersects two Breps.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+<dt>static bool BrepPlane(Brep brep,Plane plane,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</dt>
+<dd>Intersects a Brep with an (infinite) plane.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static bool BrepSurface(Brep brep,Surface surface,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</dt>
+<dd>Intersects a Brep and a Surface.</dd>
+<dd>Returns - True on success; False on failure.</dd>
+<dt>static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)</dt>
+<dd>Intersects a curve with a Brep. This function returns the 3D points of intersection
+and 3D overlap curves. If an error occurs while processing overlap curves, this function 
+will return false, but it will still provide partial results.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints,double[] curveParameters)</dt>
+<dd>Intersects a curve with a Brep. This function returns the 3D points of intersection, curve parameters at the intersection locations,
+and 3D overlap curves. If an error occurs while processing overlap curves, this function 
+will return false, but it will still provide partial results.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>static bool CurveBrep(Curve curve,Brep brep,double tolerance,double angleTolerance,double[] t)</dt>
+<dd>Intersect a curve with a Brep. This function returns the intersection parameters on the curve.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>static bool CurveBrepFace(Curve curve,BrepFace face,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)</dt>
+<dd>Intersects a curve with a Brep face.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveCurve(Curve curveA,Curve curveB,double tolerance,double overlapTolerance)</dt>
+<dd>Finds the intersections between two curves.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveCurveValidate(Curve curveA,Curve curveB,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)</dt>
+<dd>Finds the intersections between two curves.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveLine(Curve curve,Line line,double tolerance,double overlapTolerance)</dt>
+<dd>Intersects a curve and an infinite line.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurvePlane(Curve curve,Plane plane,double tolerance)</dt>
+<dd>Intersects a curve with an (infinite) plane.</dd>
+<dd>Returns - A list of intersection events or None if no intersections were recorded.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveSelf(Curve curve,double tolerance)</dt>
+<dd>Finds the places where a curve intersects itself.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveSurface(Curve curve,Interval curveDomain,Surface surface,double tolerance,double overlapTolerance)</dt>
+<dd>Intersects a sub-curve and a surface.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveSurface(Curve curve,Surface surface,double tolerance,double overlapTolerance)</dt>
+<dd>Intersects a curve and a surface.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveSurfaceValidate(Curve curve,Interval curveDomain,Surface surface,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)</dt>
+<dd>Intersects a sub-curve and a surface.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/curveintersections/">CurveIntersections</a> CurveSurfaceValidate(Curve curve,Surface surface,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)</dt>
+<dd>Intersects a curve and a surface.</dd>
+<dd>Returns - A collection of intersection events.</dd>
+<dd>since 7.0</dd>
+<dt>static bool LineBox(Line line,BoundingBox box,double tolerance,Interval lineParameters)</dt>
+<dd>Intersects an infinite line and an axis aligned bounding box.</dd>
+<dd>Returns - True if the line intersects the box, False if no intersection occurs.</dd>
+<dt>static bool LineBox(Line line,Box box,double tolerance,Interval lineParameters)</dt>
+<dd>Intersects an infinite line with a box volume.</dd>
+<dd>Returns - True if the line intersects the box, False if no intersection occurs.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/linecircleintersection/">LineCircleIntersection</a> LineCircle(Line line,Circle circle,double t1,Point3d point1,double t2,Point3d point2)</dt>
+<dd>Intersects a line with a circle using exact calculations.</dd>
+<dd>Returns - If  is returned, only t1 and point1 will have valid values. 
+If  is returned, t2 and point2 will also be filled out.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/linecylinderintersection/">LineCylinderIntersection</a> LineCylinder(Line line,Cylinder cylinder,Point3d intersectionPoint1,Point3d intersectionPoint2)</dt>
+<dd>Intersects a line with a cylinder using exact calculations.</dd>
+<dd>Returns - If None is returned, the first point is the point on the line closest
+to the cylinder and the second point is the point on the cylinder closest to
+the line. 
+If  is returned, the first point
+is the point on the line and the second point is the  same point on the
+cylinder.</dd>
+<dt>static bool LineLine(Line lineA,Line lineB,double a,double b)</dt>
+<dd>Finds the closest point between two infinite lines.</dd>
+<dd>Returns - True if points are found and False if the lines are numerically parallel. 
+Numerically parallel means the 2x2 matrix:
++AoA  -AoB-AoB  +BoB
+is numerically singular, where A = (lineA.To - lineA.From) and B = (lineB.To-lineB.From)</dd>
+<dt>static bool LineLine(Line lineA,Line lineB,double a,double b,double tolerance,bool finiteSegments)</dt>
+<dd>Intersects two lines.</dd>
+<dd>Returns - True if a closest point can be calculated and the result passes the tolerance parameter test; otherwise false.</dd>
+<dt>static bool LinePlane(Line line,Plane plane,double lineParameter)</dt>
+<dd>Intersects a line and a plane. This function only returns True if the 
+intersection result is a single point (i.e. if the line is coincident with 
+the plane then no intersection is assumed).</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/linesphereintersection/">LineSphereIntersection</a> LineSphere(Line line,Sphere sphere,Point3d intersectionPoint1,Point3d intersectionPoint2)</dt>
+<dd>Intersects a line with a sphere using exact calculations.</dd>
+<dd>Returns - If  is returned, the first point is the point on the line closest to the sphere and 
+the second point is the point on the sphere closest to the line. 
+If  is returned, the first point is the point on the line and the second point is the 
+same point on the sphere.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] MeshLine(Mesh mesh,Line line,int[] faceIds)</dt>
+<dd>Finds the intersection of a mesh and a line</dd>
+<dd>Returns - An array of points: one for each face that was passed by the faceIds out reference.</dd>
+<dt>static bool MeshMesh(IEnumerable<!-- raw HTML omitted --> meshes,double tolerance,Polyline[] intersections,bool overlapsPolylines,Polyline[] overlapsPolylinesResult,bool overlapsMesh,Mesh overlapsMeshResult,TextLog textLog,CancellationToken cancel,IProgress<!-- raw HTML omitted --> progress)</dt>
+<dd>Intersects meshes. Overlaps and perforations are provided in the output list.</dd>
+<dd>Returns - True, if the operation succeeded, otherwise false.</dd>
+<dd>since 7.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/polyline/">Polyline</a>[] MeshMeshAccurate(Mesh meshA,Mesh meshB,double tolerance)</dt>
+<dd>Intersects two meshes. Overlaps and near misses are handled. This is an old method kept for compatibility.</dd>
+<dd>Returns - An array of intersection and overlaps polylines.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/line/">Line</a>[] MeshMeshFast(Mesh meshA,Mesh meshB)</dt>
+<dd>This is an old overload kept for compatibility. Overlaps and near misses are ignored.</dd>
+<dd>Returns - An array of intersection line segments, or null.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/polyline/">Polyline</a>[] MeshPlane(Mesh mesh,IEnumerable<!-- raw HTML omitted --> planes)</dt>
+<dd>Intersects a mesh with a collection of (infinite) planes.</dd>
+<dd>Returns - An array of polylines describing the intersection loops or None (Nothing in Visual Basic) if no intersections could be found.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/polyline/">Polyline</a>[] MeshPlane(Mesh mesh,Plane plane)</dt>
+<dd>Intersects a mesh with an (infinite) plane.</dd>
+<dd>Returns - An array of polylines describing the intersection loops or None (Nothing in Visual Basic) if no intersections could be found.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] MeshPolyline(Mesh mesh,PolylineCurve curve,int[] faceIds)</dt>
+<dd>Finds the intersection of a mesh and a polyline.</dd>
+<dd>Returns - An array of points: one for each face that was passed by the faceIds out reference.</dd>
+<dt>static double MeshRay(Mesh mesh,Ray3d ray)</dt>
+<dd>Finds the first intersection of a ray with a mesh.</dd>
+<dd>Returns - &gt;= 0.0 parameter along ray if successful.
+&lt; 0.0 if no intersection found.</dd>
+<dt>static double MeshRay(Mesh mesh,Ray3d ray,int[] meshFaceIndices)</dt>
+<dd>Finds the first intersection of a ray with a mesh.</dd>
+<dd>Returns - &gt;= 0.0 parameter along ray if successful.
+&lt; 0.0 if no intersection found.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/planecircleintersection/">PlaneCircleIntersection</a> PlaneCircle(Plane plane,Circle circle,double firstCircleParameter,double secondCircleParameter)</dt>
+<dd>Intersects a plane with a circle using exact calculations.</dd>
+<dd>Returns - The type of intersection that occured.</dd>
+<dt>static bool PlanePlane(Plane planeA,Plane planeB,Line intersectionLine)</dt>
+<dd>Intersects two planes and return the intersection line. If the planes are 
+parallel or coincident, no intersection is assumed.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>static bool PlanePlanePlane(Plane planeA,Plane planeB,Plane planeC,Point3d intersectionPoint)</dt>
+<dd>Intersects three planes to find the single point they all share.</dd>
+<dd>Returns - True on success, False on failure. If at least two out of the three planes 
+are parallel or coincident, failure is assumed.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/planesphereintersection/">PlaneSphereIntersection</a> PlaneSphere(Plane plane,Sphere sphere,Circle intersectionCircle)</dt>
+<dd>Intersects a plane with a sphere using exact calculations.</dd>
+<dd>Returns - If  is returned, the intersectionCircle has a radius of zero and the center point 
+is the point on the plane closest to the sphere.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] ProjectPointsToBreps(IEnumerable<!-- raw HTML omitted --> breps,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance)</dt>
+<dd>Projects points onto breps.</dd>
+<dd>Returns - Array of projected points, or None in case of any error or invalid input.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] ProjectPointsToBrepsEx(IEnumerable<!-- raw HTML omitted --> breps,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance,int[] indices)</dt>
+<dd>Projects points onto breps.</dd>
+<dd>Returns - Array of projected points, or None in case of any error or invalid input.</dd>
+<dd>since 5.10</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] ProjectPointsToMeshes(IEnumerable<!-- raw HTML omitted --> meshes,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance)</dt>
+<dd>Projects points onto meshes.</dd>
+<dd>Returns - Array of projected points, or None in case of any error or invalid input.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] ProjectPointsToMeshesEx(IEnumerable<!-- raw HTML omitted --> meshes,IEnumerable<!-- raw HTML omitted --> points,Vector3d direction,double tolerance,int[] indices)</dt>
+<dd>Projects points onto meshes.</dd>
+<dd>Returns - Array of projected points, or None in case of any error or invalid input.</dd>
+<dd>since 5.10</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] RayShoot(Ray3d ray,IEnumerable<!-- raw HTML omitted --> geometry,int maxReflections)</dt>
+<dd>Computes point intersections that occur when shooting a ray to a collection of surfaces.</dd>
+<dd>Returns - An array of points: one for each face that was passed by the faceIds out reference.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/intersect/spheresphereintersection/">SphereSphereIntersection</a> SphereSphere(Sphere sphereA,Sphere sphereB,Circle intersectionCircle)</dt>
+<dd>Intersects two spheres using exact calculations.</dd>
+<dd>Returns - The intersection type.</dd>
+<dt>static bool SurfaceSurface(Surface surfaceA,Surface surfaceB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)</dt>
+<dd>Intersects two Surfaces.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Intersection</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

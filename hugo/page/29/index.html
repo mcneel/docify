@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,126 +57,127 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/initframebuffereventargs/">
-        <h3>InitFrameBufferEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/childslotnames/">
+        <h3>ChildSlotNames</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/initframebuffereventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-public class InitFrameBufferEventArgsMethods void SetFill(Color color)  (summary) (since) 6.18 (returns) void This is some return comment  void SetFill(Color top,Color bottom)  (summary) (since) 6.18 (returns) void This is some return comment  void SetFill(Color topLeft,Color bottomLeft,Color topRight,Color bottomRight)  (summary) (since) 6.18 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/initframebuffereventargs/">
-        <h3>InitFramebufferEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/initframebuffereventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/childslotnames/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class InitFramebufferEventArgsConstructors InitFramebufferEventArgs(DisplayPipeline dp)  (summary) (since) 6.0  Properties DisplayPipeline Pipeline  (summary) (since) 6.0  
+public class ChildSlotNamesProperties  static string AmbientOcclusion  since 7.0 static string Anisotropic  since 7.0 static string AnisotropicRotation  since 7.0 static string BaseColor  since 7.0 static string Bump  since 7.0 static string Clearcoat  since 7.0 static string ClearcoatBump  since 7.0 static string ClearcoatRoughness  since 7.0 static string Displacement  since 7.0 static string Emission  since 7.0 static string Metallic  since 7.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/instanceattributefield/">
-        <h3>InstanceAttributeField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/city/">
+        <h3>City</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/instanceattributefield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/city/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-public class InstanceAttributeFieldConstructors InstanceAttributeField(string key,string prompt,string defaultValue)  (summary) Block attribute defintion. (since) 7.0  Properties string DefaultValue  (summary) Default value used when inserting a block (since) 7.0  string Key  (summary) Attribute key (since) 7.0  string Prompt  (summary) Prompt displayed by the UI when inserting a block (since) 7.0  
+    Namespace: Rhino.Render
+City
+public class CityProperties  double Latitude Gets latitude of city. since 6.0 double Longitude Gets longitude of city. since 6.0 String Name Gets name of city. since 6.0 double TimeZone Gets time zone of city. since 6.0  Methods  static int Cities() Returns number of available cities. Returns - City count. since 6.0 static City CityAt(int index) Returns city at given index. Returns - City at index.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/instancedefinition/">
-        <h3>InstanceDefinition</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/classidattribute/">
+        <h3>ClassIdAttribute</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/instancedefinition/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/classidattribute/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-This is the same as , but in a Rhino document.
-public class InstanceDefinitionProperties InstanceDefinitionArchiveFileStatus ArchiveFileStatus  (summary) Returns the archive file status of a linked instance definition. (since) 5.2  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) (since) 5.0  Guid Id  (summary) (since) 5.0  int Index  (summary) Index of this instance definition in the index definition table.
+    Namespace: Rhino.DocObjects.Custom
+Useful for legacy UserData
+[AttributeUsage(AttributeTargets.Class)]public class ClassIdAttribute : AttributeConstructors  ClassIdAttribute(string id) Initializes a class id attrbute. since 6.0  Properties  Guid Id Gets the associated style. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/instancedefinitiongeometry/">
-        <h3>InstanceDefinitionGeometry</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/clippingplane/">
+        <h3>ClippingPlane</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/instancedefinitiongeometry/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/clippingplane/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a block definition in a File3dm. This is the same as Rhino.DocObjects.InstanceDefinition, but not associated with a RhinoDoc.
-public class InstanceDefinitionGeometryConstructors InstanceDefinitionGeometry()  (summary) Initializes a new block definition. (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) Gets or sets the description of the definition. (since) 5.0  Methods Guid[] GetObjectIds()  (summary) list of object ids in the instance geometry table (since) 5.
+    Namespace: Rhino.Render.ChangeQueue
+ChangeQueue clipping plane
+public class ClippingPlaneProperties  ObjectAttributes Attributes Get the ClippingPlaneObject for this clipping plane since 6.0 Guid Id Get Guid for this clipping plane since 6.0 bool IsEnabled True if clipping plane is enabled since 6.0 Plane Plane Get the plane that represents this clipping plane since 6.0 ListViewIds Get list of View IDs this clipping plane is supposed to clip. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/instancedefinitiontable/">
-        <h3>InstanceDefinitionTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/controls/collapsiblesectionimpl/">
+        <h3>CollapsibleSectionImpl</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/instancedefinitiontable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/controls/collapsiblesectionimpl/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class InstanceDefinitionTableProperties int ActiveCount  (summary) Number of items in the instance definitions table, excluding deleted definitions. (since) 5.0  ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Number of items in the instance definitions table. (since) 5.0  RhinoDoc Document  (summary) Document that owns this table. (since) 5.0  Methods int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes)  (summary) Adds an instance definition to the instance definition table.
+    Namespace: Rhino.UI.Controls
+public class CollapsibleSectionImpl : IMPL_CALLBACKS, IDisposableConstructors  CollapsibleSectionImpl(ICollapsibleSection section)  since 6.0  Events  DataChanged  since 6.0 ViewModelActivated  since 6.0  Properties  IntPtr CppPointer  since 6.0 IRdkViewModel ViewModel  since 6.0  Methods  static void CreateHostedSection(ICollapsibleSection section)  since 6.0 static ICollapsibleSection Find(IntPtr cpp)  since 6.0 static ICollapsibleSection GetSibling(ICollapsibleSection section,Guid siblingSectionId)  since 6.0 static ICollapsibleSection[] GetSiblings(ICollapsibleSection section)  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/instancedefinitiontableeventargs/">
-        <h3>InstanceDefinitionTableEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/color4f/">
+        <h3>Color4f</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/instancedefinitiontableeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/color4f/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class InstanceDefinitionTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.3  InstanceDefinitionTableEventType EventType  (summary) (since) 5.3  int InstanceDefinitionIndex  (summary) (since) 5.3  InstanceDefinition NewState  (summary) (since) 5.3  InstanceDefinitionGeometry OldState  (summary) (since) 5.3  
+    Namespace: Rhino.Display
+Color defined by 4 floating point values.
+ static !=  static ==   Constructors  Color4f(Color color)  Color4f(Color4f color)  Color4f(float red,float green,float blue,float alpha)  Color4f(int argb)  since 7.0  Properties  static Color4f Black  static Color4f Empty  static Color4f White  float A  float B  float G  float L  since 6.3 float R   Methods  static Color4f ApplyGamma(Color4f col,float gamma)  since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/instanceobject/">
-        <h3>InstanceObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/color4ffield/">
+        <h3>Color4fField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/instanceobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/color4ffield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class InstanceObjectProperties Point3d InsertionPoint  (summary) Basepoint coordinates of a block. (since) 5.0  InstanceDefinition InstanceDefinition  (summary) instance definition that this object uses. (since) 5.0  Transform InstanceXform  (summary) transformation applied to an instance definition for this object. (since) 5.0  Methods void Explode(bool explodeNestedInstances,RhinoObject[] pieces,ObjectAttributes[] pieceAttributes,Transform[] pieceTransforms)  (summary) Explodes the instance reference into pieces. (since) 5.0 (returns) void This is some return comment  bool UsesDefinition(int definitionIndex,int nestingLevel)  (summary) Determine if this reference uses an instance definition (since) 5.
+    Namespace: Rhino.Render.Fields
+Color4f field value class
+public class Color4fField : FieldProperties  Color SystemColorValue Gets or sets the field value since 5.1 Color4f Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/instancereferencegeometry/">
-        <h3>InstanceReferenceGeometry</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactories/">
+        <h3>ContentFactories</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/instancereferencegeometry/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactories/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a reference to the geometry in a block definition.
-public class InstanceReferenceGeometryConstructors InstanceReferenceGeometry(Guid instanceDefinitionId,Transform transform)  (summary) Constructor used when creating nested instance references. (since) 5.1  Properties Guid ParentIdefId  (summary) The unique id for the parent instance definition of this instance reference. (since) 5.6  Transform Xform  (summary) Transformation for this reference. (since) 5.6  
+    Namespace: Rhino.Render.DataSources
+public class ContentFactories : IDisposableConstructors  ContentFactories(IntPtr pRdkContentFactories)  since 6.1  Properties  IntPtr CppPointer  since 6.1  Methods  void Dispose()  since 6.1 ContentFactory FindFactory(Guid uuid)  since 6.7 ContentFactory FirstFactory()  since 6.1 ContentFactory NextFactory()  since 6.1  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interop/">
-        <h3>Interop</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactory/">
+        <h3>ContentFactory</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interop/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactory/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Runtime
-Contains static methods to marshal objects between RhinoCommon and legacy Rhino_DotNet or C++.
-public class InteropMethods static Geometry.GeometryBase CreateFromNativePointer(IntPtr pGeometry)  (summary) Constructs a RhinoCommon Geometry class from a given ON_Geomety*. The ON_Geometry* must be declared on the heap and its lifetime becomes controlled by RhinoCommon. (since) 5.0 (returns) Geometry.GeometryBase This is some return comment  static IntPtr FileReadOptionsConstPointer(FileReadOptions options)  (summary) Returns the underlying const CRhinoFileReadOptions* for a Rhino.
+    Namespace: Rhino.Render.DataSources
+public class ContentFactory : IDisposableConstructors  ContentFactory(IntPtr pRdkContentFactory)  since 6.1  Properties  IntPtr CppPointer  since 6.1  Methods  Guid ContentTypeId()  since 6.7 void Dispose()  since 6.1 RenderContentKind Kind()  since 6.3 RenderContent NewContent() New Content returns a new content, which is Initialized with the Initialize() function. The content should be unitilized after use with the Unitialize function. since 6.1  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/contentundoblocker/">
+        <h3>ContentUndoBlocker</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/contentundoblocker/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class ContentUndoBlocker : IDisposableConstructors  ContentUndoBlocker() Constructs a ContentUndoBlocker object inside a using block to block undo when modifying a RenderContent while a ContentUndoHelper is active. Alternatively - create the ContentUndoBlocker and explicitly call Dispose when you are done. since 5.10  Methods  void Dispose()  since 5.10  
   </div>
   
 

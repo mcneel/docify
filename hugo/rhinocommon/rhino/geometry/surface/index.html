@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Surface &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a base class that is common to most RhinoCommon surface types. A surface represents an entity that can be all visited by providing two independent parameters, usually called (u, v), or sometimes (s, t).
+[Serializable]public class Surface : GeometryBaseProperties  bool IsSolid Gets a values indicating whether a surface is solid.  Methods  static Surface CreateExtrusion(Curve profile,Vector3d direction) Constructs a surface by extruding a curve along a vector.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Surface</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a base class that is common to most RhinoCommon surface types.
+A surface represents an entity that can be all visited by providing
+two independent parameters, usually called (u, v), or sometimes (s, t).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Surface</span> : GeometryBase
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>bool IsSolid</dt>
+<dd>Gets a values indicating whether a surface is solid.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Surface CreateExtrusion(Curve profile,Vector3d direction)</dt>
+<dd>Constructs a surface by extruding a curve along a vector.</dd>
+<dd>Returns - A surface on success or None on failure.</dd>
+<dt>static Surface CreateExtrusionToPoint(Curve profile,Point3d apexPoint)</dt>
+<dd>Constructs a surface by extruding a curve to a point.</dd>
+<dd>Returns - A Surface on success or None on failure.</dd>
+<dt>static Surface CreatePeriodicSurface(Surface surface,int direction)</dt>
+<dd>Constructs a periodic surface from a base surface and a direction.</dd>
+<dd>Returns - A Surface on success or None on failure.</dd>
+<dt>static Surface CreatePeriodicSurface(Surface surface,int direction,bool bSmooth)</dt>
+<dd>Constructs a periodic surface from a base surface and a direction.</dd>
+<dd>Returns - A periodic surface if successful, None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>static Surface[] CreateRollingBallFillet(Surface surfaceA,bool flipA,Surface surfaceB,bool flipB,double radius,double tolerance)</dt>
+<dd>Constructs a rolling ball fillet between two surfaces.</dd>
+<dd>Returns - A new array of rolling ball fillet surfaces; this array can be empty on failure.</dd>
+<dt>static Surface[] CreateRollingBallFillet(Surface surfaceA,Point2d uvA,Surface surfaceB,Point2d uvB,double radius,double tolerance)</dt>
+<dd>Constructs a rolling ball fillet between two surfaces.</dd>
+<dd>Returns - A new array of rolling ball fillet surfaces; this array can be empty on failure.</dd>
+<dt>static Surface[] CreateRollingBallFillet(Surface surfaceA,Surface surfaceB,double radius,double tolerance)</dt>
+<dd>Constructs a rolling ball fillet between two surfaces.</dd>
+<dd>Returns - A new array of rolling ball fillet surfaces; this array can be empty on failure.</dd>
+<dt>static Surface CreateSoftEditSurface(Surface surface,Point2d uv,Vector3d delta,double uLength,double vLength,double tolerance,bool fixEnds)</dt>
+<dd>Creates a soft edited surface from an exising surface using a smooth field of influence.</dd>
+<dd>Returns - The soft edited surface if successful. None on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool ClosestPoint(Point3d testPoint,double u,double v)</dt>
+<dd>Input the parameters of the point on the surface that is closest to testPoint.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/isostatus/">IsoStatus</a> ClosestSide(double u,double v)</dt>
+<dd>Gets the side that is closest, in terms of 3D-distance, to a U and V parameter.</dd>
+<dd>Returns - A side.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/surfacecurvature/">SurfaceCurvature</a> CurvatureAt(double u,double v)</dt>
+<dd>Computes the curvature at the given UV coordinate.</dd>
+<dd>Returns - Surface Curvature data for the point at uv or None on failure.</dd>
+<dt>int Degree(int direction)</dt>
+<dd>Returns the maximum algebraic degree of any span
+(or a good estimate if curve spans are not algebraic).</dd>
+<dd>Returns - The maximum degree.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/interval/">Interval</a> Domain(int direction)</dt>
+<dd>Gets the domain in a direction.</dd>
+<dd>Returns - An interval value.</dd>
+<dt>bool Evaluate(double u,double v,int numberDerivatives,Point3d point,Vector3d[] derivatives)</dt>
+<dd>Evaluates a surface mathematically.</dd>
+<dd>Returns - True if the operation succeeded; False otherwise.</dd>
+<dt>Surface Extend(IsoStatus edge,double extensionLength,bool smooth)</dt>
+<dd>Extends an untrimmed surface along one edge.</dd>
+<dd>Returns - New extended surface on success.</dd>
+<dt>Surface Fit(int uDegree,int vDegree,double fitTolerance)</dt>
+<dd>Fits a new surface through an existing surface.</dd>
+<dd>Returns - A surface, or None on error.</dd>
+<dt>bool FrameAt(double u,double v,Plane frame)</dt>
+<dd>Computes the orient plane on a surface given a U and V parameter.
+This is the simple evaluation call with no error handling.</dd>
+<dd>Returns - True if this operation succeeded; otherwise false.</dd>
+<dt>bool GetNextDiscontinuity(int direction,Continuity continuityType,double t0,double t1,double t)</dt>
+<dd>Searches for a derivative, tangent, or curvature discontinuity.</dd>
+<dd>Returns - Parametric continuity tests c = (C0_continuous, &hellip;, G2_continuous):
+TRUE if a parametric discontinuity was found strictly between t0 and t1.
+Note well that all curves are parametrically continuous at the ends of their domains.
+<p>Locus continuity tests c = (C0_locus_continuous, &hellip;,G2_locus_continuous):
+TRUE if a locus discontinuity was found strictly between t0 and t1 or at t1 is the
+at the end of a curve. Note well that all open curves (IsClosed()=false) are locus
+discontinuous at the ends of their domains.  All closed curves (IsClosed()=true) are
+at least C0_locus_continuous at the ends of their domains.</p>
+</dd>
+<dt>bool GetNurbsFormParameterFromSurfaceParameter(double surfaceS,double surfaceT,double nurbsS,double nurbsT)</dt>
+<dd>Translates a parameter from the current surface to the parameter space of the surface returned by .</dd>
+<dd>Returns - True if the operation succeded; otherwise, false.</dd>
+<dd>since 6.0</dd>
+<dt>double[] GetSpanVector(int direction)</dt>
+<dd>Gets array of span &ldquo;knots&rdquo;.</dd>
+<dd>Returns - An array with span vectors; or None on error.</dd>
+<dt>bool GetSurfaceParameterFromNurbsFormParameter(double nurbsS,double nurbsT,double surfaceS,double surfaceT)</dt>
+<dd>Translates a parameter from a value on the surface returned by  to the current surface.</dd>
+<dd>Returns - True if the operation succeded; otherwise, false.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetSurfaceSize(double width,double height)</dt>
+<dd>Gets an estimate of the size of the rectangle that would be created
+if the 3d surface where flattened into a rectangle.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>int HasNurbsForm()</dt>
+<dd>Is there a NURBS surface representation of this surface.</dd>
+<dd>Returns - 0 unable to create NURBS representation with desired accuracy.
+1 success - NURBS parameterization matches the surface&rsquo;s
+2 success - NURBS point locus matches the surface&rsquo;s and the
+domain of the NURBS surface is correct. However, This surface&rsquo;s
+parameterization and the NURBS surface parameterization may not
+match.  This situation happens when getting NURBS representations
+of surfaces that have a transendental parameterization like spheres,
+cylinders, and cones.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> InterpolatedCurveOnSurface(IEnumerable<!-- raw HTML omitted --> points,double tolerance)</dt>
+<dd>Constructs an interpolated curve on a surface, using 3D points.</dd>
+<dd>Returns - A new nurbs curve, or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> InterpolatedCurveOnSurfaceUV(IEnumerable<!-- raw HTML omitted --> points,double tolerance)</dt>
+<dd>Returns a curve that interpolates points on a surface. The interpolant lies on the surface.</dd>
+<dd>Returns - A new NURBS curve if successful, or None on error.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbscurve/">NurbsCurve</a> InterpolatedCurveOnSurfaceUV(IEnumerable<!-- raw HTML omitted --> points,double tolerance,bool closed,int closedSurfaceHandling)</dt>
+<dd>Returns a curve that interpolates points on a surface. The interpolant lies on the surface.</dd>
+<dd>Returns - A new NURBS curve if successful, or None on error.</dd>
+<dd>since 6.18</dd>
+<dt>int IsAtSeam(double u,double v)</dt>
+<dd>Tests if a surface parameter value is at a seam.</dd>
+<dd>Returns - 0 if not a seam,
+1 if u == Domain(0)[i] and srf(u, v) == srf(Domain(0)[1-i], v)
+2 if v == Domain(1)[i] and srf(u, v) == srf(u, Domain(1)[1-i])
+3 if 1 and 2 are true.</dd>
+<dt>bool IsAtSingularity(double u,double v,bool exact)</dt>
+<dd>Tests if a surface parameter value is at a singularity.</dd>
+<dd>Returns - True if surface is singular at (s,t)</dd>
+<dt>bool IsClosed(int direction)</dt>
+<dd>Gets a value indicating if the surface is closed in a direction.</dd>
+<dd>Returns - The indicating boolean value.</dd>
+<dt>bool IsCone()</dt>
+<dd>Determines if the surface is a portion of a cone within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the surface is a portion of a cone.</dd>
+<dt>bool IsCone(double tolerance)</dt>
+<dd>Determines if the surface is a portion of a cone within a given tolerance.</dd>
+<dd>Returns - True if the surface is a portion of a cone.</dd>
+<dt>bool IsContinuous(Continuity continuityType,double u,double v)</dt>
+<dd>Tests continuity at a surface parameter value.</dd>
+<dd>Returns - True if the surface has at least the specified continuity at the (u,v) parameter.</dd>
+<dt>bool IsCylinder()</dt>
+<dd>Determines if the surface is a portion of a cylinder within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the surface is a portion of a cylinder.</dd>
+<dt>bool IsCylinder(double tolerance)</dt>
+<dd>Determines if the surface is a portion of a cylinder within a given tolerance.</dd>
+<dd>Returns - True if the surface is a portion of a cylinder.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/isostatus/">IsoStatus</a> IsIsoparametric(BoundingBox bbox)</dt>
+<dd>Determines if a 2d bounding box is iso-parameteric in the parameter space of this surface.</dd>
+<dd>Returns - IsoStatus flag describing the iso-parametric relationship between the surface and the bounding box.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/isostatus/">IsoStatus</a> IsIsoparametric(Curve curve)</dt>
+<dd>Determines if a 2d curve is iso-parameteric in the parameter space of this surface.</dd>
+<dd>Returns - IsoStatus flag describing the iso-parametric relationship between the surface and the curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/isostatus/">IsoStatus</a> IsIsoparametric(Curve curve,Interval curveDomain)</dt>
+<dd>Determines if a 2D curve is iso-parameteric in the parameter space of this surface.</dd>
+<dd>Returns - IsoStatus flag describing the iso-parametric relationship between the surface and the curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> IsoCurve(int direction,double constantParameter)</dt>
+<dd>Gets isoparametric curve.</dd>
+<dd>Returns - An isoparametric curve or None on error.</dd>
+<dt>bool IsPeriodic(int direction)</dt>
+<dd>Gets a value indicating if thr surface is periodic in a direction (default is false).</dd>
+<dd>Returns - The indicating boolean value.</dd>
+<dt>bool IsPlanar()</dt>
+<dd>Tests a surface to see if it is planar to zero tolerance.</dd>
+<dd>Returns - True if the surface is planar (flat) to within RhinoMath.ZeroTolerance units (1e-12).</dd>
+<dt>bool IsPlanar(double tolerance)</dt>
+<dd>Tests a surface to see if it is planar to a given tolerance.</dd>
+<dd>Returns - True if there is a plane such that the maximum distance from
+the surface to the plane is &lt;= tolerance.</dd>
+<dt>bool IsSingular(int side)</dt>
+<dd>True if surface side is collapsed to a point.</dd>
+<dd>Returns - True if this specific side of the surface is singular; otherwise, false.</dd>
+<dt>bool IsSphere()</dt>
+<dd>Determines if the surface is a portion of a sphere within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the surface is a portion of a sphere.</dd>
+<dt>bool IsSphere(double tolerance)</dt>
+<dd>Determines if the surface is a portion of a sphere within a given tolerance.</dd>
+<dd>Returns - True if the surface is a portion of a sphere.</dd>
+<dt>bool IsTorus()</dt>
+<dd>Determines if the surface is a portion of a torus within RhinoMath.ZeroTolerance.</dd>
+<dd>Returns - True if the surface is a portion of a torus.</dd>
+<dt>bool IsTorus(double tolerance)</dt>
+<dd>Determines if the surface is a portion of a torus within a given tolerance.</dd>
+<dd>Returns - True if the surface is a portion of a torus.</dd>
+<dt>bool LocalClosestPoint(Point3d testPoint,double seedU,double seedV,double u,double v)</dt>
+<dd>Find parameters of the point on a surface that is locally closest to
+the testPoint. The search for a local close point starts at seed parameters.</dd>
+<dd>Returns - True if the search is successful, False if the search fails.</dd>
+<dd>since 6.3</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> NormalAt(double u,double v)</dt>
+<dd>Computes the surface normal at a point.
+This is the simple evaluation call - it does not support error handling.</dd>
+<dd>Returns - The normal.</dd>
+<dt>Surface Offset(double distance,double tolerance)</dt>
+<dd>Constructs a new surface which is offset from the current surface.</dd>
+<dd>Returns - The offsetted surface or None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> PointAt(double u,double v)</dt>
+<dd>Evaluates a point at a given parameter.</dd>
+<dd>Returns - Point3d.Unset on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Pullback(Curve curve3d,double tolerance)</dt>
+<dd>Pulls a 3d curve back to the surface&rsquo;s parameter space.</dd>
+<dd>Returns - 2d curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Pullback(Curve curve3d,double tolerance,Interval curve3dSubdomain)</dt>
+<dd>Pulls a 3d curve back to the surface&rsquo;s parameter space.</dd>
+<dd>Returns - 2d curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Pushup(Curve curve2d,double tolerance)</dt>
+<dd>Computes a 3d curve that is the composite of a 2d curve and the surface map.</dd>
+<dd>Returns - 3d curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> Pushup(Curve curve2d,double tolerance,Interval curve2dSubdomain)</dt>
+<dd>Computes a 3d curve that is the composite of a 2d curve and the surface map.</dd>
+<dd>Returns - 3d curve.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> Rebuild(int uDegree,int vDegree,int uPointCount,int vPointCount)</dt>
+<dd>Rebuilds an existing surface to a given degree and point count.</dd>
+<dd>Returns - new rebuilt surface on success. None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> RebuildOneDirection(int direction,int pointCount,LoftType loftType,double refitTolerance)</dt>
+<dd>Rebuilds an existing surface with a new surface to a given point count in either the u or v directions independently.</dd>
+<dd>Returns - new rebuilt surface on success. None on failure.</dd>
+<dd>since 6.7</dd>
+<dt>Surface Reverse(int direction)</dt>
+<dd>Reverses parameterization Domain changes from [a,b] to [-b,-a]</dd>
+<dd>Returns - a new reversed surface on success.</dd>
+<dt>Surface Reverse(int direction,bool inPlace)</dt>
+<dd>Same as Reverse, but if inPlace is set to True this Surface is modified
+instead of a new copy being created.</dd>
+<dd>Returns - If inPlace is False, a new reversed surface on success. If inPlace is
+true, this surface instance is returned on success.</dd>
+<dd>since 5.8</dd>
+<dt>bool SetDomain(int direction,Interval domain)</dt>
+<dd>Sets the domain in a direction.</dd>
+<dd>Returns - True if setting succeeded, otherwise false.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> ShortPath(Point2d start,Point2d end,double tolerance)</dt>
+<dd>Constructs a geodesic between 2 points, used by ShortPath command in Rhino.</dd>
+<dd>Returns - a geodesic curve on the surface on success. None on failure.</dd>
+<dt>Surface Smooth(double smoothFactor,bool bXSmooth,bool bYSmooth,bool bZSmooth,bool bFixBoundaries,SmoothingCoordinateSystem coordinateSystem)</dt>
+<dd>Smooths a surface by averaging the positions of control points in a specified region.</dd>
+<dd>Returns - The smoothed surface if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>Surface Smooth(double smoothFactor,bool bXSmooth,bool bYSmooth,bool bZSmooth,bool bFixBoundaries,SmoothingCoordinateSystem coordinateSystem,Plane plane)</dt>
+<dd>Smooths a surface by averaging the positions of control points in a specified region.</dd>
+<dd>Returns - The smoothed surface if successful, None otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>int SpanCount(int direction)</dt>
+<dd>Gets number of smooth nonempty spans in the parameter direction.</dd>
+<dd>Returns - The span count.</dd>
+<dt>Surface[] Split(int direction,double parameter)</dt>
+<dd>Splits (divides) the surface into two parts at the specified parameter</dd>
+<dd>Returns - Array of two surfaces on success</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> ToBrep()</dt>
+<dd>Converts the surface into a Brep.</dd>
+<dd>Returns - A Brep with a similar shape like this surface or null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> ToNurbsSurface()</dt>
+<dd>Gets a NURBS surface representation of this surface. Default 
+tolerance of 0.0 is used.</dd>
+<dd>Returns - NurbsSurface on success, None on failure.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/nurbssurface/">NurbsSurface</a> ToNurbsSurface(double tolerance,int accuracy)</dt>
+<dd>Gets a NURBS surface representation of this surface.</dd>
+<dd>Returns - NurbsSurface on success, None on failure.</dd>
+<dt>Surface Transpose()</dt>
+<dd>Transposes surface parameterization (swap U and V)</dd>
+<dd>Returns - New transposed surface on success, None on failure.</dd>
+<dt>Surface Transpose(bool inPlace)</dt>
+<dd>Transposes surface parameterization (swap U and V)</dd>
+<dd>Returns - New transposed surface on success, None on failure.</dd>
+<dd>since 5.8</dd>
+<dt>Surface Trim(Interval u,Interval v)</dt>
+<dd>Constructs a sub-surface that covers the specified UV trimming domain.</dd>
+<dd>Returns - SubSurface on success, None on failure.</dd>
+<dt>bool TryGetCone(Cone cone)</dt>
+<dd>Tests a surface to see if it is a portion of a cone within RhinoMath.ZeroTolerance and return the cone.</dd>
+<dd>Returns - True if the surface is a portion of a cone.</dd>
+<dt>bool TryGetCone(Cone cone,double tolerance)</dt>
+<dd>Tests a surface to see if it is a portion of a cone and returns the cone.</dd>
+<dd>Returns - True if the surface is a portion of a cone.</dd>
+<dt>bool TryGetCylinder(Cylinder cylinder)</dt>
+<dd>Tests a surface to see if it is a portion of a cylinder within RhinoMath.ZeroTolerance and return the cylinder.</dd>
+<dd>Returns - True if the surface is a portion of a cylinder.</dd>
+<dt>bool TryGetCylinder(Cylinder cylinder,double tolerance)</dt>
+<dd>Tests a surface to see if it is a portion of a cylinder and return the infinite cylinder.</dd>
+<dd>Returns - True if the surface is a portion of a cylinder.</dd>
+<dt>bool TryGetFiniteCylinder(Cylinder cylinder,double tolerance)</dt>
+<dd>Tests a surface with the assumption that it might be a right circular cylinder and returns this geometry.</dd>
+<dd>Returns - True if the surface is a portion of a cylinder.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetPlane(Plane plane)</dt>
+<dd>Tests a surface for planarity and return the plane.</dd>
+<dd>Returns - True if there is a plane such that the maximum distance from the surface to the plane is &lt;= RhinoMath.ZeroTolerance.</dd>
+<dt>bool TryGetPlane(Plane plane,double tolerance)</dt>
+<dd>Tests a surface for planarity and return the plane.</dd>
+<dd>Returns - True if there is a plane such that the maximum distance from the surface to the plane is &lt;= tolerance.</dd>
+<dt>bool TryGetSphere(Sphere sphere)</dt>
+<dd>Test a surface to see if it is a portion of a sphere and return the sphere.</dd>
+<dd>Returns - True if the surface is a portion of a sphere.</dd>
+<dt>bool TryGetSphere(Sphere sphere,double tolerance)</dt>
+<dd>Test a surface to see if it is a portion of a sphere and return the sphere.</dd>
+<dd>Returns - True if the surface is a portion of a sphere.</dd>
+<dt>bool TryGetTorus(Torus torus)</dt>
+<dd>Tests a surface to see if it is a portion of a torus within RhinoMath.ZeroTolerance and returns the torus.</dd>
+<dd>Returns - True if the surface is a portion of a torus.</dd>
+<dt>bool TryGetTorus(Torus torus,double tolerance)</dt>
+<dd>Tests a surface to see if it is a portion of a torus and returns the torus.</dd>
+<dd>Returns - True if the surface is a portion of a torus.</dd>
+<dt>Surface VariableOffset(double uMinvMin,double uMinvMax,double uMaxvMin,double uMaxvMax,double tolerance)</dt>
+<dd>Copies a surface so that all locations at the corners of the copied surface are specified distances from the original surface.</dd>
+<dd>Returns - The offset surface if successful, None otherwise.</dd>
+<dd>since 6.13</dd>
+<dt>Surface VariableOffset(double uMinvMin,double uMinvMax,double uMaxvMin,double uMaxvMax,IEnumerable<!-- raw HTML omitted --> interiorParameters,IEnumerable<!-- raw HTML omitted --> interiorDistances,double tolerance)</dt>
+<dd>Copies a surface so that all locations at the corners, and from specified interior locations, of the copied surface are specified distances from the original surface.</dd>
+<dd>Returns - The offset surface if successful, None otherwise.</dd>
+<dd>since 6.13</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Surface</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

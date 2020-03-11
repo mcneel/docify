@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.DataSources on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/</link>
+    <description>Recent content in Rhino.Render.DataSources on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/render/datasources/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ContentFactories</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactories/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactories/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class ContentFactories : IDisposableConstructors  ContentFactories(IntPtr pRdkContentFactories)  since 6.1  Properties  IntPtr CppPointer  since 6.1  Methods  void Dispose()  since 6.1 ContentFactory FindFactory(Guid uuid)  since 6.7 ContentFactory FirstFactory()  since 6.1 ContentFactory NextFactory()  since 6.1  </description>
+    </item>
+    
+    <item>
+      <title>ContentFactory</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactory/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/contentfactory/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class ContentFactory : IDisposableConstructors  ContentFactory(IntPtr pRdkContentFactory)  since 6.1  Properties  IntPtr CppPointer  since 6.1  Methods  Guid ContentTypeId()  since 6.7 void Dispose()  since 6.1 RenderContentKind Kind()  since 6.3 RenderContent NewContent() New Content returns a new content, which is Initialized with the Initialize() function. The content should be unitilized after use with the Unitialize function. since 6.1  </description>
+    </item>
+    
+    <item>
+      <title>MetaData</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/metadata/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/metadata/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class MetaData : IDisposableConstructors  MetaData(IntPtr pMetaData)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  Guid ContentInstanceId()  since 6.7 void Dispose()  since 6.0 string Geometry()  since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>RdkEdit</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkedit/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkedit/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RdkEdit : IDisposableConstructors  RdkEdit(IntPtr pRdkEdit)  since 6.5  Properties  IntPtr CppPointer  since 6.5  Methods  void Dispose()  since 6.5 bool Execute(RenderContentCollection collection)  since 6.5  </description>
+    </item>
+    
+    <item>
+      <title>RdkModalEditContentBucket</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkmodaleditcontentbucket/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkmodaleditcontentbucket/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+[Obsolete(&amp;#34;RdkModalEditContentBucket is obsolete&amp;#34;, false)]public class RdkModalEditContentBucket : IDisposableConstructors  RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)  since 6.5  Properties  IntPtr CppPointer  since 6.5  Methods  RenderContentCollection ContentsIn()  since 6.5 void Dispose()  since 6.5 void SetContentsOut(RenderContentCollection collection)  since 6.5  </description>
+    </item>
+    
+    <item>
+      <title>RdkSelectionNavigator</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkselectionnavigator/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/rdkselectionnavigator/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RdkSelectionNavigator : IDisposableConstructors  RdkSelectionNavigator(IntPtr pRhinoSettings)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void Add(RenderContentCollection selectedContentArray) Add a selection of contents at the current position. Clears the navigator ahead of the current position. since 6.0 bool CanGoBackwards() Check the backwards status of the navigator Returns - True if it is possible to navigate backwards, else false since 6.0 bool CanGoForwards() Check the forwards status of the navigator Returns - True if it is possible to navigate forwards, else false since 6.</description>
+    </item>
+    
+    <item>
+      <title>RhinoSettings</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/datasources/rhinosettings/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/datasources/rhinosettings/</guid>
+      <description>Namespace: Rhino.Render.DataSources
+public class RhinoSettings : IDisposableConstructors  RhinoSettings(IntPtr pRhinoSettings)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  RhinoView ActiveView()  since 6.0 void Dispose()  since 6.0 List&amp;lt;System.Drawing.Size&amp;gt; GetCustomRenderSizes()  since 6.0 RenderSettings GetRenderSettings()  since 6.0 bool GroundPlaneOnInViewDisplayMode(RhinoView view)  since 6.14 Rhino.DocObjects.ViewInfo RenderingView()  since 6.12 void SetGroundPlaneOnInViewDisplayMode(RhinoView view,bool bOn)  since 6.14 void SetRenderSettings(RenderSettings renderSettings)  since 6.0 bool ViewSupportsShading(RhinoView view)  since 6.</description>
+    </item>
+    
+  </channel>
+</rss>

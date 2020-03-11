@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshVertexList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the vertices and vertex-related functionality of a mesh.
+public class MeshVertexList : IResizableList&amp;lt;Point3f&amp;gt;, IReadOnlyList&amp;lt;Point3f&amp;gt;, IListProperties  int Capacity Gets or sets the total number of vertices the internal data structure can hold without resizing. since 6.0 int Count Gets or sets the number of mesh vertices. bool UseDoublePrecisionVertices Set to True if the vertices should be stored in double precision since 6.4  Methods  static int Align(IEnumerablemeshes,double distance,IEnumerable&amp;lt;IEnumerable&amp;gt; whichVertices) Moves mesh vertices that belong to naked edges to neighboring vertices, within the specified distance.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshVertexList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the vertices and vertex-related functionality of a mesh.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshVertexList</span> : IResizableList&lt;Point3f&gt;, IReadOnlyList&lt;Point3f&gt;, IList
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Capacity</dt>
+<dd>Gets or sets the total number of vertices the internal data structure can hold without resizing.</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Gets or sets the number of mesh vertices.</dd>
+<dt>bool UseDoublePrecisionVertices</dt>
+<dd>Set to True if the vertices should be stored in double precision</dd>
+<dd>since 6.4</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static int Align(IEnumerable<!-- raw HTML omitted --> meshes,double distance,IEnumerable&lt;IEnumerable<!-- raw HTML omitted -->&gt; whichVertices)</dt>
+<dd>Moves mesh vertices that belong to naked edges to neighboring vertices, within the specified distance.
+This forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.See the _AlignMeshVertices Rhino command for more information.</dd>
+<dd>Returns - If the operation succeeded, the number of moved vertices, or -1 on error.</dd>
+<dd>since (unknown)</dd>
+<dt>int Add(double x,double y,double z)</dt>
+<dd>Adds a new vertex to the end of the Vertex list.</dd>
+<dd>Returns - The index of the newly added vertex.</dd>
+<dt>int Add(float x,float y,float z)</dt>
+<dd>Adds a new vertex to the end of the Vertex list.</dd>
+<dd>Returns - The index of the newly added vertex.</dd>
+<dt>int Add(Point3d vertex)</dt>
+<dd>Adds a new vertex to the end of the Vertex list.</dd>
+<dd>Returns - The index of the newly added vertex.</dd>
+<dt>int Add(Point3f vertex)</dt>
+<dd>Adds a new vertex to the end of the Vertex list.</dd>
+<dd>Returns - The index of the newly added vertex.</dd>
+<dt>void AddVertices(IEnumerable<!-- raw HTML omitted --> vertices)</dt>
+<dd>Adds a series of new vertices to the end of the vertex list.
+This overload accepts double-precision points.</dd>
+<dt>void AddVertices(IEnumerable<!-- raw HTML omitted --> vertices)</dt>
+<dd>Adds a series of new vertices to the end of the vertex list.
+This overload accepts single-precision points.</dd>
+<dt>int Align(double distance,IEnumerable<!-- raw HTML omitted --> whichVertices)</dt>
+<dd>Moves mesh vertices that belong to naked edges to neighboring vertices, within the specified distance.
+This forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.See the _AlignMeshVertices Rhino command for more information.</dd>
+<dd>Returns - If the operation succeeded, the number of moved vertices, or -1 on error.</dd>
+<dd>since 6.0</dd>
+<dt>void Clear()</dt>
+<dd>Clears the Vertex list on the mesh.</dd>
+<dt>bool CombineIdentical(bool ignoreNormals,bool ignoreAdditional)</dt>
+<dd>Merges identical vertices.</dd>
+<dd>Returns - True if the mesh is changed, in which case the mesh will have fewer vertices than before.</dd>
+<dt>int CullUnused()</dt>
+<dd>Removes all vertices that are currently not used by the Face list.</dd>
+<dd>Returns - The number of unused vertices that were removed.</dd>
+<dt>void Destroy()</dt>
+<dd>Releases all memory allocated to store faces. The list capacity will be 0 after this call.
+Subsequent calls can add new items.</dd>
+<dd>since 6.0</dd>
+<dt>int[] GetConnectedVertices(int vertexIndex)</dt>
+<dd>Gets indices of all vertices that form &ldquo;edges&rdquo; with a given vertex index.</dd>
+<dd>Returns - An array of vertex indices that are connected with the specified vertex.</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that yields all mesh vertices (points) in this collection.</dd>
+<dd>Returns - The enumerator.</dd>
+<dt>int[] GetTopologicalIndenticalVertices(int vertexIndex)</dt>
+<dd>Gets a list of other vertices which are &ldquo;topologically&rdquo; identical
+to this vertex.</dd>
+<dd>Returns - Array of indices of vertices that are topoligically the same as this vertex. The
+array includes vertexIndex. Returns None on failure.</dd>
+<dt>int[] GetVertexFaces(int vertexIndex)</dt>
+<dd>Gets a list of all of the faces that share a given vertex.</dd>
+<dd>Returns - An array of indices of faces on success, None on failure.</dd>
+<dt>void Hide(int vertexIndex)</dt>
+<dd>Hides the vertex at the given index.</dd>
+<dt>void HideAll()</dt>
+<dd>Hides all vertices in the mesh.</dd>
+<dt>bool IsHidden(int vertexIndex)</dt>
+<dd>Gets a value indicating whether or not a vertex is hidden.</dd>
+<dd>Returns - True if the vertex is hidden, False if it is not.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> Point3dAt(int index)</dt>
+<dd>Get double precision location at a given index</dd>
+<dd>since 6.4</dd>
+<dt>bool Remove(IEnumerable<!-- raw HTML omitted --> indices,bool shrinkFaces)</dt>
+<dd>Removes the vertices at the given indices and all faces that reference those vertices.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Remove(int index,bool shrinkFaces)</dt>
+<dd>Removes the vertex at the given index and all faces that reference that index.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetVertex(int index,double x,double y,double z)</dt>
+<dd>Sets or adds a vertex to the Vertex List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetVertex(int index,double x,double y,double z,bool updateNormals)</dt>
+<dd>Sets or adds a vertex to the Vertex List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.6</dd>
+<dt>bool SetVertex(int index,float x,float y,float z)</dt>
+<dd>Sets or adds a vertex to the Vertex List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetVertex(int index,Point3d vertex)</dt>
+<dd>Sets or adds a vertex to the Vertex List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetVertex(int index,Point3f vertex)</dt>
+<dd>Sets or adds a vertex to the Vertex List.
+If [index] is less than [Count], the existing vertex at [index] will be modified.If [index] equals [Count], a new vertex is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Show(int vertexIndex)</dt>
+<dd>Shows the vertex at the given index.</dd>
+<dt>void ShowAll()</dt>
+<dd>Shows all vertices in the mesh.</dd>
+<dt>float[] ToFloatArray()</dt>
+<dd>Copies all vertices to a linear array of float in x,y,z order</dd>
+<dd>Returns - The float array.</dd>
+<dd>since 5.9</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] ToPoint3dArray()</dt>
+<dd>Copies all vertices to a new array of .</dd>
+<dd>Returns - A new array.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3f/">Point3f</a>[] ToPoint3fArray()</dt>
+<dd>Copies all vertices to a new array of .</dd>
+<dd>Returns - A new array.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshVertexList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

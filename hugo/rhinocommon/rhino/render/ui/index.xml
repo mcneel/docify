@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Render.UI on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/render/ui/</link>
+    <description>Recent content in Rhino.Render.UI on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/render/ui/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UserInterfaceSection</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/ui/userinterfacesection/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/ui/userinterfacesection/</guid>
+      <description>Namespace: Rhino.Render.UI
+Custom user interface section manager
+[Obsolete]public class UserInterfaceSectionProperties  RenderContent RenderContent The RenderContent object that created this user interface object. since 5.1 object Window The user control associated with this user interface object. since 5.1  Methods  static UserInterfaceSection FromWindow(object window) Find the UserInterfaceSection that created the specified instance of a window. Returns - If a UserInterfaceSection object is found containing a reference to the requested window then return the object otherwise return null.</description>
+    </item>
+    
+    <item>
+      <title>WorldMapDayNight</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/render/ui/worldmapdaynight/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/render/ui/worldmapdaynight/</guid>
+      <description>Namespace: Rhino.Render.UI
+public class WorldMapDayNight : IDisposableConstructors  WorldMapDayNight()  since 6.0  Methods  void Dispose()  since 6.0 bool HasMapForCurrentSettings()  since 6.0 System.Drawing.Point LocationToMap(Point2d latlong)  since 6.0 void MakeMapBitmap()  since 6.0 System.Drawing.Image Map()  since 6.0 Rhino.Geometry.Point2d MapToLocation(Point mapPoint)  since 6.0 void SetDayNightDisplay(bool bOn)  since 6.0 void SetEnabled(bool bEnabled)  since 6.0 void SetTimeInfo(DateTime dt,double timezone,int daylightSavingMinutes,bool bDaylightSavingsOn)  since 6.0  </description>
+    </item>
+    
+  </channel>
+</rss>

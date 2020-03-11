@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ObjectTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+public class ObjectTable :RhinoDocCommonTable&amp;lt;RhinoObject&amp;gt;,ICollection&amp;lt;RhinoObject&amp;gt;Properties  BoundingBox BoundingBox Gets the boundingbox for all objects (normal, locked and hidden) in this document that exist in &amp;ldquo;model&amp;rdquo; space. This bounding box does not include objects that exist in layout space. BoundingBox BoundingBoxVisible Gets the boundingbox for all visible objects (normal and locked) in this document that exist in &amp;ldquo;model&amp;rdquo; space. This bounding box does not include hidden objects or any objects that exist in layout space.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ObjectTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObjectTable</span> :
+    RhinoDocCommonTable&lt;RhinoObject&gt;,
+    ICollection&lt;RhinoObject&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBox</dt>
+<dd>Gets the boundingbox for all objects (normal, locked and hidden) in this
+document that exist in &ldquo;model&rdquo; space. This bounding box does not include
+objects that exist in layout space.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> BoundingBoxVisible</dt>
+<dd>Gets the boundingbox for all visible objects (normal and locked) in this
+document that exist in &ldquo;model&rdquo; space. This bounding box does not include
+hidden objects or any objects that exist in layout space.</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Gets the document that owns this object table.</dd>
+<dt>int HistoryRecordCount</dt>
+<dd>Returns the amount of history records in this document.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>Guid Add(GeometryBase geometry)</dt>
+<dd>Adds geometry that is not further specified.
+This is meant, for example, to handle addition of sets of different geometrical entities.</dd>
+<dd>Returns - The new object ID on success.</dd>
+<dt>Guid Add(GeometryBase geometry,ObjectAttributes attributes)</dt>
+<dd>Adds geometry that is not further specified.
+This is meant, for example, to handle addition of sets of different geometrical entities.</dd>
+<dd>Returns - The new object ID on success.</dd>
+<dt>Guid Add(GeometryBase geometry,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds geometry that is not further specified.
+This is meant, for example, to handle addition of sets of different geometrical entities.</dd>
+<dd>Returns - The new object ID on success.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddAngularDimension(AngularDimension dimension)</dt>
+<dd>Adds a angular dimension object to the document.</dd>
+<dd>Returns - The Id of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddAngularDimension(AngularDimension dimension,ObjectAttributes attributes)</dt>
+<dd>Adds a angular dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddAngularDimension(AngularDimension dimension,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds an angular dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddArc(Arc arc)</dt>
+<dd>Adds a curve object to the document representing an arc.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddArc(Arc arc,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the document representing an arc.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddArc(Arc arc,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddBox(Box box)</dt>
+<dd>Adds a box to the object table.</dd>
+<dd>Returns - The ID.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddBox(Box box,ObjectAttributes attributes)</dt>
+<dd>Adds a box to the object table.</dd>
+<dd>Returns - The ID.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddBox(Box box,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a box to the object table, as an extrusion.</dd>
+<dd>Returns - The ID.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddBrep(Brep brep)</dt>
+<dd>Adds a brep object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddBrep(Brep brep,ObjectAttributes attributes)</dt>
+<dd>Adds a brep object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddBrep(Brep brep,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddBrep(Brep brep,ObjectAttributes attributes,HistoryRecord history,bool reference,bool splitKinkySurfaces)</dt>
+<dd></dd>
+<dt>Guid AddCentermark(Centermark centermark,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds an ordinate dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddCircle(Circle circle)</dt>
+<dd>Adds a curve object to the document representing a circle.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCircle(Circle circle,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the document representing a circle.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCircle(Circle circle,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)</dt>
+<dd>Adds a clipping plane object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds)</dt>
+<dd>Adds a clipping plane object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds,ObjectAttributes attributes)</dt>
+<dd>Adds a clipping plane object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddCurve(Curve curve)</dt>
+<dd>Adds a curve object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCurve(Curve curve,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCurve(Curve curve,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddEllipse(Ellipse ellipse)</dt>
+<dd>Adds a curve object to the document representing an ellipse.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddEllipse(Ellipse ellipse,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the document representing an ellipse.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddEllipse(Ellipse ellipse,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid[] AddExplodedInstancePieces(InstanceObject instance,bool explodeNestedInstances,bool deleteInstance)</dt>
+<dd></dd>
+<dd>since 5.11</dd>
+<dt>Guid AddExtrusion(Extrusion extrusion)</dt>
+<dd>Adds an extrusion object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddExtrusion(Extrusion extrusion,ObjectAttributes attributes)</dt>
+<dd>Adds an extrusion object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddExtrusion(Extrusion extrusion,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddHatch(Hatch hatch)</dt>
+<dd></dd>
+<dt>Guid AddHatch(Hatch hatch,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddHatch(Hatch hatch,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform)</dt>
+<dd>Adds an instance object to the document.</dd>
+<dd>Returns - A unique identifier for the object if successful. Guid.Empty it not successful.</dd>
+<dt>Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform,ObjectAttributes attributes)</dt>
+<dd>Adds an instance object to the document.</dd>
+<dd>Returns - A unique identifier for the object if successful. Guid.Empty it not successful.</dd>
+<dt>Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds an instance object to the document.</dd>
+<dd>Returns - A unique identifier for the object if successful. Guid.Empty it not successful.</dd>
+<dd>since 6.24</dd>
+<dt>Guid AddLeader(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd></dd>
+<dt>Guid AddLeader(Leader leader)</dt>
+<dd>Adds a Leader object to the document.</dd>
+<dd>Returns - The Id of the newly added object or Guid.Empty on failure.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddLeader(Leader leader,ObjectAttributes attributes)</dt>
+<dd>Addsa Leader object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddLeader(Leader leader,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a Leader object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd></dd>
+<dt>Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddLeader(string text,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd></dd>
+<dt>Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd></dd>
+<dt>Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddLine(Line line)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLine(Line line,ObjectAttributes attributes)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLine(Point3d from,Point3d to)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLine(Point3d from,Point3d to,ObjectAttributes attributes)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLine(Point3d from,Point3d to,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddLinearDimension(LinearDimension dimension)</dt>
+<dd>Adds a linear dimension object to the document.</dd>
+<dd>Returns - The Id of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddLinearDimension(LinearDimension dimension,ObjectAttributes attributes)</dt>
+<dd>Adds a linear dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddLinearDimension(LinearDimension dimension,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a linear dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddMesh(Mesh mesh)</dt>
+<dd>Adds a mesh object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddMesh(Mesh mesh,ObjectAttributes attributes)</dt>
+<dd>Adds a mesh object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddMesh(Mesh mesh,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddMesh(Mesh mesh,ObjectAttributes attributes,HistoryRecord history,bool reference,bool requireValidMesh)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Guid AddMorphControl(MorphControl morphControl)</dt>
+<dd></dd>
+<dt>Guid AddMorphControl(MorphControl morphControl,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddMorphControl(MorphControl morphControl,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Guid AddOrdinateDimension(OrdinateDimension dimordinate,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds an ordinate dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddPictureFrame(Plane plane,string texturePath,bool asMesh,double width,double height,bool selfIllumination,bool embedBitmap)</dt>
+<dd>Creates a PictureFrame object from a plane and a path to an image file,
+Note, a PictureFrame object is just a Plane surface or mesh that has a
+material with a texture assigned to it that displays in all display
+modes.</dd>
+<dd>Returns - A unique identifier for the object</dd>
+<dd>since 5.10</dd>
+<dt>Guid AddPoint(double x,double y,double z)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object..</dd>
+<dt>Guid AddPoint(Point point,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a point object and its geometry-linked information to the document</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddPoint(Point3d point)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(Point3d point,ObjectAttributes attributes)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(Point3d point,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a point object to the document</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(Point3f point)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(Point3f point,ObjectAttributes attributes)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(PointCloud cloud)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(PointCloud cloud,ObjectAttributes attributes)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(PointCloud cloud,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - List of object ids.</dd>
+<dt>RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - List of object ids.</dd>
+<dt>RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - List of object ids.</dd>
+<dt>RhinoList<!-- raw HTML omitted --> AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - List of object ids.</dd>
+<dt>Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds a polyline object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds a polyline object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddRadialDimension(RadialDimension dimension)</dt>
+<dd></dd>
+<dt>Guid AddRadialDimension(RadialDimension dimension,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddRadialDimension(RadialDimension dimension,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a radial dimension object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddRectangle(Rectangle3d rectangle)</dt>
+<dd>Adds a rectangle to the object table.</dd>
+<dd>Returns - The ID.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddRectangle(Rectangle3d rectangle,ObjectAttributes attributes)</dt>
+<dd>Adds a rectangle to the object table.</dd>
+<dd>Returns - The ID.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddRectangle(Rectangle3d rectangle,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a rectangle to the object table.</dd>
+<dd>Returns - The ID.</dd>
+<dd>since 6.0</dd>
+<dt>void AddRhinoObject(BrepObject brepObject,Brep brep)</dt>
+<dd></dd>
+<dt>void AddRhinoObject(CurveObject curveObject,Curve curve)</dt>
+<dd></dd>
+<dt>void AddRhinoObject(CustomBrepObject brepObject)</dt>
+<dd></dd>
+<dt>void AddRhinoObject(CustomBrepObject brepObject,HistoryRecord history)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>void AddRhinoObject(CustomCurveObject curveObject,HistoryRecord history)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>void AddRhinoObject(CustomMeshObject meshObject)</dt>
+<dd></dd>
+<dt>void AddRhinoObject(CustomMeshObject meshObject,HistoryRecord history)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>void AddRhinoObject(CustomPointObject pointObject)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>void AddRhinoObject(CustomPointObject pointObject,HistoryRecord history)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>void AddRhinoObject(MeshObject meshObject,Mesh mesh)</dt>
+<dd></dd>
+<dt>void AddRhinoObject(PointObject pointObject,Point point)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>Guid AddSphere(Sphere sphere)</dt>
+<dd></dd>
+<dt>Guid AddSphere(Sphere sphere,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddSphere(Sphere sphere,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddSubD(SubD subD)</dt>
+<dd>Adds a SubD object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 7.0</dd>
+<dt>Guid AddSubD(SubD subD,ObjectAttributes attributes)</dt>
+<dd>Adds a SubD object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 7.0</dd>
+<dt>Guid AddSubD(SubD subD,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a SubD object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 7.0</dd>
+<dt>Guid AddSurface(Surface surface)</dt>
+<dd>Adds a surface object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddSurface(Surface surface,ObjectAttributes attributes)</dt>
+<dd>Adds a surface object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddSurface(Surface surface,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification)</dt>
+<dd></dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes)</dt>
+<dd></dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt>Guid AddText(Text3d text3d)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(Text3d text3d,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(TextEntity text)</dt>
+<dd>Adds a v6_TextObject to the document.</dd>
+<dd>Returns - The Id of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(TextEntity text,ObjectAttributes attributes)</dt>
+<dd>Adds a text object to the document.</dd>
+<dd>Returns - The Id of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(TextEntity text,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd>Adds a text object to the document.</dd>
+<dd>Returns - The Id of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddTextDot(string text,Point3d location)</dt>
+<dd>Adds a text dot object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddTextDot(string text,Point3d location,ObjectAttributes attributes)</dt>
+<dd>Adds a text dot object to Rhino.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddTextDot(TextDot dot)</dt>
+<dd>Adds a text dot object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddTextDot(TextDot dot,ObjectAttributes attributes)</dt>
+<dd>Adds a text dot object to Rhino.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddTextDot(TextDot dot,ObjectAttributes attributes,HistoryRecord history,bool reference)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] AllObjectsSince(uint runtimeSerialNumber)</dt>
+<dd>Gets all the objects that have been added to the document since a given runtime serial number.</dd>
+<dd>Returns - An array of objects or None if no objects were added since the given runtime serial number.</dd>
+<dt>bool Delete(Guid objectId,bool quiet)</dt>
+<dd>Deletes object from document. The deletion can be undone by calling UndeleteObject().</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>int Delete(IEnumerable<!-- raw HTML omitted --> objectIds,bool quiet)</dt>
+<dd>Deletes a collection of objects from the document.</dd>
+<dd>Returns - The number of successfully deleted objects.</dd>
+<dt>bool Delete(ObjRef objref,bool quiet)</dt>
+<dd>Deletes objref.Object(). The deletion can be undone by calling UndeleteObject().</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Delete(ObjRef objref,bool quiet,bool ignoreModes)</dt>
+<dd>Deletes objref.Object(). The deletion can be undone by calling UndeleteObject().</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(RhinoObject item)</dt>
+<dd>Deletes an object, taking into account modes and not showing error message boxes.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(RhinoObject obj,bool quiet)</dt>
+<dd>Deletes object from document. The deletion can be undone by calling UndeleteObject().</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Delete(RhinoObject obj,bool quiet,bool ignoreModes)</dt>
+<dd>Deletes object from document. The deletion can be undone by calling UndeleteObject().</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 6.0</dd>
+<dt>bool DeleteGrip(GripObject grip)</dt>
+<dd>Deletes a grip object.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.5</dd>
+<dt>bool DeleteGrip(Guid gripId)</dt>
+<dd>Deletes a grip object.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.5</dd>
+<dt>bool DeleteGrip(ObjRef gripRef)</dt>
+<dd>Deletes a grip object.</dd>
+<dd>Returns - True on success.</dd>
+<dd>since 6.5</dd>
+<dt>int DeleteGrips(IEnumerable<!-- raw HTML omitted --> grips)</dt>
+<dd>Deletes one or more grip objects.</dd>
+<dd>Returns - The number of successfully deleted grip objects.</dd>
+<dd>since 6.5</dd>
+<dt>int DeleteGrips(IEnumerable<!-- raw HTML omitted --> gripIds)</dt>
+<dd>Deletes one or more grip objects.</dd>
+<dd>Returns - The number of successfully deleted grip objects.</dd>
+<dd>since 6.5</dd>
+<dt>int DeleteGrips(IEnumerable<!-- raw HTML omitted --> gripRefs)</dt>
+<dd>Deletes one or more grip objects.</dd>
+<dd>Returns - The number of successfully deleted grip objects.</dd>
+<dd>since 6.5</dd>
+<dt>int DeleteGrips(RhinoObject owner,IEnumerable<!-- raw HTML omitted --> gripIndices)</dt>
+<dd>Deletes one or more grip objects.</dd>
+<dd>Returns - The number of successfully deleted grip objects.</dd>
+<dd>since 6.5</dd>
+<dt>Guid Duplicate(Guid objectId)</dt>
+<dd>Same as TransformObject(objref, ON_Xform.Identity, false)</dd>
+<dd>Returns - The new object ID.</dd>
+<dt>Guid Duplicate(ObjRef objref)</dt>
+<dd>Duplicates the object that is referenced by objref.
+Same as Transform(objref, Transform.Identity, false)</dd>
+<dd>Returns - The new object ID.</dd>
+<dt>Guid Duplicate(RhinoObject obj)</dt>
+<dd>Duplicates the object that is referenced by obj.
+Same as TransformObject(obj, Transform.Identityy, false)</dd>
+<dd>Returns - The new object ID.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> Find(Guid objectId)</dt>
+<dd>Please use FindId().</dd>
+<dd>Returns - Do not use this method.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> Find(uint runtimeSerialNumber)</dt>
+<dd>Use the object runtime serial number to find a rhino object in the document. This is the value stored on
+RhinoObject.RuntimeObjectSerialNumber. The RhinoObject constructor sets the runtime serial number and every
+instance of a RhinoObject class will have a unique serial number for the duration of the Rhino application.
+If an object is replaced with a new object, then the new object will have a different runtime serial number.
+Deleted objects stored in the undo list maintain their runtime serial numbers and this funtion will return
+pointers to these objects. Call RhinoObject.IsDeleted if you need to determine if the returned object is
+active or deleted.  The runtime serial number is not saved in files.</dd>
+<dd>Returns - Reference to the rhino object with the objectId or None if no such object could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByCrossingWindowRegion(RhinoViewport viewport,IEnumerable<!-- raw HTML omitted --> region,bool inside,ObjectType filter)</dt>
+<dd>Finds objects bounded by a polyline region</dd>
+<dd>Returns - An array of RhinoObjects that are inside of this region</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByCrossingWindowRegion(RhinoViewport viewport,Point2d screen1,Point2d screen2,bool inside,ObjectType filter)</dt>
+<dd>Finds objects bounded by a region</dd>
+<dd>Returns - An array of RhinoObjects that are inside of this region</dd>
+<dd>since 5.8</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByDrawColor(Color drawColor,bool includeLights)</dt>
+<dd>Finds all objects whose draw color matches a given color.</dd>
+<dd>Returns - An array of Rhino document objects. This array can be empty.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByFilter(ObjectEnumeratorSettings filter)</dt>
+<dd>Same as GetObjectList but converts the result to an array.</dd>
+<dd>Returns - A Rhino object array. This array can be emptry but not null.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByGroup(int groupIndex)</dt>
+<dd>Finds all RhinoObjects that are in a given group.</dd>
+<dd>Returns - An array of objects that belong to the specified group or None if no objects could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByLayer(Layer layer)</dt>
+<dd>Finds all RhinoObjects that are in a given layer.</dd>
+<dd>Returns - Array of objects that belong to the specified group or None if no objects could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByLayer(string layerName)</dt>
+<dd>Finds all RhinoObjects that are in a given layer.</dd>
+<dd>Returns - Array of objects that belong to the specified group or None if no objects could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByObjectType(ObjectType typeFilter)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByUserString(string key,string value,bool caseSensitive)</dt>
+<dd>Finds all objects whose UserString matches the search patterns.</dd>
+<dd>Returns - An array of all objects whose UserString matches with the search patterns or None when no such objects could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByUserString(string key,string value,bool caseSensitive,bool searchGeometry,bool searchAttributes,ObjectEnumeratorSettings filter)</dt>
+<dd>Finds all objects whose UserString matches the search patterns.</dd>
+<dd>Returns - An array of all objects whose UserString matches with the search patterns or None when no such objects could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByUserString(string key,string value,bool caseSensitive,bool searchGeometry,bool searchAttributes,ObjectType filter)</dt>
+<dd>Finds all objects whose UserString matches the search patterns.</dd>
+<dd>Returns - An array of all objects whose UserString matches with the search patterns or None when no such objects could be found.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByWindowRegion(RhinoViewport viewport,IEnumerable<!-- raw HTML omitted --> region,bool inside,ObjectType filter)</dt>
+<dd>Finds objects bounded by a polyline region</dd>
+<dd>Returns - An array of RhinoObjects that are inside of this region</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] FindByWindowRegion(RhinoViewport viewport,Point2d screen1,Point2d screen2,bool inside,ObjectType filter)</dt>
+<dd>Finds objects bounded by a polyline region</dd>
+<dd>Returns - An array of RhinoObjects that are inside of this region</dd>
+<dd>since 5.8</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/clippingplaneobject/">ClippingPlaneObject</a>[] FindClippingPlanesForViewport(RhinoViewport viewport)</dt>
+<dd>Finds all of the clipping plane objects that actively clip a viewport.</dd>
+<dd>Returns - An array of clipping plane objects. The array can be emptry but not null.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/geometrybase/">GeometryBase</a> FindGeometry(Guid id)</dt>
+<dd>Same as FindId, but returns the Geometry property directly, if it exists.</dd>
+<dd>Returns - Reference to the geometry in the rhino object with the objectId or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> FindId(Guid id)</dt>
+<dd>Uses the object guid to find a rhino object. Deleted objects cannot be found by id.
+The guid is the value that is stored on RhinoObject.Id
+In a single document, no two active objects have the same guid. If an object is
+replaced with a new object, then the guid  persists. For example, if the _Move command
+moves an object, then the moved object inherits it&rsquo;s guid from the starting object.
+If the Copy command copies an object, then the copy gets a new guid. This guid persists
+through file saving/openning operations. This function will not find grip objects.</dd>
+<dd>Returns - Reference to the rhino object with the objectId or None if no such object could be found.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd></dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetObjectList(ObjectEnumeratorSettings settings)</dt>
+<dd></dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetObjectList(ObjectType typeFilter)</dt>
+<dd></dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetObjectList(Type typeFilter)</dt>
+<dd></dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetObjectsByType()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetObjectsByType(ObjectEnumeratorSettings settings)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>IEnumerable<!-- raw HTML omitted --> GetSelectedObjects(bool includeLights,bool includeGrips)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objecttype/">ObjectType</a> GetSelectedObjectTypes()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> GripUpdate(RhinoObject obj,bool deleteOriginal)</dt>
+<dd>Altered grip positions on a RhinoObject are used to calculate an updated object
+that is added to the document.</dd>
+<dd>Returns - new RhinoObject on success; otherwise null.</dd>
+<dt>bool Hide(Guid objectId,bool ignoreLayerMode)</dt>
+<dd>If Object().IsNormal() is true, then the object will be hidden.</dd>
+<dd>Returns - True if the object was successfully hidden.</dd>
+<dt>bool Hide(ObjRef objref,bool ignoreLayerMode)</dt>
+<dd>If objref.Object().IsNormal() is true, then the object will be hidden.</dd>
+<dd>Returns - True if the object was successfully hidden.</dd>
+<dt>bool Hide(RhinoObject obj,bool ignoreLayerMode)</dt>
+<dd>If obj.IsNormal() is true, then the object will be hidden.</dd>
+<dd>Returns - True if the object was successfully hidden.</dd>
+<dt>bool Lock(Guid objectId,bool ignoreLayerMode)</dt>
+<dd>If objref.Object().IsNormal() is true, then the object will be locked.</dd>
+<dd>Returns - True if the object was successfully locked.</dd>
+<dt>bool Lock(ObjRef objref,bool ignoreLayerMode)</dt>
+<dd>If objref.Object().IsNormal() is true, then the object will be locked.</dd>
+<dd>Returns - True if the object was successfully locked.</dd>
+<dt>bool Lock(RhinoObject obj,bool ignoreLayerMode)</dt>
+<dd>If obj.IsNormal() is true, then the object will be locked.</dd>
+<dd>Returns - True if the object was successfully locked.</dd>
+<dt>bool ModifyAttributes(Guid objectId,ObjectAttributes newAttributes,bool quiet)</dt>
+<dd>Modifies an object&rsquo;s attributes.  Cannot be used to change object id.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool ModifyAttributes(ObjRef objref,ObjectAttributes newAttributes,bool quiet)</dt>
+<dd>Modifies an object&rsquo;s attributes.  Cannot be used to change object id.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool ModifyAttributes(RhinoObject obj,ObjectAttributes newAttributes,bool quiet)</dt>
+<dd>Modifies an object&rsquo;s attributes.  Cannot be used to change object id.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool ModifyRenderMaterial(Guid objectId,RenderMaterial material)</dt>
+<dd>Modifies an object&rsquo;s render material assignment, this will set the
+objects material source to ObjectMaterialSource.MaterialFromObject.</dd>
+<dd>Returns - Returns True on success otherwise returns false.</dd>
+<dd>since 5.7</dd>
+<dt>bool ModifyRenderMaterial(ObjRef objRef,RenderMaterial material)</dt>
+<dd>Modifies an object&rsquo;s render material assignment, this will set the
+objects material source to ObjectMaterialSource.MaterialFromObject.</dd>
+<dd>Returns - Returns True on success otherwise returns false.</dd>
+<dd>since 5.7</dd>
+<dt>bool ModifyRenderMaterial(RhinoObject obj,RenderMaterial material)</dt>
+<dd>Modifies an object&rsquo;s render material assignment, this will set the
+objects material source to ObjectMaterialSource.MaterialFromObject.</dd>
+<dd>Returns - Returns True on success otherwise returns false.</dd>
+<dd>since 5.7</dd>
+<dt>bool ModifyTextureMapping(Guid objId,int channel,TextureMapping mapping)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>bool ModifyTextureMapping(ObjRef objRef,int channel,TextureMapping mapping)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt>bool ModifyTextureMapping(RhinoObject obj,int channel,TextureMapping mapping)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a> MostRecentObject()</dt>
+<dd>Gets the most recently added object that is still in the Document.</dd>
+<dd>Returns - The most recent (non-deleted) object in the document, or None if no such object exists.</dd>
+<dt>int ObjectCount(ObjectEnumeratorSettings filter)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objref/">ObjRef</a>[] PickObjects(PickContext pickContext)</dt>
+<dd>Pick one or more objects based on a given pick context</dd>
+<dd>Returns - zero or more objects</dd>
+<dd>since 6.0</dd>
+<dt>bool Purge(RhinoObject rhinoObject)</dt>
+<dd>Removes object from document and deletes the pointer. Typically you will
+want to call Delete instead in order to keep the object on the undo list.</dd>
+<dd>Returns - True if the object was purged; otherwise false.</dd>
+<dt>bool Purge(uint runtimeSerialNumber)</dt>
+<dd>Removes object from document and deletes the pointer. Typically you will
+want to call Delete instead in order to keep the object on the undo list.</dd>
+<dd>Returns - True if the object was purged; otherwise false.</dd>
+<dt>bool Replace(Guid objectId,Arc arc)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Brep brep)</dt>
+<dd>Replaces one object with new brep object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Brep brep,bool splitKinkySurfaces)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>bool Replace(Guid objectId,Circle circle)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Curve curve)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Extrusion extrusion)</dt>
+<dd>Replaces one object with new extrusion object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(Guid objectId,Hatch hatch)</dt>
+<dd>Replaces one object with new hatch object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.1</dd>
+<dt>bool Replace(Guid objectId,Leader leader)</dt>
+<dd>Replaces one object with new text object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(Guid objectId,Line line)</dt>
+<dd>Replaces one object with new line curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Mesh mesh)</dt>
+<dd>Replaces one object with new mesh object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Point point)</dt>
+<dd>Replaces one object with new point object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(Guid objectId,Point3d point)</dt>
+<dd>Replaces one object with new point object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,PointCloud pointcloud)</dt>
+<dd>Replaces one object with new pointcloud object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,Polyline polyline)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,SubD subD)</dt>
+<dd>Replaces one object with new subd object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 7.0</dd>
+<dt>bool Replace(Guid objectId,Surface surface)</dt>
+<dd>Replaces one object with new surface object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,TextDot dot)</dt>
+<dd>Replaces one object with new textdot object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(Guid objectId,TextEntity text)</dt>
+<dd>Replaces one object with new text object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Arc arc)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Brep brep)</dt>
+<dd>Replaces one object with new brep object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Brep brep,bool splitKinkySurfaces)</dt>
+<dd></dd>
+<dd>since 6.1</dd>
+<dt>bool Replace(ObjRef objref,Circle circle)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Curve curve)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Extrusion extrusion)</dt>
+<dd>Replaces one object with new extrusion object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(ObjRef objref,Hatch hatch)</dt>
+<dd>Replaces one object with new hatch object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.1</dd>
+<dt>bool Replace(ObjRef objref,Leader leader)</dt>
+<dd>Replaces one object with new text object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(ObjRef objref,Line line)</dt>
+<dd>Replaces one object with new line curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Mesh mesh)</dt>
+<dd>Replaces one object with new mesh object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Point point)</dt>
+<dd>Replaces one object with new point object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.0</dd>
+<dt>bool Replace(ObjRef objref,Point3d point)</dt>
+<dd>Replaces one object with new point object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,PointCloud pointcloud)</dt>
+<dd>Replaces one object with new pointcloud object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,Polyline polyline)</dt>
+<dd>Replaces one object with new curve object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,RhinoObject newObject)</dt>
+<dd>Replaces one object with another. Conceptually, this function is the same as calling
+Setting new_object attributes = old_object attributes
+DeleteObject(old_object);
+AddObject(old_object);</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,SubD subD)</dt>
+<dd>Replaces one object with a new SubD object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 7.0</dd>
+<dt>bool Replace(ObjRef objref,Surface surface)</dt>
+<dd>Replaces one object with new surface object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,TextDot dot)</dt>
+<dd>Replaces one object with new textdot object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool Replace(ObjRef objref,TextEntity text)</dt>
+<dd>Replaces one object with new text object.</dd>
+<dd>Returns - True if successful.</dd>
+<dt>bool ReplaceInstanceObject(Guid objectId,int instanceDefinitionIndex)</dt>
+<dd>Replaces the underlying instance definition of an instance object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.8</dd>
+<dt>bool ReplaceInstanceObject(ObjRef objref,int instanceDefinitionIndex)</dt>
+<dd>Replaces the underlying instance definition of an instance object.</dd>
+<dd>Returns - True if successful.</dd>
+<dd>since 6.8</dd>
+<dt>bool Select(Guid objectId)</dt>
+<dd>Select a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(Guid objectId,bool select)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(Guid objectId,bool select,bool syncHighlight)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(Guid objectId,bool select,bool syncHighlight,bool persistentSelect)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(Guid objectId,bool select,bool syncHighlight,bool persistentSelect,bool ignoreGripsState,bool ignoreLayerLocking,bool ignoreLayerVisibility)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>int Select(IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Selects a collection of objects.</dd>
+<dd>Returns - Number of objects successfully selected.</dd>
+<dt>int Select(IEnumerable<!-- raw HTML omitted --> objectIds,bool select)</dt>
+<dd>Selects or deselects a collection of objects.</dd>
+<dd>Returns - Number of objects successfully selected or deselected.</dd>
+<dt>int Select(IEnumerable<!-- raw HTML omitted --> objRefs)</dt>
+<dd>Selects a collection of objects.</dd>
+<dd>Returns - Number of objects successfully selected.</dd>
+<dt>int Select(IEnumerable<!-- raw HTML omitted --> objRefs,bool select)</dt>
+<dd>Selects or deselects a collection of objects.</dd>
+<dd>Returns - Number of objects successfully selected or deselected.</dd>
+<dt>bool Select(ObjRef objref)</dt>
+<dd>Select a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(ObjRef objref,bool select)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(ObjRef objref,bool select,bool syncHighlight)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(ObjRef objref,bool select,bool syncHighlight,bool persistentSelect)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Select(ObjRef objref,bool select,bool syncHighlight,bool persistentSelect,bool ignoreGripsState,bool ignoreLayerLocking,bool ignoreLayerVisibility)</dt>
+<dd>Select or deselects a single object.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool Show(Guid objectId,bool ignoreLayerMode)</dt>
+<dd>If Object().IsHidden() is true, then the object will be returned to normal (visible and selectable) mode.</dd>
+<dd>Returns - True if the object was successfully shown.</dd>
+<dt>bool Show(ObjRef objref,bool ignoreLayerMode)</dt>
+<dd>If objref.Object().IsHidden() is true, then the object will be returned to normal (visible and selectable) mode.</dd>
+<dd>Returns - True if the object was successfully shown.</dd>
+<dt>bool Show(RhinoObject obj,bool ignoreLayerMode)</dt>
+<dd>If obj.IsHidden() is true, then the object will be returned to normal (visible and selectable) mode.</dd>
+<dd>Returns - True if the object was successfully shown.</dd>
+<dt>Guid Transform(Guid objectId,Transform xform,bool deleteOriginal)</dt>
+<dd>Constructs a new object that is the transformation of the existing object
+and deletes the existing object if deleteOriginal is true.</dd>
+<dd>Returns - Id of the new object that is the transformation of the existing_object.
+The new object has identical attributes.</dd>
+<dt>Guid Transform(ObjRef objref,Transform xform,bool deleteOriginal)</dt>
+<dd>Constructs a new object that is the transformation of the existing object
+and deletes the existing object if deleteOriginal is true.</dd>
+<dd>Returns - Id of the new object that is the transformation of the existing_object.
+The new object has identical attributes.</dd>
+<dt>Guid Transform(RhinoObject obj,Transform xform,bool deleteOriginal)</dt>
+<dd>Constructs a new object that is the transformation of the existing object
+and deletes the existing object if deleteOriginal is true.</dd>
+<dd>Returns - Id of the new object that is the transformation of the existing_object.
+The new object has identical attributes.</dd>
+<dt>Guid TransformWithHistory(Guid objectId,Transform xform)</dt>
+<dd>Constructs a new object that is the transformation of the existing object
+and records history of the transformation if history recording is turned on.
+If history recording is not enabled, this function will act the same as
+Transform(objectId, xform, false)</dd>
+<dd>Returns - Id of the new object that is the transformation of the existing_object.
+The new object has identical attributes.</dd>
+<dt>Guid TransformWithHistory(ObjRef objref,Transform xform)</dt>
+<dd>Constructs a new object that is the transformation of the existing object
+and records history of the transformation if history recording is turned on.
+If history recording is not enabled, this function will act the same as
+Transform(objref, xform, false)</dd>
+<dd>Returns - Id of the new object that is the transformation of the existing_object.
+The new object has identical attributes.</dd>
+<dt>Guid TransformWithHistory(RhinoObject obj,Transform xform)</dt>
+<dd>Constructs a new object that is the transformation of the existing object
+and records history of the transformation if history recording is turned on.
+If history recording is not enabled, this function will act the same as
+Transform(obj, xform, false)</dd>
+<dd>Returns - Id of the new object that is the transformation of the existing_object.
+The new object has identical attributes.</dd>
+<dt>bool TryFindPoint(Guid id,Point3d point)</dt>
+<dd>Finds the location of a point, if a point exists in the document.</dd>
+<dd>Returns - True on success; False if point was not found, id represented another geometry type, or on error.</dd>
+<dd>since 6.0</dd>
+<dt>bool Undelete(RhinoObject rhinoObject)</dt>
+<dd></dd>
+<dt>bool Undelete(uint runtimeSerialNumber)</dt>
+<dd></dd>
+<dt>bool Unlock(Guid objectId,bool ignoreLayerMode)</dt>
+<dd>If Object().IsLocked() is true, then the object will be returned to normal (visible and selectable) mode.</dd>
+<dd>Returns - True if the object was successfully unlocked.</dd>
+<dt>bool Unlock(ObjRef objref,bool ignoreLayerMode)</dt>
+<dd>If objref.Object().IsLocked() is true, then the object will be returned to normal (visible and selectable) mode.</dd>
+<dd>Returns - True if the object was successfully unlocked.</dd>
+<dt>bool Unlock(RhinoObject obj,bool ignoreLayerMode)</dt>
+<dd>If obj.IsLocked() is true, then the object will be returned to normal (visible and selectable) mode.</dd>
+<dd>Returns - True if the object was successfully unlocked.</dd>
+<dt>int UnselectAll()</dt>
+<dd>Unselect objects.</dd>
+<dd>Returns - Number of object that were unselected.</dd>
+<dt>int UnselectAll(bool ignorePersistentSelections)</dt>
+<dd>Unselect objects.</dd>
+<dd>Returns - Number of object that were unselected.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ObjectTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

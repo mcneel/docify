@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ComponentStatus &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Provides information about selection, highlighting, visibility, editability and integrity states of a component. This structure is immutable.
+ static != Determines if two ComponentStatus objects differ. Returns - True if they are in any way different. False otherwise. since 6.0 static &#43; Sets flags from both component states and returns a new ComponentStatus. Returns - A new ComponentStatus. since (unknown) static == Determines if two ComponentStatus objects are equal.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ComponentStatus</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Provides information about selection, highlighting, visibility, editability and integrity states of a component.
+This structure is immutable.</p>
+<dl>
+<dt>static !=</dt>
+<dd>Determines if two ComponentStatus objects differ.</dd>
+<dd>Returns - True if they are in any way different. False otherwise.</dd>
+<dd>since 6.0</dd>
+<dt>static +</dt>
+<dd>Sets flags from both component states and returns a new ComponentStatus.</dd>
+<dd>Returns - A new ComponentStatus.</dd>
+<dd>since (unknown)</dd>
+<dt>static ==</dt>
+<dd>Determines if two ComponentStatus objects are equal.</dd>
+<dd>Returns - True if they are exactly equal. False otherwise.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static ComponentStatus AllSet</dt>
+<dd>All flags are checked.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus Clear</dt>
+<dd>This is the default value and equal to undefined.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus Damaged</dt>
+<dd>The damaged flag is checked.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus Hidden</dt>
+<dd>The hidden flag is checked.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus Highlighted</dt>
+<dd>The highlight selection flag is checked.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus Locked</dt>
+<dd>The locked flag is checked.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus Selected</dt>
+<dd>The selection flag is checked.</dd>
+<dd>since 6.0</dd>
+<dt>static ComponentStatus SelectedPersistent</dt>
+<dd>The persistent selection flag is checked.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsClear</dt>
+<dd>True if every setting is 0 or false.</dd>
+<dd>Returns - True if the component status is undefined or clear.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsDamaged</dt>
+<dd>Returns False if component is not damaged. True otherwise.</dd>
+<dd>Returns - The component status for damaged.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsHidden</dt>
+<dd>Returns True if hidden. False otherwise.</dd>
+<dd>Returns - The component status for hidden.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsHighlighted</dt>
+<dd>Returns True if highlighted. False otherwise.</dd>
+<dd>Returns - The component status for highlighted.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsLocked</dt>
+<dd>Returns True if locked. False otherwise.</dd>
+<dd>Returns - The component status for locked.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsSelected</dt>
+<dd>Returns True if selected or selected persistent. False otherwise.</dd>
+<dd>Returns - The component status for selected.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsSelectedPersistent</dt>
+<dd>Returns True if selected persistent. False otherwise.</dd>
+<dd>Returns - The component status for selected.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool Equals(ComponentStatus other)</dt>
+<dd>Determines if another ComponentStatus and this are equal.</dd>
+<dd>Returns - True if equal in value. False otherwise</dd>
+<dd>since 6.0</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines if an object and this are equal.</dd>
+<dd>Returns - True if equal in value. False otherwise</dd>
+<dd>since (unknown)</dd>
+<dt>int GetHashCode()</dt>
+<dd>Serves as a special hash function. The inner value is used for the purpose.</dd>
+<dd>Returns - An integer deriving from a bit mask.</dd>
+<dd>since (unknown)</dd>
+<dt>bool HasAllEqualStates(ComponentStatus statesFilter,ComponentStatus comparand)</dt>
+<dd>For the purposes of this test, Selected and SelectedPersistent are considered equal.</dd>
+<dd>Returns - True if at all tested states in &ldquo;this&rdquo; and comparand are identical.</dd>
+<dd>since 6.0</dd>
+<dt>bool HasNoEqualStates(ComponentStatus statesFilter,ComponentStatus comparand)</dt>
+<dd>For the purposes of this test, Selected and SelectedPersistent are considered equal.</dd>
+<dd>Returns - True if at all tested states in &ldquo;this&rdquo; and comparand are identical.</dd>
+<dd>since 6.0</dd>
+<dt>bool HasSomeEqualStates(ComponentStatus statesFilter,ComponentStatus comparand)</dt>
+<dd>For the purposes of this test, Selected and SelectedPersistent are considered equal.</dd>
+<dd>Returns - True if at least one tested state in &ldquo;this&rdquo; and comparand are identical.</dd>
+<dd>since 6.0</dd>
+<dt>string ToString()</dt>
+<dd>Provides a string representation of this ComponentStatus.</dd>
+<dd>Returns - The representation in English.</dd>
+<dd>since (unknown)</dd>
+<dt>ComponentStatus WithStates(ComponentStatus additionalStatus)</dt>
+<dd>Activates any information flag described in any of the two input component statuses
+and returns a new ComponentStatus with those flags checked.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ComponentStatus</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

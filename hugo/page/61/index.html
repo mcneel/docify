@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/subdfacelist/">
-        <h3>SubDFaceList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/">
+        <h3>SimpleArrayBinaryArchiveReader</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/subdfacelist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-All faces in a SubD
-public class SubDFaceListProperties int Count  (summary) Gets the number of SubD faces. (since) 7.0  Methods SubDFace Find(int id)  (summary) Find a face in this SubD with a given id (since) 7.0 (returns) SubDFace This is some return comment  SubDFace Find(uint id)  (summary) Find a face in this SubD with a given id (since) 7.0 (returns) SubDFace This is some return comment  IEnumeratorGetEnumerator()  (summary) Implementation of IEnumerable (since) 7.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_BinaryArchive&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayBinaryArchiveReader : IDisposableConstructors  SimpleArrayBinaryArchiveReader() Initializes a new class. since 6.0 SimpleArrayBinaryArchiveReader(IntPtr p) Initializes a new class. since 6.0  Properties  int Count Gets the amount of elements in this array. since 6.0  Methods  void Add(BinaryArchiveReader reader) Adds a new at the end of this array.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/subdvertex/">
-        <h3>SubDVertex</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybreppointer/">
+        <h3>SimpleArrayBrepPointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/subdvertex/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraybreppointer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Single vertex of a SubD
-public class SubDVertexProperties Point3d ControlNetPoint  (summary) Location of the &ldquo;control net&rdquo; point that this SubDVertex represents (since) 7.0  int EdgeCount  (summary) Number of edges for this vertex (since) 7.0  IEnumerableEdges  (summary) All edges that this vertex is part of (since) 7.0  int FaceCount  (summary) Number of faces for this vertex (since) 7.0  SubDVertex Next  (summary) Next vertex in linked list of vertices on this level (since) 7.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&lt;ON_Brep&gt; or ON_SimpleArray&lt;const ON_Brep&gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayBrepPointer : IDisposableConstructors  SimpleArrayBrepPointer() Initializes a new instance.  Properties  int Count Gets the amount of breps in this array.  Methods  void Add(Brep brep,bool asConst) Adds a brep to the list. IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/subdvertexlist/">
-        <h3>SubDVertexList</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/">
+        <h3>SimpleArrayClippingPlaneObjectPointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/subdvertexlist/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry.Collections
-Provides access to the vertices and vertex-related functionality of a SubD
-public class SubDVertexListProperties int Count  (summary) Gets the number of SubD vertices. (since) 7.0  SubDVertex First  (summary) First vertex in this linked list of vertices (since) 7.0  Methods SubDVertex Add(SubDVertexTag tag,Point3d vertex)  (summary) Add a new vertex to the end of the Vertex list. (since) 7.0 (returns) SubDVertex This is some return comment  SubDVertex Find(int id)  (summary) Find a vertex in this SubD with a given id (since) 7.
+    Namespace: Rhino.Runtime.InteropWrappers
+ON_SimpleArray of CRhinoClippingPlaneObject*
+public class SimpleArrayClippingPlaneObjectPointer : IDisposableConstructors  SimpleArrayClippingPlaneObjectPointer() Initializes a new instance. since 6.7  Properties  int Count Gets the amount of clipping planes in this array. since 6.7  Methods  void Add(ClippingPlaneObject clippingplane,bool asConst) Adds a clipping plane to the list. since 6.7 IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 6.7 void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/sumsurface/">
-        <h3>SumSurface</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraycurvepointer/">
+        <h3>SimpleArrayCurvePointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/sumsurface/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraycurvepointer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a sum surface, or an extrusion of a curve along a curved path.
-public class SumSurfaceMethods static SumSurface Create(Curve curveA,Curve curveB)  (summary) Constructs a new sum surface by extruding a curve A along a path B. (since) 5.0 (returns) SumSurface This is some return comment  
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray of ON_Curve* or const ON_Curve*. If you are not writing C++ code, then you can ignore this class.
+public class SimpleArrayCurvePointer : IDisposableConstructors  SimpleArrayCurvePointer() Initializes a new instance. SimpleArrayCurvePointer(IEnumerablecurves) Initializes a new instance, from a set of input curves.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/sun/">
-        <h3>Sun</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraydouble/">
+        <h3>SimpleArrayDouble</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/sun/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraydouble/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-Represents the Sun on a little portion of Earth.
-public class SunConstructors Sun()  (summary) Create a non-document controlled Sun (since) 5.0  Events static Changed  (summary) This event is raised when a Sun property value is changed. (since) 5.10  Properties double Altitude  (summary) Get the altitude for the sun. To set use SetPosition(azimuth, altitude) (since) 5.0  double Azimuth  (summary) Get the azimuth for the sun.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray. If you are not writing C++ code, then this class is not for you.
+public class SimpleArrayDouble : IDisposableConstructors  SimpleArrayDouble() Initializes a new instance. SimpleArrayDouble(IEnumerableitems) Initializes a new instance, with items.  Properties  int Count Gets the amount of elements in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/supportoptions/">
-        <h3>SupportOptions</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayextrusionpointer/">
+        <h3>SimpleArrayExtrusionPointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/supportoptions/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayextrusionpointer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render
-public class SupportOptionsMethods static bool AlwaysShowSunPreview()  (summary) (since) 6.0 (returns) bool This is some return comment  static int AutoSaveKeepAmount()  (summary) (since) 6.0 (returns) int This is some return comment  static bool AutoSaveRenderings()  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CheckSupportFilesBeforeRendering()  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CombineEditors()  (summary) (since) 6.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&lt;ON_Extrusion&gt; or ON_SimpleArray&lt;const ON_Extrusion&gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayExtrusionPointer : IDisposableConstructors  SimpleArrayExtrusionPointer() Initializes a new instance. since 6.0  Properties  int Count Gets the amount of Extrusions in this array. since 6.0  Methods  void Add(Extrusion extrusion,bool asConst) Adds a extrusion to the list. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/surface/">
-        <h3>Surface</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraygeometrypointer/">
+        <h3>SimpleArrayGeometryPointer</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/surface/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearraygeometrypointer/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Represents a base class that is common to most RhinoCommon surface types. A surface represents an entity that can be all visited by providing two independent parameters, usually called (u, v), or sometimes (s, t).
-public class SurfaceProperties bool IsSolid  (summary) Gets a values indicating whether a surface is solid. (since) 5.0  Methods static Surface CreateExtrusion(Curve profile,Vector3d direction)  (summary) Constructs a surface by extruding a curve along a vector.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for a C++ ON_SimpleArray&lt;ON_Geometry&gt; or ON_SimpleArray&lt;const ON_Geometry*&gt;. If you are not writing C++ code, then this class is not for you.
+public class SimpleArrayGeometryPointer : IDisposableConstructors  SimpleArrayGeometryPointer() Initializes a new instance. SimpleArrayGeometryPointer(IEnumerable geometry) Expects all of the items in the IEnumerable to be GeometryBase types SimpleArrayGeometryPointer(IEnumerablegeometry) Create an ON_SimpleArray&lt;ON_Geometry*&gt; filled with items in geometry  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/surfacecurvature/">
-        <h3>SurfaceCurvature</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguid/">
+        <h3>SimpleArrayGuid</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/surfacecurvature/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayguid/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Maintains computed information for surface curvature evaluation.
-public class SurfaceCurvatureProperties double Gaussian  (summary) Gets the Gaussian curvature value at UV. (since) 5.0  double Mean  (summary) Gets the Mean curvature value at UV. (since) 5.0  Vector3d Normal  (summary) Gets the surface normal at UV. (since) 5.0  Point3d Point  (summary) Gets the surface point at UV. (since) 5.0  Point2d UVPoint  (summary) Gets the UV location where the curvature was computed.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_UUID&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayGuid : IDisposableConstructors  SimpleArrayGuid() Initializes a new class.  Properties  int Count Gets the amount of elements in this array.  Methods  void Append(Guid uuid) Appends a new at the end of this array. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/surfaceobject/">
-        <h3>SurfaceObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayinterval/">
+        <h3>SimpleArrayInterval</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/surfaceobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayinterval/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-Represents a surface in a document.
-public class SurfaceObjectProperties Surface SurfaceGeometry  (summary) Gets the surface geometry linked with this object. (since) 5.0  Methods Surface DuplicateSurfaceGeometry()  (summary) Constructs a new deep copy of the surface geometry. (since) 5.0 (returns) Surface This is some return comment  
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_Interval&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayInterval : IDisposableConstructors  SimpleArrayInterval() Initializes a new class.  Properties  int Count Gets the amount of elements in this array.  Methods  void Add(Interval interval) Adds a new at the end of this array. since 6.0 IntPtr ConstPointer() Gets the const (immutable) pointer of this array.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/sweeponerail/">
-        <h3>SweepOneRail</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayline/">
+        <h3>SimpleArrayLine</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/sweeponerail/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayline/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Utility class for generating Breps by sweeping cross section curves over a single rail curve. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
-public class SweepOneRailConstructors SweepOneRail()  (summary) (since) 5.0  Properties double AngleToleranceRadians  (summary) (since) 5.0  bool ClosedSweep  (summary) If the input rail is closed, ClosedSweep determines if the swept breps will also be closed. (since) 5.0  bool GlobalShapeBlending  (summary) If true, the sweep is linearly blended from one end to the other, creating sweeps that taper from one cross-section curve to the other.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_Line&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArrayLine : IDisposableConstructors  SimpleArrayLine() Initializes a new instance.  Properties  int Count Gets the amount of lines in this array.  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
 

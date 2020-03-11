@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,130 +57,130 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionimpl/">
-        <h3>CollapsibleSectionImpl</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedconstructionplanetable/">
+        <h3>NamedConstructionPlaneTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionimpl/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedconstructionplanetable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls
-public class CollapsibleSectionImplConstructors CollapsibleSectionImpl(ICollapsibleSection section)  (summary) (since) 6.0  Events DataChanged  (summary) (since) 6.0  ViewModelActivated  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  IRdkViewModel ViewModel  (summary) (since) 6.0  Methods static void CreateHostedSection(ICollapsibleSection section)  (summary) (since) 6.0 (returns) void This is some return comment  static ICollapsibleSection Find(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSection This is some return comment  static ICollapsibleSection GetSibling(ICollapsibleSection section,Guid siblingSectionId)  (summary) (since) 6.
+    Namespace: Rhino.DocObjects.Tables
+Contains all named construction planes in a rhino document. This class cannot be inherited.
+public class NamedConstructionPlaneTable : IEnumerable&lt;ConstructionPlane&gt;, Collections.IRhinoTable&lt;ConstructionPlane&gt;Properties  int Count Number of construction planes in the table. RhinoDoc Document Gets the document that owns this table.  Methods  int Add(string name,Plane plane) Adds named construction plane to document. Returns - 0 based index of named construction plane. -1 on failure. bool Delete(int index) Remove named construction plane from the document.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionviewmodel/">
-        <h3>CollapsibleSectionViewModel</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedlayerstatetable/">
+        <h3>NamedLayerStateTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionviewmodel/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedlayerstatetable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI.Controls
-Derive from this class to implement your own view model that wraps around a built in implementation of IRdkViewModel. Use GetData etc to implement your properties.
-public class CollapsibleSectionViewModelConstructors CollapsibleSectionViewModel(ICollapsibleSection section)  (summary) Construct from your section - the view model should be a member of the section (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Commit(Guid uuidDataType)  (summary) (since) 6.0 (returns) void This is some return comment  void Discard(Guid uuidDataType)  (summary) (since) 6.
+    Namespace: Rhino.DocObjects.Tables
+All named layer states in a Rhino document.
+public class NamedLayerStateTableProperties  int Count Returns the number of named layers states in the document. since 6.14 RhinoDoc Document Document that owns this table. since 6.14 string[] Names Returns the names of named layer states in the document. since 6.14  Methods  bool Delete(string name) Deletes an exising named layer state. Returns - True if successful, False otherwise.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/color4f/">
-        <h3>Color4f</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedpositiontable/">
+        <h3>NamedPositionTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/color4f/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedpositiontable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Color defined by 4 floating point values.
-static !=  (summary) (since) 5.0  static ==  (summary) (since) 5.0  Constructors Color4f(Color color)  (summary) (since) 5.0  Color4f(Color4f color)  (summary) (since) 5.0  Color4f(float red,float green,float blue,float alpha)  (summary) (since) 5.0  Color4f(int argb)  (summary) (since) 7.0  Properties static Color4f Black  (summary) (since) 5.0  static Color4f Empty  (summary) (since) 5.
+    Namespace: Rhino.DocObjects.Tables
+All named positions in a rhino document.
+public class NamedPositionTableProperties  int Count Number of Named Positions in the table. since 6.0 RhinoDoc Document Document that owns this table. since 6.0 Guid[] Ids Array of Named Position guids. Returns - Guid array of each Named Position in the document. since 6.0 string[] Names Array of Named Position names. Returns - A string array with the names all Named Positions in the document.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/fields/color4ffield/">
-        <h3>Color4fField</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedviewtable/">
+        <h3>NamedViewTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/fields/color4ffield/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/namedviewtable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.Fields
-Color4f field value class
-public class Color4fFieldProperties System.Drawing.Color SystemColorValue  (summary) Gets or sets the field value (since) 5.1  Color4f Value  (summary) Gets or sets the field value (since) 5.1  Methods object ValueAsObject()  (summary) (since) 5.7 (returns) object This is some return comment  
+    Namespace: Rhino.DocObjects.Tables
+All named views in a rhino document.
+public class NamedViewTable : IEnumerable&lt;ViewInfo&gt;, Collections.IRhinoTable&lt;ViewInfo&gt;Properties  int Count Number of named views in the table. RhinoDoc Document Document that owns this table.  Methods  int Add(string name,Guid viewportId) Adds named view to document which is based on an existing viewport. Returns - 0 based index of named view. -1 on failure. int Add(ViewInfo view)  bool Delete(int index) Remove named view from the document.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/colorcmyk/">
-        <h3>ColorCMYK</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/applicationsettings/neverrepeatlist/">
+        <h3>NeverRepeatList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/colorcmyk/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/applicationsettings/neverrepeatlist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Represents a CMYK (Cyan, Magenta, Yellow, Key) color with double precision floating point channels. CMYK colors are used primarily in printing environments as they provide a good simulation of physical ink.
-Constructors ColorCMYK(Color rgb)  (summary) Initializes a new instance of ColorCMYK that is equivalent to an RGB color. (since) 5.0  ColorCMYK(double cyan,double magenta,double yellow)  (summary) Initializes a new instance of ColorCMYK with custom channel values. The cyan, magenta and yellow values will be adjusted based on their combined darkness.
+    Namespace: Rhino.ApplicationSettings
+Contains static methods and properties relating to the list of commands that are never repeated.
+public class NeverRepeatListProperties  static bool UseNeverRepeatList Only use the list if somebody modifies it via CRhinoAppSettings::SetDontRepeatCommands(). Return value of True means CRhinoCommand don&rsquo;t repeat flags will be ignored and the m_dont_repeat_list will be used instead. False means the individual CRhinoCommands will determine if they are repeatable.  Methods  static string[] CommandNames() The list of commands to not repeat.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/colorgradient/">
-        <h3>ColorGradient</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/objectattributes/">
+        <h3>ObjectAttributes</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/colorgradient/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/objectattributes/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-public class ColorGradientProperties Rhino.Geometry.Point3d EndPoint  (summary) End point of gradient (since) 7.0  Rhino.Display.GradientType GradientType  (summary) Gradient fill type associated with this hatch (since) 7.0  double Repeat  (summary) Repeat factor for gradient. Factors greater than 1 define a reflected repeat factor while values less than -1 define a wrapped repeat factor. (since) 7.0  Rhino.Geometry.Point3d StartPoint  (summary) Start point of gradient (since) 7.
+    Namespace: Rhino.DocObjects
+Attributes (color, material, layer,&hellip;) associated with a rhino object
+[Serializable]public class ObjectAttributes : Runtime.CommonObjectConstructors  ObjectAttributes()   Properties  bool CastsShadows Gets or sets an object&rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane. since 6.0 ObjectColorSource ColorSource The color used to display an object is specified in one of three ways. If ColorSource is ON::color_from_layer, then the object&rsquo;s layer ON_Layer::Color() is used.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/colorhsl/">
-        <h3>ColorHSL</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/objectenumeratorsettings/">
+        <h3>ObjectEnumeratorSettings</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/colorhsl/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/objectenumeratorsettings/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Represents an HSL (Hue, Saturation, Luminance) color with double precision floating point channels. HSL colors are used primarily in Graphical User Interface environments as they provide a very natural approach to picking colors.
-Constructors ColorHSL(Color rgb)  (summary) Constructs a new instance of ColorHSL that is equivalent to an RGB color. (since) 5.0  ColorHSL(double hue,double saturation,double luminance)  (summary) Constructs a new instance of ColorHSL with custom channel values.
+    Namespace: Rhino.DocObjects
+Settings used for getting an enumerator of objects in a document See Rhino.Collections.ObjectTable.GetEnumerator()
+public class ObjectEnumeratorSettingsConstructors  ObjectEnumeratorSettings()   Properties  bool ActiveObjects  Type ClassTypeFilter  bool DeletedObjects  bool HiddenObjects  bool IdefObjects When true, ONLY Instance Definitions will be returned bool IncludeGrips  bool IncludeLights  bool IncludePhantoms  int LayerIndexFilter  bool LockedObjects  string NameFilter  bool NormalObjects  ObjectType ObjectTypeFilter  bool ReferenceObjects  bool SelectedObjectsFilter  RhinoViewport ViewportFilter Filter on value of object-&gt;IsActiveInViewport() since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/colorhsv/">
-        <h3>ColorHSV</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/objref/">
+        <h3>ObjRef</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/colorhsv/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/objref/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Represents an HSV (Hue, Saturation, Value) color with double precision floating point channels. HSV colors (also sometimes called HSB, where B means Brightness) are similar to HSL colors in that they represent colors in a cylindrical color space, and are intended to provide intuitive means to edit the brightness of a particular color over RGB color space where each each color channel would need to be modified to affect the color brightness.
+    Namespace: Rhino.DocObjects
+Represents a reference to a Rhino object.
+public class ObjRef : IDisposableConstructors  ObjRef(Guid id) Initializes a new object reference from a globally unique identifier (). ObjRef(Guid id,ComponentIndex ci) Initializes a new object reference from a guid and component index. The component index is used to specify a &ldquo;piece&rdquo; of the geometry since 7.0 ObjRef(RhinoObject rhinoObject) Initializes a new object reference from a Rhino object. ObjRef(RhinoObject rhinoObject,PickContext pickContext) Initialized a new object reference from a Rhino object and pick context  Properties  ComponentIndex GeometryComponentIndex Gets the component index of the referenced (sub) geometry.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/colorlab/">
-        <h3>ColorLAB</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/optiondouble/">
+        <h3>OptionDouble</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/colorlab/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/optiondouble/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Represents a LAB (Lightness, A, B) color with double precision floating point channels. LAB colors are based on nonlinearly compressed CIE XYZ color space coordinates.
-The A and B parameters of a LAB color represent the opponents.
-Constructors ColorLAB(Color rgb)  (summary) Constructs a new instance of ColorLAB that is equivalent to an RGB color. (since) 5.0  ColorLAB(double lightness,double a,double b)  (summary) Constructs a new instance of ColorLAB with custom channel values.
+    Namespace: Rhino.Input.Custom
+public class OptionDouble : IDisposableConstructors  OptionDouble(double initialValue)  OptionDouble(double initialValue,bool setLowerLimit,double limit) Initializes a new instance of the double option class. OptionDouble(double initialValue,double lowerLimit,double upperLimit) Initializes a new instance of the class with lower and upper limits.  Properties  double CurrentValue  double InitialValue   Methods  void Dispose()   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/colorlch/">
-        <h3>ColorLCH</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/input/custom/optioninteger/">
+        <h3>OptionInteger</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/colorlch/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/input/custom/optioninteger/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Display
-Represents an LCH (Lightness, A, B) color with double precision floating point channels. LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, in order to approach perceptual uniformity. They are primarily used in computer graphics which deal with colored lights.
-Constructors ColorLCH(Color rgb)  (summary) Constructs a new instance of ColorLCH that is equivalent to an RGB color. (since) 5.0  ColorLCH(double lightness,double chroma,double hue)  (summary) Constructs a new instance of ColorLCH with custom channel values.
+    Namespace: Rhino.Input.Custom
+public class OptionInteger : IDisposableConstructors  OptionInteger(int initialValue)  OptionInteger(int initialValue,bool setLowerLimit,int limit) Initializes a new instance of the class. OptionInteger(int initialValue,int lowerLimit,int upperLimit) Initializes a new instance of the class wiht both lower and upper limits.  Properties  int CurrentValue  int InitialValue   Methods  void Dispose()   
   </div>
   
 

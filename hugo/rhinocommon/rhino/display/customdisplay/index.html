@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CustomDisplay &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.
+public class CustomDisplay : IDisposableConstructors  CustomDisplay(bool enable) Constructs a new CustomDisplay instance. You must call Dispose() when you are done with this instance, otherwise the display methods will never be switched off.  Properties  BoundingBox ClippingBox Gets the clipping box of this CustomDisplay. bool Enabled Gets or sets the Enabled state of this CustomDisplay instance.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CustomDisplay</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomDisplay</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>CustomDisplay(bool enable)</dt>
+<dd>Constructs a new CustomDisplay instance. You must call
+Dispose() when you are done with this instance, otherwise
+the display methods will never be switched off.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> ClippingBox</dt>
+<dd>Gets the clipping box of this CustomDisplay.</dd>
+<dt>bool Enabled</dt>
+<dd>Gets or sets the Enabled state of this CustomDisplay instance. 
+If you wish to terminate this CustomDisplay, place a call to Dispose() instead.</dd>
+<dt>bool IsDisposed</dt>
+<dd>Gets a value indicating whether this CustomDisplay instance has been disposed. 
+Once a CustomDisplay has been disposed, you can no longer use it.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void AddArc(Arc arc)</dt>
+<dd>Adds a new, black arc to the display list.</dd>
+<dt>void AddArc(Arc arc,Color color)</dt>
+<dd>Adds a new, colored arc to the display list.</dd>
+<dt>void AddArc(Arc arc,Color color,int thickness)</dt>
+<dd>Adds a new, colored arc to the display list.</dd>
+<dt>void AddCircle(Circle circle)</dt>
+<dd>Adds a new, black circle to the display list.</dd>
+<dt>void AddCircle(Circle circle,Color color)</dt>
+<dd>Adds a new, colored arc to the display list.</dd>
+<dt>void AddCircle(Circle circle,Color color,int thickness)</dt>
+<dd>Adds a new, colored circle to the display list.</dd>
+<dt>void AddCurve(Curve curve)</dt>
+<dd>Adds a new, black curve to the display list. 
+The curve will be duplicated so changes to the 
+original will not affect the display.</dd>
+<dt>void AddCurve(Curve curve,Color color)</dt>
+<dd>Adds a new, colored curve to the display list.
+The curve will be duplicated so changes to the 
+original will not affect the display.</dd>
+<dt>void AddCurve(Curve curve,Color color,int thickness)</dt>
+<dd>Adds a new, colored curve to the display list.
+The curve will be duplicated so changes to the 
+original will not affect the display.</dd>
+<dt>void AddLine(Line line)</dt>
+<dd>Adds a new, black line to the display list.</dd>
+<dt>void AddLine(Line line,Color color)</dt>
+<dd>Adds a new, colored line to the display list.</dd>
+<dt>void AddLine(Line line,Color color,int thickness)</dt>
+<dd>Adds a new, colored line to the display list.</dd>
+<dt>void AddPoint(Point3d point)</dt>
+<dd>Adds a new, black point to the display list.</dd>
+<dt>void AddPoint(Point3d point,Color color)</dt>
+<dd>Adds a new colored point to the display list.</dd>
+<dt>void AddPoint(Point3d point,Color color,PointStyle style,int radius)</dt>
+<dd>Adds a new stylized point to the display list.</dd>
+<dt>void AddPoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds a collection of black points to the display list.</dd>
+<dt>void AddPoints(IEnumerable<!-- raw HTML omitted --> points,Color color)</dt>
+<dd>Adds a collection of colored points to the display list.</dd>
+<dt>void AddPoints(IEnumerable<!-- raw HTML omitted --> points,Color color,PointStyle style,int radius)</dt>
+<dd>Adds a collection of stylized points to the display list.</dd>
+<dt>void AddPolygon(IEnumerable<!-- raw HTML omitted --> polygon,Color fillColor,Color edgeColor,bool drawFill,bool drawEdge)</dt>
+<dd>Adds a polygon to the drawing list. Polygons are not like Hatches, when you supply a concave 
+polygon, the shading probably won&rsquo;t work.</dd>
+<dt>void AddText(string text,Plane plane,double size)</dt>
+<dd>Adds a new, black 3D text object to the display list.</dd>
+<dt>void AddText(string text,Plane plane,double size,Color color)</dt>
+<dd>Adds a new, colored 3D text object to the display list.</dd>
+<dt>void AddText(Text3d text,Color color)</dt>
+<dd>Adds a new 3D text object to the display list.</dd>
+<dt>void AddVector(Point3d anchor,Vector3d span)</dt>
+<dd>Adds a new, black vector to the display list.</dd>
+<dt>void AddVector(Point3d anchor,Vector3d span,Color color)</dt>
+<dd>Adds a new, colored vector to the display list.</dd>
+<dt>void AddVector(Point3d anchor,Vector3d span,Color color,bool drawAnchor)</dt>
+<dd>Adds a new, colored vector to the display list.</dd>
+<dt>void Clear()</dt>
+<dd>Clear the drawing lists.</dd>
+<dt>void Dispose()</dt>
+<dd>Dispose this CustomDisplay instance. You must call this function in order to 
+properly shut down the CustomDisplay.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CustomDisplay</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

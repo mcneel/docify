@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BinaryArchiveWriter &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents an entity that is able to write data to an archive.
+public class BinaryArchiveWriterProperties  int Archive3dmVersion If a 3dm archive is being read or written, then this is the version of the 3dm archive format (1, 2, 3, 4 or 5). 0 a 3dm archive is not being read/written 1 a version 1 3dm archive is being read/written 2 a version 2 3dm archive is being read/written 3 a version 3 3dm archive is being read/written 4 a version 4 3dm archive is being read/written 5 an old version 5 3dm archive is being read 50 a version 5 3dm archive is being read/written.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BinaryArchiveWriter</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents an entity that is able to write data to an archive.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinaryArchiveWriter</span>
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Archive3dmVersion</dt>
+<dd>If a 3dm archive is being read or written, then this is the
+version of the 3dm archive format (1, 2, 3, 4 or 5).
+0     a 3dm archive is not being read/written
+1     a version 1 3dm archive is being read/written
+2     a version 2 3dm archive is being read/written
+3     a version 3 3dm archive is being read/written
+4     a version 4 3dm archive is being read/written
+5     an old version 5 3dm archive is being read
+50    a version 5 3dm archive is being read/written.</dd>
+<dt>bool WriteErrorOccured</dt>
+<dd>Gets or sets whether an error occurred.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool BeginWrite3dmChunk(uint typecode,int majorVersion,int minorVersion)</dt>
+<dd>Begins writing a chunk</dd>
+<dd>Returns - True if input was valid and chunk was started.  In this case you must call
+EndWrite3dmChunk(), even if something goes wrong while you attempt to write
+the contents of the chunk.
+False if input was not valid or the write failed.</dd>
+<dd>since 6.0</dd>
+<dt>bool BeginWrite3dmChunk(uint typecode,long value)</dt>
+<dd>Begins writing a chunk</dd>
+<dd>since (unknown)</dd>
+<dt>bool EnableCRCCalculation(bool enable)</dt>
+<dd>Expert user function to control CRC calculation while reading and writing.
+Typically this is used when seeking around and reading/writing information
+in non-serial order.</dd>
+<dd>Returns - Current state of CRC calculation.  Use the returned value to restore the
+CRC calculation setting after you are finished doing your fancy pants
+expert IO.</dd>
+<dd>since 6.0</dd>
+<dt>bool EndWrite3dmChunk()</dt>
+<dd>updates length in chunk header</dd>
+<dd>since 6.0</dd>
+<dt>void Write3dmChunkVersion(int major,int minor)</dt>
+<dd>A chunk version is a single byte that encodes a major.minor
+version number.  Useful when creating I/O code for 3dm chunks
+that may change in the future.  Increment the minor version 
+number if new information is added to the end of the chunk. 
+Increment the major version if the format of the chunk changes
+in some other way.</dd>
+<dd>Returns - True on successful read.</dd>
+<dt>void WriteBool(bool value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteBoolArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteBoundingBox(BoundingBox value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteByte(byte value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteByteArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteColor(Color value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteCompressedBuffer(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive as a compressed buffer.
+The return will always be an array.</dd>
+<dd>since 5.9</dd>
+<dt>void WriteDictionary(ArchivableDictionary dictionary)</dt>
+<dd>Delivers the complete content of a dictionary to the archive.</dd>
+<dt>void WriteDouble(double value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteDoubleArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteEmptyCheckSum()</dt>
+<dd>Reads a legacy ON_CheckSum, only provided to read data chunks from old
+V5 files, the CheckSum read is discarded</dd>
+<dd>since 6.0</dd>
+<dt>void WriteFont(Font value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteGeometry(GeometryBase value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteGeometryArray(IEnumerable<!-- raw HTML omitted --> geometry)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void WriteGuid(Guid value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteGuidArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteInt(int value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteInt64(Int64 value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteIntArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteInterval(Interval value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteLine(Line value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteMeshingParameters(MeshingParameters value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteObjRef(ObjRef objref)</dt>
+<dd>Writes a  to the archive</dd>
+<dd>Returns - the element that was read</dd>
+<dd>since 5.8</dd>
+<dt>void WriteObjRefArray(IEnumerable<!-- raw HTML omitted --> objrefs)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dd>since 5.8</dd>
+<dt>void WritePlane(Plane value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WritePoint(Point value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WritePoint2d(Point2d value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WritePoint3d(Point3d value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WritePoint3f(Point3f value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WritePoint4d(Point4d value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WritePointF(PointF value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteRay3d(Ray3d value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteRectangle(Rectangle value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteRectangleF(RectangleF value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteRenderSettings(RenderSettings value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dd>since 6.0</dd>
+<dt>void WriteSByte(sbyte value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteSByteArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteShort(short value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteShortArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteSingle(float value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteSingleArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteSize(Size value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteSizeF(SizeF value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteString(string value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteStringArray(IEnumerable<!-- raw HTML omitted --> value)</dt>
+<dd>Writes a list, an array, or any enumerable of  to the archive.
+The return will always be an array.</dd>
+<dt>void WriteTransform(Transform value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteUInt(uint value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteUShort(ushort value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteUtf8String(string value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dd>since 6.0</dd>
+<dt>void WriteVector2d(Vector2d value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteVector3d(Vector3d value)</dt>
+<dd>Writes a  value to the archive.</dd>
+<dt>void WriteVector3f(Vector3f value)</dt>
+<dd>Writes a  value to the archive.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BinaryArchiveWriter</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Geometry.Intersect on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/</link>
+    <description>Recent content in Rhino.Geometry.Intersect on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/geometry/intersect/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CurveIntersections</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/curveintersections/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/curveintersections/</guid>
+      <description>Namespace: Rhino.Geometry.Intersect
+Maintains an ordered list of Curve Intersection results.
+public class CurveIntersections : IDisposable, IList&amp;lt;IntersectionEvent&amp;gt;Properties  int Count Gets the number of recorded intersection events.  Methods  void CopyTo(IntersectionEvent[] array,int arrayIndex) Copies all intersection results into another array, departing at an index in the target array. void Dispose() Actively reclaims unmanaged resources that this instance uses. IEnumeratorGetEnumerator() Returns an enumerator that is capable of yielding all IntersectionEvents in the collection.</description>
+    </item>
+    
+    <item>
+      <title>Intersection</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersection/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersection/</guid>
+      <description>Namespace: Rhino.Geometry.Intersect
+Provides static methods for the computation of intersections, projections, sections and similar.
+public class IntersectionProperties  static double MeshIntersectionsTolerancesCoefficient Offers a requested adjustment coefficient for mesh-mesh intersections tolerances. The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs. since 7.0  Methods  static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints) Intersects two Breps.</description>
+    </item>
+    
+    <item>
+      <title>IntersectionEvent</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersectionevent/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersectionevent/</guid>
+      <description>Namespace: Rhino.Geometry.Intersect
+Provides all the information for a single Curve Intersection event.
+public class IntersectionEventProperties  bool IsOverlap All curve intersection events are either a single point or an overlap. bool IsPoint All curve intersection events are either a single point or an overlap. Interval OverlapA Gets the interval on curve A where the overlap occurs. If the intersection type is not overlap, this value is meaningless. Interval OverlapB Gets the interval on curve B where the overlap occurs.</description>
+    </item>
+    
+    <item>
+      <title>MeshClash</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshclash/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshclash/</guid>
+      <description>Namespace: Rhino.Geometry.Intersect
+Represents a particular instance of a clash or intersection between two meshes.
+public class MeshClashProperties  Point3d ClashPoint If valid, then the sphere centered at ClashPoint of ClashRadius distance intersects the clashing meshes. double ClashRadius Gets the clash, or intersection, radius. Mesh MeshA Gets the first mesh. Mesh MeshB Gets the second mesh.  Methods  static Mesh[] FindDetail(RhinoObject objA,RhinoObject objB,double distance) Finds all of the mesh faces on each of two Rhino objects that interfere within a clash distance.</description>
+    </item>
+    
+    <item>
+      <title>MeshInterference</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshinterference/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/meshinterference/</guid>
+      <description>Namespace: Rhino.Geometry.Intersect
+Represents an element which is part of a curve region boundary.
+Properties  Point3d[] HitPoints Array of hit points where the objects of IndexA and IndexB interfere. since 7.0 int IndexA The index of the first clashing, or interfering object. since 7.0 int IndexB The index of the second clashing, or interfering object. since 7.0  </description>
+    </item>
+    
+  </channel>
+</rss>

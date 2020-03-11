@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,131 +57,132 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/display/rhinoview/">
-        <h3>RhinoView</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/instancedefinitiongeometry/">
+        <h3>InstanceDefinitionGeometry</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/display/rhinoview/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-A RhinoView represents a single &ldquo;window&rdquo; display of a document. A view could contain one or many RhinoViewports (many in the case of Layout views with detail viewports). Standard Rhino modeling views have one viewport.
-public class RhinoViewEvents static Create  (summary) (since) 5.0  static Destroy  (summary) (since) 5.0  static Modified  (summary) (since) 7.0  static Rename  (summary) (since) 5.0  static SetActive  (summary) (since) 5.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/display/rhinoviewport/">
-        <h3>RhinoViewport</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/display/rhinoviewport/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Display
-Displays geometry with a given projection. In standard modeling views there is a one to one relationship between RhinoView and RhinoViewports. In a page layout, there may be multiple RhinoViewports for a single layout.
-public class RhinoViewportConstructors RhinoViewport()  (summary) (since) 5.0  RhinoViewport(RhinoViewport other)  (summary) (since) 5.0  Properties System.Drawing.Rectangle Bounds  (summary) Gets the size and location of the viewport, in pixels, relative to the parent view.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/rhinowindow/">
-        <h3>RhinoWindow</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/rhinowindow/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino
-Represents the top level window in Rhino
-public class RhinoWindowProperties IntPtr Handle  (summary) (since) 5.0  bool InvokeRequired  (summary) See Control.InvokeRequired (since) 5.0  Methods void Invoke(Delegate method)  (summary) (since) 5.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/riskyaction/">
-        <h3>RiskyAction</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/riskyaction/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Runtime
-Defines risky actions that need to be reported in crash exceptions
-public class RiskyActionConstructors RiskyAction(string description,string file,string member,int line)  (summary) Always create this in a using block (since) 6.0  Methods void Dispose()  (summary) IDisposable implementation (since) 6.0 (returns) void This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/rtree/">
-        <h3>RTree</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/rtree/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/instancedefinitiongeometry/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a spatial search structure based on implementations of the R-tree algorithm by Toni Gutman.
-public class RTreeConstructors RTree()  (summary) Initializes a new, empty instance of the tree. (since) 5.0  Properties int Count  (summary) Gets the number of items in this tree. (since) 5.0  Methods static RTree CreateFromPointArray(IEnumerablepoints)  (summary) Constructs a new tree with an element for each pointcloud point. (since) 6.0 (returns) RTree This is some return comment  static RTree CreateMeshFaceTree(Mesh mesh)  (summary) Constructs a new tree with an element for each face in the mesh.
+Represents a block definition in a File3dm. This is the same as Rhino.DocObjects.InstanceDefinition, but not associated with a RhinoDoc.
+public class InstanceDefinitionGeometry : ModelComponentConstructors  InstanceDefinitionGeometry() Initializes a new block definition.  Properties  ModelComponentType ComponentType Returns . since 6.0 string Description Gets or sets the description of the definition.  Methods  Guid[] GetObjectIds() list of object ids in the instance geometry table since 5.6  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/rtreeeventargs/">
-        <h3>RTreeEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/instancereferencegeometry/">
+        <h3>InstanceReferenceGeometry</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/rtreeeventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/instancereferencegeometry/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents event data that is passed when when an item that meets certain criteria is found and the passed RTree event is raised.
-public class RTreeEventArgsProperties bool Cancel  (summary) Gets or sets a value that determines if the search should be conducted farther. (since) 5.0  int Id  (summary) Gets the identifier of the found item. (since) 5.0  int IdB  (summary) If search is using two r-trees, IdB is element b in the search.
+Represents a reference to the geometry in a block definition.
+public class InstanceReferenceGeometry : GeometryBaseConstructors  InstanceReferenceGeometry(Guid instanceDefinitionId,Transform transform) Constructor used when creating nested instance references. since 5.1  Properties  Guid ParentIdefId The unique id for the parent instance definition of this instance reference. since 5.6 Transform Xform Transformation for this reference. since 5.6  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/ruiupdateui/">
-        <h3>RuiUpdateUi</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersection/">
+        <h3>Intersection</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/ruiupdateui/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersection/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-public class RuiUpdateUiProperties bool Checked  (summary) Set to True to enable menu item or False to check menu item (since) 5.11  bool Enabled  (summary) Set to True to enable menu item or False to disable menu item (since) 5.11  Guid FileId  (summary) Id of the RUI file that owns this menu item (since) 5.11  IntPtr MenuHandle  (summary) Windows menu handle of menu that contains this item (since) 5.
+    Namespace: Rhino.Geometry.Intersect
+Provides static methods for the computation of intersections, projections, sections and similar.
+public class IntersectionProperties  static double MeshIntersectionsTolerancesCoefficient Offers a requested adjustment coefficient for mesh-mesh intersections tolerances. The value can be used to multiply the document absolute tolerance.This is only a UI value; it is up to developer to honor (or not) this request, depending on application needs. since 7.0  Methods  static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints) Intersects two Breps.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/runtimedocumentdatatable/">
-        <h3>RuntimeDocumentDataTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersectionevent/">
+        <h3>IntersectionEvent</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/runtimedocumentdatatable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/intersect/intersectionevent/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-Collection of document runtime data. This is a good place to put non-serialized, per document data.
-public class RuntimeDocumentDataTableProperties RhinoDoc Document  (summary) (since) 6.3  Methods T GetValue(object key,Func&lt;RhinoDoc, T&gt; newT)  (summary) Checks the dictionary for the specified key, if found and the value is not None then then the value is returned. If the key is not found or its value is None then newT(Document) is called to create a new value instnce which is put in the dictionary and returned.
+    Namespace: Rhino.Geometry.Intersect
+Provides all the information for a single Curve Intersection event.
+public class IntersectionEventProperties  bool IsOverlap All curve intersection events are either a single point or an overlap. bool IsPoint All curve intersection events are either a single point or an overlap. Interval OverlapA Gets the interval on curve A where the overlap occurs. If the intersection type is not overlap, this value is meaningless. Interval OverlapB Gets the interval on curve B where the overlap occurs.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/savefiledialog/">
-        <h3>SaveFileDialog</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/invaliddimensionstyleidexception/">
+        <h3>InvalidDimensionStyleIdException</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/savefiledialog/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/invaliddimensionstyleidexception/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Similar to the System.Windows.Forms.SaveFileDialog, but with customized Rhino user interface.
-public class SaveFileDialogConstructors SaveFileDialog()  (summary) (since) 5.0  Properties string DefaultExt  (summary) The default file name extension. The returned string does not include the period. (since) 5.0  string FileName  (summary) Gets or sets a string containing the file name selected in the file dialog box. (since) 5.0  string Filter  (summary) Gets or sets the current file name filter string, which determines the choices that appear in the &ldquo;Save as file type&rdquo; or &ldquo;Files of type&rdquo; box in the dialog box.
+    Namespace: Rhino.Geometry
+General exception that can be thrown by annotations
+public class InvalidDimensionStyleIdException : InvalidOperationExceptionConstructors  InvalidDimensionStyleIdException(string msg)  since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/scalevalue/">
-        <h3>ScaleValue</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/leader/">
+        <h3>Leader</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/scalevalue/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/leader/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino
-Represents a scale with associated LengthValues and string representations of the scale. This allows for going back and forth from numerical representations of a scale and a string representation without &ldquo;guessing&rdquo; at the initial scale.
-public class ScaleValueConstructors ScaleValue()  (summary) Default constructor (since) 6.0  Properties double LeftToRightScale  (summary) LeftLengthValue / RightLengthValue (since) 6.0  double RightToLeftScale  (summary) RightLengthValue / LeftLengthValue (since) 6.0  Methods static ScaleValue Create(LengthValue left,LengthValue right,ScaleStringFormat format)  (summary) Create from 2 length values (since) 6.
+    Namespace: Rhino.Geometry
+Leader geometry class
+[Serializable]public class Leader : AnnotationBaseConstructors  Leader() Constructor since 6.0  Properties  NurbsCurve Curve Gets the curve used by this leader since 6.0 Guid LeaderArrowBlockId Id of the block used as the arrow for the leader when the arrow type is &lsquo;User arrow&rsquo; since 6.0 double LeaderArrowSize The size of the leader arrow since 6.0 ArrowType LeaderArrowType The arrowhead type for the leader since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/light/">
+        <h3>Light</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/light/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a light that shines in the modeling space.
+[Serializable]public class Light : GeometryBaseConstructors  Light() Initializes a new light.  Properties  Color Ambient Gets or sets the ambient color. Attenuation AttenuationType Get the type of attenuation for this light. since 7.0 Vector3d AttenuationVector Gets or Sets the attenuation vector. since 5.7 CoordinateSystem CoordinateSystem Gets a value, determined by LightStyle, that explains whether the camera directions are relative to World or Camera spaces.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/line/">
+        <h3>Line</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/line/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents the value of start and end points in a single line segment.
+ static != Determines whether two lines have different values. Returns - True if a has any coordinate that distinguishes it from b; otherwise false. static == Determines whether two lines have the same value. Returns - True if a has the same coordinates as b; otherwise false.  Constructors  Line(double x0,double y0,double z0,double x1,double y1,double z1) Constructs a new line segment between two points.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/lineardimension/">
+        <h3>LinearDimension</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/lineardimension/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a linear dimension
+[Serializable]public class LinearDimension : DimensionConstructors  LinearDimension()  LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)   Properties  bool Aligned Gets or sets a value indicating whether this annotation is aligned. AnnotationType AnnotationType  since 6.0 Point2d Arrowhead1End Gets the arrow head end of the first extension line. Point2d Arrowhead2End Gets the arrow head end of the second extension line. Point2d DimensionLinePoint Point on annotation plane where dimension line starts since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/linecurve/">
+        <h3>LineCurve</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/linecurve/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents a linear curve.
+[Serializable]public class LineCurve : CurveConstructors  LineCurve() Initializes a new instance of the class. LineCurve(Line line) Initializes a new instance of the class, by retrieving its value from a line. LineCurve(Line line,double t0,double t1) Initializes a new instance of the class, by retrieving its value from a line and setting the domain. LineCurve(LineCurve other) Initializes a new instance of the class, by copying values from another linear curve.
   </div>
   
 

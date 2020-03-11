@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,133 +57,133 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/stringparser/">
-        <h3>StringParser</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/reducemeshparameters/">
+        <h3>ReduceMeshParameters</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/stringparser/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/reducemeshparameters/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input
-Parse strings to numbers, distances and angles
-public class StringParserMethods static int ParseAngleExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,AngleUnitSystem output_angle_unit_system,double value_out,StringParserSettings parse_results,AngleUnitSystem parsed_unit_system)  (summary) (since) 6.0 (returns) int This is some return comment  static bool ParseAngleExpressionDegrees(string expression,double angle_degrees)  (summary) (since) 6.0 (returns) bool This is some return comment  static bool ParseAngleExpressionRadians(string expression,double angle_radians)  (summary) (since) 6.0 (returns) bool This is some return comment  static int ParseLengthExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,UnitSystem output_unit_system,double value_out,StringParserSettings parse_results,UnitSystem parsed_unit_system)  (summary) Parse a string for a length value.
+    Namespace: Rhino.Geometry
+Parameters for Reduce method
+public class ReduceMeshParametersConstructors  ReduceMeshParameters() Constructs a polygon reduction parameter object with default values. Users of this class should not rely on default values to stay constant across service releases. since 6.0  Properties  int Accuracy Integer from 1 to 10 telling how accurate reduction algorithm to use. Greater number gives more accurate results since 6.0 bool AllowDistortion If True mesh appearance is not changed even if the target polygon count is not reached since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/stringparsersettings/">
-        <h3>StringParserSettings</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/revsurface/">
+        <h3>RevSurface</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/stringparsersettings/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/revsurface/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input
-Parameters for parsing strings
-public class StringParserSettingsConstructors StringParserSettings()  (summary) (since) 6.0  Properties static StringParserSettings DefaultParseSettings  (summary) - The default settings parse just about everything in a reasonable way.  Any angle values with unspecified units will be treated as radians. Angles without units can be encountered while parsing formulas, lengths and points and need to be thoughtfully considered in most parsing situations.   (since) 6.
+    Namespace: Rhino.Geometry
+Represents a surface of revolution. Revolutions can be incomplete (they can form arcs).
+[Serializable]public class RevSurface : SurfaceProperties  Interval Angle Gets the start and end angles of revolution in radians. The interval angle must be increasing and satisfy RhinoMath.ZeroTolerance &lt; Angle.Length&lt;= 2.0 * System.Math.PI. since 6.0 Line Axis Gets the axis of revolution. since 6.0 Curve Curve Gets the revolute curve. since 6.0  Methods  static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution) Constructs a new surface of revolution from a generatrix curve and an axis.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/stringtable/">
-        <h3>StringTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/collections/rhinolist/">
+        <h3>RhinoList</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/stringtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/collections/rhinolist/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-Collection of document user data strings
-public class StringTableProperties int Count  (summary) The number of user data strings in the current document. (since) 5.0  RhinoDoc Document  (summary) Document that owns this object table. (since) 5.0  int DocumentDataCount  (summary) (since) 6.0  int DocumentUserTextCount  (summary) (since) 6.0  Methods void Delete(string key)  (summary) (since) 5.0 (returns) void This is some return comment  void Delete(string section,string entry)  (summary) Removes user data strings from the document.
+    Namespace: Rhino.Collections
+Provides helper methods to work with and other collections.
+[Serializable,DebuggerTypeProxy(typeof(ListDebuggerDisplayProxy&lt;&gt;)),DebuggerDisplay(&#34;Count = {Count}&#34;)]public class RhinoList : IList&lt;T&gt;, IList, ICloneableConstructors  RhinoList() Initializes a new, empty list. since (unknown) RhinoList(IEnumerablecollection) Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T. since (unknown) RhinoList(int initialCapacity) Initializes an empty list with a certain capacity. since (unknown) RhinoList(int amount,T defaultValue) Initializes a new list with a specified amount of values.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/runtime/interopwrappers/stringwrapper/">
-        <h3>StringWrapper</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinomath/">
+        <h3>RhinoMath</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/runtime/interopwrappers/stringwrapper/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/rhinomath/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino
+Provides constants and static methods that are additional to .
+public class RhinoMathMethods  static double Clamp(double value,double bound1,double bound2) Restricts a to be specified within an interval of two numbers. Returns - The clamped value. static int Clamp(int value,int bound1,int bound2) Restricts a to be specified within an interval of two integers. Returns - The clamped value. static uint CRC32(uint currentRemainder,byte[] buffer) Advances the cyclic redundancy check value remainder given a byte array.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/rtreeeventargs/">
+        <h3>RTreeEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/rtreeeventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Represents event data that is passed when when an item that meets certain criteria is found and the passed RTree event is raised.
+public class RTreeEventArgs : EventArgsProperties  bool Cancel Gets or sets a value that determines if the search should be conducted farther. int Id Gets the identifier of the found item. int IdB If search is using two r-trees, IdB is element b in the search.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/serializationoptions/">
+        <h3>SerializationOptions</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/serializationoptions/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.FileIO
+Contains options for serializing -or storing- data, such as Rhino version and user data.
+public class SerializationOptionsConstructors  SerializationOptions() Initializes a new instance of the class.  Properties  int RhinoVersion Gets or sets a value indicating the Rhino version. bool WriteUserData Gets or sets a value indicating whether to write user data.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/fileio/sha1opennurbs/">
+        <h3>SHA1OpenNURBS</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/fileio/sha1opennurbs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.FileIO
+Provides the OpenNURBS implementation of SHA1.
+This class is provided only with the purpose of hashing. It is not meant to be used for any cryptographic purpose.
+public class SHA1OpenNURBS : SHA1Constructors  SHA1OpenNURBS() Constructs a new instance of the SHA1 algorithm. since 6.0  Methods  static byte[] FileSystemPathHash(string path,bool? ignoreCase) Computes the SHA1 hash of a file system path, converted to UTF8. These file system paths have identical values of FileSystemPathHash():/x/y/z/name.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/shutliningcurveinfo/">
+        <h3>ShutLiningCurveInfo</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/shutliningcurveinfo/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry
+Contains shutlining curve information. This is used in .
+public class ShutLiningCurveInfoConstructors  ShutLiningCurveInfo(Curve curve,double radius,int profile,bool pull,bool isBump,IEnumerablecurveIntervals,bool enabled) Creates a new instance of the ShutLining curve information class. since 6.0  Properties  Curve Curve The profile curve. since 6.0 ReadOnlyCollectionCurveIntervals The parts of the curve to use as profiles. since 6.0 bool Enabled If true, this curve is active. since 6.0 bool IsBump True if profile constitutes a bump.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearray2dex/">
+        <h3>SimpleArray2dex</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearray2dex/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Runtime.InteropWrappers
-Represents a wrapper to an unmanaged OpenNurbs string. Wraps a C++ ON_wString*.
-public class StringWrapperConstructors StringWrapper()  (summary) Initializes a new empty unmanaged string (ON_wString*). (since) 5.0  StringWrapper(string s)  (summary) Initializes a new unmanaged string with an initial value. The string s can be null. (since) 5.0  Properties IntPtr ConstPointer  (summary) Gets the const pointer (const ON_wString*). (since) 5.0  IntPtr NonConstPointer  (summary) Gets the non-const pointer (ON_wString*).
+Wrapper for ON_SimpleArray&lt;ON_2dex&gt;. If you are not writing C++ code then this class is not for you.
+public class SimpleArray2dex : IDisposableConstructors  SimpleArray2dex() Initializes a new class. since 6.0 SimpleArray2dex(IEnumerablevalues) Initializes a new class since 6.0  Properties  int Count Gets the amount of elements in this array. since 6.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/subd/">
-        <h3>SubD</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayarraypoint3d/">
+        <h3>SimpleArrayArrayPoint3d</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/subd/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/runtime/interopwrappers/simplearrayarraypoint3d/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Geometry
-Subdivision surface
-public class SubDConstructors SubD()  (summary) Create a new instance of SubD geometry (since) 7.0  Properties Collections.SubDEdgeList Edges  (summary) All edges in this SubD (since) 7.0  Collections.SubDFaceList Faces  (summary) All faces in this SubD (since) 7.0  bool IsSolid  (summary) Test subd to see if the active level is a solid.
-A &ldquo;solid&rdquo; is a closed oriented manifold, or a closed oriented manifold.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/subdcomponent/">
-        <h3>SubDComponent</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/subdcomponent/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-A part of SubD geometry. Common base class for vertices, faces, and edges
-public class SubDComponentProperties uint Id  (summary) Unique id within the parent SubD for this item (since) 7.0  SubD ParentSubD  (summary) SubD that this component belonds to (since) 7.0  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/subdcreationoptions/">
-        <h3>SubDCreationOptions</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/subdcreationoptions/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Options used for creating a SubD
-public class SubDCreationOptionsConstructors SubDCreationOptions()  (summary) Create default options (since) 7.0  Properties static SubDCreationOptions ConvexCornerAtMeshCorner  (summary) Look for convex corners at sub-D vertices with 2 edges that have an included angle &lt;= 90 degrees. (since) 7.0  static SubDCreationOptions InteriorCreaseAtMeshCrease  (summary) Create an interior sub-D crease along coincident input mesh edges where the vertex normal directions at one end differ by at least 30 degrees.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/subdedge/">
-        <h3>SubDEdge</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/subdedge/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Single edge of a SubD
-public class SubDEdgeProperties Line ControlNetLine  (summary) Line representing the control net end points (since) 7.0  int FaceCount  (summary) Number of faces for this edge (since) 7.0  SubDEdgeTag Tag  (summary) identifies the type of subdivision edge (since) 7.0  SubDVertex VertexFrom  (summary) Start vertex for this edge (since) 7.0  SubDVertex VertexTo  (summary) End vertex for this edge (since) 7.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/collections/subdedgelist/">
-        <h3>SubDEdgeList</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/collections/subdedgelist/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Collections
-All edges in a SubD
-public class SubDEdgeListProperties int Count  (summary) Gets the number of SubD edges. (since) 7.0  Methods SubDEdge Add(SubDEdgeTag tag,SubDVertex v0,SubDVertex v1)  (summary) Add a new edge to the list. (since) 7.0 (returns) SubDEdge This is some return comment  SubDEdge Find(int id)  (summary) Find an edge in this SubD with a given id (since) 7.0 (returns) SubDEdge This is some return comment  SubDEdge Find(uint id)  (summary) Find an edge in this SubD with a given id (since) 7.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/subdface/">
-        <h3>SubDFace</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/subdface/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Single face of a SubD
-public class SubDFaceProperties int EdgeCount  (summary) Number of edges for this face. Note that EdgeCount is always the same as VertexCount. Two properties are provided simply for clarity. (since) 7.0  Point3d LimitSurfaceCenterPoint  (summary) Get the limit surface point location at the center of the face (since) 7.0  int VertexCount  (summary) Number of vertices for this face. Note that EdgeCount is always the same as VertexCount.
+    Namespace: Rhino.Runtime.InteropWrappers
+Wrapper for ON_SimpleArray&lt;ON_PolyLine&gt;, ON_SimpleArray&lt;ON_3dPointArray&gt; If you are not writing C++ code then this class is not for you.
+public class SimpleArrayArrayPoint3d : IDisposableConstructors  SimpleArrayArrayPoint3d() Initializes a new empty instance. since 7.0  Properties  int Count Gets the amount of polylines in this array. since 7.0  Methods  IntPtr ConstPointer() Gets the const (immutable) pointer of this array. Returns - The const pointer. since 7.0 void Dispose() Actively reclaims unmanaged resources that this instance uses.
   </div>
   
 

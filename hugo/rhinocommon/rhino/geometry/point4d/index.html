@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Point4d &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the four coordinates of a point in four-dimensional space. The W (fourth) dimension is often considered the weight of the point as seen in 3D space.
+ static - Subtracts the second point from the first point. Returns - A new point that results from the weighted subtraction of point2 from point1. static != Determines whether two Point4d have different values. Returns - True if the two points differ in any coordinate; False otherwise.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Point4d</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the four coordinates of a point in four-dimensional space.
+The W (fourth) dimension is often considered the weight of the point as seen in 3D space.</p>
+<dl>
+<dt>static -</dt>
+<dd>Subtracts the second point from the first point.</dd>
+<dd>Returns - A new point that results from the weighted subtraction of point2 from point1.</dd>
+<dt>static !=</dt>
+<dd>Determines whether two Point4d have different values.</dd>
+<dd>Returns - True if the two points differ in any coordinate; False otherwise.</dd>
+<dt>static *</dt>
+<dd>Multiplies a point by a number.</dd>
+<dd>Returns - A new point that results from the coordinatewise multiplication of point with d.</dd>
+<dt>static *</dt>
+<dd>Multiplies two  together, returning the dot (internal) product of the two.
+This is not the cross product.</dd>
+<dd>Returns - A value that results from the coordinatewise multiplication of point1 and point2.</dd>
+<dt>static +</dt>
+<dd>Sums two  together.</dd>
+<dd>Returns - A new point that results from the weighted addition of point1 and point2.</dd>
+<dd>since (unknown)</dd>
+<dt>static ==</dt>
+<dd>Determines whether two Point4d have equal values.</dd>
+<dd>Returns - True if the coordinates of the two points are equal; otherwise false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Point4d(double x,double y,double z,double w)</dt>
+<dd>Initializes a new instance of the  class based on coordinates.</dd>
+<dt>Point4d(Point3d point)</dt>
+<dd>Initializes a new instance of the  class from the coordinates of a point.</dd>
+<dt>Point4d(Point4d point)</dt>
+<dd>Initializes a new point by copying coordinates from another point.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Point4d Unset</dt>
+<dd>Gets the value of a point with all coordinates set as RhinoMath.UnsetValue.</dd>
+<dt>bool IsValid</dt>
+<dd>Returns an indication regarding the validity of this point.</dd>
+<dd>since 6.0</dd>
+<dt>double W</dt>
+<dd>Gets or sets the W (fourth) coordinate -or weight- of this point.</dd>
+<dt>double X</dt>
+<dd>Gets or sets the X (first) coordinate of this point.</dd>
+<dt>double Y</dt>
+<dd>Gets or sets the Y (second) coordinate of this point.</dd>
+<dt>double Z</dt>
+<dd>Gets or sets the Z (third) coordinate of this point.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Point4d Add(Point4d point1,Point4d point2)</dt>
+<dd>Sums two  together.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that results from the weighted addition of point1 and point2.</dd>
+<dt>static Point4d Multiply(Point4d point,double d)</dt>
+<dd>Multiplies a point by a number.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new point that results from the coordinatewise multiplication of point with d.</dd>
+<dt>static Point4d Subtract(Point4d point1,Point4d point2)</dt>
+<dd>Subtracts the second point from the first point.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new point that results from the weighted subtraction of point2 from point1.</dd>
+<dt>bool EpsilonEquals(Point4d other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether the specified System.Object is Point4d and has same coordinates as the present point.</dd>
+<dd>Returns - True if obj is Point4d and has the same coordinates as this; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Point4d point)</dt>
+<dd>Determines whether the specified point has same value as the present point.</dd>
+<dd>Returns - True if point has the same value as this; otherwise false.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes the hash code for the present point.</dd>
+<dd>Returns - A non-unique hash code, which uses all coordiantes of this object.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString()</dt>
+<dd></dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void Transform(Transform xform)</dt>
+<dd>Transforms the present point in place. The transformation matrix acts on the left of the point. i.e.,
+result = transformation*point</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Point4d</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

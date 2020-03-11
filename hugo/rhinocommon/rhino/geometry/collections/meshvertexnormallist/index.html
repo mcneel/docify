@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshVertexNormalList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the Vertex Normals of a Mesh.
+public class MeshVertexNormalList : IResizableList&amp;lt;Vector3f&amp;gt;, IList, IReadOnlyList&amp;lt;Vector3f&amp;gt;Properties  int Capacity Gets or sets the amount of vertex normals that the list can hold without resizing. since 6.0 int Count Gets or sets the number of mesh vertex normals.  Methods  int Add(double x,double y,double z) Adds a new vertex normal at the end of the list. Returns - The index of the newly added vertex normal.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshVertexNormalList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the Vertex Normals of a Mesh.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshVertexNormalList</span> : IResizableList&lt;Vector3f&gt;, IList, IReadOnlyList&lt;Vector3f&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Capacity</dt>
+<dd>Gets or sets the amount of vertex normals that the list can hold without resizing.</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Gets or sets the number of mesh vertex normals.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add(double x,double y,double z)</dt>
+<dd>Adds a new vertex normal at the end of the list.</dd>
+<dd>Returns - The index of the newly added vertex normal.</dd>
+<dt>int Add(float x,float y,float z)</dt>
+<dd>Adds a new vertex normal at the end of the list.</dd>
+<dd>Returns - The index of the newly added vertex normal.</dd>
+<dt>int Add(Vector3d normal)</dt>
+<dd>Adds a new vertex normal at the end of the list.</dd>
+<dd>Returns - The index of the newly added vertex normal.</dd>
+<dt>int Add(Vector3f normal)</dt>
+<dd>Adds a new vertex normal at the end of the list.</dd>
+<dd>Returns - The index of the newly added vertex normal.</dd>
+<dt>bool AddRange(Vector3f[] normals)</dt>
+<dd>Appends a collection of normal vectors.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Clear()</dt>
+<dd>Clears the vertex normal collection on the mesh.</dd>
+<dt>bool ComputeNormals()</dt>
+<dd>Computes the vertex normals based on the physical shape of the mesh.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>void Destroy()</dt>
+<dd>Releases all memory allocated to store vertex normals. The list capacity will be 0 after this call.
+Subsequent calls can add new items.</dd>
+<dd>since 6.0</dd>
+<dt>void Flip()</dt>
+<dd>Reverses direction of all vertex normals
+This is the same as Mesh.Flip(true, false, false)</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that yields all normals (vectors) in this collection.</dd>
+<dd>Returns - The enumerator.</dd>
+<dt>bool SetNormal(int index,double x,double y,double z)</dt>
+<dd>Sets or adds a vertex normal to the list.
+If [index] is less than [Count], the existing vertex normal at [index] will be modified.If [index] equals [Count], a new vertex normal is appended to the end of the list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetNormal(int index,float x,float y,float z)</dt>
+<dd>Sets or adds a normal to the list.
+If [index] is less than [Count], the existing vertex normal at [index] will be modified.If [index] equals [Count], a new vertex normal is appended to the end of the list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetNormal(int index,Vector3d normal)</dt>
+<dd>Sets or adds a vertex normal to the list.
+If [index] is less than [Count], the existing vertex normal at [index] will be modified.If [index] equals [Count], a new vertex normal is appended to the end of the list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetNormal(int index,Vector3f normal)</dt>
+<dd>Sets or adds a vertex normal to the list.
+If [index] is less than [Count], the existing vertex normal at [index] will be modified.If [index] equals [Count], a new vertex normal is appended to the end of the vertex list.If [index] is larger than [Count], the function will return false.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>bool SetNormals(Vector3f[] normals)</dt>
+<dd>Sets all normal vectors in one go. This method destroys the current normal array if it exists.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dt>float[] ToFloatArray()</dt>
+<dd>Copies all vertex normals to a linear array of float in x,y,z order</dd>
+<dd>Returns - The float array.</dd>
+<dd>since 6.0</dd>
+<dt>bool UnitizeNormals()</dt>
+<dd>Unitizes all vertex normals.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshVertexNormalList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

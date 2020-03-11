@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Point2d &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the two coordinates of a point in two-dimensional space, using -precision floating point numbers.
+ static - Subtracts point2 from point1. Returns - A new vector that is point1 coordinatewise subtracted by point2. static - Subtracts a vector from a point. Returns - A new point that is coordinatewise subtracted by vector. static != Determines whether two have different values. Returns - True if the two points differ in any coordinate; False otherwise.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Point2d</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the two coordinates of a point in two-dimensional space,
+using -precision floating point numbers.</p>
+<dl>
+<dt>static -</dt>
+<dd>Subtracts point2 from point1.</dd>
+<dd>Returns - A new vector that is point1 coordinatewise subtracted by point2.</dd>
+<dt>static -</dt>
+<dd>Subtracts a vector from a point.</dd>
+<dd>Returns - A new point that is coordinatewise subtracted by vector.</dd>
+<dt>static !=</dt>
+<dd>Determines whether two  have different values.</dd>
+<dd>Returns - True if the two points differ in any coordinate; False otherwise.</dd>
+<dt>static *</dt>
+<dd>Multiplies a  by a number.</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static *</dt>
+<dd>Multiplies a  by a number.</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static /</dt>
+<dd>Divides a  by a number.</dd>
+<dd>Returns - A new point that is coordinatewise divided by t.</dd>
+<dt>static +</dt>
+<dd>Adds a point with a point.</dd>
+<dd>Returns - A new point that is coordinatewise summed with the other point.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Adds a vector with a point.</dd>
+<dd>Returns - A new point that is coordinatewise summed with the vector.</dd>
+<dd>since (unknown)</dd>
+<dt>static +</dt>
+<dd>Adds a point with a vector.</dd>
+<dd>Returns - A new point that is coordinatewise summed with the vector.</dd>
+<dd>since (unknown)</dd>
+<dt>static &lt;</dt>
+<dd>Determines whether the first specified point comes before (has inferior sorting value than) the second point.
+Coordinates evaluation priority is first X, then Y.</dd>
+<dd>Returns - True if a.X is smaller than b.X, or a.X == b.X and a.Y is smaller than b.Y; otherwise, false.</dd>
+<dt>static &lt;=</dt>
+<dd>Determines whether the first specified point comes before
+(has inferior sorting value than) the second point, or it is equal to it.
+Coordinates evaluation priority is first X, then Y.</dd>
+<dd>Returns - True if a.X is smaller than b.X, or a.X == b.X and a.Y &lt;= b.Y; otherwise, false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether two  have equal values.</dd>
+<dd>Returns - True if the coordinates of the two points are exactly equal; otherwise false.</dd>
+<dt>static &gt;</dt>
+<dd>Determines whether the first specified  comes after
+(has superior sorting value than) the second point.
+Coordinates evaluation priority is first X, then Y.</dd>
+<dd>Returns - True if a.X is larger than b.X, or a.X == b.X and a.Y is larger than b.Y; otherwise, false.</dd>
+<dt>static &gt;=</dt>
+<dd>Determines whether the first specified  comes after
+(has superior sorting value than) the second point, or it is equal to it.
+Coordinates evaluation priority is first X, then Y.</dd>
+<dd>Returns - True if a.X is larger than b.X, or a.X == b.X and a.Y &gt;= b.Y; otherwise, false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Point2d(double x,double y)</dt>
+<dd>Initializes a new instance of  from coordinates.</dd>
+<dt>Point2d(Point2d point)</dt>
+<dd>Initializes a new instance of  by copying another .</dd>
+<dt>Point2d(Point3d point)</dt>
+<dd>Initializes a new instance of  by copying the first two coordiantes of a .</dd>
+<dt>Point2d(Vector2d vector)</dt>
+<dd>Initializes a new instance of  by converting a vector.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Point2d Origin</dt>
+<dd>Gets a point at 0,0.</dd>
+<dt>static Point2d Unset</dt>
+<dd>Gets a point at RhinoMath.UnsetValue,RhinoMath.UnsetValue.</dd>
+<dt>bool IsValid</dt>
+<dd>If any coordinate of a point is UnsetValue, then the point is not valid.</dd>
+<dt>double MaximumCoordinate</dt>
+<dd>Gets the largest valid coordinate, or RhinoMath.UnsetValue if no coordinate is valid.</dd>
+<dt>double MinimumCoordinate</dt>
+<dd>Gets the smallest (both positive and negative) valid coordinate, or RhinoMath.UnsetValue if no coordinate is valid.</dd>
+<dt>double X</dt>
+<dd>Gets or sets the X (first) coordinate of the point.</dd>
+<dt>double Y</dt>
+<dd>Gets or sets the Y (second) coordinate of the point.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static Point2d Add(Point2d point1,Point2d point2)</dt>
+<dd>Adds a point with a point.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise summed with the other point.</dd>
+<dt>static Point2d Add(Point2d point,Vector2d vector)</dt>
+<dd>Adds a point with a vector.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise summed with the vector.</dd>
+<dt>static Point2d Add(Vector2d vector,Point2d point)</dt>
+<dd>Adds a vector with a point.
+(Provided for languages that do not support operator overloading. You can use the + operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise summed with the vector.</dd>
+<dt>static Point2d Divide(Point2d point,double t)</dt>
+<dd>Divides a  by a number.
+(Provided for languages that do not support operator overloading. You can use the / operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise divided by t.</dd>
+<dt>static Point2d Multiply(double t,Point2d point)</dt>
+<dd>Multiplies a  by a number.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static Point2d Multiply(Point2d point,double t)</dt>
+<dd>Multiplies a  by a number.
+(Provided for languages that do not support operator overloading. You can use the * operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise multiplied by t.</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/vector2d/">Vector2d</a> Subtract(Point2d point1,Point2d point2)</dt>
+<dd>Subtracts the second point from the first point.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new vector that is point1 coordinatewise subtracted by point2.</dd>
+<dt>static Point2d Subtract(Point2d point,Vector2d vector)</dt>
+<dd>Subtracts a vector from a point.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new point that is coordinatewise subtracted by vector.</dd>
+<dt>int CompareTo(Point2d other)</dt>
+<dd>Compares this  with another .
+Coordinates evaluation priority is first X, then Y.</dd>
+<dd>Returns - 0: if this is identical to other-1: if this.X &lt; other.X-1: if this.X == other.X and this.Y &lt; other.Y+1: otherwise.</dd>
+<dt>double DistanceTo(Point2d other)</dt>
+<dd>Computes the distance between two points.</dd>
+<dd>Returns - The length of the line between the two points, or 0 if either point is invalid.</dd>
+<dt>bool EpsilonEquals(Point2d other,double epsilon)</dt>
+<dd>Check that all values in other are within epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether the specified System.Object is a Point2d and has the same values as the present point.</dd>
+<dd>Returns - True if obj is a Point2d and has the same coordinates as this; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Point2d point)</dt>
+<dd>Determines whether the specified Point2d has the same values as the present point.</dd>
+<dd>Returns - True if point has the same coordinates as this; otherwise false.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes a hash number that represents the current point.</dd>
+<dd>Returns - A hash code that is not unique for each point.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString()</dt>
+<dd>Constructs the string representation for the current point.</dd>
+<dd>Returns - The point representation in the form X,Y.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void Transform(Transform xform)</dt>
+<dd>Transforms the present point in place. The transformation matrix acts on the left of the point. i.e.,
+result = transformation*point</dd>
+<dd>since 5.1</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Point2d</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

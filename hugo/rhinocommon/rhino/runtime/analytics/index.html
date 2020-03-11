@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Analytics &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Runtime
+Provides tools for sending Google Analytics events using the Measurement Protocol. See https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event for details.
+public class AnalyticsConstructors  Analytics(string TrackingID,string Name) Construct Analytics class since 6.0 Analytics(string TrackingID,string Name,string Platform,string InstallerId,string Version) Construct Analytics class since 6.0  Properties  static bool UsageStatisticsEnabled Determine if user allows automatic data collection from Rhino since 6.0 static Guid UserId Returns a GUID that allows events to be aggregated by user.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Analytics</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Runtime</a></em></p>
+<p>Provides tools for sending Google Analytics events using the Measurement Protocol. See <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event</a> for details.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Analytics</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Analytics(string TrackingID,string Name)</dt>
+<dd>Construct Analytics class</dd>
+<dd>since 6.0</dd>
+<dt>Analytics(string TrackingID,string Name,string Platform,string InstallerId,string Version)</dt>
+<dd>Construct Analytics class</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static bool UsageStatisticsEnabled</dt>
+<dd>Determine if user allows automatic data collection from Rhino</dd>
+<dd>since 6.0</dd>
+<dt>static Guid UserId</dt>
+<dd>Returns a GUID that allows events to be aggregated by user. There is no way to determine who the
+end user is based on this GUID, unless the user tells you their ID.  On Windows, this uses the 
+registry to store the ID.  On Mac, the Hardware UUID is used as the ID.</dd>
+<dd>since 6.0</dd>
+<dt>string AppInstallerId</dt>
+<dd>App Installer Id. In Rhino, we use this to differentiate between different builds such as &ldquo;WIP&rdquo; and &ldquo;Commercial&rdquo;.
+Maps to Google Analytics parameter &lsquo;aiid&rsquo;</dd>
+<dd>since 6.0</dd>
+<dt>string AppName</dt>
+<dd>Name of Application. For example, &ldquo;Ocelot&rdquo;. Do not include version numbers.
+Maps to Google Analytics parameter &lsquo;an&rsquo;</dd>
+<dd>since 6.0</dd>
+<dt>string AppPlatform</dt>
+<dd>Platform application is running on. For example &ldquo;Mac&rdquo;, &ldquo;Windows&rdquo;. Again, don&rsquo;t include version numbers.
+Maps to Google Analytics parameter &lsquo;ai&rsquo;</dd>
+<dd>since 6.0</dd>
+<dt>string AppVersion</dt>
+<dd>Application version string.
+Maps to Google Analytics parameter &lsquo;av&rsquo;</dd>
+<dd>since 6.0</dd>
+<dt>string GoogleAnalyticsTrackingID</dt>
+<dd>Google Analytics Tracking ID</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Send(NameValueCollection data)</dt>
+<dd>Advanced method for sending Google Analytics data.
+It is the caller&rsquo;s responsibility to make sure that all parameters passed will result in a valid Google Analytics hit. Failure to do so will result in Google Analytics ignoring your hit, and the caller will get no data.
+The Analytics class will populate data from the Application, the GoogleAnalyticsTrackingID, the User ID, and set the hit type &ldquo;t&rdquo; to &ldquo;event&rdquo;. It also sets other information about the system.</dd>
+<dd>since 6.0</dd>
+<dt>void Send(string Category)</dt>
+<dd>Sends a Google Analytics event using the Measurement Protocol. See <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event</a> for details.</dd>
+<dd>since 6.0</dd>
+<dt>void Send(string Category,string Action)</dt>
+<dd>Sends a Google Analytics event using the Measurement Protocol. See <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event</a> for details.</dd>
+<dd>since 6.0</dd>
+<dt>void Send(string Category,string Action,string Label)</dt>
+<dd>Sends a Google Analytics event using the Measurement Protocol. See <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event</a> for details.</dd>
+<dd>since 6.0</dd>
+<dt>void Send(string Category,string Action,string Label,uint Value)</dt>
+<dd>Sends a Google Analytics event using the Measurement Protocol. See <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event">https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event</a> for details.
+This method is asyncrhonous and the return code is completely ignored. Validate the data you send</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Analytics</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

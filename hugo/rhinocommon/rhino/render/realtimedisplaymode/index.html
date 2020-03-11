@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RealtimeDisplayMode &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Base class for implementing real-time display modes in .NET.
+Pay special attention that in StartRenderer the RenderWindow.SetSize() function is called if the implementation relies on the RenderWindow to do the drawing to the viewport. If i.e. OpenGL is used to draw render results to the viewport then SetSize() doesn&amp;rsquo;t have to be called, nor should the implementation then access channels on the RenderWindow, as those then don&amp;rsquo;t exist. For OpenGL-based drawing the RenderWindow is used as a container for ViewInfo management, nothing else.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RealtimeDisplayMode</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Base class for implementing real-time display modes in .NET.</p>
+<p>Pay special attention that in StartRenderer the RenderWindow.SetSize()
+function is called if the implementation relies on the RenderWindow to
+do the drawing to the viewport. If i.e. OpenGL is used to draw render
+results to the viewport then SetSize() doesn&rsquo;t have to be called, nor
+should the implementation then access channels on the RenderWindow, as
+those then don&rsquo;t exist. For OpenGL-based drawing the RenderWindow is
+used as a container for ViewInfo management, nothing else.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RealtimeDisplayMode</span>
+</code></pre></div><dl>
+<dt>HudLockButtonPressed</dt>
+<dd>Listen tot his event if you want to handle the lock button control</dd>
+<dd>since 6.0</dd>
+<dt>HudPauseButtonPressed</dt>
+<dd>Listen tot his event if you want to handle the pause button control</dd>
+<dd>since 6.0</dd>
+<dt>HudPlayButtonPressed</dt>
+<dd>Listen to this event if you want to handle the play button control.</dd>
+<dd>since 6.0</dd>
+<dt>HudProductNamePressed</dt>
+<dd>Listen tot his event if you want to handle a press on the product name component</dd>
+<dd>since 6.0</dd>
+<dt>HudStatusTextPressed</dt>
+<dd>Listen tot his event if you want to handle a press on the status text component</dd>
+<dd>since 6.0</dd>
+<dt>HudTimePressed</dt>
+<dd>Listen tot his event if you want to handle a press press on the time component</dd>
+<dd>since 6.0</dd>
+<dt>HudUnlockButtonPressed</dt>
+<dd>Listen tot his event if you want to handle the unlock button control</dd>
+<dd>since 6.0</dd>
+<dt>MaxPassesChanged</dt>
+<dd>Listen to this if you want to handle changes in maximum pass count through
+the HUD.</dd>
+<dd>since 6.0</dd>
+<dt>OnDisplayPipelineSettingsChanged</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>OnDrawMiddleground</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>OnInitFramebuffer</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/render/linearworkflow/">LinearWorkflow</a> LinearWorkflow</dt>
+<dd>Returns the LinearWorkflow data for this realitime display mode.</dd>
+<dd>since 6.0</dd>
+<dt>bool Locked</dt>
+<dd></dd>
+<dd>since 6.6</dd>
+<dt>int MaxPasses</dt>
+<dd></dd>
+<dd>since 6.6</dd>
+<dt>bool Paused</dt>
+<dd></dd>
+<dd>since 6.6</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static RealtimeDisplayMode GetRealtimeViewport(IntPtr realtimeViewport)</dt>
+<dd>Retrieve RealtimeDisplayMode instance that the IntPtr refers to.</dd>
+<dd>since 6.0</dd>
+<dt>static RealtimeDisplayMode GetRealtimeViewport(IntPtr realtimeViewport,bool create)</dt>
+<dd>Retrieve RealtimeDisplayMode instance. If create is set to true
+then a new instance is created if not found, None is returned for false.</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/render/realtimedisplaymodeclassinfo/">RealtimeDisplayModeClassInfo</a>[] RegisterDisplayModes(Assembly assembly,Guid pluginId)</dt>
+<dd>Find and register classes that derive from RealtimeDisplayMode
+from the given plug-in. The plug-in is found in the given assembly</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/render/realtimedisplaymodeclassinfo/">RealtimeDisplayModeClassInfo</a>[] RegisterDisplayModes(PlugIn plugin)</dt>
+<dd>Find and register classes that derive from RealtimeDisplayMode
+from the given plug-in.</dd>
+<dd>since 6.0</dd>
+<dt>static void RemoveRealtimeViewport(IntPtr realtimeViewport)</dt>
+<dd>Remove RealtimeDisplayMode instance from internal dictionary.</dd>
+<dd>since 6.0</dd>
+<dt>static void UnregisterDisplayModes(Assembly assembly,Guid pluginId)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static void UnregisterDisplayModes(PlugIn plugin)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>double CaptureProgress()</dt>
+<dd>Override to communicate the progress of a capture.</dd>
+<dd>Returns - A number between 0.0 and 1.0 inclusive. 1.0 means 100%.</dd>
+<dd>since 6.0</dd>
+<dt>uint ComputeViewportCrc(ViewInfo view)</dt>
+<dd>Compute viewport CRC for the given ViewInfo</dd>
+<dd>Returns - the CRC for the given view</dd>
+<dd>since 6.0</dd>
+<dt>void CreateWorld(RhinoDoc doc,ViewInfo viewInfo,DisplayPipelineAttributes displayPipelineAttributes)</dt>
+<dd>Implement if you need to handle the initial CreateWorld call initiated by the display pipeline system. Note
+that this is not the same as the CreateWorld call in Rhino.Render.ChangeQueue.ChangeQueue, although
+related.</dd>
+<dd>since 6.0</dd>
+<dt>bool DrawOpenGl()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void GetRenderSize(int width,int height)</dt>
+<dd>Get the current render resolution for the running render session.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/viewinfo/">ViewInfo</a> GetView()</dt>
+<dd>Get ViewInfo that has been registered with this RealtimeDisplayMode instance.</dd>
+<dd>since 6.0</dd>
+<dt>bool HudAllowEditMaxPasses()</dt>
+<dd>Override to allow maximum pass editing. By default disabled.</dd>
+<dd>Returns - Return True to allow users to edit the maximum pass count.</dd>
+<dd>since 6.0</dd>
+<dt>string HudCustomStatusText()</dt>
+<dd>Override to display status of the render engine.</dd>
+<dd>Returns - Status text to display</dd>
+<dd>since 6.0</dd>
+<dt>int HudLastRenderedPass()</dt>
+<dd>Override to communicate the last completed pass. Can be shown in the HUD</dd>
+<dd>Returns - Last completed pass</dd>
+<dd>since 6.0</dd>
+<dt>int HudMaximumPasses()</dt>
+<dd>Override to communicate the maximum passes count currently in use for the render session.
+Can be shown in the HUD</dd>
+<dd>Returns - Maximum passes</dd>
+<dd>since 6.0</dd>
+<dt>string HudProductName()</dt>
+<dd>Override to return the name of your product. This will be printed in
+the HUD.</dd>
+<dd>Returns - Name of the product.</dd>
+<dd>since 6.0</dd>
+<dt>bool HudRendererLocked()</dt>
+<dd>Implement to support locking in the viewport</dd>
+<dd>Returns - Return True if the render engine is locked.</dd>
+<dd>since 6.0</dd>
+<dt>bool HudRendererPaused()</dt>
+<dd>Implement to support pausing and resuming in the viewport</dd>
+<dd>Returns - Return True if the render engine is paused.</dd>
+<dd>since 6.0</dd>
+<dt>bool HudShow()</dt>
+<dd>Override if you want to hide the HUD. Shown by default</dd>
+<dd>Returns - Return False to hide the HUD.</dd>
+<dd>since 6.0</dd>
+<dt>bool HudShowControls()</dt>
+<dd>Show control buttons on the realtime display HUD.
+<p>By default these are shown, override this function and
+return False if HUD controls aren&rsquo;t needed.</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>bool HudShowCustomStatusText()</dt>
+<dd>Override to show status text in HUD. By default disabled.</dd>
+<dd>Returns - Return True to show status text in HUD</dd>
+<dd>since 6.0</dd>
+<dt>bool HudShowMaxPasses()</dt>
+<dd>Override to show maximum passes in HUD. By default disabled.</dd>
+<dd>Returns - Return True to show maximum passes.</dd>
+<dd>since 6.0</dd>
+<dt>bool HudShowPasses()</dt>
+<dd>Override to show current pass in HUD. By default disabled.</dd>
+<dd>Returns - Return True to show current pass in HUD.</dd>
+<dd>since 6.0</dd>
+<dt>DateTime HudStartTime()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool IsCompleted()</dt>
+<dd>Implement to tell if your render engine has completed a frame for drawing into the viewport</dd>
+<dd>since 6.0</dd>
+<dt>bool IsFrameBufferAvailable(ViewInfo view)</dt>
+<dd>Implement to tell the render pipeline that a framebuffer is ready</dd>
+<dd>Returns - Return True when a framebuffer is ready. This is generally the
+case when StartRenderer as returned successfully.</dd>
+<dd>since 6.0</dd>
+<dt>bool IsRendererStarted()</dt>
+<dd>Override to tell the started state of your render engine.</dd>
+<dd>Returns - True if render engine is ready and rendering</dd>
+<dd>since 6.0</dd>
+<dt>int LastRenderedPass()</dt>
+<dd>Implement to communicate last completed pass to the underlying system.</dd>
+<dd>Returns - the last completed pass</dd>
+<dd>since 6.0</dd>
+<dt>bool OnRenderSizeChanged(int width,int height)</dt>
+<dd>Override to restart your render engine</dd>
+<dd>since 6.0</dd>
+<dt>int OpenGlVersion()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void PostConstruct()</dt>
+<dd>Override PostConstruct if you need to initialize where
+the underlying RealtimeDisplayMode is available.
+<p>The connection is made right after RealtimeDisplayMode
+has been instantiated, but just before PostConstruct is called.</p>
+<p>For instance finding out OpenGL information can be done in
+PostConstruct.</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>void SetUseDrawOpenGl(bool use)</dt>
+<dd>During run-time change whether to use OpenGL drawing of results or not. For instance
+offline rendering (viewcapture* with different resolution than viewport) could use
+RenderWindow instead of direct OpenGL drawing.</dd>
+<dd>since 6.0</dd>
+<dt>void SetView(ViewInfo view)</dt>
+<dd>Set ViewInfo for this RealtimeDisplayMode instance.</dd>
+<dd>since 6.0</dd>
+<dt>bool ShowCaptureProgress()</dt>
+<dd>Override if you want to i.e. hide the progress dialog for capture progress.</dd>
+<dd>Returns - Return True to show, False to hide</dd>
+<dd>since 6.0</dd>
+<dt>void ShutdownRenderer()</dt>
+<dd>Override to shutdown your render engine</dd>
+<dd>since 6.0</dd>
+<dt>void SignalRedraw()</dt>
+<dd>Use to signal the underlying pipeline a redraw is wanted. This can be used
+for instance when a renderer has completed a pass which should be
+updated in the associated viewport.</dd>
+<dd>since 6.0</dd>
+<dt>bool StartRenderer(int w,int h,RhinoDoc doc,ViewInfo view,ViewportInfo viewportInfo,bool forCapture,RenderWindow renderWindow)</dt>
+<dd>Override to start your render engine.
+<p>Note that before using the RenderWindow you <em>must</em> call SetSize
+to properly initialize the underlying DIB.</p>
+</dd>
+<dd>Returns - Return True when your render engine started correctly, False when that failed</dd>
+<dd>since 6.0</dd>
+<dt>bool UseFastDraw()</dt>
+<dd>Implement and return True if you want the display pipeline to not
+wait for IsFramebufferAvailable during the MiddleGround draw phase.
+This will also tell the pipeline to draw a complete middleground pass in OpenGL.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RealtimeDisplayMode</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

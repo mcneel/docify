@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,129 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/linearworkflow/">
-        <h3>LinearWorkflow</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/imageadjust/">
+        <h3>ImageAdjust</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/linearworkflow/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/imageadjust/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-This is the interface to linear workflow settings.
-public class LinearWorkflowConstructors LinearWorkflow()  (summary) Create an utility object not associated with any document (since) 6.0  LinearWorkflow(LinearWorkflow src)  (summary) Create utility object not associated with any document from another object (since) 6.0  Properties uint Hash  (summary) Linear workflow CRC (since) 6.0  bool PostProcessFrameBuffer  (summary) Linear workflow active state (since) 6.0  float PostProcessGamma  (summary) Linear workflow gamma (since) 6.
+Class to set image adjusting settings to a RenderWindow. This can&rsquo;t be directly created. Instead, one should use RenderWindow.GetAdjust() to get an ImageAdjust instance that can be modified, then passed into RenderWindow.SetAdjust() to update image adjusting settings.1
+public class ImageAdjustProperties  Methods Dither Set the Dithering method to use when adjusting the RenderWindow content. since 6.0 float Gamma Set the gamma value. The inverse of this will be used to apply gamma correction to the RenderWindow RGBA channel when necessary.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/linecurve/">
-        <h3>LineCurve</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/initframebuffereventargs/">
+        <h3>InitFramebufferEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/linecurve/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/initframebuffereventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class InitFramebufferEventArgs : EventArgsConstructors  InitFramebufferEventArgs(DisplayPipeline dp)  since 6.0  Properties  DisplayPipeline Pipeline  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/interpolator/">
+        <h3>Interpolator</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/interpolator/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Geometry
-Represents a linear curve.
-public class LineCurveConstructors LineCurve()  (summary) Initializes a new instance of the class. (since) 5.0  LineCurve(Line line)  (summary) Initializes a new instance of the class, by retrieving its value from a line. (since) 5.0  LineCurve(Line line,double t0,double t1)  (summary) Initializes a new instance of the class, by retrieving its value from a line and setting the domain. (since) 5.0  LineCurve(LineCurve other)  (summary) Initializes a new instance of the class, by copying values from another linear curve.
+Exposes a set of standard numeric interpolation algorithms.
+public class Interpolator : RhinoList&lt;double&gt;Constructors  Interpolator() Constructs a new, empty Interpolator. Interpolator(IEnumerablecollection) Constructs an Interpolator from a collection of numbers. Interpolator(int initialCapacity) Constructs an empty Interpolator with a certain capacity. Interpolator(int amount,double defaultValue) Constructs a new Interpolator with a specified amount of numbers. Interpolator(RhinoListlist) Copy all the numbers from an existing RhinoList.  Properties  bool Cyclical Gets or sets a value indicating whether or not the values inside this Interpolator are to be treated as cyclical (i.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/linetype/">
-        <h3>Linetype</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/interval/">
+        <h3>Interval</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/linetype/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/interval/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects
-public class LinetypeConstructors Linetype()  (summary) (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  bool IsDeleted  (summary) Gets a value indicating whether this linetype has been deleted and is currently in the Undo buffer. (since) 5.0  bool IsModified  (summary) True if this linetype has been modified by LinetypeTable.ModifyLinetype() and the modifications can be undone. (since) 5.0  bool IsReference  (summary) Gets a value indicting whether this linetype is a referenced linetype.
+    Namespace: Rhino.Geometry
+Represents an interval in one-dimensional space, that is defined as two extrema or bounds.
+ static - Shifts an interval by a specific amount (subtraction). Returns - A new interval with [T0-number, T1-number]. static - Shifts an interval by a specific amount (subtraction). Returns - A new interval with [number-T0, number-T1]. static != Determines whether the two Intervals have different values. Returns - True if the two intervals are different in any value; False if they are equal.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/linetypetable/">
-        <h3>LinetypeTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/intfield/">
+        <h3>IntField</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/linetypetable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/intfield/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Tables
-public class LinetypeTableProperties int ActiveCount  (summary) Returns number of linetypes in the linetypes table, excluding deleted linetypes. (since) 5.0  string ByLayerLinetypeName  (summary) Returns the text name of the bylayer linetype. (since) 5.0  string ByParentLinetypeName  (summary) Returns the text name of the byparent linetype. (since) 6.0  ModelComponentType ComponentType  (summary) (since) 6.0  string ContinuousLinetypeName  (summary) Returns the text name of the continuous linetype.
+    Namespace: Rhino.Render.Fields
+Integer field value class
+public class IntField : FieldProperties  int Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/loc/">
-        <h3>LOC</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/lengthvalue/">
+        <h3>LengthValue</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/loc/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/lengthvalue/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.UI
-Used a placeholded which is used by LocalizationProcessor application to create contextId mapped localized strings.
-public class LOCMethods static string COMMANDNAME(string english)  (summary) Command names that need to be localized should call this function. The COMMANDNAME function doesn&rsquo;t actually do anything but return the original string. The LocalizationProcessor application walks through the source code of a project and looks for LOC.COMMANDNAME and builds a record for each command name for the translators that can be used by developers in a commands overridden Rhino.
+    Namespace: Rhino
+Represents a length with an associated unit system and a string representation of that length. This allows for going back and forth from numerical representation of a length and a string representation without &ldquo;guessing&rdquo; at the initial string
+public class LengthValue : IDisposableProperties  AngleUnitSystem ContextAngleUnitSystem Returns the context AngleUnitSystem from this LengthValue&rsquo;s ParseSettings since 6.0 uint ContextLocaleId returns the context LocaleId from this LengthValue since 6.0 string LengthString Return length as a string since 6.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/localization/">
-        <h3>Localization</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/light/">
+        <h3>Light</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/ui/localization/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-public class LocalizationProperties static int CurrentLanguageId  (summary) (since) 6.0  static bool RunningAsEnglish  (summary) (since) 6.0  Methods static string FormatArea(double area,UnitSystem units,DimensionStyle dimStyle,bool alternate)  (summary) Format an Area string from a number (since) 7.0 (returns) string This is some return comment  static string FormatDistanceAndTolerance(double distance,UnitSystem units,DimensionStyle dimStyle,bool alternate)  (summary) (since) 7.0 (returns) string This is some return comment  static string FormatNumber(double x,UnitSystem units,DistanceDisplayMode mode,int precision,bool appendUnitSystemName)  (summary) Get a string version of a number in a given unit system / display mode.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/ui/localizestringpair/">
-        <h3>LocalizeStringPair</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/ui/localizestringpair/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.UI
-Pair of strings used for localization.
-public class LocalizeStringPairConstructors LocalizeStringPair(string english,string local)  (summary) (since) 5.0  Properties string English  (summary) (since) 5.0  string Local  (summary) (since) 5.0  Methods string ToString()  (summary) (since) (unknown) (returns) string This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/morphs/maelstromspacemorph/">
-        <h3>MaelstromSpaceMorph</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/morphs/maelstromspacemorph/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry.Morphs
-Deforms objects in a spiral as if they were caught in a whirlpool.
-public class MaelstromSpaceMorphConstructors MaelstromSpaceMorph(Plane plane,double radius0,double radius1,double angle)  (summary) Constructs a maelstrom space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.9 (returns) void This is some return comment  Point3d MorphPoint(Point3d point)  (summary) Morphs an Euclidean point.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/manifesttable/">
-        <h3>ManifestTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/manifesttable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.FileIO
-Maintains an index to every model component that is in the 3dm file. This is the &ldquo;more comprehensive&rdquo; table that contains all objects in all other tables.
-public class ManifestTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int Count  (summary) Total number of items in the manifest, including deleted items. (since) 6.0  long LongCount  (summary) Total number of items in the manifest, including deleted items.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/mappingchannel/">
-        <h3>MappingChannel</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/mappingchannel/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/light/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.ChangeQueue
-Mapping Channel for a ChangeQueue Mesh
-public class MappingChannelProperties Transform Local  (summary) Local transform for the mapping (since) 6.0  TextureMapping Mapping  (summary) Return TexturMapping for this MappingChannel (since) 6.0  
+ChangeQueue Light change representation
+public class LightProperties  Event ChangeType Get what type of light change this represents since 6.0 Light Data Get the actual light data since 6.0 Guid Id Get the light object id since 6.0 uint IdCrc Get CRC computed from Id since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/lightarray/">
+        <h3>LightArray</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/lightarray/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class LightArray : IDisposableConstructors  LightArray()  since 6.0 LightArray(IntPtr pLightArray)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void Append(Light light)  since 6.0 int Count()  since 6.0 void Dispose()  since 6.0 Rhino.Geometry.Light ElementAt(int index)  since 6.0  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/lightmanagersupport/">
+        <h3>LightManagerSupport</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/lightmanagersupport/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+Base class for implementing custom light managers in .NET
+public class LightManagerSupportMethods  static void RegisterLightManager(PlugIn plugin) Find and register classes that derive from LightManagerSupport from the given plug-in. since 6.0 static void RegisterProviders(Assembly assembly,Guid pluginId) Find and register classes that derive from RealtimeDisplayMode from the given plug-in. The plug-in is found in the given assembly since 6.0 bool DeleteLight(RhinoDoc doc,Light light,bool bUndelete) Delete light Returns - If delete is successful, then return true, else return false since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/lightmanagersupportclient/">
+        <h3>LightManagerSupportClient</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/lightmanagersupportclient/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render
+public class LightManagerSupportClient : IDisposableConstructors  LightManagerSupportClient(uint doc_uuid)  since 6.0  Properties  IntPtr CppPointer  since 6.0  Methods  void DeleteLight(Light light)  since 6.0 void Dispose()  since 6.0 Rhino.Geometry.Light GetLightFromId(Guid uuid)  since 6.0 LightArray GetLights()  since 6.0 bool GetLightSolo(Light light)  since 6.0 void GroupLights(LightArray lights)  since 6.0 string LightDescription(Light light)  since 6.0 int LightsInSoloStorage()  since 6.0 void ModifyLight(Light light)  since 6.
   </div>
   
 

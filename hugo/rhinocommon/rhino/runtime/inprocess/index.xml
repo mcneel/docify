@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.Runtime.InProcess on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/runtime/inprocess/</link>
+    <description>Recent content in Rhino.Runtime.InProcess on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/runtime/inprocess/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RhinoCore</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/runtime/inprocess/rhinocore/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:14 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/runtime/inprocess/rhinocore/</guid>
+      <description>Namespace: Rhino.Runtime.InProcess
+Represents an instance of RhinoCore.DLL.
+public class RhinoCore : IDisposableConstructors  RhinoCore() Initializes a new instance of the class. since 7.0 RhinoCore(string[] args) Initializes a new instance of the class. since 7.0 RhinoCore(string[] args,WindowStyle windowStyle) Initializes a new instance of the class. since 7.0 RhinoCore(string[] args,WindowStyle windowStyle,IntPtr hostWnd) Initializes a new instance of the class. since 7.0  Methods  void Dispose() IDisposable implementation since 7.0 bool DoEvents() If a Rhino owned window is active processes all Windows messages currently in the message queue.</description>
+    </item>
+    
+  </channel>
+</rss>

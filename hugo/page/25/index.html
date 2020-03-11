@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,129 +57,128 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getpolyline/">
-        <h3>GetPolyline</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinoapp/">
+        <h3>RhinoApp</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getpolyline/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/rhinoapp/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Input.Custom
-Use to interactively get a polyline.
-public class GetPolylineConstructors GetPolyline()  (summary) (since) 6.0  Properties string FirstPointPrompt  (summary) Prompt when getting first point (since) 6.0  string FourthPointPrompt  (summary) Prompt when getting fourth point (since) 6.0  int MaxPointCount  (summary) (since) 6.0  int MinPointCount  (summary) (since) 6.0  string SecondPointPrompt  (summary) Prompt when getting second point (since) 6.0  string ThirdPointPrompt  (summary) Prompt when getting third point (since) 6.
+    Namespace: Rhino
+.NET RhinoApp is parallel to C++ CRhinoApp.
+public class RhinoApp static LicenseStateChanged Fires when the license state has changed since 7.0  Events  static AppSettingsChanged Is raised when settings are changed. static Closing Is raised when the application is about to close. static EscapeKeyPressed Can add or removed delegates that are raised when the escape key is clicked. static Idle Occurs when the application finishes processing and is about to enter the idle state since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getsphere/">
-        <h3>GetSphere</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinodeselectallobjectseventargs/">
+        <h3>RhinoDeselectAllObjectsEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getsphere/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Input.Custom
-Class provides user interface to define a sphere.
-public class GetSphereConstructors GetSphere()  (summary) (since) 7.0  Properties double DefaultSize  (summary) Default radius or diameter (based on InDiameterMode) (since) 7.0  bool InDiameterMode  (summary) Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter (since) 7.0  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 7.0 (returns) void This is some return comment  Commands.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/getstring/">
-        <h3>GetString</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/getstring/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Input.Custom
-Used to get strings.
-public class GetStringConstructors GetString()  (summary) Constructs a new GetString. (since) 5.0  Methods GetResult Get()  (summary) Returns the string that the user typed. By default, space stops the string input. (since) 5.0 (returns) GetResult This is some return comment  GetResult GetLiteralString()  (summary) Returns the string that the user typed. By default, space does not stop input. (since) 5.0 (returns) GetResult This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/gettorus/">
-        <h3>GetTorus</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/gettorus/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Input.Custom
-Class provides user interface to define a torus.
-public class GetTorusConstructors GetTorus()  (summary) (since) 7.0  Properties double DefaultSize  (summary) Default radius or diameter (based on InDiameterMode) (since) 7.0  bool FixInnerRadius  (summary) Second radius opion. The first radius chosen sets the inner dimension of the torus and the second radius is constrained to be outside of the first radius. (since) 7.0  bool InDiameterMode  (summary) Determines if the &ldquo;size&rdquo; value is reperesenting a radius or diameter (since) 7.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/gettransform/">
-        <h3>GetTransform</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/gettransform/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Input.Custom
-Used for getting a Transform
-public class GetTransformProperties bool HaveTransform  (summary) (since) 5.0  Collections.TransformObjectList ObjectList  (summary) (since) 5.0  Transform Transform  (summary) (since) 5.0  Methods void AddTransformObjects(TransformObjectList list)  (summary) Adds any objects you want transformed and grips you want transformed. Make sure no duplicates are in the list and that no grip ownwers are passed in as objects. (since) 5.0 (returns) void This is some return comment  Transform CalculateTransform(RhinoViewport viewport,Point3d point)  (summary) Retrieves the final transformation.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/input/custom/gettruncatedcone/">
-        <h3>GetTruncatedCone</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/input/custom/gettruncatedcone/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Input.Custom
-Class provides user interface to define a truncated cone.
-public class GetTruncatedConeConstructors GetTruncatedCone()  (summary) (since) 7.0  Properties bool Cap  (summary) Gets or sets whether or not the output should be capped. (since) 7.0  CylinderConstraint CylinderConstraint  (summary) State of the cone/cyl constraint option. When the cone/cyl option is selected, the circle is being made as a base for a cone/cyl. By default the vertical cone/cyl option not available but is not selected.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/gripobject/">
-        <h3>GripObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/gripobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinodeselectallobjectseventargs/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.DocObjects
-public class GripObjectProperties Point3d CurrentLocation  (summary) (since) 5.0  int Index  (summary) (since) 5.0  bool Moved  (summary) True if the grip has moved from OriginalLocation. (since) 5.0  Point3d OriginalLocation  (summary) (since) 5.0  Guid OwnerId  (summary) (since) 5.0  double Weight  (summary) The weight of a NURBS control point grip or RhinoMath.UnsetValue if the grip is not a NURBS control point grip.
+public class RhinoDeselectAllObjectsEventArgs : EventArgsProperties  RhinoDoc Document  int ObjectCount   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/gripsdraweventargs/">
-        <h3>GripsDrawEventArgs</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinodoc/">
+        <h3>RhinoDoc</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/gripsdraweventargs/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/rhinodoc/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class GripsDrawEventArgsProperties int ControlPolygonStyle  (summary) What kind of line is used to display things like control polygons. 0 = no control polygon, 1 = solid control polygon, 2 = dotted control polygon. (since) 5.0  bool DrawDynamicStuff  (summary) If true, then draw stuff that does not move when grips are dragged, like the control polygon of the &ldquo;original&rdquo; curve. (since) 5.0  bool DrawStaticStuff  (summary) If true, then draw stuff that moves when grips are dragged, like the curve being bent by a dragged control point.
+    Namespace: Rhino
+Represents an active model.
+public class RhinoDoc : IDisposableEvents  static ActiveDocumentChanged This event is raised when the active document used by modeless user interface changes. On Mac Rhino this will get raised before the , and events. Mac Rhino will also raise this event with 0 for the document Id and a None document pointer when the last document is closed. Windows Rhino will raise this event after the , and events when a new or existing model is opened.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/custom/gripstatus/">
-        <h3>GripStatus</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinodocobserverargs/">
+        <h3>RhinoDocObserverArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/custom/gripstatus/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/rhinodocobserverargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.DocObjects.Custom
-public class GripStatusProperties bool Culled  (summary) (since) 5.0  bool Visible  (summary) (since) 5.0  
+    Namespace: Rhino
+Arguments passed to methods.
+public class RhinoDocObserverArgsConstructors  RhinoDocObserverArgs(RhinoDoc doc)  since 6.0  Properties  RhinoDoc Doc Document since 6.0 uint RuntimeSerialNumber Document runtime serial number, will be different across Rhino sessions. since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/groundplane/">
-        <h3>GroundPlane</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoobjecteventargs/">
+        <h3>RhinoObjectEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/groundplane/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoobjecteventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.Render.ChangeQueue
-ChangeQueue ground plane
-public class GroundPlaneProperties double Altitude  (summary) Get the altitude for ground plane (since) 6.0  uint Crc  (summary) Get the checksum of this groundplane object (since) 6.0  bool Enabled  (summary) Return True if ground plane is enabled (since) 6.0  bool IsShadowOnly  (summary) Get True if ground plane should be shadow-only (since) 6.0  uint MaterialId  (summary) The CRC / RenderHash of the material on this ground plane (since) 6.
+    Namespace: Rhino.DocObjects
+public class RhinoObjectEventArgs : EventArgsProperties  Guid ObjectId  RhinoObject TheObject   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoobjectselectioneventargs/">
+        <h3>RhinoObjectSelectionEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoobjectselectioneventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+public class RhinoObjectSelectionEventArgs : EventArgsProperties  RhinoDoc Document  RhinoObject[] RhinoObjects  bool Selected Returns True if objects are being selected. Returns False if objects are being deseleced.  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/rhinopageinterop/">
+        <h3>RhinoPageInterop</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/rhinopageinterop/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI
+For internal use only, provides access to unmanaged core Rhino.
+public class RhinoPageInteropMethods  static IntPtr NewPropertiesPanelPagePointer(ObjectPropertiesPage page,uint rhinoDocRuntimeSn) For internal use only, provides access to unmanaged core since 6.0 static StackedDialogPage StackedDialogPageFromUnmanagedPointer(IntPtr pointer) For internal use only, provides access to unmanaged core since 6.4  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/rhinopageview/">
+        <h3>RhinoPageView</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/display/rhinopageview/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Display
+A window that contains a single layout &lsquo;page&rsquo;
+public class RhinoPageView : RhinoViewEvents  static PageViewSpaceChange   Properties  RhinoViewport ActiveViewport The ActiveViewport is the same as the MainViewport for standard RhinoViews. In a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object. Most of the time, you will use ActiveViewport unless you explicitly need to work with the main viewport. double PageHeight Height of the page in the document&rsquo;s PageUnitSystem since 5.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoreplaceobjecteventargs/">
+        <h3>RhinoReplaceObjectEventArgs</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/rhinoreplaceobjecteventargs/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.DocObjects
+public class RhinoReplaceObjectEventArgs : EventArgsProperties  RhinoDoc Document  RhinoObject NewRhinoObject  Guid ObjectId  RhinoObject OldRhinoObject   
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/rhinowindow/">
+        <h3>RhinoWindow</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/rhinowindow/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino
+Represents the top level window in Rhino
+[System.ComponentModel.Browsable(false), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]public class RhinoWindow : System.Windows.Forms.IWin32WindowProperties  IntPtr Handle  bool InvokeRequired See Control.InvokeRequired  Methods  void Invoke(Delegate method)   
   </div>
   
 

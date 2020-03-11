@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  SweepOneRail &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Utility class for generating Breps by sweeping cross section curves over a single rail curve. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
+public class SweepOneRailConstructors  SweepOneRail()   Properties  double AngleToleranceRadians  bool ClosedSweep If the input rail is closed, ClosedSweep determines if the swept breps will also be closed. bool GlobalShapeBlending If true, the sweep is linearly blended from one end to the other, creating sweeps that taper from one cross-section curve to the other.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">SweepOneRail</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Utility class for generating Breps by sweeping cross section curves over a single rail curve. 
+Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SweepOneRail</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>SweepOneRail()</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double AngleToleranceRadians</dt>
+<dd></dd>
+<dt>bool ClosedSweep</dt>
+<dd>If the input rail is closed, ClosedSweep determines if the swept breps will also
+be closed.</dd>
+<dt>bool GlobalShapeBlending</dt>
+<dd>If true, the sweep is linearly blended from one end to the other,
+creating sweeps that taper from one cross-section curve to the other.
+If false, the sweep stays constant at the ends and changes more
+rapidly in the middle.</dd>
+<dd>since 5.1</dd>
+<dt>bool IsFreeform</dt>
+<dd></dd>
+<dt>bool IsRoadlike</dt>
+<dd></dd>
+<dt>bool IsRoadlikeFront</dt>
+<dd></dd>
+<dt>bool IsRoadlikeTop</dt>
+<dd></dd>
+<dt>bool IsRoadlineRight</dt>
+<dd></dd>
+<dt>int MiterType</dt>
+<dd>0: don&rsquo;t miter,  1: intersect surfaces and trim sweeps,  2: rotate shapes at kinks and don&rsquo;t trim.</dd>
+<dt>double SweepTolerance</dt>
+<dd></dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweep(Curve rail,Curve crossSection)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweep(Curve rail,Curve crossSection,double crossSectionParameter)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweep(Curve rail,IEnumerable<!-- raw HTML omitted --> crossSections)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweep(Curve rail,IEnumerable<!-- raw HTML omitted --> crossSections,IEnumerable<!-- raw HTML omitted --> crossSectionParameters)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRebuild(Curve rail,Curve crossSection,double crossSectionParameter,int rebuildCount)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRebuild(Curve rail,Curve crossSection,int rebuildCount)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRebuild(Curve rail,IEnumerable<!-- raw HTML omitted --> crossSections,IEnumerable<!-- raw HTML omitted --> crossSectionParameters,int rebuildCount)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRebuild(Curve rail,IEnumerable<!-- raw HTML omitted --> crossSections,int rebuildCount)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRefit(Curve rail,Curve crossSection,double refitTolerance)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRefit(Curve rail,Curve crossSection,double crossSectionParameter,double refitTolerance)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRefit(Curve rail,IEnumerable<!-- raw HTML omitted --> crossSections,double refitTolerance)</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] PerformSweepRefit(Curve rail,IEnumerable<!-- raw HTML omitted --> crossSections,IEnumerable<!-- raw HTML omitted --> crossSectionParameters,double refitTolerance)</dt>
+<dd></dd>
+<dt>void SetRoadlikeUpDirection(Vector3d up)</dt>
+<dd></dd>
+<dt>void SetToRoadlikeFront()</dt>
+<dd></dd>
+<dt>void SetToRoadlikeRight()</dt>
+<dd></dd>
+<dt>void SetToRoadlikeTop()</dt>
+<dd></dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>SweepOneRail</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

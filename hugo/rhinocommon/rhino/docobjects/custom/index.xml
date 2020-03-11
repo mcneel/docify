@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rhino.DocObjects.Custom on Hugo based API Site</title>
+    <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/</link>
+    <description>Recent content in Rhino.DocObjects.Custom on Hugo based API Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Mar 2020 15:34:14 +0000</lastBuildDate>
+    
+	<atom:link href="/apidocs/hugo/rhinocommon/rhino/docobjects/custom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CustomGripObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customgripobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customgripobject/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class CustomGripObject : GripObject, IDisposableConstructors  CustomGripObject()   Properties  int Index  Point3d OriginalLocation  double Weight   Methods  void Dispose()  void NewLocation()   </description>
+    </item>
+    
+    <item>
+      <title>CustomMeshObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custommeshobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custommeshobject/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class CustomMeshObject : MeshObject, IDisposableMethods  void Dispose()   </description>
+    </item>
+    
+    <item>
+      <title>CustomPointObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custompointobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/custompointobject/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class CustomPointObject : PointObject, IDisposableMethods  void Dispose()  since 5.6  </description>
+    </item>
+    
+    <item>
+      <title>GripStatus</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripstatus/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:18 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripstatus/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class GripStatusProperties  bool Culled  bool Visible   </description>
+    </item>
+    
+    <item>
+      <title>CustomCurveObject</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customcurveobject/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customcurveobject/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class CustomCurveObject : CurveObject, IDisposableMethods  void Dispose()   </description>
+    </item>
+    
+    <item>
+      <title>CustomObjectGrips</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customobjectgrips/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/customobjectgrips/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class CustomObjectGrips : IDisposableProperties  int GripCount  bool GripsMoved If GripsMoved is True if some of the grips have ever been moved GripObject.NewLocation() sets GripsMoved=true. bool NewLocation True if some of the grips have been moved. GripObject.NewLocation() sets NewLocation=true. Derived classes can set NewLocation to False after updating temporary display information. RhinoObject OwnerObject Owner of the grips.  Methods  static bool Dragging() Determines if grips are currently being dragged.</description>
+    </item>
+    
+    <item>
+      <title>GripsDrawEventArgs</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripsdraweventargs/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:17 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/gripsdraweventargs/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+public class GripsDrawEventArgs : Rhino.Display.DrawEventArgsProperties  int ControlPolygonStyle What kind of line is used to display things like control polygons. 0 = no control polygon, 1 = solid control polygon, 2 = dotted control polygon. bool DrawDynamicStuff If true, then draw stuff that does not move when grips are dragged, like the control polygon of the &amp;ldquo;original&amp;rdquo; curve. bool DrawStaticStuff If true, then draw stuff that moves when grips are dragged, like the curve being bent by a dragged control point.</description>
+    </item>
+    
+    <item>
+      <title>ClassIdAttribute</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/classidattribute/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/classidattribute/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+Useful for legacy UserData
+[AttributeUsage(AttributeTargets.Class)]public class ClassIdAttribute : AttributeConstructors  ClassIdAttribute(string id) Initializes a class id attrbute. since 6.0  Properties  Guid Id Gets the associated style. since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>UserData</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdata/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdata/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+Provides a base class for custom classes of information which may be attached to geometry or attribute classes.
+public class UserData : IDisposableProperties  string Description Descriptive name of the user data. bool ShouldWrite If you want to save this user data in a 3dm file, override ShouldWrite and return true. If you do support serialization, you must also override the Read and Write functions. Transform Transform Updated if user data is attached to a piece of geometry that is transformed and the virtual OnTransform() is not overridden.</description>
+    </item>
+    
+    <item>
+      <title>UserDataList</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalist/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalist/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+Represents a collection of user data.
+public class UserDataList : IEnumerable&amp;lt;UserData&amp;gt;Properties  int Count Number of UserData objects in this list.  Methods  bool Add(UserData userdata) If the userdata is already in a different UserDataList, it will be removed from that list and added to this list. Returns - Whether this operation succeeded. bool Contains(Guid userdataId) Checks for the existence of a specific type of userdata in this list Both .</description>
+    </item>
+    
+    <item>
+      <title>UserDataListEnumerator</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalistenumerator/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdatalistenumerator/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+Enumerator for UserDataList
+public class UserDataListEnumerator : IEnumerator&amp;lt;UserData&amp;gt;Constructors  UserDataListEnumerator(UserDataList udl) Create new UserDataListEnumerator since 6.0  Properties  UserData Current Get current UserData on the enumerator. since 6.0  Methods  void Dispose() Implement Dispose(). NOP. since 6.0 bool MoveNext() Advance enumerator to next UserData item. Returns - True if there is a next item. since 6.0 void Reset() Reset the enumerator since 6.0  </description>
+    </item>
+    
+    <item>
+      <title>UserDictionary</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdictionary/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:16 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/userdictionary/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+Defines the storage data class for a user dictionary.
+[System.Runtime.InteropServices.Guid(&amp;#34;171E831F-7FEF-40E2-9857-E5CCD39446F0&amp;#34;)]public class UserDictionary : UserDataProperties  string Description Gets the text &amp;ldquo;RhinoCommon UserDictionary&amp;rdquo;. ArchivableDictionary Dictionary Gets the dictionary that is associated with this class. This dictionary is unique. bool ShouldWrite Writes this entity if the count is larger than 0.  </description>
+    </item>
+    
+    <item>
+      <title>UnknownUserData</title>
+      <link>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/unknownuserdata/</link>
+      <pubDate>Wed, 11 Mar 2020 15:34:15 +0000</pubDate>
+      
+      <guid>/apidocs/hugo/rhinocommon/rhino/docobjects/custom/unknownuserdata/</guid>
+      <description>Namespace: Rhino.DocObjects.Custom
+Represents user data with unknown origin.
+public class UnknownUserData : UserDataConstructors  UnknownUserData(IntPtr pointerNativeUserData) Constructs a new unknown data entity.  </description>
+    </item>
+    
+  </channel>
+</rss>

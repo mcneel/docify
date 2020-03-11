@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Point3f &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents the three coordinates of a point in three-dimensional space, using -precision floating point numbers.
+ static - Subtracts a point from another point. Returns - A new vector that is the difference of point minus vector. static != Determines whether two points have different values. Returns - True if the two points differ in any coordinate; False otherwise. static * Multiplies a point by a factor. Returns - A new vector that is the multiplication of point by value.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Point3f</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents the three coordinates of a point in three-dimensional space,
+using -precision floating point numbers.</p>
+<dl>
+<dt>static -</dt>
+<dd>Subtracts a point from another point.</dd>
+<dd>Returns - A new vector that is the difference of point minus vector.</dd>
+<dt>static !=</dt>
+<dd>Determines whether two points have different values.</dd>
+<dd>Returns - True if the two points differ in any coordinate; False otherwise.</dd>
+<dt>static *</dt>
+<dd>Multiplies a point by a factor.</dd>
+<dd>Returns - A new vector that is the multiplication of point by value.</dd>
+<dd>since 6.0</dd>
+<dt>static *</dt>
+<dd>Multiplies a point by a factor.</dd>
+<dd>Returns - A new vector that is the multiplication of point by value.</dd>
+<dd>since 6.0</dd>
+<dt>static +</dt>
+<dd>Adds a point to another point.</dd>
+<dd>Returns - A new vector that is the sum of point1 plus point2.</dd>
+<dd>since (unknown)</dd>
+<dt>static &lt;</dt>
+<dd>Determines whether the first specified point comes before (has inferior sorting value than) the second point.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is smaller than b.X,
+or a.X == b.X and a.Y is smaller than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z is smaller than b.Z;
+otherwise, false.</dd>
+<dt>static &lt;=</dt>
+<dd>Determines whether the first specified point comes before
+(has inferior sorting value than) the second point, or it is equal to it.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is smaller than b.X,
+or a.X == b.X and a.Y is smaller than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z &lt;= b.Z;
+otherwise, false.</dd>
+<dt>static ==</dt>
+<dd>Determines whether two points have equal values.</dd>
+<dd>Returns - True if the coordinates of the two points are exactly equal; otherwise false.</dd>
+<dt>static &gt;</dt>
+<dd>Determines whether the first specified point comes after (has superior sorting value than) the second point.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is larger than b.X,
+or a.X == b.X and a.Y is larger than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z is larger than b.Z;
+otherwise, false.</dd>
+<dt>static &gt;=</dt>
+<dd>Determines whether the first specified point comes after
+(has superior sorting value than) the second point, or it is equal to it.
+Coordinates evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - True if a.X is larger than b.X,
+or a.X == b.X and a.Y is larger than b.Y,
+or a.X == b.X and a.Y == b.Y and a.Z &gt;= b.Z;
+otherwise, false.</dd>
+</dl>
+<h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Point3f(float x,float y,float z)</dt>
+<dd>Initializes a new two-dimensional vector from two components.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static Point3f Origin</dt>
+<dd>Gets the value of a point at location 0,0,0.</dd>
+<dt>static Point3f Unset</dt>
+<dd>Gets the value of a point at location RhinoMath.UnsetValue,RhinoMath.UnsetValue,RhinoMath.UnsetValue.</dd>
+<dt>bool IsValid</dt>
+<dd>Each coordinate of the point must pass the  test.</dd>
+<dt>float X</dt>
+<dd>Gets or sets the X (first) component of the vector.</dd>
+<dt>float Y</dt>
+<dd>Gets or sets the Y (second) component of the vector.</dd>
+<dt>float Z</dt>
+<dd>Gets or sets the Z (third) component of the vector.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/geometry/vector3f/">Vector3f</a> Subtract(Point3f point1,Point3f point2)</dt>
+<dd>Subtracts a point from another point.
+(Provided for languages that do not support operator overloading. You can use the - operator otherwise)</dd>
+<dd>Returns - A new vector that is the difference of point minus vector.</dd>
+<dt>int CompareTo(Point3f other)</dt>
+<dd>Compares this  with another .
+Component evaluation priority is first X, then Y, then Z.</dd>
+<dd>Returns - 0: if this is identical to other-1: if this.X &lt; other.X-1: if this.X == other.X and this.Y &lt; other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z &lt; other.Z+1: otherwise.</dd>
+<dt>double DistanceTo(Point3f other)</dt>
+<dd>Computes the distance between two points.</dd>
+<dd>Returns - The length of the line between this and the other point; or 0 if any of the points is not valid.</dd>
+<dt>bool EpsilonEquals(Point3f other,float epsilon)</dt>
+<dd>Check that all values in other are withing epsilon of the values in this</dd>
+<dd>since 5.4</dd>
+<dt>bool Equals(object obj)</dt>
+<dd>Determines whether the specified System.Object is a Point3f and has the same values as the present point.</dd>
+<dd>Returns - True if obj is Point3f and has the same coordinates as this; otherwise false.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Equals(Point3f point)</dt>
+<dd>Determines whether the specified Point3f has the same values as the present point.</dd>
+<dd>Returns - True if point has the same coordinates as this; otherwise false.</dd>
+<dt>int GetHashCode()</dt>
+<dd>Computes a hash code for the present point.</dd>
+<dd>Returns - A non-unique integer that represents this point.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString()</dt>
+<dd>Constructs the string representation for the current point.</dd>
+<dd>Returns - The point representation in the form X,Y,Z.</dd>
+<dd>since (unknown)</dd>
+<dt>string ToString(string format,IFormatProvider formatProvider)</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>void Transform(Transform xform)</dt>
+<dd>Transforms the present point in place. The transformation matrix acts on the left of the point. i.e.,
+result = transformation*point</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Point3f</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GetLine &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input.Custom
+Use to interactively get a line. The Rhino &amp;ldquo;Line&amp;rdquo; command uses GetLine.
+public class GetLine : IDisposableConstructors  GetLine()  since 5.1  Properties  bool AcceptZeroLengthLine Controls whether or not a zero length line is acceptable. The default is to require the user to keep picking the end point until we get a point different than the start point. since 5.1 Color FeedbackColor If set, the feedback color is used to draw the dynamic line when the second point is begin picked.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GetLine</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input.Custom</a></em></p>
+<p>Use to interactively get a line.  The Rhino &ldquo;Line&rdquo; command uses GetLine.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GetLine</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>GetLine()</dt>
+<dd></dd>
+<dd>since 5.1</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool AcceptZeroLengthLine</dt>
+<dd>Controls whether or not a zero length line is acceptable.
+The default is to require the user to keep picking the end
+point until we get a point different than the start point.</dd>
+<dd>since 5.1</dd>
+<dt>Color FeedbackColor</dt>
+<dd>If set, the feedback color is used to draw the dynamic
+line when the second point is begin picked.  If not set,
+the active layer color is used.</dd>
+<dd>since 5.1</dd>
+<dt>string FirstPointPrompt</dt>
+<dd>Prompt when getting first point</dd>
+<dd>since 5.1</dd>
+<dt>double FixedLength</dt>
+<dd>If FixedLength &gt; 0, the line must have the specified length</dd>
+<dd>since 5.1</dd>
+<dt><a href="/rhinocommon/rhino/input/custom/getlinemode/">GetLineMode</a> GetLineMode</dt>
+<dd>Mode used</dd>
+<dd>since 5.1</dd>
+<dt>bool HaveFeedbackColor</dt>
+<dd>If true, the feedback color is used to draw the dynamic
+line when the second point is begin picked.  If false,
+the active layer color is used.</dd>
+<dd>since 5.1</dd>
+<dt>string MidPointPrompt</dt>
+<dd>Prompt when getting midpoint</dd>
+<dd>since 5.1</dd>
+<dt>string SecondPointPrompt</dt>
+<dd>Prompt when getting second point</dd>
+<dd>since 5.1</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dd>since 5.1</dd>
+<dt>void EnableAllVariations(bool on)</dt>
+<dd>If true, then all line variations are shown if the default line mode is used</dd>
+<dd>since 5.1</dd>
+<dt>void EnableFromBothSidesOption(bool on)</dt>
+<dd>If true, then the &ldquo;BothSides&rdquo; option shows up when the
+start point is inteactively picked.</dd>
+<dd>since 5.1</dd>
+<dt>void EnableFromMidPointOption(bool on)</dt>
+<dd>If true, the the &ldquo;MidPoint&rdquo; options shows up</dd>
+<dd>since 5.1</dd>
+<dt>Commands.Result Get(Line line)</dt>
+<dd>Perform the &lsquo;get&rsquo; operation.</dd>
+<dd>since 5.1</dd>
+<dt>void SetFirstPoint(Point3d point)</dt>
+<dd>Use SetFirstPoint to specify the line&rsquo;s starting point and skip
+the start point interactive picking</dd>
+<dd>since 5.1</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GetLine</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

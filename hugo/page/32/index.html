@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,127 +57,130 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/changequeue/light/">
-        <h3>Light</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/dynamicobjecttransform/">
+        <h3>DynamicObjectTransform</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/changequeue/light/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/dynamicobjecttransform/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render.ChangeQueue
-ChangeQueue Light change representation
-public class LightProperties Event ChangeType  (summary) Get what type of light change this represents (since) 6.0  Geometry.Light Data  (summary) Get the actual light data (since) 6.0  Guid Id  (summary) Get the light object id (since) 6.0  uint IdCrc  (summary) Get CRC computed from Id (since) 6.0  
+ChangeQueue DynamicObject
+public class DynamicObjectTransformProperties  uint MeshInstanceId Get the mesh instance id for this dynamic object. since 6.0 Transform Transform Transform for the DynamicObject since 6.0  Methods  string ToString() String representation of DynamicObject since (unknown)  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/lightarray/">
-        <h3>LightArray</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/controls/factorybase/">
+        <h3>FactoryBase</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/lightarray/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/controls/factorybase/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.UI.Controls
+Base class for CollapsibleSection and ViewModel factories used by the RDK UI
+public class FactoryBaseMethods  static Type[] Register() Call this function during startup of current assembly to load classes with factory creation support are registed since 6.0 static Type[] Register(PlugIn plugin) Call this function during the startup of your plug-in to ensure that all classes that support factory creation are registed since 6.0 IntPtr Get(Guid id) Override this method to return a new instance of your class for the given ID since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/field/">
+        <h3>Field</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/field/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.Fields
+Generic data fields used to add publicly accessible properties to RenderContent.FieldDictionary. These should be created by calling a FieldDictaionary.Add() method on a Render content object. These are allocated after the RenderContent object&rsquo;s C++ object is created and added to the underlying C++ objects content dictionary, who ever allocates a field is responsible for deleting it so these objects clean up the C++ pointers when they are disposed of.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/fielddictionary/">
+        <h3>FieldDictionary</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/fielddictionary/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.Fields
+Dictionary containing RenderContent data fields, add fields to this dictionary in your derived RenderContent classes constructor. Get field values using the TryGetdata type methods and set them using the Set() method.
+public class FieldDictionary : IEnumerableMethods  BoolField Add(string key,bool value) Add a new BoolField to the dictionary. This will be a data only field and not show up in the content browsers. since 5.1 BoolField Add(string key,bool value,string prompt) Add a new BoolField to the dictionary.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/fields/floatfield/">
+        <h3>FloatField</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/fields/floatfield/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.Fields
+float field value class
+public class FloatField : FieldProperties  float Value Gets or sets the field value since 5.1  Methods  object ValueAsObject()  since 5.7  
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/geometry/morphs/flowspacemorph/">
+        <h3>FlowSpaceMorph</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/geometry/morphs/flowspacemorph/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Geometry.Morphs
+Re-aligns objects from a base curve to a target curve.
+public class FlowSpaceMorph : Rhino.Geometry.SpaceMorph, IDisposableConstructors  FlowSpaceMorph(Curve curve0,Curve curve1,bool preventStretching) Constructs a flow space morph. since 5.9 FlowSpaceMorph(Curve curve0,Curve curve1,bool reverseCurve0,bool reverseCurve1,bool preventStretching) Constructs a flow space morph. since 5.9  Properties  bool IsValid Returns True if the space morph definition is valid, False otherwise. since 5.9  Methods  void Dispose() Actively reclaims unmanaged resources that this instance uses.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/freefloatingbase/">
+        <h3>FreeFloatingBase</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/freefloatingbase/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class LightArrayConstructors LightArray()  (summary) (since) 6.0  LightArray(IntPtr pLightArray)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Append(Light light)  (summary) (since) 6.0 (returns) void This is some return comment  int Count()  (summary) (since) 6.0 (returns) int This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  Rhino.
+Base class for Rhino.Render objects that are owned by the document, or can be delivered separately from other functions. In general, you cannot create these objects yourself.
+public class FreeFloatingBaseMethods  void CopyFrom(FreeFloatingBase src) Copy from another object since 6.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/lightmanagersupport/">
-        <h3>LightManagerSupport</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/changequeue/groundplane/">
+        <h3>GroundPlane</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/lightmanagersupport/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/changequeue/groundplane/</small>
+      2020-03-11
+    </div>
+    Namespace: Rhino.Render.ChangeQueue
+ChangeQueue ground plane
+public class GroundPlaneProperties  double Altitude Get the altitude for ground plane since 6.0 uint Crc Get the checksum of this groundplane object since 6.0 bool Enabled Return True if ground plane is enabled since 6.0 bool IsShadowOnly Get True if ground plane should be shadow-only since 6.0 uint MaterialId The CRC / RenderHash of the material on this ground plane since 6.0 Vector2d TextureOffset Get texture offset on the ground plane since 6.
+  </div>
+  
+  <div>
+    <div>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/groundplane/">
+        <h3>GroundPlane</h3>
+      </a>
+      <small>/apidocs/hugo/rhinocommon/rhino/render/groundplane/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-Base class for implementing custom light managers in .NET
-public class LightManagerSupportMethods static void RegisterLightManager(PlugIn plugin)  (summary) Find and register classes that derive from LightManagerSupport from the given plug-in. (since) 6.0 (returns) void This is some return comment  static void RegisterProviders(Assembly assembly,Guid pluginId)  (summary) Find and register classes that derive from RealtimeDisplayMode from the given plug-in. The plug-in is found in the given assembly (since) 6.
+Represents an infinite plane for implementation by renderers. See SupportsFeature.
+public class GroundPlane : DocumentOrFreeFloatingBaseConstructors  GroundPlane() Create an utility object not associated with any document since 6.0 GroundPlane(GroundPlane g) Create an utility object not associated with any document from another object since 6.0  Events  static Changed This event is raised when a GroundPlane property value is changed. since 5.10  Properties  double Altitude Height above world XY plane in model units.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/render/lightmanagersupportclient/">
-        <h3>LightManagerSupportClient</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/hudmaxpasseschangedeventargs/">
+        <h3>HudMaxPassesChangedEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/render/lightmanagersupportclient/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/hudmaxpasseschangedeventargs/</small>
+      2020-03-11
     </div>
     Namespace: Rhino.Render
-public class LightManagerSupportClientConstructors LightManagerSupportClient(uint doc_uuid)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void DeleteLight(Light light)  (summary) (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  Rhino.Geometry.Light GetLightFromId(Guid uuid)  (summary) (since) 6.0 (returns) Rhino.Geometry.Light This is some return comment  LightArray GetLights()  (summary) (since) 6.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/lightobject/">
-        <h3>LightObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/lightobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-public class LightObjectProperties ModelComponentType ComponentType  (summary) (since) 6.0  Light LightGeometry  (summary) (since) 5.0  Methods Light DuplicateLightGeometry()  (summary) (since) 5.0 (returns) Light This is some return comment  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/lighttable/">
-        <h3>LightTable</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/lighttable/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-public class LightTableProperties ModelComponentType ComponentType  (summary) (since) 6.0  int Count  (summary) Number of lights in the light table. Does not include Sun or Skylight. (since) 5.0  RhinoDoc Document  (summary) Document that owns this light table. (since) 5.0  Render.Skylight Skylight  (summary) (since) 6.0  Render.Sun Sun  (summary) Gets the Sun instance that is applied to the document. If the RDK is loaded, an instance is always returned.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/tables/lighttableeventargs/">
-        <h3>LightTableEventArgs</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/tables/lighttableeventargs/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects.Tables
-public class LightTableEventArgsProperties RhinoDoc Document  (summary) (since) 5.3  LightTableEventType EventType  (summary) (since) 5.3  int LightIndex  (summary) (since) 5.3  LightObject NewState  (summary) (since) 5.3  Light OldState  (summary) (since) 5.3  
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/line/">
-        <h3>Line</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/line/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents the value of start and end points in a single line segment.
-static !=  (summary) Determines whether two lines have different values. (since) 5.0  static ==  (summary) Determines whether two lines have the same value. (since) 5.0  Constructors Line(double x0,double y0,double z0,double x1,double y1,double z1)  (summary) Constructs a new line segment between two points. (since) 5.0  Line(Point3d from,Point3d to)  (summary) Constructs a new line segment between two points.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/geometry/lineardimension/">
-        <h3>LinearDimension</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/geometry/lineardimension/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.Geometry
-Represents a linear dimension
-public class LinearDimensionConstructors LinearDimension()  (summary) (since) 5.0  LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)  (summary) (since) 5.0  Properties bool Aligned  (summary) Gets or sets a value indicating whether this annotation is aligned. (since) 5.0  AnnotationType AnnotationType  (summary) (since) 6.0  Point2d Arrowhead1End  (summary) Gets the arrow head end of the first extension line. (since) 5.0  Point2d Arrowhead2End  (summary) Gets the arrow head end of the second extension line.
-  </div>
-  
-  <div>
-    <div>
-      <a href="/apidocs/hugo/posts/rhino/docobjects/lineardimensionobject/">
-        <h3>LinearDimensionObject</h3>
-      </a>
-      <small>/apidocs/hugo/posts/rhino/docobjects/lineardimensionobject/</small>
-      0001-01-01
-    </div>
-    Namespace: Rhino.DocObjects
-Rhino Object that represents a linear dimension geometry and attributes
-public class LinearDimensionObjectProperties Geometry.LinearDimension LinearDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  
+public class HudMaxPassesChangedEventArgs : EventArgsConstructors  HudMaxPassesChangedEventArgs(int mp)  since 6.0  Properties  int MaxPasses  since 6.0  
   </div>
   
 

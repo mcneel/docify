@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  PickContext &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Input.Custom
+Utility for determining if objects are picked
+public class PickContext : IDisposableConstructors  PickContext()   Properties  GetObject GetObjectUsed  bool PickGroupsEnabled Thue if GroupObjects should be added to the pick list Line PickLine pick chord starts on near clipping plane and ends on far clipping plane. PickMode PickMode  PickStyle PickStyle  bool SubObjectSelectionEnabled True if the user had activated subobject selection RhinoView View This view can be a model view or a page view.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">PickContext</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Input.Custom</a></em></p>
+<p>Utility for determining if objects are picked</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PickContext</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>PickContext()</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/input/custom/getobject/">GetObject</a> GetObjectUsed</dt>
+<dd></dd>
+<dt>bool PickGroupsEnabled</dt>
+<dd>Thue if GroupObjects should be added to the pick list</dd>
+<dt><a href="/rhinocommon/rhino/geometry/line/">Line</a> PickLine</dt>
+<dd>pick chord starts on near clipping plane and ends on far clipping plane.</dd>
+<dt><a href="/rhinocommon/rhino/input/custom/pickmode/">PickMode</a> PickMode</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/input/custom/pickstyle/">PickStyle</a> PickStyle</dt>
+<dd></dd>
+<dt>bool SubObjectSelectionEnabled</dt>
+<dd>True if the user had activated subobject selection</dd>
+<dt><a href="/rhinocommon/rhino/display/rhinoview/">RhinoView</a> View</dt>
+<dd>This view can be a model view or a page view. When view is a page view,
+then you need to distingish between the viewports MainViewport() and
+ActiveViewport().  When m_view is a model view, both MainViewport() and
+ActiveViewport() return the world view&rsquo;s viewport.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>bool PickFrustumTest(BezierCurve bezier,double t,double depth,double distance)</dt>
+<dd></dd>
+<dt>bool PickFrustumTest(BoundingBox box,bool boxCompletelyInFrustum)</dt>
+<dd>Fast test to check if a bounding box intersects a pick frustum.</dd>
+<dd>Returns - False if bbox is invalid or box does not intersect the pick frustum</dd>
+<dt>bool PickFrustumTest(Line line,double t,double depth,double distance)</dt>
+<dd></dd>
+<dt>bool PickFrustumTest(Mesh mesh,MeshPickStyle pickStyle,Point3d hitPoint,double depth,double distance,MeshHitFlag hitFlag,int hitIndex)</dt>
+<dd>Utility for picking meshes</dd>
+<dt>bool PickFrustumTest(Mesh mesh,MeshPickStyle pickStyle,Point3d hitPoint,Point2d hitSurfaceUV,Point2d hitTextureCoordinate,double depth,double distance,MeshHitFlag hitFlag,int hitIndex)</dt>
+<dd>Utility for picking meshes</dd>
+<dt>bool PickFrustumTest(NurbsCurve curve,double t,double depth,double distance)</dt>
+<dd></dd>
+<dt>bool PickFrustumTest(Point3d point,double depth,double distance)</dt>
+<dd>Utility for picking 3d point</dd>
+<dd>Returns - True if there is a hit</dd>
+<dt>bool PickFrustumTest(Point3d[] points,int pointIndex,double depth,double distance)</dt>
+<dd></dd>
+<dt>bool PickFrustumTest(PointCloud cloud,int pointIndex,double depth,double distance)</dt>
+<dd></dd>
+<dt>int[] PickMeshTopologyVertices(Mesh mesh)</dt>
+<dd>Utility for picking mesh vertices</dd>
+<dd>Returns - indices of mesh topology vertices that were picked</dd>
+<dt>void SetPickTransform(Transform transform)</dt>
+<dd></dd>
+<dt>void UpdateClippingPlanes()</dt>
+<dd>Updates the clipping plane information in pick region. The
+SetClippingPlanes and View fields must be called before calling
+UpdateClippingPlanes().</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>PickContext</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

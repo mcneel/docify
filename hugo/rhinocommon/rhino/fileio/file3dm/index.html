@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  File3dm &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents a 3dm file, which is stored using the OpenNURBS file standard. The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.
+public class File3dm : IDisposableConstructors  File3dm() Initializes a new instance of a 3dm file.  Properties  File3dmDimStyleTable AllDimStyles Dimension Styles in this file. since 6.0 File3dmGroupTable AllGroups Grpups in this file. since 6.5 File3dmHatchPatternTable AllHatchPatterns Hatch patterns in this file. since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">File3dm</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents a 3dm file, which is stored using the OpenNURBS file standard.
+The 3dm format is the main Rhinoceros storage format.Visit <a href="http://www.opennurbs.com/">http://www.opennurbs.com/</a> for more details.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">File3dm</span> : IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>File3dm()</dt>
+<dd>Initializes a new instance of a 3dm file.</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmdimstyletable/">File3dmDimStyleTable</a> AllDimStyles</dt>
+<dd>Dimension Styles in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmgrouptable/">File3dmGroupTable</a> AllGroups</dt>
+<dd>Grpups in this file.</dd>
+<dd>since 6.5</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmhatchpatterntable/">File3dmHatchPatternTable</a> AllHatchPatterns</dt>
+<dd>Hatch patterns in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dminstancedefinitiontable/">File3dmInstanceDefinitionTable</a> AllInstanceDefinitions</dt>
+<dd>Instance definitions in this file</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmlayertable/">File3dmLayerTable</a> AllLayers</dt>
+<dd>Layers in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmlinetypetable/">File3dmLinetypeTable</a> AllLinetypes</dt>
+<dd>Linetypes in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmmaterialtable/">File3dmMaterialTable</a> AllMaterials</dt>
+<dd>Materials in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmnamedconstructionplanes/">File3dmNamedConstructionPlanes</a> AllNamedConstructionPlanes</dt>
+<dd>Named construction planes in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmviewtable/">File3dmViewTable</a> AllNamedViews</dt>
+<dd>Named views in this file.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmviewtable/">File3dmViewTable</a> AllViews</dt>
+<dd>Views that represent the RhinoViews which are displayed when Rhino loads this file.</dd>
+<dd>since 6.0</dd>
+<dt>string ApplicationDetails</dt>
+<dd>Gets or sets details for the application that wrote this file.</dd>
+<dt>string ApplicationName</dt>
+<dd>Gets or sets the name of the application that wrote this file.</dd>
+<dt>string ApplicationUrl</dt>
+<dd>Gets or sets a URL for the application that wrote this file.</dd>
+<dt>DateTime Created</dt>
+<dd>Get the DateTime that this file was originally created. If the
+value is not set in the 3dm file, then DateTime.MinValue is returned</dd>
+<dd>since 5.6</dd>
+<dt>string CreatedBy</dt>
+<dd>Gets a string that names the user who created the file.</dd>
+<dt>IList<!-- raw HTML omitted --> DimStyles</dt>
+<dd>Dimension Styles in this file.</dd>
+<dt>IList<!-- raw HTML omitted --> HatchPatterns</dt>
+<dd>Hatch patterns in this file</dd>
+<dt>IList<!-- raw HTML omitted --> InstanceDefinitions</dt>
+<dd>Instance definitions in this file.</dd>
+<dd>since 5.6</dd>
+<dt>DateTime LastEdited</dt>
+<dd>Get the DateTime that this file was last edited. If the
+value is not set in the 3dm file, then DateTime.MinValue is returned</dd>
+<dd>since 5.6</dd>
+<dt>string LastEditedBy</dt>
+<dd>Gets a string that names the user who last edited the file.</dd>
+<dt>IList<!-- raw HTML omitted --> Layers</dt>
+<dd>Layers in this file.</dd>
+<dt>IList<!-- raw HTML omitted --> Linetypes</dt>
+<dd>Linetypes in this file.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/manifesttable/">ManifestTable</a> Manifest</dt>
+<dd>Retrieves the manifest with all object descriptions in this file.</dd>
+<dd>since 6.0</dd>
+<dt>IList<!-- raw HTML omitted --> Materials</dt>
+<dd>Materials in this file.</dd>
+<dt>IList<!-- raw HTML omitted --> NamedConstructionPlanes</dt>
+<dd>Named construction planes in this file.</dd>
+<dd>since 6.0</dd>
+<dt>IList<!-- raw HTML omitted --> NamedViews</dt>
+<dd>Named views in this file.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmnotes/">File3dmNotes</a> Notes</dt>
+<dd>Gets or sets the model notes.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmobjecttable/">File3dmObjectTable</a> Objects</dt>
+<dd>Gets access to the  class associated with this file,
+which contains all objects.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmplugindatatable/">File3dmPlugInDataTable</a> PlugInData</dt>
+<dd>Custom plug-in data in this file.  This data is not attached to any geometry or attributes</dd>
+<dt>int Revision</dt>
+<dd>Gets or sets the revision number.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmsettings/">File3dmSettings</a> Settings</dt>
+<dd>Settings include tolerance, and unit system, and defaults used
+for creating views and objects.</dd>
+<dt>string StartSectionComments</dt>
+<dd>Gets or sets the start section comments, which are the comments with which the 3dm file begins.</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmstringtable/">File3dmStringTable</a> Strings</dt>
+<dd>Document user strings in this file</dd>
+<dd>since 6.0</dd>
+<dt>IList<!-- raw HTML omitted --> Views</dt>
+<dd>Views that represent the RhinoViews which are displayed when Rhino loads this file.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static File3dm Read(string path)</dt>
+<dd>Reads a 3dm file from a specified location.</dd>
+<dd>Returns - new File3dm on success, None on error.</dd>
+<dt>static File3dm Read(string path,TableTypeFilter tableTypeFilterFilter,ObjectTypeFilter objectTypeFilter)</dt>
+<dd>Reads a 3dm file from a specified location.</dd>
+<dd>Returns - new File3dm on success, None on error.</dd>
+<dd>since 5.9</dd>
+<dt>static void ReadApplicationData(string path,string applicationName,string applicationUrl,string applicationDetails)</dt>
+<dd>Reads only the application information from an existing 3dm file.</dd>
+<dt>static int ReadArchiveVersion(string path)</dt>
+<dd>Reads only the archive 3dm version from an existing 3dm file.</dd>
+<dd>Returns - The 3dm file archive version.</dd>
+<dd>since 5.10</dd>
+<dt>static <a href="/rhinocommon/rhino/docobjects/dimensionstyle/">DimensionStyle</a>[] ReadDimensionStyles(string path)</dt>
+<dd>Read the dimension styles table out of a 3dm file.</dd>
+<dd>Returns - Array of dimension styles on success (empty array if file does not contain dimension styles)
+None on error</dd>
+<dd>since 6.0</dd>
+<dt>static string ReadNotes(string path)</dt>
+<dd>Reads only the notes from an existing 3dm file.</dd>
+<dd>Returns - The 3dm file notes.</dd>
+<dt>static System.Drawing.Bitmap ReadPreviewImage(string path)</dt>
+<dd>Attempts to read the preview image out of a 3dm file.</dd>
+<dd>Returns - A bitmap, or None on failure.</dd>
+<dt>static bool ReadRevisionHistory(string path,string createdBy,string lastEditedBy,int revision,DateTime createdOn,DateTime lastEditedOn)</dt>
+<dd>Quickly check a file for it&rsquo;s revision information.  This function does
+not read the entire file, just what it needs to get revision information out</dd>
+<dd>Returns - True on success</dd>
+<dd>since 5.6</dd>
+<dt>static File3dm ReadWithLog(string path,string errorLog)</dt>
+<dd>Read a 3dm file from a specified location and log any archive
+reading errors.</dd>
+<dd>Returns - New File3dm on success, None on error.</dd>
+<dt>static File3dm ReadWithLog(string path,TableTypeFilter tableTypeFilterFilter,ObjectTypeFilter objectTypeFilter,string errorLog)</dt>
+<dd>Reads a 3dm file from a specified location.</dd>
+<dd>Returns - new File3dm on success, None on error.</dd>
+<dd>since 5.9</dd>
+<dt>int Audit(bool attemptRepair,int repairCount,string errors,int[] warnings)</dt>
+<dd>This function is only kept for forward assembly compatibility.</dd>
+<dd>Returns - Returns 0.</dd>
+<dt>void Dispose()</dt>
+<dd>Actively reclaims unmanaged resources that this instance uses.</dd>
+<dt>string Dump()</dt>
+<dd>Prepares a text dump of the entire model.</dd>
+<dd>Returns - The text dump.</dd>
+<dt>string DumpSummary()</dt>
+<dd>Prepares a text dump of model properties and settings.</dd>
+<dd>Returns - The text dump.</dd>
+<dt>void DumpToTextLog(TextLog log)</dt>
+<dd>Prepares a text dump of the entire model.</dd>
+<dd>since 5.1</dd>
+<dt>System.Drawing.Bitmap GetPreviewImage()</dt>
+<dd>Preview image used for file explorer</dd>
+<dd>since 6.0</dd>
+<dt>bool IsValid(string errors)</dt>
+<dd>The File3dm object is kept consistent during its creation.
+Therefore, this function now returns only true.</dd>
+<dd>Returns - True in any case.</dd>
+<dt>bool IsValid(TextLog errors)</dt>
+<dd>The File3dm object is kept consistent during its creation.
+Therefore, this function now returns only true.</dd>
+<dd>Returns - &gt;True in any case.</dd>
+<dd>since 5.1</dd>
+<dt>void Polish()</dt>
+<dd>This function is only kept for forward assembly compatibility.</dd>
+<dt>void SetPreviewImage(Bitmap image)</dt>
+<dd>Preview image used for file explorer</dd>
+<dd>since 6.0</dd>
+<dt>bool Write(string path,File3dmWriteOptions options)</dt>
+<dd>Writes contents of this model to an openNURBS archive.
+If the model is not valid, then Write will refuse to write it.</dd>
+<dd>Returns - True if archive is written with no error.
+False if errors occur.</dd>
+<dd>since 5.9</dd>
+<dt>bool Write(string path,int version)</dt>
+<dd>Writes contents of this model to an openNURBS archive.
+If the model is not valid, then Write will refuse to write it.</dd>
+<dd>Returns - True if archive is written with no error.
+False if errors occur.</dd>
+<dt>bool WriteWithLog(string path,File3dmWriteOptions options,string errorLog)</dt>
+<dd>Writes contents of this model to an openNURBS archive.
+If the model is not valid, then Write will refuse to write it.</dd>
+<dd>Returns - True if archive is written with no error.
+False if errors occur.</dd>
+<dd>since 6.0</dd>
+<dt>bool WriteWithLog(string path,int version,string errorLog)</dt>
+<dd>Writes contents of this model to an openNURBS archive.
+If the model is not valid, then Write will refuse to write it.</dd>
+<dd>Returns - True if archive is written with no error.
+False if errors occur.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>File3dm</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  File3dmObjectTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Represents a simple object table for a file that is open externally. This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.
+public class File3dmObjectTable :File3dmCommonComponentTable&amp;lt;File3dmObject&amp;gt;,IEnumerable&amp;lt;File3dmObject&amp;gt;Properties  ModelComponentType ComponentType Returns . since 6.0 int Count Returns the total amount of items in the object table, including lights.  Methods  void Add(File3dmObject item) Duplicates the object, then adds a copy of the object to the document.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">File3dmObjectTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Represents a simple object table for a file that is open externally.
+This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">File3dmObjectTable</span> :
+    File3dmCommonComponentTable&lt;File3dmObject&gt;,
+    IEnumerable&lt;File3dmObject&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt>int Count</dt>
+<dd>Returns the total amount of items in the object table, including lights.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Add(File3dmObject item)</dt>
+<dd>Duplicates the object, then adds a copy of the object to the document.</dd>
+<dd>since 6.0</dd>
+<dt>Guid AddAngularDimension(AngularDimension dimension)</dt>
+<dd>Adds a angular dimension object to the 3dm file object table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.5</dd>
+<dt>Guid AddAngularDimension(AngularDimension dimension,ObjectAttributes attributes)</dt>
+<dd>Adds a angular dimension object to the 3dm file object table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.5</dd>
+<dt>Guid AddArc(Arc arc)</dt>
+<dd>Adds a curve object to the document representing an arc.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddArc(Arc arc,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the document representing an arc.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddBrep(Brep brep)</dt>
+<dd>Adds a brep object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddBrep(Brep brep,ObjectAttributes attributes)</dt>
+<dd>Adds a brep object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCircle(Circle circle)</dt>
+<dd>Adds a curve object to the document representing a circle.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCircle(Circle circle,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the document representing a circle.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)</dt>
+<dd>Adds a clipping plane object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds)</dt>
+<dd>Adds a clipping plane object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,IEnumerable<!-- raw HTML omitted --> clippedViewportIds,ObjectAttributes attributes)</dt>
+<dd>Adds a clipping plane object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCurve(Curve curve)</dt>
+<dd>Adds a curve object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddCurve(Curve curve,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddEllipse(Ellipse ellipse)</dt>
+<dd>Adds a curve object to the document representing an ellipse.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddEllipse(Ellipse ellipse,ObjectAttributes attributes)</dt>
+<dd>Adds a curve object to the document representing an ellipse.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddExtrusion(Extrusion extrusion)</dt>
+<dd>Adds an extrusion object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddExtrusion(Extrusion extrusion,ObjectAttributes attributes)</dt>
+<dd>Adds an extrusion object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddHatch(Hatch hatch)</dt>
+<dd>Adds a hatch to the document.</dd>
+<dd>Returns - A unique identifier for the hatch, or  on failure.</dd>
+<dt>Guid AddHatch(Hatch hatch,ObjectAttributes attributes)</dt>
+<dd>Adds a hatch to the document.</dd>
+<dd>Returns - A unique identifier for the hatch, or  on failure.</dd>
+<dt>Guid AddInstanceObject(InstanceReferenceGeometry instanceReference)</dt>
+<dd>Adds an instance reference geometry object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.5</dd>
+<dt>Guid AddInstanceObject(InstanceReferenceGeometry instanceReference,ObjectAttributes attributes)</dt>
+<dd>Adds an instance reference geometry object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.5</dd>
+<dt>Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform)</dt>
+<dd>Adds an instance reference geometry object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.5</dd>
+<dt>Guid AddInstanceObject(int instanceDefinitionIndex,Transform instanceXform,ObjectAttributes attributes)</dt>
+<dd>Adds an instance reference geometry object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dd>since 6.5</dd>
+<dt>Guid AddLeader(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds an annotation leader to the document. This overload is only provided in the Rhino SDK.</dd>
+<dd>Returns - A unique identifier for the object; or  on failure.</dd>
+<dt>Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds an annotation leader to the document.</dd>
+<dd>Returns - A unique identifier for the object; or  on failure.</dd>
+<dt>Guid AddLeader(Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation leader to the document.</dd>
+<dd>Returns - A unique identifier for the object; or  on failure.</dd>
+<dt>Guid AddLeader(string text,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds an annotation leader to the document. This overload is only provided in the Rhino SDK.</dd>
+<dd>Returns - A unique identifier for the object; or  on failure.</dd>
+<dt>Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds an annotation leader to the document.</dd>
+<dd>Returns - A unique identifier for the object; or  on failure.</dd>
+<dt>Guid AddLeader(string text,Plane plane,IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation leader to the document.</dd>
+<dd>Returns - A unique identifier for the object; or  on failure.</dd>
+<dt>Guid AddLine(Line line)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLine(Line line,ObjectAttributes attributes)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLine(Point3d from,Point3d to)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier of new rhino object.</dd>
+<dt>Guid AddLine(Point3d from,Point3d to,ObjectAttributes attributes)</dt>
+<dd>Adds a line object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLinearDimension(LinearDimension dimension)</dt>
+<dd>Adds a linear dimension to the 3dm file object table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddLinearDimension(LinearDimension dimension,ObjectAttributes attributes)</dt>
+<dd>Adds a linear dimension to the 3dm file object table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddMesh(Mesh mesh)</dt>
+<dd>Adds a mesh object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddMesh(Mesh mesh,ObjectAttributes attributes)</dt>
+<dd>Adds a mesh object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(double x,double y,double z)</dt>
+<dd>Adds a point object to the table.</dd>
+<dd>Returns - id of new object.</dd>
+<dt>Guid AddPoint(Point3d point)</dt>
+<dd>Adds a point object to the table.</dd>
+<dd>Returns - Id of new object.</dd>
+<dt>Guid AddPoint(Point3d point,ObjectAttributes attributes)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(Point3f point)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPoint(Point3f point,ObjectAttributes attributes)</dt>
+<dd>Adds a point object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(PointCloud cloud)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPointCloud(PointCloud cloud,ObjectAttributes attributes)</dt>
+<dd>Adds a point cloud object to the document.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - List of object ids.</dd>
+<dt>Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - An array of object unique identifiers.</dd>
+<dt>Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - An array of object unique identifiers.</dd>
+<dt>Guid[] AddPoints(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds multiple points to the document.</dd>
+<dd>Returns - An array of object unique identifiers.</dd>
+<dt>Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points)</dt>
+<dd>Adds a polyline object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddPolyline(IEnumerable<!-- raw HTML omitted --> points,ObjectAttributes attributes)</dt>
+<dd>Adds a polyline object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddSphere(Sphere sphere)</dt>
+<dd>Adds a surface object to the document representing a sphere.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddSphere(Sphere sphere,ObjectAttributes attributes)</dt>
+<dd>Adds a surface object to the document representing a sphere.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddSurface(Surface surface)</dt>
+<dd>Adds a surface object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddSurface(Surface surface,ObjectAttributes attributes)</dt>
+<dd>Adds a surface object to Rhino.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic,TextJustification justification,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(Text3d text3d)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddText(Text3d text3d,ObjectAttributes attributes)</dt>
+<dd>Adds an annotation text object to the document.</dd>
+<dd>Returns - The Guid of the newly added object or Guid.Empty on failure.</dd>
+<dt>Guid AddTextDot(string text,Point3d location)</dt>
+<dd>Adds a text dot object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddTextDot(string text,Point3d location,ObjectAttributes attributes)</dt>
+<dd>Adds a text dot object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddTextDot(TextDot dot)</dt>
+<dd>Adds a text dot object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>Guid AddTextDot(TextDot dot,ObjectAttributes attributes)</dt>
+<dd>Adds a text dot object to the table.</dd>
+<dd>Returns - A unique identifier for the object.</dd>
+<dt>bool Delete(Guid objectId)</dt>
+<dd>Deletes object from document.</dd>
+<dd>Returns - True on success, False on failure.</dd>
+<dd>since 5.2</dd>
+<dt>int Delete(IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Deletes a collection of objects from the document.</dd>
+<dd>Returns - The number of successfully deleted objects.</dd>
+<dd>since 5.2</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmobject/">File3dmObject</a>[] FindByGroup(Group group)</dt>
+<dd>Finds all File3dmObject that are in a given group.</dd>
+<dd>Returns - Array of objects that belong to the specified group or empty array if no objects could be found.</dd>
+<dd>since 6.20</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmobject/">File3dmObject</a>[] FindByLayer(Layer layer)</dt>
+<dd>Finds all File3dmObject that are in a given layer.</dd>
+<dd>Returns - Array of objects that belong to the specified layer or empty array if no objects could be found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/fileio/file3dmobject/">File3dmObject</a>[] FindByLayer(string layer)</dt>
+<dd>Finds all File3dmObject that are in a given layer.</dd>
+<dd>Returns - Array of objects that belong to the specified layer or empty array if no objects could be found.</dd>
+<dt>Rhino.Geometry.BoundingBox GetBoundingBox()</dt>
+<dd>Gets the bounding box containing every object in this table.</dd>
+<dd>Returns - The computed bounding box.</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Returns an enumerator that yields all objects in this document.
+Like in Rhino, this includes lights. Unlike in Rhino, however, all lights are returned in the end of the list.</dd>
+<dd>Returns - An enumerator that yields all objects in a document.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>File3dmObjectTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

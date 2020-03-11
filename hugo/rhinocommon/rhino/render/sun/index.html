@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Sun &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Render
+Represents the Sun on a little portion of Earth.
+public class Sun : DocumentOrFreeFloatingBase, IDisposableConstructors  Sun() Create a non-document controlled Sun  Events  static Changed This event is raised when a Sun property value is changed. since 5.10  Properties  double Altitude Get the altitude for the sun. To set use SetPosition(azimuth, altitude) double Azimuth Get the azimuth for the sun. To set use SetPosition(azimuth, altitude) bool DaylightSaving Daylight savings time since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Sun</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Render</a></em></p>
+<p>Represents the Sun on a little portion of Earth.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sun</span> : DocumentOrFreeFloatingBase, IDisposable
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Sun()</dt>
+<dd>Create a non-document controlled Sun</dd>
+</dl>
+<h2 id="events">Events</h2>
+<dl>
+<dt>static Changed</dt>
+<dd>This event is raised when a Sun property value is changed.</dd>
+<dd>since 5.10</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double Altitude</dt>
+<dd>Get the altitude for the sun. To set use SetPosition(azimuth, altitude)</dd>
+<dt>double Azimuth</dt>
+<dd>Get the azimuth for the sun. To set use SetPosition(azimuth, altitude)</dd>
+<dt>bool DaylightSaving</dt>
+<dd>Daylight savings time</dd>
+<dd>since 5.10</dd>
+<dt>int DaylightSavingMinutes</dt>
+<dd>Daylight saving minutes</dd>
+<dd>since 6.0</dd>
+<dt>bool Enabled</dt>
+<dd>Turn the sun on/off in this document.</dd>
+<dt>double Intensity</dt>
+<dd>Sun intensity.</dd>
+<dd>since 7.0</dd>
+<dt>double Latitude</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/geometry/light/">Light</a> Light</dt>
+<dd>Get a Light which represents the sun. If manual control is in effect, no sun calculation
+is performed; the function uses the values last used in calls to Azimuth, Altitude
+or Vector. If manual control is not in effect, the observer&rsquo;s position, date, time,
+time zone and daylight saving values are used to calculate the position of the sun.</dd>
+<dd>since 6.0</dd>
+<dt>double Longitude</dt>
+<dd></dd>
+<dt>bool ManualControl</dt>
+<dd>Set angles directly or use place/date/time</dd>
+<dd>since 5.10</dd>
+<dt>double North</dt>
+<dd>Angle in degrees on world X-Y plane that should be considered north in the model. Angle is
+measured starting at X-Axis and travels counterclockwise. Y-Axis would be a north angle of 90
+degrees.</dd>
+<dt>bool SkylightOn</dt>
+<dd>Turn skylight on or off.</dd>
+<dd>since 5.10</dd>
+<dt>double TimeZone</dt>
+<dd>Measured in hours += UTC</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/vector3d/">Vector3d</a> Vector</dt>
+<dd></dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static double AltitudeFromValues(double latitude,double longitude,double timezoneHours,int daylightMinutes,DateTime when,double hours,bool fast)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static System.Drawing.Color ColorFromAltitude(double altitudeDegrees)</dt>
+<dd>Get sun color based on altitude.</dd>
+<dd>Returns - Returns color for altitude.</dd>
+<dd>since 6.0</dd>
+<dt>static bool Here(double latitude,double longitude)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static double JulianDay(double timezoneHours,int daylightMinutes,DateTime when,double hours)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>static Geometry.Vector3d SunDirection(double latitude,double longitude,DateTime when)</dt>
+<dd></dd>
+<dt>static double TwilightZone()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void CopyFrom(FreeFloatingBase src)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Dispose()</dt>
+<dd></dd>
+<dt>DateTime GetDateTime(DateTimeKind kind)</dt>
+<dd></dd>
+<dt>void SetDateTime(DateTime time,DateTimeKind kind)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void SetPosition(DateTime when,double latitudeDegrees,double longitudeDegrees)</dt>
+<dd>Sets position of the sun based on physical location and time.</dd>
+<dt>void SetPosition(double azimuthDegrees,double altitudeDegrees)</dt>
+<dd>Sets position of the Sun based on azimuth and altitude values.
+Using this function will also set sun to manual.</dd>
+<dt>void ShowDialog()</dt>
+<dd>Show the tabbed sun dialog.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Sun</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

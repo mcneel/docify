@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoPageView &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Display
+A window that contains a single layout &amp;lsquo;page&amp;rsquo;
+public class RhinoPageView : RhinoViewEvents  static PageViewSpaceChange   Properties  RhinoViewport ActiveViewport The ActiveViewport is the same as the MainViewport for standard RhinoViews. In a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object. Most of the time, you will use ActiveViewport unless you explicitly need to work with the main viewport. double PageHeight Height of the page in the document&amp;rsquo;s PageUnitSystem since 5.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoPageView</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Display</a></em></p>
+<p>A window that contains a single layout &lsquo;page&rsquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoPageView</span> : RhinoView
+</code></pre></div><h2 id="events">Events</h2>
+<dl>
+<dt>static PageViewSpaceChange</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/display/rhinoviewport/">RhinoViewport</a> ActiveViewport</dt>
+<dd>The ActiveViewport is the same as the MainViewport for standard RhinoViews. In
+a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object.
+Most of the time, you will use ActiveViewport unless you explicitly need to work with
+the main viewport.</dd>
+<dt>double PageHeight</dt>
+<dd>Height of the page in the document&rsquo;s PageUnitSystem</dd>
+<dd>since 5.10</dd>
+<dt>bool PageIsActive</dt>
+<dd>True if the page is active instead of any detail views. This occurs
+when the MainViewport.Id == ActiveViewportID.</dd>
+<dt>string PageName</dt>
+<dd>Same as the MainViewport.Name.</dd>
+<dt>int PageNumber</dt>
+<dd>Gets or sets the runtime page number and updates the page number for all
+of the other pages. The first page has a value of 0.</dd>
+<dt>double PageWidth</dt>
+<dd>Width of the page in the document&rsquo;s PageUnitSystem</dd>
+<dd>since 5.10</dd>
+<dt>string PaperName</dt>
+<dd>Returns the name of the layout&rsquo;s media, or paper (e.g. Letter, Legal, A1, etc.),
+used to determine the page width and page height.</dd>
+<dd>since 6.15</dd>
+<dt>string PrinterName</dt>
+<dd>Returns the name of the layout&rsquo;s destination printer.</dd>
+<dd>since 6.15</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/docobjects/detailviewobject/">DetailViewObject</a> AddDetailView(string title,Point2d corner0,Point2d corner1,DefinedViewportProjection initialProjection)</dt>
+<dd>Creates a detail view object that is displayed on this page and adds it to the doc.</dd>
+<dd>Returns - Newly created detail view on success. None on error.</dd>
+<dt>RhinoPageView Duplicate(bool duplicatePageGeometry)</dt>
+<dd>Copy a page view</dd>
+<dd>since 6.3</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/detailviewobject/">DetailViewObject</a>[] GetDetailViews()</dt>
+<dd>Gets a list of the detail view objects associated with this layout.</dd>
+<dd>Returns - An array of detail view objects if successful, an empty array if the layout has no details.</dd>
+<dt>System.Drawing.Bitmap GetPreviewImage(Size size,bool grayScale)</dt>
+<dd>Creates a preview image of the page.</dd>
+<dd>Returns - A bitmap if successful, None othewise.</dd>
+<dd>since 7.0</dd>
+<dt>bool SetActiveDetail(Guid detailId)</dt>
+<dd></dd>
+<dt>bool SetActiveDetail(string detailName,bool compareCase)</dt>
+<dd></dd>
+<dt>void SetPageAsActive()</dt>
+<dd></dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoPageView</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

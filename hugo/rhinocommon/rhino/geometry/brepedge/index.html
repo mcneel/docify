@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  BrepEdge &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Represents a single edge curve in a Brep object.
+public class BrepEdge : CurveProxyProperties  Brep Brep Gets the Brep that owns this edge. Curve EdgeCurve Get the brep.Curves3D[] 3d curve geometry used by this edge or null. since 6.0 int EdgeCurveIndex Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1. since 6.0 int EdgeIndex Gets the index of this edge in the Brep.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">BrepEdge</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Represents a single edge curve in a Brep object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BrepEdge</span> : CurveProxy
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/brep/">Brep</a> Brep</dt>
+<dd>Gets the Brep that owns this edge.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/curve/">Curve</a> EdgeCurve</dt>
+<dd>Get the brep.Curves3D[] 3d curve geometry used by this edge or null.</dd>
+<dd>since 6.0</dd>
+<dt>int EdgeCurveIndex</dt>
+<dd>Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1.</dd>
+<dd>since 6.0</dd>
+<dt>int EdgeIndex</dt>
+<dd>Gets the index of this edge in the Brep.Edges collection.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brepvertex/">BrepVertex</a> EndVertex</dt>
+<dd>BrepVertex at end of edge</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/geometry/brepvertex/">BrepVertex</a> StartVertex</dt>
+<dd>BrepVertex at start of edge</dd>
+<dd>since 5.10</dd>
+<dt>double Tolerance</dt>
+<dd>Gets or sets the accuracy of the edge curve (&gt;=0.0 or RhinoMath.UnsetValue)
+A value of UnsetValue indicates that the tolerance should be computed.
+<p>The maximum distance from the edge&rsquo;s 3d curve to any surface of a face
+that has this edge as a portion of its boundary must be &lt;= this tolerance.</p>
+</dd>
+<dt>int TrimCount</dt>
+<dd>Gets the number of trim-curves that use this edge.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/edgeadjacency/">EdgeAdjacency</a> Valence</dt>
+<dd>Gets the topological valency of this edge. The topological valency 
+is defined by how many adjacent faces share this edge.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int[] AdjacentFaces()</dt>
+<dd>Gets the indices of all the BrepFaces that use this edge.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/concavity/">Concavity</a> ConcavityAt(double t,double tolerance)</dt>
+<dd>Determine the concavity of this edge at a specific parameter.</dd>
+<dd>Returns - Concavity measure at parameter.</dd>
+<dd>since 6.2</dd>
+<dt>bool GetEdgeParameter(int trimIndex,double trimParameter,double edgeParameter)</dt>
+<dd>Get corresponding edge parameter for given trim at given trim parameter.</dd>
+<dd>Returns - True on success</dd>
+<dd>since 5.12</dd>
+<dt>bool IsSmoothManifoldEdge(double angleToleranceRadians)</dt>
+<dd>For a manifold, non-boundary edge, decides whether or not the two surfaces
+on either side meet smoothly.</dd>
+<dd>Returns - True if edge is manifold, has exactly 2 trims, and surface normals on either
+side agree to within angle_tolerance.</dd>
+<dt>bool SetEdgeCurve(int curve3dIndex)</dt>
+<dd>Set 3d curve geometry used by a b-rep edge.</dd>
+<dd>Returns - True if successful</dd>
+<dd>since 5.4</dd>
+<dt>bool SetEdgeCurve(int curve3dIndex,Interval subDomain)</dt>
+<dd>Set 3d curve geometry used by a b-rep edge.</dd>
+<dd>Returns - True if successful</dd>
+<dd>since 5.4</dd>
+<dt>int[] TrimIndices()</dt>
+<dd>Gets the indices of all trims associated with this edge.</dd>
+<dd>Returns - Empty array on failure.</dd>
+<dd>since 5.12</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>BrepEdge</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

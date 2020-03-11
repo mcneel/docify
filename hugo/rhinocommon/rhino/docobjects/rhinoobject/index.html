@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  RhinoObject &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Represents an object in the document. RhinoObjects should only ever be creatable by the RhinoDoc.
+public class RhinoObject : ModelComponentProperties  static uint NextRuntimeSerialNumber Gets the runtime serial number that will be assigned to the next Rhino Object that is created. ObjectAttributes Attributes Gets or sets the object attributes. ModelComponentType ComponentType Returns . since 6.0 RhinoDoc Document Gets the document that owns this object. GeometryBase Geometry Gets the underlying geometry for this object.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">RhinoObject</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Represents an object in the document.
+RhinoObjects should only ever be creatable by the RhinoDoc.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RhinoObject</span> : ModelComponent
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>static uint NextRuntimeSerialNumber</dt>
+<dd>Gets the runtime serial number that will be assigned to
+the next Rhino Object that is created.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectattributes/">ObjectAttributes</a> Attributes</dt>
+<dd>Gets or sets the object attributes.</dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/rhinodoc/">RhinoDoc</a> Document</dt>
+<dd>Gets the document that owns this object.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/geometrybase/">GeometryBase</a> Geometry</dt>
+<dd>Gets the underlying geometry for this object.
+All rhino objects are composed of geometry and attributes.</dd>
+<dt>bool GripsOn</dt>
+<dd>Gets or sets the activation state of object default editing grips.</dd>
+<dt>bool GripsSelected</dt>
+<dd>True if grips are turned on and at least one is selected.</dd>
+<dt>int GroupCount</dt>
+<dd>Number of groups object belongs to.</dd>
+<dt>bool HasDynamicTransform</dt>
+<dd>True if the object has a dynamic transformation</dd>
+<dt>bool HasSubobjectMaterials</dt>
+<dd>Will be True if the object contains sub object meshes with materials
+that are different than the top level object.</dd>
+<dd>since 6.0</dd>
+<dt>Guid Id</dt>
+<dd>Every object has a Guid (globally unique identifier, also known as UUID, or universally
+unique identifier). The default value is Guid.Empty.
+<p>When an object is added to a model, the value is checked.  If the value is Guid.Empty, a
+new Guid is created. If the value is not None but it is already used by another object
+in the model, a new Guid is created. If the value is not Guid.Empty and it is not used by
+another object in the model, then that value persists. When an object is updated, by
+a move for example, the value of ObjectId persists.
+This value is the same as the one returned by this.Attributes.ObjectId.</p>
+</dd>
+<dt>uint InstanceDefinitionModelSerialNumber</dt>
+<dd>When a component is in a model as part of the information required for a linked instance definition,
+this value identifies the the linked instance definition reference model.</dd>
+<dd>since 6.12</dd>
+<dt>bool IsDeletable</dt>
+<dd>Some objects cannot be deleted, like grips on lights and annotation objects.</dd>
+<dt>bool IsDeleted</dt>
+<dd>True if the object is deleted. Deleted objects are kept by the document
+for undo purposes. Call RhinoDoc.UndeleteObject to undelete an object.</dd>
+<dt>bool IsHidden</dt>
+<dd>An object must be in one of three modes: normal, locked or hidden.
+If an object is in normal mode, then the object&rsquo;s layer controls visibility
+and selectability. If an object is locked, then the object&rsquo;s layer controls
+visibility by the object cannot be selected. If the object is hidden, it is
+not visible and it cannot be selected.</dd>
+<dt>bool IsInstanceDefinitionGeometry</dt>
+<dd>True if the object is used as part of an instance definition.</dd>
+<dt>bool IsLocked</dt>
+<dd>An object must be in one of three modes: normal, locked or hidden.
+If an object is in normal mode, then the object&rsquo;s layer controls visibility
+and selectability. If an object is locked, then the object&rsquo;s layer controls
+visibility by the object cannot be selected. If the object is hidden, it is
+not visible and it cannot be selected.</dd>
+<dt>bool IsNormal</dt>
+<dd>An object must be in one of three modes: normal, locked or hidden.
+If an object is in normal mode, then the object&rsquo;s layer controls visibility
+and selectability. If an object is locked, then the object&rsquo;s layer controls
+visibility by the object cannot be selected. If the object is hidden, it is
+not visible and it cannot be selected.</dd>
+<dt>bool IsReference</dt>
+<dd>Gets a value indicating if an object is a reference object. An object from a work session
+reference model is a reference object and cannot be modified. An object is
+a reference object if, and only if, it is on a reference layer.</dd>
+<dt>string Name</dt>
+<dd>Rhino objects have optional text names.  More than one object in
+a model can have the same name and some objects may have no name.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objecttype/">ObjectType</a> ObjectType</dt>
+<dd>Gets the Rhino-based object type.</dd>
+<dt>uint ReferenceModelSerialNumber</dt>
+<dd>When a component is in a model for reference, this value identifies the reference model.</dd>
+<dd>since 6.12</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> RenderMaterial</dt>
+<dd>Gets the render material associated with this object or None if there
+is none.  This does not pay attention to the material source and will
+not check parent objects or layers for a RenderMaterial.</dd>
+<dd>since 5.7</dd>
+<dt>uint RuntimeSerialNumber</dt>
+<dd>Gets the objects runtime serial number.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/componentindex/">ComponentIndex</a>[] SubobjectMaterialComponents</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool Visible</dt>
+<dd>Gets the object visibility.</dd>
+<dt>uint WorksessionReferenceSerialNumber</dt>
+<dd>Obsolete - use ReferenceModelSerialNumber</dd>
+<dd>since 6.3</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>static RhinoObject FromRuntimeSerialNumber(uint serialNumber)</dt>
+<dd>Get a Rhino object for a unique runtime serial number</dd>
+<dd>since 6.0</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] GetFillSurfaces(RhinoObject rhinoObject,ClippingPlaneObject clippingPlaneObject)</dt>
+<dd>Return list of fill surfaces if any for object and clipping plane.</dd>
+<dd>since 6.7</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] GetFillSurfaces(RhinoObject rhinoObject,IEnumerable<!-- raw HTML omitted --> clippingPlaneObjects)</dt>
+<dd>Return list of fill surfaces if any for object and clipping plane. Fills are trimmed by
+clipping planes that did not generate them.</dd>
+<dd>Returns - Array of Brep containing fully trimmed fills if there were any generated.</dd>
+<dd>since 6.7</dd>
+<dt>static <a href="/rhinocommon/rhino/geometry/brep/">Brep</a>[] GetFillSurfaces(RhinoObject rhinoObject,IEnumerable<!-- raw HTML omitted --> clippingPlaneObjects,bool unclippedFills)</dt>
+<dd>Return list of fill surfaces if any for object and clipping plane.</dd>
+<dd>Returns - Array of Brep containing fills if there were any generated, trimmed if unclippedFills was false</dd>
+<dd>since 6.7</dd>
+<dt>static <a href="/rhinocommon/rhino/docobjects/objref/">ObjRef</a>[] GetRenderMeshes(IEnumerable<!-- raw HTML omitted --> rhinoObjects,bool okToCreate,bool returnAllObjects)</dt>
+<dd>Gets the render meshes of some objects.</dd>
+<dd>Returns - An array of object references.</dd>
+<dt>static Commands.Result MeshObjects(IEnumerable<!-- raw HTML omitted --> rhinoObjects,MeshingParameters parameters,bool simpleDialog,Mesh[] meshes,ObjectAttributes[] attributes)</dt>
+<dd>Meshes Rhino objects.</dd>
+<dd>Returns - The results of the calculation.</dd>
+<dd>since 5.9</dd>
+<dt>static Commands.Result MeshObjects(IEnumerable<!-- raw HTML omitted --> rhinoObjects,MeshingParameters parameters,int uiStyle,Transform xform,Mesh[] meshes,ObjectAttributes[] attributes)</dt>
+<dd>Meshes Rhino objects.</dd>
+<dd>Returns - The results of the calculation.</dd>
+<dd>since 6.0</dd>
+<dt>static Commands.Result MeshObjects(IEnumerable<!-- raw HTML omitted --> rhinoObjects,MeshingParameters parameters,Mesh[] meshes,ObjectAttributes[] attributes)</dt>
+<dd>Meshes Rhino objects.</dd>
+<dd>Returns - The results of the calculation.</dd>
+<dd>since 5.9</dd>
+<dt>bool CommitChanges()</dt>
+<dd>Moves changes made to this RhinoObject into the RhinoDoc.</dd>
+<dd>Returns - True if changes were made.</dd>
+<dt>int CreateMeshes(MeshType meshType,MeshingParameters parameters,bool ignoreCustomParameters)</dt>
+<dd>Create meshes used to render and analyze surface and polysrf objects.</dd>
+<dd>Returns - number of meshes created</dd>
+<dt>void Description(TextLog textLog)</dt>
+<dd>Get a brief description of a object, including it&rsquo;s attributes and geometry.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/geometrybase/">GeometryBase</a> DuplicateGeometry()</dt>
+<dd>Constructs a deep (full) copy of the geometry.</dd>
+<dd>Returns - A copy of the internal geometry.</dd>
+<dt>bool EnableCustomGrips(CustomObjectGrips customGrips)</dt>
+<dd>Turns on/off the object&rsquo;s editing grips.</dd>
+<dd>Returns - True if the call succeeded.  If you attempt to add custom grips to an
+object that does not support custom grips, then False is returned.</dd>
+<dt>bool EnableVisualAnalysisMode(VisualAnalysisMode mode,bool enable)</dt>
+<dd>Used to turn analysis modes on and off.</dd>
+<dd>Returns - True if this object supports the analysis mode.</dd>
+<dt>Display.VisualAnalysisMode[] GetActiveVisualAnalysisModes()</dt>
+<dd>Gets a list of currently enabled analysis modes for this object.</dd>
+<dd>Returns - An array of visual analysis modes. The array can be empty, but not null.</dd>
+<dt>IConvertible GetCustomRenderMeshParameter(Guid providerId,String parameterName)</dt>
+<dd>Query the object for the value of a given named custom render mesh parameter.</dd>
+<dd>Returns - IConvertible. Note that you can&rsquo;t directly cast from object, instead you have to use the Convert mechanism.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetDynamicTransform(Transform transform)</dt>
+<dd>While an object is being dynamically tranformed (dragged, rotated, &hellip;),
+the current transformation can be retrieved and used for creating
+dynamic display.</dd>
+<dd>Returns - True if the object is being edited and its transformation
+is available.  False if the object is not being edited,
+in which case the identity xform is returned.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/gripobject/">GripObject</a>[] GetGrips()</dt>
+<dd>Returns grips for this object If grips are enabled. If grips are not
+enabled, returns null.</dd>
+<dd>Returns - An array of grip objects; or None if there are no grips.</dd>
+<dt>int[] GetGroupList()</dt>
+<dd>Allocates an array of group indices of length GroupCount.
+If  is 0, then this method returns null.</dd>
+<dd>Returns - An array of group indices, or None if  is 0.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/componentindex/">ComponentIndex</a>[] GetHighlightedSubObjects()</dt>
+<dd>Gets a list of all highlighted subobjects.</dd>
+<dd>Returns - An array of all highlighted subobjects; or None is there are none.</dd>
+<dt><a href="/rhinocommon/rhino/render/changequeue/material/">Material</a> GetMaterial(bool frontMaterial)</dt>
+<dd>Gets material that this object uses based on it&rsquo;s attributes and the document
+that the object is associated with.  In the rare case that a document is not
+associated with this object, None will be returned.</dd>
+<dt><a href="/rhinocommon/rhino/render/changequeue/material/">Material</a> GetMaterial(ComponentIndex componentIndex)</dt>
+<dd>Get the Material associated with the sub object
+identified by componentIndex if the component index is
+set to ComponentIndex.Unset
+then the top level material is returned.</dd>
+<dd>Returns - Returns the Material associated with the sub object
+identified by componentIndex if the component index is
+set to ComponentIndex.Unset then the top level material
+is returned.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/changequeue/material/">Material</a> GetMaterial(ComponentIndex componentIndex,Guid plugInId)</dt>
+<dd>Get the Material associated with the sub object
+identified by componentIndex if the component index is
+set to ComponentIndex.Unset
+then the top level material is returned.</dd>
+<dd>Returns - Returns the Material associated with the sub object
+identified by componentIndex if the component index is set to
+ComponentIndex.Unset
+then the top level material is returned.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/changequeue/material/">Material</a> GetMaterial(ComponentIndex componentIndex,Guid plugInId,ObjectAttributes attributes)</dt>
+<dd>Get the Material associated with the sub object
+identified by componentIndex if the component index is
+set to ComponentIndex.Unset then the top level material
+is returned.</dd>
+<dd>Returns - Returns the Material associated with the sub object
+identified by componentIndex if the component index is set to
+ComponentIndex.Unset then the top level material is returned.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/mesh/">Mesh</a>[] GetMeshes(MeshType meshType)</dt>
+<dd>Get existing meshes used to render and analyze surface and polysrf objects.</dd>
+<dd>Returns - An array of meshes.</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> GetRenderMaterial(bool frontMaterial)</dt>
+<dd>Gets the RenderMaterial that this object uses based on it&rsquo;s attributes
+and the document that the object is associated with. If there is no 
+RenderMaterial associated with this object then None is returned.  If
+None is returned you should call GetMaterial to get the material used
+to render this object.</dd>
+<dd>Returns - If there is a RenderMaterial associated with this objects&rsquo; associated
+Material then it is returned otherwise; None is returned.</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> GetRenderMaterial(ComponentIndex componentIndex)</dt>
+<dd>Gets the RenderMaterial associated with this object if there is one. If
+there is no RenderMaterial associated with this object then None is
+returned.  If None is returned you should call GetMaterial to get the
+material used to render this object.</dd>
+<dd>Returns - Returns the  associated with the sub object
+identified by componentIndex if the component index is set to
+then the top level
+RenderMaterail is returned.  If this method returns None it means there
+is no RenderMaterial associated with the object or  sub object so you
+should may GetMaterial get the objects generic material.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> GetRenderMaterial(ComponentIndex componentIndex,Guid plugInId)</dt>
+<dd>Gets the RenderMaterial associated with this object if there is one. If
+there is no RenderMaterial associated with this object then None is
+returned.  If None is returned you should call GetMaterial to get the
+material used to render this object.</dd>
+<dd>Returns - Returns the  associated with the sub object
+identified by componentIndex if the component index is set to
+then the top level
+RenderMaterail is returned.  If this method returns None it means there
+is no RenderMaterial associated with the object or sub object so you
+should may GetMaterial get the objects generic material.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> GetRenderMaterial(ComponentIndex componentIndex,Guid plugInId,ObjectAttributes attributes)</dt>
+<dd>Gets the RenderMaterial associated with this object if there is one. If
+there is no RenderMaterial associated with this object then None is
+returned.  If None is returned you should call GetMaterial to get the
+material used to render this object.</dd>
+<dd>Returns - Returns the  associated with the sub object
+identified by componentIndex if the component index is set to
+then the top level
+RenderMaterail is returned.  If this method returns None it means there
+is no RenderMaterial associated with the object or  sub object so you
+should may GetMaterial get the objects generic material.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshingparameters/">MeshingParameters</a> GetRenderMeshParameters()</dt>
+<dd>Meshing parameters that this object uses for generating render meshes. If the
+object&rsquo;s attributes do not have custom meshing parameters, then the document&rsquo;s
+meshing parameters are used.</dd>
+<dt><a href="/rhinocommon/rhino/render/renderprimitivelist/">RenderPrimitiveList</a> GetRenderPrimitiveList(ViewportInfo viewport,bool preview)</dt>
+<dd>Build custom render mesh(es) for this object.</dd>
+<dd>Returns - Returns a RenderPrimitiveList if successful otherwise returns null.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/renderprimitivelist/">RenderPrimitiveList</a> GetRenderPrimitiveList(ViewportInfo viewport,DisplayPipelineAttributes attrs)</dt>
+<dd>Build custom render mesh(es) for this object.</dd>
+<dd>Returns - Returns a RenderPrimitiveList if successful otherwise returns null.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/componentindex/">ComponentIndex</a>[] GetSelectedSubObjects()</dt>
+<dd>Get a list of all selected sub-objects.</dd>
+<dd>Returns - An array of subobject indices, or None if there are none.</dd>
+<dt>RhinoObject[] GetSubObjects()</dt>
+<dd>Gets an array of sub-objects.</dd>
+<dd>Returns - An array of subobjects, or None if there are none.</dd>
+<dt>int[] GetTextureChannels()</dt>
+<dd>Get a list of the texture mapping channel Id&rsquo;s associated with object.</dd>
+<dd>Returns - Returns an array of channel Id&rsquo;s or an empty list if there are not mappings.</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/texturemapping/">TextureMapping</a> GetTextureMapping(int channel)</dt>
+<dd></dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/render/texturemapping/">TextureMapping</a> GetTextureMapping(int channel,Transform objectTransform)</dt>
+<dd>Get objects texture mapping</dd>
+<dd>since 5.7</dd>
+<dt>bool HasTextureMapping()</dt>
+<dd>Returns True if this object has a texture mapping form any source (pluginId)</dd>
+<dd>since 6.0</dd>
+<dt>bool Highlight(bool enable)</dt>
+<dd>Modifies the highlighting of the object.</dd>
+<dd>Returns - True if the object is now highlighted.</dd>
+<dt>bool HighlightSubObject(ComponentIndex componentIndex,bool highlight)</dt>
+<dd>Highlights a subobject.</dd>
+<dd>Returns - True if the subobject is now highlighted.</dd>
+<dt>bool InVisualAnalysisMode()</dt>
+<dd>Reports if any visual analysis mode is currently active for an object.</dd>
+<dd>Returns - True if an analysis mode is active; otherwise false.</dd>
+<dt>bool InVisualAnalysisMode(VisualAnalysisMode mode)</dt>
+<dd>Reports if a visual analysis mode is currently active for an object.</dd>
+<dd>Returns - True if the specified analysis mode is active; otherwise false.</dd>
+<dt>bool IsActiveInViewport(RhinoViewport viewport)</dt>
+<dd>Determine if this object is active in a particular viewport.</dd>
+<dd>Returns - True if the object is active in viewport</dd>
+<dt>int IsHighlighted(bool checkSubObjects)</dt>
+<dd>Check highlight state.</dd>
+<dd>Returns - 0: object is not highlighted.1: entire object is highlighted.3: one or more proper sub-objects are highlighted.</dd>
+<dt>bool IsMeshable(MeshType meshType)</dt>
+<dd>Returns True if the object is capable of having a mesh of the specified type</dd>
+<dt>bool IsSelectable()</dt>
+<dd>Reports if an object can be selected.</dd>
+<dd>Returns - True if object is capable of being selected.</dd>
+<dt>bool IsSelectable(bool ignoreSelectionState,bool ignoreGripsState,bool ignoreLayerLocking,bool ignoreLayerVisibility)</dt>
+<dd>Reports if an object can be selected.</dd>
+<dd>Returns - True if object is capable of being selected.</dd>
+<dt>int IsSelected(bool checkSubObjects)</dt>
+<dd>Check selection state.</dd>
+<dd>Returns - 0 = object is not selected.
+1 = object is selected.
+2 = entire object is selected persistently.
+3 = one or more proper sub-objects are selected.</dd>
+<dt>bool IsSubObjectHighlighted(ComponentIndex componentIndex)</dt>
+<dd>Determines if a subobject is highlighted.</dd>
+<dd>Returns - True if the subobject is highlighted.</dd>
+<dt>bool IsSubObjectSelectable(ComponentIndex componentIndex,bool ignoreSelectionState)</dt>
+<dd>Reports if a subobject can be selected.</dd>
+<dd>Returns - True if the specified subobject can be selected.</dd>
+<dt>bool IsSubObjectSelected(ComponentIndex componentIndex)</dt>
+<dd>Check sub-object selection state.</dd>
+<dd>Returns - True if the subobject is selected.</dd>
+<dt>uint MemoryEstimate()</dt>
+<dd>Computes an estimate of the number of bytes that this object is using in memory.
+Note that this is a runtime memory estimate and does not directly compare to the
+amount of space take up by the object when saved to a file.</dd>
+<dd>Returns - The estimated number of bytes this object occupies in memory.</dd>
+<dt>int MeshCount(MeshType meshType,MeshingParameters parameters)</dt>
+<dd>RhinoObjects can have several different types of meshes and 
+different numbers of meshes.  A b-rep can have a render and 
+an analysis mesh on each face.  A mesh object has a single 
+render mesh and no analysis mesh. Curve, point, and annotation
+objects have no meshes.</dd>
+<dd>Returns - number of meshes</dd>
+<dt>int Select(bool on)</dt>
+<dd>Selects an object.</dd>
+<dd>Returns - 0: object is not selected.1: object is selected.2: object is selected persistently.</dd>
+<dt>int Select(bool on,bool syncHighlight)</dt>
+<dd>Selects an object.</dd>
+<dd>Returns - 0: object is not selected.1: object is selected.2: object is selected persistently.</dd>
+<dt>int Select(bool on,bool syncHighlight,bool persistentSelect,bool ignoreGripsState,bool ignoreLayerLocking,bool ignoreLayerVisibility)</dt>
+<dd>Selects an object.</dd>
+<dd>Returns - 0: object is not selected.1: object is selected.2: object is selected persistently.</dd>
+<dt>int SelectSubObject(ComponentIndex componentIndex,bool select,bool syncHighlight)</dt>
+<dd>Reports if an object can be selected.</dd>
+<dd>Returns - 0: object is not selected
+1: object is selected
+2: object is selected persistently.</dd>
+<dt>int SelectSubObject(ComponentIndex componentIndex,bool select,bool syncHighlight,bool persistentSelect)</dt>
+<dd>Reports if an object can be selected.</dd>
+<dd>Returns - 0: object is not selected1: object is selected2: object is selected persistently.</dd>
+<dd>since 6.0</dd>
+<dt>void SetCustomRenderMeshParameter(Guid providerId,String parameterName,object value)</dt>
+<dd>Set the named custom render mesh parameter value for this object.</dd>
+<dd>since 6.0</dd>
+<dt>int SetTextureMapping(int channel,TextureMapping tm)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>string ShortDescription(bool plural)</dt>
+<dd>Gets a localized short descriptive name of the object.</dd>
+<dd>Returns - A string with the short localized descriptive name.</dd>
+<dt>bool SupportsRenderPrimitiveList(ViewportInfo viewport,bool preview)</dt>
+<dd>Determines if custom render meshes will be built for a particular object.</dd>
+<dd>Returns - Returns True if custom render mesh(es) will get built for this object.</dd>
+<dd>since 5.7</dd>
+<dt>bool SupportsRenderPrimitiveList(ViewportInfo viewport,DisplayPipelineAttributes attrs)</dt>
+<dd>Determines if custom render meshes will be built for a particular object.</dd>
+<dd>Returns - Returns True if custom render mesh(es) will get built for this object.</dd>
+<dd>since 6.0</dd>
+<dt>bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,bool preview,BoundingBox boundingBox)</dt>
+<dd>Get the bounding box for the custom render meshes associated with this
+object.</dd>
+<dd>Returns - Returns True if the bounding box was successfully calculated otherwise
+returns False on error.</dd>
+<dd>since 5.7</dd>
+<dt>bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,DisplayPipelineAttributes attrs,BoundingBox boundingBox)</dt>
+<dd>Get the bounding box for the custom render meshes associated with this
+object.</dd>
+<dd>Returns - Returns True if the bounding box was successfully calculated otherwise
+returns False on error.</dd>
+<dd>since 6.0</dd>
+<dt>int UnhighlightAllSubObjects()</dt>
+<dd>Removes highlighting from all subobjects.</dd>
+<dd>Returns - The number of changed subobjects.</dd>
+<dt>int UnselectAllSubObjects()</dt>
+<dd>Removes selection from all subobjects.</dd>
+<dd>Returns - The number of unselected subobjects.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>RhinoObject</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

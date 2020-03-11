@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  ObjectAttributes &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+Attributes (color, material, layer,&amp;hellip;) associated with a rhino object
+[Serializable]public class ObjectAttributes : Runtime.CommonObjectConstructors  ObjectAttributes()   Properties  bool CastsShadows Gets or sets an object&amp;rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane. since 6.0 ObjectColorSource ColorSource The color used to display an object is specified in one of three ways. If ColorSource is ON::color_from_layer, then the object&amp;rsquo;s layer ON_Layer::Color() is used.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">ObjectAttributes</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<p>Attributes (color, material, layer,&hellip;) associated with a rhino object</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObjectAttributes</span> : Runtime.CommonObject
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>ObjectAttributes()</dt>
+<dd></dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>bool CastsShadows</dt>
+<dd>Gets or sets an object&rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectcolorsource/">ObjectColorSource</a> ColorSource</dt>
+<dd>The color used to display an object is specified in one of three ways.
+If ColorSource is ON::color_from_layer, then the object&rsquo;s layer ON_Layer::Color() is used.
+If ColorSource is ON::color_from_object, then value of m_color is used.
+If ColorSource is ON::color_from_material, then the diffuse color of the object&rsquo;s
+render material is used.  See ON_3dmObjectAttributes::MaterialSource() to
+determine where to get the definition of the object&rsquo;s render material.</dd>
+<dt><a href="/rhinocommon/rhino/render/decals/">Decals</a> Decals</dt>
+<dd>Gets all object decals associated with this object.</dd>
+<dd>since 5.10</dd>
+<dt>int DisplayOrder</dt>
+<dd>Display order used to force objects to be drawn on top or behind each other.
+Larger numbers draw on top of smaller numbers.
+0  = draw object in standard depth buffered order&lt;0 = draw object behind &ldquo;normal&rdquo; draw order objects&gt;0 = draw object on top of &ldquo;normal&rdquo; draw order objects</dd>
+<dd>since 5.10</dd>
+<dt>int GroupCount</dt>
+<dd>number of groups object belongs to.</dd>
+<dt>bool HasMapping</dt>
+<dd>A mapping from any plugin source is associated with these attributes
+Need to do this here to respond correctly to ModifyObjectAttributes event</dd>
+<dd>since 5.10</dd>
+<dt>bool IsDocumentControlled</dt>
+<dd></dd>
+<dt>bool IsInstanceDefinitionObject</dt>
+<dd>Use this query to determine if an object is part of an instance definition.</dd>
+<dt>int LayerIndex</dt>
+<dd>Gets or sets an associated layer index.
+Layer definitions in an OpenNURBS model are stored in a layer table.
+The layer table is conceptually an array of ON_Layer classes.  Every
+OpenNURBS object in a model is on some layer.  The object&rsquo;s layer
+is specified by zero based indicies into the ON_Layer array.</dd>
+<dt>int LinetypeIndex</dt>
+<dd>Gets or sets the linetype index.
+Linetype definitions in an OpenNURBS model are stored in a linetype table.
+The linetype table is conceptually an array of ON_Linetype classes. Every
+OpenNURBS object in a model references some linetype.  The object&rsquo;s linetype
+is specified by zero based indicies into the ON_Linetype array.Index 0 is reserved for continuous linetype (no pattern).</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectlinetypesource/">ObjectLinetypeSource</a> LinetypeSource</dt>
+<dd>The Linetype used to display an object is specified in one of two ways.
+If LinetypeSource is ON::linetype_from_layer, then the object&rsquo;s layer ON_Layer::Linetype() is used.
+If LinetypeSource is ON::linetype_from_object, then value of m_linetype is used.</dd>
+<dt>int MaterialIndex</dt>
+<dd>Gets or sets the material index.
+If you want something simple and fast, set the index of
+the rendering material.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/materialrefs/">MaterialRefs</a> MaterialRefs</dt>
+<dd>If you are developing a high quality plug-in renderer, and a user is
+assigning a custom render material to this object, then add rendering
+material information to the MaterialRefs dictionary.
+<p>Note to developers:
+As soon as the MaterialRefs dictionary contains items rendering
+material queries slow down.  Do not populate the MaterialRefs
+dictionary when setting the MaterialIndex will take care of your needs.</p>
+</dd>
+<dd>since 5.10</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectmaterialsource/">ObjectMaterialSource</a> MaterialSource</dt>
+<dd>Determines if the simple material should come from the object or from it&rsquo;s layer.
+High quality rendering plug-ins should use m_rendering_attributes.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectmode/">ObjectMode</a> Mode</dt>
+<dd>An object must be in one of three modes: normal, locked or hidden.
+If an object is in normal mode, then the object&rsquo;s layer controls visibility
+and selectability. If an object is locked, then the object&rsquo;s layer controls
+visibility by the object cannot be selected. If the object is hidden, it is
+not visible and it cannot be selected.</dd>
+<dt>string Name</dt>
+<dd>Gets or sets an object optional text name.
+More than one object in a model can have the same name and
+some objects may have no name.</dd>
+<dt>Color ObjectColor</dt>
+<dd>If ON::color_from_object == ColorSource, then color is the object&rsquo;s display color.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectdecoration/">ObjectDecoration</a> ObjectDecoration</dt>
+<dd>Used to indicate an object has a decoration (like an arrowhead on a curve)</dd>
+<dt>Guid ObjectId</dt>
+<dd>Every object has a Guid (globally unique identifier, also known as UUID, or universally
+unique identifier). The default value is Guid.Empty.
+<p>When an object is added to a model, the value is checked.  If the value is Guid.Empty, a
+new Guid is created. If the value is not None but it is already used by another object
+in the model, a new Guid is created. If the value is not Guid.Empty and it is not used by
+another object in the model, then that value persists. When an object is updated, by
+a move for example, the value of ObjectId persists.
+This value is the same as the one returned by object.Id.</p>
+</dd>
+<dt>Color PlotColor</dt>
+<dd>If plot_color_from_object == PlotColorSource, then PlotColor is the object&rsquo;s plotting color.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectplotcolorsource/">ObjectPlotColorSource</a> PlotColorSource</dt>
+<dd>The color used to plot an object on paper is specified in one of three ways.
+If PlotColorSource is ON::plot_color_from_layer, then the object&rsquo;s layer ON_Layer::PlotColor() is used.
+If PlotColorSource is ON::plot_color_from_object, then value of PlotColor() is used.</dd>
+<dt>double PlotWeight</dt>
+<dd>Plot weight in millimeters.
+=0.0 means use the default width
+&lt;0.0 means don&rsquo;t plot (visible for screen display, but does not show on plot)</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/objectplotweightsource/">ObjectPlotWeightSource</a> PlotWeightSource</dt>
+<dd></dd>
+<dt>bool ReceivesShadows</dt>
+<dd>Gets or sets an object&rsquo;s receives shadows property, or whether or not an object receives shadows from other objects.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/activespace/">ActiveSpace</a> Space</dt>
+<dd>Starting with V4, objects can be in either model space or page space.
+If an object is in page space, then ViewportId is not nil and
+identifies the page it is on.</dd>
+<dt>string Url</dt>
+<dd>Objects may have an URL. There are no restrictions on what value this
+URL may have. As an example, if the object came from a commercial part
+library, the URL might point to the definition of that part.</dd>
+<dd>since 6.8</dd>
+<dt>int UserStringCount</dt>
+<dd></dd>
+<dt>Guid ViewportId</dt>
+<dd>If ViewportId is nil, the object is active in all viewports. If ViewportId is not nil, then 
+this object is only active in a specific view. This field is primarily used to assign page
+space objects to a specific page, but it can also be used to restrict model space to a
+specific view.</dd>
+<dt>bool Visible</dt>
+<dd>Gets or sets an object&rsquo;s visiblity.</dd>
+<dt>int WireDensity</dt>
+<dd>When a surface object is displayed in wireframe, this controls
+how many isoparametric wires are used.
+value    number of isoparametric wires
+-1       boundary wires (off)
+0        boundary and knot wires 
+1        boundary and knot wires and, if there are no interior knots, a single interior wire.
+N&gt;=2     boundary and knot wires and (N+1) interior wires.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool AddHideInDetailOverride(Guid detailId)</dt>
+<dd>Make this object hidden in a given detail</dd>
+<dd>since 6.1</dd>
+<dt>void AddToGroup(int groupIndex)</dt>
+<dd>Adds object to the group with specified index by appending index to
+group list.
+If the object is already in group, nothing is changed.</dd>
+<dt>System.Drawing.Color ComputedPlotColor(RhinoDoc document)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>System.Drawing.Color ComputedPlotColor(RhinoDoc document,Guid viewportId)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>double ComputedPlotWeight(RhinoDoc document)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>double ComputedPlotWeight(RhinoDoc document,Guid viewportId)</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>void DeleteAllUserStrings()</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool DeleteUserString(string key)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>System.Drawing.Color DrawColor(RhinoDoc document)</dt>
+<dd></dd>
+<dt>System.Drawing.Color DrawColor(RhinoDoc document,Guid viewportId)</dt>
+<dd></dd>
+<dt>ObjectAttributes Duplicate()</dt>
+<dd>Constructs a copy of this  instance.</dd>
+<dd>Returns - A new instance on success, or None on failure.</dd>
+<dt>Guid GetDisplayModeOverride(Guid viewportId)</dt>
+<dd>Returns the id of the display mode of an objects. Object display modes are view based. Thus, it is possible to have an object display different in different views.</dd>
+<dd>Returns - A display node id if the object has a display mode override for the viewport; otherwise Guid.Empty is returned.</dd>
+<dd>since 6.18</dd>
+<dt>int[] GetGroupList()</dt>
+<dd>Returns an array of GroupCount group indices.  If GroupCount is zero, then GetGroupList() returns null.</dd>
+<dd>Returns - An array of group indices. None might be returned in place of an empty array.</dd>
+<dt>Guid[] GetHideInDetailOverrides()</dt>
+<dd>Get list of details that this object is supposed to be hidden in</dd>
+<dd>since 6.1</dd>
+<dt>string GetUserString(string key)</dt>
+<dd>Gets a user string.</dd>
+<dd>Returns - string associated with the key if successful. None if no key was found.</dd>
+<dt>System.Collections.Specialized.NameValueCollection GetUserStrings()</dt>
+<dd>Gets an independent copy of the collection of (user text key, user text value) pairs attached to this object.</dd>
+<dd>Returns - A collection of key strings and values strings. This</dd>
+<dt>bool HasDisplayModeOverride(Guid viewportId)</dt>
+<dd>Determines if an object has a display mode override for a given viewport.</dd>
+<dd>Returns - True if the object has a display mode override for the viewport; otherwise, false.</dd>
+<dt>bool HasHideInDetailOverrideSet(Guid detailId)</dt>
+<dd>Is this object supposed to be hidden in a given detail</dd>
+<dd>since 6.1</dd>
+<dt>void RemoveDisplayModeOverride()</dt>
+<dd>By default, objects are drawn using the display mode of the viewport that
+the object is being drawn in. Setting a specific display mode, instructs
+Rhino to always use that display mode, regardless of the viewport&rsquo;s mode.
+This function resets an object to use the viewport&rsquo;s display mode for all
+viewports.</dd>
+<dt>void RemoveDisplayModeOverride(Guid rhinoViewportId)</dt>
+<dd>By default, objects are drawn using the display mode of the viewport that
+the object is being drawn in. Setting a specific display mode, instructs
+Rhino to always use that display mode, regardless of the viewport&rsquo;s mode.
+This function resets an object to use the viewport&rsquo;s display mode.</dd>
+<dt>void RemoveFromAllGroups()</dt>
+<dd>Removes object from all groups.</dd>
+<dt>void RemoveFromGroup(int groupIndex)</dt>
+<dd>removes object from the group with specified index.
+If the object is not in the group, nothing is changed.</dd>
+<dt>bool RemoveHideInDetailOverride(Guid detailId)</dt>
+<dd>Remove hidden in detail flag for a specific detail</dd>
+<dd>since 6.1</dd>
+<dt>bool SetDisplayModeOverride(DisplayModeDescription mode)</dt>
+<dd>By default, objects are drawn using the display mode of the viewport that
+the object is being drawn in. Setting a specific display mode, instructs
+Rhino to always use that display mode, regardless of the viewport&rsquo;s mode.
+This version affects the object&rsquo;s display mode for all viewports.</dd>
+<dd>Returns - True if setting was successful.</dd>
+<dt>bool SetDisplayModeOverride(DisplayModeDescription mode,Guid rhinoViewportId)</dt>
+<dd>By default, objects are drawn using the display mode of the viewport that
+the object is being drawn in. Setting a specific display mode, instructs
+Rhino to always use that display mode, regardless of the viewport&rsquo;s mode.
+This version sets a display mode for a specific viewport.</dd>
+<dd>Returns - True on success.</dd>
+<dt>bool SetUserString(string key,string value)</dt>
+<dd>Attach a user string (key,value combination) to this geometry.</dd>
+<dd>Returns - True on success.</dd>
+<dt>bool Transform(Transform xform)</dt>
+<dd>Apply a transformation.</dd>
+<dd>Returns - trueif successful, False otherwise.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>ObjectAttributes</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

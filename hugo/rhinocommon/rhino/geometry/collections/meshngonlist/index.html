@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshNgonList &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry.Collections
+Provides access to the ngons and n-gon related functionality of a Mesh. See also the property for Ngon functionality details.
+public class MeshNgonList : IResizableList&amp;lt;MeshNgon&amp;gt;, IList, IReadOnlyList&amp;lt;MeshNgon&amp;gt;Properties  int Count Gets or sets the number of mesh ngons. since 6.0 uint UnsignedCount Gets or sets the number of mesh ngons. since 6.0  Methods  int AddNgon(MeshNgon ngon) Appends a new ngon to the end of the mesh ngon list.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshNgonList</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry.Collections</a></em></p>
+<p>Provides access to the ngons and n-gon related functionality of a Mesh.
+See also the  property for Ngon functionality details.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshNgonList</span> : IResizableList&lt;MeshNgon&gt;, IList, IReadOnlyList&lt;MeshNgon&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>int Count</dt>
+<dd>Gets or sets the number of mesh ngons.</dd>
+<dd>since 6.0</dd>
+<dt>uint UnsignedCount</dt>
+<dd>Gets or sets the number of mesh ngons.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int AddNgon(MeshNgon ngon)</dt>
+<dd>Appends a new ngon to the end of the mesh ngon list.</dd>
+<dd>Returns - The index of the newly added ngon.</dd>
+<dd>since 6.0</dd>
+<dt>int[] AddNgons(IEnumerable<!-- raw HTML omitted --> ngons)</dt>
+<dd>Appends a list of ngons to the end of the mesh ngon list.</dd>
+<dd>Returns - Indices of the newly created ngons</dd>
+<dd>since 6.0</dd>
+<dt>int AddPlanarNgons(double planarTolerance)</dt>
+<dd>Add an ngon for each group of connected coplanar faces.</dd>
+<dd>Returns - Number of ngons added to the mesh.</dd>
+<dd>since 6.0</dd>
+<dt>int AddPlanarNgons(double planarTolerance,int minimumNgonVertexCount,int minimumNgonFaceCount,bool allowHoles)</dt>
+<dd>Add an ngon for each group of connected coplanar faces.</dd>
+<dd>Returns - Number of ngons added to the mesh.</dd>
+<dd>since 6.0</dd>
+<dt>void Clear()</dt>
+<dd>Clears the Ngon list on the mesh.</dd>
+<dd>since 6.0</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Gets an enumerator that yields all ngons in this collection.</dd>
+<dd>Returns - The enumerator.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/meshngon/">MeshNgon</a> GetNgon(int index)</dt>
+<dd>Returns the mesh ngon at the given index.</dd>
+<dd>Returns - The mesh ngon at the given index.  This ngon can be MeshNgon.Empty.</dd>
+<dd>since 6.0</dd>
+<dt>int[] GetNgonBoundary(IEnumerable<!-- raw HTML omitted --> ngonFaceIndexList)</dt>
+<dd>Get a list of vertices that form the boundary of a face set. This is often use to get n-gon boundaries.</dd>
+<dd>Returns - List of mesh vertex indices that form the boundary of the face set.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetNgonBoundingBox(int index)</dt>
+<dd>Gets the bounding box of an ngon.</dd>
+<dd>Returns - A new bounding box, or  on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/boundingbox/">BoundingBox</a> GetNgonBoundingBox(MeshNgon ngon)</dt>
+<dd>Gets the bounding box of an ngon.</dd>
+<dd>Returns - A new bounding box, or  on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetNgonCenter(int index)</dt>
+<dd>Gets the center point of an ngon.
+This the avarage of the corner points.</dd>
+<dd>Returns - The center point.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> GetNgonCenter(MeshNgon ngon)</dt>
+<dd>Gets the center point of an ngon.
+This the avarage of the corner points.</dd>
+<dd>Returns - The center point.</dd>
+<dd>since 6.0</dd>
+<dt>int GetNgonEdgeCount(int index)</dt>
+<dd>Gets the complete edge count of an ngon.</dd>
+<dd>Returns - Complete edge count or zero on error.</dd>
+<dd>since 6.0</dd>
+<dt>int GetNgonOuterEdgeCount(int index)</dt>
+<dd>Gets the outer edge count of an ngon.</dd>
+<dd>Returns - Outer edge count or zero on error.</dd>
+<dd>since 6.0</dd>
+<dt>void Insert(int index,MeshNgon ngon)</dt>
+<dd>Inserts a mesh ngon at a defined index in this list.</dd>
+<dd>since 6.0</dd>
+<dt>uint IsValid(int index)</dt>
+<dd>Tests an ngon to see if the vertex and face references are valid and pass partial boundary validity checks.</dd>
+<dd>Returns - 0 if the ngon is not valid, otherwise the number of boundary edges.</dd>
+<dd>since 6.0</dd>
+<dt>uint IsValid(int index,TextLog textLog)</dt>
+<dd>Tests an ngon to see if the vertex and face references are valid and pass partial boundary validity checks.</dd>
+<dd>Returns - 0 if the ngon is not valid, otherwise the number of boundary edges.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a>[] NgonBoundaryVertexList(MeshNgon ngon,bool bAppendStartPoint)</dt>
+<dd>Get an ngon&rsquo;s boundary points.</dd>
+<dd>Returns - A list of ngon boundary points.</dd>
+<dd>since 6.0</dd>
+<dt>bool NgonHasHoles(int index)</dt>
+<dd>Determines whether a ngon has holes.</dd>
+<dd>Returns - True for holes (or malformed ngon, see remarks), False for no holes.</dd>
+<dd>since 6.0</dd>
+<dt>int NgonIndexFromFaceIndex(int meshFaceIndex)</dt>
+<dd>Returns the index of a mesh ngon the face belongs to.</dd>
+<dd>Returns - The index of the mesh ngon the face belongs to or -1 if the face does not belong to an ngon.</dd>
+<dd>since 6.0</dd>
+<dt>int Orientation(int index,bool permitHoles)</dt>
+<dd>Determine if the ngon&rsquo;s boundary orientation matches that of the set of faces it is made from.</dd>
+<dd>Returns - 1: The ngon does not have holes, the ngon&rsquo;s faces are compatibly oriented, 
+and the ngon&rsquo;s outer boundary orientation matches the faces&rsquo; orientation.
+-1: The ngon does not have holes, the ngon&rsquo;s faces are compatibly oriented,
+and the ngon&rsquo;s outer boundary orientation is opposite the faces&rsquo; orientation.
+0: Otherwise.The ngon may be invalid, have holes, the ngon&rsquo;s faces may not be
+compatibly oriented, the ngons edges may not have a consistent orientation
+with respect to the faces, or some other issue.</dd>
+<dd>since 7.0</dd>
+<dt>void RemoveAt(int index)</dt>
+<dd>Removes an ngon from the mesh.</dd>
+<dd>since 6.0</dd>
+<dt>int RemoveNgons(IEnumerable<!-- raw HTML omitted --> indices)</dt>
+<dd>Remove one or more ngons from the mesh.</dd>
+<dd>Returns - The number of deleted ngons.</dd>
+<dd>since 6.0</dd>
+<dt>void ReverseOuterBoundary(int index)</dt>
+<dd>Reverse the order of the m_vi[] array for an ngon</dd>
+<dd>since 7.0</dd>
+<dt>void SetNgon(int index,MeshNgon ngon)</dt>
+<dd>Set an ngon in this list.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshNgonList</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

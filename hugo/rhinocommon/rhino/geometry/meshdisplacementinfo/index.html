@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  MeshDisplacementInfo &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.Geometry
+Contains mesh displacement information.
+public class MeshDisplacementInfoConstructors  MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. since 6.0  Properties  double Black Value considered lowest point in the displacement. since 6.0 double BlackMove The amount of displacement for the black color in the texture. since 6.0 int ChannelNumber Mapping channel number for the displacement mapping.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">MeshDisplacementInfo</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.Geometry</a></em></p>
+<p>Contains mesh displacement information.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshDisplacementInfo</span>
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)</dt>
+<dd>Constructs a displacement information instance with default values.
+Users of this class should not rely on default values to stay constant
+across service releases.</dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>double Black</dt>
+<dd>Value considered lowest point in the displacement.</dd>
+<dd>since 6.0</dd>
+<dt>double BlackMove</dt>
+<dd>The amount of displacement for the black color in the texture.</dd>
+<dd>since 6.0</dd>
+<dt>int ChannelNumber</dt>
+<dd>Mapping channel number for the displacement mapping.</dd>
+<dd>since 6.0</dd>
+<dt>int FaceLimit</dt>
+<dd>Runs a mesh reduction as a post process o simplify the result of
+displacement to meet the specified number of faces.</dd>
+<dd>since 6.0</dd>
+<dt>int FairingAmount</dt>
+<dd>Straightens rough feature edges.
+The value specifies the number of passes.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> InstanceTransform</dt>
+<dd>Instance transformation of the mesh.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/texturemapping/">TextureMapping</a> Mapping</dt>
+<dd>The texture mapping of the mesh.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/geometry/transform/">Transform</a> MappingTransform</dt>
+<dd>Texture mapping transform.</dd>
+<dd>since 6.0</dd>
+<dt>int MemoryLimit</dt>
+<dd>Specifies how much memory can be allocated for use by the
+displacement mesh. Value in megabytes.</dd>
+<dd>since 6.0</dd>
+<dt>double PostWeldAngle</dt>
+<dd>Specifies the maximum angle between face normals of adjacent faces
+that will get welded together.</dd>
+<dd>since 6.0</dd>
+<dt>double RefineSensitivity</dt>
+<dd>Specifies how sensitive the divider for contrasts is on the
+displacement texture.Specify 1 to split all mesh edges on each refine step.Specify 0.99 to make even slight contrasts on the displacement
+texture cause edges to be split.Specifying 0.01 only splits edges where heavy contrast
+exists.</dd>
+<dd>since 6.0</dd>
+<dt>int RefineStepCount</dt>
+<dd>Specifies the number of refinement passes.</dd>
+<dd>since 6.0</dd>
+<dt>double SweepPitch</dt>
+<dd>Specifies how densely the object is initially subdivided.
+The lower the value, the higher the resolution of the displaced mesh.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendertexture/">RenderTexture</a> Texture</dt>
+<dd>The texture used as displacement.</dd>
+<dd>since 6.0</dd>
+<dt>double White</dt>
+<dd>Value considered highest point of the displacement texture.</dd>
+<dd>since 6.0</dd>
+<dt>double WhiteMove</dt>
+<dd>The amount of displacement for the white color in the texture.</dd>
+<dd>since 6.0</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>MeshDisplacementInfo</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Material &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+[Serializable]public class Material : ModelComponentConstructors  Material()  Material(Material other)  since 6.0  Properties  static Material DefaultMaterial  static double MaxShine  bool AlphaTransparency  since 6.0 Color AmbientColor  ModelComponentType ComponentType Returns . since 6.0 Color DiffuseColor  bool DisableLighting  since 6.0 Color EmissionColor  double FresnelIndexOfRefraction Gets or sets the Fresnel index of refraction of the material, default is 1.56 since 6.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Material</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#a6e22e">[Serializable]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Material</span> : ModelComponent
+</code></pre></div><h2 id="constructors">Constructors</h2>
+<dl>
+<dt>Material()</dt>
+<dd></dd>
+<dt>Material(Material other)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="properties">Properties</h2>
+<dl>
+<dt>static <a href="/rhinocommon/rhino/render/changequeue/material/">Material</a> DefaultMaterial</dt>
+<dd></dd>
+<dt>static double MaxShine</dt>
+<dd></dd>
+<dt>bool AlphaTransparency</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Color AmbientColor</dt>
+<dd></dd>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns .</dd>
+<dd>since 6.0</dd>
+<dt>Color DiffuseColor</dt>
+<dd></dd>
+<dt>bool DisableLighting</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Color EmissionColor</dt>
+<dd></dd>
+<dt>double FresnelIndexOfRefraction</dt>
+<dd>Gets or sets the Fresnel index of refraction of the material,
+default is 1.56</dd>
+<dd>since 6.0</dd>
+<dt>bool FresnelReflections</dt>
+<dd>Gets or sets if fresnel reflections are used.</dd>
+<dd>since 6.0</dd>
+<dt>double IndexOfRefraction</dt>
+<dd>Gets or sets the index of refraction of the material, generally
+<blockquote>
+<p>= 1.0 (speed of light in vacuum)/(speed of light in material)</p>
+</blockquote>
+</dd>
+<dd>since 5.1</dd>
+<dt>bool IsDefaultMaterial</dt>
+<dd>By default Rhino layers and objects are assigned the default rendering material.</dd>
+<dt>bool IsDeleted</dt>
+<dd>Deleted materials are kept in the runtime material table so that undo
+will work with materials.  Call IsDeleted to determine to determine if
+a material is deleted.</dd>
+<dt>bool IsDocumentControlled</dt>
+<dd>If True this object may not be modified. Any properties or functions that attempt
+to modify this object when it is set to &ldquo;IsReadOnly&rdquo; will throw a NotSupportedException.</dd>
+<dd>since 5.6</dd>
+<dt>bool IsReference</dt>
+<dd>Rhino allows multiple files to be viewed simultaneously. Materials in the
+document are &ldquo;normal&rdquo; or &ldquo;reference&rdquo;. Reference materials are not saved.</dd>
+<dt>int MaterialIndex</dt>
+<dd></dd>
+<dd>since 5.6</dd>
+<dt>string Name</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/render/physicallybasedmaterial/">PhysicallyBasedMaterial</a> PhysicallyBased</dt>
+<dd></dd>
+<dd>since 7.0</dd>
+<dt>Color PreviewColor</dt>
+<dd>Very simple preview color function for GUIs.</dd>
+<dd>since 6.6</dd>
+<dt>Color ReflectionColor</dt>
+<dd></dd>
+<dt>double ReflectionGlossiness</dt>
+<dd>Gets or sets the reflection glossiness.</dd>
+<dd>since 6.0</dd>
+<dt>double Reflectivity</dt>
+<dd>Gets or sets how reflective a material is, 0f is no reflection
+1f is 100% reflective.</dd>
+<dd>since 5.7</dd>
+<dt>double RefractionGlossiness</dt>
+<dd>Gets or sets the refraction glossiness.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/render/rendermaterial/">RenderMaterial</a> RenderMaterial</dt>
+<dd>Get the RenderMaterial related to this Material.
+<p>Will create a new RenderMaterial if none exists. This can happen for older
+documents.</p>
+</dd>
+<dd>since 6.0</dd>
+<dt>Guid RenderMaterialInstanceId</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>Guid RenderPlugInId</dt>
+<dd>The Id of the RenderPlugIn that is associated with this material.</dd>
+<dt>double Shine</dt>
+<dd>Gets or sets the shine factor of the material.</dd>
+<dt>Color SpecularColor</dt>
+<dd></dd>
+<dt>double Transparency</dt>
+<dd>Gets or sets the transparency of the material (0.0 = opaque to 1.0 = transparent)</dd>
+<dt>Color TransparentColor</dt>
+<dd></dd>
+<dt>int UseCount</dt>
+<dd>Number of objects and layers that use this material.</dd>
+<dt>int UserStringCount</dt>
+<dd></dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool CommitChanges()</dt>
+<dd></dd>
+<dt>void CopyFrom(Material other)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>void Default()</dt>
+<dd>Set material to default settings.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/texture/">Texture</a> GetBitmapTexture()</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/texture/">Texture</a> GetBumpTexture()</dt>
+<dd>Gets the bump texture of this material.</dd>
+<dd>Returns - A texture; or None if no bump texture has been added to this material.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/texture/">Texture</a> GetEnvironmentTexture()</dt>
+<dd></dd>
+<dt><a href="/rhinocommon/rhino/docobjects/texture/">Texture</a> GetTexture(TextureType which)</dt>
+<dd>Get the texture that corresponds with the specified texture type for this material.</dd>
+<dd>since 7.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/texture/">Texture</a>[] GetTextures()</dt>
+<dd>Get array of textures that this material uses</dd>
+<dd>since 5.7</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/texture/">Texture</a> GetTransparencyTexture()</dt>
+<dd></dd>
+<dt>string GetUserString(string key)</dt>
+<dd>Gets a user string.</dd>
+<dd>Returns - string associated with the key if successful. None if no key was found.</dd>
+<dt>System.Collections.Specialized.NameValueCollection GetUserStrings()</dt>
+<dd>Gets an independent copy of the collection of (user text key, user text value) pairs attached to this object.</dd>
+<dd>Returns - A collection of key strings and values strings. This</dd>
+<dt>bool SetBitmapTexture(string filename)</dt>
+<dd></dd>
+<dt>bool SetBitmapTexture(Texture texture)</dt>
+<dd></dd>
+<dt>bool SetBumpTexture(string filename)</dt>
+<dd></dd>
+<dt>bool SetBumpTexture(Texture texture)</dt>
+<dd></dd>
+<dt>bool SetEnvironmentTexture(string filename)</dt>
+<dd></dd>
+<dt>bool SetEnvironmentTexture(Texture texture)</dt>
+<dd></dd>
+<dt>bool SetTexture(Texture texture,TextureType which)</dt>
+<dd>Set the texture that corresponds with the specified texture type for this material.</dd>
+<dd>since 7.0</dd>
+<dt>bool SetTransparencyTexture(string filename)</dt>
+<dd></dd>
+<dt>bool SetTransparencyTexture(Texture texture)</dt>
+<dd></dd>
+<dt>bool SetUserString(string key,string value)</dt>
+<dd>Attach a user string (key,value combination) to this geometry.</dd>
+<dd>Returns - True on success.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Material</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#constructors">Constructors</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

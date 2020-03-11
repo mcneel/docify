@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Placeholder &ndash; Test API Site
+  Placeholder &ndash; Hugo based API Site
 
     </title>
     
@@ -17,7 +17,7 @@
     <meta name="description" property="og:description" content="">
     
 
-    <meta name="apple-mobile-web-app-title" content="Test API Site">
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
     
     
     
@@ -36,7 +36,7 @@
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
-    Test API Site
+    Hugo based API Site
   </a>
 
   
@@ -57,132 +57,124 @@
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmgrouptable/">
-        <h3>File3dmGroupTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballdisplayconduit/">
+        <h3>GumballDisplayConduit</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmgrouptable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballdisplayconduit/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to groups in the 3dm file.
-public class File3dmGroupTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.5  Methods Group FindIndex(int groupIndex)  (summary) Retrieves a Group object based on an index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.5 (returns) Group This is some return comment  Group FindName(string name)  (summary) Finds a Group given its name.
+    Namespace: Rhino.UI.Gumball
+public class GumballDisplayConduit : IDisposableConstructors  GumballDisplayConduit()   Properties  GumballObject BaseGumball Starting location. bool Enabled  GumballObject Gumball  Transform GumballTransform The gumball transformation is the transformation calculated by comparing the current gumball to the starting BaseGumball. bool InRelocate  GumballPickResult PickResult The inital mouse down event sets PickResult. Transform PreTransform The pre-transform is a transformation that needs to be applied before the gumball transformation. Transform TotalTransform The total transformation is GumballTransform * PreTransform.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmhatchpatterntable/">
-        <h3>File3dmHatchPatternTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballframe/">
+        <h3>GumballFrame</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmhatchpatterntable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballframe/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to hatch pattern definitions in the 3dm file.
-public class File3dmHatchPatternTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods HatchPattern FindIndex(int index)  (summary) Retrieves a HatchPattern object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.0 (returns) HatchPattern This is some return comment  HatchPattern FindName(string name)  (summary) Finds a HatchPattern given its name.
+    Namespace: Rhino.UI.Gumball
+Properties  Plane Plane  Vector3d ScaleGripDistance  GumballScaleMode ScaleMode   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dminstancedefinitiontable/">
-        <h3>File3dmInstanceDefinitionTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballobject/">
+        <h3>GumballObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dminstancedefinitiontable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to instance (block) definitions in the 3dm file.
-public class File3dmInstanceDefinitionTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods int Add(string name,string description,Point3d basePoint,GeometryBase geometry,ObjectAttributes attributes)  (summary) Adds an instance definition to the instance definition table. (since) 6.5 (returns) int This is some return comment  int Add(string name,string description,Point3d basePoint,IEnumerablegeometry)  (summary) Adds an instance definition to the instance definition table. (since) 6.
+    Namespace: Rhino.UI.Gumball
+public class GumballObject : IDisposableConstructors  GumballObject()   Properties  GumballFrame Frame   Methods  void Dispose()  bool SetFromArc(Arc arc)  bool SetFromBoundingBox(BoundingBox boundingBox)  bool SetFromBoundingBox(Plane frame,BoundingBox frameBoundingBox) Sets the gumball bounding box with respect to a frame. Returns - True if input is valid and gumball is set. False if input is not valid. In this case, gumball is set to the default.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmlayertable/">
-        <h3>File3dmLayerTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballpickresult/">
+        <h3>GumballPickResult</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmlayertable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/ui/gumball/gumballpickresult/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to layers in the 3dm file.
-public class File3dmLayerTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods Layer FindIndex(int index)  (summary) Retrieves a Layer object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.0 (returns) Layer This is some return comment  Layer FindName(string name,Guid parentId)  (summary) Finds a Layer given its name.
+    Namespace: Rhino.UI.Gumball
+public class GumballPickResultProperties  GumballMode Mode   Methods  void SetToDefault()   
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmlinetypetable/">
-        <h3>File3dmLinetypeTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/hatchobject/">
+        <h3>HatchObject</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmlinetypetable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/hatchobject/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to Linetypes in the 3dm file.
-public class File3dmLinetypeTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods Linetype FindIndex(int index)  (summary) Retrieves a Linetype object based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.0 (returns) Linetype This is some return comment  Linetype FindName(string name)  (summary) Finds a Linetype given its name.
+    Namespace: Rhino.DocObjects
+public class HatchObject : RhinoObjectProperties  Hatch HatchGeometry   Methods  bool SetHatchGeometry(Hatch hatch) Replaces a hatch object&rsquo;s underlying hatch geometry. This only works for non-document hatch objects. Returns - True if successful, False otherwise. since 7.0  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmmaterialtable/">
-        <h3>File3dmMaterialTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/historyrecord/">
+        <h3>HistoryRecord</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmmaterialtable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/historyrecord/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to materials in the 3dm file.
-public class File3dmMaterialTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Methods DocObjects.Material FindIndex(int index)  (summary) Retrieves a material based on Index. This search type of search is discouraged. We are moving towards using only IDs for all tables. (since) 6.0 (returns) DocObjects.Material This is some return comment  
+    Namespace: Rhino.DocObjects
+Provides a single bundling of information to be passed to Rhino when setting up history for an object.
+public class HistoryRecord : IDisposableConstructors  HistoryRecord(Command command,int version)   Properties  bool CopyOnReplaceObject When an object is replaced and the old object has a history record with this field set, the history record is copied and attached to the new object. That allows a descendant object to continue the history linkage after it is edited.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmnamedconstructionplanes/">
-        <h3>File3dmNamedConstructionPlanes</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/imagefile/">
+        <h3>ImageFile</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmnamedconstructionplanes/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/imagefile/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Provides access to namned construction planes in the 3dm file.
-public class File3dmNamedConstructionPlanesProperties int Count  (summary) Number of named construction planes in the table. (since) 6.0  Methods void Add(ConstructionPlane cplane)  (summary) Adds a named construction plane to the table. (since) 6.0 (returns) void This is some return comment  int Add(string name,Plane plane)  (summary) Adds a named construction plane to the table. (since) 6.
+    Namespace: Rhino.Render
+Controls interaction with RDK render image files
+public class ImageFileEvents  static Deleted Called when the RDK is cleaning up old render image files, a plug-in should delete any plug-in specific image files at this time. since 5.11 static Loaded Generally called when the &ldquo;RenderOpenLastRender&rdquo; command is run, this event is raised after the render window has been created and the saved scene has been loaded. since 5.
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmnotes/">
-        <h3>File3dmNotes</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/render/imagefileeventargs/">
+        <h3>ImageFileEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmnotes/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/render/imagefileeventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Represents the notes information stored in a 3dm file.
-public class File3dmNotesConstructors File3dmNotes()  (summary) Creates empty default notes (since) 5.0  Properties bool IsHtml  (summary) Gets or sets the text format. If the format is HTML, true; False otherwise. (since) 5.0  bool IsVisible  (summary) Gets or sets the notes visibility. If the notes are visible, true; False otherwise. (since) 5.0  string Notes  (summary) Gets or sets the text content of the notes.
+    Namespace: Rhino.Render
+public class ImageFileEventArgs : EventArgsProperties  int EllapsedTime  since 5.11 ImageFileEvent Event  since 5.11 string FileName  since 5.11 string RenderEngine  since 5.11 Guid RenderEngineId  since 5.11 Guid SessionId  since 5.11  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmobject/">
-        <h3>File3dmObject</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/display/initframebuffereventargs/">
+        <h3>InitFrameBufferEventArgs</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmobject/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/display/initframebuffereventargs/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Used to store geometry table object definition and attributes in a File3dm.
-public class File3dmObjectProperties ObjectAttributes Attributes  (summary) Gets the attributes that are linked with this document object. (since) 5.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  GeometryBase Geometry  (summary) Gets the geometry that is linked with this document object. (since) 5.0  string Name  (summary) Gets or sets the Name of the object.
+    Namespace: Rhino.Display
+public class InitFrameBufferEventArgs : EventArgsMethods  void SetFill(Color color)  since 6.18 void SetFill(Color top,Color bottom)  since 6.18 void SetFill(Color topLeft,Color bottomLeft,Color topRight,Color bottomRight)  since 6.18  
   </div>
   
   <div>
     <div>
-      <a href="/apidocs/hugo/posts/rhino/fileio/file3dmobjecttable/">
-        <h3>File3dmObjectTable</h3>
+      <a href="/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertable/">
+        <h3>LayerTable</h3>
       </a>
-      <small>/apidocs/hugo/posts/rhino/fileio/file3dmobjecttable/</small>
-      0001-01-01
+      <small>/apidocs/hugo/rhinocommon/rhino/docobjects/tables/layertable/</small>
+      2020-03-11
     </div>
-    Namespace: Rhino.FileIO
-Represents a simple object table for a file that is open externally. This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.
-public class File3dmObjectTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int Count  (summary) Returns the total amount of items in the object table, including lights. (since) 5.0  Methods void Add(File3dmObject item)  (summary) Duplicates the object, then adds a copy of the object to the document.
+    Namespace: Rhino.DocObjects.Tables
+public class LayerTable :RhinoDocCommonTable&lt;Layer&gt;, ICollection&lt;Layer&gt;Properties  int ActiveCount Returns number of layers in the layer table, excluding deleted layers. ModelComponentType ComponentType  since 6.0 int Count Returns number of layers in the layer table, including deleted layers. Layer CurrentLayer At all times, there is a &ldquo;current&rdquo; layer. Unless otherwise specified, new objects are assigned to the current layer. The current layer is never locked, hidden, or deleted.
   </div>
   
 

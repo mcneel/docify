@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  CommonComponentTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.FileIO
+Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.
+public class CommonComponentTable :ICommonComponentTable&amp;lt;T&amp;gt;,IList&amp;lt;T&amp;gt;, IReadOnlyList&amp;lt;T&amp;gt;Properties  ModelComponentType ComponentType Returns the actual component type of a table. since (unknown) int Count Returns the count of all items, including deleted ones. since (unknown)  Methods  void Clear() Marks all items as deleted. since (unknown) bool Delete(T item) Deletes an item. Items that are deleted are still keeping their space, but the &amp;lsquo;IsDeleted&amp;rsquo; flag is checked.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">CommonComponentTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.FileIO</a></em></p>
+<p>Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CommonComponentTable</span> :
+    ICommonComponentTable&lt;T&gt;,
+    IList&lt;T&gt;, IReadOnlyList&lt;T&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>ModelComponentType ComponentType</dt>
+<dd>Returns the actual component type of a table.</dd>
+<dd>since (unknown)</dd>
+<dt>int Count</dt>
+<dd>Returns the count of all items, including deleted ones.</dd>
+<dd>since (unknown)</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>void Clear()</dt>
+<dd>Marks all items as deleted.</dd>
+<dd>since (unknown)</dd>
+<dt>bool Delete(T item)</dt>
+<dd>Deletes an item. Items that are deleted are still keeping their space, but the &lsquo;IsDeleted&rsquo; flag is checked.</dd>
+<dd>Returns - True if an items could be deleted (e.g., it was not locked).</dd>
+<dd>since (unknown)</dd>
+<dt>T FindId(Guid id)</dt>
+<dd>Uses the guid to find a model component. Deleted objects cannot be found by id.
+The guid is the value that is stored in the .Id property.
+In a single document, no two active objects have the same guid. If an object is
+replaced with a new object, then the guid  persists. For example, if the _Move command
+moves an object, then the moved object inherits its guid from the starting object.
+If the Copy command copies an object, then the copy gets a new guid. This guid persists
+through file saving/openning operations. This function will not find grip objects.</dd>
+<dd>Returns - Reference to the rhino object with the objectId or None if no such object could be found.</dd>
+<dd>since (unknown)</dd>
+<dt>IEnumerator<!-- raw HTML omitted --> GetEnumerator()</dt>
+<dd>Returns the enumerator that yields all items.</dd>
+<dd>since (unknown)</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>CommonComponentTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

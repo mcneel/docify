@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GroupTable &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects.Tables
+Group tables store the list of groups in a Rhino document.
+public class GroupTable :RhinoDocCommonTable&amp;lt;Group&amp;gt;, ICollection&amp;lt;Group&amp;gt;Properties  ModelComponentType ComponentType  since 6.0  Methods  int Add() Adds a new empty group to the group table. Returns - &amp;gt;=0 index of new group. -1 group not added because a group with that name already exists. int Add(IEnumerableobjectIds) Adds a new group to the group table with a set of objects.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GroupTable</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects.Tables</a></em></p>
+<p>Group tables store the list of groups in a Rhino document.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GroupTable</span> :
+      RhinoDocCommonTable&lt;Group&gt;, ICollection&lt;Group&gt;
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt>ModelComponentType ComponentType</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>int Add()</dt>
+<dd>Adds a new empty group to the group table.</dd>
+<dd>Returns - &gt;=0 index of new group. 
+-1 group not added because a group with that name already exists.</dd>
+<dt>int Add(IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Adds a new group to the group table with a set of objects.</dd>
+<dd>Returns - &gt;=0 index of new group.
+-1 group not added because a group with that name already exists.</dd>
+<dt>int Add(string groupName)</dt>
+<dd>Adds a new empty group to the group table.</dd>
+<dd>Returns - &gt;=0 index of new group. 
+-1 group not added because a group with that name already exists.</dd>
+<dt>int Add(string groupName,IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Adds a new group to the group table with a set of objects.</dd>
+<dd>Returns - &gt;=0 index of new group. 
+-1 group not added because a group with that name already exists.</dd>
+<dt>bool AddToGroup(int groupIndex,Guid objectId)</dt>
+<dd>Adds an object to an existing group.</dd>
+<dd>Returns - True if the operation was successful.</dd>
+<dt>bool AddToGroup(int groupIndex,IEnumerable<!-- raw HTML omitted --> objectIds)</dt>
+<dd>Adds a list of objects to an existing group.</dd>
+<dd>Returns - True if at least an operation was successful.</dd>
+<dt>bool ChangeGroupName(int groupIndex,string newName)</dt>
+<dd></dd>
+<dt>bool Delete(Group item)</dt>
+<dd></dd>
+<dd>since 6.0</dd>
+<dt>bool Delete(int groupIndex)</dt>
+<dd>Deletes a group from this table.
+Deleted groups are kept in the runtime group table so that undo
+will work with groups.  Call IsDeleted() to determine if a group is deleted.</dd>
+<dd>Returns - True if the operation was successful.</dd>
+<dt>int Find(string groupName)</dt>
+<dd>Finds a group with a given name.</dd>
+<dd>Returns - &gt;=0 index of the group with the given name.
+UnsetIntIndex no group found with the given name.</dd>
+<dd>since 6.0</dd>
+<dt>int Find(string groupName,bool ignoreDeletedGroups)</dt>
+<dd>Finds a group with a given name.</dd>
+<dd>Returns - &gt;=0 index of the group with the given name.
+-1 no group found with the given name.</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/group/">Group</a> FindIndex(int index)</dt>
+<dd>Retrieves a Group object based on Index. This seach type of search is discouraged.
+We are moving towards using only IDs for all tables.</dd>
+<dd>Returns - A Group object, or None if none was found.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/group/">Group</a> FindName(string name)</dt>
+<dd>Finds a Linetype given its name. Returns the instance, rather than the index.</dd>
+<dd>Returns - An Linetype, or None on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/group/">Group</a> FindNameHash(NameHash nameHash)</dt>
+<dd>Finds a Linetype given its name hash.</dd>
+<dd>Returns - An Linetype, or None on error.</dd>
+<dd>since 6.0</dd>
+<dt><a href="/rhinocommon/rhino/docobjects/rhinoobject/">RhinoObject</a>[] GroupMembers(int groupIndex)</dt>
+<dd>Gets an array of all of the objects in a group.</dd>
+<dd>Returns - An array with all the objects in the specified group.</dd>
+<dt>string GroupName(int groupIndex)</dt>
+<dd></dd>
+<dt>string[] GroupNames(bool ignoreDeletedGroups)</dt>
+<dd></dd>
+<dt>int GroupObjectCount(int groupIndex)</dt>
+<dd></dd>
+<dt>int Hide(int groupIndex)</dt>
+<dd></dd>
+<dt>bool IsDeleted(int groupIndex)</dt>
+<dd></dd>
+<dt>int Lock(int groupIndex)</dt>
+<dd></dd>
+<dt>int Show(int groupIndex)</dt>
+<dd></dd>
+<dt>bool Undelete(int groupIndex)</dt>
+<dd></dd>
+<dt>int Unlock(int groupIndex)</dt>
+<dd></dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GroupTable</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>

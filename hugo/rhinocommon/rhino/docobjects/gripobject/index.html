@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  GripObject &ndash; Hugo based API Site
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Namespace: Rhino.DocObjects
+public class GripObject : RhinoObjectProperties  Point3d CurrentLocation  int Index  bool Moved True if the grip has moved from OriginalLocation. Point3d OriginalLocation  Guid OwnerId  double Weight The weight of a NURBS control point grip or RhinoMath.UnsetValue if the grip is not a NURBS control point grip.  Methods  bool GetCageParameters(double u,double v,double w) Retrieves the 2d parameter space values of this GripObject from the cage it&amp;rsquo;s associated with.|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Hugo based API Site">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/apidocs/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/apidocs/hugo/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="/apidocs/hugo/">
+    Hugo based API Site
+  </a>
+
+  
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">GripObject</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2020-03-11.">
+        
+          Published: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p><em>Namespace: <a href="../">Rhino.DocObjects</a></em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GripObject</span> : RhinoObject
+</code></pre></div><h2 id="properties">Properties</h2>
+<dl>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> CurrentLocation</dt>
+<dd></dd>
+<dt>int Index</dt>
+<dd></dd>
+<dt>bool Moved</dt>
+<dd>True if the grip has moved from OriginalLocation.</dd>
+<dt><a href="/rhinocommon/rhino/geometry/point3d/">Point3d</a> OriginalLocation</dt>
+<dd></dd>
+<dt>Guid OwnerId</dt>
+<dd></dd>
+<dt>double Weight</dt>
+<dd>The weight of a NURBS control point grip or RhinoMath.UnsetValue
+if the grip is not a NURBS control point grip.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<dl>
+<dt>bool GetCageParameters(double u,double v,double w)</dt>
+<dd>Retrieves the 2d parameter space values of this GripObject from the cage it&rsquo;s associated with.</dd>
+<dd>Returns - True on success. Output is unreliable if return is false.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetCurveParameters(double t)</dt>
+<dd>Retrieves the 2d parameter space values of this GripObject from the curve it&rsquo;s associated with.</dd>
+<dd>Returns - True on success. Output is unreliable if return is false.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetGripDirections(Vector3d u,Vector3d v,Vector3d normal)</dt>
+<dd>Sometimes grips have directions.  These directions
+can have any length and do not have to be orthoganal.</dd>
+<dd>Returns - True if the grip has directions.</dd>
+<dd>since 6.0</dd>
+<dt>bool GetSurfaceParameters(double u,double v)</dt>
+<dd>Retrieves the 2d parameter space values of this GripObject from the surface it&rsquo;s associated with.</dd>
+<dd>Returns - True on success. Output is unreliable if return is false.</dd>
+<dd>since 6.0</dd>
+<dt>void Move(Point3d newLocation)</dt>
+<dd>Moves the grip to a new location.</dd>
+<dt>void Move(Transform xform)</dt>
+<dd>Moves the grip to a new location.</dd>
+<dt>void Move(Vector3d delta)</dt>
+<dd>Moves the grip to a new location.</dd>
+<dt>GripObject NeighborGrip(int directionR,int directionS,int directionT,bool wrap)</dt>
+<dd>Used to get a grip&rsquo;s logical neighbors, like NURBS curve, suface,
+and cage control point grips.</dd>
+<dd>Returns - logical neighbor or None if the is no logical neighbor</dd>
+<dt>void UndoMove()</dt>
+<dd>Undoes any grip moves made by calling Move.</dd>
+</dl>
+
+  </section>
+
+  <section>
+    
+      
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>GripObject</b><nav id="TableOfContents">
+  <ul>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+  </ul>
+</nav></div>
+  
+
+  
+    <div>
+      
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+    
+  </body>
+</html>
