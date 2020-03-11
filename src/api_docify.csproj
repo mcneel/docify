@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeAnalysisExtensions.cs" />
-    <Compile Include="ParsedBaseType.cs" />
+    <Compile Include="ParsedType.cs" />
     <Compile Include="ParsedMember.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

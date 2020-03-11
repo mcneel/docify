@@ -7,7 +7,7 @@ namespace api_docify
 {
     class SourceFileWalker : Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker
     {
-        public static (List<ParsedBaseType>, List<ParsedMember>) ParseSource(string code)
+        public static (List<ParsedType>, List<ParsedMember>) ParseSource(string code)
         {
             var options = new Microsoft.CodeAnalysis.CSharp.CSharpParseOptions().WithPreprocessorSymbols("RHINO_SDK").WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode.Parse);
             var tree = Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(code, options);
@@ -17,7 +17,7 @@ namespace api_docify
         }
 
         List<ParsedMember> _parsedMembers = new List<ParsedMember>();
-        List<ParsedBaseType> _parsedBaseTypes = new List<ParsedBaseType>();
+        List<ParsedType> _parsedBaseTypes = new List<ParsedType>();
 
         private SourceFileWalker() : base(Microsoft.CodeAnalysis.SyntaxWalkerDepth.StructuredTrivia)
         {
@@ -26,25 +26,25 @@ namespace api_docify
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedBaseTypes.Add(new ParsedBaseType(node, docComment));
+            _parsedBaseTypes.Add(new ParsedType(node, docComment));
             base.VisitClassDeclaration(node);
         }
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedBaseTypes.Add(new ParsedBaseType(node, docComment));
+            _parsedBaseTypes.Add(new ParsedType(node, docComment));
             base.VisitStructDeclaration(node);
         }
         public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedBaseTypes.Add(new ParsedBaseType(node, docComment));
+            _parsedBaseTypes.Add(new ParsedType(node, docComment));
             base.VisitInterfaceDeclaration(node);
         }
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedBaseTypes.Add(new ParsedBaseType(node, docComment));
+            _parsedBaseTypes.Add(new ParsedType(node, docComment));
             base.VisitEnumDeclaration(node);
         }
 

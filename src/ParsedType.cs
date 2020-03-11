@@ -6,27 +6,18 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace api_docify
 {
-    enum ParsedContainerType
-    {
-        None = 0,
-        Class = 1,
-        Struct = 2,
-        Interface = 3,
-        Enum = 4
-    }
-
     /// <summary>
     /// Class, struct, enum, or interface declaration
     /// </summary>
-    class ParsedBaseType : XmlDocumentedItem
+    class ParsedType : XmlDocumentedItem
     {
-        public ParsedBaseType(BaseTypeDeclarationSyntax basetype, DocumentationCommentTriviaSyntax documentation) : base(documentation)
+        BaseTypeDeclarationSyntax _basetype;
+        public ParsedType(BaseTypeDeclarationSyntax basetype, DocumentationCommentTriviaSyntax documentation) : base(documentation)
         {
-            BaseType = basetype;
-            Documentation = documentation;
+            _basetype = basetype;
         }
 
-        public void Merge(ParsedBaseType other)
+        public void Merge(ParsedType other)
         {
             if (!FullName.Equals(other.FullName))
                 throw new Exception("Invalid Merge");
@@ -39,14 +30,13 @@ namespace api_docify
             }
         }
 
-        public DocumentationCommentTriviaSyntax Documentation { get; private set; }
-        private BaseTypeDeclarationSyntax BaseType { get; }
+        public bool IsClass { get { return _basetype is ClassDeclarationSyntax; } }
 
         public string FullName
         {
             get
             {
-                return GetFullContainerName(BaseType);
+                return GetFullContainerName(_basetype);
             }
         }
 
@@ -54,7 +44,7 @@ namespace api_docify
         {
             get
             {
-                return $"{BaseType.Identifier}";
+                return $"{_basetype.Identifier}";
             }
         }
 
@@ -63,7 +53,7 @@ namespace api_docify
             get
             {
                 string ns = "";
-                var parent = BaseType.Parent;
+                var parent = _basetype.Parent;
                 while (parent != null)
                 {
                     var namespaceDeclaration = parent as NamespaceDeclarationSyntax;
@@ -81,7 +71,7 @@ namespace api_docify
         {
             get
             {
-                return BaseType.IsPublic();
+                return _basetype.IsPublic();
             }
         }
 

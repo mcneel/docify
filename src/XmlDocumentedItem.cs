@@ -5,17 +5,18 @@ namespace api_docify
 {
     class XmlDocumentedItem
     {
-        DocumentationCommentTriviaSyntax _documentation;
         System.Xml.XmlDocument _documentationAsXml;
 
         protected XmlDocumentedItem(DocumentationCommentTriviaSyntax documentation)
         {
-            _documentation = documentation;
+            Documentation = documentation;
         }
+
+        protected DocumentationCommentTriviaSyntax Documentation { get; set; }
 
         public bool HasSinceTag()
         {
-            bool exists = (_documentation != null && _documentation.Content.ToFullString().Contains("<since>"));
+            bool exists = (Documentation != null && Documentation.Content.ToFullString().Contains("<since>"));
             return exists;
         }
 
@@ -42,16 +43,16 @@ namespace api_docify
             {
                 var element = xml.GetElementsByTagName("summary");
                 if (element != null && element.Count > 0)
-                    return element[0].InnerText;
+                    return element[0].InnerText.Trim();
             }
             return "";
         }
 
         System.Xml.XmlDocument DocumentationAsXml()
         {
-            if (_documentationAsXml == null && _documentation != null)
+            if (_documentationAsXml == null && Documentation != null)
             {
-                string comment = _documentation.ToString();
+                string comment = Documentation.ToString();
                 comment = comment.Replace("///", "");
                 comment = comment.Replace("\t", " ");
                 comment = comment.Replace("null ", "None ");

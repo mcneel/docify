@@ -77,7 +77,7 @@ namespace api_docify
         {
             get
             {
-                return ParsedBaseType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
+                return ParsedType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
             }
         }
 

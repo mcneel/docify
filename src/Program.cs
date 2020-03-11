@@ -12,7 +12,7 @@ namespace api_docify
             const string outputDirectory = "../../../apisite/content/posts/";
 
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
-            Dictionary<string, ParsedBaseType> allBaseTypes = new Dictionary<string, ParsedBaseType>();
+            Dictionary<string, ParsedType> allBaseTypes = new Dictionary<string, ParsedType>();
             foreach (var sourceFile in AllSourceFiles(rhinocommonDirectory))
             {
                 //Console.WriteLine($"parse: {sourceFile}");
@@ -57,10 +57,66 @@ namespace api_docify
                 allBaseTypes[kv.Key].Members = items;
             }
 
+            Dictionary<string, List<ParsedType>> namespaces = new Dictionary<string, List<ParsedType>>();
+            foreach (var kv in allBaseTypes)
+            {
+                var basetype = kv.Value;
+                if (!basetype.IsPublic)
+                    continue;
+                string ns = basetype.Namespace;
+                if (!namespaces.ContainsKey(ns))
+                    namespaces[ns] = new List<ParsedType>();
+                namespaces[ns].Add(basetype);
+            }
+            foreach (var kv in namespaces)
+            {
+                StringBuilder content = new StringBuilder();
+                content.AppendLine("---");
+                content.AppendLine($"title: \"{kv.Key}\"");
+                // Don't set a date yet in the front matter as this constantly changes the
+                // file contents
+                //content.AppendLine($"date: {DateTime.Now.ToString("u")}");
+                content.AppendLine("draft: false");
+                content.AppendLine("---");
+                content.AppendLine();
+
+                var items = kv.Value;
+                items.Sort((a, b) =>
+                {
+                    string aName = a.FullName;
+                    string bName = b.FullName;
+                    return aName.CompareTo(bName);
+                });
+                foreach(var item in items)
+                {
+                    content.AppendLine($"- [{item.Name}]({item.Name.ToLower()}/)");
+                }
+
+                string directory = OutputDirectoryFromNamespace(outputDirectory, kv.Key);
+                if (!System.IO.Directory.Exists(directory))
+                    System.IO.Directory.CreateDirectory(directory);
+
+                string path = System.IO.Path.Combine(directory, "_index.md");
+                bool writeContent = true;
+                if (System.IO.File.Exists(path))
+                {
+                    string oldContent = System.IO.File.ReadAllText(path);
+                    if (oldContent.Equals(content.ToString()))
+                        writeContent = false;
+                }
+
+                if (writeContent)
+                {
+                    if (!System.IO.Directory.Exists(directory))
+                        System.IO.Directory.CreateDirectory(directory);
+
+                    System.IO.File.WriteAllText(path, content.ToString());
+                }
+            }
 
             System.Threading.Tasks.Parallel.ForEach(allBaseTypes, (keyValue) =>
             {
-                ParsedBaseType basetype = keyValue.Value;
+                ParsedType basetype = keyValue.Value;
                 if (!basetype.IsPublic)
                     return;
 
@@ -74,11 +130,19 @@ namespace api_docify
                 content.AppendLine("---");
                 content.AppendLine();
 
-                content.AppendLine($"*Namespace: {basetype.Namespace}*");
-
+                content.AppendLine($"*Namespace: [{basetype.Namespace}](../)*");
+                content.AppendLine();
                 string baseTypeSummary = basetype.Summary();
                 if (!string.IsNullOrEmpty(baseTypeSummary))
                     content.AppendLine(baseTypeSummary);
+
+                if (basetype.IsClass)
+                {
+                    content.AppendLine("```cs");
+                    //content.AppendLine("[Serializable]");
+                    content.AppendLine($"public class {basetype.Name}");
+                    content.AppendLine("```");
+                }
 
                 if (basetype.Members == null)
                     return; // TODO: Figure out this case
@@ -116,8 +180,10 @@ namespace api_docify
                     }
                 }
 
-                string name = basetype.FullName;
-                string path = System.IO.Path.Combine(outputDirectory, name.ToLower().Replace(".", "-") + ".md");
+                string name = basetype.Name;
+                string directory = OutputDirectoryFromNamespace(outputDirectory, basetype.Namespace);
+                string path = System.IO.Path.Combine(directory, name.ToLower() + ".md");
+
                 string newContent = content.ToString();
                 bool writeContent = true;
                 if( System.IO.File.Exists(path ))
@@ -129,6 +195,9 @@ namespace api_docify
 
                 if (writeContent)
                 {
+                    if (!System.IO.Directory.Exists(directory))
+                        System.IO.Directory.CreateDirectory(directory);
+
                     System.IO.File.WriteAllText(path, content.ToString());
                     Console.WriteLine($"(write) {name}");
                 }
@@ -136,6 +205,15 @@ namespace api_docify
                     Console.WriteLine($"(no change) {name}");
             });
 
+        }
+
+        static string OutputDirectoryFromNamespace(string baseDirectory, string ns)
+        {
+            List<string> dir = new List<string>();
+            dir.Add(baseDirectory);
+            dir.AddRange(ns.ToLower().Split(new char[] { '.' }));
+            string directory = System.IO.Path.Combine(dir.ToArray());
+            return directory;
         }
 
         static IEnumerable<string> AllSourceFiles(string sourcePath)
