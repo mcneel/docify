@@ -196,7 +196,8 @@ namespace api_docify
                     {
                         if (IsStatic)
                             signature.Append("static ");
-                        signature.Append($"{ClassPath}(");
+                        var parent = new ParsedType(Member.Parent as BaseTypeDeclarationSyntax, null);
+                        signature.Append($"{parent.Name}(");
                     }
                     int parameterCount = constructor.ParameterList.Parameters.Count;
                     for (int i = 0; i < parameterCount; i++)
