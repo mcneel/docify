@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Geometry.Morphs on Test API Site</title>
-    <link>http://example.org/posts/rhino/geometry/morphs/</link>
+    <link>/posts/rhino/geometry/morphs/</link>
     <description>Recent content in Rhino.Geometry.Morphs on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/posts/rhino/geometry/morphs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/posts/rhino/geometry/morphs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BendSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/bendspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/bendspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/bendspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/bendspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Deforms objects by bending along a spine arc.
 public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  BendSpaceMorph(Point3d start,Point3d end,Point3d point,double angle,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.</description>
@@ -23,10 +23,10 @@ public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d en
     
     <item>
       <title>FlowSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/flowspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/flowspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/flowspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/flowspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Re-aligns objects from a base curve to a target curve.
 public class FlowSpaceMorphConstructors FlowSpaceMorph(Curve curve0,Curve curve1,bool preventStretching)  (summary) Constructs a flow space morph. (since) 5.9  FlowSpaceMorph(Curve curve0,Curve curve1,bool reverseCurve0,bool reverseCurve1,bool preventStretching)  (summary) Constructs a flow space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.</description>
@@ -34,10 +34,10 @@ public class FlowSpaceMorphConstructors FlowSpaceMorph(Curve curve0,Curve curve
     
     <item>
       <title>MaelstromSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/maelstromspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/maelstromspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/maelstromspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/maelstromspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Deforms objects in a spiral as if they were caught in a whirlpool.
 public class MaelstromSpaceMorphConstructors MaelstromSpaceMorph(Plane plane,double radius0,double radius1,double angle)  (summary) Constructs a maelstrom space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.9 (returns) void This is some return comment  Point3d MorphPoint(Point3d point)  (summary) Morphs an Euclidean point.</description>
@@ -45,10 +45,10 @@ public class MaelstromSpaceMorphConstructors MaelstromSpaceMorph(Plane plane,do
     
     <item>
       <title>SplopSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/splopspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/splopspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/splopspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/splopspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Rotates, scales, and wraps objects on a surface.
 public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale,double angle)  (summary) Constructs a flow space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise.</description>
@@ -56,10 +56,10 @@ public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface su
     
     <item>
       <title>SporphSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/sporphspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/sporphspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/sporphspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/sporphspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Deforms an object from a source surface to a target surface.
 public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Surface surface1)  (summary) Constructs a sporph space morph. (since) 5.9  SporphSpaceMorph(Surface surface0,Surface surface1,Point2d surface0Param,Point2d surface1Param)  (summary) Constructs a sporph space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.</description>
@@ -67,10 +67,10 @@ public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Sur
     
     <item>
       <title>StretchSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/stretchspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/stretchspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/stretchspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/stretchspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Deforms objects toward or away from a specified axis.
 public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Point3d end,double length)  (summary) Constructs a stretch space morph. (since) 5.9  StretchSpaceMorph(Point3d start,Point3d end,Point3d point)  (summary) Constructs a stretch space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.</description>
@@ -78,10 +78,10 @@ public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Poin
     
     <item>
       <title>TaperSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/taperspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/taperspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/taperspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/taperspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Deforms objects toward or away from a specified axis.
 public class TaperSpaceMorphConstructors TaperSpaceMorph(Point3d start,Point3d end,double startRadius,double endRadius,bool bFlat,bool infiniteTaper)  (summary) Constructs a taper space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.9 (returns) void This is some return comment  Point3d MorphPoint(Point3d point)  (summary) Morphs an Euclidean point.</description>
@@ -89,10 +89,10 @@ public class TaperSpaceMorphConstructors TaperSpaceMorph(Point3d start,Point3d 
     
     <item>
       <title>TwistSpaceMorph</title>
-      <link>http://example.org/posts/rhino/geometry/morphs/twistspacemorph/</link>
+      <link>/posts/rhino/geometry/morphs/twistspacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/geometry/morphs/twistspacemorph/</guid>
+      <guid>/posts/rhino/geometry/morphs/twistspacemorph/</guid>
       <description>Namespace: Rhino.Geometry.Morphs
 Deforms objects by rotating them around an axis.
 public class TwistSpaceMorphConstructors TwistSpaceMorph()  (summary) Constructs a twist space morph. (since) 5.1  Properties bool InfiniteTwist  (summary) If true, the deformation is constant throughout the object, even if the axis is shorter than the object. If false, the deformation takes place only the length of the axis. (since) 5.1  double TwistAngleRadians  (summary) Twist angle in radians.</description>

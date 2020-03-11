@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.UI.Controls.DataSource on Test API Site</title>
-    <link>http://example.org/posts/rhino/ui/controls/datasource/</link>
+    <link>/posts/rhino/ui/controls/datasource/</link>
     <description>Recent content in Rhino.UI.Controls.DataSource on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/posts/rhino/ui/controls/datasource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/posts/rhino/ui/controls/datasource/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EventArgs</title>
-      <link>http://example.org/posts/rhino/ui/controls/datasource/eventargs/</link>
+      <link>/posts/rhino/ui/controls/datasource/eventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/ui/controls/datasource/eventargs/</guid>
+      <guid>/posts/rhino/ui/controls/datasource/eventargs/</guid>
       <description>Namespace: Rhino.UI.Controls.DataSource
 public class EventArgsProperties Guid DataType  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>EventInfoArgs</title>
-      <link>http://example.org/posts/rhino/ui/controls/datasource/eventinfoargs/</link>
+      <link>/posts/rhino/ui/controls/datasource/eventinfoargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/ui/controls/datasource/eventinfoargs/</guid>
+      <guid>/posts/rhino/ui/controls/datasource/eventinfoargs/</guid>
       <description>Namespace: Rhino.UI.Controls.DataSource
 public class EventInfoArgsProperties Guid DataType  (summary) (since) 6.0  IntPtr EventInfoPtr  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>ProviderIds</title>
-      <link>http://example.org/posts/rhino/ui/controls/datasource/providerids/</link>
+      <link>/posts/rhino/ui/controls/datasource/providerids/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/ui/controls/datasource/providerids/</guid>
+      <guid>/posts/rhino/ui/controls/datasource/providerids/</guid>
       <description>Namespace: Rhino.UI.Controls.DataSource
 public class ProviderIdsProperties static Guid ContentChildSlot  (summary) (since) 6.1  static Guid ContentDatabase  (summary) (since) 6.0  static Guid ContentDisplayCollection  (summary) (since) 6.0  static Guid ContentEditorSettings  (summary) (since) 6.0  static Guid ContentLookup  (summary) (since) 6.0  static Guid ContentParam  (summary) (since) 6.0  static Guid ContentPreviewRendered  (summary) (since) 6.0  static Guid ContentSelection  (summary) (since) 6.0  static Guid ContentUIs  (summary) (since) 6.</description>
     </item>

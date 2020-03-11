@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Runtime on Test API Site</title>
-    <link>http://example.org/posts/rhino/runtime/</link>
+    <link>/posts/rhino/runtime/</link>
     <description>Recent content in Rhino.Runtime on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://example.org/posts/rhino/runtime/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/posts/rhino/runtime/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analytics</title>
-      <link>http://example.org/posts/rhino/runtime/analytics/</link>
+      <link>/posts/rhino/runtime/analytics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/analytics/</guid>
+      <guid>/posts/rhino/runtime/analytics/</guid>
       <description>Namespace: Rhino.Runtime
 Provides tools for sending Google Analytics events using the Measurement Protocol. See https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event for details.
 public class AnalyticsConstructors Analytics(string TrackingID,string Name)  (summary) Construct Analytics class (since) 6.0  Analytics(string TrackingID,string Name,string Platform,string InstallerId,string Version)  (summary) Construct Analytics class (since) 6.0  Properties static bool UsageStatisticsEnabled  (summary) Determine if user allows automatic data collection from Rhino (since) 6.0  static Guid UserId  (summary) Returns a GUID that allows events to be aggregated by user.</description>
@@ -23,10 +23,10 @@ public class AnalyticsConstructors Analytics(string TrackingID,string Name)  (s
     
     <item>
       <title>AssemblyResolver</title>
-      <link>http://example.org/posts/rhino/runtime/assemblyresolver/</link>
+      <link>/posts/rhino/runtime/assemblyresolver/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/assemblyresolver/</guid>
+      <guid>/posts/rhino/runtime/assemblyresolver/</guid>
       <description>Namespace: Rhino.Runtime
 Assembly Resolver for the Rhino App Domain.
 public class AssemblyResolverMethods static void AddSearchFile(string file)  (summary) Register another file with the Assembly Resolver. File must be a .NET assembly, so it should probably be a dll, rhp or exe. (since) 5.0 (returns) void This is some return comment  static void AddSearchFolder(string folder)  (summary) Register a custom folder with the Assembly Resolver. Folders will be searched recursively, so this could potentially be a very expensive operation.</description>
@@ -34,10 +34,10 @@ public class AssemblyResolverMethods static void AddSearchFile(string file)  (s
     
     <item>
       <title>CommonObject</title>
-      <link>http://example.org/posts/rhino/runtime/commonobject/</link>
+      <link>/posts/rhino/runtime/commonobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/commonobject/</guid>
+      <guid>/posts/rhino/runtime/commonobject/</guid>
       <description>Namespace: Rhino.Runtime
 Base class for .NET classes that wrap C++ unmanaged Rhino classes.
 public class CommonObjectProperties static bool PerformCorruptionTesting  (summary) Used to test ON_Object* pointers to see if they are a brep or mesh that is corrupt enough to crash Rhino. (since) 6.10  bool Disposed  (summary) Indicates if this object has been disposed or the document it originally belonged to has been disposed. (since) 6.0  bool HasUserData  (summary) Gets True if this class has any custom information attached to it through UserData.</description>
@@ -45,10 +45,10 @@ public class CommonObjectProperties static bool PerformCorruptionTesting  (summ
     
     <item>
       <title>CorruptGeometryException</title>
-      <link>http://example.org/posts/rhino/runtime/corruptgeometryexception/</link>
+      <link>/posts/rhino/runtime/corruptgeometryexception/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/corruptgeometryexception/</guid>
+      <guid>/posts/rhino/runtime/corruptgeometryexception/</guid>
       <description>Namespace: Rhino.Runtime
 Thrown when Rhino finds a brep or mesh that will cause a crash if used for calculations.
 public class CorruptGeometryExceptionProperties CommonObject CommonObject  (summary) Corrupt geometry .NET class (since) 6.10  IntPtr Pointer  (summary) pointer to base geometry (ON_Object*) (since) 6.10  </description>
@@ -56,10 +56,10 @@ public class CorruptGeometryExceptionProperties CommonObject CommonObject  (sum
     
     <item>
       <title>DocumentCollectedException</title>
-      <link>http://example.org/posts/rhino/runtime/documentcollectedexception/</link>
+      <link>/posts/rhino/runtime/documentcollectedexception/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/documentcollectedexception/</guid>
+      <guid>/posts/rhino/runtime/documentcollectedexception/</guid>
       <description>Namespace: Rhino.Runtime
 Represents the error that happen when a class user attempts to execute a modifying operation on an object that has been added to a document.
 public class DocumentCollectedExceptionConstructors DocumentCollectedException()  (summary) Initializes a new instance of the document controlled exception class. (since) 5.0  DocumentCollectedException(string message)  (summary) Initializes a new instance of the document collected exception class. (since) 6.0  </description>
@@ -67,10 +67,10 @@ public class DocumentCollectedExceptionConstructors DocumentCollectedException(
     
     <item>
       <title>HostUtils</title>
-      <link>http://example.org/posts/rhino/runtime/hostutils/</link>
+      <link>/posts/rhino/runtime/hostutils/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/hostutils/</guid>
+      <guid>/posts/rhino/runtime/hostutils/</guid>
       <description>Namespace: Rhino.Runtime
 Contains static methods to deal with teh runtime environment.
 public class HostUtilsstatic OnExceptionReport  (summary) Is raised when an exception is reported with one of the method. (since) 5.0  static OnSendLogMessageToCloud  (summary) Is raised when an exception is reported with one of the method. (since) 6.4  Properties static string ComputerSerialNumber  (summary) Gets the serial number of the computer running Rhino. (since) 6.0  static uint CurrentOSLanguage  (summary) Get the current operating system language.</description>
@@ -78,20 +78,20 @@ public class HostUtilsstatic OnExceptionReport  (summary) Is raised when an exc
     
     <item>
       <title>InstanceAttributeField</title>
-      <link>http://example.org/posts/rhino/runtime/instanceattributefield/</link>
+      <link>/posts/rhino/runtime/instanceattributefield/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/instanceattributefield/</guid>
+      <guid>/posts/rhino/runtime/instanceattributefield/</guid>
       <description>Namespace: Rhino.Runtime
 public class InstanceAttributeFieldConstructors InstanceAttributeField(string key,string prompt,string defaultValue)  (summary) Block attribute defintion. (since) 7.0  Properties string DefaultValue  (summary) Default value used when inserting a block (since) 7.0  string Key  (summary) Attribute key (since) 7.0  string Prompt  (summary) Prompt displayed by the UI when inserting a block (since) 7.0  </description>
     </item>
     
     <item>
       <title>Interop</title>
-      <link>http://example.org/posts/rhino/runtime/interop/</link>
+      <link>/posts/rhino/runtime/interop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/interop/</guid>
+      <guid>/posts/rhino/runtime/interop/</guid>
       <description>Namespace: Rhino.Runtime
 Contains static methods to marshal objects between RhinoCommon and legacy Rhino_DotNet or C++.
 public class InteropMethods static Geometry.GeometryBase CreateFromNativePointer(IntPtr pGeometry)  (summary) Constructs a RhinoCommon Geometry class from a given ON_Geomety*. The ON_Geometry* must be declared on the heap and its lifetime becomes controlled by RhinoCommon. (since) 5.0 (returns) Geometry.GeometryBase This is some return comment  static IntPtr FileReadOptionsConstPointer(FileReadOptions options)  (summary) Returns the underlying const CRhinoFileReadOptions* for a Rhino.</description>
@@ -99,10 +99,10 @@ public class InteropMethods static Geometry.GeometryBase CreateFromNativePointe
     
     <item>
       <title>LicenseStateChangedEventArgs</title>
-      <link>http://example.org/posts/rhino/runtime/licensestatechangedeventargs/</link>
+      <link>/posts/rhino/runtime/licensestatechangedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/licensestatechangedeventargs/</guid>
+      <guid>/posts/rhino/runtime/licensestatechangedeventargs/</guid>
       <description>Namespace: Rhino.Runtime
 Passed to LicenseStateChanged event on RhinoApp
 public class LicenseStateChangedEventArgsConstructors LicenseStateChangedEventArgs(bool callingRhinoCommonAllowed)  (summary) LicenseStateChangedEventArgs constructor (since) 7.0  Properties bool CallingRhinoCommonAllowed  (summary) True if RhinoCommon calls will never raise Rhino.Runtime.NotLicensedException. False otherwise (since) 7.0  </description>
@@ -110,10 +110,10 @@ public class LicenseStateChangedEventArgsConstructors LicenseStateChangedEventA
     
     <item>
       <title>NamedParametersEventArgs</title>
-      <link>http://example.org/posts/rhino/runtime/namedparameterseventargs/</link>
+      <link>/posts/rhino/runtime/namedparameterseventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/namedparameterseventargs/</guid>
+      <guid>/posts/rhino/runtime/namedparameterseventargs/</guid>
       <description>Namespace: Rhino.Runtime
 Dictionary style class used for named callbacks from C++ -&amp;gt; .NET
 public class NamedParametersEventArgsConstructors NamedParametersEventArgs()  (summary) Construct a new named parameter even args. You should dispose this class when you are done with it (since) 7.0  Methods void Dispose()  (summary) Dispose native resources (since) 7.0 (returns) void This is some return comment  void Set(string name,bool value)  (summary) Set a bool value for a given key name (since) 7.</description>
@@ -121,10 +121,10 @@ public class NamedParametersEventArgsConstructors NamedParametersEventArgs()  (
     
     <item>
       <title>NotLicensedException</title>
-      <link>http://example.org/posts/rhino/runtime/notlicensedexception/</link>
+      <link>/posts/rhino/runtime/notlicensedexception/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/notlicensedexception/</guid>
+      <guid>/posts/rhino/runtime/notlicensedexception/</guid>
       <description>Namespace: Rhino.Runtime
 Exception thrown when calling functions in RhinoCommon and the application is executing without a license
 public class NotLicensedExceptionConstructors NotLicensedException()  (summary) Default constructor (since) 7.0  NotLicensedException(string message)  (summary) Create a new instance with a custom message (since) 7.0  NotLicensedException(string message,Exception inner)  (summary) Create a new instance with a custom message and an inner exception (since) 7.0  </description>
@@ -132,30 +132,30 @@ public class NotLicensedExceptionConstructors NotLicensedException()  (summary)
     
     <item>
       <title>PathPoint</title>
-      <link>http://example.org/posts/rhino/runtime/pathpoint/</link>
+      <link>/posts/rhino/runtime/pathpoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/pathpoint/</guid>
+      <guid>/posts/rhino/runtime/pathpoint/</guid>
       <description>Namespace: Rhino.Runtime
 Properties PointF Location  (summary) (since) 6.0  PointType PointType  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>Pen</title>
-      <link>http://example.org/posts/rhino/runtime/pen/</link>
+      <link>/posts/rhino/runtime/pen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/pen/</guid>
+      <guid>/posts/rhino/runtime/pen/</guid>
       <description>Namespace: Rhino.Runtime
 public class PenProperties Color Color  (summary) (since) 6.0  float Width  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>PythonCompiledCode</title>
-      <link>http://example.org/posts/rhino/runtime/pythoncompiledcode/</link>
+      <link>/posts/rhino/runtime/pythoncompiledcode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/pythoncompiledcode/</guid>
+      <guid>/posts/rhino/runtime/pythoncompiledcode/</guid>
       <description>Namespace: Rhino.Runtime
 Represents scripting compiled code.
 public class PythonCompiledCodeMethods void Execute(PythonScript scope)  (summary) Executes the script in a specific scope. (since) 5.0 (returns) void This is some return comment  </description>
@@ -163,10 +163,10 @@ public class PythonCompiledCodeMethods void Execute(PythonScript scope)  (summa
     
     <item>
       <title>PythonScript</title>
-      <link>http://example.org/posts/rhino/runtime/pythonscript/</link>
+      <link>/posts/rhino/runtime/pythonscript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/pythonscript/</guid>
+      <guid>/posts/rhino/runtime/pythonscript/</guid>
       <description>Namespace: Rhino.Runtime
 Represents a Python script.
 public class PythonScriptProperties int ContextId  (summary) Gets or sets a context unique identified. (since) 5.0  ActionOutput  (summary) Gets or sets the Python script &amp;ldquo;print()&amp;rdquo; target. By default string output goes to the Rhino.RhinoApp.Write function. Set Output if you want to redirect the output from python to a different function while this script executes. (since) 5.0  Commands.Command ScriptContextCommand  (summary) Command associated with this script.</description>
@@ -174,10 +174,10 @@ public class PythonScriptProperties int ContextId  (summary) Gets or sets a con
     
     <item>
       <title>RdkNotLoadedException</title>
-      <link>http://example.org/posts/rhino/runtime/rdknotloadedexception/</link>
+      <link>/posts/rhino/runtime/rdknotloadedexception/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/rdknotloadedexception/</guid>
+      <guid>/posts/rhino/runtime/rdknotloadedexception/</guid>
       <description>Namespace: Rhino.Runtime
 Is thrown when the RDK is not loaded.
 public class RdkNotLoadedExceptionConstructors RdkNotLoadedException()  (summary) Initializes a new instance of the RDK not loaded exception with a standard message. (since) 5.0  </description>
@@ -185,10 +185,10 @@ public class RdkNotLoadedExceptionConstructors RdkNotLoadedException()  (summar
     
     <item>
       <title>RiskyAction</title>
-      <link>http://example.org/posts/rhino/runtime/riskyaction/</link>
+      <link>/posts/rhino/runtime/riskyaction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/riskyaction/</guid>
+      <guid>/posts/rhino/runtime/riskyaction/</guid>
       <description>Namespace: Rhino.Runtime
 Defines risky actions that need to be reported in crash exceptions
 public class RiskyActionConstructors RiskyAction(string description,string file,string member,int line)  (summary) Always create this in a using block (since) 6.0  Methods void Dispose()  (summary) IDisposable implementation (since) 6.0 (returns) void This is some return comment  </description>
@@ -196,10 +196,10 @@ public class RiskyActionConstructors RiskyAction(string description,string file
     
     <item>
       <title>Skin</title>
-      <link>http://example.org/posts/rhino/runtime/skin/</link>
+      <link>/posts/rhino/runtime/skin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/skin/</guid>
+      <guid>/posts/rhino/runtime/skin/</guid>
       <description>Namespace: Rhino.Runtime
 Represents a customized environment that changes the appearance of Rhino. Skin DLLs must contain a single class that derives from the Skin class.
 public class SkinProperties static Skin ActiveSkin  (summary) Any time Rhino is running there is at most one skin being used (and possibly no skin). If a RhinoCommon based Skin class is being used, use ActiveSkin to get at the instance of this Skin class.</description>
@@ -207,10 +207,10 @@ public class SkinProperties static Skin ActiveSkin  (summary) Any time Rhino is
     
     <item>
       <title>TextFields</title>
-      <link>http://example.org/posts/rhino/runtime/textfields/</link>
+      <link>/posts/rhino/runtime/textfields/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/textfields/</guid>
+      <guid>/posts/rhino/runtime/textfields/</guid>
       <description>Namespace: Rhino.Runtime
 This Class Processes Text Field Functions
 public class TextFieldsMethods static double Area(string id)  (summary) Returns the area value for a selected object id (since) 7.0 (returns) double This is some return comment  static double Area(string id,string unitSystem)  (summary) Returns the area value for a selected object id in a specified unit system (since) 7.0 (returns) double This is some return comment  static string BlockAttributeText(string key,string prompt,string defaultValue)  (summary) User text associated with a block (since) 7.</description>
@@ -218,10 +218,10 @@ public class TextFieldsMethods static double Area(string id)  (summary) Returns
     
     <item>
       <title>ViewCaptureWriter</title>
-      <link>http://example.org/posts/rhino/runtime/viewcapturewriter/</link>
+      <link>/posts/rhino/runtime/viewcapturewriter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/viewcapturewriter/</guid>
+      <guid>/posts/rhino/runtime/viewcapturewriter/</guid>
       <description>Namespace: Rhino.Runtime
 Callback system used by SVG and PDF exporter to generate documents
 public class ViewCaptureWriterConstructors ViewCaptureWriter(double dpi,Size pageSize)  (summary) (since) 6.0  Methods void Draw(IntPtr constPtrPrintInfo,RhinoDoc doc)  (summary) (since) 6.15 (returns) void This is some return comment  </description>
@@ -229,10 +229,10 @@ public class ViewCaptureWriterConstructors ViewCaptureWriter(double dpi,Size pa
     
     <item>
       <title>ZooClientParameters</title>
-      <link>http://example.org/posts/rhino/runtime/zooclientparameters/</link>
+      <link>/posts/rhino/runtime/zooclientparameters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/rhino/runtime/zooclientparameters/</guid>
+      <guid>/posts/rhino/runtime/zooclientparameters/</guid>
       <description>Namespace: Rhino.Runtime
 ZooClientParameters is a read-only set of parameters that control the flow of licensing inside ZooClient. Because this class flows through a number of other classes, functions, and UI, it is read-only so that inadvertent changes are not made to the data as it propagates from the caller.
 public class ZooClientParametersConstructors ZooClientParameters(Guid productGuid,Guid licenseGuid,string productTitle,int productBuildType,LicenseCapabilities capabilities,string licenseEntryTextMask,string productPath,object parentWindow,LicenseTypes selectedLicenseType,ValidateProductKeyDelegate validateProductKey,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate)  (summary) ZooClientParameters Constructor (since) 6.</description>
