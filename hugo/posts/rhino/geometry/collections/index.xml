@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Geometry.Collections on Test API Site</title>
-    <link>/hugo/posts/rhino/geometry/collections/</link>
+    <link>/apidocs/hugo/posts/rhino/geometry/collections/</link>
     <description>Recent content in Rhino.Geometry.Collections on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo/posts/rhino/geometry/collections/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/apidocs/hugo/posts/rhino/geometry/collections/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BrepCurveList</title>
-      <link>/hugo/posts/rhino/geometry/collections/brepcurvelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/brepcurvelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/brepcurvelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/brepcurvelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the underlying curves in a Brep object.
 public class BrepCurveListProperties int Count  (summary) Gets the number of curves in this list. (since) 5.6  Methods int Add(Curve curve)  (summary) Adds a curve (since) 5.6 (returns) int This is some return comment  IEnumeratorGetEnumerator()  (summary) Get an enumerator that visits all curves. (since) 5.6 (returns) IEnumeratorThis is some return comment  </description>
@@ -23,10 +23,10 @@ public class BrepCurveListProperties int Count  (summary) Gets the number of cu
     
     <item>
       <title>BrepEdgeList</title>
-      <link>/hugo/posts/rhino/geometry/collections/brepedgelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/brepedgelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/brepedgelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/brepedgelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the Edges in a Brep object.
 public class BrepEdgeListProperties int Count  (summary) Gets the number of brep edges. (since) 5.0  Methods BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,double edgeTolerance)  (summary) Create and add a new edge to this list (since) 5.4 (returns) BrepEdge This is some return comment  BrepEdge Add(BrepVertex startVertex,BrepVertex endVertex,int curve3dIndex,Interval subDomain,double edgeTolerance)  (summary) Create and add a new edge to this list (since) 5.</description>
@@ -34,10 +34,10 @@ public class BrepEdgeListProperties int Count  (summary) Gets the number of bre
     
     <item>
       <title>BrepFaceList</title>
-      <link>/hugo/posts/rhino/geometry/collections/brepfacelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/brepfacelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/brepfacelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/brepfacelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the Faces in a Brep object.
 public class BrepFaceListProperties int Count  (summary) Gets the number of brep faces. (since) 5.0  Methods BrepFace Add(int surfaceIndex)  (summary) Create and add a new face to this list. An incomplete face is added. The caller must create and fill in the loops used by the face. (since) 5.4 (returns) BrepFace This is some return comment  BrepFace Add(Surface surface)  (summary) Add a new face to a brep.</description>
@@ -45,10 +45,10 @@ public class BrepFaceListProperties int Count  (summary) Gets the number of bre
     
     <item>
       <title>BrepLoopList</title>
-      <link>/hugo/posts/rhino/geometry/collections/breplooplist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/breplooplist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/breplooplist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/breplooplist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the Loops in a Brep object.
 public class BrepLoopListProperties int Count  (summary) Gets the number of brep loops. (since) 5.0  Methods BrepLoop Add(BrepLoopType loopType)  (summary) Create a new empty boundary loop. The new loop will not be part of a face and will not include any trim curves. (since) 5.4 (returns) BrepLoop This is some return comment  BrepLoop Add(BrepLoopType loopType,BrepFace face)  (summary) Create a new boundary loop on a face.</description>
@@ -56,10 +56,10 @@ public class BrepLoopListProperties int Count  (summary) Gets the number of bre
     
     <item>
       <title>BrepSurfaceList</title>
-      <link>/hugo/posts/rhino/geometry/collections/brepsurfacelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/brepsurfacelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/brepsurfacelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/brepsurfacelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the underlying surfaces in a Brep object.
 public class BrepSurfaceListProperties int Count  (summary) Gets the number of surfaces in a brep. (since) 5.4  Methods IEnumeratorGetEnumerator()  (summary) Gets an enumerator that visits all surfaces. (since) 5.4 (returns) IEnumeratorThis is some return comment  </description>
@@ -67,10 +67,10 @@ public class BrepSurfaceListProperties int Count  (summary) Gets the number of 
     
     <item>
       <title>BrepTrimList</title>
-      <link>/hugo/posts/rhino/geometry/collections/breptrimlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/breptrimlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/breptrimlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/breptrimlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the Trims in a Brep object
 public class BrepTrimListProperties int Count  (summary) Gets the number of brep trims. (since) 5.1  Methods BrepTrim Add(bool rev3d,BrepEdge edge,int curve2dIndex)  (summary) Add a new trim that will be part of an inner, outer, or slit loop to the brep (since) 5.4 (returns) BrepTrim This is some return comment  BrepTrim Add(bool rev3d,BrepLoop loop,int curve2dIndex)  (summary) Add a new trim that will be part of an inner, outer, or slit loop to the brep (since) 5.</description>
@@ -78,10 +78,10 @@ public class BrepTrimListProperties int Count  (summary) Gets the number of bre
     
     <item>
       <title>BrepVertexList</title>
-      <link>/hugo/posts/rhino/geometry/collections/brepvertexlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/brepvertexlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/brepvertexlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/brepvertexlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to all the Vertices in a Brep object
 public class BrepVertexListProperties int Count  (summary) Gets the number of brep vertices. (since) 5.4  Methods BrepVertex Add()  (summary) Create and add a new vertex to this list (since) 5.4 (returns) BrepVertex This is some return comment  BrepVertex Add(Point3d point,double vertexTolerance)  (summary) Create and add a new vertex to this list (since) 5.4 (returns) BrepVertex This is some return comment  BrepVertex AddPointOnFace(BrepFace face,double s,double t)  (summary) Adds a new point on face to the brep (since) 5.</description>
@@ -89,10 +89,10 @@ public class BrepVertexListProperties int Count  (summary) Gets the number of b
     
     <item>
       <title>MeshFaceList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshfacelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshfacelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshfacelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshfacelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the faces and Face related functionality of a Mesh.
 public class MeshFaceListProperties int Capacity  (summary) Gets or sets the total number of mesh triangles and quads the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh faces. When getting this can includes invalid faces. (since) 5.0  int QuadCount  (summary) Gets the number of faces that are valid quads (4 corners).</description>
@@ -100,10 +100,10 @@ public class MeshFaceListProperties int Capacity  (summary) Gets or sets the to
     
     <item>
       <title>MeshFaceNormalList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshfacenormallist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshfacenormallist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshfacenormallist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshfacenormallist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the Face normals of a Mesh.
 public class MeshFaceNormalListProperties int Capacity  (summary) Gets or sets the total number of face normals the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh face normals. (since) 5.0  Methods int AddFaceNormal(double x,double y,double z)  (summary) Appends a face normal to the list of mesh face normals.</description>
@@ -111,10 +111,10 @@ public class MeshFaceNormalListProperties int Capacity  (summary) Gets or sets 
     
     <item>
       <title>MeshNgonList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshngonlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshngonlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshngonlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshngonlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the ngons and n-gon related functionality of a Mesh. See also the property for Ngon functionality details.
 public class MeshNgonListProperties int Count  (summary) Gets or sets the number of mesh ngons. (since) 6.0  uint UnsignedCount  (summary) Gets or sets the number of mesh ngons. (since) 6.0  Methods int AddNgon(MeshNgon ngon)  (summary) Appends a new ngon to the end of the mesh ngon list.</description>
@@ -122,10 +122,10 @@ public class MeshNgonListProperties int Count  (summary) Gets or sets the numbe
     
     <item>
       <title>MeshTextureCoordinateList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the Vertex Texture coordinates of a Mesh.
 public class MeshTextureCoordinateListProperties int Capacity  (summary) Gets or sets the total number of texture coordinates the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of texture coordinates. (since) 5.0  Methods int Add(double s,double t)  (summary) Adds a new texture coordinate to the end of the Texture list.</description>
@@ -133,10 +133,10 @@ public class MeshTextureCoordinateListProperties int Capacity  (summary) Gets o
     
     <item>
       <title>MeshTopologyEdgeList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshtopologyedgelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshtopologyedgelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshtopologyedgelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshtopologyedgelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Represents an entry point to the list of edges in a mesh topology.
 public class MeshTopologyEdgeListProperties int Count  (summary) Gets the amount of edges in this list. (since) 5.0  Methods bool CollapseEdge(int topologyEdgeIndex)  (summary) Replaces a mesh edge with a vertex at its center and update adjacent faces as needed. (since) 5.0 (returns) bool This is some return comment  Line EdgeLine(int topologyEdgeIndex)  (summary) Gets the 3d line along an edge.</description>
@@ -144,10 +144,10 @@ public class MeshTopologyEdgeListProperties int Count  (summary) Gets the amoun
     
     <item>
       <title>MeshTopologyVertexList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshtopologyvertexlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshtopologyvertexlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshtopologyvertexlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshtopologyvertexlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the mesh topology vertices of a mesh. Topology vertices are sets of vertices in the MeshVertexList that can topologically be considered the same vertex.
 public class MeshTopologyVertexListProperties int Count  (summary) Gets or sets the number of mesh topology vertices. (since) 5.0  Methods int ConnectedEdge(int topologyVertexIndex,int edgeAtVertexIndex)  (summary) Gets a particular edge that is connected to a topological vertex. Call TopologyVertices.SortVertices before this if you are interested in ordered edges.</description>
@@ -155,10 +155,10 @@ public class MeshTopologyVertexListProperties int Count  (summary) Gets or sets
     
     <item>
       <title>MeshVertexColorList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshvertexcolorlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexcolorlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshvertexcolorlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexcolorlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the vertex colors of a mesh object.
 public class MeshVertexColorListProperties int Capacity  (summary) Gets or sets the total number of vertex colors the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh colors. (since) 5.0  MappingTag Tag  (summary) Gets or sets a mapping information for the mesh associated with these vertex colors.</description>
@@ -166,10 +166,10 @@ public class MeshVertexColorListProperties int Capacity  (summary) Gets or sets
     
     <item>
       <title>MeshVertexList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshvertexlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshvertexlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the vertices and vertex-related functionality of a mesh.
 public class MeshVertexListProperties int Capacity  (summary) Gets or sets the total number of vertices the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh vertices. (since) 5.0  bool UseDoublePrecisionVertices  (summary) Set to True if the vertices should be stored in double precision (since) 6.</description>
@@ -177,10 +177,10 @@ public class MeshVertexListProperties int Capacity  (summary) Gets or sets the 
     
     <item>
       <title>MeshVertexNormalList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshvertexnormallist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexnormallist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshvertexnormallist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexnormallist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the Vertex Normals of a Mesh.
 public class MeshVertexNormalListProperties int Capacity  (summary) Gets or sets the amount of vertex normals that the list can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of mesh vertex normals. (since) 5.0  Methods int Add(double x,double y,double z)  (summary) Adds a new vertex normal at the end of the list.</description>
@@ -188,10 +188,10 @@ public class MeshVertexNormalListProperties int Capacity  (summary) Gets or set
     
     <item>
       <title>MeshVertexStatusList</title>
-      <link>/hugo/posts/rhino/geometry/collections/meshvertexstatuslist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexstatuslist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/meshvertexstatuslist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexstatuslist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to status information relative to components of a mesh.
 public class MeshVertexStatusListProperties int Capacity  (summary) Gets or sets the total number of hidden vertex information the internal data structure can hold without resizing. (since) 6.0  int Count  (summary) Gets or sets the number of hidden vertices. For this to be a valid part of a mesh, this count should be the same as the one of mesh vertices.</description>
@@ -199,10 +199,10 @@ public class MeshVertexStatusListProperties int Capacity  (summary) Gets or set
     
     <item>
       <title>NurbsCurveKnotList</title>
-      <link>/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the knot vector of a nurbs curve.
 public class NurbsCurveKnotListProperties int Count  (summary) Total number of knots in this curve. (since) 5.0  bool IsClampedEnd  (summary) Gets a value indicating whether or not the knot vector is clamped at the end of the curve. Clamped curves are coincident with the first and last control-point. This requires fully multiple knots. (since) 5.0  bool IsClampedStart  (summary) Gets a value indicating whether or not the knot vector is clamped at the start of the curve.</description>
@@ -210,10 +210,10 @@ public class NurbsCurveKnotListProperties int Count  (summary) Total number of 
     
     <item>
       <title>NurbsCurvePointList</title>
-      <link>/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the control points of a nurbs curve.
 public class NurbsCurvePointListProperties double ControlPolygonLength  (summary) Gets the length of the polyline connecting all control points. (since) 5.0  int Count  (summary) Gets the number of control points in this curve. (since) 5.0  int PointSize  (summary) Returns the control point size, or the number of doubles per control point. For rational curves, PointSize = Curve.</description>
@@ -221,10 +221,10 @@ public class NurbsCurvePointListProperties double ControlPolygonLength  (summar
     
     <item>
       <title>NurbsSurfaceKnotList</title>
-      <link>/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the knot vector of a nurbs surface.
 public class NurbsSurfaceKnotListProperties bool ClampedAtEnd  (summary) Determines if a knot vector is clamped. (since) 5.0  bool ClampedAtStart  (summary) Determines if a knot vector is clamped. (since) 5.0  int Count  (summary) Gets the total number of knots in this curve. (since) 5.0  Methods bool CreatePeriodicKnots(double knotSpacing)  (summary) Compute a clamped, uniform, periodic knot vector based on the current degree and control point count.</description>
@@ -232,10 +232,10 @@ public class NurbsSurfaceKnotListProperties bool ClampedAtEnd  (summary) Determ
     
     <item>
       <title>NurbsSurfacePointList</title>
-      <link>/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the control points of a nurbs surface.
 public class NurbsSurfacePointListProperties int CountU  (summary) Gets the number of control points in the U direction of this surface. (since) 5.0  int CountV  (summary) Gets the number of control points in the V direction of this surface. (since) 5.0  int PointSize  (summary) Returns the control point size, or the number of doubles per control point.</description>
@@ -243,10 +243,10 @@ public class NurbsSurfacePointListProperties int CountU  (summary) Gets the num
     
     <item>
       <title>SubDEdgeList</title>
-      <link>/hugo/posts/rhino/geometry/collections/subdedgelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/subdedgelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/subdedgelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/subdedgelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 All edges in a SubD
 public class SubDEdgeListProperties int Count  (summary) Gets the number of SubD edges. (since) 7.0  Methods SubDEdge Add(SubDEdgeTag tag,SubDVertex v0,SubDVertex v1)  (summary) Add a new edge to the list. (since) 7.0 (returns) SubDEdge This is some return comment  SubDEdge Find(int id)  (summary) Find an edge in this SubD with a given id (since) 7.0 (returns) SubDEdge This is some return comment  SubDEdge Find(uint id)  (summary) Find an edge in this SubD with a given id (since) 7.</description>
@@ -254,10 +254,10 @@ public class SubDEdgeListProperties int Count  (summary) Gets the number of Sub
     
     <item>
       <title>SubDFaceList</title>
-      <link>/hugo/posts/rhino/geometry/collections/subdfacelist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/subdfacelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/subdfacelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/subdfacelist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 All faces in a SubD
 public class SubDFaceListProperties int Count  (summary) Gets the number of SubD faces. (since) 7.0  Methods SubDFace Find(int id)  (summary) Find a face in this SubD with a given id (since) 7.0 (returns) SubDFace This is some return comment  SubDFace Find(uint id)  (summary) Find a face in this SubD with a given id (since) 7.0 (returns) SubDFace This is some return comment  IEnumeratorGetEnumerator()  (summary) Implementation of IEnumerable (since) 7.</description>
@@ -265,10 +265,10 @@ public class SubDFaceListProperties int Count  (summary) Gets the number of Sub
     
     <item>
       <title>SubDVertexList</title>
-      <link>/hugo/posts/rhino/geometry/collections/subdvertexlist/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/collections/subdvertexlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/collections/subdvertexlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/collections/subdvertexlist/</guid>
       <description>Namespace: Rhino.Geometry.Collections
 Provides access to the vertices and vertex-related functionality of a SubD
 public class SubDVertexListProperties int Count  (summary) Gets the number of SubD vertices. (since) 7.0  SubDVertex First  (summary) First vertex in this linked list of vertices (since) 7.0  Methods SubDVertex Add(SubDVertexTag tag,Point3d vertex)  (summary) Add a new vertex to the end of the Vertex list. (since) 7.0 (returns) SubDVertex This is some return comment  SubDVertex Find(int id)  (summary) Find a vertex in this SubD with a given id (since) 7.</description>

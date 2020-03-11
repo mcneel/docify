@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Geometry on Test API Site</title>
-    <link>/hugo/posts/rhino/geometry/</link>
+    <link>/apidocs/hugo/posts/rhino/geometry/</link>
     <description>Recent content in Rhino.Geometry on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo/posts/rhino/geometry/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/apidocs/hugo/posts/rhino/geometry/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AngularDimension</title>
-      <link>/hugo/posts/rhino/geometry/angulardimension/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/angulardimension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/angulardimension/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/angulardimension/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a dimension of an entity that can be measured with an angle.
 public class AngularDimensionConstructors AngularDimension()  (summary) (since) 6.0  AngularDimension(Arc arc,double offset)  (summary) Create an angular dimension from a given arc (since) 5.0  Properties DimensionStyle.AngleDisplayFormat AngleFormat  (summary) (since) 6.0  int AngleResolution  (summary) (since) 6.0  double AngleRoundoff  (summary) (since) 6.0  DimensionStyle.ZeroSuppression AngleZeroSuppression  (summary) (since) 6.0  Point2d ArrowPoint1  (summary) (since) 6.</description>
@@ -23,10 +23,10 @@ public class AngularDimensionConstructors AngularDimension()  (summary) (since)
     
     <item>
       <title>AnnotationBase</title>
-      <link>/hugo/posts/rhino/geometry/annotationbase/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/annotationbase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/annotationbase/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/annotationbase/</guid>
       <description>Namespace: Rhino.Geometry
 Provides a common base class to all annotation geometry. This class refers to the geometric element that is independent from the document.
 public class AnnotationBaseProperties DimensionStyle.LengthDisplay AlternateDimensionLengthDisplay  (summary) Alternate length display units and format (since) 6.0  AnnotationType AnnotationType  (summary) Type of annotation (since) 6.0  char DecimalSeparator  (summary) Set or get the decimal separator c (since) 7.0  DimensionStyle.LengthDisplay DimensionLengthDisplay  (summary) Length display units and format (since) 6.</description>
@@ -34,10 +34,10 @@ public class AnnotationBaseProperties DimensionStyle.LengthDisplay AlternateDim
     
     <item>
       <title>Arc</title>
-      <link>/hugo/posts/rhino/geometry/arc/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/arc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/arc/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/arc/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the value of a plane, two angles and a radius in a subcurve of a three-dimensional circle.
 The curve is parameterized by an angle expressed in radians. For an IsValid arc the total subtended angle AngleRadians() = Domain()(1) - Domain()(0) must satisfy 0 &amp;lt; AngleRadians() &amp;lt; 2*PiThe parameterization of the Arc is inherited from the Circle it is derived from. In particulart -&amp;gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere xaxis and yaxis, (part of Circle.</description>
@@ -45,10 +45,10 @@ The curve is parameterized by an angle expressed in radians. For an IsValid arc 
     
     <item>
       <title>ArcCurve</title>
-      <link>/hugo/posts/rhino/geometry/arccurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/arccurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/arccurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/arccurve/</guid>
       <description>Namespace: Rhino.Geometry
 Represent arcs and circles. ArcCurve.IsCircle returns True if the curve is a complete circle.
 public class ArcCurveConstructors ArcCurve()  (summary) Initializes a new instance. Radius is set to 1, position to Origin and Domain to full span (circle). (since) 5.0  ArcCurve(Arc arc)  (summary) Initializes a new instance, copying values from another . (since) 5.0  ArcCurve(Arc arc,double t0,double t1)  (summary) Initializes a new instance, copying values from another and specifying the needed parametrization of the arc.</description>
@@ -56,10 +56,10 @@ public class ArcCurveConstructors ArcCurve()  (summary) Initializes a new insta
     
     <item>
       <title>AreaMassProperties</title>
-      <link>/hugo/posts/rhino/geometry/areamassproperties/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/areamassproperties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/areamassproperties/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/areamassproperties/</guid>
       <description>Namespace: Rhino.Geometry
 Contains static initialization methods and allows access to the computed metrics of area, area centroid and area moments in closed planar curves, in meshes, in surfaces, in hatches and in boundary representations.
 public class AreaMassPropertiesProperties double Area  (summary) Gets the area solution. (since) 5.0  double AreaError  (summary) Gets the uncertainty in the area calculation. (since) 5.0  Point3d Centroid  (summary) Gets the area centroid in the world coordinate system.</description>
@@ -67,10 +67,10 @@ public class AreaMassPropertiesProperties double Area  (summary) Gets the area 
     
     <item>
       <title>Arrowhead</title>
-      <link>/hugo/posts/rhino/geometry/arrowhead/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/arrowhead/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/arrowhead/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/arrowhead/</guid>
       <description>Namespace: Rhino.Geometry
 Arrowhead used by annotation
 public class ArrowheadConstructors Arrowhead()  (summary) Constructor (since) 6.0  Arrowhead(ArrowType arrowType,Guid blockId)  (summary) Constructor (since) 6.0  Properties DimensionStyle.ArrowType ArrowType  (summary) Type of arrowhead used by annotation (since) 6.0  Guid BlockId  (summary) Id of block used for user-defined arrowhead (since) 6.0  </description>
@@ -78,10 +78,10 @@ public class ArrowheadConstructors Arrowhead()  (summary) Constructor (since) 6
     
     <item>
       <title>BezierCurve</title>
-      <link>/hugo/posts/rhino/geometry/beziercurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/beziercurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/beziercurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/beziercurve/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a Bezier curve. Note: as an exception, the bezier curve is not derived from .
 public class BezierCurveConstructors BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 2d points (since) 5.0  BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 3d points (since) 5.0  BezierCurve(IEnumerablecontrolPoints)  (summary) Create bezier curve with controls defined by a list of 4d points (since) 5.</description>
@@ -89,10 +89,10 @@ public class BezierCurveConstructors BezierCurve(IEnumerablecontrolPoints)  (su
     
     <item>
       <title>BoundingBox</title>
-      <link>/hugo/posts/rhino/geometry/boundingbox/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/boundingbox/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/boundingbox/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/boundingbox/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the value of two points in a bounding box defined by the two extreme corner points. This box is therefore aligned to the world X, Y and Z axes.
 Constructors BoundingBox(double minX,double minY,double minZ,double maxX,double maxY,double maxZ)  (summary) Constructs a boundingbox from numeric extremes. (since) 5.0  BoundingBox(IEnumerablepoints)  (summary) Constructs a boundingbox from a collection of points. (since) 5.0  BoundingBox(IEnumerablepoints,Transform xform)  (summary) Constructs a boundingbox from a collection of points.</description>
@@ -100,10 +100,10 @@ Constructors BoundingBox(double minX,double minY,double minZ,double maxX,double 
     
     <item>
       <title>Box</title>
-      <link>/hugo/posts/rhino/geometry/box/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/box/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/box/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/box/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the value of a plane and three intervals in an orthogonal, oriented box that is not necessarily parallel to the world Y, X, Z axes.
 Constructors Box(BoundingBox bbox)  (summary) Initializes a new Box that mimics a BoundingBox struct. The orientation plane of the Box is coincident with the World XY plane. (since) 5.0  Box(Plane basePlane,BoundingBox boundingbox)  (summary) Initializes a world aligned box from a base plane and a boundingbox.</description>
@@ -111,10 +111,10 @@ Constructors Box(BoundingBox bbox)  (summary) Initializes a new Box that mimics 
     
     <item>
       <title>Brep</title>
-      <link>/hugo/posts/rhino/geometry/brep/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/brep/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/brep/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/brep/</guid>
       <description>Namespace: Rhino.Geometry
 Boundary Representation. A surface or polysurface along with trim curve information.
 public class BrepConstructors Brep()  (summary) Initializes a new empty brep (since) 5.4  Properties Collections.BrepCurveList Curves2D  (summary) Parameter space trimming curves (used by trims) (since) 5.6  Collections.BrepCurveList Curves3D  (summary) Pointers to 3d curves (used by edges) (since) 5.6  Collections.BrepEdgeList Edges  (summary) Gets the brep edges list accessor. (since) 5.0  Collections.</description>
@@ -122,10 +122,10 @@ public class BrepConstructors Brep()  (summary) Initializes a new empty brep (s
     
     <item>
       <title>BrepEdge</title>
-      <link>/hugo/posts/rhino/geometry/brepedge/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/brepedge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/brepedge/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/brepedge/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a single edge curve in a Brep object.
 public class BrepEdgeProperties Brep Brep  (summary) Gets the Brep that owns this edge. (since) 5.0  Curve EdgeCurve  (summary) Get the brep.Curves3D[] 3d curve geometry used by this edge or null. (since) 6.0  int EdgeCurveIndex  (summary) Get the brep.Curves3D[] index of the 3d curve geometry used by this edge or -1. (since) 6.0  int EdgeIndex  (summary) Gets the index of this edge in the Brep.</description>
@@ -133,10 +133,10 @@ public class BrepEdgeProperties Brep Brep  (summary) Gets the Brep that owns th
     
     <item>
       <title>BrepFace</title>
-      <link>/hugo/posts/rhino/geometry/brepface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/brepface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/brepface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/brepface/</guid>
       <description>Namespace: Rhino.Geometry
 Provides strongly-typed access to brep faces. A Brep face is composed of one surface and trimming curves.
 public class BrepFaceProperties Brep Brep  (summary) Gets the Brep that owns this face. (since) 6.9  int FaceIndex  (summary) Index of face in Brep.Faces array. (since) 5.0  bool IsSurface  (summary) Gets a value indicating whether the face is synonymous with the underlying surface. If a Face has no trimming curves then it is considered a Surface.</description>
@@ -144,10 +144,10 @@ public class BrepFaceProperties Brep Brep  (summary) Gets the Brep that owns th
     
     <item>
       <title>BrepLoop</title>
-      <link>/hugo/posts/rhino/geometry/breploop/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/breploop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/breploop/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/breploop/</guid>
       <description>Namespace: Rhino.Geometry
 Represent a single loop in a Brep object. A loop is composed of a list of trim curves.
 public class BrepLoopProperties Brep Brep  (summary) Gets the Brep that owns this loop. (since) 5.0  BrepFace Face  (summary) BrepFace this loop belongs to. (since) 5.0  int LoopIndex  (summary) Gets the index of this loop in the Brep.Loops collection. (since) 5.0  BrepLoopType LoopType  (summary) type of loop.</description>
@@ -155,10 +155,10 @@ public class BrepLoopProperties Brep Brep  (summary) Gets the Brep that owns th
     
     <item>
       <title>BrepRegion</title>
-      <link>/hugo/posts/rhino/geometry/brepregion/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/brepregion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/brepregion/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/brepregion/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a brep topological region that has sides.
 public class BrepRegionProperties BoundingBox BoundingBox  (summary) Gets the region bounding box. (since) 5.0  Brep Brep  (summary) Gets a reference to the Brep this region belongs to. (since) 5.0  int Index  (summary) Gets the index of region in the RegionTopology array. (since) 5.0  bool IsFinite  (summary) Gets a value indicating whether this region is finite.</description>
@@ -166,10 +166,10 @@ public class BrepRegionProperties BoundingBox BoundingBox  (summary) Gets the r
     
     <item>
       <title>BrepRegionFaceSide</title>
-      <link>/hugo/posts/rhino/geometry/brepregionfaceside/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/brepregionfaceside/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/brepregionfaceside/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/brepregionfaceside/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a side of a entity.
 public class BrepRegionFaceSideProperties Brep Brep  (summary) The brep this side belongs to. (since) 5.0  BrepFace Face  (summary) Gets the face this side belongs to. (since) 5.0  BrepRegion Region  (summary) The region this side belongs to. (since) 5.0  bool SurfaceNormalPointsIntoRegion  (summary) Gets True if BrepFace&amp;rsquo;s surface normal points into region; False otherwise. (since) 5.0  </description>
@@ -177,10 +177,10 @@ public class BrepRegionFaceSideProperties Brep Brep  (summary) The brep this si
     
     <item>
       <title>BrepTrim</title>
-      <link>/hugo/posts/rhino/geometry/breptrim/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/breptrim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/breptrim/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/breptrim/</guid>
       <description>Namespace: Rhino.Geometry
 Brep trim information is stored in BrepTrim classes. Brep.Trims is an array of all the trims in the brep. A BrepTrim is derived from CurveProxy so the trim can supply easy to use evaluation tools via the Curve virtual member functions. Note well that the domains and orientations of the curve m_C2[trim.m_c2i] and the trim as a curve may not agree.
 public class BrepTrimProperties Brep Brep  (summary) Gets the Brep that owns this trim.</description>
@@ -188,10 +188,10 @@ public class BrepTrimProperties Brep Brep  (summary) Gets the Brep that owns th
     
     <item>
       <title>BrepVertex</title>
-      <link>/hugo/posts/rhino/geometry/brepvertex/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/brepvertex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/brepvertex/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/brepvertex/</guid>
       <description>Namespace: Rhino.Geometry
 Brep vertex information
 public class BrepVertexProperties Brep Brep  (summary) Gets the Brep that owns this vertex. (since) 5.4  int VertexIndex  (summary) Gets the index of this vertex in the Brep.Vertices collection. (since) 5.4  Methods int[] EdgeIndices()  (summary) Gets the indices of all edges associated with this vertex. (since) 5.12 (returns) int[] This is some return comment  </description>
@@ -199,10 +199,10 @@ public class BrepVertexProperties Brep Brep  (summary) Gets the Brep that owns 
     
     <item>
       <title>Centermark</title>
-      <link>/hugo/posts/rhino/geometry/centermark/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/centermark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/centermark/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/centermark/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a centermark
 public class CentermarkConstructors Centermark()  (summary) (since) 6.0  Methods static Centermark Create(DimensionStyle dimStyle,Plane plane,Point3d centerpoint,double radius)  (summary) Create a new centermark (since) 6.0 (returns) Centermark This is some return comment  </description>
@@ -210,10 +210,10 @@ public class CentermarkConstructors Centermark()  (summary) (since) 6.0  Method
     
     <item>
       <title>Circle</title>
-      <link>/hugo/posts/rhino/geometry/circle/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/circle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/circle/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/circle/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a circle in 3D. The values used are a radius and an orthonormal frame of the plane containing the circle, with origin at the center.The circle is parameterized by radians from 0 to 2 Pi given byt -&amp;gt; center + cos(t)radiusxaxis + sin(t)radiusyaxiswhere center, xaxis and yaxis define the orthonormal frame of the circle plane.
 Constructors Circle(Arc arc)  (summary) Initializes a circle from an arc. (since) 5.</description>
@@ -221,10 +221,10 @@ Constructors Circle(Arc arc)  (summary) Initializes a circle from an arc. (since
     
     <item>
       <title>ClippingPlaneSurface</title>
-      <link>/hugo/posts/rhino/geometry/clippingplanesurface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/clippingplanesurface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/clippingplanesurface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/clippingplanesurface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a planar surface that is used as clipping plane in viewports. A clipping plane object maintains a list of viewports that it clips against.
 public class ClippingPlaneSurfaceProperties Plane Plane  (summary) Gets or sets the clipping plane. (since) 5.0  Methods bool AddClipViewportId(Guid viewportId)  (summary) Adds a viewport id to the list of viewports that this clipping plane clips. (since) 6.1 (returns) bool This is some return comment  bool RemoveClipViewportId(Guid viewportId)  (summary) Removes a viewport id that this being clipped by this clipping plane.</description>
@@ -232,10 +232,10 @@ public class ClippingPlaneSurfaceProperties Plane Plane  (summary) Gets or sets
     
     <item>
       <title>ComponentIndex</title>
-      <link>/hugo/posts/rhino/geometry/componentindex/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/componentindex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/componentindex/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/componentindex/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an index of an element contained in another object.
 Constructors ComponentIndex(ComponentIndexType type,int index)  (summary) Construct component index with a specific type/index combination (since) 5.0  Properties static ComponentIndex Unset  (summary) The unset value of component index. (since) 5.0  ComponentIndexType ComponentIndexType  (summary) The interpretation of Index depends on the Type value. Type m_index interpretation (0 based indices) no_type used when context makes it clear what array is being index brep_vertex Brep.</description>
@@ -243,10 +243,10 @@ Constructors ComponentIndex(ComponentIndexType type,int index)  (summary) Constr
     
     <item>
       <title>ComponentStatus</title>
-      <link>/hugo/posts/rhino/geometry/componentstatus/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/componentstatus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/componentstatus/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/componentstatus/</guid>
       <description>Namespace: Rhino.Geometry
 Provides information about selection, highlighting, visibility, editability and integrity states of a component. This structure is immutable.
 static !=  (summary) Determines if two ComponentStatus objects differ. (since) 6.0  static +  (summary) Sets flags from both component states and returns a new ComponentStatus. (since) (unknown)  static ==  (summary) Determines if two ComponentStatus objects are equal. (since) 6.0  Properties static ComponentStatus AllSet  (summary) All flags are checked.</description>
@@ -254,10 +254,10 @@ static !=  (summary) Determines if two ComponentStatus objects differ. (since) 6
     
     <item>
       <title>Cone</title>
-      <link>/hugo/posts/rhino/geometry/cone/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/cone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/cone/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/cone/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the center plane, radius and height values in a right circular cone.
 Constructors Cone(Plane plane,double height,double radius)  (summary) Initializes a new cone with a specified base plane, height and radius. (since) 5.0  Properties static Cone Unset  (summary) Gets an invalid Cone. (since) 5.0  Point3d ApexPoint  (summary) Point at tip of the cone. (since) 5.0  Vector3d Axis  (summary) Unit vector axis of cone.</description>
@@ -265,10 +265,10 @@ Constructors Cone(Plane plane,double height,double radius)  (summary) Initialize
     
     <item>
       <title>ControlPoint</title>
-      <link>/hugo/posts/rhino/geometry/controlpoint/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/controlpoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/controlpoint/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/controlpoint/</guid>
       <description>Namespace: Rhino.Geometry
 Represents control point geometry with three-dimensional position and weight.
 Constructors ControlPoint(double x,double y,double z)  (summary) Constructs a new world 3-D, or Euclidean, control point. The 4-D representation is (x, y, z, 1.0). (since) 5.0  ControlPoint(double x,double y,double z,double weight)  (summary) Constructs a new homogeneous control point, where the 4-D representation is (x, y, z, w). The world 3-D, or Euclidean, representation is (x/w, y/w, z/w). (since) 5.</description>
@@ -276,10 +276,10 @@ Constructors ControlPoint(double x,double y,double z)  (summary) Constructs a ne
     
     <item>
       <title>Curve</title>
-      <link>/hugo/posts/rhino/geometry/curve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/curve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/curve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/curve/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a base class that is common to most RhinoCommon curve types. A curve represents an entity that can be all visited by providing a single parameter, usually called t.
 public class CurveProperties int Degree  (summary) Gets the maximum algebraic degree of any span or a good estimate if curve spans are not algebraic. (since) 5.0  int Dimension  (summary) Gets the dimension of the object.</description>
@@ -287,10 +287,10 @@ public class CurveProperties int Degree  (summary) Gets the maximum algebraic d
     
     <item>
       <title>CurveBooleanRegions</title>
-      <link>/hugo/posts/rhino/geometry/curvebooleanregions/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/curvebooleanregions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/curvebooleanregions/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/curvebooleanregions/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the results of a Curve.CreateBooleanRegions calculation.
 public class CurveBooleanRegionsProperties int PlanarCurveCount  (summary) Returns number of planar curves that were calculated by Curve.CreateBooleanRegions. (since) 7.0  int PointCount  (summary) If this object were created using the Curve.CreateBooleanRegions override that accepts a collection of points as input, then this value will be equal to the length of the points collection. (since) 7.0  int RegionCount  (summary) Returns the number of curve regions.</description>
@@ -298,10 +298,10 @@ public class CurveBooleanRegionsProperties int PlanarCurveCount  (summary) Retu
     
     <item>
       <title>CurveProxy</title>
-      <link>/hugo/posts/rhino/geometry/curveproxy/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/curveproxy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/curveproxy/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/curveproxy/</guid>
       <description>Namespace: Rhino.Geometry
 Provides strongly-typed access to Brep edges.
 public class CurveProxyProperties bool ProxyCurveIsReversed  (summary) True if &amp;ldquo;this&amp;rdquo; is a curve is reversed from the &amp;ldquo;real&amp;rdquo; curve geometry (since) 5.10  </description>
@@ -309,10 +309,10 @@ public class CurveProxyProperties bool ProxyCurveIsReversed  (summary) True if 
     
     <item>
       <title>Cylinder</title>
-      <link>/hugo/posts/rhino/geometry/cylinder/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/cylinder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/cylinder/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/cylinder/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the values of a plane, a radius and two heights -on top and beneath- that define a right circular cylinder.
 Constructors Cylinder(Circle baseCircle)  (summary) Constructs a new cylinder with infinite height. (since) 5.0  Cylinder(Circle baseCircle,double height)  (summary) Constructs a new cylinder with a finite height. (since) 5.0  Properties static Cylinder Unset  (summary) Gets an invalid Cylinder. (since) 5.0  Vector3d Axis  (summary) Gets the axis direction of the cylinder.</description>
@@ -320,10 +320,10 @@ Constructors Cylinder(Circle baseCircle)  (summary) Constructs a new cylinder wi
     
     <item>
       <title>DetailView</title>
-      <link>/hugo/posts/rhino/geometry/detailview/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/detailview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/detailview/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/detailview/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a view of the model placed on a page layout.
 public class DetailViewProperties bool IsParallelProjection  (summary) Gets or sets whether the view is parallel. (since) 5.0  bool IsPerspectiveProjection  (summary) Gets or sets whether the view is perspective. (since) 5.0  bool IsProjectionLocked  (summary) Gets or sets whether the view projection is locked. (since) 5.0  double PageToModelRatio  (summary) Gets the page units/model units quotient.</description>
@@ -331,10 +331,10 @@ public class DetailViewProperties bool IsParallelProjection  (summary) Gets or 
     
     <item>
       <title>DevelopableSrf</title>
-      <link>/hugo/posts/rhino/geometry/developablesrf/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/developablesrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/developablesrf/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/developablesrf/</guid>
       <description>Namespace: Rhino.Geometry
 Helpers for developable surface functions
 public class DevelopableSrfMethods static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out)  (summary) Finds minimum twist ruling between 2 curves at local domains (since) 6.0 (returns) int This is some return comment  static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out,double cos_twist_out)  (summary) Find a ruling from rail0(t0_out) to rail1(t1_out) that has the least twist across the ruling with t0_out in domain0 and t1_out in domain1.</description>
@@ -342,10 +342,10 @@ public class DevelopableSrfMethods static int GetLocalDevopableRuling(NurbsCurv
     
     <item>
       <title>Dimension</title>
-      <link>/hugo/posts/rhino/geometry/dimension/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/dimension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/dimension/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/dimension/</guid>
       <description>Namespace: Rhino.Geometry
 Base class for dimensions
 public class DimensionProperties bool AlternateBelowLine  (summary) (since) 6.0  double AltLengthFactor  (summary) (since) 6.0  int AltLengthResolution  (summary) (since) 6.0  double AltLengthRoundoff  (summary) (since) 6.0  string AltPrefix  (summary) (since) 6.0  string AltSuffix  (summary) (since) 6.0  int AltToleranceResolution  (summary) (since) 6.0  bool AltUnitsDisplay  (summary) (since) 6.0  DimensionStyle.ZeroSuppression AltZeroSuppression  (summary) (since) 6.</description>
@@ -353,10 +353,10 @@ public class DimensionProperties bool AlternateBelowLine  (summary) (since) 6.0
     
     <item>
       <title>Ellipse</title>
-      <link>/hugo/posts/rhino/geometry/ellipse/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/ellipse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/ellipse/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/ellipse/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the values of a plane and the two semiaxes radii in an ellipse.
 Constructors Ellipse(Plane plane,double radius1,double radius2)  (summary) Initializes a new ellipse from base plane and both principal radii. (since) 5.0  Ellipse(Point3d center,Point3d second,Point3d third)  (summary) Initializes a new ellipse from a center point and the two semiaxes intersections. (since) 5.0  Properties bool IsValid  (summary) Returns an indication of the validity of this ellipse.</description>
@@ -364,10 +364,10 @@ Constructors Ellipse(Plane plane,double radius1,double radius2)  (summary) Initi
     
     <item>
       <title>Extrusion</title>
-      <link>/hugo/posts/rhino/geometry/extrusion/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/extrusion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/extrusion/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/extrusion/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an extrusion, or objects such as beams or linearly extruded elements, that can be represented by profile curves and two miter planes at the extremes.
 public class ExtrusionConstructors Extrusion()  (summary) Initializes a new instance of the class. (since) 5.0  Properties int CapCount  (summary) Gets the amount of capping surfaces. (since) 5.0  bool IsCappedAtBottom  (summary) Gets a value indicating whether the surface that fills the bottom profile is existing.</description>
@@ -375,10 +375,10 @@ public class ExtrusionConstructors Extrusion()  (summary) Initializes a new ins
     
     <item>
       <title>GeometryBase</title>
-      <link>/hugo/posts/rhino/geometry/geometrybase/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/geometrybase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/geometrybase/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/geometrybase/</guid>
       <description>Namespace: Rhino.Geometry
 Provides a common base for most geometric classes. This class is abstract.
 public class GeometryBaseProperties bool HasBrepForm  (summary) Returns True if the Brep.TryConvertBrep function will be successful for this object (since) 5.6  bool IsDeformable  (summary) True if object can be accurately modified with &amp;ldquo;squishy&amp;rdquo; transformations like projections, shears, and non-uniform scaling. (since) 5.0  bool IsDocumentControlled  (summary) If True this object may not be modified.</description>
@@ -386,10 +386,10 @@ public class GeometryBaseProperties bool HasBrepForm  (summary) Returns True if
     
     <item>
       <title>Hatch</title>
-      <link>/hugo/posts/rhino/geometry/hatch/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hatch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hatch/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hatch/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a hatch in planar boundary loop or loops. This is a 2d entity with a plane defining a local coordinate system. The loops, patterns, angles, etc are all in this local coordinate system. The Hatch object manages the plane and loop array Fill definitions are in the HatchPattern or class derived from HatchPattern Hatch has an index to get the pattern definition from the pattern table.
 public class HatchProperties Point3d BasePoint  (summary) Gets or sets the hatchpattern basepoint (since) 6.</description>
@@ -397,10 +397,10 @@ public class HatchProperties Point3d BasePoint  (summary) Gets or sets the hatc
     
     <item>
       <title>HermiteSurface</title>
-      <link>/hugo/posts/rhino/geometry/hermitesurface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hermitesurface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hermitesurface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hermitesurface/</guid>
       <description>Namespace: Rhino.Geometry
 Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.
 public class HermiteSurfaceConstructors HermiteSurface()  (summary) Initializes a new instance. (since) 7.0  HermiteSurface(int uCount,int vCount)  (summary) Initializes a new instance. (since) 7.0  Properties bool IsValid  (summary) Returns True if the all of values in all of the internal data structues contain valid values, False otherwise. (since) 7.0  int UCount  (summary) Gets the number of parameters in the &amp;ldquo;u&amp;rdquo; direction.</description>
@@ -408,10 +408,10 @@ public class HermiteSurfaceConstructors HermiteSurface()  (summary) Initializes
     
     <item>
       <title>HiddenLineDrawing</title>
-      <link>/hugo/posts/rhino/geometry/hiddenlinedrawing/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hiddenlinedrawing/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawing/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a hidden line drawing object. A hidden line drawing consists of curves generated from source objects. The curves correspond to edges, and silhouettes of source objects and intersections with cutting planes.
 public class HiddenLineDrawingProperties IEnumerablePoints  (summary) Point objects calculated by the hidden line drawing. (since) 6.8  IEnumerableSegments  (summary) Subcurve objects calculated by the hidden line drawing. (since) 6.0  ViewportInfo Viewport  (summary) Returns the ViewportInfo used by the hidden line drawing.</description>
@@ -419,10 +419,10 @@ public class HiddenLineDrawingProperties IEnumerablePoints  (summary) Point obj
     
     <item>
       <title>HiddenLineDrawingObject</title>
-      <link>/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an object added to a HiddenLineDrawing
 public class HiddenLineDrawingObjectProperties GeometryBase Geometry  (summary) Returns the geometry in world coordinates if UseXform is false. Otherwise, the geometry in object space coordinates is returned. (since) 6.0  object Tag  (summary) Returns the extra data used to cross-reference the object specified in HiddenLineDrawing.AddObject. (since) 6.0  Transform Transform  (summary) Returns the transformation passed into the Add&amp;hellip; function when setting up the hidden line drawing parameters.</description>
@@ -430,10 +430,10 @@ public class HiddenLineDrawingObjectProperties GeometryBase Geometry  (summary)
     
     <item>
       <title>HiddenLineDrawingObjectCurve</title>
-      <link>/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</guid>
       <description>Namespace: Rhino.Geometry
 Curves generated from source objects which correspond to edges, and silhouettes of source objects and intersections with cutting planes. A HiddenLineDrawingObjectCurve is partitioned into hidden and visible segments called HiddenLineDrawingSegment
 public class HiddenLineDrawingObjectCurveProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.0  int Index  (summary) Index of this object in HiddenLineDrawing.FullCurves. (since) 6.0  bool IsProjecting  (summary) Returns True if all the non clipped portions of this curve are projecting.</description>
@@ -441,10 +441,10 @@ public class HiddenLineDrawingObjectCurveProperties int ClippingPlaneIndex  (su
     
     <item>
       <title>HiddenLineDrawingParameters</title>
-      <link>/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</guid>
       <description>Namespace: Rhino.Geometry
 Input used for computing a hidden line drawing
 public class HiddenLineDrawingParametersConstructors HiddenLineDrawingParameters()  (summary) default constructor (since) 6.0  Properties double AbsoluteTolerance  (summary) Absolute tolerance is used to decide if curves overlap or intersect. A suggested value is to use RhinoDoc.AbsoluteTolerance (since) 6.0  bool Flatten  (summary) Flatten the computed geometry (since) 6.0  bool IncludeHiddenCurves  (summary) Include hidden curves in hidden line drawing (default is true) (since) 6.</description>
@@ -452,10 +452,10 @@ public class HiddenLineDrawingParametersConstructors HiddenLineDrawingParameter
     
     <item>
       <title>HiddenLineDrawingPoint</title>
-      <link>/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</guid>
       <description>Namespace: Rhino.Geometry
 Points generated from source objects which coorespond to point and point cloud source objects.
 public class HiddenLineDrawingPointProperties int ClippingPlaneIndex  (summary) Index into HiddenLineDrawing.ClippingPlanes when SilhouetteType == SilhouetteType.SectionCut. (since) 6.8  int Index  (summary) Index of this object in HiddenLineDrawing.Points. (since) 6.8  Point3d Location  (summary) Returns the location of this object in HiddenLineDrawing coordinates. (since) 6.8  Visibility PointVisibility  (summary) Returns the point&amp;rsquo;s visibility (since) 6.</description>
@@ -463,10 +463,10 @@ public class HiddenLineDrawingPointProperties int ClippingPlaneIndex  (summary)
     
     <item>
       <title>HiddenLineDrawingSegment</title>
-      <link>/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</guid>
       <description>Namespace: Rhino.Geometry
 The results of HiddenLineDrawing calculation are a collection of segments. A segment is a subcurve of a HiddenLineDrawingObjectCurve.
 public class HiddenLineDrawingSegmentProperties Curve CurveGeometry  (summary) The actual curve geometry (since) 6.0  SideFill[] CurveSideFills  (summary) The SideFill fields are only valid for visible curves. With respect to the HiddenLineDrawing, the region to the left (or right respecively) of this curve is described by CurveSideFills[0] or CurveSideFills[1], respectively.</description>
@@ -474,10 +474,10 @@ public class HiddenLineDrawingSegmentProperties Curve CurveGeometry  (summary) 
     
     <item>
       <title>InstanceDefinitionGeometry</title>
-      <link>/hugo/posts/rhino/geometry/instancedefinitiongeometry/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/instancedefinitiongeometry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/instancedefinitiongeometry/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/instancedefinitiongeometry/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a block definition in a File3dm. This is the same as Rhino.DocObjects.InstanceDefinition, but not associated with a RhinoDoc.
 public class InstanceDefinitionGeometryConstructors InstanceDefinitionGeometry()  (summary) Initializes a new block definition. (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) Gets or sets the description of the definition. (since) 5.0  Methods Guid[] GetObjectIds()  (summary) list of object ids in the instance geometry table (since) 5.</description>
@@ -485,10 +485,10 @@ public class InstanceDefinitionGeometryConstructors InstanceDefinitionGeometry(
     
     <item>
       <title>InstanceReferenceGeometry</title>
-      <link>/hugo/posts/rhino/geometry/instancereferencegeometry/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/instancereferencegeometry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/instancereferencegeometry/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/instancereferencegeometry/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a reference to the geometry in a block definition.
 public class InstanceReferenceGeometryConstructors InstanceReferenceGeometry(Guid instanceDefinitionId,Transform transform)  (summary) Constructor used when creating nested instance references. (since) 5.1  Properties Guid ParentIdefId  (summary) The unique id for the parent instance definition of this instance reference. (since) 5.6  Transform Xform  (summary) Transformation for this reference. (since) 5.6  </description>
@@ -496,10 +496,10 @@ public class InstanceReferenceGeometryConstructors InstanceReferenceGeometry(Gu
     
     <item>
       <title>Interpolator</title>
-      <link>/hugo/posts/rhino/geometry/interpolator/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/interpolator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/interpolator/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/interpolator/</guid>
       <description>Namespace: Rhino.Geometry
 Exposes a set of standard numeric interpolation algorithms.
 public class InterpolatorConstructors Interpolator()  (summary) Constructs a new, empty Interpolator. (since) 5.0  Interpolator(IEnumerablecollection)  (summary) Constructs an Interpolator from a collection of numbers. (since) 5.0  Interpolator(int initialCapacity)  (summary) Constructs an empty Interpolator with a certain capacity. (since) 5.0  Interpolator(int amount,double defaultValue)  (summary) Constructs a new Interpolator with a specified amount of numbers. (since) 5.</description>
@@ -507,10 +507,10 @@ public class InterpolatorConstructors Interpolator()  (summary) Constructs a ne
     
     <item>
       <title>Interval</title>
-      <link>/hugo/posts/rhino/geometry/interval/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/interval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/interval/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/interval/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an interval in one-dimensional space, that is defined as two extrema or bounds.
 static -  (summary) Shifts an interval by a specific amount (subtraction). (since) 5.0  static -  (summary) Shifts an interval by a specific amount (subtraction). (since) 5.0  static !=  (summary) Determines whether the two Intervals have different values. (since) 5.0  static +  (summary) Shifts a by a specific amount (addition).</description>
@@ -518,10 +518,10 @@ static -  (summary) Shifts an interval by a specific amount (subtraction). (sinc
     
     <item>
       <title>InvalidDimensionStyleIdException</title>
-      <link>/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</guid>
       <description>Namespace: Rhino.Geometry
 General exception that can be thrown by annotations
 public class InvalidDimensionStyleIdExceptionConstructors InvalidDimensionStyleIdException(string msg)  (summary) (since) 6.0  </description>
@@ -529,10 +529,10 @@ public class InvalidDimensionStyleIdExceptionConstructors InvalidDimensionStyle
     
     <item>
       <title>Leader</title>
-      <link>/hugo/posts/rhino/geometry/leader/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/leader/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/leader/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/leader/</guid>
       <description>Namespace: Rhino.Geometry
 Leader geometry class
 public class LeaderConstructors Leader()  (summary) Constructor (since) 6.0  Properties NurbsCurve Curve  (summary) Gets the curve used by this leader (since) 6.0  Guid LeaderArrowBlockId  (summary) Id of the block used as the arrow for the leader when the arrow type is &amp;lsquo;User arrow&amp;rsquo; (since) 6.0  double LeaderArrowSize  (summary) The size of the leader arrow (since) 6.0  DimensionStyle.ArrowType LeaderArrowType  (summary) The arrowhead type for the leader (since) 6.</description>
@@ -540,10 +540,10 @@ public class LeaderConstructors Leader()  (summary) Constructor (since) 6.0  Pr
     
     <item>
       <title>Light</title>
-      <link>/hugo/posts/rhino/geometry/light/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/light/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/light/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/light/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a light that shines in the modeling space.
 public class LightConstructors Light()  (summary) Initializes a new light. (since) 5.0  Properties System.Drawing.Color Ambient  (summary) Gets or sets the ambient color. (since) 5.0  Attenuation AttenuationType  (summary) Get the type of attenuation for this light. (since) 7.0  Vector3d AttenuationVector  (summary) Gets or Sets the attenuation vector. (since) 5.7  DocObjects.CoordinateSystem CoordinateSystem  (summary) Gets a value, determined by LightStyle, that explains whether the camera directions are relative to World or Camera spaces.</description>
@@ -551,10 +551,10 @@ public class LightConstructors Light()  (summary) Initializes a new light. (sin
     
     <item>
       <title>Line</title>
-      <link>/hugo/posts/rhino/geometry/line/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/line/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/line/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/line/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the value of start and end points in a single line segment.
 static !=  (summary) Determines whether two lines have different values. (since) 5.0  static ==  (summary) Determines whether two lines have the same value. (since) 5.0  Constructors Line(double x0,double y0,double z0,double x1,double y1,double z1)  (summary) Constructs a new line segment between two points. (since) 5.0  Line(Point3d from,Point3d to)  (summary) Constructs a new line segment between two points.</description>
@@ -562,10 +562,10 @@ static !=  (summary) Determines whether two lines have different values. (since)
     
     <item>
       <title>LinearDimension</title>
-      <link>/hugo/posts/rhino/geometry/lineardimension/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/lineardimension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/lineardimension/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/lineardimension/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a linear dimension
 public class LinearDimensionConstructors LinearDimension()  (summary) (since) 5.0  LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)  (summary) (since) 5.0  Properties bool Aligned  (summary) Gets or sets a value indicating whether this annotation is aligned. (since) 5.0  AnnotationType AnnotationType  (summary) (since) 6.0  Point2d Arrowhead1End  (summary) Gets the arrow head end of the first extension line. (since) 5.0  Point2d Arrowhead2End  (summary) Gets the arrow head end of the second extension line.</description>
@@ -573,10 +573,10 @@ public class LinearDimensionConstructors LinearDimension()  (summary) (since) 5
     
     <item>
       <title>LineCurve</title>
-      <link>/hugo/posts/rhino/geometry/linecurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/linecurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/linecurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/linecurve/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a linear curve.
 public class LineCurveConstructors LineCurve()  (summary) Initializes a new instance of the class. (since) 5.0  LineCurve(Line line)  (summary) Initializes a new instance of the class, by retrieving its value from a line. (since) 5.0  LineCurve(Line line,double t0,double t1)  (summary) Initializes a new instance of the class, by retrieving its value from a line and setting the domain. (since) 5.0  LineCurve(LineCurve other)  (summary) Initializes a new instance of the class, by copying values from another linear curve.</description>
@@ -584,10 +584,10 @@ public class LineCurveConstructors LineCurve()  (summary) Initializes a new ins
     
     <item>
       <title>Matrix</title>
-      <link>/hugo/posts/rhino/geometry/matrix/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/matrix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/matrix/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/matrix/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an arbitrarily sized matrix of double-precision floating point numbers. If you are working with a 4x4 matrix, then you may want to use the class instead.
 public class Matrixstatic *  (summary) Multiplies two matrices and returns a new product matrix. (since) 5.0  static +  (summary) Adds two matrices and returns a new sum matrix. (since) (unknown)  Constructors Matrix(int rowCount,int columnCount)  (summary) Initializes a new instance of the matrix.</description>
@@ -595,10 +595,10 @@ public class Matrixstatic *  (summary) Multiplies two matrices and returns a ne
     
     <item>
       <title>Mesh</title>
-      <link>/hugo/posts/rhino/geometry/mesh/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/mesh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/mesh/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/mesh/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a geometry type that is defined by vertices and faces. This is often called a face-vertex mesh.
 public class MeshConstructors Mesh()  (summary) Initializes a new empty mesh. (since) 5.0  Properties Collections.MeshVertexStatusList ComponentStates  (summary) Gets access to the vertex hidden/visibility collection in this mesh. This is a runtime property and it is not saved in the 3dm file. (since) 6.0  int DisjointMeshCount  (summary) Gets the number of disjoint (topologically unconnected) pieces in this mesh.</description>
@@ -606,10 +606,10 @@ public class MeshConstructors Mesh()  (summary) Initializes a new empty mesh. (
     
     <item>
       <title>MeshCheckParameters</title>
-      <link>/hugo/posts/rhino/geometry/meshcheckparameters/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshcheckparameters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshcheckparameters/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshcheckparameters/</guid>
       <description>Namespace: Rhino.Geometry
 Output of a mesh checking operations.
 Properties bool CheckForBadNormals  (summary) If true, then then look for vertex normals that are not unit vectors, are zero length or vary greatly from the general direction of the face normals. (since) 7.0  bool CheckForDegenerateFaces  (summary) If true, then look for triangles and quads that have zero area and quads where one sub triangle has zero area. (since) 7.0  bool CheckForDisjointMeshes  (summary) If true, then look for faces in the mesh that are totally isolated from other faces in the mesh.</description>
@@ -617,10 +617,10 @@ Properties bool CheckForBadNormals  (summary) If true, then then look for vertex
     
     <item>
       <title>MeshDisplacementInfo</title>
-      <link>/hugo/posts/rhino/geometry/meshdisplacementinfo/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshdisplacementinfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshdisplacementinfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshdisplacementinfo/</guid>
       <description>Namespace: Rhino.Geometry
 Contains mesh displacement information.
 public class MeshDisplacementInfoConstructors MeshDisplacementInfo(RenderTexture texture,TextureMapping mapping)  (summary) Constructs a displacement information instance with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties double Black  (summary) Value considered lowest point in the displacement. (since) 6.0  double BlackMove  (summary) The amount of displacement for the black color in the texture.</description>
@@ -628,10 +628,10 @@ public class MeshDisplacementInfoConstructors MeshDisplacementInfo(RenderTextur
     
     <item>
       <title>MeshExtruder</title>
-      <link>/hugo/posts/rhino/geometry/meshextruder/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshextruder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshextruder/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshextruder/</guid>
       <description>Namespace: Rhino.Geometry
 Extrudes a mesh and provides preview
 public class MeshExtruderConstructors MeshExtruder(Mesh inputMesh,IEnumerablecomponentIndices)  (summary) Construct object to extrude given mesh faces, edges and ngons. (since) 6.3  Properties bool EdgeBasedUVN  (summary) Edge based UVN defines UVN directions according to boundary edge directions (since) 6.4  MeshExtruderFaceDirectionMode FaceDirectionMode  (summary) Face direction mode determines how faces are oriented (since) 6.3  bool KeepOriginalFaces  (summary) Whether or not to keep original faces.</description>
@@ -639,10 +639,10 @@ public class MeshExtruderConstructors MeshExtruder(Mesh inputMesh,IEnumerableco
     
     <item>
       <title>MeshFace</title>
-      <link>/hugo/posts/rhino/geometry/meshface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the values of the four indices of a mesh face quad. If the third and fourth values are the same, this face represents a triangle.
 static !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Constructors MeshFace(int a,int b,int c)  (summary) Constructs a new triangular Mesh face. (since) 5.</description>
@@ -650,10 +650,10 @@ static !=  (summary) Determines whether two structures have different values. (s
     
     <item>
       <title>MeshingParameters</title>
-      <link>/hugo/posts/rhino/geometry/meshingparameters/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshingparameters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshingparameters/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshingparameters/</guid>
       <description>Namespace: Rhino.Geometry
 Represents settings used for creating a mesh representation of a brep or surface.
 public class MeshingParametersConstructors MeshingParameters()  (summary) Initializes a new instance with default values. Initial values are same as . (since) 5.0  MeshingParameters(double density)  (summary) Initializes a new instance with simple values, similar to that of Rhino&amp;rsquo;s meshing slider interface. (since) 6.0  MeshingParameters(double density,double minimumEdgeLength)  (summary) Initializes a new instance with simple values, similar to that of Rhino&amp;rsquo;s meshing slider interface.</description>
@@ -661,10 +661,10 @@ public class MeshingParametersConstructors MeshingParameters()  (summary) Initi
     
     <item>
       <title>MeshNgon</title>
-      <link>/hugo/posts/rhino/geometry/meshngon/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshngon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshngon/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshngon/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a mesh ngon. When retrieved from the Ngon property of a mesh, this contains faces that have edge valence strictly higher than 4.When retrieving Ngons from , this might contain also triangles and quads.
 public class MeshNgonstatic !=  (summary) Determines whether two structures have different values. (since) 6.0  static ==  (summary) Determines whether two structures have equal values. (since) 6.0  Properties static MeshNgon Empty  (summary) Gets an empty MeshNgon.</description>
@@ -672,10 +672,10 @@ public class MeshNgonstatic !=  (summary) Determines whether two structures hav
     
     <item>
       <title>MeshPart</title>
-      <link>/hugo/posts/rhino/geometry/meshpart/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshpart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshpart/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshpart/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a portion of a mesh for partitioning
 public class MeshPartProperties int EndFaceIndex  (summary) End of subinterval of parent mesh face array (since) 5.6  int EndVertexIndex  (summary) End of subinterval of parent mesh vertex array (since) 5.6  int StartFaceIndex  (summary) Start of subinterval of parent mesh face array (since) 5.6  int StartVertexIndex  (summary) Start of subinterval of parent mesh vertex array (since) 5.</description>
@@ -683,10 +683,10 @@ public class MeshPartProperties int EndFaceIndex  (summary) End of subinterval 
     
     <item>
       <title>MeshPoint</title>
-      <link>/hugo/posts/rhino/geometry/meshpoint/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshpoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshpoint/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshpoint/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a point that is found on a mesh.
 public class MeshPointProperties ComponentIndex ComponentIndex  (summary) Gets the component index of the intersecting element in the mesh. (since) 5.0  int EdgeIndex  (summary) When set, EdgeIndex is an index of an edge in the mesh&amp;rsquo;s edge list. (since) 5.0  double EdgeParameter  (summary) Edge parameter when found. (since) 5.0  int FaceIndex  (summary) FaceIndex is an index of a face in mesh.</description>
@@ -694,10 +694,10 @@ public class MeshPointProperties ComponentIndex ComponentIndex  (summary) Gets 
     
     <item>
       <title>MeshThicknessMeasurement</title>
-      <link>/hugo/posts/rhino/geometry/meshthicknessmeasurement/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshthicknessmeasurement/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshthicknessmeasurement/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshthicknessmeasurement/</guid>
       <description>Namespace: Rhino.Geometry
 Thickness measurement used in the mesh thickness solver.
 Constructors MeshThicknessMeasurement(int meshIndex,int vertexIndex,double thickness,Point3d point,Point3d oppositePoint)  (summary) Create a new thickness measurement. (since) 6.0  Properties int MeshIndex  (summary) Gets the index of the mesh associated with this thickness measurement. (since) 6.0  Point3d OppositePoint  (summary) Gets the point opposite to the measurement point. (since) 6.0  Point3d Point  (summary) Gets the location of the thickness measurement.</description>
@@ -705,10 +705,10 @@ Constructors MeshThicknessMeasurement(int meshIndex,int vertexIndex,double thick
     
     <item>
       <title>MeshUnsafeLock</title>
-      <link>/hugo/posts/rhino/geometry/meshunsafelock/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/meshunsafelock/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/meshunsafelock/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/meshunsafelock/</guid>
       <description>Namespace: Rhino.Geometry
 Permits access to the underlying mesh raw data structures in an unsafe way.
 public class MeshUnsafeLockMethods MeshFace* FacesArray(int length)  (summary) Retrieves a pointer to the raw faces array, which uses 4 integers for each face. . (since) 6.20 (returns) MeshFace* This is some return comment  Vector3f* NormalVector3fArray(int length)  (summary) Retrieves a pointer to the raw mesh vertex normal array, which uses vectors defined with single precision floating point numbers, or throws an exception if none is available.</description>
@@ -716,10 +716,10 @@ public class MeshUnsafeLockMethods MeshFace* FacesArray(int length)  (summary) 
     
     <item>
       <title>MorphControl</title>
-      <link>/hugo/posts/rhino/geometry/morphcontrol/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/morphcontrol/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/morphcontrol/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/morphcontrol/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a geometry that is able to control the morphing behaviour of some other geometry.
 public class MorphControlConstructors MorphControl(NurbsCurve originCurve,NurbsCurve targetCurve)  (summary) Constructs a MorphControl that allows for morphing between two curves. (since) 5.0  Properties NurbsCurve Curve  (summary) Returns the morph control&amp;rsquo;s curve. While this should never be null, the calling function should check. (since) 6.0  bool PreserveStructure  (summary) True if the morph should be done in a way that preserves the structure of the geometry.</description>
@@ -727,10 +727,10 @@ public class MorphControlConstructors MorphControl(NurbsCurve originCurve,Nurbs
     
     <item>
       <title>NurbsCurve</title>
-      <link>/hugo/posts/rhino/geometry/nurbscurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/nurbscurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/nurbscurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/nurbscurve/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a Non Uniform Rational B-Splines (NURBS) curve.
 public class NurbsCurveConstructors NurbsCurve(int dimension,bool rational,int order,int pointCount)  (summary) Constructs a new NURBS curve with knot and CV memory allocated. (since) 5.0  NurbsCurve(int degree,int pointCount)  (summary) Constructs a new NURBS curve with a specific degree and control point count. (since) 5.0  NurbsCurve(NurbsCurve other)  (summary) Initializes a NURBS curve by copying its values from another NURBS curve.</description>
@@ -738,10 +738,10 @@ public class NurbsCurveConstructors NurbsCurve(int dimension,bool rational,int 
     
     <item>
       <title>NurbsSurface</title>
-      <link>/hugo/posts/rhino/geometry/nurbssurface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/nurbssurface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/nurbssurface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/nurbssurface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a Non Uniform Rational B-Splines (NURBS) surface.
 public class NurbsSurfaceConstructors NurbsSurface(NurbsSurface other)  (summary) Initializes a new NURBS surface by copying the values from another surface. (since) 5.0  Properties bool IsRational  (summary) Gets a value indicating whether or not the nurbs surface is rational. (since) 5.0  Collections.NurbsSurfaceKnotList KnotsU  (summary) The U direction knot vector. (since) 5.0  Collections.NurbsSurfaceKnotList KnotsV  (summary) The V direction knot vector.</description>
@@ -749,10 +749,10 @@ public class NurbsSurfaceConstructors NurbsSurface(NurbsSurface other)  (summar
     
     <item>
       <title>OrdinateDimension</title>
-      <link>/hugo/posts/rhino/geometry/ordinatedimension/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/ordinatedimension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/ordinatedimension/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/ordinatedimension/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an ordinate dimension
 public class OrdinateDimensionConstructors OrdinateDimension()  (summary) (since) 6.0  Properties Point2d DefPoint  (summary) (since) 6.0  double KinkOffset1  (summary) (since) 6.0  double KinkOffset2  (summary) (since) 6.0  Point2d KinkPoint1  (summary) (since) 6.0  Point2d KinkPoint2  (summary) (since) 6.0  Point2d LeaderPoint  (summary) (since) 6.0  Methods static OrdinateDimension Create(DimensionStyle dimStyle,Plane plane,MeasuredDirection direction,Point3d basepoint,Point3d defpoint,Point3d leaderpoint,double kinkoffset1,double kinkoffset2)  (summary) Initialize Dimension parameters (since) 6.</description>
@@ -760,10 +760,10 @@ public class OrdinateDimensionConstructors OrdinateDimension()  (summary) (sinc
     
     <item>
       <title>Particle</title>
-      <link>/hugo/posts/rhino/geometry/particle/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/particle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/particle/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/particle/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a simple particle. This base class only defines position and display properties (size, color, bitmap id). You will most likely create a class that derives from this particle class to perform some sort of physical simulation (movement over time or frames).
 public class ParticleConstructors Particle()  (summary) Initializes a new instance of the class. (since) 5.0  Properties System.Drawing.Color Color  (summary) (since) 5.0  int DisplayBitmapIndex  (summary) (since) 5.</description>
@@ -771,20 +771,20 @@ public class ParticleConstructors Particle()  (summary) Initializes a new insta
     
     <item>
       <title>ParticleSystem</title>
-      <link>/hugo/posts/rhino/geometry/particlesystem/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/particlesystem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/particlesystem/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/particlesystem/</guid>
       <description>Namespace: Rhino.Geometry
 public class ParticleSystemProperties BoundingBox BoundingBox  (summary) (since) 5.0  bool DisplaySizesInWorldUnits  (summary) (since) 5.0  bool DrawRequiresDepthSorting  (summary) (since) 5.0  Methods bool Add(Particle particle)  (summary) Adds a particle to this ParticleSystem. A Particle can only be in one system at a time. If the Particle already exists in a different system, this function will return false. You should remove the particle from the other system first before adding it.</description>
     </item>
     
     <item>
       <title>Plane</title>
-      <link>/hugo/posts/rhino/geometry/plane/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/plane/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/plane/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/plane/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the value of a center point and two axes in a plane in three dimensions.
 static !=  (summary) Determines if two planes are different. (since) 5.0  static ==  (summary) Determines if two planes are equal. (since) 5.0  Constructors Plane(double a,double b,double c,double d)  (summary) Constructs a plane from an equation Ax+By+Cz+D=0. (since) 5.0  Plane(Plane other)  (summary) Copy constructor. This is nothing special and performs the same as assigning to another variable.</description>
@@ -792,10 +792,10 @@ static !=  (summary) Determines if two planes are different. (since) 5.0  static
     
     <item>
       <title>PlaneSurface</title>
-      <link>/hugo/posts/rhino/geometry/planesurface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/planesurface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/planesurface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/planesurface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a plane surface, with plane and two intervals.
 public class PlaneSurfaceConstructors PlaneSurface(Plane plane,Interval xExtents,Interval yExtents)  (summary) Initializes a plane surface with x and y intervals. (since) 5.0  Methods static PlaneSurface CreateThroughBox(Line lineInPlane,Vector3d vectorInPlane,BoundingBox box)  (summary) Makes a plane that includes a line and a vector and goes through a bounding box. (since) 5.0 (returns) PlaneSurface This is some return comment  static PlaneSurface CreateThroughBox(Plane plane,BoundingBox box)  (summary) Extends a plane into a plane surface so that the latter goes through a bounding box.</description>
@@ -803,10 +803,10 @@ public class PlaneSurfaceConstructors PlaneSurface(Plane plane,Interval xExtent
     
     <item>
       <title>Point</title>
-      <link>/hugo/posts/rhino/geometry/point/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a geometric point. This is fundamentally a class that derives from and contains a single location.
 public class PointConstructors Point(Point3d location)  (summary) Initializes a new point instance with a location. (since) 5.0  Properties Point3d Location  (summary) Gets or sets the location (position) of this point. (since) 5.0  </description>
@@ -814,10 +814,10 @@ public class PointConstructors Point(Point3d location)  (summary) Initializes a
     
     <item>
       <title>Point2d</title>
-      <link>/hugo/posts/rhino/geometry/point2d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point2d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point2d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point2d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the two coordinates of a point in two-dimensional space, using -precision floating point numbers.
 static -  (summary) Subtracts point2 from point1. (since) 5.0  static -  (summary) Subtracts a vector from a point. (since) 5.0  static !=  (summary) Determines whether two have different values. (since) 5.0  static *  (summary) Multiplies a by a number. (since) 5.0  static *  (summary) Multiplies a by a number.</description>
@@ -825,10 +825,10 @@ static -  (summary) Subtracts point2 from point1. (since) 5.0  static -  (summar
     
     <item>
       <title>Point2f</title>
-      <link>/hugo/posts/rhino/geometry/point2f/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point2f/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point2f/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point2f/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the two coordinates of a point in two-dimensional space, using -precision floating point numbers.
 static -  (summary) Subtracts two s. (since) 6.0  static !=  (summary) Determines whether two have different values. (since) 5.0  static *  (summary) Multiplies a by a scalar. (since) 6.0  static /  (summary) Divides a by a scalar. (since) 6.0  static +  (summary) Sums two s.</description>
@@ -836,10 +836,10 @@ static -  (summary) Subtracts two s. (since) 6.0  static !=  (summary) Determine
     
     <item>
       <title>Point3d</title>
-      <link>/hugo/posts/rhino/geometry/point3d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point3d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point3d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the three coordinates of a point in three-dimensional space, using -precision floating point values.
 static -  (summary) Computes the additive inverse of all coordinates in the point, and returns the new point. (since) 5.0  static -  (summary) Subtracts a point from another point. (since) 5.0  static -  (summary) Subtracts a vector from a point. (since) 5.0  static !=  (summary) Determines whether two Point3d have different values.</description>
@@ -847,10 +847,10 @@ static -  (summary) Computes the additive inverse of all coordinates in the poin
     
     <item>
       <title>Point3dGrid</title>
-      <link>/hugo/posts/rhino/geometry/point3dgrid/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point3dgrid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point3dgrid/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point3dgrid/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a rectangular grid of 3D points.
 public class Point3dGridConstructors Point3dGrid()  (summary) Initializes a rectangular grid of points, with no points in it. (since) 5.0  Point3dGrid(int rows,int columns)  (summary) Initializes a rectangular grid of points with a given number of columns and rows. (since) 5.0  </description>
@@ -858,10 +858,10 @@ public class Point3dGridConstructors Point3dGrid()  (summary) Initializes a rec
     
     <item>
       <title>Point3f</title>
-      <link>/hugo/posts/rhino/geometry/point3f/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point3f/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point3f/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point3f/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the three coordinates of a point in three-dimensional space, using -precision floating point numbers.
 static -  (summary) Subtracts a point from another point. (since) 5.0  static !=  (summary) Determines whether two points have different values. (since) 5.0  static *  (summary) Multiplies a point by a factor. (since) 6.0  static *  (summary) Multiplies a point by a factor. (since) 6.0  static +  (summary) Adds a point to another point.</description>
@@ -869,10 +869,10 @@ static -  (summary) Subtracts a point from another point. (since) 5.0  static !=
     
     <item>
       <title>Point4d</title>
-      <link>/hugo/posts/rhino/geometry/point4d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/point4d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/point4d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/point4d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the four coordinates of a point in four-dimensional space. The W (fourth) dimension is often considered the weight of the point as seen in 3D space.
 static -  (summary) Subtracts the second point from the first point. (since) 5.0  static !=  (summary) Determines whether two Point4d have different values. (since) 5.0  static *  (summary) Multiplies a point by a number. (since) 5.0  static *  (summary) Multiplies two together, returning the dot (internal) product of the two.</description>
@@ -880,10 +880,10 @@ static -  (summary) Subtracts the second point from the first point. (since) 5.0
     
     <item>
       <title>PointCloud</title>
-      <link>/hugo/posts/rhino/geometry/pointcloud/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/pointcloud/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/pointcloud/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/pointcloud/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a collection of coordinates with optional normal vectors and colors.
 public class PointCloudConstructors PointCloud()  (summary) Initializes a new instance of the class that is empty. (since) 5.0  PointCloud(IEnumerablepoints)  (summary) Initializes a new instance of the class, copying the content from a set of points. (since) 5.0  PointCloud(PointCloud other)  (summary) Initializes a new instance of the class, copying (Merge) the content of another pointcloud.</description>
@@ -891,10 +891,10 @@ public class PointCloudConstructors PointCloud()  (summary) Initializes a new i
     
     <item>
       <title>PointCloudItem</title>
-      <link>/hugo/posts/rhino/geometry/pointclouditem/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/pointclouditem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/pointclouditem/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/pointclouditem/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a single item in a pointcloud. A PointCloud item always has a location, but it has an optional normal vector and color.
 public class PointCloudItemProperties Color Color  (summary) Gets or sets the color of this point cloud item. (since) 5.0  bool Hidden  (summary) Gets or sets the hidden flag of this point cloud item. (since) 5.0  int Index  (summary) Gets the index of this point cloud item.</description>
@@ -902,10 +902,10 @@ public class PointCloudItemProperties Color Color  (summary) Gets or sets the c
     
     <item>
       <title>PolyCurve</title>
-      <link>/hugo/posts/rhino/geometry/polycurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/polycurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/polycurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/polycurve/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a curve that is the result of joining several (possibly different) types of curves.
 public class PolyCurveConstructors PolyCurve()  (summary) Initializes a new, empty polycurve. (since) 5.0  Properties bool HasGap  (summary) This is a quick way to see if the curve has gaps between the sub curve segments. (since) 5.0  bool IsNested  (summary) Gets a value indicating whether or not a PolyCurve contains nested PolyCurves.</description>
@@ -913,10 +913,10 @@ public class PolyCurveConstructors PolyCurve()  (summary) Initializes a new, em
     
     <item>
       <title>Polyline</title>
-      <link>/hugo/posts/rhino/geometry/polyline/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/polyline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/polyline/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/polyline/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an ordered set of points connected by linear segments. Polylines are closed if start and end points coincide.
 public class PolylineConstructors Polyline()  (summary) Initializes a new empty polyline. (since) 5.0  Polyline(IEnumerablecollection)  (summary) Initializes a new polyline from a collection of points. (since) 5.0  Polyline(int initialCapacity)  (summary) Initializes a new empty polyline with an initial capacity. (since) 5.0  Properties bool IsClosed  (summary) Gets a value that indicates whether this polyline is closed.</description>
@@ -924,10 +924,10 @@ public class PolylineConstructors Polyline()  (summary) Initializes a new empty
     
     <item>
       <title>PolylineCurve</title>
-      <link>/hugo/posts/rhino/geometry/polylinecurve/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/polylinecurve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/polylinecurve/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/polylinecurve/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the geometry of a set of linked line segments. This is fundamentally a class that derives from and internally contains a .
 public class PolylineCurveConstructors PolylineCurve()  (summary) Initializes a new empty polyline curve. (since) 5.0  PolylineCurve(IEnumerablepoints)  (summary) Initializes a new polyline curve by copying its content from another set of points. (since) 5.0  PolylineCurve(PolylineCurve other)  (summary) Initializes a new polyline curve by copying its content from another polyline curve.</description>
@@ -935,10 +935,10 @@ public class PolylineCurveConstructors PolylineCurve()  (summary) Initializes a
     
     <item>
       <title>QuadRemeshParameters</title>
-      <link>/hugo/posts/rhino/geometry/quadremeshparameters/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/quadremeshparameters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/quadremeshparameters/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/quadremeshparameters/</guid>
       <description>Namespace: Rhino.Geometry
 Parameters for QuadRemesh method
 public class QuadRemeshParametersProperties bool AdaptiveQuadCount  (summary) Respect the original Target Quad Count value as much as possible. True returns more quads than TargetQuadCount depending on amount of high-curvature areas. (since) 7.0  double AdaptiveSize  (summary) Larger values results in for quad sizes that adjust to match input curvature. Smaller values results in more uniform quad sizes at the risk of less feature preservation.</description>
@@ -946,10 +946,10 @@ public class QuadRemeshParametersProperties bool AdaptiveQuadCount  (summary) R
     
     <item>
       <title>Quaternion</title>
-      <link>/hugo/posts/rhino/geometry/quaternion/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/quaternion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/quaternion/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/quaternion/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the four coefficient values in a quaternion. The first value a is the real part, while the rest multipies i, j and k, that are imaginary.quaternion = a + bi + cj + dk
 static -  (summary) Subtracts a quaternion from another one. This computes the difference of each quaternion coefficient with its correspondant and returns a new result quaternion. (since) 5.0  static !=  (summary) Determines whether two quaternions have different values.</description>
@@ -957,10 +957,10 @@ static -  (summary) Subtracts a quaternion from another one. This computes the d
     
     <item>
       <title>RadialDimension</title>
-      <link>/hugo/posts/rhino/geometry/radialdimension/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/radialdimension/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/radialdimension/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/radialdimension/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a dimension of a circular entity that can be measured with radius or diameter.
 public class RadialDimensionConstructors RadialDimension()  (summary) (since) 6.0  Properties AnnotationType AnnotationType  (summary) (since) 6.0  Point2d CenterPoint  (summary) (since) 6.0  Point2d DimlinePoint  (summary) (since) 6.0  bool IsDiameterDimension  (summary) Gets a value indicating whether the value refers to the diameter, rather than the radius. (since) 5.0  Point2d KneePoint  (summary) (since) 6.</description>
@@ -968,10 +968,10 @@ public class RadialDimensionConstructors RadialDimension()  (summary) (since) 6
     
     <item>
       <title>Ray3d</title>
-      <link>/hugo/posts/rhino/geometry/ray3d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/ray3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/ray3d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/ray3d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents an immutable ray in three dimensions, using position and direction.
 static !=  (summary) Determines whether two have different values. (since) 5.0  static ==  (summary) Determines whether two have equal values. (since) 5.0  Constructors Ray3d(Point3d position,Vector3d direction)  (summary) Initializes a new Ray3d instance. (since) 5.0  Properties Vector3d Direction  (summary) Gets the direction vector of this ray. (since) 5.0  Point3d Position  (summary) Gets the starting position of this ray.</description>
@@ -979,10 +979,10 @@ static !=  (summary) Determines whether two have different values. (since) 5.0  
     
     <item>
       <title>Rectangle3d</title>
-      <link>/hugo/posts/rhino/geometry/rectangle3d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/rectangle3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/rectangle3d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/rectangle3d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the values of a plane and two intervals that form an oriented rectangle in three dimensions.
 Constructors Rectangle3d(Plane plane,double width,double height)  (summary) Initializes a new rectangle from width and height. (since) 5.0  Rectangle3d(Plane plane,Interval width,Interval height)  (summary) Initializes a new rectangle from dimensions. (since) 5.0  Rectangle3d(Plane plane,Point3d cornerA,Point3d cornerB)  (summary) Initializes a new rectangle from a base plane and two corner points. (since) 5.</description>
@@ -990,10 +990,10 @@ Constructors Rectangle3d(Plane plane,double width,double height)  (summary) Init
     
     <item>
       <title>ReduceMeshParameters</title>
-      <link>/hugo/posts/rhino/geometry/reducemeshparameters/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/reducemeshparameters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/reducemeshparameters/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/reducemeshparameters/</guid>
       <description>Namespace: Rhino.Geometry
 Parameters for Reduce method
 public class ReduceMeshParametersConstructors ReduceMeshParameters()  (summary) Constructs a polygon reduction parameter object with default values. Users of this class should not rely on default values to stay constant across service releases. (since) 6.0  Properties int Accuracy  (summary) Integer from 1 to 10 telling how accurate reduction algorithm to use. Greater number gives more accurate results (since) 6.0  bool AllowDistortion  (summary) If True mesh appearance is not changed even if the target polygon count is not reached (since) 6.</description>
@@ -1001,10 +1001,10 @@ public class ReduceMeshParametersConstructors ReduceMeshParameters()  (summary)
     
     <item>
       <title>RevSurface</title>
-      <link>/hugo/posts/rhino/geometry/revsurface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/revsurface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/revsurface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/revsurface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a surface of revolution. Revolutions can be incomplete (they can form arcs).
 public class RevSurfaceProperties Interval Angle  (summary) Gets the start and end angles of revolution in radians. The interval angle must be increasing and satisfy RhinoMath.ZeroTolerance &amp;lt; Angle.Length&amp;lt;= 2.0 * System.Math.PI. (since) 6.0  Line Axis  (summary) Gets the axis of revolution. (since) 6.0  Curve Curve  (summary) Gets the revolute curve. (since) 6.</description>
@@ -1012,10 +1012,10 @@ public class RevSurfaceProperties Interval Angle  (summary) Gets the start and 
     
     <item>
       <title>RTree</title>
-      <link>/hugo/posts/rhino/geometry/rtree/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/rtree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/rtree/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/rtree/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a spatial search structure based on implementations of the R-tree algorithm by Toni Gutman.
 public class RTreeConstructors RTree()  (summary) Initializes a new, empty instance of the tree. (since) 5.0  Properties int Count  (summary) Gets the number of items in this tree. (since) 5.0  Methods static RTree CreateFromPointArray(IEnumerablepoints)  (summary) Constructs a new tree with an element for each pointcloud point. (since) 6.0 (returns) RTree This is some return comment  static RTree CreateMeshFaceTree(Mesh mesh)  (summary) Constructs a new tree with an element for each face in the mesh.</description>
@@ -1023,10 +1023,10 @@ public class RTreeConstructors RTree()  (summary) Initializes a new, empty inst
     
     <item>
       <title>RTreeEventArgs</title>
-      <link>/hugo/posts/rhino/geometry/rtreeeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/rtreeeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/rtreeeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/rtreeeventargs/</guid>
       <description>Namespace: Rhino.Geometry
 Represents event data that is passed when when an item that meets certain criteria is found and the passed RTree event is raised.
 public class RTreeEventArgsProperties bool Cancel  (summary) Gets or sets a value that determines if the search should be conducted farther. (since) 5.0  int Id  (summary) Gets the identifier of the found item. (since) 5.0  int IdB  (summary) If search is using two r-trees, IdB is element b in the search.</description>
@@ -1034,10 +1034,10 @@ public class RTreeEventArgsProperties bool Cancel  (summary) Gets or sets a val
     
     <item>
       <title>ShutLiningCurveInfo</title>
-      <link>/hugo/posts/rhino/geometry/shutliningcurveinfo/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/shutliningcurveinfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/shutliningcurveinfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/shutliningcurveinfo/</guid>
       <description>Namespace: Rhino.Geometry
 Contains shutlining curve information. This is used in .
 public class ShutLiningCurveInfoConstructors ShutLiningCurveInfo(Curve curve,double radius,int profile,bool pull,bool isBump,IEnumerablecurveIntervals,bool enabled)  (summary) Creates a new instance of the ShutLining curve information class. (since) 6.0  Properties Curve Curve  (summary) The profile curve. (since) 6.0  ReadOnlyCollectionCurveIntervals  (summary) The parts of the curve to use as profiles. (since) 6.0  bool Enabled  (summary) If true, this curve is active.</description>
@@ -1045,10 +1045,10 @@ public class ShutLiningCurveInfoConstructors ShutLiningCurveInfo(Curve curve,do
     
     <item>
       <title>Silhouette</title>
-      <link>/hugo/posts/rhino/geometry/silhouette/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/silhouette/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/silhouette/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/silhouette/</guid>
       <description>Namespace: Rhino.Geometry
 Information about silhouette curves that are generated from geometry (surfaces, brep faces, meshes)
 public class SilhouetteProperties Curve Curve  (summary) 3D curve representing the shape of the silhouette. (since) 6.0  ComponentIndex GeometryComponentIndex  (summary) Gets the component index corresponding with this silhouette curve. This field is only set when the entire silhouette curve is part of some geometry component. (since) 6.0  SilhouetteType SilhouetteType  (summary) Gets the type of this silhouette curve.</description>
@@ -1056,10 +1056,10 @@ public class SilhouetteProperties Curve Curve  (summary) 3D curve representing 
     
     <item>
       <title>SpaceMorph</title>
-      <link>/hugo/posts/rhino/geometry/spacemorph/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/spacemorph/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/spacemorph/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/spacemorph/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a spacial, Euclidean morph.
 public class SpaceMorphProperties bool PreserveStructure  (summary) True if the morph should be done in a way that preserves the structure of the geometry. In particular, for NURBS objects, True means that only the control points are moved. The PreserveStructure value does not affect the way meshes and points are morphed. The default is false. (since) 5.0  bool QuickPreview  (summary) True if the morph should be done as quickly as possible because the result is being used for some type of dynamic preview.</description>
@@ -1067,10 +1067,10 @@ public class SpaceMorphProperties bool PreserveStructure  (summary) True if the
     
     <item>
       <title>Sphere</title>
-      <link>/hugo/posts/rhino/geometry/sphere/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/sphere/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/sphere/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/sphere/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the plane and radius values of a sphere.
 Constructors Sphere(Plane equatorialPlane,double radius)  (summary) Initializes a new sphere given the plane of the equator circle and radius. (since) 5.0  Sphere(Point3d center,double radius)  (summary) Initializes a new sphere given center point and radius. (since) 5.0  Properties static Sphere Unset  (summary) Gets a sphere with invalid members. (since) 5.0  BoundingBox BoundingBox  (summary) Gets the world aligned boundingbox for this Sphere.</description>
@@ -1078,10 +1078,10 @@ Constructors Sphere(Plane equatorialPlane,double radius)  (summary) Initializes 
     
     <item>
       <title>SubD</title>
-      <link>/hugo/posts/rhino/geometry/subd/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/subd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/subd/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/subd/</guid>
       <description>Namespace: Rhino.Geometry
 Subdivision surface
 public class SubDConstructors SubD()  (summary) Create a new instance of SubD geometry (since) 7.0  Properties Collections.SubDEdgeList Edges  (summary) All edges in this SubD (since) 7.0  Collections.SubDFaceList Faces  (summary) All faces in this SubD (since) 7.0  bool IsSolid  (summary) Test subd to see if the active level is a solid.
@@ -1090,10 +1090,10 @@ A &amp;ldquo;solid&amp;rdquo; is a closed oriented manifold, or a closed oriente
     
     <item>
       <title>SubDComponent</title>
-      <link>/hugo/posts/rhino/geometry/subdcomponent/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/subdcomponent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/subdcomponent/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/subdcomponent/</guid>
       <description>Namespace: Rhino.Geometry
 A part of SubD geometry. Common base class for vertices, faces, and edges
 public class SubDComponentProperties uint Id  (summary) Unique id within the parent SubD for this item (since) 7.0  SubD ParentSubD  (summary) SubD that this component belonds to (since) 7.0  </description>
@@ -1101,10 +1101,10 @@ public class SubDComponentProperties uint Id  (summary) Unique id within the pa
     
     <item>
       <title>SubDCreationOptions</title>
-      <link>/hugo/posts/rhino/geometry/subdcreationoptions/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/subdcreationoptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/subdcreationoptions/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/subdcreationoptions/</guid>
       <description>Namespace: Rhino.Geometry
 Options used for creating a SubD
 public class SubDCreationOptionsConstructors SubDCreationOptions()  (summary) Create default options (since) 7.0  Properties static SubDCreationOptions ConvexCornerAtMeshCorner  (summary) Look for convex corners at sub-D vertices with 2 edges that have an included angle &amp;lt;= 90 degrees. (since) 7.0  static SubDCreationOptions InteriorCreaseAtMeshCrease  (summary) Create an interior sub-D crease along coincident input mesh edges where the vertex normal directions at one end differ by at least 30 degrees.</description>
@@ -1112,10 +1112,10 @@ public class SubDCreationOptionsConstructors SubDCreationOptions()  (summary) C
     
     <item>
       <title>SubDEdge</title>
-      <link>/hugo/posts/rhino/geometry/subdedge/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/subdedge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/subdedge/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/subdedge/</guid>
       <description>Namespace: Rhino.Geometry
 Single edge of a SubD
 public class SubDEdgeProperties Line ControlNetLine  (summary) Line representing the control net end points (since) 7.0  int FaceCount  (summary) Number of faces for this edge (since) 7.0  SubDEdgeTag Tag  (summary) identifies the type of subdivision edge (since) 7.0  SubDVertex VertexFrom  (summary) Start vertex for this edge (since) 7.0  SubDVertex VertexTo  (summary) End vertex for this edge (since) 7.</description>
@@ -1123,10 +1123,10 @@ public class SubDEdgeProperties Line ControlNetLine  (summary) Line representin
     
     <item>
       <title>SubDFace</title>
-      <link>/hugo/posts/rhino/geometry/subdface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/subdface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/subdface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/subdface/</guid>
       <description>Namespace: Rhino.Geometry
 Single face of a SubD
 public class SubDFaceProperties int EdgeCount  (summary) Number of edges for this face. Note that EdgeCount is always the same as VertexCount. Two properties are provided simply for clarity. (since) 7.0  Point3d LimitSurfaceCenterPoint  (summary) Get the limit surface point location at the center of the face (since) 7.0  int VertexCount  (summary) Number of vertices for this face. Note that EdgeCount is always the same as VertexCount.</description>
@@ -1134,10 +1134,10 @@ public class SubDFaceProperties int EdgeCount  (summary) Number of edges for th
     
     <item>
       <title>SubDVertex</title>
-      <link>/hugo/posts/rhino/geometry/subdvertex/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/subdvertex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/subdvertex/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/subdvertex/</guid>
       <description>Namespace: Rhino.Geometry
 Single vertex of a SubD
 public class SubDVertexProperties Point3d ControlNetPoint  (summary) Location of the &amp;ldquo;control net&amp;rdquo; point that this SubDVertex represents (since) 7.0  int EdgeCount  (summary) Number of edges for this vertex (since) 7.0  IEnumerableEdges  (summary) All edges that this vertex is part of (since) 7.0  int FaceCount  (summary) Number of faces for this vertex (since) 7.0  SubDVertex Next  (summary) Next vertex in linked list of vertices on this level (since) 7.</description>
@@ -1145,10 +1145,10 @@ public class SubDVertexProperties Point3d ControlNetPoint  (summary) Location o
     
     <item>
       <title>SumSurface</title>
-      <link>/hugo/posts/rhino/geometry/sumsurface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/sumsurface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/sumsurface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/sumsurface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a sum surface, or an extrusion of a curve along a curved path.
 public class SumSurfaceMethods static SumSurface Create(Curve curveA,Curve curveB)  (summary) Constructs a new sum surface by extruding a curve A along a path B. (since) 5.0 (returns) SumSurface This is some return comment  </description>
@@ -1156,10 +1156,10 @@ public class SumSurfaceMethods static SumSurface Create(Curve curveA,Curve curv
     
     <item>
       <title>Surface</title>
-      <link>/hugo/posts/rhino/geometry/surface/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/surface/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/surface/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/surface/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a base class that is common to most RhinoCommon surface types. A surface represents an entity that can be all visited by providing two independent parameters, usually called (u, v), or sometimes (s, t).
 public class SurfaceProperties bool IsSolid  (summary) Gets a values indicating whether a surface is solid. (since) 5.0  Methods static Surface CreateExtrusion(Curve profile,Vector3d direction)  (summary) Constructs a surface by extruding a curve along a vector.</description>
@@ -1167,10 +1167,10 @@ public class SurfaceProperties bool IsSolid  (summary) Gets a values indicating
     
     <item>
       <title>SurfaceCurvature</title>
-      <link>/hugo/posts/rhino/geometry/surfacecurvature/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/surfacecurvature/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/surfacecurvature/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/surfacecurvature/</guid>
       <description>Namespace: Rhino.Geometry
 Maintains computed information for surface curvature evaluation.
 public class SurfaceCurvatureProperties double Gaussian  (summary) Gets the Gaussian curvature value at UV. (since) 5.0  double Mean  (summary) Gets the Mean curvature value at UV. (since) 5.0  Vector3d Normal  (summary) Gets the surface normal at UV. (since) 5.0  Point3d Point  (summary) Gets the surface point at UV. (since) 5.0  Point2d UVPoint  (summary) Gets the UV location where the curvature was computed.</description>
@@ -1178,10 +1178,10 @@ public class SurfaceCurvatureProperties double Gaussian  (summary) Gets the Gau
     
     <item>
       <title>SweepOneRail</title>
-      <link>/hugo/posts/rhino/geometry/sweeponerail/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/sweeponerail/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/sweeponerail/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/sweeponerail/</guid>
       <description>Namespace: Rhino.Geometry
 Utility class for generating Breps by sweeping cross section curves over a single rail curve. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
 public class SweepOneRailConstructors SweepOneRail()  (summary) (since) 5.0  Properties double AngleToleranceRadians  (summary) (since) 5.0  bool ClosedSweep  (summary) If the input rail is closed, ClosedSweep determines if the swept breps will also be closed. (since) 5.0  bool GlobalShapeBlending  (summary) If true, the sweep is linearly blended from one end to the other, creating sweeps that taper from one cross-section curve to the other.</description>
@@ -1189,10 +1189,10 @@ public class SweepOneRailConstructors SweepOneRail()  (summary) (since) 5.0  Pr
     
     <item>
       <title>SweepTwoRail</title>
-      <link>/hugo/posts/rhino/geometry/sweeptworail/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/sweeptworail/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/sweeptworail/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/sweeptworail/</guid>
       <description>Namespace: Rhino.Geometry
 Utility class for generating Breps by sweeping cross section curves over two rail curves. Note, this class has been superceeded by the Rhino.Geometry.Brep.CreateFromSweep static functions.
 public class SweepTwoRailConstructors SweepTwoRail()  (summary) (since) 5.0  Properties double AngleToleranceRadians  (summary) Gets or sets the angle tolerance in radians. (since) 5.0  bool ClosedSweep  (summary) If the input rails are closed, ClosedSweep determines if the swept Breps will also be closed.</description>
@@ -1200,10 +1200,10 @@ public class SweepTwoRailConstructors SweepTwoRail()  (summary) (since) 5.0  Pr
     
     <item>
       <title>TextDot</title>
-      <link>/hugo/posts/rhino/geometry/textdot/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/textdot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/textdot/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/textdot/</guid>
       <description>Namespace: Rhino.Geometry
 Represents a text dot, or an annotation entity with text that always faces the camera and always has the same size. This class refers to the geometric element that is independent from the document.
 public class TextDotConstructors TextDot(string text,Point3d location)  (summary) Initializes a new textdot based on the text and the location. (since) 5.0  Properties string FontFace  (summary) Font face used for displaying the dot (since) 5.</description>
@@ -1211,20 +1211,20 @@ public class TextDotConstructors TextDot(string text,Point3d location)  (summar
     
     <item>
       <title>TextEntity</title>
-      <link>/hugo/posts/rhino/geometry/textentity/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/textentity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/textentity/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/textentity/</guid>
       <description>Namespace: Rhino.Geometry
 public class TextEntityConstructors TextEntity()  (summary) Initializes a new instance of the class. (since) 5.0  Properties TextJustification Justification  (summary) Gets or sets the justification of text in relation to its base point. (since) 5.0  TextHorizontalAlignment TextHorizontalAlignment  (summary) (since) 6.0  TextOrientation TextOrientation  (summary) (since) 6.0  TextVerticalAlignment TextVerticalAlignment  (summary) (since) 6.0  Methods static TextEntity Create(string text,Plane plane,DimensionStyle style,bool wrapped,double rectWidth,double rotationRadians)  (summary) Create Text geometry or None if input is invalid (since) 6.</description>
     </item>
     
     <item>
       <title>Torus</title>
-      <link>/hugo/posts/rhino/geometry/torus/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/torus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/torus/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/torus/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the value of a plane and two radii in a torus that is oriented in three-dimensional space.
 Constructors Torus(Plane basePlane,double majorRadius,double minorRadius)  (summary) Initializes a new Torus from base pane and two radii. (since) 5.0  Properties static Torus Unset  (summary) Gets an invalid Torus. (since) 5.0  bool IsValid  (summary) Gets a value indicating whether this torus is valid. (since) 5.0  double MajorRadius  (summary) Gets or sets the radius of the circle that lies at the heart of the torus.</description>
@@ -1232,10 +1232,10 @@ Constructors Torus(Plane basePlane,double majorRadius,double minorRadius)  (summ
     
     <item>
       <title>Transform</title>
-      <link>/hugo/posts/rhino/geometry/transform/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/transform/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/transform/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/transform/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the values in a 4x4 transform matrix. This is parallel to C++ ON_Xform.
 static !=  (summary) Determines if two transformations are different in value. (since) 5.0  static *  (summary) Multiplies (combines) two transformations. (since) 5.0  static *  (summary) Multiplies a transformation by a point and gets a new point. (since) 5.0  static *  (summary) Multiplies a transformation by a vector and gets a new vector.</description>
@@ -1243,10 +1243,10 @@ static !=  (summary) Determines if two transformations are different in value. (
     
     <item>
       <title>Unroller</title>
-      <link>/hugo/posts/rhino/geometry/unroller/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/unroller/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/unroller/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/unroller/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the operation of unrolling a single surface.
 public class UnrollerConstructors Unroller(Brep brep)  (summary) Initializes a new instance of the class with a brep. (since) 5.0  Unroller(Surface surface)  (summary) Initializes a new instance of the class with surface. (since) 5.0  Properties double AbsoluteTolerance  (summary) Gets or sets the absolute tolerance for the unrolling operation. Absolute tolerance is used in the evaluation of new entities, such as intersections, reprojections and splits.</description>
@@ -1254,10 +1254,10 @@ public class UnrollerConstructors Unroller(Brep brep)  (summary) Initializes a 
     
     <item>
       <title>Vector2d</title>
-      <link>/hugo/posts/rhino/geometry/vector2d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/vector2d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/vector2d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/vector2d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the two components of a vector in two-dimensional space, using -precision floating point numbers.
 static -  (summary) Computes the opposite vector. (since) 6.0  static -  (summary) Subtracts the second vector from the first one. (since) 6.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies a vector by a number, having the effect of scaling it.</description>
@@ -1265,10 +1265,10 @@ static -  (summary) Computes the opposite vector. (since) 6.0  static -  (summar
     
     <item>
       <title>Vector2f</title>
-      <link>/hugo/posts/rhino/geometry/vector2f/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/vector2f/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/vector2f/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/vector2f/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the two components of a vector in two-dimensional space, using -precision floating point numbers.
 static -  (summary) Computes the difference between two vectors. (since) 6.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies two together, returning the dot (internal) product of the two. (since) 6.0  static +  (summary) Computes the sum between two vectors.</description>
@@ -1276,10 +1276,10 @@ static -  (summary) Computes the difference between two vectors. (since) 6.0  st
     
     <item>
       <title>Vector3d</title>
-      <link>/hugo/posts/rhino/geometry/vector3d/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/vector3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/vector3d/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/vector3d/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
 static -  (summary) Computes the opposite vector. (since) 5.0  static -  (summary) Subtracts the second vector from the first one. (since) 5.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies two vectors together, returning the dot product (or inner product).</description>
@@ -1287,10 +1287,10 @@ static -  (summary) Computes the opposite vector. (since) 5.0  static -  (summar
     
     <item>
       <title>Vector3f</title>
-      <link>/hugo/posts/rhino/geometry/vector3f/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/vector3f/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/vector3f/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/vector3f/</guid>
       <description>Namespace: Rhino.Geometry
 Represents the three components of a vector in three-dimensional space, using -precision floating point numbers.
 static -  (summary) Subtracts the second vector from the first one. (since) 6.0  static -  (summary) Computes the opposite vector. (since) 6.0  static !=  (summary) Determines whether two vectors have different values. (since) 5.0  static *  (summary) Multiplies a vector by a number, having the effect of scaling it.</description>
@@ -1298,10 +1298,10 @@ static -  (summary) Subtracts the second vector from the first one. (since) 6.0 
     
     <item>
       <title>VolumeMassProperties</title>
-      <link>/hugo/posts/rhino/geometry/volumemassproperties/</link>
+      <link>/apidocs/hugo/posts/rhino/geometry/volumemassproperties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/geometry/volumemassproperties/</guid>
+      <guid>/apidocs/hugo/posts/rhino/geometry/volumemassproperties/</guid>
       <description>Namespace: Rhino.Geometry
 Contains static initialization methods and allows access to the computed metrics of volume, volume centroid and volume moments in in solid meshes, in solid surfaces and in solid (closed) boundary representations.
 public class VolumeMassPropertiesProperties Point3d Centroid  (summary) Gets the volume centroid in the world coordinate system. (since) 5.0  Vector3d CentroidCoordinatesMomentsOfInertia  (summary) Moments of inertia with respect to centroid coordinate system. X = integral of ((y-y0)^2 + (z-z0)^2) dm Y = integral of ((z-z0)^2 + (x-x0)^2) dm Z = integral of ((z-z0)^2 + (y-y0)^2) dm where (x0,y0,z0) = centroid.</description>

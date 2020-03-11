@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Render on Test API Site</title>
-    <link>/hugo/posts/rhino/render/</link>
+    <link>/apidocs/hugo/posts/rhino/render/</link>
     <description>Recent content in Rhino.Render on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo/posts/rhino/render/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/apidocs/hugo/posts/rhino/render/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AsyncRenderContext</title>
-      <link>/hugo/posts/rhino/render/asyncrendercontext/</link>
+      <link>/apidocs/hugo/posts/rhino/render/asyncrendercontext/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/asyncrendercontext/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/asyncrendercontext/</guid>
       <description>Namespace: Rhino.Render
 \ingroup rhino_render Inherit from AsyncRenderContext to be able to create asynchronous render engine implementations through RhinoCommon.
 public class AsyncRenderContextProperties Thread RenderThread  (summary) Holder for render thread, that gets set through StartRenderThread() (since) 6.0  RenderWindow RenderWindow  (summary) Handle to the RenderWindow for the instance of this class. This is a convenience property for implementors to use. (since) 6.0  Methods void Dispose()  (summary) (since) 6.</description>
@@ -23,10 +23,10 @@ public class AsyncRenderContextProperties Thread RenderThread  (summary) Holder
     
     <item>
       <title>CachedTextureCoordinates</title>
-      <link>/hugo/posts/rhino/render/cachedtexturecoordinates/</link>
+      <link>/apidocs/hugo/posts/rhino/render/cachedtexturecoordinates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/cachedtexturecoordinates/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/cachedtexturecoordinates/</guid>
       <description>Namespace: Rhino.Render
 Used for cached texture coordinates
 public class CachedTextureCoordinatesProperties int Count  (summary) Number of cached coordinates. (since) 5.10  int Dim  (summary) Coordinate dimension: 2 = UV, 3 = UVW (since) 5.10  bool IsReadOnly  (summary) This collection is always read-only (since) 5.10  Guid MappingId  (summary) The texture mapping Id. (since) 5.10  Methods bool Contains(Point3d item)  (summary) Determines whether this collection contains a specific value.</description>
@@ -34,30 +34,30 @@ public class CachedTextureCoordinatesProperties int Count  (summary) Number of 
     
     <item>
       <title>Channel</title>
-      <link>/hugo/posts/rhino/render/channel/</link>
+      <link>/apidocs/hugo/posts/rhino/render/channel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/channel/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/channel/</guid>
       <description>Namespace: Rhino.Render
 public class ChannelMethods void AddValue(int x,int y,Color4f value)  (summary) Add value to existing values at point x, y. If x or y are out of range, the function will fail and may crash Rhino. (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  int PixelSize()  (summary) Returns the size of the data in one pixel in the channel.</description>
     </item>
     
     <item>
       <title>ChildSlotNames</title>
-      <link>/hugo/posts/rhino/render/childslotnames/</link>
+      <link>/apidocs/hugo/posts/rhino/render/childslotnames/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/childslotnames/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/childslotnames/</guid>
       <description>Namespace: Rhino.Render
 public class ChildSlotNamesProperties static string AmbientOcclusion  (summary) (since) 7.0  static string Anisotropic  (summary) (since) 7.0  static string AnisotropicRotation  (summary) (since) 7.0  static string BaseColor  (summary) (since) 7.0  static string Bump  (summary) (since) 7.0  static string Clearcoat  (summary) (since) 7.0  static string ClearcoatBump  (summary) (since) 7.0  static string ClearcoatRoughness  (summary) (since) 7.0  static string Displacement  (summary) (since) 7.</description>
     </item>
     
     <item>
       <title>City</title>
-      <link>/hugo/posts/rhino/render/city/</link>
+      <link>/apidocs/hugo/posts/rhino/render/city/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/city/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/city/</guid>
       <description>Namespace: Rhino.Render
 City
 public class CityProperties double Latitude  (summary) Gets latitude of city. (since) 6.0  double Longitude  (summary) Gets longitude of city. (since) 6.0  String Name  (summary) Gets name of city. (since) 6.0  double TimeZone  (summary) Gets time zone of city. (since) 6.0  Methods static int Cities()  (summary) Returns number of available cities. (since) 6.0 (returns) int This is some return comment  static City CityAt(int index)  (summary) Returns city at given index.</description>
@@ -65,30 +65,30 @@ public class CityProperties double Latitude  (summary) Gets latitude of city. (
     
     <item>
       <title>ContentCollectionIterator</title>
-      <link>/hugo/posts/rhino/render/contentcollectioniterator/</link>
+      <link>/apidocs/hugo/posts/rhino/render/contentcollectioniterator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/contentcollectioniterator/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/contentcollectioniterator/</guid>
       <description>Namespace: Rhino.Render
 public class ContentCollectionIteratorConstructors ContentCollectionIterator(IntPtr pCollection)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void DeleteThis()  (summary) (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  RenderContent First()  (summary) (since) 6.0 (returns) RenderContent This is some return comment  RenderContent Next()  (summary) (since) 6.0 (returns) RenderContent This is some return comment  </description>
     </item>
     
     <item>
       <title>ContentUndoBlocker</title>
-      <link>/hugo/posts/rhino/render/contentundoblocker/</link>
+      <link>/apidocs/hugo/posts/rhino/render/contentundoblocker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/contentundoblocker/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/contentundoblocker/</guid>
       <description>Namespace: Rhino.Render
 public class ContentUndoBlockerConstructors ContentUndoBlocker()  (summary) Constructs a ContentUndoBlocker object inside a using block to block undo when modifying a RenderContent while a ContentUndoHelper is active. Alternatively - create the ContentUndoBlocker and explicitly call Dispose when you are done. (since) 5.10  Methods void Dispose()  (summary) (since) 5.10 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>ContentUndoHelper</title>
-      <link>/hugo/posts/rhino/render/contentundohelper/</link>
+      <link>/apidocs/hugo/posts/rhino/render/contentundohelper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/contentundohelper/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/contentundohelper/</guid>
       <description>Namespace: Rhino.Render
 Content undo helper to be used with &amp;ldquo;using {}&amp;rdquo; to enclose a block of changes.
 public class ContentUndoHelperConstructors ContentUndoHelper(RhinoDoc doc,String description)  (summary) Constructs a ContentUndoHelper object inside a using block to handle undo when modifying a RenderContent or - alternatively - create the ContentUndoHelper and explicitly call Dispose when you are done. (since) 6.0  Methods bool AddContent(RenderContent content,RenderContent parent)  (summary) Call this after adding a content.</description>
@@ -96,10 +96,10 @@ public class ContentUndoHelperConstructors ContentUndoHelper(RhinoDoc doc,Strin
     
     <item>
       <title>ContentUuids</title>
-      <link>/hugo/posts/rhino/render/contentuuids/</link>
+      <link>/apidocs/hugo/posts/rhino/render/contentuuids/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/contentuuids/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/contentuuids/</guid>
       <description>Namespace: Rhino.Render
 Content Guids of RenderContent provided by the RDK SDK.
 These Guids can be used to check against RenderContent.TypeId.
@@ -108,10 +108,10 @@ public class ContentUuidsProperties static Guid AdvancedDotTextureType  (summar
     
     <item>
       <title>ConvertibleExtensions</title>
-      <link>/hugo/posts/rhino/render/convertibleextensions/</link>
+      <link>/apidocs/hugo/posts/rhino/render/convertibleextensions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/convertibleextensions/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/convertibleextensions/</guid>
       <description>Namespace: Rhino.Render
 Extension methods for IConvertible that work when an object is a Variant.
 public class ConvertibleExtensionsMethods static Color4f ToColor4f(IConvertible variant)  (summary) (since) 6.0 (returns) Color4f This is some return comment  static Vector2d ToVector2d(IConvertible variant)  (summary) (since) 6.0 (returns) Vector2d This is some return comment  static Vector3d ToVector3d(IConvertible variant)  (summary) (since) 6.0 (returns) Vector3d This is some return comment  </description>
@@ -119,10 +119,10 @@ public class ConvertibleExtensionsMethods static Color4f ToColor4f(IConvertible
     
     <item>
       <title>CreatePreviewEventArgs</title>
-      <link>/hugo/posts/rhino/render/createprevieweventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/createprevieweventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/createprevieweventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/createprevieweventargs/</guid>
       <description>Namespace: Rhino.Render
 Used in RenderPlugIn virtual CreatePreview function
 public class CreatePreviewEventArgsProperties bool Cancel  (summary) Get set by Rhino if the preview generation should be canceled for this (since) 5.1  RenderContentKind ContentKind  (summary) Description of content that preview is being generated for. (since) 6.0  Guid ContentTypeId  (summary) The class Id of content that preview is being generated for. (since) 6.0  Rhino.Render.RenderEnvironment Environment  (summary) The environment that the previewed object is rendered in.</description>
@@ -130,20 +130,20 @@ public class CreatePreviewEventArgsProperties bool Cancel  (summary) Get set by
     
     <item>
       <title>CreateTexture2dPreviewEventArgs</title>
-      <link>/hugo/posts/rhino/render/createtexture2dprevieweventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/createtexture2dprevieweventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/createtexture2dprevieweventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/createtexture2dprevieweventargs/</guid>
       <description>Namespace: Rhino.Render
 public class CreateTexture2dPreviewEventArgsProperties System.Drawing.Bitmap PreviewImage  (summary) Initially null. If this image is set, then this image will be used for the preview. If never set, the default internal simulation preview will be used. (since) 5.1  System.Drawing.Size PreviewImageSize  (summary) Pixel size of the image that is being requested for the preview scene (since) 5.1  </description>
     </item>
     
     <item>
       <title>CustomEvent</title>
-      <link>/hugo/posts/rhino/render/customevent/</link>
+      <link>/apidocs/hugo/posts/rhino/render/customevent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/customevent/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/customevent/</guid>
       <description>Namespace: Rhino.Render
 This class contains the event for CustomEvents that are fired from RDK .
 public class CustomEventEvents static OnCustomEvent  (summary) This event is raised when a Custom Event is triggered in rdk. (since) 7.0  </description>
@@ -151,20 +151,20 @@ public class CustomEventEvents static OnCustomEvent  (summary) This event is ra
     
     <item>
       <title>CustomRenderContentAttribute</title>
-      <link>/hugo/posts/rhino/render/customrendercontentattribute/</link>
+      <link>/apidocs/hugo/posts/rhino/render/customrendercontentattribute/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/customrendercontentattribute/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/customrendercontentattribute/</guid>
       <description>Namespace: Rhino.Render
 public class CustomRenderContentAttributeConstructors CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private)  (summary) (since) 6.0  CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private,bool is_linear,bool is_hdrcapable,bool is_normalmap)  (summary) (since) 6.16  Properties string Category  (summary) (since) 6.0  bool ImageBased  (summary) (since) 6.0  bool IsBuiltIn  (summary) (since) 6.0  bool IsElevated  (summary) (since) 6.0  bool IsHdrCapable  (summary) (since) 6.16  bool IsLinear  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>CustomRenderMeshProvider</title>
-      <link>/hugo/posts/rhino/render/customrendermeshprovider/</link>
+      <link>/apidocs/hugo/posts/rhino/render/customrendermeshprovider/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/customrendermeshprovider/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/customrendermeshprovider/</guid>
       <description>Namespace: Rhino.Render
 You must call CustomRenderMeshProvider.RegisterProviders() from your plug-ins OnLoad override for each assembly containing a custom mesh provider. Only publicly exported classes derived from CustomRenderMeshProvider with a public constructor that has no parameters will get registered.
 public class CustomRenderMeshProviderProperties static Guid CurvePipingId  (summary) (since) 6.0  static Guid DisplacementId  (summary) (since) 6.0  static Guid EdgeSofteningId  (summary) (since) 6.0  static Guid ShutLiningId  (summary) (since) 6.</description>
@@ -172,20 +172,20 @@ public class CustomRenderMeshProviderProperties static Guid CurvePipingId  (sum
     
     <item>
       <title>CustomRenderMeshProvider2</title>
-      <link>/hugo/posts/rhino/render/customrendermeshprovider2/</link>
+      <link>/apidocs/hugo/posts/rhino/render/customrendermeshprovider2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/customrendermeshprovider2/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/customrendermeshprovider2/</guid>
       <description>Namespace: Rhino.Render
 public class CustomRenderMeshProvider2Methods BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)  (summary) (since) 6.4 (returns) BoundingBox This is some return comment  BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,RhinoDoc doc,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  (summary) (since) 6.0 (returns) BoundingBox This is some return comment  bool BuildCustomMeshes(ViewportInfo vp,RenderPrimitiveList objMeshes,Guid requestingPlugIn,bool preview)  (summary) (since) 6.4 (returns) bool This is some return comment  bool BuildCustomMeshes(ViewportInfo vp,RhinoDoc doc,RenderPrimitiveList objMeshes,Guid requestingPlugIn,DisplayPipelineAttributes attrs)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>Decal</title>
-      <link>/hugo/posts/rhino/render/decal/</link>
+      <link>/apidocs/hugo/posts/rhino/render/decal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/decal/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/decal/</guid>
       <description>Namespace: Rhino.Render
 Represents a decal, or a picture that can be moved on an object.
 public class DecalProperties int CRC  (summary) The decal CRC identifies a decal by its state. Multiple decals which would be exactly the same would have the same CRC and are culled from the system. If you store this value with the intention of using it to find the decal again later, you must update your stored value whenever the decal state changes.</description>
@@ -193,10 +193,10 @@ public class DecalProperties int CRC  (summary) The decal CRC identifies a deca
     
     <item>
       <title>DecalCreateParams</title>
-      <link>/hugo/posts/rhino/render/decalcreateparams/</link>
+      <link>/apidocs/hugo/posts/rhino/render/decalcreateparams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/decalcreateparams/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/decalcreateparams/</guid>
       <description>Namespace: Rhino.Render
 Used by RhinoObject.AddDecal() to create and add a decal
 public class DecalCreateParamsProperties DecalMapping DecalMapping  (summary) (since) 6.0  DecalProjection DecalProjection  (summary) (since) 6.0  double EndLatitude  (summary) (since) 6.0  double EndLongitude  (summary) (since) 6.0  double Height  (summary) (since) 6.0  bool MapToInside  (summary) (since) 6.0  double MaxU  (summary) (since) 6.0  double MaxV  (summary) (since) 6.0  double MinU  (summary) (since) 6.</description>
@@ -204,10 +204,10 @@ public class DecalCreateParamsProperties DecalMapping DecalMapping  (summary) (
     
     <item>
       <title>Decals</title>
-      <link>/hugo/posts/rhino/render/decals/</link>
+      <link>/apidocs/hugo/posts/rhino/render/decals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/decals/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/decals/</guid>
       <description>Namespace: Rhino.Render
 Represents all the decals of an object.
 public class DecalsMethods uint Add(Decal decal)  (summary) Add a new Decal to the decals list, use Decal.Create to create a new decal instance to add. (since) 5.10 (returns) uint This is some return comment  void Clear()  (summary) (since) 5.10 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.10 (returns) IEnumeratorThis is some return comment  bool Remove(Decal decal)  (summary) (since) 5.</description>
@@ -215,20 +215,20 @@ public class DecalsMethods uint Add(Decal decal)  (summary) Add a new Decal to 
     
     <item>
       <title>DisplayPipelineSettingsChangedEventArgs</title>
-      <link>/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class DisplayPipelineSettingsChangedEventArgsConstructors DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)  (summary) (since) 6.0  Properties DisplayPipelineAttributes Attributes  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>Dithering</title>
-      <link>/hugo/posts/rhino/render/dithering/</link>
+      <link>/apidocs/hugo/posts/rhino/render/dithering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/dithering/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/dithering/</guid>
       <description>Namespace: Rhino.Render
 This is the interface to linear workflow settings.
 public class DitheringConstructors Dithering()  (summary) Create an utility object not associated with any document (since) 6.0  Dithering(Dithering d)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Properties Methods Method  (summary) (since) 6.0  Methods void CopyFrom(FreeFloatingBase src)  (summary) (since) 6.0 (returns) void This is some return comment  </description>
@@ -236,10 +236,10 @@ public class DitheringConstructors Dithering()  (summary) Create an utility obj
     
     <item>
       <title>DocumentOrFreeFloatingBase</title>
-      <link>/hugo/posts/rhino/render/documentorfreefloatingbase/</link>
+      <link>/apidocs/hugo/posts/rhino/render/documentorfreefloatingbase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/documentorfreefloatingbase/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/documentorfreefloatingbase/</guid>
       <description>Namespace: Rhino.Render
 Base class for Rhino.Render objects that are owned by the document, or can be delivered separately from other functions. In general, you cannot create these objects yourself.
 public class DocumentOrFreeFloatingBaseMethods void BeginChange(ChangeContexts cc)  (summary) Call this function before making any change to this object (calling a setter) otherwise undo will not work correctly. Calls to BeginChange must be paired with a call to EndChange. (since) 6.0 (returns) void This is some return comment  bool EndChange()  (summary) See BeginChange (since) 6.</description>
@@ -247,20 +247,20 @@ public class DocumentOrFreeFloatingBaseMethods void BeginChange(ChangeContexts 
     
     <item>
       <title>DrawMiddlegroundEventArgs</title>
-      <link>/hugo/posts/rhino/render/drawmiddlegroundeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/drawmiddlegroundeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/drawmiddlegroundeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/drawmiddlegroundeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class DrawMiddlegroundEventArgsConstructors DrawMiddlegroundEventArgs(DisplayPipeline dp)  (summary) (since) 6.0  Properties DisplayPipeline Pipeline  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>FreeFloatingBase</title>
-      <link>/hugo/posts/rhino/render/freefloatingbase/</link>
+      <link>/apidocs/hugo/posts/rhino/render/freefloatingbase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/freefloatingbase/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/freefloatingbase/</guid>
       <description>Namespace: Rhino.Render
 Base class for Rhino.Render objects that are owned by the document, or can be delivered separately from other functions. In general, you cannot create these objects yourself.
 public class FreeFloatingBaseMethods void CopyFrom(FreeFloatingBase src)  (summary) Copy from another object (since) 6.0 (returns) void This is some return comment  </description>
@@ -268,10 +268,10 @@ public class FreeFloatingBaseMethods void CopyFrom(FreeFloatingBase src)  (summ
     
     <item>
       <title>GroundPlane</title>
-      <link>/hugo/posts/rhino/render/groundplane/</link>
+      <link>/apidocs/hugo/posts/rhino/render/groundplane/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/groundplane/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/groundplane/</guid>
       <description>Namespace: Rhino.Render
 Represents an infinite plane for implementation by renderers. See SupportsFeature.
 public class GroundPlaneConstructors GroundPlane()  (summary) Create an utility object not associated with any document (since) 6.0  GroundPlane(GroundPlane g)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Events static Changed  (summary) This event is raised when a GroundPlane property value is changed. (since) 5.10  Properties double Altitude  (summary) Height above world XY plane in model units.</description>
@@ -279,20 +279,20 @@ public class GroundPlaneConstructors GroundPlane()  (summary) Create an utility
     
     <item>
       <title>HudMaxPassesChangedEventArgs</title>
-      <link>/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class HudMaxPassesChangedEventArgsConstructors HudMaxPassesChangedEventArgs(int mp)  (summary) (since) 6.0  Properties int MaxPasses  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>ImageAdjust</title>
-      <link>/hugo/posts/rhino/render/imageadjust/</link>
+      <link>/apidocs/hugo/posts/rhino/render/imageadjust/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/imageadjust/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/imageadjust/</guid>
       <description>Namespace: Rhino.Render
 Class to set image adjusting settings to a RenderWindow. This can&amp;rsquo;t be directly created. Instead, one should use RenderWindow.GetAdjust() to get an ImageAdjust instance that can be modified, then passed into RenderWindow.SetAdjust() to update image adjusting settings.1
 public class ImageAdjustProperties Dithering.Methods Dither  (summary) Set the Dithering method to use when adjusting the RenderWindow content. (since) 6.0  float Gamma  (summary) Set the gamma value. The inverse of this will be used to apply gamma correction to the RenderWindow RGBA channel when necessary.</description>
@@ -300,10 +300,10 @@ public class ImageAdjustProperties Dithering.Methods Dither  (summary) Set the 
     
     <item>
       <title>ImageFile</title>
-      <link>/hugo/posts/rhino/render/imagefile/</link>
+      <link>/apidocs/hugo/posts/rhino/render/imagefile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/imagefile/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/imagefile/</guid>
       <description>Namespace: Rhino.Render
 Controls interaction with RDK render image files
 public class ImageFileEvents static Deleted  (summary) Called when the RDK is cleaning up old render image files, a plug-in should delete any plug-in specific image files at this time. (since) 5.11  static Loaded  (summary) Generally called when the &amp;ldquo;RenderOpenLastRender&amp;rdquo; command is run, this event is raised after the render window has been created and the saved scene has been loaded.</description>
@@ -311,40 +311,40 @@ public class ImageFileEvents static Deleted  (summary) Called when the RDK is c
     
     <item>
       <title>ImageFileEventArgs</title>
-      <link>/hugo/posts/rhino/render/imagefileeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/imagefileeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/imagefileeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/imagefileeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class ImageFileEventArgsProperties int EllapsedTime  (summary) (since) 5.11  ImageFileEvent Event  (summary) (since) 5.11  string FileName  (summary) (since) 5.11  string RenderEngine  (summary) (since) 5.11  Guid RenderEngineId  (summary) (since) 5.11  Guid SessionId  (summary) (since) 5.11  </description>
     </item>
     
     <item>
       <title>InitFramebufferEventArgs</title>
-      <link>/hugo/posts/rhino/render/initframebuffereventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/initframebuffereventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/initframebuffereventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/initframebuffereventargs/</guid>
       <description>Namespace: Rhino.Render
 public class InitFramebufferEventArgsConstructors InitFramebufferEventArgs(DisplayPipeline dp)  (summary) (since) 6.0  Properties DisplayPipeline Pipeline  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>LightArray</title>
-      <link>/hugo/posts/rhino/render/lightarray/</link>
+      <link>/apidocs/hugo/posts/rhino/render/lightarray/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/lightarray/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/lightarray/</guid>
       <description>Namespace: Rhino.Render
 public class LightArrayConstructors LightArray()  (summary) (since) 6.0  LightArray(IntPtr pLightArray)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Append(Light light)  (summary) (since) 6.0 (returns) void This is some return comment  int Count()  (summary) (since) 6.0 (returns) int This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  Rhino.</description>
     </item>
     
     <item>
       <title>LightManagerSupport</title>
-      <link>/hugo/posts/rhino/render/lightmanagersupport/</link>
+      <link>/apidocs/hugo/posts/rhino/render/lightmanagersupport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/lightmanagersupport/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/lightmanagersupport/</guid>
       <description>Namespace: Rhino.Render
 Base class for implementing custom light managers in .NET
 public class LightManagerSupportMethods static void RegisterLightManager(PlugIn plugin)  (summary) Find and register classes that derive from LightManagerSupport from the given plug-in. (since) 6.0 (returns) void This is some return comment  static void RegisterProviders(Assembly assembly,Guid pluginId)  (summary) Find and register classes that derive from RealtimeDisplayMode from the given plug-in. The plug-in is found in the given assembly (since) 6.</description>
@@ -352,20 +352,20 @@ public class LightManagerSupportMethods static void RegisterLightManager(PlugIn
     
     <item>
       <title>LightManagerSupportClient</title>
-      <link>/hugo/posts/rhino/render/lightmanagersupportclient/</link>
+      <link>/apidocs/hugo/posts/rhino/render/lightmanagersupportclient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/lightmanagersupportclient/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/lightmanagersupportclient/</guid>
       <description>Namespace: Rhino.Render
 public class LightManagerSupportClientConstructors LightManagerSupportClient(uint doc_uuid)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void DeleteLight(Light light)  (summary) (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  Rhino.Geometry.Light GetLightFromId(Guid uuid)  (summary) (since) 6.0 (returns) Rhino.Geometry.Light This is some return comment  LightArray GetLights()  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>LinearWorkflow</title>
-      <link>/hugo/posts/rhino/render/linearworkflow/</link>
+      <link>/apidocs/hugo/posts/rhino/render/linearworkflow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/linearworkflow/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/linearworkflow/</guid>
       <description>Namespace: Rhino.Render
 This is the interface to linear workflow settings.
 public class LinearWorkflowConstructors LinearWorkflow()  (summary) Create an utility object not associated with any document (since) 6.0  LinearWorkflow(LinearWorkflow src)  (summary) Create utility object not associated with any document from another object (since) 6.0  Properties uint Hash  (summary) Linear workflow CRC (since) 6.0  bool PostProcessFrameBuffer  (summary) Linear workflow active state (since) 6.0  float PostProcessGamma  (summary) Linear workflow gamma (since) 6.</description>
@@ -373,10 +373,10 @@ public class LinearWorkflowConstructors LinearWorkflow()  (summary) Create an u
     
     <item>
       <title>MappingTag</title>
-      <link>/hugo/posts/rhino/render/mappingtag/</link>
+      <link>/apidocs/hugo/posts/rhino/render/mappingtag/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/mappingtag/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/mappingtag/</guid>
       <description>Namespace: Rhino.Render
 Holds texture mapping information.
 public class MappingTagProperties Guid Id  (summary) Gets or sets a map globally unique identifier. (since) 5.0  uint MappingCRC  (summary) Gets or sets the cyclic redundancy check on the mapping. See also . (since) 5.0  TextureMappingType MappingType  (summary) Gets or sets a texture mapping type: linear, cylinder, etc&amp;hellip; (since) 5.0  Transform MeshTransform  (summary) Gets or sets a 4x4 matrix transform.</description>
@@ -384,10 +384,10 @@ public class MappingTagProperties Guid Id  (summary) Gets or sets a map globall
     
     <item>
       <title>MetaDataProxy</title>
-      <link>/hugo/posts/rhino/render/metadataproxy/</link>
+      <link>/apidocs/hugo/posts/rhino/render/metadataproxy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/metadataproxy/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/metadataproxy/</guid>
       <description>Namespace: Rhino.Render
 ProxyClass for MetaData
 public class MetaDataProxyConstructors MetaDataProxy()  (summary) Constructor for MetaDataProxy (since) 6.8  Properties IntPtr CppPointer  (summary) MetaDataProxy c++ pointer (since) 6.8  Methods void Dispose()  (summary) Dispose for MetaDataProxy (since) 6.8 (returns) void This is some return comment  void SetContentInstanceId(Guid uuid)  (summary) Set Content instance id for meta data (since) 6.8 (returns) void This is some return comment  </description>
@@ -395,50 +395,50 @@ public class MetaDataProxyConstructors MetaDataProxy()  (summary) Constructor f
     
     <item>
       <title>NamedValue</title>
-      <link>/hugo/posts/rhino/render/namedvalue/</link>
+      <link>/apidocs/hugo/posts/rhino/render/namedvalue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/namedvalue/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/namedvalue/</guid>
       <description>Namespace: Rhino.Render
 public class NamedValueConstructors NamedValue(string name,object value)  (summary) (since) 5.1  Properties string Name  (summary) (since) 5.1  object Value  (summary) (since) 5.1  </description>
     </item>
     
     <item>
       <title>ParametersNames</title>
-      <link>/hugo/posts/rhino/render/parametersnames/</link>
+      <link>/apidocs/hugo/posts/rhino/render/parametersnames/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/parametersnames/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/parametersnames/</guid>
       <description>Namespace: Rhino.Render
 public class ParametersNamesProperties static string AmbientOcclusion  (summary) (since) 7.0  static string Anisotropic  (summary) (since) 7.0  static string AnisotropicRotation  (summary) (since) 7.0  static string BaseColor  (summary) (since) 7.0  static string BRDF  (summary) (since) 7.0  static string Bump  (summary) (since) 7.0  static string Clearcoat  (summary) (since) 7.0  static string ClearcoatBump  (summary) (since) 7.0  static string ClearcoatRoughness  (summary) (since) 7.</description>
     </item>
     
     <item>
       <title>PhysicallyBasedMaterial</title>
-      <link>/hugo/posts/rhino/render/physicallybasedmaterial/</link>
+      <link>/apidocs/hugo/posts/rhino/render/physicallybasedmaterial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/physicallybasedmaterial/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/physicallybasedmaterial/</guid>
       <description>Namespace: Rhino.Render
 public class PhysicallyBasedMaterialProperties double Anisotropic  (summary) (since) 7.0  double AnisotropicRotation  (summary) (since) 7.0  Rhino.Display.Color4f BaseColor  (summary) (since) 7.0  BRDFs BRDF  (summary) (since) 7.0  double Clearcoat  (summary) (since) 7.0  double ClearcoatRoughness  (summary) (since) 7.0  Rhino.Display.Color4f Emission  (summary) (since) 7.0  DocObjects.Material Material  (summary) (since) 7.0  double Metallic  (summary) (since) 7.0  double Opacity  (summary) (since) 7.</description>
     </item>
     
     <item>
       <title>PixelBuffer</title>
-      <link>/hugo/posts/rhino/render/pixelbuffer/</link>
+      <link>/apidocs/hugo/posts/rhino/render/pixelbuffer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/pixelbuffer/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/pixelbuffer/</guid>
       <description>Namespace: Rhino.Render
 public class PixelBufferConstructors PixelBuffer(IntPtr bufferPointer)  (summary) Create a new PixelBuffer pointing to the (unmanaged) pixel data buffer behind IntPtr (since) 6.0  Properties IntPtr Buffer  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>PreviewAppearance</title>
-      <link>/hugo/posts/rhino/render/previewappearance/</link>
+      <link>/apidocs/hugo/posts/rhino/render/previewappearance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/previewappearance/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/previewappearance/</guid>
       <description>Namespace: Rhino.Render
 PreviewAppearance class
 public class PreviewAppearanceConstructors PreviewAppearance(IntPtr pRenderContent)  (summary) Constructor for previewappearance (since) 6.0  Properties IntPtr CppPointer  (summary) Previewappearances c++ pointer (since) 6.0  MetaData MetaData  (summary) Previewappearance MetaData (since) 6.0  Methods PreviewBackground Background()  (summary) Background (since) 6.0 (returns) PreviewBackground This is some return comment  void Dispose()  (summary) Dispose for previewappearance (since) 6.0 (returns) void This is some return comment  void FromMetaData(MetaData md)  (summary) Copy data from MetaData to PreviewAppearance (since) 6.</description>
@@ -446,10 +446,10 @@ public class PreviewAppearanceConstructors PreviewAppearance(IntPtr pRenderCont
     
     <item>
       <title>PreviewBackground</title>
-      <link>/hugo/posts/rhino/render/previewbackground/</link>
+      <link>/apidocs/hugo/posts/rhino/render/previewbackground/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/previewbackground/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/previewbackground/</guid>
       <description>Namespace: Rhino.Render
 PreviewBackGround takes care of constucting and desctrutction of PreviewLight
 public class PreviewBackgroundConstructors PreviewBackground(IntPtr pPreviewBackground)  (summary) Constructor for PreivewLighting (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreivewLighting (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  Guid EnvironmentInstanceId()  (summary) EnvironmentInstanceId (since) 6.0 (returns) Guid This is some return comment  void SetEnvironmentInstanceId(Guid guid)  (summary) SetEnvironmentInstanceId (since) 6.</description>
@@ -457,10 +457,10 @@ public class PreviewBackgroundConstructors PreviewBackground(IntPtr pPreviewBac
     
     <item>
       <title>PreviewGeometry</title>
-      <link>/hugo/posts/rhino/render/previewgeometry/</link>
+      <link>/apidocs/hugo/posts/rhino/render/previewgeometry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/previewgeometry/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/previewgeometry/</guid>
       <description>Namespace: Rhino.Render
 PreviewAppearance takes care of constucting and desctrutction of PreivewGeometry
 public class PreviewGeometryConstructors PreviewGeometry(IntPtr pPreviewGeometry)  (summary) Constructor for PreviewGeometry (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreviewGeometry (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  void SetUpPreview(IntPtr sceneServerPointer,IntPtr pRenderContent,bool bCopy)  (summary) SetUpPreview (since) 6.0 (returns) void This is some return comment  </description>
@@ -468,10 +468,10 @@ public class PreviewGeometryConstructors PreviewGeometry(IntPtr pPreviewGeometr
     
     <item>
       <title>PreviewLighting</title>
-      <link>/hugo/posts/rhino/render/previewlighting/</link>
+      <link>/apidocs/hugo/posts/rhino/render/previewlighting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/previewlighting/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/previewlighting/</guid>
       <description>Namespace: Rhino.Render
 PreviewAppearance takes care of constucting and desctrutction of PreviewLight
 public class PreviewLightingConstructors PreviewLighting(IntPtr pPreviewLighting)  (summary) Constructor for PreivewLighting (since) 6.0  Properties IntPtr CppPointer  (summary) CppPointer for PreivewLighting (since) 6.0  Methods string ElementKind()  (summary) ElementKind (since) 6.0 (returns) string This is some return comment  void SetUpPreview(IntPtr sceneServerPointer)  (summary) SetUpPreview (since) 6.0 (returns) void This is some return comment  </description>
@@ -479,10 +479,10 @@ public class PreviewLightingConstructors PreviewLighting(IntPtr pPreviewLightin
     
     <item>
       <title>PreviewSceneServer</title>
-      <link>/hugo/posts/rhino/render/previewsceneserver/</link>
+      <link>/apidocs/hugo/posts/rhino/render/previewsceneserver/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/previewsceneserver/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/previewsceneserver/</guid>
       <description>Namespace: Rhino.Render
 PreviewSceneServer
 public class PreviewSceneServerConstructors PreviewSceneServer(IntPtr pPreviewSceneServer)  (summary) Constructor for PreviewSceneServer (since) 6.0  Properties IntPtr CppPointer  (summary) The CppPointer of PreviewSceneServer (since) 6.0  Methods void ApplyRotation(double X,double Y,IRhRdkPreviewSceneServer_eRotationType type)  (summary) Set Scene Server Rotation (since) 6.0 (returns) void This is some return comment  void Dispose()  (summary) Dispose for PreviewSceneServer (since) 6.0 (returns) void This is some return comment  </description>
@@ -490,10 +490,10 @@ public class PreviewSceneServerConstructors PreviewSceneServer(IntPtr pPreviewS
     
     <item>
       <title>RdkUndo</title>
-      <link>/hugo/posts/rhino/render/rdkundo/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rdkundo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rdkundo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rdkundo/</guid>
       <description>Namespace: Rhino.Render
 RdkUndo class, which is used to get the RdkUndoRecord
 public class RdkUndoConstructors RdkUndo(IntPtr pUndoRecord)  (summary) Constructor for RdkUndo (since) 6.11  Methods void Dispose()  (summary) Dispose for RdkUndo (since) 6.11 (returns) void This is some return comment  RdkUndoRecord NewUndoRecord()  (summary) Get a new UndoRecord (since) 6.11 (returns) RdkUndoRecord This is some return comment  </description>
@@ -501,10 +501,10 @@ public class RdkUndoConstructors RdkUndo(IntPtr pUndoRecord)  (summary) Constru
     
     <item>
       <title>RdkUndoRecord</title>
-      <link>/hugo/posts/rhino/render/rdkundorecord/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rdkundorecord/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rdkundorecord/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rdkundorecord/</guid>
       <description>Namespace: Rhino.Render
 RdkUndoRecord class
 public class RdkUndoRecordConstructors RdkUndoRecord(IntPtr pUndoRecord)  (summary) Constructor for RdkUndoRecord (since) 6.0  Methods void Dispose()  (summary) Dispose for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  void SetDescription(String description)  (summary) Set description for RdkUndoRecord (since) 6.0 (returns) void This is some return comment  </description>
@@ -512,10 +512,10 @@ public class RdkUndoRecordConstructors RdkUndoRecord(IntPtr pUndoRecord)  (summ
     
     <item>
       <title>RealtimeDisplayMode</title>
-      <link>/hugo/posts/rhino/render/realtimedisplaymode/</link>
+      <link>/apidocs/hugo/posts/rhino/render/realtimedisplaymode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/realtimedisplaymode/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/realtimedisplaymode/</guid>
       <description>Namespace: Rhino.Render
 Base class for implementing real-time display modes in .NET.
 Pay special attention that in StartRenderer the RenderWindow.SetSize() function is called if the implementation relies on the RenderWindow to do the drawing to the viewport. If i.e. OpenGL is used to draw render results to the viewport then SetSize() doesn&amp;rsquo;t have to be called, nor should the implementation then access channels on the RenderWindow, as those then don&amp;rsquo;t exist. For OpenGL-based drawing the RenderWindow is used as a container for ViewInfo management, nothing else.</description>
@@ -523,10 +523,10 @@ Pay special attention that in StartRenderer the RenderWindow.SetSize() function 
     
     <item>
       <title>RealtimeDisplayModeClassInfo</title>
-      <link>/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</link>
+      <link>/apidocs/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</guid>
       <description>Namespace: Rhino.Render
 Class information obligatory for registering RealtimeDisplayMode implementations.
 public class RealtimeDisplayModeClassInfoProperties bool DontRegisterAttributesOnStart  (summary) Override and return True when you don&amp;rsquo;t want your class info to cause display attributes to be registered with the system. (since) 6.0  bool DrawOpenGl  (summary) Return True if the RealtimeDisplayMode draws its result using OpenGL. RenderWindow usage will then be skipped. (since) 6.0  Guid GUID  (summary) Get the RealtimeDisplayMode implementation GUID (since) 6.</description>
@@ -534,40 +534,40 @@ public class RealtimeDisplayModeClassInfoProperties bool DontRegisterAttributes
     
     <item>
       <title>RenderContent</title>
-      <link>/hugo/posts/rhino/render/rendercontent/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontent/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontent/</guid>
       <description>Namespace: Rhino.Render
 public class RenderContentEvents static ContentAdded  (summary) Used to monitor render content addition to the document. (since) 5.7  static ContentChanged  (summary) Used to monitor render content modifications. (since) 5.7  static ContentDeleted  (summary) Used to monitor render content deletion from the document. (since) 6.0  static ContentDeleting  (summary) Used to monitor render content deletion from the document. (since) 5.7  static ContentFieldChanged  (summary) This event is raised when a field value is modified.</description>
     </item>
     
     <item>
       <title>RenderContentChangedEventArgs</title>
-      <link>/hugo/posts/rhino/render/rendercontentchangedeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontentchangedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontentchangedeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontentchangedeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class RenderContentChangedEventArgsProperties RenderContent.ChangeContexts ChangeContext  (summary) (since) 5.7  RenderContent OldContent  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>RenderContentCollection</title>
-      <link>/hugo/posts/rhino/render/rendercontentcollection/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontentcollection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontentcollection/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontentcollection/</guid>
       <description>Namespace: Rhino.Render
 public class RenderContentCollectionConstructors RenderContentCollection()  (summary) (since) 6.0  RenderContentCollection(IntPtr nativePtr)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Add(RenderContentCollection collection)  (summary) (since) 6.0 (returns) void This is some return comment  void Append(RenderContent content)  (summary) (since) 6.0 (returns) void This is some return comment  void Clear()  (summary) (since) 6.0 (returns) void This is some return comment  RenderContent ContentAt(int index)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>RenderContentEventArgs</title>
-      <link>/hugo/posts/rhino/render/rendercontenteventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontenteventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontenteventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontenteventargs/</guid>
       <description>Namespace: Rhino.Render
 public class RenderContentEventArgsProperties RenderContent Content  (summary) (since) 5.7  RhinoDoc Document  (summary) (since) 6.0  RenderEnvironment.Usage EnvironmentUsage   (summary) Meaningful for CurrentEnvironmentChanged event. Will be one of Background, ReflectionAndRefraction or Skylighting.
 Since 6.11
@@ -577,30 +577,30 @@ Since 6.11
     
     <item>
       <title>RenderContentFieldChangedEventArgs</title>
-      <link>/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class RenderContentFieldChangedEventArgsProperties string FieldName  (summary) (since) 5.11  </description>
     </item>
     
     <item>
       <title>RenderContentKindList</title>
-      <link>/hugo/posts/rhino/render/rendercontentkindlist/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontentkindlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontentkindlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontentkindlist/</guid>
       <description>Namespace: Rhino.Render
 public class RenderContentKindListConstructors RenderContentKindList()  (summary) (since) 6.7  RenderContentKindList(IntPtr pRdkRenderContentKindList)  (summary) (since) 6.1  RenderContentKindList(RenderContentKindList kind_list)  (summary) (since) 6.7  Properties IntPtr CppPointer  (summary) (since) 6.1  Methods void Add(RenderContentKind kind)  (summary) (since) 6.7 (returns) void This is some return comment  bool Contains(RenderContentKind kind)  (summary) (since) 6.3 (returns) bool This is some return comment  int Count()  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>RenderContentManager</title>
-      <link>/hugo/posts/rhino/render/rendercontentmanager/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontentmanager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontentmanager/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontentmanager/</guid>
       <description>Namespace: Rhino.Render
 RenderContentManager&amp;rsquo;s RestoreRenderContents method unpacks the default render contents from the from the application and places them in the User&amp;rsquo;s folder. Only available on Mac at the moment.
 public class RenderContentManagerProperties static string UserRenderContentPath  (summary) Get the path to: Windows: C:\Users\user\AppData\Roaming\McNeel\Rhinoceros\6.0\Localization\en-US\Render Content macOS: ~/Library/Application Support/McNeel/Rhinoceros/6.0/Render Content If a CustomLibraryPath is set, this is returned (since) 6.10  Methods static bool RestoreRenderContent()  (summary) Unpacks the default render contents from the from the application and places them in the User&amp;rsquo;s folder.</description>
@@ -608,10 +608,10 @@ public class RenderContentManagerProperties static string UserRenderContentPath
     
     <item>
       <title>RenderContentSerializer</title>
-      <link>/hugo/posts/rhino/render/rendercontentserializer/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontentserializer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontentserializer/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontentserializer/</guid>
       <description>Namespace: Rhino.Render
 Used to import and export custom render content types such as materials, environments and textures. You must override RenderPlugIn.RenderContentSerializers() and return an array of derived RenderContentSerializer class types to add to the content browsers.
 public class RenderContentSerializerProperties bool CanRead  (summary) If True then the file type can be imported and will be included in the file open box when importing the specified render content type. (since) 5.</description>
@@ -619,10 +619,10 @@ public class RenderContentSerializerProperties bool CanRead  (summary) If True 
     
     <item>
       <title>RenderContentType</title>
-      <link>/hugo/posts/rhino/render/rendercontenttype/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercontenttype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercontenttype/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercontenttype/</guid>
       <description>Namespace: Rhino.Render
 Represents one of the render content types registered with Rhino.
 public class RenderContentTypeConstructors RenderContentType(Guid typeId)  (summary) (since) 6.0  Properties Guid Id  (summary) Returns the type identifier associated with this type. (since) 6.0  String InternalName  (summary) Returns the internal name identifier associated with this type. (since) 6.0  Guid PlugInId  (summary) (since) 6.0  Guid RenderEngineId  (summary) (since) 6.0  Methods static RenderContentType[] GetAllAvailableTypes()  (summary) Gets an array of all available render content types registered with Rhino.</description>
@@ -630,10 +630,10 @@ public class RenderContentTypeConstructors RenderContentType(Guid typeId)  (sum
     
     <item>
       <title>RenderCustomEventArgs</title>
-      <link>/hugo/posts/rhino/render/rendercustomeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendercustomeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendercustomeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendercustomeventargs/</guid>
       <description>Namespace: Rhino.Render
 Used as Rhino.Render Custom Events args.
 public class RenderCustomEventArgsProperties IntPtr Argument  (summary) The pointer to the custom event args. (since) 7.0  Guid EventType  (summary) The type of the event. (since) 7.0  </description>
@@ -641,50 +641,50 @@ public class RenderCustomEventArgsProperties IntPtr Argument  (summary) The poi
     
     <item>
       <title>RenderEnvironment</title>
-      <link>/hugo/posts/rhino/render/renderenvironment/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderenvironment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderenvironment/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderenvironment/</guid>
       <description>Namespace: Rhino.Render
 public class RenderEnvironmentProperties static RenderEnvironment CurrentEnvironment  (summary) (since) 5.1  String TextureChildSlotName  (summary) (since) 6.0  Methods static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment)  (summary) Constructs a new from a . (since) 5.3 (returns) RenderEnvironment This is some return comment  static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment,RhinoDoc doc)  (summary) (since) 6.4 (returns) RenderEnvironment This is some return comment  SimulatedEnvironment SimulateEnvironment(bool isForDataOnly)  (summary) (since) 6.0 (returns) SimulatedEnvironment This is some return comment  void SimulateEnvironment(SimulatedEnvironment simulation,bool isForDataOnly)  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>RenderEnvironmentTable</title>
-      <link>/hugo/posts/rhino/render/renderenvironmenttable/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderenvironmenttable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderenvironmenttable/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderenvironmenttable/</guid>
       <description>Namespace: Rhino.Render
 public class RenderEnvironmentTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderEnvironment c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderEnvironment c)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>RenderMaterial</title>
-      <link>/hugo/posts/rhino/render/rendermaterial/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendermaterial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendermaterial/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendermaterial/</guid>
       <description>Namespace: Rhino.Render
 public class RenderMaterialProperties static Guid GemMaterialGuid  (summary) (since) 6.0  static Guid GlassMaterialGuid  (summary) (since) 6.0  static Guid MetalMaterialGuid  (summary) (since) 6.0  static Guid PaintMaterialGuid  (summary) (since) 6.0  static Guid PictureMaterialGuid  (summary) (since) 6.0  static Guid PlasterMaterialGuid  (summary) (since) 6.0  static Guid PlasticMaterialGuid  (summary) (since) 6.0  PreviewBackgroundType DefaultPreviewBackgroundType  (summary) Set or get the default scene background for the image that appears in preview panes (since) 5.</description>
     </item>
     
     <item>
       <title>RenderMaterialTable</title>
-      <link>/hugo/posts/rhino/render/rendermaterialtable/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendermaterialtable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendermaterialtable/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendermaterialtable/</guid>
       <description>Namespace: Rhino.Render
 public class RenderMaterialTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderMaterial c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderMaterial c)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>RenderPanels</title>
-      <link>/hugo/posts/rhino/render/renderpanels/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderpanels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderpanels/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderpanels/</guid>
       <description>Namespace: Rhino.Render
 This class is used to extend the standard Render user interface
 public class RenderPanelsMethods static object FromRenderSessionId(PlugIn plugIn,Type panelType,Guid renderSessionId)  (summary) Get the instance of a render panel associated with a specific render session, this is useful when it is necessary to update a control from a (since) 5.11 (returns) object This is some return comment  void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)  (summary) Register custom render user interface with Rhino.</description>
@@ -692,10 +692,10 @@ public class RenderPanelsMethods static object FromRenderSessionId(PlugIn plugI
     
     <item>
       <title>RenderPipeline</title>
-      <link>/hugo/posts/rhino/render/renderpipeline/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderpipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderpipeline/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderpipeline/</guid>
       <description>Namespace: Rhino.Render
 Provides facilities to a render plug-in for integrating with the standard Rhino render window. Also adds helper functions for processing a render scene. This is the suggested class to use when integrating a renderer with Rhino and maintaining a &amp;ldquo;standard&amp;rdquo; user interface that users will expect.
 public class RenderPipelineProperties int ConfirmationSeconds  (summary) Sets the number of seconds that need to elapse during rendering before the user is asked if the rendered image should be saved.</description>
@@ -703,50 +703,50 @@ public class RenderPipelineProperties int ConfirmationSeconds  (summary) Sets t
     
     <item>
       <title>RenderPlugInInfo</title>
-      <link>/hugo/posts/rhino/render/renderplugininfo/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderplugininfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderplugininfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderplugininfo/</guid>
       <description>Namespace: Rhino.Render
 public class RenderPlugInInfoProperties string Name  (summary) (since) 6.0  Guid PlugInId  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>RenderPlugInList</title>
-      <link>/hugo/posts/rhino/render/renderpluginlist/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderpluginlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderpluginlist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderpluginlist/</guid>
       <description>Namespace: Rhino.Render
 public class RenderPlugInListConstructors RenderPlugInList()  (summary) (since) 6.0  </description>
     </item>
     
     <item>
       <title>RenderPrimitive</title>
-      <link>/hugo/posts/rhino/render/renderprimitive/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderprimitive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderprimitive/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderprimitive/</guid>
       <description>Namespace: Rhino.Render
 public class RenderPrimitiveProperties BoundingBox BoundingBox  (summary) The bounding box for this primitive. (since) 5.7  Transform InstanceTransform  (summary) Instance reference transform or Identity if not an instance reference. (since) 5.7  RenderPrimitiveType PrimitiveType  (summary) Call this before extracting meshes if you support render primitives to get the of this mesh then call the associated , , , or method. Calling the property will mesh the primitive and return a mesh always.</description>
     </item>
     
     <item>
       <title>RenderPrimitiveList</title>
-      <link>/hugo/posts/rhino/render/renderprimitivelist/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderprimitivelist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderprimitivelist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderprimitivelist/</guid>
       <description>Namespace: Rhino.Render
 public class RenderPrimitiveListProperties int Count  (summary) Number of meshes in this list (since) 5.7  RhinoObject RhinoObject  (summary) The Rhino object associated with this list (since) 5.7  bool UseObjectsMappingChannels  (summary) Returns True if the texture mapping will be taken from the Rhino object otherwise; the texture mapping will use the texture coordinates on the mesh only. (since) 5.7  Methods void Add(Box box,RenderMaterial material)  (summary) Add primitive box and material.</description>
     </item>
     
     <item>
       <title>RenderPropertyChangedEvent</title>
-      <link>/hugo/posts/rhino/render/renderpropertychangedevent/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderpropertychangedevent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderpropertychangedevent/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderpropertychangedevent/</guid>
       <description>Namespace: Rhino.Render
 Used by Rhino.Render object property value has changed events.
 public class RenderPropertyChangedEventProperties int Context  (summary) Optional argument which may specify the property being modified. (since) 5.10  RhinoDoc Document  (summary) The document triggering the event. (since) 5.10  </description>
@@ -754,10 +754,10 @@ public class RenderPropertyChangedEventProperties int Context  (summary) Option
     
     <item>
       <title>RenderSettings</title>
-      <link>/hugo/posts/rhino/render/rendersettings/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendersettings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendersettings/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendersettings/</guid>
       <description>Namespace: Rhino.Render
 Contains settings used in rendering.
 public class RenderSettingsConstructors RenderSettings()  (summary) Initialize a new instance of the RenderSettings class. (since) 5.0  RenderSettings(RenderSettings source)  (summary) Initialize new instance of the RenderSettings class. (since) 6.0  Properties System.Drawing.Color AmbientLight  (summary) Gets or sets the ambient light color used in rendering. (since) 5.0  AntialiasLevel AntialiasLevel  (summary) Gets or sets antialias level, used for render quality (since) 5.</description>
@@ -765,10 +765,10 @@ public class RenderSettingsConstructors RenderSettings()  (summary) Initialize 
     
     <item>
       <title>RenderSourceView</title>
-      <link>/hugo/posts/rhino/render/rendersourceview/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendersourceview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendersourceview/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendersourceview/</guid>
       <description>Namespace: Rhino.Render
 Helper class to get the correct view from the Render View Source settings.
 An instance of this class is supposed to be used with the using() {} construct.
@@ -779,70 +779,70 @@ If the RenderSettings have the source view set to for instance a SnapShot this c
     
     <item>
       <title>RenderTabs</title>
-      <link>/hugo/posts/rhino/render/rendertabs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendertabs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendertabs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendertabs/</guid>
       <description>Namespace: Rhino.Render
 public class RenderTabsMethods static object FromRenderSessionId(PlugIn plugIn,Type tabType,Guid renderSessionId)  (summary) Get the instance of a render tab associated with a specific render session, this is useful when it is necessary to update a control from a (since) 5.11 (returns) object This is some return comment  static Guid SessionIdFromTab(object tab)  (summary) Get the session Id that created the specified tab object. (since) 5.11 (returns) Guid This is some return comment  void RegisterTab(PlugIn plugin,Type tabType,string caption,Icon icon)  (summary) Register custom render user interface with Rhino.</description>
     </item>
     
     <item>
       <title>RenderTexture</title>
-      <link>/hugo/posts/rhino/render/rendertexture/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendertexture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendertexture/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendertexture/</guid>
       <description>Namespace: Rhino.Render
 public class RenderTextureProperties Transform LocalMappingTransform  (summary) Gets the transformation that can be applied to the UVW vector to convert it from normalized texture space into locally mapped space (ie - with repeat, offset and rotation applied.) (since) 5.1  uint RenderHashWithoutLocalMapping  (summary) Render hash for texture excluding local mapping. (since) 6.0  Methods static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)  (summary) (since) 5.7 (returns) bool This is some return comment  static Point3d GetWcsBoxMapping(Point3d worldXyz,Vector3d normal)  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>RenderTextureTable</title>
-      <link>/hugo/posts/rhino/render/rendertexturetable/</link>
+      <link>/apidocs/hugo/posts/rhino/render/rendertexturetable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/rendertexturetable/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/rendertexturetable/</guid>
       <description>Namespace: Rhino.Render
 public class RenderTextureTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderTexture c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderTexture c)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>RenderWindow</title>
-      <link>/hugo/posts/rhino/render/renderwindow/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderwindow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderwindow/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderwindow/</guid>
       <description>Namespace: Rhino.Render
 public class RenderWindowEvents static Cloned  (summary) (since) 5.11  Properties Guid SessionId  (summary) (since) 5.11  Methods static Guid ChannelId(StandardChannels ch)  (summary) (since) 5.0 (returns) Guid This is some return comment  static RenderWindow Create(Size szSize)  (summary) (since) 6.0 (returns) RenderWindow This is some return comment  static RenderWindow FromSessionId(Guid sessionId)  (summary) (since) 5.11 (returns) RenderWindow This is some return comment  bool AddChannel(StandardChannels channel)  (summary) Add a channel to the frame buffer in addition to the fixed Red, Green, Blue and Alpha channels.</description>
     </item>
     
     <item>
       <title>RenderWindowClonedEventArgs</title>
-      <link>/hugo/posts/rhino/render/renderwindowclonedeventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/render/renderwindowclonedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/renderwindowclonedeventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/renderwindowclonedeventargs/</guid>
       <description>Namespace: Rhino.Render
 public class RenderWindowClonedEventArgsProperties RenderWindow NewRenderWindow  (summary) (since) 5.11  Guid NewSessionId  (summary) (since) 5.11  RenderWindow OldRenderWindow  (summary) (since) 5.11  Guid OldSessionId  (summary) (since) 5.11  </description>
     </item>
     
     <item>
       <title>SceneObject</title>
-      <link>/hugo/posts/rhino/render/sceneobject/</link>
+      <link>/apidocs/hugo/posts/rhino/render/sceneobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/sceneobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/sceneobject/</guid>
       <description>Namespace: Rhino.Render
 public class SceneObjectProperties Rhino.Render.RenderMaterial Material  (summary) (since) 5.1  Rhino.Geometry.Mesh Mesh  (summary) (since) 5.1  </description>
     </item>
     
     <item>
       <title>SceneServerData</title>
-      <link>/hugo/posts/rhino/render/sceneserverdata/</link>
+      <link>/apidocs/hugo/posts/rhino/render/sceneserverdata/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/sceneserverdata/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/sceneserverdata/</guid>
       <description>Namespace: Rhino.Render
 The Scene Server Data used by the PreviewSceneServer
 public class SceneServerDataConstructors SceneServerData(PreviewGeometry geo,PreviewBackground back,PreviewLighting light,SceneServerDataUsage usage)  (summary) Constructor for SceneServerData (since) 6.0  Properties IntPtr CppPointer  (summary) The CppPointer of SceneServerData (since) 6.0  Methods void Dispose()  (summary) Dispose for SceneServerData (since) 6.0 (returns) void This is some return comment  </description>
@@ -850,40 +850,40 @@ public class SceneServerDataConstructors SceneServerData(PreviewGeometry geo,Pr
     
     <item>
       <title>SimulatedEnvironment</title>
-      <link>/hugo/posts/rhino/render/simulatedenvironment/</link>
+      <link>/apidocs/hugo/posts/rhino/render/simulatedenvironment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/simulatedenvironment/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/simulatedenvironment/</guid>
       <description>Namespace: Rhino.Render
 public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary) (since) 5.1  Properties System.Drawing.Color BackgroundColor  (summary) (since) 5.1  Rhino.Render.SimulatedTexture BackgroundImage  (summary) (since) 5.1  BackgroundProjections BackgroundProjection  (summary) (since) 5.1  Methods static BackgroundProjections ProjectionFromString(String projection)  (summary) (since) 5.1 (returns) BackgroundProjections This is some return comment  static string StringFromProjection(BackgroundProjections projection)  (summary) (since) 5.1 (returns) string This is some return comment  IntPtr ConstPointer()  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>SimulatedTexture</title>
-      <link>/hugo/posts/rhino/render/simulatedtexture/</link>
+      <link>/apidocs/hugo/posts/rhino/render/simulatedtexture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/simulatedtexture/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/simulatedtexture/</guid>
       <description>Namespace: Rhino.Render
 public class SimulatedTextureConstructors SimulatedTexture()  (summary) (since) 5.1  Properties static int BitmapSize  (summary) (since) 5.1  String Filename  (summary) (since) 5.1  bool Filtered  (summary) (since) 5.1  bool HasTransparentColor  (summary) (since) 5.1  Rhino.Geometry.Transform LocalMappingTransform  (summary) (since) 5.1  int MappingChannel  (summary) (since) 5.1  Rhino.Geometry.Vector2d Offset  (summary) (since) 5.1  String OriginalFilename  (summary) (since) 5.1  ProjectionModes ProjectionMode  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>Skylight</title>
-      <link>/hugo/posts/rhino/render/skylight/</link>
+      <link>/apidocs/hugo/posts/rhino/render/skylight/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/skylight/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/skylight/</guid>
       <description>Namespace: Rhino.Render
 public class SkylightConstructors Skylight()  (summary) Create an utility object not associated with any document (since) 6.0  Skylight(Skylight src)  (summary) Create an utility object not associated with any document from another object (since) 6.0  Events static Changed  (summary) This event is raised when a Skylight property value is changed. (since) 6.0  Properties Guid CustomEnvironment  (summary) (since) 6.0  bool CustomEnvironmentOn  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>Sun</title>
-      <link>/hugo/posts/rhino/render/sun/</link>
+      <link>/apidocs/hugo/posts/rhino/render/sun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/sun/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/sun/</guid>
       <description>Namespace: Rhino.Render
 Represents the Sun on a little portion of Earth.
 public class SunConstructors Sun()  (summary) Create a non-document controlled Sun (since) 5.0  Events static Changed  (summary) This event is raised when a Sun property value is changed. (since) 5.10  Properties double Altitude  (summary) Get the altitude for the sun. To set use SetPosition(azimuth, altitude) (since) 5.0  double Azimuth  (summary) Get the azimuth for the sun.</description>
@@ -891,20 +891,20 @@ public class SunConstructors Sun()  (summary) Create a non-document controlled 
     
     <item>
       <title>SupportOptions</title>
-      <link>/hugo/posts/rhino/render/supportoptions/</link>
+      <link>/apidocs/hugo/posts/rhino/render/supportoptions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/supportoptions/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/supportoptions/</guid>
       <description>Namespace: Rhino.Render
 public class SupportOptionsMethods static bool AlwaysShowSunPreview()  (summary) (since) 6.0 (returns) bool This is some return comment  static int AutoSaveKeepAmount()  (summary) (since) 6.0 (returns) int This is some return comment  static bool AutoSaveRenderings()  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CheckSupportFilesBeforeRendering()  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CombineEditors()  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>TexturedColor</title>
-      <link>/hugo/posts/rhino/render/texturedcolor/</link>
+      <link>/apidocs/hugo/posts/rhino/render/texturedcolor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/texturedcolor/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/texturedcolor/</guid>
       <description>Namespace: Rhino.Render
 Color4f specialization of TexturedValue.
 public class TexturedColorConstructors TexturedColor(string name,Color4f value,bool on,float amount)  (summary) (since) 6.12  </description>
@@ -912,10 +912,10 @@ public class TexturedColorConstructors TexturedColor(string name,Color4f value,
     
     <item>
       <title>TexturedFloat</title>
-      <link>/hugo/posts/rhino/render/texturedfloat/</link>
+      <link>/apidocs/hugo/posts/rhino/render/texturedfloat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/texturedfloat/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/texturedfloat/</guid>
       <description>Namespace: Rhino.Render
 float specialization of TexturedValue.
 public class TexturedFloatConstructors TexturedFloat(string name,float value,bool on,float amount)  (summary) (since) 6.12  </description>
@@ -923,10 +923,10 @@ public class TexturedFloatConstructors TexturedFloat(string name,float value,bo
     
     <item>
       <title>TexturedValue</title>
-      <link>/hugo/posts/rhino/render/texturedvalue/</link>
+      <link>/apidocs/hugo/posts/rhino/render/texturedvalue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/texturedvalue/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/texturedvalue/</guid>
       <description>Namespace: Rhino.Render
 Generic class to help holding on to related values. This can be used to get data from textured content fields with the HandleTexturedValue function.
 public class TexturedValueConstructors TexturedValue(string name,T value,bool on,float amount)  (summary) (since) (unknown)  </description>
@@ -934,10 +934,10 @@ public class TexturedValueConstructors TexturedValue(string name,T value,bool o
     
     <item>
       <title>TextureEvaluator</title>
-      <link>/hugo/posts/rhino/render/textureevaluator/</link>
+      <link>/apidocs/hugo/posts/rhino/render/textureevaluator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/textureevaluator/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/textureevaluator/</guid>
       <description>Namespace: Rhino.Render
 This is the interface to a lightweight object capable of evaluating texture color throughout uvw space. Derive from this class to create your own texture evaluator to return from a custom RenderTexture.
 public class TextureEvaluatorMethods static void FreeByteArray(IntPtr p)  (summary) (since) 7.0 (returns) void This is some return comment  static byte GetByteArrayValue(IntPtr p,int offset)  (summary) (since) 7.0 (returns) byte This is some return comment  static IntPtr NewByteArray(int width,int height)  (summary) (since) 7.</description>
@@ -945,20 +945,20 @@ public class TextureEvaluatorMethods static void FreeByteArray(IntPtr p)  (summ
     
     <item>
       <title>TextureGraphInfo</title>
-      <link>/hugo/posts/rhino/render/texturegraphinfo/</link>
+      <link>/apidocs/hugo/posts/rhino/render/texturegraphinfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/texturegraphinfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/texturegraphinfo/</guid>
       <description>Namespace: Rhino.Render
 public class TextureGraphInfoConstructors TextureGraphInfo()  (summary) (since) 6.3  Properties IntPtr CppPointer  (summary) (since) 6.3  Methods Axis ActiveAxis()  (summary) (since) 6.3 (returns) Axis This is some return comment  Channel ActiveChannel()  (summary) (since) 6.3 (returns) Channel This is some return comment  double AmountU()  (summary) (since) 6.3 (returns) double This is some return comment  double AmountV()  (summary) (since) 6.3 (returns) double This is some return comment  double AmountW()  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>TextureMapping</title>
-      <link>/hugo/posts/rhino/render/texturemapping/</link>
+      <link>/apidocs/hugo/posts/rhino/render/texturemapping/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/texturemapping/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/texturemapping/</guid>
       <description>Namespace: Rhino.Render
 Represents a texture mapping.
 public class TextureMappingProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  Guid Id  (summary) The unique Id for this texture mapping object. (since) 5.10  TextureMappingType MappingType  (summary) Texture mapping type associated with this Mapping object. (since) 5.10  Transform NormalTransform  (summary) For primitive based mappings, these transformations are used to map the world coordinate (x,y,z) point P and surface normal N before it is projected to the normalized mapping primitive.</description>
@@ -966,10 +966,10 @@ public class TextureMappingProperties ModelComponentType ComponentType  (summar
     
     <item>
       <title>TimeZone</title>
-      <link>/hugo/posts/rhino/render/timezone/</link>
+      <link>/apidocs/hugo/posts/rhino/render/timezone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/timezone/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/timezone/</guid>
       <description>Namespace: Rhino.Render
 TimeZone
 public class TimeZoneProperties double Hours  (summary) Gets hours of a time zone. (since) 6.0  double Latitude  (summary) Returns the latitude of a major city nearby (since) 6.15  double Longitude  (summary) Returns the Longitude of a major city nearby (since) 6.15  String Name  (summary) Gets name of a time zone. (since) 6.0  Methods static TimeZone TimeZoneAt(int index)  (summary) Returns a time zone at given index.</description>
@@ -977,20 +977,20 @@ public class TimeZoneProperties double Hours  (summary) Gets hours of a time zo
     
     <item>
       <title>TwoColorRenderTexture</title>
-      <link>/hugo/posts/rhino/render/twocolorrendertexture/</link>
+      <link>/apidocs/hugo/posts/rhino/render/twocolorrendertexture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/twocolorrendertexture/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/twocolorrendertexture/</guid>
       <description>Namespace: Rhino.Render
 public class TwoColorRenderTextureProperties Display.Color4f Color1  (summary) (since) 5.1  Display.Color4f Color2  (summary) (since) 5.1  bool SuperSample  (summary) (since) 5.1  bool SwapColors  (summary) (since) 5.1  double Texture1Amount  (summary) (since) 5.1  bool Texture1On  (summary) (since) 5.1  double Texture2Amount  (summary) (since) 5.1  bool Texture2On  (summary) (since) 5.1  </description>
     </item>
     
     <item>
       <title>UndoRedo</title>
-      <link>/hugo/posts/rhino/render/undoredo/</link>
+      <link>/apidocs/hugo/posts/rhino/render/undoredo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/undoredo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/undoredo/</guid>
       <description>Namespace: Rhino.Render
 This class contains the event for UndoRedoChanged that is fired from RDK .
 public class UndoRedoEvents static UndoRedoChanged  (summary) Called after undo or redo has occurred for document settings. (since) 6.0  static UndoRedoEndedChanged  (summary) This event is raised when undo/redo ends in rdk. (since) 7.0  </description>
@@ -998,10 +998,10 @@ public class UndoRedoEvents static UndoRedoChanged  (summary) Called after undo
     
     <item>
       <title>Utilities</title>
-      <link>/hugo/posts/rhino/render/utilities/</link>
+      <link>/apidocs/hugo/posts/rhino/render/utilities/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/render/utilities/</guid>
+      <guid>/apidocs/hugo/posts/rhino/render/utilities/</guid>
       <description>Namespace: Rhino.Render
 public class UtilitiesProperties static Guid DefaultRenderPlugInId  (summary) Get the plug-in Id for the default render plug-in (since) 5.3  static bool ShowIncompatibleEnvironments  (summary) Specifies whether incompatible content should be shown in the corresponding editor. (since) 5.3  static bool ShowIncompatibleMaterials  (summary) Specifies whether incompatible content should be shown in the corresponding editor. (since) 5.3  static bool ShowIncompatibleTextures  (summary) Specifies whether incompatible content should be shown in the corresponding editor.</description>
     </item>

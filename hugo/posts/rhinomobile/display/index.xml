@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RhinoMobile.Display on Test API Site</title>
-    <link>/hugo/posts/rhinomobile/display/</link>
+    <link>/apidocs/hugo/posts/rhinomobile/display/</link>
     <description>Recent content in RhinoMobile.Display on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo/posts/rhinomobile/display/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/apidocs/hugo/posts/rhinomobile/display/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

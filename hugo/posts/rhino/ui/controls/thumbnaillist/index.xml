@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.UI.Controls.Thumbnaillist on Test API Site</title>
-    <link>/hugo/posts/rhino/ui/controls/thumbnaillist/</link>
+    <link>/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/</link>
     <description>Recent content in Rhino.UI.Controls.Thumbnaillist on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo/posts/rhino/ui/controls/thumbnaillist/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ThumbnailList</title>
-      <link>/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</link>
+      <link>/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</guid>
+      <guid>/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</guid>
       <description>Namespace: Rhino.UI.Controls.Thumbnaillist
 public class ThumbnailListConstructors ThumbnailList()  (summary) (since) (unknown)  Properties ContentEditingContext CEC  (summary) (since) (unknown)  bool Created  (summary) (since) (unknown)  bool Enabled  (summary) (since) (unknown)  string EnglishCaption  (summary) (since) (unknown)  bool Hidden  (summary) (since) (unknown)  IntPtr HolderParent  (summary) (since) (unknown)  string LocalCaption  (summary) (since) (unknown)  bool Shown  (summary) (since) (unknown)  RdkThumbnaillistViewModel ViewModel  (summary) (since) (unknown)  Methods void Add(IRhRdkThumbnail t)  (summary) (since) (unknown) (returns) void This is some return comment  void Clear()  (summary) (since) (unknown) (returns) void This is some return comment  Rhino.</description>
     </item>

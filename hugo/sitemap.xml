@@ -3,2871 +3,2871 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/hugo/posts/</loc>
+    <loc>/apidocs/hugo/posts/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/analytics/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/analytics/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/angulardimension/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/angulardimension/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/angulardimensionobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/angulardimensionobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/animationproperties/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/animationproperties/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/annotationbase/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/annotationbase/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/annotationobjectbase/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/annotationobjectbase/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/appearancesettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/appearancesettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/appearancesettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/appearancesettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/arc/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/arc/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/arccurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/arccurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/collections/archivabledictionary/</loc>
+    <loc>/apidocs/hugo/posts/rhino/collections/archivabledictionary/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/areamassproperties/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/areamassproperties/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/arrowhead/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/arrowhead/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/assemblyresolver/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/assemblyresolver/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/asyncrendercontext/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/asyncrendercontext/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/bendspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/bendspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/beziercurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/beziercurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/binaryarchiveexception/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/binaryarchiveexception/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/binaryarchivefile/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/binaryarchivefile/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/binaryarchivereader/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/binaryarchivereader/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/binaryarchivewriter/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/binaryarchivewriter/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/bitmapentry/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/bitmapentry/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/bitmaptable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/bitmaptable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/boolfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/boolfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/boundingbox/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/boundingbox/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/box/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/box/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/brep/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/brep/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/brepcurvelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/brepcurvelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/brepedge/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/brepedge/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/brepedgelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/brepedgelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/brepface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/brepface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/brepfacelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/brepfacelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/breploop/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/breploop/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/breplooplist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/breplooplist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/brepobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/brepobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/brepregion/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/brepregion/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/brepregionfaceside/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/brepregionfaceside/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/brepsurfacelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/brepsurfacelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/breptrim/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/breptrim/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/breptrimlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/breptrimlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/brepvertex/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/brepvertex/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/brepvertexlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/brepvertexlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/bytearrayfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/bytearrayfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/cachedtexturecoordinates/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/cachedtexturecoordinates/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/calculateboundingboxeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/calculateboundingboxeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/categories/</loc>
+    <loc>/apidocs/hugo/categories/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/centermark/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/centermark/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/centermarkobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/centermarkobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/changequeue/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/changequeue/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/channel/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/channel/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/childslotnames/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/childslotnames/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/circle/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/circle/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/city/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/city/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/classarrayobjref/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarrayobjref/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/classarrayonobjref/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarrayonobjref/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/classarraystring/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/classarraystring/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/classidattribute/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/classidattribute/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/clippingplane/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/clippingplane/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/clippingplaneobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/clippingplaneobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/clippingplanesurface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/clippingplanesurface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/collapsiblesectionholderimpl/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionholderimpl/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/collapsiblesectionimpl/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionimpl/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/collapsiblesectionviewmodel/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/collapsiblesectionviewmodel/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/color4f/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/color4f/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/color4ffield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/color4ffield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorcmyk/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorcmyk/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorgradient/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorgradient/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorhsl/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorhsl/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorhsv/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorhsv/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorlab/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorlab/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorlch/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorlch/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorstop/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorstop/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/colorxyz/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/colorxyz/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/command/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/command/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/commandaliaslist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/commandaliaslist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/commandeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/commandeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/commandlineoption/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/commandlineoption/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commandlinetextwriter/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commandlinetextwriter/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/commandstyleattribute/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/commandstyleattribute/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/commoncomponenttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/commoncomponenttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/commonobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/commonobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/nodeincode/componentfunctioninfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/nodeincode/componentfunctioninfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/componentindex/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/componentindex/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/nodeincode/components/</loc>
+    <loc>/apidocs/hugo/posts/rhino/nodeincode/components/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/componentstatus/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/componentstatus/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/cone/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/cone/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/constructionplane/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/constructionplane/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/contentcollectioniterator/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/contentcollectioniterator/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/contentfactories/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/contentfactories/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/contentfactory/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/contentfactory/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/contenthash/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/contenthash/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/contentundoblocker/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/contentundoblocker/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/contentundohelper/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/contentundohelper/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/contentuuids/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/contentuuids/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/controlpoint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/controlpoint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/convertibleextensions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/convertibleextensions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/corruptgeometryexception/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/corruptgeometryexception/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/createprevieweventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/createprevieweventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/createtexture2dprevieweventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/createtexture2dprevieweventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/cullobjecteventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/cullobjecteventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/cursortooltipsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/cursortooltipsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/cursortooltipsettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/cursortooltipsettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/curvatureanalysissettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/curvatureanalysissettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/curvatureanalysissettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/curvatureanalysissettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/curve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/curve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/curvebooleanregions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/curvebooleanregions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/intersect/curveintersections/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/intersect/curveintersections/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/collections/curvelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/collections/curvelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/curveobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/curveobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/curveproxy/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/curveproxy/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/curvesegment/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/curvesegment/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/customcurveobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/customcurveobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/customdisplay/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/customdisplay/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/customevent/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/customevent/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/customgripobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/customgripobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/custommeshobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/custommeshobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/customobjectgrips/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/customobjectgrips/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/custompointobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/custompointobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/customrendercontentattribute/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/customrendercontentattribute/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/customrendermeshprovider/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/customrendermeshprovider/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/customrendermeshprovider2/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/customrendermeshprovider2/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/customrendersavefiletypes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/customrendersavefiletypes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/customundoeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/customundoeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/cylinder/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/cylinder/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/datetimefield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/datetimefield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/decal/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/decal/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/decalcreateparams/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/decalcreateparams/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/decals/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/decals/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/defaults/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/defaults/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/detailview/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/detailview/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/detailviewobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/detailviewobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/developablesrf/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/developablesrf/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/dialogs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/dialogs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/digitizerplugin/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/digitizerplugin/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/dimension/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/dimension/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/dimensionobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/dimensionobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/dimensionstyle/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/dimensionstyle/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/dimstyletable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/dimstyletable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/dimstyletableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/dimstyletableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaybitmap/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaybitmap/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaybitmapdrawlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaybitmapdrawlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displayconduit/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displayconduit/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displayengine/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displayengine/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaymaterial/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaymaterial/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaymodechangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaymodechangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaymodedescription/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaymodedescription/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaypipeline/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaypipeline/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/displaypipelineattributes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/displaypipelineattributes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/displaypipelinesettingschangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/displayrendersettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/displayrendersettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/dithering/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/dithering/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/documentcollectedexception/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/documentcollectedexception/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/documenteventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/documenteventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/documentopeneventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/documentopeneventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/documentorfreefloatingbase/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/documentorfreefloatingbase/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/documentsaveeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/documentsaveeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/doublefield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/doublefield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/dracocompression/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/dracocompression/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/dracocompressionoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/dracocompressionoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/draftangleanalysissettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/draftangleanalysissettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/draftangleanalysissettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/draftangleanalysissettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/draweventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/draweventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/drawforegroundeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/drawforegroundeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/drawingutilities/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/drawingutilities/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/drawmiddlegroundeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/drawmiddlegroundeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/drawobjecteventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/drawobjecteventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/dynamicobjecttransform/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/dynamicobjecttransform/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/earthanchorpoint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/earthanchorpoint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/edgeanalysissettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/edgeanalysissettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/edgeanalysissettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/edgeanalysissettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/ellipse/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/ellipse/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/datasource/eventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/datasource/eventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/datasource/eventinfoargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/datasource/eventinfoargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/extrusion/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/extrusion/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/extrusionobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/extrusionobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/factorybase/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/factorybase/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/field/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/field/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/fielddictionary/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/fielddictionary/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dm/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dm/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmcommoncomponenttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmcommoncomponenttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmdimstyletable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmdimstyletable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmgrouptable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmgrouptable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmhatchpatterntable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmhatchpatterntable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dminstancedefinitiontable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dminstancedefinitiontable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmlayertable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmlayertable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmlinetypetable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmlinetypetable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmmaterialtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmmaterialtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmnamedconstructionplanes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmnamedconstructionplanes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmnotes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmnotes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmobjecttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmobjecttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmplugindata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmplugindata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmplugindatatable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmplugindatatable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmstringtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmstringtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmviewtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmviewtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/file3dmwriteoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/file3dmwriteoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileobj/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileobj/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileobjreadoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileobjreadoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileobjwriteoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileobjwriteoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filepdf/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filepdf/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filepdfeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filepdfeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileply/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileply/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileplywriteoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileplywriteoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filereadoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filereadoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filereference/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filereference/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/filesettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/filesettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/filesettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/filesettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileslc/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileslc/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/fileslcwriteoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/fileslcwriteoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filestp/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filestp/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filestpwriteoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filestpwriteoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filetype/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filetype/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/filetypelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/filetypelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/filewriteoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/filewriteoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/floatfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/floatfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/flowspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/flowspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/font/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/font/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/fontquartet/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/fontquartet/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/fonts/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/fonts/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/fonttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/fonttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/freefloatingbase/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/freefloatingbase/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/generalsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/generalsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/generalsettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/generalsettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/geometrybase/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/geometrybase/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getarc/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getarc/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getbaseclass/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getbaseclass/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getcancel/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getcancel/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getcircle/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getcircle/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/getcoloreventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/getcoloreventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getcone/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getcone/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getcylinder/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getcylinder/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getellipsoid/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getellipsoid/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getinteger/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getinteger/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getline/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getline/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getnumber/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getnumber/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getoption/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getoption/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getpoint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getpoint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getpointdraweventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getpointdraweventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getpointmouseeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getpointmouseeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getpolyline/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getpolyline/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getsphere/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getsphere/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/getstring/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/getstring/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/gettorus/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/gettorus/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/gettransform/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/gettransform/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/gettruncatedcone/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/gettruncatedcone/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/gripobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/gripobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/gripsdraweventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/gripsdraweventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/gripstatus/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/gripstatus/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/groundplane/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/groundplane/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/groundplane/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/groundplane/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/group/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/group/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/grouptable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/grouptable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/grouptableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/grouptableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/guidfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/guidfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/gumball/gumballappearancesettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/gumball/gumballappearancesettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/gumball/gumballdisplayconduit/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/gumball/gumballdisplayconduit/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/gumball/gumballframe/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/gumball/gumballframe/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/gumball/gumballobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/gumball/gumballobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/gumball/gumballpickresult/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/gumball/gumballpickresult/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hatch/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hatch/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/hatchobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/hatchobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/hatchpattern/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/hatchpattern/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/hatchpatterntable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/hatchpatterntable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hermitesurface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hermitesurface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hiddenlinedrawing/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawing/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingobjectcurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingparameters/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingpoint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/hiddenlinedrawingsegment/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/historyrecord/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/historyrecord/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/historysettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/historysettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/hostutils/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/hostutils/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/hudmaxpasseschangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/imageadjust/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/imageadjust/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/imagefile/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/imagefile/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/imagefile/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/imagefile/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/imagefileeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/imagefileeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/indexpair/</loc>
+    <loc>/apidocs/hugo/posts/rhino/indexpair/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/initframebuffereventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/initframebuffereventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/initframebuffereventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/initframebuffereventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/instanceattributefield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/instanceattributefield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/instancedefinition/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/instancedefinition/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/instancedefinitiongeometry/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/instancedefinitiongeometry/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/instancedefinitiontable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/instancedefinitiontable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/instancedefinitiontableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/instancedefinitiontableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/instanceobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/instanceobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/instancereferencegeometry/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/instancereferencegeometry/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interop/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interop/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/interpolator/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/interpolator/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/intersect/intersection/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/intersect/intersection/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/intersect/intersectionevent/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/intersect/intersectionevent/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/interval/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/interval/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/intfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/intfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/invaliddimensionstyleidexception/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/layer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/layer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/layertable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/layertable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/layertableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/layertableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/leader/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/leader/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/leaderobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/leaderobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/lengthvalue/</loc>
+    <loc>/apidocs/hugo/posts/rhino/lengthvalue/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/licensedata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/licensedata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/licenseidattribute/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/licenseidattribute/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/licenselease/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/licenselease/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/licenseleasechangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/licenseleasechangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/licensestatechangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/licensestatechangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/licensestatus/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/licensestatus/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/licenseutils/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/licenseutils/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/light/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/light/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/light/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/light/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/lightarray/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/lightarray/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/lightmanagersupport/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/lightmanagersupport/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/lightmanagersupportclient/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/lightmanagersupportclient/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/lightobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/lightobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/lighttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/lighttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/lighttableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/lighttableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/line/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/line/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/lineardimension/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/lineardimension/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/lineardimensionobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/lineardimensionobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/linearworkflow/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/linearworkflow/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/linecurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/linecurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/linetype/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/linetype/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/linetypetable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/linetypetable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/loc/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/loc/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/localization/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/localization/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/localizestringpair/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/localizestringpair/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/maelstromspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/maelstromspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/manifesttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/manifesttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/mappingchannel/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/mappingchannel/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/mappingchannelcollection/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/mappingchannelcollection/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/mappingtag/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/mappingtag/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/material/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/material/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/material/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/material/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/materialref/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/materialref/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/materialrefcreateparams/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/materialrefcreateparams/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/materialrefs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/materialrefs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/materialtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/materialtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/materialtableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/materialtableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/matrix/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/matrix/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/mesh/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/mesh/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/mesh/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/mesh/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshcheckparameters/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshcheckparameters/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/intersect/meshclash/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/intersect/meshclash/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshdisplacementinfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshdisplacementinfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/meshdisplayattributes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/meshdisplayattributes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshextruder/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshextruder/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshfacelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshfacelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshfacenormallist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshfacenormallist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshingparameters/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshingparameters/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/meshinstance/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/meshinstance/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/intersect/meshinterference/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/intersect/meshinterference/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshngon/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshngon/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshngonlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshngonlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/meshobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/meshobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshpart/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshpart/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshpoint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshpoint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshtexturecoordinatelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshthicknessmeasurement/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshthicknessmeasurement/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshtopologyedgelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshtopologyedgelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshtopologyvertexlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshtopologyvertexlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshunsafelock/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshunsafelock/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshvertexcolorlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexcolorlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshvertexlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshvertexnormallist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexnormallist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/meshvertexstatuslist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/meshvertexstatuslist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/metadata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/metadata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/metadataproxy/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/metadataproxy/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/modelaidsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/modelaidsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/modelaidsettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/modelaidsettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/modelcomponent/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/modelcomponent/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphcontrol/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphcontrol/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/mostrecentcommanddescription/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/mostrecentcommanddescription/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/mousecallback/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/mousecallback/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/mousecallbackeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/mousecallbackeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/mousecursor/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/mousecursor/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/namedconstructionplanetable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/namedconstructionplanetable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/namedlayerstatetable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/namedlayerstatetable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/namedparameterseventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/namedparameterseventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/namedpositiontable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/namedpositiontable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/namedvalue/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/namedvalue/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/namedviewtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/namedviewtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/namehash/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/namehash/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/neverrepeatlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/neverrepeatlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/nodeincode/nodeincodetable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/nodeincode/nodeincodetable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/notifications/notification/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/notifications/notification/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/notifications/notificationbuttonclickedargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/notifications/notificationbuttonclickedargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/notlicensedexception/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/notlicensedexception/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/nurbscurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/nurbscurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurveknotlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/nurbscurvepointlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/nurbssurface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/nurbssurface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfaceknotlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/nurbssurfacepointlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/objectattributes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/objectattributes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/objectenumeratorsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/objectenumeratorsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/objectpropertiespage/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/objectpropertiespage/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/objectpropertiespagecollection/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/objectpropertiespagecollection/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/objectpropertiespageeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/objectpropertiespageeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/objecttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/objecttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/objref/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/objref/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/openfiledialog/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/openfiledialog/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/openglsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/openglsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/openglsettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/openglsettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/optioncolor/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/optioncolor/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/optiondouble/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/optiondouble/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/optioninteger/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/optioninteger/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/optionsdialogpage/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/optionsdialogpage/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/optiontoggle/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/optiontoggle/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/ordinatedimension/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/ordinatedimension/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/ordinatedimensionobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/ordinatedimensionobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/pageviewspacechangeeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/pageviewspacechangeeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/paneleventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/paneleventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/panelids/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/panelids/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/panels/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/panels/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/parametersnames/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/parametersnames/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/particle/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/particle/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/particlesystem/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/particlesystem/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/pathpoint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/pathpoint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/pen/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/pen/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/persistentsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/persistentsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/persistentsettingsconverter/</loc>
+    <loc>/apidocs/hugo/posts/rhino/persistentsettingsconverter/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/persistentsettingseventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/persistentsettingseventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/persistentsettingssavedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/persistentsettingssavedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/physicallybasedmaterial/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/physicallybasedmaterial/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/pickcontext/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/pickcontext/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/pixelbuffer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/pixelbuffer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/</loc>
+    <loc>/apidocs/hugo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/plane/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/plane/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/planesurface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/planesurface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/plugin/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/plugin/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/plugindescriptionattribute/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/plugindescriptionattribute/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/plugininfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/plugininfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point2d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point2d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/point2dfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/point2dfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point2f/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point2f/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/point3dfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/point3dfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point3dgrid/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point3dgrid/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/collections/point3dlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/collections/point3dlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point3f/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point3f/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/point4d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/point4d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/point4dfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/point4dfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/pointcloud/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/pointcloud/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/pointclouditem/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/pointclouditem/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/pointcloudobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/pointcloudobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/pointobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/pointobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/polycurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/polycurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/polyline/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/polyline/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/polylinecurve/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/polylinecurve/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/previewappearance/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/previewappearance/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/previewbackground/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/previewbackground/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/previewgeometry/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/previewgeometry/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/previewlighting/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/previewlighting/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/previewnotification/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/previewnotification/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/previewsceneserver/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/previewsceneserver/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/datasource/providerids/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/datasource/providerids/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/proxyobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/proxyobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/pythoncompiledcode/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/pythoncompiledcode/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/pythonscript/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/pythonscript/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/quadremeshparameters/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/quadremeshparameters/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/quaternion/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/quaternion/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/radialdimension/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/radialdimension/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/radialdimensionobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/radialdimensionobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/ray3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/ray3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/rdkedit/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/rdkedit/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/rdkmodaleditcontentbucket/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/rdkmodaleditcontentbucket/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/rdknotloadedexception/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/rdknotloadedexception/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/rdkselectionnavigator/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/rdkselectionnavigator/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rdkundo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rdkundo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rdkundorecord/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rdkundorecord/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/realtimedisplaymode/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/realtimedisplaymode/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/realtimedisplaymodeclassinfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/rectangle3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/rectangle3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/reducemeshparameters/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/reducemeshparameters/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshrefinements/refinementsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshrefinements/refinementsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontent/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontent/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontentchangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontentchangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontentcollection/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontentcollection/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontenteventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontenteventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontentfieldchangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontentkindlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontentkindlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontentmanager/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontentmanager/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontentserializer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontentserializer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rendercontenttableeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rendercontenttableeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercontenttype/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercontenttype/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendercustomeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendercustomeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderenvironment/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderenvironment/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderenvironmenttable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderenvironmenttable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendermaterial/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendermaterial/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rendermaterialassignmentchangedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rendermaterialassignmentchangedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendermaterialtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendermaterialtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderpanels/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderpanels/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderpipeline/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderpipeline/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/renderplugin/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/renderplugin/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderplugininfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderplugininfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderpluginlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderpluginlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderprimitive/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderprimitive/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderprimitivelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderprimitivelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderpropertychangedevent/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderpropertychangedevent/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendersettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendersettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendersourceview/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendersourceview/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendertabs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendertabs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendertexture/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendertexture/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/rendertexturetable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/rendertexturetable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderwindow/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderwindow/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/renderwindowclonedeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/renderwindowclonedeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/replayhistorydata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/replayhistorydata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/replayhistoryresult/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/replayhistoryresult/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/revsurface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/revsurface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/</loc>
+    <loc>/apidocs/hugo/posts/rhino/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/collections/</loc>
+    <loc>/apidocs/hugo/posts/rhino/collections/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/snapshots/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/snapshots/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/intersect/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/intersect/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/meshrefinements/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/meshrefinements/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/nodeincode/</loc>
+    <loc>/apidocs/hugo/posts/rhino/nodeincode/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/plugins/</loc>
+    <loc>/apidocs/hugo/posts/rhino/plugins/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/ui/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/ui/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/inprocess/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/inprocess/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/notifications/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/notifications/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/datasource/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/datasource/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/thumbnaillist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/thumbnailui/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/gumball/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/gumball/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rhinoapp/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rhinoapp/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/inprocess/rhinocore/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/inprocess/rhinocore/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinodeselectallobjectseventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinodeselectallobjectseventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rhinodoc/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rhinodoc/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/rhinodoccommontable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/rhinodoccommontable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rhinodocobserverargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rhinodocobserverargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/rhinoget/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/rhinoget/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/rhinohelp/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/rhinohelp/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/collections/rhinolist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/collections/rhinolist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rhinomath/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rhinomath/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhinomobile/display/</loc>
+    <loc>/apidocs/hugo/posts/rhinomobile/display/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinoobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinoobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/rhinopageinterop/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/rhinopageinterop/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/rhinopageview/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/rhinopageview/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/datasources/rhinosettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/datasources/rhinosettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/rhinoview/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/rhinoview/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/rhinoviewport/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/rhinoviewport/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/rhinowindow/</loc>
+    <loc>/apidocs/hugo/posts/rhino/rhinowindow/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/riskyaction/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/riskyaction/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/rtree/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/rtree/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/rtreeeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/rtreeeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/ruiupdateui/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/ruiupdateui/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/runtimedocumentdatatable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/runtimedocumentdatatable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/savefiledialog/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/savefiledialog/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/scalevalue/</loc>
+    <loc>/apidocs/hugo/posts/rhino/scalevalue/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/sceneobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/sceneobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/sceneserverdata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/sceneserverdata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/selcommand/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/selcommand/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/selectionfiltersettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/selectionfiltersettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/selectionfiltersettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/selectionfiltersettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/serializationoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/serializationoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/sha1opennurbs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/sha1opennurbs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/shortcutkeysettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/shortcutkeysettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/showpaneleventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/showpaneleventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/shutliningcurveinfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/shutliningcurveinfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/silhouette/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/silhouette/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearray2dex/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearray2dex/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayarraypoint3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayarraypoint3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraybinaryarchivereader/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraybreppointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraybreppointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayclippingplaneobjectpointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraycurvepointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraycurvepointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraydouble/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraydouble/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayextrusionpointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayextrusionpointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraygeometrypointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraygeometrypointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayguid/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayguid/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayguidpointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayguidpointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayinterval/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayinterval/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayline/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayline/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraylinetypepointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraylinetypepointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraymeshpointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraymeshpointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayplane/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayplane/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint2d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint2d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraypoint3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearraysurfacepointer/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearraysurfacepointer/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/simplearrayuint/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/simplearrayuint/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/simulatedenvironment/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/simulatedenvironment/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/simulatedtexture/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/simulatedtexture/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/skin/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/skin/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/changequeue/skylight/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/changequeue/skylight/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/skylight/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/skylight/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/smarttracksettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/smarttracksettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/smarttracksettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/smarttracksettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/snapshots/snapshotsclient/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/snapshots/snapshotsclient/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/snapshottable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/snapshottable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/spacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/spacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/sphere/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/sphere/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/splopspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/splopspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/sporphspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/sporphspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/stackeddialogpage/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/stackeddialogpage/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/statusbar/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/statusbar/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/stretchspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/stretchspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/stringfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/stringfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/stringholder/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/stringholder/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/stringparser/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/stringparser/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/stringparsersettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/stringparsersettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/stringtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/stringtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/interopwrappers/stringwrapper/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/interopwrappers/stringwrapper/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/subd/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/subd/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/subdcomponent/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/subdcomponent/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/subdcreationoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/subdcreationoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/subdedge/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/subdedge/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/subdedgelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/subdedgelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/subdface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/subdface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/subdfacelist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/subdfacelist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/subdvertex/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/subdvertex/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/collections/subdvertexlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/collections/subdvertexlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/sumsurface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/sumsurface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/sun/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/sun/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/supportoptions/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/supportoptions/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/surface/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/surface/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/surfacecurvature/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/surfacecurvature/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/surfaceobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/surfaceobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/sweeponerail/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/sweeponerail/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/sweeptworail/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/sweeptworail/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/symbols/</loc>
+    <loc>/apidocs/hugo/posts/rhino/symbols/</loc>
   </url>
   
   <url>
-    <loc>/hugo/tags/</loc>
+    <loc>/apidocs/hugo/tags/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/taperspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/taperspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/input/custom/taskcompleteeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/input/custom/taskcompleteeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/text3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/text3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/textdot/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/textdot/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/textentity/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/textentity/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/textfields/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/textfields/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/fileio/textlog/</loc>
+    <loc>/apidocs/hugo/posts/rhino/fileio/textlog/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/textobject/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/textobject/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/texture/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/texture/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/texturedcolor/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/texturedcolor/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/texturedfloat/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/texturedfloat/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/texturedvalue/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/texturedvalue/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/textureevaluator/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/textureevaluator/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/texturegraphinfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/texturegraphinfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/texturemapping/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/texturemapping/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/texturemappingeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/texturemappingeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/thumbnailui/thumbdata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbdata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/thumbnailui/thumbnail/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbnail/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/thumbnaillist/thumbnaillist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/thumbnailui/thumbnailviewmodelfactory/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/thumbnailui/thumbnailviewmodelfactory/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/timezone/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/timezone/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/toolbar/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/toolbar/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/toolbarfile/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/toolbarfile/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/toolbarfilecollection/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/toolbarfilecollection/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/toolbargroup/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/toolbargroup/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/torus/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/torus/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/transform/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/transform/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/transformfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/transformfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/collections/transformobjectlist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/collections/transformobjectlist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/notifications/trulyobservableorderedset/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/notifications/trulyobservableorderedset/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/morphs/twistspacemorph/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/morphs/twistspacemorph/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/twocolorrendertexture/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/twocolorrendertexture/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/controls/undorecord/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/controls/undorecord/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/undoredo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/undoredo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/commands/undoredoeventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/commands/undoredoeventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/unknownuserdata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/unknownuserdata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/unroller/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/unroller/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/userdata/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/userdata/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/userdatalist/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/userdatalist/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/userdatalistenumerator/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/userdatalistenumerator/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/custom/userdictionary/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/custom/userdictionary/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/ui/userinterfacesection/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/ui/userinterfacesection/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/utilities/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/utilities/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/vector2d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/vector2d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/vector2dfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/vector2dfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/vector2f/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/vector2f/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/vector3d/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/vector3d/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/fields/vector3dfield/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/fields/vector3dfield/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/vector3f/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/vector3f/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/viewcapture/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/viewcapture/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/viewcapturesettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/viewcapturesettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/viewcapturewriter/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/viewcapturewriter/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/viewdisplayattributes/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/viewdisplayattributes/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/vieweventargs/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/vieweventargs/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/viewinfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/viewinfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/viewportinfo/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/viewportinfo/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/viewsettings/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/viewsettings/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/applicationsettings/viewsettingsstate/</loc>
+    <loc>/apidocs/hugo/posts/rhino/applicationsettings/viewsettingsstate/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/tables/viewtable/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/tables/viewtable/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/visualanalysismode/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/visualanalysismode/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/geometry/volumemassproperties/</loc>
+    <loc>/apidocs/hugo/posts/rhino/geometry/volumemassproperties/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/ui/waitcursor/</loc>
+    <loc>/apidocs/hugo/posts/rhino/ui/waitcursor/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/docobjects/worksession/</loc>
+    <loc>/apidocs/hugo/posts/rhino/docobjects/worksession/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/render/ui/worldmapdaynight/</loc>
+    <loc>/apidocs/hugo/posts/rhino/render/ui/worldmapdaynight/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/display/zbuffercapture/</loc>
+    <loc>/apidocs/hugo/posts/rhino/display/zbuffercapture/</loc>
   </url>
   
   <url>
-    <loc>/hugo/posts/rhino/runtime/zooclientparameters/</loc>
+    <loc>/apidocs/hugo/posts/rhino/runtime/zooclientparameters/</loc>
   </url>
   
 </urlset>

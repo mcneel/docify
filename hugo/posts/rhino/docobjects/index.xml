@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.DocObjects on Test API Site</title>
-    <link>/hugo/posts/rhino/docobjects/</link>
+    <link>/apidocs/hugo/posts/rhino/docobjects/</link>
     <description>Recent content in Rhino.DocObjects on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo/posts/rhino/docobjects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/apidocs/hugo/posts/rhino/docobjects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AngularDimensionObject</title>
-      <link>/hugo/posts/rhino/docobjects/angulardimensionobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/angulardimensionobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/angulardimensionobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/angulardimensionobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents an angular dimension geometry and attributes
 public class AngularDimensionObjectProperties Geometry.AngularDimension AngularDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  </description>
@@ -23,10 +23,10 @@ public class AngularDimensionObjectProperties Geometry.AngularDimension Angular
     
     <item>
       <title>AnimationProperties</title>
-      <link>/hugo/posts/rhino/docobjects/animationproperties/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/animationproperties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/animationproperties/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/animationproperties/</guid>
       <description>Namespace: Rhino.DocObjects
 Contains information used by the Animation Tools to create sun, season, turntable and fly through animations.
 public class AnimationPropertiesConstructors AnimationProperties()  (summary) Initializes a new instance of the class. (since) 6.11  AnimationProperties(AnimationProperties source)  (summary) Initialize new instance of the AnimationProperties class. (since) 6.11  Properties string AnimationName  (summary) Gets or sets the name of the animation sequence. (since) 6.11  Guid CameraPathId  (summary) Gets or sets the object ID of the camera path.</description>
@@ -34,10 +34,10 @@ public class AnimationPropertiesConstructors AnimationProperties()  (summary) I
     
     <item>
       <title>AnnotationObjectBase</title>
-      <link>/hugo/posts/rhino/docobjects/annotationobjectbase/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/annotationobjectbase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/annotationobjectbase/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/annotationobjectbase/</guid>
       <description>Namespace: Rhino.DocObjects
 Base class for all annotation objects (text and dimensions)
 public class AnnotationObjectBaseProperties AnnotationBase AnnotationGeometry  (summary) Get the annotation base geometry for this object (since) 6.0  string DisplayText  (summary) Gets the text that is displayed to users. (since) 5.0  bool HasMeasurableTextFields  (summary) Test if the text in the annotation object contains fields that involve length, area, or volume measurements (since) 7.0  </description>
@@ -45,10 +45,10 @@ public class AnnotationObjectBaseProperties AnnotationBase AnnotationGeometry  
     
     <item>
       <title>BitmapEntry</title>
-      <link>/hugo/posts/rhino/docobjects/bitmapentry/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/bitmapentry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/bitmapentry/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/bitmapentry/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino.DocObjects.Tables.BitmapTable entry
 public class BitmapEntryProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string FileName  (summary) The name of this bitmap. (since) 5.1  bool IsReference  (summary) Gets a value indicting whether this bitmap is a referenced bitmap. Referenced bitmaps are part of referenced documents. (since) 5.1  Methods bool Save(string fileName)  (summary) (since) 5.1 (returns) bool This is some return comment  </description>
@@ -56,10 +56,10 @@ public class BitmapEntryProperties ModelComponentType ComponentType  (summary) 
     
     <item>
       <title>BrepObject</title>
-      <link>/hugo/posts/rhino/docobjects/brepobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/brepobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/brepobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/brepobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents a brep in a document.
 public class BrepObjectProperties Brep BrepGeometry  (summary) Gets the brep geometry linked with this object. (since) 5.0  Methods Brep DuplicateBrepGeometry()  (summary) Constructs a new deep copy of the brep geometry. (since) 5.0 (returns) Brep This is some return comment  </description>
@@ -67,10 +67,10 @@ public class BrepObjectProperties Brep BrepGeometry  (summary) Gets the brep ge
     
     <item>
       <title>CentermarkObject</title>
-      <link>/hugo/posts/rhino/docobjects/centermarkobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/centermarkobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/centermarkobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/centermarkobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents a centermark geometry and attributes
 public class CentermarkObjectProperties Geometry.Centermark CentermarkGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  </description>
@@ -78,10 +78,10 @@ public class CentermarkObjectProperties Geometry.Centermark CentermarkGeometry 
     
     <item>
       <title>ClippingPlaneObject</title>
-      <link>/hugo/posts/rhino/docobjects/clippingplaneobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/clippingplaneobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/clippingplaneobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/clippingplaneobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents the object of a clipping plane, stored in the Rhino document and with attributes.
 public class ClippingPlaneObjectProperties Rhino.Geometry.ClippingPlaneSurface ClippingPlaneGeometry  (summary) Gets the clipping plane surface. (since) 5.0  Methods bool AddClipViewport(RhinoViewport viewport,bool commit)  (summary) Adds a viewport to the list of viewports that this clipping plane clips. (since) 6.1 (returns) bool This is some return comment  bool RemoveClipViewport(RhinoViewport viewport,bool commit)  (summary) Removes a viewport from the list of viewports that this clipping plane clips.</description>
@@ -89,10 +89,10 @@ public class ClippingPlaneObjectProperties Rhino.Geometry.ClippingPlaneSurface 
     
     <item>
       <title>ConstructionPlane</title>
-      <link>/hugo/posts/rhino/docobjects/constructionplane/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/constructionplane/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/constructionplane/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/constructionplane/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents a contruction plane inside the document. Use Rhino.DocObjects.Tables.NamedConstructionPlaneTable methods and indexers to add and access a .
 public class ConstructionPlaneConstructors ConstructionPlane()  (summary) Initializes a new instance of . (since) 5.0  Properties bool DepthBuffered  (summary) Gets or sets whether the grid is drawn on top of geometry. false=grid is always drawn behind 3d geometrytrue=grid is drawn at its depth as a 3d plane and grid lines obscure things behind the grid.</description>
@@ -100,10 +100,10 @@ public class ConstructionPlaneConstructors ConstructionPlane()  (summary) Initi
     
     <item>
       <title>CurveObject</title>
-      <link>/hugo/posts/rhino/docobjects/curveobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/curveobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/curveobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/curveobject/</guid>
       <description>Namespace: Rhino.DocObjects
 A Rhino Object that represents curve geometry and attributes
 public class CurveObjectProperties Curve CurveGeometry  (summary) (since) 5.0  Methods Curve DuplicateCurveGeometry()  (summary) (since) 5.0 (returns) Curve This is some return comment  </description>
@@ -111,20 +111,20 @@ public class CurveObjectProperties Curve CurveGeometry  (summary) (since) 5.0  
     
     <item>
       <title>Defaults</title>
-      <link>/hugo/posts/rhino/docobjects/defaults/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/defaults/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/defaults/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/defaults/</guid>
       <description>Namespace: Rhino.DocObjects
 public class DefaultsProperties static HatchPattern Dash  (summary) (since) 6.0  static HatchPattern Grid  (summary) (since) 6.0  static HatchPattern Grid60  (summary) (since) 6.0  static HatchPattern Hatch1  (summary) (since) 6.0  static HatchPattern Hatch2  (summary) (since) 6.0  static HatchPattern Hatch3  (summary) (since) 6.0  static HatchPattern Plus  (summary) (since) 6.0  static HatchPattern Solid  (summary) (since) 6.0  static HatchPattern Squares  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>DetailViewObject</title>
-      <link>/hugo/posts/rhino/docobjects/detailviewobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/detailviewobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/detailviewobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/detailviewobject/</guid>
       <description>Namespace: Rhino.DocObjects
 A detail view object is a nested Rhino viewport placed on a page view with a 2D closed curve boundary. It can be any type of modeling view.
 public class DetailViewObjectProperties string DescriptiveTitle  (summary) Detail objects have two strings that can be used to describe the detail: 1. The name string that is part of the object&amp;rsquo;s attributes 2. The viewport projection title that is part of the viewport This function combines these two strings to create a single &amp;ldquo;description&amp;rdquo; string in the form of attribute_name - projection_title.</description>
@@ -132,10 +132,10 @@ public class DetailViewObjectProperties string DescriptiveTitle  (summary) Deta
     
     <item>
       <title>DimensionObject</title>
-      <link>/hugo/posts/rhino/docobjects/dimensionobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/dimensionobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/dimensionobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/dimensionobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents dimension geometry and attributes
 public class DimensionObjectProperties DimensionStyle DimensionStyle  (summary) Gets the associated with this OrdinateDimensionObject. (since) 6.0  </description>
@@ -143,10 +143,10 @@ public class DimensionObjectProperties DimensionStyle DimensionStyle  (summary)
     
     <item>
       <title>DimensionStyle</title>
-      <link>/hugo/posts/rhino/docobjects/dimensionstyle/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/dimensionstyle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/dimensionstyle/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/dimensionstyle/</guid>
       <description>Namespace: Rhino.DocObjects
 Can also be considered an annotation style since it is used for more than just dimensions
 public class DimensionStyleConstructors DimensionStyle()  (summary) Create a new non-document controlled annotation style (since) 5.0  Properties bool AlternateBelowLine  (summary) (since) 6.0  LengthDisplay AlternateDimensionLengthDisplay  (summary) (since) 6.0  double AlternateLengthFactor  (summary) (since) 5.0  int AlternateLengthResolution  (summary) (since) 6.0  string AlternatePrefix  (summary) (since) 6.0  double AlternateRoundoff  (summary) (since) 6.</description>
@@ -154,10 +154,10 @@ public class DimensionStyleConstructors DimensionStyle()  (summary) Create a ne
     
     <item>
       <title>EarthAnchorPoint</title>
-      <link>/hugo/posts/rhino/docobjects/earthanchorpoint/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/earthanchorpoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/earthanchorpoint/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/earthanchorpoint/</guid>
       <description>Namespace: Rhino.DocObjects
 Contains information about the model&amp;rsquo;s position in latitude, longitude, and elevation for GIS mapping applications.
 public class EarthAnchorPointConstructors EarthAnchorPoint()  (summary) Initializes a new instance of the class. (since) 5.0  Properties string Description  (summary) Gets or sets the long form of the identifying information about this location. (since) 5.0  double EarthBasepointElevation  (summary) Gets or sets the point elevation on earth, in meters. (since) 5.</description>
@@ -165,20 +165,20 @@ public class EarthAnchorPointConstructors EarthAnchorPoint()  (summary) Initial
     
     <item>
       <title>ExtrusionObject</title>
-      <link>/hugo/posts/rhino/docobjects/extrusionobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/extrusionobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/extrusionobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/extrusionobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class ExtrusionObjectProperties Extrusion ExtrusionGeometry  (summary) (since) 5.0  Methods Extrusion DuplicateExtrusionGeometry()  (summary) (since) 5.0 (returns) Extrusion This is some return comment  </description>
     </item>
     
     <item>
       <title>Font</title>
-      <link>/hugo/posts/rhino/docobjects/font/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/font/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/font/</guid>
       <description>Namespace: Rhino.DocObjects
 Defines a format for text.
 public class FontConstructors Font(string familyName)  (summary) (since) 6.0  Font(string familyName,FontWeight weight,FontStyle style,bool underlined,bool strikethrough)  (summary) (since) 6.0  Properties bool Bold  (summary) (since) 5.0  string Description  (summary) Returns a long description that includes family, face, weight, stretch and style information. Generally not useful for finding matching fonts. (since) 6.5  string EnglishFaceName  (summary) Returns English Facename (since) 6.</description>
@@ -186,60 +186,60 @@ public class FontConstructors Font(string familyName)  (summary) (since) 6.0  F
     
     <item>
       <title>FontQuartet</title>
-      <link>/hugo/posts/rhino/docobjects/fontquartet/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/fontquartet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/fontquartet/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/fontquartet/</guid>
       <description>Namespace: Rhino.DocObjects
 public class FontQuartetProperties bool HasBoldFont  (summary) (since) 6.7  bool HasBoldItalicFont  (summary) (since) 6.7  bool HasItalicFont  (summary) (since) 6.7  bool HasRegularFont  (summary) (since) 6.7  string QuartetName  (summary) (since) 6.7  Methods string ToString()  (summary) (since) (unknown) (returns) string This is some return comment  </description>
     </item>
     
     <item>
       <title>GripObject</title>
-      <link>/hugo/posts/rhino/docobjects/gripobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/gripobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/gripobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/gripobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class GripObjectProperties Point3d CurrentLocation  (summary) (since) 5.0  int Index  (summary) (since) 5.0  bool Moved  (summary) True if the grip has moved from OriginalLocation. (since) 5.0  Point3d OriginalLocation  (summary) (since) 5.0  Guid OwnerId  (summary) (since) 5.0  double Weight  (summary) The weight of a NURBS control point grip or RhinoMath.UnsetValue if the grip is not a NURBS control point grip.</description>
     </item>
     
     <item>
       <title>Group</title>
-      <link>/hugo/posts/rhino/docobjects/group/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/group/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/group/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/group/</guid>
       <description>Namespace: Rhino.DocObjects
 public class GroupProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int UserStringCount  (summary) Gets the amount of user strings. (since) 6.4  Methods string GetUserString(string key)  (summary) Gets user string from this geometry. (since) 6.4 (returns) string This is some return comment  System.Collections.Specialized.NameValueCollection GetUserStrings()  (summary) Gets a copy of all (user key string, user value string) pairs attached to this geometry. (since) 6.</description>
     </item>
     
     <item>
       <title>HatchObject</title>
-      <link>/hugo/posts/rhino/docobjects/hatchobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/hatchobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/hatchobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/hatchobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class HatchObjectProperties Hatch HatchGeometry  (summary) (since) 5.0  Methods bool SetHatchGeometry(Hatch hatch)  (summary) Replaces a hatch object&amp;rsquo;s underlying hatch geometry. This only works for non-document hatch objects. (since) 7.0 (returns) bool This is some return comment  </description>
     </item>
     
     <item>
       <title>HatchPattern</title>
-      <link>/hugo/posts/rhino/docobjects/hatchpattern/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/hatchpattern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/hatchpattern/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/hatchpattern/</guid>
       <description>Namespace: Rhino.DocObjects
 public class HatchPatternConstructors HatchPattern()  (summary) (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) (since) 5.0  HatchPatternFillType FillType  (summary) (since) 5.0  int Index  (summary) Index in the hatch pattern table for this pattern. -1 if not in the table. (since) 5.0  bool IsDeleted  (summary) Deleted hatch patterns are kept in the runtime hatch pattern table so that undo will work with hatch patterns.</description>
     </item>
     
     <item>
       <title>HistoryRecord</title>
-      <link>/hugo/posts/rhino/docobjects/historyrecord/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/historyrecord/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/historyrecord/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/historyrecord/</guid>
       <description>Namespace: Rhino.DocObjects
 Provides a single bundling of information to be passed to Rhino when setting up history for an object.
 public class HistoryRecordConstructors HistoryRecord(Command command,int version)  (summary) (since) 5.0  Properties bool CopyOnReplaceObject  (summary) When an object is replaced and the old object has a history record with this field set, the history record is copied and attached to the new object. That allows a descendant object to continue the history linkage after it is edited.</description>
@@ -247,10 +247,10 @@ public class HistoryRecordConstructors HistoryRecord(Command command,int versio
     
     <item>
       <title>InstanceDefinition</title>
-      <link>/hugo/posts/rhino/docobjects/instancedefinition/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/instancedefinition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/instancedefinition/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/instancedefinition/</guid>
       <description>Namespace: Rhino.DocObjects
 This is the same as , but in a Rhino document.
 public class InstanceDefinitionProperties InstanceDefinitionArchiveFileStatus ArchiveFileStatus  (summary) Returns the archive file status of a linked instance definition. (since) 5.2  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  string Description  (summary) (since) 5.0  Guid Id  (summary) (since) 5.0  int Index  (summary) Index of this instance definition in the index definition table.</description>
@@ -258,30 +258,30 @@ public class InstanceDefinitionProperties InstanceDefinitionArchiveFileStatus A
     
     <item>
       <title>InstanceObject</title>
-      <link>/hugo/posts/rhino/docobjects/instanceobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/instanceobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/instanceobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/instanceobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class InstanceObjectProperties Point3d InsertionPoint  (summary) Basepoint coordinates of a block. (since) 5.0  InstanceDefinition InstanceDefinition  (summary) instance definition that this object uses. (since) 5.0  Transform InstanceXform  (summary) transformation applied to an instance definition for this object. (since) 5.0  Methods void Explode(bool explodeNestedInstances,RhinoObject[] pieces,ObjectAttributes[] pieceAttributes,Transform[] pieceTransforms)  (summary) Explodes the instance reference into pieces. (since) 5.0 (returns) void This is some return comment  bool UsesDefinition(int definitionIndex,int nestingLevel)  (summary) Determine if this reference uses an instance definition (since) 5.</description>
     </item>
     
     <item>
       <title>Layer</title>
-      <link>/hugo/posts/rhino/docobjects/layer/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/layer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/layer/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/layer/</guid>
       <description>Namespace: Rhino.DocObjects
 public class Layerstatic !=  (summary) (since) 6.0  static ==  (summary) (since) 6.0  Constructors Layer()  (summary) (since) 5.0  Properties static string PathSeparator  (summary) The string &amp;ldquo;::&amp;rdquo; (colon,colon) is used to separate parent and child layer names. (since) 6.0  System.Drawing.Color Color  (summary) Gets or sets the display color for this layer. (since) 5.0  ComponentStatus ComponentStatus  (summary) Gets or sets the status of the layer.</description>
     </item>
     
     <item>
       <title>LeaderObject</title>
-      <link>/hugo/posts/rhino/docobjects/leaderobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/leaderobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/leaderobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/leaderobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents leader geometry and attributes
 public class LeaderObjectProperties Geometry.Leader LeaderGeometry  (summary) Get the leader geometry for this object. (since) 6.0  </description>
@@ -289,20 +289,20 @@ public class LeaderObjectProperties Geometry.Leader LeaderGeometry  (summary) G
     
     <item>
       <title>LightObject</title>
-      <link>/hugo/posts/rhino/docobjects/lightobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/lightobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/lightobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/lightobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class LightObjectProperties ModelComponentType ComponentType  (summary) (since) 6.0  Light LightGeometry  (summary) (since) 5.0  Methods Light DuplicateLightGeometry()  (summary) (since) 5.0 (returns) Light This is some return comment  </description>
     </item>
     
     <item>
       <title>LinearDimensionObject</title>
-      <link>/hugo/posts/rhino/docobjects/lineardimensionobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/lineardimensionobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/lineardimensionobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/lineardimensionobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents a linear dimension geometry and attributes
 public class LinearDimensionObjectProperties Geometry.LinearDimension LinearDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  </description>
@@ -310,40 +310,40 @@ public class LinearDimensionObjectProperties Geometry.LinearDimension LinearDim
     
     <item>
       <title>Linetype</title>
-      <link>/hugo/posts/rhino/docobjects/linetype/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/linetype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/linetype/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/linetype/</guid>
       <description>Namespace: Rhino.DocObjects
 public class LinetypeConstructors Linetype()  (summary) (since) 5.0  Properties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  bool IsDeleted  (summary) Gets a value indicating whether this linetype has been deleted and is currently in the Undo buffer. (since) 5.0  bool IsModified  (summary) True if this linetype has been modified by LinetypeTable.ModifyLinetype() and the modifications can be undone. (since) 5.0  bool IsReference  (summary) Gets a value indicting whether this linetype is a referenced linetype.</description>
     </item>
     
     <item>
       <title>Material</title>
-      <link>/hugo/posts/rhino/docobjects/material/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/material/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/material/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/material/</guid>
       <description>Namespace: Rhino.DocObjects
 public class MaterialConstructors Material()  (summary) (since) 5.0  Material(Material other)  (summary) (since) 6.0  Properties static Material DefaultMaterial  (summary) (since) 5.0  static double MaxShine  (summary) (since) 5.0  bool AlphaTransparency  (summary) (since) 6.0  System.Drawing.Color AmbientColor  (summary) (since) 5.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  System.Drawing.Color DiffuseColor  (summary) (since) 5.0  bool DisableLighting  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>MaterialRef</title>
-      <link>/hugo/posts/rhino/docobjects/materialref/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/materialref/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/materialref/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/materialref/</guid>
       <description>Namespace: Rhino.DocObjects
 public class MaterialRefProperties Guid BackFaceMaterialId  (summary) The Id of the Material used to render the back of an object. (since) 5.10  int BackFaceMaterialIndex  (summary) The index of the material used to render the back of an object (since) 5.10  Guid FrontFaceMaterialId  (summary) The Id of the Material used to render the front of an object. (since) 5.10  int FrontFaceMaterialIndex  (summary) The index of the material used to render the front of an object (since) 5.</description>
     </item>
     
     <item>
       <title>MaterialRefCreateParams</title>
-      <link>/hugo/posts/rhino/docobjects/materialrefcreateparams/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/materialrefcreateparams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/materialrefcreateparams/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/materialrefcreateparams/</guid>
       <description>Namespace: Rhino.DocObjects
 Options passed to MaterialRefs.Create
 public class MaterialRefCreateParamsProperties Guid BackFaceMaterialId  (summary) The Id of the Material used to render the back of an object. (since) 5.10  int BackFaceMaterialIndex  (summary) The index of the material used to render the back of an object (since) 5.10  Guid FrontFaceMaterialId  (summary) The Id of the Material used to render the front of an object. (since) 5.10  int FrontFaceMaterialIndex  (summary) The index of the material used to render the front of an object (since) 5.</description>
@@ -351,10 +351,10 @@ public class MaterialRefCreateParamsProperties Guid BackFaceMaterialId  (summar
     
     <item>
       <title>MaterialRefs</title>
-      <link>/hugo/posts/rhino/docobjects/materialrefs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/materialrefs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/materialrefs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/materialrefs/</guid>
       <description>Namespace: Rhino.DocObjects
 If you are developing a high quality plug-in renderer, and a user is assigning a custom render material to this object, then add rendering material information to the MaterialRefs dictionary.
 Note to developers: As soon as the MaterialRefs dictionary contains items rendering material queries slow down. Do not populate the MaterialRefs dictionary when setting the MaterialIndex will take care of your needs.
@@ -363,20 +363,20 @@ public class MaterialRefsProperties int Count  (summary) Gets the number of ele
     
     <item>
       <title>MeshObject</title>
-      <link>/hugo/posts/rhino/docobjects/meshobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/meshobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/meshobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/meshobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class MeshObjectProperties bool IsCustomObject  (summary) (since) 6.0  Mesh MeshGeometry  (summary) (since) 5.0  Methods static bool CheckMeshes(IEnumerablemeshObjects,TextLog textLog,MeshCheckParameters parameters)  (summary) Examines mesh objects and logs a description of what it finds right or wrong. The various properties the function checks for are described in MeshCheckParameters. (since) 7.0 (returns) bool This is some return comment  Mesh DuplicateMeshGeometry()  (summary) (since) 5.0 (returns) Mesh This is some return comment  </description>
     </item>
     
     <item>
       <title>ModelComponent</title>
-      <link>/hugo/posts/rhino/docobjects/modelcomponent/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/modelcomponent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/modelcomponent/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/modelcomponent/</guid>
       <description>Namespace: Rhino.DocObjects
 Base class for all components in a model (document) and manages the index, id and other information common to this type of objects. This class parallels the C++ ON_ModelComponent.
 public class ModelComponentProperties ComponentStatus ComponentStatus  (summary) Gets or sets the component status of the model component. (since) 6.0  ModelComponentType ComponentType  (summary) Gets the for this object. Useful in switch statements. (since) 6.0  string DeletedName  (summary) Gets the name of a component that is deleted.</description>
@@ -384,10 +384,10 @@ public class ModelComponentProperties ComponentStatus ComponentStatus  (summary
     
     <item>
       <title>ObjectAttributes</title>
-      <link>/hugo/posts/rhino/docobjects/objectattributes/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/objectattributes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/objectattributes/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/objectattributes/</guid>
       <description>Namespace: Rhino.DocObjects
 Attributes (color, material, layer,&amp;hellip;) associated with a rhino object
 public class ObjectAttributesConstructors ObjectAttributes()  (summary) (since) 5.0  Properties bool CastsShadows  (summary) Gets or sets an object&amp;rsquo;s casts shadows property, or whether or not an object casts shadows on other objects and a ground plane. (since) 6.0  ObjectColorSource ColorSource  (summary) The color used to display an object is specified in one of three ways. If ColorSource is ON::color_from_layer, then the object&amp;rsquo;s layer ON_Layer::Color() is used.</description>
@@ -395,10 +395,10 @@ public class ObjectAttributesConstructors ObjectAttributes()  (summary) (since)
     
     <item>
       <title>ObjectEnumeratorSettings</title>
-      <link>/hugo/posts/rhino/docobjects/objectenumeratorsettings/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/objectenumeratorsettings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/objectenumeratorsettings/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/objectenumeratorsettings/</guid>
       <description>Namespace: Rhino.DocObjects
 Settings used for getting an enumerator of objects in a document See Rhino.Collections.ObjectTable.GetEnumerator()
 public class ObjectEnumeratorSettingsConstructors ObjectEnumeratorSettings()  (summary) (since) 5.0  Properties bool ActiveObjects  (summary) (since) 5.0  Type ClassTypeFilter  (summary) (since) 5.0  bool DeletedObjects  (summary) (since) 5.0  bool HiddenObjects  (summary) (since) 5.0  bool IdefObjects  (summary) When true, ONLY Instance Definitions will be returned (since) 5.0  bool IncludeGrips  (summary) (since) 5.</description>
@@ -406,10 +406,10 @@ public class ObjectEnumeratorSettingsConstructors ObjectEnumeratorSettings()  (
     
     <item>
       <title>ObjRef</title>
-      <link>/hugo/posts/rhino/docobjects/objref/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/objref/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/objref/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/objref/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents a reference to a Rhino object.
 public class ObjRefConstructors ObjRef(Guid id)  (summary) Initializes a new object reference from a globally unique identifier (). (since) 5.0  ObjRef(Guid id,ComponentIndex ci)  (summary) Initializes a new object reference from a guid and component index. The component index is used to specify a &amp;ldquo;piece&amp;rdquo; of the geometry (since) 7.0  ObjRef(RhinoObject rhinoObject)  (summary) Initializes a new object reference from a Rhino object.</description>
@@ -417,10 +417,10 @@ public class ObjRefConstructors ObjRef(Guid id)  (summary) Initializes a new ob
     
     <item>
       <title>OrdinateDimensionObject</title>
-      <link>/hugo/posts/rhino/docobjects/ordinatedimensionobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/ordinatedimensionobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/ordinatedimensionobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/ordinatedimensionobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents an ordinate dimension geometry and attributes
 public class OrdinateDimensionObjectProperties Geometry.OrdinateDimension OrdinateDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  </description>
@@ -428,30 +428,30 @@ public class OrdinateDimensionObjectProperties Geometry.OrdinateDimension Ordin
     
     <item>
       <title>PointCloudObject</title>
-      <link>/hugo/posts/rhino/docobjects/pointcloudobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/pointcloudobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/pointcloudobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/pointcloudobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class PointCloudObjectProperties PointCloud PointCloudGeometry  (summary) (since) 5.0  Methods PointCloud DuplicatePointCloudGeometry()  (summary) (since) 5.0 (returns) PointCloud This is some return comment  </description>
     </item>
     
     <item>
       <title>PointObject</title>
-      <link>/hugo/posts/rhino/docobjects/pointobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/pointobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/pointobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/pointobject/</guid>
       <description>Namespace: Rhino.DocObjects
 public class PointObjectProperties Point PointGeometry  (summary) (since) 5.0  Methods Point DuplicatePointGeometry()  (summary) (since) 5.0 (returns) Point This is some return comment  </description>
     </item>
     
     <item>
       <title>ProxyObject</title>
-      <link>/hugo/posts/rhino/docobjects/proxyobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/proxyobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/proxyobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/proxyobject/</guid>
       <description>Namespace: Rhino.DocObjects
 A proxy object (not saved in files)
 public class ProxyObjectMethods int CreateMeshes(MeshType meshType,MeshingParameters parameters,bool ignoreCustomParameters)  (summary) (since) 7.0 (returns) int This is some return comment  Mesh[] GetMeshes(MeshType meshType)  (summary) (since) 7.0 (returns) Mesh[] This is some return comment  </description>
@@ -459,10 +459,10 @@ public class ProxyObjectMethods int CreateMeshes(MeshType meshType,MeshingParam
     
     <item>
       <title>RadialDimensionObject</title>
-      <link>/hugo/posts/rhino/docobjects/radialdimensionobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/radialdimensionobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/radialdimensionobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/radialdimensionobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents a radial dimension geometry and attributes
 public class RadialDimensionObjectProperties Geometry.RadialDimension RadialDimensionGeometry  (summary) Get the dimension geometry for this object. (since) 6.0  </description>
@@ -470,10 +470,10 @@ public class RadialDimensionObjectProperties Geometry.RadialDimension RadialDim
     
     <item>
       <title>ReplayHistoryData</title>
-      <link>/hugo/posts/rhino/docobjects/replayhistorydata/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/replayhistorydata/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/replayhistorydata/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/replayhistorydata/</guid>
       <description>Namespace: Rhino.DocObjects
 Provides history information to commands that will repeat history construction. Generally, a developer using this class will not construct a new instance, but receive one.
 public class ReplayHistoryDataProperties RhinoDoc Document  (summary) The document this record belongs to (since) 5.0  int HistoryVersion  (summary) ReplayHistory overrides check the version number to ensure the information saved in the history record is compatible with the current implementation of ReplayHistory (since) 5.</description>
@@ -481,40 +481,40 @@ public class ReplayHistoryDataProperties RhinoDoc Document  (summary) The docum
     
     <item>
       <title>ReplayHistoryResult</title>
-      <link>/hugo/posts/rhino/docobjects/replayhistoryresult/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/replayhistoryresult/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/replayhistoryresult/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/replayhistoryresult/</guid>
       <description>Namespace: Rhino.DocObjects
 public class ReplayHistoryResultProperties RhinoObject ExistingObject  (summary) The previously existing object. Do not attempt to edit this object. It might have been already deleted by, for example, dragging. (since) 5.0  Methods bool UpdateToAngularDimension(AngularDimension dimension,ObjectAttributes attributes)  (summary) (since) 5.0 (returns) bool This is some return comment  bool UpdateToArc(Arc arc,ObjectAttributes attributes)  (summary) (since) 5.0 (returns) bool This is some return comment  bool UpdateToBrep(Brep brep,ObjectAttributes attributes)  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>RhinoDeselectAllObjectsEventArgs</title>
-      <link>/hugo/posts/rhino/docobjects/rhinodeselectallobjectseventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinodeselectallobjectseventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinodeselectallobjectseventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinodeselectallobjectseventargs/</guid>
       <description>Namespace: Rhino.DocObjects
 public class RhinoDeselectAllObjectsEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  int ObjectCount  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>RhinoModifyObjectAttributesEventArgs</title>
-      <link>/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinomodifyobjectattributeseventargs/</guid>
       <description>Namespace: Rhino.DocObjects
 public class RhinoModifyObjectAttributesEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  ObjectAttributes NewAttributes  (summary) (since) 5.0  ObjectAttributes OldAttributes  (summary) (since) 5.0  RhinoObject RhinoObject  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>RhinoObject</title>
-      <link>/hugo/posts/rhino/docobjects/rhinoobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinoobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinoobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinoobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents an object in the document. RhinoObjects should only ever be creatable by the RhinoDoc.
 public class RhinoObjectProperties static uint NextRuntimeSerialNumber  (summary) Gets the runtime serial number that will be assigned to the next Rhino Object that is created. (since) 5.0  ObjectAttributes Attributes  (summary) Gets or sets the object attributes. (since) 5.0  ModelComponentType ComponentType  (summary) Returns . (since) 6.0  RhinoDoc Document  (summary) Gets the document that owns this object.</description>
@@ -522,40 +522,40 @@ public class RhinoObjectProperties static uint NextRuntimeSerialNumber  (summar
     
     <item>
       <title>RhinoObjectEventArgs</title>
-      <link>/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinoobjecteventargs/</guid>
       <description>Namespace: Rhino.DocObjects
 public class RhinoObjectEventArgsProperties Guid ObjectId  (summary) (since) 5.0  RhinoObject TheObject  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>RhinoObjectSelectionEventArgs</title>
-      <link>/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinoobjectselectioneventargs/</guid>
       <description>Namespace: Rhino.DocObjects
 public class RhinoObjectSelectionEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  RhinoObject[] RhinoObjects  (summary) (since) 5.0  bool Selected  (summary) Returns True if objects are being selected. Returns False if objects are being deseleced. (since) 5.0  </description>
     </item>
     
     <item>
       <title>RhinoReplaceObjectEventArgs</title>
-      <link>/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinoreplaceobjecteventargs/</guid>
       <description>Namespace: Rhino.DocObjects
 public class RhinoReplaceObjectEventArgsProperties RhinoDoc Document  (summary) (since) 5.0  RhinoObject NewRhinoObject  (summary) (since) 5.0  Guid ObjectId  (summary) (since) 5.0  RhinoObject OldRhinoObject  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>RhinoTransformObjectsEventArgs</title>
-      <link>/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/rhinotransformobjectseventargs/</guid>
       <description>Namespace: Rhino.DocObjects
 EventArgs passed to RhinoDoc.BeforeTransform.
 public class RhinoTransformObjectsEventArgsProperties int ObjectCount  (summary) (since) 5.10  RhinoObject[] Objects  (summary) (since) 5.10  bool ObjectsWillBeCopied  (summary) (since) 5.10  Transform Transform  (summary) (since) 5.10  </description>
@@ -563,10 +563,10 @@ public class RhinoTransformObjectsEventArgsProperties int ObjectCount  (summary
     
     <item>
       <title>SurfaceObject</title>
-      <link>/hugo/posts/rhino/docobjects/surfaceobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/surfaceobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/surfaceobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/surfaceobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents a surface in a document.
 public class SurfaceObjectProperties Surface SurfaceGeometry  (summary) Gets the surface geometry linked with this object. (since) 5.0  Methods Surface DuplicateSurfaceGeometry()  (summary) Constructs a new deep copy of the surface geometry. (since) 5.0 (returns) Surface This is some return comment  </description>
@@ -574,10 +574,10 @@ public class SurfaceObjectProperties Surface SurfaceGeometry  (summary) Gets th
     
     <item>
       <title>TextObject</title>
-      <link>/hugo/posts/rhino/docobjects/textobject/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/textobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/textobject/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/textobject/</guid>
       <description>Namespace: Rhino.DocObjects
 Rhino Object that represents text geometry and attributes
 public class TextObjectProperties Geometry.TextEntity TextGeometry  (summary) Get the text geometry for this object. (since) 5.0  </description>
@@ -585,10 +585,10 @@ public class TextObjectProperties Geometry.TextEntity TextGeometry  (summary) G
     
     <item>
       <title>Texture</title>
-      <link>/hugo/posts/rhino/docobjects/texture/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/texture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/texture/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/texture/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents a texture that is mapped on objects.
 public class TextureConstructors Texture()  (summary) Initializes a new texture. (since) 5.0  Properties bool ApplyUvwTransform  (summary) If True then the UVW transform is applied to the texture otherwise the UVW transform is ignored. (since) 5.6  bool Enabled  (summary) If the texture is enabled then it will be visible in the rendered display otherwise it will not.</description>
@@ -596,10 +596,10 @@ public class TextureConstructors Texture()  (summary) Initializes a new texture
     
     <item>
       <title>ViewInfo</title>
-      <link>/hugo/posts/rhino/docobjects/viewinfo/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/viewinfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/viewinfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/viewinfo/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents the name and orientation of a View (and named view). views can be thought of as cameras.
 public class ViewInfoConstructors ViewInfo(RhinoViewport rhinoViewPort)  (summary) Access to the ViewInfo for given RhinoViewport (since) 6.0  ViewInfo(uint docRuntimeSerialNumber)  (summary) Construct the ViewInfo for active viewport of given doc. (since) 6.0  Properties double FocalBlurAperture  (summary) Gets or sets the Focal blur aperture of the active viewport (since) 6.</description>
@@ -607,10 +607,10 @@ public class ViewInfoConstructors ViewInfo(RhinoViewport rhinoViewPort)  (summa
     
     <item>
       <title>ViewportInfo</title>
-      <link>/hugo/posts/rhino/docobjects/viewportinfo/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/viewportinfo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/viewportinfo/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/viewportinfo/</guid>
       <description>Namespace: Rhino.DocObjects
 Represents a viewing frustum.
 public class ViewportInfoConstructors ViewportInfo()  (summary) Initializes a new instance. (since) 5.0  ViewportInfo(RhinoViewport rhinoViewport)  (summary) Copies all of the ViewportInfo data from an existing RhinoViewport. (since) 5.0  ViewportInfo(ViewportInfo other)  (summary) Initializes a new instance by copying values from another instance. (since) 5.0  Properties static Vector3d DefaultCameraDirection  (summary) Default z=up perspective camera direction (since) 6.0  double Camera35mmLensLength  (summary) This property assumes the camera is horizontal and crop the film rather than the image when the aspect of the frustum is not 36/24.</description>
@@ -618,10 +618,10 @@ public class ViewportInfoConstructors ViewportInfo()  (summary) Initializes a n
     
     <item>
       <title>Worksession</title>
-      <link>/hugo/posts/rhino/docobjects/worksession/</link>
+      <link>/apidocs/hugo/posts/rhino/docobjects/worksession/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo/posts/rhino/docobjects/worksession/</guid>
+      <guid>/apidocs/hugo/posts/rhino/docobjects/worksession/</guid>
       <description>Namespace: Rhino.DocObjects
 Manages a list of models that are being used as reference geometry.
 public class WorksessionProperties RhinoDoc Document  (summary) Gets the document that owns this worksession. (since) 6.0  string FileName  (summary) Returns the path to the open worksession, or .rws, file. If there is no worksession file open, or the active worksession has not yet been saved, then None is returned. (since) 6.0  int ModelCount  (summary) Returns the number of models in the worksession.</description>
