@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Geometry.MeshRefinements on Test API Site</title>
-    <link>/posts/rhino/geometry/meshrefinements/</link>
+    <link>/hugo/posts/rhino/geometry/meshrefinements/</link>
     <description>Recent content in Rhino.Geometry.MeshRefinements on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/posts/rhino/geometry/meshrefinements/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo/posts/rhino/geometry/meshrefinements/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RefinementSettings</title>
-      <link>/posts/rhino/geometry/meshrefinements/refinementsettings/</link>
+      <link>/hugo/posts/rhino/geometry/meshrefinements/refinementsettings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/geometry/meshrefinements/refinementsettings/</guid>
+      <guid>/hugo/posts/rhino/geometry/meshrefinements/refinementsettings/</guid>
       <description>Namespace: Rhino.Geometry.MeshRefinements
 Defines the way a mesh refinement modifier works.
 public class RefinementSettingsConstructors RefinementSettings()  (summary) Creates a default operation settings object. (since) 6.0  Properties CancellationToken ContinueRequest  (summary) A token to request computation termination. (since) 6.0  bool HasPull  (summary) Gets a value indicating whether this subdivision should create a result on a specific surface. (since) 6.0  int Level  (summary) The level of subdivision to achieve.</description>

@@ -23,9 +23,9 @@
     
 
 
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/hugo/assets/style.css">
   </head>
 
 
@@ -34,7 +34,7 @@
 
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="/">
+  <a class="UnderlineNav-actions muted-link h2" href="/hugo/">
     Test API Site
   </a>
 
@@ -125,7 +125,7 @@
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/filetype/">
+      <a href="/hugo/posts/rhino/fileio/filetype/">
         <div class="h2 mt-1 mb-1">FileType</div>
       </a>
     </div>
@@ -145,7 +145,7 @@
     
     Namespace: Rhino.FileIO
 public class FileTypeConstructors FileType(string extension,string description)  (summary) (since) 5.0  Properties string Description  (summary) (since) 5.0  string Extension  (summary) (since) 5.0  
-    <a class="muted-link" href="/posts/rhino/fileio/filetype/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/filetype/">…</a>
   </div>
 </div>
 
@@ -155,7 +155,7 @@ public class FileTypeConstructors FileType(string extension,string description)
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/filewriteoptions/">
+      <a href="/hugo/posts/rhino/fileio/filewriteoptions/">
         <div class="h2 mt-1 mb-1">FileWriteOptions</div>
       </a>
     </div>
@@ -175,7 +175,7 @@ public class FileTypeConstructors FileType(string extension,string description)
     
     Namespace: Rhino.FileIO
 public class FileWriteOptionsConstructors FileWriteOptions()  (summary) (since) 5.0  Properties string DestinationFileName  (summary) For use on Apple frameworks only. Retrns the final destination file name. (since) 6.3  int FileVersion  (summary) (since) 5.0  bool IncludeBitmapTable  (summary) The file written should include the bitmap table if your File Writing Plug-in supports it. (since) 5.0  bool IncludeHistory  (summary) The file written should include history information if your File Writing Plug-In supports it.
-    <a class="muted-link" href="/posts/rhino/fileio/filewriteoptions/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/filewriteoptions/">…</a>
   </div>
 </div>
 
@@ -185,7 +185,7 @@ public class FileWriteOptionsConstructors FileWriteOptions()  (summary) (since)
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/imagefile/">
+      <a href="/hugo/posts/rhino/fileio/imagefile/">
         <div class="h2 mt-1 mb-1">ImageFile</div>
       </a>
     </div>
@@ -206,7 +206,7 @@ public class FileWriteOptionsConstructors FileWriteOptions()  (summary) (since)
     Namespace: Rhino.FileIO
 Support functions for image files
 public class ImageFileMethods static bool SupportsAlphaChannel(string filename)  (summary) Returns True if file at given path is an image file and that file format supports an alpha channel (since) 6.0 (returns) bool This is some return comment  
-    <a class="muted-link" href="/posts/rhino/fileio/imagefile/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/imagefile/">…</a>
   </div>
 </div>
 
@@ -216,7 +216,7 @@ public class ImageFileMethods static bool SupportsAlphaChannel(string filename)
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/manifesttable/">
+      <a href="/hugo/posts/rhino/fileio/manifesttable/">
         <div class="h2 mt-1 mb-1">ManifestTable</div>
       </a>
     </div>
@@ -237,7 +237,7 @@ public class ImageFileMethods static bool SupportsAlphaChannel(string filename)
     Namespace: Rhino.FileIO
 Maintains an index to every model component that is in the 3dm file. This is the &ldquo;more comprehensive&rdquo; table that contains all objects in all other tables.
 public class ManifestTableProperties ModelComponentType ComponentType  (summary) Returns . (since) 6.0  int Count  (summary) Total number of items in the manifest, including deleted items. (since) 6.0  long LongCount  (summary) Total number of items in the manifest, including deleted items.
-    <a class="muted-link" href="/posts/rhino/fileio/manifesttable/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/manifesttable/">…</a>
   </div>
 </div>
 
@@ -247,7 +247,7 @@ public class ManifestTableProperties ModelComponentType ComponentType  (summary
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/namehash/">
+      <a href="/hugo/posts/rhino/fileio/namehash/">
         <div class="h2 mt-1 mb-1">NameHash</div>
       </a>
     </div>
@@ -268,7 +268,7 @@ public class ManifestTableProperties ModelComponentType ComponentType  (summary
     Namespace: Rhino.FileIO
 Contains information that is useful to uniquly identify an object name. This object is immutable.
 public class NameHashstatic !=  (summary) Determines if two NameHash instances are different by value. (since) 6.0  static ==  (summary) Determines if two NameHash instances are equal by value. (since) 6.0  Constructors NameHash(string name)  (summary) Creates a new NameHash, representing a piece of text. (since) 6.0  NameHash(string name,Guid parentId)  (summary) Creates a new NameHash, representing a piece of text.
-    <a class="muted-link" href="/posts/rhino/fileio/namehash/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/namehash/">…</a>
   </div>
 </div>
 
@@ -278,7 +278,7 @@ public class NameHashstatic !=  (summary) Determines if two NameHash instances 
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/serializationoptions/">
+      <a href="/hugo/posts/rhino/fileio/serializationoptions/">
         <div class="h2 mt-1 mb-1">SerializationOptions</div>
       </a>
     </div>
@@ -299,7 +299,7 @@ public class NameHashstatic !=  (summary) Determines if two NameHash instances 
     Namespace: Rhino.FileIO
 Contains options for serializing -or storing- data, such as Rhino version and user data.
 public class SerializationOptionsConstructors SerializationOptions()  (summary) Initializes a new instance of the class. (since) 5.0  Properties int RhinoVersion  (summary) Gets or sets a value indicating the Rhino version. (since) 5.0  bool WriteUserData  (summary) Gets or sets a value indicating whether to write user data. (since) 5.0  
-    <a class="muted-link" href="/posts/rhino/fileio/serializationoptions/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/serializationoptions/">…</a>
   </div>
 </div>
 
@@ -309,7 +309,7 @@ public class SerializationOptionsConstructors SerializationOptions()  (summary)
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/sha1opennurbs/">
+      <a href="/hugo/posts/rhino/fileio/sha1opennurbs/">
         <div class="h2 mt-1 mb-1">SHA1OpenNURBS</div>
       </a>
     </div>
@@ -331,7 +331,7 @@ public class SerializationOptionsConstructors SerializationOptions()  (summary)
 Provides the OpenNURBS implementation of SHA1.
 This class is provided only with the purpose of hashing. It is not meant to be used for any cryptographic purpose.
 public class SHA1OpenNURBSConstructors SHA1OpenNURBS()  (summary) Constructs a new instance of the SHA1 algorithm. (since) 6.0  Methods static byte[] FileSystemPathHash(string path,bool? ignoreCase)  (summary) Computes the SHA1 hash of a file system path, converted to UTF8. These file system paths have identical values of FileSystemPathHash():/x/y/z/name.
-    <a class="muted-link" href="/posts/rhino/fileio/sha1opennurbs/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/sha1opennurbs/">…</a>
   </div>
 </div>
 
@@ -341,7 +341,7 @@ public class SHA1OpenNURBSConstructors SHA1OpenNURBS()  (summary) Constructs a 
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/fileio/textlog/">
+      <a href="/hugo/posts/rhino/fileio/textlog/">
         <div class="h2 mt-1 mb-1">TextLog</div>
       </a>
     </div>
@@ -362,7 +362,7 @@ public class SHA1OpenNURBSConstructors SHA1OpenNURBS()  (summary) Constructs a 
     Namespace: Rhino.FileIO
 Used for collecting text data
 public class TextLogConstructors TextLog()  (summary) Creates a text log that stores all text in memory. Use ToString on this version of the TextLog to get the text that we written (since) 5.1  TextLog(IntPtr ptr)  (summary) (since) 6.0  TextLog(string filename)  (summary) Creates a text log that writes all text to a file. If no filename is provided, then text is written to StdOut (since) 5.
-    <a class="muted-link" href="/posts/rhino/fileio/textlog/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/fileio/textlog/">…</a>
   </div>
 </div>
 
@@ -375,7 +375,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
   <div class="pagination">
     <ul>
       
-      <a href="/posts/rhino/fileio/page/4/" class="previous_page">Prev</a>
+      <a href="/hugo/posts/rhino/fileio/page/4/" class="previous_page">Prev</a>
       
 
       
@@ -389,7 +389,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
           
             
               
-              <a href="/posts/rhino/fileio/">1</a>
+              <a href="/hugo/posts/rhino/fileio/">1</a>
             
           
       
@@ -403,7 +403,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
           
             
               
-              <a href="/posts/rhino/fileio/page/2/">2</a>
+              <a href="/hugo/posts/rhino/fileio/page/2/">2</a>
             
           
       
@@ -417,7 +417,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
           
             
               
-              <a href="/posts/rhino/fileio/page/3/">3</a>
+              <a href="/hugo/posts/rhino/fileio/page/3/">3</a>
             
           
       
@@ -431,7 +431,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
           
             
               
-              <a href="/posts/rhino/fileio/page/4/">4</a>
+              <a href="/hugo/posts/rhino/fileio/page/4/">4</a>
             
           
       
@@ -470,7 +470,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
   
 
   <div class="Box Box--blue p-2 mb-3 mt-5">
-    <a href="/tags/" class="link-gray-dark">
+    <a href="/hugo/tags/" class="link-gray-dark">
       <h4>Tags</h4>
     </a>
     
@@ -480,7 +480,7 @@ public class TextLogConstructors TextLog()  (summary) Creates a text log that s
 
 
   <div class="Box Box--blue p-2 mb-3">
-    <a href="/categories/" class="link-gray-dark">
+    <a href="/hugo/categories/" class="link-gray-dark">
       <h4>Categories</h4>
     </a>
     

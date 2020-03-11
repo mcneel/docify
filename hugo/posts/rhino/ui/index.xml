@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.UI on Test API Site</title>
-    <link>/posts/rhino/ui/</link>
+    <link>/hugo/posts/rhino/ui/</link>
     <description>Recent content in Rhino.UI on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/posts/rhino/ui/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo/posts/rhino/ui/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dialogs</title>
-      <link>/posts/rhino/ui/dialogs/</link>
+      <link>/hugo/posts/rhino/ui/dialogs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/dialogs/</guid>
+      <guid>/hugo/posts/rhino/ui/dialogs/</guid>
       <description>Namespace: Rhino.UI
 public class DialogsMethods static void KillSplash()  (summary) Destroy the splash screen if it is being displayed. (since) 5.0 (returns) void This is some return comment  static void SetCustomColorDialog(EventHandlerhandler)  (summary) (since) 5.0 (returns) void This is some return comment  static void ShowAboutDialog(bool forceSimpleDialog)  (summary) (since) 6.0 (returns) void This is some return comment  static bool[] ShowCheckListBox(string title,string message,IList items,IListcheckState)  (summary) Displays Rhino&amp;rsquo;s check list box.</description>
     </item>
     
     <item>
       <title>DrawingUtilities</title>
-      <link>/posts/rhino/ui/drawingutilities/</link>
+      <link>/hugo/posts/rhino/ui/drawingutilities/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/drawingutilities/</guid>
+      <guid>/hugo/posts/rhino/ui/drawingutilities/</guid>
       <description>Namespace: Rhino.UI
 RhinoCommon Drawing Utilities
 public class DrawingUtilitiesMethods static Bitmap BitmapFromIconResource(string resourceName,Assembly assembly)  (summary) Load a Icon from an embedded resource and convert it to a bitmap of the specified size. Will look for a icon image that is greater than or equal to the requested size, if all images are less than the requested size the largest image will be used. (since) 6.12 (returns) Bitmap This is some return comment  static Bitmap BitmapFromIconResource(string resourceName,Size bitmapSize,Assembly assembly)  (summary) Load a Icon from an embedded resource and convert it to a bitmap of the specified size.</description>
@@ -33,10 +33,10 @@ public class DrawingUtilitiesMethods static Bitmap BitmapFromIconResource(strin
     
     <item>
       <title>Fonts</title>
-      <link>/posts/rhino/ui/fonts/</link>
+      <link>/hugo/posts/rhino/ui/fonts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/fonts/</guid>
+      <guid>/hugo/posts/rhino/ui/fonts/</guid>
       <description>Namespace: Rhino.UI
 Rhino.Rumtime.UI
 public class FontsProperties static Font BoldHeadingFont  (summary) Returns a font that is 1.2x NormalFont and Bold (since) 6.0  static Font HeadingFont  (summary) Returns a font used for dialog headings. 1.2x the size of NormalFont. (since) 6.0  static Font NormalFont  (summary) Returns the normal font used for dialog boxes and buttons. (since) 6.0  static Font SmallFont  (summary) Returns a font use for small text in dialog boxes.</description>
@@ -44,20 +44,20 @@ public class FontsProperties static Font BoldHeadingFont  (summary) Returns a f
     
     <item>
       <title>GetColorEventArgs</title>
-      <link>/posts/rhino/ui/getcoloreventargs/</link>
+      <link>/hugo/posts/rhino/ui/getcoloreventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/getcoloreventargs/</guid>
+      <guid>/hugo/posts/rhino/ui/getcoloreventargs/</guid>
       <description>Namespace: Rhino.UI
 public class GetColorEventArgsProperties bool IncludeButtonColors  (summary) (since) 5.0  System.Drawing.Color InputColor  (summary) (since) 5.0  System.Drawing.Color SelectedColor  (summary) (since) 5.0  string Title  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>LOC</title>
-      <link>/posts/rhino/ui/loc/</link>
+      <link>/hugo/posts/rhino/ui/loc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/loc/</guid>
+      <guid>/hugo/posts/rhino/ui/loc/</guid>
       <description>Namespace: Rhino.UI
 Used a placeholded which is used by LocalizationProcessor application to create contextId mapped localized strings.
 public class LOCMethods static string COMMANDNAME(string english)  (summary) Command names that need to be localized should call this function. The COMMANDNAME function doesn&amp;rsquo;t actually do anything but return the original string. The LocalizationProcessor application walks through the source code of a project and looks for LOC.COMMANDNAME and builds a record for each command name for the translators that can be used by developers in a commands overridden Rhino.</description>
@@ -65,20 +65,20 @@ public class LOCMethods static string COMMANDNAME(string english)  (summary) Co
     
     <item>
       <title>Localization</title>
-      <link>/posts/rhino/ui/localization/</link>
+      <link>/hugo/posts/rhino/ui/localization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/localization/</guid>
+      <guid>/hugo/posts/rhino/ui/localization/</guid>
       <description>Namespace: Rhino.UI
 public class LocalizationProperties static int CurrentLanguageId  (summary) (since) 6.0  static bool RunningAsEnglish  (summary) (since) 6.0  Methods static string FormatArea(double area,UnitSystem units,DimensionStyle dimStyle,bool alternate)  (summary) Format an Area string from a number (since) 7.0 (returns) string This is some return comment  static string FormatDistanceAndTolerance(double distance,UnitSystem units,DimensionStyle dimStyle,bool alternate)  (summary) (since) 7.0 (returns) string This is some return comment  static string FormatNumber(double x,UnitSystem units,DistanceDisplayMode mode,int precision,bool appendUnitSystemName)  (summary) Get a string version of a number in a given unit system / display mode.</description>
     </item>
     
     <item>
       <title>LocalizeStringPair</title>
-      <link>/posts/rhino/ui/localizestringpair/</link>
+      <link>/hugo/posts/rhino/ui/localizestringpair/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/localizestringpair/</guid>
+      <guid>/hugo/posts/rhino/ui/localizestringpair/</guid>
       <description>Namespace: Rhino.UI
 Pair of strings used for localization.
 public class LocalizeStringPairConstructors LocalizeStringPair(string english,string local)  (summary) (since) 5.0  Properties string English  (summary) (since) 5.0  string Local  (summary) (since) 5.0  Methods string ToString()  (summary) (since) (unknown) (returns) string This is some return comment  </description>
@@ -86,10 +86,10 @@ public class LocalizeStringPairConstructors LocalizeStringPair(string english,s
     
     <item>
       <title>MouseCallback</title>
-      <link>/posts/rhino/ui/mousecallback/</link>
+      <link>/hugo/posts/rhino/ui/mousecallback/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/mousecallback/</guid>
+      <guid>/hugo/posts/rhino/ui/mousecallback/</guid>
       <description>Namespace: Rhino.UI
 Used for intercepting mouse events in the Rhino views.
 public class MouseCallbackProperties bool Enabled  (summary) (since) 5.0  </description>
@@ -97,20 +97,20 @@ public class MouseCallbackProperties bool Enabled  (summary) (since) 5.0  </des
     
     <item>
       <title>MouseCallbackEventArgs</title>
-      <link>/posts/rhino/ui/mousecallbackeventargs/</link>
+      <link>/hugo/posts/rhino/ui/mousecallbackeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/mousecallbackeventargs/</guid>
+      <guid>/hugo/posts/rhino/ui/mousecallbackeventargs/</guid>
       <description>Namespace: Rhino.UI
 public class MouseCallbackEventArgsProperties System.Windows.Forms.MouseButtons Button  (summary) (since) 5.0  bool CtrlKeyDown  (summary) (since) 6.0  MouseButton MouseButton  (summary) (since) 6.0  bool ShiftKeyDown  (summary) (since) 6.0  Display.RhinoView View  (summary) (since) 5.0  System.Drawing.Point ViewportPoint  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>MouseCursor</title>
-      <link>/posts/rhino/ui/mousecursor/</link>
+      <link>/hugo/posts/rhino/ui/mousecursor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/mousecursor/</guid>
+      <guid>/hugo/posts/rhino/ui/mousecursor/</guid>
       <description>Namespace: Rhino.UI
 Contains static methods to control the mouse icon.
 public class MouseCursorProperties static Point2d Location  (summary) Retrieves the position of the mouse cursor, in screen coordinates (since) 5.8  Methods static void SetToolTip(string tooltip)  (summary) Sets a cursor tooltip string shown next to the mouse cursor. Overrides all cursor tooltip panes. (since) 5.0 (returns) void This is some return comment  </description>
@@ -118,10 +118,10 @@ public class MouseCursorProperties static Point2d Location  (summary) Retrieves
     
     <item>
       <title>ObjectPropertiesPage</title>
-      <link>/posts/rhino/ui/objectpropertiespage/</link>
+      <link>/hugo/posts/rhino/ui/objectpropertiespage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/objectpropertiespage/</guid>
+      <guid>/hugo/posts/rhino/ui/objectpropertiespage/</guid>
       <description>Namespace: Rhino.UI
 Base class used to add object property user interface panels
 public class ObjectPropertiesPageProperties bool AllObjectsMustBeSupported   (summary) Returns True when running on Mac which requires only objects of SupportedTypes. Returns False when running on Windows which only requires a single item of SupportedTypes to be selected.
@@ -132,10 +132,10 @@ Override if you wish to change the above behavior.
     
     <item>
       <title>ObjectPropertiesPageCollection</title>
-      <link>/posts/rhino/ui/objectpropertiespagecollection/</link>
+      <link>/hugo/posts/rhino/ui/objectpropertiespagecollection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/objectpropertiespagecollection/</guid>
+      <guid>/hugo/posts/rhino/ui/objectpropertiespagecollection/</guid>
       <description>Namespace: Rhino.UI
 Passed to Rhino.PlugIns.PlugIn.ObjectPropertiesPages to allow a plug-in to add custom ObjectPropertiesPage pages to the Rhino properties panel.
 public class ObjectPropertiesPageCollectionProperties RhinoDoc Document  (summary) Document associated with the Rhino properties panel. (since) 7.0  uint DocumentRuntimeSerailNumber  (summary) Document associated with the Rhino properties panel. (since) 7.0  Methods void Add(ObjectPropertiesPage page)  (summary) Custom page to add (since) 7.0 (returns) void This is some return comment  </description>
@@ -143,20 +143,20 @@ public class ObjectPropertiesPageCollectionProperties RhinoDoc Document  (summa
     
     <item>
       <title>ObjectPropertiesPageEventArgs</title>
-      <link>/posts/rhino/ui/objectpropertiespageeventargs/</link>
+      <link>/hugo/posts/rhino/ui/objectpropertiespageeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/objectpropertiespageeventargs/</guid>
+      <guid>/hugo/posts/rhino/ui/objectpropertiespageeventargs/</guid>
       <description>Namespace: Rhino.UI
 public class ObjectPropertiesPageEventArgsConstructors ObjectPropertiesPageEventArgs(ObjectPropertiesPage page)  (summary) Used by to notify the page when updating, modifying or determining if the page should be included in the navigation bar (since) 6.0  Properties uint DocRuntimeSerialNumber  (summary) Document containing the objects and views (since) 6.0  RhinoDoc Document  (summary) Document containing the objects and views (since) 6.0  uint EventRuntimeSerialNumber  (summary) Gets the runtime serial number. (since) 6.</description>
     </item>
     
     <item>
       <title>OpenFileDialog</title>
-      <link>/posts/rhino/ui/openfiledialog/</link>
+      <link>/hugo/posts/rhino/ui/openfiledialog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/openfiledialog/</guid>
+      <guid>/hugo/posts/rhino/ui/openfiledialog/</guid>
       <description>Namespace: Rhino.UI
 Similar to the System.Windows.Forms.OpenFileDialog, but with customized Rhino user interface.
 public class OpenFileDialogConstructors OpenFileDialog()  (summary) Create a new open file dialog. (since) 5.0  Properties string DefaultExt  (summary) The default file name extension. The returned string does not include the period. (since) 5.0  string FileName  (summary) Gets or sets a string containing the file name selected in the file dialog box. (since) 5.0  string[] FileNames  (summary) Gets the names of all of the selected files in the dialog box (since) 5.</description>
@@ -164,20 +164,20 @@ public class OpenFileDialogConstructors OpenFileDialog()  (summary) Create a ne
     
     <item>
       <title>OptionsDialogPage</title>
-      <link>/posts/rhino/ui/optionsdialogpage/</link>
+      <link>/hugo/posts/rhino/ui/optionsdialogpage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/optionsdialogpage/</guid>
+      <guid>/hugo/posts/rhino/ui/optionsdialogpage/</guid>
       <description>Namespace: Rhino.UI
 public class OptionsDialogPageMethods Commands.Result RunScript(RhinoDoc doc,RunMode mode)  (summary) (since) 5.0 (returns) Commands.Result This is some return comment  </description>
     </item>
     
     <item>
       <title>PanelEventArgs</title>
-      <link>/posts/rhino/ui/paneleventargs/</link>
+      <link>/hugo/posts/rhino/ui/paneleventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/paneleventargs/</guid>
+      <guid>/hugo/posts/rhino/ui/paneleventargs/</guid>
       <description>Namespace: Rhino.UI
 Panels.Show event arguments
 public class PanelEventArgsConstructors PanelEventArgs(Guid panelId,uint documentSerialNumber)  (summary) (since) 6.0  Properties RhinoDoc Document  (summary) (since) 6.0  uint DocumentSerialNumber  (summary) (since) 6.0  Guid PanelId  (summary) Class Id for panel being shown or hidden (since) 6.0  </description>
@@ -185,10 +185,10 @@ public class PanelEventArgsConstructors PanelEventArgs(Guid panelId,uint docume
     
     <item>
       <title>PanelIds</title>
-      <link>/posts/rhino/ui/panelids/</link>
+      <link>/hugo/posts/rhino/ui/panelids/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/panelids/</guid>
+      <guid>/hugo/posts/rhino/ui/panelids/</guid>
       <description>Namespace: Rhino.UI
 Standard Rhino panel Id&amp;rsquo;s
 public class PanelIdsProperties static Guid ContextHelp  (summary) Rhino context sensitive help panel. (since) 5.0  static Guid Display  (summary) (since) 5.0  static Guid Environment  (summary) Rhino environment panel (since) 5.0  static Guid GroundPlane  (summary) Rhino ground plane panel (since) 5.0  static Guid Layers  (summary) Rhino Layer panel (since) 5.0  static Guid Libraries  (summary) Rhino render properties panel (since) 5.</description>
@@ -196,10 +196,10 @@ public class PanelIdsProperties static Guid ContextHelp  (summary) Rhino contex
     
     <item>
       <title>Panels</title>
-      <link>/posts/rhino/ui/panels/</link>
+      <link>/hugo/posts/rhino/ui/panels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/panels/</guid>
+      <guid>/hugo/posts/rhino/ui/panels/</guid>
       <description>Namespace: Rhino.UI
 Access to Rhino panels and register custom panels
 public class Panelsstatic Closed  (summary) This event is raised when a panel host is closed (since) 6.0  static Show  (summary) This event is called when a panel is shown or hidden. This event will get raised multipThis times when the active document changes in Mac Rhino. It will called with show equal to False for the prevous active document and with show equal to True for the current document.</description>
@@ -207,10 +207,10 @@ public class Panelsstatic Closed  (summary) This event is raised when a panel h
     
     <item>
       <title>RhinoHelp</title>
-      <link>/posts/rhino/ui/rhinohelp/</link>
+      <link>/hugo/posts/rhino/ui/rhinohelp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/rhinohelp/</guid>
+      <guid>/hugo/posts/rhino/ui/rhinohelp/</guid>
       <description>Namespace: Rhino.UI
 Provides access to the built in Rhino help system
 public class RhinoHelpMethods static bool Show(string helpLink)  (summary) Call this method to display standard Rhino help (since) 6.0 (returns) bool This is some return comment  </description>
@@ -218,10 +218,10 @@ public class RhinoHelpMethods static bool Show(string helpLink)  (summary) Call
     
     <item>
       <title>RhinoPageInterop</title>
-      <link>/posts/rhino/ui/rhinopageinterop/</link>
+      <link>/hugo/posts/rhino/ui/rhinopageinterop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/rhinopageinterop/</guid>
+      <guid>/hugo/posts/rhino/ui/rhinopageinterop/</guid>
       <description>Namespace: Rhino.UI
 For internal use only, provides access to unmanaged core Rhino.
 public class RhinoPageInteropMethods static IntPtr NewPropertiesPanelPagePointer(ObjectPropertiesPage page,uint rhinoDocRuntimeSn)  (summary) For internal use only, provides access to unmanaged core (since) 6.0 (returns) IntPtr This is some return comment  static StackedDialogPage StackedDialogPageFromUnmanagedPointer(IntPtr pointer)  (summary) For internal use only, provides access to unmanaged core (since) 6.4 (returns) StackedDialogPage This is some return comment  </description>
@@ -229,20 +229,20 @@ public class RhinoPageInteropMethods static IntPtr NewPropertiesPanelPagePointe
     
     <item>
       <title>RuiUpdateUi</title>
-      <link>/posts/rhino/ui/ruiupdateui/</link>
+      <link>/hugo/posts/rhino/ui/ruiupdateui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/ruiupdateui/</guid>
+      <guid>/hugo/posts/rhino/ui/ruiupdateui/</guid>
       <description>Namespace: Rhino.UI
 public class RuiUpdateUiProperties bool Checked  (summary) Set to True to enable menu item or False to check menu item (since) 5.11  bool Enabled  (summary) Set to True to enable menu item or False to disable menu item (since) 5.11  Guid FileId  (summary) Id of the RUI file that owns this menu item (since) 5.11  IntPtr MenuHandle  (summary) Windows menu handle of menu that contains this item (since) 5.</description>
     </item>
     
     <item>
       <title>SaveFileDialog</title>
-      <link>/posts/rhino/ui/savefiledialog/</link>
+      <link>/hugo/posts/rhino/ui/savefiledialog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/savefiledialog/</guid>
+      <guid>/hugo/posts/rhino/ui/savefiledialog/</guid>
       <description>Namespace: Rhino.UI
 Similar to the System.Windows.Forms.SaveFileDialog, but with customized Rhino user interface.
 public class SaveFileDialogConstructors SaveFileDialog()  (summary) (since) 5.0  Properties string DefaultExt  (summary) The default file name extension. The returned string does not include the period. (since) 5.0  string FileName  (summary) Gets or sets a string containing the file name selected in the file dialog box. (since) 5.0  string Filter  (summary) Gets or sets the current file name filter string, which determines the choices that appear in the &amp;ldquo;Save as file type&amp;rdquo; or &amp;ldquo;Files of type&amp;rdquo; box in the dialog box.</description>
@@ -250,10 +250,10 @@ public class SaveFileDialogConstructors SaveFileDialog()  (summary) (since) 5.0
     
     <item>
       <title>ShowPanelEventArgs</title>
-      <link>/posts/rhino/ui/showpaneleventargs/</link>
+      <link>/hugo/posts/rhino/ui/showpaneleventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/showpaneleventargs/</guid>
+      <guid>/hugo/posts/rhino/ui/showpaneleventargs/</guid>
       <description>Namespace: Rhino.UI
 Panels.Show event arguments
 public class ShowPanelEventArgsConstructors ShowPanelEventArgs(Guid panelId,uint documentSerialNumber,bool show)  (summary) (since) 6.0  Properties bool Show  (summary) Will be True if showing or False if hiding (since) 6.0  </description>
@@ -261,10 +261,10 @@ public class ShowPanelEventArgsConstructors ShowPanelEventArgs(Guid panelId,uin
     
     <item>
       <title>StackedDialogPage</title>
-      <link>/posts/rhino/ui/stackeddialogpage/</link>
+      <link>/hugo/posts/rhino/ui/stackeddialogpage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/stackeddialogpage/</guid>
+      <guid>/hugo/posts/rhino/ui/stackeddialogpage/</guid>
       <description>Namespace: Rhino.UI
 Base class to inherit from for the addition of stacked dialog pages.
 public class StackedDialogPageProperties ListChildren  (summary) List of child (sub) pages of this page (since) 5.0  string EnglishPageTitle  (summary) English string used when scripting this page and a user prefixes a command option with &amp;ldquo;_&amp;rdquo; (since) 5.0  IntPtr Handle  (summary) When running on Windows return the window handle for the parent of this page otherwise; return IntPtr.</description>
@@ -272,10 +272,10 @@ public class StackedDialogPageProperties ListChildren  (summary) List of child 
     
     <item>
       <title>StatusBar</title>
-      <link>/posts/rhino/ui/statusbar/</link>
+      <link>/hugo/posts/rhino/ui/statusbar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/statusbar/</guid>
+      <guid>/hugo/posts/rhino/ui/statusbar/</guid>
       <description>Namespace: Rhino.UI
 Contains static methods to control the application status bar.
 public class StatusBarMethods static void ClearMessagePane()  (summary) Removes the message from the message pane. (since) 5.0 (returns) void This is some return comment  static void HideProgressMeter()  (summary) Ends, or hides, Rhino&amp;rsquo;s status bar progress meter. (since) 5.0 (returns) void This is some return comment  static void HideProgressMeter(uint docSerialNumber)  (summary) Ends, or hides, Rhino&amp;rsquo;s status bar progress meter.</description>
@@ -283,50 +283,50 @@ public class StatusBarMethods static void ClearMessagePane()  (summary) Removes
     
     <item>
       <title>Toolbar</title>
-      <link>/posts/rhino/ui/toolbar/</link>
+      <link>/hugo/posts/rhino/ui/toolbar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/toolbar/</guid>
+      <guid>/hugo/posts/rhino/ui/toolbar/</guid>
       <description>Namespace: Rhino.UI
 public class ToolbarProperties static Size BitmapSize  (summary) (since) 6.0  static Size TabSize  (summary) (since) 6.0  Guid Id  (summary) (since) 5.0  string Name  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>ToolbarFile</title>
-      <link>/posts/rhino/ui/toolbarfile/</link>
+      <link>/hugo/posts/rhino/ui/toolbarfile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/toolbarfile/</guid>
+      <guid>/hugo/posts/rhino/ui/toolbarfile/</guid>
       <description>Namespace: Rhino.UI
 public class ToolbarFileProperties int GroupCount  (summary) (since) 5.0  Guid Id  (summary) (since) 5.0  string Name  (summary) (since) 5.0  string Path  (summary) Full path to this file on disk (since) 5.0  int ToolbarCount  (summary) (since) 5.0  Methods bool Close(bool prompt)  (summary) (since) 5.0 (returns) bool This is some return comment  ToolbarGroup GetGroup(int index)  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>ToolbarFileCollection</title>
-      <link>/posts/rhino/ui/toolbarfilecollection/</link>
+      <link>/hugo/posts/rhino/ui/toolbarfilecollection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/toolbarfilecollection/</guid>
+      <guid>/hugo/posts/rhino/ui/toolbarfilecollection/</guid>
       <description>Namespace: Rhino.UI
 public class ToolbarFileCollectionProperties static bool MruSidebarIsVisible  (summary) (since) 5.0  static bool SidebarIsVisible  (summary) (since) 5.0  int Count  (summary) Number of open toolbar files (since) 5.0  Methods ToolbarFile FindByName(string name,bool ignoreCase)  (summary) (since) 5.0 (returns) ToolbarFile This is some return comment  ToolbarFile FindByPath(string path)  (summary) (since) 5.0 (returns) ToolbarFile This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>ToolbarGroup</title>
-      <link>/posts/rhino/ui/toolbargroup/</link>
+      <link>/hugo/posts/rhino/ui/toolbargroup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/toolbargroup/</guid>
+      <guid>/hugo/posts/rhino/ui/toolbargroup/</guid>
       <description>Namespace: Rhino.UI
 public class ToolbarGroupProperties Guid Id  (summary) (since) 5.0  bool IsDocked  (summary) (since) 5.0  string Name  (summary) (since) 5.0  bool Visible  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>WaitCursor</title>
-      <link>/posts/rhino/ui/waitcursor/</link>
+      <link>/hugo/posts/rhino/ui/waitcursor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/waitcursor/</guid>
+      <guid>/hugo/posts/rhino/ui/waitcursor/</guid>
       <description>Namespace: Rhino.UI
 public class WaitCursorConstructors WaitCursor()  (summary) (since) 5.1  Methods void Clear()  (summary) (since) 5.1 (returns) void This is some return comment  void Dispose()  (summary) (since) 5.1 (returns) void This is some return comment  void Set()  (summary) (since) 5.1 (returns) void This is some return comment  </description>
     </item>

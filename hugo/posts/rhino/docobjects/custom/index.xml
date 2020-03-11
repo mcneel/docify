@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.DocObjects.Custom on Test API Site</title>
-    <link>/posts/rhino/docobjects/custom/</link>
+    <link>/hugo/posts/rhino/docobjects/custom/</link>
     <description>Recent content in Rhino.DocObjects.Custom on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/posts/rhino/docobjects/custom/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo/posts/rhino/docobjects/custom/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ClassIdAttribute</title>
-      <link>/posts/rhino/docobjects/custom/classidattribute/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/classidattribute/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/classidattribute/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/classidattribute/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 Useful for legacy UserData
 public class ClassIdAttributeConstructors ClassIdAttribute(string id)  (summary) Initializes a class id attrbute. (since) 6.0  Properties Guid Id  (summary) Gets the associated style. (since) 6.0  </description>
@@ -23,80 +23,80 @@ public class ClassIdAttributeConstructors ClassIdAttribute(string id)  (summary
     
     <item>
       <title>CustomCurveObject</title>
-      <link>/posts/rhino/docobjects/custom/customcurveobject/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/customcurveobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/customcurveobject/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/customcurveobject/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class CustomCurveObjectMethods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>CustomGripObject</title>
-      <link>/posts/rhino/docobjects/custom/customgripobject/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/customgripobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/customgripobject/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/customgripobject/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class CustomGripObjectConstructors CustomGripObject()  (summary) (since) 5.0  Properties int Index  (summary) (since) 5.0  Point3d OriginalLocation  (summary) (since) 5.0  double Weight  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  void NewLocation()  (summary) (since) 5.0 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>CustomMeshObject</title>
-      <link>/posts/rhino/docobjects/custom/custommeshobject/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/custommeshobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/custommeshobject/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/custommeshobject/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class CustomMeshObjectMethods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>CustomObjectGrips</title>
-      <link>/posts/rhino/docobjects/custom/customobjectgrips/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/customobjectgrips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/customobjectgrips/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/customobjectgrips/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class CustomObjectGripsProperties int GripCount  (summary) (since) 5.0  bool GripsMoved  (summary) If GripsMoved is True if some of the grips have ever been moved GripObject.NewLocation() sets GripsMoved=true. (since) 5.0  bool NewLocation  (summary) True if some of the grips have been moved. GripObject.NewLocation() sets NewLocation=true. Derived classes can set NewLocation to False after updating temporary display information. (since) 5.0  Rhino.DocObjects.RhinoObject OwnerObject  (summary) Owner of the grips.</description>
     </item>
     
     <item>
       <title>CustomPointObject</title>
-      <link>/posts/rhino/docobjects/custom/custompointobject/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/custompointobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/custompointobject/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/custompointobject/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class CustomPointObjectMethods void Dispose()  (summary) (since) 5.6 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>GripsDrawEventArgs</title>
-      <link>/posts/rhino/docobjects/custom/gripsdraweventargs/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/gripsdraweventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/gripsdraweventargs/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/gripsdraweventargs/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class GripsDrawEventArgsProperties int ControlPolygonStyle  (summary) What kind of line is used to display things like control polygons. 0 = no control polygon, 1 = solid control polygon, 2 = dotted control polygon. (since) 5.0  bool DrawDynamicStuff  (summary) If true, then draw stuff that does not move when grips are dragged, like the control polygon of the &amp;ldquo;original&amp;rdquo; curve. (since) 5.0  bool DrawStaticStuff  (summary) If true, then draw stuff that moves when grips are dragged, like the curve being bent by a dragged control point.</description>
     </item>
     
     <item>
       <title>GripStatus</title>
-      <link>/posts/rhino/docobjects/custom/gripstatus/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/gripstatus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/gripstatus/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/gripstatus/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 public class GripStatusProperties bool Culled  (summary) (since) 5.0  bool Visible  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>UnknownUserData</title>
-      <link>/posts/rhino/docobjects/custom/unknownuserdata/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/unknownuserdata/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/unknownuserdata/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/unknownuserdata/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 Represents user data with unknown origin.
 public class UnknownUserDataConstructors UnknownUserData(IntPtr pointerNativeUserData)  (summary) Constructs a new unknown data entity. (since) 5.0  </description>
@@ -104,10 +104,10 @@ public class UnknownUserDataConstructors UnknownUserData(IntPtr pointerNativeUs
     
     <item>
       <title>UserData</title>
-      <link>/posts/rhino/docobjects/custom/userdata/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/userdata/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/userdata/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/userdata/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 Provides a base class for custom classes of information which may be attached to geometry or attribute classes.
 public class UserDataProperties string Description  (summary) Descriptive name of the user data. (since) 5.0  bool ShouldWrite  (summary) If you want to save this user data in a 3dm file, override ShouldWrite and return true. If you do support serialization, you must also override the Read and Write functions.</description>
@@ -115,10 +115,10 @@ public class UserDataProperties string Description  (summary) Descriptive name 
     
     <item>
       <title>UserDataList</title>
-      <link>/posts/rhino/docobjects/custom/userdatalist/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/userdatalist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/userdatalist/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/userdatalist/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 Represents a collection of user data.
 public class UserDataListProperties int Count  (summary) Number of UserData objects in this list. (since) 5.0  Methods bool Add(UserData userdata)  (summary) If the userdata is already in a different UserDataList, it will be removed from that list and added to this list. (since) 5.0 (returns) bool This is some return comment  bool Contains(Guid userdataId)  (summary) Checks for the existence of a specific type of userdata in this list Both .</description>
@@ -126,10 +126,10 @@ public class UserDataListProperties int Count  (summary) Number of UserData obj
     
     <item>
       <title>UserDataListEnumerator</title>
-      <link>/posts/rhino/docobjects/custom/userdatalistenumerator/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/userdatalistenumerator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/userdatalistenumerator/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/userdatalistenumerator/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 Enumerator for UserDataList
 public class UserDataListEnumeratorConstructors UserDataListEnumerator(UserDataList udl)  (summary) Create new UserDataListEnumerator (since) 6.0  Properties UserData Current  (summary) Get current UserData on the enumerator. (since) 6.0  Methods void Dispose()  (summary) Implement Dispose(). NOP. (since) 6.0 (returns) void This is some return comment  bool MoveNext()  (summary) Advance enumerator to next UserData item. (since) 6.0 (returns) bool This is some return comment  void Reset()  (summary) Reset the enumerator (since) 6.</description>
@@ -137,10 +137,10 @@ public class UserDataListEnumeratorConstructors UserDataListEnumerator(UserData
     
     <item>
       <title>UserDictionary</title>
-      <link>/posts/rhino/docobjects/custom/userdictionary/</link>
+      <link>/hugo/posts/rhino/docobjects/custom/userdictionary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/docobjects/custom/userdictionary/</guid>
+      <guid>/hugo/posts/rhino/docobjects/custom/userdictionary/</guid>
       <description>Namespace: Rhino.DocObjects.Custom
 Defines the storage data class for a user dictionary.
 public class UserDictionaryProperties string Description  (summary) Gets the text &amp;ldquo;RhinoCommon UserDictionary&amp;rdquo;. (since) 5.0  Collections.ArchivableDictionary Dictionary  (summary) Gets the dictionary that is associated with this class. This dictionary is unique. (since) 5.0  bool ShouldWrite  (summary) Writes this entity if the count is larger than 0. (since) 5.0  </description>

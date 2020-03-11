@@ -23,9 +23,9 @@
     
 
 
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/hugo/assets/style.css">
   </head>
 
 
@@ -34,7 +34,7 @@
 
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="/">
+  <a class="UnderlineNav-actions muted-link h2" href="/hugo/">
     Test API Site
   </a>
 
@@ -89,7 +89,7 @@
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/customrendersavefiletypes/">
+      <a href="/hugo/posts/rhino/plugins/customrendersavefiletypes/">
         <div class="h2 mt-1 mb-1">CustomRenderSaveFileTypes</div>
       </a>
     </div>
@@ -109,7 +109,7 @@
     
     Namespace: Rhino.PlugIns
 public class CustomRenderSaveFileTypesMethods void RegisterFileType(IEnumerableextensions,string description,SaveFileHandler saveFileHandler)  (summary) Call this method to register a custom file save type with the render output window save dialog. (since) 5.11 (returns) void This is some return comment  
-    <a class="muted-link" href="/posts/rhino/plugins/customrendersavefiletypes/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/customrendersavefiletypes/">…</a>
   </div>
 </div>
 
@@ -119,7 +119,7 @@ public class CustomRenderSaveFileTypesMethods void RegisterFileType(IEnumerable
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/digitizerplugin/">
+      <a href="/hugo/posts/rhino/plugins/digitizerplugin/">
         <div class="h2 mt-1 mb-1">DigitizerPlugIn</div>
       </a>
     </div>
@@ -139,7 +139,7 @@ public class CustomRenderSaveFileTypesMethods void RegisterFileType(IEnumerable
     
     Namespace: Rhino.PlugIns
 public class DigitizerPlugInMethods void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey)  (summary) If the digitizer is enabled, call this function to send a point to Rhino. Call this function as much as you like. The digitizers that Rhino currently supports send a point every 15 milliseconds or so. This function should be called when users press or release any digitizer button. (since) 6.0 (returns) void This is some return comment  void SendRay(Ray3d ray,MouseButton mousebuttons,bool shiftKey,bool controlKey)  (summary) If the digitizer is enabled, call this function to send a point and direction to Rhino.
-    <a class="muted-link" href="/posts/rhino/plugins/digitizerplugin/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/digitizerplugin/">…</a>
   </div>
 </div>
 
@@ -149,7 +149,7 @@ public class DigitizerPlugInMethods void SendPoint(Point3d point,MouseButton mo
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/filetypelist/">
+      <a href="/hugo/posts/rhino/plugins/filetypelist/">
         <div class="h2 mt-1 mb-1">FileTypeList</div>
       </a>
     </div>
@@ -169,7 +169,7 @@ public class DigitizerPlugInMethods void SendPoint(Point3d point,MouseButton mo
     
     Namespace: Rhino.PlugIns
 public class FileTypeListConstructors FileTypeList()  (summary) (since) 5.0  FileTypeList(string description,string extension)  (summary) (since) 6.0  FileTypeList(string description,string extension,bool showOptionsButtonInFileDialog)  (summary) (since) 6.0  Methods int AddFileType(string description,IEnumerableextensions)  (summary) (since) 5.0 (returns) int This is some return comment  int AddFileType(string description,IEnumerableextensions,bool showOptionsButtonInFileDialog)  (summary) (since) 6.0 (returns) int This is some return comment  int AddFileType(string description,string extension)  (summary) (since) 5.0 (returns) int This is some return comment  int AddFileType(string description,string extension,bool showOptionsButtonInFileDialog)  (summary) (since) 6.
-    <a class="muted-link" href="/posts/rhino/plugins/filetypelist/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/filetypelist/">…</a>
   </div>
 </div>
 
@@ -179,7 +179,7 @@ public class FileTypeListConstructors FileTypeList()  (summary) (since) 5.0  Fi
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/licensedata/">
+      <a href="/hugo/posts/rhino/plugins/licensedata/">
         <div class="h2 mt-1 mb-1">LicenseData</div>
       </a>
     </div>
@@ -200,7 +200,7 @@ public class FileTypeListConstructors FileTypeList()  (summary) (since) 5.0  Fi
     Namespace: Rhino.PlugIns
 Zoo plugin license data.
 public class LicenseDataConstructors LicenseData()  (summary) Public constructor. (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount)  (summary) Public constructor (since) 5.0  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime? expirationDate)  (summary) Public constructor (since) (unknown)  LicenseData(string productLicense,string serialNumber,string licenseTitle,LicenseBuildType buildType,int licenseCount,DateTime?
-    <a class="muted-link" href="/posts/rhino/plugins/licensedata/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/licensedata/">…</a>
   </div>
 </div>
 
@@ -210,7 +210,7 @@ public class LicenseDataConstructors LicenseData()  (summary) Public constructo
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/licenseidattribute/">
+      <a href="/hugo/posts/rhino/plugins/licenseidattribute/">
         <div class="h2 mt-1 mb-1">LicenseIdAttribute</div>
       </a>
     </div>
@@ -230,7 +230,7 @@ public class LicenseDataConstructors LicenseData()  (summary) Public constructo
     
     Namespace: Rhino.PlugIns
 public class LicenseIdAttributeConstructors LicenseIdAttribute(string value)  (summary) (since) 6.0  Properties string Value  (summary) (since) 6.0  
-    <a class="muted-link" href="/posts/rhino/plugins/licenseidattribute/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/licenseidattribute/">…</a>
   </div>
 </div>
 
@@ -240,7 +240,7 @@ public class LicenseIdAttributeConstructors LicenseIdAttribute(string value)  (
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/licenselease/">
+      <a href="/hugo/posts/rhino/plugins/licenselease/">
         <div class="h2 mt-1 mb-1">LicenseLease</div>
       </a>
     </div>
@@ -261,7 +261,7 @@ public class LicenseIdAttributeConstructors LicenseIdAttribute(string value)  (
     Namespace: Rhino.PlugIns
 LicenseLease represents a lease returned from the Cloud Zoo
 public class LicenseLeaseConstructors LicenseLease(IntPtr unmanagedPointer)  (summary) (since) 6.0  LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp)  (summary) (since) 6.0  LicenseLease(string productId,string groupName,string groupId,string userName,string userId,string productTitle,string productVersion,string productEdition,string leaseId,DateTime iat,DateTime exp,DateTime renewable_until)  (summary) (since) 6.4  Properties DateTime Expiration  (summary) The date when this lease will expire (since) 6.
-    <a class="muted-link" href="/posts/rhino/plugins/licenselease/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/licenselease/">…</a>
   </div>
 </div>
 
@@ -271,7 +271,7 @@ public class LicenseLeaseConstructors LicenseLease(IntPtr unmanagedPointer)  (s
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/licenseleasechangedeventargs/">
+      <a href="/hugo/posts/rhino/plugins/licenseleasechangedeventargs/">
         <div class="h2 mt-1 mb-1">LicenseLeaseChangedEventArgs</div>
       </a>
     </div>
@@ -292,7 +292,7 @@ public class LicenseLeaseConstructors LicenseLease(IntPtr unmanagedPointer)  (s
     Namespace: Rhino.PlugIns
 Arguments for OnLeaseChangedDelegate
 public class LicenseLeaseChangedEventArgsConstructors LicenseLeaseChangedEventArgs(LicenseLease lease)  (summary) (since) 6.0  Properties LicenseLease Lease  (summary) The lease returned by Rhino Accounts server (since) 6.0  
-    <a class="muted-link" href="/posts/rhino/plugins/licenseleasechangedeventargs/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/licenseleasechangedeventargs/">…</a>
   </div>
 </div>
 
@@ -302,7 +302,7 @@ public class LicenseLeaseChangedEventArgsConstructors LicenseLeaseChangedEventA
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/licensestatus/">
+      <a href="/hugo/posts/rhino/plugins/licensestatus/">
         <div class="h2 mt-1 mb-1">LicenseStatus</div>
       </a>
     </div>
@@ -323,7 +323,7 @@ public class LicenseLeaseChangedEventArgsConstructors LicenseLeaseChangedEventA
     Namespace: Rhino.PlugIns
 LicenseStatus class.
 public class LicenseStatusConstructors LicenseStatus()  (summary) Public constructor. (since) 5.0  Properties LicenseBuildType BuildType  (summary) The build contentType of the product, where: 100 = A release build, either commercical, education, nfr, etc. 200 = A evaluation build 300 = A beta build, such as a wip. (since) 5.0  DateTime? CheckOutExpirationDate  (summary) The date and time the checked out license will expire. Note, this is only set if m_license_type = Standalone or CloudZoo and if &ldquo;limited license checkout&rdquo; was enabled on the Zoo server in the case of Standalone.
-    <a class="muted-link" href="/posts/rhino/plugins/licensestatus/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/licensestatus/">…</a>
   </div>
 </div>
 
@@ -333,7 +333,7 @@ public class LicenseStatusConstructors LicenseStatus()  (summary) Public constr
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/licenseutils/">
+      <a href="/hugo/posts/rhino/plugins/licenseutils/">
         <div class="h2 mt-1 mb-1">LicenseUtils</div>
       </a>
     </div>
@@ -354,7 +354,7 @@ public class LicenseStatusConstructors LicenseStatus()  (summary) Public constr
     Namespace: Rhino.PlugIns
 License Manager Utilities.
 public class LicenseUtilsMethods static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  (summary) This version of Rhino.PlugIns.LicenseUtils.AskUserForLicense is used by Rhino C++ plug-ins. (since) 6.0 (returns) bool This is some return comment  static bool AskUserForLicense(int productType,bool standAlone,object parentWindow,string textMask,ValidateProductKeyDelegate validateProductKeyDelegate,OnLeaseChangedDelegate onLeaseChangedDelegate,VerifyLicenseKeyDelegate verifyLicenseKeyDelegate,VerifyPreviousVersionLicenseDelegate verifyPreviousVersionLicenseKeyDelegate,string product_path,string product_title,Guid pluginId,Guid licenseId,LicenseCapabilities capabilities)  (summary) (since) 6.0 (returns) bool This is some return comment  static bool CheckInLicense(Guid productId)  (summary) Checks in a previously checked out license to the Zoo server from which it was checked out.
-    <a class="muted-link" href="/posts/rhino/plugins/licenseutils/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/licenseutils/">…</a>
   </div>
 </div>
 
@@ -364,7 +364,7 @@ public class LicenseUtilsMethods static bool AskUserForLicense(int productType,
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/plugins/plugin/">
+      <a href="/hugo/posts/rhino/plugins/plugin/">
         <div class="h2 mt-1 mb-1">PlugIn</div>
       </a>
     </div>
@@ -384,7 +384,7 @@ public class LicenseUtilsMethods static bool AskUserForLicense(int productType,
     
     Namespace: Rhino.PlugIns
 public class PlugInSettingsSaved  (summary) This event is raised when an instance of Rhino has modified the external settings file associated with this plug-in&rsquo;s property. (since) 6.0  Properties static bool AskOnLoadProtection  (summary) If true, Rhino will display a warning dialog when load-protected plug-ins are attempting to load. If false, load-protected plug-ins will silently not load. (since) 6.0  static int InstalledPlugInCount  (summary) Returns the number of installed Rhino plug-ins.
-    <a class="muted-link" href="/posts/rhino/plugins/plugin/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/plugins/plugin/">…</a>
   </div>
 </div>
 
@@ -424,13 +424,13 @@ public class PlugInSettingsSaved  (summary) This event is raised when an instan
           
             
               
-              <a href="/posts/rhino/plugins/page/2/">2</a>
+              <a href="/hugo/posts/rhino/plugins/page/2/">2</a>
             
           
       
 
       
-      <a href="/posts/rhino/plugins/page/2/" class="next_page">Next</a>
+      <a href="/hugo/posts/rhino/plugins/page/2/" class="next_page">Next</a>
       
     </ul>
   </div>
@@ -450,7 +450,7 @@ public class PlugInSettingsSaved  (summary) This event is raised when an instan
   
 
   <div class="Box Box--blue p-2 mb-3 mt-5">
-    <a href="/tags/" class="link-gray-dark">
+    <a href="/hugo/tags/" class="link-gray-dark">
       <h4>Tags</h4>
     </a>
     
@@ -460,7 +460,7 @@ public class PlugInSettingsSaved  (summary) This event is raised when an instan
 
 
   <div class="Box Box--blue p-2 mb-3">
-    <a href="/categories/" class="link-gray-dark">
+    <a href="/hugo/categories/" class="link-gray-dark">
       <h4>Categories</h4>
     </a>
     

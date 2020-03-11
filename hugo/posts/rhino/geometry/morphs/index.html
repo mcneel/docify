@@ -23,9 +23,9 @@
     
 
 
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/hugo/assets/style.css">
   </head>
 
 
@@ -34,7 +34,7 @@
 
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="/">
+  <a class="UnderlineNav-actions muted-link h2" href="/hugo/">
     Test API Site
   </a>
 
@@ -68,7 +68,7 @@
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/bendspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/bendspacemorph/">
         <div class="h2 mt-1 mb-1">BendSpaceMorph</div>
       </a>
     </div>
@@ -89,7 +89,7 @@
     Namespace: Rhino.Geometry.Morphs
 Deforms objects by bending along a spine arc.
 public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  BendSpaceMorph(Point3d start,Point3d end,Point3d point,double angle,bool straight,bool symmetric)  (summary) Constructs a bend space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/bendspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/bendspacemorph/">…</a>
   </div>
 </div>
 
@@ -99,7 +99,7 @@ public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d en
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/flowspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/flowspacemorph/">
         <div class="h2 mt-1 mb-1">FlowSpaceMorph</div>
       </a>
     </div>
@@ -120,7 +120,7 @@ public class BendSpaceMorphConstructors BendSpaceMorph(Point3d start,Point3d en
     Namespace: Rhino.Geometry.Morphs
 Re-aligns objects from a base curve to a target curve.
 public class FlowSpaceMorphConstructors FlowSpaceMorph(Curve curve0,Curve curve1,bool preventStretching)  (summary) Constructs a flow space morph. (since) 5.9  FlowSpaceMorph(Curve curve0,Curve curve1,bool reverseCurve0,bool reverseCurve1,bool preventStretching)  (summary) Constructs a flow space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/flowspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/flowspacemorph/">…</a>
   </div>
 </div>
 
@@ -130,7 +130,7 @@ public class FlowSpaceMorphConstructors FlowSpaceMorph(Curve curve0,Curve curve
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/maelstromspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/maelstromspacemorph/">
         <div class="h2 mt-1 mb-1">MaelstromSpaceMorph</div>
       </a>
     </div>
@@ -151,7 +151,7 @@ public class FlowSpaceMorphConstructors FlowSpaceMorph(Curve curve0,Curve curve
     Namespace: Rhino.Geometry.Morphs
 Deforms objects in a spiral as if they were caught in a whirlpool.
 public class MaelstromSpaceMorphConstructors MaelstromSpaceMorph(Plane plane,double radius0,double radius1,double angle)  (summary) Constructs a maelstrom space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.9 (returns) void This is some return comment  Point3d MorphPoint(Point3d point)  (summary) Morphs an Euclidean point.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/maelstromspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/maelstromspacemorph/">…</a>
   </div>
 </div>
 
@@ -161,7 +161,7 @@ public class MaelstromSpaceMorphConstructors MaelstromSpaceMorph(Plane plane,do
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/splopspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/splopspacemorph/">
         <div class="h2 mt-1 mb-1">SplopSpaceMorph</div>
       </a>
     </div>
@@ -182,7 +182,7 @@ public class MaelstromSpaceMorphConstructors MaelstromSpaceMorph(Plane plane,do
     Namespace: Rhino.Geometry.Morphs
 Rotates, scales, and wraps objects on a surface.
 public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale)  (summary) Constructs a flow space morph. (since) 5.9  SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam,double scale,double angle)  (summary) Constructs a flow space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/splopspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/splopspacemorph/">…</a>
   </div>
 </div>
 
@@ -192,7 +192,7 @@ public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface su
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/sporphspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/sporphspacemorph/">
         <div class="h2 mt-1 mb-1">SporphSpaceMorph</div>
       </a>
     </div>
@@ -213,7 +213,7 @@ public class SplopSpaceMorphConstructors SplopSpaceMorph(Plane plane,Surface su
     Namespace: Rhino.Geometry.Morphs
 Deforms an object from a source surface to a target surface.
 public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Surface surface1)  (summary) Constructs a sporph space morph. (since) 5.9  SporphSpaceMorph(Surface surface0,Surface surface1,Point2d surface0Param,Point2d surface1Param)  (summary) Constructs a sporph space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/sporphspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/sporphspacemorph/">…</a>
   </div>
 </div>
 
@@ -223,7 +223,7 @@ public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Sur
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/stretchspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/stretchspacemorph/">
         <div class="h2 mt-1 mb-1">StretchSpaceMorph</div>
       </a>
     </div>
@@ -244,7 +244,7 @@ public class SporphSpaceMorphConstructors SporphSpaceMorph(Surface surface0,Sur
     Namespace: Rhino.Geometry.Morphs
 Deforms objects toward or away from a specified axis.
 public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Point3d end,double length)  (summary) Constructs a stretch space morph. (since) 5.9  StretchSpaceMorph(Point3d start,Point3d end,Point3d point)  (summary) Constructs a stretch space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/stretchspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/stretchspacemorph/">…</a>
   </div>
 </div>
 
@@ -254,7 +254,7 @@ public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Poin
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/taperspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/taperspacemorph/">
         <div class="h2 mt-1 mb-1">TaperSpaceMorph</div>
       </a>
     </div>
@@ -275,7 +275,7 @@ public class StretchSpaceMorphConstructors StretchSpaceMorph(Point3d start,Poin
     Namespace: Rhino.Geometry.Morphs
 Deforms objects toward or away from a specified axis.
 public class TaperSpaceMorphConstructors TaperSpaceMorph(Point3d start,Point3d end,double startRadius,double endRadius,bool bFlat,bool infiniteTaper)  (summary) Constructs a taper space morph. (since) 5.9  Properties bool IsValid  (summary) Returns True if the space morph definition is valid, False otherwise. (since) 5.9  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.9 (returns) void This is some return comment  Point3d MorphPoint(Point3d point)  (summary) Morphs an Euclidean point.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/taperspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/taperspacemorph/">…</a>
   </div>
 </div>
 
@@ -285,7 +285,7 @@ public class TaperSpaceMorphConstructors TaperSpaceMorph(Point3d start,Point3d 
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/geometry/morphs/twistspacemorph/">
+      <a href="/hugo/posts/rhino/geometry/morphs/twistspacemorph/">
         <div class="h2 mt-1 mb-1">TwistSpaceMorph</div>
       </a>
     </div>
@@ -306,7 +306,7 @@ public class TaperSpaceMorphConstructors TaperSpaceMorph(Point3d start,Point3d 
     Namespace: Rhino.Geometry.Morphs
 Deforms objects by rotating them around an axis.
 public class TwistSpaceMorphConstructors TwistSpaceMorph()  (summary) Constructs a twist space morph. (since) 5.1  Properties bool InfiniteTwist  (summary) If true, the deformation is constant throughout the object, even if the axis is shorter than the object. If false, the deformation takes place only the length of the axis. (since) 5.1  double TwistAngleRadians  (summary) Twist angle in radians.
-    <a class="muted-link" href="/posts/rhino/geometry/morphs/twistspacemorph/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/geometry/morphs/twistspacemorph/">…</a>
   </div>
 </div>
 
@@ -329,7 +329,7 @@ public class TwistSpaceMorphConstructors TwistSpaceMorph()  (summary) Construct
   
 
   <div class="Box Box--blue p-2 mb-3 mt-5">
-    <a href="/tags/" class="link-gray-dark">
+    <a href="/hugo/tags/" class="link-gray-dark">
       <h4>Tags</h4>
     </a>
     
@@ -339,7 +339,7 @@ public class TwistSpaceMorphConstructors TwistSpaceMorph()  (summary) Construct
 
 
   <div class="Box Box--blue p-2 mb-3">
-    <a href="/categories/" class="link-gray-dark">
+    <a href="/hugo/categories/" class="link-gray-dark">
       <h4>Categories</h4>
     </a>
     

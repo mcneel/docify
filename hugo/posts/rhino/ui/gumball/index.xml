@@ -2,60 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.UI.Gumball on Test API Site</title>
-    <link>/posts/rhino/ui/gumball/</link>
+    <link>/hugo/posts/rhino/ui/gumball/</link>
     <description>Recent content in Rhino.UI.Gumball on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/posts/rhino/ui/gumball/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo/posts/rhino/ui/gumball/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GumballAppearanceSettings</title>
-      <link>/posts/rhino/ui/gumball/gumballappearancesettings/</link>
+      <link>/hugo/posts/rhino/ui/gumball/gumballappearancesettings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/gumball/gumballappearancesettings/</guid>
+      <guid>/hugo/posts/rhino/ui/gumball/gumballappearancesettings/</guid>
       <description>Namespace: Rhino.UI.Gumball
 public class GumballAppearanceSettingsConstructors GumballAppearanceSettings()  (summary) (since) 5.0  Properties int ArcThickness  (summary) in pixels. (since) 5.0  int ArrowHeadLength  (summary) in pixels. (since) 5.0  int ArrowHeadWidth  (summary) in pixels. (since) 5.0  int AxisThickness  (summary) in pixels. (since) 5.0  System.Drawing.Color ColorMenuButton  (summary) (since) 5.0  System.Drawing.Color ColorX  (summary) Default is Red. (since) 5.0  System.Drawing.Color ColorY  (summary) Default is Green.</description>
     </item>
     
     <item>
       <title>GumballDisplayConduit</title>
-      <link>/posts/rhino/ui/gumball/gumballdisplayconduit/</link>
+      <link>/hugo/posts/rhino/ui/gumball/gumballdisplayconduit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/gumball/gumballdisplayconduit/</guid>
+      <guid>/hugo/posts/rhino/ui/gumball/gumballdisplayconduit/</guid>
       <description>Namespace: Rhino.UI.Gumball
 public class GumballDisplayConduitConstructors GumballDisplayConduit()  (summary) (since) 5.0  Properties GumballObject BaseGumball  (summary) Starting location. (since) 5.0  bool Enabled  (summary) (since) 5.0  GumballObject Gumball  (summary) (since) 5.0  Transform GumballTransform  (summary) The gumball transformation is the transformation calculated by comparing the current gumball to the starting BaseGumball. (since) 5.0  bool InRelocate  (summary) (since) 5.0  GumballPickResult PickResult  (summary) The inital mouse down event sets PickResult.</description>
     </item>
     
     <item>
       <title>GumballFrame</title>
-      <link>/posts/rhino/ui/gumball/gumballframe/</link>
+      <link>/hugo/posts/rhino/ui/gumball/gumballframe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/gumball/gumballframe/</guid>
+      <guid>/hugo/posts/rhino/ui/gumball/gumballframe/</guid>
       <description>Namespace: Rhino.UI.Gumball
 Properties Plane Plane  (summary) (since) 5.0  Vector3d ScaleGripDistance  (summary) (since) 5.0  GumballScaleMode ScaleMode  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>GumballObject</title>
-      <link>/posts/rhino/ui/gumball/gumballobject/</link>
+      <link>/hugo/posts/rhino/ui/gumball/gumballobject/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/gumball/gumballobject/</guid>
+      <guid>/hugo/posts/rhino/ui/gumball/gumballobject/</guid>
       <description>Namespace: Rhino.UI.Gumball
 public class GumballObjectConstructors GumballObject()  (summary) (since) 5.0  Properties GumballFrame Frame  (summary) (since) 5.0  Methods void Dispose()  (summary) (since) 5.0 (returns) void This is some return comment  bool SetFromArc(Arc arc)  (summary) (since) 5.0 (returns) bool This is some return comment  bool SetFromBoundingBox(BoundingBox boundingBox)  (summary) (since) 5.0 (returns) bool This is some return comment  bool SetFromBoundingBox(Plane frame,BoundingBox frameBoundingBox)  (summary) Sets the gumball bounding box with respect to a frame.</description>
     </item>
     
     <item>
       <title>GumballPickResult</title>
-      <link>/posts/rhino/ui/gumball/gumballpickresult/</link>
+      <link>/hugo/posts/rhino/ui/gumball/gumballpickresult/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/gumball/gumballpickresult/</guid>
+      <guid>/hugo/posts/rhino/ui/gumball/gumballpickresult/</guid>
       <description>Namespace: Rhino.UI.Gumball
 public class GumballPickResultProperties GumballMode Mode  (summary) (since) 5.0  Methods void SetToDefault()  (summary) (since) 5.0 (returns) void This is some return comment  </description>
     </item>

@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.UI.Controls on Test API Site</title>
-    <link>/posts/rhino/ui/controls/</link>
+    <link>/hugo/posts/rhino/ui/controls/</link>
     <description>Recent content in Rhino.UI.Controls on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/posts/rhino/ui/controls/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo/posts/rhino/ui/controls/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CollapsibleSectionHolderImpl</title>
-      <link>/posts/rhino/ui/controls/collapsiblesectionholderimpl/</link>
+      <link>/hugo/posts/rhino/ui/controls/collapsiblesectionholderimpl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/controls/collapsiblesectionholderimpl/</guid>
+      <guid>/hugo/posts/rhino/ui/controls/collapsiblesectionholderimpl/</guid>
       <description>Namespace: Rhino.UI.Controls
 public class CollapsibleSectionHolderImplConstructors CollapsibleSectionHolderImpl(ICollapsibleSectionHolder client)  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods static ICollapsibleSectionHolder Find(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSectionHolder This is some return comment  static ICollapsibleSectionHolder NewNativeWrapper(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSectionHolder This is some return comment  void Dispose()  (summary) (since) 6.0 (returns) void This is some return comment  bool IsSameObject(IntPtr cpp)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>CollapsibleSectionImpl</title>
-      <link>/posts/rhino/ui/controls/collapsiblesectionimpl/</link>
+      <link>/hugo/posts/rhino/ui/controls/collapsiblesectionimpl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/controls/collapsiblesectionimpl/</guid>
+      <guid>/hugo/posts/rhino/ui/controls/collapsiblesectionimpl/</guid>
       <description>Namespace: Rhino.UI.Controls
 public class CollapsibleSectionImplConstructors CollapsibleSectionImpl(ICollapsibleSection section)  (summary) (since) 6.0  Events DataChanged  (summary) (since) 6.0  ViewModelActivated  (summary) (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  IRdkViewModel ViewModel  (summary) (since) 6.0  Methods static void CreateHostedSection(ICollapsibleSection section)  (summary) (since) 6.0 (returns) void This is some return comment  static ICollapsibleSection Find(IntPtr cpp)  (summary) (since) 6.0 (returns) ICollapsibleSection This is some return comment  static ICollapsibleSection GetSibling(ICollapsibleSection section,Guid siblingSectionId)  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>CollapsibleSectionViewModel</title>
-      <link>/posts/rhino/ui/controls/collapsiblesectionviewmodel/</link>
+      <link>/hugo/posts/rhino/ui/controls/collapsiblesectionviewmodel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/controls/collapsiblesectionviewmodel/</guid>
+      <guid>/hugo/posts/rhino/ui/controls/collapsiblesectionviewmodel/</guid>
       <description>Namespace: Rhino.UI.Controls
 Derive from this class to implement your own view model that wraps around a built in implementation of IRdkViewModel. Use GetData etc to implement your properties.
 public class CollapsibleSectionViewModelConstructors CollapsibleSectionViewModel(ICollapsibleSection section)  (summary) Construct from your section - the view model should be a member of the section (since) 6.0  Properties IntPtr CppPointer  (summary) (since) 6.0  Methods void Commit(Guid uuidDataType)  (summary) (since) 6.0 (returns) void This is some return comment  void Discard(Guid uuidDataType)  (summary) (since) 6.</description>
@@ -43,10 +43,10 @@ public class CollapsibleSectionViewModelConstructors CollapsibleSectionViewMode
     
     <item>
       <title>FactoryBase</title>
-      <link>/posts/rhino/ui/controls/factorybase/</link>
+      <link>/hugo/posts/rhino/ui/controls/factorybase/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/controls/factorybase/</guid>
+      <guid>/hugo/posts/rhino/ui/controls/factorybase/</guid>
       <description>Namespace: Rhino.UI.Controls
 Base class for CollapsibleSection and ViewModel factories used by the RDK UI
 public class FactoryBaseMethods static Type[] Register()  (summary) Call this function during startup of current assembly to load classes with factory creation support are registed (since) 6.0 (returns) Type[] This is some return comment  static Type[] Register(PlugIn plugin)  (summary) Call this function during the startup of your plug-in to ensure that all classes that support factory creation are registed (since) 6.</description>
@@ -54,10 +54,10 @@ public class FactoryBaseMethods static Type[] Register()  (summary) Call this f
     
     <item>
       <title>UndoRecord</title>
-      <link>/posts/rhino/ui/controls/undorecord/</link>
+      <link>/hugo/posts/rhino/ui/controls/undorecord/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/ui/controls/undorecord/</guid>
+      <guid>/hugo/posts/rhino/ui/controls/undorecord/</guid>
       <description>Namespace: Rhino.UI.Controls
 Undo Record
 public class UndoRecordConstructors UndoRecord(string description,IRdkViewModel viewModel)  (summary) UndoRecord Constructor (since) 6.0  Methods void Dispose()  (summary) UndoRecord Dispose (since) 6.0 (returns) void This is some return comment  </description>

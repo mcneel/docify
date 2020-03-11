@@ -23,9 +23,9 @@
     
 
 
-    <link rel="stylesheet" href="/assets/syntax.css">
-    <link rel="stylesheet" href="/assets/primer-build.css">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/hugo/assets/syntax.css">
+    <link rel="stylesheet" href="/hugo/assets/primer-build.css">
+    <link rel="stylesheet" href="/hugo/assets/style.css">
   </head>
 
 
@@ -34,7 +34,7 @@
 
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
-  <a class="UnderlineNav-actions muted-link h2" href="/">
+  <a class="UnderlineNav-actions muted-link h2" href="/hugo/">
     Test API Site
   </a>
 
@@ -220,7 +220,7 @@
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/rendersettings/">
+      <a href="/hugo/posts/rhino/render/rendersettings/">
         <div class="h2 mt-1 mb-1">RenderSettings</div>
       </a>
     </div>
@@ -241,7 +241,7 @@
     Namespace: Rhino.Render
 Contains settings used in rendering.
 public class RenderSettingsConstructors RenderSettings()  (summary) Initialize a new instance of the RenderSettings class. (since) 5.0  RenderSettings(RenderSettings source)  (summary) Initialize new instance of the RenderSettings class. (since) 6.0  Properties System.Drawing.Color AmbientLight  (summary) Gets or sets the ambient light color used in rendering. (since) 5.0  AntialiasLevel AntialiasLevel  (summary) Gets or sets antialias level, used for render quality (since) 5.
-    <a class="muted-link" href="/posts/rhino/render/rendersettings/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/rendersettings/">…</a>
   </div>
 </div>
 
@@ -251,7 +251,7 @@ public class RenderSettingsConstructors RenderSettings()  (summary) Initialize 
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/rendersourceview/">
+      <a href="/hugo/posts/rhino/render/rendersourceview/">
         <div class="h2 mt-1 mb-1">RenderSourceView</div>
       </a>
     </div>
@@ -275,7 +275,7 @@ An instance of this class is supposed to be used with the using() {} construct.
 public class RenderSourceViewConstructors RenderSourceView(RhinoDoc doc)   (summary) Create a new RenderSourceView for the given doc.
 Note that this should be done with using(var rsv = new RenderSourceView(doc)) {}
 If the RenderSettings have the source view set to for instance a SnapShot this construct will ensure that the (active) view is set to the correct snapshot, and reverted back to the original once this instance goes out of scope.
-    <a class="muted-link" href="/posts/rhino/render/rendersourceview/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/rendersourceview/">…</a>
   </div>
 </div>
 
@@ -285,7 +285,7 @@ If the RenderSettings have the source view set to for instance a SnapShot this c
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/rendertabs/">
+      <a href="/hugo/posts/rhino/render/rendertabs/">
         <div class="h2 mt-1 mb-1">RenderTabs</div>
       </a>
     </div>
@@ -305,7 +305,7 @@ If the RenderSettings have the source view set to for instance a SnapShot this c
     
     Namespace: Rhino.Render
 public class RenderTabsMethods static object FromRenderSessionId(PlugIn plugIn,Type tabType,Guid renderSessionId)  (summary) Get the instance of a render tab associated with a specific render session, this is useful when it is necessary to update a control from a (since) 5.11 (returns) object This is some return comment  static Guid SessionIdFromTab(object tab)  (summary) Get the session Id that created the specified tab object. (since) 5.11 (returns) Guid This is some return comment  void RegisterTab(PlugIn plugin,Type tabType,string caption,Icon icon)  (summary) Register custom render user interface with Rhino.
-    <a class="muted-link" href="/posts/rhino/render/rendertabs/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/rendertabs/">…</a>
   </div>
 </div>
 
@@ -315,7 +315,7 @@ public class RenderTabsMethods static object FromRenderSessionId(PlugIn plugIn,
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/rendertexture/">
+      <a href="/hugo/posts/rhino/render/rendertexture/">
         <div class="h2 mt-1 mb-1">RenderTexture</div>
       </a>
     </div>
@@ -335,7 +335,7 @@ public class RenderTabsMethods static object FromRenderSessionId(PlugIn plugIn,
     
     Namespace: Rhino.Render
 public class RenderTextureProperties Transform LocalMappingTransform  (summary) Gets the transformation that can be applied to the UVW vector to convert it from normalized texture space into locally mapped space (ie - with repeat, offset and rotation applied.) (since) 5.1  uint RenderHashWithoutLocalMapping  (summary) Render hash for texture excluding local mapping. (since) 6.0  Methods static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)  (summary) (since) 5.7 (returns) bool This is some return comment  static Point3d GetWcsBoxMapping(Point3d worldXyz,Vector3d normal)  (summary) (since) 5.
-    <a class="muted-link" href="/posts/rhino/render/rendertexture/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/rendertexture/">…</a>
   </div>
 </div>
 
@@ -345,7 +345,7 @@ public class RenderTextureProperties Transform LocalMappingTransform  (summary)
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/rendertexturetable/">
+      <a href="/hugo/posts/rhino/render/rendertexturetable/">
         <div class="h2 mt-1 mb-1">RenderTextureTable</div>
       </a>
     </div>
@@ -365,7 +365,7 @@ public class RenderTextureProperties Transform LocalMappingTransform  (summary)
     
     Namespace: Rhino.Render
 public class RenderTextureTableProperties int Count  (summary) (since) 5.7  Methods bool Add(RenderTexture c)  (summary) (since) 6.0 (returns) bool This is some return comment  void BeginChange(ChangeContexts changeContext)  (summary) (since) 7.0 (returns) void This is some return comment  void EndChange()  (summary) (since) 7.0 (returns) void This is some return comment  IEnumeratorGetEnumerator()  (summary) (since) 5.7 (returns) IEnumeratorThis is some return comment  bool Remove(RenderTexture c)  (summary) (since) 6.
-    <a class="muted-link" href="/posts/rhino/render/rendertexturetable/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/rendertexturetable/">…</a>
   </div>
 </div>
 
@@ -375,7 +375,7 @@ public class RenderTextureTableProperties int Count  (summary) (since) 5.7  Met
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/renderwindow/">
+      <a href="/hugo/posts/rhino/render/renderwindow/">
         <div class="h2 mt-1 mb-1">RenderWindow</div>
       </a>
     </div>
@@ -395,7 +395,7 @@ public class RenderTextureTableProperties int Count  (summary) (since) 5.7  Met
     
     Namespace: Rhino.Render
 public class RenderWindowEvents static Cloned  (summary) (since) 5.11  Properties Guid SessionId  (summary) (since) 5.11  Methods static Guid ChannelId(StandardChannels ch)  (summary) (since) 5.0 (returns) Guid This is some return comment  static RenderWindow Create(Size szSize)  (summary) (since) 6.0 (returns) RenderWindow This is some return comment  static RenderWindow FromSessionId(Guid sessionId)  (summary) (since) 5.11 (returns) RenderWindow This is some return comment  bool AddChannel(StandardChannels channel)  (summary) Add a channel to the frame buffer in addition to the fixed Red, Green, Blue and Alpha channels.
-    <a class="muted-link" href="/posts/rhino/render/renderwindow/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/renderwindow/">…</a>
   </div>
 </div>
 
@@ -405,7 +405,7 @@ public class RenderWindowEvents static Cloned  (summary) (since) 5.11  Properti
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/renderwindowclonedeventargs/">
+      <a href="/hugo/posts/rhino/render/renderwindowclonedeventargs/">
         <div class="h2 mt-1 mb-1">RenderWindowClonedEventArgs</div>
       </a>
     </div>
@@ -425,7 +425,7 @@ public class RenderWindowEvents static Cloned  (summary) (since) 5.11  Properti
     
     Namespace: Rhino.Render
 public class RenderWindowClonedEventArgsProperties RenderWindow NewRenderWindow  (summary) (since) 5.11  Guid NewSessionId  (summary) (since) 5.11  RenderWindow OldRenderWindow  (summary) (since) 5.11  Guid OldSessionId  (summary) (since) 5.11  
-    <a class="muted-link" href="/posts/rhino/render/renderwindowclonedeventargs/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/renderwindowclonedeventargs/">…</a>
   </div>
 </div>
 
@@ -435,7 +435,7 @@ public class RenderWindowClonedEventArgsProperties RenderWindow NewRenderWindow
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/sceneobject/">
+      <a href="/hugo/posts/rhino/render/sceneobject/">
         <div class="h2 mt-1 mb-1">SceneObject</div>
       </a>
     </div>
@@ -455,7 +455,7 @@ public class RenderWindowClonedEventArgsProperties RenderWindow NewRenderWindow
     
     Namespace: Rhino.Render
 public class SceneObjectProperties Rhino.Render.RenderMaterial Material  (summary) (since) 5.1  Rhino.Geometry.Mesh Mesh  (summary) (since) 5.1  
-    <a class="muted-link" href="/posts/rhino/render/sceneobject/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/sceneobject/">…</a>
   </div>
 </div>
 
@@ -465,7 +465,7 @@ public class SceneObjectProperties Rhino.Render.RenderMaterial Material  (summa
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/sceneserverdata/">
+      <a href="/hugo/posts/rhino/render/sceneserverdata/">
         <div class="h2 mt-1 mb-1">SceneServerData</div>
       </a>
     </div>
@@ -486,7 +486,7 @@ public class SceneObjectProperties Rhino.Render.RenderMaterial Material  (summa
     Namespace: Rhino.Render
 The Scene Server Data used by the PreviewSceneServer
 public class SceneServerDataConstructors SceneServerData(PreviewGeometry geo,PreviewBackground back,PreviewLighting light,SceneServerDataUsage usage)  (summary) Constructor for SceneServerData (since) 6.0  Properties IntPtr CppPointer  (summary) The CppPointer of SceneServerData (since) 6.0  Methods void Dispose()  (summary) Dispose for SceneServerData (since) 6.0 (returns) void This is some return comment  
-    <a class="muted-link" href="/posts/rhino/render/sceneserverdata/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/sceneserverdata/">…</a>
   </div>
 </div>
 
@@ -496,7 +496,7 @@ public class SceneServerDataConstructors SceneServerData(PreviewGeometry geo,Pr
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
-      <a href="/posts/rhino/render/simulatedenvironment/">
+      <a href="/hugo/posts/rhino/render/simulatedenvironment/">
         <div class="h2 mt-1 mb-1">SimulatedEnvironment</div>
       </a>
     </div>
@@ -516,7 +516,7 @@ public class SceneServerDataConstructors SceneServerData(PreviewGeometry geo,Pr
     
     Namespace: Rhino.Render
 public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary) (since) 5.1  Properties System.Drawing.Color BackgroundColor  (summary) (since) 5.1  Rhino.Render.SimulatedTexture BackgroundImage  (summary) (since) 5.1  BackgroundProjections BackgroundProjection  (summary) (since) 5.1  Methods static BackgroundProjections ProjectionFromString(String projection)  (summary) (since) 5.1 (returns) BackgroundProjections This is some return comment  static string StringFromProjection(BackgroundProjections projection)  (summary) (since) 5.1 (returns) string This is some return comment  IntPtr ConstPointer()  (summary) (since) 5.
-    <a class="muted-link" href="/posts/rhino/render/simulatedenvironment/">…</a>
+    <a class="muted-link" href="/hugo/posts/rhino/render/simulatedenvironment/">…</a>
   </div>
 </div>
 
@@ -529,7 +529,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
   <div class="pagination">
     <ul>
       
-      <a href="/posts/rhino/render/page/7/" class="previous_page">Prev</a>
+      <a href="/hugo/posts/rhino/render/page/7/" class="previous_page">Prev</a>
       
 
       
@@ -543,7 +543,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
           
             
               
-              <a href="/posts/rhino/render/">1</a>
+              <a href="/hugo/posts/rhino/render/">1</a>
             
           
       
@@ -557,7 +557,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
           
             
               
-              <a href="/posts/rhino/render/page/2/">2</a>
+              <a href="/hugo/posts/rhino/render/page/2/">2</a>
             
           
       
@@ -571,7 +571,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
           
             
               
-              <a href="/posts/rhino/render/page/3/">3</a>
+              <a href="/hugo/posts/rhino/render/page/3/">3</a>
             
           
       
@@ -614,7 +614,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
           
             
               
-              <a href="/posts/rhino/render/page/7/">7</a>
+              <a href="/hugo/posts/rhino/render/page/7/">7</a>
             
           
       
@@ -641,7 +641,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
           
             
               
-              <a href="/posts/rhino/render/page/9/">9</a>
+              <a href="/hugo/posts/rhino/render/page/9/">9</a>
             
           
       
@@ -655,13 +655,13 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
           
             
               
-              <a href="/posts/rhino/render/page/10/">10</a>
+              <a href="/hugo/posts/rhino/render/page/10/">10</a>
             
           
       
 
       
-      <a href="/posts/rhino/render/page/9/" class="next_page">Next</a>
+      <a href="/hugo/posts/rhino/render/page/9/" class="next_page">Next</a>
       
     </ul>
   </div>
@@ -681,7 +681,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
   
 
   <div class="Box Box--blue p-2 mb-3 mt-5">
-    <a href="/tags/" class="link-gray-dark">
+    <a href="/hugo/tags/" class="link-gray-dark">
       <h4>Tags</h4>
     </a>
     
@@ -691,7 +691,7 @@ public class SimulatedEnvironmentConstructors SimulatedEnvironment()  (summary)
 
 
   <div class="Box Box--blue p-2 mb-3">
-    <a href="/categories/" class="link-gray-dark">
+    <a href="/hugo/categories/" class="link-gray-dark">
       <h4>Categories</h4>
     </a>
     

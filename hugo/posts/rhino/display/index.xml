@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhino.Display on Test API Site</title>
-    <link>/posts/rhino/display/</link>
+    <link>/hugo/posts/rhino/display/</link>
     <description>Recent content in Rhino.Display on Test API Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/posts/rhino/display/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo/posts/rhino/display/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CalculateBoundingBoxEventArgs</title>
-      <link>/posts/rhino/display/calculateboundingboxeventargs/</link>
+      <link>/hugo/posts/rhino/display/calculateboundingboxeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/calculateboundingboxeventargs/</guid>
+      <guid>/hugo/posts/rhino/display/calculateboundingboxeventargs/</guid>
       <description>Namespace: Rhino.Display
 public class CalculateBoundingBoxEventArgsProperties BoundingBox BoundingBox  (summary) Gets the current bounding box. (since) 5.0  Methods void IncludeBoundingBox(BoundingBox box)  (summary) Unites a bounding box with the current display bounding box in order to ensure dynamic objects in &amp;ldquo;box&amp;rdquo; are drawn. (since) 5.0 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>Color4f</title>
-      <link>/posts/rhino/display/color4f/</link>
+      <link>/hugo/posts/rhino/display/color4f/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/color4f/</guid>
+      <guid>/hugo/posts/rhino/display/color4f/</guid>
       <description>Namespace: Rhino.Display
 Color defined by 4 floating point values.
 static !=  (summary) (since) 5.0  static ==  (summary) (since) 5.0  Constructors Color4f(Color color)  (summary) (since) 5.0  Color4f(Color4f color)  (summary) (since) 5.0  Color4f(float red,float green,float blue,float alpha)  (summary) (since) 5.0  Color4f(int argb)  (summary) (since) 7.0  Properties static Color4f Black  (summary) (since) 5.0  static Color4f Empty  (summary) (since) 5.</description>
@@ -33,10 +33,10 @@ static !=  (summary) (since) 5.0  static ==  (summary) (since) 5.0  Constructors
     
     <item>
       <title>ColorCMYK</title>
-      <link>/posts/rhino/display/colorcmyk/</link>
+      <link>/hugo/posts/rhino/display/colorcmyk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorcmyk/</guid>
+      <guid>/hugo/posts/rhino/display/colorcmyk/</guid>
       <description>Namespace: Rhino.Display
 Represents a CMYK (Cyan, Magenta, Yellow, Key) color with double precision floating point channels. CMYK colors are used primarily in printing environments as they provide a good simulation of physical ink.
 Constructors ColorCMYK(Color rgb)  (summary) Initializes a new instance of ColorCMYK that is equivalent to an RGB color. (since) 5.0  ColorCMYK(double cyan,double magenta,double yellow)  (summary) Initializes a new instance of ColorCMYK with custom channel values. The cyan, magenta and yellow values will be adjusted based on their combined darkness.</description>
@@ -44,20 +44,20 @@ Constructors ColorCMYK(Color rgb)  (summary) Initializes a new instance of Color
     
     <item>
       <title>ColorGradient</title>
-      <link>/posts/rhino/display/colorgradient/</link>
+      <link>/hugo/posts/rhino/display/colorgradient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorgradient/</guid>
+      <guid>/hugo/posts/rhino/display/colorgradient/</guid>
       <description>Namespace: Rhino.Display
 public class ColorGradientProperties Rhino.Geometry.Point3d EndPoint  (summary) End point of gradient (since) 7.0  Rhino.Display.GradientType GradientType  (summary) Gradient fill type associated with this hatch (since) 7.0  double Repeat  (summary) Repeat factor for gradient. Factors greater than 1 define a reflected repeat factor while values less than -1 define a wrapped repeat factor. (since) 7.0  Rhino.Geometry.Point3d StartPoint  (summary) Start point of gradient (since) 7.</description>
     </item>
     
     <item>
       <title>ColorHSL</title>
-      <link>/posts/rhino/display/colorhsl/</link>
+      <link>/hugo/posts/rhino/display/colorhsl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorhsl/</guid>
+      <guid>/hugo/posts/rhino/display/colorhsl/</guid>
       <description>Namespace: Rhino.Display
 Represents an HSL (Hue, Saturation, Luminance) color with double precision floating point channels. HSL colors are used primarily in Graphical User Interface environments as they provide a very natural approach to picking colors.
 Constructors ColorHSL(Color rgb)  (summary) Constructs a new instance of ColorHSL that is equivalent to an RGB color. (since) 5.0  ColorHSL(double hue,double saturation,double luminance)  (summary) Constructs a new instance of ColorHSL with custom channel values.</description>
@@ -65,20 +65,20 @@ Constructors ColorHSL(Color rgb)  (summary) Constructs a new instance of ColorHS
     
     <item>
       <title>ColorHSV</title>
-      <link>/posts/rhino/display/colorhsv/</link>
+      <link>/hugo/posts/rhino/display/colorhsv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorhsv/</guid>
+      <guid>/hugo/posts/rhino/display/colorhsv/</guid>
       <description>Namespace: Rhino.Display
 Represents an HSV (Hue, Saturation, Value) color with double precision floating point channels. HSV colors (also sometimes called HSB, where B means Brightness) are similar to HSL colors in that they represent colors in a cylindrical color space, and are intended to provide intuitive means to edit the brightness of a particular color over RGB color space where each each color channel would need to be modified to affect the color brightness.</description>
     </item>
     
     <item>
       <title>ColorLAB</title>
-      <link>/posts/rhino/display/colorlab/</link>
+      <link>/hugo/posts/rhino/display/colorlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorlab/</guid>
+      <guid>/hugo/posts/rhino/display/colorlab/</guid>
       <description>Namespace: Rhino.Display
 Represents a LAB (Lightness, A, B) color with double precision floating point channels. LAB colors are based on nonlinearly compressed CIE XYZ color space coordinates.
 The A and B parameters of a LAB color represent the opponents.
@@ -87,10 +87,10 @@ Constructors ColorLAB(Color rgb)  (summary) Constructs a new instance of ColorLA
     
     <item>
       <title>ColorLCH</title>
-      <link>/posts/rhino/display/colorlch/</link>
+      <link>/hugo/posts/rhino/display/colorlch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorlch/</guid>
+      <guid>/hugo/posts/rhino/display/colorlch/</guid>
       <description>Namespace: Rhino.Display
 Represents an LCH (Lightness, A, B) color with double precision floating point channels. LCH colors (also sometimes called CIELUV) are transformation of the 1931 CIE XYZ color space, in order to approach perceptual uniformity. They are primarily used in computer graphics which deal with colored lights.
 Constructors ColorLCH(Color rgb)  (summary) Constructs a new instance of ColorLCH that is equivalent to an RGB color. (since) 5.0  ColorLCH(double lightness,double chroma,double hue)  (summary) Constructs a new instance of ColorLCH with custom channel values.</description>
@@ -98,10 +98,10 @@ Constructors ColorLCH(Color rgb)  (summary) Constructs a new instance of ColorLC
     
     <item>
       <title>ColorStop</title>
-      <link>/posts/rhino/display/colorstop/</link>
+      <link>/hugo/posts/rhino/display/colorstop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorstop/</guid>
+      <guid>/hugo/posts/rhino/display/colorstop/</guid>
       <description>Namespace: Rhino.Display
 Combination of a color and position. Used in defining gradient fills
 Constructors ColorStop(Color color,double t)  (summary) Create color stop from a color and position (since) 7.0  Properties System.Drawing.Color Color  (summary) (since) 7.0  double Position  (summary) Parameter that Color is defined at (since) 7.0  </description>
@@ -109,10 +109,10 @@ Constructors ColorStop(Color color,double t)  (summary) Create color stop from a
     
     <item>
       <title>ColorXYZ</title>
-      <link>/posts/rhino/display/colorxyz/</link>
+      <link>/hugo/posts/rhino/display/colorxyz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/colorxyz/</guid>
+      <guid>/hugo/posts/rhino/display/colorxyz/</guid>
       <description>Namespace: Rhino.Display
 Represents an XYZ (Hue, Saturation, Luminance) color with double precision floating point channels. XYZ colors are based on the CIE 1931 XYZ color space standard and they mimic the natural sensitivity of cones in the human retina.
 Constructors ColorXYZ(Color rgb)  (summary) Constructs a new instance of ColorXYZ that is equivalent to an RGB color. (since) 5.0  ColorXYZ(double x,double y,double z)  (summary) Constructs a new instance of ColorXYZ with custom channel values.</description>
@@ -120,20 +120,20 @@ Constructors ColorXYZ(Color rgb)  (summary) Constructs a new instance of ColorXY
     
     <item>
       <title>CullObjectEventArgs</title>
-      <link>/posts/rhino/display/cullobjecteventargs/</link>
+      <link>/hugo/posts/rhino/display/cullobjecteventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/cullobjecteventargs/</guid>
+      <guid>/hugo/posts/rhino/display/cullobjecteventargs/</guid>
       <description>Namespace: Rhino.Display
 public class CullObjectEventArgsProperties bool CullObject  (summary) (since) 5.3  Rhino.DocObjects.RhinoObject RhinoObject  (summary) (since) 5.3  uint RhinoObjectSerialNumber  (summary) Gets the rhino object runtime serial number. (since) 6.14  </description>
     </item>
     
     <item>
       <title>CustomDisplay</title>
-      <link>/posts/rhino/display/customdisplay/</link>
+      <link>/hugo/posts/rhino/display/customdisplay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/customdisplay/</guid>
+      <guid>/hugo/posts/rhino/display/customdisplay/</guid>
       <description>Namespace: Rhino.Display
 Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.
 public class CustomDisplayConstructors CustomDisplay(bool enable)  (summary) Constructs a new CustomDisplay instance. You must call Dispose() when you are done with this instance, otherwise the display methods will never be switched off. (since) 5.0  Properties BoundingBox ClippingBox  (summary) Gets the clipping box of this CustomDisplay. (since) 5.0  bool Enabled  (summary) Gets or sets the Enabled state of this CustomDisplay instance.</description>
@@ -141,10 +141,10 @@ public class CustomDisplayConstructors CustomDisplay(bool enable)  (summary) Co
     
     <item>
       <title>DisplayBitmap</title>
-      <link>/posts/rhino/display/displaybitmap/</link>
+      <link>/hugo/posts/rhino/display/displaybitmap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaybitmap/</guid>
+      <guid>/hugo/posts/rhino/display/displaybitmap/</guid>
       <description>Namespace: Rhino.Display
 A bitmap resource that can be used by the display pipeline (currently only in OpenGL display). Reuse DisplayBitmaps for drawing if possible; it is much more expensive to construct new DisplayBitmaps than it is to reuse existing DisplayBitmaps.
 public class DisplayBitmapConstructors DisplayBitmap(Bitmap bitmap)  (summary) Constructs a DisplayBitmap from an existing bitmap. (since) 5.0  Methods static DisplayBitmap Load(string path)  (summary) Load a DisplayBitmap from and image file on disk.</description>
@@ -152,60 +152,60 @@ public class DisplayBitmapConstructors DisplayBitmap(Bitmap bitmap)  (summary) 
     
     <item>
       <title>DisplayBitmapDrawList</title>
-      <link>/posts/rhino/display/displaybitmapdrawlist/</link>
+      <link>/hugo/posts/rhino/display/displaybitmapdrawlist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaybitmapdrawlist/</guid>
+      <guid>/hugo/posts/rhino/display/displaybitmapdrawlist/</guid>
       <description>Namespace: Rhino.Display
 public class DisplayBitmapDrawListConstructors DisplayBitmapDrawList()  (summary) (since) 5.0  Properties Geometry.BoundingBox BoundingBox  (summary) (since) 5.0  int MaximumCachedSortLists  (summary) Maximum number of cached sort order index lists stored on this class. Default is 10, but depending on the number of points in this list you may get better performance by setting this value to a certain percentage of the point count. (since) 5.0  double SortAngleTolerance  (summary) Angle in radians used to determine if an index list is &amp;ldquo;parallel enough&amp;rdquo; to a viewports camera angle.</description>
     </item>
     
     <item>
       <title>DisplayConduit</title>
-      <link>/posts/rhino/display/displayconduit/</link>
+      <link>/hugo/posts/rhino/display/displayconduit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displayconduit/</guid>
+      <guid>/hugo/posts/rhino/display/displayconduit/</guid>
       <description>Namespace: Rhino.Display
 public class DisplayConduitProperties bool Enabled  (summary) (since) 5.0  DocObjects.ActiveSpace SpaceFilter  (summary) If you want this conduit to only work in a specific space (model or page), then set this filter to that specific space. The default is None meaning no filter is applied (since) 6.0  </description>
     </item>
     
     <item>
       <title>DisplayEngine</title>
-      <link>/posts/rhino/display/displayengine/</link>
+      <link>/hugo/posts/rhino/display/displayengine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displayengine/</guid>
+      <guid>/hugo/posts/rhino/display/displayengine/</guid>
       <description>Namespace: Rhino.Display
 public class DisplayEngineMethods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 6.0 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>DisplayMaterial</title>
-      <link>/posts/rhino/display/displaymaterial/</link>
+      <link>/hugo/posts/rhino/display/displaymaterial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaymaterial/</guid>
+      <guid>/hugo/posts/rhino/display/displaymaterial/</guid>
       <description>Namespace: Rhino.Display
 public class DisplayMaterialConstructors DisplayMaterial()  (summary) Constructs a default material. (since) 5.0  DisplayMaterial(Color diffuse)  (summary) Constructs a default material with a specific diffuse color. (since) 5.0  DisplayMaterial(Color diffuse,Color specular,Color ambient,Color emission,double shine,double transparency)  (summary) Constructs a material with custom properties. (since) 5.0  DisplayMaterial(Color diffuse,double transparency)  (summary) Constructs a default material with a specific diffuse color and transparency. (since) 5.0  DisplayMaterial(DisplayMaterial other)  (summary) Duplicate another material.</description>
     </item>
     
     <item>
       <title>DisplayModeChangedEventArgs</title>
-      <link>/posts/rhino/display/displaymodechangedeventargs/</link>
+      <link>/hugo/posts/rhino/display/displaymodechangedeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaymodechangedeventargs/</guid>
+      <guid>/hugo/posts/rhino/display/displaymodechangedeventargs/</guid>
       <description>Namespace: Rhino.Display
 public class DisplayModeChangedEventArgsProperties Guid ChangedDisplayModeId  (summary) (since) 6.18  Guid OldDisplayModeId  (summary) (since) 6.18  RhinoDoc RhinoDoc  (summary) (since) 6.18  RhinoViewport Viewport  (summary) (since) 6.18  </description>
     </item>
     
     <item>
       <title>DisplayModeDescription</title>
-      <link>/posts/rhino/display/displaymodedescription/</link>
+      <link>/hugo/posts/rhino/display/displaymodedescription/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaymodedescription/</guid>
+      <guid>/hugo/posts/rhino/display/displaymodedescription/</guid>
       <description>Namespace: Rhino.Display
 Description of a how Rhino will display in a viewport. These are the modes that are listed under &amp;ldquo;Advanced display&amp;rdquo; in the options dialog.
 public class DisplayModeDescriptionProperties static Guid AmbientOcclusionId  (summary) (since) 6.0  static Guid GhostedId  (summary) (since) 6.0  static Guid PenId  (summary) (since) 6.0  static Guid RaytracedId  (summary) (since) 6.0  static Guid RenderedId  (summary) (since) 6.0  static Guid RenderedShadowsId  (summary) (since) 6.</description>
@@ -213,10 +213,10 @@ public class DisplayModeDescriptionProperties static Guid AmbientOcclusionId  (
     
     <item>
       <title>DisplayPipeline</title>
-      <link>/posts/rhino/display/displaypipeline/</link>
+      <link>/hugo/posts/rhino/display/displaypipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaypipeline/</guid>
+      <guid>/hugo/posts/rhino/display/displaypipeline/</guid>
       <description>Namespace: Rhino.Display
 The display pipeline calls events during specific phases of drawing During the drawing of a single frame the events are called in the following order.
 [Begin Drawing of a Frame] CalculateBoundingBoxCalculateClippingPanesSetupFrustumSetupLightingInitializeFrameBufferDrawBackgroundIf this is a layout and detail objects exist the channels are called in the same order for each detail object (drawn as a nested viewport)PreDrawObjectsFor Each Visible Non Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostDrawObjects - depth writing/testing onDrawForeGround - depth writing/testing offFor Each Visible Highlighted ObjectSetupObjectDisplayAttributesPreDrawObjectDrawObjectPostDrawObjectPostProcessFrameBuffer (If a delegate exists that requires this)DrawOverlay (if Rhino is in a feedback mode) [End of Drawing of a Frame]</description>
@@ -224,10 +224,10 @@ The display pipeline calls events during specific phases of drawing During the d
     
     <item>
       <title>DisplayPipelineAttributes</title>
-      <link>/posts/rhino/display/displaypipelineattributes/</link>
+      <link>/hugo/posts/rhino/display/displaypipelineattributes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/displaypipelineattributes/</guid>
+      <guid>/hugo/posts/rhino/display/displaypipelineattributes/</guid>
       <description>Namespace: Rhino.Display
 Represents display pipeline settings, such as &amp;ldquo;show transparency&amp;rdquo; and &amp;ldquo;show grips&amp;rdquo;.
 public class DisplayPipelineAttributesProperties Color AmbientLightingColor  (summary) (since) 6.3  BoundingBoxDisplayMode BoundingBoxMode  (summary) (since) 6.1  bool CastShadows  (summary) Cast shadows. (since) 6.4  ContextsForDraw ContextForDraw  (summary) (since) 6.5  System.Drawing.Color CurveColor  (summary) Color used for drawing curves (since) 5.1  int CurveThickness  (summary) Pixel thickness for curves (since) 5.1  bool DisableConduits  (summary) (since) 5.</description>
@@ -235,70 +235,70 @@ public class DisplayPipelineAttributesProperties Color AmbientLightingColor  (s
     
     <item>
       <title>DrawEventArgs</title>
-      <link>/posts/rhino/display/draweventargs/</link>
+      <link>/hugo/posts/rhino/display/draweventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/draweventargs/</guid>
+      <guid>/hugo/posts/rhino/display/draweventargs/</guid>
       <description>Namespace: Rhino.Display
 public class DrawEventArgsProperties DisplayPipeline Display  (summary) (since) 5.0  RhinoDoc RhinoDoc  (summary) (since) 5.0  RhinoViewport Viewport  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>DrawForegroundEventArgs</title>
-      <link>/posts/rhino/display/drawforegroundeventargs/</link>
+      <link>/hugo/posts/rhino/display/drawforegroundeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/drawforegroundeventargs/</guid>
+      <guid>/hugo/posts/rhino/display/drawforegroundeventargs/</guid>
       <description>Namespace: Rhino.Display
 public class DrawForegroundEventArgsProperties bool DrawWorldAxes  (summary) (since) 5.0  bool WorldAxesDrawn  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>DrawObjectEventArgs</title>
-      <link>/posts/rhino/display/drawobjecteventargs/</link>
+      <link>/hugo/posts/rhino/display/drawobjecteventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/drawobjecteventargs/</guid>
+      <guid>/hugo/posts/rhino/display/drawobjecteventargs/</guid>
       <description>Namespace: Rhino.Display
 public class DrawObjectEventArgsProperties bool DrawObject  (summary) (since) 5.0  Rhino.DocObjects.RhinoObject RhinoObject  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>InitFrameBufferEventArgs</title>
-      <link>/posts/rhino/display/initframebuffereventargs/</link>
+      <link>/hugo/posts/rhino/display/initframebuffereventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/initframebuffereventargs/</guid>
+      <guid>/hugo/posts/rhino/display/initframebuffereventargs/</guid>
       <description>Namespace: Rhino.Display
 public class InitFrameBufferEventArgsMethods void SetFill(Color color)  (summary) (since) 6.18 (returns) void This is some return comment  void SetFill(Color top,Color bottom)  (summary) (since) 6.18 (returns) void This is some return comment  void SetFill(Color topLeft,Color bottomLeft,Color topRight,Color bottomRight)  (summary) (since) 6.18 (returns) void This is some return comment  </description>
     </item>
     
     <item>
       <title>MeshDisplayAttributes</title>
-      <link>/posts/rhino/display/meshdisplayattributes/</link>
+      <link>/hugo/posts/rhino/display/meshdisplayattributes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/meshdisplayattributes/</guid>
+      <guid>/hugo/posts/rhino/display/meshdisplayattributes/</guid>
       <description>Namespace: Rhino.Display
 public class MeshDisplayAttributesProperties Color AllMeshWiresColor  (summary) Color.Empty means that we are NOT using a single color for all mesh wires. (since) 5.0  bool HighlightMeshes  (summary) (since) 5.0  int MeshWireThickness  (summary) (since) 5.0  bool ShowMeshVertices  (summary) (since) 5.0  bool ShowMeshWires  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>PageViewSpaceChangeEventArgs</title>
-      <link>/posts/rhino/display/pageviewspacechangeeventargs/</link>
+      <link>/hugo/posts/rhino/display/pageviewspacechangeeventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/pageviewspacechangeeventargs/</guid>
+      <guid>/hugo/posts/rhino/display/pageviewspacechangeeventargs/</guid>
       <description>Namespace: Rhino.Display
 public class PageViewSpaceChangeEventArgsProperties Guid NewActiveDetailId  (summary) The id of the detail object was set active. Note, if this id is equal to Guid.Empty, then the active detail object is the page view itself. (since) 5.0  Guid OldActiveDetailId  (summary) The id of the previously active detail object. Note, if this id is equal to Guid.Empty, then the active detail object was the page view itself. (since) 5.</description>
     </item>
     
     <item>
       <title>RhinoPageView</title>
-      <link>/posts/rhino/display/rhinopageview/</link>
+      <link>/hugo/posts/rhino/display/rhinopageview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/rhinopageview/</guid>
+      <guid>/hugo/posts/rhino/display/rhinopageview/</guid>
       <description>Namespace: Rhino.Display
 A window that contains a single layout &amp;lsquo;page&amp;rsquo;
 public class RhinoPageViewEvents static PageViewSpaceChange  (summary) (since) 5.0  Properties RhinoViewport ActiveViewport  (summary) The ActiveViewport is the same as the MainViewport for standard RhinoViews. In a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object. Most of the time, you will use ActiveViewport unless you explicitly need to work with the main viewport. (since) 5.</description>
@@ -306,10 +306,10 @@ public class RhinoPageViewEvents static PageViewSpaceChange  (summary) (since) 
     
     <item>
       <title>RhinoView</title>
-      <link>/posts/rhino/display/rhinoview/</link>
+      <link>/hugo/posts/rhino/display/rhinoview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/rhinoview/</guid>
+      <guid>/hugo/posts/rhino/display/rhinoview/</guid>
       <description>Namespace: Rhino.Display
 A RhinoView represents a single &amp;ldquo;window&amp;rdquo; display of a document. A view could contain one or many RhinoViewports (many in the case of Layout views with detail viewports). Standard Rhino modeling views have one viewport.
 public class RhinoViewEvents static Create  (summary) (since) 5.0  static Destroy  (summary) (since) 5.0  static Modified  (summary) (since) 7.0  static Rename  (summary) (since) 5.0  static SetActive  (summary) (since) 5.</description>
@@ -317,10 +317,10 @@ public class RhinoViewEvents static Create  (summary) (since) 5.0  static Destr
     
     <item>
       <title>RhinoViewport</title>
-      <link>/posts/rhino/display/rhinoviewport/</link>
+      <link>/hugo/posts/rhino/display/rhinoviewport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/rhinoviewport/</guid>
+      <guid>/hugo/posts/rhino/display/rhinoviewport/</guid>
       <description>Namespace: Rhino.Display
 Displays geometry with a given projection. In standard modeling views there is a one to one relationship between RhinoView and RhinoViewports. In a page layout, there may be multiple RhinoViewports for a single layout.
 public class RhinoViewportConstructors RhinoViewport()  (summary) (since) 5.0  RhinoViewport(RhinoViewport other)  (summary) (since) 5.0  Properties System.Drawing.Rectangle Bounds  (summary) Gets the size and location of the viewport, in pixels, relative to the parent view.</description>
@@ -328,10 +328,10 @@ public class RhinoViewportConstructors RhinoViewport()  (summary) (since) 5.0  
     
     <item>
       <title>Text3d</title>
-      <link>/posts/rhino/display/text3d/</link>
+      <link>/hugo/posts/rhino/display/text3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/text3d/</guid>
+      <guid>/hugo/posts/rhino/display/text3d/</guid>
       <description>Namespace: Rhino.Display
 3D aligned text with font settings.
 public class Text3dConstructors Text3d(string text)  (summary) Constructs a new instance of Text3d. (since) 5.0  Text3d(string text,Plane plane,double height)  (summary) Constructs a new instance of Text3d. (since) 5.0  Properties bool Bold  (summary) Gets or sets whether this Text3d object will be drawn in Bold. (since) 5.0  BoundingBox BoundingBox  (summary) Gets the boundingbox for this Text3d object.</description>
@@ -339,20 +339,20 @@ public class Text3dConstructors Text3d(string text)  (summary) Constructs a new
     
     <item>
       <title>ViewCapture</title>
-      <link>/posts/rhino/display/viewcapture/</link>
+      <link>/hugo/posts/rhino/display/viewcapture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/viewcapture/</guid>
+      <guid>/hugo/posts/rhino/display/viewcapture/</guid>
       <description>Namespace: Rhino.Display
 public class ViewCaptureConstructors ViewCapture()  (summary) (since) 6.0  Properties bool DrawAxes  (summary) (since) 6.0  bool DrawGrid  (summary) (since) 6.0  bool DrawGridAxes  (summary) (since) 6.0  int Height  (summary) Height of capture in Pixels (since) 6.0  bool Preview  (summary) (since) 6.0  int RealtimeRenderPasses  (summary) (since) 6.0  bool ScaleScreenItems  (summary) (since) 6.0  bool TransparentBackground  (summary) (since) 6.</description>
     </item>
     
     <item>
       <title>ViewCaptureSettings</title>
-      <link>/posts/rhino/display/viewcapturesettings/</link>
+      <link>/hugo/posts/rhino/display/viewcapturesettings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/viewcapturesettings/</guid>
+      <guid>/hugo/posts/rhino/display/viewcapturesettings/</guid>
       <description>Namespace: Rhino.Display
 Used to hold the information required to generate high resolution output of a RhinoViewport. This is used for generating paper prints or image files
 public class ViewCaptureSettingsConstructors ViewCaptureSettings()  (summary) (since) 6.0  ViewCaptureSettings(RhinoPageView sourcePageView,double dpi)  (summary) (since) 6.0  ViewCaptureSettings(RhinoView sourceView,Size mediaSize,double dpi)  (summary) (since) 6.0  Properties double ArrowheadSizeMillimeters  (summary) arrowhead size in millimeters (since) 6.15  Rectangle CropRectangle  (summary) Actual area of output rectangle that view capture is sent to.</description>
@@ -360,30 +360,30 @@ public class ViewCaptureSettingsConstructors ViewCaptureSettings()  (summary) (
     
     <item>
       <title>ViewDisplayAttributes</title>
-      <link>/posts/rhino/display/viewdisplayattributes/</link>
+      <link>/hugo/posts/rhino/display/viewdisplayattributes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/viewdisplayattributes/</guid>
+      <guid>/hugo/posts/rhino/display/viewdisplayattributes/</guid>
       <description>Namespace: Rhino.Display
 public class ViewDisplayAttributesProperties bool BlendGrid  (summary) (since) 5.0  bool DrawGrid  (summary) (since) 5.0  bool DrawGridAxes  (summary) (since) 5.0  bool DrawTransparentGridPlane  (summary) (since) 5.0  bool DrawWorldAxes  (summary) (since) 5.0  bool DrawZAxis  (summary) (since) 5.0  double HorizontalViewportScale  (summary) (since) 5.0  bool ShowGridOnTop  (summary) (since) 5.0  bool UseDocumentGrid  (summary) (since) 5.0  double VerticalViewportScale  (summary) (since) 5.</description>
     </item>
     
     <item>
       <title>ViewEventArgs</title>
-      <link>/posts/rhino/display/vieweventargs/</link>
+      <link>/hugo/posts/rhino/display/vieweventargs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/vieweventargs/</guid>
+      <guid>/hugo/posts/rhino/display/vieweventargs/</guid>
       <description>Namespace: Rhino.Display
 public class ViewEventArgsProperties RhinoView View  (summary) (since) 5.0  </description>
     </item>
     
     <item>
       <title>VisualAnalysisMode</title>
-      <link>/posts/rhino/display/visualanalysismode/</link>
+      <link>/hugo/posts/rhino/display/visualanalysismode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/visualanalysismode/</guid>
+      <guid>/hugo/posts/rhino/display/visualanalysismode/</guid>
       <description>Namespace: Rhino.Display
 Represents a base class for visual analysis modes. This class is abstract.
 public class VisualAnalysisModeProperties static Guid RhinoCurvatureColorAnalyisModeId  (summary) Id for Rhino&amp;rsquo;s built-in curvature color analysis mode. Surface curvature is shown using False color mapping. (since) 5.0  static Guid RhinoCurvatureGraphAnalysisModeId  (summary) Id for Rhino&amp;rsquo;s built-in curvature graphs analysis mode. Curvature hair is shown on curves and surfaces. (since) 5.0  static Guid RhinoDraftAngleAnalysisModeId  (summary) Id for Rhino&amp;rsquo;s built-in draft angle analysis mode.</description>
@@ -391,10 +391,10 @@ public class VisualAnalysisModeProperties static Guid RhinoCurvatureColorAnalyi
     
     <item>
       <title>ZBufferCapture</title>
-      <link>/posts/rhino/display/zbuffercapture/</link>
+      <link>/hugo/posts/rhino/display/zbuffercapture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/posts/rhino/display/zbuffercapture/</guid>
+      <guid>/hugo/posts/rhino/display/zbuffercapture/</guid>
       <description>Namespace: Rhino.Display
 Provides functionality for getting the zbuffer values from a viewport and a given display mode
 public class ZBufferCaptureConstructors ZBufferCapture(RhinoViewport viewport)  (summary) (since) 5.3  Methods void Dispose()  (summary) Actively reclaims unmanaged resources that this instance uses. (since) 5.3 (returns) void This is some return comment  System.Drawing.Bitmap GrayscaleDib()  (summary) (since) 5.3 (returns) System.Drawing.Bitmap This is some return comment  int HitCount()  (summary) (since) 5.</description>
