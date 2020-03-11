@@ -110,5 +110,21 @@ namespace api_docify
             string className = $"{ns}{basetype.Identifier}";
             return className;
         }
+
+
+        public string[] GetAttributes()
+        {
+            string[] rc = new string[_basetype.AttributeLists.Count];
+            for (int i = 0; i < rc.Length; i++)
+                rc[i] = _basetype.AttributeLists[i].ToString();
+            return rc;
+        }
+
+        public string GetBaseList()
+        {
+            if (_basetype.BaseList != null)
+                return _basetype.BaseList.ToString();
+            return "";
+        }
     }
 }

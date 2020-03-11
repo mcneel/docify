@@ -38,10 +38,20 @@ namespace api_docify
 
         public string Summary()
         {
+            return GetTagText("summary");
+        }
+
+        public string ReturnDocString()
+        {
+            return GetTagText("returns");
+        }
+
+        string GetTagText(string tag)
+        {
             var xml = DocumentationAsXml();
             if (xml != null)
             {
-                var element = xml.GetElementsByTagName("summary");
+                var element = xml.GetElementsByTagName(tag);
                 if (element != null && element.Count > 0)
                     return element[0].InnerText.Trim();
             }

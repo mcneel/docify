@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace api_docify
@@ -29,7 +30,7 @@ namespace api_docify
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
             MemberType = mt;
         }
-
+        public ParsedType ParentType { get; set; }
         private MemberDeclarationSyntax Member { get; }
 
         public int SinceInsertIndex()
@@ -148,7 +149,11 @@ namespace api_docify
                     }
                     else
                     {
-                        signature.Append($"{prefix}{property.Type} {property.Identifier}");
+                        string proptype = $"{property.Type}";
+                        int index = proptype.LastIndexOf('.');
+                        if (index > 0)
+                            proptype = proptype.Substring(index + 1);
+                        signature.Append($"{prefix}{proptype} {property.Identifier}");
                     }
                     return signature.ToString();
                 }
@@ -237,6 +242,49 @@ namespace api_docify
                 }
             }
             throw new System.NotImplementedException();
+        }
+
+        public ParsedType ReturnType(IEnumerable<ParsedType> types)
+        {
+            string searchName = null;
+            {
+                PropertyDeclarationSyntax property = Member as PropertyDeclarationSyntax;
+                if (property != null)
+                {
+                    string proptype = $"{property.Type}";
+                    int index = proptype.LastIndexOf('.');
+                    if (index > 0)
+                        proptype = proptype.Substring(index + 1);
+                    searchName = proptype;
+                }
+            }
+            {
+                MethodDeclarationSyntax method = Member as MethodDeclarationSyntax;
+                if (method != null)
+                {
+                    searchName = $"{method.ReturnType}";
+                }
+            }
+            if (string.IsNullOrEmpty(searchName))
+                return null;
+            if (char.IsLower(searchName[0]))
+                return null;
+            if (searchName.EndsWith("[]"))
+                searchName = searchName.Substring(0, searchName.Length - 2);
+
+            foreach (var type in types)
+            {
+                if( type.Name.EndsWith(searchName) )
+                {
+                    string name = type.Name;
+                    int index = name.LastIndexOf('.');
+                    if (index > 0)
+                        name = name.Substring(index + 1);
+                    if (searchName.Equals(name))
+                        return type;
+                }
+            }
+            return null;
         }
 
         public string Returns()
