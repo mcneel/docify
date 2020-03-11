@@ -9,7 +9,7 @@ namespace api_docify
         static void Main(string[] args)
         {
             const string rhinocommonDirectory = "../../../../rhino/src4/DotNetSDK/rhinocommon/dotnet/";
-            const string outputDirectory = "../../../apisite/content/posts/";
+            const string outputDirectory = "../../../hugo_site/content/posts/";
 
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allBaseTypes = new Dictionary<string, ParsedType>();

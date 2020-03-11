@@ -40,6 +40,17 @@ namespace api_docify
             }
         }
 
+        public string[] BaseTypes()
+        {
+            var types = _basetype.BaseList.Types;
+            string[] rc = new string[types.Count];
+            for( int i=0; i<types.Count; i++)
+            {
+                rc[i] = types[i].ToString();
+            }
+            return rc;
+        }
+
         public string Name
         {
             get
