@@ -6,15 +6,24 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace api_docify
 {
+    enum ParsedDataType
+    {
+        None = 0,
+        Class = 1,
+        Struct = 2,
+        Enum = 3,
+        Interface = 4
+    }
+
     /// <summary>
     /// Class, struct, enum, or interface declaration
     /// </summary>
     class ParsedType : XmlDocumentedItem
     {
-        BaseTypeDeclarationSyntax _basetype;
-        public ParsedType(BaseTypeDeclarationSyntax basetype, DocumentationCommentTriviaSyntax documentation) : base(documentation)
+        BaseTypeDeclarationSyntax _declarationType;
+        public ParsedType(BaseTypeDeclarationSyntax type, DocumentationCommentTriviaSyntax documentation) : base(documentation)
         {
-            _basetype = basetype;
+            _declarationType = type;
         }
 
         public void Merge(ParsedType other)
@@ -30,19 +39,34 @@ namespace api_docify
             }
         }
 
-        public bool IsClass { get { return _basetype is ClassDeclarationSyntax; } }
+        public ParsedDataType DataType
+        {
+            get
+            {
+                if (_declarationType is ClassDeclarationSyntax)
+                    return ParsedDataType.Class;
+                if (_declarationType is StructDeclarationSyntax)
+                    return ParsedDataType.Struct;
+                if (_declarationType is EnumDeclarationSyntax)
+                    return ParsedDataType.Enum;
+                if (_declarationType is InterfaceDeclarationSyntax)
+                    return ParsedDataType.Interface;
+                return ParsedDataType.None;
+            }
+        }
+        public bool IsClass { get { return _declarationType is ClassDeclarationSyntax; } }
 
         public string FullName
         {
             get
             {
-                return GetFullContainerName(_basetype);
+                return GetFullContainerName(_declarationType);
             }
         }
 
         public string[] BaseTypes()
         {
-            var types = _basetype.BaseList.Types;
+            var types = _declarationType.BaseList.Types;
             string[] rc = new string[types.Count];
             for( int i=0; i<types.Count; i++)
             {
@@ -55,7 +79,7 @@ namespace api_docify
         {
             get
             {
-                return $"{_basetype.Identifier}";
+                return $"{_declarationType.Identifier}";
             }
         }
 
@@ -64,7 +88,7 @@ namespace api_docify
             get
             {
                 string ns = "";
-                var parent = _basetype.Parent;
+                var parent = _declarationType.Parent;
                 while (parent != null)
                 {
                     var namespaceDeclaration = parent as NamespaceDeclarationSyntax;
@@ -82,7 +106,7 @@ namespace api_docify
         {
             get
             {
-                return _basetype.IsPublic();
+                return _declarationType.IsPublic();
             }
         }
 
@@ -114,16 +138,16 @@ namespace api_docify
 
         public string[] GetAttributes()
         {
-            string[] rc = new string[_basetype.AttributeLists.Count];
+            string[] rc = new string[_declarationType.AttributeLists.Count];
             for (int i = 0; i < rc.Length; i++)
-                rc[i] = _basetype.AttributeLists[i].ToString();
+                rc[i] = _declarationType.AttributeLists[i].ToString();
             return rc;
         }
 
         public string GetBaseList()
         {
-            if (_basetype.BaseList != null)
-                return _basetype.BaseList.ToString();
+            if (_declarationType.BaseList != null)
+                return _declarationType.BaseList.ToString();
             return "";
         }
     }

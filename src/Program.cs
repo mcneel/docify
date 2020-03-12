@@ -70,10 +70,11 @@ namespace api_docify
                 namespaces[ns].Add(basetype);
             }
 
-            const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
-            MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
-            MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
-
+            //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
+            //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
+            //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
+            const string jsonOutput = "../../../rhinocommon_api.js";
+            JsonBuilder.Write(allTypes, jsonOutput);
         }
 
         static IEnumerable<string> AllSourceFiles(string sourcePath)
