@@ -12,8 +12,8 @@ namespace api_docify
         {
             StringBuilder content = new StringBuilder();
 
-            content.Append(@"
-const dataTypes = {
+            content.Append(@"// auto-generated from api_docify
+const DataTypes = {
   NONE: 0,
   CLASS: 1,
   STRUCT: 2,
@@ -21,7 +21,7 @@ const dataTypes = {
   INTERFACE: 4
 }
 ");
-            content.AppendLine("rhinocommonApi = [");
+            content.AppendLine("var RhinoCommonApi = [");
 
             List<ParsedType> sortedTypes = new List<ParsedType>(types.Values);
             sortedTypes.Sort((a, b) => { return a.FullName.CompareTo(b.FullName); });
@@ -36,9 +36,21 @@ const dataTypes = {
                 content.Append(jsonType);
                 objectWritten = true;
             }
+            content.AppendLine();
             content.AppendLine("]");
             content.AppendLine();
+            content.AppendLine("export { DataTypes, RhinoCommonApi }");
+
             System.IO.File.WriteAllText(path, content.ToString());
+        }
+
+        static string JsonQuote(string s)
+        {
+            s = s.Replace("\\", "\\\\");
+            if (s.Contains('\n'))
+                return "`" + s + "`";
+            s = s.Replace("'", "\\'");
+            return "'" + s + "'";
         }
 
         static string WriteTypeAsObject(ParsedType type)
@@ -46,23 +58,46 @@ const dataTypes = {
             if (!type.IsPublic)
                 return null;
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("{");
-            sb.AppendLine($"  name: '{type.FullName}',");
-            sb.AppendLine($"  dataType: {(int)(type.DataType)},");
-            sb.AppendLine($"  summary: `{type.Summary()}`,");
+            sb.AppendLine("  {");
+            sb.AppendLine($"    name: '{type.FullName}',");
+            sb.AppendLine($"    dataType: {(int)(type.DataType)},");
+            sb.Append($"    summary: {JsonQuote(type.Summary())}");
             string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
             string properties = MembersAsJsonArray(type, ParsedMemberType.Property);
             string methods = MembersAsJsonArray(type, ParsedMemberType.Method);
             string events = MembersAsJsonArray(type, ParsedMemberType.Event);
-            if(!string.IsNullOrWhiteSpace(constructors))
-                sb.AppendLine($"  constructors: {constructors},");
+            if (constructors != null || properties != null || methods != null || events != null)
+                sb.AppendLine(",");
+            else
+                sb.AppendLine();
+
+            if (!string.IsNullOrWhiteSpace(constructors))
+            {
+                sb.Append($"    constructors: {constructors}");
+                if (properties != null || methods != null || events != null)
+                    sb.AppendLine(",");
+                else
+                    sb.AppendLine();
+            }
             if (!string.IsNullOrWhiteSpace(properties))
-                sb.AppendLine($"  properties: {properties},");
+            {
+                sb.Append($"    properties: {properties}");
+                if (methods != null || events != null)
+                    sb.AppendLine(",");
+                else
+                    sb.AppendLine();
+            }
             if (!string.IsNullOrWhiteSpace(methods))
-                sb.AppendLine($"  methods: {methods},");
+            {
+                sb.Append($"    methods: {methods}");
+                if (events != null)
+                    sb.AppendLine(",");
+                else
+                    sb.AppendLine();
+            }
             if (!string.IsNullOrWhiteSpace(events))
-                sb.AppendLine($"  events: {events}");
-            sb.Append("}");
+                sb.AppendLine($"    events: {events}");
+            sb.Append("  }");
             return sb.ToString();
         }
 
@@ -79,13 +114,13 @@ const dataTypes = {
                     continue;
                 if (memberAdded)
                     sb.AppendLine(",");
-                sb.AppendLine("    {");
-                sb.Append($"      signature: '{member.Signature(false)}'");
+                sb.AppendLine("      {");
+                sb.Append($"        signature: '{member.Signature(false)}'");
                 string summary = member.Summary();
                 if (!string.IsNullOrWhiteSpace(summary))
                 {
                     sb.AppendLine(",");
-                    sb.Append($"      summary: `{summary.Replace("\\", "\\\\")}`");
+                    sb.Append($"        summary: {JsonQuote(summary)}");
                 }
                 if (member.MemberType == ParsedMemberType.Method)
                 {
@@ -93,15 +128,15 @@ const dataTypes = {
                     if (!string.IsNullOrWhiteSpace(returns))
                     {
                         sb.AppendLine(",");
-                        sb.Append($"      returns: `{returns.Replace("\\", "\\\\")}`");
+                        sb.Append($"        returns: {JsonQuote(returns)}");
                     }
                 }
                 sb.AppendLine();
-                sb.Append("    }");
+                sb.Append("      }");
                 memberAdded = true;
             }
             sb.AppendLine();
-            sb.Append("  ]");
+            sb.Append("    ]");
 
             return memberAdded ? sb.ToString() : null;
         }

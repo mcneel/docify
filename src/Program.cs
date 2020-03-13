@@ -73,7 +73,7 @@ namespace api_docify
             //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
-            const string jsonOutput = "../../../rhinocommon_api.js";
+            const string jsonOutput = "../../../quasar_site/src/RhinoCommonApi.js";
             JsonBuilder.Write(allTypes, jsonOutput);
         }
 
