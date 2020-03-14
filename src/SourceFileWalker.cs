@@ -48,6 +48,11 @@ namespace api_docify
             base.VisitEnumDeclaration(node);
         }
 
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            base.VisitEnumMemberDeclaration(node);
+        }
+
         public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();

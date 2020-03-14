@@ -10,7 +10,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.AntialiasLevel',
     dataType: 3,
-    summary: 'Provides the antialias levels used for render quality'
+    summary: 'Provides the antialias levels used for render quality',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Low quality'
+      },
+      {
+        signature: 'Draft = 1',
+        summary: 'Draft quality'
+      },
+      {
+        signature: 'Good = 2',
+        summary: 'Good quality'
+      },
+      {
+        signature: 'High = 3',
+        summary: 'High quality'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.AppearanceSettings',
@@ -407,7 +425,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.ClipboardState',
     dataType: 3,
-    summary: 'Defines enumerated constant values for diferent behaviour that is related to clipboard data.'
+    summary: 'Defines enumerated constant values for diferent behaviour that is related to clipboard data.',
+    values: [
+      {
+        signature: 'KeepData = 0',
+        summary: 'Always keep clipboard data, regardless of size and never prompt the user.'
+      },
+      {
+        signature: 'DeleteData',
+        summary: 'Always delete clipboard data, regardless of size and never prompt the user.'
+      },
+      {
+        signature: 'PromptWhenBig',
+        summary: 'Prompt user when clipboard memory is large.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.CommandAliasList',
@@ -486,12 +518,44 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.CommandPromptPosition',
     dataType: 3,
-    summary: 'Defines enumerated constant values for default positions of the command prompt inside the frame of the full editor window.'
+    summary: 'Defines enumerated constant values for default positions of the command prompt inside the frame of the full editor window.',
+    values: [
+      {
+        signature: 'Top = 0',
+        summary: 'The command prompt is shown on top.'
+      },
+      {
+        signature: 'Bottom = 1',
+        summary: 'The command prompt is shown at the bottom.'
+      },
+      {
+        signature: 'Floating = 2',
+        summary: 'The command prompt is shown floating.'
+      },
+      {
+        signature: 'Hidden = 3',
+        summary: 'The command prompt is shown hidden.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.CursorMode',
     dataType: 3,
-    summary: 'Defines enumerated constant values for particular OSnap cursor colors.'
+    summary: 'Defines enumerated constant values for particular OSnap cursor colors.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No OSnap cursor.'
+      },
+      {
+        signature: 'BlackOnWhite',
+        summary: 'Black on white OSnap cursor.'
+      },
+      {
+        signature: 'WhiteOnBlack',
+        summary: 'White on black OSnap cursor.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.CursorTooltipSettings',
@@ -683,7 +747,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.CurvatureAnalysisSettings.CurvatureStyle',
     dataType: 3,
-    summary: 'Curvature analysis styles'
+    summary: 'Curvature analysis styles',
+    values: [
+      {
+        signature: 'Gaussian = 0',
+        summary: 'Gaussian curvature'
+      },
+      {
+        signature: 'Mean = 1',
+        summary: 'Mean curvature'
+      },
+      {
+        signature: 'MinRadius = 2',
+        summary: 'Minimum radius curvature'
+      },
+      {
+        signature: 'MaxRadius = 3',
+        summary: 'Maximum radius curvature'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.CurvatureAnalysisSettingsState',
@@ -1266,18 +1348,87 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.Installation',
     dataType: 3,
-    summary: 'The type of Rhino executable that is executing'
+    summary: 'The type of Rhino executable that is executing',
+    values: [
+      {
+        signature: 'Undefined = 0',
+        summary: 'Unknown'
+      },
+      {
+        signature: 'Commercial'
+      },
+      {
+        signature: 'Educational'
+      },
+      {
+        signature: 'EducationalLab'
+      },
+      {
+        signature: 'NotForResale'
+      },
+      {
+        signature: 'NotForResaleLab'
+      },
+      {
+        signature: 'Beta'
+      },
+      {
+        signature: 'BetaLab'
+      },
+      {
+        signature: 'Evaluation',
+        summary: '25 Save limit evaluation version of Rhino'
+      },
+      {
+        signature: 'Corporate'
+      },
+      {
+        signature: 'EvaluationTimed',
+        summary: '90 day time limit evaluation version of Rhino'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.LicenseNode',
     dataType: 3,
-    summary: 'License node types.'
+    summary: 'License node types.',
+    values: [
+      {
+        signature: 'Standalone = 0',
+        summary: 'An independent node.'
+      },
+      {
+        signature: 'Network = 1',
+        summary: 'Network (obtains license from Zoo server)'
+      },
+      {
+        signature: 'NetworkCheckedOut = 2',
+        summary: 'Network (has license checked out from Zoo server)'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.MiddleMouseMode',
     dataType: 3,
     summary: `Defines enumerated constant values to define what happens when
-   either the middle mouse button on a three-button mouse is clicked or after pressing the wheel on a wheeled mouse.`
+   either the middle mouse button on a three-button mouse is clicked or after pressing the wheel on a wheeled mouse.`,
+    values: [
+      {
+        signature: 'PopupMenu = 0',
+        summary: `Pops up two-part menu at the cursor location.
+     You can list your favorite commands in the top section.
+     The bottom section is the list of most recent commands used.`
+      },
+      {
+        signature: 'PopupToolbar = 1',
+        summary: `Choose a toolbar to pop up at the cursor location.
+     Create a toolbar containing your favorite commands or object snaps to use as a pop-up toolbar.`
+      },
+      {
+        signature: 'RunMacro = 2',
+        summary: 'Lists a series of commands that run when you click the middle mouse button.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.ModelAidSettings',
@@ -1569,7 +1720,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.MouseSelectMode',
     dataType: 3,
-    summary: 'Defines enumerated constant values to indicate a particular window selection mode.'
+    summary: 'Defines enumerated constant values to indicate a particular window selection mode.',
+    values: [
+      {
+        signature: 'Crossing = 0',
+        summary: 'Anything that crosses this window will be selected.'
+      },
+      {
+        signature: 'Window = 1',
+        summary: 'Anything that is inside this window will be selected.'
+      },
+      {
+        signature: 'Combo = 2',
+        summary: 'Drag a rectangle from left to right for window select. Drag a rectangle from right to left for crossing select.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.NeverRepeatList',
@@ -1650,12 +1815,76 @@ var RhinoCommonApi = [
     name: 'Rhino.ApplicationSettings.OsnapModes',
     dataType: 3,
     summary: `Defines several bit masks for each of the OSnap that are defined.
-   Refer to the Rhino Help file for further information.`
+   Refer to the Rhino Help file for further information.`,
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No OSnap.'
+      },
+      {
+        signature: 'Near = 2',
+        summary: 'Near OSnap.'
+      },
+      {
+        signature: 'Focus = 8',
+        summary: 'Focus OSnap.'
+      },
+      {
+        signature: 'Center = 0x20',
+        summary: 'Center OSnap.'
+      },
+      {
+        signature: 'Vertex = 0x40',
+        summary: 'Vertex OSnap.'
+      },
+      {
+        signature: 'Knot = 0x80',
+        summary: 'Knot OSnap.'
+      },
+      {
+        signature: 'Quadrant = 0x200',
+        summary: 'Quadrant OSnap.'
+      },
+      {
+        signature: 'Midpoint = 0x800',
+        summary: 'Midpoint OSnap.'
+      },
+      {
+        signature: 'Intersection = 0x2000',
+        summary: 'Intersection OSnap.'
+      },
+      {
+        signature: 'End = 0x20000',
+        summary: 'End OSnap.'
+      },
+      {
+        signature: 'Perpendicular = 0x80000',
+        summary: 'Perpendicular OSnap.'
+      },
+      {
+        signature: 'Tangent = 0x200000',
+        summary: 'Tangent OSnap.'
+      },
+      {
+        signature: 'Point =  0x8000000',
+        summary: 'Point OSnap.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.PointDisplayMode',
     dataType: 3,
-    summary: 'Defines enumerated constant values for world coordinates and CPlane point display modes.'
+    summary: 'Defines enumerated constant values for world coordinates and CPlane point display modes.',
+    values: [
+      {
+        signature: 'WorldPoint = 0',
+        summary: 'Points are displayed in world coordinates.'
+      },
+      {
+        signature: 'CplanePoint',
+        summary: 'Points are displayed in CPlane coordinates.'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.SelectionFilterSettings',
@@ -1741,7 +1970,713 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.ShortcutKey',
     dataType: 3,
-    summary: 'Shortcut key combinations'
+    summary: 'Shortcut key combinations',
+    values: [
+      {
+        signature: 'F1 = 0',
+        summary: 'F1'
+      },
+      {
+        signature: 'F2',
+        summary: 'F2'
+      },
+      {
+        signature: 'F3',
+        summary: 'F3'
+      },
+      {
+        signature: 'F4',
+        summary: 'F4'
+      },
+      {
+        signature: 'F5',
+        summary: 'F5'
+      },
+      {
+        signature: 'F6',
+        summary: 'F6'
+      },
+      {
+        signature: 'F7',
+        summary: 'F7'
+      },
+      {
+        signature: 'F8',
+        summary: 'F8'
+      },
+      {
+        signature: 'F9',
+        summary: 'F9'
+      },
+      {
+        signature: 'F10',
+        summary: 'F10'
+      },
+      {
+        signature: 'F11',
+        summary: 'F11'
+      },
+      {
+        signature: 'F12',
+        summary: 'F12'
+      },
+      {
+        signature: 'CtrlF1',
+        summary: 'Ctrl + F1'
+      },
+      {
+        signature: 'CtrlF2',
+        summary: 'Ctrl + F2'
+      },
+      {
+        signature: 'CtrlF3',
+        summary: 'Ctrl + F3'
+      },
+      {
+        signature: 'CtrlF4',
+        summary: 'Ctrl + F4'
+      },
+      {
+        signature: 'CtrlF5',
+        summary: 'Ctrl + F5'
+      },
+      {
+        signature: 'CtrlF6',
+        summary: 'Ctrl + F6'
+      },
+      {
+        signature: 'CtrlF7',
+        summary: 'Ctrl + F7'
+      },
+      {
+        signature: 'CtrlF8',
+        summary: 'Ctrl + F8'
+      },
+      {
+        signature: 'CtrlF9',
+        summary: 'Ctrl + F9'
+      },
+      {
+        signature: 'CtrlF10',
+        summary: 'Ctrl + F10'
+      },
+      {
+        signature: 'CtrlF11',
+        summary: 'Ctrl + F11'
+      },
+      {
+        signature: 'CtrlF12',
+        summary: 'Ctrl + F12'
+      },
+      {
+        signature: 'ShiftCtrlF1',
+        summary: 'Shift + Ctrl + F1'
+      },
+      {
+        signature: 'ShiftCtrlF2',
+        summary: 'Shift + Ctrl + F2'
+      },
+      {
+        signature: 'ShiftCtrlF3',
+        summary: 'Shift + Ctrl + F3'
+      },
+      {
+        signature: 'ShiftCtrlF4',
+        summary: 'Shift + Ctrl + F4'
+      },
+      {
+        signature: 'ShiftCtrlF5',
+        summary: 'Shift + Ctrl + F5'
+      },
+      {
+        signature: 'ShiftCtrlF6',
+        summary: 'Shift + Ctrl + F6'
+      },
+      {
+        signature: 'ShiftCtrlF7',
+        summary: 'Shift + Ctrl + F7'
+      },
+      {
+        signature: 'ShiftCtrlF8',
+        summary: 'Shift + Ctrl + F8'
+      },
+      {
+        signature: 'ShiftCtrlF9',
+        summary: 'Shift + Ctrl + F9'
+      },
+      {
+        signature: 'ShiftCtrlF10',
+        summary: 'Shift + Ctrl + F10'
+      },
+      {
+        signature: 'ShiftCtrlF11',
+        summary: 'Shift + Ctrl + F11'
+      },
+      {
+        signature: 'ShiftCtrlF12',
+        summary: 'Shift + Ctrl + F12'
+      },
+      {
+        signature: 'AltCtrlF1',
+        summary: 'Alt + Ctrl + F1'
+      },
+      {
+        signature: 'AltCtrlF2',
+        summary: 'Alt + Ctrl + F2'
+      },
+      {
+        signature: 'AltCtrlF3',
+        summary: 'Alt + Ctrl + F3'
+      },
+      {
+        signature: 'AltCtrlF4',
+        summary: 'Alt + Ctrl + F4'
+      },
+      {
+        signature: 'AltCtrlF5',
+        summary: 'Alt + Ctrl + F5'
+      },
+      {
+        signature: 'AltCtrlF6',
+        summary: 'Alt + Ctrl + F6'
+      },
+      {
+        signature: 'AltCtrlF7',
+        summary: 'Alt + Ctrl + F7'
+      },
+      {
+        signature: 'AltCtrlF8',
+        summary: 'Alt + Ctrl + F8'
+      },
+      {
+        signature: 'AltCtrlF9',
+        summary: 'Alt + Ctrl + F9'
+      },
+      {
+        signature: 'AltCtrlF10',
+        summary: 'Alt + Ctrl + F10'
+      },
+      {
+        signature: 'AltCtrlF11',
+        summary: 'Alt + Ctrl + F11'
+      },
+      {
+        signature: 'AltCtrlF12',
+        summary: 'Alt + Ctrl + F12'
+      },
+      {
+        signature: 'CtrlA',
+        summary: 'Ctrl + A'
+      },
+      {
+        signature: 'CtrlB',
+        summary: 'Ctrl + B'
+      },
+      {
+        signature: 'CtrlC',
+        summary: 'Ctrl + C'
+      },
+      {
+        signature: 'CtrlD',
+        summary: 'Ctrl + D'
+      },
+      {
+        signature: 'CtrlE',
+        summary: 'Ctrl + E'
+      },
+      {
+        signature: 'CtrlF',
+        summary: 'Ctrl + F'
+      },
+      {
+        signature: 'CtrlG',
+        summary: 'Ctrl + G'
+      },
+      {
+        signature: 'CtrlH',
+        summary: 'Ctrl + H'
+      },
+      {
+        signature: 'CtrlI',
+        summary: 'Ctrl + I'
+      },
+      {
+        signature: 'CtrlJ',
+        summary: 'Ctrl + J'
+      },
+      {
+        signature: 'CtrlK',
+        summary: 'Ctrl + K'
+      },
+      {
+        signature: 'CtrlL',
+        summary: 'Ctrl + L'
+      },
+      {
+        signature: 'CtrlM',
+        summary: 'Ctrl + M'
+      },
+      {
+        signature: 'CtrlN',
+        summary: 'Ctrl + N'
+      },
+      {
+        signature: 'CtrlO',
+        summary: 'Ctrl + O'
+      },
+      {
+        signature: 'CtrlP',
+        summary: 'Ctrl + P'
+      },
+      {
+        signature: 'CtrlQ',
+        summary: 'Ctrl + Q'
+      },
+      {
+        signature: 'CtrlR',
+        summary: 'Ctrl + R'
+      },
+      {
+        signature: 'CtrlS',
+        summary: 'Ctrl + S'
+      },
+      {
+        signature: 'CtrlT',
+        summary: 'Ctrl + T'
+      },
+      {
+        signature: 'CtrlU',
+        summary: 'Ctrl + U'
+      },
+      {
+        signature: 'CtrlV',
+        summary: 'Ctrl + V'
+      },
+      {
+        signature: 'CtrlW',
+        summary: 'Ctrl + W'
+      },
+      {
+        signature: 'CtrlX',
+        summary: 'Ctrl + X'
+      },
+      {
+        signature: 'CtrlY',
+        summary: 'Ctrl + Y'
+      },
+      {
+        signature: 'CtrlZ',
+        summary: 'Ctrl + Z'
+      },
+      {
+        signature: 'ShiftCtrlA',
+        summary: 'Shift + Ctrl + A'
+      },
+      {
+        signature: 'ShiftCtrlB',
+        summary: 'Shift + Ctrl + B'
+      },
+      {
+        signature: 'ShiftCtrlC',
+        summary: 'Shift + Ctrl + C'
+      },
+      {
+        signature: 'ShiftCtrlD',
+        summary: 'Shift + Ctrl + D'
+      },
+      {
+        signature: 'ShiftCtrlE',
+        summary: 'Shift + Ctrl + E'
+      },
+      {
+        signature: 'ShiftCtrlF',
+        summary: 'Shift + Ctrl + F'
+      },
+      {
+        signature: 'ShiftCtrlG',
+        summary: 'Shift + Ctrl + G'
+      },
+      {
+        signature: 'ShiftCtrlH',
+        summary: 'Shift + Ctrl + H'
+      },
+      {
+        signature: 'ShiftCtrlI',
+        summary: 'Shift + Ctrl + I'
+      },
+      {
+        signature: 'ShiftCtrlJ',
+        summary: 'Shift + Ctrl + J'
+      },
+      {
+        signature: 'ShiftCtrlK',
+        summary: 'Shift + Ctrl + K'
+      },
+      {
+        signature: 'ShiftCtrlL',
+        summary: 'Shift + Ctrl + L'
+      },
+      {
+        signature: 'ShiftCtrlM',
+        summary: 'Shift + Ctrl + M'
+      },
+      {
+        signature: 'ShiftCtrlN',
+        summary: 'Shift + Ctrl + N'
+      },
+      {
+        signature: 'ShiftCtrlO',
+        summary: 'Shift + Ctrl + O'
+      },
+      {
+        signature: 'ShiftCtrlP',
+        summary: 'Shift + Ctrl + P'
+      },
+      {
+        signature: 'ShiftCtrlQ',
+        summary: 'Shift + Ctrl + Q'
+      },
+      {
+        signature: 'ShiftCtrlR',
+        summary: 'Shift + Ctrl + R'
+      },
+      {
+        signature: 'ShiftCtrlS',
+        summary: 'Shift + Ctrl + S'
+      },
+      {
+        signature: 'ShiftCtrlT',
+        summary: 'Shift + Ctrl + T'
+      },
+      {
+        signature: 'ShiftCtrlU',
+        summary: 'Shift + Ctrl + U'
+      },
+      {
+        signature: 'ShiftCtrlV',
+        summary: 'Shift + Ctrl + V'
+      },
+      {
+        signature: 'ShiftCtrlW',
+        summary: 'Shift + Ctrl + W'
+      },
+      {
+        signature: 'ShiftCtrlX',
+        summary: 'Shift + Ctrl + X'
+      },
+      {
+        signature: 'ShiftCtrlY',
+        summary: 'Shift + Ctrl + Y'
+      },
+      {
+        signature: 'ShiftCtrlZ',
+        summary: 'Shift + Ctrl + Z'
+      },
+      {
+        signature: 'AltCtrlA',
+        summary: 'Alt + Ctrl + A'
+      },
+      {
+        signature: 'AltCtrlB',
+        summary: 'Alt + Ctrl + B'
+      },
+      {
+        signature: 'AltCtrlC',
+        summary: 'Alt + Ctrl + C'
+      },
+      {
+        signature: 'AltCtrlD',
+        summary: 'Alt + Ctrl + D'
+      },
+      {
+        signature: 'AltCtrlE',
+        summary: 'Alt + Ctrl + E'
+      },
+      {
+        signature: 'AltCtrlF',
+        summary: 'Alt + Ctrl + F'
+      },
+      {
+        signature: 'AltCtrlG',
+        summary: 'Alt + Ctrl + G'
+      },
+      {
+        signature: 'AltCtrlH',
+        summary: 'Alt + Ctrl + H'
+      },
+      {
+        signature: 'AltCtrlI',
+        summary: 'Alt + Ctrl + I'
+      },
+      {
+        signature: 'AltCtrlJ',
+        summary: 'Alt + Ctrl + J'
+      },
+      {
+        signature: 'AltCtrlK',
+        summary: 'Alt + Ctrl + K'
+      },
+      {
+        signature: 'AltCtrlL',
+        summary: 'Alt + Ctrl + L'
+      },
+      {
+        signature: 'AltCtrlM',
+        summary: 'Alt + Ctrl + M'
+      },
+      {
+        signature: 'AltCtrlN',
+        summary: 'Alt + Ctrl + N'
+      },
+      {
+        signature: 'AltCtrlO',
+        summary: 'Alt + Ctrl + O'
+      },
+      {
+        signature: 'AltCtrlP',
+        summary: 'Alt + Ctrl + P'
+      },
+      {
+        signature: 'AltCtrlQ',
+        summary: 'Alt + Ctrl + Q'
+      },
+      {
+        signature: 'AltCtrlR',
+        summary: 'Alt + Ctrl + R'
+      },
+      {
+        signature: 'AltCtrlS',
+        summary: 'Alt + Ctrl + S'
+      },
+      {
+        signature: 'AltCtrlT',
+        summary: 'Alt + Ctrl + T'
+      },
+      {
+        signature: 'AltCtrlU',
+        summary: 'Alt + Ctrl + U'
+      },
+      {
+        signature: 'AltCtrlV',
+        summary: 'Alt + Ctrl + V'
+      },
+      {
+        signature: 'AltCtrlW',
+        summary: 'Alt + Ctrl + W'
+      },
+      {
+        signature: 'AltCtrlX',
+        summary: 'Alt + Ctrl + X'
+      },
+      {
+        signature: 'AltCtrlY',
+        summary: 'Alt + Ctrl + Y'
+      },
+      {
+        signature: 'AltCtrlZ',
+        summary: 'Alt + Ctrl + Z'
+      },
+      {
+        signature: 'Ctrl0',
+        summary: 'Ctrl + 0'
+      },
+      {
+        signature: 'Ctrl1',
+        summary: 'Ctrl + 1'
+      },
+      {
+        signature: 'Ctrl2',
+        summary: 'Ctrl + 2'
+      },
+      {
+        signature: 'Ctrl3',
+        summary: 'Ctrl + 3'
+      },
+      {
+        signature: 'Ctrl4',
+        summary: 'Ctrl + 4'
+      },
+      {
+        signature: 'Ctrl5',
+        summary: 'Ctrl + 5'
+      },
+      {
+        signature: 'Ctrl6',
+        summary: 'Ctrl + 6'
+      },
+      {
+        signature: 'Ctrl7',
+        summary: 'Ctrl + 7'
+      },
+      {
+        signature: 'Ctrl8',
+        summary: 'Ctrl + 8'
+      },
+      {
+        signature: 'Ctrl9',
+        summary: 'Ctrl + 9'
+      },
+      {
+        signature: 'ShiftCtrl0',
+        summary: 'Shift + Ctrl + 0'
+      },
+      {
+        signature: 'ShiftCtrl1',
+        summary: 'Shift + Ctrl + 1'
+      },
+      {
+        signature: 'ShiftCtrl2',
+        summary: 'Shift + Ctrl + 2'
+      },
+      {
+        signature: 'ShiftCtrl3',
+        summary: 'Shift + Ctrl + 3'
+      },
+      {
+        signature: 'ShiftCtrl4',
+        summary: 'Shift + Ctrl + 4'
+      },
+      {
+        signature: 'ShiftCtrl5',
+        summary: 'Shift + Ctrl + 5'
+      },
+      {
+        signature: 'ShiftCtrl6',
+        summary: 'Shift + Ctrl + 6'
+      },
+      {
+        signature: 'ShiftCtrl7',
+        summary: 'Shift + Ctrl + 7'
+      },
+      {
+        signature: 'ShiftCtrl8',
+        summary: 'Shift + Ctrl + 8'
+      },
+      {
+        signature: 'ShiftCtrl9',
+        summary: 'Shift + Ctrl + 9'
+      },
+      {
+        signature: 'AltCtrl0',
+        summary: 'Alt + Ctrl + 0'
+      },
+      {
+        signature: 'AltCtrl1',
+        summary: 'Alt + Ctrl + 1'
+      },
+      {
+        signature: 'AltCtrl2',
+        summary: 'Alt + Ctrl + 2'
+      },
+      {
+        signature: 'AltCtrl3',
+        summary: 'Alt + Ctrl + 3'
+      },
+      {
+        signature: 'AltCtrl4',
+        summary: 'Alt + Ctrl + 4'
+      },
+      {
+        signature: 'AltCtrl5',
+        summary: 'Alt + Ctrl + 5'
+      },
+      {
+        signature: 'AltCtrl6',
+        summary: 'Alt + Ctrl + 6'
+      },
+      {
+        signature: 'AltCtrl7',
+        summary: 'Alt + Ctrl + 7'
+      },
+      {
+        signature: 'AltCtrl8',
+        summary: 'Alt + Ctrl + 8'
+      },
+      {
+        signature: 'AltCtrl9',
+        summary: 'Alt + Ctrl + 9'
+      },
+      {
+        signature: 'Home',
+        summary: 'Home'
+      },
+      {
+        signature: 'End',
+        summary: 'End'
+      },
+      {
+        signature: 'CtrlHome',
+        summary: 'Ctrl + Home'
+      },
+      {
+        signature: 'CtrlEnd',
+        summary: 'Ctrl + End'
+      },
+      {
+        signature: 'ShiftHome',
+        summary: 'Shift + Home'
+      },
+      {
+        signature: 'ShiftEnd',
+        summary: 'Shift + End'
+      },
+      {
+        signature: 'ShiftCtrlHome',
+        summary: 'Shift + Ctrl + Home'
+      },
+      {
+        signature: 'ShiftCtrlEnd',
+        summary: 'Shift + Ctrl + End'
+      },
+      {
+        signature: 'AltCtrlHome',
+        summary: 'Alt + Ctrl + Home'
+      },
+      {
+        signature: 'AltCtrlEnd',
+        summary: 'Alt + Ctrl + End'
+      },
+      {
+        signature: 'PageUp',
+        summary: 'Page Up'
+      },
+      {
+        signature: 'PageDown',
+        summary: 'Page Down'
+      },
+      {
+        signature: 'ShiftPageUp',
+        summary: 'Shift + Page Up'
+      },
+      {
+        signature: 'ShiftPageDown',
+        summary: 'Shift + Page Down'
+      },
+      {
+        signature: 'CtrlPageUp',
+        summary: 'Ctrl + Page Up'
+      },
+      {
+        signature: 'CtrlPageDown',
+        summary: 'Ctrl + Page Down'
+      },
+      {
+        signature: 'ShiftCtrlPageUp',
+        summary: 'Shift + Ctrl + Page Up'
+      },
+      {
+        signature: 'ShiftCtrlPageDown',
+        summary: 'Shift + Ctrl + Page Down'
+      },
+      {
+        signature: 'AltCtrlPageUp',
+        summary: 'Alt + Ctrl + Page Up'
+      },
+      {
+        signature: 'AltCtrlPageDown',
+        summary: 'Alt + Ctrl + Page Down'
+      }
+    ]
   },
   {
     name: 'Rhino.ApplicationSettings.ShortcutKeySettings',
@@ -3609,12 +4544,56 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Commands.Result',
     dataType: 3,
-    summary: 'Defines enumerated constant values for several command result types.'
+    summary: 'Defines enumerated constant values for several command result types.',
+    values: [
+      {
+        signature: 'Success = 0',
+        summary: 'Command worked.'
+      },
+      {
+        signature: 'Cancel  = 1',
+        summary: 'User canceled command.'
+      },
+      {
+        signature: 'Nothing = 2',
+        summary: 'Command did nothing but cancel was not pressed.'
+      },
+      {
+        signature: 'Failure',
+        summary: 'Command failed (bad input, computational problem, etc.)'
+      },
+      {
+        signature: 'UnknownCommand',
+        summary: 'Command not found (user probably had a typo in command name).'
+      },
+      {
+        signature: 'CancelModelessDialog',
+        summary: 'Commands canceled and modeless dialog.'
+      },
+      {
+        signature: 'ExitRhino = 0x0FFFFFFF',
+        summary: 'exit RhinoCommon.'
+      }
+    ]
   },
   {
     name: 'Rhino.Commands.RunMode',
     dataType: 3,
-    summary: 'Provides enumerated constants for a command running mode. This is currently interactive or scripted.'
+    summary: 'Provides enumerated constants for a command running mode. This is currently interactive or scripted.',
+    values: [
+      {
+        signature: 'Interactive = 0',
+        summary: `Can use dialogs for input. Must use message boxes to
+     report serious error conditions.`
+      },
+      {
+        signature: 'Scripted = 1',
+        summary: `All input must come from command line, GetPoint, GetObject,
+     GetString, etc.  Must use message boxes to report serious
+     error conditions.  Script mode gets used when a command is
+     run with a hyphen (-) prefix.`
+      }
+    ]
   },
   {
     name: 'Rhino.Commands.SelCommand',
@@ -3641,7 +4620,40 @@ var RhinoCommonApi = [
     name: 'Rhino.Commands.Style',
     dataType: 3,
     summary: `Defines bitwise mask flags for different styles of commands, such as
-   Hidden or DoNotRepeat.`
+   Hidden or DoNotRepeat.`,
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No flag is defined.'
+      },
+      {
+        signature: 'Hidden = 1',
+        summary: `Also known as a "test" command. The command name does not auto-complete
+     when typed on the command line an is therefore not discoverable. Useful
+     for writing commands that users don't normally have access to.`
+      },
+      {
+        signature: 'ScriptRunner = 2',
+        summary: `For commands that want to run scripts as if they were typed at the command
+     line (like RhinoScript's RunScript command)`
+      },
+      {
+        signature: 'Transparent = 4',
+        summary: `Transparent commands can be run inside of other commands.
+     The command does not modify the contents of the model's geometry in any way.
+     Examples of transparent commands include commands that change views and toggle
+     snap states.  Any command that adds or deletes, a view cannot be transparent.`
+      },
+      {
+        signature: 'DoNotRepeat = 8',
+        summary: `The command should not be repeated by pressing "ENTER" immediately after
+     the command finishes.`
+      },
+      {
+        signature: 'NotUndoable = 16',
+        summary: 'By default, all commands are undoable.'
+      }
+    ]
   },
   {
     name: 'Rhino.Commands.TransformCommand',
@@ -3694,12 +4706,76 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.BackgroundStyle',
     dataType: 3,
-    summary: 'Constants that define how the background of a viewport should be filled.'
+    summary: 'Constants that define how the background of a viewport should be filled.',
+    values: [
+      {
+        signature: 'SolidColor = 0',
+        summary: 'Single solid color fill.'
+      },
+      {
+        signature: 'WallpaperImage = 1',
+        summary: 'Simple image background wallpaper.'
+      },
+      {
+        signature: 'Gradient = 2',
+        summary: 'Two color top/bottom color gradient.'
+      },
+      {
+        signature: 'Environment = 3',
+        summary: 'Using a special environment.'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.BlendMode',
     dataType: 3,
-    summary: 'Defines enmerated constants for display blend modes.'
+    summary: 'Defines enmerated constants for display blend modes.',
+    values: [
+      {
+        signature: 'Zero = 0',
+        summary: 'Blends using 0.'
+      },
+      {
+        signature: 'One = 1',
+        summary: 'Blends using 1.'
+      },
+      {
+        signature: 'SourceColor = 0x0300',
+        summary: 'Blends using source color.'
+      },
+      {
+        signature: 'OneMinusSourceColor = 0x0301',
+        summary: 'Blends using 1-source color.'
+      },
+      {
+        signature: 'SourceAlpha = 0x0302',
+        summary: 'Blends using the source alpha channel.'
+      },
+      {
+        signature: 'OneMinusSourceAlpha = 0x0303',
+        summary: 'Blends using 1-the source alpha channel.'
+      },
+      {
+        signature: 'DestinationAlpha = 0x0304',
+        summary: 'Blends using the destination alpha channel.'
+      },
+      {
+        signature: 'OneMinusDestinationAlpha = 0x0305',
+        summary: 'Blends using 1-the destination alpha channel.'
+      },
+      {
+        signature: 'DestinationColor = 0x0306',
+        summary: 'Blends using the destination color.'
+      },
+      {
+        signature: 'OneMinusDestinationColor = 0x0307',
+        summary: 'Blends using 1-the destination color.'
+      },
+      {
+        signature: 'SourceAlphaSaturate = 0x0308',
+        summary: 'Blends using the source alpha saturation.'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.CalculateBoundingBoxEventArgs',
@@ -4378,7 +5454,18 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.CullFaceMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'DrawFrontAndBack = 0'
+      },
+      {
+        signature: 'DrawFrontFaces = 1'
+      },
+      {
+        signature: 'DrawBackFaces = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.CullObjectEventArgs',
@@ -4581,12 +5668,52 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DefinedViewportProjection',
     dataType: 3,
-    summary: 'Parallel and perspective projections that are "standard" in Rhino'
+    summary: 'Parallel and perspective projections that are "standard" in Rhino',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Top = 1'
+      },
+      {
+        signature: 'Bottom = 2'
+      },
+      {
+        signature: 'Left = 3'
+      },
+      {
+        signature: 'Right = 4'
+      },
+      {
+        signature: 'Front = 5'
+      },
+      {
+        signature: 'Back = 6'
+      },
+      {
+        signature: 'Perspective = 7'
+      },
+      {
+        signature: 'TwoPointPerspective = 8'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DepthMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Neutral = 0'
+      },
+      {
+        signature: 'AlwaysInFront = 1'
+      },
+      {
+        signature: 'AlwaysInBack = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DisplayBitmap',
@@ -6364,17 +7491,74 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.BoundingBoxDisplayMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.DisplayPipelineAttributesBBox.BBoxOff'
+      },
+      {
+        signature: 'OnDuringDynamicDisplay = UnsafeNativeMethods.DisplayPipelineAttributesBBox.BBoxOnDynamicDisplay'
+      },
+      {
+        signature: 'OnAlways = UnsafeNativeMethods.DisplayPipelineAttributesBBox.BBoxOnAlways'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.ContextsForDraw',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Unset = 0'
+      },
+      {
+        signature: 'FilePreview = 1'
+      },
+      {
+        signature: 'ViewCapture = 2'
+      },
+      {
+        signature: 'Printing = 3'
+      },
+      {
+        signature: 'UIPreview = 4'
+      },
+      {
+        signature: 'Mask = 5'
+      },
+      {
+        signature: 'RenderOverlays = 6'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.FrameBufferFillMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'DefaultColor = UnsafeNativeMethods.FrameBufferFillMode.DEFAULT_COLOR'
+      },
+      {
+        signature: 'SolidColor = UnsafeNativeMethods.FrameBufferFillMode.SOLID_COLOR'
+      },
+      {
+        signature: 'Gradient2Color = UnsafeNativeMethods.FrameBufferFillMode.GRADIENT_2_COLOR'
+      },
+      {
+        signature: 'Gradient4Color = UnsafeNativeMethods.FrameBufferFillMode.GRADIENT_4_COLOR'
+      },
+      {
+        signature: 'Bitmap = UnsafeNativeMethods.FrameBufferFillMode.BITMAP'
+      },
+      {
+        signature: 'Renderer = UnsafeNativeMethods.FrameBufferFillMode.RENDERER'
+      },
+      {
+        signature: 'Transparent = UnsafeNativeMethods.FrameBufferFillMode.TRANSPARENT'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.MeshDisplayAttributes',
@@ -6407,7 +7591,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.StereoRenderContextEnum',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'NotApplicable = 0'
+      },
+      {
+        signature: 'RenderingLeftEye = 1'
+      },
+      {
+        signature: 'RenderingRightEye = 2'
+      },
+      {
+        signature: 'RenderingBothEyes = 3'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.ViewDisplayAttributes',
@@ -6505,7 +7703,72 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DrawFrameStages',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'InitializeFrameBuffer = 0x00000001'
+      },
+      {
+        signature: 'SetupFrustum = 0x00000002'
+      },
+      {
+        signature: 'ObjectCulling = 0x00000004'
+      },
+      {
+        signature: 'CalculateBoundingBox = 0x00000008'
+      },
+      {
+        signature: 'CalculateClippingPlanes = 0x00000010'
+      },
+      {
+        signature: 'SetupLighting = 0x00000020'
+      },
+      {
+        signature: 'DrawBackground = 0x00000040'
+      },
+      {
+        signature: 'PreDrawObjects = 0x00000080'
+      },
+      {
+        signature: 'DrawObject = 0x00000100'
+      },
+      {
+        signature: 'PostDrawObjects = 0x00000200'
+      },
+      {
+        signature: 'DrawForeGround = 0x00000400'
+      },
+      {
+        signature: 'DrawOverlay = 0x00000800'
+      },
+      {
+        signature: 'PostProcessFrameBuffer = 0x00001000'
+      },
+      {
+        signature: 'MeshingParameters = 0x00002000'
+      },
+      {
+        signature: 'ObjectDisplayAttributes = 0x00004000'
+      },
+      {
+        signature: 'PreObjectDraw = 0x00008000'
+      },
+      {
+        signature: 'PostObjectDraw = 0x00010000'
+      },
+      {
+        signature: 'ViewExtents = 0x00020000'
+      },
+      {
+        signature: 'DrawMiddleGround = PreDrawObjects | DrawObject | PostDrawObjects'
+      },
+      {
+        signature: 'ObjectBasedChannel = ObjectCulling | DrawObject | ObjectDisplayAttributes | PreObjectDraw | PostObjectDraw'
+      },
+      {
+        signature: 'All = 0xFFFFFFFF & ~ViewExtents'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.DrawObjectEventArgs',
@@ -6525,7 +7788,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.GradientType',
     dataType: 3,
-    summary: 'Style of color gradient'
+    summary: 'Style of color gradient',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No gradient'
+      },
+      {
+        signature: 'Linear = 1',
+        summary: 'Linear (or axial) gradient between two points'
+      },
+      {
+        signature: 'Radial = 2',
+        summary: 'Radial (or spherical) gradient using a center point and a radius'
+      },
+      {
+        signature: 'LinearDisabled = 3',
+        summary: 'Disabled linear gradient. Useful for keeping gradient information around, but not having it displayed'
+      },
+      {
+        signature: 'RadialDisabled = 4',
+        summary: 'Disabled radial gradient. Useful for keeping gradient information around, but not having it displayed'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.InitFrameBufferEventArgs',
@@ -7928,12 +9213,40 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewCaptureSettings.AnchorLocation',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'LowerLeft = UnsafeNativeMethods.PrintInfoAnchor.LowerLeft'
+      },
+      {
+        signature: 'LowerRight = UnsafeNativeMethods.PrintInfoAnchor.LowerRight'
+      },
+      {
+        signature: 'UpperLeft = UnsafeNativeMethods.PrintInfoAnchor.UpperLeft'
+      },
+      {
+        signature: 'UpperRight = UnsafeNativeMethods.PrintInfoAnchor.UpperRight'
+      },
+      {
+        signature: 'Center = UnsafeNativeMethods.PrintInfoAnchor.Center'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.ViewCaptureSettings.ColorMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'DisplayColor'
+      },
+      {
+        signature: 'PrintColor'
+      },
+      {
+        signature: 'BlackAndWhite'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.ViewEventArgs',
@@ -7949,7 +9262,18 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewportType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'StandardModelingViewport = 0'
+      },
+      {
+        signature: 'PageViewMainViewport = 1'
+      },
+      {
+        signature: 'DetailViewport = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.VisualAnalysisMode',
@@ -8075,13 +9399,38 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.VisualAnalysisMode.AnalysisStyle',
     dataType: 3,
-    summary: 'Contains enumerated values for analysis styles, such as wireframe, texture or False colors..'
+    summary: 'Contains enumerated values for analysis styles, such as wireframe, texture or False colors..',
+    values: [
+      {
+        signature: 'Wireframe = 1',
+        summary: 'The analysis is showing with wires.'
+      },
+      {
+        signature: 'Texture = 2',
+        summary: 'The analysis is showing with textures.'
+      },
+      {
+        signature: 'FalseColor = 4',
+        summary: 'The analysis is showing with False colors.'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.ZBiasMode',
     dataType: 3,
     summary: `Baising applied to geometry to attempt to get coplanar items
-   to draw on top of or below other geometry`
+   to draw on top of or below other geometry`,
+    values: [
+      {
+        signature: 'Neutral = 0'
+      },
+      {
+        signature: 'TowardsCamera = 1'
+      },
+      {
+        signature: 'AwayFromCamera = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Display.ZBufferCapture',
@@ -8161,12 +9510,40 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ActiveSpace',
     dataType: 3,
-    summary: 'Defines the current working space.'
+    summary: 'Defines the current working space.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'There is no working space.'
+      },
+      {
+        signature: 'ModelSpace = 1',
+        summary: '3d modeling or "world" space.'
+      },
+      {
+        signature: 'PageSpace = 2',
+        summary: 'page/layout/paper/printing space.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.AngleDisplayMode',
     dataType: 3,
-    summary: 'Defines enumerated values for the display of angles.'
+    summary: 'Defines enumerated values for the display of angles.',
+    values: [
+      {
+        signature: 'Degrees = 0',
+        summary: 'Shows angle in decimal degrees'
+      },
+      {
+        signature: 'DMS = 1',
+        summary: 'Show angle as degree,minute,second.'
+      },
+      {
+        signature: 'Grads = 2',
+        summary: 'Show angle as grads.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.AngularDimensionObject',
@@ -8381,7 +9758,33 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.AnimationProperties.CaptureTypes',
     dataType: 3,
-    summary: 'Constants that define the mode of the animation tools.'
+    summary: 'Constants that define the mode of the animation tools.',
+    values: [
+      {
+        signature: 'Path = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.Path',
+        summary: 'Camera and target movement along separate path curves'
+      },
+      {
+        signature: 'Turntable = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.Turntable',
+        summary: 'Rotate a view around the target.'
+      },
+      {
+        signature: 'Flythrough = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.Flythrough',
+        summary: 'Camera and target movement along a path curve'
+      },
+      {
+        signature: 'DaySunStudy = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.DaySunStudy',
+        summary: 'Sun movement through a specified calendar day'
+      },
+      {
+        signature: 'SeasonalSunStudy = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.SeasonalSunStudy',
+        summary: 'Sun movement through a specified week, month, or year'
+      },
+      {
+        signature: 'None = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.None',
+        summary: 'No capture type specified'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.AnnotationObjectBase',
@@ -8410,7 +9813,21 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.BasepointZero',
     dataType: 3,
     summary: `Specifies enumerated constants used to indicate the zero level convention relating to a location on Earth.
-   This is used in conjunction with the  class.`
+   This is used in conjunction with the  class.`,
+    values: [
+      {
+        signature: 'GroundLevel = 0',
+        summary: 'The ground level is the convention for 0.'
+      },
+      {
+        signature: 'MeanSeaLevel = 1',
+        summary: 'The mean sea level is the convention for 0.'
+      },
+      {
+        signature: 'CenterOfEarth = 2',
+        summary: 'The center of the planet is the convention for 0.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.BitmapEntry',
@@ -8597,7 +10014,26 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.CoordinateSystem',
     dataType: 3,
-    summary: 'Defines enumerated values for coordinate systems to use as references.'
+    summary: 'Defines enumerated values for coordinate systems to use as references.',
+    values: [
+      {
+        signature: 'World = 0',
+        summary: `The world coordinate system. This has origin (0,0,0),
+       X unit axis is (1, 0, 0) and Y unit axis is (0, 1, 0).`
+      },
+      {
+        signature: 'Camera = 1',
+        summary: 'The camera coordinate system.'
+      },
+      {
+        signature: 'Clip = 2',
+        summary: 'The clip coordinate system.'
+      },
+      {
+        signature: 'Screen = 3',
+        summary: 'The screen coordinate system.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.CurveObject',
@@ -9080,7 +10516,33 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.DetailViewObject.ScaleFormat',
     dataType: 3,
-    summary: 'Detail view object scale formats.'
+    summary: 'Detail view object scale formats.',
+    values: [
+      {
+        signature: 'None',
+        summary: 'No formatting'
+      },
+      {
+        signature: 'PageLengthToOne',
+        summary: '#:1'
+      },
+      {
+        signature: 'OneToModelLength',
+        summary: '1:#'
+      },
+      {
+        signature: 'OneInchToModelLengthFeet',
+        summary: '1" = #\''
+      },
+      {
+        signature: 'ModelLengthInchToOneFoot',
+        summary: '#" = 1\''
+      },
+      {
+        signature: 'ModelLengthInchToOneFootInch',
+        summary: '#\' = 1\'-0"'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.DimensionObject',
@@ -9562,12 +11024,49 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.DisplayMode',
     dataType: 3,
-    summary: 'Defines enumerated values for display modes, such as wireframe or shaded.'
+    summary: 'Defines enumerated values for display modes, such as wireframe or shaded.',
+    values: [
+      {
+        signature: 'Default = 0',
+        summary: 'The default display mode.'
+      },
+      {
+        signature: 'Wireframe = 1',
+        summary: `The wireframe display mode.
+       Objects are generally only outlined by their corresponding isocurves and edges.`
+      },
+      {
+        signature: 'Shaded = 2',
+        summary: `The shaded display mode.
+       Objects are generally displayed with their corresponding isocurves and edges,
+       and are filled with their diplay colors.`
+      },
+      {
+        signature: 'RenderPreview = 3',
+        summary: `The render display mode.
+       Objects are generally displayed in a similar way to the one that will be resulting
+       from rendering.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.DistanceDisplayMode',
     dataType: 3,
-    summary: 'Defines enumerated values for the display of distances in US customary and Imperial units.'
+    summary: 'Defines enumerated values for the display of distances in US customary and Imperial units.',
+    values: [
+      {
+        signature: 'Decimal = 0',
+        summary: 'Shows distance decimals.'
+      },
+      {
+        signature: 'Feet = 1',
+        summary: 'Show feet.'
+      },
+      {
+        signature: 'FeetAndInches = 2',
+        summary: 'Show feet and inches.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.EarthAnchorPoint',
@@ -10099,7 +11598,18 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.HatchPatternFillType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Solid = 0'
+      },
+      {
+        signature: 'Lines = 1'
+      },
+      {
+        signature: 'Gradient = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.HistoryRecord',
@@ -10403,20 +11913,90 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.InstanceDefinitionArchiveFileStatus',
     dataType: 3,
     summary: `The archive file of a linked instance definition can have the following possible states.
-   Use InstanceObject.ArchiveFileStatus to query a instance definition's archive file status.`
+   Use InstanceObject.ArchiveFileStatus to query a instance definition's archive file status.`,
+    values: [
+      {
+        signature: 'NotALinkedInstanceDefinition = -3',
+        summary: 'The instance definition is not a linked instance definition.'
+      },
+      {
+        signature: 'LinkedFileNotReadable = -2',
+        summary: 'The instance definition\'s archive file is not readable.'
+      },
+      {
+        signature: 'LinkedFileNotFound = -1',
+        summary: 'The instance definition\'s archive file cannot be found.'
+      },
+      {
+        signature: 'LinkedFileIsUpToDate = 0',
+        summary: 'The instance definition\'s archive file is up-to-date.'
+      },
+      {
+        signature: 'LinkedFileIsNewer = 1',
+        summary: 'The instance definition\'s archive file is newer.'
+      },
+      {
+        signature: 'LinkedFileIsOlder = 2',
+        summary: 'The instance definition\'s archive file is older.'
+      },
+      {
+        signature: 'LinkedFileIsDifferent = 3',
+        summary: 'The instance definition\'s archive file is different.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.InstanceDefinitionLayerStyle',
     dataType: 3,
     summary: `A InstanceDefinitionUpdateType.Static or InstanceDefinitionUpdateType.LinkedAndEmbedded idef
    must have LayerStyle = Unset, a InstanceDefinitionUpdateType.Linked InstanceDefnition must
-   have LayerStyle = Active or Reference`
+   have LayerStyle = Active or Reference`,
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Active = 1'
+      },
+      {
+        signature: 'Reference = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.InstanceDefinitionUpdateType',
     dataType: 3,
     summary: `The possible relationships between the instance definition geometry
-   and the archive containing the original defition.`
+   and the archive containing the original defition.`,
+    values: [
+      {
+        signature: 'Static = 0',
+        summary: `The Rhino user interface uses the term "Embedded" for Static update types.
+     This instance definition is never updated. If m_source_archive is set,
+     it records the origin of the instance definition geometry, but
+     m_source_archive is never used to update the instance definition.`
+      },
+      {
+        signature: '    Embedded = 1',
+        summary: `This instance definition geometry was imported from another archive (m_source_archive)
+     and is embedded. If m_source_archive changes, the user is asked if they want to update
+     the instance definition.`
+      },
+      {
+        signature: 'LinkedAndEmbedded = 2',
+        summary: `This instance definition geometry was imported from another archive (m_source_archive)
+     and is embedded. If m_source_archive changes, the instance definition is automatically
+     updated. If m_source_archive is not available, the instance definition is still valid.`
+      },
+      {
+        signature: 'Linked = 3',
+        summary: `This instance definition geometry was imported from another archive (m_source_archive)
+     and is not embedded. If m_source_archive changes, the instance definition is automatically
+     updated. If m_source_archive is not available, the instance definition is not valid.
+     This does not save runtime memory.  It may save a little disk space, but it is a  foolish
+     option requested by people who do not understand all the issues.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.InstanceObject',
@@ -12023,12 +13603,49 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ObjectColorSource',
     dataType: 3,
-    summary: 'Defines enumerated values for the source of display color of single objects.'
+    summary: 'Defines enumerated values for the source of display color of single objects.',
+    values: [
+      {
+        signature: 'ColorFromLayer = 0',
+        summary: 'use color assigned to layer.'
+      },
+      {
+        signature: 'ColorFromObject = 1',
+        summary: 'use color assigned to object.'
+      },
+      {
+        signature: 'ColorFromMaterial = 2',
+        summary: 'use diffuse render material color.'
+      },
+      {
+        signature: 'ColorFromParent = 3',
+        summary: `for objects with parents (like objects in instance references, use parent linetype)
+       if no parent, treat as color_from_layer.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectDecoration',
     dataType: 3,
-    summary: 'Defines bit mask values to represent object decorations.'
+    summary: 'Defines bit mask values to represent object decorations.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'There are no object decorations.'
+      },
+      {
+        signature: 'StartArrowhead = 0x08',
+        summary: 'Arrow head at start.'
+      },
+      {
+        signature: 'EndArrowhead = 0x10',
+        summary: 'Arrow head at end.'
+      },
+      {
+        signature: 'BothArrowhead = 0x18',
+        summary: 'Arrow head at start and end.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectEnumeratorSettings',
@@ -12117,32 +13734,240 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ObjectLinetypeSource',
     dataType: 3,
-    summary: 'Defines enumerated values for the source of linetype of single objects.'
+    summary: 'Defines enumerated values for the source of linetype of single objects.',
+    values: [
+      {
+        signature: 'LinetypeFromLayer = 0',
+        summary: 'use line style assigned to layer.'
+      },
+      {
+        signature: 'LinetypeFromObject = 1',
+        summary: 'use line style assigned to object.'
+      },
+      {
+        signature: 'LinetypeFromParent = 3',
+        summary: `for objects with parents (like objects in instance references, use parent linetype)
+       if not parent, treat as linetype_from_layer.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectMaterialSource',
     dataType: 3,
-    summary: 'Defines enumerated values for the source of material of single objects.'
+    summary: 'Defines enumerated values for the source of material of single objects.',
+    values: [
+      {
+        signature: 'MaterialFromLayer = 0',
+        summary: 'use material assigned to layer.'
+      },
+      {
+        signature: 'MaterialFromObject = 1',
+        summary: 'use material assigned to object.'
+      },
+      {
+        signature: 'MaterialFromParent = 3',
+        summary: `for objects with parents, like definition geometry in instance
+       references and faces in polysurfaces, this value indicates the
+       material definition should come from the parent. If the object
+       does not have an obvious "parent", then treat it the same as
+       material_from_layer.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectMode',
     dataType: 3,
-    summary: 'Defines enumerated values for the display and behavior of single objects.'
+    summary: 'Defines enumerated values for the display and behavior of single objects.',
+    values: [
+      {
+        signature: 'Normal = 0',
+        summary: 'Object mode comes from layer.'
+      },
+      {
+        signature: 'Hidden = 1',
+        summary: 'Not visible, object cannot be selected or changed.'
+      },
+      {
+        signature: 'Locked = 2',
+        summary: 'Visible, object cannot be selected or changed.'
+      },
+      {
+        signature: 'InstanceDefinitionObject = 3',
+        summary: `Object is part of an InstanceDefinition. The InstanceDefinition
+      m_object_uuid[] array will contain this object attribute's uuid.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectPlotColorSource',
     dataType: 3,
-    summary: 'Defines enumerated values for the source of plotting/printing color of single objects.'
+    summary: 'Defines enumerated values for the source of plotting/printing color of single objects.',
+    values: [
+      {
+        signature: 'PlotColorFromLayer = 0',
+        summary: 'use plot color assigned to layer.'
+      },
+      {
+        signature: 'PlotColorFromObject = 1',
+        summary: 'use plot color assigned to object.'
+      },
+      {
+        signature: 'PlotColorFromDisplay = 2',
+        summary: 'use display color.'
+      },
+      {
+        signature: 'PlotColorFromParent = 3',
+        summary: `for objects with parents (like objects in instance references, use parent plot color)
+       if no parent, treat as plot_color_from_layer.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectPlotWeightSource',
     dataType: 3,
-    summary: 'Defines enumerated values for the source of plotting/printing weight of single objects.'
+    summary: 'Defines enumerated values for the source of plotting/printing weight of single objects.',
+    values: [
+      {
+        signature: 'PlotWeightFromLayer = 0',
+        summary: 'use plot color assigned to layer.'
+      },
+      {
+        signature: 'PlotWeightFromObject = 1',
+        summary: 'use plot color assigned to object.'
+      },
+      {
+        signature: 'PlotWeightFromParent = 3',
+        summary: `for objects with parents (like objects in instance references, use parent plot color)
+       if no parent, treat as plot_color_from_layer.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjectType',
     dataType: 3,
-    summary: 'Defines binary mask values for each object type that can be found in a document.'
+    summary: 'Defines binary mask values for each object type that can be found in a document.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Nothing.'
+      },
+      {
+        signature: 'Point = 1',
+        summary: 'A point.'
+      },
+      {
+        signature: 'PointSet = 2',
+        summary: 'A point set or cloud.'
+      },
+      {
+        signature: 'Curve = 4',
+        summary: 'A curve.'
+      },
+      {
+        signature: 'Surface = 8',
+        summary: 'A surface.'
+      },
+      {
+        signature: 'Brep = 0x10',
+        summary: 'A brep.'
+      },
+      {
+        signature: 'Mesh = 0x20',
+        summary: 'A mesh.'
+      },
+      {
+        signature: 'Light = 0x100',
+        summary: 'A rendering light.'
+      },
+      {
+        signature: 'Annotation = 0x200',
+        summary: 'An annotation.'
+      },
+      {
+        signature: 'InstanceDefinition = 0x800',
+        summary: 'A block definition.'
+      },
+      {
+        signature: 'InstanceReference = 0x1000',
+        summary: 'A block reference.'
+      },
+      {
+        signature: 'TextDot = 0x2000',
+        summary: 'A text dot.'
+      },
+      {
+        signature: 'Grip = 0x4000',
+        summary: 'Selection filter value - not a real object type.'
+      },
+      {
+        signature: 'Detail = 0x8000',
+        summary: 'A detail.'
+      },
+      {
+        signature: 'Hatch = 0x10000',
+        summary: 'A hatch.'
+      },
+      {
+        signature: 'MorphControl = 0x20000',
+        summary: 'A morph control.'
+      },
+      {
+        signature: 'SubD = 0x40000',
+        summary: 'A SubD object.'
+      },
+      {
+        signature: 'BrepLoop = 0x80000',
+        summary: 'A brep loop.'
+      },
+      {
+        signature: 'BrepVertex = 0x100000',
+        summary: 'a brep vertex.'
+      },
+      {
+        signature: 'PolysrfFilter = 0x200000',
+        summary: 'Selection filter value - not a real object type.'
+      },
+      {
+        signature: 'EdgeFilter = 0x400000',
+        summary: 'Selection filter value - not a real object type.'
+      },
+      {
+        signature: 'PolyedgeFilter = 0x800000',
+        summary: 'Selection filter value - not a real object type.'
+      },
+      {
+        signature: 'MeshVertex = 0x01000000',
+        summary: 'A mesh vertex.'
+      },
+      {
+        signature: 'MeshEdge = 0x02000000',
+        summary: 'A mesh edge.'
+      },
+      {
+        signature: 'MeshFace = 0x04000000',
+        summary: 'A mesh face.'
+      },
+      {
+        signature: 'Cage = 0x08000000',
+        summary: 'A cage.'
+      },
+      {
+        signature: 'Phantom = 0x10000000',
+        summary: 'A phantom object.'
+      },
+      {
+        signature: 'ClipPlane = 0x20000000',
+        summary: 'A clipping plane.'
+      },
+      {
+        signature: 'Extrusion = 0x40000000',
+        summary: 'An extrusion.'
+      },
+      {
+        signature: 'AnyObject = 0xFFFFFFFF',
+        summary: 'All bits set.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ObjRef',
@@ -13399,7 +15224,27 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.SelectionMethod',
     dataType: 3,
-    summary: 'Defines enumerated values for several kinds of selection methods.'
+    summary: 'Defines enumerated values for several kinds of selection methods.',
+    values: [
+      {
+        signature: 'Other = 0',
+        summary: 'Selected by non-mouse method (SelAll, etc.)'
+      },
+      {
+        signature: 'MousePick = 1',
+        summary: 'Selected by a mouse click on the object.'
+      },
+      {
+        signature: 'WindowBox = 2',
+        summary: `Selected by a mouse selection window box. 
+     Window selection indicates the object is completely contained by the selection rectangle.`
+      },
+      {
+        signature: 'CrossingBox = 3',
+        summary: `Selected by a mouse selection crossing box. 
+     A crossing selection indicates the object intersects with the selection rectangle.`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.SnapShots.SnapShotsClient',
@@ -13865,7 +15710,30 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.DimStyleTableEventType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Added'
+      },
+      {
+        signature: 'Deleted'
+      },
+      {
+        signature: 'Undeleted'
+      },
+      {
+        signature: 'Modified',
+        summary: 'name, color, etc., change'
+      },
+      {
+        signature: 'Sorted',
+        summary: 'doc.m_dimstyle_table.Sort() potentially changed sort order'
+      },
+      {
+        signature: 'Current',
+        summary: 'current dim style change'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.FontTable',
@@ -14089,7 +15957,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.GroupTableEventType',
     dataType: 3,
-    summary: 'Defines the types of group table events.'
+    summary: 'Defines the types of group table events.',
+    values: [
+      {
+        signature: 'Added = 0',
+        summary: 'A group was added.'
+      },
+      {
+        signature: 'Deleted = 1',
+        summary: 'A group was deleted.'
+      },
+      {
+        signature: 'Undeleted = 2',
+        summary: 'A group was undeleted.'
+      },
+      {
+        signature: 'Modified = 3',
+        summary: 'A group was modified.'
+      },
+      {
+        signature: 'Sorted = 4',
+        summary: 'The group table was sorted.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.HatchPatternTable',
@@ -14394,7 +16284,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.InstanceDefinitionTableEventType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Added = 0'
+      },
+      {
+        signature: 'Deleted = 1'
+      },
+      {
+        signature: 'Undeleted = 2'
+      },
+      {
+        signature: 'Modified = 3'
+      },
+      {
+        signature: 'Sorted = 4',
+        summary: 'InstanceDefinitionTable.Sort() potentially changed sort order.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.LayerTable',
@@ -14738,7 +16646,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LayerTableEventType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Added = 0'
+      },
+      {
+        signature: 'Deleted = 1'
+      },
+      {
+        signature: 'Undeleted = 2'
+      },
+      {
+        signature: 'Modified = 3'
+      },
+      {
+        signature: 'Sorted = 4',
+        summary: 'LayerTable.Sort() potentially changed sort order.'
+      },
+      {
+        signature: 'Current = 5',
+        summary: 'Current layer change.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.LightTable',
@@ -14855,7 +16785,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LightTableEventType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Added = 0'
+      },
+      {
+        signature: 'Deleted = 1'
+      },
+      {
+        signature: 'Undeleted = 2'
+      },
+      {
+        signature: 'Modified = 3'
+      },
+      {
+        signature: 'Sorted = 4',
+        summary: 'LightTable.Sort() potentially changed sort order.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.LinetypeTable',
@@ -15167,12 +17115,43 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.MaterialTableEventType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Added = 0'
+      },
+      {
+        signature: 'Deleted = 1'
+      },
+      {
+        signature: 'Undeleted = 2'
+      },
+      {
+        signature: 'Modified = 3'
+      },
+      {
+        signature: 'Sorted = 4'
+      },
+      {
+        signature: 'Current = 5'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.ModifyType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Modify'
+      },
+      {
+        signature: 'Override'
+      },
+      {
+        signature: 'NotSaved'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.NamedConstructionPlaneTable',
@@ -17107,7 +19086,69 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.RestoreLayerProperties',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0x0',
+        summary: 'Restore nothing'
+      },
+      {
+        signature: 'Current = 0x1',
+        summary: 'Restore current layer'
+      },
+      {
+        signature: 'Visible = 0x2',
+        summary: 'Restore layer visibility'
+      },
+      {
+        signature: 'Locked = 0x4',
+        summary: 'Restore layer locked status'
+      },
+      {
+        signature: 'Color = 0x8',
+        summary: 'Restore layer color'
+      },
+      {
+        signature: 'Linetype = 0x10',
+        summary: 'Restore layer linetype'
+      },
+      {
+        signature: 'PrintColor = 0x20',
+        summary: 'Restore layer print color'
+      },
+      {
+        signature: 'PrintWidth = 0x40',
+        summary: 'Restore layer print width'
+      },
+      {
+        signature: 'ViewportVisible = 0x80',
+        summary: 'Restore per-viewport layer visibility'
+      },
+      {
+        signature: 'ViewportColor = 0x100',
+        summary: 'Restore per-viewport layer color'
+      },
+      {
+        signature: 'ViewportPrintColor = 0x200',
+        summary: 'Restore per-viewport layer print color'
+      },
+      {
+        signature: 'ViewportPrintWidth = 0x400',
+        summary: 'Restore per-viewport layer print width'
+      },
+      {
+        signature: 'RenderMaterial = 0x800',
+        summary: 'Restore render material'
+      },
+      {
+        signature: 'Unused = 0x1000',
+        summary: 'Unused flag'
+      },
+      {
+        signature: 'All = 0xFFFFFFFF',
+        summary: 'Restore all layer properties'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.Tables.RhinoDocCommonTable',
@@ -17364,7 +19405,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.TextDisplayAlignment',
     dataType: 3,
-    summary: 'Defines enumerated values for the line alignment of text.'
+    summary: 'Defines enumerated values for the line alignment of text.',
+    values: [
+      {
+        signature: 'Normal = 0',
+        summary: 'Normal alignment.'
+      },
+      {
+        signature: 'Horizontal = 1',
+        summary: 'Horizontal alignment.'
+      },
+      {
+        signature: 'AboveLine = 2',
+        summary: 'Above line alignment.'
+      },
+      {
+        signature: 'InLine = 3',
+        summary: 'In line alignment.'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.TextDotObject',
@@ -17510,18 +19569,156 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.TextureCombineMode',
     dataType: 3,
     summary: `Determines how this texture is combined with others in a material's
-   texture list.`
+   texture list.`,
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Modulate = 1',
+        summary: 'Modulate with material diffuse color'
+      },
+      {
+        signature: 'Decal = 2',
+        summary: 'Decal'
+      },
+      {
+        signature: 'Blend = 3',
+        summary: `Blend texture with others in the material
+       To "add" a texture, set BlendAmount = +1
+       To "subtract" a texture, set BlendAmount = -1`
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.TextureType',
     dataType: 3,
     summary: `The TextureType controls how the pixels in the bitmap
-   are interpreted.`
+   are interpreted.`,
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Bitmap = 1',
+        summary: 'Deprecated - this should be diffuse'
+      },
+      {
+        signature: 'Diffuse = 1',
+        summary: 'The diffuse color of the material, ideally the albedo.'
+      },
+      {
+        signature: 'Bump = 2',
+        summary: 'bump map'
+      },
+      {
+        signature: 'Transparency = 3',
+        summary: 'Deprecated - see Opacity.  This has always actually meant opacity in Rhino, so there is nothing to change.'
+      },
+      {
+        signature: 'Opacity = 3',
+        summary: 'value = alpha'
+      },
+      {
+        signature: 'Emap = 4',
+        summary: 'Emap/Environment texture'
+      },
+      {
+        signature: 'PBR_BaseColor = 1',
+        summary: 'Physically based materials only - base color.  Re-uses diffuse texture slot.'
+      },
+      {
+        signature: 'PBR_Subsurface = 10',
+        summary: 'Physically based materials only - subsurface (greyscale)'
+      },
+      {
+        signature: 'PBR_SubsurfaceScattering = 11',
+        summary: 'Physically based materials only - subsurface scattering'
+      },
+      {
+        signature: 'PBR_SubsurfaceScatteringRadius = 12',
+        summary: 'Physically based materials only - subsurface scattering radius (greyscale)'
+      },
+      {
+        signature: 'PBR_Metallic = 13',
+        summary: 'Physically based materials only - metallic (greyscale)'
+      },
+      {
+        signature: 'PBR_Specular = 14',
+        summary: 'Physically based materials only - specular (greyscale)'
+      },
+      {
+        signature: 'PBR_SpecularTint = 15',
+        summary: 'Physically based materials only - specular tint (greyscale)'
+      },
+      {
+        signature: 'PBR_Roughness = 16',
+        summary: 'Physically based materials only - roughness (greyscale)'
+      },
+      {
+        signature: 'PBR_Anisotropic = 17',
+        summary: 'Physically based materials only - anisotropic (greyscale)'
+      },
+      {
+        signature: 'PBR_Anisotropic_Rotation = 18',
+        summary: 'Physically based materials only - anisotropic rotation 0 = 0, 255 = 360'
+      },
+      {
+        signature: 'PBR_Sheen = 19',
+        summary: 'Physically based materials only - sheen (greyscale)'
+      },
+      {
+        signature: 'PBR_SheenTint = 20',
+        summary: 'Physically based materials only - sheen tint (greyscale)'
+      },
+      {
+        signature: 'PBR_Clearcoat = 21',
+        summary: 'Physically based materials only - clearcoat (greyscale)'
+      },
+      {
+        signature: 'PBR_ClearcoatRoughness = 22',
+        summary: 'Physically based materials only - clearcoat roughness (greyscale)'
+      },
+      {
+        signature: 'PBR_OpacityIor = 23',
+        summary: 'Physically based materials only - ior (greyscale - remaps from 1.0 to 2.0)'
+      },
+      {
+        signature: 'PBR_OpacityRoughness = 24',
+        summary: 'Physically based materials only - transparency roughness (greyscale)'
+      },
+      {
+        signature: 'PBR_Emission = 25',
+        summary: 'Physically based materials only - emission (greyscale)'
+      },
+      {
+        signature: 'PBR_AmbientOcclusion = 26',
+        summary: 'Physically based materials only - occulusion (greyscale)'
+      },
+      {
+        signature: 'PBR_Displacement = 28',
+        summary: 'Physically based materials only - normal 8-bit RGB, alpha is ignored'
+      },
+      {
+        signature: 'PBR_ClearcoatBump = 29',
+        summary: 'Physically based materials only - clearcoat normal  or bump (normal map, RGB)'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.TextureUvwWrapping',
     dataType: 3,
-    summary: 'Defines Texture UVW wrapping modes'
+    summary: 'Defines Texture UVW wrapping modes',
+    values: [
+      {
+        signature: 'Repeat = 0',
+        summary: 'Repeat the texture'
+      },
+      {
+        signature: 'Clamp = 1',
+        summary: 'Clamp the texture'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ViewInfo',
@@ -17603,7 +19800,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ViewInfoFocalBlurModes',
     dataType: 3,
-    summary: 'The different focal blur modes of the ViewInfo'
+    summary: 'The different focal blur modes of the ViewInfo',
+    values: [
+      {
+        signature: 'None',
+        summary: 'No focal blur'
+      },
+      {
+        signature: 'Automatic',
+        summary: 'Autofocus on selected objects'
+      },
+      {
+        signature: 'Manual',
+        summary: 'Fully manual focus'
+      }
+    ]
   },
   {
     name: 'Rhino.DocObjects.ViewportInfo',
@@ -18449,7 +20660,27 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.BinaryArchiveMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Unknown = 0'
+      },
+      {
+        signature: 'Read = 1'
+      },
+      {
+        signature: 'Write = 2'
+      },
+      {
+        signature: 'ReadWrite = 3'
+      },
+      {
+        signature: 'Read3dm = 5'
+      },
+      {
+        signature: 'Write3dm = 6'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.BinaryArchiveReader',
@@ -19755,12 +21986,128 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.File3dm.ObjectTypeFilter',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.ObjectTypeFilter.None'
+      },
+      {
+        signature: 'Point = UnsafeNativeMethods.ObjectTypeFilter.Point',
+        summary: 'some type of Point'
+      },
+      {
+        signature: 'Pointset = UnsafeNativeMethods.ObjectTypeFilter.Pointset',
+        summary: 'some type of PointCloud, PointGrid, ...'
+      },
+      {
+        signature: 'Curve = UnsafeNativeMethods.ObjectTypeFilter.Curve',
+        summary: 'some type of Curve like LineCurve, NurbsCurve, etc.'
+      },
+      {
+        signature: 'Surface = UnsafeNativeMethods.ObjectTypeFilter.Surface',
+        summary: 'some type of Surface like PlaneSurface, NurbsSurface, etc.'
+      },
+      {
+        signature: 'Brep = UnsafeNativeMethods.ObjectTypeFilter.Brep',
+        summary: 'some type of Brep'
+      },
+      {
+        signature: 'Mesh = UnsafeNativeMethods.ObjectTypeFilter.Mesh',
+        summary: 'some type of Mesh'
+      },
+      {
+        signature: 'Annotation = UnsafeNativeMethods.ObjectTypeFilter.Annotation',
+        summary: 'some type of Annotation'
+      },
+      {
+        signature: 'InstanceDefinition = UnsafeNativeMethods.ObjectTypeFilter.InstanceDefinition',
+        summary: 'some type of InstanceDefinition'
+      },
+      {
+        signature: 'InstanceReference = UnsafeNativeMethods.ObjectTypeFilter.InstanceReference',
+        summary: 'some type of InstanceReference'
+      },
+      {
+        signature: 'TextDot = UnsafeNativeMethods.ObjectTypeFilter.TextDot',
+        summary: 'some type of TextDot'
+      },
+      {
+        signature: 'DetailView = UnsafeNativeMethods.ObjectTypeFilter.Detail',
+        summary: 'some type of DetailView'
+      },
+      {
+        signature: 'Hatch = UnsafeNativeMethods.ObjectTypeFilter.Hatch',
+        summary: 'some type of Hatch'
+      },
+      {
+        signature: 'Extrusion = UnsafeNativeMethods.ObjectTypeFilter.Extrusion',
+        summary: 'some type of Extrusion'
+      },
+      {
+        signature: 'Any = UnsafeNativeMethods.ObjectTypeFilter.Any'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.File3dm.TableTypeFilter',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.ReadFileTableTypeFilter.None'
+      },
+      {
+        signature: 'Properties = UnsafeNativeMethods.ReadFileTableTypeFilter.PropertiesTable'
+      },
+      {
+        signature: 'Settings = UnsafeNativeMethods.ReadFileTableTypeFilter.SettingsTable'
+      },
+      {
+        signature: 'Bitmap = UnsafeNativeMethods.ReadFileTableTypeFilter.BitmapTable'
+      },
+      {
+        signature: 'TextureMapping = UnsafeNativeMethods.ReadFileTableTypeFilter.TextureMappingTable'
+      },
+      {
+        signature: 'Material = UnsafeNativeMethods.ReadFileTableTypeFilter.MaterialTable'
+      },
+      {
+        signature: 'Linetype = UnsafeNativeMethods.ReadFileTableTypeFilter.LinetypeTable'
+      },
+      {
+        signature: 'Layer = UnsafeNativeMethods.ReadFileTableTypeFilter.LayerTable'
+      },
+      {
+        signature: 'Group = UnsafeNativeMethods.ReadFileTableTypeFilter.GroupTable'
+      },
+      {
+        signature: 'Font = UnsafeNativeMethods.ReadFileTableTypeFilter.FontTable'
+      },
+      {
+        signature: 'FutureFont = UnsafeNativeMethods.ReadFileTableTypeFilter.FutureFontTable'
+      },
+      {
+        signature: 'Dimstyle = UnsafeNativeMethods.ReadFileTableTypeFilter.DimstyleTable'
+      },
+      {
+        signature: 'Light = UnsafeNativeMethods.ReadFileTableTypeFilter.LightTable'
+      },
+      {
+        signature: 'Hatchpattern = UnsafeNativeMethods.ReadFileTableTypeFilter.HatchpatternTable'
+      },
+      {
+        signature: 'InstanceDefinition = UnsafeNativeMethods.ReadFileTableTypeFilter.InstanceDefinitionTable'
+      },
+      {
+        signature: 'ObjectTable = UnsafeNativeMethods.ReadFileTableTypeFilter.ObjectTable'
+      },
+      {
+        signature: 'Historyrecord = UnsafeNativeMethods.ReadFileTableTypeFilter.HistoryrecordTable'
+      },
+      {
+        signature: 'UserTable = UnsafeNativeMethods.ReadFileTableTypeFilter.UserTable'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.File3dmCommonComponentTable',
@@ -21069,7 +23416,25 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.FileObjReadOptions.UseObjGsAs',
     dataType: 3,
     summary: `Determines how "g"s in the obj file will be interpreted
-     on import`
+     on import`,
+    values: [
+      {
+        signature: 'IgnoreObjGroups = 0',
+        summary: 'OBJ "g"s in the file are ignored'
+      },
+      {
+        signature: 'ObjGroupsAsLayers = 1',
+        summary: 'OBJ "g"s in the file will become Rhino layers'
+      },
+      {
+        signature: 'ObjGroupsAsGroups = 2',
+        summary: 'OBJ "g"s in the file will become Rhino groups'
+      },
+      {
+        signature: 'ObjGroupsAsObjects = 3',
+        summary: 'OBJ "g"s in the file will become Rhino objects'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions',
@@ -21236,38 +23601,122 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.AsciiEol',
     dataType: 3,
-    summary: 'End of Line'
+    summary: 'End of Line',
+    values: [
+      {
+        signature: 'Crlf = 0',
+        summary: 'MicroSoft'
+      },
+      {
+        signature: 'Lf = 1',
+        summary: 'UNIX'
+      },
+      {
+        signature: 'Cr = 2',
+        summary: 'Apple'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.CurveType',
     dataType: 3,
-    summary: 'Type of curve used for trimmed surfaces'
+    summary: 'Type of curve used for trimmed surfaces',
+    values: [
+      {
+        signature: 'Polyline = 0',
+        summary: 'Polyline approximation, see comments for AngleTolRadians'
+      },
+      {
+        signature: 'Nurbs = 1'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.GeometryType',
     dataType: 3,
     summary: `(trimmed) NURBS surfaces may be exported                              
-     as either NURBS or meshes`
+     as either NURBS or meshes`,
+    values: [
+      {
+        signature: 'Nurbs = 0'
+      },
+      {
+        signature: 'Mesh = 1'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.ObjGroupNames',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'NoGroups = 0',
+        summary: 'Neither layer or group names are exported as OBJ groups'
+      },
+      {
+        signature: 'LayerAsGroup = 1',
+        summary: 'Rhino layer names are exported as OBJ groups'
+      },
+      {
+        signature: 'GroupAsGroup = 2',
+        summary: 'Rhino group names are exported as OBJ groups'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.ObjObjectNames',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'NoObjects = 0',
+        summary: 'Object names are not exported'
+      },
+      {
+        signature: 'ObjectAsGroup = 1',
+        summary: 'Rhino Object names are exported as OBJ groups'
+      },
+      {
+        signature: 'ObjectAsObject = 2',
+        summary: 'Rhino Object names are exported as OBJ objects'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.SubDMeshing',
     dataType: 3,
-    summary: 'Determines whether the surface or control net of a SubD object is used to generate a mesh'
+    summary: 'Determines whether the surface or control net of a SubD object is used to generate a mesh',
+    values: [
+      {
+        signature: 'Surface = 0',
+        summary: 'The SubD surface is used'
+      },
+      {
+        signature: 'ControlNet = 1',
+        summary: 'The SubD control net is used'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.VertexWelding',
     dataType: 3,
-    summary: 'Determines how/if vertexes of the mesh in Rhino will be modified in the output'
+    summary: 'Determines how/if vertexes of the mesh in Rhino will be modified in the output',
+    values: [
+      {
+        signature: 'Normal = 0',
+        summary: 'Mesh is exported in existing state'
+      },
+      {
+        signature: 'Welded = 1',
+        summary: `Mesh topology vertex indexing is used for the v in the OBJ output file
+       normals and texture coordinates, if they exist, come from the mesh`
+      },
+      {
+        signature: 'Unwelded = 2',
+        summary: 'Each face gets it\'s own vertex, and normal and tc if they exist, in the output'
+      }
+    ]
   },
   {
     name: 'Rhino.FileIO.FileObjWriter.ObjGroupComparer',
@@ -23262,12 +25711,37 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.BlendContinuity',
     dataType: 3,
-    summary: 'Used in curve and surface blending functions'
+    summary: 'Used in curve and surface blending functions',
+    values: [
+      {
+        signature: 'Position = 0'
+      },
+      {
+        signature: 'Tangency = 1'
+      },
+      {
+        signature: 'Curvature = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.BlendType',
     dataType: 3,
-    summary: 'Blend types used for creating filleted Brep edges'
+    summary: 'Blend types used for creating filleted Brep edges',
+    values: [
+      {
+        signature: 'Chamfer = 0',
+        summary: 'Creates a ruled surface between brep edges with varying chamfer distances.'
+      },
+      {
+        signature: 'Fillet = 1',
+        summary: 'Creates a tangent surface between brep edges with varying radius values.'
+      },
+      {
+        signature: 'Blend = 2',
+        summary: 'Creates a curvature-continuous blend surface between brep edges with varying radius values.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.BoundingBox',
@@ -25004,7 +27478,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.BrepFace.ShrinkDisableSide',
     dataType: 3,
-    summary: 'Defines bitwise mask flags indicating what side of a surface to not shrink.'
+    summary: 'Defines bitwise mask flags indicating what side of a surface to not shrink.',
+    values: [
+      {
+        signature: 'ShrinkAllSides = 0x0000',
+        summary: 'Shrink on all four sides.'
+      },
+      {
+        signature: 'DoNotShrinkWestSide = 0x0001',
+        summary: 'Do not shrink on the west side of domain.'
+      },
+      {
+        signature: 'DoNotShrinkSouthSide = 0x0002',
+        summary: 'Do not shrink on the south side of domain.'
+      },
+      {
+        signature: 'DoNotShrinkEastSide = 0x0004',
+        summary: 'Do not shrink on the east side of domain.'
+      },
+      {
+        signature: 'DoNotShrinkNorthSide = 0x0008',
+        summary: 'Do not shrink on the north side of domain.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.BrepLoop',
@@ -25055,7 +27551,35 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.BrepLoopType',
     dataType: 3,
-    summary: 'Each brep loop has a defined type, e.g. outer, inner or point on surface.'
+    summary: 'Each brep loop has a defined type, e.g. outer, inner or point on surface.',
+    values: [
+      {
+        signature: 'Unknown = 0',
+        summary: 'Unknown loop type.'
+      },
+      {
+        signature: 'Outer = 1',
+        summary: '2d loop curves form a simple closed curve with a counterclockwise orientation.'
+      },
+      {
+        signature: 'Inner = 2',
+        summary: '2d loop curves form a simple closed curve with a clockwise orientation.'
+      },
+      {
+        signature: 'Slit = 3',
+        summary: 'Always closed - used internally during splitting operations.'
+      },
+      {
+        signature: 'CurveOnSurface = 4',
+        summary: `"loop" is a curveonsrf made from a single (open or closed) trim that
+     has type TrimType.CurveOnSurface.`
+      },
+      {
+        signature: 'PointOnSurface = 5',
+        summary: `"loop" is a PointOnSurface made from a single trim that has
+     type TrimType.PointOnSurface.`
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.BrepRegion',
@@ -25130,7 +27654,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.BrepSolidOrientation',
     dataType: 3,
-    summary: 'Enumerates all possible Solid Orientations for a Brep.'
+    summary: 'Enumerates all possible Solid Orientations for a Brep.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Brep is not a Solid.'
+      },
+      {
+        signature: 'Inward = -1',
+        summary: 'Brep is a Solid with inward facing normals.'
+      },
+      {
+        signature: 'Outward = 1',
+        summary: 'Brep is a Solid with outward facing normals.'
+      },
+      {
+        signature: 'Unknown = 2',
+        summary: 'Breps is a Solid but no orientation could be computed.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.BrepTrim',
@@ -25239,7 +27781,52 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.BrepTrimType',
     dataType: 3,
-    summary: 'Each brep trim has a defined type.'
+    summary: 'Each brep trim has a defined type.',
+    values: [
+      {
+        signature: 'Unknown = 0',
+        summary: 'Unknown type'
+      },
+      {
+        signature: 'Boundary = 1',
+        summary: `Trim is connected to an edge, is part of an outer, inner or
+     slit loop, and is the only trim connected to the edge.`
+      },
+      {
+        signature: 'Mated = 2',
+        summary: `Trim is connected to an edge, is part of an outer, inner or slit loop,
+     no other trim from the same loop is connected to the edge, and at least
+     one trim from a different loop is connected to the edge.`
+      },
+      {
+        signature: 'Seam = 3',
+        summary: `trim is connected to an edge, is part of an outer, inner or slit loop,
+     and one other trim from the same loop is connected to the edge.
+     (There can be other mated trims that are also connected to the edge.
+     For example, the non-mainfold edge that results when a surface edge lies
+     in the middle of another surface.)  Non-mainfold "cuts" have seam trims too.`
+      },
+      {
+        signature: 'Singular = 4',
+        summary: `Trim is part of an outer loop, the trim's 2d curve runs along the singular
+     side of a surface, and the trim is NOT connected to an edge. (There is
+     no 3d edge because the surface side is singular.)`
+      },
+      {
+        signature: 'CurveOnSurface = 5',
+        summary: `Trim is connected to an edge, is the only trim in a crfonsrf loop, and
+     is the only trim connected to the edge.`
+      },
+      {
+        signature: 'PointOnSurface = 6',
+        summary: `Trim is a point on a surface, trim.m_pbox is records surface parameters,
+     and is the only trim in a ptonsrf loop.  This trim is not connected to
+     an edge and has no 2d curve.`
+      },
+      {
+        signature: 'Slit = 7'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.BrepVertex',
@@ -28038,7 +30625,132 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.ComponentIndexType',
     dataType: 3,
-    summary: 'Defines enumerated values to represent component index types.'
+    summary: 'Defines enumerated values to represent component index types.',
+    values: [
+      {
+        signature: 'InvalidType = 0',
+        summary: 'Not used. This is the default value of the enumeration type.'
+      },
+      {
+        signature: 'BrepVertex = 1',
+        summary: 'Targets a brep vertex index.'
+      },
+      {
+        signature: 'BrepEdge = 2',
+        summary: 'Targets a brep edge index.'
+      },
+      {
+        signature: 'BrepFace = 3',
+        summary: 'Targets a brep face index.'
+      },
+      {
+        signature: 'BrepTrim = 4',
+        summary: 'Targets a brep trim index.'
+      },
+      {
+        signature: 'BrepLoop = 5',
+        summary: 'Targets a brep loop index.'
+      },
+      {
+        signature: 'MeshVertex = 11',
+        summary: 'Targets a mesh vertex index.'
+      },
+      {
+        signature: 'MeshTopologyVertex = 12',
+        summary: 'Targets a mesh topology vertex index.'
+      },
+      {
+        signature: 'MeshTopologyEdge = 13',
+        summary: 'Targets a mesh topology edge index.'
+      },
+      {
+        signature: 'MeshFace = 14',
+        summary: 'Targets a mesh face index.'
+      },
+      {
+        signature: 'MeshNgon = 15',
+        summary: 'Targets a mesh ngon index.'
+      },
+      {
+        signature: 'InstanceDefinitionPart = 21',
+        summary: 'Targets an instance definition part index.'
+      },
+      {
+        signature: 'PolycurveSegment = 31',
+        summary: 'Targets a polycurve segment index.'
+      },
+      {
+        signature: 'PointCloudPoint = 41',
+        summary: 'Targets a pointcloud point index.'
+      },
+      {
+        signature: 'GroupMember = 51',
+        summary: 'Targets a group member index.'
+      },
+      {
+        signature: 'ExtrusionBottomProfile = 61',
+        summary: '3d bottom profile curves. Index identifies profile component'
+      },
+      {
+        signature: 'ExtrusionTopProfile = 62',
+        summary: '3d top profile curves. Index identifies profile component'
+      },
+      {
+        signature: 'ExtrusionWallEdge = 63',
+        summary: `3d wall edge curve.
+     Index/2: identifies profile component
+     Index%2: 0=start, 1=end`
+      },
+      {
+        signature: 'ExtrusionWallSurface = 64',
+        summary: `Side wall surfaces.
+     Index identifies profile component`
+      },
+      {
+        signature: 'ExtrusionCapSurface = 65',
+        summary: 'Bottom and top cap surfaces. Index 0=bottom, 1=top'
+      },
+      {
+        signature: 'ExtrusionPath = 66',
+        summary: 'Extrusion path (axis line). Index -1=entire path, 0=start point, 1=endpoint'
+      },
+      {
+        signature: 'SubdVertex = 71',
+        summary: 'Targets a SubD vertex pointer Id. Ids are not guaranteed to be sequential.'
+      },
+      {
+        signature: 'SubdEdge = 72',
+        summary: 'Targets a SubD edge pointer Id. Ids are not guaranteed to be sequential.'
+      },
+      {
+        signature: 'SubdFace = 73',
+        summary: 'Targets a SubD face pointer Id. Ids are not guaranteed to be sequential.'
+      },
+      {
+        signature: 'DimLinearPoint = 100',
+        summary: 'Targets a linear dimension point index.'
+      },
+      {
+        signature: 'DimRadialPoint = 101',
+        summary: 'Targets a radial dimension point index.'
+      },
+      {
+        signature: 'DimAngularPoint = 102',
+        summary: 'Targets an angular dimension point index.'
+      },
+      {
+        signature: 'DimOrdinatePoint = 103',
+        summary: 'Targets an ordinate dimension point index.'
+      },
+      {
+        signature: 'DimTextPoint = 104',
+        summary: 'Targets a text point index.'
+      },
+      {
+        signature: 'NoType = 0x0FFFFFFF',
+        summary: 'Targets no specific type.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.ComponentStatus',
@@ -28173,7 +30885,26 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.Concavity',
     dataType: 3,
-    summary: 'Enumerates the possible types of edge concavity types.'
+    summary: 'Enumerates the possible types of edge concavity types.',
+    values: [
+      {
+        signature: 'None = -1',
+        summary: `Concavity is not relevant, for example naked and non-manifold edges
+     cannot have a concavity measure.`
+      },
+      {
+        signature: 'Tangent = 0',
+        summary: 'Faces on either side of the edge are tangent within tolerance.'
+      },
+      {
+        signature: 'Convex = 1',
+        summary: 'Faces on either side of the edge are convex.'
+      },
+      {
+        signature: 'Concave = 2',
+        summary: 'Faces on either side of the edge are concave.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Cone',
@@ -28279,13 +31010,142 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.ConicSectionType',
     dataType: 3,
-    summary: 'Defines enumerated values for types of conic sections.'
+    summary: 'Defines enumerated values for types of conic sections.',
+    values: [
+      {
+        signature: 'Unknown = 0',
+        summary: 'The curve shape is unknown.'
+      },
+      {
+        signature: 'Circle = 1',
+        summary: 'The curve has the shape of a circle.'
+      },
+      {
+        signature: 'Ellipse = 2',
+        summary: 'The curve has the shape of an ellipse.'
+      },
+      {
+        signature: 'Hyperbola = 3',
+        summary: 'The curve has the shape of a hyperbola.'
+      },
+      {
+        signature: 'Parabola = 4',
+        summary: 'The curve has the shape of a parabola.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Continuity',
     dataType: 3,
     summary: `Provides enumerated values for continuity along geometry,
-     such as continuous first derivative or continuous unit tangent and curvature.`
+     such as continuous first derivative or continuous unit tangent and curvature.`,
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'There is no continuity.'
+      },
+      {
+        signature: 'C0_continuous = 1',
+        summary: `Continuous Function : Test for parametric continuity. In particular, all types of curves
+       are considered infinitely continuous at the start/end of the evaluation domain.`
+      },
+      {
+        signature: 'C1_continuous = 2',
+        summary: `Continuous first derivative : Test for parametric continuity. In particular,
+       all types of curves are considered infinitely continuous at the start/end
+       of the evaluation domain.`
+      },
+      {
+        signature: 'C2_continuous = 3',
+        summary: `Continuous first derivative and second derivative : Test for parametric continuity.
+       In particular, all types of curves are considered infinitely continuous at the
+       start/end of the evaluation domain.`
+      },
+      {
+        signature: 'G1_continuous = 4',
+        summary: `Continuous unit tangent : Test for parametric continuity. In particular, all types of
+       curves are considered infinitely continuous at the start/end of the evaluation domain.`
+      },
+      {
+        signature: 'G2_continuous = 5',
+        summary: `Continuous unit tangent and curvature : Test for parametric continuity. In particular,
+       all types of curves are considered infinitely continuous at the start/end of the
+       evaluation domain.`
+      },
+      {
+        signature: 'C0_locus_continuous = 6',
+        summary: `Locus continuous function :
+       Continuity tests using the following enum values are identical to tests using the
+       preceding enum values on the INTERIOR of a curve's domain. At the END of a curve
+       a "locus" test is performed in place of a parametric test. In particular, at the
+       END of a domain, all open curves are locus discontinuous. At the END of a domain,
+       all closed curves are at least C0_locus_continuous. By convention all Curves
+       are considered locus continuous at the START of the evaluation domain. This
+       convention is not strictly correct, but it was adopted to make iterative kink
+       finding tools easier to use and so that locus discontinuities are reported once
+       at the end parameter of a curve rather than twice.`
+      },
+      {
+        signature: 'C1_locus_continuous = 7',
+        summary: `Locus continuous first derivative :
+       Continuity tests using the following enum values are identical to tests using the
+       preceding enum values on the INTERIOR of a curve's domain. At the END of a curve
+       a "locus" test is performed in place of a parametric test. In particular, at the
+       END of a domain, all open curves are locus discontinuous. At the END of a domain,
+       all closed curves are at least C0_locus_continuous. By convention all Curves
+       are considered locus continuous at the START of the evaluation domain. This
+       convention is not strictly correct, but it was adopted to make iterative kink
+       finding tools easier to use and so that locus discontinuities are reported once
+       at the end parameter of a curve rather than twice.`
+      },
+      {
+        signature: 'C2_locus_continuous = 8',
+        summary: `Locus continuous first and second derivative :
+       Continuity tests using the following enum values are identical to tests using the
+       preceding enum values on the INTERIOR of a curve's domain. At the END of a curve
+       a "locus" test is performed in place of a parametric test. In particular, at the
+       END of a domain, all open curves are locus discontinuous. At the END of a domain,
+       all closed curves are at least C0_locus_continuous. By convention all Curves
+       are considered locus continuous at the START of the evaluation domain. This
+       convention is not strictly correct, but it was adopted to make iterative kink
+       finding tools easier to use and so that locus discontinuities are reported once
+       at the end parameter of a curve rather than twice.`
+      },
+      {
+        signature: 'G1_locus_continuous = 9',
+        summary: `Locus continuous unit tangent :
+       Continuity tests using the following enum values are identical to tests using the
+       preceding enum values on the INTERIOR of a curve's domain. At the END of a curve
+       a "locus" test is performed in place of a parametric test. In particular, at the
+       END of a domain, all open curves are locus discontinuous. At the END of a domain,
+       all closed curves are at least C0_locus_continuous. By convention all Curves
+       are considered locus continuous at the START of the evaluation domain. This
+       convention is not strictly correct, but it was adopted to make iterative kink
+       finding tools easier to use and so that locus discontinuities are reported once
+       at the end parameter of a curve rather than twice.`
+      },
+      {
+        signature: 'G2_locus_continuous = 10',
+        summary: `Locus continuous unit tangent and curvature :
+       Continuity tests using the following enum values are identical to tests using the
+       preceding enum values on the INTERIOR of a curve's domain. At the END of a curve
+       a "locus" test is performed in place of a parametric test. In particular, at the
+       END of a domain, all open curves are locus discontinuous. At the END of a domain,
+       all closed curves are at least C0_locus_continuous. By convention all Curves
+       are considered locus continuous at the START of the evaluation domain. This
+       convention is not strictly correct, but it was adopted to make iterative kink
+       finding tools easier to use and so that locus discontinuities are reported once
+       at the end parameter of a curve rather than twice.`
+      },
+      {
+        signature: 'Cinfinity_continuous = 11',
+        summary: 'Analytic discontinuity. Cinfinity_continuous is a euphanisim for "at a knot".'
+      },
+      {
+        signature: 'Gsmooth_continuous = 12',
+        summary: 'Aesthetic discontinuity'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.ControlPoint',
@@ -29900,32 +32760,140 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.CurveEnd',
     dataType: 3,
-    summary: 'Defines the extremes of a curve through a flagged enumeration.'
+    summary: 'Defines the extremes of a curve through a flagged enumeration.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Not the start nor the end.'
+      },
+      {
+        signature: 'Start = 1',
+        summary: 'The frontal part of the curve.'
+      },
+      {
+        signature: 'End = 2',
+        summary: 'The tail part of the curve.'
+      },
+      {
+        signature: 'Both = 3',
+        summary: 'Both the start and the end of the curve.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.CurveEvaluationSide',
     dataType: 3,
-    summary: 'Defines enumerated values for the options that defines a curve evaluation side when evaluating kinks.'
+    summary: 'Defines enumerated values for the options that defines a curve evaluation side when evaluating kinks.',
+    values: [
+      {
+        signature: 'Default = 0',
+        summary: 'The default evaluation side.'
+      },
+      {
+        signature: 'Below = -1',
+        summary: 'The below evaluation side.'
+      },
+      {
+        signature: 'Above = +1',
+        summary: 'The above evaluation side.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.CurveExtensionStyle',
     dataType: 3,
-    summary: 'Defines enumerated values for styles to use during curve extension, such as "Line", "Arc" or "Smooth".'
+    summary: 'Defines enumerated values for styles to use during curve extension, such as "Line", "Arc" or "Smooth".',
+    values: [
+      {
+        signature: 'Line = 0',
+        summary: 'Curve ends will be propagated linearly according to tangents.'
+      },
+      {
+        signature: 'Arc = 1',
+        summary: 'Curve ends will be propagated arc-wise according to curvature.'
+      },
+      {
+        signature: 'Smooth = 2',
+        summary: 'Curve ends will be propagated smoothly according to curvature.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.CurveKnotStyle',
     dataType: 3,
-    summary: 'Defines enumerated values for knot spacing styles in interpolated curves.'
+    summary: 'Defines enumerated values for knot spacing styles in interpolated curves.',
+    values: [
+      {
+        signature: 'Uniform = 0',
+        summary: 'Parameter spacing between consecutive knots is 1.0.'
+      },
+      {
+        signature: 'Chord = 1',
+        summary: 'Chord length spacing, requires degree=3 with CV1 and CVn1 specified.'
+      },
+      {
+        signature: 'ChordSquareRoot = 2',
+        summary: 'Square root of chord length, requires degree=3 with CV1 and CVn1 specified.'
+      },
+      {
+        signature: 'UniformPeriodic = 3',
+        summary: 'Periodic with uniform spacing.'
+      },
+      {
+        signature: 'ChordPeriodic = 4',
+        summary: 'Periodic with chord length spacing.'
+      },
+      {
+        signature: 'ChordSquareRootPeriodic = 5',
+        summary: 'Periodic with square roor of chord length spacing.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.CurveOffsetCornerStyle',
     dataType: 3,
-    summary: 'Defines enumerated values for all implemented corner styles in curve offsets.'
+    summary: 'Defines enumerated values for all implemented corner styles in curve offsets.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'The dafault value.'
+      },
+      {
+        signature: 'Sharp = 1',
+        summary: 'Offsets and extends curves with a straight line until they intersect.'
+      },
+      {
+        signature: 'Round = 2',
+        summary: 'Offsets and fillets curves with an arc of radius equal to the offset distance.'
+      },
+      {
+        signature: 'Smooth = 3',
+        summary: 'Offsets and connects curves with a smooth (G1 continuity) curve.'
+      },
+      {
+        signature: 'Chamfer = 4',
+        summary: 'Offsets and connects curves with a straight line between their endpoints.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.CurveOrientation',
     dataType: 3,
-    summary: 'Defines enumerated values for closed curve orientations.'
+    summary: 'Defines enumerated values for closed curve orientations.',
+    values: [
+      {
+        signature: 'Undefined = 0',
+        summary: 'Unable to compute the curve\'s orientation.'
+      },
+      {
+        signature: 'Clockwise = -1',
+        summary: 'The curve\'s orientation is clockwise in the xy plane.'
+      },
+      {
+        signature: 'CounterClockwise = +1',
+        summary: 'The curve\'s orientation is counter clockwise in the xy plane.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.CurveProxy',
@@ -29942,7 +32910,44 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.CurveSimplifyOptions',
     dataType: 3,
-    summary: 'Enumerates the options to use when simplifying a curve.'
+    summary: 'Enumerates the options to use when simplifying a curve.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No option is specified.'
+      },
+      {
+        signature: 'SplitAtFullyMultipleKnots = 1',
+        summary: `Split NurbsCurves at fully multiple knots. 
+     Effectively turning single nurbs segments with kinks into multiple segments.`
+      },
+      {
+        signature: 'RebuildLines = 2',
+        summary: 'Replace linear segments with LineCurves.'
+      },
+      {
+        signature: 'RebuildArcs = 4',
+        summary: 'Replace partially circular segments with ArcCurves.'
+      },
+      {
+        signature: 'RebuildRationals = 8',
+        summary: `Replace rational nurbscurves with constant weights 
+     with an equivalent non-rational NurbsCurve.`
+      },
+      {
+        signature: 'AdjustG1 = 16',
+        summary: 'Adjust Curves at G1-joins.'
+      },
+      {
+        signature: 'Merge = 32',
+        summary: `Merge adjacent co-linear lines or co-circular arcs 
+     or combine consecutive line segments into a polyline.`
+      },
+      {
+        signature: 'All = SplitAtFullyMultipleKnots | RebuildLines | RebuildArcs | RebuildRationals | AdjustG1 | Merge',
+        summary: 'Implies all of the simplification functions will be used.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Cylinder',
@@ -30363,12 +33368,54 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.DistancingMode',
     dataType: 3,
-    summary: 'Defines how offset and similar operations should work.'
+    summary: 'Defines how offset and similar operations should work.',
+    values: [
+      {
+        signature: 'Undefined',
+        summary: 'Nothing is defined. This serves as null.'
+      },
+      {
+        signature: 'Linear',
+        summary: 'When geometrically possible, offsets with a linear distance.'
+      },
+      {
+        signature: 'LinearFromEnd',
+        summary: 'When geometrically possible and an opposite side exists, offsets with a linear distance from that side.'
+      },
+      {
+        signature: 'Ratio',
+        summary: `When geometrically possible, uses a percentage of respective neighbours to
+     compute offsets.`
+      },
+      {
+        signature: 'RatioFromEnd',
+        summary: `When geometrically possible and an opposite side exists, uses a percentage of respective neighbours to
+     compute offsets.`
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.EdgeAdjacency',
     dataType: 3,
-    summary: 'Enumerates all possible Topological Edge adjacency types.'
+    summary: 'Enumerates all possible Topological Edge adjacency types.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Edge is not used by any faces and is therefore superfluous.'
+      },
+      {
+        signature: 'Naked = 1',
+        summary: 'Edge is used by a single face.'
+      },
+      {
+        signature: 'Interior = 2',
+        summary: 'Edge is used by two adjacent faces.'
+      },
+      {
+        signature: 'NonManifold = 3',
+        summary: 'Edge is used by three or more adjacent faces.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Ellipse',
@@ -30426,7 +33473,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.ExtrudeCornerType',
     dataType: 3,
-    summary: 'Corner types used for creating a tapered extrusion'
+    summary: 'Corner types used for creating a tapered extrusion',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No Corner'
+      },
+      {
+        signature: 'Sharp = 1'
+      },
+      {
+        signature: 'Round = 2'
+      },
+      {
+        signature: 'Smooth = 3'
+      },
+      {
+        signature: 'Chamfer = 4'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Extrusion',
@@ -31295,7 +34360,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.HiddenLineDrawingPoint.Visibility',
     dataType: 3,
-    summary: 'The different types of HiddenLineObjectPoint visiblity'
+    summary: 'The different types of HiddenLineObjectPoint visiblity',
+    values: [
+      {
+        signature: 'Unset = UnsafeNativeMethods.HldPointVisibility.PointUnset',
+        summary: 'Unset value'
+      },
+      {
+        signature: 'Visible = UnsafeNativeMethods.HldPointVisibility.PointVisible',
+        summary: 'Visible'
+      },
+      {
+        signature: 'Hidden = UnsafeNativeMethods.HldPointVisibility.PointHidden',
+        summary: 'Hidden'
+      },
+      {
+        signature: 'Duplicate = UnsafeNativeMethods.HldPointVisibility.PointDuplicate',
+        summary: 'Duplicate'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.HiddenLineDrawingSegment',
@@ -31345,12 +34428,56 @@ var RhinoCommonApi = [
     dataType: 3,
     summary: `When a silhouette is projected on the image plane (determined by the camera location or direction),
      and projects to a curve (not a point), the image area to the left or right of a projected silhouette
-     curve is filled with either the surface or a void.`
+     curve is filled with either the surface or a void.`,
+    values: [
+      {
+        signature: 'SideUnset = UnsafeNativeMethods.HldSilhouetteSideFill.SideUnset',
+        summary: 'Unset'
+      },
+      {
+        signature: 'SideSurface = UnsafeNativeMethods.HldSilhouetteSideFill.SideSurface',
+        summary: 'Surface'
+      },
+      {
+        signature: 'SideVoid = UnsafeNativeMethods.HldSilhouetteSideFill.SideVoid',
+        summary: 'Void'
+      },
+      {
+        signature: 'OtherSurface = UnsafeNativeMethods.HldSilhouetteSideFill.SideOtherSurface',
+        summary: 'Other Surface'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.HiddenLineDrawingSegment.Visibility',
     dataType: 3,
-    summary: 'The different types of HiddenLineDrawingSegment visiblity'
+    summary: 'The different types of HiddenLineDrawingSegment visiblity',
+    values: [
+      {
+        signature: 'Unset = UnsafeNativeMethods.HldCurveVisibility.Unset',
+        summary: 'Unset value'
+      },
+      {
+        signature: 'Visible = UnsafeNativeMethods.HldCurveVisibility.Visible',
+        summary: 'Visible'
+      },
+      {
+        signature: 'Hidden = UnsafeNativeMethods.HldCurveVisibility.Hidden',
+        summary: 'Hidden'
+      },
+      {
+        signature: 'Duplicate = UnsafeNativeMethods.HldCurveVisibility.Duplicate',
+        summary: 'Duplicate'
+      },
+      {
+        signature: 'Projecting = UnsafeNativeMethods.HldCurveVisibility.Projecting',
+        summary: 'Projects to a point (smaller than tolerance)'
+      },
+      {
+        signature: 'Clipped = UnsafeNativeMethods.HldCurveVisibility.Clipped',
+        summary: 'Clipped by clipping planes'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.InstanceDefinitionGeometry',
@@ -31911,17 +35038,63 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.Intersect.LineCircleIntersection',
     dataType: 3,
-    summary: 'Represents all possible cases of a Line|Circle intersection event.'
+    summary: 'Represents all possible cases of a Line|Circle intersection event.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No intersections.'
+      },
+      {
+        signature: 'Single = 1',
+        summary: 'One intersection.'
+      },
+      {
+        signature: 'Multiple = 2',
+        summary: 'Two intersections.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Intersect.LineCylinderIntersection',
     dataType: 3,
-    summary: 'Represents all possible cases of a Line|Cylinder intersection event.'
+    summary: 'Represents all possible cases of a Line|Cylinder intersection event.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No intersections.'
+      },
+      {
+        signature: 'Single = 1',
+        summary: 'One intersection.'
+      },
+      {
+        signature: 'Multiple = 2',
+        summary: 'Two intersections.'
+      },
+      {
+        signature: 'Overlap = 3',
+        summary: 'Line lies on cylinder.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Intersect.LineSphereIntersection',
     dataType: 3,
-    summary: 'Represents all possible cases of a Line|Sphere intersection event.'
+    summary: 'Represents all possible cases of a Line|Sphere intersection event.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No intersections.'
+      },
+      {
+        signature: 'Single = 1',
+        summary: 'One intersection.'
+      },
+      {
+        signature: 'Multiple = 2',
+        summary: 'Two intersections.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Intersect.MeshClash',
@@ -32033,17 +35206,72 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.Intersect.PlaneCircleIntersection',
     dataType: 3,
-    summary: 'Represents all possible cases of a Plane|Circle intersection event.'
+    summary: 'Represents all possible cases of a Plane|Circle intersection event.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No intersections. Either because radius is too small or because circle plane is parallel but not coincident with the intersection plane.'
+      },
+      {
+        signature: 'Tangent = 1',
+        summary: 'Tangent (one point) intersection.'
+      },
+      {
+        signature: 'Secant = 2',
+        summary: 'Secant (two point) intersection.'
+      },
+      {
+        signature: 'Parallel = 3',
+        summary: `Circle and plane are planar but not coincident. 
+     Parallel indicates no intersection took place.`
+      },
+      {
+        signature: 'Coincident = 4',
+        summary: 'Circle and plane are co-planar, they intersect everywhere.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Intersect.PlaneSphereIntersection',
     dataType: 3,
-    summary: 'Represents all possible cases of a Plane|Sphere intersection event.'
+    summary: 'Represents all possible cases of a Plane|Sphere intersection event.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No intersections.'
+      },
+      {
+        signature: 'Point = 1',
+        summary: 'Tangent intersection.'
+      },
+      {
+        signature: 'Circle = 2',
+        summary: 'Circular intersection.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Intersect.SphereSphereIntersection',
     dataType: 3,
-    summary: 'Represents all possible cases of a Sphere|Sphere intersection event.'
+    summary: 'Represents all possible cases of a Sphere|Sphere intersection event.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Spheres do not intersect.'
+      },
+      {
+        signature: 'Point = 1',
+        summary: 'Spheres touch at a single point.'
+      },
+      {
+        signature: 'Circle = 2',
+        summary: 'Spheres intersect at a circle.'
+      },
+      {
+        signature: 'Overlap = 3',
+        summary: 'Spheres are identical.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Interval',
@@ -32260,7 +35488,37 @@ var RhinoCommonApi = [
     dataType: 3,
     summary: `Defines enumerated values for isoparametric curve direction on a surface, such as X or Y,
    and curve sides, such as North or West boundary.
-   Note: odd values are all x-constant; even values > 0 are all y-constant.`
+   Note: odd values are all x-constant; even values > 0 are all y-constant.`,
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'curve is not an isoparameteric curve.'
+      },
+      {
+        signature: 'X = 1',
+        summary: 'curve is a "x" = constant (vertical) isoparametric curve in the interior of the surface\'s domain.'
+      },
+      {
+        signature: 'Y = 2',
+        summary: 'curve is a "y" = constant (horizontal) isoparametric curve in the interior of the surface\'s domain.'
+      },
+      {
+        signature: 'West = 3',
+        summary: 'curve is a "x" = constant isoparametric curve along the west side of the surface\'s domain.'
+      },
+      {
+        signature: 'South = 4',
+        summary: 'curve is a "y" = constant isoparametric curve along the south side of the surface\'s domain.'
+      },
+      {
+        signature: 'East = 5',
+        summary: 'curve is a "x" = constant isoparametric curve along the east side of the surface\'s domain.'
+      },
+      {
+        signature: 'North = 6',
+        summary: 'curve is a "y" = constant isoparametric curve along the north side of the surface\'s domain.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Leader',
@@ -32575,12 +35833,71 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.Light.Attenuation',
     dataType: 3,
-    summary: 'Types of light attenuation available.'
+    summary: 'Types of light attenuation available.',
+    values: [
+      {
+        signature: 'Constant',
+        summary: 'Constant light attenuation, meaning no light energy fall-off.'
+      },
+      {
+        signature: 'Linear',
+        summary: 'Linear light attenuation, meaning linear light energy fall-off.'
+      },
+      {
+        signature: 'InverseSquared',
+        summary: 'Inverse squared light attenuation, meaning light energy falls off in spherical order.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.LightStyle',
     dataType: 3,
-    summary: 'Defines enumerated values to represent light styles or types, such as directional or spotlight.'
+    summary: 'Defines enumerated values to represent light styles or types, such as directional or spotlight.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No light type. This is the default value of the enumeration type.'
+      },
+      {
+        signature: 'CameraDirectional = 4',
+        summary: `Light location and direction in camera coordinates.
+     +x points to right, +y points up, +z points towards camera.`
+      },
+      {
+        signature: 'CameraPoint = 5',
+        summary: `Light location and direction in camera coordinates.
+     +x points to right, +y points up, +z points towards camera.`
+      },
+      {
+        signature: 'CameraSpot = 6',
+        summary: `Light location and direction in camera coordinates.
+     +x points to right, +y points up, +z points towards camera.`
+      },
+      {
+        signature: 'WorldDirectional = 7',
+        summary: 'Light location and direction in world coordinates.'
+      },
+      {
+        signature: 'WorldPoint = 8',
+        summary: 'Light location and direction in world coordinates.'
+      },
+      {
+        signature: 'WorldSpot = 9',
+        summary: 'Light location and direction in world coordinates.'
+      },
+      {
+        signature: 'Ambient = 10',
+        summary: 'Ambient light.'
+      },
+      {
+        signature: 'WorldLinear = 11',
+        summary: 'Linear light in world coordinates.'
+      },
+      {
+        signature: 'WorldRectangular = 12',
+        summary: 'Rectangular light in world coordinates.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Line',
@@ -32994,7 +36311,36 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.LoftType',
     dataType: 3,
-    summary: 'Specifies enumerated constants for all supported loft types.'
+    summary: 'Specifies enumerated constants for all supported loft types.',
+    values: [
+      {
+        signature: 'Normal = 0',
+        summary: 'Uses chord-length parameterization in the loft direction.'
+      },
+      {
+        signature: 'Loose = 1',
+        summary: `The surface is allowed to move away from the original curves to make a smoother surface.
+     The surface control points are created at the same locations as the control points
+     of the loft input curves.`
+      },
+      {
+        signature: 'Tight = 2',
+        summary: `The surface sticks closely to the original curves. Uses square root of chord-length
+     parameterization in the loft direction.`
+      },
+      {
+        signature: 'Straight = 3',
+        summary: 'The sections between the curves are straight. This is also known as a ruled surface.'
+      },
+      {
+        signature: '    Developable = 4',
+        summary: 'Obsolete, do not use.'
+      },
+      {
+        signature: 'Uniform = 5',
+        summary: 'Constructs a uniform loft. The object knot vectors will be uniform.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Matrix',
@@ -34794,12 +38140,60 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.MeshingParameterStyle',
     dataType: 3,
-    summary: 'Type of Mesh Parameters used by the RhinoDoc for meshing objects'
+    summary: 'Type of Mesh Parameters used by the RhinoDoc for meshing objects',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No style'
+      },
+      {
+        signature: 'Fast = 1'
+      },
+      {
+        signature: 'Quality = 2'
+      },
+      {
+        signature: 'Custom = 9'
+      },
+      {
+        signature: 'PerObject = 10'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.MeshingParameterTextureRange',
     dataType: 3,
-    summary: 'Defines how to pack render/meshes textures.'
+    summary: 'Defines how to pack render/meshes textures.',
+    values: [
+      {
+        signature: 'Unset = 0',
+        summary: 'This value is not set.'
+      },
+      {
+        signature: 'UnpackedUnscaledNormalized = 1',
+        summary: `Rach face has a normalized texture range [0,1]x[0,1].
+     The normalized coordinate is calculated using the
+     entire surface domain.  For meshes of trimmed
+     surfaces when the active area is a small subset of
+     the entire surface, there will be large regions of
+     unused texture space in [0,1]x[0,1].  When the 3d region
+     being meshed is far from being square-ish, there will be
+     a substantual amount of distortion mapping [0,1]x[0,1]
+     texture space to the 3d mesh.`
+      },
+      {
+        signature: 'PackedScaledNormalized = 2',
+        summary: `Each face is assigned a texture range that is a 
+     subrectangle of [0,1]x[0,1].  The subrectangles are 
+     mutually disjoint and packed into into [0,1]x[0,1]
+     in a way that minimizes distortion and maximizes the
+     coverage of [0,1]x[0,1].
+     When the surface or surfaces being meshed are trimmed,
+     this option takes into account only the region of the
+     base surface the mesh covers and uses as much of 
+     [0,1]x[0,1] as possible. (default)`
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.MeshNgon',
@@ -34997,12 +38391,44 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.MeshRefinements.CreaseEdges',
     dataType: 3,
-    summary: 'Defines the way naked edges are handled.'
+    summary: 'Defines the way naked edges are handled.',
+    values: [
+      {
+        signature: '    NakedFixed',
+        summary: 'Naked edges will not move or be modified.'
+      },
+      {
+        signature: '    NakedSmooth',
+        summary: 'The naked edge will tend toward a spline.'
+      },
+      {
+        signature: '    CornerFixedOtherCreased',
+        summary: 'Corners (2-sided vertices) will be fixed, while other naked vertices will tend toward a spline.'
+      },
+      {
+        signature: '    Auto = 3',
+        summary: 'Unwelded vertices become creases, and welded are smooth.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.MeshRefinements.LoopFormula',
     dataType: 3,
-    summary: 'Enumerates the alternative Loop implementations.'
+    summary: 'Enumerates the alternative Loop implementations.',
+    values: [
+      {
+        signature: 'Loop = 0',
+        summary: 'The original Loop formula.'
+      },
+      {
+        signature: 'Warren = 1',
+        summary: 'Warren\'s improved formula.'
+      },
+      {
+        signature: 'WarrenWeimer = 2',
+        summary: 'The formula as explained by Weimer, improving over Warren\'s.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.MeshRefinements.RefinementSettings',
@@ -35080,7 +38506,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.MeshType',
     dataType: 3,
-    summary: 'Defines enumerated values for various mesh types.'
+    summary: 'Defines enumerated values for various mesh types.',
+    values: [
+      {
+        signature: 'Default = 0',
+        summary: 'The default mesh.'
+      },
+      {
+        signature: 'Render = 1',
+        summary: 'The render mesh.'
+      },
+      {
+        signature: 'Analysis = 2',
+        summary: 'The analysis mesh.'
+      },
+      {
+        signature: 'Preview = 3',
+        summary: 'The preview mesh.'
+      },
+      {
+        signature: 'Any = 4',
+        summary: 'Any mesh that is available.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.MeshUnsafeLock',
@@ -35713,7 +39161,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.NurbsCurve.NurbsCurveEndConditionType',
     dataType: 3,
-    summary: 'What end conditions to set'
+    summary: 'What end conditions to set',
+    values: [
+      {
+        signature: 'Nothing = UnsafeNativeMethods.NurbsCurveEndConditionType.Nothing',
+        summary: 'Set nothing'
+      },
+      {
+        signature: 'Position = UnsafeNativeMethods.NurbsCurveEndConditionType.Position',
+        summary: 'Set endpoint'
+      },
+      {
+        signature: 'Tangency = UnsafeNativeMethods.NurbsCurveEndConditionType.Tangency',
+        summary: 'Set tangent'
+      },
+      {
+        signature: 'Curvature = UnsafeNativeMethods.NurbsCurveEndConditionType.Curvature',
+        summary: 'Set curvature'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.NurbsSurface',
@@ -36076,7 +39542,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.PipeCapMode',
     dataType: 3,
-    summary: 'Defines styles used for creating Brep pipes.'
+    summary: 'Defines styles used for creating Brep pipes.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No cap.'
+      },
+      {
+        signature: 'Flat = 1',
+        summary: 'Caps with planar surface.'
+      },
+      {
+        signature: 'Round = 2',
+        summary: 'Caps with hemispherical surface.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Plane',
@@ -36351,7 +39831,22 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.PlaneFitResult',
     dataType: 3,
-    summary: 'Enumerates all possible outcomes of a Least-Squares plane fitting operation.'
+    summary: 'Enumerates all possible outcomes of a Least-Squares plane fitting operation.',
+    values: [
+      {
+        signature: 'Failure = -1',
+        summary: 'No plane could be found.'
+      },
+      {
+        signature: 'Success = 0',
+        summary: 'A plane was successfully fitted.'
+      },
+      {
+        signature: 'Inconclusive = 1',
+        summary: `A valid plane was found, but it is an inconclusive result. 
+     This might happen with co-linear points for example.`
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.PlaneSurface',
@@ -37370,12 +40865,44 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.PointContainment',
     dataType: 3,
-    summary: 'Defines enumerated values for closed curve/point spatial relationships.'
+    summary: 'Defines enumerated values for closed curve/point spatial relationships.',
+    values: [
+      {
+        signature: 'Unset',
+        summary: 'Relation is meaningless.'
+      },
+      {
+        signature: 'Inside',
+        summary: 'Point is on the interior of the region implied by the closed curve.'
+      },
+      {
+        signature: 'Outside',
+        summary: 'Point is on the exterior of the region implied by the closed curve.'
+      },
+      {
+        signature: 'Coincident',
+        summary: 'Point is coincident with the curve and therefor neither inside not outside.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.PointFaceRelation',
     dataType: 3,
-    summary: 'Enumerates the possible point/BrepFace spatial relationships.'
+    summary: 'Enumerates the possible point/BrepFace spatial relationships.',
+    values: [
+      {
+        signature: 'Exterior = 0',
+        summary: 'Point is on the exterior (the trimmed part) of the face.'
+      },
+      {
+        signature: 'Interior = 1',
+        summary: 'Point is on the interior (the existing part) of the face.'
+      },
+      {
+        signature: 'Boundary = 2',
+        summary: 'Point is in limbo.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.PolyCurve',
@@ -37822,7 +41349,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.QuadRemeshSymmetryAxis',
     dataType: 3,
-    summary: 'Symmetrical meshing axis'
+    summary: 'Symmetrical meshing axis',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No symmetric remeshing'
+      },
+      {
+        signature: 'X = 1',
+        summary: 'Symmetry across X axis'
+      },
+      {
+        signature: 'Y = 2',
+        summary: 'Symmetry across Y axis'
+      },
+      {
+        signature: 'Z = 4',
+        summary: 'Symmetry across Z axis'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Quaternion',
@@ -38179,7 +41724,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.RailType',
     dataType: 3,
-    summary: 'Rail types used for creating filleted Brep edges'
+    summary: 'Rail types used for creating filleted Brep edges',
+    values: [
+      {
+        signature: 'DistanceFromEdge = 0',
+        summary: 'The distance from the edge curves determines the intersection.'
+      },
+      {
+        signature: 'RollingBall = 1',
+        summary: 'The radius of a rolling ball determines the intersection.'
+      },
+      {
+        signature: 'DistanceBetweenRails = 2',
+        summary: 'The distance between the edge rails determines the intersection.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Ray3d',
@@ -38481,7 +42040,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.RegionContainment',
     dataType: 3,
-    summary: 'Defines enumerated values for closed curve/closed curve relationships.'
+    summary: 'Defines enumerated values for closed curve/closed curve relationships.',
+    values: [
+      {
+        signature: 'Disjoint = 0',
+        summary: 'There is no common area between the two regions.'
+      },
+      {
+        signature: 'MutualIntersection = 1',
+        summary: 'The two curves intersect. There is therefore no full containment relationship either way.'
+      },
+      {
+        signature: 'AInsideB = 2',
+        summary: 'Region bounded by curveA (first curve) is inside of curveB (second curve).'
+      },
+      {
+        signature: 'BInsideA = 3',
+        summary: 'Region bounded by curveB (second curve) is inside of curveA (first curve).'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.RevSurface',
@@ -38924,12 +42501,78 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.SilhouetteType',
     dataType: 3,
-    summary: 'Enumerates the different types of silhouettes and their origins.'
+    summary: 'Enumerates the different types of silhouettes and their origins.',
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.SilEventType.None',
+        summary: 'None.'
+      },
+      {
+        signature: 'Projecting = UnsafeNativeMethods.SilEventType.Projecting',
+        summary: `Boundary of a region that projects to a curve.  
+     The view direction is tangent to the surface over the entire region.`
+      },
+      {
+        signature: 'TangentProjects = UnsafeNativeMethods.SilEventType.TanProjects',
+        summary: `Tangent silhouette curve where the curve projects to a point (within tolerance).
+     In this case side_fill[i] is meaningless so it's left unset.`
+      },
+      {
+        signature: 'Tangent = UnsafeNativeMethods.SilEventType.Tangent',
+        summary: 'Tangent silhouette curve. The view direction is tangent to the surface along the curve.'
+      },
+      {
+        signature: 'Crease = UnsafeNativeMethods.SilEventType.Crease',
+        summary: 'Crease on geometry that is a silhouette.'
+      },
+      {
+        signature: 'Boundary = UnsafeNativeMethods.SilEventType.Boundary',
+        summary: 'Boundary of geometry is always a silhouette.'
+      },
+      {
+        signature: 'NonSilhouetteCrease = UnsafeNativeMethods.SilEventType.NonSilCrease',
+        summary: 'A non-silhouette crease, meaning both sides are visible.'
+      },
+      {
+        signature: 'NonSilhouetteTangent = UnsafeNativeMethods.SilEventType.NonSilTangent',
+        summary: 'A non-silhouette tangent edge that is not a crease.'
+      },
+      {
+        signature: 'NonSilhouetteSeam = UnsafeNativeMethods.SilEventType.NonSilSeam',
+        summary: 'A non-silhouette surface seam.'
+      },
+      {
+        signature: 'SectionCut = UnsafeNativeMethods.SilEventType.SectionCut',
+        summary: 'Intersection with a clipping plane.'
+      },
+      {
+        signature: 'MiscellaneousFeature = UnsafeNativeMethods.SilEventType.MiscFeature',
+        summary: 'Miscellaneous curve feature.'
+      },
+      {
+        signature: 'DraftCurve = UnsafeNativeMethods.SilEventType.DraftCurve',
+        summary: 'Draft curve is a curve of constant draft angle.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.SmoothingCoordinateSystem',
     dataType: 3,
-    summary: 'The direction of the smoothing used by Curve, Surface, and Mesh Smooth.'
+    summary: 'The direction of the smoothing used by Curve, Surface, and Mesh Smooth.',
+    values: [
+      {
+        signature: 'World = 0',
+        summary: 'World coordinates'
+      },
+      {
+        signature: 'CPlane = 1',
+        summary: 'Construction plane coordinates'
+      },
+      {
+        signature: 'Object = 2',
+        summary: 'Object u, v, and n coordinates'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.SpaceMorph',
@@ -40231,7 +43874,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.SweepRebuild',
     dataType: 3,
-    summary: 'Rebuild types for creating swept surfaces'
+    summary: 'Rebuild types for creating swept surfaces',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Do not simplify cross section curves.'
+      },
+      {
+        signature: 'Rebuild = 1',
+        summary: 'Rebuild cross section curves through points.'
+      },
+      {
+        signature: 'Refit = 2',
+        summary: 'Refit cross section curves to tolerance.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.SweepTwoRail',
@@ -40463,12 +44120,104 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.TextJustification',
     dataType: 3,
-    summary: 'Specifies enumerated constants used to indicate the internal alignment and justification of text.'
+    summary: 'Specifies enumerated constants used to indicate the internal alignment and justification of text.',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'The default justification.'
+      },
+      {
+        signature: 'Left = 1 << 0',
+        summary: 'Left justification.'
+      },
+      {
+        signature: 'Center = 1 << 1',
+        summary: 'Center justification.'
+      },
+      {
+        signature: 'Right = 1 << 2',
+        summary: 'Right justification.'
+      },
+      {
+        signature: 'Bottom = 1 << 16',
+        summary: 'Bottom inner alignment.'
+      },
+      {
+        signature: 'Middle = 1 << 17',
+        summary: 'Middle inner alignment.'
+      },
+      {
+        signature: 'Top = 1 << 18',
+        summary: 'Top inner alignment.'
+      },
+      {
+        signature: 'BottomLeft = Bottom | Left',
+        summary: 'Combination of left justification and bottom alignment.'
+      },
+      {
+        signature: 'BottomCenter = Bottom | Center',
+        summary: 'Combination of center justification and bottom alignment.'
+      },
+      {
+        signature: 'BottomRight = Bottom | Right',
+        summary: 'Combination of right justification and bottom alignment.'
+      },
+      {
+        signature: 'MiddleLeft = Middle | Left',
+        summary: 'Combination of left justification and middle alignment.'
+      },
+      {
+        signature: 'MiddleCenter = Middle | Center',
+        summary: 'Combination of center justification and middle alignment.'
+      },
+      {
+        signature: 'MiddleRight = Middle | Right',
+        summary: 'Combination of right justification and middle alignment.'
+      },
+      {
+        signature: 'TopLeft = Top | Left',
+        summary: 'Combination of left justification and top alignment.'
+      },
+      {
+        signature: 'TopCenter = Top | Center',
+        summary: 'Combination of center justification and top alignment.'
+      },
+      {
+        signature: 'TopRight = Top | Right',
+        summary: 'Combination of right justification and top alignment.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.TextRunType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.TextRunTypeConsts.None'
+      },
+      {
+        signature: 'Text = UnsafeNativeMethods.TextRunTypeConsts.Text'
+      },
+      {
+        signature: 'Newline = UnsafeNativeMethods.TextRunTypeConsts.Newline'
+      },
+      {
+        signature: 'Paragraph = UnsafeNativeMethods.TextRunTypeConsts.Paragraph'
+      },
+      {
+        signature: 'Column = UnsafeNativeMethods.TextRunTypeConsts.Column'
+      },
+      {
+        signature: 'Field = UnsafeNativeMethods.TextRunTypeConsts.Field'
+      },
+      {
+        signature: 'Fontdef = UnsafeNativeMethods.TextRunTypeConsts.Fontdef'
+      },
+      {
+        signature: 'Header = UnsafeNativeMethods.TextRunTypeConsts.Header'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Torus',
@@ -41022,12 +44771,40 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.TransformRigidType',
     dataType: 3,
-    summary: 'Lists all possible outcomes for rigid transformation.'
+    summary: 'Lists all possible outcomes for rigid transformation.',
+    values: [
+      {
+        signature: 'RigidReversing = -1',
+        summary: 'Transformation is an orientation reversing isometry.'
+      },
+      {
+        signature: 'NotRigid = 0',
+        summary: 'Transformation is not an orthogonal transformation.'
+      },
+      {
+        signature: 'Rigid = 1',
+        summary: 'Transformation is an rigid transformation.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.TransformSimilarityType',
     dataType: 3,
-    summary: 'Lists all possible outcomes for transform similarity.'
+    summary: 'Lists all possible outcomes for transform similarity.',
+    values: [
+      {
+        signature: 'OrientationReversing = -1',
+        summary: 'Similarity is preserved, but orientation is flipped.'
+      },
+      {
+        signature: 'NotSimilarity = 0',
+        summary: 'Similarity is not preserved. Geometry needs to be deformable for this Transform to operate correctly.'
+      },
+      {
+        signature: 'OrientationPreserving = 1',
+        summary: 'Similarity and orientation are preserved.'
+      }
+    ]
   },
   {
     name: 'Rhino.Geometry.Unroller',
@@ -42249,18 +46026,233 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.ConeConstraint',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Vertical = 1'
+      },
+      {
+        signature: 'AroundCurve = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.CylinderConstraint',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Vertical = 1'
+      },
+      {
+        signature: 'AroundCurve = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.GeometryAttributeFilter',
     dataType: 3,
     summary: `If an object passes the geometry TYPE filter, then the geometry ATTRIBUTE
-   filter is applied.`
+   filter is applied.`,
+    values: [
+      {
+        signature: 'WireCurve = 1<<0',
+        summary: `3d wire curve
+     If you want to accept only wire or edge curves, then
+     specify wire_curve or edge_curve, otherwise both wire
+     and edge curves will pass the attribute filter.`
+      },
+      {
+        signature: 'EdgeCurve = 1 << 1',
+        summary: `3d curve of a surface edge
+     If you want to accept only wire or edge curves, then
+     specify wire_curve or edge_curve, otherwise both wire
+     and edge curves will pass the attribute filter.`
+      },
+      {
+        signature: 'ClosedCurve = 1<<2',
+        summary: `Closed Curves and Edges are acceptable
+     If you want to accept only closed or open curves, then
+     specify either closed_curve or open_curve.  Otherwise both
+     closed and open curves will pass the attribute filter.`
+      },
+      {
+        signature: 'OpenCurve = 1 << 3',
+        summary: `Open Curves and Edges are acceptable
+     If you want to accept only closed or open curves, then
+     specify either closed_curve or open_curve.  Otherwise both
+     closed and open curves will pass the attribute filter.`
+      },
+      {
+        signature: 'SeamEdge = 1<<4',
+        summary: `seam edges are acceptable
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'ManifoldEdge = 1 << 5',
+        summary: `edges with 2 different surfaces pass
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'NonmanifoldEdge = 1 << 6',
+        summary: `edges with 3 or more surfaces pass
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'MatedEdge = (1 << 4) | (1 << 5) | (1 << 6)',
+        summary: `any mated edge passes
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'SurfaceBoundaryEdge = 1 << 7',
+        summary: `boundary edges on surface sides pass
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'TrimmingBoundaryEdge = 1 << 8',
+        summary: `boundary edges that trim a surface pass
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'BoundaryEdge = (1 << 7) | (1 << 8)',
+        summary: `ant boundary edge passes
+     attributes of acceptable trimming edge objects (associated with an ON_BrepTrim).
+    
+     If none of these attributes are explicitly specified, then
+     any kind of trimming edge will pass the attribute filter.`
+      },
+      {
+        signature: 'ClosedSurface = 1 << 9',
+        summary: `If you want to accept only closed or open surfaces, then
+     specify either closed_surface or open_surface.  Otherwise both
+     closed and open surfaces will pass the attribute filter.`
+      },
+      {
+        signature: 'OpenSurface = 1 << 10',
+        summary: `If you want to accept only closed or open surfaces, then
+     specify either closed_surface or open_surface.  Otherwise both
+     closed and open surfaces will pass the attribute filter.`
+      },
+      {
+        signature: 'TrimmedSurface = 1 << 11',
+        summary: `If you want to accept only trimmed or untrimmed surfaces, then
+     specify either trimmed_surface or untrimmed_surface.  Otherwise
+     both trimmed and untrimmed surfaces will pass the attribute filter.`
+      },
+      {
+        signature: 'UntrimmedSurface = 1 << 12',
+        summary: `If you want to accept only trimmed or untrimmed surfaces, then
+     specify either trimmed_surface or untrimmed_surface.  Otherwise
+     both trimmed and untrimmed surfaces will pass the attribute filter.`
+      },
+      {
+        signature: 'SubSurface = 1 << 13',
+        summary: `If you want to accept only sub-surfaces of (multi-surface)
+     polysrf, then specify sub_surface.  If you do not want to
+     accept sub-surfaces, then specify top_surface.  Otherwise
+     sub-surfaces and top surfaces will pass the attribute filter.`
+      },
+      {
+        signature: 'TopSurface = 1 << 14',
+        summary: `If you want to accept only sub-surfaces of (multi-surface)
+     polysrf, then specify sub_surface.  If you do not want to
+     accept sub-surfaces, then specify top_surface.  Otherwise
+     sub-surfaces and top surfaces will pass the attribute filter.`
+      },
+      {
+        signature: 'ManifoldPolysrf = 1 << 15',
+        summary: `If you want to accept only manifold or nonmanifold polysrfs,
+     then specify manifold_polysrf or nonmanifold_polysrf. Otherwise
+     both manifold and nonmanifold polysrfs will pass the attribute
+     filter.`
+      },
+      {
+        signature: 'NonmanifoldPolysrf = 1 << 16',
+        summary: `If you want to accept only manifold or nonmanifold polysrfs,
+     then specify manifold_polysrf or nonmanifold_polysrf. Otherwise
+     both manifold and nonmanifold polysrfs will pass the attribute
+     filter.`
+      },
+      {
+        signature: 'ClosedPolysrf = 1 << 17',
+        summary: `If you want to accept only closed or open polysrfs, then
+     specify either closed_polysrf or open_polysrf.  Otherwise both
+     closed and open polysrfs will pass the attribute filter.`
+      },
+      {
+        signature: 'OpenPolysrf = 1 << 18',
+        summary: `If you want to accept only closed or open polysrfs, then
+     specify either closed_polysrf or open_polysrf.  Otherwise both
+     closed and open polysrfs will pass the attribute filter.`
+      },
+      {
+        signature: 'ClosedMesh = 1 << 19',
+        summary: `If you want to accept only closed or open meshs, then
+     specify either closed_mesh or open_mesh.  Otherwise both
+     closed and open meshs will pass the attribute filter.`
+      },
+      {
+        signature: 'OpenMesh = 1 << 20',
+        summary: `If you want to accept only closed or open meshs, then
+     specify either closed_mesh or open_mesh.  Otherwise both
+     closed and open meshs will pass the attribute filter.`
+      },
+      {
+        signature: 'BoundaryInnerLoop = 1 << 21',
+        summary: 'all trimming edges are boundary edges.'
+      },
+      {
+        signature: 'MatedInnerLoop = 1 << 22',
+        summary: 'all trimming edges are mated.'
+      },
+      {
+        signature: 'InnerLoop = (1 << 21) | (1 << 22)',
+        summary: 'any inner loop is acceptable.'
+      },
+      {
+        signature: 'BoundaryOuterLoop = 1 << 23',
+        summary: 'all trimming edges are boundary edges.'
+      },
+      {
+        signature: 'MatedOuterLoop = 1 << 24',
+        summary: 'all trimming edges are mated.'
+      },
+      {
+        signature: 'OuterLoop = (1 << 23) | (1 << 24)',
+        summary: 'any outer loop is acceptable.'
+      },
+      {
+        signature: 'SpecialLoop = (1 << 25)',
+        summary: 'slit, crvonsrf, ptonsrf, etc.'
+      },
+      {
+        signature: 'AcceptAllAttributes = 0xffffffff'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.GetArc',
@@ -43029,7 +47021,57 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetFileNameMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Open = 0'
+      },
+      {
+        signature: 'OpenTemplate = 1'
+      },
+      {
+        signature: 'OpenImage = 2'
+      },
+      {
+        signature: 'OpenRhinoOnly = 3'
+      },
+      {
+        signature: 'OpenTextFile = 5'
+      },
+      {
+        signature: 'OpenWorksession = 6'
+      },
+      {
+        signature: 'Import = 7'
+      },
+      {
+        signature: 'Attach = 8'
+      },
+      {
+        signature: 'LoadPlugIn = 9'
+      },
+      {
+        signature: 'Save = 10'
+      },
+      {
+        signature: 'SaveSmall = 11'
+      },
+      {
+        signature: 'SaveTemplate = 12'
+      },
+      {
+        signature: 'SaveImage = 13'
+      },
+      {
+        signature: 'Export = 14'
+      },
+      {
+        signature: 'SaveTextFile = 17'
+      },
+      {
+        signature: 'SaveWorksession = 18'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.GetInteger',
@@ -43162,7 +47204,39 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetLineMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'TwoPoint = 0'
+      },
+      {
+        signature: 'SurfaceNormal = 1'
+      },
+      {
+        signature: 'Angled = 2'
+      },
+      {
+        signature: 'Vertical = 3'
+      },
+      {
+        signature: 'FourPoint = 4'
+      },
+      {
+        signature: 'Bisector = 5'
+      },
+      {
+        signature: 'Perpendicular = 6'
+      },
+      {
+        signature: 'Tangent = 7'
+      },
+      {
+        signature: 'CurveEnd = 8'
+      },
+      {
+        signature: 'CPlaneNormalVector = 9'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.GetNumber',
@@ -44414,22 +48488,72 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.PickContext.MeshHitFlag',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Invalid = -1'
+      },
+      {
+        signature: 'Vertex = 0'
+      },
+      {
+        signature: 'Edge = 1'
+      },
+      {
+        signature: 'Face = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.PickContext.MeshPickStyle',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'WireframePicking = 0',
+        summary: 'Checks for vertex and edge hits'
+      },
+      {
+        signature: 'ShadedModePicking = 1',
+        summary: 'Checks for face hits'
+      },
+      {
+        signature: 'VertexOnlyPicking = 2',
+        summary: 'Returns False if no vertices are hit'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.PickMode',
     dataType: 3,
-    summary: 'Picking can happen in wireframe or shaded display mode'
+    summary: 'Picking can happen in wireframe or shaded display mode',
+    values: [
+      {
+        signature: 'Wireframe = 1'
+      },
+      {
+        signature: 'Shaded = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.PickStyle',
     dataType: 3,
-    summary: 'Provides picking values that describe common CAD picking behavior.'
+    summary: 'Provides picking values that describe common CAD picking behavior.',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'PointPick = 1'
+      },
+      {
+        signature: 'WindowPick = 2'
+      },
+      {
+        signature: 'CrossingPick = 3'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.Custom.TaskCompleteEventArgs',
@@ -44459,12 +48583,154 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.GetBoxMode',
     dataType: 3,
-    summary: 'Enumerates all Box getter modes.'
+    summary: 'Enumerates all Box getter modes.',
+    values: [
+      {
+        signature: 'All = 0',
+        summary: 'All modes are allowed.'
+      },
+      {
+        signature: 'Corner = 1',
+        summary: 'The base rectangle is created by picking the two corner points.'
+      },
+      {
+        signature: 'ThreePoint = 2',
+        summary: 'The base rectangle is created by picking three points.'
+      },
+      {
+        signature: 'Vertical = 3',
+        summary: 'The base vertical rectangle is created by picking three points.'
+      },
+      {
+        signature: 'Center = 4',
+        summary: 'The base rectangle is created by picking a center point and a corner point.'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.GetResult',
     dataType: 3,
-    summary: 'Possible results from GetObject.Get(), GetPoint.Get(), etc...'
+    summary: 'Possible results from GetObject.Get(), GetPoint.Get(), etc...',
+    values: [
+      {
+        signature: 'NoResult = 0'
+      },
+      {
+        signature: 'Cancel = 1',
+        summary: 'User wants to cancel current command.'
+      },
+      {
+        signature: 'Nothing = 2',
+        summary: 'User pressed enter - typically used to accept defaults.'
+      },
+      {
+        signature: 'Option = 3',
+        summary: 'User specified an option - call Option() to get option index.'
+      },
+      {
+        signature: 'Number = 4',
+        summary: 'User entered a real number - call Number() to get value.'
+      },
+      {
+        signature: 'Color = 5',
+        summary: 'User entered a color - call Color() to get value.'
+      },
+      {
+        signature: 'Undo = 6',
+        summary: 'User pressed undo.'
+      },
+      {
+        signature: 'Miss = 7',
+        summary: 'User clicked and missed.'
+      },
+      {
+        signature: 'Point = 8',
+        summary: 'User picked 3d point - call Point() to get 3d point.'
+      },
+      {
+        signature: 'Point2d = 9',
+        summary: `User picked 2d window point in CRhinoGetPoint::Get2dPoint()
+    call ON_2dPoint() to get the point and View() to get the view.`
+      },
+      {
+        signature: 'Line2d = 10',
+        summary: `User picked a 2d line in CRhinoGetPoint::Get2dLine() call Line2d()
+    to get the line and View() to get the view.`
+      },
+      {
+        signature: 'Rectangle2d = 11',
+        summary: `User picked a 2d rectangle in CRhinoGetPoint::Get2dRectangle() call
+    Rectangle2d() to get the rectangle and View() to get the view.`
+      },
+      {
+        signature: 'Object = 12',
+        summary: 'User selected an object - call Object() to get object.'
+      },
+      {
+        signature: 'String = 13',
+        summary: 'User typed a string - call String() to get the string.'
+      },
+      {
+        signature: 'CustomMessage = 14',
+        summary: 'A custom message was posted to the RhinoGet'
+      },
+      {
+        signature: 'Timeout = 15',
+        summary: `The getter waited for the amount of time specifed in RhinoGet::SetWaitDuration()
+    and then gave up.`
+      },
+      {
+        signature: 'Circle = 16',
+        summary: 'call CRhinoGetCircle::GetCircle() to get the circle.'
+      },
+      {
+        signature: 'Plane = 17',
+        summary: 'call CRhinoGetPlane::GetPlane() to get the plane.'
+      },
+      {
+        signature: 'Cylinder = 18',
+        summary: 'call CRhinoGetCylinder::GetCylinder() to get the cylinder.'
+      },
+      {
+        signature: 'Sphere = 19',
+        summary: 'call CRhinoGetSphere::GetSphere() to get the sphere.'
+      },
+      {
+        signature: 'Angle = 20',
+        summary: 'call CRhinoGetAngle::Angle() to get the angle in radians (CRhinoGetAngle() returns this for typed number, too).'
+      },
+      {
+        signature: 'Distance = 21',
+        summary: 'call CRhinoGetDistance::Distance() to get the distance value.'
+      },
+      {
+        signature: 'Direction = 22',
+        summary: 'call CRhinoGetDirection::Direction() to get the direction vector.'
+      },
+      {
+        signature: 'Frame = 23',
+        summary: 'call CRhinoGetFrame::Frame() to get the frame that was picked.'
+      },
+      {
+        signature: 'User1 = 0xFFFFFFFF'
+      },
+      {
+        signature: 'User2 = 0xFFFFFFFE'
+      },
+      {
+        signature: 'User3 = 0xFFFFFFFD'
+      },
+      {
+        signature: 'User4 = 0xFFFFFFFC'
+      },
+      {
+        signature: 'User5 = 0xFFFFFFFB'
+      },
+      {
+        signature: 'ExitRhino = 0x0FFFFFFF',
+        summary: 'Stop now, do not cleaup, just return ASAP.'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.RhinoGet',
@@ -44749,7 +49015,27 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.RhinoGet.BitmapFileTypes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'bmp = 1'
+      },
+      {
+        signature: 'jpg = 2'
+      },
+      {
+        signature: 'pcx = 4'
+      },
+      {
+        signature: 'png = 8'
+      },
+      {
+        signature: 'tif = 16'
+      },
+      {
+        signature: 'tga = 32'
+      }
+    ]
   },
   {
     name: 'Rhino.Input.StringParser',
@@ -46155,7 +50441,36 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.DescriptionType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Organization'
+      },
+      {
+        signature: 'Address'
+      },
+      {
+        signature: 'Country'
+      },
+      {
+        signature: 'Phone'
+      },
+      {
+        signature: 'WebSite'
+      },
+      {
+        signature: 'Email'
+      },
+      {
+        signature: 'UpdateUrl'
+      },
+      {
+        signature: 'Fax'
+      },
+      {
+        signature: 'Icon'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.DigitizerPlugIn',
@@ -46238,14 +50553,70 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.LicenseBuildType',
     dataType: 3,
-    summary: 'License build contentType enumerations.'
+    summary: 'License build contentType enumerations.',
+    values: [
+      {
+        signature: 'Unspecified = 0',
+        summary: 'An unspecified build'
+      },
+      {
+        signature: 'Release = 100',
+        summary: 'A release build (e.g. commercial, education, nfr, etc.)'
+      },
+      {
+        signature: 'Evaluation = 200',
+        summary: 'A evaluation build'
+      },
+      {
+        signature: 'Beta = 300',
+        summary: 'A beta build (e.g. wip)'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.LicenseCapabilities',
     dataType: 3,
     summary: `Controls the buttons that will appear on the license notification window
    that is displayed if a license for the requesting product is not found.
-   Note, the "Close" button will always be displayed.`
+   Note, the "Close" button will always be displayed.`,
+    values: [
+      {
+        signature: 'NoCapabilities = 0x0',
+        summary: 'Only the "Close" button will be displayed'
+      },
+      {
+        signature: 'CanBePurchased = 0x1',
+        summary: 'Shows "Buy a license" button'
+      },
+      {
+        signature: 'CanBeSpecified = 0x2',
+        summary: 'OBSOLETE: Shows ""Enter a license" and "Use a Zoo" buttons. Use SupportsStandalone | SupportsZoo instead.'
+      },
+      {
+        signature: 'CanBeEvaluated = 0x4',
+        summary: 'Shows "Evaluate" button'
+      },
+      {
+        signature: 'EvaluationIsExpired = 0x8',
+        summary: 'Shows "Evaluate" button disabled'
+      },
+      {
+        signature: 'SupportsRhinoAccounts = 0x10',
+        summary: 'Supports getting a license from a Cloud Zoo / Rhino Account'
+      },
+      {
+        signature: 'SupportsStandalone = 0x20',
+        summary: 'Supports single-computer licensing'
+      },
+      {
+        signature: 'SupportsZooPerUser = 0x40',
+        summary: 'Supports getting a license from a Zoo server'
+      },
+      {
+        signature: 'SupportsZooPerCore = 0x80',
+        summary: 'Supports getting a license from a Zoo server'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.LicenseChangedEventArgs',
@@ -46589,7 +50960,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.LicenseType',
     dataType: 3,
-    summary: 'LicenseType enumeration.'
+    summary: 'LicenseType enumeration.',
+    values: [
+      {
+        signature: 'Standalone',
+        summary: 'A standalone license'
+      },
+      {
+        signature: 'Network',
+        summary: 'A network license that has not been fulfilled by a Zoo'
+      },
+      {
+        signature: 'NetworkLoanedOut',
+        summary: 'A license on temporary loan from a Zoo'
+      },
+      {
+        signature: 'NetworkCheckedOut',
+        summary: 'A license on permanent check out from a Zoo'
+      },
+      {
+        signature: 'CloudZoo',
+        summary: 'A lease granted by the Cloud Zoo'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.LicenseUtils',
@@ -46716,12 +51109,35 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.LoadPlugInResult',
     dataType: 3,
-    summary: 'Result of attempting to load a plug-in'
+    summary: 'Result of attempting to load a plug-in',
+    values: [
+      {
+        signature: 'Success',
+        summary: 'Successfully loaded'
+      },
+      {
+        signature: 'SuccessAlreadyLoaded'
+      },
+      {
+        signature: 'ErrorUnknown'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.LoadReturnCode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Success = 1'
+      },
+      {
+        signature: 'ErrorShowDialog = 0'
+      },
+      {
+        signature: 'ErrorNoDialog = -1'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.PlugIn',
@@ -47111,12 +51527,67 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.PlugInLoadTime',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Disabled = 0',
+        summary: 'never load plug-in.'
+      },
+      {
+        signature: 'AtStartup = 1',
+        summary: 'Load when Rhino starts.'
+      },
+      {
+        signature: 'WhenNeeded = 2',
+        summary: '(default) Load the first time a plug-in command used.'
+      },
+      {
+        signature: 'WhenNeededIgnoreDockingBars = 6',
+        summary: 'Load the first time a plug-in command used NOT when restoring docking control bars.'
+      },
+      {
+        signature: 'WhenNeededOrOptionsDialog = 10',
+        summary: 'When a plug-in command is used or the options dialog is shown.'
+      },
+      {
+        signature: 'WhenNeededOrTabbedDockBar = 18',
+        summary: 'When a plug-in command is used or when a tabbed dockbar is loaded.'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.PlugInType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Render = 1'
+      },
+      {
+        signature: 'FileImport = 2'
+      },
+      {
+        signature: 'FileExport = 4'
+      },
+      {
+        signature: 'Digitizer = 8'
+      },
+      {
+        signature: 'Utility = 16'
+      },
+      {
+        signature: 'DisplayPipeline = 32'
+      },
+      {
+        signature: 'DisplayEngine = 64'
+      },
+      {
+        signature: 'Any = Render | FileImport | FileExport | Digitizer | Utility | DisplayPipeline | DisplayEngine'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.PreviewNotification',
@@ -47216,22 +51687,128 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.RenderPlugIn.PreviewRenderTypes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'ThreeSeparateImages'
+      },
+      {
+        signature: 'SingleImage'
+      },
+      {
+        signature: 'Progressive'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.RenderPlugIn.RenderFeature',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Materials = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Materials'
+      },
+      {
+        signature: 'Environments = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Environments'
+      },
+      {
+        signature: 'Textures = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Textures'
+      },
+      {
+        signature: 'PostEffects = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.PostEffects'
+      },
+      {
+        signature: 'Sun = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Sun'
+      },
+      {
+        signature: 'CustomRenderMeshes = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomRenderMeshes'
+      },
+      {
+        signature: 'Decals = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Decals'
+      },
+      {
+        signature: 'GroundPlane = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.GroundPlane'
+      },
+      {
+        signature: 'SkyLight = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.SkyLight'
+      },
+      {
+        signature: 'CustomDecalProperties = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomDecalProperties'
+      },
+      {
+        signature: 'LinearWorkflow = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.LinearWorkflow'
+      },
+      {
+        signature: 'Exposure = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Exposure'
+      },
+      {
+        signature: 'ShadowOnlyGroundPlane = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.ShadowOnlyGroundPlane'
+      },
+      {
+        signature: 'RenderBlowup = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderBlowup'
+      },
+      {
+        signature: 'RenderWindow = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderWindow'
+      },
+      {
+        signature: 'RenderInWindow = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderInWindow'
+      },
+      {
+        signature: 'FocalBlur = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderFocalBlur'
+      },
+      {
+        signature: 'RenderArctic = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderArctic'
+      },
+      {
+        signature: 'RenderViewSource  = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderViewSource'
+      },
+      {
+        signature: 'CustomSkylightEnvironment = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomSkylightEnvironment'
+      },
+      {
+        signature: 'CustomReflectionEnvironment = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomReflectionEnvironment'
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.ValidateResult',
     dataType: 3,
-    summary: 'ValidateProductKeyDelegate result code.'
+    summary: 'ValidateProductKeyDelegate result code.',
+    values: [
+      {
+        signature: 'Success = 1',
+        summary: 'The product key or license is validated successfully.'
+      },
+      {
+        signature: 'ErrorShowMessage = 0',
+        summary: `There was an error validating the product key or license, the license
+     manager show an error message.`
+      },
+      {
+        signature: 'ErrorHideMessage = -1',
+        summary: `There was an error validating the product key or license. The validating
+     delegate will show an error message, not the license manager.`
+      }
+    ]
   },
   {
     name: 'Rhino.PlugIns.WriteFileResult',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Cancel = -1'
+      },
+      {
+        signature: 'Failure = 0'
+      },
+      {
+        signature: 'Success = 1'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.AsyncRenderContext',
@@ -47485,7 +52062,41 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ChangeQueue.ChangeQueue.BakingFunctions',
     dataType: 3,
-    summary: 'Enumeration of functions for baking to conduct.'
+    summary: 'Enumeration of functions for baking to conduct.',
+    values: [
+      {
+        signature: 'None = 0x00',
+        summary: 'No baking'
+      },
+      {
+        signature: 'Decals = 0x01',
+        summary: 'Bake decals'
+      },
+      {
+        signature: 'ProceduralTextures = 0x02',
+        summary: 'Bake procedural textures'
+      },
+      {
+        signature: 'CustomObjectMappings = 0x04',
+        summary: 'Bake custom object mappings'
+      },
+      {
+        signature: 'WcsBasedMappings = 0x08',
+        summary: 'Bake WCS-based mappings'
+      },
+      {
+        signature: 'MultipleMappingChannels = 0x10',
+        summary: 'Bake multiple mapping channels'
+      },
+      {
+        signature: 'NoRepeatTextures = 0x20',
+        summary: 'Bake no-repeat textures'
+      },
+      {
+        signature: 'All = 0xFFFFFFFF',
+        summary: 'Bake everything'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.ChangeQueue.ClippingPlane',
@@ -47572,7 +52183,45 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ChangeQueue.Environment.FrameBufferFillMode',
     dataType: 3,
-    summary: 'Fillmode for background'
+    summary: 'Fillmode for background',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'None set'
+      },
+      {
+        signature: 'DefaultColor = 1',
+        summary: 'Use default color'
+      },
+      {
+        signature: 'SolidColor',
+        summary: 'Use specified solid color'
+      },
+      {
+        signature: 'Gradient2Color',
+        summary: 'Use 2-color gradient'
+      },
+      {
+        signature: 'Gradient4Color',
+        summary: 'Use 4-color gradient (colors are specified by corners)'
+      },
+      {
+        signature: 'Bitmap',
+        summary: 'Use bitmap'
+      },
+      {
+        signature: 'Renderer',
+        summary: 'Use whatever renderer chooses'
+      },
+      {
+        signature: 'Transparent',
+        summary: 'Transparent background'
+      },
+      {
+        signature: 'Force32Bit = 0xffffffff',
+        summary: 'Use 32bit color @todo verify what this means'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.ChangeQueue.GroundPlane',
@@ -47651,7 +52300,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ChangeQueue.Light.Event',
     dataType: 3,
-    summary: 'Light change type'
+    summary: 'Light change type',
+    values: [
+      {
+        signature: 'Added',
+        summary: 'Light was added'
+      },
+      {
+        signature: 'Deleted',
+        summary: 'Light was deleted'
+      },
+      {
+        signature: 'Undeleted',
+        summary: 'Light was undeleted'
+      },
+      {
+        signature: 'Modified',
+        summary: 'Light was modified'
+      },
+      {
+        signature: 'Sorted',
+        summary: 'Light was sorted in LightTable'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.ChangeQueue.MappingChannel',
@@ -48230,7 +52901,24 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CrcRenderHashFlags',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Normal                 = 0'
+      },
+      {
+        signature: 'ExcludeLinearWorkflow  = 1'
+      },
+      {
+        signature: 'ExcludeLocalMapping    = 2'
+      },
+      {
+        signature: 'Reserved1              = 4'
+      },
+      {
+        signature: 'Reserved2              = 8'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.CreatePreviewEventArgs',
@@ -48334,7 +53022,24 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CreatePreviewReason',
     dataType: 3,
-    summary: 'Reason the content preview is being generated'
+    summary: 'Reason the content preview is being generated',
+    values: [
+      {
+        signature: 'ContentChanged = UnsafeNativeMethods.CRhRdkPlugInQuickPreviewReason.ContentChanged'
+      },
+      {
+        signature: 'ViewChanged = UnsafeNativeMethods.CRhRdkPlugInQuickPreviewReason.ViewChanged'
+      },
+      {
+        signature: 'RefreshDisplay = UnsafeNativeMethods.CRhRdkPlugInQuickPreviewReason.RefreshDisplay'
+      },
+      {
+        signature: 'UpdateBitmap = UnsafeNativeMethods.CRhRdkPlugInQuickPreviewReason.UpdateBitmap'
+      },
+      {
+        signature: 'Other = UnsafeNativeMethods.CRhRdkPlugInQuickPreviewReason.Other'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.CreateTexture2dPreviewEventArgs',
@@ -48540,32 +53245,134 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.AssignBys',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Unset'
+      },
+      {
+        signature: 'Layer'
+      },
+      {
+        signature: 'Parent'
+      },
+      {
+        signature: 'Object'
+      },
+      {
+        signature: 'Varies'
+      },
+      {
+        signature: 'PlugIn'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ContentDatabaseEventInfo.AttachReason',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Attach'
+      },
+      {
+        signature: 'Change'
+      },
+      {
+        signature: 'Undo'
+      },
+      {
+        signature: 'Open'
+      },
+      {
+        signature: 'Edit'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ContentDatabaseEventInfo.DetachReason',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Detach'
+      },
+      {
+        signature: 'Change'
+      },
+      {
+        signature: 'Undo'
+      },
+      {
+        signature: 'Delete'
+      },
+      {
+        signature: 'Edit'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ContentDatabaseEventInfo.Types',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Attached'
+      },
+      {
+        signature: 'Detaching'
+      },
+      {
+        signature: 'Detached'
+      },
+      {
+        signature: 'Replacing'
+      },
+      {
+        signature: 'Replaced'
+      },
+      {
+        signature: 'Blossom'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ContentEditorSettings.Layouts',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Horizontal'
+      },
+      {
+        signature: 'Vertical'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ContentEditorSettings.Splitters',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'HA'
+      },
+      {
+        signature: 'HB'
+      },
+      {
+        signature: 'HC'
+      },
+      {
+        signature: 'VA'
+      },
+      {
+        signature: 'VB'
+      },
+      {
+        signature: 'VC'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ContentFactories',
@@ -48642,12 +53449,40 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentParamEventInfo.Types',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Name'
+      },
+      {
+        signature: 'Notes'
+      },
+      {
+        signature: 'Tags'
+      },
+      {
+        signature: 'GroupId'
+      },
+      {
+        signature: 'Param'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.DecalEventInfo.Operations',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Add'
+      },
+      {
+        signature: 'Delete'
+      },
+      {
+        signature: 'Modify'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.MetaData',
@@ -48683,27 +53518,97 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.Modes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Unset'
+      },
+      {
+        signature: 'Grid'
+      },
+      {
+        signature: 'List'
+      },
+      {
+        signature: 'Tree'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.NamedItemCommand.States',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Off = UnsafeNativeMethods.NamedItemCommand_States.Off'
+      },
+      {
+        signature: 'On = UnsafeNativeMethods.NamedItemCommand_States.On'
+      },
+      {
+        signature: 'Varies = UnsafeNativeMethods.NamedItemCommand_States.Varies'
+      },
+      {
+        signature: 'Unknown = UnsafeNativeMethods.NamedItemCommand_States.Unknown'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.NamedItems.CommandFilters',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'ToolButton = UnsafeNativeMethods.NamedItems_CommandFilters.ToolButton'
+      },
+      {
+        signature: 'MenuItem = UnsafeNativeMethods.NamedItems_CommandFilters.MenuItem'
+      },
+      {
+        signature: 'CheckBox = UnsafeNativeMethods.NamedItems_CommandFilters.CheckBox'
+      },
+      {
+        signature: 'All = UnsafeNativeMethods.NamedItems_CommandFilters.All'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.NamedItems.DisplayModes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'List = UnsafeNativeMethods.NamedItems_DisplayMode.List'
+      },
+      {
+        signature: 'Thumbnail = UnsafeNativeMethods.NamedItems_DisplayMode.Thumbnail'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.ParamBlock.UiHints',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None'
+      },
+      {
+        signature: 'Folder'
+      },
+      {
+        signature: 'Filename'
+      },
+      {
+        signature: 'Combo'
+      },
+      {
+        signature: 'Solar'
+      },
+      {
+        signature: 'Location'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.RdkEdit',
@@ -48879,12 +53784,37 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.Shapes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Square'
+      },
+      {
+        signature: 'Wide'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DataSources.Sizes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Unset'
+      },
+      {
+        signature: 'Tiny'
+      },
+      {
+        signature: 'Small'
+      },
+      {
+        signature: 'Medium'
+      },
+      {
+        signature: 'Large'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Decal',
@@ -49093,12 +54023,44 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DecalMapping',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Planar = (int)UnsafeNativeMethods.RhRdkDecalMapping.Planar',
+        summary: 'Planar mapping. Uses projection, origin, up and across vectors (not unitized).'
+      },
+      {
+        signature: 'Cylindrical = (int)UnsafeNativeMethods.RhRdkDecalMapping.Cylindrical',
+        summary: 'Cylindrical mapping. Uses origin, up, across, height, radius, latitude start and stop.'
+      },
+      {
+        signature: 'Spherical = (int)UnsafeNativeMethods.RhRdkDecalMapping.Spherical',
+        summary: 'Spherical mapping. Uses origin, up, across, radius, latitude/longitude start and stop.'
+      },
+      {
+        signature: 'UV = (int)UnsafeNativeMethods.RhRdkDecalMapping.UV',
+        summary: 'UV mapping.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.DecalProjection',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Forward = (int)UnsafeNativeMethods.RhRdkDecalProjection.Forward',
+        summary: 'Project forward'
+      },
+      {
+        signature: 'Backward = (int)UnsafeNativeMethods.RhRdkDecalProjection.Backward',
+        summary: 'Project backward'
+      },
+      {
+        signature: 'Both = (int)UnsafeNativeMethods.RhRdkDecalProjection.Both',
+        summary: 'Project forward and backward'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Decals',
@@ -49176,7 +54138,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DynamicIconUsage',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'TreeControl = 0',
+        summary: 'Dynamic icon appears in a tree control.'
+      },
+      {
+        signature: 'SubnodeControl = 1',
+        summary: 'Dynamic icon appears in a sub-node control (\\see CRhRdkSubNodeCtrl)'
+      },
+      {
+        signature: 'ContentControl = 2',
+        summary: 'Dynamic icon appears in a content control  (\\see CRhRdkContentCtrl)'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Fields.BoolField',
@@ -50230,7 +55206,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.FilterContentByUsage',
     dataType: 3,
-    summary: 'Content collection filter value'
+    summary: 'Content collection filter value',
+    values: [
+      {
+        signature: 'None',
+        summary: 'No filter in use'
+      },
+      {
+        signature: 'Used',
+        summary: 'Display only used contents'
+      },
+      {
+        signature: 'Unused',
+        summary: 'Display only unused contents'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.FreeFloatingBase',
@@ -50375,7 +55365,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ImageFileEvent',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Saved',
+        summary: 'Render image file has been successfully written'
+      },
+      {
+        signature: 'Loaded',
+        summary: 'Render image file has been successfully loaded'
+      },
+      {
+        signature: 'Deleted',
+        summary: 'Render image file was just deleted'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.ImageFileEventArgs',
@@ -50411,12 +55415,30 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.IRhRdkPreviewSceneServer_eRotationType',
     dataType: 3,
-    summary: 'c# version of IRhRdkPreviewSceneServer eRotationType enum'
+    summary: 'c# version of IRhRdkPreviewSceneServer eRotationType enum',
+    values: [
+      {
+        signature: 'Camera',
+        summary: 'Camera'
+      },
+      {
+        signature: 'Object',
+        summary: 'Object'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.it_strategy',
     dataType: 3,
-    summary: 'Defines the collection type to iterate.'
+    summary: 'Defines the collection type to iterate.',
+    values: [
+      {
+        signature: 'ContentDataBase'
+      },
+      {
+        signature: 'ContentSelection'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.LightArray',
@@ -50654,7 +55676,24 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.LightMangerSupportCustomEvent',
     dataType: 3,
-    summary: 'LightMangerSupportCustomEvent'
+    summary: 'LightMangerSupportCustomEvent',
+    values: [
+      {
+        signature: 'light_added'
+      },
+      {
+        signature: 'light_deleted'
+      },
+      {
+        signature: 'light_undeleted'
+      },
+      {
+        signature: 'light_modified'
+      },
+      {
+        signature: 'light_sorted'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.LinearWorkflow',
@@ -50925,7 +55964,15 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.PhysicallyBasedMaterial.BRDFs',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'GGX = 0'
+      },
+      {
+        signature: 'Ward = 1'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.PhysicallyBasedMaterial.ParametersNames',
@@ -51266,7 +56313,46 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.PreviewSceneQuality',
     dataType: 3,
-    summary: 'Quality levels when creating preview images'
+    summary: 'Quality levels when creating preview images',
+    values: [
+      {
+        signature: '    RealtimeQuick = Low',
+        summary: 'Very fast preview. Typically using the internal OpenGL preview generator.'
+      },
+      {
+        signature: '    RefineFirstPass = Low',
+        summary: 'Low quality rendering for quick preview.'
+      },
+      {
+        signature: '    RefineSecondPass = Medium',
+        summary: 'Medium quality rendering for intermediate preview.'
+      },
+      {
+        signature: '    RefineThirdPass = Full',
+        summary: 'Full quality rendering (quality comes from user settings)'
+      },
+      {
+        signature: 'None = 0',
+        summary: 'No quality set.'
+      },
+      {
+        signature: 'Low = 1',
+        summary: 'Low quality rendering for quick preview.'
+      },
+      {
+        signature: 'Medium = 2',
+        summary: 'Medium quality rendering for intermediate preview.'
+      },
+      {
+        signature: 'IntermediateProgressive = 3',
+        summary: `Intermediate update, always considered better quality than the previous
+     IntermediateProgressive, but not as high as Full.`
+      },
+      {
+        signature: 'Full = 4',
+        summary: 'Full quality rendering (quality comes from user settings).'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.PreviewSceneServer',
@@ -51302,7 +56388,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ProxyTypes',
     dataType: 3,
-    summary: 'Defines the proxy type of the render content'
+    summary: 'Defines the proxy type of the render content',
+    values: [
+      {
+        signature: 'None'
+      },
+      {
+        signature: 'Single'
+      },
+      {
+        signature: 'Multi'
+      },
+      {
+        signature: 'Texture'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RdkUndo',
@@ -52392,22 +57492,92 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContent.ChangeContexts',
     dataType: 3,
-    summary: 'Context of a change to content parameters.'
+    summary: 'Context of a change to content parameters.',
+    values: [
+      {
+        signature: 'UI = 0',
+        summary: 'Change occurred as a result of user activity in the content\'s UI.'
+      },
+      {
+        signature: 'Drop = 1',
+        summary: 'Change occurred as a result of drag and drop.'
+      },
+      {
+        signature: 'Program = 2',
+        summary: 'Change occurred as a result of internal program activity.'
+      },
+      {
+        signature: 'Ignore = 3',
+        summary: 'Change can be disregarded.'
+      },
+      {
+        signature: 'Tree = 4',
+        summary: 'Change occurred within the content tree (e.g., nodes reordered).'
+      },
+      {
+        signature: 'Undo = 5',
+        summary: 'Change occurred as a result of an undo.'
+      },
+      {
+        signature: 'FieldInit = 6',
+        summary: 'Change occurred as a result of a field initialization.'
+      },
+      {
+        signature: 'Serialize = 7',
+        summary: 'Change occurred during serialization (loading).'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContent.ExtraRequirementsSetContexts',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'UI = 0',
+        summary: 'Setting extra requirement as a result of user activity.'
+      },
+      {
+        signature: 'Drop = 1',
+        summary: 'Setting extra requirement as a result of drag and drop.'
+      },
+      {
+        signature: 'Program = 2',
+        summary: 'Setting extra requirement as a result of other (non-user) program activity.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContent.MatchDataResult',
     dataType: 3,
-    summary: 'Return values for MatchData function'
+    summary: 'Return values for MatchData function',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Some = 1'
+      },
+      {
+        signature: 'All = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContent.ShowContentChooserFlags',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0x0000'
+      },
+      {
+        signature: 'HideNewTab = 0x0001'
+      },
+      {
+        signature: 'HideExistingTab = 0x0002'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContentChangedEventArgs',
@@ -52427,7 +57597,45 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentChangeReason',
     dataType: 3,
-    summary: 'Enumeration denoting type of change for attach or detach'
+    summary: 'Enumeration denoting type of change for attach or detach',
+    values: [
+      {
+        signature: 'None',
+        summary: 'No attach or detach change'
+      },
+      {
+        signature: 'Attach',
+        summary: 'Content is being attached by the RhinoDoc.AttachContent() or RenderContent.AttachChild() methods.'
+      },
+      {
+        signature: 'Detach',
+        summary: 'Content is being detached by the RenderContent.DeleteContent() method.'
+      },
+      {
+        signature: 'ChangeAttach',
+        summary: 'Content is being attached while changing.'
+      },
+      {
+        signature: 'ChangeDetach',
+        summary: 'Content is being detached while changing.'
+      },
+      {
+        signature: 'AttachUndo',
+        summary: 'Content is being attached during undo/redo'
+      },
+      {
+        signature: 'DetachUndo',
+        summary: 'Content is being detached during undo/redo.'
+      },
+      {
+        signature: 'Open',
+        summary: 'Content is being attached during open document'
+      },
+      {
+        signature: 'Delete',
+        summary: 'Content is being detached during normal deletion.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContentCollection',
@@ -52574,7 +57782,21 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.RenderContentKind',
     dataType: 3,
     summary: `Defines constant values for all render content kinds, such as material,
-   environment or texture.`
+   environment or texture.`,
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.CRhRdkContentKindConst.None'
+      },
+      {
+        signature: 'Material = UnsafeNativeMethods.CRhRdkContentKindConst.Material'
+      },
+      {
+        signature: 'Environment = UnsafeNativeMethods.CRhRdkContentKindConst.Environment'
+      },
+      {
+        signature: 'Texture = UnsafeNativeMethods.CRhRdkContentKindConst.Texture'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContentKindList',
@@ -52716,7 +57938,57 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentStyles',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'No defined styles'
+      },
+      {
+        signature: 'TextureSummary = 0x0001',
+        summary: 'Texture UI includes an auto texture summary section. See AddAutoParameters().'
+      },
+      {
+        signature: 'QuickPreview = 0x0002',
+        summary: 'Editor displays an instant preview before preview cycle begins.'
+      },
+      {
+        signature: 'PreviewCache = 0x0004',
+        summary: 'Content\'s preview imagery can be stored in the preview cache.'
+      },
+      {
+        signature: 'ProgressivePreview = 0x0008',
+        summary: 'Content\'s preview imagery can be rendered progressively.'
+      },
+      {
+        signature: 'LocalTextureMapping = 0x0010',
+        summary: 'Texture UI includes an auto local mapping section for textures. See AddAutoParameters()'
+      },
+      {
+        signature: 'GraphDisplay = 0x0020',
+        summary: 'Texture UI includes a graph section.'
+      },
+      {
+        signature: '    SharedUI = 0x0040',
+        summary: 'Content supports UI sharing between contents of the same type id.'
+      },
+      {
+        signature: 'Adjustment = 0x0080',
+        summary: 'Texture UI includes an adjustment section.'
+      },
+      {
+        signature: 'Fields = 0x0100',
+        summary: 'Content uses fields to facilitate data storage and undo support. See Fields()'
+      },
+      {
+        signature: 'ModalEditing = 0x0200',
+        summary: 'Content supports editing in a modal editor.'
+      },
+      {
+        signature: 'DynamicFields = 0x0400',
+        summary: 'The content\'s fields are dynamic. Dynamic fields can be created during loading.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderContentTableEventForwarder.RenderContentTableEventArgs',
@@ -52844,7 +58116,24 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderEnvironment.Usage',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None                      = 0x00'
+      },
+      {
+        signature: 'Background                = 0x01'
+      },
+      {
+        signature: 'ReflectionAndRefraction   = 0x02'
+      },
+      {
+        signature: 'Skylighting               = 0x04'
+      },
+      {
+        signature: 'AnyUsage                  = Background | ReflectionAndRefraction | Skylighting'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderEnvironmentTable',
@@ -52882,42 +58171,139 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Rendering.CommandFilters',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'ToolButton = UnsafeNativeMethods.RdkRendering_CommandFilters.ToolButton'
+      },
+      {
+        signature: 'MenuItem = UnsafeNativeMethods.RdkRendering_CommandFilters.MenuItem'
+      },
+      {
+        signature: 'All = UnsafeNativeMethods.RdkRendering_CommandFilters.All'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Rendering.StatusTexts',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Image = UnsafeNativeMethods.RdkRendering_StatusTexts.Image'
+      },
+      {
+        signature: 'Zoom = UnsafeNativeMethods.RdkRendering_StatusTexts.Zoom'
+      },
+      {
+        signature: 'Channel = UnsafeNativeMethods.RdkRendering_StatusTexts.Channel'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderingCommand.MenuCategories',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'File = UnsafeNativeMethods.RdkRenderingCommand_MenuCategories.File'
+      },
+      {
+        signature: 'Edit = UnsafeNativeMethods.RdkRenderingCommand_MenuCategories.Edit'
+      },
+      {
+        signature: 'View = UnsafeNativeMethods.RdkRenderingCommand_MenuCategories.View'
+      },
+      {
+        signature: 'Render = UnsafeNativeMethods.RdkRenderingCommand_MenuCategories.Render'
+      },
+      {
+        signature: 'Help = UnsafeNativeMethods.RdkRenderingCommand_MenuCategories.Help'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderingCommand.States',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Off = UnsafeNativeMethods.RdkRenderingCommand_States.Off'
+      },
+      {
+        signature: 'On = UnsafeNativeMethods.RdkRenderingCommand_States.On'
+      },
+      {
+        signature: 'Unknown = UnsafeNativeMethods.RdkRenderingCommand_States.Unknown'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderingHistogram.HistogramFlags',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'UseAlpha = 0x01'
+      },
+      {
+        signature: 'Photometric = 0x02'
+      },
+      {
+        signature: 'Logarithmic = 0x04'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderingHistogram.HistogramType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Original = UnsafeNativeMethods.RdkRendering_Histogram.Original'
+      },
+      {
+        signature: 'Early = UnsafeNativeMethods.RdkRendering_Histogram.Early'
+      },
+      {
+        signature: 'ToneMapping = UnsafeNativeMethods.RdkRendering_Histogram.ToneMapping'
+      },
+      {
+        signature: 'Late = UnsafeNativeMethods.RdkRendering_Histogram.Late'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderingPostEffectCommand.States',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Off = UnsafeNativeMethods.RhRdkRenderingPostEffectCommand_States.Off'
+      },
+      {
+        signature: 'On = UnsafeNativeMethods.RhRdkRenderingPostEffectCommand_States.On'
+      },
+      {
+        signature: 'Unknown = UnsafeNativeMethods.RhRdkRenderingPostEffectCommand_States.Unknown'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderingPostEffects.Disposition',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Early = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.Early'
+      },
+      {
+        signature: 'ToneMapping = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.ToneMapping'
+      },
+      {
+        signature: 'Late = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.Late'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderMaterial',
@@ -53304,17 +58690,157 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.RenderMaterial.PreviewBackgroundType',
     dataType: 3,
     summary: `The default scene background for the image that appears in
-     preview panes`
+     preview panes`,
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.RhCmnMaterialPreviewBackground.None'
+      },
+      {
+        signature: 'Checkered = UnsafeNativeMethods.RhCmnMaterialPreviewBackground.Checkered'
+      },
+      {
+        signature: 'Scene = UnsafeNativeMethods.RhCmnMaterialPreviewBackground.Scene'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderMaterial.PreviewGeometryType',
     dataType: 3,
-    summary: 'Geometry that appears in preview panes'
+    summary: 'Geometry that appears in preview panes',
+    values: [
+      {
+        signature: 'Cone = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Cone'
+      },
+      {
+        signature: 'Cube = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Cuboid'
+      },
+      {
+        signature: 'Plane = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Plane'
+      },
+      {
+        signature: 'Pyramid = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Pyramid'
+      },
+      {
+        signature: 'Sphere = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Sphere'
+      },
+      {
+        signature: 'Torus = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Torus'
+      },
+      {
+        signature: 'Scene = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Mesh'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderMaterial.StandardChildSlots',
     dataType: 3,
-    summary: 'Defines enumerated constant values for use in  method.'
+    summary: 'Defines enumerated constant values for use in  method.',
+    values: [
+      {
+        signature: 'None = 0x0',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::None.'
+      },
+      {
+        signature: 'Diffuse = 0x1',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::Diffuse.'
+      },
+      {
+        signature: 'Transparency = 0x2',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::Transparency'
+      },
+      {
+        signature: 'Bump = 0x4',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::Bump'
+      },
+      {
+        signature: 'Environment = 0x8',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::Environment'
+      },
+      {
+        signature: 'PbrBaseColor = 0x1',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_base_color'
+      },
+      {
+        signature: 'PbrSubsurface = 0x20',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_subsurface'
+      },
+      {
+        signature: 'PbrSubSurfaceScattering = 0x40',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_subsurface_scattering'
+      },
+      {
+        signature: 'PbrSubsurfaceScatteringRadius = 0x80',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_subsurface_scattering_radius'
+      },
+      {
+        signature: 'PbrMetallic = 0x100',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_metallic'
+      },
+      {
+        signature: 'PbrSpecular = 0x200',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_specular'
+      },
+      {
+        signature: 'PbrSpecularTint = 0x400',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_specular_tint'
+      },
+      {
+        signature: 'PbrRoughness = 0x800',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_roughness'
+      },
+      {
+        signature: 'PbrAnisotropic = 0x1000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_anisotropic'
+      },
+      {
+        signature: 'PbrAnisotropicRotation = 0x2000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_anisotropic_rotation'
+      },
+      {
+        signature: 'PbrSheen = 0x4000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_sheen'
+      },
+      {
+        signature: 'PbrSheenTint = 0x8000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_sheen_tint'
+      },
+      {
+        signature: 'PbrClearcoat = 0x10000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_clearcoat'
+      },
+      {
+        signature: 'PbrClearcoatRoughness = 0x20000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_clearcoat_roughness'
+      },
+      {
+        signature: 'PbrOpacityIor = 0x40000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_opacity_ior'
+      },
+      {
+        signature: 'PbrOpacity = 0x02',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_opacity'
+      },
+      {
+        signature: 'PbrOpacityRoughness = 0x80000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_opacity_roughness'
+      },
+      {
+        signature: 'PbrEmission = 0x100000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_emission'
+      },
+      {
+        signature: 'PbrAmbientOcclusion = 0x200000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_ambient_occlusion'
+      },
+      {
+        signature: 'PbrDisplacement = 0x800000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_smudge'
+      },
+      {
+        signature: 'PbrClearcoatBump = 0x1000000',
+        summary: 'Corresponds to CRhRdkMaterial::ChildSlotUsage::PBR_clearcoat_roughness'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderMaterialTable',
@@ -53382,7 +58908,13 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPanelType',
     dataType: 3,
-    summary: 'Contains the custom user interfaces that may be provided'
+    summary: 'Contains the custom user interfaces that may be provided',
+    values: [
+      {
+        signature: 'RenderWindow = UnsafeNativeMethods.RhRdkCustomUiType.RenderWindowCustomDlgInterface',
+        summary: 'A custom control panel added to the render output window.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderPipeline',
@@ -53518,7 +59050,45 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPipeline.RenderReturnCode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Ok = 0'
+      },
+      {
+        signature: 'EmptyScene'
+      },
+      {
+        signature: 'Cancel'
+      },
+      {
+        signature: 'NoActiveView'
+      },
+      {
+        signature: 'OnPreCreateWindow'
+      },
+      {
+        signature: 'NoFrameWndPointer'
+      },
+      {
+        signature: 'ErrorCreatingWindow'
+      },
+      {
+        signature: 'ErrorStartingRender'
+      },
+      {
+        signature: 'EnterModalLoop'
+      },
+      {
+        signature: 'ExitModalLoop'
+      },
+      {
+        signature: 'ExitRhino'
+      },
+      {
+        signature: 'InternalError'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderPlugInInfo',
@@ -53802,7 +59372,27 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPrimitiveType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Mesh = 1'
+      },
+      {
+        signature: 'Sphere = 2'
+      },
+      {
+        signature: 'Plane = 3'
+      },
+      {
+        signature: 'Box = 4'
+      },
+      {
+        signature: 'Cone = 5'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderPropertyChangedEvent',
@@ -53988,7 +59578,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderSettings.RenderingSources',
     dataType: 3,
-    summary: 'Rendering source (render directly from a NamedView or Snapshot)'
+    summary: 'Rendering source (render directly from a NamedView or Snapshot)',
+    values: [
+      {
+        signature: 'ActiveViewport',
+        summary: 'Get the rendering view from the currently active viewport (as in all previous versions of Rhino)'
+      },
+      {
+        signature: 'SpecificViewport',
+        summary: 'Get the rendering view from the named viewport (see NamedViewport below)'
+      },
+      {
+        signature: 'NamedView',
+        summary: 'Get the rendering view from a specific named view (see NamedView below)'
+      },
+      {
+        signature: 'SnapShot',
+        summary: 'Before rendering, restore the Snapshot specified in Snapshot below, then render.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderSourceView',
@@ -54312,17 +59920,59 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTexture.eLocalMappingType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'lmt_none'
+      },
+      {
+        signature: 'lmt_2D'
+      },
+      {
+        signature: 'lmt_3D'
+      },
+      {
+        signature: 'lmt_force32bit = 0xFFFFFFFF'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderTexture.TextureEvaluatorFlags',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Normal                  = 0x0000'
+      },
+      {
+        signature: 'DisableFiltering        = 0x0001'
+      },
+      {
+        signature: 'DisableLocalMapping     = 0x0002'
+      },
+      {
+        signature: 'DisableAdjustment       = 0x0004'
+      },
+      {
+        signature: 'DisableProjectionChange = 0x0008'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderTexture.TextureGeneration',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Allow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Allow'
+      },
+      {
+        signature: 'Disallow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Disallow'
+      },
+      {
+        signature: 'Skip = UnsafeNativeMethods.CRhRdkTextureGenConsts.Skip'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderTextureTable',
@@ -54556,12 +60206,82 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderWindow.RenderSuccessCode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Completed = 0'
+      },
+      {
+        signature: 'Failed'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderWindow.StandardChannels',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None    = 0x0000'
+      },
+      {
+        signature: 'Red     = 0x0001'
+      },
+      {
+        signature: 'Green   = 0x0002'
+      },
+      {
+        signature: 'Blue    = 0x0004'
+      },
+      {
+        signature: 'Alpha   = 0x0008'
+      },
+      {
+        signature: 'RGBA    = 0x000E'
+      },
+      {
+        signature: 'RGB     = 0x000F'
+      },
+      {
+        signature: 'DistanceFromCamera  = 0x0010'
+      },
+      {
+        signature: 'NormalX             = 0x0020'
+      },
+      {
+        signature: 'NormalY             = 0x0040'
+      },
+      {
+        signature: 'NormalZ             = 0x0080'
+      },
+      {
+        signature: 'LuminanceRed        = 0x0100'
+      },
+      {
+        signature: 'LuminanceGreen      = 0x0200'
+      },
+      {
+        signature: 'LuminanceBlue       = 0x0400'
+      },
+      {
+        signature: 'BackgroundLuminanceRed      = 0x1000'
+      },
+      {
+        signature: 'BackgroundLuminanceGreen    = 0x2000'
+      },
+      {
+        signature: 'BackgroundLuminanceBlue     = 0x4000'
+      },
+      {
+        signature: 'MaterialIds       = 0x00010000'
+      },
+      {
+        signature: 'ObjectIds         = 0x00020000'
+      },
+      {
+        signature: 'Wireframe         = 0x00040000'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.RenderWindowClonedEventArgs',
@@ -54615,7 +60335,15 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SceneServerDataUsage',
     dataType: 3,
-    summary: 'SceneServerData Usage (Synchronous or Asynchronous)'
+    summary: 'SceneServerData Usage (Synchronous or Asynchronous)',
+    values: [
+      {
+        signature: 'Synchronous'
+      },
+      {
+        signature: 'Asynchronous'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.SimulatedEnvironment',
@@ -54663,7 +60391,36 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedEnvironment.BackgroundProjections',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Planar = 0'
+      },
+      {
+        signature: 'Spherical = 1'
+      },
+      {
+        signature: 'Emap = 2'
+      },
+      {
+        signature: 'Box = 3'
+      },
+      {
+        signature: 'Automatic = 4'
+      },
+      {
+        signature: 'Lightprobe = 5'
+      },
+      {
+        signature: 'Cubemap = 6'
+      },
+      {
+        signature: 'VerticalCrossCubemap = 7'
+      },
+      {
+        signature: 'HorizontalCrossCubemap = 8'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.SimulatedTexture',
@@ -54771,12 +60528,61 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedTexture.EnvironmentMappingModes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Automatic = 0'
+      },
+      {
+        signature: 'Spherical = 1'
+      },
+      {
+        signature: 'Emap = 2'
+      },
+      {
+        signature: 'Box = 3'
+      },
+      {
+        signature: 'Lightprobe = 5'
+      },
+      {
+        signature: 'Cubemap = 6'
+      },
+      {
+        signature: 'VerticalCrossCubemap = 7'
+      },
+      {
+        signature: 'HorizontalCrossCubemap = 8'
+      },
+      {
+        signature: 'Hemispherical = 9'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.SimulatedTexture.ProjectionModes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'MappingChannel = 0'
+      },
+      {
+        signature: 'View = 1'
+      },
+      {
+        signature: 'Wcs = 2'
+      },
+      {
+        signature: 'Emap = 3'
+      },
+      {
+        signature: 'WcsBox = 4'
+      },
+      {
+        signature: 'Screen = 5'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Skylight',
@@ -55229,12 +61035,40 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SupportOptions.RdkInitialLocation',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'RenderContent = UnsafeNativeMethods.RdkInitialLocation.RenderContent'
+      },
+      {
+        signature: 'LastOpenedFolder = UnsafeNativeMethods.RdkInitialLocation.LastOpenedFolder'
+      },
+      {
+        signature: 'CustomFolder = UnsafeNativeMethods.RdkInitialLocation.CustomFolder'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.SupportOptions.RdkTextureSize',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Size1 = UnsafeNativeMethods.RdkTextureSize.Size1'
+      },
+      {
+        signature: 'Size2 = UnsafeNativeMethods.RdkTextureSize.Size2'
+      },
+      {
+        signature: 'Size3 = UnsafeNativeMethods.RdkTextureSize.Size3'
+      },
+      {
+        signature: 'Size4 = UnsafeNativeMethods.RdkTextureSize.Size4'
+      },
+      {
+        signature: 'Size5 = UnsafeNativeMethods.RdkTextureSize.Size5'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TexturedColor',
@@ -55273,7 +61107,36 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureEnvironmentMappingMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Automatic   = 0'
+      },
+      {
+        signature: 'Spherical   = 1'
+      },
+      {
+        signature: 'EnvironmentMap    = 2'
+      },
+      {
+        signature: 'Box         = 3'
+      },
+      {
+        signature: 'LightProbe = 5'
+      },
+      {
+        signature: 'Cube  = 6'
+      },
+      {
+        signature: 'VerticalCrossCube = 7'
+      },
+      {
+        signature: 'HorizontalCrossCube = 8'
+      },
+      {
+        signature: 'Hemispherical = 9'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureEvaluator',
@@ -55347,7 +61210,15 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureGeneration',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Allow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Allow'
+      },
+      {
+        signature: 'Disallow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Disallow'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureGraphInfo',
@@ -55415,12 +61286,40 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureGraphInfo.Axis',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'kU = 0'
+      },
+      {
+        signature: 'kV = 1'
+      },
+      {
+        signature: 'kW = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureGraphInfo.Channel',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'kRed = 0'
+      },
+      {
+        signature: 'kGrn = 1'
+      },
+      {
+        signature: 'kBlu = 2'
+      },
+      {
+        signature: 'kAlp = 3'
+      },
+      {
+        signature: 'kLum = 4'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureMapping',
@@ -55577,27 +61476,155 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureMappingType',
     dataType: 3,
-    summary: 'Defines enumerated constants for mapping types such as planar, cylindrical or spherical.'
+    summary: 'Defines enumerated constants for mapping types such as planar, cylindrical or spherical.',
+    values: [
+      {
+        signature: 'None = UnsafeNativeMethods.TextureMappingType.NoMapping',
+        summary: 'No mapping is selected.'
+      },
+      {
+        signature: 'SurfaceParameters = UnsafeNativeMethods.TextureMappingType.SrfpMapping',
+        summary: '(u, v) = linear transform of surface params, w = 0.'
+      },
+      {
+        signature: 'PlaneMapping = UnsafeNativeMethods.TextureMappingType.PlaneMapping',
+        summary: '(u, v, w) = 3d coordinates wrt frame.'
+      },
+      {
+        signature: 'CylinderMapping = UnsafeNativeMethods.TextureMappingType.CylinderMapping',
+        summary: '(u, v, w) = longitude, height, radius.'
+      },
+      {
+        signature: 'SphereMapping = UnsafeNativeMethods.TextureMappingType.SphereMapping',
+        summary: '(u, v, w) = longitude,latitude,radius.'
+      },
+      {
+        signature: 'BoxMapping = UnsafeNativeMethods.TextureMappingType.BoxMapping',
+        summary: 'Box mapping type.'
+      },
+      {
+        signature: 'MeshMappingPrimitive = UnsafeNativeMethods.TextureMappingType.MeshMappingPrimitive',
+        summary: 'Mapping primitive is a mesh.'
+      },
+      {
+        signature: 'SurfaceMappingPrimitive = UnsafeNativeMethods.TextureMappingType.SrfMappingPrimitive',
+        summary: 'Mapping primitive is a surface.'
+      },
+      {
+        signature: 'BrepMappingPrimitive = UnsafeNativeMethods.TextureMappingType.BrepMappingPrimitive',
+        summary: 'Mapping primitive is a brep.'
+      },
+      {
+        signature: 'OcsMapping = UnsafeNativeMethods.TextureMappingType.OcsMapping',
+        summary: 'OCS mapping type (WCS/WCS Box with object frame).'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'PROJECTION_MODE = 0'
+      },
+      {
+        signature: 'MAPPING_CHANNEL_MODE'
+      },
+      {
+        signature: 'WRAP_TYPE_MODE'
+      },
+      {
+        signature: 'REPEAT_LOCKED_MODE'
+      },
+      {
+        signature: 'OFFSET_LOCKED_MODE'
+      },
+      {
+        signature: 'PREVIEW_IN_3D_MODE'
+      },
+      {
+        signature: 'REPEAT_MODE'
+      },
+      {
+        signature: 'OFFSET_MODE'
+      },
+      {
+        signature: 'ROTATION_MODE'
+      },
+      {
+        signature: 'ENVIRONMENT_MAPPING_MODE'
+      },
+      {
+        signature: 'INTERNAL_ENVIRONMENT_MAPPING_MODE'
+      },
+      {
+        signature: 'PREVIEW_LOCAL_MAPPING_MODE'
+      },
+      {
+        signature: 'DISPLAY_IN_VIEWPORT_MODE'
+      },
+      {
+        signature: 'IS_HDR_CAPABLE_MODE'
+      },
+      {
+        signature: 'IS_LINEAR_MODE'
+      },
+      {
+        signature: 'IS_IMAGE_BASED'
+      },
+      {
+        signature: 'IS_NORMALMAP'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureProjectionMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'MappingChannel = 0'
+      },
+      {
+        signature: 'View = 1'
+      },
+      {
+        signature: 'Wcs = 2'
+      },
+      {
+        signature: 'EnvironmentMap = 3'
+      },
+      {
+        signature: 'WcsBox = 4'
+      },
+      {
+        signature: 'Screen = 5'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureRenderHashFlags',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'ExcludeLocalMapping = (1 << 32)'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TextureWrapType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Clamped = 0'
+      },
+      {
+        signature: 'Repeating = 1'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.TimeZone',
@@ -55897,17 +61924,104 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Utilities.ShowContentChooserResults',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None',
+        summary: 'No choice (user cancelled).'
+      },
+      {
+        signature: 'New',
+        summary: 'User chose from \'New\' tab. uuidOut is the type id.'
+      },
+      {
+        signature: 'Copy',
+        summary: 'User chose from \'Existing\' tab with \'copy\' radio button checked. uuidOut is the instance id.'
+      },
+      {
+        signature: 'Instance',
+        summary: 'User chose from \'Existing\' tab with \'instance\' radio button checked. uuidOut is the instance id.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Utilities.UiFrameworks',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Win32',
+        summary: 'Win32.'
+      },
+      {
+        signature: 'Cocoa',
+        summary: 'Cocoa.'
+      },
+      {
+        signature: 'Eto',
+        summary: 'Eto.'
+      },
+      {
+        signature: 'WinForms',
+        summary: 'WinForms.'
+      },
+      {
+        signature: 'WPF',
+        summary: 'WPF.'
+      }
+    ]
   },
   {
     name: 'Rhino.Render.Variant.VariantTypes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Null = 0'
+      },
+      {
+        signature: 'Bool = 1'
+      },
+      {
+        signature: 'Integer = 2'
+      },
+      {
+        signature: 'Float = 3'
+      },
+      {
+        signature: 'Double = 4'
+      },
+      {
+        signature: 'Color = 5'
+      },
+      {
+        signature: 'Vector2d = 6'
+      },
+      {
+        signature: 'Vector3d = 7'
+      },
+      {
+        signature: 'String = 8'
+      },
+      {
+        signature: 'Pointer = 9'
+      },
+      {
+        signature: 'Uuid = 10'
+      },
+      {
+        signature: 'Matrix = 11'
+      },
+      {
+        signature: 'Time = 12'
+      },
+      {
+        signature: 'Buffer = 13'
+      },
+      {
+        signature: 'Point4d = 14'
+      }
+    ]
   },
   {
     name: 'Rhino.RhinoApp',
@@ -57430,7 +63544,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.RhinoDoc.RenderContentTableEventType',
     dataType: 3,
-    summary: 'Type of content table event'
+    summary: 'Type of content table event',
+    values: [
+      {
+        signature: 'Loaded',
+        summary: 'The document has been read and the table has been loaded'
+      },
+      {
+        signature: 'Clearing',
+        summary: 'The table is about to be cleared'
+      },
+      {
+        signature: 'Cleared',
+        summary: 'The table has been cleared'
+      },
+      {
+        signature: 'MaterialAssignmentChanged',
+        summary: 'Object or layer material assignment changed'
+      }
+    ]
   },
   {
     name: 'Rhino.RhinoDoc.RenderMaterialAssignmentChangedEventArgs',
@@ -57489,7 +63621,25 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.RhinoDoc.TextureMappingEventType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Added = UnsafeNativeMethods.RhinoEventWatcherTextureMappingEventConsts.Added',
+        summary: 'Adding texture mapping to a document'
+      },
+      {
+        signature: 'Deleted = UnsafeNativeMethods.RhinoEventWatcherTextureMappingEventConsts.Deleted',
+        summary: 'A texture mapping was deleted from a document'
+      },
+      {
+        signature: 'Undeleted = UnsafeNativeMethods.RhinoEventWatcherTextureMappingEventConsts.Undeleted',
+        summary: 'A texture mapping was undeleted in a document'
+      },
+      {
+        signature: 'Modified = UnsafeNativeMethods.RhinoEventWatcherTextureMappingEventConsts.Modified',
+        summary: 'A texture mapping was modified in a document'
+      }
+    ]
   },
   {
     name: 'Rhino.RhinoDocObserverArgs',
@@ -58227,7 +64377,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.HostUtils.LogMessageType',
     dataType: 3,
-    summary: 'Represents the type of message that is being sent to the OnSendLogMessageToCloud event'
+    summary: 'Represents the type of message that is being sent to the OnSendLogMessageToCloud event',
+    values: [
+      {
+        signature: 'unknown = 0',
+        summary: 'Unknown message type'
+      },
+      {
+        signature: 'information = 1',
+        summary: 'Message is informational only'
+      },
+      {
+        signature: 'warning = 2',
+        summary: 'Message is a warning'
+      },
+      {
+        signature: 'error = 3',
+        summary: 'Message is an error'
+      },
+      {
+        signature: 'assert = 4',
+        summary: 'Message is a debug ASSERT'
+      }
+    ]
   },
   {
     name: 'Rhino.Runtime.InProcess.RhinoCore',
@@ -58299,7 +64471,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.InProcess.WindowStyle',
     dataType: 3,
-    summary: 'Specified how a new window should appear when Rhino starts.'
+    summary: 'Specified how a new window should appear when Rhino starts.',
+    values: [
+      {
+        signature: 'NoWindow = -1',
+        summary: 'The no window style.'
+      },
+      {
+        signature: 'Normal = 0',
+        summary: 'The normal, visible window style.'
+      },
+      {
+        signature: 'Hidden = 1',
+        summary: 'The hidden window style.'
+      },
+      {
+        signature: 'Minimized = 2',
+        summary: 'The minimized window style.'
+      },
+      {
+        signature: 'Maximized = 3',
+        summary: 'The maximized window style.'
+      }
+    ]
   },
   {
     name: 'Rhino.Runtime.Interop',
@@ -59813,7 +66007,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.LicenseTypes',
     dataType: 3,
-    summary: 'Different licensing modes that Rhino can run in'
+    summary: 'Different licensing modes that Rhino can run in',
+    values: [
+      {
+        signature: 'Undefined = 0',
+        summary: 'Licensing mode not define'
+      },
+      {
+        signature: 'Standalone',
+        summary: 'Standalone license installed on this computer.'
+      },
+      {
+        signature: 'ZooAutoDetect',
+        summary: 'Classic Zoo license with the Zoo server automatically detected at runtime.'
+      },
+      {
+        signature: 'ZooManualDetect',
+        summary: 'Classic Zoo license with the Zoo server specified by hostname or IP'
+      },
+      {
+        signature: 'CloudZoo',
+        summary: 'Cloud Zoo licenese'
+      }
+    ]
   },
   {
     name: 'Rhino.Runtime.NamedParametersEventArgs',
@@ -59936,7 +66152,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.Notifications.ButtonType',
     dataType: 3,
-    summary: 'The type of button in a notification.'
+    summary: 'The type of button in a notification.',
+    values: [
+      {
+        signature: 'CancelOrClose',
+        summary: 'Denotes either the Cancel button as well as, on some platforms, the close button if present.'
+      },
+      {
+        signature: 'Confirm',
+        summary: 'The Confirm buttton.'
+      },
+      {
+        signature: 'Alternate',
+        summary: 'The Alternate button.'
+      }
+    ]
   },
   {
     name: 'Rhino.Runtime.Notifications.IAssemblyRestrictedObject',
@@ -60095,7 +66325,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.Notifications.Notification.Severity',
     dataType: 3,
-    summary: 'Determines the severity of a notification.'
+    summary: 'Determines the severity of a notification.',
+    values: [
+      {
+        signature: 'Debug',
+        summary: 'Least serious.'
+      },
+      {
+        signature: 'Info',
+        summary: 'Not serious.'
+      },
+      {
+        signature: 'Warning',
+        summary: 'Important.'
+      },
+      {
+        signature: 'Serious',
+        summary: 'Very important.'
+      },
+      {
+        signature: 'Critical',
+        summary: 'Extremely important.'
+      }
+    ]
   },
   {
     name: 'Rhino.Runtime.Notifications.NotificationButtonClickedArgs',
@@ -60709,7 +66961,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.ViewCaptureWriter.PointType',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Move'
+      },
+      {
+        signature: 'Line'
+      },
+      {
+        signature: 'CubicBezier'
+      },
+      {
+        signature: 'Close'
+      }
+    ]
   },
   {
     name: 'Rhino.Runtime.ZooClientParameters',
@@ -61257,7 +67523,21 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.InternalRdkViewModel.EventPriority',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Low'
+      },
+      {
+        signature: 'Normal'
+      },
+      {
+        signature: 'High'
+      },
+      {
+        signature: 'RealTime'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.Controls.InternalRdkViewModel.NewUndoRecord',
@@ -61404,7 +67684,29 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkContentThumbnailList_Sizes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Tiny',
+        summary: 'Tiny thumbnails.'
+      },
+      {
+        signature: 'Small',
+        summary: 'Small thumbnails.'
+      },
+      {
+        signature: 'Medium',
+        summary: 'Medium thumbnails.'
+      },
+      {
+        signature: 'Large',
+        summary: 'Large thumbnails.'
+      },
+      {
+        signature: 'Custom',
+        summary: 'Custom-sized thumbnails.'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnail',
@@ -61419,12 +67721,36 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnailList_Modes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Grid',
+        summary: 'Big thumbnails like Explorer icon mode (default).'
+      },
+      {
+        signature: 'List',
+        summary: 'Small thumbnails and info on right like Explorer report mode.'
+      },
+      {
+        signature: 'Tree',
+        summary: 'Tree view mode.'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnailList_Shapes',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Square',
+        summary: 'Square thumbnails.'
+      },
+      {
+        signature: 'Wide',
+        summary: 'Wide thumbnails.'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.ThumbData',
@@ -61777,7 +68103,18 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.DistanceDisplayMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Decimal = 0'
+      },
+      {
+        signature: 'Fractional = 1'
+      },
+      {
+        signature: 'FeetInches = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.DrawingUtilities',
@@ -62188,7 +68525,92 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballMode',
     dataType: 3,
-    summary: 'Transformation modes for gumballs.'
+    summary: 'Transformation modes for gumballs.',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Menu  = 1',
+        summary: 'Gumball menu button was picked.'
+      },
+      {
+        signature: 'TranslateFree = 2',
+        summary: 'Unconstrained translation.'
+      },
+      {
+        signature: 'TranslateX = 3',
+        summary: 'Translation along a single axis.'
+      },
+      {
+        signature: 'TranslateY = 4',
+        summary: 'Translation along a single axis.'
+      },
+      {
+        signature: 'TranslateZ = 5',
+        summary: 'Translation along a single axis.'
+      },
+      {
+        signature: 'TranslateXY = 6',
+        summary: 'Translation in a plane.'
+      },
+      {
+        signature: 'TranslateYZ = 7',
+        summary: 'Translation in a plane.'
+      },
+      {
+        signature: 'TranslateZX = 8',
+        summary: 'Translation in a plane.'
+      },
+      {
+        signature: 'ScaleX = 9',
+        summary: 'Scale along a single axis.'
+      },
+      {
+        signature: 'ScaleY = 10',
+        summary: 'Scale along a single axis.'
+      },
+      {
+        signature: 'ScaleZ = 11',
+        summary: 'Scale along a single axis.'
+      },
+      {
+        signature: 'ScaleXY = 12',
+        summary: 'Scale in a plane.'
+      },
+      {
+        signature: 'ScaleYZ = 13',
+        summary: 'Scale in a plane.'
+      },
+      {
+        signature: 'ScaleZX = 14',
+        summary: 'Scale in a plane.'
+      },
+      {
+        signature: 'RotateX = 15',
+        summary: 'Rotation around a single axis.'
+      },
+      {
+        signature: 'RotateY = 16',
+        summary: 'Rotation around a single axis.'
+      },
+      {
+        signature: 'RotateZ = 17',
+        summary: 'Rotation around a single axis.'
+      },
+      {
+        signature: 'ExtrudeX = 18',
+        summary: 'Extrusion along a single axis.'
+      },
+      {
+        signature: 'ExtrudeY = 19',
+        summary: 'Extrusion along a single axis.'
+      },
+      {
+        signature: 'ExtrudeZ = 20',
+        summary: 'Extrusion along a single axis.'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.Gumball.GumballObject',
@@ -62280,7 +68702,24 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballScaleMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Independent = 0'
+      },
+      {
+        signature: 'XY = 1'
+      },
+      {
+        signature: 'YZ = 2'
+      },
+      {
+        signature: 'ZX = 3'
+      },
+      {
+        signature: 'XYZ = 4'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.IDialogService',
@@ -62520,12 +68959,37 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ModifierKey',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Control = 1'
+      },
+      {
+        signature: 'Shift = 2'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.MouseButton',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Left = 1'
+      },
+      {
+        signature: 'Right = 2'
+      },
+      {
+        signature: 'Middle = 4'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.MouseCallback',
@@ -63388,12 +69852,37 @@ var RhinoCommonApi = [
     name: 'Rhino.UI.Panels.FloatPanelMode',
     dataType: 3,
     summary: `Used by the FloatPanel method to detemine if the floating panel
-       should be shown or hidden.`
+       should be shown or hidden.`,
+    values: [
+      {
+        signature: 'Show',
+        summary: 'Show the floating panel'
+      },
+      {
+        signature: 'Hide',
+        summary: 'Hide the floating panel'
+      },
+      {
+        signature: 'Toggle',
+        summary: 'Toggle the visibility state'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.PanelType',
     dataType: 3,
-    summary: 'Panel type'
+    summary: 'Panel type',
+    values: [
+      {
+        signature: 'PerDoc',
+        summary: 'Default panel type, creates a panel instance per document'
+      },
+      {
+        signature: 'System',
+        summary: `A System panel may appear in one or more container but the
+     panel will be used for all open documents`
+      }
+    ]
   },
   {
     name: 'Rhino.UI.RhinoHelp',
@@ -63551,32 +70040,152 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageButton',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'OK = 0'
+      },
+      {
+        signature: 'OKCancel = 1'
+      },
+      {
+        signature: 'AbortRetryIgnore = 2'
+      },
+      {
+        signature: 'YesNoCancel = 3'
+      },
+      {
+        signature: 'YesNo = 4'
+      },
+      {
+        signature: 'RetryCancel = 5'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.ShowMessageDefaultButton',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'Button1 = 0'
+      },
+      {
+        signature: 'Button2 = 256'
+      },
+      {
+        signature: 'Button3 = 512'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.ShowMessageIcon',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Error = 16'
+      },
+      {
+        signature: 'Hand = 16'
+      },
+      {
+        signature: 'Stop = 16'
+      },
+      {
+        signature: 'Question = 32'
+      },
+      {
+        signature: 'Exclamation = 48'
+      },
+      {
+        signature: 'Warning = 48'
+      },
+      {
+        signature: 'Information = 64'
+      },
+      {
+        signature: 'Asterisk = 64'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.ShowMessageMode',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'ApplicationModal = 0'
+      },
+      {
+        signature: 'SystemModal = 4096'
+      },
+      {
+        signature: 'TaskModal = 8192'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.ShowMessageOptions',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'SetForeground = 65536'
+      },
+      {
+        signature: 'DefaultDesktopOnly = 131072'
+      },
+      {
+        signature: 'TopMost = 262144'
+      },
+      {
+        signature: 'RightAlign = 524288'
+      },
+      {
+        signature: 'RtlReading = 1048576'
+      },
+      {
+        signature: 'ServiceNotification = 2097152'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.ShowMessageResult',
     dataType: 3,
-    summary: ''
+    summary: '',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'OK = 1'
+      },
+      {
+        signature: 'Cancel = 2'
+      },
+      {
+        signature: 'Abort = 3'
+      },
+      {
+        signature: 'Retry = 4'
+      },
+      {
+        signature: 'Ignore = 5'
+      },
+      {
+        signature: 'Yes = 6'
+      },
+      {
+        signature: 'No = 7'
+      }
+    ]
   },
   {
     name: 'Rhino.UI.ShowPanelEventArgs',

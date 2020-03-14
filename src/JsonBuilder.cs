@@ -61,15 +61,20 @@ const DataTypes = {
             sb.AppendLine($"    name: '{type.FullName}',");
             sb.AppendLine($"    dataType: {(int)(type.DataType)},");
             sb.Append($"    summary: {JsonQuote(type.Summary())}");
+            string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
             string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
             string properties = MembersAsJsonArray(type, ParsedMemberType.Property);
             string methods = MembersAsJsonArray(type, ParsedMemberType.Method);
             string events = MembersAsJsonArray(type, ParsedMemberType.Event);
-            if (constructors != null || properties != null || methods != null || events != null)
+            if (values != null || constructors != null || properties != null || methods != null || events != null)
                 sb.AppendLine(",");
             else
                 sb.AppendLine();
 
+            if (!string.IsNullOrWhiteSpace(values))
+            {
+                sb.AppendLine($"    values: {values}");
+            }
             if (!string.IsNullOrWhiteSpace(constructors))
             {
                 sb.Append($"    constructors: {constructors}");
@@ -104,6 +109,10 @@ const DataTypes = {
         {
             if (type.Members == null)
                 return null;
+            if( filter == ParsedMemberType.EnumValue )
+            {
+                filter = filter;
+            }
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("[");
             bool memberAdded = false;

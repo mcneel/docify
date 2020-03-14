@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-
 
 namespace api_docify
 {
@@ -21,6 +20,7 @@ namespace api_docify
     class ParsedType : XmlDocumentedItem
     {
         BaseTypeDeclarationSyntax _declarationType;
+        List<ParsedMember> _members;
         public ParsedType(BaseTypeDeclarationSyntax type, DocumentationCommentTriviaSyntax documentation) : base(documentation)
         {
             _declarationType = type;
@@ -110,7 +110,27 @@ namespace api_docify
             }
         }
 
-        public List<ParsedMember> Members { get; set; }
+        public List<ParsedMember> Members
+        {
+            get
+            {
+                if(null == _members && DataType == ParsedDataType.Enum)
+                {
+                    _members = new List<ParsedMember>();
+                    foreach( var node in _declarationType.ChildNodes())
+                    {
+                        var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
+                        var enumMember = node as EnumMemberDeclarationSyntax;
+                        _members.Add(new ParsedMember(enumMember, docComment));
+                    }
+                }
+                return _members;
+            }
+            set
+            {
+                _members = value;
+            }
+        }
 
         public static string GetFullContainerName(BaseTypeDeclarationSyntax basetype)
         {

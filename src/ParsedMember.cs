@@ -10,7 +10,8 @@ namespace api_docify
         Constructor = 1,
         Event = 2,
         Property = 3,
-        Method = 4
+        Method = 4,
+        EnumValue = 5
     }
 
     /// <summary>
@@ -28,6 +29,7 @@ namespace api_docify
             if (Member is EventDeclarationSyntax) mt = ParsedMemberType.Event;
             if (Member is PropertyDeclarationSyntax) mt = ParsedMemberType.Property;
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
+            if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
             MemberType = mt;
         }
         public ParsedType ParentType { get; set; }
@@ -239,6 +241,16 @@ namespace api_docify
                     }
                     signature.Append(")");
                     return signature.ToString();
+                }
+            }
+            {
+                EnumMemberDeclarationSyntax enumMember = Member as EnumMemberDeclarationSyntax;
+                if (enumMember != null)
+                {
+                    var signature = enumMember.ToString();
+                    var items = signature.Split(new char[] { '\n' });
+                    signature = items[items.Length - 1];
+                    return signature;
                 }
             }
             throw new System.NotImplementedException();

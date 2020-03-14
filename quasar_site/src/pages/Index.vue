@@ -69,6 +69,13 @@ export default {
           expanded: true
         })
       }
+      if (item.values) {
+        this.memberSections.push({
+          title: 'Values',
+          items: item.values,
+          expanded: true
+        })
+      }
       if (item.properties) {
         this.memberSections.push({
           title: 'Properties (' + item.properties.length + ')',
