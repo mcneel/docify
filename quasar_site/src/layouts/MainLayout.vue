@@ -44,6 +44,7 @@ export default {
   },
   watch: {
     selectedNode: function (newState, oldState) {
+      this.$router.push('/' + newState)
       ViewModel.setSelectedItem(newState)
     }
   }

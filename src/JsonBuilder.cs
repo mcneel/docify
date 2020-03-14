@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace api_docify
 {
@@ -122,6 +121,13 @@ const DataTypes = {
                     sb.AppendLine(",");
                     sb.Append($"        summary: {JsonQuote(summary)}");
                 }
+                string since = member.Since;
+                if (!string.IsNullOrWhiteSpace(since) && double.TryParse(since, out double sinceValue))
+                {
+                    sb.AppendLine(",");
+                    sb.Append($"        since: {since}");
+                }
+
                 if (member.MemberType == ParsedMemberType.Method)
                 {
                     string returns = member.ReturnDocString();

@@ -64,9 +64,10 @@ const ViewModel = {
     _selectedItemChangedCallback = callback
   },
   setSelectedItem (item) {
+    item = item.toLowerCase()
     for (let i = 0; i < RhinoCommonApi.length; i++) {
       const node = RhinoCommonApi[i]
-      if (node.name === item) {
+      if (node.name.toLowerCase() === item) {
         _selectedItemChangedCallback(node)
         return
       }

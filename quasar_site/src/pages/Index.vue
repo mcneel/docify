@@ -1,67 +1,28 @@
 <template>
   <q-page>
-    <h3>{{title}}</h3>
+    <h4>{{title}}</h4>
     <i>Namespace: <a href="#" @click="setSelectedItem(namespace)">{{namespace}}</a></i>
 <p>{{vm.summary}}</p>
-
 <q-list bordered class="rounded-borders q-mt-md">
-  <q-expansion-item q-if="vm.constructors"
+  <q-expansion-item v-for="section in memberSections"
+    :key="section.title"
     expand-separator
     switch-toggle-side
     dense
     dense-toggle
-    label="Constructors"
+    :value="section.expanded"
+    :label="section.title"
     :content-inset-level="1"
   >
-    <q-item v-for="constructor in vm.constructors" :key="constructor.signature">
+    <q-item v-for="member in section.items" :key="member.signature">
       <q-item-section>
-        <q-item-label>{{constructor.signature}}</q-item-label>
-        <q-item-label caption>{{constructor.summary}}</q-item-label>
-      </q-item-section>
-    </q-item>
-  </q-expansion-item>
-  <q-expansion-item q-if="vm.properties"
-    expand-separator
-    switch-toggle-side
-    dense
-    dense-toggle
-    label="Properties"
-    :content-inset-level="1"
-  >
-    <q-item v-for="property in vm.properties" :key="property.signature">
-      <q-item-section>
-        <q-item-label>{{property.signature}}</q-item-label>
-        <q-item-label caption>{{property.summary}}</q-item-label>
-      </q-item-section>
-    </q-item>
-  </q-expansion-item>
-  <q-expansion-item q-if="vm.methods"
-    expand-separator
-    switch-toggle-side
-    dense
-    dense-toggle
-    label="Methods"
-    :content-inset-level="1"
-  >
-    <q-item v-for="method in vm.methods" :key="method.signature">
-      <q-item-section>
-        <q-item-label>{{method.signature}}</q-item-label>
-        <q-item-label caption>{{method.summary}}</q-item-label>
-      </q-item-section>
-    </q-item>
-  </q-expansion-item>
-  <q-expansion-item q-if="vm.events"
-    expand-separator
-    switch-toggle-side
-    dense
-    dense-toggle
-    label="Events"
-    :content-inset-level="1"
-  >
-    <q-item v-for="event in vm.events" :key="event.signature">
-      <q-item-section>
-        <q-item-label>{{event.signature}}</q-item-label>
-        <q-item-label caption>{{event.summary}}</q-item-label>
+        <q-item-label>{{member.signature}}</q-item-label>
+        <q-item-label caption>
+          <q-badge outline color="secondary">{{member.since.toFixed(1)}}
+            <q-tooltip>Available since {{member.since.toFixed(1)}}</q-tooltip>
+          </q-badge>
+          {{member.summary}}
+        </q-item-label>
       </q-item-section>
     </q-item>
   </q-expansion-item>
@@ -77,14 +38,21 @@ export default {
     return {
       vm: {},
       title: '',
-      namespace: ''
+      namespace: '',
+      memberSections: []
     }
   },
   created () {
     ViewModel.setSelectedItemChangedCallback(this.onChangeSelectedItem)
   },
+  mounted () {
+    if (this.$route.params && this.$route.params.datatype) {
+      ViewModel.setSelectedItem(this.$route.params.datatype)
+    }
+  },
   methods: {
     setSelectedItem (name) {
+      this.$router.push('/' + name)
       ViewModel.setSelectedItem(name)
     },
     onChangeSelectedItem (item) {
@@ -93,6 +61,35 @@ export default {
       const index = item.name.lastIndexOf('.')
       this.title = item.name.substring(index + 1)
       this.namespace = item.name.substring(0, index)
+      this.memberSections = []
+      if (item.constructors) {
+        this.memberSections.push({
+          title: 'Constructors (' + item.constructors.length + ')',
+          items: item.constructors,
+          expanded: true
+        })
+      }
+      if (item.properties) {
+        this.memberSections.push({
+          title: 'Properties (' + item.properties.length + ')',
+          items: item.properties,
+          expanded: true
+        })
+      }
+      if (item.methods) {
+        this.memberSections.push({
+          title: 'Methods (' + item.methods.length + ')',
+          items: item.methods,
+          expanded: true
+        })
+      }
+      if (item.events) {
+        this.memberSections.push({
+          title: 'Events (' + item.events.length + ')',
+          items: item.events,
+          expanded: true
+        })
+      }
     }
   }
 }
