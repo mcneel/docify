@@ -64,13 +64,39 @@ const ViewModel = {
     _selectedItemChangedCallback = callback
   },
   setSelectedItem (item) {
-    item = item.toLowerCase()
+    const typename = item.toLowerCase()
     for (let i = 0; i < RhinoCommonApi.length; i++) {
       const node = RhinoCommonApi[i]
-      if (node.name.toLowerCase() === item) {
+      if (node.name.toLowerCase() === typename) {
         _selectedItemChangedCallback(node)
         return
       }
+    }
+    // No item found. Check to see if this is a namespace
+    let tree = this.getTree()
+    const tokens = item.split('.')
+    if (tree.label.toLowerCase() === tokens[0].toLowerCase()) {
+      for (let i = 1; i < tokens.length; i++) {
+        let found = false
+        for (let j = 0; j < tree.children.length; j++) {
+          if (tree.children[j].label.toLowerCase() === tokens[i].toLowerCase()) {
+            tree = tree.children[j]
+            found = true
+            break
+          }
+        }
+        if (!found) return
+      }
+      const children = []
+      for (let i = 0; i < tree.children.length; i++) {
+        children.push(tree.children[i].label)
+      }
+      const obj = {
+        isNamespace: true,
+        name: item,
+        children: children
+      }
+      _selectedItemChangedCallback(obj)
     }
   },
   namespaceFromItem (item) {

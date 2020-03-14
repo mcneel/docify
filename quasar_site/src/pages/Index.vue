@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <h4>{{title}}</h4>
-    <i>Namespace: <a href="#" @click="setSelectedItem(namespace)">{{namespace}}</a></i>
+    <i v-if="namespace">Namespace: <a href="#" @click="setSelectedItem(namespace)">{{namespace}}</a></i>
 <p>{{vm.summary}}</p>
 <q-list bordered class="rounded-borders q-mt-md">
   <q-expansion-item v-for="section in memberSections"
@@ -26,6 +26,7 @@
       </q-item-section>
     </q-item>
   </q-expansion-item>
+  <q-item v-for="item in namespaces" :key="item">{{item}}</q-item>
 </q-list>
 </q-page>
 </template>
@@ -39,7 +40,8 @@ export default {
       vm: {},
       title: '',
       namespace: '',
-      memberSections: []
+      memberSections: [],
+      namespaces: null
     }
   },
   created () {
@@ -58,44 +60,52 @@ export default {
     onChangeSelectedItem (item) {
       console.log('selected item changed to ' + item)
       this.vm = item
-      const index = item.name.lastIndexOf('.')
-      this.title = item.name.substring(index + 1)
-      this.namespace = item.name.substring(0, index)
-      this.memberSections = []
-      if (item.constructors) {
-        this.memberSections.push({
-          title: 'Constructors (' + item.constructors.length + ')',
-          items: item.constructors,
-          expanded: true
-        })
-      }
-      if (item.values) {
-        this.memberSections.push({
-          title: 'Values',
-          items: item.values,
-          expanded: true
-        })
-      }
-      if (item.properties) {
-        this.memberSections.push({
-          title: 'Properties (' + item.properties.length + ')',
-          items: item.properties,
-          expanded: true
-        })
-      }
-      if (item.methods) {
-        this.memberSections.push({
-          title: 'Methods (' + item.methods.length + ')',
-          items: item.methods,
-          expanded: true
-        })
-      }
-      if (item.events) {
-        this.memberSections.push({
-          title: 'Events (' + item.events.length + ')',
-          items: item.events,
-          expanded: true
-        })
+      if (item.isNamespace) {
+        this.title = item.name
+        this.namespace = null
+        this.memberSections = []
+        this.namespaces = item.children
+      } else {
+        const index = item.name.lastIndexOf('.')
+        this.title = item.name.substring(index + 1)
+        this.namespace = item.name.substring(0, index)
+        this.memberSections = []
+        this.namespaces = null
+        if (item.constructors) {
+          this.memberSections.push({
+            title: 'Constructors (' + item.constructors.length + ')',
+            items: item.constructors,
+            expanded: true
+          })
+        }
+        if (item.values) {
+          this.memberSections.push({
+            title: 'Values',
+            items: item.values,
+            expanded: true
+          })
+        }
+        if (item.properties) {
+          this.memberSections.push({
+            title: 'Properties (' + item.properties.length + ')',
+            items: item.properties,
+            expanded: true
+          })
+        }
+        if (item.methods) {
+          this.memberSections.push({
+            title: 'Methods (' + item.methods.length + ')',
+            items: item.methods,
+            expanded: true
+          })
+        }
+        if (item.events) {
+          this.memberSections.push({
+            title: 'Events (' + item.events.length + ')',
+            items: item.events,
+            expanded: true
+          })
+        }
       }
     }
   }
