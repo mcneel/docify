@@ -18,7 +18,7 @@
       <q-item-section>
         <q-item-label>{{member.signature}}</q-item-label>
         <q-item-label caption>
-          <q-badge outline color="secondary">{{member.since.toFixed(1)}}
+          <q-badge v-if="member.since" outline color="secondary">{{member.since.toFixed(1)}}
             <q-tooltip>Available since {{member.since.toFixed(1)}}</q-tooltip>
           </q-badge>
           {{member.summary}}
