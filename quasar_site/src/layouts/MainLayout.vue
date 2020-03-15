@@ -16,6 +16,7 @@
       <q-scroll-area class="fit">
         <q-tree
         :nodes="api"
+        accordion
         node-key="path"
         selected-color="accent"
         :selected.sync="selectedNode"
@@ -40,14 +41,27 @@ export default {
     return {
       leftDrawerOpen: false,
       api: vm,
-      selectedNode: []
+      selectedNode: [],
+      watcherEnabled: true
+    }
+  },
+  created () {
+    ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
+  },
+  methods: {
+    onChangeSelectedItem (item) {
+      this.watcherEnabled = false
+      this.selectedNode = item.name
+      this.watcherEnabled = true
     }
   },
   watch: {
     selectedNode: function (newState, oldState) {
-      console.log(newState)
-      this.$router.push('/' + newState)
-      ViewModel.setSelectedItem(newState)
+      if (this.watcherEnabled && newState) {
+        console.log(newState)
+        this.$router.push('/' + newState)
+        ViewModel.setSelectedItem(newState)
+      }
     }
   }
 }

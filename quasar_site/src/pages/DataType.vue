@@ -51,7 +51,7 @@ export default {
     }
   },
   created () {
-    ViewModel.setSelectedItemChangedCallback(this.onChangeSelectedItem)
+    ViewModel.setSelectedItemChangedCallback('DataType.vue', this.onChangeSelectedItem)
   },
   mounted () {
     if (this.$route.params && this.$route.params.datatype) {

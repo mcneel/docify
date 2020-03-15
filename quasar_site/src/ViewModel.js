@@ -1,46 +1,26 @@
 import { DataTypes, RhinoCommonApi } from './RhinoCommonApi'
 
 let _viewmodel = null
-let _selectedItemChangedCallback = null
+const _selectedItemChangedCallbacks = {}
 
-/*
-function buildClassTree (tokens, node, fullName) {
-  if (!tokens || tokens.length < 1) return
-  const title = tokens.splice(0, 1)[0]
-  if (tokens.length < 1) {
-    // title represents a leaf (class, struct, interface, enum)
-    if (!node.children) {
-      node.children = []
-    }
-    node.children.push({
-      label: title,
-      path: fullName
-    })
-    return
+function icon (dataType) {
+  switch (dataType) {
+    case DataTypes.CLASS:
+      return 'mdi-alpha-c-circle-outline'
+    case DataTypes.ENUM:
+      return 'mdi-alpha-e-box-outline'
+    case DataTypes.EVENT:
+      return 'mdi-alpha-e-circle-outline'
+    case DataTypes.INTERFACE:
+      return 'mdi-alpha-i-circle-outline'
+    case DataTypes.STRUCT:
+      return 'mdi-alpha-s-circle-outline'
+    case DataTypes.NAMESPACE:
+      return 'mdi-code-braces'
+    default:
+      return null
   }
-
-  if (!node.label) {
-    node.label = title
-    node.path = fullName
-    node.children = []
-  }
-  for (let i = 0; i < node.children.length; i++) {
-    if (node.children[i].label === title) {
-      buildClassTree(tokens, node.children[i], fullName)
-      return
-    }
-  }
-
-  const index = fullName.indexOf(title)
-  const namespace = fullName.substring(0, index) + title
-  node.children.push({
-    label: title,
-    path: namespace,
-    children: []
-  })
-  buildClassTree(tokens, node.children[node.children.length - 1], fullName)
 }
-*/
 
 const ViewModel = {
   getTree () {
@@ -70,36 +50,28 @@ const ViewModel = {
               ns.children.push({
                 label: typeName,
                 path: type.name,
-                summary: type.summary
+                summary: type.summary,
+                icon: icon(type.dataType)
               })
             }
           })
         }
       })
-      /*
-      RhinoCommonApi.forEach(type => {
-        if (type.dataType !== DataTypes.NAMESPACE) {
-          const tokens = type.name.split('.')
-          const path = type.name
-          if (tokens[0] !== 'Rhino') return
-          tokens.splice(0, 1)
-          buildClassTree(tokens, namespaces, path)
-        }
-      })
-      */
       _viewmodel = namespaces
     }
     return _viewmodel
   },
-  setSelectedItemChangedCallback (callback) {
-    _selectedItemChangedCallback = callback
+  setSelectedItemChangedCallback (source, callback) {
+    _selectedItemChangedCallbacks[source] = callback
   },
   setSelectedItem (item) {
     const typename = item.toLowerCase()
     for (let i = 0; i < RhinoCommonApi.length; i++) {
       const node = RhinoCommonApi[i]
       if (node.name.toLowerCase() === typename) {
-        _selectedItemChangedCallback(node)
+        for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
+          callback(node)
+        }
         return
       }
     }
@@ -127,7 +99,9 @@ const ViewModel = {
         name: item,
         children: children
       }
-      _selectedItemChangedCallback(obj)
+      for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
+        callback(obj)
+      }
     }
   },
   namespaceFromItem (item) {
