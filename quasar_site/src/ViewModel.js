@@ -13,6 +13,7 @@ const ViewModel = {
           namespaces.push({
             label: type.name,
             path: type.name,
+            summary: type.summary,
             children: []
           })
         }
