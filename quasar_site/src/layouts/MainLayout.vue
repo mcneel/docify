@@ -57,11 +57,23 @@ export default {
   },
   watch: {
     selectedNode: function (newState, oldState) {
-      if (this.watcherEnabled && newState) {
-        console.log(newState)
-        this.$router.push('/' + newState)
-        ViewModel.setSelectedItem(newState)
+      if (!this.watcherEnabled) return
+
+      if (!newState) {
+        const selectItem = this.$router.currentRoute.path.substring(1)
+        if (selectItem) {
+          this.watcherEnabled = false
+          this.selectedNode = selectItem
+          this.watcherEnabled = true
+        }
+        return
       }
+
+      console.log(newState)
+      const newPath = '/' + newState
+      if (this.$router.currentRoute.path === newPath) return
+      this.$router.push(newPath)
+      ViewModel.setSelectedItem(newState)
     }
   }
 }

@@ -3,25 +3,6 @@ import { DataTypes, RhinoCommonApi } from './RhinoCommonApi'
 let _viewmodel = null
 const _selectedItemChangedCallbacks = {}
 
-function icon (dataType) {
-  switch (dataType) {
-    case DataTypes.CLASS:
-      return 'mdi-alpha-c-circle-outline'
-    case DataTypes.ENUM:
-      return 'mdi-alpha-e-box-outline'
-    case DataTypes.EVENT:
-      return 'mdi-alpha-e-circle-outline'
-    case DataTypes.INTERFACE:
-      return 'mdi-alpha-i-circle-outline'
-    case DataTypes.STRUCT:
-      return 'mdi-alpha-s-circle-outline'
-    case DataTypes.NAMESPACE:
-      return 'mdi-code-braces'
-    default:
-      return null
-  }
-}
-
 const ViewModel = {
   getTree () {
     if (!_viewmodel) {
@@ -51,7 +32,7 @@ const ViewModel = {
                 label: typeName,
                 path: type.name,
                 summary: type.summary,
-                icon: icon(type.dataType)
+                icon: this.icon(type.dataType)
               })
             }
           })
@@ -75,38 +56,24 @@ const ViewModel = {
         return
       }
     }
-    // No item found. Check to see if this is a namespace
-    let tree = this.getTree()
-    const tokens = item.split('.')
-    if (tree.label.toLowerCase() === tokens[0].toLowerCase()) {
-      for (let i = 1; i < tokens.length; i++) {
-        let found = false
-        for (let j = 0; j < tree.children.length; j++) {
-          if (tree.children[j].label.toLowerCase() === tokens[i].toLowerCase()) {
-            tree = tree.children[j]
-            found = true
-            break
-          }
-        }
-        if (!found) return
-      }
-      const children = []
-      for (let i = 0; i < tree.children.length; i++) {
-        children.push(tree.children[i].label)
-      }
-      const obj = {
-        isNamespace: true,
-        name: item,
-        children: children
-      }
-      for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
-        callback(obj)
-      }
-    }
   },
-  namespaceFromItem (item) {
-    const index = item.name.lastIndexOf('.')
-    return item.name.substring(0, index)
+  icon (dataType) {
+    switch (dataType) {
+      case DataTypes.CLASS:
+        return 'mdi-alpha-c-circle-outline'
+      case DataTypes.ENUM:
+        return 'mdi-alpha-e-box-outline'
+      case DataTypes.EVENT:
+        return 'mdi-alpha-e-circle-outline'
+      case DataTypes.INTERFACE:
+        return 'mdi-alpha-i-circle-outline'
+      case DataTypes.STRUCT:
+        return 'mdi-alpha-s-circle-outline'
+      case DataTypes.NAMESPACE:
+        return 'mdi-code-braces'
+      default:
+        return null
+    }
   }
 }
 
