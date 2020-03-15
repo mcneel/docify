@@ -13,13 +13,15 @@
       bordered
       content-class="bg-grey-3"
     >
-      <q-tree
+      <q-scroll-area class="fit">
+        <q-tree
         :nodes="api"
         node-key="path"
         selected-color="accent"
         :selected.sync="selectedNode"
-        :expanded.sync="expandedNode"
-      />
+        :duration="200"
+        />
+      </q-scroll-area>
     </q-drawer>
 
     <q-page-container>
@@ -37,13 +39,13 @@ export default {
     const vm = ViewModel.getTree()
     return {
       leftDrawerOpen: false,
-      api: [vm],
-      selectedNode: [],
-      expandedNode: ['Rhino']
+      api: vm,
+      selectedNode: []
     }
   },
   watch: {
     selectedNode: function (newState, oldState) {
+      console.log(newState)
       this.$router.push('/' + newState)
       ViewModel.setSelectedItem(newState)
     }

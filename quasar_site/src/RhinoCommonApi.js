@@ -4,9 +4,185 @@ const DataTypes = {
   CLASS: 1,
   STRUCT: 2,
   ENUM: 3,
-  INTERFACE: 4
+  INTERFACE: 4,
+  NAMESPACE: 5
 }
 var RhinoCommonApi = [
+  {
+    name: 'Rhino.Runtime',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Runtime.InProcess',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.FileIO',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.NodeInCode',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Runtime.Notifications',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.DocObjects',
+    dataType: 5,
+    summary: `The DocObjects namespace contains types that correspond to geometry
+   that is found in a document.
+   Generally, these types reference an attribute and have a
+   distinctive ID.`
+  },
+  {
+    name: 'Rhino.Render',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Display',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Geometry',
+    dataType: 5,
+    summary: `The Geometry namespace contains geometric types used in Rhino.
+   Examples are lines, curves, meshes and boundary representations.`
+  },
+  {
+    name: 'Rhino.Collections',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Runtime.InteropWrappers',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Geometry.Collections',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino',
+    dataType: 5,
+    summary: `The Rhino namespace contains fundamental types that
+   define commonly-used value types and classes used in Rhino.`
+  },
+  {
+    name: 'Rhino.Geometry.Intersect',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Input',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.DocObjects.Custom',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Geometry.Morphs',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Geometry.MeshRefinements',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Render.ChangeQueue',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Render.UI',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Render.Fields',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Render.DataSources',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.UI.Controls',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.UI.Controls.ThumbnailUI',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.UI.Controls.Thumbnaillist',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.ApplicationSettings',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.UI',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.DocObjects.Tables',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Commands',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.Input.Custom',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.UI.Gumball',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.PlugIns',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'Rhino.DocObjects.SnapShots',
+    dataType: 5,
+    summary: ''
+  },
+  {
+    name: 'RhinoMobile.Display',
+    dataType: 5,
+    summary: ''
+  },
   {
     name: 'Rhino.AntialiasLevel',
     dataType: 3,

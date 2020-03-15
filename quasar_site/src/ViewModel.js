@@ -1,8 +1,9 @@
-import { RhinoCommonApi } from './RhinoCommonApi'
+import { DataTypes, RhinoCommonApi } from './RhinoCommonApi'
 
 let _viewmodel = null
 let _selectedItemChangedCallback = null
 
+/*
 function buildClassTree (tokens, node, fullName) {
   if (!tokens || tokens.length < 1) return
   const title = tokens.splice(0, 1)[0]
@@ -39,23 +40,53 @@ function buildClassTree (tokens, node, fullName) {
   })
   buildClassTree(tokens, node.children[node.children.length - 1], fullName)
 }
+*/
 
 const ViewModel = {
   getTree () {
     if (!_viewmodel) {
       // console.log('creating viewodel')
-      const namespaces = {
-        label: 'Rhino',
-        path: 'Rhino',
-        children: []
-      }
+      const namespaces = []
       RhinoCommonApi.forEach(type => {
-        const tokens = type.name.split('.')
-        const path = type.name
-        if (tokens[0] !== 'Rhino') return
-        tokens.splice(0, 1)
-        buildClassTree(tokens, namespaces, path)
+        if (type.dataType === DataTypes.NAMESPACE) {
+          namespaces.push({
+            label: type.name,
+            path: type.name,
+            children: []
+          })
+        }
       })
+      namespaces.sort(function (a, b) {
+        return a.label.localeCompare(b.label)
+      })
+
+      RhinoCommonApi.forEach(type => {
+        if (type.dataType !== DataTypes.NAMESPACE) {
+          const index = type.name.lastIndexOf('.')
+          const testNamespace = type.name.substring(0, index)
+          namespaces.forEach(ns => {
+            if (ns.label === testNamespace) {
+              const typeName = type.name.substring(index + 1)
+              ns.children.push({
+                label: typeName,
+                path: type.name,
+                summary: type.summary
+              })
+            }
+          })
+        }
+      })
+      /*
+      RhinoCommonApi.forEach(type => {
+        if (type.dataType !== DataTypes.NAMESPACE) {
+          const tokens = type.name.split('.')
+          const path = type.name
+          if (tokens[0] !== 'Rhino') return
+          tokens.splice(0, 1)
+          buildClassTree(tokens, namespaces, path)
+        }
+      })
+      */
       _viewmodel = namespaces
     }
     return _viewmodel

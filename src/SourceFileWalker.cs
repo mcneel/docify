@@ -7,20 +7,28 @@ namespace api_docify
 {
     class SourceFileWalker : Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker
     {
-        public static (List<ParsedType>, List<ParsedMember>) ParseSource(string code)
+        public static (List<ParsedType>, List<ParsedMember>, List<ParsedType>) ParseSource(string code)
         {
             var options = new Microsoft.CodeAnalysis.CSharp.CSharpParseOptions().WithPreprocessorSymbols("RHINO_SDK").WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode.Parse);
             var tree = Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(code, options);
             SourceFileWalker sfw = new SourceFileWalker();
             sfw.Visit(tree.GetRoot());
-            return (sfw._parsedBaseTypes, sfw._parsedMembers);
+            return (sfw._parsedBaseTypes, sfw._parsedMembers, sfw._parsedNamespaces);
         }
 
         List<ParsedMember> _parsedMembers = new List<ParsedMember>();
         List<ParsedType> _parsedBaseTypes = new List<ParsedType>();
+        List<ParsedType> _parsedNamespaces = new List<ParsedType>();
 
         private SourceFileWalker() : base(Microsoft.CodeAnalysis.SyntaxWalkerDepth.StructuredTrivia)
         {
+        }
+
+        public override void VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
+        {
+            var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
+            _parsedNamespaces.Add(new ParsedType(node, docComment));
+            base.VisitNamespaceDeclaration(node);
         }
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)

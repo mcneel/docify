@@ -12,11 +12,12 @@ namespace api_docify
 
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
+            Dictionary<string, ParsedType> allNamespaces = new Dictionary<string, ParsedType>();
             foreach (var sourceFile in AllSourceFiles(rhinocommonDirectory))
             {
                 //Console.WriteLine($"parse: {sourceFile}");
                 string text = System.IO.File.ReadAllText(sourceFile);
-                var (containers, parsedItems) = SourceFileWalker.ParseSource(text);
+                var (containers, parsedItems, namespaceDefinitions) = SourceFileWalker.ParseSource(text);
                 foreach (var container in containers)
                 {
                     string containerName = container.FullName;
@@ -33,6 +34,15 @@ namespace api_docify
                     if (!allMembers.ContainsKey(className))
                         allMembers[className] = new List<ParsedMember>();
                     allMembers[className].Add(parsedItem);
+                }
+
+                foreach (var ns in namespaceDefinitions)
+                {
+                    string namespaceName = ns.FullName;
+                    if (allNamespaces.ContainsKey(namespaceName))
+                        allNamespaces[namespaceName].Merge(ns);
+                    else
+                        allNamespaces[namespaceName] = ns;
                 }
             }
 
@@ -58,23 +68,33 @@ namespace api_docify
                 System.Threading.Tasks.Parallel.ForEach(items, (item) => { item.ParentType = type; });
             }
 
-            Dictionary<string, List<ParsedType>> namespaces = new Dictionary<string, List<ParsedType>>();
+            foreach (var kv in allTypes)
+            {
+                var item = kv.Value;
+                if( item.Name.Equals("NamespaceDoc"))
+                {
+                    string ns = item.Namespace;
+                    allNamespaces[ns].Merge(item);
+                }
+            }
+
+            var publicTypesByNamespace = new Dictionary<string, List<ParsedType>>();
             foreach (var kv in allTypes)
             {
                 var basetype = kv.Value;
                 if (!basetype.IsPublic)
                     continue;
                 string ns = basetype.Namespace;
-                if (!namespaces.ContainsKey(ns))
-                    namespaces[ns] = new List<ParsedType>();
-                namespaces[ns].Add(basetype);
+                if (!publicTypesByNamespace.ContainsKey(ns))
+                    publicTypesByNamespace[ns] = new List<ParsedType>();
+                publicTypesByNamespace[ns].Add(basetype);
             }
 
             //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
             const string jsonOutput = "../../../quasar_site/src/RhinoCommonApi.js";
-            JsonBuilder.Write(allTypes, jsonOutput);
+            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, jsonOutput);
         }
 
         static IEnumerable<string> AllSourceFiles(string sourcePath)

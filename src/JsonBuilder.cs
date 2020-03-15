@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace api_docify
 {
     class JsonBuilder
     {
-        public static void Write(Dictionary<string, ParsedType> types, string path)
+        public static void Write(
+            Dictionary<string, ParsedType> namespaces,
+            Dictionary<string, List<ParsedType>> publicTypes,
+            string path)
         {
             StringBuilder content = new StringBuilder();
 
@@ -17,14 +21,35 @@ const DataTypes = {
   CLASS: 1,
   STRUCT: 2,
   ENUM: 3,
-  INTERFACE: 4
+  INTERFACE: 4,
+  NAMESPACE: 5
 }
 ");
             content.AppendLine("var RhinoCommonApi = [");
-
-            List<ParsedType> sortedTypes = new List<ParsedType>(types.Values);
-            sortedTypes.Sort((a, b) => { return a.FullName.CompareTo(b.FullName); });
             bool objectWritten = false;
+
+            // write all namespaces first along with their docs
+            foreach (var kv in publicTypes)
+            {
+                string namespaceName = kv.Key;
+                if (!namespaces.ContainsKey(namespaceName))
+                    continue; // TODO: figure out these cases
+                var nsDefinition = namespaces[kv.Key];
+                string jsonType = WriteTypeAsObject(nsDefinition);
+                if (string.IsNullOrEmpty(jsonType))
+                    continue;
+                if (objectWritten)
+                    content.AppendLine(",");
+                content.Append(jsonType);
+                objectWritten = true;
+            }
+
+            List<ParsedType> sortedTypes = new List<ParsedType>();
+            foreach(var kv in publicTypes)
+            {
+                sortedTypes.AddRange(kv.Value);
+            }
+            sortedTypes.Sort((a, b) => { return a.FullName.CompareTo(b.FullName); });
             for( int i=0; i<sortedTypes.Count; i++ )
             {
                 string jsonType = WriteTypeAsObject(sortedTypes[i]);
@@ -61,46 +86,53 @@ const DataTypes = {
             sb.AppendLine($"    name: '{type.FullName}',");
             sb.AppendLine($"    dataType: {(int)(type.DataType)},");
             sb.Append($"    summary: {JsonQuote(type.Summary())}");
-            string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
-            string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
-            string properties = MembersAsJsonArray(type, ParsedMemberType.Property);
-            string methods = MembersAsJsonArray(type, ParsedMemberType.Method);
-            string events = MembersAsJsonArray(type, ParsedMemberType.Event);
-            if (values != null || constructors != null || properties != null || methods != null || events != null)
-                sb.AppendLine(",");
-            else
+            if (type.DataType == ParsedDataType.Namespace)
+            {
                 sb.AppendLine();
+            }
+            else
+            {
+                string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
+                string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
+                string properties = MembersAsJsonArray(type, ParsedMemberType.Property);
+                string methods = MembersAsJsonArray(type, ParsedMemberType.Method);
+                string events = MembersAsJsonArray(type, ParsedMemberType.Event);
+                if (values != null || constructors != null || properties != null || methods != null || events != null)
+                    sb.AppendLine(",");
+                else
+                    sb.AppendLine();
 
-            if (!string.IsNullOrWhiteSpace(values))
-            {
-                sb.AppendLine($"    values: {values}");
+                if (!string.IsNullOrWhiteSpace(values))
+                {
+                    sb.AppendLine($"    values: {values}");
+                }
+                if (!string.IsNullOrWhiteSpace(constructors))
+                {
+                    sb.Append($"    constructors: {constructors}");
+                    if (properties != null || methods != null || events != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(properties))
+                {
+                    sb.Append($"    properties: {properties}");
+                    if (methods != null || events != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(methods))
+                {
+                    sb.Append($"    methods: {methods}");
+                    if (events != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(events))
+                    sb.AppendLine($"    events: {events}");
             }
-            if (!string.IsNullOrWhiteSpace(constructors))
-            {
-                sb.Append($"    constructors: {constructors}");
-                if (properties != null || methods != null || events != null)
-                    sb.AppendLine(",");
-                else
-                    sb.AppendLine();
-            }
-            if (!string.IsNullOrWhiteSpace(properties))
-            {
-                sb.Append($"    properties: {properties}");
-                if (methods != null || events != null)
-                    sb.AppendLine(",");
-                else
-                    sb.AppendLine();
-            }
-            if (!string.IsNullOrWhiteSpace(methods))
-            {
-                sb.Append($"    methods: {methods}");
-                if (events != null)
-                    sb.AppendLine(",");
-                else
-                    sb.AppendLine();
-            }
-            if (!string.IsNullOrWhiteSpace(events))
-                sb.AppendLine($"    events: {events}");
             sb.Append("  }");
             return sb.ToString();
         }
@@ -109,10 +141,6 @@ const DataTypes = {
         {
             if (type.Members == null)
                 return null;
-            if( filter == ParsedMemberType.EnumValue )
-            {
-                filter = filter;
-            }
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("[");
             bool memberAdded = false;

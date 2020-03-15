@@ -11,7 +11,8 @@ namespace api_docify
         Class = 1,
         Struct = 2,
         Enum = 3,
-        Interface = 4
+        Interface = 4,
+        Namespace = 5
     }
 
     /// <summary>
@@ -20,15 +21,22 @@ namespace api_docify
     class ParsedType : XmlDocumentedItem
     {
         BaseTypeDeclarationSyntax _declarationType;
+        NamespaceDeclarationSyntax _namespaceType;
         List<ParsedMember> _members;
         public ParsedType(BaseTypeDeclarationSyntax type, DocumentationCommentTriviaSyntax documentation) : base(documentation)
         {
             _declarationType = type;
         }
 
+        public ParsedType(NamespaceDeclarationSyntax node, DocumentationCommentTriviaSyntax documentation) : base(documentation)
+        {
+            _namespaceType = node;
+        }
+
+
         public void Merge(ParsedType other)
         {
-            if (!FullName.Equals(other.FullName))
+            if (!FullName.Equals(other.FullName) && !other.Name.Equals("NamespaceDoc"))
                 throw new Exception("Invalid Merge");
             if( other.Documentation!= null )
             {
@@ -43,6 +51,8 @@ namespace api_docify
         {
             get
             {
+                if (_namespaceType != null)
+                    return ParsedDataType.Namespace;
                 if (_declarationType is ClassDeclarationSyntax)
                     return ParsedDataType.Class;
                 if (_declarationType is StructDeclarationSyntax)
@@ -60,6 +70,8 @@ namespace api_docify
         {
             get
             {
+                if (_namespaceType != null)
+                    return _namespaceType.Name.ToString();
                 return GetFullContainerName(_declarationType);
             }
         }
@@ -106,7 +118,8 @@ namespace api_docify
         {
             get
             {
-                return _declarationType.IsPublic();
+                // all namespaces are "public"
+                return _namespaceType!= null || _declarationType.IsPublic();
             }
         }
 
