@@ -4,12 +4,12 @@
     <p>{{vm.summary}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
-      <a v-if="item.link" :href="'/#/'+item.link" @click="setSelectedItem(item.link)">{{item.name}}</a>
+      <a v-if="item.link" :href="'#/'+item.link" @click="setSelectedItem(item.link)">{{item.name}}</a>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
-    <p v-if="namespace"><i>Namespace: <a :href="'/#/'+namespace" @click="setSelectedItem(namespace)">{{namespace}}</a></i></p>
+    <p v-if="namespace"><i>Namespace: <a :href="'#/'+namespace" @click="setSelectedItem(namespace)">{{namespace}}</a></i></p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
