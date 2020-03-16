@@ -84,6 +84,33 @@ namespace api_docify
             }
         }
 
+        public bool PropertyType(out bool get, out bool set)
+        {
+            get = false;
+            set = false;
+            PropertyDeclarationSyntax property = Member as PropertyDeclarationSyntax;
+            if (property != null)
+            {
+                if (property.AccessorList == null)
+                {
+                    get = true;
+                }
+                else
+                {
+                    for (int i = 0; i < property.AccessorList.Accessors.Count; i++)
+                    {
+                        var accessor = property.AccessorList.Accessors[i].Keyword.Text;
+                        if (accessor.Equals("get"))
+                            get = true;
+                        if (accessor.Equals("set"))
+                            set = true;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
         public string Signature(bool forSorting)
         {
             string prefix = forSorting ? ClassPath + "." : "";

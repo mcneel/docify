@@ -113,7 +113,7 @@ const DataTypes = {
                     int firstInterfaceIndex = -1;
                     for (int i=0; i<baseList.Length; i++)
                     {
-                        // guessing based on .Net naming conventions. I'm sure
+                        // TODO: guessing based on .Net naming conventions. I'm sure
                         // this can be improved
                         if(baseList[i].StartsWith("I") && char.IsUpper(baseList[i][1]))
                         {
@@ -210,7 +210,7 @@ const DataTypes = {
                 if (!string.IsNullOrWhiteSpace(since) && double.TryParse(since, out double sinceValue))
                 {
                     sb.AppendLine(",");
-                    sb.Append($"        since: {since}");
+                    sb.Append($"        since: {sinceValue}");
                 }
 
                 if (member.MemberType == ParsedMemberType.Method)
@@ -220,6 +220,24 @@ const DataTypes = {
                     {
                         sb.AppendLine(",");
                         sb.Append($"        returns: {JsonQuote(returns)}");
+                    }
+                }
+
+                if (member.MemberType == ParsedMemberType.Property)
+                {
+                    bool get, set;
+                    if( member.PropertyType(out get, out set))
+                    {
+                        sb.AppendLine(",");
+                        string s = get ? "['get'" : "[";
+                        if( set )
+                        {
+                            if (get)
+                                s += ", ";
+                            s += "'set'";
+                        }
+                        s += "]";
+                        sb.Append($"        property: {s}");
                     }
                 }
                 sb.AppendLine();

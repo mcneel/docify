@@ -23,7 +23,7 @@
       >
         <q-item v-for="member in section.items" :key="member.signature">
           <q-item-section>
-            <q-item-label>{{member.signature}}</q-item-label>
+            <q-item-label>{{signature(member)}}</q-item-label>
             <q-item-label caption>
               <q-badge v-if="member.since" outline color="secondary">{{member.since.toFixed(1)}}
                 <q-tooltip>Available since {{member.since.toFixed(1)}}</q-tooltip>
@@ -68,6 +68,18 @@ export default {
     }
   },
   methods: {
+    signature (member) {
+      if (member.property) {
+        let s = member.signature + ' {'
+        for (let i = 0; i < member.property.length; i++) {
+          if (i > 0) s += '|'
+          s += member.property[i]
+        }
+        s += '}'
+        return s
+      }
+      return member.signature
+    },
     setSelectedItem (name) {
       this.$router.push('/' + name)
       ViewModel.setSelectedItem(name)
