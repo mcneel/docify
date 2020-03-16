@@ -1,8 +1,15 @@
 <template>
   <q-page>
-    <h4>{{title}}</h4>
-    <i v-if="namespace">Namespace: <a href="#" @click="setSelectedItem(namespace)">{{namespace}}</a></i>
+    <h1>{{title}}</h1>
     <p>{{vm.summary}}</p>
+    <i v-for="(item, index) in inheritence" :key="item.name">
+      <i v-if="index===0">Inheritence: </i>
+      <a v-if="item.link" :href="'/#/'+item.link" @click="setSelectedItem(item.link)">{{item.name}}</a>
+      <i v-else>{{item.name}}</i>
+      <q-icon name="arrow_forward"/>
+      <i v-if="index===(inheritence.length-1)">{{title}}</i>
+    </i>
+    <p v-if="namespace"><i>Namespace: <a :href="'/#/'+namespace" @click="setSelectedItem(namespace)">{{namespace}}</a></i></p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
@@ -48,7 +55,8 @@ export default {
       title: '',
       namespace: '',
       memberSections: [],
-      namespaceItems: null
+      namespaceItems: null,
+      inheritence: []
     }
   },
   created () {
@@ -79,6 +87,7 @@ export default {
             break
           }
         }
+        this.inheritence = []
       } else {
         const index = item.name.lastIndexOf('.')
         this.title = item.name.substring(index + 1)
@@ -120,6 +129,7 @@ export default {
             expanded: true
           })
         }
+        this.inheritence = ViewModel.getInheritence(item)
       }
     }
   }

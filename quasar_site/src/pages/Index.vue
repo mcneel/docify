@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <h4>RhinoCommon Namespaces</h4>
+    <h1>Namespaces</h1>
       <q-item clickable v-for="item in vm" :key="item.label" @click="setSelectedItem(item.path)">
         <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
         <q-item-section>

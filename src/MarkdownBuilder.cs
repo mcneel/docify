@@ -85,9 +85,17 @@ namespace api_docify
                         content.AppendLine(attributes[i]);
 
                     content.Append($"public class {basetype.Name}");
-                    string baseList = basetype.GetBaseList();
-                    if (!string.IsNullOrWhiteSpace(baseList))
-                        content.Append(" " + baseList);
+                    string[] baseList = basetype.GetBaseList(null);
+                    if( baseList != null )
+                    {
+                        for( int i=0; i<baseList.Length; i++)
+                        {
+                            if (i == 0)
+                                content.Append($": {baseList[i]}");
+                            else
+                                content.Append($", {baseList[i]}");
+                        }
+                    }
                     content.AppendLine();
                     content.AppendLine("```");
                 }

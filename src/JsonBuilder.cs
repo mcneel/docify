@@ -35,7 +35,7 @@ const DataTypes = {
                 if (!namespaces.ContainsKey(namespaceName))
                     continue; // TODO: figure out these cases
                 var nsDefinition = namespaces[kv.Key];
-                string jsonType = WriteTypeAsObject(nsDefinition);
+                string jsonType = WriteTypeAsObject(nsDefinition, null);
                 if (string.IsNullOrEmpty(jsonType))
                     continue;
                 if (objectWritten)
@@ -50,9 +50,17 @@ const DataTypes = {
                 sortedTypes.AddRange(kv.Value);
             }
             sortedTypes.Sort((a, b) => { return a.FullName.CompareTo(b.FullName); });
+            var typesByNameDictionary = new Dictionary<string, ParsedType>();
+            foreach(var type in sortedTypes)
+            {
+                string name = type.Name;
+                if( !name.Equals("EventArgs"))
+                    typesByNameDictionary[name] = type;
+            }
+
             for( int i=0; i<sortedTypes.Count; i++ )
             {
-                string jsonType = WriteTypeAsObject(sortedTypes[i]);
+                string jsonType = WriteTypeAsObject(sortedTypes[i], typesByNameDictionary);
                 if (string.IsNullOrEmpty(jsonType))
                     continue;
                 if (objectWritten)
@@ -77,21 +85,61 @@ const DataTypes = {
             return "'" + s + "'";
         }
 
-        static string WriteTypeAsObject(ParsedType type)
+        static string WriteTypeAsObject(ParsedType type, Dictionary<string, ParsedType> allPublicTypesByShortName)
         {
             if (!type.IsPublic)
                 return null;
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("  {");
             sb.AppendLine($"    name: '{type.FullName}',");
-            sb.AppendLine($"    dataType: {(int)(type.DataType)},");
-            sb.Append($"    summary: {JsonQuote(type.Summary())}");
+            sb.Append($"    dataType: {(int)(type.DataType)}");
+            string summary = type.Summary();
+            if( !string.IsNullOrWhiteSpace(summary) )
+            {
+                sb.AppendLine(",");
+                sb.Append($"    summary: {JsonQuote(summary)}");
+            }
+
             if (type.DataType == ParsedDataType.Namespace)
             {
                 sb.AppendLine();
             }
             else
             {
+                string[] baseList = type.IsClass ? type.GetBaseList(allPublicTypesByShortName) : null;
+                if (baseList != null && baseList.Length > 0)
+                {
+                    sb.AppendLine(",");
+                    int firstInterfaceIndex = -1;
+                    for (int i=0; i<baseList.Length; i++)
+                    {
+                        // guessing based on .Net naming conventions. I'm sure
+                        // this can be improved
+                        if(baseList[i].StartsWith("I") && char.IsUpper(baseList[i][1]))
+                        {
+                            firstInterfaceIndex = i;
+                            break;
+                        }
+                    }
+                    if(firstInterfaceIndex!=0)
+                    {
+                        sb.Append($"    baseclass: {JsonQuote(baseList[0])}");
+                    }
+                    if(firstInterfaceIndex>-1)
+                    {
+                        if( firstInterfaceIndex>0)
+                            sb.AppendLine(",");
+                        sb.Append("    interfaces: [");
+                        for (int i = firstInterfaceIndex; i < baseList.Length; i++)
+                        {
+                            if (i > firstInterfaceIndex)
+                                sb.Append(", ");
+                            sb.Append(JsonQuote(baseList[i]));
+                        }
+                        sb.Append("]");
+                    }
+                }
+
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
                 string properties = MembersAsJsonArray(type, ParsedMemberType.Property);

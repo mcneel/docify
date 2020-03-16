@@ -10,28 +10,23 @@ const DataTypes = {
 var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Runtime.InProcess',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.FileIO',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.NodeInCode',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Runtime.Notifications',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.DocObjects',
@@ -43,13 +38,11 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.Render',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Display',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Geometry',
@@ -59,18 +52,15 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.Collections',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Runtime.InteropWrappers',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Geometry.Collections',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino',
@@ -80,108 +70,87 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.Geometry.Intersect',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Input',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.DocObjects.Custom',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Geometry.Morphs',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Geometry.MeshRefinements',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Render.ChangeQueue',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Render.UI',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Render.Fields',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Render.DataSources',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.UI.Controls',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.UI.Controls.Thumbnaillist',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.ApplicationSettings',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.UI',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.DocObjects.Tables',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Commands',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.Input.Custom',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.UI.Gumball',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.PlugIns',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.DocObjects.SnapShots',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'RhinoMobile.Display',
-    dataType: 5,
-    summary: ''
+    dataType: 5
   },
   {
     name: 'Rhino.AntialiasLevel',
@@ -978,7 +947,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.DraftAngleAnalysisSettings',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static Interval AngleRange',
@@ -3206,6 +3174,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a dictionary class that can be attached to objects and
    can be serialized (saved) at necessity.See remarks for layout.`,
+    interfaces: ['ICloneable', 'IDictionary<string, object>', 'ISerializable'],
     constructors: [
       {
         signature: 'ArchivableDictionary()',
@@ -3806,6 +3775,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Collections.CurveList',
     dataType: 1,
     summary: 'Represents a list of curves.',
+    baseclass: 'RhinoList<Curve>',
     constructors: [
       {
         signature: 'CurveList()',
@@ -3893,6 +3863,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Collections.Point3dList',
     dataType: 1,
     summary: 'Represents a list of .',
+    baseclass: 'RhinoList<Point3d>',
+    interfaces: ['ICloneable'],
     constructors: [
       {
         signature: 'Point3dList()',
@@ -4009,6 +3981,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Collections.RhinoList',
     dataType: 1,
     summary: 'Provides helper methods to work with  and other collections.',
+    interfaces: ['IList<T>', 'IList', 'ICloneable'],
     constructors: [
       {
         signature: 'RhinoList()',
@@ -4399,6 +4372,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Collections.TransformObjectList',
     dataType: 1,
     summary: 'Used by the TransformCommand and GetTransform classes.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'TransformObjectList()',
@@ -4613,7 +4587,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Commands.CommandEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'string CommandEnglishName',
@@ -4656,6 +4630,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Commands.CommandStyleAttribute',
     dataType: 1,
     summary: 'Decorates commands to provide styles.',
+    baseclass: 'Attribute',
     constructors: [
       {
         signature: 'CommandStyleAttribute(Style styles)',
@@ -4675,6 +4650,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Commands.CustomUndoEventArgs',
     dataType: 1,
     summary: 'Argument package that is passed to a custom undo delegate',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'string ActionDescription',
@@ -4777,6 +4753,7 @@ var RhinoCommonApi = [
     summary: `For adding nestable selection commands that work like the native Rhino
    SelCrv command, derive your command from SelCommand and override the
    virtual SelFilter function.`,
+    baseclass: 'Rhino.Commands.Command',
     properties: [
       {
         signature: 'bool BeQuiet',
@@ -4834,12 +4811,12 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Commands.TransformCommand',
     dataType: 1,
-    summary: ''
+    baseclass: 'Rhino.Commands.Command'
   },
   {
     name: 'Rhino.Commands.UndoRedoEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'Guid CommandId',
@@ -4956,7 +4933,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.CalculateBoundingBoxEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Display.DrawEventArgs',
     properties: [
       {
         signature: 'BoundingBox BoundingBox',
@@ -5155,7 +5132,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ColorGradient',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'Point3d EndPoint',
@@ -5630,7 +5606,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.CullFaceMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'DrawFrontAndBack = 0'
@@ -5646,7 +5621,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.CullObjectEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Display.DrawEventArgs',
     properties: [
       {
         signature: 'bool CullObject',
@@ -5667,6 +5642,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Display.CustomDisplay',
     dataType: 1,
     summary: 'Provides some basic (indeed, very basic) mechanisms for drawing custom geometry in viewports.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'CustomDisplay(bool enable)',
@@ -5878,7 +5854,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DepthMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Neutral = 0'
@@ -5898,6 +5873,7 @@ var RhinoCommonApi = [
    in OpenGL display).  Reuse DisplayBitmaps for drawing if possible; it is
    much more expensive to construct new DisplayBitmaps than it is to reuse
    existing DisplayBitmaps.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'DisplayBitmap(Bitmap bitmap)',
@@ -5936,7 +5912,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayBitmapDrawList',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'DisplayBitmapDrawList()',
@@ -5985,7 +5960,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayConduit',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'bool Enabled',
@@ -6003,7 +5977,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayEngine',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'void Dispose()',
@@ -6015,7 +5989,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayMaterial',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'DisplayMaterial()',
@@ -6181,7 +6155,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayModeChangedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'Guid ChangedDisplayModeId',
@@ -6206,6 +6180,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Description of a how Rhino will display in a viewport. These are the modes
    that are listed under "Advanced display" in the options dialog.`,
+    interfaces: ['IDisposable', 'ISerializable'],
     properties: [
       {
         signature: 'static Guid AmbientOcclusionId',
@@ -7425,6 +7400,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Display.DisplayPipelineAttributes',
     dataType: 1,
     summary: 'Represents display pipeline settings, such as "show transparency" and "show grips".',
+    interfaces: ['IDisposable', 'ISerializable'],
     properties: [
       {
         signature: 'Color AmbientLightingColor',
@@ -7667,7 +7643,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.BoundingBoxDisplayMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.DisplayPipelineAttributesBBox.BBoxOff'
@@ -7683,7 +7658,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.ContextsForDraw',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Unset = 0'
@@ -7711,7 +7685,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.FrameBufferFillMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'DefaultColor = UnsafeNativeMethods.FrameBufferFillMode.DEFAULT_COLOR'
@@ -7739,7 +7712,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.MeshDisplayAttributes',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'Color AllMeshWiresColor',
@@ -7767,7 +7739,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.StereoRenderContextEnum',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'NotApplicable = 0'
@@ -7786,7 +7757,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DisplayPipelineAttributes.ViewDisplayAttributes',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'bool BlendGrid',
@@ -7845,7 +7815,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DrawEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'DisplayPipeline Display',
@@ -7864,7 +7834,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DrawForegroundEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Display.DrawEventArgs',
     properties: [
       {
         signature: 'bool DrawWorldAxes',
@@ -7879,7 +7849,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DrawFrameStages',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'InitializeFrameBuffer = 0x00000001'
@@ -7949,7 +7918,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.DrawObjectEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Display.DrawEventArgs',
     properties: [
       {
         signature: 'bool DrawObject',
@@ -7991,7 +7960,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.InitFrameBufferEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     methods: [
       {
         signature: 'void SetFill(Color color)',
@@ -8010,7 +7979,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.PageViewSpaceChangeEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'Guid NewActiveDetailId',
@@ -8037,6 +8006,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Display.RhinoPageView',
     dataType: 1,
     summary: 'A window that contains a single layout \'page\'',
+    baseclass: 'Rhino.Display.RhinoView',
     properties: [
       {
         signature: 'RhinoViewport ActiveViewport',
@@ -8376,6 +8346,7 @@ var RhinoCommonApi = [
     summary: `Displays geometry with a given projection. In standard modeling views there
    is a one to one relationship between RhinoView and RhinoViewports. In a page
    layout, there may be multiple RhinoViewports for a single layout.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RhinoViewport()',
@@ -9065,6 +9036,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Display.Text3d',
     dataType: 1,
     summary: '3D aligned text with font settings.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'Text3d(string text)',
@@ -9136,7 +9108,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewCapture',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'ViewCapture()',
@@ -9203,6 +9174,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Used to hold the information required to generate high resolution output
    of a RhinoViewport.  This is used for generating paper prints or image files`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ViewCaptureSettings()',
@@ -9389,7 +9361,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewCaptureSettings.AnchorLocation',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'LowerLeft = UnsafeNativeMethods.PrintInfoAnchor.LowerLeft'
@@ -9411,7 +9382,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewCaptureSettings.ColorMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'DisplayColor'
@@ -9427,7 +9397,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoView View',
@@ -9438,7 +9408,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Display.ViewportType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'StandardModelingViewport = 0'
@@ -9613,6 +9582,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Provides functionality for getting the zbuffer values from a viewport
    and a given display mode`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ZBufferCapture(RhinoViewport viewport)',
@@ -9725,6 +9695,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.AngularDimensionObject',
     dataType: 1,
     summary: 'Rhino Object that represents an angular dimension geometry and attributes',
+    baseclass: 'Rhino.DocObjects.DimensionObject',
     properties: [
       {
         signature: 'AngularDimension AngularDimensionGeometry',
@@ -9738,6 +9709,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Contains information used by the Animation Tools to create sun, season,
    turntable and fly through animations.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'AnimationProperties()',
@@ -9966,6 +9938,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.AnnotationObjectBase',
     dataType: 1,
     summary: 'Base class for all annotation objects (text and dimensions)',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'AnnotationBase AnnotationGeometry',
@@ -10009,6 +9982,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.BitmapEntry',
     dataType: 1,
     summary: 'Rhino.DocObjects.Tables.BitmapTable entry',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -10038,6 +10012,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.BrepObject',
     dataType: 1,
     summary: 'Represents a brep in a document.',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Brep BrepGeometry',
@@ -10058,6 +10033,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.CentermarkObject',
     dataType: 1,
     summary: 'Rhino Object that represents a centermark geometry and attributes',
+    baseclass: 'Rhino.DocObjects.DimensionObject',
     properties: [
       {
         signature: 'Centermark CentermarkGeometry',
@@ -10071,6 +10047,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents the object of a clipping plane,
    stored in the Rhino document and with attributes.`,
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'ClippingPlaneSurface ClippingPlaneGeometry',
@@ -10215,6 +10192,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.CurveObject',
     dataType: 1,
     summary: 'A Rhino Object that represents curve geometry and attributes',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Curve CurveGeometry',
@@ -10232,6 +10210,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Custom.ClassIdAttribute',
     dataType: 1,
     summary: 'Useful for legacy UserData',
+    baseclass: 'Attribute',
     constructors: [
       {
         signature: 'ClassIdAttribute(string id)',
@@ -10250,12 +10229,14 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.CustomBrepObject',
     dataType: 1,
-    summary: ''
+    baseclass: 'Rhino.DocObjects.BrepObject',
+    interfaces: ['IDisposable']
   },
   {
     name: 'Rhino.DocObjects.Custom.CustomCurveObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.CurveObject',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'void Dispose()',
@@ -10266,7 +10247,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.CustomGripObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.GripObject',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'CustomGripObject()',
@@ -10301,7 +10283,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.CustomMeshObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.MeshObject',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'void Dispose()',
@@ -10312,7 +10295,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.CustomObjectGrips',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'int GripCount',
@@ -10361,7 +10344,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.CustomPointObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.PointObject',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'void Dispose()',
@@ -10372,7 +10356,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.GripsDrawEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Display.DrawEventArgs',
     properties: [
       {
         signature: 'int ControlPolygonStyle',
@@ -10441,7 +10425,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.GripStatus',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'bool Culled',
@@ -10457,6 +10440,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Custom.UnknownUserData',
     dataType: 1,
     summary: 'Represents user data with unknown origin.',
+    baseclass: 'Rhino.DocObjects.Custom.UserData',
     constructors: [
       {
         signature: 'UnknownUserData(IntPtr pointerNativeUserData)',
@@ -10470,6 +10454,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Provides a base class for custom classes of information which may be attached to
    geometry or attribute classes.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'string Description',
@@ -10530,6 +10515,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Custom.UserDataList',
     dataType: 1,
     summary: 'Represents a collection of user data.',
+    interfaces: ['IEnumerable<UserData>'],
     properties: [
       {
         signature: 'int Count',
@@ -10579,6 +10565,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Custom.UserDataListEnumerator',
     dataType: 1,
     summary: 'Enumerator for UserDataList',
+    interfaces: ['IEnumerator<UserData>'],
     constructors: [
       {
         signature: 'UserDataListEnumerator(UserDataList udl)',
@@ -10616,6 +10603,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Custom.UserDictionary',
     dataType: 1,
     summary: 'Defines the storage data class for a user dictionary.',
+    baseclass: 'Rhino.DocObjects.Custom.UserData',
     properties: [
       {
         signature: 'string Description',
@@ -10640,6 +10628,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `A detail view object is a nested Rhino viewport placed on a page view with a 2D closed curve
    boundary. It can be any type of modeling view.`,
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'string DescriptiveTitle',
@@ -10724,6 +10713,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.DimensionObject',
     dataType: 1,
     summary: 'Rhino Object that represents dimension geometry and attributes',
+    baseclass: 'Rhino.DocObjects.AnnotationObjectBase',
     properties: [
       {
         signature: 'DimensionStyle DimensionStyle',
@@ -10738,6 +10728,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Can also be considered an annotation style since it is used for
    more than just dimensions`,
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     constructors: [
       {
         signature: 'DimensionStyle()',
@@ -11249,6 +11240,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Contains information about the model's position in latitude, longitude,
    and elevation for GIS mapping applications.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'EarthAnchorPoint()',
@@ -11344,7 +11336,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ExtrusionObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Extrusion ExtrusionGeometry',
@@ -11497,7 +11489,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.FontQuartet',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'bool HasBoldFont',
@@ -11529,7 +11520,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.GripObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Point3d CurrentLocation',
@@ -11617,7 +11608,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Group',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -11654,7 +11645,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.HatchObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Hatch HatchGeometry',
@@ -11673,7 +11664,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.HatchPattern',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     constructors: [
       {
         signature: 'HatchPattern()',
@@ -11731,7 +11722,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.HatchPattern.Defaults',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static HatchPattern Dash',
@@ -11774,7 +11764,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.HatchPatternFillType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Solid = 0'
@@ -11791,6 +11780,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.HistoryRecord',
     dataType: 1,
     summary: 'Provides a single bundling of information to be passed to Rhino when setting up history for an object.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'HistoryRecord(Command command,int version)',
@@ -11925,6 +11915,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.InstanceDefinition',
     dataType: 1,
     summary: 'This is the same as , but in a Rhino document.',
+    baseclass: 'Rhino.Geometry.InstanceDefinitionGeometry',
     properties: [
       {
         signature: 'InstanceDefinitionArchiveFileStatus ArchiveFileStatus',
@@ -12177,7 +12168,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.InstanceObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Point3d InsertionPoint',
@@ -12212,7 +12203,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Layer',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
+    interfaces: ['IEquatable<Layer>'],
     constructors: [
       {
         signature: 'Layer()',
@@ -12604,6 +12596,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.LeaderObject',
     dataType: 1,
     summary: 'Rhino Object that represents leader geometry and attributes',
+    baseclass: 'Rhino.DocObjects.AnnotationObjectBase',
     properties: [
       {
         signature: 'Leader LeaderGeometry',
@@ -12615,7 +12608,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.LightObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -12637,6 +12630,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.LinearDimensionObject',
     dataType: 1,
     summary: 'Rhino Object that represents a linear dimension geometry and attributes',
+    baseclass: 'Rhino.DocObjects.DimensionObject',
     properties: [
       {
         signature: 'LinearDimension LinearDimensionGeometry',
@@ -12648,7 +12642,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Linetype',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     constructors: [
       {
         signature: 'Linetype()',
@@ -12750,7 +12744,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Material',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     constructors: [
       {
         signature: 'Material()',
@@ -13020,7 +13014,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.MaterialRef',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'Guid BackFaceMaterialId',
@@ -13110,6 +13104,7 @@ var RhinoCommonApi = [
     As soon as the MaterialRefs dictionary contains items rendering
     material queries slow down.  Do not populate the MaterialRefs
    dictionary when setting the MaterialIndex will take care of your needs.`,
+    interfaces: ['IDictionary<Guid, MaterialRef>'],
     properties: [
       {
         signature: 'int Count',
@@ -13204,7 +13199,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.MeshObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'bool IsCustomObject',
@@ -13235,6 +13230,7 @@ var RhinoCommonApi = [
     summary: `Base class for all components in a model (document) and manages the
    index, id and other information common to this type of objects.
    This class parallels the C++ ON_ModelComponent.`,
+    baseclass: 'Rhino.Runtime.CommonObject',
     properties: [
       {
         signature: 'ComponentStatus ComponentStatus',
@@ -13400,12 +13396,14 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.MorphControlObject',
     dataType: 1,
-    summary: 'Represents a MorphControl in a document.'
+    summary: 'Represents a MorphControl in a document.',
+    baseclass: 'Rhino.DocObjects.RhinoObject'
   },
   {
     name: 'Rhino.DocObjects.ObjectAttributes',
     dataType: 1,
     summary: 'Attributes (color, material, layer,...) associated with a rhino object',
+    baseclass: 'Rhino.Runtime.CommonObject',
     constructors: [
       {
         signature: 'ObjectAttributes()',
@@ -14149,6 +14147,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.ObjRef',
     dataType: 1,
     summary: 'Represents a reference to a Rhino object.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ObjRef(Guid id)',
@@ -14370,6 +14369,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.OrdinateDimensionObject',
     dataType: 1,
     summary: 'Rhino Object that represents an ordinate dimension geometry and attributes',
+    baseclass: 'Rhino.DocObjects.DimensionObject',
     properties: [
       {
         signature: 'OrdinateDimension OrdinateDimensionGeometry',
@@ -14381,7 +14381,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.PointCloudObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'PointCloud PointCloudGeometry',
@@ -14398,7 +14398,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.PointObject',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Point PointGeometry',
@@ -14416,6 +14416,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.ProxyObject',
     dataType: 1,
     summary: 'A proxy object (not saved in files)',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     methods: [
       {
         signature: 'int CreateMeshes(MeshType meshType,MeshingParameters parameters,bool ignoreCustomParameters)',
@@ -14431,6 +14432,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.RadialDimensionObject',
     dataType: 1,
     summary: 'Rhino Object that represents a radial dimension geometry and attributes',
+    baseclass: 'Rhino.DocObjects.DimensionObject',
     properties: [
       {
         signature: 'RadialDimension RadialDimensionGeometry',
@@ -14444,6 +14446,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Provides history information to commands that will repeat history construction.
    Generally, a developer using this class will not construct a new instance, but receive one.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -14533,7 +14536,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ReplayHistoryResult',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'RhinoObject ExistingObject',
@@ -14644,7 +14646,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.RhinoDeselectAllObjectsEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -14659,7 +14661,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.RhinoModifyObjectAttributesEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -14684,6 +14686,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents an object in the document.
    RhinoObjects should only ever be creatable by the RhinoDoc.`,
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     properties: [
       {
         signature: 'static uint NextRuntimeSerialNumber',
@@ -15318,7 +15321,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.RhinoObjectEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'Guid ObjectId',
@@ -15333,7 +15336,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.RhinoObjectSelectionEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -15354,7 +15357,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.RhinoReplaceObjectEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -15378,6 +15381,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.RhinoTransformObjectsEventArgs',
     dataType: 1,
     summary: 'EventArgs passed to RhinoDoc.BeforeTransform.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'int ObjectCount',
@@ -15426,6 +15430,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.SnapShots.SnapShotsClient',
     dataType: 1,
     summary: 'This is the abstract interface class for for all Snapshot clients.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SnapShotsClient()',
@@ -15632,12 +15637,14 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.SubDObject',
     dataType: 1,
-    summary: 'Rhino object for SubD'
+    summary: 'Rhino object for SubD',
+    baseclass: 'Rhino.DocObjects.RhinoObject'
   },
   {
     name: 'Rhino.DocObjects.SurfaceObject',
     dataType: 1,
     summary: 'Represents a surface in a document.',
+    baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
         signature: 'Surface SurfaceGeometry',
@@ -15658,6 +15665,8 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Tables.BitmapTable',
     dataType: 1,
     summary: 'Stores the list of bitmaps in a Rhino document.',
+    baseclass: 'RhinoDocCommonTable<BitmapEntry>',
+    interfaces: ['ICollection<BitmapEntry>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -15725,7 +15734,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.DimStyleTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<DimensionStyle>',
+    interfaces: ['ICollection<DimensionStyle>'],
     properties: [
       {
         signature: 'DimensionStyle[] BuiltInStyles',
@@ -15859,7 +15869,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.DimStyleTableEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -15886,7 +15896,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.DimStyleTableEventType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Added'
@@ -15916,6 +15925,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Font tables store the list of fonts in a Rhino document.
    The FontTable is now just a wrapper around the DimStyles table.`,
+    interfaces: ['IEnumerable<Font>', 'Collections.IRhinoTable<Font>'],
     properties: [
       {
         signature: 'int Count',
@@ -15958,6 +15968,8 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Tables.GroupTable',
     dataType: 1,
     summary: 'Group tables store the list of groups in a Rhino document.',
+    baseclass: 'RhinoDocCommonTable<Group>',
+    interfaces: ['ICollection<Group>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -16102,6 +16114,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Tables.GroupTableEventArgs',
     dataType: 1,
     summary: 'Contains group table event data.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -16161,6 +16174,8 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Tables.HatchPatternTable',
     dataType: 1,
     summary: 'All of the hatch pattern definitions contained in a rhino document.',
+    baseclass: 'RhinoDocCommonTable<HatchPattern>',
+    interfaces: ['ICollection<HatchPattern>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -16221,7 +16236,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.InstanceDefinitionTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<InstanceDefinition>',
     properties: [
       {
         signature: 'int ActiveCount',
@@ -16433,7 +16448,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.InstanceDefinitionTableEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -16460,7 +16475,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.InstanceDefinitionTableEventType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Added = 0'
@@ -16483,7 +16497,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LayerTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<Layer>',
+    interfaces: ['ICollection<Layer>'],
     properties: [
       {
         signature: 'int ActiveCount',
@@ -16795,7 +16810,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LayerTableEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -16822,7 +16837,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LayerTableEventType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Added = 0'
@@ -16849,7 +16863,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LightTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<LightObject>',
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -16934,7 +16948,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LightTableEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -16961,7 +16975,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LightTableEventType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Added = 0'
@@ -16984,7 +16997,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.LinetypeTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<Linetype>',
+    interfaces: ['ICollection<Linetype>'],
     properties: [
       {
         signature: 'int ActiveCount',
@@ -17181,7 +17195,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.MaterialTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<Material>',
+    interfaces: ['ICollection<Material>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -17268,7 +17283,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.MaterialTableEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -17291,7 +17306,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.MaterialTableEventType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Added = 0'
@@ -17316,7 +17330,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.ModifyType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Modify'
@@ -17334,6 +17347,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Contains all named construction planes in a rhino document.
    This class cannot be inherited.`,
+    interfaces: ['IEnumerable<ConstructionPlane>', 'Collections.IRhinoTable<ConstructionPlane>'],
     properties: [
       {
         signature: 'int Count',
@@ -17615,6 +17629,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Tables.NamedViewTable',
     dataType: 1,
     summary: 'All named views in a rhino document.',
+    interfaces: ['IEnumerable<ViewInfo>', 'Collections.IRhinoTable<ViewInfo>'],
     properties: [
       {
         signature: 'int Count',
@@ -17720,7 +17735,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.ObjectTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'RhinoDocCommonTable<RhinoObject>',
+    interfaces: ['ICollection<RhinoObject>'],
     properties: [
       {
         signature: 'BoundingBox BoundingBox',
@@ -19262,7 +19278,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.RestoreLayerProperties',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0x0',
@@ -19329,7 +19344,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.RhinoDocCommonTable',
     dataType: 1,
-    summary: '',
+    baseclass: 'CommonComponentTable<T>',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -19342,6 +19357,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Collection of document runtime data. This is a good place to
    put non-serialized, per document data.`,
+    baseclass: 'Dictionary<object, object>',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -19467,7 +19483,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Tables.ViewTable',
     dataType: 1,
-    summary: '',
+    interfaces: ['IEnumerable<RhinoView>'],
     properties: [
       {
         signature: 'RhinoView ActiveView',
@@ -19604,12 +19620,14 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.TextDotObject',
     dataType: 1,
-    summary: 'Represents a text dot that is a document.'
+    summary: 'Represents a text dot that is a document.',
+    baseclass: 'Rhino.DocObjects.RhinoObject'
   },
   {
     name: 'Rhino.DocObjects.TextObject',
     dataType: 1,
     summary: 'Rhino Object that represents text geometry and attributes',
+    baseclass: 'Rhino.DocObjects.AnnotationObjectBase',
     properties: [
       {
         signature: 'TextEntity TextGeometry',
@@ -19622,6 +19640,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.Texture',
     dataType: 1,
     summary: 'Represents a texture that is mapped on objects.',
+    baseclass: 'Rhino.Runtime.CommonObject',
     constructors: [
       {
         signature: 'Texture()',
@@ -19901,6 +19920,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents the name and orientation of a View (and named view).
    views can be thought of as cameras.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ViewInfo(RhinoViewport rhinoViewPort)',
@@ -19996,6 +20016,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocObjects.ViewportInfo',
     dataType: 1,
     summary: 'Represents a viewing frustum.',
+    baseclass: 'Rhino.Runtime.CommonObject',
     constructors: [
       {
         signature: 'ViewportInfo()',
@@ -20726,6 +20747,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocumentEventArgs',
     dataType: 1,
     summary: 'Provides document information for RhinoDoc events.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -20748,6 +20770,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocumentOpenEventArgs',
     dataType: 1,
     summary: 'Provides document information for RhinoDoc events.',
+    baseclass: 'Rhino.DocumentEventArgs',
     properties: [
       {
         signature: 'string FileName',
@@ -20771,6 +20794,7 @@ var RhinoCommonApi = [
     name: 'Rhino.DocumentSaveEventArgs',
     dataType: 1,
     summary: 'Provides document information for RhinoDoc events.',
+    baseclass: 'Rhino.DocumentEventArgs',
     properties: [
       {
         signature: 'bool ExportSelected',
@@ -20789,6 +20813,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Thrown by BinaryArchiveReader and BinaryArchiveWriter classes when
    an IO error has occured.`,
+    baseclass: 'System.IO.IOException',
     constructors: [
       {
         signature: 'BinaryArchiveException(string message)',
@@ -20800,7 +20825,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.BinaryArchiveFile',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'BinaryArchiveFile(string filename,BinaryArchiveMode mode)',
@@ -20836,7 +20861,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.BinaryArchiveMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Unknown = 0'
@@ -21625,6 +21649,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.CommonComponentTable',
     dataType: 1,
     summary: 'Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.',
+    interfaces: ['ICommonComponentTable<T>', 'IList<T>', 'IReadOnlyList<T>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -21667,6 +21692,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Contains information that is useful to uniquly identify an object.
    This object is immutable.`,
+    interfaces: ['ICloneable', 'IEquatable<ContentHash>'],
     properties: [
       {
         signature: 'ulong ByteCount',
@@ -21725,6 +21751,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.DracoCompression',
     dataType: 1,
     summary: 'Google draco compression for mesh and point cloud data',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'static DracoCompression Compress(Mesh mesh)',
@@ -21822,6 +21849,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a 3dm file, which is stored using the OpenNURBS file standard.
    The 3dm format is the main Rhinoceros storage format.Visit http://www.opennurbs.com/ for more details.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'File3dm()',
@@ -22162,7 +22190,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.File3dm.ObjectTypeFilter',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.ObjectTypeFilter.None'
@@ -22227,7 +22254,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.File3dm.TableTypeFilter',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.ReadFileTableTypeFilter.None'
@@ -22289,6 +22315,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmCommonComponentTable',
     dataType: 1,
     summary: 'Provides a base table type that is shared among all File3dm tables.',
+    baseclass: 'CommonComponentTable<T>',
+    interfaces: ['ICollection<T>'],
     methods: [
       {
         signature: 'void Add(T item)',
@@ -22315,6 +22343,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmDimStyleTable',
     dataType: 1,
     summary: 'Provides access to annotation styles in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<DimensionStyle>',
+    interfaces: ['IList<DimensionStyle>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22348,6 +22378,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmGroupTable',
     dataType: 1,
     summary: 'Provides access to groups in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<Group>',
+    interfaces: ['IList<Group>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22387,6 +22419,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmHatchPatternTable',
     dataType: 1,
     summary: 'Provides access to hatch pattern definitions in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<HatchPattern>',
+    interfaces: ['IList<HatchPattern>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22420,6 +22454,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmInstanceDefinitionTable',
     dataType: 1,
     summary: 'Provides access to instance (block) definitions in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<InstanceDefinitionGeometry>',
+    interfaces: ['IList<InstanceDefinitionGeometry>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22469,6 +22505,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmLayerTable',
     dataType: 1,
     summary: 'Provides access to layers in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<Layer>',
+    interfaces: ['IList<Layer>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22502,6 +22540,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmLinetypeTable',
     dataType: 1,
     summary: 'Provides access to Linetypes in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<Linetype>',
+    interfaces: ['IList<DocObjects.Linetype>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22535,6 +22575,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmMaterialTable',
     dataType: 1,
     summary: 'Provides access to materials in the 3dm file.',
+    baseclass: 'File3dmCommonComponentTable<Material>',
+    interfaces: ['IList<DocObjects.Material>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -22556,6 +22598,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmNamedConstructionPlanes',
     dataType: 1,
     summary: 'Provides access to namned construction planes in the 3dm file.',
+    interfaces: ['IList<ConstructionPlane>', 'Collections.IRhinoTable<ConstructionPlane>'],
     properties: [
       {
         signature: 'int Count',
@@ -22661,6 +22704,8 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmObject',
     dataType: 1,
     summary: 'Used to store geometry table object definition and attributes in a File3dm.',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
+    interfaces: ['IEquatable<File3dmObject>'],
     properties: [
       {
         signature: 'ObjectAttributes Attributes',
@@ -22707,6 +22752,8 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a simple object table for a file that is open externally.
    This class mimics Rhino.DocObjects.Tables.ObjectTable while providing external eccess to the file.`,
+    baseclass: 'File3dmCommonComponentTable<File3dmObject>',
+    interfaces: ['IEnumerable<File3dmObject>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -23182,6 +23229,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmPlugInDataTable',
     dataType: 1,
     summary: 'Table of custom data provided by plug-ins',
+    interfaces: ['IEnumerable<File3dmPlugInData>', 'Collections.IRhinoTable<File3dmPlugInData>'],
     properties: [
       {
         signature: 'int Count',
@@ -23392,6 +23440,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.File3dmViewTable',
     dataType: 1,
     summary: 'Provides access to views in the 3dm file.',
+    interfaces: ['IList<ViewInfo>', 'Collections.IRhinoTable<DocObjects.ViewInfo>'],
     properties: [
       {
         signature: 'int Count',
@@ -23615,7 +23664,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileObjWriteOptions',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'FileObjWriteOptions(FileWriteOptions writeOptions)',
@@ -23824,7 +23872,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.ObjGroupNames',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'NoGroups = 0',
@@ -23843,7 +23890,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileObjWriteOptions.ObjObjectNames',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'NoObjects = 0',
@@ -23897,22 +23943,20 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileObjWriter.ObjGroupComparer',
     dataType: 1,
-    summary: ''
+    interfaces: ['IComparer<ObjRhinoObject>']
   },
   {
     name: 'Rhino.FileIO.FileObjWriter.ObjLayerComparer',
     dataType: 1,
-    summary: ''
+    interfaces: ['IComparer<ObjRhinoObject>']
   },
   {
     name: 'Rhino.FileIO.FileObjWriter.ObjRhinoObject',
-    dataType: 1,
-    summary: ''
+    dataType: 1
   },
   {
     name: 'Rhino.FileIO.FileObjWriter.RhinoObjectMesh',
-    dataType: 1,
-    summary: ''
+    dataType: 1
   },
   {
     name: 'Rhino.FileIO.FilePdf',
@@ -23978,6 +24022,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.FilePdfEventArgs',
     dataType: 1,
     summary: 'Used for events that are fired while constructing/saving a Pdf',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'FilePdf Pdf',
@@ -24001,7 +24046,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FilePlyWriteOptions',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'FilePlyWriteOptions(FileWriteOptions writeOptions)',
@@ -24043,7 +24087,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileReadOptions',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'FileReadOptions()',
@@ -24127,6 +24171,7 @@ var RhinoCommonApi = [
     summary: `Manages a reference to an existing or nonexisting file,
    using either or both absolute or relative paths.
    Once constructed, this class is immutable.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'FileReference(string fullPath,string relativePath,ContentHash hash,FileReferenceStatus status)',
@@ -24280,7 +24325,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileType',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'FileType(string extension,string description)',
@@ -24301,7 +24345,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.FileIO.FileWriteOptions',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'FileWriteOptions()',
@@ -24411,6 +24455,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Maintains an index to every model component that is in the 3dm file.
    This is the "more comprehensive" table that contains all objects in all other tables.`,
+    interfaces: ['ICommonComponentTable<ModelComponent>'],
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -24566,6 +24611,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Contains information that is useful to uniquly identify an object name.
    This object is immutable.`,
+    interfaces: ['ICloneable', 'IEquatable<NameHash>'],
     constructors: [
       {
         signature: 'NameHash(string name)',
@@ -24669,6 +24715,7 @@ var RhinoCommonApi = [
    
    This class is provided only with the purpose of hashing. It is not meant to be
    used for any cryptographic purpose.`,
+    baseclass: 'SHA1',
     constructors: [
       {
         signature: 'SHA1OpenNURBS()',
@@ -24701,6 +24748,7 @@ var RhinoCommonApi = [
     name: 'Rhino.FileIO.TextLog',
     dataType: 1,
     summary: 'Used for collecting text data',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'TextLog()',
@@ -24780,6 +24828,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.AngularDimension',
     dataType: 1,
     summary: 'Represents a dimension of an entity that can be measured with an angle.',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'AngularDimension()',
@@ -24878,6 +24927,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Provides a common base class to all annotation geometry.
    This class refers to the geometric element that is independent from the document.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     properties: [
       {
         signature: 'LengthDisplay AlternateDimensionLengthDisplay',
@@ -25406,6 +25456,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represent arcs and circles.
    ArcCurve.IsCircle returns True if the curve is a complete circle.`,
+    baseclass: 'Rhino.Geometry.Curve',
     constructors: [
       {
         signature: 'ArcCurve()',
@@ -25483,6 +25534,7 @@ var RhinoCommonApi = [
     summary: `Contains static initialization methods and allows access to the computed
    metrics of area, area centroid and area moments in closed
    planar curves, in meshes, in surfaces, in hatches and in boundary representations.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'double Area',
@@ -25726,6 +25778,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a Bezier curve.
    Note: as an exception, the bezier curve is not derived from .`,
+    interfaces: ['IDisposable', 'ISerializable'],
     constructors: [
       {
         signature: 'BezierCurve(IEnumerable<Point2d> controlPoints)',
@@ -26368,6 +26421,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Brep',
     dataType: 1,
     summary: 'Boundary Representation. A surface or polysurface along with trim curve information.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'Brep()',
@@ -27380,6 +27434,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.BrepEdge',
     dataType: 1,
     summary: 'Represents a single edge curve in a Brep object.',
+    baseclass: 'Rhino.Geometry.CurveProxy',
     properties: [
       {
         signature: 'Brep Brep',
@@ -27483,6 +27538,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Provides strongly-typed access to brep faces.
    A Brep face is composed of one surface and trimming curves.`,
+    baseclass: 'Rhino.Geometry.SurfaceProxy',
     properties: [
       {
         signature: 'Brep Brep',
@@ -27683,6 +27739,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represent a single loop in a Brep object. A loop is composed
    of a list of trim curves.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     properties: [
       {
         signature: 'Brep Brep',
@@ -27761,6 +27818,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.BrepRegion',
     dataType: 1,
     summary: 'Represents a brep topological region that has sides.',
+    baseclass: 'Rhino.Runtime.CommonObject',
     properties: [
       {
         signature: 'BoundingBox BoundingBox',
@@ -27804,6 +27862,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.BrepRegionFaceSide',
     dataType: 1,
     summary: 'Represents a side of a  entity.',
+    baseclass: 'Rhino.Runtime.CommonObject',
     properties: [
       {
         signature: 'Brep Brep',
@@ -27859,6 +27918,7 @@ var RhinoCommonApi = [
    member functions.
    Note well that the domains and orientations of the curve m_C2[trim.m_c2i]
    and the trim as a curve may not agree.`,
+    baseclass: 'Rhino.Geometry.CurveProxy',
     properties: [
       {
         signature: 'Brep Brep',
@@ -28008,6 +28068,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.BrepVertex',
     dataType: 1,
     summary: 'Brep vertex information',
+    baseclass: 'UnsafeNativeMethods.Point',
     properties: [
       {
         signature: 'Brep Brep',
@@ -28033,6 +28094,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Centermark',
     dataType: 1,
     summary: 'Represents a centermark',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'Centermark()',
@@ -28265,6 +28327,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a planar surface that is used as clipping plane in viewports.
    A clipping plane object maintains a list of viewports that it clips against.`,
+    baseclass: 'Rhino.Geometry.PlaneSurface',
     properties: [
       {
         signature: 'Plane Plane',
@@ -28297,6 +28360,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepCurveList',
     dataType: 1,
     summary: 'Provides access to all the underlying curves in a Brep object.',
+    interfaces: ['IEnumerable<Curve>', 'Rhino.Collections.IRhinoTable<Curve>'],
     properties: [
       {
         signature: 'int Count',
@@ -28324,6 +28388,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepEdgeList',
     dataType: 1,
     summary: 'Provides access to all the Edges in a Brep object.',
+    interfaces: ['IEnumerable<BrepEdge>', 'Rhino.Collections.IRhinoTable<BrepEdge>'],
     properties: [
       {
         signature: 'int Count',
@@ -28395,6 +28460,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepFaceList',
     dataType: 1,
     summary: 'Provides access to all the Faces in a Brep object.',
+    interfaces: ['IEnumerable<BrepFace>', 'Rhino.Collections.IRhinoTable<BrepFace>'],
     properties: [
       {
         signature: 'int Count',
@@ -28537,6 +28603,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepLoopList',
     dataType: 1,
     summary: 'Provides access to all the Loops in a Brep object.',
+    interfaces: ['IEnumerable<BrepLoop>', 'Rhino.Collections.IRhinoTable<BrepLoop>'],
     properties: [
       {
         signature: 'int Count',
@@ -28585,6 +28652,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepSurfaceList',
     dataType: 1,
     summary: 'Provides access to all the underlying surfaces in a Brep object.',
+    interfaces: ['IEnumerable<Surface>', 'Rhino.Collections.IRhinoTable<Surface>'],
     properties: [
       {
         signature: 'int Count',
@@ -28605,6 +28673,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepTrimList',
     dataType: 1,
     summary: 'Provides access to all the Trims in a Brep object',
+    interfaces: ['IEnumerable<BrepTrim>', 'Rhino.Collections.IRhinoTable<BrepTrim>'],
     properties: [
       {
         signature: 'int Count',
@@ -28689,6 +28758,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.BrepVertexList',
     dataType: 1,
     summary: 'Provides access to all the Vertices in a Brep object',
+    interfaces: ['IEnumerable<BrepVertex>', 'Rhino.Collections.IRhinoTable<BrepVertex>'],
     properties: [
       {
         signature: 'int Count',
@@ -28725,6 +28795,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshFaceList',
     dataType: 1,
     summary: 'Provides access to the faces and Face related functionality of a Mesh.',
+    interfaces: ['IResizableList<MeshFace>', 'IList', 'IReadOnlyList<MeshFace>'],
     properties: [
       {
         signature: 'int Capacity',
@@ -28992,6 +29063,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshFaceNormalList',
     dataType: 1,
     summary: 'Provides access to the Face normals of a Mesh.',
+    interfaces: ['IResizableList<Vector3f>', 'IList', 'IReadOnlyList<Vector3f>'],
     properties: [
       {
         signature: 'int Capacity',
@@ -29089,6 +29161,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Provides access to the ngons and n-gon related functionality of a Mesh.
    See also the  property for Ngon functionality details.`,
+    interfaces: ['IResizableList<MeshNgon>', 'IList', 'IReadOnlyList<MeshNgon>'],
     properties: [
       {
         signature: 'int Count',
@@ -29261,6 +29334,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshTextureCoordinateList',
     dataType: 1,
     summary: 'Provides access to the Vertex Texture coordinates of a Mesh.',
+    interfaces: ['IResizableList<Point2f>', 'IList', 'IReadOnlyList<Point2f>'],
     properties: [
       {
         signature: 'int Capacity',
@@ -29504,6 +29578,7 @@ var RhinoCommonApi = [
     summary: `Provides access to the mesh topology vertices of a mesh. Topology vertices are
    sets of vertices in the MeshVertexList that can topologically be considered the
    same vertex.`,
+    interfaces: ['IEnumerable<Point3f>', 'IList<Point3f>', 'IList', 'IReadOnlyList<Point3f>'],
     properties: [
       {
         signature: 'int Count',
@@ -29612,6 +29687,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshVertexColorList',
     dataType: 1,
     summary: 'Provides access to the vertex colors of a mesh object.',
+    interfaces: ['IResizableList<Color>', 'IList', 'IReadOnlyList<Color>'],
     properties: [
       {
         signature: 'int Capacity',
@@ -29710,6 +29786,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshVertexList',
     dataType: 1,
     summary: 'Provides access to the vertices and vertex-related functionality of a mesh.',
+    interfaces: ['IResizableList<Point3f>', 'IReadOnlyList<Point3f>', 'IList'],
     properties: [
       {
         signature: 'int Capacity',
@@ -29928,6 +30005,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshVertexNormalList',
     dataType: 1,
     summary: 'Provides access to the Vertex Normals of a Mesh.',
+    interfaces: ['IResizableList<Vector3f>', 'IList', 'IReadOnlyList<Vector3f>'],
     properties: [
       {
         signature: 'int Capacity',
@@ -30052,6 +30130,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshVertexStatusList',
     dataType: 1,
     summary: 'Provides access to status information relative to components of a mesh.',
+    interfaces: ['IResizableList<bool>', 'IList', 'IReadOnlyList<bool>'],
     properties: [
       {
         signature: 'int Capacity',
@@ -30116,6 +30195,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.NurbsCurveKnotList',
     dataType: 1,
     summary: 'Provides access to the knot vector of a nurbs curve.',
+    interfaces: ['IEnumerable<double>', 'IRhinoTable<double>', 'IEpsilonComparable<NurbsCurveKnotList>', 'IList<double>'],
     properties: [
       {
         signature: 'int Count',
@@ -30241,6 +30321,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.NurbsCurvePointList',
     dataType: 1,
     summary: 'Provides access to the control points of a nurbs curve.',
+    interfaces: ['IEnumerable<ControlPoint>', 'IRhinoTable<ControlPoint>', 'IEpsilonComparable<NurbsCurvePointList>', 'IList<ControlPoint>'],
     properties: [
       {
         signature: 'double ControlPolygonLength',
@@ -30397,6 +30478,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.NurbsSurfaceKnotList',
     dataType: 1,
     summary: 'Provides access to the knot vector of a nurbs surface.',
+    interfaces: ['IEnumerable<double>', 'Rhino.Collections.IRhinoTable<double>', 'IEpsilonComparable<NurbsSurfaceKnotList>'],
     properties: [
       {
         signature: 'bool ClampedAtEnd',
@@ -30496,6 +30578,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.NurbsSurfacePointList',
     dataType: 1,
     summary: 'Provides access to the control points of a nurbs surface.',
+    interfaces: ['IEnumerable<ControlPoint>', 'IEpsilonComparable<NurbsSurfacePointList>'],
     properties: [
       {
         signature: 'int CountU',
@@ -30632,6 +30715,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.SubDEdgeList',
     dataType: 1,
     summary: 'All edges in a SubD',
+    interfaces: ['IEnumerable<SubDEdge>'],
     properties: [
       {
         signature: 'int Count',
@@ -30666,6 +30750,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.SubDFaceList',
     dataType: 1,
     summary: 'All faces in a SubD',
+    interfaces: ['IEnumerable<SubDFace>'],
     properties: [
       {
         signature: 'int Count',
@@ -31411,6 +31496,7 @@ var RhinoCommonApi = [
     summary: `Represents a base class that is common to most RhinoCommon curve types.
    A curve represents an entity that can be all visited by providing
    a single parameter, usually called t.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     properties: [
       {
         signature: 'int Degree',
@@ -32862,6 +32948,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.CurveBooleanRegions',
     dataType: 1,
     summary: 'Represents the results of a Curve.CreateBooleanRegions calculation.',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'int PlanarCurveCount',
@@ -33075,6 +33162,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.CurveProxy',
     dataType: 1,
     summary: 'Provides strongly-typed access to Brep edges.',
+    baseclass: 'Rhino.Geometry.Curve',
     properties: [
       {
         signature: 'bool ProxyCurveIsReversed',
@@ -33244,6 +33332,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.DetailView',
     dataType: 1,
     summary: 'Represents a view of the model placed on a page layout.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     properties: [
       {
         signature: 'bool IsParallelProjection',
@@ -33312,6 +33401,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Dimension',
     dataType: 1,
     summary: 'Base class for dimensions',
+    baseclass: 'Rhino.Geometry.AnnotationBase',
     properties: [
       {
         signature: 'bool AlternateBelowLine',
@@ -33674,6 +33764,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents an extrusion, or objects such as beams or linearly extruded elements,
    that can be represented by profile curves and two miter planes at the extremes.`,
+    baseclass: 'Rhino.Geometry.Surface',
     constructors: [
       {
         signature: 'Extrusion()',
@@ -33874,6 +33965,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.GeometryBase',
     dataType: 1,
     summary: 'Provides a common base for most geometric classes. This class is abstract.',
+    baseclass: 'Rhino.Runtime.CommonObject',
     properties: [
       {
         signature: 'bool HasBrepForm',
@@ -34047,6 +34139,7 @@ var RhinoCommonApi = [
    The Hatch object manages the plane and loop array
    Fill definitions are in the HatchPattern or class derived from HatchPattern
    Hatch has an index to get the pattern definition from the pattern table.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     properties: [
       {
         signature: 'Point3d BasePoint',
@@ -34136,6 +34229,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.HermiteSurface',
     dataType: 1,
     summary: 'Create an ON_NurbsSurface satisfying Hermite interpolation conditions at a grid of points.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'HermiteSurface()',
@@ -34264,6 +34358,7 @@ var RhinoCommonApi = [
    A hidden line drawing consists of curves generated from source objects.
    The curves correspond to edges, and silhouettes of  source objects and
    intersections with cutting planes.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'IEnumerable<HiddenLineDrawingPoint> Points',
@@ -34660,6 +34755,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a block definition in a File3dm. This is the same as
    Rhino.DocObjects.InstanceDefinition, but not associated with a RhinoDoc.`,
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     constructors: [
       {
         signature: 'InstanceDefinitionGeometry()',
@@ -34691,6 +34787,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.InstanceReferenceGeometry',
     dataType: 1,
     summary: 'Represents a reference to the geometry in a block definition.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'InstanceReferenceGeometry(Guid instanceDefinitionId,Transform transform)',
@@ -34715,6 +34812,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Interpolator',
     dataType: 1,
     summary: 'Exposes a set of standard numeric interpolation algorithms.',
+    baseclass: 'RhinoList<double>',
     constructors: [
       {
         signature: 'Interpolator()',
@@ -34787,6 +34885,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Intersect.CurveIntersections',
     dataType: 1,
     summary: 'Maintains an ordered list of Curve Intersection results.',
+    interfaces: ['IDisposable', 'IList<IntersectionEvent>'],
     properties: [
       {
         signature: 'int Count',
@@ -35652,6 +35751,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.InvalidDimensionStyleIdException',
     dataType: 1,
     summary: 'General exception that can be thrown by annotations',
+    baseclass: 'InvalidOperationException',
     constructors: [
       {
         signature: 'InvalidDimensionStyleIdException(string msg)',
@@ -35700,6 +35800,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Leader',
     dataType: 1,
     summary: 'Leader geometry class',
+    baseclass: 'Rhino.Geometry.AnnotationBase',
     constructors: [
       {
         signature: 'Leader()',
@@ -35786,6 +35887,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Light',
     dataType: 1,
     summary: 'Represents a light that shines in the modeling space.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'Light()',
@@ -36348,6 +36450,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.LinearDimension',
     dataType: 1,
     summary: 'Represents a linear dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'LinearDimension()',
@@ -36439,6 +36542,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.LineCurve',
     dataType: 1,
     summary: 'Represents a linear curve.',
+    baseclass: 'Rhino.Geometry.Curve',
     constructors: [
       {
         signature: 'LineCurve()',
@@ -36524,6 +36628,7 @@ var RhinoCommonApi = [
     summary: `Represents an arbitrarily sized matrix of double-precision
    floating point numbers. If you are working with a 4x4 matrix, then you may want
    to use the  class instead.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'Matrix(int rowCount,int columnCount)',
@@ -36680,6 +36785,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a geometry type that is defined by vertices and faces.
    This is often called a face-vertex mesh.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'Mesh()',
@@ -37894,6 +38000,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.MeshExtruder',
     dataType: 1,
     summary: 'Extrudes a mesh and provides preview',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'MeshExtruder(Mesh inputMesh,IEnumerable<ComponentIndex> componentIndices)',
@@ -38136,6 +38243,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.MeshingParameters',
     dataType: 1,
     summary: 'Represents settings used for creating a mesh representation of a brep or surface.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'MeshingParameters()',
@@ -38378,6 +38486,7 @@ var RhinoCommonApi = [
    When retrieved from the Ngon property of a mesh,
    this contains faces that have edge valence strictly higher than 4.When retrieving Ngons from ,
    this might contain also triangles and quads.`,
+    interfaces: ['IEquatable<MeshNgon>', 'IComparable<MeshNgon>', 'IComparable'],
     properties: [
       {
         signature: 'static MeshNgon Empty',
@@ -38710,6 +38819,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.MeshUnsafeLock',
     dataType: 1,
     summary: 'Permits access to the underlying mesh raw data structures in an unsafe way.',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'MeshFace* FacesArray(int length)',
@@ -38754,6 +38864,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.MorphControl',
     dataType: 1,
     summary: 'Represents a geometry that is able to control the morphing behaviour of some other geometry.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'MorphControl(NurbsCurve originCurve,NurbsCurve targetCurve)',
@@ -38811,6 +38922,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.BendSpaceMorph',
     dataType: 1,
     summary: 'Deforms objects by bending along a spine arc.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'BendSpaceMorph(Point3d start,Point3d end,Point3d point,bool straight,bool symmetric)',
@@ -38848,6 +38961,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.FlowSpaceMorph',
     dataType: 1,
     summary: 'Re-aligns objects from a base curve to a target curve.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'FlowSpaceMorph(Curve curve0,Curve curve1,bool preventStretching)',
@@ -38885,6 +39000,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.MaelstromSpaceMorph',
     dataType: 1,
     summary: 'Deforms objects in a spiral as if they were caught in a whirlpool.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'MaelstromSpaceMorph(Plane plane,double radius0,double radius1,double angle)',
@@ -38917,6 +39034,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.SplopSpaceMorph',
     dataType: 1,
     summary: 'Rotates, scales, and wraps objects on a surface.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SplopSpaceMorph(Plane plane,Surface surface,Point2d surfaceParam)',
@@ -38959,6 +39078,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.SporphSpaceMorph',
     dataType: 1,
     summary: 'Deforms an object from a source surface to a target surface.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SporphSpaceMorph(Surface surface0,Surface surface1)',
@@ -38996,6 +39117,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.StretchSpaceMorph',
     dataType: 1,
     summary: 'Deforms objects toward or away from a specified axis.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'StretchSpaceMorph(Point3d start,Point3d end,double length)',
@@ -39033,6 +39156,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.TaperSpaceMorph',
     dataType: 1,
     summary: 'Deforms objects toward or away from a specified axis.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'TaperSpaceMorph(Point3d start,Point3d end,double startRadius,double endRadius,bool bFlat,bool infiniteTaper)',
@@ -39065,6 +39190,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Morphs.TwistSpaceMorph',
     dataType: 1,
     summary: 'Deforms objects by rotating them around an axis.',
+    baseclass: 'Rhino.Geometry.SpaceMorph',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'TwistSpaceMorph()',
@@ -39108,6 +39235,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.NurbsCurve',
     dataType: 1,
     summary: 'Represents a Non Uniform Rational B-Splines (NURBS) curve.',
+    baseclass: 'Rhino.Geometry.Curve',
+    interfaces: ['IEpsilonComparable<NurbsCurve>'],
     constructors: [
       {
         signature: 'NurbsCurve(int dimension,bool rational,int order,int pointCount)',
@@ -39361,6 +39490,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.NurbsSurface',
     dataType: 1,
     summary: 'Represents a Non Uniform Rational B-Splines (NURBS) surface.',
+    baseclass: 'Rhino.Geometry.Surface',
+    interfaces: ['IEpsilonComparable<NurbsSurface>'],
     constructors: [
       {
         signature: 'NurbsSurface(NurbsSurface other)',
@@ -39552,6 +39683,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.OrdinateDimension',
     dataType: 1,
     summary: 'Represents an ordinate dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'OrdinateDimension()',
@@ -39668,7 +39800,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.ParticleSystem',
     dataType: 1,
-    summary: '',
+    interfaces: ['IEnumerable<Particle>'],
     properties: [
       {
         signature: 'BoundingBox BoundingBox',
@@ -40028,6 +40160,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.PlaneSurface',
     dataType: 1,
     summary: 'Represents a plane surface, with plane and two intervals.',
+    baseclass: 'Rhino.Geometry.Surface',
     constructors: [
       {
         signature: 'PlaneSurface(Plane plane,Interval xExtents,Interval yExtents)',
@@ -40056,6 +40189,7 @@ var RhinoCommonApi = [
     summary: `Represents a geometric point.
    This is fundamentally a class that derives from
     and contains a single  location.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'Point(Point3d location)',
@@ -40562,6 +40696,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Point3dGrid',
     dataType: 1,
     summary: 'Represents a rectangular grid of 3D points.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'Point3dGrid()',
@@ -40794,6 +40929,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.PointCloud',
     dataType: 1,
     summary: 'Represents a collection of coordinates with optional normal vectors and colors.',
+    baseclass: 'Rhino.Geometry.GeometryBase',
+    interfaces: ['IEnumerable<PointCloudItem>'],
     constructors: [
       {
         signature: 'PointCloud()',
@@ -41085,6 +41222,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a curve that is the result of joining several (possibly different)
    types of curves.`,
+    baseclass: 'Rhino.Geometry.Curve',
     constructors: [
       {
         signature: 'PolyCurve()',
@@ -41223,6 +41361,8 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents an ordered set of points connected by linear segments.
    Polylines are closed if start and end points coincide.`,
+    baseclass: 'Rhino.Collections.Point3dList',
+    interfaces: ['ICloneable'],
     constructors: [
       {
         signature: 'Polyline()',
@@ -41416,6 +41556,7 @@ var RhinoCommonApi = [
     summary: `Represents the geometry of a set of linked line segments.
    This is fundamentally a class that derives from 
    and internally contains a .`,
+    baseclass: 'Rhino.Geometry.Curve',
     constructors: [
       {
         signature: 'PolylineCurve()',
@@ -41802,6 +41943,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.RadialDimension',
     dataType: 1,
     summary: 'Represents a dimension of a circular entity that can be measured with radius or diameter.',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'RadialDimension()',
@@ -42241,6 +42383,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a surface of revolution.
    Revolutions can be incomplete (they can form arcs).`,
+    baseclass: 'Rhino.Geometry.Surface',
     properties: [
       {
         signature: 'Interval Angle',
@@ -42332,6 +42475,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a spatial search structure based on implementations of the
    R-tree algorithm by Toni Gutman.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RTree()',
@@ -42505,6 +42649,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents event data that is passed when when an item that meets certain 
    criteria is found and the passed RTree event is raised.`,
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'bool Cancel',
@@ -43006,6 +43151,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.SubD',
     dataType: 1,
     summary: 'Subdivision surface',
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'SubD()',
@@ -43097,6 +43243,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.SubDCreationOptions',
     dataType: 1,
     summary: 'Options used for creating a SubD',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SubDCreationOptions()',
@@ -43183,6 +43330,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.SubDEdge',
     dataType: 1,
     summary: 'Single edge of a SubD',
+    baseclass: 'Rhino.Geometry.SubDComponent',
     properties: [
       {
         signature: 'Line ControlNetLine',
@@ -43228,6 +43376,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.SubDFace',
     dataType: 1,
     summary: 'Single face of a SubD',
+    baseclass: 'Rhino.Geometry.SubDComponent',
     properties: [
       {
         signature: 'int EdgeCount',
@@ -43269,6 +43418,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.SubDVertex',
     dataType: 1,
     summary: 'Single vertex of a SubD',
+    baseclass: 'Rhino.Geometry.SubDComponent',
     properties: [
       {
         signature: 'Point3d ControlNetPoint',
@@ -43313,6 +43463,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.SumSurface',
     dataType: 1,
     summary: 'Represents a sum surface, or an extrusion of a curve along a curved path.',
+    baseclass: 'Rhino.Geometry.Surface',
     methods: [
       {
         signature: 'static SumSurface Create(Curve curveA,Curve curveB)',
@@ -43328,6 +43479,7 @@ var RhinoCommonApi = [
     summary: `Represents a base class that is common to most RhinoCommon surface types.
    A surface represents an entity that can be all visited by providing
    two independent parameters, usually called (u, v), or sometimes (s, t).`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     properties: [
       {
         signature: 'bool IsSolid',
@@ -43918,7 +44070,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.SurfaceProxy',
     dataType: 1,
-    summary: 'Provides a base class to brep faces and other surface proxies.'
+    summary: 'Provides a base class to brep faces and other surface proxies.',
+    baseclass: 'Rhino.Geometry.Surface'
   },
   {
     name: 'Rhino.Geometry.SweepOneRail',
@@ -44173,6 +44326,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a text dot, or an annotation entity with text that always faces the camera and always has the same size.
    This class refers to the geometric element that is independent from the document.`,
+    baseclass: 'Rhino.Geometry.GeometryBase',
     constructors: [
       {
         signature: 'TextDot(string text,Point3d location)',
@@ -44211,7 +44365,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.TextEntity',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Geometry.AnnotationBase',
     constructors: [
       {
         signature: 'TextEntity()',
@@ -44367,7 +44521,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.TextRunType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.TextRunTypeConsts.None'
@@ -45907,6 +46060,7 @@ var RhinoCommonApi = [
     summary: `Contains static initialization methods and allows access to the computed
    metrics of volume, volume centroid and volume moments in 
    in solid meshes, in solid surfaces and in solid (closed) boundary representations.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'Point3d Centroid',
@@ -46092,13 +46246,11 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.IEpsilonComparable',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.IEpsilonFComparable',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.IndexPair',
@@ -46157,7 +46309,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.CommandLineOption',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'int CurrentListOptionIndex',
@@ -46202,7 +46353,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.ConeConstraint',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -46218,7 +46368,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.CylinderConstraint',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -46433,7 +46582,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetArc',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetArc()',
@@ -46489,6 +46638,7 @@ var RhinoCommonApi = [
    Provides tools to set command prompt, set command options, and specify
    if the "get" can optionally accept numbers, nothing (pressing enter),
    and undo.`,
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'static void PostCustomMessage(object messageData)',
@@ -46884,7 +47034,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetCancel',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetCancel()',
@@ -46938,7 +47088,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetCircle',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetCircle()',
@@ -46992,6 +47142,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetCone',
     dataType: 1,
     summary: 'Class provides user interface to define a cone.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetCone()',
@@ -47069,6 +47220,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetCylinder',
     dataType: 1,
     summary: 'Class provides user interface to define a cylinder.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetCylinder()',
@@ -47140,6 +47292,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetEllipsoid',
     dataType: 1,
     summary: 'Class provides user interface to define a truncated cone.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetEllipsoid()',
@@ -47197,7 +47350,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetFileNameMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Open = 0'
@@ -47253,6 +47405,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetInteger',
     dataType: 1,
     summary: 'Used to get integer numbers.',
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetInteger()',
@@ -47288,6 +47441,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetLine',
     dataType: 1,
     summary: 'Use to interactively get a line.  The Rhino "Line" command uses GetLine.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetLine()',
@@ -47380,7 +47534,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.GetLineMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'TwoPoint = 0'
@@ -47418,6 +47571,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetNumber',
     dataType: 1,
     summary: 'Used to get double precision numbers.',
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetNumber()',
@@ -47450,6 +47604,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetObject',
     dataType: 1,
     summary: 'The GetObject class is the tool commands use to interactively select objects.',
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetObject()',
@@ -47698,6 +47853,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `If you want to explicitly get string input, then use GetString class with
    options. If you only want to get options, then use this class (GetOption)`,
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetOption()',
@@ -47718,6 +47874,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetPoint',
     dataType: 1,
     summary: 'Used to interactively get a point.',
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetPoint()',
@@ -48064,6 +48221,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetPointDrawEventArgs',
     dataType: 1,
     summary: 'Arguments for drawing during point getting.',
+    baseclass: 'Rhino.Display.DrawEventArgs',
     properties: [
       {
         signature: 'Point3d CurrentPoint',
@@ -48080,6 +48238,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetPointMouseEventArgs',
     dataType: 1,
     summary: 'Arguments for mouse information during point getting.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'bool ControlKeyDown',
@@ -48123,6 +48282,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetPolyline',
     dataType: 1,
     summary: 'Use to interactively get a polyline.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetPolyline()',
@@ -48182,6 +48342,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetSphere',
     dataType: 1,
     summary: 'Class provides user interface to define a sphere.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetSphere()',
@@ -48224,6 +48385,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetString',
     dataType: 1,
     summary: 'Used to get strings.',
+    baseclass: 'Rhino.Input.Custom.GetBaseClass',
     constructors: [
       {
         signature: 'GetString()',
@@ -48250,6 +48412,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetTorus',
     dataType: 1,
     summary: 'Class provides user interface to define a torus.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetTorus()',
@@ -48307,6 +48470,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetTransform',
     dataType: 1,
     summary: 'Used for getting a Transform',
+    baseclass: 'Rhino.Input.Custom.GetPoint',
     properties: [
       {
         signature: 'bool HaveTransform',
@@ -48349,6 +48513,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.GetTruncatedCone',
     dataType: 1,
     summary: 'Class provides user interface to define a truncated cone.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GetTruncatedCone()',
@@ -48419,7 +48584,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.OptionColor',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'OptionColor(Color initialValue)',
@@ -48446,7 +48611,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.OptionDouble',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'OptionDouble(double initialValue)',
@@ -48483,7 +48648,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.OptionInteger',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'OptionInteger(int initialValue)',
@@ -48520,7 +48685,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.OptionToggle',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'OptionToggle(bool initialValue,LocalizeStringPair offValue,LocalizeStringPair onValue)',
@@ -48552,6 +48717,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.Custom.PickContext',
     dataType: 1,
     summary: 'Utility for determining if objects are picked',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'PickContext()',
@@ -48664,7 +48830,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.PickContext.MeshHitFlag',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Invalid = -1'
@@ -48683,7 +48848,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.PickContext.MeshPickStyle',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'WireframePicking = 0',
@@ -48734,7 +48898,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.Custom.TaskCompleteEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'TaskCompleteEventArgs(Task task,RhinoDoc doc)',
@@ -49191,7 +49355,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Input.RhinoGet.BitmapFileTypes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'bmp = 1'
@@ -49259,6 +49422,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Input.StringParserSettings',
     dataType: 1,
     summary: 'Parameters for parsing strings',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'StringParserSettings()',
@@ -49496,6 +49660,7 @@ var RhinoCommonApi = [
    representation of that length. This allows for going back and
    forth from numerical representation of a length and a string
    representation without "guessing" at the initial string`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'AngleUnitSystem ContextAngleUnitSystem',
@@ -49748,6 +49913,7 @@ var RhinoCommonApi = [
     name: 'Rhino.NodeInCode.NodeInCodeTable',
     dataType: 1,
     summary: 'Permits rapid access to references to all Grasshopper functions.',
+    baseclass: 'DynamicObject',
     constructors: [
       {
         signature: 'NodeInCodeTable(IEnumerable<ComponentFunctionInfo> items)',
@@ -49795,6 +49961,7 @@ var RhinoCommonApi = [
     name: 'Rhino.PersistentSettings',
     dataType: 1,
     summary: 'A dictionary of SettingValue items.',
+    interfaces: ['ISerializable'],
     properties: [
       {
         signature: 'static PersistentSettings RhinoAppSettings',
@@ -50557,6 +50724,7 @@ var RhinoCommonApi = [
     name: 'Rhino.PersistentSettingsEventArgs',
     dataType: 1,
     summary: 'Represents the persistent settings modification event arguments.',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'PersistentSettingsEventArgs(T currentValue,T newValue)'
@@ -50579,6 +50747,7 @@ var RhinoCommonApi = [
     name: 'Rhino.PersistentSettingsSavedEventArgs',
     dataType: 1,
     summary: 'Event argument passed to the  event.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'PersistentSettings PlugInSettings',
@@ -50604,7 +50773,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.CustomRenderSaveFileTypes',
     dataType: 1,
-    summary: '',
     methods: [
       {
         signature: 'void RegisterFileType(IEnumerable<string> extensions,string description,SaveFileHandler saveFileHandler)',
@@ -50617,7 +50785,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.DescriptionType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Organization'
@@ -50651,7 +50818,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.DigitizerPlugIn',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.PlugIns.PlugIn',
     methods: [
       {
         signature: 'void SendPoint(Point3d point,MouseButton mousebuttons,bool shiftKey,bool controlKey)',
@@ -50674,17 +50841,16 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.FileExportPlugIn',
     dataType: 1,
-    summary: ''
+    baseclass: 'Rhino.PlugIns.PlugIn'
   },
   {
     name: 'Rhino.PlugIns.FileImportPlugIn',
     dataType: 1,
-    summary: ''
+    baseclass: 'Rhino.PlugIns.PlugIn'
   },
   {
     name: 'Rhino.PlugIns.FileTypeList',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'FileTypeList()',
@@ -50797,7 +50963,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.LicenseChangedEventArgs',
     dataType: 1,
-    summary: ''
+    baseclass: 'EventArgs'
   },
   {
     name: 'Rhino.PlugIns.LicenseData',
@@ -50935,7 +51101,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.LicenseIdAttribute',
     dataType: 1,
-    summary: '',
+    baseclass: 'Attribute',
     constructors: [
       {
         signature: 'LicenseIdAttribute(string value)',
@@ -51302,7 +51468,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.LoadReturnCode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Success = 1'
@@ -51318,7 +51483,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.PlugIn',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static bool AskOnLoadProtection',
@@ -51552,7 +51716,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.PlugInDescriptionAttribute',
     dataType: 1,
-    summary: '',
+    baseclass: 'Attribute',
     constructors: [
       {
         signature: 'PlugInDescriptionAttribute(DescriptionType descriptionType,string value)',
@@ -51703,7 +51867,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.PlugInLoadTime',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Disabled = 0',
@@ -51734,7 +51897,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.PlugInType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -51768,7 +51930,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.PreviewNotification',
     dataType: 1,
-    summary: '',
     methods: [
       {
         signature: 'void NotifyIntermediateUpdate(RenderWindow rw)',
@@ -51779,7 +51940,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.RenderPlugIn',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.PlugIns.PlugIn',
     properties: [
       {
         signature: 'bool PerferBasicContent',
@@ -51863,7 +52024,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.RenderPlugIn.PreviewRenderTypes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -51882,7 +52042,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.RenderPlugIn.RenderFeature',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Materials = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Materials'
@@ -51973,7 +52132,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PlugIns.WriteFileResult',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Cancel = -1'
@@ -51992,6 +52150,7 @@ var RhinoCommonApi = [
     summary: `\\ingroup rhino_render
    Inherit from AsyncRenderContext to be able to create asynchronous
    render engine implementations through RhinoCommon.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'Thread RenderThread',
@@ -52036,6 +52195,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.CachedTextureCoordinates',
     dataType: 1,
     summary: 'Used for cached texture coordinates',
+    baseclass: 'Rhino.Runtime.CommonObject',
+    interfaces: ['IList<Point3d>'],
     properties: [
       {
         signature: 'int Count',
@@ -52096,6 +52257,7 @@ var RhinoCommonApi = [
     summary: `Base class for ChangeQueue.
    
    Generally used by render plugins to build interactive updating of scenes that are being rendered.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'DisplayPipelineAttributes DisplayPipelineAttributes',
@@ -52737,7 +52899,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ContentCollectionIterator',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ContentCollectionIterator(IntPtr pCollection)',
@@ -52772,7 +52934,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ContentUndoBlocker',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ContentUndoBlocker()',
@@ -52792,6 +52954,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.ContentUndoHelper',
     dataType: 1,
     summary: 'Content undo helper to be used with "using {}" to enclose a block of changes.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ContentUndoHelper(RhinoDoc doc,String description)',
@@ -53077,7 +53240,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CrcRenderHashFlags',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Normal                 = 0'
@@ -53100,6 +53262,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.CreatePreviewEventArgs',
     dataType: 1,
     summary: 'Used in RenderPlugIn virtual CreatePreview function',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'bool Cancel',
@@ -53183,7 +53346,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CreatePreviewEventArgs.SceneObject',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'RenderMaterial Material',
@@ -53220,7 +53382,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CreateTexture2dPreviewEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'Bitmap PreviewImage',
@@ -53251,7 +53413,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CustomRenderContentAttribute',
     dataType: 1,
-    summary: '',
+    baseclass: 'Attribute',
     constructors: [
       {
         signature: 'CustomRenderContentAttribute(string renderEngineGuid,bool imageBased,string category,bool is_elevated,bool is_built_in,bool is_private)',
@@ -53390,7 +53552,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.CustomRenderMeshProvider2',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.CustomRenderMeshProvider',
     methods: [
       {
         signature: 'BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)',
@@ -53421,7 +53583,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.AssignBys',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Unset'
@@ -53446,7 +53607,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentDatabaseEventInfo.AttachReason',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Attach'
@@ -53468,7 +53628,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentDatabaseEventInfo.DetachReason',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Detach'
@@ -53490,7 +53649,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentDatabaseEventInfo.Types',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Attached'
@@ -53515,7 +53673,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentEditorSettings.Layouts',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Horizontal'
@@ -53528,7 +53685,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentEditorSettings.Splitters',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'HA'
@@ -53553,7 +53709,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentFactories',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ContentFactories(IntPtr pRdkContentFactories)',
@@ -53588,7 +53744,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentFactory',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ContentFactory(IntPtr pRdkContentFactory)',
@@ -53625,7 +53781,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ContentParamEventInfo.Types',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Name'
@@ -53647,7 +53802,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.DecalEventInfo.Operations',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Add'
@@ -53663,7 +53817,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.MetaData',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'MetaData(IntPtr pMetaData)',
@@ -53694,7 +53848,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.Modes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Unset'
@@ -53713,7 +53866,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.NamedItemCommand.States',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Off = UnsafeNativeMethods.NamedItemCommand_States.Off'
@@ -53732,7 +53884,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.NamedItems.CommandFilters',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'ToolButton = UnsafeNativeMethods.NamedItems_CommandFilters.ToolButton'
@@ -53751,7 +53902,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.NamedItems.DisplayModes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'List = UnsafeNativeMethods.NamedItems_DisplayMode.List'
@@ -53764,7 +53914,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.ParamBlock.UiHints',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None'
@@ -53789,7 +53938,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.RdkEdit',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RdkEdit(IntPtr pRdkEdit)',
@@ -53816,7 +53965,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.RdkModalEditContentBucket',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)',
@@ -53847,7 +53996,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.RdkSelectionNavigator',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RdkSelectionNavigator(IntPtr pRhinoSettings)',
@@ -53905,7 +54054,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.RhinoSettings',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RhinoSettings(IntPtr pRhinoSettings)',
@@ -53960,7 +54109,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.Shapes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Square'
@@ -53973,7 +54121,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DataSources.Sizes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Unset'
@@ -53996,6 +54143,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Decal',
     dataType: 1,
     summary: 'Represents a decal, or a picture that can be moved on an object.',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'int CRC',
@@ -54199,7 +54347,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DecalMapping',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Planar = (int)UnsafeNativeMethods.RhRdkDecalMapping.Planar',
@@ -54222,7 +54369,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DecalProjection',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Forward = (int)UnsafeNativeMethods.RhRdkDecalProjection.Forward',
@@ -54242,6 +54388,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Decals',
     dataType: 1,
     summary: 'Represents all the decals of an object.',
+    interfaces: ['IEnumerable<Decal>'],
     methods: [
       {
         signature: 'uint Add(Decal decal)',
@@ -54267,6 +54414,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Dithering',
     dataType: 1,
     summary: 'This is the interface to linear workflow settings.',
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
     constructors: [
       {
         signature: 'Dithering()',
@@ -54297,6 +54445,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Base class for Rhino.Render objects that are owned by the document, or can be delivered separately
    from other functions.  In general, you cannot create these objects yourself.`,
+    baseclass: 'Rhino.Render.FreeFloatingBase',
     methods: [
       {
         signature: 'void BeginChange(ChangeContexts cc)',
@@ -54314,7 +54463,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.DynamicIconUsage',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'TreeControl = 0',
@@ -54334,6 +54482,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.BoolField',
     dataType: 1,
     summary: 'bool field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'bool Value',
@@ -54352,6 +54501,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.ByteArrayField',
     dataType: 1,
     summary: 'ByteArray field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'byte[] Value',
@@ -54370,6 +54520,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.Color4fField',
     dataType: 1,
     summary: 'Color4f field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Color SystemColorValue',
@@ -54393,6 +54544,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.DateTimeField',
     dataType: 1,
     summary: 'DateTime field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'DateTime Value',
@@ -54411,6 +54563,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.DoubleField',
     dataType: 1,
     summary: 'double field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'double Value',
@@ -54482,6 +54635,7 @@ var RhinoCommonApi = [
    dictionary in your derived RenderContent classes constructor.  Get field
    values using the TryGet[data type]() methods and set them using the Set()
    method.`,
+    interfaces: ['IEnumerable'],
     methods: [
       {
         signature: 'BoolField Add(string key,bool value)',
@@ -55203,6 +55357,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.FloatField',
     dataType: 1,
     summary: 'float field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'float Value',
@@ -55221,6 +55376,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.GuidField',
     dataType: 1,
     summary: 'Guid field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Guid Value',
@@ -55239,6 +55395,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.IntField',
     dataType: 1,
     summary: 'Integer field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'int Value',
@@ -55257,6 +55414,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.Point2dField',
     dataType: 1,
     summary: 'Point2d field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Point2d Value',
@@ -55275,6 +55433,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.Point3dField',
     dataType: 1,
     summary: 'Point3d field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Point3d Value',
@@ -55293,6 +55452,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.Point4dField',
     dataType: 1,
     summary: 'Point4d field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Point4d Value',
@@ -55311,6 +55471,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.StringField',
     dataType: 1,
     summary: 'String field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'string Value',
@@ -55329,6 +55490,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.TransformField',
     dataType: 1,
     summary: 'Transform field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Transform Value',
@@ -55347,6 +55509,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.Vector2dField',
     dataType: 1,
     summary: 'Vector2d field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Vector2d Value',
@@ -55365,6 +55528,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Fields.Vector3dField',
     dataType: 1,
     summary: 'Vector3d field value class',
+    baseclass: 'Rhino.Render.Fields.Field',
     properties: [
       {
         signature: 'Vector3d Value',
@@ -55416,6 +55580,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents an infinite plane for implementation by renderers.
    See SupportsFeature.`,
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
     constructors: [
       {
         signature: 'GroundPlane()',
@@ -55501,13 +55666,11 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.Render.ICurrentEnvironment',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.Render.ICurrentEnvironment_Get',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.Render.ImageFile',
@@ -55541,7 +55704,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ImageFileEvent',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Saved',
@@ -55560,7 +55722,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.ImageFileEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'int EllapsedTime',
@@ -55619,7 +55781,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.LightArray',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'LightArray()',
@@ -55781,7 +55943,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.LightManagerSupportClient',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'LightManagerSupportClient(uint doc_uuid)',
@@ -55875,6 +56037,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.LinearWorkflow',
     dataType: 1,
     summary: 'This is the interface to linear workflow settings.',
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
     constructors: [
       {
         signature: 'LinearWorkflow()',
@@ -55973,6 +56136,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.MetaDataProxy',
     dataType: 1,
     summary: 'ProxyClass for MetaData',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'MetaDataProxy()',
@@ -56003,7 +56167,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.NamedValue',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'NamedValue(string name,object value)',
@@ -56024,7 +56187,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.PhysicallyBasedMaterial',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'double Anisotropic',
@@ -56140,7 +56302,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.PhysicallyBasedMaterial.BRDFs',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'GGX = 0'
@@ -56266,7 +56427,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.PixelBuffer',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'PixelBuffer(IntPtr bufferPointer)',
@@ -56286,6 +56446,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.PreviewAppearance',
     dataType: 1,
     summary: 'PreviewAppearance class',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'PreviewAppearance(IntPtr pRenderContent)',
@@ -56585,6 +56746,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `RdkUndo class, which is used to get the 
    RdkUndoRecord`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RdkUndo(IntPtr pUndoRecord)',
@@ -56609,6 +56771,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.RdkUndoRecord',
     dataType: 1,
     summary: 'RdkUndoRecord class',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RdkUndoRecord(IntPtr pUndoRecord)',
@@ -56906,7 +57069,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RealtimeDisplayMode.DisplayPipelineSettingsChangedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'DisplayPipelineSettingsChangedEventArgs(DisplayPipelineAttributes dpa)',
@@ -56923,7 +57086,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RealtimeDisplayMode.DrawMiddlegroundEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'DrawMiddlegroundEventArgs(DisplayPipeline dp)',
@@ -56940,7 +57103,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RealtimeDisplayMode.HudMaxPassesChangedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'HudMaxPassesChangedEventArgs(int mp)',
@@ -56957,7 +57120,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RealtimeDisplayMode.InitFramebufferEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'InitFramebufferEventArgs(DisplayPipeline dp)',
@@ -57011,7 +57174,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContent',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'bool CanBeEdited',
@@ -57707,7 +57870,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContent.ExtraRequirementsSetContexts',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'UI = 0',
@@ -57742,7 +57904,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContent.ShowContentChooserFlags',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0x0000'
@@ -57758,7 +57919,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentChangedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.RenderContentEventArgs',
     properties: [
       {
         signature: 'ChangeContexts ChangeContext',
@@ -57816,7 +57977,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentCollection',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable', 'IEnumerable'],
     constructors: [
       {
         signature: 'RenderContentCollection()',
@@ -57919,7 +58080,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RenderContent Content',
@@ -57946,7 +58107,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentFieldChangedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.RenderContentChangedEventArgs',
     properties: [
       {
         signature: 'string FieldName',
@@ -57977,7 +58138,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentKindList',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RenderContentKindList()',
@@ -58114,7 +58275,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentStyles',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0',
@@ -58169,12 +58329,13 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderContentTableEventForwarder.RenderContentTableEventArgs',
     dataType: 1,
-    summary: ''
+    baseclass: 'EventArgs'
   },
   {
     name: 'Rhino.Render.RenderContentType',
     dataType: 1,
     summary: 'Represents one of the render content types registered with Rhino.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RenderContentType(Guid typeId)',
@@ -58236,6 +58397,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.RenderCustomEventArgs',
     dataType: 1,
     summary: 'Used as Rhino.Render Custom Events args.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'IntPtr Argument',
@@ -58252,12 +58414,13 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderEndEventArgs',
     dataType: 1,
-    summary: 'Contains information about why OnRenderEnd was called'
+    summary: 'Contains information about why OnRenderEnd was called',
+    baseclass: 'EventArgs'
   },
   {
     name: 'Rhino.Render.RenderEnvironment',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.RenderContent',
     properties: [
       {
         signature: 'static RenderEnvironment CurrentEnvironment',
@@ -58292,7 +58455,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderEnvironment.Usage',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None                      = 0x00'
@@ -58314,7 +58476,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderEnvironmentTable',
     dataType: 1,
-    summary: '',
+    interfaces: ['IRenderContentTable<RenderEnvironment>', 'IEnumerable<RenderEnvironment>', 'Collections.IRhinoTable<RenderEnvironment>'],
     properties: [
       {
         signature: 'int Count',
@@ -58347,7 +58509,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Rendering.CommandFilters',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'ToolButton = UnsafeNativeMethods.RdkRendering_CommandFilters.ToolButton'
@@ -58363,7 +58524,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Rendering.StatusTexts',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Image = UnsafeNativeMethods.RdkRendering_StatusTexts.Image'
@@ -58379,7 +58539,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderingCommand.MenuCategories',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'File = UnsafeNativeMethods.RdkRenderingCommand_MenuCategories.File'
@@ -58401,7 +58560,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderingCommand.States',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Off = UnsafeNativeMethods.RdkRenderingCommand_States.Off'
@@ -58417,7 +58575,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderingHistogram.HistogramFlags',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'UseAlpha = 0x01'
@@ -58433,7 +58590,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderingHistogram.HistogramType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Original = UnsafeNativeMethods.RdkRendering_Histogram.Original'
@@ -58452,7 +58608,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderingPostEffectCommand.States',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Off = UnsafeNativeMethods.RhRdkRenderingPostEffectCommand_States.Off'
@@ -58468,7 +58623,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderingPostEffects.Disposition',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Early = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.Early'
@@ -58484,7 +58638,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderMaterial',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.RenderContent',
     properties: [
       {
         signature: 'static Guid GemMaterialGuid',
@@ -58665,7 +58819,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderMaterial.PhysicallyBased.ChildSlotNames',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static string AmbientOcclusion',
@@ -58766,7 +58919,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderMaterial.PhysicallyBased.ParametersNames',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static string AmbientOcclusion',
@@ -59021,7 +59173,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderMaterialTable',
     dataType: 1,
-    summary: '',
+    interfaces: ['IRenderContentTable<RenderMaterial>', 'IEnumerable<RenderMaterial>', 'Collections.IRhinoTable<RenderMaterial>'],
     properties: [
       {
         signature: 'int Count',
@@ -59099,6 +59251,7 @@ var RhinoCommonApi = [
    Rhino render window. Also adds helper functions for processing a render
    scene. This is the suggested class to use when integrating a renderer with
    Rhino and maintaining a "standard" user interface that users will expect.`,
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'int ConfirmationSeconds',
@@ -59226,7 +59379,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPipeline.RenderReturnCode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Ok = 0'
@@ -59269,7 +59421,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPlugInInfo',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'string Name',
@@ -59284,7 +59435,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPlugInList',
     dataType: 1,
-    summary: '',
+    baseclass: 'List<RenderPlugInInfo>',
     constructors: [
       {
         signature: 'RenderPlugInList()',
@@ -59295,7 +59446,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPrimitive',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'BoundingBox BoundingBox',
@@ -59380,7 +59531,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPrimitiveList',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'int Count',
@@ -59548,7 +59699,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderPrimitiveType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -59574,6 +59724,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.RenderPropertyChangedEvent',
     dataType: 1,
     summary: 'Used by Rhino.Render object property value has changed events.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'int Context',
@@ -59591,6 +59742,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.RenderSettings',
     dataType: 1,
     summary: 'Contains settings used in rendering.',
+    baseclass: 'Rhino.Runtime.CommonObject',
     constructors: [
       {
         signature: 'RenderSettings()',
@@ -59780,6 +59932,7 @@ var RhinoCommonApi = [
     summary: `Helper class to get the correct view from the Render View Source settings.
    
    An instance of this class is supposed to be used with the using() {} construct.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RenderSourceView(RhinoDoc doc)',
@@ -59809,7 +59962,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTabs',
     dataType: 1,
-    summary: '',
     methods: [
       {
         signature: 'static object FromRenderSessionId(PlugIn plugIn,Type tabType,Guid renderSessionId)',
@@ -59841,7 +59993,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTexture',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.RenderContent',
     properties: [
       {
         signature: 'Transform LocalMappingTransform',
@@ -60096,7 +60248,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTexture.eLocalMappingType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'lmt_none'
@@ -60115,7 +60266,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTexture.TextureEvaluatorFlags',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Normal                  = 0x0000'
@@ -60137,7 +60287,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTexture.TextureGeneration',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Allow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Allow'
@@ -60153,7 +60302,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderTextureTable',
     dataType: 1,
-    summary: '',
+    interfaces: ['IRenderContentTable<RenderTexture>', 'IEnumerable<RenderTexture>', 'Collections.IRhinoTable<RenderTexture>'],
     properties: [
       {
         signature: 'int Count',
@@ -60186,7 +60335,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderWindow',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'Guid SessionId',
@@ -60320,7 +60469,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderWindow.Channel',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'void AddValue(int x,int y,Color4f value)',
@@ -60382,7 +60531,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderWindow.RenderSuccessCode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Completed = 0'
@@ -60395,7 +60543,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderWindow.StandardChannels',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None    = 0x0000'
@@ -60462,7 +60609,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderWindowClonedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RenderWindow NewRenderWindow',
@@ -60524,7 +60671,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedEnvironment',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimulatedEnvironment()',
@@ -60567,7 +60714,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedEnvironment.BackgroundProjections',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Planar = 0'
@@ -60601,7 +60747,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedTexture',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimulatedTexture()',
@@ -60704,7 +60850,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedTexture.EnvironmentMappingModes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Automatic = 0'
@@ -60738,7 +60883,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SimulatedTexture.ProjectionModes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'MappingChannel = 0'
@@ -60763,7 +60907,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Skylight',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
     constructors: [
       {
         signature: 'Skylight()',
@@ -60812,6 +60956,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.Sun',
     dataType: 1,
     summary: 'Represents the Sun on a little portion of Earth.',
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'Sun()',
@@ -60964,7 +61110,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SupportOptions',
     dataType: 1,
-    summary: '',
     methods: [
       {
         signature: 'static bool AlwaysShowSunPreview()',
@@ -61211,7 +61356,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SupportOptions.RdkInitialLocation',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'RenderContent = UnsafeNativeMethods.RdkInitialLocation.RenderContent'
@@ -61227,7 +61371,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.SupportOptions.RdkTextureSize',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Size1 = UnsafeNativeMethods.RdkTextureSize.Size1'
@@ -61250,6 +61393,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.TexturedColor',
     dataType: 1,
     summary: 'Color4f specialization of TexturedValue.',
+    baseclass: 'TexturedValue<Display.Color4f>',
     constructors: [
       {
         signature: 'TexturedColor(string name,Color4f value,bool on,float amount)',
@@ -61261,6 +61405,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.TexturedFloat',
     dataType: 1,
     summary: 'float specialization of TexturedValue.',
+    baseclass: 'TexturedValue<float>',
     constructors: [
       {
         signature: 'TexturedFloat(string name,float value,bool on,float amount)',
@@ -61283,7 +61428,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureEnvironmentMappingMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Automatic   = 0'
@@ -61318,6 +61462,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.TextureEvaluator',
     dataType: 1,
     summary: 'This is the interface to a lightweight object capable of evaluating texture color throughout uvw space.  Derive from this class to create your own texture evaluator to return from a custom RenderTexture.',
+    interfaces: ['IDisposable'],
     methods: [
       {
         signature: 'static void FreeByteArray(IntPtr p)',
@@ -61386,7 +61531,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureGeneration',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Allow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Allow'
@@ -61399,7 +61543,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureGraphInfo',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'TextureGraphInfo()',
@@ -61462,7 +61606,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureGraphInfo.Axis',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'kU = 0'
@@ -61478,7 +61621,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureGraphInfo.Channel',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'kRed = 0'
@@ -61501,6 +61643,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.TextureMapping',
     dataType: 1,
     summary: 'Represents a texture mapping.',
+    baseclass: 'Rhino.DocObjects.ModelComponent',
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
@@ -61699,7 +61842,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'PROJECTION_MODE = 0'
@@ -61757,7 +61899,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureProjectionMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'MappingChannel = 0'
@@ -61782,7 +61923,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureRenderHashFlags',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'ExcludeLocalMapping = (1 << 32)'
@@ -61792,7 +61932,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TextureWrapType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Clamped = 0'
@@ -61846,7 +61985,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.TwoColorRenderTexture',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.Render.RenderTexture',
     properties: [
       {
         signature: 'Color4f Color1',
@@ -61934,7 +62073,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.UI.WorldMapDayNight',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'WorldMapDayNight()',
@@ -62000,7 +62139,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Utilities',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static Guid DefaultRenderPlugInId',
@@ -62100,7 +62238,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Utilities.ShowContentChooserResults',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None',
@@ -62123,7 +62260,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Utilities.UiFrameworks',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Win32',
@@ -62150,7 +62286,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.Variant.VariantTypes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Null = 0'
@@ -62821,6 +62956,7 @@ var RhinoCommonApi = [
     name: 'Rhino.RhinoApp.CommandLineTextWriter',
     dataType: 1,
     summary: 'Provides a text writer that writes to the command line.',
+    baseclass: 'System.IO.TextWriter',
     properties: [
       {
         signature: 'Encoding Encoding',
@@ -62855,6 +62991,7 @@ var RhinoCommonApi = [
     name: 'Rhino.RhinoDoc',
     dataType: 1,
     summary: 'Represents an active model.',
+    interfaces: ['IDisposable'],
     properties: [
       {
         signature: 'static RhinoDoc ActiveDoc',
@@ -63704,6 +63841,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Passed to the ,  and the
       events.`,
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -63743,7 +63881,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.RhinoDoc.RenderMaterialAssignmentChangedEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.RhinoDoc.RenderContentTableEventArgs',
     properties: [
       {
         signature: 'bool IsLayer',
@@ -63775,6 +63913,7 @@ var RhinoCommonApi = [
     name: 'Rhino.RhinoDoc.TextureMappingEventArgs',
     dataType: 1,
     summary: 'Event arguments passed to the RhinoDoc.TextureMappingEvent.',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -63797,7 +63936,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.RhinoDoc.TextureMappingEventType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Added = UnsafeNativeMethods.RhinoEventWatcherTextureMappingEventConsts.Added',
@@ -63955,6 +64093,7 @@ var RhinoCommonApi = [
     name: 'Rhino.RhinoWindow',
     dataType: 1,
     summary: 'Represents the top level window in Rhino',
+    baseclass: 'System.Windows.Forms.IWin32Window',
     properties: [
       {
         signature: 'IntPtr Handle',
@@ -64087,6 +64226,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.CommonObject',
     dataType: 1,
     summary: 'Base class for .NET classes that wrap C++ unmanaged Rhino classes.',
+    interfaces: ['IDisposable', 'ISerializable'],
     properties: [
       {
         signature: 'static bool PerformCorruptionTesting',
@@ -64174,6 +64314,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.CorruptGeometryException',
     dataType: 1,
     summary: 'Thrown when Rhino finds a brep or mesh that will cause a crash if used for calculations.',
+    baseclass: 'Exception',
     properties: [
       {
         signature: 'CommonObject CommonObject',
@@ -64192,6 +64333,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents the error that happen when a class user attempts to execute a modifying operation
    on an object that has been added to a document.`,
+    baseclass: 'Exception',
     constructors: [
       {
         signature: 'DocumentCollectedException()',
@@ -64581,6 +64723,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.InProcess.RhinoCore',
     dataType: 1,
     summary: 'Represents an instance of RhinoCore.DLL.',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RhinoCore()',
@@ -64864,6 +65007,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a wrapper to an unmanaged "array" (list) of CRhinoObjRef instances.
    Wrapper for a C++ ON_ClassArray of CRhinoObjRef`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ClassArrayObjRef()',
@@ -64919,6 +65063,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a wrapper to an unmanaged "array" (list) of ON_ObjRef instances.
    Wrapper for a C++ ON_ClassArray of ON_ObjRef`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ClassArrayOnObjRef()',
@@ -64974,6 +65119,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_ClassArray<ON_wString>
    If you are not writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ClassArrayString()',
@@ -65052,6 +65198,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_2dex>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArray2dex()',
@@ -65102,6 +65249,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_PolyLine*>, ON_SimpleArray<ON_3dPointArray*>
    If you are not writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayArrayPoint3d()',
@@ -65146,6 +65294,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_BinaryArchive>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayBinaryArchiveReader()',
@@ -65200,6 +65349,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_SimpleArray<ON_Brep*> or ON_SimpleArray<const ON_Brep*>
    If you are not writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayBrepPointer()',
@@ -65249,6 +65399,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.InteropWrappers.SimpleArrayClippingPlaneObjectPointer',
     dataType: 1,
     summary: 'ON_SimpleArray of CRhinoClippingPlaneObject*',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayClippingPlaneObjectPointer()',
@@ -65293,6 +65444,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_SimpleArray of ON_Curve* or const ON_Curve*.  If you are not
    writing C++ code, then you can ignore this class.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayCurvePointer()',
@@ -65336,6 +65488,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<double>. If you are not writing C++ code,
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayDouble()',
@@ -65386,6 +65539,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_SimpleArray<ON_Extrusion*> or ON_SimpleArray<const ON_Extrusion*>
    If you are not writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayExtrusionPointer()',
@@ -65436,6 +65590,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_SimpleArray<ON_Geometry*>* or ON_SimpleArray<const ON_Geometry*>.
    If you are not writing C++ code, then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayGeometryPointer()',
@@ -65484,6 +65639,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_UUID>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayGuid()',
@@ -65534,6 +65690,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_UUID>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayGuidPointer()',
@@ -65579,6 +65736,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<int>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayInt()',
@@ -65629,6 +65787,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_Interval>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayInterval()',
@@ -65679,6 +65838,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_Line>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayLine()',
@@ -65724,6 +65884,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_SimpleArray<ON_Linetype*>
    If you are not writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayLinetypePointer()',
@@ -65770,6 +65931,7 @@ var RhinoCommonApi = [
     summary: `Represents a wrapper to an unmanaged array of mesh pointers.
    Wrapper for a C++ ON_SimpleArray of ON_Mesh* or const ON_Mesh*. If you are not
    writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayMeshPointer()',
@@ -65820,6 +65982,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<ON_Plane>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayPlane()',
@@ -65865,6 +66028,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `ON_SimpleArray<ON_2dPoint> class wrapper.  If you are not writing
    C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayPoint2d()',
@@ -65911,6 +66075,7 @@ var RhinoCommonApi = [
     summary: `ON_SimpleArray<ON_3dPoint>, ON_3dPointArray, ON_PolyLine all have the same size
    This class wraps all of these C++ versions.  If you are not writing C++ code then this
    class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayPoint3d()',
@@ -65956,6 +66121,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for a C++ ON_SimpleArray of ON_Surface* or const ON_Surface*.  If
    you are not writing C++ code then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArraySurfacePointer()',
@@ -65995,6 +66161,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Wrapper for ON_SimpleArray<unsigned int>. If you are not writing C++ code
    then this class is not for you.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'SimpleArrayUint()',
@@ -66052,6 +66219,7 @@ var RhinoCommonApi = [
    and unmanaged code.  This should not be be needed by plug-ins.
    If you are just dealing with an ON_wString*,
    use`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'StringHolder()',
@@ -66094,6 +66262,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents a wrapper to an unmanaged OpenNurbs string.
    Wraps a C++ ON_wString*.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'StringWrapper()',
@@ -66164,6 +66333,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.LicenseStateChangedEventArgs',
     dataType: 1,
     summary: 'Passed to LicenseStateChanged event on RhinoApp',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'LicenseStateChangedEventArgs(bool callingRhinoCommonAllowed)',
@@ -66211,6 +66381,8 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.NamedParametersEventArgs',
     dataType: 1,
     summary: 'Dictionary style class used for named callbacks from C++ -> .NET',
+    baseclass: 'EventArgs',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'NamedParametersEventArgs()',
@@ -66379,6 +66551,7 @@ var RhinoCommonApi = [
    in the constructor changes this behavior.
    
    Notification objects are not thread-safe and should only be manipulated in UI thread.`,
+    interfaces: ['INotifyPropertyChanged', 'Rhino.Runtime.Notifications.IAssemblyRestrictedObject'],
     constructors: [
       {
         signature: 'Notification()',
@@ -66529,6 +66702,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.Notifications.NotificationButtonClickedArgs',
     dataType: 1,
     summary: 'Used when a button is clicked for a notification.',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'NotificationButtonClickedArgs(Notification notification,ButtonType buttonClicked)',
@@ -66560,6 +66734,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.Notifications.TrulyObservableOrderedSet',
     dataType: 1,
     summary: 'An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.',
+    interfaces: ['IList<T>', 'INotifyCollectionChanged'],
     constructors: [
       {
         signature: 'TrulyObservableOrderedSet()',
@@ -66631,6 +66806,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Exception thrown when calling functions in RhinoCommon and the
    application is executing without a license`,
+    baseclass: 'Exception',
     constructors: [
       {
         signature: 'NotLicensedException()',
@@ -66794,6 +66970,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.RdkNotLoadedException',
     dataType: 1,
     summary: 'Is thrown when the RDK is not loaded.',
+    baseclass: 'Exception',
     constructors: [
       {
         signature: 'RdkNotLoadedException()',
@@ -66806,6 +66983,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Runtime.RiskyAction',
     dataType: 1,
     summary: 'Defines risky actions that need to be reported in crash exceptions',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'RiskyAction(string description,string file,string member,int line)',
@@ -67061,7 +67239,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.TextFields.InstanceAttributeField',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'InstanceAttributeField(string key,string prompt,string defaultValue)',
@@ -67107,7 +67284,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.ViewCaptureWriter.PathPoint',
     dataType: 2,
-    summary: '',
     properties: [
       {
         signature: 'PointF Location',
@@ -67122,7 +67298,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.ViewCaptureWriter.Pen',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'Color Color',
@@ -67137,7 +67312,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.ViewCaptureWriter.PointType',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Move'
@@ -67242,6 +67416,7 @@ var RhinoCommonApi = [
    of the scale. This allows for going back and forth from numerical
    representations of a scale and a string representation without "guessing"
    at the initial scale.`,
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'ScaleValue()',
@@ -67329,7 +67504,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.CollapsibleSectionHolderImpl',
     dataType: 1,
-    summary: '',
+    interfaces: ['IMPL_CALLBACKS', 'IDisposable'],
     constructors: [
       {
         signature: 'CollapsibleSectionHolderImpl(ICollapsibleSectionHolder client)',
@@ -67364,7 +67539,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.CollapsibleSectionImpl',
     dataType: 1,
-    summary: '',
+    interfaces: ['IMPL_CALLBACKS', 'IDisposable'],
     constructors: [
       {
         signature: 'CollapsibleSectionImpl(ICollapsibleSection section)',
@@ -67433,13 +67608,14 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.CollapsibleSectionImpl.Factory',
     dataType: 1,
-    summary: ''
+    baseclass: 'Rhino.UI.Controls.FactoryBase'
   },
   {
     name: 'Rhino.UI.Controls.CollapsibleSectionViewModel',
     dataType: 1,
     summary: `Derive from this class to implement your own view model that wraps around a built
    in implementation of IRdkViewModel.  Use GetData etc to implement your properties.`,
+    baseclass: 'Rhino.UI.Controls.IRdkViewModel',
     constructors: [
       {
         signature: 'CollapsibleSectionViewModel(ICollapsibleSection section)',
@@ -67478,7 +67654,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.DataSource.EventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'System.EventArgs',
     properties: [
       {
         signature: 'Guid DataType',
@@ -67489,7 +67665,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.DataSource.EventInfoArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'System.EventArgs',
     properties: [
       {
         signature: 'Guid DataType',
@@ -67504,7 +67680,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.DataSource.ProviderIds',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static Guid ContentChildSlot',
@@ -67654,8 +67829,7 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.UI.Controls.Delegates',
-    dataType: 1,
-    summary: ''
+    dataType: 1
   },
   {
     name: 'Rhino.UI.Controls.FactoryBase',
@@ -67683,23 +67857,19 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.UI.Controls.ICollapsibleSection',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.ICollapsibleSectionHolder',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.IHasCppImplementation',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.InternalRdkViewModel.EventPriority',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Low'
@@ -67718,32 +67888,31 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.InternalRdkViewModel.NewUndoRecord',
     dataType: 1,
-    summary: ''
+    interfaces: ['IDisposable']
   },
   {
     name: 'Rhino.UI.Controls.InternalRdkViewModel.UndoHelper',
     dataType: 1,
-    summary: ''
+    interfaces: ['IDisposable']
   },
   {
     name: 'Rhino.UI.Controls.InternalRdkViewModelFactory',
     dataType: 1,
-    summary: ''
+    baseclass: 'Rhino.UI.Controls.FactoryBase'
   },
   {
     name: 'Rhino.UI.Controls.IRdkViewModel',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.IWindow',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.Thumbnaillist.ThumbnailList',
     dataType: 1,
-    summary: '',
+    baseclass: 'Eto.Forms.Panel',
+    interfaces: ['IThumbnailList'],
     constructors: [
       {
         signature: 'ThumbnailList()'
@@ -67849,18 +68018,15 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.UI.Controls.Thumbnaillist.ThumbnailList.IHandler',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkContentThumbnail',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkContentThumbnailList_Sizes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Tiny',
@@ -67886,18 +68052,15 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnail',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnailList',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnailList_Modes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Grid',
@@ -67916,7 +68079,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnailList_Shapes',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Square',
@@ -67931,7 +68093,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.ThumbData',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'List<ThumbData> Children',
@@ -68004,7 +68165,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.Thumbnail',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.UI.Controls.ThumbnailUI.IRhRdkThumbnail',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'Thumbnail(IntPtr pRdkThumbnail)',
@@ -68058,7 +68220,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Controls.ThumbnailUI.ThumbnailViewModelFactory',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.UI.Controls.InternalRdkViewModelFactory',
     constructors: [
       {
         signature: 'ThumbnailViewModelFactory()',
@@ -68076,6 +68238,7 @@ var RhinoCommonApi = [
     name: 'Rhino.UI.Controls.UndoRecord',
     dataType: 1,
     summary: 'Undo Record',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'UndoRecord(string description,IRdkViewModel viewModel)',
@@ -68094,7 +68257,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Dialogs',
     dataType: 1,
-    summary: '',
     methods: [
       {
         signature: 'static void KillSplash()',
@@ -68279,7 +68441,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.DistanceDisplayMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Decimal = 0'
@@ -68403,7 +68564,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.GetColorEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'bool IncludeButtonColors',
@@ -68426,7 +68587,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballAppearanceSettings',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'GumballAppearanceSettings()',
@@ -68602,7 +68762,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballDisplayConduit',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GumballDisplayConduit()',
@@ -68682,7 +68842,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballFrame',
     dataType: 2,
-    summary: '',
     properties: [
       {
         signature: 'Plane Plane',
@@ -68791,7 +68950,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballObject',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'GumballObject()',
@@ -68861,7 +69020,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballPickResult',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'GumballMode Mode',
@@ -68878,7 +69036,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Gumball.GumballScaleMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Independent = 0'
@@ -68899,8 +69056,7 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.UI.IDialogService',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.IHelp',
@@ -68909,13 +69065,11 @@ var RhinoCommonApi = [
   },
   {
     name: 'Rhino.UI.ILocalizationService',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.IPanel',
-    dataType: 4,
-    summary: ''
+    dataType: 4
   },
   {
     name: 'Rhino.UI.IPanelsService',
@@ -69006,7 +69160,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Localization',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static int CurrentLanguageId',
@@ -69135,7 +69288,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ModifierKey',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -69151,7 +69303,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.MouseButton',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -69181,7 +69332,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.MouseCallbackEventArgs',
     dataType: 1,
-    summary: '',
+    baseclass: 'System.ComponentModel.CancelEventArgs',
     properties: [
       {
         signature: 'MouseButtons Button',
@@ -69428,7 +69579,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ObjectPropertiesPageEventArgs',
     dataType: 1,
-    summary: '',
     constructors: [
       {
         signature: 'ObjectPropertiesPageEventArgs(ObjectPropertiesPage page)',
@@ -69581,7 +69731,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.OptionsDialogPage',
     dataType: 1,
-    summary: '',
+    baseclass: 'Rhino.UI.StackedDialogPage',
     methods: [
       {
         signature: 'Commands.Result RunScript(RhinoDoc doc,RunMode mode)',
@@ -69593,6 +69743,7 @@ var RhinoCommonApi = [
     name: 'Rhino.UI.PanelEventArgs',
     dataType: 1,
     summary: 'Panels.Show event arguments',
+    baseclass: 'EventArgs',
     constructors: [
       {
         signature: 'PanelEventArgs(Guid panelId,uint documentSerialNumber)',
@@ -70093,7 +70244,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.RuiUpdateUi',
     dataType: 1,
-    summary: '',
+    baseclass: 'EventArgs',
     properties: [
       {
         signature: 'bool Checked',
@@ -70216,7 +70367,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageButton',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'OK = 0'
@@ -70241,7 +70391,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageDefaultButton',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'Button1 = 0'
@@ -70257,7 +70406,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageIcon',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -70291,7 +70439,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageMode',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'ApplicationModal = 0'
@@ -70307,7 +70454,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageOptions',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -70335,7 +70481,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ShowMessageResult',
     dataType: 3,
-    summary: '',
     values: [
       {
         signature: 'None = 0'
@@ -70367,6 +70512,7 @@ var RhinoCommonApi = [
     name: 'Rhino.UI.ShowPanelEventArgs',
     dataType: 1,
     summary: 'Panels.Show event arguments',
+    baseclass: 'Rhino.UI.PanelEventArgs',
     constructors: [
       {
         signature: 'ShowPanelEventArgs(Guid panelId,uint documentSerialNumber,bool show)',
@@ -70600,7 +70746,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.Toolbar',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'static Size BitmapSize',
@@ -70623,7 +70768,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ToolbarFile',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'int GroupCount',
@@ -70677,7 +70821,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ToolbarFileCollection',
     dataType: 1,
-    summary: '',
+    interfaces: ['IEnumerable<ToolbarFile>'],
     properties: [
       {
         signature: 'static bool MruSidebarIsVisible',
@@ -70715,7 +70859,6 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.ToolbarGroup',
     dataType: 1,
-    summary: '',
     properties: [
       {
         signature: 'Guid Id',
@@ -70738,7 +70881,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.UI.WaitCursor',
     dataType: 1,
-    summary: '',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'WaitCursor()',
@@ -70762,13 +70905,11 @@ var RhinoCommonApi = [
   },
   {
     name: 'RhinoMobile.Display.ColorExtensions',
-    dataType: 1,
-    summary: ''
+    dataType: 1
   },
   {
     name: 'UnsafeNativeMethods.Point',
-    dataType: 2,
-    summary: ''
+    dataType: 2
   }
 ]
 

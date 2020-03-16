@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>RhinoCommon API</q-toolbar-title>
-        <div>v7.0</div>
+        <div>v{{version}}</div>
       </q-toolbar>
     </q-header>
 
@@ -38,11 +38,13 @@ export default {
   name: 'MainLayout',
   data () {
     const vm = ViewModel.getTree()
+    const mostRecent = ViewModel.mostRecentSince().toFixed(1)
     return {
       leftDrawerOpen: false,
       api: vm,
       selectedNode: [],
-      watcherEnabled: true
+      watcherEnabled: true,
+      version: mostRecent
     }
   },
   created () {

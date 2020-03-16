@@ -177,11 +177,25 @@ namespace api_docify
             return rc;
         }
 
-        public string GetBaseList()
+        public string[] GetBaseList(Dictionary<string, ParsedType> allPublicTypes)
         {
-            if (_declarationType.BaseList != null)
-                return _declarationType.BaseList.ToString();
-            return "";
+            if (_declarationType != null && _declarationType.BaseList != null)
+            {
+                int typeCount = _declarationType.BaseList.Types.Count;
+                string[] rc = new string[typeCount];
+                for( int i=0; i<typeCount; i++)
+                {
+                    rc[i] = _declarationType.BaseList.Types[i].ToString();
+                    if( rc[i].Equals("Runtime.CommonObject"))
+                    {
+                        rc[i] = "CommonObject"; //temp hack fix
+                    }
+                    if (allPublicTypes != null && allPublicTypes.ContainsKey(rc[i]))
+                        rc[i] = allPublicTypes[rc[i]].FullName;
+                }
+                return rc;
+            }
+            return null;
         }
     }
 }
