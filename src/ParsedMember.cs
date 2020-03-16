@@ -283,6 +283,23 @@ namespace api_docify
             throw new System.NotImplementedException();
         }
 
+        public ParsedParameter[] GetParameters()
+        {
+            // BaseMethodDeclarationSyntax handles both methods and constructors
+            BaseMethodDeclarationSyntax method = Member as BaseMethodDeclarationSyntax;
+            ParameterListSyntax parameters = method?.ParameterList;
+            if(parameters != null && parameters.Parameters.Count > 0)
+            {
+                ParsedParameter[] rc = new ParsedParameter[parameters.Parameters.Count];
+                for( int i=0; i<parameters.Parameters.Count; i++ )
+                {
+                    rc[i] = new ParsedParameter(parameters.Parameters[i], Documentation);
+                }
+                return rc;
+            }
+            return null;
+        }
+
         public ParsedType ReturnType(IEnumerable<ParsedType> types)
         {
             string searchName = null;

@@ -46,6 +46,7 @@
     <Compile Include="CodeAnalysisExtensions.cs" />
     <Compile Include="JsonBuilder.cs" />
     <Compile Include="MarkdownBuilder.cs" />
+    <Compile Include="ParsedParameter.cs" />
     <Compile Include="ParsedType.cs" />
     <Compile Include="ParsedMember.cs" />
     <Compile Include="Program.cs" />

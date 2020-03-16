@@ -46,16 +46,34 @@ namespace api_docify
             return GetTagText("returns");
         }
 
-        string GetTagText(string tag)
+        string GetTagText(string tag, string attributeName = null)
         {
             var xml = DocumentationAsXml();
             if (xml != null)
             {
                 var element = xml.GetElementsByTagName(tag);
                 if (element != null && element.Count > 0)
-                    return element[0].InnerText.Trim();
+                {
+                    if(attributeName==null)
+                        return element[0].InnerText.Trim();
+                    for(int i=0; i<element.Count; i++ )
+                    {
+                        var el = element[i];
+                        for( int j=0; j<el.Attributes.Count; j++)
+                        {
+                            var attr = el.Attributes[j];
+                            if (attr.Name.Equals("name") && attr.Value.Equals(attributeName))
+                                return el.InnerText.Trim();
+                        }
+                    }
+                }
             }
             return "";
+        }
+
+        protected string GetParamText(string paramName)
+        {
+            return GetTagText("param", paramName);
         }
 
         System.Xml.XmlDocument DocumentationAsXml()

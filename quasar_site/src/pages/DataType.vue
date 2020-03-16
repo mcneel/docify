@@ -30,6 +30,13 @@
               </q-badge>
               {{member.summary}}
             </q-item-label>
+            <q-item v-if="member.parameters">
+              <q-item-section>
+                <q-item-label inset-level="1" caption v-for="parameter in member.parameters" :key="parameter.name">
+                  {{parameter.name}} - {{parameter.summary}}
+                </q-item-label>
+              </q-item-section>
+            </q-item>
           </q-item-section>
         </q-item>
       </q-expansion-item>

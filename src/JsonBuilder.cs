@@ -213,6 +213,40 @@ const DataTypes = {
                     sb.Append($"        since: {sinceValue}");
                 }
 
+                var parameters = member.GetParameters();
+                if( parameters!=null)
+                {
+                    // for now, just skip items that have ALL undocumented parameters
+                    bool writeParameters = false;
+                    for(int i=0; i<parameters.Length; i++)
+                    {
+                        if( !string.IsNullOrWhiteSpace(parameters[i].DocString))
+                        {
+                            writeParameters = true;
+                            break;
+                        }
+                    }
+
+                    if (writeParameters)
+                    {
+                        sb.AppendLine(",");
+                        sb.AppendLine($"        parameters: [");
+                        for (int i = 0; i < parameters.Length; i++)
+                        {
+                            if (i > 0)
+                                sb.AppendLine(",");
+                            sb.AppendLine("          {");
+                            sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
+                            // Not sure if we really need type as it is easy to resolve in javascript
+                            // sb.AppendLine($"            type: {JsonQuote(parameters[i].Type)},");
+                            sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
+                            sb.Append("          }");
+                        }
+                        sb.AppendLine();
+                        sb.Append("        ]");
+                    }
+                }
+
                 if (member.MemberType == ParsedMemberType.Method)
                 {
                     string returns = member.ReturnDocString();
