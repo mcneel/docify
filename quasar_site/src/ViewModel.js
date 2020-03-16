@@ -3,6 +3,7 @@ import { DataTypes, RhinoCommonApi } from './RhinoCommonApi'
 const _selectedItemChangedCallbacks = {}
 let _viewmodel = null
 let _typemap = null
+let _optionsList = null
 
 const ViewModel = {
   getTree () {
@@ -131,6 +132,15 @@ const ViewModel = {
       }
     })
     return since
+  },
+  getOptionsList () {
+    if (_optionsList) return _optionsList
+    const rc = []
+    RhinoCommonApi.forEach(type => {
+      rc.push(type.name)
+    })
+    _optionsList = rc
+    return rc
   }
 }
 

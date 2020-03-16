@@ -4,7 +4,39 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>RhinoCommon API</q-toolbar-title>
-        <div>v{{version}}</div>
+        <!--
+        <q-input dense standout bg-color="white" color="black" v-model="text">
+          <template v-slot:append>
+            <q-icon v-if="text === ''" name="search" />
+            <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
+          </template>
+        </q-input>
+        -->
+        <q-select
+          bg-color="white"
+          color="black"
+          dense
+          hide-dropdown-icon
+          clearable
+          v-model="model"
+          use-input
+          hide-selected
+          fill-input
+          input-debounce="0"
+          :options="options"
+          style="width: 150px;"
+          @input="onInput"
+          @filter="filterFn"
+        >
+          <template v-slot:no-option>
+            <q-item>
+              <q-item-section class="text-grey">
+                No results
+              </q-item-section>
+            </q-item>
+          </template>
+        </q-select>
+        <div class="q-pa-sm">v{{version}}</div>
       </q-toolbar>
     </q-header>
 
@@ -39,22 +71,44 @@ export default {
   data () {
     const vm = ViewModel.getTree()
     const mostRecent = ViewModel.mostRecentSince().toFixed(1)
+    const inputOptions = ViewModel.getOptionsList()
     return {
       leftDrawerOpen: false,
       api: vm,
       selectedNode: [],
       watcherEnabled: true,
-      version: mostRecent
+      version: mostRecent,
+      model: null,
+      options: inputOptions
     }
   },
   created () {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
   },
   methods: {
+    onInput (value) {
+      if (ViewModel.getOptionsList().includes(value)) {
+        this.model = ''
+        this.selectedNode = value
+      }
+      // console.log(value)
+    },
     onChangeSelectedItem (item) {
       this.watcherEnabled = false
       this.selectedNode = item.name
       this.watcherEnabled = true
+    },
+    filterFn (val, update) {
+      update(() => {
+        if (val === '') {
+          this.options = ViewModel.getOptionsList()
+        } else {
+          const needle = val.toLowerCase()
+          this.options = ViewModel.getOptionsList().filter(
+            v => v.toLowerCase().indexOf(needle) > -1
+          )
+        }
+      })
     }
   },
   watch: {
