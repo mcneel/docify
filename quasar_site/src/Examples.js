@@ -1,6 +1,6 @@
 var Examples = [
   {
-    name: 'ex_extractthumbnail.vb',
+    name: 'Extractthumbnail.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input
@@ -46,7 +46,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_extractthumbnail.cs',
+    name: 'Extractthumbnail.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -89,7 +89,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_extractthumbnail.py',
+    name: 'Extractthumbnail.py',
     code: `import Rhino
 import rhinoscriptsyntax as rs
 from scriptcontext import doc
@@ -126,7 +126,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addclippingplane.vb',
+    name: 'Addclippingplane.vb',
     code: `Partial Class Examples
   Public Shared Function AddClippingPlane(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Define the corners of the clipping plane
@@ -167,7 +167,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addclippingplane.cs',
+    name: 'Addclippingplane.cs',
     code: `using System;
 
 partial class Examples
@@ -211,7 +211,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addclippingplane.py',
+    name: 'Addclippingplane.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -247,7 +247,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_printinstancedefinitiontree.vb',
+    name: 'Printinstancedefinitiontree.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.FileIO
@@ -323,7 +323,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_printinstancedefinitiontree.cs',
+    name: 'Printinstancedefinitiontree.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.FileIO;
@@ -392,7 +392,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_printinstancedefinitiontree.py',
+    name: 'Printinstancedefinitiontree.py',
     code: `from scriptcontext import doc
 import Rhino
 
@@ -441,7 +441,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_hatchcurve.vb',
+    name: 'Hatchcurve.vb',
     code: `Partial Class Examples
   Public Shared Function HatchCurve(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim go = New Rhino.Input.Custom.GetObject()
@@ -497,7 +497,7 @@ End Class
     ]
   },
   {
-    name: 'ex_hatchcurve.cs',
+    name: 'Hatchcurve.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result HatchCurve(Rhino.RhinoDoc doc)
@@ -550,7 +550,7 @@ End Class
     ]
   },
   {
-    name: 'ex_hatchcurve.py',
+    name: 'Hatchcurve.py',
     code: `import Rhino
 import scriptcontext
 
@@ -594,7 +594,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_gettext.vb',
+    name: 'Gettext.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -633,7 +633,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_gettext.cs',
+    name: 'Gettext.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -671,7 +671,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_gettext.py',
+    name: 'Gettext.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -700,7 +700,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_findobjectsbyname.vb',
+    name: 'Findobjectsbyname.vb',
     code: `Partial Class Examples
   Public Shared Function FindObjectsByName(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Const name As String = "abc"
@@ -732,7 +732,7 @@ End Class
     ]
   },
   {
-    name: 'ex_findobjectsbyname.cs',
+    name: 'Findobjectsbyname.cs',
     code: `using System;
 
 partial class Examples
@@ -767,7 +767,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_findobjectsbyname.py',
+    name: 'Findobjectsbyname.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -795,7 +795,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_objectiterator.vb',
+    name: 'Objectiterator.vb',
     code: `
 Imports Rhino
 Imports Rhino.Commands
@@ -837,7 +837,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_objectiterator.cs',
+    name: 'Objectiterator.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.DocObjects;
@@ -883,7 +883,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_objectiterator.py',
+    name: 'Objectiterator.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -916,7 +916,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_replacehatchpattern.vb',
+    name: 'Replacehatchpattern.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -973,7 +973,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_replacehatchpattern.cs',
+    name: 'Replacehatchpattern.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -1033,7 +1033,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_replacehatchpattern.py',
+    name: 'Replacehatchpattern.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -1077,7 +1077,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_blockinsertionpoint.vb',
+    name: 'Blockinsertionpoint.vb',
     code: `Partial Class Examples
   Public Shared Function BlockInsertionPoint(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim rc As Rhino.Commands.Result
@@ -1101,7 +1101,7 @@ End Class
     ]
   },
   {
-    name: 'ex_blockinsertionpoint.cs',
+    name: 'Blockinsertionpoint.cs',
     code: `using Rhino.Commands;
 
 partial class Examples
@@ -1128,7 +1128,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_blockinsertionpoint.py',
+    name: 'Blockinsertionpoint.py',
     code: `import Rhino
 import scriptcontext
 
@@ -1151,7 +1151,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_instancedefinitionobjects.vb',
+    name: 'Instancedefinitionobjects.vb',
     code: `Partial Class Examples
   Public Shared Function InstanceDefinitionObjects(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim objref As Rhino.DocObjects.ObjRef = Nothing
@@ -1180,7 +1180,7 @@ End Class
     ]
   },
   {
-    name: 'ex_instancedefinitionobjects.cs',
+    name: 'Instancedefinitionobjects.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result InstanceDefinitionObjects(Rhino.RhinoDoc doc)
@@ -1211,7 +1211,7 @@ End Class
     ]
   },
   {
-    name: 'ex_instancedefinitionobjects.py',
+    name: 'Instancedefinitionobjects.py',
     code: `import Rhino
 import scriptcontext
 
@@ -1235,7 +1235,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_renameblock.vb',
+    name: 'Renameblock.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 
@@ -1306,7 +1306,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_renameblock.cs',
+    name: 'Renameblock.cs',
     code: `using Rhino;
 using Rhino.Input;
 using Rhino.Commands;
@@ -1373,7 +1373,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_renameblock.py',
+    name: 'Renameblock.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import doc
 
@@ -1401,7 +1401,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_locklayer.vb',
+    name: 'Locklayer.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports System.Linq
@@ -1474,7 +1474,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_locklayer.cs',
+    name: 'Locklayer.cs',
     code: `using Rhino;
 using Rhino.Input;
 using Rhino.Commands;
@@ -1553,7 +1553,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_locklayer.py',
+    name: 'Locklayer.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import doc
 
@@ -1594,7 +1594,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_sellayer.vb',
+    name: 'Sellayer.vb',
     code: `Partial Class Examples
   Public Shared Function SelLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim rc As Rhino.Commands.Result
@@ -1625,7 +1625,7 @@ End Class
     ]
   },
   {
-    name: 'ex_sellayer.cs',
+    name: 'Sellayer.cs',
     code: `using Rhino.Commands;
 
 partial class Examples
@@ -1658,7 +1658,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_sellayer.py',
+    name: 'Sellayer.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid, System.Drawing.Color
@@ -1688,7 +1688,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addchildlayer.vb',
+    name: 'Addchildlayer.vb',
     code: `Partial Class Examples
   Public Shared Function AddChildLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Get an existing layer
@@ -1734,7 +1734,7 @@ End Class`,
     ]
   },
   {
-    name: 'ex_addchildlayer.cs',
+    name: 'Addchildlayer.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result AddChildLayer(Rhino.RhinoDoc doc)
@@ -1782,7 +1782,7 @@ End Class`,
     ]
   },
   {
-    name: 'ex_addchildlayer.py',
+    name: 'Addchildlayer.py',
     code: `import Rhino
 import scriptcontext
 import System.Drawing.Color
@@ -1827,7 +1827,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addlayer.vb',
+    name: 'Addlayer.vb',
     code: `Partial Class Examples
   Public Shared Function AddLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Cook up an unused layer name
@@ -1890,7 +1890,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addlayer.cs',
+    name: 'Addlayer.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result AddLayer(Rhino.RhinoDoc doc)
@@ -1958,7 +1958,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addlayer.py',
+    name: 'Addlayer.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid, System.Drawing.Color
@@ -2022,7 +2022,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addlayout.vb',
+    name: 'Addlayout.vb',
     code: `Partial Class Examples
   ''' <summary>
   ''' Generate a layout with a single detail view that zooms to a list of objects
@@ -2070,7 +2070,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addlayout.cs',
+    name: 'Addlayout.cs',
     code: `partial class Examples
 {
   /// <summary>
@@ -2122,7 +2122,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addlayout.py',
+    name: 'Addlayout.py',
     code: `import Rhino
 import scriptcontext
 
@@ -2166,7 +2166,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_duplicateobject.vb',
+    name: 'Duplicateobject.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.DocObjects
@@ -2206,7 +2206,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_duplicateobject.cs',
+    name: 'Duplicateobject.cs',
     code: `using System;
 using Rhino;
 using Rhino.Commands;
@@ -2241,7 +2241,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_duplicateobject.py',
+    name: 'Duplicateobject.py',
     code: `from System import *
 from Rhino import *
 from Rhino.Commands import *
@@ -2270,7 +2270,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_orientonsrf.vb',
+    name: 'Orientonsrf.vb',
     code: `Partial Class Examples
   Public Shared Function OrientOnSrf(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Select objects to orient
@@ -2376,7 +2376,7 @@ End Class
     ]
   },
   {
-    name: 'ex_orientonsrf.cs',
+    name: 'Orientonsrf.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result OrientOnSrf(Rhino.RhinoDoc doc)
@@ -2479,7 +2479,7 @@ End Class
     ]
   },
   {
-    name: 'ex_orientonsrf.py',
+    name: 'Orientonsrf.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -2576,7 +2576,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_booleandifference.vb',
+    name: 'Booleandifference.vb',
     code: `Imports System.Collections.Generic
 
 Partial Class Examples
@@ -2637,7 +2637,7 @@ End Class
     ]
   },
   {
-    name: 'ex_booleandifference.cs',
+    name: 'Booleandifference.cs',
     code: `using System.Collections.Generic;
 using Rhino.Commands;
 
@@ -2696,7 +2696,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_booleandifference.py',
+    name: 'Booleandifference.py',
     code: `import Rhino
 import scriptcontext
 
@@ -2738,7 +2738,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_intersectcurves.vb',
+    name: 'Intersectcurves.vb',
     code: `Partial Class Examples
   Public Shared Function IntersectCurves(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Select two curves to intersect
@@ -2786,7 +2786,7 @@ End Class
     ]
   },
   {
-    name: 'ex_intersectcurves.cs',
+    name: 'Intersectcurves.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result IntersectCurves(Rhino.RhinoDoc doc)
@@ -2837,7 +2837,7 @@ End Class
     ]
   },
   {
-    name: 'ex_intersectcurves.py',
+    name: 'Intersectcurves.py',
     code: `import Rhino
 import scriptcontext
 
@@ -2878,7 +2878,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addradialdimension.vb',
+    name: 'Addradialdimension.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -2946,7 +2946,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_addradialdimension.cs',
+    name: 'Addradialdimension.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -3018,7 +3018,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_addradialdimension.py',
+    name: 'Addradialdimension.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -3072,7 +3072,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_constrainedcopy.vb',
+    name: 'Constrainedcopy.vb',
     code: `Partial Class Examples
   Public Shared Function ConstrainedCopy(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Get a single planar closed curve
@@ -3129,7 +3129,7 @@ End Class
     ]
   },
   {
-    name: 'ex_constrainedcopy.cs',
+    name: 'Constrainedcopy.cs',
     code: `using System;
 
 partial class Examples
@@ -3188,7 +3188,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_constrainedcopy.py',
+    name: 'Constrainedcopy.py',
     code: `import Rhino
 import scriptcontext
 
@@ -3235,7 +3235,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_modifyobjectcolor.vb',
+    name: 'Modifyobjectcolor.vb',
     code: `Imports System.Drawing
 Imports Rhino
 Imports Rhino.DocObjects
@@ -3288,7 +3288,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_modifyobjectcolor.cs',
+    name: 'Modifyobjectcolor.cs',
     code: `using System.Drawing;
 using Rhino;
 using Rhino.DocObjects;
@@ -3336,7 +3336,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_modifyobjectcolor.py',
+    name: 'Modifyobjectcolor.py',
     code: `from System.Drawing import *
 from Rhino import *
 from Rhino.DocObjects import *
@@ -3378,7 +3378,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_displayorder.vb',
+    name: 'Displayorder.vb',
     code: `Imports System.Collections.Generic
 Imports System.Drawing
 Imports System.Linq
@@ -3455,7 +3455,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_displayorder.cs',
+    name: 'Displayorder.cs',
     code: `using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -3533,7 +3533,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_displayorder.py',
+    name: 'Displayorder.py',
     code: `from System.Collections.Generic import *
 from System.Drawing import *
 from Rhino import *
@@ -3598,7 +3598,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_moveobjectstocurrentlayer.vb',
+    name: 'Moveobjectstocurrentlayer.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.DocObjects
@@ -3640,7 +3640,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_moveobjectstocurrentlayer.cs',
+    name: 'Moveobjectstocurrentlayer.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.DocObjects;
@@ -3684,7 +3684,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_moveobjectstocurrentlayer.py',
+    name: 'Moveobjectstocurrentlayer.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.DocObjects import *
@@ -3718,7 +3718,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_isocurvedensity.vb',
+    name: 'Isocurvedensity.vb',
     code: `Partial Class Examples
   Public Shared Function IsocurveDensity(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim objref As Rhino.DocObjects.ObjRef = Nothing
@@ -3742,7 +3742,7 @@ End Class
     ]
   },
   {
-    name: 'ex_isocurvedensity.cs',
+    name: 'Isocurvedensity.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result IsocurveDensity(Rhino.RhinoDoc doc)
@@ -3768,7 +3768,7 @@ End Class
     ]
   },
   {
-    name: 'ex_isocurvedensity.py',
+    name: 'Isocurvedensity.py',
     code: `import Rhino
 import scriptcontext
 
@@ -3789,7 +3789,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_objectdisplaymode.vb',
+    name: 'Objectdisplaymode.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 
@@ -3845,7 +3845,7 @@ End Class
     ]
   },
   {
-    name: 'ex_objectdisplaymode.cs',
+    name: 'Objectdisplaymode.cs',
     code: `using System;
 using Rhino;
 using Rhino.Commands;
@@ -3904,7 +3904,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_objectdisplaymode.py',
+    name: 'Objectdisplaymode.py',
     code: `import Rhino
 import scriptcontext
 
@@ -3950,7 +3950,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_advanceddisplay.vb',
+    name: 'Advanceddisplay.vb',
     code: `Imports System.Collections.Generic
 Imports Rhino.Display
 
@@ -4023,7 +4023,7 @@ End Class
     ]
   },
   {
-    name: 'ex_advanceddisplay.cs',
+    name: 'Advanceddisplay.cs',
     code: `using System.Collections.Generic;
 using Rhino.Display;
 
@@ -4098,7 +4098,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_advanceddisplay.py',
+    name: 'Advanceddisplay.py',
     code: `import Rhino
 import scriptcontext
 
@@ -4155,7 +4155,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_drawstring.vb',
+    name: 'Drawstring.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Geometry
@@ -4197,7 +4197,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_drawstring.cs',
+    name: 'Drawstring.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Geometry;
@@ -4238,7 +4238,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_drawstring.py',
+    name: 'Drawstring.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Geometry import *
@@ -4271,7 +4271,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_conduitarrowheads.vb',
+    name: 'Conduitarrowheads.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
@@ -4379,7 +4379,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_conduitarrowheads.cs',
+    name: 'Conduitarrowheads.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Geometry;
@@ -4496,7 +4496,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_conduitarrowheads.py',
+    name: 'Conduitarrowheads.py',
     code: `import Rhino
 import System.Drawing
 import scriptcontext
@@ -4582,7 +4582,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_conduitbitmap.vb',
+    name: 'Conduitbitmap.vb',
     code: `Imports System.Drawing
 Imports Rhino
 Imports Rhino.Commands
@@ -4636,7 +4636,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_conduitbitmap.cs',
+    name: 'Conduitbitmap.cs',
     code: `using System.Drawing;
 using Rhino;
 using Rhino.Commands;
@@ -4688,7 +4688,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_conduitbitmap.py',
+    name: 'Conduitbitmap.py',
     code: `import Rhino
 from Rhino.Geometry import *
 import System.Drawing
@@ -4721,7 +4721,7 @@ if __name__== "__main__":
     ]
   },
   {
-    name: 'ex_getpointdynamicdraw.vb',
+    name: 'Getpointdynamicdraw.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Commands
@@ -4788,7 +4788,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_getpointdynamicdraw.cs',
+    name: 'Getpointdynamicdraw.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
@@ -4852,7 +4852,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_getpointdynamicdraw.py',
+    name: 'Getpointdynamicdraw.py',
     code: `from Rhino import *
 from Rhino.Geometry import *
 from Rhino.Commands import *
@@ -4902,7 +4902,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_meshdrawing.vb',
+    name: 'Meshdrawing.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Display
@@ -5004,7 +5004,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_meshdrawing.cs',
+    name: 'Meshdrawing.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Display;
@@ -5103,7 +5103,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_meshdrawing.py',
+    name: 'Meshdrawing.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import doc
 import Rhino
@@ -5167,7 +5167,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_arraybydistance.vb',
+    name: 'Arraybydistance.vb',
     code: `Imports Rhino
 
 <System.Runtime.InteropServices.Guid("03249FBF-75C9-4878-83CC-20C197E5A758")> _
@@ -5279,7 +5279,7 @@ End Class
     ]
   },
   {
-    name: 'ex_arraybydistance.cs',
+    name: 'Arraybydistance.cs',
     code: `using Rhino;
 
 [System.Runtime.InteropServices.Guid("3CDCBB20-B4E4-4AB6-B870-C911C7435BD7")]
@@ -5397,7 +5397,7 @@ public class ArrayByDistanceCommand : Rhino.Commands.Command
     ]
   },
   {
-    name: 'ex_arraybydistance.py',
+    name: 'Arraybydistance.py',
     code: `import Rhino
 import scriptcontext
 
@@ -5484,7 +5484,7 @@ if( __name__ == "__main__" ):
     ]
   },
   {
-    name: 'ex_rhinopageviewwidthheight.vb',
+    name: 'Rhinopageviewwidthheight.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input
@@ -5530,7 +5530,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_rhinopageviewwidthheight.cs',
+    name: 'Rhinopageviewwidthheight.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -5570,7 +5570,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_rhinopageviewwidthheight.py',
+    name: 'Rhinopageviewwidthheight.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.Input import *
@@ -5604,7 +5604,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_activeviewport.vb',
+    name: 'Activeviewport.vb',
     code: `Partial Class Examples
   Public Shared Function ActiveViewport(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim view As Rhino.Display.RhinoView = doc.Views.ActiveView
@@ -5635,7 +5635,7 @@ End Class
     ]
   },
   {
-    name: 'ex_activeviewport.cs',
+    name: 'Activeviewport.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result ActiveViewport(Rhino.RhinoDoc doc)
@@ -5673,7 +5673,7 @@ End Class
     ]
   },
   {
-    name: 'ex_activeviewport.py',
+    name: 'Activeviewport.py',
     code: `import Rhino
 import scriptcontext
 
@@ -5699,7 +5699,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addbackgroundbitmap.vb',
+    name: 'Addbackgroundbitmap.vb',
     code: `Partial Class Examples
   Public Shared Function AddBackgroundBitmap(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Allow the user to select a bitmap file
@@ -5779,7 +5779,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addbackgroundbitmap.cs',
+    name: 'Addbackgroundbitmap.cs',
     code: `using System;
 
 partial class Examples
@@ -5862,7 +5862,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addbackgroundbitmap.py',
+    name: 'Addbackgroundbitmap.py',
     code: `import Rhino
 import scriptcontext
 import System.Windows.Forms.DialogResult
@@ -5938,7 +5938,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_screencaptureview.vb',
+    name: 'Screencaptureview.vb',
     code: `Imports System.Windows.Forms
 Imports Rhino
 Imports Rhino.Commands
@@ -5988,7 +5988,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_screencaptureview.cs',
+    name: 'Screencaptureview.cs',
     code: `using System;
 using System.Windows.Forms;
 using Rhino;
@@ -6042,7 +6042,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_screencaptureview.py',
+    name: 'Screencaptureview.py',
     code: `from scriptcontext import doc
 from System.Windows.Forms import *
 import Rhino.UI
@@ -6083,7 +6083,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addnamedview.vb',
+    name: 'Addnamedview.vb',
     code: `Partial Class Examples
   Public Shared Function AddNamedView(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim view As Rhino.Display.RhinoView = Nothing
@@ -6142,7 +6142,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addnamedview.cs',
+    name: 'Addnamedview.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result AddNamedView(Rhino.RhinoDoc doc)
@@ -6198,7 +6198,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addnamedview.py',
+    name: 'Addnamedview.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -6252,7 +6252,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_viewportresolution.vb',
+    name: 'Viewportresolution.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 
@@ -6277,7 +6277,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_viewportresolution.cs',
+    name: 'Viewportresolution.cs',
     code: `using Rhino;
 using Rhino.Commands;
 
@@ -6301,7 +6301,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_viewportresolution.py',
+    name: 'Viewportresolution.py',
     code: `from scriptcontext import doc
 
 activeViewport = doc.Views.ActiveView.ActiveViewport
@@ -6313,7 +6313,7 @@ print "Name = {0}: Width = {1}, Height = {2}".format(
     ]
   },
   {
-    name: 'ex_pointatcursor.vb',
+    name: 'Pointatcursor.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.DocObjects
@@ -6363,7 +6363,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_pointatcursor.cs',
+    name: 'Pointatcursor.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.DocObjects;
@@ -6407,7 +6407,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_addbrepbox.vb',
+    name: 'Addbrepbox.vb',
     code: `Partial Class Examples
   Public Shared Function AddBrepBox(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim pt0 As New Rhino.Geometry.Point3d(0, 0, 0)
@@ -6430,7 +6430,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addbrepbox.cs',
+    name: 'Addbrepbox.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result AddBrepBox(Rhino.RhinoDoc doc)
@@ -6456,7 +6456,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addbrepbox.py',
+    name: 'Addbrepbox.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -6482,7 +6482,7 @@ if( __name__ == "__main__" ):
     ]
   },
   {
-    name: 'ex_elevation.vb',
+    name: 'Elevation.vb',
     code: `Imports System.Collections.Generic
 Imports System.Linq
 Imports Rhino
@@ -6599,7 +6599,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_elevation.cs',
+    name: 'Elevation.cs',
     code: `using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6721,7 +6721,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_elevation.py',
+    name: 'Elevation.py',
     code: `import rhinoscriptsyntax as rs
 from Rhino.Geometry import Intersect, Point3d, Vector3d
 from scriptcontext import doc
@@ -6755,7 +6755,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_curvebrepbox.vb',
+    name: 'Curvebrepbox.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Commands
@@ -6800,7 +6800,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_curvebrepbox.cs',
+    name: 'Curvebrepbox.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
@@ -6843,7 +6843,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_curvebrepbox.py',
+    name: 'Curvebrepbox.py',
     code: `import Rhino
 from Rhino.Geometry import *
 from Rhino.Commands import Result
@@ -6884,7 +6884,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_isbrepbox.vb',
+    name: 'Isbrepbox.vb',
     code: `Partial Class Examples
   Public Shared Function IsBrepBox(brep As Rhino.Geometry.Brep) As Boolean
     Const zero_tolerance As Double = 0.000001 ' or whatever
@@ -6955,7 +6955,7 @@ End Class
     ]
   },
   {
-    name: 'ex_isbrepbox.cs',
+    name: 'Isbrepbox.cs',
     code: `using System;
 
 partial class Examples
@@ -7024,7 +7024,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_isbrepbox.py',
+    name: 'Isbrepbox.py',
     code: `import Rhino
 
 def IsBrepBox(brep):
@@ -7071,7 +7071,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_makerhinocontours.vb',
+    name: 'Makerhinocontours.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Geometry
@@ -7156,7 +7156,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_makerhinocontours.cs',
+    name: 'Makerhinocontours.cs',
     code: `using System;
 using Rhino;
 using Rhino.DocObjects;
@@ -7238,7 +7238,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_makerhinocontours.py',
+    name: 'Makerhinocontours.py',
     code: `from System import *
 from Rhino import *
 from Rhino.DocObjects import *
@@ -7304,7 +7304,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_edgesrf.vb',
+    name: 'Edgesrf.vb',
     code: `Imports System.Linq
 Imports Rhino
 Imports Rhino.Commands
@@ -7349,7 +7349,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_edgesrf.cs',
+    name: 'Edgesrf.cs',
     code: `using System.Linq;
 using Rhino;
 using Rhino.Commands;
@@ -7392,7 +7392,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_edgesrf.py',
+    name: 'Edgesrf.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.DocObjects import *
@@ -7426,7 +7426,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_loft.vb',
+    name: 'Loft.vb',
     code: `Imports Rhino
 Imports Rhino.Input.Custom
 Imports Rhino.DocObjects
@@ -7475,7 +7475,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_loft.cs',
+    name: 'Loft.cs',
     code: `using System.Linq;
 using Rhino;
 using Rhino.Input.Custom;
@@ -7517,7 +7517,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_loft.py',
+    name: 'Loft.py',
     code: `import rhinoscriptsyntax as rs
 
 def RunCommand():
@@ -7533,7 +7533,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addtruncatedcone.vb',
+    name: 'Addtruncatedcone.vb',
     code: `Imports Rhino.Geometry
 
 Partial Class Examples
@@ -7566,7 +7566,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addtruncatedcone.cs',
+    name: 'Addtruncatedcone.cs',
     code: `using System;
 using Rhino.Geometry;
 
@@ -7603,7 +7603,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addtruncatedcone.py',
+    name: 'Addtruncatedcone.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -7639,7 +7639,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_dupborder.vb',
+    name: 'Dupborder.vb',
     code: `Imports Rhino.DocObjects
 
 Partial Class Examples
@@ -7675,7 +7675,7 @@ End Class
     ]
   },
   {
-    name: 'ex_dupborder.cs',
+    name: 'Dupborder.cs',
     code: `using System;
 using Rhino.DocObjects;
 
@@ -7713,7 +7713,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_dupborder.py',
+    name: 'Dupborder.py',
     code: `import Rhino
 import scriptcontext
 
@@ -7742,7 +7742,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_evnormal.vb',
+    name: 'Evnormal.vb',
     code: `Imports Rhino
 Imports Rhino.Input.Custom
 Imports Rhino.DocObjects
@@ -7804,7 +7804,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_evnormal.cs',
+    name: 'Evnormal.cs',
     code: `using Rhino;
 using Rhino.Input.Custom;
 using Rhino.DocObjects;
@@ -7864,7 +7864,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_evnormal.py',
+    name: 'Evnormal.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import *
 import Rhino
@@ -7914,7 +7914,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_tightboundingbox.vb',
+    name: 'Tightboundingbox.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports System.Linq
@@ -8004,7 +8004,7 @@ End Namespace
     ]
   },
   {
-    name: 'ex_tightboundingbox.cs',
+    name: 'Tightboundingbox.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using System.Linq;
@@ -8090,7 +8090,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_tightboundingbox.py',
+    name: 'Tightboundingbox.py',
     code: `from scriptcontext import doc
 import rhinoscriptsyntax as rs
 from Rhino.Geometry import *
@@ -8158,7 +8158,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addcircle.vb',
+    name: 'Addcircle.vb',
     code: `Partial Class Examples
   Public Shared Function AddCircle(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim center As New Rhino.Geometry.Point3d(0, 0, 0)
@@ -8180,7 +8180,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addcircle.cs',
+    name: 'Addcircle.cs',
     code: `using System;
 
 partial class Examples
@@ -8207,7 +8207,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addcircle.py',
+    name: 'Addcircle.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -8232,7 +8232,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_filletcurves.vb',
+    name: 'Filletcurves.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
@@ -8311,7 +8311,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_filletcurves.cs',
+    name: 'Filletcurves.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Geometry;
@@ -8381,7 +8381,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_filletcurves.py',
+    name: 'Filletcurves.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.Geometry import *
@@ -8441,7 +8441,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_crvdeviation.vb',
+    name: 'Crvdeviation.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.DocObjects
@@ -8571,7 +8571,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_crvdeviation.cs',
+    name: 'Crvdeviation.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.DocObjects;
@@ -8698,7 +8698,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_crvdeviation.py',
+    name: 'Crvdeviation.py',
     code: `import rhinoscriptsyntax as rs
 import scriptcontext
 import Rhino
@@ -8734,7 +8734,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_dividebylength.vb',
+    name: 'Dividebylength.vb',
     code: `Imports Rhino.DocObjects
 
 Partial Class Examples
@@ -8791,7 +8791,7 @@ End Class
     ]
   },
   {
-    name: 'ex_dividebylength.cs',
+    name: 'Dividebylength.cs',
     code: `using Rhino.DocObjects;
 
 partial class Examples
@@ -8845,7 +8845,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_dividebylength.py',
+    name: 'Dividebylength.py',
     code: `import Rhino
 import scriptcontext
 
@@ -8890,7 +8890,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_curvereverse.vb',
+    name: 'Curvereverse.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input
@@ -8929,7 +8929,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_curvereverse.cs',
+    name: 'Curvereverse.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -8967,7 +8967,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_curvereverse.py',
+    name: 'Curvereverse.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import *
 import Rhino
@@ -8992,7 +8992,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_extendcurve.vb',
+    name: 'Extendcurve.vb',
     code: `Imports System.Linq
 Imports Rhino
 Imports Rhino.Geometry
@@ -9062,7 +9062,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_extendcurve.cs',
+    name: 'Extendcurve.cs',
     code: `using System.Linq;
 using Rhino;
 using Rhino.Geometry;
@@ -9126,7 +9126,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_extendcurve.py',
+    name: 'Extendcurve.py',
     code: `from Rhino import *
 from Rhino.Geometry import *
 from Rhino.DocObjects import *
@@ -9177,7 +9177,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_arclengthpoint.vb',
+    name: 'Arclengthpoint.vb',
     code: `Partial Class Examples
   Public Shared Function ArcLengthPoint(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim objref As Rhino.DocObjects.ObjRef = Nothing
@@ -9212,7 +9212,7 @@ End Class
     ]
   },
   {
-    name: 'ex_arclengthpoint.cs',
+    name: 'Arclengthpoint.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result ArcLengthPoint(Rhino.RhinoDoc doc)
@@ -9248,7 +9248,7 @@ End Class
     ]
   },
   {
-    name: 'ex_arclengthpoint.py',
+    name: 'Arclengthpoint.py',
     code: `import Rhino
 import scriptcontext
 
@@ -9276,7 +9276,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_customgeometryfilter.vb',
+    name: 'Customgeometryfilter.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Commands
@@ -9365,7 +9365,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_customgeometryfilter.cs',
+    name: 'Customgeometryfilter.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
@@ -9447,7 +9447,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_customgeometryfilter.py',
+    name: 'Customgeometryfilter.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import *
 import Rhino
@@ -9480,7 +9480,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_circlecenter.vb',
+    name: 'Circlecenter.vb',
     code: `Partial Class Examples
   Public Shared Function CircleCenter(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim go As New Rhino.Input.Custom.GetObject()
@@ -9519,7 +9519,7 @@ End Class
     ]
   },
   {
-    name: 'ex_circlecenter.cs',
+    name: 'Circlecenter.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result CircleCenter(Rhino.RhinoDoc doc)
@@ -9559,7 +9559,7 @@ End Class
     ]
   },
   {
-    name: 'ex_circlecenter.py',
+    name: 'Circlecenter.py',
     code: `import Rhino
 import scriptcontext
 
@@ -9593,7 +9593,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addcylinder.vb',
+    name: 'Addcylinder.vb',
     code: `Partial Class Examples
   Public Shared Function AddCylinder(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim center_point As New Rhino.Geometry.Point3d(0, 0, 0)
@@ -9619,7 +9619,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addcylinder.cs',
+    name: 'Addcylinder.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result AddCylinder(Rhino.RhinoDoc doc)
@@ -9648,7 +9648,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addcylinder.py',
+    name: 'Addcylinder.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -9678,7 +9678,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addlineardimension2.vb',
+    name: 'Addlineardimension2.vb',
     code: `Imports Rhino.Geometry
 
 Partial Class Examples
@@ -9715,7 +9715,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addlineardimension2.cs',
+    name: 'Addlineardimension2.cs',
     code: `using System;
 using Rhino.Geometry;
 
@@ -9756,7 +9756,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addlineardimension2.py',
+    name: 'Addlineardimension2.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -9790,7 +9790,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_curveboundingbox.vb',
+    name: 'Curveboundingbox.vb',
     code: `Partial Class Examples
   Public Shared Function CurveBoundingBox(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Select a curve object
@@ -9840,7 +9840,7 @@ End Class
     ]
   },
   {
-    name: 'ex_curveboundingbox.cs',
+    name: 'Curveboundingbox.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result CurveBoundingBox(Rhino.RhinoDoc doc)
@@ -9888,7 +9888,7 @@ End Class
     ]
   },
   {
-    name: 'ex_curveboundingbox.py',
+    name: 'Curveboundingbox.py',
     code: `import Rhino
 import scriptcontext
 
@@ -9930,7 +9930,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_explodehatch.vb',
+    name: 'Explodehatch.vb',
     code: `Imports Rhino.DocObjects
 
 Partial Class Examples
@@ -9992,7 +9992,7 @@ End Class`,
     ]
   },
   {
-    name: 'ex_explodehatch.cs',
+    name: 'Explodehatch.cs',
     code: `using Rhino.DocObjects;
 
 partial class Examples
@@ -10054,7 +10054,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_explodehatch.py',
+    name: 'Explodehatch.py',
     code: `import Rhino
 import scriptcontext
 
@@ -10085,7 +10085,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_nestedblock.cs',
+    name: 'Nestedblock.cs',
     code: `using System;
 
 using Rhino;
@@ -10116,7 +10116,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_modifylightcolor.vb',
+    name: 'Modifylightcolor.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -10160,7 +10160,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_modifylightcolor.cs',
+    name: 'Modifylightcolor.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -10205,7 +10205,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_modifylightcolor.py',
+    name: 'Modifylightcolor.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Input import *
@@ -10239,7 +10239,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_intersectlines.vb',
+    name: 'Intersectlines.vb',
     code: `Imports Rhino.Geometry
 
 Partial Class Examples
@@ -10296,7 +10296,7 @@ End Class
     ]
   },
   {
-    name: 'ex_intersectlines.cs',
+    name: 'Intersectlines.cs',
     code: `using Rhino.Geometry;
 
 partial class Examples
@@ -10354,7 +10354,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_intersectlines.py',
+    name: 'Intersectlines.py',
     code: `import Rhino
 import scriptcontext
 
@@ -10404,7 +10404,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_meshvolume.vb',
+    name: 'Meshvolume.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input.Custom
@@ -10455,7 +10455,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_meshvolume.cs',
+    name: 'Meshvolume.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input.Custom;
@@ -10506,7 +10506,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_meshvolume.py',
+    name: 'Meshvolume.py',
     code: `from Rhino.Input.Custom import *
 from Rhino.DocObjects import ObjectType
 from Rhino.Geometry import *
@@ -10543,7 +10543,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_createmeshfrombrep.vb',
+    name: 'Createmeshfrombrep.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
@@ -10601,7 +10601,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_createmeshfrombrep.cs',
+    name: 'Createmeshfrombrep.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -10654,7 +10654,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_createmeshfrombrep.py',
+    name: 'Createmeshfrombrep.py',
     code: `import Rhino
 from Rhino.Geometry import *
 from Rhino.Input import RhinoGet
@@ -10700,7 +10700,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addmesh.vb',
+    name: 'Addmesh.vb',
     code: `Partial Class Examples
   Public Shared Function AddMesh(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim mesh As New Rhino.Geometry.Mesh()
@@ -10746,7 +10746,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addmesh.cs',
+    name: 'Addmesh.cs',
     code: `using System;
 
 partial class Examples
@@ -10797,7 +10797,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addmesh.py',
+    name: 'Addmesh.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -10848,7 +10848,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_dupmeshboundary.vb',
+    name: 'Dupmeshboundary.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input.Custom
@@ -10892,7 +10892,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_dupmeshboundary.cs',
+    name: 'Dupmeshboundary.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input.Custom;
@@ -10932,7 +10932,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_dupmeshboundary.py',
+    name: 'Dupmeshboundary.py',
     code: `from Rhino.Commands import *
 from Rhino.Input.Custom import *
 from Rhino.DocObjects import *
@@ -10963,7 +10963,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addnurbscircle.vb',
+    name: 'Addnurbscircle.vb',
     code: `Partial Class Examples
   Public Shared Function AddNurbsCircle(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' The easy way to get a NURBS curve from a circle is with
@@ -11013,7 +11013,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addnurbscircle.cs',
+    name: 'Addnurbscircle.cs',
     code: `using System;
 
 partial class Examples
@@ -11068,7 +11068,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addnurbscircle.py',
+    name: 'Addnurbscircle.py',
     code: `using System;
 
 partial class Examples
@@ -11123,7 +11123,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addnurbscurve.vb',
+    name: 'Addnurbscurve.vb',
     code: `Partial Class Examples
   Public Shared Function AddNurbsCurve(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim points As New Rhino.Collections.Point3dList(5)
@@ -11151,7 +11151,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addnurbscurve.cs',
+    name: 'Addnurbscurve.cs',
     code: `using System;
 
 partial class Examples
@@ -11185,7 +11185,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addnurbscurve.py',
+    name: 'Addnurbscurve.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -11216,7 +11216,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_nurbscurveincreasedegree.vb',
+    name: 'Nurbscurveincreasedegree.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input
@@ -11270,7 +11270,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_nurbscurveincreasedegree.cs',
+    name: 'Nurbscurveincreasedegree.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -11314,7 +11314,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_nurbscurveincreasedegree.py',
+    name: 'Nurbscurveincreasedegree.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.Input import *
@@ -11350,7 +11350,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_createsurfaceexample.vb',
+    name: 'Createsurfaceexample.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
@@ -11441,7 +11441,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_createsurfaceexample.cs',
+    name: 'Createsurfaceexample.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Geometry;
@@ -11534,7 +11534,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_createsurfaceexample.py',
+    name: 'Createsurfaceexample.py',
     code: `from Rhino.Geometry import Point3d, NurbsSurface, ControlPoint
 from scriptcontext import doc
 
@@ -11596,7 +11596,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_srfpt.vb',
+    name: 'Srfpt.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Commands
@@ -11629,7 +11629,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_srfpt.cs',
+    name: 'Srfpt.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
@@ -11663,7 +11663,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_srfpt.py',
+    name: 'Srfpt.py',
     code: `from Rhino.Geometry import NurbsSurface, Point3d
 from scriptcontext import doc
 
@@ -11680,7 +11680,7 @@ doc.Views.Redraw();`,
     ]
   },
   {
-    name: 'ex_nurbssurfaceincreasedegree.vb',
+    name: 'Nurbssurfaceincreasedegree.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Input
@@ -11743,7 +11743,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_nurbssurfaceincreasedegree.cs',
+    name: 'Nurbssurfaceincreasedegree.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -11794,7 +11794,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_nurbssurfaceincreasedegree.py',
+    name: 'Nurbssurfaceincreasedegree.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.Input import *
@@ -11837,7 +11837,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_issurfaceinplane.vb',
+    name: 'Issurfaceinplane.vb',
     code: `Imports System.Linq
 Imports Rhino
 Imports Rhino.DocObjects
@@ -11891,7 +11891,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_issurfaceinplane.cs',
+    name: 'Issurfaceinplane.cs',
     code: `using System.Linq;
 using Rhino;
 using Rhino.DocObjects;
@@ -11945,7 +11945,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_issurfaceinplane.py',
+    name: 'Issurfaceinplane.py',
     code: `import Rhino
 from Rhino.Geometry import *
 import rhinoscriptsyntax as rs
@@ -11988,7 +11988,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_planesurface.vb',
+    name: 'Planesurface.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Commands
@@ -12022,7 +12022,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_planesurface.cs',
+    name: 'Planesurface.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
@@ -12057,7 +12057,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_planesurface.py',
+    name: 'Planesurface.py',
     code: `import Rhino;
 import rhinoscriptsyntax as rs
 
@@ -12078,7 +12078,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_splitbrepwithplane.vb',
+    name: 'Splitbrepwithplane.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -12157,7 +12157,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_splitbrepwithplane.cs',
+    name: 'Splitbrepwithplane.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -12241,7 +12241,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_splitbrepwithplane.py',
+    name: 'Splitbrepwithplane.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -12304,7 +12304,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_leader.vb',
+    name: 'Leader.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Commands
@@ -12353,7 +12353,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_leader.cs',
+    name: 'Leader.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Commands;
@@ -12402,7 +12402,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_leader.py',
+    name: 'Leader.py',
     code: `import rhinoscriptsyntax as rs
 
 def RunCommand():
@@ -12417,7 +12417,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addline.vb',
+    name: 'Addline.vb',
     code: `Partial Class Examples
   Public Shared Function AddLine(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim gp As New Rhino.Input.Custom.GetPoint()
@@ -12464,7 +12464,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addline.cs',
+    name: 'Addline.cs',
     code: `using System;
 
 partial class Examples
@@ -12513,7 +12513,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addline.py',
+    name: 'Addline.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -12559,7 +12559,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_closestpoint.vb',
+    name: 'Closestpoint.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 
@@ -12650,7 +12650,7 @@ End Namespace
     ]
   },
   {
-    name: 'ex_closestpoint.cs',
+    name: 'Closestpoint.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 
@@ -12748,7 +12748,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_closestpoint.py',
+    name: 'Closestpoint.py',
     code: `import Rhino
 import rhinoscriptsyntax as rs
 
@@ -12806,7 +12806,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_addsphere.vb',
+    name: 'Addsphere.vb',
     code: `Partial Class Examples
   Public Shared Function AddSphere(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim center As New Rhino.Geometry.Point3d(0, 0, 0)
@@ -12826,7 +12826,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addsphere.cs',
+    name: 'Addsphere.cs',
     code: `using System;
 
 partial class Examples
@@ -12851,7 +12851,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addsphere.py',
+    name: 'Addsphere.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -12875,7 +12875,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_principalcurvature.vb',
+    name: 'Principalcurvature.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Input
@@ -12941,7 +12941,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_principalcurvature.cs',
+    name: 'Principalcurvature.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Input;
@@ -13020,7 +13020,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_principalcurvature.py',
+    name: 'Principalcurvature.py',
     code: `import rhinoscriptsyntax as rs
 
 surface_id,_,_,_,_,_ = rs.GetSurfaceObject("Select surface for curvature measurement")
@@ -13058,7 +13058,7 @@ print "  Mean curvature: {0}".format(mean)`,
     ]
   },
   {
-    name: 'ex_extractisocurve.vb',
+    name: 'Extractisocurve.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -13128,7 +13128,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_extractisocurve.cs',
+    name: 'Extractisocurve.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -13193,7 +13193,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_extractisocurve.py',
+    name: 'Extractisocurve.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -13247,7 +13247,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_textjustify.vb',
+    name: 'Textjustify.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
@@ -13283,7 +13283,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_textjustify.cs',
+    name: 'Textjustify.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Geometry;
@@ -13319,7 +13319,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_textjustify.py',
+    name: 'Textjustify.py',
     code: `from scriptcontext import doc
 from Rhino.Geometry import *
 
@@ -13339,7 +13339,7 @@ doc.Views.Redraw()`,
     ]
   },
   {
-    name: 'ex_addtorus.vb',
+    name: 'Addtorus.vb',
     code: `Partial Class Examples
   Public Shared Function AddTorus(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Const major_radius As Double = 4.0
@@ -13363,7 +13363,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addtorus.cs',
+    name: 'Addtorus.cs',
     code: `using System;
 
 partial class Examples
@@ -13392,7 +13392,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addtorus.py',
+    name: 'Addtorus.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -13421,7 +13421,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_transformbrep.vb',
+    name: 'Transformbrep.vb',
     code: `Imports Rhino.Input
 
 Partial Class Examples
@@ -13445,7 +13445,7 @@ End Class
     ]
   },
   {
-    name: 'ex_transformbrep.cs',
+    name: 'Transformbrep.cs',
     code: `using Rhino.Input;
 
 partial class Examples
@@ -13470,7 +13470,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_transformbrep.py',
+    name: 'Transformbrep.py',
     code: `import Rhino
 import scriptcontext
 
@@ -13490,7 +13490,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_sweep1.vb',
+    name: 'Sweep1.vb',
     code: `Imports Rhino.Input
 Imports System.Collections.Generic
 
@@ -13547,7 +13547,7 @@ End Class
     ]
   },
   {
-    name: 'ex_sweep1.cs',
+    name: 'Sweep1.cs',
     code: `using Rhino.Input;
 using System.Collections.Generic;
 
@@ -13601,7 +13601,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_sweep1.py',
+    name: 'Sweep1.py',
     code: `import rhinoscriptsyntax as rs
 import Rhino
 import scriptcontext
@@ -13633,7 +13633,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_analysismode.vb',
+    name: 'Analysismode.vb',
     code: `Imports Rhino.DocObjects
 Imports Rhino
 Imports Rhino.Geometry
@@ -13804,7 +13804,7 @@ End Class
     ]
   },
   {
-    name: 'ex_analysismode.cs',
+    name: 'Analysismode.cs',
     code: `using System;
 using Rhino;
 using Rhino.DocObjects;
@@ -13970,7 +13970,7 @@ public class ZAnalysisMode : Rhino.Display.VisualAnalysisMode
     ]
   },
   {
-    name: 'ex_insertknot.vb',
+    name: 'Insertknot.vb',
     code: `Imports Rhino.DocObjects
 
 Partial Class Examples
@@ -14015,7 +14015,7 @@ End Class
     ]
   },
   {
-    name: 'ex_insertknot.cs',
+    name: 'Insertknot.cs',
     code: `using Rhino.Commands;
 using Rhino.DocObjects;
 
@@ -14061,7 +14061,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_insertknot.py',
+    name: 'Insertknot.py',
     code: `import Rhino
 import scriptcontext
 
@@ -14096,7 +14096,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_rhinogettransform.vb',
+    name: 'Rhinogettransform.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Geometry
@@ -14178,7 +14178,7 @@ End Namespace
     ]
   },
   {
-    name: 'ex_rhinogettransform.cs',
+    name: 'Rhinogettransform.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Geometry;
@@ -14259,7 +14259,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_dimstyle.vb',
+    name: 'Dimstyle.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Commands
@@ -14307,7 +14307,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_dimstyle.cs',
+    name: 'Dimstyle.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Commands;
@@ -14351,7 +14351,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_dimstyle.py',
+    name: 'Dimstyle.py',
     code: `from Rhino import *
 from Rhino.DocObjects import *
 from Rhino.Commands import *
@@ -14383,7 +14383,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addobjectstogroup.vb',
+    name: 'Addobjectstogroup.vb',
     code: `Imports System.Collections.Generic
 
 Partial Class Examples
@@ -14417,7 +14417,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addobjectstogroup.cs',
+    name: 'Addobjectstogroup.cs',
     code: `using System;
 using System.Collections.Generic;
 
@@ -14453,7 +14453,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addobjectstogroup.py',
+    name: 'Addobjectstogroup.py',
     code: `import Rhino
 import scriptcontext
 
@@ -14483,7 +14483,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_displayprecision.vb',
+    name: 'Displayprecision.vb',
     code: `Imports Rhino
 Imports Rhino.Input.Custom
 Imports Rhino.Commands
@@ -14522,7 +14522,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_displayprecision.cs',
+    name: 'Displayprecision.cs',
     code: `using Rhino;
 using Rhino.Input.Custom;
 using Rhino.Commands;
@@ -14557,7 +14557,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_displayprecision.py',
+    name: 'Displayprecision.py',
     code: `from Rhino import *
 from Rhino.Input.Custom import *
 from Rhino.Commands import *
@@ -14581,7 +14581,7 @@ if __name__ ==  "__main__":
     ]
   },
   {
-    name: 'ex_customundo.vb',
+    name: 'Customundo.vb',
     code: `Imports System.Runtime.InteropServices
 Imports Rhino
 
@@ -14649,7 +14649,7 @@ End Class
     ]
   },
   {
-    name: 'ex_customundo.cs',
+    name: 'Customundo.cs',
     code: `using System;
 using System.Runtime.InteropServices;
 using Rhino;
@@ -14709,7 +14709,7 @@ public class ex_customundoCommand : Rhino.Commands.Command
     ]
   },
   {
-    name: 'ex_customundo.py',
+    name: 'Customundo.py',
     code: `import Rhino
 import scriptcontext
 
@@ -14762,7 +14762,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_objectdecoration.vb',
+    name: 'Objectdecoration.vb',
     code: `Partial Class Examples
   Public Shared Function ObjectDecoration(doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' Define a line
@@ -14787,7 +14787,7 @@ End Class
     ]
   },
   {
-    name: 'ex_objectdecoration.cs',
+    name: 'Objectdecoration.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result ObjectDecoration(Rhino.RhinoDoc doc)
@@ -14814,7 +14814,7 @@ End Class
     ]
   },
   {
-    name: 'ex_objectdecoration.py',
+    name: 'Objectdecoration.py',
     code: `import Rhino
 import scriptcontext
 
@@ -14839,7 +14839,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_curvesurfaceintersect.vb',
+    name: 'Curvesurfaceintersect.vb',
     code: `Imports Rhino
 Imports Rhino.Geometry
 Imports Rhino.Geometry.Intersect
@@ -14913,7 +14913,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_curvesurfaceintersect.cs',
+    name: 'Curvesurfaceintersect.cs',
     code: `using Rhino;
 using Rhino.Geometry;
 using Rhino.Geometry.Intersect;
@@ -14981,7 +14981,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_curvesurfaceintersect.py',
+    name: 'Curvesurfaceintersect.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import *
 import Rhino
@@ -15018,7 +15018,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_intersectlinecircle.vb',
+    name: 'Intersectlinecircle.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
@@ -15080,7 +15080,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_intersectlinecircle.cs',
+    name: 'Intersectlinecircle.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.Input;
@@ -15139,7 +15139,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_intersectlinecircle.py',
+    name: 'Intersectlinecircle.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import doc
 import Rhino
@@ -15181,7 +15181,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_projectpointstobreps.vb',
+    name: 'Projectpointstobreps.vb',
     code: `Imports Rhino
 Imports Rhino.DocObjects
 Imports Rhino.Input.Custom
@@ -15240,7 +15240,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_projectpointstobreps.cs',
+    name: 'Projectpointstobreps.cs',
     code: `using Rhino;
 using Rhino.DocObjects;
 using Rhino.Input.Custom;
@@ -15292,7 +15292,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_projectpointstobreps.py',
+    name: 'Projectpointstobreps.py',
     code: `import rhinoscriptsyntax as rs
 from scriptcontext import *
 from Rhino.Geometry import *
@@ -15322,7 +15322,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_projectpointstomeshesex.vb',
+    name: 'Projectpointstomeshesex.vb',
     code: `Imports System.Collections.Generic
 Imports Rhino
 Imports Rhino.Commands
@@ -15376,7 +15376,7 @@ End Namespace
     ]
   },
   {
-    name: 'ex_projectpointstomeshesex.cs',
+    name: 'Projectpointstomeshesex.cs',
     code: `using System.Collections.Generic;
 using Rhino;
 using Rhino.Commands;
@@ -15421,7 +15421,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_projectpointstomeshesex.py',
+    name: 'Projectpointstomeshesex.py',
     code: `from System.Collections.Generic import *
 from Rhino import *
 from Rhino.Commands import *
@@ -15456,7 +15456,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addlineardimension.vb',
+    name: 'Addlineardimension.vb',
     code: `Partial Class Examples
   Public Shared Function AddLinearDimension(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim dimension As Rhino.Geometry.LinearDimension = Nothing
@@ -15478,7 +15478,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addlineardimension.cs',
+    name: 'Addlineardimension.cs',
     code: `using System;
 
 partial class Examples
@@ -15504,7 +15504,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addlineardimension.py',
+    name: 'Addlineardimension.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -15528,7 +15528,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_ortho.vb',
+    name: 'Ortho.vb',
     code: `Imports Rhino
 Imports Rhino.ApplicationSettings
 Imports Rhino.Commands
@@ -15581,7 +15581,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_ortho.cs',
+    name: 'Ortho.cs',
     code: `using Rhino;
 using Rhino.ApplicationSettings;
 using Rhino.Commands;
@@ -15631,7 +15631,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_ortho.py',
+    name: 'Ortho.py',
     code: `from Rhino import *
 from Rhino.ApplicationSettings import *
 from Rhino.Commands import *
@@ -15672,7 +15672,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_replacecolordialog.vb',
+    name: 'Replacecolordialog.vb',
     code: `Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.UI
@@ -15709,7 +15709,7 @@ End Namespace`,
     ]
   },
   {
-    name: 'ex_replacecolordialog.cs',
+    name: 'Replacecolordialog.cs',
     code: `using Rhino;
 using Rhino.Commands;
 using Rhino.UI;
@@ -15745,7 +15745,7 @@ namespace examples_cs
     ]
   },
   {
-    name: 'ex_replacecolordialog.py',
+    name: 'Replacecolordialog.py',
     code: `from Rhino import *
 from Rhino.Commands import *
 from Rhino.UI import *
@@ -15770,7 +15770,7 @@ if __name__ == "__main__":
     ]
   },
   {
-    name: 'ex_addtext.vb',
+    name: 'Addtext.vb',
     code: `Partial Class Examples
   Public Shared Function AddAnnotationText(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     Dim pt As New Rhino.Geometry.Point3d(10, 0, 0)
@@ -15793,7 +15793,7 @@ End Class
     ]
   },
   {
-    name: 'ex_addtext.cs',
+    name: 'Addtext.cs',
     code: `using System;
 
 partial class Examples
@@ -15821,7 +15821,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_addtext.py',
+    name: 'Addtext.py',
     code: `import Rhino
 import scriptcontext
 import System.Guid
@@ -15848,7 +15848,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_createblock.vb',
+    name: 'Createblock.vb',
     code: `Imports Rhino.DocObjects
 
 Partial Class Examples
@@ -15925,7 +15925,7 @@ End Class
     ]
   },
   {
-    name: 'ex_createblock.cs',
+    name: 'Createblock.cs',
     code: `using Rhino.DocObjects;
 
 partial class Examples
@@ -16005,7 +16005,7 @@ partial class Examples
     ]
   },
   {
-    name: 'ex_createblock.py',
+    name: 'Createblock.py',
     code: `import Rhino
 import scriptcontext
 
@@ -16067,7 +16067,7 @@ if __name__=="__main__":
     ]
   },
   {
-    name: 'ex_commandlineoptions.vb',
+    name: 'Commandlineoptions.vb',
     code: `Partial Class Examples
   Public Shared Function CommandLineOptions(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result
     ' For this example we will use a GetPoint class, but all of the custom
@@ -16132,7 +16132,7 @@ End Class
     ]
   },
   {
-    name: 'ex_commandlineoptions.cs',
+    name: 'Commandlineoptions.cs',
     code: `partial class Examples
 {
   public static Rhino.Commands.Result CommandLineOptions(Rhino.RhinoDoc doc)
@@ -16201,7 +16201,7 @@ End Class
     ]
   },
   {
-    name: 'ex_commandlineoptions.py',
+    name: 'Commandlineoptions.py',
     code: `import Rhino
 import scriptcontext
 

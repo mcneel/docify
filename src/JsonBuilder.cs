@@ -321,6 +321,10 @@ const DataTypes = {
             {
                 string path = System.IO.Path.Combine(examplesBaseDirectory, sample.Key);
                 string name = System.IO.Path.GetFileName(path);
+                if (name.StartsWith("ex_", StringComparison.OrdinalIgnoreCase))
+                    name = name.Substring("ex_".Length);
+                if (char.IsLower(name[0]))
+                    name = char.ToUpper(name[0]) + name.Substring(1);
                 string code = System.IO.File.ReadAllText(path);
 
                 code = code.Replace("\\\"", "\"");
