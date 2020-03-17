@@ -159,6 +159,38 @@ const ViewModel = {
       })
     }
     return item.examples
+  },
+  getFilteredApi (version) {
+    const api = []
+    RhinoCommonApi.forEach(type => {
+      const localApi = {
+        name: type.name,
+        dataType: type.dataType,
+        summary: type.summary,
+        constructors: [],
+        methods: [],
+        properties: []
+      }
+      const test = function (inputList, outputList, version) {
+        let count = 0
+        if (inputList) {
+          inputList.forEach(item => {
+            if (item.since === version) {
+              outputList.push(item)
+              count++
+            }
+          })
+        }
+        return count
+      }
+      let added = test(type.constructors, localApi.constructors, version)
+      added += test(type.properties, localApi.properties, version)
+      added += test(type.methods, localApi.methods, version)
+      if (added > 0) {
+        api.push(localApi)
+      }
+    })
+    return api
   }
 }
 

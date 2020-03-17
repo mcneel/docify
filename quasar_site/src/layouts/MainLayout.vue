@@ -4,14 +4,6 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>RhinoCommon API</q-toolbar-title>
-        <!--
-        <q-input dense standout bg-color="white" color="black" v-model="text">
-          <template v-slot:append>
-            <q-icon v-if="text === ''" name="search" />
-            <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
-          </template>
-        </q-input>
-        -->
         <q-select
           bg-color="white"
           color="black"
@@ -36,7 +28,12 @@
             </q-item>
           </template>
         </q-select>
-        <div class="q-pa-sm">v{{version}}</div>
+        <q-btn dense flat no-caps size="md" class="q-pa-sm"
+          :label="'v' + version"
+          :to="'/whatsnew/' + version"
+        >
+          <q-tooltip>What's new in v{{version}}</q-tooltip>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
