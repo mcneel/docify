@@ -23,7 +23,18 @@
       >
         <q-item v-for="member in section.items" :key="member.signature">
           <q-item-section>
-            <q-item-label>{{signature(member)}}</q-item-label>
+            <q-item-label>{{signature(member)}}
+              <q-btn v-if="member.examples && member.examples.length>0"
+                size="xs"
+                dense
+                outline
+                color="secondary"
+                icon="mdi-code-tags"
+                :to="exampleUrl(member)"
+                >
+                <q-tooltip>Show Example</q-tooltip>
+              </q-btn>
+            </q-item-label>
             <q-item-label caption>
               <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since.toFixed(1)}}
                 <q-tooltip>Available since {{member.since.toFixed(1)}}</q-tooltip>
@@ -89,6 +100,12 @@ export default {
       }
       return member.signature
     },
+    exampleUrl (member) {
+      let name = member.examples[0].name
+      const index = name.lastIndexOf('.')
+      name = name.substring(0, index)
+      return '/examples/' + name
+    },
     setSelectedItem (name) {
       this.$router.push('/' + name)
       ViewModel.setSelectedItem(name)
@@ -135,6 +152,7 @@ export default {
             items: item.properties,
             expanded: true
           })
+          item.properties.forEach(m => ViewModel.getExamples(item, m))
         }
         if (item.methods) {
           this.memberSections.push({
@@ -142,6 +160,7 @@ export default {
             items: item.methods,
             expanded: true
           })
+          item.methods.forEach(m => ViewModel.getExamples(item, m))
         }
         if (item.events) {
           this.memberSections.push({

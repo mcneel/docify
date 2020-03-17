@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace api_docify
 {
@@ -282,6 +281,71 @@ const DataTypes = {
             sb.Append("    ]");
 
             return memberAdded ? sb.ToString() : null;
+        }
+
+        public static void WriteExamples(
+            Dictionary<string, List<ParsedType>> publicTypes,
+            string examplesBaseDirectory,
+            string outputJsonFile)
+        {
+            Dictionary<string, List<ParsedMember>> examples = new Dictionary<string, List<ParsedMember>>();
+            foreach (var typelist in publicTypes.Values)
+            {
+                foreach (var type in typelist)
+                {
+                    if (null == type.Members)
+                        continue;
+                    foreach (var member in type.Members)
+                    {
+                        if (member.MemberType == ParsedMemberType.None)
+                            continue;
+                        string[] sampleRefs = member.GetSampleReferences();
+                        if (sampleRefs != null)
+                        {
+                            for (int i = 0; i < sampleRefs.Length; i++)
+                            {
+                                string s = sampleRefs[i].ToLower();
+                                if (!examples.ContainsKey(s))
+                                    examples[s] = new List<ParsedMember>();
+                                examples[s].Add(member);
+                            }
+                        }
+                    }
+                }
+            }
+
+            StringBuilder content = new StringBuilder();
+            content.AppendLine("var Examples = [");
+            bool addComma = false;
+            foreach (var sample in examples)
+            {
+                string path = System.IO.Path.Combine(examplesBaseDirectory, sample.Key);
+                string name = System.IO.Path.GetFileName(path);
+                string code = System.IO.File.ReadAllText(path);
+
+                code = code.Replace("\\\"", "\"");
+                if (addComma)
+                    content.AppendLine(",");
+                addComma = true;
+                content.AppendLine("  {");
+                content.AppendLine($"    name: '{name}',");
+                content.AppendLine($"    code: `{code}`,");
+                content.AppendLine("    members: [");
+                for( int i=0; i<sample.Value.Count; i++)
+                {
+                    if (i > 0)
+                        content.AppendLine(",");
+                    content.Append($"      ['{sample.Value[i].ParentType.FullName}', '{sample.Value[i].Signature(false)}']");
+                }
+                content.AppendLine();
+                content.AppendLine("    ]");
+                content.Append("  }");
+            }
+            content.AppendLine();
+            content.AppendLine("]");
+            content.AppendLine();
+            content.AppendLine("export { Examples }");
+            System.IO.File.WriteAllText(outputJsonFile, content.ToString());
         }
     }
 }

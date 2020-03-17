@@ -9,6 +9,7 @@ namespace api_docify
         static void Main(string[] args)
         {
             const string rhinocommonDirectory = "../../../../rhino/src4/DotNetSDK/rhinocommon/dotnet/";
+            const string examplesDirectoryBase = "../../../../rhino/src4/DotNetSDK/rhinocommon/";
 
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
@@ -94,7 +95,9 @@ namespace api_docify
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
             const string jsonOutput = "../../../quasar_site/src/RhinoCommonApi.js";
-            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, jsonOutput);
+            //JsonBuilder.Write(allNamespaces, publicTypesByNamespace, jsonOutput);
+            const string jsonExampleOutput = "../../../quasar_site/src/Examples.js";
+            JsonBuilder.WriteExamples(publicTypesByNamespace, examplesDirectoryBase, jsonExampleOutput);
         }
 
         static IEnumerable<string> AllSourceFiles(string sourcePath)

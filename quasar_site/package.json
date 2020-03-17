@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@quasar/quasar-app-extension-qmarkdown": "^1.0.24",
     "quasar": "^1.0.0"
   },
   "devDependencies": {

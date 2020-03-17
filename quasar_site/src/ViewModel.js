@@ -1,4 +1,5 @@
 import { DataTypes, RhinoCommonApi } from './RhinoCommonApi'
+import { Examples } from './Examples'
 
 const _selectedItemChangedCallbacks = {}
 let _viewmodel = null
@@ -141,6 +142,23 @@ const ViewModel = {
     })
     _optionsList = rc
     return rc
+  },
+  getExamples (parentType, item) {
+    if (!item.examples) {
+      item.examples = []
+      Examples.forEach(example => {
+        example.members.forEach(member => {
+          const type = member[0]
+          if (parentType.name === type) {
+            const signature = member[1]
+            if (signature === item.signature) {
+              item.examples.push(example)
+            }
+          }
+        })
+      })
+    }
+    return item.examples
   }
 }
 

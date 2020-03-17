@@ -76,6 +76,29 @@ namespace api_docify
             return GetTagText("param", paramName);
         }
 
+        public string[] GetSampleReferences()
+        {
+            var xml = DocumentationAsXml();
+            if (xml != null)
+            {
+                var element = xml.GetElementsByTagName("example");
+                if (element != null && element.Count > 0)
+                {
+                    int count = element[0].ChildNodes.Count;
+                    if (count > 0 && element[0].ChildNodes[0].Attributes != null)
+                    {
+                        string[] rc = new string[count];
+                        for (int i = 0; i < count; i++)
+                        {
+                            rc[i] = element[0].ChildNodes[i].Attributes["source"].Value;
+                        }
+                        return rc;
+                    }
+                }
+            }
+            return null;
+        }
+
         System.Xml.XmlDocument DocumentationAsXml()
         {
             if (_documentationAsXml == null && Documentation != null)
