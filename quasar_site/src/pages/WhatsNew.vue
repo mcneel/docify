@@ -8,6 +8,7 @@
         switch-toggle-side
         dense
         dense-toggle
+        :value="true"
         :label="type.name"
         :content-inset-level="1"
       >
