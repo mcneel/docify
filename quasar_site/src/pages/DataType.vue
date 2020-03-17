@@ -25,7 +25,7 @@
           <q-item-section>
             <q-item-label>{{signature(member)}}</q-item-label>
             <q-item-label caption>
-              <q-badge v-if="member.since" outline color="secondary">{{member.since.toFixed(1)}}
+              <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since.toFixed(1)}}
                 <q-tooltip>Available since {{member.since.toFixed(1)}}</q-tooltip>
               </q-badge>
               {{member.summary}}
@@ -57,13 +57,15 @@ import { DataTypes } from '../RhinoCommonApi'
 
 export default {
   data () {
+    const mostRecent = ViewModel.mostRecentSince()
     return {
       vm: {},
       title: '',
       namespace: '',
       memberSections: [],
       namespaceItems: null,
-      inheritence: []
+      inheritence: [],
+      version: mostRecent
     }
   },
   created () {
