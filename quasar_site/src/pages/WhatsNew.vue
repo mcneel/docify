@@ -1,6 +1,7 @@
 <template>
   <q-page>
     <h1>New in RhinoCommon {{version.toFixed(1)}} - ({{memberCount}} new items)</h1>
+    <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
         {{type.name}}

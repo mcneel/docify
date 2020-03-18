@@ -13,10 +13,7 @@
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
-        expand-separator
         switch-toggle-side
-        dense
-        dense-toggle
         :value="section.expanded"
         :label="section.title"
         :content-inset-level="1"
