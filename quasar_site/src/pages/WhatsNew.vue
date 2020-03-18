@@ -1,28 +1,16 @@
 <template>
   <q-page>
-    <h1>New in RhinoCommon {{version}} - ({{memberCount}} new items)</h1>
-    <q-list bordered class="rounded-borders q-mt-md">
-      <q-expansion-item v-for="type in api"
-        :key="type.name"
-        expand-separator
-        switch-toggle-side
-        dense
-        dense-toggle
-        :value="true"
-        :label="type.name"
-        :content-inset-level="1"
-      >
-        <q-item v-for="constructor in type.constructors" :key="constructor.signature">
-          {{constructor.signature}}
-        </q-item>
-        <q-item v-for="property in type.properties" :key="property.signature">
-          {{property.signature}}
-        </q-item>
-        <q-item v-for="method in type.methods" :key="method.signature">
-          {{method.signature}}
-        </q-item>
-      </q-expansion-item>
-    </q-list>
+    <h1>New in RhinoCommon {{version.toFixed(1)}} - ({{memberCount}} new items)</h1>
+    <ul>
+      <li v-for="type in api" :key="type.name">
+        {{type.name}}
+        <ul>
+          <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
+          <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>
+          <li v-for="method in type.methods" :key="method.signature">{{method.signature}}</li>
+        </ul>
+      </li>
+    </ul>
   </q-page>
 </template>
 
