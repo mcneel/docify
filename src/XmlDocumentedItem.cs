@@ -55,7 +55,7 @@ namespace api_docify
                 if (element != null && element.Count > 0)
                 {
                     if(attributeName==null)
-                        return element[0].InnerText.Trim();
+                        return Markdownify(element[0]);
                     for(int i=0; i<element.Count; i++ )
                     {
                         var el = element[i];
@@ -63,12 +63,37 @@ namespace api_docify
                         {
                             var attr = el.Attributes[j];
                             if (attr.Name.Equals("name") && attr.Value.Equals(attributeName))
-                                return el.InnerText.Trim();
+                                return Markdownify(el);
                         }
                     }
                 }
             }
             return "";
+        }
+
+        private string Markdownify(System.Xml.XmlNode el)
+        {
+            var sb = new System.Text.StringBuilder();
+
+            for (int i = 0; i < el.ChildNodes.Count; i++)
+            {
+                System.Xml.XmlNode child = el.ChildNodes[i];
+                switch (child.Name)
+                {
+                    case "see":
+                    case "seealso":
+                        sb.Append(child.Attributes[0].Value); // TODO: linkify
+                        break;
+                    //case "b":
+                    //    sb.Append(string.Format("**{0}**", child.InnerText));
+                    //    break;
+                    default:
+                        sb.Append(child.InnerText);
+                        break;
+                }
+            }
+
+            return sb.ToString().Trim();
         }
 
         protected string GetParamText(string paramName)
