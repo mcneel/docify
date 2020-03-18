@@ -528,7 +528,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.AppearanceSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of the values in .',
+    summary: 'Represents a snapshot of the values in AppearanceSettings.',
     properties: [
       {
         signature: 'Color CommandPromptBackgroundColor',
@@ -959,7 +959,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.CursorTooltipSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of CursorTooltipSettings.',
     properties: [
       {
         signature: 'bool AutoSuppress',
@@ -1118,7 +1118,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.CurvatureAnalysisSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of CurvatureAnalysisSettings.',
     properties: [
       {
         signature: 'Interval GaussRange',
@@ -1207,7 +1207,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.DraftAngleAnalysisSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of',
+    summary: 'Represents a snapshot of DraftAngleAnalysisSettings',
     properties: [
       {
         signature: 'Interval AngleRange',
@@ -1281,7 +1281,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.EdgeAnalysisSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of EdgeAnalysisSettings.',
     properties: [
       {
         signature: 'Color ShowEdgeColor',
@@ -1526,7 +1526,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.FileSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of FileSettings.',
     properties: [
       {
         signature: 'bool AutoSaveEnabled',
@@ -1691,7 +1691,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.GeneralSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of GeneralSettings.',
     properties: [
       {
         signature: 'bool AutoUpdateCommandHelp',
@@ -2082,7 +2082,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.ModelAidSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of ModelAidSettings.',
     properties: [
       {
         signature: 'bool AltPlusArrow',
@@ -2324,7 +2324,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.OpenGLSettingsState',
     dataType: 1,
-    summary: 'Represents a sapshot of',
+    summary: 'Represents a sapshot of OpenGLSettings',
     properties: [
       {
         signature: 'AntialiasLevel AntialiasLevel',
@@ -2474,7 +2474,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.SelectionFilterSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of SelectionFilterSettings.',
     properties: [
       {
         signature: 'bool Enabled',
@@ -3328,7 +3328,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.SmartTrackSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of SmartTrackSettings.',
     properties: [
       {
         signature: 'static int MaxSmartPoints',
@@ -3524,7 +3524,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.ApplicationSettings.ViewSettingsState',
     dataType: 1,
-    summary: 'Represents a snapshot of .',
+    summary: 'Represents a snapshot of ViewSettings.',
     properties: [
       {
         signature: 'bool AlwaysPanParallelViews',
@@ -3691,7 +3691,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'string Name',
-        summary: 'Gets or sets the name string of this .',
+        summary: 'Gets or sets the name string of this ArchivableDictionary.',
         since: 5,
         property: ['get', 'set']
       },
@@ -3711,7 +3711,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int Version',
-        summary: 'Gets or sets the version of this .',
+        summary: 'Gets or sets the version of this ArchivableDictionary.',
         since: 5,
         property: ['get', 'set']
       }
@@ -3793,7 +3793,7 @@ var RhinoCommonApi = [
         signature: 'IEnumerator<KeyValuePair<string, object>> GetEnumerator()',
         summary: 'Gets the enumerator of this dictionary.',
         since: 5,
-        returns: 'A , where T is an instance of , with T0 set as string, and T1 as Syste.Object.'
+        returns: 'A IEnumerator{T}, where T is an instance of KeyValuePair{T0,T1}, with T0 set as string, and T1 as Syste.Object.'
       },
       {
         signature: 'T GetEnumValue()',
@@ -3965,7 +3965,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,ArchivableDictionary val)',
-        summary: 'Sets another  as entry in this dictionary.',
+        summary: 'Sets another ArchivableDictionary as entry in this dictionary.',
         since: 5,
         parameters: [
           {
@@ -3981,7 +3981,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,bool val)',
-        summary: 'Sets a .',
+        summary: 'Sets a bool.',
         since: 5,
         parameters: [
           {
@@ -3990,7 +3990,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A  value.
+            summary: `A bool value.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -3998,7 +3998,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,BoundingBox val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.BoundingBox.',
         since: 5,
         parameters: [
           {
@@ -4014,7 +4014,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,byte val)',
-        summary: 'Sets a .',
+        summary: 'Sets a byte.',
         since: 5,
         parameters: [
           {
@@ -4023,7 +4023,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A byte.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4031,7 +4031,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Color val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.Color.',
         since: 5,
         parameters: [
           {
@@ -4049,7 +4049,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,double val)',
-        summary: 'Sets a .',
+        summary: 'Sets a double.',
         since: 5,
         parameters: [
           {
@@ -4058,7 +4058,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A double.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4066,7 +4066,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,float val)',
-        summary: 'Sets a .',
+        summary: 'Sets a float.',
         since: 5,
         parameters: [
           {
@@ -4075,7 +4075,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A float.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4083,7 +4083,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Font val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.Font.',
         since: 5,
         parameters: [
           {
@@ -4099,7 +4099,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,GeometryBase val)',
-        summary: 'Sets any class deriving from the  base class.',
+        summary: 'Sets any class deriving from the Rhino.Geometry.GeometryBase base class.',
         since: 5,
         parameters: [
           {
@@ -4115,7 +4115,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Guid val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Guid.',
         since: 5,
         parameters: [
           {
@@ -4124,7 +4124,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A Guid.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4132,7 +4132,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<bool> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of bool.',
         since: 5,
         parameters: [
           {
@@ -4149,7 +4149,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<byte> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of byte.',
         since: 5,
         parameters: [
           {
@@ -4166,7 +4166,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<double> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of double.',
         since: 5,
         parameters: [
           {
@@ -4183,7 +4183,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<float> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of float.',
         since: 5,
         parameters: [
           {
@@ -4204,7 +4204,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<Guid> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of Guid.',
         since: 5,
         parameters: [
           {
@@ -4221,7 +4221,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<int> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of int.',
         since: 5,
         parameters: [
           {
@@ -4238,7 +4238,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<ObjRef> val)',
-        summary: 'Sets an array of',
+        summary: 'Sets an array of Rhino.DocObjects.ObjRef',
         since: 5.8,
         parameters: [
           {
@@ -4254,7 +4254,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<sbyte> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of sbyte.',
         since: 5,
         parameters: [
           {
@@ -4271,7 +4271,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<short> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of short.',
         since: 5,
         parameters: [
           {
@@ -4288,7 +4288,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,IEnumerable<string> val)',
-        summary: 'Sets a list, an array or any enumerable of .',
+        summary: 'Sets a list, an array or any enumerable of string.',
         since: 5,
         parameters: [
           {
@@ -4305,7 +4305,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,int val)',
-        summary: 'Sets a .',
+        summary: 'Sets a int.',
         since: 5,
         parameters: [
           {
@@ -4314,7 +4314,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A int.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4322,7 +4322,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Int64 val)',
-        summary: 'Sets a .',
+        summary: 'Sets a long.',
         since: 5,
         parameters: [
           {
@@ -4331,7 +4331,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A long.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4339,7 +4339,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Interval val)',
-        summary: 'Sets an .',
+        summary: 'Sets an Rhino.Geometry.Interval.',
         since: 5,
         parameters: [
           {
@@ -4355,7 +4355,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Line val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Line.',
         since: 5,
         parameters: [
           {
@@ -4371,7 +4371,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,MeshingParameters val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.MeshingParameters.',
         since: 5,
         parameters: [
           {
@@ -4387,7 +4387,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,ObjRef val)',
-        summary: 'Sets a',
+        summary: 'Sets a Rhino.DocObjects.ObjRef',
         since: 5.8,
         parameters: [
           {
@@ -4403,7 +4403,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Plane val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Plane.',
         since: 5,
         parameters: [
           {
@@ -4419,7 +4419,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Point val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.Point.',
         since: 5,
         parameters: [
           {
@@ -4435,7 +4435,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Point2d val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Point2d.',
         since: 5,
         parameters: [
           {
@@ -4451,7 +4451,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Point3d val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Point3d.',
         since: 5,
         parameters: [
           {
@@ -4467,7 +4467,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Point3f val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Point3f.',
         since: 5,
         parameters: [
           {
@@ -4483,7 +4483,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Point4d val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Point4d.',
         since: 5,
         parameters: [
           {
@@ -4499,7 +4499,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,PointF val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.PointF.',
         since: 5,
         parameters: [
           {
@@ -4515,7 +4515,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Ray3d val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Ray3d.',
         since: 5,
         parameters: [
           {
@@ -4531,7 +4531,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Rectangle val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.Rectangle.',
         since: 5,
         parameters: [
           {
@@ -4547,7 +4547,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,RectangleF val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.RectangleF.',
         since: 5,
         parameters: [
           {
@@ -4563,7 +4563,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,sbyte val)',
-        summary: 'Sets a .',
+        summary: 'Sets a sbyte.',
         since: 5,
         parameters: [
           {
@@ -4572,7 +4572,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A sbyte.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4580,7 +4580,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,short val)',
-        summary: 'Sets a .',
+        summary: 'Sets a short.',
         since: 5,
         parameters: [
           {
@@ -4589,7 +4589,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A short.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4597,7 +4597,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Size val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.Size.',
         since: 5,
         parameters: [
           {
@@ -4613,7 +4613,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,SizeF val)',
-        summary: 'Sets a .',
+        summary: 'Sets a System.Drawing.SizeF.',
         since: 5,
         parameters: [
           {
@@ -4629,7 +4629,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,string val)',
-        summary: 'Sets a .',
+        summary: 'Sets a string.',
         since: 5,
         parameters: [
           {
@@ -4638,7 +4638,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A string.
      Because  is immutable, it is not possible to modify the object while it is in this dictionary.`
           }
         ],
@@ -4646,7 +4646,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Transform val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Transform.',
         since: 5,
         parameters: [
           {
@@ -4662,7 +4662,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,uint val)',
-        summary: 'Sets a .',
+        summary: 'Sets a uint.',
         since: 5,
         parameters: [
           {
@@ -4671,7 +4671,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A uint.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4679,7 +4679,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,ushort val)',
-        summary: 'Sets a .',
+        summary: 'Sets a ushort.',
         since: 5,
         parameters: [
           {
@@ -4688,7 +4688,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'val',
-            summary: `A .
+            summary: `A ushort.
      Because  has value semantics, changes to the assigning value will leave this entry unchanged.`
           }
         ],
@@ -4696,7 +4696,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Vector2d val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Vector2d.',
         since: 5,
         parameters: [
           {
@@ -4712,7 +4712,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Vector3d val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Vector3d.',
         since: 5,
         parameters: [
           {
@@ -4728,7 +4728,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Set(string key,Vector3f val)',
-        summary: 'Sets a .',
+        summary: 'Sets a Rhino.Geometry.Vector3f.',
         since: 5,
         parameters: [
           {
@@ -4869,7 +4869,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'collection',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Curve.'
           }
         ]
       },
@@ -5036,7 +5036,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Collections.Point3dList',
     dataType: 1,
-    summary: 'Represents a list of .',
+    summary: 'Represents a list of Point3d.',
     baseclass: 'RhinoList<Point3d>',
     interfaces: ['ICloneable'],
     constructors: [
@@ -5222,7 +5222,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Collections.RhinoList',
     dataType: 1,
-    summary: 'Provides helper methods to work with  and other collections.',
+    summary: 'Provides helper methods to work with RhinoList<T> and other collections.',
     interfaces: ['IList<T>', 'IList', 'ICloneable'],
     constructors: [
       {
@@ -6251,7 +6251,7 @@ var RhinoCommonApi = [
         summary: `Gets the  unique ID of this command. It is best to use a Guid
      attribute for each custom derived command class since this will
      keep the id consistent between sessions of Rhino
-     GuidAttribute`,
+     System.Runtime.InteropServices.GuidAttribute`,
         since: 5,
         property: ['get']
       },
@@ -6371,7 +6371,7 @@ var RhinoCommonApi = [
             summary: 'True if the name is to searched in English. This ensures that a \'_\' is prepended to the name.'
           }
         ],
-        returns: 'An of the command, or  on error.'
+        returns: 'An of the command, or Guid.Empty on error.'
       },
       {
         signature: 'static string LookupCommandName(Guid commandId,bool englishName)',
@@ -6479,7 +6479,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Commands.CommandStyleAttribute',
     dataType: 1,
-    summary: 'Decorates commands to provide styles.',
+    summary: 'Decorates Command to provide styles.',
     baseclass: 'Attribute',
     constructors: [
       {
@@ -6642,7 +6642,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Commands.Style',
     dataType: 3,
     summary: `Defines bitwise mask flags for different styles of commands, such as
-   Hidden or DoNotRepeat.`,
+   Style.Hidden or Style.DoNotRepeat.`,
     values: [
       {
         signature: 'None = 0',
@@ -10733,7 +10733,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void DrawObject(RhinoObject rhinoObject,Transform xform)',
-        summary: 'Draws a RhinoObject with an applied transformation.',
+        summary: 'Draws a DocObjects.RhinoObject with an applied transformation.',
         since: 5,
         parameters: [
           {
@@ -14720,7 +14720,7 @@ var RhinoCommonApi = [
       {
         signature: 'Guid Id',
         summary: `Gets the visual analysis mode GUID.
-     The Guid is specified with the GuidAttribute
+     The Guid is specified with the System.Runtime.InteropServices.GuidAttribute
      applied to the class.`,
         since: 5,
         property: ['get']
@@ -15003,7 +15003,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'AnimationProperties()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the AnimationProperties class.',
         since: 6.11
       },
       {
@@ -15319,7 +15319,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Image.',
         since: 6,
         property: ['get']
       },
@@ -15347,7 +15347,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.BrepObject',
     dataType: 1,
-    summary: 'Represents a brep in a document.',
+    summary: 'Represents a Rhino.Geometry.Brep in a document.',
     baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
@@ -15383,7 +15383,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.ClippingPlaneObject',
     dataType: 1,
-    summary: `Represents the object of a clipping plane,
+    summary: `Represents the object of a Rhino.Geometry.ClippingPlaneSurface,
    stored in the Rhino document and with attributes.`,
     baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
@@ -15438,7 +15438,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ConstructionPlane()',
-        summary: 'Initializes a new instance of .',
+        summary: 'Initializes a new instance of ConstructionPlane.',
         since: 5
       }
     ],
@@ -16105,7 +16105,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.Custom.UserDictionary',
     dataType: 1,
-    summary: 'Defines the storage data class for a user dictionary.',
+    summary: 'Defines the storage data class for a Rhino.Collections.ArchivableDictionary.',
     baseclass: 'Rhino.DocObjects.Custom.UserData',
     properties: [
       {
@@ -16239,7 +16239,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'DimensionStyle DimensionStyle',
-        summary: `Gets the 
+        summary: `Gets the DimensionStyle
      associated with this OrdinateDimensionObject.`,
         since: 6,
         property: ['get']
@@ -16377,7 +16377,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.ModelGeometry.',
         since: 6,
         property: ['get']
       },
@@ -16867,7 +16867,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'EarthAnchorPoint()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the EarthAnchorPoint class.',
         since: 5
       }
     ],
@@ -17336,7 +17336,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Group.',
         since: 6,
         property: ['get']
       },
@@ -17423,7 +17423,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.HatchPattern.',
         since: 6,
         property: ['get']
       },
@@ -17711,7 +17711,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.InstanceDefinition',
     dataType: 1,
-    summary: 'This is the same as , but in a Rhino document.',
+    summary: 'This is the same as InstanceDefinitionGeometry, but in a Rhino document.',
     baseclass: 'Rhino.Geometry.InstanceDefinitionGeometry',
     properties: [
       {
@@ -17722,7 +17722,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.InstanceDefinition.',
         since: 6,
         property: ['get']
       },
@@ -18181,7 +18181,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Layer.',
         since: 6,
         property: ['get']
       },
@@ -18278,11 +18278,11 @@ var RhinoCommonApi = [
       },
       {
         signature: 'RenderMaterial RenderMaterial',
-        summary: `Gets or sets the  for objects on
+        summary: `Gets or sets the Render.RenderMaterial for objects on
      this layer that have MaterialSource() == MaterialFromLayer.
-     A None result indicates that no  has
+     A None result indicates that no Render.RenderMaterial has
      been assigned  and the material created by the default Material
-     constructor or the  should be used.`,
+     constructor or the RenderMaterialIndex should be used.`,
         since: 5.7,
         property: ['get', 'set']
       },
@@ -18779,7 +18779,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.LinePattern.',
         since: 6,
         property: ['get']
       },
@@ -18974,7 +18974,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.RenderMaterial.',
         since: 6,
         property: ['get']
       },
@@ -19596,7 +19596,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: `Gets the  for this object.
+        summary: `Gets the ModelComponentType for this object.
      Useful in switch statements.`,
         since: 6,
         property: ['get']
@@ -19799,7 +19799,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.MorphControlObject',
     dataType: 1,
-    summary: 'Represents a MorphControl in a document.',
+    summary: 'Represents a Rhino.Geometry.MorphControl in a document.',
     baseclass: 'Rhino.DocObjects.RhinoObject'
   },
   {
@@ -20104,7 +20104,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ObjectAttributes Duplicate()',
-        summary: 'Constructs a copy of this  instance.',
+        summary: 'Constructs a copy of this ObjectAttributes instance.',
         since: 5,
         returns: 'A new instance on success, or None on failure.'
       },
@@ -20669,7 +20669,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ObjRef(Guid id)',
-        summary: 'Initializes a new object reference from a globally unique identifier ().',
+        summary: 'Initializes a new object reference from a globally unique identifier (Guid).',
         since: 5,
         parameters: [
           {
@@ -21283,7 +21283,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.ModelGeometry.',
         since: 6,
         property: ['get']
       },
@@ -21737,9 +21737,9 @@ var RhinoCommonApi = [
       {
         signature: 'int[] GetGroupList()',
         summary: `Allocates an array of group indices of length GroupCount.
-     If  is 0, then this method returns null.`,
+     If GroupCount is 0, then this method returns null.`,
         since: 5,
-        returns: 'An array of group indices, or None if  is 0.'
+        returns: 'An array of group indices, or None if GroupCount is 0.'
       },
       {
         signature: 'ComponentIndex[] GetHighlightedSubObjects()',
@@ -21868,9 +21868,9 @@ var RhinoCommonApi = [
      the objects top level material if it is set to ComponentIndex.Unset`
           }
         ],
-        returns: `Returns the  associated with the sub object
+        returns: `Returns the RenderMaterial associated with the sub object
      identified by componentIndex if the component index is set to
-      then the top level
+     ComponentIndex.Unset then the top level
      RenderMaterail is returned.  If this method returns None it means there
      is no RenderMaterial associated with the object or  sub object so you
      should may GetMaterial get the objects generic material.`
@@ -21886,16 +21886,17 @@ var RhinoCommonApi = [
           {
             name: 'componentIndex',
             summary: `Returns the RenderMaterial associated with the specified sub object or
-     the objects top level material if it is set to`
+     the objects top level material if it is set to
+     Rhino.Geometry.ComponentIndex.Unset`
           },
           {
             name: 'plugInId',
             summary: 'The plug-in specific material to look for.'
           }
         ],
-        returns: `Returns the  associated with the sub object
+        returns: `Returns the RenderMaterial associated with the sub object
      identified by componentIndex if the component index is set to
-      then the top level
+     ComponentIndex.Unset then the top level
      RenderMaterail is returned.  If this method returns None it means there
      is no RenderMaterial associated with the object or sub object so you
      should may GetMaterial get the objects generic material.`
@@ -21911,7 +21912,8 @@ var RhinoCommonApi = [
           {
             name: 'componentIndex',
             summary: `Returns the RenderMaterial associated with the specified sub object or
-     the objects top level material if it is set to`
+     the objects top level material if it is set to
+     Rhino.Geometry.ComponentIndex.Unset`
           },
           {
             name: 'plugInId',
@@ -21923,9 +21925,9 @@ var RhinoCommonApi = [
      None the objects attributes are used.`
           }
         ],
-        returns: `Returns the  associated with the sub object
+        returns: `Returns the RenderMaterial associated with the sub object
      identified by componentIndex if the component index is set to
-      then the top level
+     ComponentIndex.Unset then the top level
      RenderMaterail is returned.  If this method returns None it means there
      is no RenderMaterial associated with the object or  sub object so you
      should may GetMaterial get the objects generic material.`
@@ -23053,7 +23055,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.SurfaceObject',
     dataType: 1,
-    summary: 'Represents a surface in a document.',
+    summary: 'Represents a Rhino.Geometry.Surface in a document.',
     baseclass: 'Rhino.DocObjects.RhinoObject',
     properties: [
       {
@@ -23081,7 +23083,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Image.',
         since: 6,
         property: ['get']
       }
@@ -23224,19 +23226,19 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.DimStyle.',
         since: 6,
         property: ['get']
       },
       {
         signature: 'DimensionStyle Current',
-        summary: 'Returns an instance of the current .',
+        summary: 'Returns an instance of the current DimensionStyle.',
         since: 6,
         property: ['get']
       },
       {
         signature: 'DimensionStyle CurrentDimensionStyle',
-        summary: 'Do not use. Use the  property.',
+        summary: 'Do not use. Use the Current property.',
         since: 5,
         property: ['get']
       },
@@ -23417,7 +23419,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool SetCurrent(int index,bool quiet)',
-        summary: 'Sets the  property.',
+        summary: 'Sets the Current property.',
         since: 6,
         parameters: [
           {
@@ -23433,7 +23435,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool SetCurrentDimensionStyleIndex(int index,bool quiet)',
-        summary: 'Do not use. Use the  method.',
+        summary: 'Do not use. Use the SetCurrent method.',
         since: 5,
         parameters: [
           {
@@ -23702,7 +23704,7 @@ var RhinoCommonApi = [
           }
         ],
         returns: `>=0 index of the group with the given name.
-       UnsetIntIndex no group found with the given name.`
+       RhinoMath.UnsetIntIndex no group found with the given name.`
       },
       {
         signature: 'int Find(string groupName,bool ignoreDeletedGroups)',
@@ -24137,11 +24139,11 @@ var RhinoCommonApi = [
         signature: 'bool DestroySourceArchive(InstanceDefinition definition,bool quiet)',
         summary: `Destroys all source archive information.
      Specifically:
-     *  is set to the empty string.
+     * InstanceDefinition.SourceArchive is set to the empty string.
      * SourceRelativePath is set to false
      * The alternative source archive path is set to the empty string.
      * Checksum.Zero() is used to private destroy all checksum information.
-     *  is set to .`,
+     * InstanceDefinition.UpdateType is set to InstanceDefinitionUpdateType.Static.`,
         since: 6,
         parameters: [
           {
@@ -24804,7 +24806,7 @@ var RhinoCommonApi = [
           {
             name: 'notFoundReturnValue',
             summary: `Should be -1 to get the index of the OpenNURBS default layer,
-     or UnsetIntIndex to get an always-out-of-bound value.`
+     or RhinoMath.UnsetIntIndex to get an always-out-of-bound value.`
           }
         ],
         returns: 'The index of the found layer, or notFoundReturnValue.'
@@ -24846,7 +24848,7 @@ var RhinoCommonApi = [
           {
             name: 'notFoundReturnValue',
             summary: `Should be -1 to get the index of the OpenNURBS default layer,
-     or UnsetIntIndex to get an always-out-of-bound value.`
+     or RhinoMath.UnsetIntIndex to get an always-out-of-bound value.`
           }
         ],
         returns: 'The index of the found layer, or notFoundReturnValue.'
@@ -24887,7 +24889,7 @@ var RhinoCommonApi = [
           {
             name: 'notFoundReturnValue',
             summary: `Should be -1 to get the index of the OpenNURBS default layer,
-     or UnsetIntIndex to get an always-out-of-bound value.`
+     or RhinoMath.UnsetIntIndex to get an always-out-of-bound value.`
           }
         ],
         returns: 'The index of the found layer, or notFoundReturnValue.'
@@ -27920,7 +27922,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A ; a list, an array, or any enumerable set of .'
+            summary: 'A Polyline; a list, an array, or any enumerable set of Point3d.'
           }
         ],
         returns: 'A unique identifier for the object.'
@@ -27932,7 +27934,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A ; a list, an array, or any enumerable set of .'
+            summary: 'A Polyline; a list, an array, or any enumerable set of Point3d.'
           },
           {
             name: 'attributes',
@@ -31453,7 +31455,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'double CameraAngle',
-        summary: 'Gets or sets the 1/2 smallest angle. See  for more information.',
+        summary: 'Gets or sets the 1/2 smallest angle. See GetCameraAngles for more information.',
         since: 5,
         property: ['get', 'set']
       },
@@ -31541,7 +31543,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'double FrustumHeight',
-        summary: 'Gets the frustum height. This is  - .',
+        summary: 'Gets the frustum height. This is FrustumTop - FrustumBottom.',
         since: 5,
         property: ['get']
       },
@@ -31560,13 +31562,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'double FrustumMaximumDiameter',
-        summary: 'Gets the frustum maximum diameter, or the maximum between  and .',
+        summary: 'Gets the frustum maximum diameter, or the maximum between FrustumWidth and FrustumHeight.',
         since: 5,
         property: ['get']
       },
       {
         signature: 'double FrustumMinimumDiameter',
-        summary: 'Gets the frustum minimum diameter, or the minimum between  and .',
+        summary: 'Gets the frustum minimum diameter, or the minimum between FrustumWidth and FrustumHeight.',
         since: 5,
         property: ['get']
       },
@@ -31615,7 +31617,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'double FrustumWidth',
-        summary: 'Gets the frustum width. This is  - .',
+        summary: 'Gets the frustum width. This is FrustumRight - FrustumLeft.',
         since: 5,
         property: ['get']
       },
@@ -31708,7 +31710,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Rectangle ScreenPort',
-        summary: 'Get or set the screen port.  and',
+        summary: 'Get or set the screen port. SetScreenPort(System.Drawing.Rectangle) and GetScreenPort()',
         since: 6,
         property: ['get', 'set']
       },
@@ -32260,9 +32262,9 @@ var RhinoCommonApi = [
       {
         signature: 'System.Drawing.Rectangle GetScreenPort()',
         summary: `Gets the location of viewport in pixels.
-     See documentation for SetScreenPort.`,
+     See documentation for SetScreenPort(int, int, int, int, int, int).`,
         since: 5,
-        returns: 'The rectangle, or Empty rectangle on error.'
+        returns: 'The rectangle, or System.Drawing.Rectangle.Empty rectangle on error.'
       },
       {
         signature: 'System.Drawing.Rectangle GetScreenPort(int near,int far)',
@@ -32279,7 +32281,7 @@ var RhinoCommonApi = [
             summary: 'The far value. This out parameter is assigned during the call.'
           }
         ],
-        returns: 'The rectangle, or Empty rectangle on error.'
+        returns: 'The rectangle, or System.Drawing.Rectangle.Empty rectangle on error.'
       },
       {
         signature: 'void GetScreenPortLocation(int left,int top,int right,int bottom)',
@@ -32816,7 +32818,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'BinaryArchiveException(string message)',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the BinaryArchiveException class.',
         since: 5,
         parameters: [
           {
@@ -33020,32 +33022,32 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool ReadBool()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a bool from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'bool[] ReadBoolArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of bool from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'Geometry.BoundingBox ReadBoundingBox()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.BoundingBox from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'byte ReadByte()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a byte from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'byte[] ReadByteArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of byte from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
@@ -33058,45 +33060,45 @@ var RhinoCommonApi = [
       },
       {
         signature: 'System.Drawing.Color ReadColor()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.Color from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'byte[] ReadCompressedBuffer()',
-        summary: `Reads an array of compressed  information from the archive and uncompresses it.
+        summary: `Reads an array of compressed byte information from the archive and uncompresses it.
      An array is returned even if the input was another enumerable type.`,
         since: 5.9,
         returns: 'The array that was read.'
       },
       {
         signature: 'Rhino.Collections.ArchivableDictionary ReadDictionary()',
-        summary: 'Reads a complete  from the archive.',
+        summary: 'Reads a complete Rhino.Collections.ArchivableDictionary from the archive.',
         since: 5,
         returns: 'The newly instantiated object.'
       },
       {
         signature: 'double ReadDouble()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a double from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'double[] ReadDoubleArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of double from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'System.Drawing.Font ReadFont()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.Font from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.GeometryBase ReadGeometry()',
-        summary: `Reads a -derived object from the archive.
+        summary: `Reads a Rhino.Geometry.GeometryBase-derived object from the archive.
      The  class is abstract.`,
         since: 5,
         returns: 'The element that was read.'
@@ -33107,236 +33109,236 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Guid ReadGuid()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Guid from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'Guid[] ReadGuidArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of Guid from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'int ReadInt()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a int from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'Int64 ReadInt64()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a long from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'int[] ReadIntArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of int from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'Geometry.Interval ReadInterval()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Interval from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Line ReadLine()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Line from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.MeshingParameters ReadMeshingParameters()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.MeshingParameters from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'DocObjects.ObjRef ReadObjRef()',
-        summary: 'Reads a  from the archive',
+        summary: 'Reads a Rhino.DocObjects.ObjRef from the archive',
         since: 5.8,
         returns: 'the element that was read'
       },
       {
         signature: 'DocObjects.ObjRef[] ReadObjRefArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of double from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5.8,
         returns: 'The array that was read.'
       },
       {
         signature: 'Geometry.Plane ReadPlane()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Plane from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'System.Drawing.Point ReadPoint()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.Point from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Point2d ReadPoint2d()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Point2d from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Point3d ReadPoint3d()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Point3d from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Point3f ReadPoint3f()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Point3f from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Point4d ReadPoint4d()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Point4d from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'System.Drawing.PointF ReadPointF()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.PointF from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Ray3d ReadRay3d()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Ray3d from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'System.Drawing.Rectangle ReadRectangle()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.Rectangle from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'System.Drawing.RectangleF ReadRectangleF()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.RectangleF from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'RenderSettings ReadRenderSettings()',
-        summary: 'Reads a -derived object from the archive.',
+        summary: 'Reads a Rhino.Render.RenderSettings-derived object from the archive.',
         since: 6,
         returns: 'The element that was read.'
       },
       {
         signature: 'sbyte ReadSByte()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a sbyte from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'sbyte[] ReadSByteArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of sbyte from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'short ReadShort()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a short from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'short[] ReadShortArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of short from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'float ReadSingle()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a float from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'float[] ReadSingleArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of float from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'System.Drawing.Size ReadSize()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.Size from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'System.Drawing.SizeF ReadSizeF()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a System.Drawing.SizeF from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'string ReadString()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a string from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'string[] ReadStringArray()',
-        summary: `Reads an array of  from the archive.
+        summary: `Reads an array of string from the archive.
      An array is returned even if the input was another enumerable type.`,
         since: 5,
         returns: 'The array that was read.'
       },
       {
         signature: 'Geometry.Transform ReadTransform()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Transform from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'uint ReadUInt()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a uint from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'ushort ReadUShort()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a ushort from the archive.',
         since: 5,
         returns: 'The value that was read.'
       },
       {
         signature: 'string ReadUtf8String()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a string from the archive.',
         since: 6,
         returns: 'The value that was read.'
       },
       {
         signature: 'Geometry.Vector2d ReadVector2d()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Vector2d from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Vector3d ReadVector3d()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Vector3d from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
       {
         signature: 'Geometry.Vector3f ReadVector3f()',
-        summary: 'Reads a  from the archive.',
+        summary: 'Reads a Rhino.Geometry.Vector3f from the archive.',
         since: 5,
         returns: 'The element that was read.'
       },
@@ -33456,7 +33458,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteBool(bool value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a bool value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33467,7 +33469,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteBoolArray(IEnumerable<bool> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of bool to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33479,7 +33481,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteBoundingBox(BoundingBox value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.BoundingBox value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33490,7 +33492,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteByte(byte value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a byte value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33501,7 +33503,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteByteArray(IEnumerable<byte> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of byte to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33513,7 +33515,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteColor(Color value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.Color value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33524,7 +33526,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteCompressedBuffer(IEnumerable<byte> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive as a compressed buffer.
+        summary: `Writes a list, an array, or any enumerable of byte to the archive as a compressed buffer.
      The return will always be an array.`,
         since: 5.9,
         parameters: [
@@ -33547,7 +33549,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteDouble(double value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a double value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33558,7 +33560,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteDoubleArray(IEnumerable<double> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of double to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33576,7 +33578,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteFont(Font value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.Font value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33587,7 +33589,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteGeometry(GeometryBase value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.GeometryBase value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33602,7 +33604,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteGuid(Guid value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Guid value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33613,7 +33615,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteGuidArray(IEnumerable<Guid> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of Guid to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33625,7 +33627,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteInt(int value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a int value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33636,7 +33638,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteInt64(Int64 value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Int64 value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33647,7 +33649,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteIntArray(IEnumerable<int> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of int to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33659,7 +33661,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteInterval(Interval value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Interval value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33670,7 +33672,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteLine(Line value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Line value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33681,7 +33683,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteMeshingParameters(MeshingParameters value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.MeshingParameters value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33692,13 +33694,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteObjRef(ObjRef objref)',
-        summary: 'Writes a  to the archive',
+        summary: 'Writes a Rhino.DocObjects.ObjRef to the archive',
         since: 5.8,
         returns: 'the element that was read'
       },
       {
         signature: 'void WriteObjRefArray(IEnumerable<ObjRef> objrefs)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of Rhino.DocObjects.ObjRef to the archive.
      The return will always be an array.`,
         since: 5.8,
         parameters: [
@@ -33710,7 +33712,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePlane(Plane value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Plane value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33721,7 +33723,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePoint(Point value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.Point value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33732,7 +33734,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePoint2d(Point2d value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Point2d value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33743,7 +33745,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePoint3d(Point3d value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Point3d value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33754,7 +33756,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePoint3f(Point3f value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Point3f value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33765,7 +33767,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePoint4d(Point4d value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Point4d value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33776,7 +33778,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WritePointF(PointF value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.PointF value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33787,7 +33789,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteRay3d(Ray3d value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Ray3d value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33798,7 +33800,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteRectangle(Rectangle value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.Rectangle value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33809,7 +33811,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteRectangleF(RectangleF value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.RectangleF value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33820,7 +33822,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteRenderSettings(RenderSettings value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Render.RenderSettings value to the archive.',
         since: 6,
         parameters: [
           {
@@ -33831,7 +33833,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteSByte(sbyte value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a sbyte value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33842,7 +33844,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteSByteArray(IEnumerable<sbyte> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of sbyte to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33854,7 +33856,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteShort(short value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a short value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33865,7 +33867,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteShortArray(IEnumerable<short> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of short to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33877,7 +33879,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteSingle(float value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a float value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33888,7 +33890,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteSingleArray(IEnumerable<float> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of float to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33900,7 +33902,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteSize(Size value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.Size value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33911,7 +33913,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteSizeF(SizeF value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a System.Drawing.SizeF value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33922,7 +33924,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteString(string value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a string value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33933,7 +33935,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteStringArray(IEnumerable<string> value)',
-        summary: `Writes a list, an array, or any enumerable of  to the archive.
+        summary: `Writes a list, an array, or any enumerable of string to the archive.
      The return will always be an array.`,
         since: 5,
         parameters: [
@@ -33945,7 +33947,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteTransform(Transform value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Transform value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33956,7 +33958,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteUInt(uint value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a uint value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33967,7 +33969,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteUShort(ushort value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a ushort value to the archive.',
         since: 5,
         parameters: [
           {
@@ -33978,7 +33980,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteUtf8String(string value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a string value to the archive.',
         since: 6,
         parameters: [
           {
@@ -33989,7 +33991,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteVector2d(Vector2d value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Vector2d value to the archive.',
         since: 5,
         parameters: [
           {
@@ -34000,7 +34002,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteVector3d(Vector3d value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Vector3d value to the archive.',
         since: 5,
         parameters: [
           {
@@ -34011,7 +34013,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void WriteVector3f(Vector3f value)',
-        summary: 'Writes a  value to the archive.',
+        summary: 'Writes a Rhino.Geometry.Vector3f value to the archive.',
         since: 5,
         parameters: [
           {
@@ -34481,7 +34483,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'File3dmObjectTable Objects',
-        summary: `Gets access to the  class associated with this file,
+        summary: `Gets access to the File3dmObjectTable class associated with this file,
      which contains all objects.`,
         since: 5,
         property: ['get']
@@ -35063,7 +35065,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.DimStyle.',
         since: 6,
         property: ['get']
       }
@@ -35117,7 +35119,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Group.',
         since: 6.5,
         property: ['get']
       }
@@ -35183,7 +35185,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.HatchPattern.',
         since: 6,
         property: ['get']
       }
@@ -35237,7 +35239,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.InstanceDefinition.',
         since: 6,
         property: ['get']
       }
@@ -35377,7 +35379,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Layer.',
         since: 6,
         property: ['get']
       }
@@ -35435,7 +35437,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.LinePattern.',
         since: 6,
         property: ['get']
       }
@@ -35489,7 +35491,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.RenderMaterial.',
         since: 6,
         property: ['get']
       }
@@ -35682,7 +35684,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.ModelGeometry.',
         since: 6,
         property: ['get']
       },
@@ -35740,7 +35742,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.ModelGeometry.',
         since: 6,
         property: ['get']
       },
@@ -36045,7 +36047,7 @@ var RhinoCommonApi = [
             summary: 'A hatch.'
           }
         ],
-        returns: 'A unique identifier for the hatch, or  on failure.'
+        returns: 'A unique identifier for the hatch, or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddHatch(Hatch hatch,ObjectAttributes attributes)',
@@ -36061,7 +36063,7 @@ var RhinoCommonApi = [
             summary: 'Attributes to apply to brep.'
           }
         ],
-        returns: 'A unique identifier for the hatch, or  on failure.'
+        returns: 'A unique identifier for the hatch, or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddInstanceObject(InstanceReferenceGeometry instanceReference)',
@@ -36137,7 +36139,7 @@ var RhinoCommonApi = [
             summary: 'A list, an array or any enumerable set of 2d points.'
           }
         ],
-        returns: 'A unique identifier for the object; or  on failure.'
+        returns: 'A unique identifier for the object; or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddLeader(Plane plane,IEnumerable<Point2d> points)',
@@ -36153,7 +36155,7 @@ var RhinoCommonApi = [
             summary: 'A list, an array or any enumerable set of 2d points.'
           }
         ],
-        returns: 'A unique identifier for the object; or  on failure.'
+        returns: 'A unique identifier for the object; or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddLeader(Plane plane,IEnumerable<Point2d> points,ObjectAttributes attributes)',
@@ -36173,7 +36175,7 @@ var RhinoCommonApi = [
             summary: 'Attributes to apply to brep.'
           }
         ],
-        returns: 'A unique identifier for the object; or  on failure.'
+        returns: 'A unique identifier for the object; or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddLeader(string text,IEnumerable<Point3d> points)',
@@ -36189,7 +36191,7 @@ var RhinoCommonApi = [
             summary: 'A list, an array or any enumerable set of 2d points.'
           }
         ],
-        returns: 'A unique identifier for the object; or  on failure.'
+        returns: 'A unique identifier for the object; or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddLeader(string text,Plane plane,IEnumerable<Point2d> points)',
@@ -36209,7 +36211,7 @@ var RhinoCommonApi = [
             summary: 'A list, an array or any enumerable set of 2d points.'
           }
         ],
-        returns: 'A unique identifier for the object; or  on failure.'
+        returns: 'A unique identifier for the object; or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddLeader(string text,Plane plane,IEnumerable<Point2d> points,ObjectAttributes attributes)',
@@ -36233,7 +36235,7 @@ var RhinoCommonApi = [
             summary: 'Attributes to apply to brep.'
           }
         ],
-        returns: 'A unique identifier for the object; or  on failure.'
+        returns: 'A unique identifier for the object; or Guid.Empty on failure.'
       },
       {
         signature: 'Guid AddLine(Line line)',
@@ -36432,7 +36434,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Point3d.'
           }
         ],
         returns: 'A unique identifier for the object.'
@@ -36444,7 +36446,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Point3d.'
           },
           {
             name: 'attributes',
@@ -36544,7 +36546,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Point3d.'
           }
         ],
         returns: 'A unique identifier for the object.'
@@ -36556,7 +36558,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Point3d.'
           },
           {
             name: 'attributes',
@@ -36972,7 +36974,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'IEnumerator<File3dmPlugInData> GetEnumerator()',
-        summary: 'Gets the enumerator that visits any  in this table.',
+        summary: 'Gets the enumerator that visits any File3dmPlugInData in this table.',
         since: 5,
         returns: 'The enumerator.'
       }
@@ -37016,7 +37018,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'UnitSystem ModelUnitSystem',
-        summary: 'Gets or sets the model unit system, using  enumeration.',
+        summary: 'Gets or sets the model unit system, using Rhino.UnitSystem enumeration.',
         since: 5,
         property: ['get', 'set']
       },
@@ -37052,7 +37054,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'UnitSystem PageUnitSystem',
-        summary: 'Gets or sets the page unit system, using  enumeration.',
+        summary: 'Gets or sets the page unit system, using Rhino.UnitSystem enumeration.',
         since: 5,
         property: ['get', 'set']
       }
@@ -38456,7 +38458,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.Mixed.',
         since: 6,
         property: ['get']
       },
@@ -38484,7 +38486,7 @@ var RhinoCommonApi = [
         signature: 'static ModelComponentType GetModelComponentTypeFromGenericType()',
         summary: 'Returns the result of the ComponentType property of a ModelComponent.',
         since: 6,
-        returns: 'A .'
+        returns: 'A ModelComponentType.'
       },
       {
         signature: 'int ActiveObjectCount(ModelComponentType type)',
@@ -38576,7 +38578,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'type',
-            summary: `The type to be searched. If this is 
+            summary: `The type to be searched. If this is ModelComponentType.Unset
      then all types are searched.`
           }
         ],
@@ -38607,7 +38609,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'type',
-            summary: 'The type to be searched. Cannot be .'
+            summary: 'The type to be searched. Cannot be ModelComponentType.Unset.'
           }
         ],
         returns: 'Reference to the rhino object or None if no such object could be found.'
@@ -38643,7 +38645,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'type',
-            summary: 'The type to be searched. Cannot be .'
+            summary: 'The type to be searched. Cannot be ModelComponentType.Unset.'
           },
           {
             name: 'parent',
@@ -38676,7 +38678,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'type',
-            summary: 'The type to be searched. Cannot be .'
+            summary: 'The type to be searched. Cannot be ModelComponentType.Unset.'
           }
         ],
         returns: 'Reference to the rhino object or None if no such object could be found.'
@@ -38775,7 +38777,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'type',
-            summary: 'Calls  to determine if case should be used in search.'
+            summary: 'Calls DocObjects.ModelComponent.ModelComponentTypeIgnoresCase to determine if case should be used in search.'
           }
         ]
       }
@@ -38858,7 +38860,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SerializationOptions()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the SerializationOptions class.',
         since: 5
       }
     ],
@@ -40018,14 +40020,14 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ArcCurve()',
-        summary: `Initializes a new  instance.
+        summary: `Initializes a new ArcCurve instance.
      Radius is set to 1, position to Origin and Domain to full span (circle).`,
         since: 5
       },
       {
         signature: 'ArcCurve(Arc arc)',
-        summary: `Initializes a new  instance,
-     copying values from another .`,
+        summary: `Initializes a new ArcCurve instance,
+     copying values from another Arc.`,
         since: 5,
         parameters: [
           {
@@ -40036,8 +40038,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ArcCurve(Arc arc,double t0,double t1)',
-        summary: `Initializes a new  instance,
-     copying values from another  and specifying the 
+        summary: `Initializes a new ArcCurve instance,
+     copying values from another Arc and specifying the 
      needed parametrization of the arc.
      Arc will not be cut again at these parameterizations.`,
         since: 5,
@@ -40058,8 +40060,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ArcCurve(ArcCurve other)',
-        summary: `Initializes a new  instance,
-     copying values from another .`,
+        summary: `Initializes a new ArcCurve instance,
+     copying values from another ArcCurve.`,
         since: 5,
         parameters: [
           {
@@ -40070,8 +40072,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ArcCurve(Circle circle)',
-        summary: `Initializes a new  instance,
-     copying the shape of a .
+        summary: `Initializes a new ArcCurve instance,
+     copying the shape of a Circle.
      Parameterization will be [0;circle.Circumference]`,
         since: 5,
         parameters: [
@@ -40083,8 +40085,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'ArcCurve(Circle circle,double t0,double t1)',
-        summary: `Initializes a new  instance,
-     copying values from a  and specifying the 
+        summary: `Initializes a new ArcCurve instance,
+     copying values from a Circle and specifying the 
      needed parametrization of the arc.
      Circle will not be newly cut at these parameterizations.`,
         since: 5,
@@ -41307,7 +41309,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Brep ToBrep()',
-        summary: 'Constructs a  representation of this boundingbox.',
+        summary: 'Constructs a Brep representation of this boundingbox.',
         since: 5,
         returns: 'If this operation is sucessfull, a Brep representation of this box; otherwise null.'
       },
@@ -43361,8 +43363,8 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'geometry',
-            summary: `A combination of curves, brep trims,
-     points, point clouds or meshes.
+            summary: `A combination of Curve, brep trims,
+     Point, PointCloud or Mesh.
      Curves and trims are sampled to get points. Trims are sampled for
      points and normals.`
           },
@@ -43411,8 +43413,8 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'geometry',
-            summary: `A combination of curves, brep trims,
-     points, point clouds or meshes.
+            summary: `A combination of Curve, brep trims,
+     Point, PointCloud or Mesh.
      Curves and trims are sampled to get points. Trims are sampled for
      points and normals.`
           },
@@ -44056,7 +44058,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Brep DuplicateBrep()',
-        summary: `Same as , but already performs a cast to a brep.
+        summary: `Same as Duplicate(), but already performs a cast to a brep.
      This cast always succeeds.`,
         since: 5,
         returns: 'A brep.'
@@ -44276,7 +44278,7 @@ var RhinoCommonApi = [
             summary: `If the brep geometry is not valid, then a brief description of the problem
      in English is assigned to this out parameter. The information is suitable for
      low-level debugging purposes by programmers and is not intended to be
-     useful as a high level user interface tool. Otherwise, .`
+     useful as a high level user interface tool. Otherwise, string.Empty.`
           }
         ],
         returns: 'A value that indicates whether the geometry is valid.'
@@ -44294,7 +44296,7 @@ var RhinoCommonApi = [
             summary: `If the brep tolerance or flags are not valid, then a brief description 
      of the problem in English is assigned to this out parameter. The information is
      suitable for low-level debugging purposes by programmers and is not
-     intended to be useful as a high level user interface tool. Otherwise, .`
+     intended to be useful as a high level user interface tool. Otherwise, string.Empty.`
           }
         ],
         returns: 'A value that indicates'
@@ -45349,7 +45351,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'BrepRegionFaceSide[] GetFaceSides()',
-        summary: 'Gets an array of  entities delimiting this region.',
+        summary: 'Gets an array of BrepRegionFaceSide entities delimiting this region.',
         since: 5,
         returns: 'An array of region face sides. This array might be empty on failure.'
       }
@@ -45358,7 +45360,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.BrepRegionFaceSide',
     dataType: 1,
-    summary: 'Represents a side of a  entity.',
+    summary: 'Represents a side of a BrepRegion entity.',
     baseclass: 'Rhino.Runtime.CommonObject',
     properties: [
       {
@@ -46444,7 +46446,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'IEnumerator<BrepFace> GetEnumerator()',
-        summary: 'Gets an enumerators that yields  objects.',
+        summary: 'Gets an enumerators that yields BrepFace objects.',
         since: 5,
         returns: 'The enumerator.'
       },
@@ -47281,7 +47283,7 @@ var RhinoCommonApi = [
             summary: 'A face index.'
           }
         ],
-        returns: 'A new bounding box, or  on error.'
+        returns: 'A new bounding box, or BoundingBox.Empty on error.'
       },
       {
         signature: 'Point3d GetFaceCenter(int faceIndex)',
@@ -47732,7 +47734,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Collections.MeshNgonList',
     dataType: 1,
     summary: `Provides access to the ngons and n-gon related functionality of a Mesh.
-   See also the  property for Ngon functionality details.`,
+   See also the Rhino.Geometry.Mesh.Ngons property for Ngon functionality details.`,
     interfaces: ['IResizableList<MeshNgon>', 'IList', 'IReadOnlyList<MeshNgon>'],
     properties: [
       {
@@ -47855,7 +47857,7 @@ var RhinoCommonApi = [
             summary: 'A ngon index.'
           }
         ],
-        returns: 'A new bounding box, or  on error.'
+        returns: 'A new bounding box, or BoundingBox.Empty on error.'
       },
       {
         signature: 'BoundingBox GetNgonBoundingBox(MeshNgon ngon)',
@@ -47867,7 +47869,7 @@ var RhinoCommonApi = [
             summary: 'An ngon.'
           }
         ],
-        returns: 'A new bounding box, or  on error.'
+        returns: 'A new bounding box, or BoundingBox.Empty on error.'
       },
       {
         signature: 'Point3d GetNgonCenter(int index)',
@@ -48331,7 +48333,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'topologyEdgeIndex',
-            summary: 'An index of a topology edge in .'
+            summary: 'An index of a topology edge in Mesh.TopologyEdges.'
           }
         ],
         returns: 'True if successful.'
@@ -48442,7 +48444,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'topologyEdgeIndex',
-            summary: 'An index of a topology edge in .'
+            summary: 'An index of a topology edge in Mesh.TopologyEdges.'
           }
         ],
         returns: 'True if the edge is unwelded, False if the edge is welded.'
@@ -48455,7 +48457,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'topologyEdgeIndex',
-            summary: 'An index of a topology edge in .'
+            summary: 'An index of a topology edge in Mesh.TopologyEdges.'
           }
         ],
         returns: 'True if mesh topology edge is hidden.'
@@ -48467,19 +48469,19 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'topologyEdgeIndex',
-            summary: 'An index of a topology edge in .'
+            summary: 'An index of a topology edge in Mesh.TopologyEdges.'
           }
         ],
         returns: 'True if mesh topology edge is an interior ngon edge.'
       },
       {
         signature: 'bool IsSwappableEdge(int topologyEdgeIndex)',
-        summary: 'Determines if a mesh edge index is valid input for .',
+        summary: 'Determines if a mesh edge index is valid input for SwapEdge.',
         since: 5,
         parameters: [
           {
             name: 'topologyEdgeIndex',
-            summary: 'An index of a topology edge in .'
+            summary: 'An index of a topology edge in Mesh.TopologyEdges.'
           }
         ],
         returns: 'True if edge can be swapped.'
@@ -48523,7 +48525,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'topologyEdgeIndex',
-            summary: 'An index of a topology edge in .'
+            summary: 'An index of a topology edge in Mesh.TopologyEdges.'
           }
         ],
         returns: 'True if successful.'
@@ -49015,7 +49017,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'vertices',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Point3d.'
           }
         ]
       },
@@ -49027,7 +49029,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'vertices',
-            summary: 'A list, an array or any enumerable set of .'
+            summary: 'A list, an array or any enumerable set of Point3f.'
           }
         ]
       },
@@ -49328,13 +49330,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Point3d[] ToPoint3dArray()',
-        summary: 'Copies all vertices to a new array of .',
+        summary: 'Copies all vertices to a new array of Point3d.',
         since: 5,
         returns: 'A new array.'
       },
       {
         signature: 'Point3f[] ToPoint3fArray()',
-        summary: 'Copies all vertices to a new array of .',
+        summary: 'Copies all vertices to a new array of Point3f.',
         since: 5,
         returns: 'A new array.'
       }
@@ -56928,7 +56930,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'Extrusion()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the Extrusion class.',
         since: 5
       }
     ],
@@ -57620,12 +57622,12 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale)',
-        summary: 'Constructs an array of hatches from one curve.',
+        summary: 'Constructs an array of Hatch from one curve.',
         since: 5,
         parameters: [
           {
             name: 'curve',
-            summary: 'A .'
+            summary: 'A Curve.'
           },
           {
             name: 'hatchPatternIndex',
@@ -57644,12 +57646,12 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale,double tolerance)',
-        summary: 'Constructs an array of hatches from one curve.',
+        summary: 'Constructs an array of Hatch from one curve.',
         since: 6,
         parameters: [
           {
             name: 'curve',
-            summary: 'A .'
+            summary: 'A Curve.'
           },
           {
             name: 'hatchPatternIndex',
@@ -57672,12 +57674,12 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Hatch[] Create(IEnumerable<Curve> curves,int hatchPatternIndex,double rotationRadians,double scale)',
-        summary: 'Constructs an array of hatches from a set of curves.',
+        summary: 'Constructs an array of Hatch from a set of curves.',
         since: 5,
         parameters: [
           {
             name: 'curves',
-            summary: 'An array, a list or any enumarable set of .'
+            summary: 'An array, a list or any enumarable set of Curve.'
           },
           {
             name: 'hatchPatternIndex',
@@ -57696,12 +57698,12 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Hatch[] Create(IEnumerable<Curve> curves,int hatchPatternIndex,double rotationRadians,double scale,double tolerance)',
-        summary: 'Constructs an array of hatches from a set of curves.',
+        summary: 'Constructs an array of Hatch from a set of curves.',
         since: 6,
         parameters: [
           {
             name: 'curves',
-            summary: 'An array, a list or any enumarable set of .'
+            summary: 'An array, a list or any enumarable set of Curve.'
           },
           {
             name: 'hatchPatternIndex',
@@ -57769,12 +57771,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'HermiteSurface()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new HermiteSurface instance.',
         since: 7
       },
       {
         signature: 'HermiteSurface(int uCount,int vCount)',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new HermiteSurface instance.',
         since: 7,
         parameters: [
           {
@@ -58538,7 +58540,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.InstanceDefinition.',
         since: 6,
         property: ['get']
       },
@@ -59303,8 +59305,8 @@ var RhinoCommonApi = [
             summary: 'Point on circle closest to second intersection.'
           }
         ],
-        returns: `If  is returned, only t1 and point1 will have valid values. 
-     If  is returned, t2 and point2 will also be filled out.`
+        returns: `If LineCircleIntersection.Single is returned, only t1 and point1 will have valid values. 
+     If LineCircleIntersection.Multiple is returned, t2 and point2 will also be filled out.`
       },
       {
         signature: 'static LineCylinderIntersection LineCylinder(Line line,Cylinder cylinder,Point3d intersectionPoint1,Point3d intersectionPoint2)',
@@ -59446,9 +59448,9 @@ var RhinoCommonApi = [
             summary: 'Second intersection point.'
           }
         ],
-        returns: `If  is returned, the first point is the point on the line closest to the sphere and 
+        returns: `If LineSphereIntersection.None is returned, the first point is the point on the line closest to the sphere and 
      the second point is the point on the sphere closest to the line. 
-     If  is returned, the first point is the point on the line and the second point is the 
+     If LineSphereIntersection.Single is returned, the first point is the point on the line and the second point is the 
      same point on the sphere.`
       },
       {
@@ -59736,7 +59738,7 @@ var RhinoCommonApi = [
             summary: 'Intersection result.'
           }
         ],
-        returns: `If  is returned, the intersectionCircle has a radius of zero and the center point 
+        returns: `If PlaneSphereIntersection.None is returned, the intersectionCircle has a radius of zero and the center point 
      is the point on the plane closest to the sphere.`
       },
       {
@@ -60588,13 +60590,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Interval other)',
-        summary: `Compares this  with another interval.
+        summary: `Compares this Interval with another interval.
      The lower bound has first evaluation priority.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to compare with.'
+            summary: 'The other Interval to compare with.'
           }
         ],
         returns: '0: if this is identical to other-1: if this[0] < other[0]+1: if this[0] > other[0]-1: if this[0] == other[0] and this[1] < other[1]+1: if this[0] == other[0] and this[1] > other[1].'
@@ -60606,7 +60608,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Equals(Interval other)',
-        summary: `Determines whether the specified  is equal to the current ,
+        summary: `Determines whether the specified Interval is equal to the current Interval,
      comparing by value.`,
         since: 5,
         parameters: [
@@ -60615,11 +60617,11 @@ var RhinoCommonApi = [
             summary: 'The other interval to compare with.'
           }
         ],
-        returns: 'True if obj is an  and has the same bounds; False otherwise.'
+        returns: 'True if obj is an Interval and has the same bounds; False otherwise.'
       },
       {
         signature: 'bool Equals(object obj)',
-        summary: `Determines whether the specified  is equal to the current ,
+        summary: `Determines whether the specified object is equal to the current Interval,
      comparing by value.`,
         parameters: [
           {
@@ -60627,16 +60629,16 @@ var RhinoCommonApi = [
             summary: 'The other object to compare with.'
           }
         ],
-        returns: 'True if obj is an  and has the same bounds; False otherwise.'
+        returns: 'True if obj is an Interval and has the same bounds; False otherwise.'
       },
       {
         signature: 'int GetHashCode()',
-        summary: 'Computes the hash code for this  object.',
-        returns: 'A hash value that might be equal for two different  values.'
+        summary: 'Computes the hash code for this Interval object.',
+        returns: 'A hash value that might be equal for two different Interval values.'
       },
       {
         signature: 'void Grow(double value)',
-        summary: 'Grows the  to include the given number.',
+        summary: 'Grows the Interval to include the given number.',
         since: 5,
         parameters: [
           {
@@ -60703,7 +60705,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void MakeIncreasing()',
-        summary: 'Ensures this  is either singleton or increasing.',
+        summary: 'Ensures this Interval is either singleton or increasing.',
         since: 5
       },
       {
@@ -60742,7 +60744,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'string ToString()',
-        summary: 'Returns a string representation of this .',
+        summary: 'Returns a string representation of this Interval.',
         returns: 'A string with T0,T1.'
       }
     ]
@@ -60970,7 +60972,7 @@ var RhinoCommonApi = [
       {
         signature: 'bool IsDirectionalLight',
         summary: `Gets a value indicating whether the light style
-     is  CameraDirectional or WorldDirectional.`,
+     is LightStyle CameraDirectional or WorldDirectional.`,
         since: 5,
         property: ['get']
       },
@@ -60983,28 +60985,28 @@ var RhinoCommonApi = [
       {
         signature: 'bool IsLinearLight',
         summary: `Gets a value indicating whether the light style
-     is  WorldLinear.`,
+     is LightStyle WorldLinear.`,
         since: 5,
         property: ['get']
       },
       {
         signature: 'bool IsPointLight',
         summary: `Gets a value indicating whether the light style
-     is  CameraPoint or WorldPoint.`,
+     is LightStyle CameraPoint or WorldPoint.`,
         since: 5,
         property: ['get']
       },
       {
         signature: 'bool IsRectangularLight',
         summary: `Gets a value indicating whether the light style
-     is  WorldRectangular.`,
+     is LightStyle WorldRectangular.`,
         since: 5,
         property: ['get']
       },
       {
         signature: 'bool IsSpotLight',
         summary: `Gets a value indicating whether the light style
-     is  CameraSpot or WorldSpot.`,
+     is LightStyle CameraSpot or WorldSpot.`,
         since: 5,
         property: ['get']
       },
@@ -61158,7 +61160,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Light CreateSunLight(Sun sun)',
-        summary: 'Constructs a light which simulates a .',
+        summary: 'Constructs a light which simulates a Rhino.Render.Sun.',
         since: 5,
         parameters: [
           {
@@ -61377,7 +61379,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'static Line Unset',
-        summary: 'Gets a line segment which has  end points.',
+        summary: 'Gets a line segment which has Point3d.Unset end points.',
         since: 5,
         property: ['get']
       },
@@ -61747,13 +61749,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Point3d PointAtLength(double distance)',
-        summary: `Computes a point located at a specific metric distance from the line origin ().
+        summary: `Computes a point located at a specific metric distance from the line origin (From).
      If line start and end coincide, then the start point is always returned.`,
         since: 6,
         parameters: [
           {
             name: 'distance',
-            summary: 'A positive, 0, or a negative value that will be the distance from .'
+            summary: 'A positive, 0, or a negative value that will be the distance from From.'
           }
         ],
         returns: 'The newly found point.'
@@ -61907,7 +61909,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static LinearDimension FromPoints(Point3d extensionLine1End,Point3d extensionLine2End,Point3d pointOnDimensionLine)',
-        summary: 'Initializes a new instance of the  class, based on three points.',
+        summary: 'Initializes a new instance of the LinearDimension class, based on three points.',
         since: 5
       },
       {
@@ -61969,13 +61971,13 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'LineCurve()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the LineCurve class.',
         since: 5
       },
       {
         signature: 'LineCurve(Line line)',
-        summary: `Initializes a new instance of the  class, by
-     retrieving its value from a line.`,
+        summary: `Initializes a new instance of the LineCurve class, by
+     retrieving its value from a Line.`,
         since: 5,
         parameters: [
           {
@@ -61986,8 +61988,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'LineCurve(Line line,double t0,double t1)',
-        summary: `Initializes a new instance of the  class, by
-     retrieving its value from a line and setting the domain.`,
+        summary: `Initializes a new instance of the LineCurve class, by
+     retrieving its value from a Line and setting the domain.`,
         since: 5,
         parameters: [
           {
@@ -62006,14 +62008,14 @@ var RhinoCommonApi = [
       },
       {
         signature: 'LineCurve(LineCurve other)',
-        summary: `Initializes a new instance of the  class, by
+        summary: `Initializes a new instance of the LineCurve class, by
      copying values from another linear curve.`,
         since: 5
       },
       {
         signature: 'LineCurve(Point2d from,Point2d to)',
-        summary: `Initializes a new instance of the  class, by
-     setting start and end point from two 2D points.`,
+        summary: `Initializes a new instance of the LineCurve class, by
+     setting start and end point from two Point2d.`,
         since: 5,
         parameters: [
           {
@@ -62028,8 +62030,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'LineCurve(Point3d from,Point3d to)',
-        summary: `Initializes a new instance of the  class, by
-     setting start and end point from two 3D points.`,
+        summary: `Initializes a new instance of the LineCurve class, by
+     setting start and end point from two Point3d.`,
         since: 5,
         parameters: [
           {
@@ -62091,7 +62093,7 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `Represents an arbitrarily sized matrix of double-precision
    floating point numbers. If you are working with a 4x4 matrix, then you may want
-   to use the  class instead.`,
+   to use the Transform class instead.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
@@ -62111,7 +62113,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Matrix(Transform xform)',
-        summary: 'Initializes a new instance of the matrix based on a 4x4 matrix .',
+        summary: 'Initializes a new instance of the matrix based on a 4x4 matrix Transform.',
         since: 5,
         parameters: [
           {
@@ -62465,14 +62467,14 @@ var RhinoCommonApi = [
       },
       {
         signature: 'MeshTopologyEdgeList TopologyEdges',
-        summary: `Gets the  object associated with this mesh.
+        summary: `Gets the Rhino.Geometry.Collections.MeshTopologyEdgeList object associated with this mesh.
      This object stores edge connectivity.`,
         since: 5,
         property: ['get']
       },
       {
         signature: 'MeshTopologyVertexList TopologyVertices',
-        summary: `Gets the  object associated with this mesh.
+        summary: `Gets the Rhino.Geometry.Collections.MeshTopologyVertexList object associated with this mesh.
      This object stores vertex connectivity and the indices of vertices
      that were unified while computing the edge topology.`,
         since: 5,
@@ -63704,14 +63706,14 @@ var RhinoCommonApi = [
       {
         signature: 'GeometryBase Duplicate()',
         summary: `Constructs a copy of this mesh.
-     This is the same as .`,
+     This is the same as DuplicateMesh.`,
         since: 5,
         returns: 'A mesh.'
       },
       {
         signature: 'Mesh DuplicateMesh()',
         summary: `Constructs a copy of this mesh.
-     This is the same as .`,
+     This is the same as Duplicate.`,
         since: 5
       },
       {
@@ -63882,7 +63884,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int GetNgonAndFacesCount()',
-        summary: 'Retrieves the count of items that  will provide.',
+        summary: 'Retrieves the count of items that GetNgonAndFacesEnumerable will provide.',
         since: 6,
         returns: 'The amount of faces that are not part of an ngon + the amount of ngons.'
       },
@@ -63936,7 +63938,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'MeshPart GetPartition(int which)',
-        summary: 'Retrieves a partition. See  for details.',
+        summary: 'Retrieves a partition. See CreatePartitions for details.',
         since: 5.6,
         parameters: [
           {
@@ -64467,7 +64469,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void ReleaseUnsafeLock(MeshUnsafeLock meshData)',
-        summary: 'Updates the Mesh data with the information that was stored via the .',
+        summary: 'Updates the Mesh data with the information that was stored via the MeshUnsafeLock.',
         parameters: [
           {
             name: 'meshData',
@@ -65384,14 +65386,14 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'int CompareTo(MeshFace other)',
-        summary: `Compares this  with another 
+        summary: `Compares this MeshFace with another MeshFace
      and returns a value of 1, 0, or -1, referring to dictionary order.
      Index evaluation priority is first A, then B, then C, then D.`,
         since: 6,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other MeshFace to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this < other. Priority is for index of corner A first, then B, then C, then D.+1: otherwise.'
@@ -65559,7 +65561,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'string ToString()',
-        summary: `Returns a string representation for this .
+        summary: `Returns a string representation for this MeshFace.
      This is to provide a meaningful visualization of this structure
      and is subject to change in newer releases.`,
         returns: 'The string representation.'
@@ -65872,7 +65874,7 @@ var RhinoCommonApi = [
       {
         signature: 'int BoundaryVertexCount',
         summary: `Get the number of vertices in this ngon.
-      about length information.`,
+     MeshNgon about length information.`,
         since: 6,
         property: ['get']
       },
@@ -65910,7 +65912,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(MeshNgon otherNgon)',
-        summary: `Compares this  with otherNgon
+        summary: `Compares this MeshNgon with otherNgon
      and returns a value of 1, 0, or -1.
      Priority is for vertex count, then face count,
      then vertex index list values, then face index list values.`,
@@ -65918,7 +65920,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'otherNgon',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other MeshNgon to use in comparison.'
           }
         ],
         returns: '0: if this is identical to otherNgon-1: if this < otherNgon. +1: if this > otherNgon.'
@@ -65978,7 +65980,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'string ToString()',
-        summary: `Returns a string representation for this .
+        summary: `Returns a string representation for this MeshNgon.
      This is to provide a meaningful visualization of this structure
      and is subject to change in newer releases.`,
         returns: 'The string representation.'
@@ -66287,7 +66289,7 @@ var RhinoCommonApi = [
       {
         signature: 'MeshFace* FacesArray(int length)',
         summary: `Retrieves a pointer to the raw faces array, which uses 4 integers for each face.
-     .`,
+     MeshFace.`,
         since: 6.2,
         parameters: [
           {
@@ -68391,7 +68393,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'Particle()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the Particle class.',
         since: 5
       }
     ],
@@ -69194,11 +69196,11 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Point2d',
     dataType: 2,
     summary: `Represents the two coordinates of a point in two-dimensional space,
-   using -precision floating point numbers.`,
+   using double-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Point2d(double x,double y)',
-        summary: 'Initializes a new instance of  from coordinates.',
+        summary: 'Initializes a new instance of Point2d from coordinates.',
         since: 5,
         parameters: [
           {
@@ -69213,7 +69215,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Point2d(Point2d point)',
-        summary: 'Initializes a new instance of  by copying another .',
+        summary: 'Initializes a new instance of Point2d by copying another Point2d.',
         since: 5,
         parameters: [
           {
@@ -69224,7 +69226,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Point2d(Point3d point)',
-        summary: 'Initializes a new instance of  by copying the first two coordiantes of a .',
+        summary: 'Initializes a new instance of Point3d by copying the first two coordiantes of a Point3d.',
         since: 5,
         parameters: [
           {
@@ -69235,7 +69237,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Point2d(Vector2d vector)',
-        summary: 'Initializes a new instance of  by converting a vector.',
+        summary: 'Initializes a new instance of Point2d by converting a vector.',
         since: 5,
         parameters: [
           {
@@ -69343,7 +69345,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Point2d Divide(Point2d point,double t)',
-        summary: `Divides a  by a number.
+        summary: `Divides a Point2d by a number.
      (Provided for languages that do not support operator overloading. You can use the / operator otherwise)`,
         since: 5,
         parameters: [
@@ -69360,7 +69362,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Point2d Multiply(double t,Point2d point)',
-        summary: `Multiplies a  by a number.
+        summary: `Multiplies a Point2d by a number.
      (Provided for languages that do not support operator overloading. You can use the * operator otherwise)`,
         since: 5,
         parameters: [
@@ -69377,7 +69379,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Point2d Multiply(Point2d point,double t)',
-        summary: `Multiplies a  by a number.
+        summary: `Multiplies a Point2d by a number.
      (Provided for languages that do not support operator overloading. You can use the * operator otherwise)`,
         since: 5,
         parameters: [
@@ -69428,13 +69430,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Point2d other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Point2d with another Point2d.
      Coordinates evaluation priority is first X, then Y.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Point2d to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y+1: otherwise.'
@@ -69511,7 +69513,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Point2f',
     dataType: 2,
     summary: `Represents the two coordinates of a point in two-dimensional space,
-   using -precision floating point numbers.`,
+   using Single-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Point2f(double x,double y)',
@@ -69574,13 +69576,13 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'int CompareTo(Point2f other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Point2f with another Point2f.
      Coordinates evaluation priority is first X, then Y.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Point2f to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y+1: otherwise.'
@@ -69592,7 +69594,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Equals(object obj)',
-        summary: 'Determines whether the specified System.Object is a  and has the same values as the present point.',
+        summary: 'Determines whether the specified System.Object is a Point2f and has the same values as the present point.',
         parameters: [
           {
             name: 'obj',
@@ -69603,7 +69605,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Equals(Point2f point)',
-        summary: 'Determines whether the specified  has the same values as the present point.',
+        summary: 'Determines whether the specified Point2f has the same values as the present point.',
         since: 5,
         parameters: [
           {
@@ -69633,7 +69635,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Point3d',
     dataType: 2,
     summary: `Represents the three coordinates of a point in three-dimensional space,
-   using -precision floating point values.`,
+   using double-precision floating point values.`,
     constructors: [
       {
         signature: 'Point3d(double x,double y,double z)',
@@ -69716,7 +69718,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool IsValid',
-        summary: 'Each coordinate of the point must pass the  test.',
+        summary: 'Each coordinate of the point must pass the RhinoMath.IsValidDouble test.',
         since: 5,
         property: ['get']
       },
@@ -69755,7 +69757,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static Point3d Add(Point3d point1,Point3d point2)',
-        summary: `Sums two  instances.
+        summary: `Sums two Point3d instances.
      (Provided for languages that do not support operator overloading. You can use the + operator otherwise)`,
         since: 5,
         parameters: [
@@ -69828,7 +69830,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable of .'
+            summary: 'A list, an array or any enumerable of Point3d.'
           },
           {
             name: 'tolerance',
@@ -69844,7 +69846,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable of .'
+            summary: 'A list, an array or any enumerable of Point3d.'
           },
           {
             name: 'tolerance',
@@ -69857,7 +69859,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Point3d Divide(Point3d point,double t)',
-        summary: `Divides a  by a number.
+        summary: `Divides a Point3d by a number.
      (Provided for languages that do not support operator overloading. You can use the / operator otherwise)`,
         since: 5,
         parameters: [
@@ -69886,7 +69888,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Point3d Multiply(double t,Point3d point)',
-        summary: `Multiplies a  by a number.
+        summary: `Multiplies a Point3d by a number.
      (Provided for languages that do not support operator overloading. You can use the * operator otherwise)`,
         since: 5,
         parameters: [
@@ -69903,7 +69905,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Point3d Multiply(Point3d point,double t)',
-        summary: `Multiplies a  by a number.
+        summary: `Multiplies a Point3d by a number.
      (Provided for languages that do not support operator overloading. You can use the * operator otherwise)`,
         since: 5,
         parameters: [
@@ -69926,7 +69928,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'points',
-            summary: 'A list, an array or any enumerable of .'
+            summary: 'A list, an array or any enumerable of Point3d.'
           },
           {
             name: 'minimumDistance',
@@ -69987,13 +69989,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Point3d other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Point3d with another Point3d.
      Component evaluation priority is first X, then Y, then Z.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Point3d to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z < other.Z+1: otherwise.'
@@ -70030,7 +70032,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Equals(object obj)',
-        summary: 'Determines whether the specified  is a  and has the same values as the present point.',
+        summary: 'Determines whether the specified object is a Point3d and has the same values as the present point.',
         parameters: [
           {
             name: 'obj',
@@ -70041,7 +70043,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool Equals(Point3d point)',
-        summary: 'Determines whether the specified  has the same values as the present point.',
+        summary: 'Determines whether the specified Point3d has the same values as the present point.',
         since: 5,
         parameters: [
           {
@@ -70133,7 +70135,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Point3f',
     dataType: 2,
     summary: `Represents the three coordinates of a point in three-dimensional space,
-   using -precision floating point numbers.`,
+   using Single-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Point3f(float x,float y,float z)',
@@ -70170,7 +70172,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool IsValid',
-        summary: 'Each coordinate of the point must pass the  test.',
+        summary: 'Each coordinate of the point must pass the RhinoMath.IsValidSingle test.',
         since: 5,
         property: ['get']
       },
@@ -70213,13 +70215,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Point3f other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Point3f with another Point3f.
      Component evaluation priority is first X, then Y, then Z.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Point3d to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z < other.Z+1: otherwise.'
@@ -70300,7 +70302,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'Point4d(double x,double y,double z,double w)',
-        summary: 'Initializes a new instance of the  class based on coordinates.',
+        summary: 'Initializes a new instance of the Point4d class based on coordinates.',
         since: 5,
         parameters: [
           {
@@ -70323,7 +70325,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Point4d(Point3d point)',
-        summary: 'Initializes a new instance of the  class from the coordinates of a point.',
+        summary: 'Initializes a new instance of the Point4d class from the coordinates of a point.',
         since: 5,
         parameters: [
           {
@@ -70385,7 +70387,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static Point4d Add(Point4d point1,Point4d point2)',
-        summary: `Sums two  together.
+        summary: `Sums two Point4d together.
      (Provided for languages that do not support operator overloading. You can use the + operator otherwise)`,
         since: 5,
         parameters: [
@@ -70497,25 +70499,25 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'PointCloud()',
-        summary: `Initializes a new instance of the  class
+        summary: `Initializes a new instance of the PointCloud class
      that is empty.`,
         since: 5
       },
       {
         signature: 'PointCloud(IEnumerable<Point3d> points)',
-        summary: `Initializes a new instance of the  class,
+        summary: `Initializes a new instance of the PointCloud class,
      copying the content from a set of points.`,
         since: 5,
         parameters: [
           {
             name: 'points',
-            summary: 'A list or an array of Point3d, or any object that implements .'
+            summary: 'A list or an array of Point3d, or any object that implements IEnumerable{Point3d}.'
           }
         ]
       },
       {
         signature: 'PointCloud(PointCloud other)',
-        summary: `Initializes a new instance of the  class,
+        summary: `Initializes a new instance of the PointCloud class,
      copying (Merge) the content of another pointcloud.`,
         since: 5
       }
@@ -70725,7 +70727,7 @@ var RhinoCommonApi = [
         signature: 'IEnumerator<PointCloudItem> GetEnumerator()',
         summary: 'Gets an enumerator that allows to modify each pointcloud point.',
         since: 5,
-        returns: 'A instance of .'
+        returns: 'A instance of IEnumerator{PointCloudItem}.'
       },
       {
         signature: 'Vector3d[] GetNormals()',
@@ -70817,7 +70819,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'PointCloudItem InsertNew(int index)',
-        summary: 'Inserts a new  at a specific position of the point cloud.',
+        summary: 'Inserts a new PointCloudItem at a specific position of the point cloud.',
         since: 5,
         parameters: [
           {
@@ -71087,7 +71089,7 @@ var RhinoCommonApi = [
       {
         signature: 'Curve[] Explode()',
         summary: `Explodes this PolyCurve into a list of Curve segments. This will not explode nested polycurves. 
-     Call  first if you need all individual segments.`,
+     Call RemoveNesting first if you need all individual segments.`,
         since: 5,
         returns: 'An array of polycurve segments.'
       },
@@ -71539,7 +71541,7 @@ var RhinoCommonApi = [
           {
             name: 'points',
             summary: `A list, an array or any enumerable set of points to copy from.
-     This includes a  object.`
+     This includes a Polyline object.`
           }
         ]
       },
@@ -73400,7 +73402,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'tag',
-            summary: 'State to be passed inside the  Tag property.'
+            summary: 'State to be passed inside the RTreeEventArgs Tag property.'
           }
         ],
         returns: 'True if entire tree was searched. It is possible no results were found.'
@@ -73436,7 +73438,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'tag',
-            summary: 'State to be passed inside the  Tag property.'
+            summary: 'State to be passed inside the RTreeEventArgs Tag property.'
           }
         ],
         returns: 'True if entire tree was searched. It is possible no results were found.'
@@ -73506,7 +73508,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Geometry.ShutLiningCurveInfo',
     dataType: 1,
-    summary: 'Contains shutlining curve information. This is used in .',
+    summary: 'Contains shutlining curve information. This is used in Mesh.WithShutLining.',
     constructors: [
       {
         signature: 'ShutLiningCurveInfo(Curve curve,double radius,int profile,bool pull,bool isBump,IEnumerable<Interval> curveIntervals,bool enabled)',
@@ -75221,7 +75223,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool GetNurbsFormParameterFromSurfaceParameter(double surfaceS,double surfaceT,double nurbsS,double nurbsT)',
-        summary: 'Translates a parameter from the current surface to the parameter space of the surface returned by .',
+        summary: 'Translates a parameter from the current surface to the parameter space of the surface returned by ToNurbsSurface().',
         since: 6,
         parameters: [
           {
@@ -75257,7 +75259,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool GetSurfaceParameterFromNurbsFormParameter(double nurbsS,double nurbsT,double surfaceS,double surfaceT)',
-        summary: 'Translates a parameter from a value on the surface returned by  to the current surface.',
+        summary: 'Translates a parameter from a value on the surface returned by ToNurbsSurface() to the current surface.',
         since: 6,
         parameters: [
           {
@@ -76787,7 +76789,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'TextEntity()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the TextEntity class.',
         since: 5
       }
     ],
@@ -78149,7 +78151,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'Unroller(Brep brep)',
-        summary: 'Initializes a new instance of the  class with a brep.',
+        summary: 'Initializes a new instance of the Unroller class with a brep.',
         since: 5,
         parameters: [
           {
@@ -78160,7 +78162,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'Unroller(Surface surface)',
-        summary: 'Initializes a new instance of the  class with surface.',
+        summary: 'Initializes a new instance of the Unroller class with surface.',
         since: 5,
         parameters: [
           {
@@ -78375,7 +78377,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Vector2d',
     dataType: 2,
     summary: `Represents the two components of a vector in two-dimensional space,
-   using -precision floating point numbers.`,
+   using double-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Vector2d(double x,double y)',
@@ -78459,7 +78461,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Vector2d Divide(Vector2d vector,double t)',
-        summary: `Divides a  by a number, having the effect of shrinking it.
+        summary: `Divides a Vector2d by a number, having the effect of shrinking it.
      (Provided for languages that do not support operator overloading. You can use the / operator otherwise)`,
         since: 6,
         parameters: [
@@ -78558,13 +78560,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Vector2d other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Vector2d with another Vector2d.
      Components evaluation priority is first X, then Y.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Vector2d to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y+1: otherwise.'
@@ -78655,7 +78657,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Vector2f',
     dataType: 2,
     summary: `Represents the two components of a vector in two-dimensional space,
-   using -precision floating point numbers.`,
+   using Single-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Vector2f(float x,float y)',
@@ -78703,7 +78705,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static double Multiply(Vector2f point1,Vector2f point2)',
-        summary: `Multiplies two  together, returning the dot (internal) product of the two.
+        summary: `Multiplies two Vector2f together, returning the dot (internal) product of the two.
      (Provided for languages that do not support operator overloading. You can use the * operator otherwise)`,
         since: 6,
         parameters: [
@@ -78720,13 +78722,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Vector2f other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Vector2f with another Vector2f.
      Components evaluation priority is first X, then Y.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Vector2f to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y+1: otherwise.'
@@ -78779,7 +78781,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Vector3d',
     dataType: 2,
     summary: `Represents the three components of a vector in three-dimensional space,
-   using -precision floating point numbers.`,
+   using double-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Vector3d(double x,double y,double z)',
@@ -79036,7 +79038,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Vector3d Divide(Vector3d vector,double t)',
-        summary: `Divides a  by a number, having the effect of shrinking it.
+        summary: `Divides a Vector3d by a number, having the effect of shrinking it.
      (Provided for languages that do not support operator overloading. You can use the / operator otherwise)`,
         since: 5,
         parameters: [
@@ -79193,13 +79195,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Vector3d other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Vector3d with another Vector3d.
      Component evaluation priority is first X, then Y, then Z.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Vector3d to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z < other.Z+1: otherwise.'
@@ -79384,7 +79386,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Geometry.Vector3f',
     dataType: 2,
     summary: `Represents the three components of a vector in three-dimensional space,
-   using -precision floating point numbers.`,
+   using Single-precision floating point numbers.`,
     constructors: [
       {
         signature: 'Vector3f(float x,float y,float z)',
@@ -79545,7 +79547,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Vector3f Divide(Vector3f vector,double t)',
-        summary: `Divides a  by a number, having the effect of shrinking it, t times.
+        summary: `Divides a Vector3f by a number, having the effect of shrinking it, t times.
      (Provided for languages that do not support operator overloading. You can use the / operator otherwise)`,
         since: 6,
         parameters: [
@@ -79562,7 +79564,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static Vector3f Divide(Vector3f vector,float t)',
-        summary: `Divides a  by a number, having the effect of shrinking it, t times.
+        summary: `Divides a Vector3f by a number, having the effect of shrinking it, t times.
      (Provided for languages that do not support operator overloading. You can use the / operator otherwise)`,
         since: 6,
         parameters: [
@@ -79613,7 +79615,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static double Multiply(Vector3f point1,Vector3f point2)',
-        summary: `Multiplies two  together, returning the dot (internal) product of the two.
+        summary: `Multiplies two Vector3f together, returning the dot (internal) product of the two.
      This is not the cross product.
      (Provided for languages that do not support operator overloading. You can use the * operator otherwise)`,
         since: 6,
@@ -79661,13 +79663,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'int CompareTo(Vector3f other)',
-        summary: `Compares this  with another .
+        summary: `Compares this Vector3f with another Vector3f.
      Component evaluation priority is first X, then Y, then Z.`,
         since: 5,
         parameters: [
           {
             name: 'other',
-            summary: 'The other  to use in comparison.'
+            summary: 'The other Vector3f to use in comparison.'
           }
         ],
         returns: '0: if this is identical to other-1: if this.X < other.X-1: if this.X == other.X and this.Y < other.Y-1: if this.X == other.X and this.Y == other.Y and this.Z < other.Z+1: otherwise.'
@@ -80113,7 +80115,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'IndexPair(int i,int j)',
-        summary: 'Initializes a new instance of  with two indices.',
+        summary: 'Initializes a new instance of IndexPair with two indices.',
         since: 5,
         parameters: [
           {
@@ -80150,26 +80152,26 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'bool Contains(int item)',
-        summary: 'Determines whether the  contains a specific value.',
+        summary: 'Determines whether the IndexPair contains a specific value.',
         since: 6,
         parameters: [
           {
             name: 'item',
-            summary: 'The number to locate in the .'
+            summary: 'The number to locate in the IndexPair.'
           }
         ],
-        returns: 'True if  is found in the ; otherwise, false.'
+        returns: 'True if  is found in the IndexPair; otherwise, false.'
       },
       {
         signature: 'void CopyTo(int[] array,int arrayIndex)',
-        summary: 'Copies the elements of the  to an , starting at a particular  index.',
+        summary: 'Copies the elements of the IndexPair to an T:System.Array, starting at a particular T:System.Array index.',
         since: 6,
         parameters: [
           {
             name: 'array',
-            summary: `The one-dimensional  that is the destination of the elements copied
-     from .
-     The  must have zero-based indexing.`
+            summary: `The one-dimensional T:System.Array that is the destination of the elements copied
+     from IndexPair.
+     The T:System.Array must have zero-based indexing.`
           },
           {
             name: 'arrayIndex',
@@ -80179,18 +80181,18 @@ var RhinoCommonApi = [
       },
       {
         signature: 'IEnumerator<int> GetEnumerator()',
-        summary: 'Gets an enumerator that goes over  and , in this order.',
+        summary: 'Gets an enumerator that goes over I and J, in this order.',
         since: 6,
         returns: 'The needed enumerator.'
       },
       {
         signature: 'int IndexOf(int item)',
-        summary: 'Determines the index of a specific item in .',
+        summary: 'Determines the index of a specific item in IndexPair.',
         since: 6,
         parameters: [
           {
             name: 'item',
-            summary: 'The object to locate in the .'
+            summary: 'The object to locate in the T:System.Collections.Generic.IList`1.'
           }
         ],
         returns: 'The index, 0 for I or 1 for J of  if found in the list; otherwise, -1.'
@@ -81131,14 +81133,14 @@ var RhinoCommonApi = [
       },
       {
         signature: 'T GetSelectedEnumValue()',
-        summary: `Returns the selected enum value. Use this in combination with .
+        summary: `Returns the selected enum value. Use this in combination with AddOptionEnumList{T}(string, T).
      This must be called directly after having called a Get method, and having obtained a  value.`,
         since: 5.4
       },
       {
         signature: 'T GetSelectedEnumValueFromSelectionList(IEnumerable<T> selectionList)',
         summary: `Returns the selected enum value by looking at the list of values from which to select.
-     Use this in combination with`,
+     Use this in combination with AddOptionEnumSelectionList{T}`,
         since: 5.4
       },
       {
@@ -81888,7 +81890,7 @@ var RhinoCommonApi = [
         signature: 'GetResult Get()',
         summary: 'Call to get an integer.',
         since: 5,
-        returns: 'If the user chose a number, then ; another enumeration value otherwise.'
+        returns: 'If the user chose a number, then GetResult.Number; another enumeration value otherwise.'
       },
       {
         signature: 'int Number()',
@@ -82083,7 +82085,7 @@ var RhinoCommonApi = [
         signature: 'GetResult Get()',
         summary: 'Call to get a number.',
         since: 5,
-        returns: 'If the user chose a number, then ; another enumeration value otherwise.'
+        returns: 'If the user chose a number, then GetResult.Number; another enumeration value otherwise.'
       },
       {
         signature: 'void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan)',
@@ -82472,7 +82474,7 @@ var RhinoCommonApi = [
         summary: `Call to get an option. A return value of "option" means the user selected
      a valid option. Use Option() the determine which option.`,
         since: 5,
-        returns: 'If the user chose an option, then ; another enumeration value otherwise.'
+        returns: 'If the user chose an option, then GetResult.Option; another enumeration value otherwise.'
       }
     ]
   },
@@ -82516,7 +82518,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'object Tag',
-        summary: `Gets or sets an arbitrary object that can be attached to this  instance.
+        summary: `Gets or sets an arbitrary object that can be attached to this GetPoint instance.
      Useful for passing some/ information that you may need in a DynamicDraw event since you can get at this Tag from
      the GetPointDrawEventArgs.`,
         since: 5,
@@ -82938,7 +82940,7 @@ var RhinoCommonApi = [
      If true, the point is returned when the left mouse button goes up.`
           }
         ],
-        returns: 'if the user chose a point; other enumeration value otherwise.'
+        returns: 'GetResult.Point if the user chose a point; other enumeration value otherwise.'
       },
       {
         signature: 'GetResult Get(bool onMouseUp,bool get2DPoint)',
@@ -82955,7 +82957,7 @@ var RhinoCommonApi = [
             summary: 'If True then get a 2d point otherwise get a 2d point'
           }
         ],
-        returns: 'if the user chose a 3d point;  if the user chose a 2d point; other enumeration value otherwise.'
+        returns: 'GetResult.Point if the user chose a 3d point; GetResult.Point2d if the user chose a 2d point; other enumeration value otherwise.'
       },
       {
         signature: 'Point3d[] GetConstructionPoints()',
@@ -83369,13 +83371,13 @@ var RhinoCommonApi = [
         signature: 'GetResult Get()',
         summary: 'Returns the string that the user typed. By default, space stops the string input.',
         since: 5,
-        returns: 'The result type. If the user typed a string, this is .'
+        returns: 'The result type. If the user typed a string, this is GetResult.String.'
       },
       {
         signature: 'GetResult GetLiteralString()',
         summary: 'Returns the string that the user typed. By default, space does not stop input.',
         since: 5,
-        returns: 'The result type. If the user typed a string, this is .'
+        returns: 'The result type. If the user typed a string, this is GetResult.String.'
       }
     ]
   },
@@ -83700,7 +83702,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'OptionDouble(double initialValue,double lowerLimit,double upperLimit)',
-        summary: 'Initializes a new instance of the  class with lower and upper limits.',
+        summary: 'Initializes a new instance of the OptionDouble class with lower and upper limits.',
         since: 5,
         parameters: [
           {
@@ -83748,7 +83750,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'OptionInteger(int initialValue,bool setLowerLimit,int limit)',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the OptionInteger class.',
         since: 5,
         parameters: [
           {
@@ -83769,7 +83771,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'OptionInteger(int initialValue,int lowerLimit,int upperLimit)',
-        summary: 'Initializes a new instance of the  class wiht both lower and upper limits.',
+        summary: 'Initializes a new instance of the OptionInteger class wiht both lower and upper limits.',
         since: 5,
         parameters: [
           {
@@ -84439,7 +84441,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'mode',
-            summary: 'A particular "get box" mode, or .'
+            summary: 'A particular "get box" mode, or GetBoxMode.All.'
           },
           {
             name: 'basePoint',
@@ -85023,7 +85025,7 @@ var RhinoCommonApi = [
         ],
         returns: `Returns None if the strings are None or empty or if they contain
      nothing but invalid characters.  If the converted string is one or more
-     charcters in length then a  is returned
+     charcters in length then a LocalizeStringPair is returned
      characters the converted string values.  If the localized string is
      None or empty then the English string is used as the localized value.`
       }
@@ -85736,7 +85738,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'object[] Invoke(object[] args)',
-        summary: `Runs  with keepTree equal to false,
+        summary: `Runs Evaluate with keepTree equal to false,
      and raises an exception on the first warning.`,
         since: 7,
         parameters: [
@@ -85749,7 +85751,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'object[] InvokeKeepTree(object[] args)',
-        summary: 'Runs  with keepTree equal to True and raises an exception on the first warning.',
+        summary: 'Runs Evaluate with keepTree equal to True and raises an exception on the first warning.',
         since: 7,
         parameters: [
           {
@@ -85761,7 +85763,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'object[] InvokeKeepTreeSilenceWarnings(object[] args)',
-        summary: `Runs  with keepTree equal to true,
+        summary: `Runs Evaluate with keepTree equal to true,
      and discards warnings (this is a dangerous operation!).`,
         since: 7,
         parameters: [
@@ -85774,8 +85776,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'object[] InvokeSilenceWarnings(object[] args)',
-        summary: `Runs  with keepTree equal to false,
-     then simplifies output with  and discards warnings (this is a dangerous operation!).`,
+        summary: `Runs Evaluate with keepTree equal to false,
+     then simplifies output with SimplifyTreeOutput and discards warnings (this is a dangerous operation!).`,
         since: 7,
         parameters: [
           {
@@ -85956,7 +85958,7 @@ var RhinoCommonApi = [
       {
         signature: 'PersistentSettings AddChild(string key)',
         summary: `Call this method to add a new child key, if the key is exists then the
-     existing key is returned otherwise a new empty 
+     existing key is returned otherwise a new empty PersistentSettings
      child key is added and the new settings are returned.`,
         since: 6,
         parameters: [
@@ -85966,7 +85968,7 @@ var RhinoCommonApi = [
           }
         ],
         returns: `If the key is exists then the existing key is returned otherwise a new
-     empty  child key is added and the new
+     empty PersistentSettings child key is added and the new
      settings are returned.`
       },
       {
@@ -86028,8 +86030,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'PersistentSettings GetChild(string key)',
-        summary: `Call this method to get a nested settings 
-     instance, will throw a  exception if
+        summary: `Call this method to get a nested settings PersistentSettings
+     instance, will throw a KeyNotFoundException exception if
      the key does not exist.`,
         since: 6,
         parameters: [
@@ -86478,7 +86480,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool TryGetChild(string key,PersistentSettings value)',
-        summary: `Call this method to get a nested settings 
+        summary: `Call this method to get a nested settings PersistentSettings
      instance, will return True if the key exists and value was set
      otherwise; will return False and value will be set to null.`,
         since: 6,
@@ -86932,7 +86934,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.PersistentSettingsSavedEventArgs',
     dataType: 1,
-    summary: 'Event argument passed to the  event.',
+    summary: 'Event argument passed to the Rhino.PlugIns.PlugIn.SettingsSaved event.',
     baseclass: 'EventArgs',
     properties: [
       {
@@ -88278,7 +88280,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'void SaveSettings()',
-        summary: `Write settings to disk which will raise a 
+        summary: `Write settings to disk which will raise a SettingsSaved
      event.`,
         since: 6
       }
@@ -88911,7 +88913,7 @@ var RhinoCommonApi = [
           {
             name: 'w',
             summary: `Output parameter which will receive the W value, this is only
-     meaningful if  is 3.`
+     meaningful if Dim is 3.`
           }
         ],
         returns: 'Returns True if index is valid; otherwise returns false.'
@@ -93917,7 +93919,7 @@ var RhinoCommonApi = [
     name: 'Rhino.Render.GroundPlane',
     dataType: 1,
     summary: `Represents an infinite plane for implementation by renderers.
-   See SupportsFeature.`,
+   See Rhino.PlugIns.RenderPlugIn.SupportsFeature.`,
     baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
     constructors: [
       {
@@ -94482,7 +94484,7 @@ var RhinoCommonApi = [
       {
         signature: 'uint MappingCRC',
         summary: `Gets or sets the cyclic redundancy check on the mapping.
-     See also .`,
+     See also RhinoMath.CRC32(uint,byte[]).`,
         since: 5,
         property: ['get', 'set']
       },
@@ -95855,7 +95857,7 @@ var RhinoCommonApi = [
      a caching mechanism which means the hash value can be retrieved quickly
      if it hasn't changed. The cache is invalidated when Changed() is called.
      
-     You can override the  method to provide
+     You can override the CalculateRenderHash method to provide
      a custom hash value.`,
         since: 6,
         property: ['get']
@@ -96179,7 +96181,7 @@ var RhinoCommonApi = [
         signature: 'void BeginChange(ChangeContexts changeContext)',
         summary: `Begins a change or batch of changes. This returns a reference to the
      content which you should use to make your changes. It may also make a
-     copy of the content state allowing  to send an
+     copy of the content state allowing EndChange to send an
      event with the old and new contents. Calls to this method are counted;
      you must call EndChange() once for every call to BeginChange().
      Note:
@@ -96195,7 +96197,7 @@ var RhinoCommonApi = [
      the OnContentChanged event.
      Note:
        If you override this method, please be sure to call the base
-       class.`
+       class. EndChangeContentChanged`
           }
         ]
       },
@@ -96279,13 +96281,13 @@ var RhinoCommonApi = [
       {
         signature: 'void EndChange()',
         summary: `Ends a change or batch of changes. Calls to this method are counted;
-     you must call this method once for every call to .
+     you must call this method once for every call to BeginChange.
      Note:
-       If  was called with ChangeContexts.UI,
+       If BeginChange was called with ChangeContexts.UI,
        ChangeContexts.Program, ChangeContexts.Drop or ChangeContexts.UI.Tree
-       and Changed() was called between the calls to  and
+       and Changed() was called between the calls to BeginChange and
        EndChange(), the last call to EndChange() will raise the
-        event.`,
+       ContentChanged event.`,
         since: 6
       },
       {
@@ -96385,7 +96387,7 @@ var RhinoCommonApi = [
       {
         signature: 'bool IsRenderHashCached()',
         summary: `This method is deprecated and no longer called. For more information
-     see`,
+     see CalculateRenderHash`,
         since: 6,
         returns: 'bool'
       },
@@ -96632,7 +96634,7 @@ var RhinoCommonApi = [
       {
         signature: 'void SetRenderHash(uint hash)',
         summary: `This method is deprecated and no longer called. For more information
-     see`,
+     see CalculateRenderHash`,
         since: 6
       },
       {
@@ -97375,7 +97377,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static RenderEnvironment NewBasicEnvironment(SimulatedEnvironment environment)',
-        summary: 'Constructs a new  from a .',
+        summary: 'Constructs a new RenderEnvironment from a SimulatedEnvironment.',
         since: 5.3,
         parameters: [
           {
@@ -97706,7 +97708,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static RenderMaterial CreateBasicMaterial(Material material)',
-        summary: 'Constructs a new basic material from a Material.',
+        summary: 'Constructs a new basic material from a Rhino.DocObjects.Material.',
         since: 5.1,
         parameters: [
           {
@@ -98115,7 +98117,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Render.RenderMaterial.StandardChildSlots',
     dataType: 3,
-    summary: 'Defines enumerated constant values for use in  method.',
+    summary: 'Defines enumerated constant values for use in TextureChildSlotName method.',
     values: [
       {
         signature: 'None = 0x0',
@@ -98265,7 +98267,8 @@ var RhinoCommonApi = [
       {
         signature: 'static object FromRenderSessionId(PlugIn plugIn,Type panelType,Guid renderSessionId)',
         summary: `Get the instance of a render panel associated with a specific render
-     session, this is useful when it is necessary to update a control from a`,
+     session, this is useful when it is necessary to update a control from a
+     RenderPipeline`,
         since: 5.11,
         parameters: [
           {
@@ -98278,7 +98281,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'renderSessionId',
-            summary: `The  of a specific render
+            summary: `The RenderPipeline.RenderSessionId of a specific render
      session.`
           }
         ],
@@ -98287,8 +98290,8 @@ var RhinoCommonApi = [
       {
         signature: 'void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)',
         summary: `Register custom render user interface with Rhino.  This should only be
-     done in .  Panels
-     registered after  is called
+     done in RenderPlugIn.RegisterRenderPanels.  Panels
+     registered after RenderPlugIn.RegisterRenderPanels is called
      will be ignored.`,
         since: 5.11,
         parameters: [
@@ -98298,7 +98301,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'renderPanelType',
-            summary: 'See  for supported user interface types.'
+            summary: 'See RenderPanelType for supported user interface types.'
           },
           {
             name: 'panelType',
@@ -98322,8 +98325,8 @@ var RhinoCommonApi = [
       {
         signature: 'void RegisterPanelEx(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,Guid renderEngineId,string caption,bool alwaysShow,bool initialShow)',
         summary: `Register custom render user interface with Rhino.  This should only be
-     done in .  Panels
-     registered after  is called
+     done in RenderPlugIn.RegisterRenderPanels.  Panels
+     registered after RenderPlugIn.RegisterRenderPanels is called
      will be ignored.`,
         since: 7,
         parameters: [
@@ -98333,7 +98336,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'renderPanelType',
-            summary: 'See  for supported user interface types.'
+            summary: 'See RenderPanelType for supported user interface types.'
           },
           {
             name: 'panelType',
@@ -98636,16 +98639,16 @@ var RhinoCommonApi = [
       {
         signature: 'RenderPrimitiveType PrimitiveType',
         summary: `Call this before extracting meshes if you support render primitives to
-     get the  of this mesh then call the
-     associated , , , or
-      method.  Calling the  property
+     get the RenderPrimitiveType of this mesh then call the
+     associated TryGetSphere, TryGetPlane, TryGetCone, or
+     TryGetBox method.  Calling the Mesh property
      will mesh the primitive and return a mesh always.`,
         since: 5.7,
         property: ['get']
       },
       {
         signature: 'RenderMaterial RenderMaterial',
-        summary: 'The  associated with this mesh or None if there is not one.',
+        summary: 'The RenderMaterial associated with this mesh or None if there is not one.',
         since: 5.7,
         property: ['get']
       },
@@ -98669,43 +98672,43 @@ var RhinoCommonApi = [
       },
       {
         signature: 'bool TryGetBox(Box box)',
-        summary: `Call this method to get a  primitive for this mesh.  If this
-     meshes  is not a 
-     then the box parameter is set to .`,
+        summary: `Call this method to get a Box primitive for this mesh.  If this
+     meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Box
+     then the box parameter is set to Box.Empty.`,
         since: 5.7,
         parameters: [
           {
             name: 'box',
-            summary: 'Gets set to the box primitive for this object on success or  on error.'
+            summary: 'Gets set to the box primitive for this object on success or Box.Empty on error.'
           }
         ],
-        returns: `Returns True if  is  and
+        returns: `Returns True if PrimitiveType is Rhino.Render.RenderPrimitiveType.Box and
      the box parameter was initialized otherwise returns false.`
       },
       {
         signature: 'bool TryGetCone(Cone cone,Plane truncation)',
-        summary: `Call this method to get a  primitive for this mesh.  If this
-     meshes  is not a 
-     then the cone parameter is set to  and the truncation
-     parameter is set to .`,
+        summary: `Call this method to get a Cone primitive for this mesh.  If this
+     meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Cone
+     then the cone parameter is set to Cone.Unset and the truncation
+     parameter is set to Plane.Unset.`,
         since: 5.7,
         parameters: [
           {
             name: 'cone',
-            summary: 'Gets set to the cone primitive for this object on success or  on error.'
+            summary: 'Gets set to the cone primitive for this object on success or Cone.Unset on error.'
           },
           {
             name: 'truncation',
-            summary: 'Gets set to the truncation plane for this object on success or  on error.'
+            summary: 'Gets set to the truncation plane for this object on success or Plane.Unset on error.'
           }
         ],
-        returns: `Returns True if  is  and
+        returns: `Returns True if PrimitiveType is Rhino.Render.RenderPrimitiveType.Cone and
      the cone and truncation parameters were initialized otherwise returns false.`
       },
       {
         signature: 'bool TryGetPlane(PlaneSurface plane)',
-        summary: `Call this method to get a  primitive for this mesh.  If this
-     meshes  is not a 
+        summary: `Call this method to get a Plane primitive for this mesh.  If this
+     meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Plane
      then the plane parameter is set to null.`,
         since: 5.7,
         parameters: [
@@ -98714,14 +98717,14 @@ var RhinoCommonApi = [
             summary: 'Gets set to the plane primitive for this object on success or None on error.'
           }
         ],
-        returns: `Returns True if  is  and
+        returns: `Returns True if PrimitiveType is Rhino.Render.RenderPrimitiveType.Plane and
      the plane parameter was initialized otherwise returns false.`
       },
       {
         signature: 'bool TryGetSphere(Sphere sphere)',
         summary: `Call this method to get a sphere primitive for this mesh.  If this
-     meshes  is not a 
-     then the sphere parameter is set to .`,
+     meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Sphere
+     then the sphere parameter is set to Sphere.Unset.`,
         since: 5.7,
         parameters: [
           {
@@ -98729,7 +98732,7 @@ var RhinoCommonApi = [
             summary: 'Gets set to the primitive sphere for this object on success.'
           }
         ],
-        returns: `Returns True if  is  and
+        returns: `Returns True if PrimitiveType is Rhino.Render.RenderPrimitiveType.Sphere and
      the sphere parameter was initialized otherwise returns false.`
       }
     ]
@@ -99250,7 +99253,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'RenderingSources RenderSource',
-        summary: 'Gets or sets the render source  enumeration.',
+        summary: 'Gets or sets the render source RenderingSources enumeration.',
         since: 6.1,
         property: ['get', 'set']
       },
@@ -99370,7 +99373,8 @@ var RhinoCommonApi = [
       {
         signature: 'static object FromRenderSessionId(PlugIn plugIn,Type tabType,Guid renderSessionId)',
         summary: `Get the instance of a render tab associated with a specific render
-     session, this is useful when it is necessary to update a control from a`,
+     session, this is useful when it is necessary to update a control from a
+     RenderPipeline`,
         since: 5.11,
         parameters: [
           {
@@ -99383,7 +99387,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'renderSessionId',
-            summary: `The  of a specific render
+            summary: `The RenderPipeline.RenderSessionId of a specific render
      session.`
           }
         ],
@@ -99397,8 +99401,8 @@ var RhinoCommonApi = [
       {
         signature: 'void RegisterTab(PlugIn plugin,Type tabType,string caption,Icon icon)',
         summary: `Register custom render user interface with Rhino.  This should only be
-     done in .  Panels
-     registered after  is called
+     done in RenderPlugIn.RegisterRenderTabs.  Panels
+     registered after RenderPlugIn.RegisterRenderTabs is called
      will be ignored.  If the class includes a public method "void DoHelp()"
      the method will get called when F1 is pressed and the custom tab is active.`,
         since: 5.11,
@@ -100795,7 +100799,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'when',
-            summary: `A  instance.
+            summary: `A DateTime instance.
      If the date Kind is DateTimeKind.Local,
      or DateTimeKind.Unspecified, the date is considered local.`
           },
@@ -101436,7 +101440,7 @@ var RhinoCommonApi = [
     properties: [
       {
         signature: 'ModelComponentType ComponentType',
-        summary: 'Returns .',
+        summary: 'Returns ModelComponentType.TextureMapping.',
         since: 6,
         property: ['get']
       },
@@ -104353,12 +104357,12 @@ var RhinoCommonApi = [
         signature: 'static ActiveDocumentChanged',
         summary: `This event is raised when the active document used by modeless user
      interface changes.  On Mac Rhino this will get raised before the
-     ,  and
-      events.  Mac Rhino will also raise this
+     NewDocument, BeginOpenDocument and
+     EndOpenDocument events.  Mac Rhino will also raise this
      event with 0 for the document Id and a None document pointer when the
      last document is closed.  Windows Rhino will raise this event after the
-     ,  and
-      events when a new or existing model is
+     NewDocument, BeginOpenDocument and
+     EndOpenDocument events when a new or existing model is
      opened.`,
         since: 6
       },
@@ -104418,13 +104422,13 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static EndOpenDocumentInitialiViewUpdate',
-        summary: `This event is raised after  when the
+        summary: `This event is raised after EndOpenDocument when the
      documents initial views have been created and initialized.`,
         since: 5.11
       },
       {
         signature: 'static EndOpenDocumentInitialViewUpdate',
-        summary: `This event is raised after  when the
+        summary: `This event is raised after EndOpenDocument when the
      documents initial views have been created and initialized.`,
         since: 6.18
       },
@@ -104481,8 +104485,8 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static RenderTextureTableEvent',
-        summary: `Called when the  has been loaded, is
-     about to be cleared or has been cleared.  See  for more
+        summary: `Called when the RenderTextureTable has been loaded, is
+     about to be cleared or has been cleared.  See RenderContentTableEventType for more
      information.`,
         since: 5.7
       },
@@ -104518,8 +104522,8 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.RhinoDoc.RenderContentTableEventArgs',
     dataType: 1,
-    summary: `Passed to the ,  and the
-      events.`,
+    summary: `Passed to the RenderMaterialsTableEvent, RenderEnvironmentTableEvent and the
+     RenderTextureTableEvent events.`,
     baseclass: 'EventArgs',
     properties: [
       {
@@ -104649,7 +104653,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.RhinoDocObserverArgs',
     dataType: 1,
-    summary: 'Arguments passed to  methods.',
+    summary: 'Arguments passed to IRhinoDocObserver methods.',
     constructors: [
       {
         signature: 'RhinoDocObserverArgs(RhinoDoc doc)',
@@ -104675,11 +104679,11 @@ var RhinoCommonApi = [
     name: 'Rhino.RhinoMath',
     dataType: 1,
     summary: `Provides constants and static methods that are additional to
-   .`,
+   System.Math.`,
     methods: [
       {
         signature: 'static double Clamp(double value,double bound1,double bound2)',
-        summary: 'Restricts a  to be specified within an interval of two numbers.',
+        summary: 'Restricts a double to be specified within an interval of two numbers.',
         since: 5,
         parameters: [
           {
@@ -104699,7 +104703,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static int Clamp(int value,int bound1,int bound2)',
-        summary: 'Restricts a  to be specified within an interval of two integers.',
+        summary: 'Restricts a int to be specified within an interval of two integers.',
         since: 5,
         parameters: [
           {
@@ -104736,7 +104740,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static uint CRC32(uint currentRemainder,double value)',
-        summary: `Advances the cyclic redundancy check value remainder given a .
+        summary: `Advances the cyclic redundancy check value remainder given a double.
      http://en.wikipedia.org/wiki/Cyclic_redundancy_check.`,
         since: 5,
         parameters: [
@@ -104753,7 +104757,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static uint CRC32(uint currentRemainder,int value)',
-        summary: `Advances the cyclic redundancy check value remainder given a .
+        summary: `Advances the cyclic redundancy check value remainder given a int.
      http://en.wikipedia.org/wiki/Cyclic_redundancy_check.`,
         since: 5,
         parameters: [
@@ -104853,38 +104857,38 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static string IntIndexToString(int index)',
-        summary: 'Portrays an  index in text.',
+        summary: 'Portrays an int index in text.',
         since: 6,
         parameters: [
           {
             name: 'index',
-            summary: 'number express as string.'
+            summary: 'int number express as string.'
           }
         ],
         returns: 'The text representation of the int index.'
       },
       {
         signature: 'static bool IsValidDouble(double x)',
-        summary: `Determines whether a  value is valid within the RhinoCommon context.
+        summary: `Determines whether a double value is valid within the RhinoCommon context.
      Rhino does not use Double.NaN by convention, so this test evaluates to True if:x is not equal to RhinoMath.UnsetValueSystem.Double.IsNaN(x) evaluates to falseSystem.Double.IsInfinity(x) evaluates to false`,
         since: 5,
         parameters: [
           {
             name: 'x',
-            summary: 'number to test for validity.'
+            summary: 'double number to test for validity.'
           }
         ],
         returns: 'True if the number if valid, False if the number is NaN, Infinity or Unset.'
       },
       {
         signature: 'static bool IsValidSingle(float x)',
-        summary: `Determines whether a  value is valid within the RhinoCommon context.
+        summary: `Determines whether a float value is valid within the RhinoCommon context.
      Rhino does not use Single.NaN by convention, so this test evaluates to True if:x is not equal to RhinoMath.UnsetValue,System.Single.IsNaN(x) evaluates to falseSystem.Single.IsInfinity(x) evaluates to false`,
         since: 5,
         parameters: [
           {
             name: 'x',
-            summary: 'number to test for validity.'
+            summary: 'float number to test for validity.'
           }
         ],
         returns: 'True if the number if valid, False if the number is NaN, Infinity or Unset.'
@@ -105471,7 +105475,7 @@ var RhinoCommonApi = [
           {
             name: 'throwOnFalse',
             summary: `if the RDK is not loaded, then throws a
-     .`
+     RdkNotLoadedException.`
           },
           {
             name: 'usePreviousResult',
@@ -105480,7 +105484,7 @@ var RhinoCommonApi = [
           }
         ],
         returns: `True if the RDK is loaded; False if the RDK is not loaded. Note that the
-      will hinder the retrieval of any return value.`
+     RdkNotLoadedException will hinder the retrieval of any return value.`
       },
       {
         signature: 'static void ClearFpuExceptionStatus()',
@@ -105521,7 +105525,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'pluginType',
-            summary: 'A plug-in type. This type must derive from .'
+            summary: 'A plug-in type. This type must derive from PlugIn.'
           },
           {
             name: 'printDebugMessages',
@@ -105930,12 +105934,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'RhinoCore()',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the RhinoCore class.',
         since: 7
       },
       {
         signature: 'RhinoCore(string[] args)',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the RhinoCore class.',
         since: 7,
         parameters: [
           {
@@ -105946,7 +105950,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'RhinoCore(string[] args,WindowStyle windowStyle)',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the RhinoCore class.',
         since: 7,
         parameters: [
           {
@@ -105961,7 +105965,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'RhinoCore(string[] args,WindowStyle windowStyle,IntPtr hostWnd)',
-        summary: 'Initializes a new instance of the  class.',
+        summary: 'Initializes a new instance of the RhinoCore class.',
         since: 7,
         parameters: [
           {
@@ -106155,7 +106159,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'geometry',
-            summary: 'A geometry object. This can be None and in such a case  is returned.'
+            summary: 'A geometry object. This can be None and in such a case IntPtr.Zero is returned.'
           }
         ],
         returns: 'A pointer to the const geometry.'
@@ -106168,7 +106172,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'geometry',
-            summary: 'A geometry object. This can be None and in such a case  is returned.'
+            summary: 'A geometry object. This can be None and in such a case IntPtr.Zero is returned.'
           }
         ],
         returns: 'A pointer to the non-const geometry.'
@@ -106268,7 +106272,7 @@ var RhinoCommonApi = [
             summary: 'The original pointer.'
           }
         ],
-        returns: 'A new Rhino object, or None if the pointer was invalid or .'
+        returns: 'A new Rhino object, or None if the pointer was invalid or IntPtr.Zero.'
       },
       {
         signature: 'static object ToIRhinoViewport(RhinoViewport source)',
@@ -106391,7 +106395,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ClassArrayObjRef()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new ClassArrayObjRef instance.',
         since: 5
       },
       {
@@ -106460,7 +106464,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ClassArrayOnObjRef()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new ClassArrayOnObjRef instance.',
         since: 5.8
       },
       {
@@ -106529,7 +106533,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ClassArrayString()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new ClassArrayString instance.',
         since: 6
       }
     ],
@@ -106618,12 +106622,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArray2dex()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArray2dex class.',
         since: 6
       },
       {
         signature: 'SimpleArray2dex(IEnumerable<IndexPair> values)',
-        summary: 'Initializes a new  class',
+        summary: 'Initializes a new SimpleArray2dex class',
         since: 6,
         parameters: [
           {
@@ -106676,7 +106680,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayArrayPoint3d()',
-        summary: 'Initializes a new empty  instance.',
+        summary: 'Initializes a new empty SimpleArrayArrayPoint3d instance.',
         since: 7
       }
     ],
@@ -106722,12 +106726,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayBinaryArchiveReader()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayBinaryArchiveReader class.',
         since: 6
       },
       {
         signature: 'SimpleArrayBinaryArchiveReader(IntPtr p)',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayBinaryArchiveReader class.',
         since: 6
       }
     ],
@@ -106742,7 +106746,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'void Add(BinaryArchiveReader reader)',
-        summary: 'Adds a new  at the end of this array.',
+        summary: 'Adds a new Interval at the end of this array.',
         since: 6
       },
       {
@@ -106778,7 +106782,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayBrepPointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayBrepPointer instance.',
         since: 5
       }
     ],
@@ -106839,7 +106843,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayClippingPlaneObjectPointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayClippingPlaneObjectPointer instance.',
         since: 6.7
       }
     ],
@@ -106895,12 +106899,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayCurvePointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayCurvePointer instance.',
         since: 5
       },
       {
         signature: 'SimpleArrayCurvePointer(IEnumerable<Curve> curves)',
-        summary: 'Initializes a new  instance, from a set of input curves.',
+        summary: 'Initializes a new SimpleArrayCurvePointer instance, from a set of input curves.',
         since: 5,
         parameters: [
           {
@@ -106945,12 +106949,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayDouble()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayDouble instance.',
         since: 5
       },
       {
         signature: 'SimpleArrayDouble(IEnumerable<double> items)',
-        summary: 'Initializes a new  instance, with items.',
+        summary: 'Initializes a new SimpleArrayDouble instance, with items.',
         since: 5
       }
     ],
@@ -106997,7 +107001,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayExtrusionPointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayExtrusionPointer instance.',
         since: 6
       }
     ],
@@ -107059,7 +107063,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayGeometryPointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayGeometryPointer instance.',
         since: 5
       },
       {
@@ -107108,7 +107112,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayGuid()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayGuid class.',
         since: 5
       }
     ],
@@ -107123,7 +107127,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'void Append(Guid uuid)',
-        summary: 'Appends a new  at the end of this array.',
+        summary: 'Appends a new Guid at the end of this array.',
         since: 6
       },
       {
@@ -107160,7 +107164,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayGuidPointer()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayGuidPointer class.',
         since: 6
       }
     ],
@@ -107207,12 +107211,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayInt()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayInt class.',
         since: 5
       },
       {
         signature: 'SimpleArrayInt(IEnumerable<int> values)',
-        summary: 'Initializes a new  class',
+        summary: 'Initializes a new SimpleArrayInt class',
         since: 5.9,
         parameters: [
           {
@@ -107265,7 +107269,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayInterval()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayInterval class.',
         since: 5
       }
     ],
@@ -107280,7 +107284,7 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'void Add(Interval interval)',
-        summary: 'Adds a new  at the end of this array.',
+        summary: 'Adds a new Interval at the end of this array.',
         since: 6
       },
       {
@@ -107317,7 +107321,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayLine()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayLine instance.',
         since: 5
       }
     ],
@@ -107364,7 +107368,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayLinetypePointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayLinetypePointer instance.',
         since: 6.6
       }
     ],
@@ -107412,7 +107416,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayMeshPointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayMeshPointer instance.',
         since: 5
       }
     ],
@@ -107474,7 +107478,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayPlane()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArrayLine instance.',
         since: 6
       }
     ],
@@ -107521,7 +107525,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayPoint2d()',
-        summary: 'Initializes a new empty  instance.',
+        summary: 'Initializes a new empty SimpleArrayPoint3d instance.',
         since: 5.6
       }
     ],
@@ -107569,7 +107573,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayPoint3d()',
-        summary: 'Initializes a new empty  instance.',
+        summary: 'Initializes a new empty SimpleArrayPoint3d instance.',
         since: 5
       }
     ],
@@ -107616,7 +107620,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArraySurfacePointer()',
-        summary: 'Initializes a new  instance.',
+        summary: 'Initializes a new SimpleArraySurfacePointer instance.',
         since: 5
       }
     ],
@@ -107656,12 +107660,12 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'SimpleArrayUint()',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayInt class.',
         since: 6
       },
       {
         signature: 'SimpleArrayUint(IEnumerable<uint> values)',
-        summary: 'Initializes a new  class.',
+        summary: 'Initializes a new SimpleArrayInt class.',
         since: 6,
         parameters: [
           {
@@ -108050,12 +108054,12 @@ var RhinoCommonApi = [
     dataType: 1,
     summary: `A Notification instance can be used to inform the user about various events. For
    a Notification instance to be displayed in Rhino, it must be added to the
-   . When added, it will be displayed in the
+   NotificationCenter. When added, it will be displayed in the
    Notifications panel in Rhino. A Notification contains 1 to 3 buttons that are 
-   automatically wired to its  Action if it is not null. 
+   automatically wired to its ButtonClicked Action if it is not null. 
    The buttons are displayed when the Notification is shown modally by either the user 
    clicking on a particular notification in the Notifications panel, or by programatically 
-   showing it using .
+   showing it using ShowModal.
    
    Currently, only process-wide notifications are
    supported; document specific notifications are not possible.
@@ -108063,10 +108067,10 @@ var RhinoCommonApi = [
    Notification instances contain metadata that can be added, modified, or removed during
    its life. The metadata is important for LINQ queries and other patterns.
    For example, a particular action may require that multiple notifications be modified. 
-   Thus, a LINQ query can be performed on the  using metadata
+   Thus, a LINQ query can be performed on the NotificationCenter using metadata
    to retrieve related Notification objects and modify them as a batch.
    
-   Notification objects implement . By default, a 
+   Notification objects implement IAssemblyRestrictedObject. By default, a 
    Notification can be editedby any assembly, but explicitly specifing allowed assemblies 
    in the constructor changes this behavior.
    
@@ -108168,9 +108172,9 @@ var RhinoCommonApi = [
     methods: [
       {
         signature: 'static void ExecuteAssemblyProtectedCode(Action action)',
-        summary: `If a  object is only allowed to be modified by certain
+        summary: `If a Notification object is only allowed to be modified by certain
      assemblies, then any code that interacts with it must be wrapped around this method,
-     or a  will be thrown. For performance reasons,
+     or a InvalidOperationException will be thrown. For performance reasons,
      the code wrapped by this method should be kept as simple as possible.`,
         since: 6.3,
         parameters: [
@@ -108182,9 +108186,9 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static TResult ExecuteAssemblyProtectedCode(Func<TResult> func)',
-        summary: `If a  object is only allowed to be modified by certain
+        summary: `If a Notification object is only allowed to be modified by certain
      assemblies, then any code that interacts with it must be wrapped around this method,
-     or a  will be thrown. For performance reasons,
+     or a InvalidOperationException will be thrown. For performance reasons,
      the code wrapped by this method should be kept as simple as possible.`,
         since: 6.3,
         parameters: [
@@ -108197,7 +108201,7 @@ var RhinoCommonApi = [
       {
         signature: 'bool Editable()',
         summary: `Determines whether an assembly can modify the instance. Any code that modifies an assembly protected
-     notification must be wrapped in a  method.`,
+     notification must be wrapped in a ExecuteAssemblyProtectedCode(Action) method.`,
         since: 6.3
       },
       {
@@ -108295,7 +108299,7 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.Runtime.Notifications.NotificationCenter',
     dataType: 1,
-    summary: `The NotificationCenter holds all  objects that are displayed in the Notifications panel by Rhino.
+    summary: `The NotificationCenter holds all Notification objects that are displayed in the Notifications panel by Rhino.
    
    The NotificationCenter is not thread-safe and should only be used in the UI thread.`
   },
@@ -111713,7 +111717,7 @@ var RhinoCommonApi = [
       },
       {
         signature: 'static string STR(string english,object assemblyOrObject)',
-        summary: 'Similar to  function.',
+        summary: 'Similar to string.Format(string, object) function.',
         since: 5,
         parameters: [
           {
@@ -112266,7 +112270,7 @@ var RhinoCommonApi = [
         parameters: [
           {
             name: 'doc',
-            summary: 'Active'
+            summary: 'Active RhinoDoc'
           },
           {
             name: 'objectList',
@@ -112328,7 +112332,7 @@ var RhinoCommonApi = [
     constructors: [
       {
         signature: 'ObjectPropertiesPageEventArgs(ObjectPropertiesPage page)',
-        summary: `Used by  to notify the page when
+        summary: `Used by ObjectPropertiesPage to notify the page when
      updating, modifying or determining if the page should be included
      in the navigation bar`,
         since: 6,
@@ -113329,7 +113333,7 @@ var RhinoCommonApi = [
           },
           {
             name: 'panelType',
-            summary: 'See'
+            summary: 'See PanelType'
           }
         ]
       }

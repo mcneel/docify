@@ -95,7 +95,7 @@ namespace api_docify
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
             const string jsonOutput = "../../../quasar_site/src/RhinoCommonApi.js";
-            //JsonBuilder.Write(allNamespaces, publicTypesByNamespace, jsonOutput);
+            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, jsonOutput);
             const string jsonExampleOutput = "../../../quasar_site/src/Examples.js";
             JsonBuilder.WriteExamples(publicTypesByNamespace, examplesDirectoryBase, jsonExampleOutput);
         }
