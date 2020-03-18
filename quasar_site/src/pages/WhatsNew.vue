@@ -4,7 +4,7 @@
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
-        {{type.name}}
+        <a :href="'/#/'+type.name">{{type.name}}</a>
         <ul>
           <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
           <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>
