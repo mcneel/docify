@@ -48,7 +48,7 @@
           </q-item-section>
         </q-item>
       </q-expansion-item>
-      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="'#/' + item.path">
+      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="item.path">
         <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
         <q-item-section>
           <q-item-label>{{item.label}}</q-item-label>
