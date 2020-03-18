@@ -4,12 +4,12 @@
     <p>{{vm.summary}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
-      <a v-if="item.link" :href="'#/'+item.link" @click="setSelectedItem(item.link)">{{item.name}}</a>
+      <a v-if="item.link" :href="'#/'+item.link">{{item.name}}</a>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
-    <p v-if="namespace"><i>Namespace: <a :href="'#/'+namespace" @click="setSelectedItem(namespace)">{{namespace}}</a></i></p>
+    <p v-if="namespace"><i>Namespace: <a :href="'#/'+namespace">{{namespace}}</a></i></p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
@@ -48,7 +48,7 @@
           </q-item-section>
         </q-item>
       </q-expansion-item>
-      <q-item clickable v-for="item in namespaceItems" :key="item.label" @click="setSelectedItem(item.path)">
+      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="'#/' + item.path">
         <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
         <q-item-section>
           <q-item-label>{{item.label}}</q-item-label>
@@ -84,6 +84,14 @@ export default {
       ViewModel.setSelectedItem(this.$route.params.datatype)
     }
   },
+  watch: {
+    '$route' (to, from) {
+      // react to route changes...
+      console.log('route watch ' + to.path + ' | ' + from.path)
+      const selectedItem = to.path.substring(1)
+      ViewModel.setSelectedItem(selectedItem)
+    }
+  },
   methods: {
     signature (member) {
       if (member.property) {
@@ -102,10 +110,6 @@ export default {
       const index = name.lastIndexOf('.')
       name = name.substring(0, index)
       return '/examples/' + name
-    },
-    setSelectedItem (name) {
-      this.$router.push('/' + name)
-      ViewModel.setSelectedItem(name)
     },
     onChangeSelectedItem (item) {
       console.log('selected item changed to ' + item)
