@@ -21,7 +21,7 @@ import ViewModel from '../ViewModel'
 export default {
   data () {
     return {
-      version: null,
+      version: 0,
       memberCount: 0,
       api: []
     }

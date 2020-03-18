@@ -25,3 +25,23 @@ yarn dev
 ```bash
 yarn build
 ```
+
+----
+
+Files:
+
+- layouts
+  - MainLayout.vue : UI for the top bar and flyout left side tree view
+- pages
+  - DataType.vue : UI for an individual class, enum, struct, namespace, of interface. This is the "main" content when you look at the description of a class
+  - Error404.vue: hope this is obvious
+  - Example.vue: UI for displaying an individual example in different programming languages. This is displayed by taking some contents of Examples.js and showing it as processed markdown
+  - Index.vue: Simple home page
+  - WhatsNew.vue: UI to list all items added at a single revision of Rhino
+- router
+  - routes.js: maps urls to vue pages
+- statics
+  - icons and images
+- Examples.js: JSON created by api_docify that represents source code examples and the methods they should be associated with
+- RhinoCommonApi.js: JSON created by api_docify that represents all public items in the RhinoCommon SDK
+- ViewModel.js: shared javascript that is used by the vue pages to figure out what to show
