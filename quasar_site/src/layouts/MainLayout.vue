@@ -40,18 +40,23 @@
     <q-drawer v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-3"
     >
-      <q-scroll-area class="fit">
-        <q-tree
+      <q-input class="q-pa-md q-gutter-sm" ref="filter" filled v-model="filter" label="Filter">
+        <template v-slot:append>
+          <q-icon v-if="filter !== ''" name="clear" class="cursor-pointer" @click="resetFilter" />
+        </template>
+      </q-input>
+      <q-tree
         :nodes="api"
         accordion
         node-key="path"
         selected-color="accent"
         :selected.sync="selectedNode"
+        :expanded.sync="expanded"
         :duration="200"
-        />
-      </q-scroll-area>
+        :filter="filter"
+        :filter-method="nodeFilter"
+      />
     </q-drawer>
 
     <q-page-container>
@@ -76,7 +81,9 @@ export default {
       watcherEnabled: true,
       version: mostRecent,
       model: null,
-      options: inputOptions
+      options: inputOptions,
+      filter: '',
+      expanded: []
     }
   },
   created () {
@@ -106,6 +113,24 @@ export default {
           )
         }
       })
+    },
+    nodeFilter (node, filter) {
+      const filt = filter.toLowerCase()
+      const passesTest = node.label && node.label.toLowerCase().indexOf(filt) > -1
+      if (passesTest && !node.children) {
+        const ns = node.path.substring(0, node.path.length - node.label.length - 1)
+        let pushit = true
+        this.expanded.forEach(name => {
+          if (name === ns) pushit = false
+        })
+        if (pushit) this.expanded.push(ns)
+      }
+      return passesTest
+    },
+    resetFilter () {
+      this.filter = ''
+      this.expanded = []
+      this.$refs.filter.focus()
     }
   },
   watch: {
