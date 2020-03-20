@@ -76,6 +76,12 @@ export default {
       version: mostRecent
     }
   },
+  meta () {
+    return {
+      // set the actual page title
+      title: 'RhinoCommon - ' + this.title
+    }
+  },
   created () {
     ViewModel.setSelectedItemChangedCallback('DataType.vue', this.onChangeSelectedItem)
   },
