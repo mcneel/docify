@@ -4,6 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>RhinoCommon API</q-toolbar-title>
+        <!--
         <q-select
           bg-color="white"
           color="black"
@@ -28,6 +29,7 @@
             </q-item>
           </template>
         </q-select>
+        -->
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
           :label="'v' + version"
           :to="'/whatsnew/' + version"
