@@ -10,10 +10,14 @@
  *   If you are looking to add common DEV & PROD logic to the express app, then use
  *   "src-ssr/extension.js"
  */
+// import { RhinoCommonApi } from '../src/RhinoCommonApi'
 
 const
   express = require('express'),
-  compression = require('compression')
+  compression = require('compression'),
+  LRU = require('lru-cache')
+
+// const http = require('http')
 
 const
   ssr = require('quasar-ssr'),
@@ -23,6 +27,11 @@ const
 
 const serve = (path, cache) => express.static(ssr.resolveWWW(path), {
   maxAge: cache ? 1000 * 60 * 60 * 24 * 30 : 0
+})
+
+const microCache = new LRU({
+  max: 100000,
+  maxAge: 1000 * 60 * 60 * 10000
 })
 
 // gzip
@@ -41,6 +50,13 @@ extension.extendApp({ app, ssr })
 
 // this should be last get(), rendering with SSR
 app.get('*', (req, res) => {
+  const hit = microCache.get(req.url)
+  if (hit) {
+    // console.log('cache hit ' + req.url)
+    return res.send(hit)
+  }
+  // console.log('cache miss ' + req.url)
+
   res.setHeader('Content-Type', 'text/html')
 
   // SECURITY HEADERS
@@ -77,11 +93,9 @@ app.get('*', (req, res) => {
     if (err) {
       if (err.url) {
         res.redirect(err.url)
-      }
-      else if (err.code === 404) {
+      } else if (err.code === 404) {
         res.status(404).send('404 | Page Not Found')
-      }
-      else {
+      } else {
         // Render Error Page or Redirect
         res.status(500).send('500 | Internal Server Error')
         if (ssr.settings.debug) {
@@ -90,13 +104,46 @@ app.get('*', (req, res) => {
           console.error(err.stack)
         }
       }
-    }
-    else {
+    } else {
       res.send(html)
+      microCache.set(req.url, html)
+      // console.log('caching ' + req.url)
     }
   })
 })
 
 app.listen(port, () => {
   console.log(`Server listening at port ${port}`)
+
+  // The following could be used to "warm" the cache though
+  // it causes the server to be unresponsive for the first
+  // minute or so of start-up. There's most likely a much
+  // better way
+  /*
+  const getData = {
+    hostname: 'localhost',
+    port: port,
+    path: '/',
+    agent: false // Create a new agent just for this one request
+  }
+  http.get(getData, response => {
+    // do nothing
+  })
+
+  RhinoCommonApi.forEach(type => {
+    const cacheUrl = '/' + type.name.toLowerCase()
+    console.log('attempt to get ' + cacheUrl)
+    const cacheData = {
+      hostname: 'localhost',
+      port: port,
+      path: cacheUrl,
+      agent: false // Create a new agent just for this one request
+    }
+    http.get(cacheData, response => {
+      // do nothing
+    }).on('error', (e) => {
+      console.error(`Got error: ${e.message}`)
+    })
+  })
+  */
 })

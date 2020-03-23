@@ -10,13 +10,15 @@
   "scripts": {
     "dev": "quasar dev",
     "build": "quasar build",
-    "buildssr": "quasar build -m ssr",
+    "ssrdev": "quasar dev -m ssr",
+    "ssrbuild": "quasar build -m ssr",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.24",
+    "lru-cache": "^5.1.1",
     "quasar": "^1.0.0"
   },
   "devDependencies": {

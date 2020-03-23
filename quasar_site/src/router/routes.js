@@ -1,13 +1,13 @@
 
 const routes = [
   {
-    path: '/',
+    path: '/rhinocommon/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: '/examples/:example', component: () => import('pages/Example.vue') },
-      { path: '/whatsnew/:version', component: () => import('pages/WhatsNew.vue') },
-      { path: '/:datatype', component: () => import('pages/DataType.vue') }
+      { path: 'examples/:example', component: () => import('pages/Example.vue') },
+      { path: 'whatsnew/:version', component: () => import('pages/WhatsNew.vue') },
+      { path: ':datatype', component: () => import('pages/DataType.vue') }
     ]
   }
 ]

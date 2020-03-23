@@ -4,7 +4,7 @@
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
-        <a :href="'/#/'+type.name.toLowerCase()">{{type.name}}</a>
+        <router-link :to="apiBase + type.name.toLowerCase()">{{type.name}}</router-link>
         <ul>
           <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
           <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>
@@ -23,7 +23,8 @@ export default {
     return {
       version: 0,
       memberCount: 0,
-      api: []
+      api: [],
+      apiBase: '/rhinocommon/'
     }
   },
   mounted () {

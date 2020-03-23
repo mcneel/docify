@@ -3,7 +3,9 @@
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
-        <q-toolbar-title>RhinoCommon API</q-toolbar-title>
+        <q-toolbar-title>
+          <q-btn no-caps size="lg" :to="apiBase" label="RhinoCommon API"/>
+        </q-toolbar-title>
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
           :label="'v' + version"
           :to="apiBase + 'whatsnew/' + version"
@@ -60,7 +62,7 @@ export default {
       options: inputOptions,
       filter: '',
       expanded: [],
-      apiBase: '/'
+      apiBase: '/rhinocommon/'
     }
   },
   created () {

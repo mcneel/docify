@@ -4,12 +4,12 @@
     <p>{{vm.summary}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
-      <a v-if="item.link" :href="'#/'+item.link.toLowerCase()">{{item.name}}</a>
+      <router-link v-if="item.link" :to="apiBase+item.link.toLowerCase()">{{item.name}}</router-link>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
-    <p v-if="namespace"><i>Namespace: <a :href="'#/'+namespace.toLowerCase()">{{namespace}}</a></i></p>
+    <p v-if="namespace"><i>Namespace: <router-link :to="apiBase+namespace.toLowerCase()">{{namespace}}</router-link></i></p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
@@ -74,7 +74,7 @@ export default {
       namespaceItems: null,
       inheritence: [],
       version: mostRecent,
-      apiBase: '/'
+      apiBase: '/rhinocommon/'
     }
   },
   meta () {
