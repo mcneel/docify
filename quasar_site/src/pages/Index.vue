@@ -18,12 +18,13 @@ export default {
   data () {
     const tree = ViewModel.getTree()
     return {
-      vm: tree
+      vm: tree,
+      apiBase: '/'
     }
   },
   methods: {
     setSelectedItem (name) {
-      this.$router.push('/' + name)
+      this.$router.push(this.apiBase + name.toLowerCase())
       ViewModel.setSelectedItem(name)
     }
   }

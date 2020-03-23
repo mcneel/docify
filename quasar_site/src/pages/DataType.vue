@@ -4,12 +4,12 @@
     <p>{{vm.summary}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
-      <a v-if="item.link" :href="'#/'+item.link">{{item.name}}</a>
+      <a v-if="item.link" :href="'#/'+item.link.toLowerCase()">{{item.name}}</a>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
-    <p v-if="namespace"><i>Namespace: <a :href="'#/'+namespace">{{namespace}}</a></i></p>
+    <p v-if="namespace"><i>Namespace: <a :href="'#/'+namespace.toLowerCase()">{{namespace}}</a></i></p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
@@ -27,7 +27,7 @@
                 outline
                 color="secondary"
                 icon="mdi-code-tags"
-                :to="exampleUrl(member)"
+                :to="exampleUrl(member.toLowerCase())"
                 >
                 <q-tooltip>Show Example</q-tooltip>
               </q-btn>
@@ -48,7 +48,7 @@
           </q-item-section>
         </q-item>
       </q-expansion-item>
-      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="item.path">
+      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="apiBase + item.path.toLowerCase()">
         <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
         <q-item-section>
           <q-item-label>{{item.label}}</q-item-label>
@@ -73,7 +73,8 @@ export default {
       memberSections: [],
       namespaceItems: null,
       inheritence: [],
-      version: mostRecent
+      version: mostRecent,
+      apiBase: '/'
     }
   },
   meta () {
@@ -94,7 +95,7 @@ export default {
     '$route' (to, from) {
       // react to route changes...
       console.log('route watch ' + to.path + ' | ' + from.path)
-      const selectedItem = to.path.substring(1)
+      const selectedItem = to.path.substring(this.apiBase.length)
       ViewModel.setSelectedItem(selectedItem)
     }
   },
@@ -114,7 +115,7 @@ export default {
     exampleUrl (member) {
       let name = member.examples[0].name
       const index = name.lastIndexOf('.')
-      name = name.substring(0, index)
+      name = name.substring(0, index).toLowerCase()
       return '/examples/' + name
     },
     onChangeSelectedItem (item) {

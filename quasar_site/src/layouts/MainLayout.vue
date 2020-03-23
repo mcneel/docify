@@ -4,35 +4,9 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>RhinoCommon API</q-toolbar-title>
-        <!--
-        <q-select
-          bg-color="white"
-          color="black"
-          dense
-          hide-dropdown-icon
-          clearable
-          v-model="model"
-          use-input
-          hide-selected
-          fill-input
-          input-debounce="0"
-          :options="options"
-          style="width: 150px;"
-          @input="onInput"
-          @filter="filterFn"
-        >
-          <template v-slot:no-option>
-            <q-item>
-              <q-item-section class="text-grey">
-                No results
-              </q-item-section>
-            </q-item>
-          </template>
-        </q-select>
-        -->
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
           :label="'v' + version"
-          :to="'/whatsnew/' + version"
+          :to="apiBase + 'whatsnew/' + version"
         >
           <q-tooltip>What's new in v{{version}}</q-tooltip>
         </q-btn>
@@ -85,7 +59,8 @@ export default {
       model: null,
       options: inputOptions,
       filter: '',
-      expanded: []
+      expanded: [],
+      apiBase: '/'
     }
   },
   created () {
@@ -150,8 +125,8 @@ export default {
       }
 
       console.log(newState)
-      const newPath = '/' + newState
-      if (this.$router.currentRoute.path === newPath) return
+      const newPath = this.apiBase + newState.toLowerCase()
+      if (this.$router.currentRoute.path.toLowerCase() === newPath) return
       this.$router.push(newPath)
       ViewModel.setSelectedItem(newState)
     }
