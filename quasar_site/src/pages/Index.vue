@@ -19,7 +19,7 @@ export default {
     const tree = ViewModel.getTree()
     return {
       vm: tree,
-      apiBase: '/'
+      apiBase: '/rhinocommon/'
     }
   },
   methods: {
