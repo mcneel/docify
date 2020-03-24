@@ -27,7 +27,7 @@
                 outline
                 color="secondary"
                 icon="mdi-code-tags"
-                :to="exampleUrl(member.toLowerCase())"
+                :to="exampleUrl(member)"
                 >
                 <q-tooltip>Show Example</q-tooltip>
               </q-btn>
@@ -116,7 +116,7 @@ export default {
       let name = member.examples[0].name
       const index = name.lastIndexOf('.')
       name = name.substring(0, index).toLowerCase()
-      return '/examples/' + name
+      return this.apiBase + 'examples/' + name
     },
     onChangeSelectedItem (item) {
       console.log('selected item changed to ' + item)

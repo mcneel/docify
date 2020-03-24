@@ -40,7 +40,7 @@ export default {
       const search = this.title + '.'
       this.exampleMarkdown = []
       Examples.forEach(item => {
-        if (item.name.startsWith(search)) {
+        if (item.name.toLowerCase().startsWith(search)) {
           // for now the javascript highlighter seems good enough
           const code = ['```js', item.code, '```'].join('\n')
           const index = item.name.lastIndexOf('.')
