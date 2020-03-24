@@ -1,6 +1,0 @@
-baseURL = "/"
-# baseURL = "/apidocs/hugo/"
-languageCode = "en-us"
-title = "Hugo based API Site"
-theme = "hugo-primer"
-
