@@ -24,9 +24,6 @@ const ViewModel = {
           })
         }
       })
-      namespaces.sort(function (a, b) {
-        return a.label.localeCompare(b.label)
-      })
 
       RhinoCommonApi.forEach(type => {
         if (type.dataType !== DataTypes.NAMESPACE) {

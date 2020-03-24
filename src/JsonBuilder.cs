@@ -28,12 +28,14 @@ const DataTypes = {
             bool objectWritten = false;
 
             // write all namespaces first along with their docs
-            foreach (var kv in publicTypes)
+            // sort namespaces alphabetically
+            List<string> namespaceNames = new List<string>(publicTypes.Keys);
+            namespaceNames.Sort();
+            foreach (var namespaceName in namespaceNames)
             {
-                string namespaceName = kv.Key;
                 if (!namespaces.ContainsKey(namespaceName))
                     continue; // TODO: figure out these cases
-                var nsDefinition = namespaces[kv.Key];
+                var nsDefinition = namespaces[namespaceName];
                 string jsonType = WriteTypeAsObject(nsDefinition, null);
                 if (string.IsNullOrEmpty(jsonType))
                     continue;

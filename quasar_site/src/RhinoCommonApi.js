@@ -9,23 +9,25 @@ const DataTypes = {
 }
 var RhinoCommonApi = [
   {
-    name: 'Rhino.Runtime',
+    name: 'Rhino',
+    dataType: 5,
+    summary: `The Rhino namespace contains fundamental types that
+   define commonly-used value types and classes used in Rhino.`
+  },
+  {
+    name: 'Rhino.ApplicationSettings',
     dataType: 5
   },
   {
-    name: 'Rhino.Runtime.InProcess',
+    name: 'Rhino.Collections',
     dataType: 5
   },
   {
-    name: 'Rhino.FileIO',
+    name: 'Rhino.Commands',
     dataType: 5
   },
   {
-    name: 'Rhino.NodeInCode',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Runtime.Notifications',
+    name: 'Rhino.Display',
     dataType: 5
   },
   {
@@ -37,11 +39,19 @@ var RhinoCommonApi = [
    distinctive ID.`
   },
   {
-    name: 'Rhino.Render',
+    name: 'Rhino.DocObjects.Custom',
     dataType: 5
   },
   {
-    name: 'Rhino.Display',
+    name: 'Rhino.DocObjects.SnapShots',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.DocObjects.Tables',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.FileIO',
     dataType: 5
   },
   {
@@ -51,37 +61,11 @@ var RhinoCommonApi = [
    Examples are lines, curves, meshes and boundary representations.`
   },
   {
-    name: 'Rhino.Collections',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Runtime.InteropWrappers',
-    dataType: 5
-  },
-  {
     name: 'Rhino.Geometry.Collections',
     dataType: 5
   },
   {
-    name: 'Rhino',
-    dataType: 5,
-    summary: `The Rhino namespace contains fundamental types that
-   define commonly-used value types and classes used in Rhino.`
-  },
-  {
     name: 'Rhino.Geometry.Intersect',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Input',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.DocObjects.Custom',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Geometry.Morphs',
     dataType: 5
   },
   {
@@ -89,47 +73,11 @@ var RhinoCommonApi = [
     dataType: 5
   },
   {
-    name: 'Rhino.Render.ChangeQueue',
+    name: 'Rhino.Geometry.Morphs',
     dataType: 5
   },
   {
-    name: 'Rhino.Render.UI',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Render.Fields',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Render.DataSources',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.UI.Controls',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.UI.Controls.ThumbnailUI',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.UI.Controls.Thumbnaillist',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.ApplicationSettings',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.UI',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.DocObjects.Tables',
-    dataType: 5
-  },
-  {
-    name: 'Rhino.Commands',
+    name: 'Rhino.Input',
     dataType: 5
   },
   {
@@ -137,7 +85,7 @@ var RhinoCommonApi = [
     dataType: 5
   },
   {
-    name: 'Rhino.UI.Gumball',
+    name: 'Rhino.NodeInCode',
     dataType: 5
   },
   {
@@ -145,11 +93,63 @@ var RhinoCommonApi = [
     dataType: 5
   },
   {
-    name: 'Rhino.DocObjects.SnapShots',
+    name: 'Rhino.Render',
     dataType: 5
   },
   {
-    name: 'RhinoMobile.Display',
+    name: 'Rhino.Render.ChangeQueue',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Render.DataSources',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Render.Fields',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Render.UI',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Runtime',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Runtime.InProcess',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Runtime.InteropWrappers',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Runtime.Notifications',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.UI',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.UI.Controls',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.UI.Controls.Thumbnaillist',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.UI.Controls.ThumbnailUI',
+    dataType: 5
+  },
+  {
+    name: 'Rhino.UI.Gumball',
     dataType: 5
   },
   {
@@ -8906,6 +8906,10 @@ var RhinoCommonApi = [
         property: ['get']
       },
       {
+        signature: 'static Guid ArtisticId',
+        property: ['get']
+      },
+      {
         signature: 'static Guid GhostedId',
         since: 6,
         property: ['get']
@@ -17150,6 +17154,11 @@ var RhinoCommonApi = [
   {
     name: 'Rhino.DocObjects.FontQuartet',
     dataType: 1,
+    constructors: [
+      {
+        signature: 'FontQuartet(string name,bool supportsRegular,bool supportsBold,bool supportsItalic,bool supportsBoldItalic)'
+      }
+    ],
     properties: [
       {
         signature: 'bool HasBoldFont',
@@ -19144,6 +19153,9 @@ var RhinoCommonApi = [
       {
         signature: 'bool CommitChanges()',
         since: 5
+      },
+      {
+        signature: 'Rhino.Render.PhysicallyBasedMaterial ConvertToPhysicallyBased()'
       },
       {
         signature: 'void CopyFrom(Material other)',
@@ -91458,6 +91470,11 @@ var RhinoCommonApi = [
         signature: 'Methods Method',
         since: 6,
         property: ['get', 'set']
+      },
+      {
+        signature: 'bool On',
+        since: 7,
+        property: ['get', 'set']
       }
     ],
     methods: [
@@ -94424,6 +94441,12 @@ var RhinoCommonApi = [
       },
       {
         signature: 'float PostProcessGamma',
+        summary: 'Linear workflow gamma',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool PostProcessGammaOn',
         summary: 'Linear workflow gamma',
         since: 6,
         property: ['get', 'set']
@@ -99934,6 +99957,18 @@ var RhinoCommonApi = [
         since: 5
       },
       {
+        signature: 'bool IsChannelAvailable(Guid id)',
+        summary: 'Query if a channel is available.',
+        since: 7,
+        returns: 'Returns True if the channel is available.'
+      },
+      {
+        signature: 'bool IsChannelShown(Guid id)',
+        summary: 'Query if a channel is being shown.',
+        since: 7,
+        returns: 'Returns True if the channel is being shown.'
+      },
+      {
         signature: 'Channel OpenChannel(StandardChannels id)',
         since: 5
       },
@@ -100240,6 +100275,9 @@ var RhinoCommonApi = [
       },
       {
         signature: 'NormalZ             = 0x0080'
+      },
+      {
+        signature: 'NormalXYZ           = 0x00F0'
       },
       {
         signature: 'LuminanceRed        = 0x0100'
@@ -108725,6 +108763,627 @@ var RhinoCommonApi = [
     ]
   },
   {
+    name: 'Rhino.Runtime.RhinoAccounts.IOAuth2Token',
+    dataType: 4,
+    summary: 'Represents an OAuth2 Token that can be used for authorization purposes.'
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.IOpenIDConnectToken',
+    dataType: 4,
+    summary: 'This class represents an OpenIDConnect token issued from an OpenID provider. The token is immutable.'
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.IRhinoAccountsManager',
+    dataType: 4,
+    summary: 'Performs various Rhino Accounts-related tasks.'
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.ProgressState',
+    dataType: 3,
+    summary: 'Describes the state of progress.',
+    values: [
+      {
+        signature: 'AwaitingLogin',
+        summary: 'The task is awaiting for the user to login.'
+      },
+      {
+        signature: 'RetrievingTokens',
+        summary: 'The task is now nogotiating with the remote server for auth tokens.'
+      },
+      {
+        signature: 'Other',
+        summary: 'Other'
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccoountsProgressInfo',
+    dataType: 1,
+    summary: `This class is designed to convey the progress of an asynchronous operation through .NET's IProgress{T} interface. 
+   It can be used by callers of such tasks to relay the tasks' progress, as well as useful metadata information that may be of interest.`,
+    constructors: [
+      {
+        signature: 'RhinoAccoountsProgressInfo(ProgressState state,Dictionary<object, object> metadata,string customDescription)',
+        summary: 'Creates a new instance.',
+        parameters: [
+          {
+            name: 'state',
+            summary: 'The state to report.'
+          },
+          {
+            name: 'metadata',
+            summary: 'Optional. Any metadata of interest that may be used by the caller of a task.'
+          },
+          {
+            name: 'customDescription',
+            summary: 'Optional. If a non-None value is passed, it will override the default description of the instance.'
+          }
+        ]
+      }
+    ],
+    properties: [
+      {
+        signature: 'string Description',
+        summary: 'A localized description of the state that may be shown to the user of the application.',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Dictionary<object, object> Metadata',
+        summary: 'Any metadata of interest that may be used by the caller of a task.',
+        property: ['get']
+      },
+      {
+        signature: 'ProgressState State',
+        summary: 'The state to report.',
+        property: ['get', 'set']
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsAuthTokenMismatchException',
+    dataType: 1,
+    summary: 'Exception thrown when the currently logged in user is different from the newly logged in user.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsAuthTokenMismatchException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsAuthTokenMismatchException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsAuthTokenMismatchException(string currentUsername,string newUsername,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'currentUsername',
+            summary: 'The name of the currently logged in user.'
+          },
+          {
+            name: 'newUsername',
+            summary: 'The name of the newly logged in user.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsCannotListenException',
+    dataType: 1,
+    summary: 'Exception thrown when there is no port available on the machine for Rhino to listen for Rhino Accounts\' response.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsCannotListenException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsCannotListenException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    dataType: 1,
+    summary: 'Base exception for all Rhino Accounts operations.',
+    baseclass: 'Exception',
+    constructors: [
+      {
+        signature: 'RhinoAccountsException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsGroup',
+    dataType: 1,
+    summary: 'Represents a Rhino Accounts group.',
+    constructors: [
+      {
+        signature: 'RhinoAccountsGroup(string id,string name)',
+        summary: 'Represents a group in Rhino Accounts. Groups are a collection of individual members that can share resources.'
+      }
+    ],
+    properties: [
+      {
+        signature: 'string Id',
+        summary: 'The id of the group. The id is unique to a group within Rhino Accounts.',
+        property: ['get']
+      },
+      {
+        signature: 'string Name',
+        summary: 'The name of the group. The name can be changed at anytime by group members.',
+        property: ['get']
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsInvalidResponseException',
+    dataType: 1,
+    summary: 'Exception thrown when the response returned by Rhino Accounts is not valid.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsInvalidResponseException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsInvalidResponseException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsInvalidStateException',
+    dataType: 1,
+    summary: 'Occurs when the state returned by the Rhino Accounts server is not the same as the one sent to the server. It usually indicates the request has been tampered with.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsInvalidStateException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsInvalidStateException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsInvalidTokenException',
+    dataType: 1,
+    summary: 'Exception thrown when the token returned by Rhino Accounts is not valid.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsInvalidTokenException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsInvalidTokenException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsManager',
+    dataType: 1,
+    summary: 'Performs various Rhino Accounts-related tasks.',
+    methods: [
+      {
+        signature: 'static void ExecuteProtectedCode(Action<SecretKey> protectedCode)',
+        summary: `Any synchronous method in the IRhinoAccountsManager class must be executed within the function passed to this method,
+     or an InvalidOperationException will be thrown.`,
+        parameters: [
+          {
+            name: 'protectedCode',
+            summary: `A function returning an awaitable task that has a SecretKey passed to it. You will need to pass this
+     secret key to any method you wish to call within IRhinoAccountsManager.`
+          }
+        ]
+      },
+      {
+        signature: 'static Task ExecuteProtectedCodeAsync(Func<SecretKey, Task> protectedCode)',
+        summary: `Any asynchronous method in the IRhinoAccountsManager class must be executed within the function passed to this method,
+     or an InvalidOperationException will be thrown.`,
+        parameters: [
+          {
+            name: 'protectedCode',
+            summary: `A function returning an awaitable task that has a SecretKey passed to it. You will need to pass this
+     secret key to any method you wish to call within IRhinoAccountsManager.`
+          }
+        ]
+      },
+      {
+        signature: 'static Task<Tuple<IOpenIDConnectToken, IOAuth2Token>> GetAuthTokensAsync(string clientId,string clientSecret,IEnumerable<string> scope,string prompt,int? maxAge,bool showUI,IProgress<RhinoAccoountsProgressInfo> progress,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Asynchronously retrieves auth tokens with the given criteria from the Rhino Accounts server.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'clientSecret',
+            summary: 'The secret of the client registered in Rhino Accounts'
+          },
+          {
+            name: 'scope',
+            summary: 'The scope desired for the tokens. Valid scope values can be found in the Rhino Accounts documentation.'
+          },
+          {
+            name: 'prompt',
+            summary: 'The prompt of the request. See Rhino Accounts documentation for details. You may pass None if no prompt is desired.'
+          },
+          {
+            name: 'maxAge',
+            summary: 'The maxAge of the request. See Rhino Accounts documentation for details. You may pass None if no maxAge should be enforced.'
+          },
+          {
+            name: 'showUI',
+            summary: `True if the user should see a UI showing the progress of the operation and a way to cancel it, or False if the UI should not be displayed.
+     If false, it is strongly recommended that you pass a  object and display your own UI to the user.`
+          },
+          {
+            name: 'progress',
+            summary: 'An object that will report the progress of the operation to the caller. If no progress is needed, you may pass null.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ],
+        returns: 'The auth tokens requested.'
+      },
+      {
+        signature: 'static Task<Tuple<IOpenIDConnectToken, IOAuth2Token>> GetAuthTokensAsync(string clientId,string clientSecret,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Asynchronously retrieves auth tokens with the given criteria from the Rhino Accounts server.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'clientSecret',
+            summary: 'The secret of the client registered in Rhino Accounts'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ],
+        returns: 'The auth tokens requested.'
+      },
+      {
+        signature: 'static Task RevokeAuthTokenAsync(IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Invalidates/revokes an IOAuth2Token object from the Rhino Accounts server.',
+        parameters: [
+          {
+            name: 'oauth2Token',
+            summary: 'The token to revoke.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ]
+      },
+      {
+        signature: 'static Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,IEnumerable<string> scope,SecretKey secretKey)',
+        summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'scope',
+            summary: 'The scope desired for the tokens. Valid scope values can be found in the Rhino Accounts documentation.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          }
+        ],
+        returns: 'Cached tokens matching the exact criteria passed, or None if none can be found matching the criteria.'
+      },
+      {
+        signature: 'static Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,SecretKey secretKey)',
+        summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          }
+        ],
+        returns: 'Cached tokens matching the exact criteria passed, or None if none can be found matching the criteria.'
+      },
+      {
+        signature: 'static Task<IOpenIDConnectToken> UpdateOpenIDConnectTokenAsync(IOpenIDConnectToken currentToken,IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Updates an OpenID Connect token so that it contains the latest user information by contacting the Rhino Account\'s server userinfo endpoint using a compatible O',
+        parameters: [
+          {
+            name: 'currentToken',
+            summary: 'The existing OpenID Connect token that you wish to updated with the latest user information.'
+          },
+          {
+            name: 'oauth2Token',
+            summary: 'A valid OAuth2 token used for authorization. The OAuth2 token must have been issued together with the OpenID Connect token passed or a RhinoAccountsAuthTokenMismatchException will be thrown.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ],
+        returns: 'The updated OpenIDConnectToken based on the original token passed to this method.'
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsOperationInProgressException',
+    dataType: 1,
+    summary: 'Exception thrown when there is already a Rhino Accounts operation taking place.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsOperationInProgressException(Assembly assembly,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'assembly',
+            summary: 'The assembly that is currently performing an operation.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsOperationInProgressException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsProxyException',
+    dataType: 1,
+    summary: 'Exception thrown when there is a problem with a proxy setting during a Rhino Accounts operation.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsProxyException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsProxyException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsServerException',
+    dataType: 1,
+    summary: 'Exception thrown when the Rhino Accounts server returned an unsuccessful HTTP response with a code of 400 or greater.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsServerException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsServerException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsServerNotReachableException',
+    dataType: 1,
+    summary: 'Exception thrown when the Rhino Accounts server cannot be reached due to a network problem.',
+    baseclass: 'Rhino.Runtime.RhinoAccounts.RhinoAccountsException',
+    constructors: [
+      {
+        signature: 'RhinoAccountsServerNotReachableException(Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoAccountsServerNotReachableException(string message,Exception innerException)',
+        summary: 'Generates a new instance of the exception.',
+        parameters: [
+          {
+            name: 'message',
+            summary: 'The message of the exception.'
+          },
+          {
+            name: 'innerException',
+            summary: 'The inner exception.'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Rhino.Runtime.RhinoAccounts.SecretKey',
+    dataType: 1,
+    summary: `An instance of this of this class is given to the function you pass to ExceuteProtectedCodeAsync and
+   must be passed to any method of the RhinoAccountsManager that requires it. Failure to do so will throw an InvalidOperationException.`
+  },
+  {
     name: 'Rhino.Runtime.RiskyAction',
     dataType: 1,
     summary: 'Defines risky actions that need to be reported in crash exceptions',
@@ -112105,6 +112764,14 @@ var RhinoCommonApi = [
         property: ['get']
       },
       {
+        signature: 'int Index',
+        summary: `The page navigation control adds buttons in the order the pages are 
+     processed, override this method and return a sort index to move the button
+     to the beginning of the list.  By default this returns -1 which puts the
+     button at the end of the list.`,
+        property: ['get']
+      },
+      {
         signature: 'string LocalPageTitle',
         summary: `Localized page description string, returns the EnglishPageTitle by
      default.`,
@@ -114264,10 +114931,6 @@ var RhinoCommonApi = [
         since: 5.1
       }
     ]
-  },
-  {
-    name: 'RhinoMobile.Display.ColorExtensions',
-    dataType: 1
   },
   {
     name: 'UnsafeNativeMethods.Point',

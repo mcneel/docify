@@ -109,6 +109,8 @@ namespace api_docify
                     continue;
                 if (file.Contains("\\obj\\"))
                     continue;
+                if (file.ToLower().Contains("rhinomobile"))
+                    continue;
                 yield return file;
             }
         }
