@@ -8,7 +8,6 @@ let _optionsList = null
 
 const ViewModel = {
   getTree () {
-    // We might need to remove this shortcut for SSR
     if (_viewmodel) return _viewmodel
     let viewmodel = null
     {

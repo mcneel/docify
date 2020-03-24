@@ -4,12 +4,12 @@
     <p>{{vm.summary}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
-      <router-link v-if="item.link" :to="apiBase+item.link.toLowerCase()">{{item.name}}</router-link>
+      <router-link v-if="item.link" :to="baseUrl+item.link.toLowerCase()">{{item.name}}</router-link>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
-    <p v-if="namespace"><i>Namespace: <router-link :to="apiBase+namespace.toLowerCase()">{{namespace}}</router-link></i></p>
+    <p v-if="namespace"><i>Namespace: <router-link :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i></p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
@@ -48,7 +48,7 @@
           </q-item-section>
         </q-item>
       </q-expansion-item>
-      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="apiBase + item.path.toLowerCase()">
+      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
         <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
         <q-item-section>
           <q-item-label>{{item.label}}</q-item-label>
@@ -64,6 +64,9 @@ import ViewModel from '../ViewModel'
 import { DataTypes } from '../RhinoCommonApi'
 
 export default {
+  props: {
+    baseUrl: { type: String }
+  },
   data () {
     const mostRecent = ViewModel.mostRecentSince()
     return {
@@ -73,8 +76,7 @@ export default {
       memberSections: [],
       namespaceItems: null,
       inheritence: [],
-      version: mostRecent,
-      apiBase: '/rhinocommon/'
+      version: mostRecent
     }
   },
   meta () {
@@ -95,7 +97,7 @@ export default {
     '$route' (to, from) {
       // react to route changes...
       console.log('route watch ' + to.path + ' | ' + from.path)
-      const selectedItem = to.path.substring(this.apiBase.length)
+      const selectedItem = to.path.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
     }
   },
@@ -116,7 +118,7 @@ export default {
       let name = member.examples[0].name
       const index = name.lastIndexOf('.')
       name = name.substring(0, index).toLowerCase()
-      return this.apiBase + 'examples/' + name
+      return this.baseUrl + 'examples/' + name
     },
     onChangeSelectedItem (item) {
       console.log('selected item changed to ' + item)

@@ -15,16 +15,18 @@
 import ViewModel from '../ViewModel'
 
 export default {
+  props: {
+    baseUrl: { type: String }
+  },
   data () {
     const tree = ViewModel.getTree()
     return {
-      vm: tree,
-      apiBase: '/rhinocommon/'
+      vm: tree
     }
   },
   methods: {
     setSelectedItem (name) {
-      this.$router.push(this.apiBase + name.toLowerCase())
+      this.$router.push(this.baseUrl + name.toLowerCase())
       ViewModel.setSelectedItem(name)
     }
   }

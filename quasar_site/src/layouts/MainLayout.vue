@@ -4,11 +4,11 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>
-          <q-btn no-caps size="lg" :to="apiBase" label="RhinoCommon API"/>
+          <q-btn no-caps size="lg" :to="baseUrl" label="RhinoCommon API"/>
         </q-toolbar-title>
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
           :label="'v' + version"
-          :to="apiBase + 'whatsnew/' + version"
+          :to="baseUrl + 'whatsnew/' + version"
         >
           <q-tooltip>What's new in v{{version}}</q-tooltip>
         </q-btn>
@@ -47,7 +47,9 @@
 import ViewModel from '../ViewModel'
 
 export default {
-  name: 'MainLayout',
+  props: {
+    baseUrl: { type: String }
+  },
   data () {
     const vm = ViewModel.getTree()
     const mostRecent = ViewModel.mostRecentSince().toFixed(1)
@@ -61,8 +63,7 @@ export default {
       model: null,
       options: inputOptions,
       filter: '',
-      expanded: [],
-      apiBase: '/rhinocommon/'
+      expanded: []
     }
   },
   created () {
@@ -117,7 +118,7 @@ export default {
       if (!this.watcherEnabled) return
 
       if (!newState) {
-        const selectItem = this.$router.currentRoute.path.substring(this.apiBase.length)
+        const selectItem = this.$router.currentRoute.path.substring(this.baseUrl.length)
         if (selectItem) {
           this.watcherEnabled = false
           this.selectedNode = selectItem
@@ -127,7 +128,7 @@ export default {
       }
 
       console.log(newState)
-      const newPath = this.apiBase + newState.toLowerCase()
+      const newPath = this.baseUrl + newState.toLowerCase()
       if (this.$router.currentRoute.path.toLowerCase() === newPath) return
       this.$router.push(newPath)
       ViewModel.setSelectedItem(newState)

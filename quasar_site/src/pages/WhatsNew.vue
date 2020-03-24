@@ -4,7 +4,7 @@
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
-        <router-link :to="apiBase + type.name.toLowerCase()">{{type.name}}</router-link>
+        <router-link :to="baseUrl + type.name.toLowerCase()">{{type.name}}</router-link>
         <ul>
           <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
           <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>
@@ -19,12 +19,14 @@
 import ViewModel from '../ViewModel'
 
 export default {
+  props: {
+    baseUrl: { type: String }
+  },
   data () {
     return {
       version: 0,
       memberCount: 0,
-      api: [],
-      apiBase: '/rhinocommon/'
+      api: []
     }
   },
   mounted () {
