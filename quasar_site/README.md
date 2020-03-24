@@ -26,6 +26,15 @@ yarn dev
 yarn build
 ```
 
+### Build SSR version of the app (development and production)
+```bash
+yarn ssrdev
+```
+or
+```bash
+yarn ssrbuild
+```
+
 ----
 
 Files:

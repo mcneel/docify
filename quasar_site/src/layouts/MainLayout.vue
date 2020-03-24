@@ -117,7 +117,7 @@ export default {
       if (!this.watcherEnabled) return
 
       if (!newState) {
-        const selectItem = this.$router.currentRoute.path.substring(1)
+        const selectItem = this.$router.currentRoute.path.substring(this.apiBase.length)
         if (selectItem) {
           this.watcherEnabled = false
           this.selectedNode = selectItem
