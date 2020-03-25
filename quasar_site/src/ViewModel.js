@@ -4,48 +4,51 @@ import { Examples } from './Examples'
 const _selectedItemChangedCallbacks = {}
 let _viewmodel = null
 let _typemap = null
-let _optionsList = null
 
 const ViewModel = {
+  itemPath (item) {
+    let path = null
+    if (item.namespace) path = item.namespace + '.' + item.name
+    else path = item.name
+    return path.toLowerCase()
+  },
   getTree () {
     if (_viewmodel) return _viewmodel
     let viewmodel = null
     {
       // console.log('creating viewodel')
-      const namespaces = []
+      const namespaceDict = {}
       RhinoCommonApi.forEach(type => {
+        let summary = ''
+        if (type.summary) summary = type.summary
         if (type.dataType === DataTypes.NAMESPACE) {
-          const typeSummary = type.summary ? type.summary : ''
-          namespaces.push({
+          namespaceDict[type.name] = {
             label: type.name,
-            path: type.name,
-            summary: typeSummary,
+            path: this.itemPath(type),
+            summary: summary,
             children: []
-          })
+          }
+        } else {
+          const item = {
+            label: type.name,
+            path: this.itemPath(type),
+            summary: summary,
+            icon: this.icon(type.dataType)
+          }
+          if (type.inherits) item.inherits = type.inherits
+          const node = namespaceDict[type.namespace]
+          if (!node) {
+            console.log('no namespace for ' + type.name)
+          } else {
+            namespaceDict[type.namespace].children.push(item)
+          }
         }
       })
-
-      RhinoCommonApi.forEach(type => {
-        if (type.dataType !== DataTypes.NAMESPACE) {
-          const index = type.name.lastIndexOf('.')
-          const testNamespace = type.name.substring(0, index)
-          namespaces.forEach(ns => {
-            if (ns.label === testNamespace) {
-              const typeName = type.name.substring(index + 1)
-              const typeSummary = type.summary ? type.summary : ''
-              const item = {
-                label: typeName,
-                path: type.name,
-                summary: typeSummary,
-                icon: this.icon(type.dataType)
-              }
-              if (type.inherits) item.inherits = type.inherits
-              ns.children.push(item)
-            }
-          })
-        }
+      viewmodel = []
+      const namespaceKeys = Object.keys(namespaceDict).sort()
+      namespaceKeys.forEach(ns => {
+        viewmodel.push(namespaceDict[ns])
       })
-      viewmodel = namespaces
     }
     _viewmodel = viewmodel
     return viewmodel
@@ -64,15 +67,20 @@ const ViewModel = {
   setSelectedItemChangedCallback (source, callback) {
     _selectedItemChangedCallbacks[source] = callback
   },
+  findNodeByPath (path) {
+    path = path.toLowerCase()
+    let found = null
+    RhinoCommonApi.forEach(type => {
+      if (found) return
+      if (this.itemPath(type) === path) found = type
+    })
+    return found
+  },
   setSelectedItem (item) {
-    const typename = item.toLowerCase()
-    for (let i = 0; i < RhinoCommonApi.length; i++) {
-      const node = RhinoCommonApi[i]
-      if (node.name.toLowerCase() === typename) {
-        for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
-          callback(node)
-        }
-        return
+    const node = this.findNodeByPath(item)
+    if (node) {
+      for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
+        callback(node)
       }
     }
   },
@@ -96,13 +104,19 @@ const ViewModel = {
   },
   getInheritence (item) {
     const rc = []
+    let count = 0
     while (item && item.baseclass) {
+      count++
+      if (count > 10) break // don't allow infinite loop due to some bug in my code
       const typemap = this.getTypeMap()
-      const baseclass = item.baseclass
+      const index = item.baseclass.lastIndexOf('.')
+      const baseclass = item.baseclass.substring(index + 1)
+      const link = item.baseclass.toLowerCase()
+      const node = { name: item.baseclass }
       item = typemap[baseclass]
-      const node = { name: baseclass }
+      if (baseclass === 'EventArgs') item = null
       if (item) {
-        node.link = baseclass
+        node.link = link
       }
       rc.push(node)
     }
@@ -130,22 +144,16 @@ const ViewModel = {
     })
     return since
   },
-  getOptionsList () {
-    if (_optionsList) return _optionsList
-    const rc = []
-    RhinoCommonApi.forEach(type => {
-      rc.push(type.name)
-    })
-    _optionsList = rc
-    return rc
-  },
   getExamples (parentType, item) {
     if (!item.examples) {
       item.examples = []
+      let fullname = null
+      if (parentType.namespace) fullname = parentType.namespace + '.' + parentType.name
+      else fullname = parentType.name
       Examples.forEach(example => {
         example.members.forEach(member => {
           const type = member[0]
-          if (parentType.name === type) {
+          if (fullname === type) {
             const signature = member[1]
             if (signature === item.signature) {
               item.examples.push(example)
@@ -167,6 +175,7 @@ const ViewModel = {
         methods: [],
         properties: []
       }
+      if (type.namespace) localApi.namespace = type.namespace
       const test = function (inputList, outputList, version) {
         let count = 0
         if (inputList) {

@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>
-          <q-btn no-caps size="lg" :to="baseUrl" label="RhinoCommon API"/>
+          <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'"/>
         </q-toolbar-title>
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
           :label="'v' + version"
@@ -48,12 +48,12 @@ import ViewModel from '../ViewModel'
 
 export default {
   props: {
+    apiTitle: { type: String },
     baseUrl: { type: String }
   },
   data () {
     const vm = ViewModel.getTree()
     const mostRecent = ViewModel.mostRecentSince().toFixed(1)
-    const inputOptions = ViewModel.getOptionsList()
     return {
       leftDrawerOpen: false,
       api: vm,
@@ -61,7 +61,6 @@ export default {
       watcherEnabled: true,
       version: mostRecent,
       model: null,
-      options: inputOptions,
       filter: '',
       expanded: []
     }
@@ -70,29 +69,10 @@ export default {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
   },
   methods: {
-    onInput (value) {
-      if (ViewModel.getOptionsList().includes(value)) {
-        this.model = ''
-        this.selectedNode = value
-      }
-      // console.log(value)
-    },
     onChangeSelectedItem (item) {
       this.watcherEnabled = false
-      this.selectedNode = item.name
+      this.selectedNode = ViewModel.itemPath(item)
       this.watcherEnabled = true
-    },
-    filterFn (val, update) {
-      update(() => {
-        if (val === '') {
-          this.options = ViewModel.getOptionsList()
-        } else {
-          const needle = val.toLowerCase()
-          this.options = ViewModel.getOptionsList().filter(
-            v => v.toLowerCase().indexOf(needle) > -1
-          )
-        }
-      })
     },
     nodeFilter (node, filter) {
       const filt = filter.toLowerCase()

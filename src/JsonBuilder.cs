@@ -25,12 +25,12 @@ const DataTypes = {
 }
 ");
             content.AppendLine("var RhinoCommonApi = [");
-            bool objectWritten = false;
 
             // write all namespaces first along with their docs
             // sort namespaces alphabetically
             List<string> namespaceNames = new List<string>(publicTypes.Keys);
             namespaceNames.Sort();
+            bool objectWritten = false;
             foreach (var namespaceName in namespaceNames)
             {
                 if (!namespaces.ContainsKey(namespaceName))
@@ -44,6 +44,8 @@ const DataTypes = {
                 content.Append(jsonType);
                 objectWritten = true;
             }
+            if (objectWritten)
+                content.AppendLine(",");
 
             List<ParsedType> sortedTypes = new List<ParsedType>();
             foreach(var kv in publicTypes)
@@ -58,7 +60,7 @@ const DataTypes = {
                 if( !name.Equals("EventArgs"))
                     typesByNameDictionary[name] = type;
             }
-
+            objectWritten = false;
             for( int i=0; i<sortedTypes.Count; i++ )
             {
                 string jsonType = WriteTypeAsObject(sortedTypes[i], typesByNameDictionary);
@@ -88,11 +90,19 @@ const DataTypes = {
 
         static string WriteTypeAsObject(ParsedType type, Dictionary<string, ParsedType> allPublicTypesByShortName)
         {
-            if (!type.IsPublic)
+            if (!type.IsPublic || (type.DataType != ParsedDataType.Namespace && string.IsNullOrWhiteSpace(type.Namespace)))
                 return null;
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("  {");
-            sb.AppendLine($"    name: '{type.FullName}',");
+            if (type.DataType == ParsedDataType.Namespace)
+            {
+                sb.AppendLine($"    name: '{type.FullName}',");
+            }
+            else
+            {
+                sb.AppendLine($"    namespace: '{type.Namespace}',");
+                sb.AppendLine($"    name: '{type.Name}',");
+            }
             sb.Append($"    dataType: {(int)(type.DataType)}");
             string summary = type.Summary();
             if( !string.IsNullOrWhiteSpace(summary) )

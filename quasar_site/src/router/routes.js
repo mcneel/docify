@@ -1,4 +1,5 @@
 const rhinocommonProps = {
+  apiTitle: 'RhinoCommon',
   baseUrl: '/rhinocommon/'
 }
 

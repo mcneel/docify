@@ -91,6 +91,9 @@ namespace api_docify
         {
             get
             {
+                var parentClass = _declarationType.Parent as ClassDeclarationSyntax;
+                if (parentClass != null)
+                    return $"{parentClass.Identifier}.{_declarationType.Identifier}";
                 return $"{_declarationType.Identifier}";
             }
         }

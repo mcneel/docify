@@ -20,7 +20,13 @@
       >
         <q-item v-for="member in section.items" :key="member.signature">
           <q-item-section>
-            <q-item-label>{{signature(member)}}
+            <q-item-label>
+              <span v-for="(chunk, index) in signature(member, section)" :key="index">
+                <span v-if="chunk.link">
+                  <router-link :to="chunk.link">{{chunk.name}}</router-link>
+                </span>
+                <span v-else>{{chunk.name}}</span>
+              </span>
               <q-btn v-if="member.examples && member.examples.length>0"
                 size="xs"
                 dense
@@ -96,23 +102,85 @@ export default {
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      console.log('route watch ' + to.path + ' | ' + from.path)
+      // console.log('route watch ' + to.path + ' | ' + from.path)
       const selectedItem = to.path.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
     }
   },
   methods: {
-    signature (member) {
+    tokenLink (token) {
+      // skip tokens that start with a lower case letter
+      if (token[0] === token[0].toLowerCase()) return null
+      if (token.endsWith('[]')) token = token.substring(0, token.length - 2)
+      if (token === this.vm.name) return null
+      const typeMap = ViewModel.getTypeMap()
+      const type = typeMap[token]
+      if (!type) return null
+      return this.baseUrl + ViewModel.itemPath(type)
+    },
+    signature (member, section) {
+      const tokens = member.signature.split(' ')
+      const chunks = []
+      if (tokens[0] === 'static') {
+        chunks.push({ name: tokens[0] + ' ' })
+        tokens.shift()
+      }
+      if (section.events) {
+        chunks.push({ name: tokens[0] })
+        return chunks
+      }
+
+      if (section.properties || section.methods) {
+        // try to get a link for the return type
+        const link = this.tokenLink(tokens[0])
+        if (link) {
+          chunks.push({
+            link: link,
+            name: tokens[0]
+          })
+          chunks.push({ name: ' ' })
+        } else {
+          chunks.push({ name: tokens[0] + ' ' })
+        }
+        tokens.shift()
+      }
+
+      const declaration = tokens.join(' ')
+      const parenIndex = declaration.indexOf('(')
+      if (parenIndex > 0) {
+        chunks.push({ name: declaration.substring(0, parenIndex + 1) })
+        const parameterTokens = declaration.substring(parenIndex + 1, declaration.length - 1).split(',')
+        for (let i = 0; i < parameterTokens.length; i++) {
+          if (!parameterTokens[i]) continue
+          if (i > 0) chunks.push({ name: ', ' })
+          const parameter = parameterTokens[i].trim()
+          const index = parameter.indexOf(' ')
+          const link = this.tokenLink(parameter.substring(0, index))
+          if (link) {
+            chunks.push({
+              link: link,
+              name: parameter.substring(0, index)
+            })
+            chunks.push({ name: parameter.substring(index) })
+          } else {
+            chunks.push({ name: parameter })
+          }
+        }
+        chunks.push({ name: ')' })
+      } else {
+        chunks.push({ name: declaration })
+      }
+
       if (member.property) {
-        let s = member.signature + ' {'
+        let s = ' {'
         for (let i = 0; i < member.property.length; i++) {
           if (i > 0) s += '|'
           s += member.property[i]
         }
         s += '}'
-        return s
+        chunks.push({ name: s })
       }
-      return member.signature
+      return chunks
     },
     exampleUrl (member) {
       let name = member.examples[0].name
@@ -137,30 +205,32 @@ export default {
         }
         this.inheritence = []
       } else {
-        const index = item.name.lastIndexOf('.')
-        this.title = item.name.substring(index + 1)
-        this.namespace = item.name.substring(0, index)
+        this.title = item.name
+        this.namespace = item.namespace
         this.memberSections = []
         this.namespaceItems = null
         if (item.constructors) {
           this.memberSections.push({
             title: 'Constructors (' + item.constructors.length + ')',
             items: item.constructors,
-            expanded: true
+            expanded: true,
+            constructors: true
           })
         }
         if (item.values) {
           this.memberSections.push({
             title: 'Values',
             items: item.values,
-            expanded: true
+            expanded: true,
+            values: true
           })
         }
         if (item.properties) {
           this.memberSections.push({
             title: 'Properties (' + item.properties.length + ')',
             items: item.properties,
-            expanded: true
+            expanded: true,
+            properties: true
           })
           item.properties.forEach(m => ViewModel.getExamples(item, m))
         }
@@ -168,7 +238,8 @@ export default {
           this.memberSections.push({
             title: 'Methods (' + item.methods.length + ')',
             items: item.methods,
-            expanded: true
+            expanded: true,
+            methods: true
           })
           item.methods.forEach(m => ViewModel.getExamples(item, m))
         }
@@ -176,7 +247,8 @@ export default {
           this.memberSections.push({
             title: 'Events (' + item.events.length + ')',
             items: item.events,
-            expanded: true
+            expanded: true,
+            events: true
           })
         }
         this.inheritence = ViewModel.getInheritence(item)
