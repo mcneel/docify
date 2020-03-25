@@ -107,7 +107,7 @@ export default {
         return
       }
 
-      console.log(newState)
+      // console.log(newState)
       const newPath = this.baseUrl + newState.toLowerCase()
       if (this.$router.currentRoute.path.toLowerCase() === newPath) return
       this.$router.push(newPath)

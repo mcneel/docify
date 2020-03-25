@@ -105,7 +105,7 @@ namespace api_docify
             foreach (string file in System.IO.Directory.EnumerateFiles(sourcePath, "*.cs", System.IO.SearchOption.AllDirectories))
             {
                 string filename = System.IO.Path.GetFileName(file);
-                if (filename.Equals(".cs") || filename.StartsWith("AutoNative"))
+                if (filename.Equals(".cs") || filename.StartsWith("AutoNativeMethods"))
                     continue;
                 if (file.Contains("\\obj\\"))
                     continue;
