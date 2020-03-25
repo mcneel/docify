@@ -110,7 +110,7 @@ export default {
   methods: {
     tokenLink (token) {
       // skip tokens that start with a lower case letter
-      if (token[0] === token[0].toLowerCase()) return null
+      if (token.length < 1 || token[0] === token[0].toLowerCase()) return null
       if (token.endsWith('[]')) token = token.substring(0, token.length - 2)
       if (token === this.vm.name) return null
       const typeMap = ViewModel.getTypeMap()
@@ -150,6 +150,12 @@ export default {
       if (parenIndex > 0) {
         chunks.push({ name: declaration.substring(0, parenIndex + 1) })
         const parameterTokens = declaration.substring(parenIndex + 1, declaration.length - 1).split(',')
+        for (let i = 0; i < parameterTokens.length; i++) {
+          if (parameterTokens[i].indexOf('<') > 0) {
+            parameterTokens[i] = parameterTokens[i] + ',' + parameterTokens[i + 1]
+            parameterTokens[i + 1] = ''
+          }
+        }
         for (let i = 0; i < parameterTokens.length; i++) {
           if (!parameterTokens[i]) continue
           if (i > 0) chunks.push({ name: ', ' })
