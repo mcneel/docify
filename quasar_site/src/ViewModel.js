@@ -1,5 +1,14 @@
-import { DataTypes, RhinoCommonApi } from './RhinoCommonApi'
+import { RhinoCommonApi } from './RhinoCommonApi'
 import { Examples } from './Examples'
+
+const DataTypes = {
+  NAMESPACE: 'namespace',
+  CLASS: 'class',
+  ENUM: 'enum',
+  EVENT: 'event',
+  INTERFACE: 'interface',
+  STRUCT: 'struct'
+}
 
 const _selectedItemChangedCallbacks = {}
 let _viewmodel = null

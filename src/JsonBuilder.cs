@@ -14,16 +14,7 @@ namespace api_docify
         {
             StringBuilder content = new StringBuilder();
 
-            content.Append(@"// auto-generated from api_docify
-const DataTypes = {
-  NONE: 0,
-  CLASS: 1,
-  STRUCT: 2,
-  ENUM: 3,
-  INTERFACE: 4,
-  NAMESPACE: 5
-}
-");
+            content.AppendLine(@"// auto-generated from api_docify");
             content.AppendLine("var RhinoCommonApi = [");
 
             // write all namespaces first along with their docs
@@ -74,7 +65,7 @@ const DataTypes = {
             content.AppendLine();
             content.AppendLine("]");
             content.AppendLine();
-            content.AppendLine("export { DataTypes, RhinoCommonApi }");
+            content.AppendLine("export { RhinoCommonApi }");
 
             System.IO.File.WriteAllText(path, content.ToString());
         }
@@ -103,7 +94,7 @@ const DataTypes = {
                 sb.AppendLine($"    namespace: '{type.Namespace}',");
                 sb.AppendLine($"    name: '{type.Name}',");
             }
-            sb.Append($"    dataType: {(int)(type.DataType)}");
+            sb.Append($"    dataType: '{type.DataType.ToString().ToLower()}'");
             string summary = type.Summary();
             if( !string.IsNullOrWhiteSpace(summary) )
             {
@@ -331,7 +322,8 @@ const DataTypes = {
             bool addComma = false;
             foreach (var sample in examples)
             {
-                string path = System.IO.Path.Combine(examplesBaseDirectory, sample.Key);
+                string key = sample.Key.Replace('\\', '/');
+                string path = System.IO.Path.Combine(examplesBaseDirectory, key);
                 string name = System.IO.Path.GetFileName(path);
                 if (name.StartsWith("ex_", StringComparison.OrdinalIgnoreCase))
                     name = name.Substring("ex_".Length);

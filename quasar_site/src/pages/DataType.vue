@@ -71,7 +71,6 @@
 
 <script>
 import ViewModel from '../ViewModel'
-import { DataTypes } from '../RhinoCommonApi'
 
 export default {
   props: {
@@ -201,7 +200,7 @@ export default {
     onChangeSelectedItem (item) {
       console.log('selected item changed to ' + item)
       this.vm = item
-      if (item.dataType === DataTypes.NAMESPACE) {
+      if (item.dataType === 'namespace') {
         this.title = 'Namespace: ' + item.name
         this.namespace = null
         this.memberSections = []
