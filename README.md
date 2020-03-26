@@ -1,5 +1,5 @@
-# apidocs
-Project for generating API documentation. This repo is split into the following parts:
+# docify
+Project for generating Rhino/Grasshopper API documentation. This repo is split into the following parts:
 
 # src 
 src contains a Visual Studio project (api_docify) that parses source code and generates markdown and json files that represent the public facing API for a project
