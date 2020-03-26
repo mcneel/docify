@@ -1,11 +1,13 @@
+const apiBase = '/api/'
+
 const rhinocommonProps = {
   apiTitle: 'RhinoCommon',
-  baseUrl: '/rhinocommon/'
+  baseUrl: apiBase + 'rhinocommon/'
 }
 
 const routes = [
   {
-    path: '/rhinocommon/',
+    path: apiBase + 'rhinocommon/',
     component: () => import('layouts/MainLayout.vue'),
     props: rhinocommonProps,
     children: [
