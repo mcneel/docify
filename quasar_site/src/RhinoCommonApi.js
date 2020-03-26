@@ -5224,7 +5224,15 @@ var RhinoCommonApi = [
     namespace: 'Rhino.Collections',
     name: 'IResizableList',
     dataType: 4,
-    summary: 'Provides the ability to resize a generic list by setting the Count property.'
+    summary: 'Provides the ability to resize a generic list by setting the Count property.',
+    properties: [
+      {
+        signature: 'int Count',
+        summary: `Gets or sets the length of the list.
+     This hides (Shadows in Vb.Net) the read-only Count property of the generic list.`,
+        property: ['get', 'set']
+      }
+    ]
   },
   {
     namespace: 'Rhino.Collections',
@@ -39285,7 +39293,37 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     name: 'ICommonComponentTable',
     dataType: 4,
     summary: `Provides methods to use all File3dm and RhinoDoc tables under the same contract.
-   Do not derive from this interface. This is to ensure all tables can be used with the same method list.`
+   Do not derive from this interface. This is to ensure all tables can be used with the same method list.`,
+    properties: [
+      {
+        signature: 'ModelComponentType ComponentType',
+        summary: 'Returns the model component type the table handles.',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'T FindId(Guid id)',
+        summary: 'Retrieves an object based on ID. You should prefer ID search over Index search.',
+        parameters: [
+          {
+            name: 'id',
+            summary: 'The id to search for.'
+          }
+        ],
+        returns: 'A model component, or None if none was found.'
+      },
+      {
+        signature: 'T FindNameHash(NameHash nameHash)',
+        summary: 'Retrieves an object based on Name.',
+        parameters: [
+          {
+            name: 'nameHash',
+            summary: 'The name hash for which to search.'
+          }
+        ]
+      }
+    ]
   },
   {
     namespace: 'Rhino.FileIO',
@@ -81052,12 +81090,22 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino',
     name: 'IEpsilonComparable',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'bool EpsilonEquals(T other,double epsilon)'
+      }
+    ]
   },
   {
     namespace: 'Rhino',
     name: 'IEpsilonFComparable',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'bool EpsilonEquals(T other,float epsilon)'
+      }
+    ]
   },
   {
     namespace: 'Rhino',
@@ -86384,7 +86432,21 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     name: 'IRhinoDocObserver',
     dataType: 4,
     summary: `Implement this interface if you are a modeless interface to aid in
-   handling multiple document implementations`
+   handling multiple document implementations`,
+    methods: [
+      {
+        signature: 'void ActiveRhinoDocChanged(RhinoDocObserverArgs e)',
+        summary: `In Windows Rhino this will mean a new document has been created or
+     opened.  In Mac Rhino this can mean the same thing as well it can
+     indicate switching from one active open document to another.`,
+        since: 6
+      },
+      {
+        signature: 'void RhinoDocClosed(RhinoDocObserverArgs e)',
+        summary: 'When a document is closed',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino',
@@ -94975,12 +95037,61 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino.Render',
     name: 'ICurrentEnvironment',
-    dataType: 4
+    dataType: 4,
+    properties: [
+      {
+        signature: 'RenderEnvironment ForAnyUsage',
+        since: 6,
+        property: ['set']
+      },
+      {
+        signature: 'RenderEnvironment ForBackground',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'RenderEnvironment ForBackground_CheckMode',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'RenderEnvironment ForLighting',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'RenderEnvironment ForReflectionAndRefraction',
+        since: 6,
+        property: ['get', 'set']
+      }
+    ]
   },
   {
     namespace: 'Rhino.Render',
     name: 'ICurrentEnvironment_Get',
-    dataType: 4
+    dataType: 4,
+    properties: [
+      {
+        signature: 'RenderEnvironment ForBackground',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'RenderEnvironment ForBackground_CheckMode',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'RenderEnvironment ForLighting',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'RenderEnvironment ForReflectionAndRefraction',
+        since: 6,
+        property: ['get']
+      }
+    ]
   },
   {
     namespace: 'Rhino.Render',
@@ -103195,7 +103306,49 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     name: 'IUserInterfaceSection',
     dataType: 4,
     summary: `Implement this interface in your user control to get UserInterfaceSection
-   event notification.`
+   event notification.`,
+    properties: [
+      {
+        signature: 'bool Hidden',
+        summary: 'Return True if the section should be hidden, else return false.',
+        since: 6,
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void OnUserInterfaceSectionExpanding(UserInterfaceSection userInterfaceSection,bool expanding)',
+        summary: 'The UserInterfaceSection object that called this interface method.',
+        since: 5.1,
+        parameters: [
+          {
+            name: 'userInterfaceSection',
+            summary: 'The UserInterfaceSection object that called this interface method.'
+          },
+          {
+            name: 'expanding',
+            summary: `Will be True if the control has been createExpanded or False if it was
+     collapsed.`
+          }
+        ]
+      },
+      {
+        signature: 'void UserInterfaceDisplayData(UserInterfaceSection userInterfaceSection,RenderContent[] renderContentList)',
+        summary: `Called by UserInterfaceSection when the selected content changes or a
+     content field property value changes.`,
+        since: 5.1,
+        parameters: [
+          {
+            name: 'userInterfaceSection',
+            summary: 'The UserInterfaceSection object that called this interface method.'
+          },
+          {
+            name: 'renderContentList',
+            summary: 'The currently selected list of content items to edit.'
+          }
+        ]
+      }
+    ]
   },
   {
     namespace: 'Rhino.Render.UI',
@@ -109123,13 +109276,148 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     summary: `Get platform specific services that are used internally for
    general cross platform funtions in RhinoCommon. This includes
    services like localization and GUI components that have concrete
-   implementations in the RhinoWindows or RhinoMac assemblies`
+   implementations in the RhinoWindows or RhinoMac assemblies`,
+    methods: [
+      {
+        signature: 'T GetService()',
+        summary: 'Used to get service of a specific type',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.Runtime',
     name: 'IZooClientUtilities',
     dataType: 4,
-    summary: 'Interface implemented in ZooClient and added to Rhino via dependency injection'
+    summary: 'Interface implemented in ZooClient and added to Rhino via dependency injection',
+    properties: [
+      {
+        signature: 'Image LoggedInUserAvatar',
+        summary: `Returns the logged in user's avatar picture. 
+     Returns a default avatar if the user does not have an avatar or if the avatar could not be fetched.`,
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'string LoggedInUserName',
+        summary: 'Returns the name of the logged in user, or None if the user is not logged in.',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'bool UserIsLoggedIn',
+        summary: `Returns True if the user is logged in; else returns false.
+     A logged in user does not guarantee that the auth tokens managed by the CloudZooManager instance are valid.`,
+        since: 6,
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'bool AskUserForLicense(object verify,ZooClientParameters parameters)',
+        since: 6
+      },
+      {
+        signature: 'bool CheckInLicense(object verify,Guid productId)',
+        summary: 'Checks in a checked out license to the owning Zoo.',
+        since: 6
+      },
+      {
+        signature: 'bool CheckOutLicense(object verify,Guid productId)',
+        summary: 'Checks out a loaned out license from the owning Zoo.',
+        since: 6
+      },
+      {
+        signature: 'bool ConvertLicense(object verify,Guid productId)',
+        summary: 'Converts a standalone license to a network license.',
+        since: 6
+      },
+      {
+        signature: 'bool DeleteLicense(object verify,Guid productId)',
+        summary: `31-Mar-2015 Dale Fugier, http://mcneel.myjetbrains.com/youtrack/issue/MR-1725
+     Deletes a license along with its license file.`,
+        since: 6
+      },
+      {
+        signature: 'string Echo(object verify,string message)',
+        since: 6
+      },
+      {
+        signature: 'DateTime GetCurrentTime()',
+        summary: 'Gets the current time, trying to access an NTP server before using local time.',
+        since: 6
+      },
+      {
+        signature: 'bool GetLicense(object verify,ZooClientParameters parameters)',
+        since: 6
+      },
+      {
+        signature: 'LicenseStatus[] GetLicenseStatus(object verify)',
+        summary: 'Returns the current status of every license for ui purposes',
+        since: 6
+      },
+      {
+        signature: 'int GetLicenseType(object verify,Guid productId)',
+        summary: 'Returns the type of a specified product license',
+        since: 6
+      },
+      {
+        signature: 'LicenseStatus GetOneLicenseStatus(object verify,Guid productId)',
+        summary: 'Returns the current status of a license for ui purposes',
+        since: 6
+      },
+      {
+        signature: 'bool GetRegisteredOwnerInfo(object verify,Guid productId,string registeredOwner,string registeredOrganization)',
+        summary: `Returns the registered owner and organization of a license
+     4-Sept-2014 Dale Fugier, http://mcneel.myjetbrains.com/youtrack/issue/RH-28623`,
+        since: 6
+      },
+      {
+        signature: 'bool Initialize(object verify)',
+        since: 6
+      },
+      {
+        signature: 'bool IsCheckOutEnabled(object verify)',
+        summary: 'Returns whether or not license checkout is enabled',
+        since: 6
+      },
+      {
+        signature: 'bool LicenseOptionsHandler(object verify,ZooClientParameters parameters)',
+        since: 6
+      },
+      {
+        signature: 'bool LoginToCloudZoo()',
+        summary: 'Logs the user in to the cloud zoo. This logs out the current user and voids any existing leases.',
+        since: 6
+      },
+      {
+        signature: 'bool LogoutOfCloudZoo()',
+        summary: 'Logs the user out of the cloud zoo. This logs out the current user and voids any existing leases.',
+        since: 6
+      },
+      {
+        signature: 'bool ReturnLicense(object verify,Guid productId)',
+        since: 6
+      },
+      {
+        signature: 'bool ReturnLicense(object verify,string productPath,Guid productId)',
+        since: 6
+      },
+      {
+        signature: 'void ShowBuyLicenseUi(object verify,Guid productId)',
+        since: 6
+      },
+      {
+        signature: 'bool ShowLicenseValidationUi(object verify,string cdkey)',
+        summary: `Shows user interface to validate and register a license.
+     Returns True if the license is successfully validated; False otherwise`,
+        since: 6
+      },
+      {
+        signature: 'bool ShowRhinoExpiredMessage(Mode mode,int result)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.Runtime',
@@ -109361,7 +109649,15 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
    only be modified by certain assemblies. This is useful in cases where only
    certain assemblies should be able to modify an object. The actual members of an 
    instance that are restricted are left to the discretion of the instance's class,
-   and should be documented.`
+   and should be documented.`,
+    methods: [
+      {
+        signature: 'bool Editable()',
+        summary: 'Determines whether an assembly can modify the instance.',
+        since: 6.3,
+        returns: 'True if the instance can be edited by the assembly, otherwise returns false.'
+      }
+    ]
   },
   {
     namespace: 'Rhino.Runtime.Notifications',
@@ -110051,19 +110347,321 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     namespace: 'Rhino.Runtime.RhinoAccounts',
     name: 'IOAuth2Token',
     dataType: 4,
-    summary: 'Represents an OAuth2 Token that can be used for authorization purposes.'
+    summary: 'Represents an OAuth2 Token that can be used for authorization purposes.',
+    properties: [
+      {
+        signature: 'DateTime? Exp',
+        summary: 'The expiration of the token. Expired tokens will be considered invalid by the Rhino Accounts server.',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsExpired',
+        summary: 'True if the token is expired; False otherwise.',
+        property: ['get']
+      },
+      {
+        signature: 'string RawToken',
+        summary: 'The raw token that can be passed to various servers for authorization.',
+        property: ['get']
+      },
+      {
+        signature: 'IReadOnlyCollection<string> Scope',
+        summary: 'The scope of the token.',
+        property: ['get']
+      }
+    ]
   },
   {
     namespace: 'Rhino.Runtime.RhinoAccounts',
     name: 'IOpenIDConnectToken',
     dataType: 4,
-    summary: 'This class represents an OpenIDConnect token issued from an OpenID provider. The token is immutable.'
+    summary: 'This class represents an OpenIDConnect token issued from an OpenID provider. The token is immutable.',
+    properties: [
+      {
+        signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> AdminGroups',
+        summary: 'Returns all the groups the user is an admin of.',
+        property: ['get']
+      },
+      {
+        signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> AllGroups',
+        summary: 'Returns all the groups the user is a member of.',
+        property: ['get']
+      },
+      {
+        signature: 'string AtHash',
+        summary: 'Access Token hash value. Its value is the base64url encoding of the left-most half of the hash of the octets of the ASCII representation of the access_token value, where the hash algorithm used is the hash algorithm used in the alg Header Parameter of the ID Token\'s JOSE Header. For instance, if the alg is RS256, hash the access_token value with SHA-256, then take the left-most 128 bits and base64url encode them. The at_hash value is a case sensitive string.',
+        property: ['get']
+      },
+      {
+        signature: 'string Aud',
+        summary: 'The id of the client (the audience) this token is intended for.',
+        property: ['get']
+      },
+      {
+        signature: 'DateTime? AuthTime',
+        summary: 'Time when the End-User authentication occurred',
+        property: ['get']
+      },
+      {
+        signature: 'IReadOnlyCollection<string> Emails',
+        summary: 'All the emails belonging to the account the token represents.',
+        property: ['get']
+      },
+      {
+        signature: 'bool? EmailVerified',
+        summary: 'True if all the emails in the account have been verified; False otherwise.',
+        property: ['get']
+      },
+      {
+        signature: 'DateTime? Exp',
+        summary: 'The date the token expires.',
+        property: ['get']
+      },
+      {
+        signature: 'DateTime? Iat',
+        summary: 'The date the token was issued.',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsExpired',
+        summary: 'True if the token is expired; False otherwise.',
+        property: ['get']
+      },
+      {
+        signature: 'string Iss',
+        summary: 'The id of the entity that issued the token.',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsUpdated',
+        summary: 'True if the token has been updated; False otherwise.',
+        property: ['get']
+      },
+      {
+        signature: 'string Locale',
+        summary: 'The local of the user this token represents.  ISO 639-1 Alpha-2 [ISO639‑1] language code and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in, separated by a dash.',
+        property: ['get']
+      },
+      {
+        signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> MemberGroups',
+        summary: 'Returns all the groups the user is a member of, but not an admin or an owner.',
+        property: ['get']
+      },
+      {
+        signature: 'string Name',
+        summary: 'The name of the user this token represents.',
+        property: ['get']
+      },
+      {
+        signature: 'string Nonce',
+        summary: 'String value used to associate a Client session with an ID Token, and to mitigate replay attacks',
+        property: ['get']
+      },
+      {
+        signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> OwnerGroups',
+        summary: 'Returns all the groups the user is an owner of.',
+        property: ['get']
+      },
+      {
+        signature: 'string Phone',
+        summary: 'The phone of the user this token represents.',
+        property: ['get']
+      },
+      {
+        signature: 'string Picture',
+        summary: 'The url of a picture/avatar/icon of the user this token represents.',
+        property: ['get']
+      },
+      {
+        signature: 'string RawToken',
+        summary: 'The raw OpenIDConnect token.',
+        property: ['get']
+      },
+      {
+        signature: 'string Sub',
+        summary: 'The unique id for the subject this token represents.',
+        property: ['get']
+      },
+      {
+        signature: 'DateTime? UpdatedAt',
+        summary: 'The last time the token was updated.',
+        property: ['get']
+      }
+    ]
   },
   {
     namespace: 'Rhino.Runtime.RhinoAccounts',
     name: 'IRhinoAccountsManager',
     dataType: 4,
-    summary: 'Performs various Rhino Accounts-related tasks.'
+    summary: 'Performs various Rhino Accounts-related tasks.',
+    methods: [
+      {
+        signature: 'void ExecuteProtectedCode(Action<SecretKey> protectedCode)',
+        summary: `Any synchronous method in the IRhinoAccountsManager class must be executed within the function passed to this method,
+     or an InvalidOperationException will be thrown.`,
+        parameters: [
+          {
+            name: 'protectedCode',
+            summary: `A function returning an awaitable task that has a SecretKey passed to it. You will need to pass this
+     secret key to any method you wish to call within IRhinoAccountsManager.`
+          }
+        ]
+      },
+      {
+        signature: 'Task ExecuteProtectedCodeAsync(Func<SecretKey, Task> protectedCode)',
+        summary: `Any asynchronous method in the IRhinoAccountsManager class must be executed within the function passed to this method,
+     or an InvalidOperationException will be thrown.`,
+        parameters: [
+          {
+            name: 'protectedCode',
+            summary: `A function returning an awaitable task that has a SecretKey passed to it. You will need to pass this
+     secret key to any method you wish to call within IRhinoAccountsManager.`
+          }
+        ]
+      },
+      {
+        signature: 'Task<Tuple<IOpenIDConnectToken, IOAuth2Token>> GetAuthTokensAsync(string clientId,string clientSecret,IEnumerable<string> scope,string prompt,int? maxAge,bool showUI,IProgress<RhinoAccoountsProgressInfo> progress,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Asynchronously retrieves auth tokens with the given criteria from the Rhino Accounts server.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'clientSecret',
+            summary: 'The secret of the client registered in Rhino Accounts'
+          },
+          {
+            name: 'scope',
+            summary: 'The scope desired for the tokens. Valid scope values can be found in the Rhino Accounts documentation.'
+          },
+          {
+            name: 'prompt',
+            summary: 'The prompt of the request. See Rhino Accounts documentation for details. You may pass None if no prompt is desired.'
+          },
+          {
+            name: 'maxAge',
+            summary: 'The maxAge of the request. See Rhino Accounts documentation for details. You may pass None if no maxAge should be enforced.'
+          },
+          {
+            name: 'showUI',
+            summary: `True if the user should see a UI showing the progress of the operation and a way to cancel it, or False if the UI should not be displayed.
+     If false, it is strongly recommended that you pass a  object and display your own UI to the user.`
+          },
+          {
+            name: 'progress',
+            summary: 'An object that will report the progress of the operation to the caller. If no progress is needed, you may pass null.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ],
+        returns: 'The auth tokens requested.'
+      },
+      {
+        signature: 'Task<Tuple<IOpenIDConnectToken, IOAuth2Token>> GetAuthTokensAsync(string clientId,string clientSecret,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Asynchronously retrieves auth tokens with the given criteria from the Rhino Accounts server.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'clientSecret',
+            summary: 'The secret of the client registered in Rhino Accounts'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ],
+        returns: 'The auth tokens requested.'
+      },
+      {
+        signature: 'Task RevokeAuthTokenAsync(IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Invalidates/revokes an IOAuth2Token object from the Rhino Accounts server.',
+        parameters: [
+          {
+            name: 'oauth2Token',
+            summary: 'The token to revoke.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ]
+      },
+      {
+        signature: 'Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,IEnumerable<string> scope,SecretKey secretKey)',
+        summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'scope',
+            summary: 'The scope desired for the tokens. Valid scope values can be found in the Rhino Accounts documentation.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          }
+        ],
+        returns: 'Cached tokens matching the exact criteria passed, or None if none can be found matching the criteria.'
+      },
+      {
+        signature: 'Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,SecretKey secretKey)',
+        summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        parameters: [
+          {
+            name: 'clientId',
+            summary: 'The unique id of the client registered in Rhino Accounts.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          }
+        ],
+        returns: 'Cached tokens matching the exact criteria passed, or None if none can be found matching the criteria.'
+      },
+      {
+        signature: 'Task<IOpenIDConnectToken> UpdateOpenIDConnectTokenAsync(IOpenIDConnectToken currentToken,IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
+        summary: 'Updates an OpenID Connect token so that it contains the latest user information by contacting the Rhino Account\'s server userinfo endpoint using a compatible O',
+        parameters: [
+          {
+            name: 'currentToken',
+            summary: 'The existing OpenID Connect token that you wish to updated with the latest user information.'
+          },
+          {
+            name: 'oauth2Token',
+            summary: 'A valid OAuth2 token used for authorization. The OAuth2 token must have been issued together with the OpenID Connect token passed or a RhinoAccountsAuthTokenMismatchException will be thrown.'
+          },
+          {
+            name: 'secretKey',
+            summary: 'A special key that was handed to you in ExecuteProtectedCodeAsync(Func{SecretKey, Task})'
+          },
+          {
+            name: 'cancellationToken',
+            summary: 'A token that can be used to signal that the operation should be cancelled.'
+          }
+        ],
+        returns: 'The updated OpenIDConnectToken based on the original token passed to this method.'
+      }
+    ]
   },
   {
     namespace: 'Rhino.Runtime.RhinoAccounts',
@@ -111769,17 +112367,165 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino.UI.Controls',
     name: 'ICollapsibleSection',
-    dataType: 4
+    dataType: 4,
+    properties: [
+      {
+        signature: 'Color BackgroundColor',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool Collapsible',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'LocalizeStringPair CommandOptionName',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'int Height',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'bool Hidden',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'Guid Id',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'bool InitiallyExpanded',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'Guid PlugInId',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'string SettingsTag',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'IRdkViewModel ViewModel',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'Guid ViewModelId',
+        since: 6,
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'int RunScript(IRdkViewModel vm)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls',
     name: 'ICollapsibleSectionHolder',
-    dataType: 4
+    dataType: 4,
+    properties: [
+      {
+        signature: 'Color BackgroundColor',
+        since: 6,
+        property: ['set']
+      },
+      {
+        signature: 'int BottomMargin',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string EmptyText',
+        since: 6,
+        property: ['set']
+      },
+      {
+        signature: 'int LeftMargin',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int RightMargin',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int ScrollPosition',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int SectionCount',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'IEnumerable<ICollapsibleSection> Sections',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'string SettingsPathSubKey',
+        since: 6,
+        property: ['set']
+      },
+      {
+        signature: 'int TopMargin',
+        since: 6,
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void Add(ICollapsibleSection section)',
+        since: 6
+      },
+      {
+        signature: 'void ExpandSection(ICollapsibleSection section,bool expand,bool ensureVisible)',
+        since: 6
+      },
+      {
+        signature: 'bool IsSectionExpanded(ICollapsibleSection section)',
+        since: 6
+      },
+      {
+        signature: 'void Remove(ICollapsibleSection section)',
+        since: 6
+      },
+      {
+        signature: 'ICollapsibleSection SectionAt(int index)',
+        since: 6
+      },
+      {
+        signature: 'void UpdateAllViews(int flags)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls',
     name: 'IHasCppImplementation',
-    dataType: 4
+    dataType: 4,
+    properties: [
+      {
+        signature: 'IntPtr CppPointer',
+        since: 6,
+        property: ['get']
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls',
@@ -111821,12 +112567,64 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino.UI.Controls',
     name: 'IRdkViewModel',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'void Commit(Guid uuidDataType)',
+        since: 6
+      },
+      {
+        signature: 'void Discard(Guid uuidDataType)',
+        since: 6
+      },
+      {
+        signature: 'object GetData(Guid uuidDataType,bool bForWrite,bool bAutoChangeBracket)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls',
     name: 'IWindow',
-    dataType: 4
+    dataType: 4,
+    properties: [
+      {
+        signature: 'LocalizeStringPair Caption',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'bool Created',
+        since: 6,
+        property: ['get']
+      },
+      {
+        signature: 'bool Enabled',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'IntPtr Parent',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool Shown',
+        since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'IntPtr Window',
+        since: 6,
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void Move(Rectangle pos,bool bRepaint,bool bRepaintBorder)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls.Thumbnaillist',
@@ -111954,7 +112752,21 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
     name: 'IRhRdkContentThumbnail',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'Rhino.Render.RenderContent ChildContent()',
+        since: 6
+      },
+      {
+        signature: 'Guid GroupId()',
+        since: 6
+      },
+      {
+        signature: 'Rhino.Render.RenderContent TopLevelContent()',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
@@ -111986,12 +112798,100 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
     name: 'IRhRdkThumbnail',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'void Dib(Bitmap dibOut)',
+        since: 6
+      },
+      {
+        signature: 'System.Drawing.Bitmap GetDib()',
+        since: 6
+      },
+      {
+        signature: 'void GetDisplayRect(RectangleF rectOut)',
+        since: 6
+      },
+      {
+        signature: 'Guid Id()',
+        since: 6
+      },
+      {
+        signature: 'bool IsHot()',
+        since: 6
+      },
+      {
+        signature: 'bool IsSelected()',
+        since: 6
+      },
+      {
+        signature: 'string Label()',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
     name: 'IRhRdkThumbnailList',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'void Add(Thumbnail t)',
+        since: 6
+      },
+      {
+        signature: 'void Clear()',
+        since: 6
+      },
+      {
+        signature: 'IRhRdkThumbnail Get(Guid u)',
+        since: 6
+      },
+      {
+        signature: 'void GetGridMetrics(int w,int h,int ox,int oy)',
+        since: 6
+      },
+      {
+        signature: 'IRhRdkContentThumbnailList_Sizes GetSize()',
+        since: 6
+      },
+      {
+        signature: 'void GetStatisticsHeaderHeight()',
+        since: 6
+      },
+      {
+        signature: 'IRhRdkThumbnailList_Modes Mode()',
+        since: 6
+      },
+      {
+        signature: 'void SetClientText(string w)',
+        since: 6
+      },
+      {
+        signature: 'void SetCustomBitmapSize(int w,int h)',
+        since: 6
+      },
+      {
+        signature: 'void SetMode(IRhRdkThumbnailList_Modes m,bool b)',
+        since: 6
+      },
+      {
+        signature: 'void SetShowLabels(bool b)',
+        since: 6
+      },
+      {
+        signature: 'IRhRdkThumbnailList_Shapes Shape()',
+        since: 6
+      },
+      {
+        signature: 'bool ShowLabels()',
+        since: 6
+      },
+      {
+        signature: 'Guid UUID()',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
@@ -113623,23 +114523,81 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   {
     namespace: 'Rhino.UI',
     name: 'IDialogService',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'IntPtr ObjectToWindowHandle(object window,bool useMainRhinoWindowWhenNull)',
+        since: 6
+      },
+      {
+        signature: 'bool ShowColorDialog(object parent,Color4f color,bool allowAlpha,OnColorChangedEvent colorCallback)',
+        since: 7
+      },
+      {
+        signature: 'string[] ShowMultiListBox(string title,string message,IList<string> items,IList<string> defaults)',
+        since: 6
+      },
+      {
+        signature: 'object WrapAsIWin32Window(IntPtr handle)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',
     name: 'IHelp',
     dataType: 4,
-    summary: 'Implement this class to add help to a modeless UI panel.'
+    summary: 'Implement this class to add help to a modeless UI panel.',
+    properties: [
+      {
+        signature: 'string HelpUrl',
+        summary: 'Help topic URL which gets passed to RhinoHelp.Show',
+        since: 6,
+        property: ['get']
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',
     name: 'ILocalizationService',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'string LocalizeCommandName(Assembly assembly,int languageId,string english)',
+        since: 6
+      },
+      {
+        signature: 'string LocalizeDialogItem(Assembly assembly,int languageId,string key,string english)',
+        since: 6
+      },
+      {
+        signature: 'void LocalizeForm(Assembly assembly,int languageId,object formOrUserControl)',
+        since: 6
+      },
+      {
+        signature: 'string LocalizeString(Assembly assembly,int languageId,string english,int contextId)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',
     name: 'IPanel',
-    dataType: 4
+    dataType: 4,
+    methods: [
+      {
+        signature: 'void PanelClosing(uint documentSerialNumber,bool onCloseDocument)',
+        since: 6
+      },
+      {
+        signature: 'void PanelHidden(uint documentSerialNumber,ShowPanelReason reason)',
+        since: 6
+      },
+      {
+        signature: 'void PanelShown(uint documentSerialNumber,ShowPanelReason reason)',
+        since: 6
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',
@@ -113647,13 +114605,60 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     dataType: 4,
     summary: `For internal use, the IPanels service is implemented in RhinoWindows
      or RhinoMac as appropriate and handles the communication with core
-     Rhino`
+     Rhino`,
+    methods: [
+      {
+        signature: 'void DestroyNativeWindow(object host,object nativeObject,bool disposeOfNativeObject)',
+        since: 6.1
+      },
+      {
+        signature: 'void SetF1Hook(object nativeObject,EventHandler hook)',
+        since: 6.1
+      },
+      {
+        signature: 'bool SupportedType(Type type,string exceptionMessage)',
+        since: 6.1
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',
     name: 'IRhinoUiDialogService',
     dataType: 4,
-    summary: 'Used by Rhino.UI.Dialogs to access generic Eto dialogs from Rhino Common'
+    summary: 'Used by Rhino.UI.Dialogs to access generic Eto dialogs from Rhino Common',
+    methods: [
+      {
+        signature: 'bool[] ShowCheckListBox(string title,string message,IList items,IList<bool> checkState)',
+        since: 6
+      },
+      {
+        signature: 'object ShowComboListBox(string title,string message,IList items)',
+        since: 6
+      },
+      {
+        signature: 'bool ShowEditBox(string title,string message,string defaultText,bool multiline,string text)',
+        since: 6
+      },
+      {
+        signature: 'object ShowLineTypes(string title,string message,RhinoDoc doc)',
+        since: 6.7
+      },
+      {
+        signature: 'object ShowListBox(string title,string message,IList items,object selectedItem)',
+        since: 6
+      },
+      {
+        signature: 'string[] ShowMultiListBox(IList<string> items,string message,string title,IList<string> defaults)',
+        since: 6.1
+      },
+      {
+        signature: 'bool ShowNumberBox(string title,string message,double number,double minimum,double maximum)',
+        since: 6
+      },
+      {
+        signature: 'int ShowPopupMenu(string[] arrItems,int[] arrModes,int? screenPointX,int? screenPointY)'
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',
@@ -113661,7 +114666,56 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
     dataType: 4,
     summary: `For internal use, the IStackedDialogPageService service is implemented in
    RhinoWindows or RhinoMac as appropriate and handles the communication
-   with core Rhino`
+   with core Rhino`,
+    methods: [
+      {
+        signature: 'IntPtr GetImageHandle(Icon icon,bool canBeNull)',
+        summary: 'Convert image to platform specific unmanaged pointer',
+        since: 6.1
+      },
+      {
+        signature: 'IntPtr GetImageHandle(Image image,bool canBeNull)',
+        summary: 'Convert image to platform specific unmanaged pointer',
+        since: 6
+      },
+      {
+        signature: 'IntPtr GetNativePageWindow(object nativeWindowObject,object host)',
+        summary: 'Get the unmanaged pointer associated with the pages content control',
+        since: 6
+      },
+      {
+        signature: 'IntPtr GetNativePageWindow(object pageObject,object nativeWindowObject,object host)',
+        summary: 'Get the unmanaged pointer associated with the pages content control',
+        since: 6.1
+      },
+      {
+        signature: 'void RedrawPageControl(object pageControl)',
+        summary: 'Redraw the specified control.',
+        since: 6,
+        parameters: [
+          {
+            name: 'pageControl',
+            summary: 'Control to redraw'
+          }
+        ]
+      },
+      {
+        signature: 'bool TryGetControlMinimumSize(object controlObject,SizeF size)',
+        summary: 'Get the minimum size associated with a control object',
+        since: 6.5,
+        parameters: [
+          {
+            name: 'controlObject',
+            summary: 'The control object to check for minimum size.'
+          },
+          {
+            name: 'size',
+            summary: 'The minimum size of the control if provided.'
+          }
+        ],
+        returns: 'Returns True if get control minimum size found, False otherwise.'
+      }
+    ]
   },
   {
     namespace: 'Rhino.UI',

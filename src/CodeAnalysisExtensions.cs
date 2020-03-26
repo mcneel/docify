@@ -23,6 +23,8 @@ namespace api_docify
                 if (modifier.Text == "public")
                     return true;
             }
+            if (method.Parent is InterfaceDeclarationSyntax)
+                return true;
             return false;
         }
 

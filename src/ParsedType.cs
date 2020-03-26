@@ -150,6 +150,8 @@ namespace api_docify
 
         public static string GetFullContainerName(BaseTypeDeclarationSyntax basetype)
         {
+            if (basetype == null)
+                throw new ArgumentNullException();
             string ns = "";
             var parent = basetype.Parent;
             while (parent != null)

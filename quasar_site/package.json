@@ -1,8 +1,8 @@
 {
   "name": "quasar_site",
   "version": "0.0.1",
-  "description": "RhinoCommon API Test Quasar Site",
-  "productName": "RhinoCommonApi",
+  "description": "Rhino/Grasshopper APIs ",
+  "productName": "RhinoApis",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Steve Baer <steve@mcneel.com>",
