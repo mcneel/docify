@@ -9,7 +9,11 @@
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
-    <p v-if="namespace"><i>Namespace: <router-link :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i></p>
+    <p v-if="namespace">
+      <i>Namespace: <router-link :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i>
+      <br>
+      <i>{{title}}: <router-link :to="baseUrl+'references/'+namespace.toLowerCase() + '.' + title.toLowerCase()">references</router-link></i>
+    </p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"

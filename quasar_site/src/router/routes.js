@@ -12,6 +12,7 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue'), props: rhinocommonProps },
       { path: 'examples/:example', component: () => import('pages/Example.vue') },
       { path: 'whatsnew/:version', component: () => import('pages/WhatsNew.vue'), props: rhinocommonProps },
+      { path: 'references/:datatype', component: () => import('pages/References.vue'), props: rhinocommonProps },
       { path: ':datatype', component: () => import('pages/DataType.vue'), props: rhinocommonProps }
     ]
   }

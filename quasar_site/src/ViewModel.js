@@ -164,7 +164,7 @@ const ViewModel = {
     }
     return item.examples
   },
-  getFilteredApi (version) {
+  getFilteredSet (test) {
     const api = []
     RhinoCommonApi.forEach(type => {
       const localApi = {
@@ -176,26 +176,71 @@ const ViewModel = {
         properties: []
       }
       if (type.namespace) localApi.namespace = type.namespace
-      const test = function (inputList, outputList, version) {
-        let count = 0
-        if (inputList) {
-          inputList.forEach(item => {
-            if (item.since === version) {
-              outputList.push(item)
-              count++
-            }
-          })
-        }
-        return count
-      }
-      let added = test(type.constructors, localApi.constructors, version)
-      added += test(type.properties, localApi.properties, version)
-      added += test(type.methods, localApi.methods, version)
+      let added = test(type, type.constructors, localApi.constructors)
+      added += test(type, type.properties, localApi.properties)
+      added += test(type, type.methods, localApi.methods)
       if (added > 0) {
         api.push(localApi)
       }
     })
     return api
+  },
+  getFilteredApi (version) {
+    const test = function (type, inputList, outputList) {
+      let count = 0
+      if (inputList) {
+        inputList.forEach(item => {
+          if (item.since === version) {
+            outputList.push(item)
+            count++
+          }
+        })
+      }
+      return count
+    }
+    return this.getFilteredSet(test)
+  },
+  getReferences (item) {
+    // console.log('get references')
+    const searchName = item.name
+    const test = function (type, inputList, outputList) {
+      let count = 0
+      if (inputList) {
+        inputList.forEach(member => {
+          if (member.signature.indexOf(searchName) >= 0) {
+            let found = false
+            if (type.properties === inputList || type.methods === inputList) {
+              // check on match for return type
+              const tokens = member.signature.split(' ')
+              found = tokens[0] === searchName
+              found = found || (tokens[0] === 'static' && tokens[1] === searchName)
+            }
+            if (!found) {
+              if (type.methods === inputList || type.constructors === inputList) {
+                const index = member.signature.indexOf('(')
+                const parameters = member.signature.substring(index + 1, member.signature.length - 1)
+                const paramTokens = parameters.split(',')
+                for (let i = 0; i < paramTokens.length; i++) {
+                  if (paramTokens[i].startsWith(searchName)) {
+                    found = found || paramTokens[i] === searchName
+                    if (paramTokens[i].length > searchName.length) {
+                      found = paramTokens[i][searchName.length] === ' '
+                    }
+                  }
+                }
+              }
+            }
+
+            if (found) {
+              outputList.push(member)
+              count++
+            }
+          }
+        })
+      }
+      return count
+    }
+    return this.getFilteredSet(test)
   }
 }
 
