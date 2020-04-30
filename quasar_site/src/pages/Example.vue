@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Examples } from '../Examples'
+import { Examples } from '../RhinoCommonExamples'
 
 export default {
   data () {
