@@ -50,11 +50,10 @@ export default {
         break
     }
 
-    t = t.toLowerCase()
-
     // console.log(this.$route)
     const base = this.$route.fullPath
-    const p = base.split('/').slice(0, -2).join('/') + '/' + t
+    let p = base.split('/').slice(0, -2).join('/') + '/' + t
+    p = p.toLowerCase()
 
     // this.$router.push(p)
 
