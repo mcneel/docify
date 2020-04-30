@@ -20,6 +20,12 @@ const routes = [
   }
 ]
 
+// redirect sandcastle urls
+routes.push({
+  path: apiBase + 'rhinocommon/html/:ref',
+  component: () => import('pages/SandcastleRedirect.vue')
+})
+
 // Always leave this as last one
 if (process.env.MODE !== 'ssr') {
   routes.push({
