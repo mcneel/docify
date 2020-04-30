@@ -104,7 +104,7 @@ module.exports = function (ctx) {
       manifest: {
         name: 'RhinoCommonApi',
         short_name: 'RhinoCommonApi',
-        description: 'RhinoCommon API Test Quasar Site',
+        description: 'RhinoCommon API',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

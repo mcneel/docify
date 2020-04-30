@@ -1,5 +1,5 @@
 import { RhinoCommonApi } from './RhinoCommonApi'
-import { Examples } from './Examples'
+import { Examples } from './RhinoCommonExamples'
 
 const DataTypes = {
   NAMESPACE: 'namespace',

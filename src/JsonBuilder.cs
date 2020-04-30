@@ -74,7 +74,19 @@ namespace api_docify
         {
             s = s.Replace("\\", "\\\\");
             if (s.Contains('\n'))
-                return "`" + s + "`";
+            {
+                var lines = s.Split('\n');
+                StringBuilder sb = new StringBuilder();
+                sb.Append("`");
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (i > 0)
+                        sb.AppendLine();
+                    sb.Append(lines[i].Trim());
+                }
+                sb.Append("`");
+                return sb.ToString();
+            }
             s = s.Replace("'", "\\'");
             return "'" + s + "'";
         }
@@ -320,9 +332,14 @@ namespace api_docify
             StringBuilder content = new StringBuilder();
             content.AppendLine("var Examples = [");
             bool addComma = false;
-            foreach (var sample in examples)
+            var keys = new List<string>(examples.Keys);
+            // sort so we get a consistent order
+            keys.Sort();
+            for( int keyIndex=0; keyIndex<keys.Count; keyIndex++ )
             {
-                string key = sample.Key.Replace('\\', '/');
+                string key = keys[keyIndex];
+                var sample = examples[key];
+                key = key.Replace('\\', '/');
                 string path = System.IO.Path.Combine(examplesBaseDirectory, key);
                 string name = System.IO.Path.GetFileName(path);
                 if (name.StartsWith("ex_", StringComparison.OrdinalIgnoreCase))
@@ -339,11 +356,11 @@ namespace api_docify
                 content.AppendLine($"    name: '{name}',");
                 content.AppendLine($"    code: `{code}`,");
                 content.AppendLine("    members: [");
-                for( int i=0; i<sample.Value.Count; i++)
+                for( int i=0; i<sample.Count; i++)
                 {
                     if (i > 0)
                         content.AppendLine(",");
-                    content.Append($"      ['{sample.Value[i].ParentType.FullName}', '{sample.Value[i].Signature(false)}']");
+                    content.Append($"      ['{sample[i].ParentType.FullName}', '{sample[i].Signature(false)}']");
                 }
                 content.AppendLine();
                 content.AppendLine("    ]");
