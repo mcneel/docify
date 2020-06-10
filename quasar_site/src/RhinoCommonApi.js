@@ -6445,6 +6445,7 @@ when replacing the command to ensure the command is properly overridden.`,
       {
         signature: 'static BlockEditCommand Replacement',
         summary: 'The current replacement command',
+        since: 6.26,
         property: ['get', 'set']
       }
     ],
@@ -6452,20 +6453,24 @@ when replacing the command to ensure the command is properly overridden.`,
       {
         signature: 'static bool InBlockEditMode(RhinoDoc doc)',
         summary: 'Call this method to determine if a document is being blocked edited.',
+        since: 6.26,
         returns: 'Returns True if the specified document is editing a block.'
       },
       {
         signature: 'static void ReplaceWith(BlockEditCommand replacementCommand)',
         summary: `Call this method to register your replacement command, the last command
-registered will be called.`
+registered will be called.`,
+        since: 6.26
       },
       {
         signature: 'bool IsBlockEditing(RhinoDoc doc)',
-        summary: 'Called to determine if the specified document was not block edit mode.'
+        summary: 'Called to determine if the specified document was not block edit mode.',
+        since: 6.26
       },
       {
         signature: 'Result RunCommand(RhinoDoc doc,RunMode mode)',
-        summary: 'Called by the internal BlockEdit command when the command is executed.'
+        summary: 'Called by the internal BlockEdit command when the command is executed.',
+        since: 6.26
       }
     ]
   },
@@ -8902,12 +8907,45 @@ to a viewports camera angle. Default is 0.0873 radians (5 degrees)`,
         property: ['get', 'set']
       },
       {
+        signature: 'ObjectType GeometryFilter',
+        summary: `The geometry filter will ensure that your conduit's per-object functions
+will only be called for objects that are of certain geometry type`,
+        since: 7,
+        property: ['get', 'set']
+      },
+      {
         signature: 'ActiveSpace SpaceFilter',
         summary: `If you want this conduit to only work in a specific space (model or page),
 then set this filter to that specific space. The default is None meaning
 no filter is applied`,
         since: 6,
         property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void GetSelectionFilter(bool on,bool checkSubObjects)',
+        summary: `The selection filter will make per-object conduit functions only be
+called for selected objects (when the filter is turned on)`,
+        since: 7
+      },
+      {
+        signature: 'void SetObjectIdFilter(Guid id)',
+        summary: `Set an object Id that this conduit's per-object functions will
+only be called for`,
+        since: 7
+      },
+      {
+        signature: 'void SetObjectIdFilter(IEnumerable<Guid> ids)',
+        summary: `Set object Ids that this conduit's per-object functions will
+only be called for`,
+        since: 7
+      },
+      {
+        signature: 'void SetSelectionFilter(bool on,bool checkSubObjects)',
+        summary: `The selection filter will make per-object conduit functions only be
+called for selected objects (when the filter is turned on)`,
+        since: 7
       }
     ]
   },
@@ -9189,6 +9227,7 @@ that are listed under "Advanced display" in the options dialog.`,
       },
       {
         signature: 'static Guid ArtisticId',
+        since: 6.26,
         property: ['get']
       },
       {
@@ -11632,7 +11671,8 @@ When DepthWriting is disabled, drawn geometry does not affect the Z-Buffer.`,
       },
       {
         signature: 'void Flush()',
-        summary: 'Force the pipeline to immediately flush any cached geometry to the display'
+        summary: 'Force the pipeline to immediately flush any cached geometry to the display',
+        since: 7
       },
       {
         signature: 'Light[] GetLights()',
@@ -17692,7 +17732,8 @@ add another converter.`,
     dataType: 'class',
     constructors: [
       {
-        signature: 'FontQuartet(string name,bool supportsRegular,bool supportsBold,bool supportsItalic,bool supportsBoldItalic)'
+        signature: 'FontQuartet(string name,bool supportsRegular,bool supportsBold,bool supportsItalic,bool supportsBoldItalic)',
+        since: 6.26
       }
     ],
     properties: [
@@ -18280,16 +18321,6 @@ It is strongly suggested that something like YYYYMMDD be used.`
         property: ['get']
       },
       {
-        signature: 'string Description',
-        since: 5,
-        property: ['get']
-      },
-      {
-        signature: 'Guid Id',
-        since: 5,
-        property: ['get']
-      },
-      {
         signature: 'int Index',
         summary: 'Index of this instance definition in the index definition table.',
         since: 5,
@@ -18319,11 +18350,6 @@ object if, and only if, it is on a reference layer.`,
         property: ['get']
       },
       {
-        signature: 'string Name',
-        since: 5,
-        property: ['get']
-      },
-      {
         signature: 'int ObjectCount',
         summary: `Number of objects this definition uses. This counts the objects that are used to define the geometry.
 This does NOT count the number of references to this instance definition.`,
@@ -18338,23 +18364,10 @@ This does NOT count the number of references to this instance definition.`,
       },
       {
         signature: 'string SourceArchive',
-        since: 5,
         property: ['get']
       },
       {
         signature: 'InstanceDefinitionUpdateType UpdateType',
-        since: 5,
-        property: ['get']
-      },
-      {
-        signature: 'string Url',
-        summary: 'The hyperlink URL that is executed when the UrlDescription hyperlink is clicked on in the Insert and Block UI',
-        since: 5,
-        property: ['get']
-      },
-      {
-        signature: 'string UrlDescription',
-        summary: 'The URL description displayed as a hyperlink in the Insert and Block UI',
         since: 5,
         property: ['get']
       }
@@ -19706,14 +19719,16 @@ documents.`,
     methods: [
       {
         signature: 'void ClearMaterialChannels()',
-        summary: 'Removes all material channels'
+        summary: 'Removes all material channels',
+        since: 6.26
       },
       {
         signature: 'bool CommitChanges()',
         since: 5
       },
       {
-        signature: 'Rhino.Render.PhysicallyBasedMaterial ConvertToPhysicallyBased()'
+        signature: 'Rhino.Render.PhysicallyBasedMaterial ConvertToPhysicallyBased()',
+        since: 7
       },
       {
         signature: 'void CopyFrom(Material other)',
@@ -19773,6 +19788,7 @@ documents.`,
       {
         signature: 'Guid MaterialChannelIdFromIndex(int material_channel_index)',
         summary: 'Finds id of the material channel at given index.',
+        since: 6.26,
         parameters: [
           {
             name: 'material_channel_index',
@@ -19785,6 +19801,7 @@ documents.`,
         signature: 'int MaterialChannelIndexFromId(Guid material_channel_id,bool bAddIdIfNotPresent)',
         summary: `Finds index of the material channel that refers to a material channel with the given id.
 Optionally adds channel if one is not found.`,
+        since: 6.26,
         parameters: [
           {
             name: 'material_channel_id',
@@ -21381,7 +21398,8 @@ component index is used to specify a "piece" of the geometry`,
       },
       {
         signature: 'ObjRef(ObjRef other)',
-        summary: 'Copy constructor'
+        summary: 'Copy constructor',
+        since: 7
       },
       {
         signature: 'ObjRef(RhinoObject rhinoObject)',
@@ -22246,6 +22264,7 @@ clipping planes that did not generate them.`,
       {
         signature: 'static bool GetTightBoundingBox(IEnumerable<RhinoObject> rhinoObjects,BoundingBox boundingBox)',
         summary: 'Gets a world XY-plane aligned tight bounding box from a collection of Rhino objects.',
+        since: 7,
         parameters: [
           {
             name: 'rhinoObjects',
@@ -22260,6 +22279,7 @@ clipping planes that did not generate them.`,
       {
         signature: 'static bool GetTightBoundingBox(IEnumerable<RhinoObject> rhinoObjects,Plane plane,BoundingBox boundingBox)',
         summary: 'Gets a plane aligned tight bounding box from a collection of Rhino objects.',
+        since: 7,
         parameters: [
           {
             name: 'rhinoObjects',
@@ -23080,6 +23100,7 @@ terminates.`
       {
         signature: 'int SetTextureMapping(int channel,TextureMapping tm,Transform objectTransform)',
         summary: 'Sets texture mapping and mapping object transform for a channel',
+        since: 6.26,
         parameters: [
           {
             name: 'channel',
@@ -23140,6 +23161,19 @@ generated in less time, False is meant when actually rendering.`
           }
         ],
         returns: 'Returns True if custom render mesh(es) will get built for this object.'
+      },
+      {
+        signature: 'bool TryGetGumballFrame(GumballFrame frame)',
+        summary: `If a Rhino object has been manipulated by Rhino's gumball, and the gumball is not in its default position,
+then the object's repositioned gumball frame is returned.`,
+        since: 7,
+        parameters: [
+          {
+            name: 'frame',
+            summary: 'The gumball frame.'
+          }
+        ],
+        returns: 'True if the object has a gumball frame, otherwise false.'
       },
       {
         signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,bool preview,BoundingBox boundingBox)',
@@ -24834,7 +24868,6 @@ We are moving towards using only IDs for all tables.`,
       {
         signature: 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)',
         summary: 'Adds an instance definition to the instance definition table.',
-        since: 5,
         parameters: [
           {
             name: 'name',
@@ -24843,6 +24876,42 @@ We are moving towards using only IDs for all tables.`,
           {
             name: 'description',
             summary: 'The definition description.'
+          },
+          {
+            name: 'basePoint',
+            summary: 'A base point.'
+          },
+          {
+            name: 'geometry',
+            summary: 'An array, a list or any enumerable set of geometry.'
+          },
+          {
+            name: 'attributes',
+            summary: 'An array, a list or any enumerable set of attributes.'
+          }
+        ],
+        returns: '>=0  index of instance definition in the instance definition table. -1 on failure.'
+      },
+      {
+        signature: 'int Add(string name,string description,string url,string urlTag,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)',
+        summary: 'Adds an instance definition to the instance definition table.',
+        since: 7,
+        parameters: [
+          {
+            name: 'name',
+            summary: 'The definition name.'
+          },
+          {
+            name: 'description',
+            summary: 'The definition description.'
+          },
+          {
+            name: 'url',
+            summary: 'A URL or hyperlink.'
+          },
+          {
+            name: 'urlTag',
+            summary: 'A description of the URL or hyperlink.'
           },
           {
             name: 'basePoint',
@@ -36207,7 +36276,6 @@ We are moving towards using only IDs for all tables.`,
       {
         signature: 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)',
         summary: 'Adds an instance definition to the instance definition table.',
-        since: 6.5,
         parameters: [
           {
             name: 'name',
@@ -36216,6 +36284,42 @@ We are moving towards using only IDs for all tables.`,
           {
             name: 'description',
             summary: 'The definition description.'
+          },
+          {
+            name: 'basePoint',
+            summary: 'A base point.'
+          },
+          {
+            name: 'geometry',
+            summary: 'An array, a list or any enumerable set of geometry.'
+          },
+          {
+            name: 'attributes',
+            summary: 'An array, a list or any enumerable set of attributes.'
+          }
+        ],
+        returns: '>=0  index of instance definition in the instance definition table. -1 on failure.'
+      },
+      {
+        signature: 'int Add(string name,string description,string url,string urlTag,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)',
+        summary: 'Adds an instance definition to the instance definition table.',
+        since: 7,
+        parameters: [
+          {
+            name: 'name',
+            summary: 'The definition name.'
+          },
+          {
+            name: 'description',
+            summary: 'The definition description.'
+          },
+          {
+            name: 'url',
+            summary: 'A URL or hyperlink.'
+          },
+          {
+            name: 'urlTag',
+            summary: 'A description of the URL or hyperlink.'
           },
           {
             name: 'basePoint',
@@ -38616,6 +38720,11 @@ creation of an ngon.`,
         property: ['get', 'set']
       },
       {
+        signature: 'NGons NgonMode',
+        since: 7,
+        property: ['get', 'set']
+      },
+      {
         signature: 'GeometryType ObjectType',
         since: 6,
         property: ['get', 'set']
@@ -38657,6 +38766,12 @@ for details regarding numbers used.`,
         signature: 'bool UnderbarMaterialNames',
         summary: 'Enable/disable replacing white space with under-bars in material names.',
         since: 6,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool UseDisplayColorForMaterial',
+        summary: 'Setting to display color as material when material index for object is -1.',
+        since: 7,
         property: ['get', 'set']
       },
       {
@@ -38737,6 +38852,25 @@ as either NURBS or meshes`,
       },
       {
         signature: 'Mesh = 1'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.FileIO',
+    name: 'FileObjWriteOptions.NGons',
+    dataType: 'enum',
+    values: [
+      {
+        signature: 'None = 0',
+        summary: 'Ngons will not be created, nor will they be exported if they already exist'
+      },
+      {
+        signature: 'Preserve = 1',
+        summary: 'If ngons already exist, they will be used as is, no ngons will be created'
+      },
+      {
+        signature: 'Create = 2',
+        summary: 'Ngons will be created, if possible, by calling Mesh.Ngons.AddPlanarNgons'
       }
     ]
   },
@@ -38847,6 +38981,7 @@ normals and texture coordinates, if they exist, come from the mesh`
         signature: 'bool LayersAsOptionalContentGroups',
         summary: `Add layers as "optional content groups" to the PDF. This is the
 visible layer tree available in PDF viewers`,
+        since: 7,
         property: ['get', 'set']
       }
     ],
@@ -41296,11 +41431,13 @@ where (x0,y0,z0) = centroid.`,
       {
         signature: 'Vector3d CentroidCoordinatesProductMoments',
         summary: 'Product moments with respect to centroid coordinate system.',
+        since: 6.26,
         property: ['get']
       },
       {
         signature: 'Vector3d CentroidCoordinatesProductMomentsError',
         summary: 'Uncertainty in product moments with respect to centroid coordinate system.',
+        since: 6.26,
         property: ['get']
       },
       {
@@ -44767,6 +44904,98 @@ otherwise the result is a polysurface with joined surfaces created from the poly
         returns: 'An array of Planar Breps.'
       },
       {
+        signature: 'static Brep[] CreatePlanarDifference(Brep b0,Brep b1,Plane plane,double tolerance)',
+        summary: 'CreatePlanarDifference',
+        since: 7,
+        parameters: [
+          {
+            name: 'b0',
+            summary: 'The first brep to intersect.'
+          },
+          {
+            name: 'b1',
+            summary: 'The first brep to intersect.'
+          },
+          {
+            name: 'plane',
+            summary: 'The plane in which all the input breps lie'
+          },
+          {
+            name: 'tolerance',
+            summary: 'Tolerance to use for Difference operation.'
+          }
+        ],
+        returns: 'An array of Brep results or None on failure.'
+      },
+      {
+        signature: 'static Brep[] CreatePlanarIntersection(Brep b0,Brep b1,Plane plane,double tolerance)',
+        summary: 'CreatePlanarIntersection',
+        since: 7,
+        parameters: [
+          {
+            name: 'b0',
+            summary: 'The first brep to intersect.'
+          },
+          {
+            name: 'b1',
+            summary: 'The first brep to intersect.'
+          },
+          {
+            name: 'plane',
+            summary: 'The plane in which all the input breps lie'
+          },
+          {
+            name: 'tolerance',
+            summary: 'Tolerance to use for intersection operation.'
+          }
+        ],
+        returns: 'An array of Brep results or None on failure.'
+      },
+      {
+        signature: 'static Brep[] CreatePlanarUnion(Brep b0,Brep b1,Plane plane,double tolerance)',
+        summary: 'CreatePlanarUnion',
+        since: 7,
+        parameters: [
+          {
+            name: 'b0',
+            summary: 'The first brep to union.'
+          },
+          {
+            name: 'b1',
+            summary: 'The first brep to union.'
+          },
+          {
+            name: 'plane',
+            summary: 'The plane in which all the input breps lie'
+          },
+          {
+            name: 'tolerance',
+            summary: 'Tolerance to use for union operation.'
+          }
+        ],
+        returns: 'An array of Brep results or None on failure.'
+      },
+      {
+        signature: 'static Brep[] CreatePlanarUnion(IEnumerable<Brep> breps,Plane plane,double tolerance)',
+        summary: 'CreatePlanarUnion',
+        since: 7,
+        parameters: [
+          {
+            name: 'breps',
+            summary: 'The planar regions on which to preform the union operation.'
+          },
+          {
+            name: 'plane',
+            summary: 'The plane in which all the input breps lie'
+          },
+          {
+            name: 'tolerance',
+            summary: 'Tolerance to use for union operation.'
+          }
+        ],
+        returns: 'An array of Brep results or None on failure.'
+      },
+      {
         signature: 'static Brep CreateQuadSphere(Sphere sphere)',
         summary: 'Constructs a Brep definition of a quad sphere.',
         since: 6,
@@ -46035,6 +46264,7 @@ If a Face has no trimming curves then it is considered a Surface.`,
       {
         signature: 'int MaterialChannelIndex',
         summary: 'This face\'s rendering material channel index.',
+        since: 6.26,
         property: ['get', 'set']
       },
       {
@@ -46052,6 +46282,7 @@ If a Face has no trimming curves then it is considered a Surface.`,
       {
         signature: 'Color PerFaceColor',
         summary: 'If per-face color is "Empty", then this face does not have a custom color',
+        since: 7,
         property: ['get', 'set']
       },
       {
@@ -46086,7 +46317,8 @@ If a Face has no trimming curves then it is considered a Surface.`,
       },
       {
         signature: 'void ClearMaterialChannelIndex()',
-        summary: 'Clear this face\'s rendering material channel index.'
+        summary: 'Clear this face\'s rendering material channel index.',
+        since: 6.26
       },
       {
         signature: 'Brep CreateExtrusion(Curve pathCurve,bool cap)',
@@ -46218,6 +46450,10 @@ will be skipped.`
           }
         ],
         returns: 'True on success.'
+      },
+      {
+        signature: 'Surface[] RefitTrim(BrepEdge edge,IEnumerable<double> knots,double tolerance,bool bSections,double fitQuality)',
+        since: 7
       },
       {
         signature: 'Brep RemoveHoles(double tolerance)',
@@ -59559,6 +59795,18 @@ Rhino.DocObjects.InstanceDefinition, but not associated with a RhinoDoc.`,
         summary: 'Gets or sets the description of the definition.',
         since: 5,
         property: ['get', 'set']
+      },
+      {
+        signature: 'string Url',
+        summary: 'Gets or sets the URL or hyperlink of the definition.',
+        since: 7,
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string UrlDescription',
+        summary: 'Gets or sets the description of the URL or hyperlink of the definition.',
+        since: 7,
+        property: ['get', 'set']
       }
     ],
     methods: [
@@ -60469,7 +60717,27 @@ same point on the sphere.`
       },
       {
         signature: 'static Point3d[] MeshLine(Mesh mesh,Line line,int[] faceIds)',
-        summary: 'Finds the intersection of a mesh and a line',
+        summary: 'Finds the intersections of a mesh and a line. The points are not necessarily sorted.',
+        since: 5,
+        parameters: [
+          {
+            name: 'mesh',
+            summary: 'A mesh to intersect'
+          },
+          {
+            name: 'line',
+            summary: 'The line to intersect with the mesh'
+          },
+          {
+            name: 'faceIds',
+            summary: 'The indices of the intersecting faces. This out reference is assigned during the call.'
+          }
+        ],
+        returns: 'An array of points: one for each face that was passed by the faceIds out reference.'
+      },
+      {
+        signature: 'static Point3d[] MeshLineSorted(Mesh mesh,Line line,int[] faceIds)',
+        summary: 'Finds the intersections of a mesh and a line. Points are sorted along the line.',
         since: 5,
         parameters: [
           {
@@ -60607,7 +60875,27 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
       },
       {
         signature: 'static Point3d[] MeshPolyline(Mesh mesh,PolylineCurve curve,int[] faceIds)',
-        summary: 'Finds the intersection of a mesh and a polyline.',
+        summary: 'Finds the intersection of a mesh and a polyline. Points are not guaranteed to be sorted along the polyline.',
+        since: 5,
+        parameters: [
+          {
+            name: 'mesh',
+            summary: 'A mesh to intersect.'
+          },
+          {
+            name: 'curve',
+            summary: 'A polyline curves to intersect.'
+          },
+          {
+            name: 'faceIds',
+            summary: 'The indices of the intersecting faces. This out reference is assigned during the call.'
+          }
+        ],
+        returns: 'An array of points: one for each face that was passed by the faceIds out reference.'
+      },
+      {
+        signature: 'static Point3d[] MeshPolylineSorted(Mesh mesh,PolylineCurve curve,int[] faceIds)',
+        summary: 'Finds the intersection of a mesh and a polyline. Points are guaranteed to be sorted along the polyline.',
         since: 5,
         parameters: [
           {
@@ -64064,6 +64352,7 @@ v7_____________v6|\\             |\\| \\            | \\|  \\ _____________\\|  
       {
         signature: 'static Mesh CreateFromFilteredFaceList(Mesh original,IEnumerable<bool> inclusion)',
         summary: 'Constructs a sub-mesh, that contains a filtered list of faces.',
+        since: 7,
         parameters: [
           {
             name: 'original',
@@ -65127,6 +65416,39 @@ point is inside or the distance from point to a mesh face is <= tolerance.`
         returns: 'True if point is inside the solid mesh, False if not.'
       },
       {
+        signature: 'Mesh Knife(IEnumerable<Mesh> meshes,double tolerance,bool splitAtCoplanar,TextLog textLog,CancellationToken cancel,IProgress<double> progress)',
+        summary: 'Creates edges along a collection of meshes, and return a copy if something happened. Knife does not split meshes into parts.',
+        since: 7,
+        parameters: [
+          {
+            name: 'meshes',
+            summary: 'Meshes to split with.'
+          },
+          {
+            name: 'tolerance',
+            summary: `A value for intersection tolerance.
+WARNING! Correct values are typically in the (10e-8 - 10e-4) range.An option is to use the document tolerance diminished by a few orders or magnitude.`
+          },
+          {
+            name: 'splitAtCoplanar',
+            summary: 'If false, coplanar areas will not be separated.'
+          },
+          {
+            name: 'textLog',
+            summary: 'A text log to write onto.'
+          },
+          {
+            name: 'cancel',
+            summary: 'A cancellation token.'
+          },
+          {
+            name: 'progress',
+            summary: 'A progress reporter item. This can be null.'
+          }
+        ],
+        returns: 'An array of mesh parts representing the split result, or null: when no mesh intersected, or if a cancel stopped the computation.'
+      },
+      {
         signature: 'Vector3d NormalAt(int faceIndex,double t0,double t1,double t2,double t3)',
         summary: `Evaluate a mesh normal at a set of barycentric coordinates. Barycentric coordinates must
 be assigned in accordance with the rules as defined by MeshPoint.T.`,
@@ -65718,7 +66040,7 @@ Set lazy to False to generate texture coordinates right away.`,
       },
       {
         signature: 'Mesh[] Split(IEnumerable<Mesh> meshes)',
-        summary: `Split a mesh with a collection of meshes.
+        summary: `Split a mesh with a collection of meshes. Suggestion: upgrade to overload with tolerance.
 Does not split at coplanar intersections.`,
         since: 5,
         parameters: [
@@ -65764,7 +66086,7 @@ WARNING! Correct values are typically in the (10e-8 - 10e-4) range.An option is 
       },
       {
         signature: 'Mesh[] Split(Mesh mesh)',
-        summary: 'Split a mesh with another mesh.',
+        summary: 'Split a mesh with another mesh. Suggestion: upgrade to overload with tolerance.',
         since: 5,
         parameters: [
           {
@@ -69115,6 +69437,42 @@ This is the same as calling  with tolerance 0.`,
           }
         ],
         returns: 'A new NURBS surface, or None on error.'
+      },
+      {
+        signature: 'static NurbsSurface CreateFromPlane(Plane plane,Interval uInterval,Interval vInterval,int uDegree,int vDegree,int uPointCount,int vPointCount)',
+        summary: 'Creates a NURBS surface from a plane and additonal parameters.',
+        since: 7,
+        parameters: [
+          {
+            name: 'plane',
+            summary: 'The plane.'
+          },
+          {
+            name: 'uInterval',
+            summary: 'The interval describing the extends of the output surface in the U direction.'
+          },
+          {
+            name: 'vInterval',
+            summary: 'The interval describing the extends of the output surface in the V direction.'
+          },
+          {
+            name: 'uDegree',
+            summary: 'The degree of the output surface in the U direction.'
+          },
+          {
+            name: 'vDegree',
+            summary: 'The degree of the output surface in the V direction.'
+          },
+          {
+            name: 'uPointCount',
+            summary: 'The number of control points of the output surface in the U direction.'
+          },
+          {
+            name: 'vPointCount',
+            summary: 'The number of control points of the output surface in the V direction.'
+          }
+        ],
+        returns: 'A NURBS surface if successful, or None on failure.'
       },
       {
         signature: 'static NurbsSurface CreateFromPoints(IEnumerable<Point3d> points,int uCount,int vCount,int uDegree,int vDegree)',
@@ -75546,14 +75904,14 @@ When in doubt, specify NurbsSurfaceType::Large.`
       },
       {
         signature: 'Large = 1',
-        summary: `A single NURBS surface will be created for each SubD quad. Near extraordinary vertices, the surfaces may
-have lots of knots.`
+        summary: `Onee NURBS surface will be generated for each SubD quad.
+N NURBS surfaces will be generated for each SubD N-gon (N = 3, 5 or more). ON_Brepface may cover multiple
+Near extraordinary vertices, the surfaces may have lots of knots.`
       },
       {
         signature: 'Medium = 2',
         summary: `NURBS surfaces will be as large as possible without the addition of extra knots.
-Near extraordinary vertices, the surfaces may
-have lots of knots.
+Near extraordinary vertices, the surfaces may have lots of knots.
 This option is prefered when a user wants larger NURBS surfaces but not at the cost of addtional NURBS control points.`
       },
       {
@@ -75654,6 +76012,28 @@ If the edges have 2 faces, then interior vertices have valence = 4.`
   },
   {
     namespace: 'Rhino.Geometry',
+    name: 'SubDCreationOptions.ConcaveCornerOption',
+    dataType: 'enum',
+    summary: 'Defines how concave corners are treated.',
+    values: [
+      {
+        signature: 'Unset = 0',
+        summary: 'The option is not set.'
+      },
+      {
+        signature: 'None = 1',
+        summary: 'No concave coners. In general, this is the best choice.'
+      },
+      {
+        signature: 'AtMeshCorner = 2',
+        summary: `A concave subd corner will appear at input mesh boundary vertices
+where the corner angle >= MinimumConcaveCornerAngleRadians() and
+the number of edges the end at the vertex is >= MinimumConcaveCornerEdgeCount().`
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Geometry',
     name: 'SubDCreationOptions.ConvexCornerOption',
     dataType: 'enum',
     summary: 'Defines how convex corners are treated.',
@@ -75668,7 +76048,7 @@ If the edges have 2 faces, then interior vertices have valence = 4.`
       },
       {
         signature: 'AtMeshCorner = 2',
-        summary: `A convext subd corner will appear at input mesh/ boundary vertices
+        summary: `A convex subd corner will appear at input mesh boundary vertices
 where the corner angle <= MaximumConvexCornerAngleRadians() and
 the number of edges the end at the vertex is <= MaximumConvexCornerEdgeCount().`
       }
@@ -75831,6 +76211,7 @@ as VertexCount. Two properties are provided simply for clarity.`,
       {
         signature: 'Color PerFaceColor',
         summary: 'If per-face color is "Empty", then this face does not have a custom color',
+        since: 7,
         property: ['get', 'set']
       },
       {
@@ -81145,11 +81526,13 @@ where (x0,y0,z0) = centroid.`,
       {
         signature: 'Vector3d CentroidCoordinatesProductMoments',
         summary: 'Product moments with respect to centroid coordinate system.',
+        since: 6.26,
         property: ['get']
       },
       {
         signature: 'Vector3d CentroidCoordinatesProductMomentsError',
         summary: 'Uncertainty in product moments with respect to centroid coordinate system.',
+        since: 6.26,
         property: ['get']
       },
       {
@@ -82975,59 +83358,6 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
   },
   {
     namespace: 'Rhino.Input.Custom',
-    name: 'GetContextArgs',
-    dataType: 'class',
-    properties: [
-      {
-        signature: 'int CallCount',
-        summary: 'Number of times Get() has been called for a given getter',
-        property: ['get']
-      },
-      {
-        signature: 'string ContextName',
-        summary: 'Name of the context that this get operation is happening under',
-        property: ['get']
-      },
-      {
-        signature: 'object ContextObject',
-        summary: 'Optional object that may be associated with this get operation',
-        property: ['get']
-      }
-    ],
-    methods: [
-      {
-        signature: 'void SetGetResult(GetResult result)'
-      },
-      {
-        signature: 'void SetPoint(Point3d point)'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Input.Custom',
-    name: 'GetContextCallback',
-    dataType: 'class',
-    methods: [
-      {
-        signature: 'void BeforeGetPoint(GetPoint gp,bool onMouseUp,bool get2DPoint,GetContextArgs args)',
-        summary: `Called before a GetPoint() operation. Setting the point or result
-on the input arguments will cause the default GetPoint operation to be
-skipped and results will immediately be returned to the caller of
-the initial GetPoint.`
-      },
-      {
-        signature: 'void DisableForAllContexts()'
-      },
-      {
-        signature: 'void DisableForContext(string contextName)'
-      },
-      {
-        signature: 'void EnableForContext(string contextName)'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Input.Custom',
     name: 'GetCylinder',
     dataType: 'class',
     summary: 'Class provides user interface to define a cylinder.',
@@ -83663,6 +83993,7 @@ to select objects by post picking them one at a time.`,
         signature: 'bool ProxyBrepFromSubD',
         summary: `If a subd (or a subd component) cannot be selected, but a brep (or brep
 component) can be selected, then automatically create and use a proxy brep.`,
+        since: 7,
         property: ['get', 'set']
       },
       {
@@ -83927,9 +84258,6 @@ a valid option. Use Option() the determine which option.`,
         signature: 'GetPoint()',
         summary: 'Create a new GetPoint.',
         since: 5
-      },
-      {
-        signature: 'GetPoint(string contextName,object contextObject)'
       }
     ],
     properties: [
@@ -86010,6 +86338,26 @@ Commands.Result.Cancel - user cancel number getting.`
       {
         signature: 'static Result GetLinearDimension(LinearDimension dimension)',
         since: 5
+      },
+      {
+        signature: 'static Result GetMeshParameters(RhinoDoc doc,MeshingParameters parameters,int uiStyle)',
+        summary: 'Asks the user to specify meshing parameters.',
+        since: 7,
+        parameters: [
+          {
+            name: 'doc',
+            summary: 'The active document'
+          },
+          {
+            name: 'parameters',
+            summary: 'The initial meshing parameters. If successful, the updated meshing parameters are returned here.'
+          },
+          {
+            name: 'uiStyle',
+            summary: 'The user interface style, where: 0 = simple dialog, 1 = details dialog, 2 = script or batch mode.'
+          }
+        ],
+        returns: 'Commands.Result.Success if successful.'
       },
       {
         signature: 'static Result GetMultipleObjects(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef[] rhObjects)',
@@ -90005,67 +90353,70 @@ when your plug-in is the current render plug-in.`,
     dataType: 'enum',
     values: [
       {
-        signature: 'Materials = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Materials'
+        signature: 'Materials                   = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Materials'
       },
       {
-        signature: 'Environments = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Environments'
+        signature: 'Environments                = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Environments'
       },
       {
-        signature: 'Textures = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Textures'
+        signature: 'Textures                    = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Textures'
       },
       {
-        signature: 'PostEffects = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.PostEffects'
+        signature: 'PostEffects                 = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.PostEffects'
       },
       {
-        signature: 'Sun = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Sun'
+        signature: 'Sun                         = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Sun'
       },
       {
-        signature: 'CustomRenderMeshes = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomRenderMeshes'
+        signature: 'CustomRenderMeshes          = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomRenderMeshes'
       },
       {
-        signature: 'Decals = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Decals'
+        signature: 'Decals                      = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Decals'
       },
       {
-        signature: 'GroundPlane = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.GroundPlane'
+        signature: 'GroundPlane                 = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.GroundPlane'
       },
       {
-        signature: 'SkyLight = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.SkyLight'
+        signature: 'SkyLight                    = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.SkyLight'
       },
       {
-        signature: 'CustomDecalProperties = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomDecalProperties'
+        signature: 'CustomDecalProperties       = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomDecalProperties'
       },
       {
-        signature: 'LinearWorkflow = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.LinearWorkflow'
+        signature: 'LinearWorkflow              = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.LinearWorkflow'
       },
       {
-        signature: 'Exposure = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Exposure'
+        signature: 'Exposure                    = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Exposure'
       },
       {
-        signature: 'ShadowOnlyGroundPlane = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.ShadowOnlyGroundPlane'
+        signature: 'ShadowOnlyGroundPlane       = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.ShadowOnlyGroundPlane'
       },
       {
-        signature: 'RenderBlowup = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderBlowup'
+        signature: 'RenderBlowup                = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderBlowup'
       },
       {
-        signature: 'RenderWindow = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderWindow'
+        signature: 'RenderWindow                = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderWindow'
       },
       {
-        signature: 'RenderInWindow = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderInWindow'
+        signature: 'RenderInWindow              = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderInWindow'
       },
       {
-        signature: 'FocalBlur = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderFocalBlur'
+        signature: 'FocalBlur                   = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderFocalBlur'
       },
       {
-        signature: 'RenderArctic = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderArctic'
+        signature: 'RenderArctic                = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderArctic'
       },
       {
-        signature: 'RenderViewSource  = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderViewSource'
+        signature: 'RenderViewSource            = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderViewSource'
       },
       {
-        signature: 'CustomSkylightEnvironment = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomSkylightEnvironment'
+        signature: 'CustomSkylightEnvironment   = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomSkylightEnvironment'
       },
       {
         signature: 'CustomReflectionEnvironment = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.CustomReflectionEnvironment'
+      },
+      {
+        signature: 'RenderChannels              = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.RenderChannels'
       }
     ]
   },
@@ -92664,6 +93015,10 @@ You can detect when a decal changes by watching for the OnUserDataTransformed ev
       {
         signature: 'void Dispose(bool isDisposing)',
         since: 5.1
+      },
+      {
+        signature: 'TextureMapping GetTextureMapping()',
+        since: 7
       },
       {
         signature: 'IntPtr NonConstPointer()',
@@ -96402,48 +96757,61 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'Channel(IntPtr p)'
+        signature: 'Channel(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'Channel Clone()'
+        signature: 'Channel Clone()',
+        since: 7
       },
       {
-        signature: 'void Commit()'
+        signature: 'void Commit()',
+        since: 7
       },
       {
-        signature: 'RenderWindow.ChannelEx CPU()'
+        signature: 'RenderWindow.ChannelEx CPU()',
+        since: 7
       },
       {
-        signature: 'RenderWindow.ChannelEx CPU_Const()'
+        signature: 'RenderWindow.ChannelEx CPU_Const()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'RenderWindow.ChannelGPU GPU()'
+        signature: 'RenderWindow.ChannelGPU GPU()',
+        since: 7
       },
       {
-        signature: 'RenderWindow.ChannelGPU GPU_Const()'
+        signature: 'RenderWindow.ChannelGPU GPU_Const()',
+        since: 7
       },
       {
-        signature: 'Guid Id()'
+        signature: 'Guid Id()',
+        since: 7
       },
       {
-        signature: 'uint PixelSize()'
+        signature: 'uint PixelSize()',
+        since: 7
       },
       {
-        signature: 'void SetIsCommitable()'
+        signature: 'void SetIsCommitable()',
+        since: 7
       },
       {
-        signature: 'bool WasCommit()'
+        signature: 'bool WasCommit()',
+        since: 7
       }
     ]
   },
@@ -96454,33 +96822,41 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'ChannelData()'
+        signature: 'ChannelData()',
+        since: 7
       },
       {
-        signature: 'ChannelData(ChannelData cd)'
+        signature: 'ChannelData(ChannelData cd)',
+        since: 7
       },
       {
-        signature: 'ChannelData(Guid uuid,ComponentOrder co)'
+        signature: 'ChannelData(Guid uuid,ComponentOrder co)',
+        since: 7
       },
       {
-        signature: 'ChannelData(IntPtr p)'
+        signature: 'ChannelData(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'ComponentOrder CO()'
+        signature: 'ComponentOrder CO()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'Guid Id()'
+        signature: 'Guid Id()',
+        since: 7
       }
     ]
   },
@@ -96491,27 +96867,33 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'ChannelDataCollection()'
+        signature: 'ChannelDataCollection()',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Append(ChannelData channel_data)'
+        signature: 'void Append(ChannelData channel_data)',
+        since: 7
       },
       {
-        signature: 'ChannelData At(int index)'
+        signature: 'ChannelData At(int index)',
+        since: 7
       },
       {
-        signature: 'int Count()'
+        signature: 'int Count()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -96554,23 +96936,26 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     name: 'EarlyPostEffectPlugIn',
     dataType: 'class',
     summary: `class EarlyPostEffectPlugIn
-3rd-party early PEPs should subclass this class.`,
+3rd-party early post effects should subclass this class.`,
     baseclass: 'Rhino.Render.PostEffects.ListablePostEffectPlugIn',
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'EarlyPostEffectPlugIn()'
+        signature: 'EarlyPostEffectPlugIn()',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'int SerialNumber',
+        since: 7,
         property: ['get', 'set']
       }
     ],
     methods: [
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -96581,30 +96966,37 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'EarlyPostEffectPlugInArray()'
+        signature: 'EarlyPostEffectPlugInArray()',
+        since: 7
       },
       {
-        signature: 'EarlyPostEffectPlugInArray(IntPtr pArray)'
+        signature: 'EarlyPostEffectPlugInArray(IntPtr pArray)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Append(EarlyPostEffectPlugIn plugin)'
+        signature: 'void Append(EarlyPostEffectPlugIn plugin)',
+        since: 7
       },
       {
-        signature: 'EarlyPostEffectPlugIn At(int index)'
+        signature: 'EarlyPostEffectPlugIn At(int index)',
+        since: 7
       },
       {
-        signature: 'int Count()'
+        signature: 'int Count()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -96613,23 +97005,26 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     name: 'LatePostEffectPlugIn',
     dataType: 'class',
     summary: `class LatePostEffectPlugIn
-3rd-party late PEPs should subclass this class.`,
+3rd-party late post effects should subclass this class.`,
     baseclass: 'Rhino.Render.PostEffects.ListablePostEffectPlugIn',
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'LatePostEffectPlugIn()'
+        signature: 'LatePostEffectPlugIn()',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'int SerialNumber',
+        since: 7,
         property: ['get', 'set']
       }
     ],
     methods: [
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -96640,30 +97035,37 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'LatePostEffectPlugInArray()'
+        signature: 'LatePostEffectPlugInArray()',
+        since: 7
       },
       {
-        signature: 'LatePostEffectPlugInArray(IntPtr pArray)'
+        signature: 'LatePostEffectPlugInArray(IntPtr pArray)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Append(LatePostEffectPlugIn plugin)'
+        signature: 'void Append(LatePostEffectPlugIn plugin)',
+        since: 7
       },
       {
-        signature: 'LatePostEffectPlugIn At(int index)'
+        signature: 'LatePostEffectPlugIn At(int index)',
+        since: 7
       },
       {
-        signature: 'int Count()'
+        signature: 'int Count()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -96675,26 +97077,31 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     methods: [
       {
         signature: 'bool Fixed()',
-        summary: `Return True if the PEP is fixed, else false. Fixed plug-ins cannot be
+        summary: `Return True if the post effect is fixed, else false. Fixed plug-ins cannot be
 un-shown by the user, although they can be turned off.`,
-        returns: 'Return True if the PEP is fixed'
+        since: 7,
+        returns: 'Return True if the post effect is fixed'
       },
       {
         signature: 'bool On()',
-        summary: 'Return True if the PEP is turned on. Only PEPs that are on will execute.',
-        returns: 'Return True if the PEP is turned on'
+        summary: 'Return True if the post effect is turned on. Only post effects that are on will execute.',
+        since: 7,
+        returns: 'Return True if the post effect is turned on'
       },
       {
         signature: 'void SetOn(bool bOn)',
-        summary: 'Turn the PEP on or off.'
+        summary: 'Turn the post effect on or off.',
+        since: 7
       },
       {
         signature: 'void SetShown(bool bShown)',
-        summary: 'Show or hide the PEP.'
+        summary: 'Show or hide the post effect.',
+        since: 7
       },
       {
         signature: 'bool Shown()',
-        summary: 'return True if the PEP is shown in a list. Only PEPs that are shown will execute.'
+        summary: 'return True if the post effect is shown in a list. Only post effects that are shown will execute.',
+        since: 7
       }
     ]
   },
@@ -96705,21 +97112,25 @@ un-shown by the user, although they can be turned off.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'Pixels(IntPtr p)'
+        signature: 'Pixels(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'void Get(Guid channel_uuid,ComponentOrder co,IntPtr values)'
+        signature: 'void Get(Guid channel_uuid,ComponentOrder co,IntPtr values)',
+        since: 7
       }
     ]
   },
@@ -96738,18 +97149,21 @@ all rdk factories that are expoerted and have a public constructor.`,
     constructors: [
       {
         signature: 'PostEffectFactory()',
-        summary: 'This class allows you to provide a factory for generating a custom post-effect plug-in (PEP).'
+        summary: 'This class allows you to provide a factory for generating a custom post-effect plug-in.',
+        since: 7
       }
     ],
     methods: [
       {
         signature: 'PostEffectPlugIn NewPostEffect()',
-        summary: 'Create the new PEP instance.',
-        returns: 'Return an instance to the new PEP object. Do not return null.'
+        summary: 'Create the new post effect instance.',
+        since: 7,
+        returns: 'Return an instance to the new post effect object. Do not return null.'
       },
       {
         signature: 'Guid PlugInId()',
         summary: 'Plugin id',
+        since: 7,
         returns: 'Plugin id'
       }
     ]
@@ -96761,28 +97175,34 @@ all rdk factories that are expoerted and have a public constructor.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'PostEffectJob()'
+        signature: 'PostEffectJob()',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'int SerialNumber',
+        since: 7,
         property: ['get', 'set']
       }
     ],
     methods: [
       {
-        signature: 'PostEffectJob Clone()'
+        signature: 'PostEffectJob Clone()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'bool Execute(Rectangle rect,Pixels pixels)'
+        signature: 'bool Execute(Rectangle rect,Pixels pixels)',
+        since: 7
       }
     ]
   },
@@ -96796,42 +97216,46 @@ Consider a simple post effect that just modifies the red component of a renderin
 to get the red channel as its input, and it will call NewChannel() to get a new red channel for its output.
 It will then read the input channel, do calculations and write to the output channel.When finished, it will
 call Commit() passing the new channel.Because both channels have the same identifier, this will replace the
-old channel with the new one so that subsequent PEPs in the chain will use the new channel instead of the
+old channel with the new one so that subsequent post effects in the chain will use the new channel instead of the
 original.Note that this will only replace the channel used by the pipeline.The original channel will still
-exist in the frame buffer.This system allows any PEP to access any number of channels for reading and
+exist in the frame buffer.This system allows any post effect to access any number of channels for reading and
 create any number of new channels which may or may not replace existing channels depending on the channel
-id.The final stage (convert to 8-bit) operates on the channels left in the pipeline by the PEP chain to
+id.The final stage (convert to 8-bit) operates on the channels left in the pipeline by the post effect chain to
 produce the final 32-bit RGBA image in a dib.
 
-It is also possible for a PEP to create and use any number of 'scratch' channels.If a PEP needs a
+It is also possible for a post effect to create and use any number of 'scratch' channels.If a post effect needs a
 temporary pixel buffer for some intermediate results, it can call NewChannel() with a custom (random) id.
 Once it is finished with this scratch channel, it can call Discard() on it.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'PostEffectPipeline(IntPtr p)'
+        signature: 'PostEffectPipeline(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
         signature: 'bool AllowGPU()',
-        summary: 'PEP authors should check that GPU use is allowed before using the GPU in a PEP.',
+        summary: 'Post effect authors should check that GPU use is allowed before using the GPU in a post effect.',
+        since: 7,
         returns: 'Return True if the pipeline is allowed to use the GPU, else false'
       },
       {
         signature: 'void Commit(Channel channel)',
-        summary: `Commit changes to a new channel so that those changes can be used by subsequent PEPs in the chain.
+        summary: `Commit changes to a new channel so that those changes can be used by subsequent post effects in the chain.
 If the channel has the same id as an existing channel, the existing channel will be replaced by
-the new one.If the existing channel was created by a previous PEP in the chain, it will be deleted.
+the new one.If the existing channel was created by a previous post effect in the chain, it will be deleted.
 Changes to channels that are not commited simply get ignored.
 
-This call merely sets a flag.The process is deferred until after the PEP has finished executing.`,
+This call merely sets a flag.The process is deferred until after the post effect has finished executing.`,
+        since: 7,
         parameters: [
           {
             name: 'channel',
@@ -96841,47 +97265,58 @@ This call merely sets a flag.The process is deferred until after the PEP has fin
       },
       {
         signature: 'string DateTimeStringEnd()',
-        summary: 'Formats the end time with the date and time using the user\'s control panel preferences.'
+        summary: 'Formats the end time with the date and time using the user\'s control panel preferences.',
+        since: 7
       },
       {
         signature: 'string DateTimeStringStart()',
-        summary: 'Formats the start time with the date and time using the user\'s control panel preferences.'
+        summary: 'Formats the start time with the date and time using the user\'s control panel preferences.',
+        since: 7
       },
       {
         signature: 'Size Dimensions()',
         summary: 'Get the dimensions of the frame buffer. All channels in the frame buffer have the same dimensions.',
+        since: 7,
         returns: 'Dimension as Size'
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
         signature: 'string ElapsedTimeString()',
         summary: 'Formats the elapsed time (start to end) as days, hours, minutes and seconds.',
+        since: 7,
         returns: 'string elapsed time'
       },
       {
-        signature: 'bool Execute(Rectangle p,bool bRendering,bool bUpdateHistograms)',
-        summary: `Execute the pipeline. This executes all the PEPs in order.
-Only this rectangle need be modified by the PEPs.`,
+        signature: 'bool Execute(Rectangle p,bool renderingInProgress,UsageContexts usageContexts,Histograms histogramsToUpdate)',
+        summary: `Execute the pipeline. This executes all the post effects in order.
+Only this rectangle need be modified by the post effects.`,
+        since: 7,
         parameters: [
           {
             name: 'p',
             summary: 'p is a rectangle within the frame buffer.'
           },
           {
-            name: 'bRendering',
-            summary: 'bRendering is True if rendering is in progress.'
+            name: 'renderingInProgress',
+            summary: 'rendering is True if rendering is in progress.'
           },
           {
-            name: 'bUpdateHistograms',
-            summary: 'bUpdateHistograms is True if the pipeline should update the frame buffer\'s histograms.'
+            name: 'usageContexts',
+            summary: 'Context this pipeline is being executed in'
+          },
+          {
+            name: 'histogramsToUpdate',
+            summary: 'Bitwise list of histograms to update during the execution of the pipeline'
           }
         ]
       },
       {
         signature: 'PostEffectPlugIn FindPostEffect(Guid uuid)',
         summary: 'Return a pointer to the specified post effect or None if not found.',
+        since: 7,
         parameters: [
           {
             name: 'uuid',
@@ -96892,8 +97327,9 @@ Only this rectangle need be modified by the PEPs.`,
       },
       {
         signature: 'Channel GetChannel(Guid uuid)',
-        summary: `Get a channel for reading. A PEP will use this to get channel data as input to
+        summary: `Get a channel for reading. A post effect will use this to get channel data as input to
 its process.Output will be written to new channel(s). \\see NewChannel()`,
+        since: 7,
         parameters: [
           {
             name: 'uuid',
@@ -96906,37 +97342,43 @@ its process.Output will be written to new channel(s). \\see NewChannel()`,
         signature: 'ulong GetEndTimeInMilliseconds()',
         summary: `Get the end time of the rendering expressed in milliseconds since some unspecified epoch.
 Do not make assumptions about what the epoch is; it might be different on different platforms.`,
+        since: 7,
         returns: 'milliseconds'
       },
       {
         signature: 'float GetMaxLuminance()',
         summary: 'Get the max luminance in the rendering.',
+        since: 7,
         returns: 'max luminance'
       },
       {
         signature: 'ulong GetStartTimeInMilliseconds()',
         summary: `Get the start time of the rendering expressed in milliseconds since some unspecified epoch.
 Do not make assumptions about what the epoch is; it might be different on different platforms.`,
+        since: 7,
         returns: 'milliseconds'
       },
       {
         signature: 'string GetWatermarkText()',
         summary: 'Get the watermark text set by the renderer (if any).',
+        since: 7,
         returns: 'string watermark text'
       },
       {
         signature: 'bool IsRendering()',
         summary: 'IsRendering',
+        since: 7,
         returns: 'Return True if rendering is active, else false.'
       },
       {
         signature: 'Channel NewChannel(Guid uuid,Init init,uint flags)',
-        summary: `Create a new channel for writing. A PEP will use this to get channel(s) to write the output of its
-processing to.Input will usually come from existing channels, although a PEP is free to read
+        summary: `Create a new channel for writing. A post effect will use this to get channel(s) to write the output of its
+processing to.Input will usually come from existing channels, although a post effect is free to read
 its own output channels if needed. \\see GetChannel()
 
 You are allowed to create one new channel with the same identifier as an existing channel,
 in which case Commit() will replace the existing channel with the new one in the pipeline.`,
+        since: 7,
         parameters: [
           {
             name: 'uuid',
@@ -96956,19 +97398,22 @@ in which case Commit() will replace the existing channel with the new one in the
       {
         signature: 'SimpleArrayGuid PostEffects()',
         summary: 'Returns a list of the post effects to be executed by this pipeline in order.',
+        since: 7,
         returns: 'A list of the post effects to be executed by this pipeline in order'
       },
       {
         signature: 'Guid RenderingId()',
         summary: 'Return a UUID that uniquely identifies the rendering being processed.',
+        since: 7,
         returns: 'Return a UUID that uniquely identifies the rendering being processed.'
       },
       {
         signature: 'bool ReportProgress(int rowsCompleted)',
-        summary: `PEPs should call this during execution to report progress.
+        summary: `Post effects should call this during execution to report progress.
 A good strategy is to call this once per pixel row (or several rows).
-If the function returns \\e false, your PEP should exit its pixel loop
+If the function returns \\e false, your post effect should exit its pixel loop
 as the user has requested that the operation be canceled.`,
+        since: 7,
         returns: 'Return True if the process should continue, else false.'
       },
       {
@@ -96982,7 +97427,42 @@ as the user has requested that the operation be canceled.`,
         ]
       },
       {
-        signature: 'PostEffectThreadEngine ThreadEngine()'
+        signature: 'PostEffectThreadEngine ThreadEngine()',
+        since: 7
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectPipeline.Histograms',
+    dataType: 'enum',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'BeforeEarlyEffects = 1'
+      },
+      {
+        signature: 'BeforeToneMapping = 2'
+      },
+      {
+        signature: 'AfterToneMapping = 4'
+      },
+      {
+        signature: 'AfterLateEffects = 8'
+      },
+      {
+        signature: 'All = BeforeEarlyEffects | BeforeToneMapping | AfterToneMapping | AfterLateEffects'
+      },
+      {
+        signature: 'ToneMappingDisplay = BeforeToneMapping | AfterToneMapping'
+      },
+      {
+        signature: 'AfterEarlyEffects = BeforeToneMapping'
+      },
+      {
+        signature: 'BeforeLateEffects = AfterToneMapping'
       }
     ]
   },
@@ -97004,19 +97484,41 @@ as the user has requested that the operation be canceled.`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectPipeline.UsageContexts',
+    dataType: 'enum',
+    values: [
+      {
+        signature: 'ProductionRendering = 0'
+      },
+      {
+        signature: 'RealtimeRendering = 1'
+      },
+      {
+        signature: 'ViewportDisplay = 2'
+      },
+      {
+        signature: 'ThumbnailCreation = 3'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffectPlugIn',
     dataType: 'class',
     constructors: [
       {
-        signature: 'PostEffectPlugIn()'
+        signature: 'PostEffectPlugIn()',
+        since: 7
       },
       {
-        signature: 'PostEffectPlugIn(IntPtr pPEP)'
+        signature: 'PostEffectPlugIn(IntPtr pPEP)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
@@ -97026,6 +97528,7 @@ as the user has requested that the operation be canceled.`,
         summary: `Create each of your UI sections using 'new' and then call ui.AddSection() on them.
 RDK takes ownership of the sections.If your post effect does not need a UI, then
 your implementation of this method can be a no-op.`,
+        since: 7,
         parameters: [
           {
             name: 'ui',
@@ -97034,36 +97537,53 @@ your implementation of this method can be a no-op.`,
         ]
       },
       {
+        signature: 'void BeginChange(ChangeContexts changeContext)',
+        since: 7
+      },
+      {
         signature: 'bool CanDisplayHelp()',
-        summary: 'Return True if the PEP can display a help page, else false.',
-        returns: 'Return True if the PEP can display a help page, else false.'
+        summary: 'Return True if the post effect can display a help page, else false.',
+        since: 7,
+        returns: 'Return True if the post effect can display a help page, else false.'
       },
       {
         signature: 'bool CanExecute(PostEffectPipeline pipeline)',
-        summary: `Return True if the PEP can execute, else false.
-The default implementation checks if the PEP is 'On' and 'Shown'.
-PEP authors can override this to include other criteria but please be sure to call the base class.`,
+        summary: `Return True if the post effect can execute, else false.
+The base implementation checks if the post effect is 'On' and 'Shown'.
+Post effect authors can override this to include other criteria but cannot disable the base criteria.`,
+        since: 7,
         parameters: [
           {
             name: 'pipeline',
             summary: 'PostEffectPipeline'
           }
         ],
-        returns: 'Return True if the PEP can execute, else false'
+        returns: 'Return True if the post effect can execute, else false'
+      },
+      {
+        signature: 'void Changed()',
+        since: 7
       },
       {
         signature: 'uint CRC()',
-        summary: 'A CRC of the state of this PEP.',
-        returns: 'returns a crc of PEP state'
+        summary: 'A CRC of the state of this post effect.',
+        since: 7,
+        returns: 'returns a crc of post effect state'
       },
       {
         signature: 'bool DisplayHelp()',
-        summary: 'Displays the PEP\'s help page, if any.',
+        summary: 'Displays the post effect\'s help page, if any.',
+        since: 7,
         returns: 'Return True if successful, else false.'
+      },
+      {
+        signature: 'bool EndChange()',
+        since: 7
       },
       {
         signature: 'bool Execute(PostEffectPipeline pipeline,Rectangle rect)',
         summary: 'Execute the post effect.',
+        since: 7,
         parameters: [
           {
             name: 'pipeline',
@@ -97079,22 +97599,25 @@ PEP authors can override this to include other criteria but please be sure to ca
       {
         signature: 'int ExecuteWhileRenderingDelayMS()',
         summary: `If GetExecuteWhileRenderingOption() returns UseDelay then this method returns the delay in milliseconds before the
-PEP should execute for the first time.After the first time, the PEP will execute every time the dib is updated
+post effect should execute for the first time.After the first time, the post effect will execute every time the dib is updated
 during rendering. see enum ExecuteWhileRenderingOptions.`,
+        since: 7,
         returns: 'returns the delay in milliseconds before'
       },
       {
         signature: 'ExecuteWhileRenderingOptionsValue GetExecuteWhileRenderingOptions()',
         summary: `As rendering proceeds, in order for progress to be seen on the screen, small areas of the frame buffer
 that have been rendered are post-processed and written to an area of the dib which is then shown on the
-screen.Some PEPs will not be able to support this as they need the whole frame buffer in order to operate.
-This method allows a PEP to report whether or not it is able to support execution during rendering, and
+screen. Some post effects will not be able to support this as they need the whole frame buffer in order to operate.
+This method allows a post effect to report whether or not it is able to support execution during rendering, and
 if so, when it should be done. See enum ExecuteWhileRenderingOptions.`,
+        since: 7,
         returns: 'returns the ExecuteWhileRenderingOptionsValue'
       },
       {
         signature: 'bool GetParam(string param,object var)',
         summary: 'Get a parameter.',
+        since: 7,
         parameters: [
           {
             name: 'param',
@@ -97108,15 +97631,22 @@ if so, when it should be done. See enum ExecuteWhileRenderingOptions.`,
         returns: 'Returns True if successful or False if the parameter was not found.'
       },
       {
+        signature: 'bool IsSelected()',
+        summary: 'Return True if the post effect is selected.',
+        since: 7
+      },
+      {
         signature: 'string LocalName()',
-        summary: 'Return The localized name of this PEP.',
-        returns: 'PEP localized name'
+        summary: 'Return The localized name of this post effect.',
+        since: 7,
+        returns: 'post effect localized name'
       },
       {
         signature: 'bool ReadFromDocumentDefaults(RhinoDoc doc)',
         summary: `Read the state from document defaults. This is implemented by RDK to call ReadState()
-so usually a PEP only has to implement ReadState(). However, a PEP can override this
+so usually a post effect only has to implement ReadState(). However, a post effect can override this
 method to take complete control of how the document defaults are read.`,
+        since: 7,
         parameters: [
           {
             name: 'doc',
@@ -97127,7 +97657,8 @@ method to take complete control of how the document defaults are read.`,
       },
       {
         signature: 'bool ReadState(PostEffectState state)',
-        summary: 'Read the state. If your PEP has no state, you must still return True for success.',
+        summary: 'Read the state. If your post effect has no state, you must still return True for success.',
+        since: 7,
         parameters: [
           {
             name: 'state',
@@ -97138,24 +97669,27 @@ method to take complete control of how the document defaults are read.`,
       },
       {
         signature: 'void RequiredChannels(SimpleArrayGuid channels)',
-        summary: `The RDK calls this method to determine which channels a PEP requires. If a required channel is not
-available, the RDK will hide the PEP's UI and display explanatory text instead.
+        summary: `The RDK calls this method to determine which channels a post effect requires. If a required channel is not
+available, the RDK will hide the post effect's UI and display explanatory text instead.
 Note: As a convenience, the default implementation adds IRhRdkRenderWindow::chanRGBA to the output array.
-Most PEPs should be able to use this default with no need to override the method.`,
+Most post effects should be able to use this default with no need to override the method.`,
+        since: 7,
         parameters: [
           {
             name: 'channels',
-            summary: 'aChan Accepts the channels.The PEP should add all channels used by its implementation to this array.'
+            summary: 'aChan Accepts the channels.The post effect should add all channels used by its implementation to this array.'
           }
         ]
       },
       {
         signature: 'void ResetToFactoryDefaults()',
-        summary: 'Reset the state to factory defaults.'
+        summary: 'Reset the state to factory defaults.',
+        since: 7
       },
       {
         signature: 'bool SetParam(string param,object var)',
         summary: 'Set a parameter.',
+        since: 7,
         parameters: [
           {
             name: 'param',
@@ -97170,22 +97704,26 @@ Most PEPs should be able to use this default with no need to override the method
       },
       {
         signature: 'bool SupportsHDRData()',
-        summary: 'Return True if the PEP can operate on HDR data (meaning channels containing values greater than 1).',
-        returns: 'Return True if the PEP can operate on HDR data'
+        summary: 'Return True if the post effect can operate on HDR data (meaning channels containing values greater than 1).',
+        since: 7,
+        returns: 'Return True if the post effect can operate on HDR data'
       },
       {
         signature: 'uint UsageFlags()',
         summary: 'See PostEfectsPlugIn variables: uf_ProductionRendering uf_RealtimeRendering uf_ViewportDisplay',
+        since: 7,
         returns: 'returns the usageflags'
       },
       {
         signature: 'Guid UUID()',
-        summary: 'Return The unique identifier of this PEP.',
-        returns: 'PEP uuid'
+        summary: 'Return The unique identifier of this post effect.',
+        since: 7,
+        returns: 'post effect uuid'
       },
       {
         signature: 'bool WriteState(PostEffectState state)',
-        summary: 'Write the state. If your PEP has no state, you must still return True for success.',
+        summary: 'Write the state. If your post effect has no state, you must still return True for success.',
+        since: 7,
         parameters: [
           {
             name: 'state',
@@ -97197,8 +97735,9 @@ Most PEPs should be able to use this default with no need to override the method
       {
         signature: 'bool WriteToDocumentDefaults(RhinoDoc doc)',
         summary: `Write the state to document defaults. This is implemented by RDK to call WriteState()
-so usually a PEP only has to implement WriteState(). However, a PEP can override this
+so usually a post effect only has to implement WriteState(). However, a post effect can override this
 method to take complete control of how the document defaults are written.`,
+        since: 7,
         parameters: [
           {
             name: 'doc',
@@ -97233,19 +97772,24 @@ method to take complete control of how the document defaults are written.`,
     baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
     methods: [
       {
-        signature: 'void CopyFrom(FreeFloatingBase src)'
+        signature: 'void CopyFrom(FreeFloatingBase src)',
+        since: 7
       },
       {
-        signature: 'EarlyPostEffectPlugInArray GetEarlyPostEffects()'
+        signature: 'EarlyPostEffectPlugInArray GetEarlyPostEffects()',
+        since: 7
       },
       {
-        signature: 'LatePostEffectPlugInArray GetLatePostEffects()'
+        signature: 'LatePostEffectPlugInArray GetLatePostEffects()',
+        since: 7
       },
       {
-        signature: 'ToneMappingPostEffectPlugInArray GetToneMappingPostEffects()'
+        signature: 'ToneMappingPostEffectPlugInArray GetToneMappingPostEffects()',
+        since: 7
       },
       {
-        signature: 'PostEffectPlugIn PostEffectFromId(Guid uuid)'
+        signature: 'PostEffectPlugIn PostEffectFromId(Guid uuid)',
+        since: 7
       }
     ]
   },
@@ -97256,24 +97800,29 @@ method to take complete control of how the document defaults are written.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'PostEffectState(IntPtr p)'
+        signature: 'PostEffectState(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'bool GetParam(string name,object vValue)'
+        signature: 'bool GetParam(string name,object vValue)',
+        since: 7
       },
       {
-        signature: 'bool SetParam(string name,object vValue)'
+        signature: 'bool SetParam(string name,object vValue)',
+        since: 7
       }
     ]
   },
@@ -97284,21 +97833,25 @@ method to take complete control of how the document defaults are written.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'PostEffectThreadEngine(IntPtr p)'
+        signature: 'PostEffectThreadEngine(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'bool RunPostEffect(PostEffectJob job,PostEffectPipeline pipeline,PostEffectPlugIn plugin,Rectangle rect,ChannelDataCollection channels,IntPtr pExtension)'
+        signature: 'bool RunPostEffect(PostEffectJob job,PostEffectPipeline pipeline,PostEffectPlugIn plugin,Rectangle rect,ChannelDataCollection channels,IntPtr pExtension)',
+        since: 7
       }
     ]
   },
@@ -97310,22 +97863,26 @@ method to take complete control of how the document defaults are written.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'PostEffectUI(IntPtr p)'
+        signature: 'PostEffectUI(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
         signature: 'void AddSection(ICollapsibleSection section)',
-        summary: 'Add a section to the UI.'
+        summary: 'Add a section to the UI.',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -97334,26 +97891,26 @@ method to take complete control of how the document defaults are written.`,
     name: 'ToneMappingPostEffectPlugIn',
     dataType: 'class',
     summary: `class ToneMappingPostEffectPlugIn
-3rd-party tone mapping PEPs should subclass this class.`,
+3rd-party tone mapping post effects should subclass this class.`,
     baseclass: 'Rhino.Render.PostEffects.PostEffectPlugIn',
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'ToneMappingPostEffectPlugIn()'
+        signature: 'ToneMappingPostEffectPlugIn()',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'int SerialNumber',
+        since: 7,
         property: ['get', 'set']
       }
     ],
     methods: [
       {
-        signature: 'void Dispose()'
-      },
-      {
-        signature: 'void SetManager(IntPtr pManager)'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -97364,30 +97921,37 @@ method to take complete control of how the document defaults are written.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'ToneMappingPostEffectPlugInArray()'
+        signature: 'ToneMappingPostEffectPlugInArray()',
+        since: 7
       },
       {
-        signature: 'ToneMappingPostEffectPlugInArray(IntPtr pArray)'
+        signature: 'ToneMappingPostEffectPlugInArray(IntPtr pArray)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Append(ToneMappingPostEffectPlugIn plugin)'
+        signature: 'void Append(ToneMappingPostEffectPlugIn plugin)',
+        since: 7
       },
       {
-        signature: 'ToneMappingPostEffectPlugIn At(int index)'
+        signature: 'ToneMappingPostEffectPlugIn At(int index)',
+        since: 7
       },
       {
-        signature: 'int Count()'
+        signature: 'int Count()',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       }
     ]
   },
@@ -97460,6 +98024,11 @@ method to take complete control of how the document defaults are written.`,
         since: 6
       },
       {
+        signature: 'double SceneSize()',
+        summary: 'Scene size - the actual size that is rendered',
+        since: 7
+      },
+      {
         signature: 'void SetRotationType(IRhRdkPreviewSceneServer_eRotationType type)',
         summary: 'SetRotationType',
         since: 6
@@ -97481,7 +98050,7 @@ method to take complete control of how the document defaults are written.`,
       },
       {
         signature: 'double Size()',
-        summary: 'Size',
+        summary: 'Size - used in the UI.  Always meters.',
         since: 6
       },
       {
@@ -98236,6 +98805,22 @@ UI.`,
   },
   {
     namespace: 'Rhino.Render',
+    name: 'RenderChannels.Modes',
+    dataType: 'enum',
+    summary: 'Mode.',
+    values: [
+      {
+        signature: 'Automatic',
+        summary: 'Render-channels are managed automatically'
+      },
+      {
+        signature: 'Custom',
+        summary: 'Render-channels are specified by the user'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
     name: 'RenderContent',
     dataType: 'class',
     interfaces: ['IDisposable'],
@@ -98311,6 +98896,12 @@ imagery.`,
         summary: 'Return First child of this content or nullptr if none.',
         since: 6,
         property: ['get']
+      },
+      {
+        signature: 'Guid GroupId',
+        summary: 'Group ID of the content',
+        since: 6.26,
+        property: ['get', 'set']
       },
       {
         signature: 'bool Hidden',
@@ -98784,6 +99375,18 @@ Sub-classes may (in the future) override these functions to provide different ma
         ]
       },
       {
+        signature: 'void ConvertMetersToUnits(UnitSystem units)',
+        summary: `Modify your content so that it is converted from meters into the units of the unit system.
+No need to call the base class when you override this, and no need to recurse into children.`,
+        since: 7
+      },
+      {
+        signature: 'void ConvertUnitsToMeters(UnitSystem units)',
+        summary: `Modify your content so that it is converted from the units of the unit system into meters.
+No need to call the base class when you override this, and no need to recurse into children.`,
+        since: 7
+      },
+      {
         signature: 'void DeleteAllChildren(ChangeContexts changeContexts)',
         since: 5.1
       },
@@ -98801,10 +99404,15 @@ Sub-classes may (in the future) override these functions to provide different ma
       },
       {
         signature: 'RenderContent Edit()',
-        summary: `Call this method to open the content in the a modal version of the editor.
-The content must be in the document or the call will fail.`,
+        summary: `This method allows a render content hierarchy to be edited using a modal (AKA 'pop-up') editor.
+If the original render content is in a document, it will remain there, and the edited one will be
+'free-floating'. Therefore it is the caller's responsibility to do any replacement in the document
+if required. The returned new content will be owned by the caller.`,
         since: 6.13,
-        returns: 'Returns the edited content on succees or None on error.'
+        returns: `Returns an edited version of the content hierarchy if successful, else null.
+The method always edits the entire hierarchy. It places a copy of the hierarchy in the editor
+and selects the copied item that corresponds to this one. Therefore, editing a child will return
+a top-level render content, not a child.`
       },
       {
         signature: 'void EndChange()',
@@ -98925,6 +99533,16 @@ see CalculateRenderHash`,
 instance Id.`,
         since: 6,
         returns: 'The new RenderContent'
+      },
+      {
+        signature: 'RenderContent MakeGroupInstance()',
+        summary: `Create an 'instance' of the content tree and group the new tree with this tree.
+If the instance is subsequently attached to the same document, the state of all members
+of the group will be kept synchronized.With the exception of the instance ids, all
+state is exactly preserved in the new instance tree.
+\\note The grouping will have no effect until the new instance is attached to the same document.`,
+        since: 6.26,
+        returns: 'A grouped instance of the content tree'
       },
       {
         signature: 'MatchDataResult MatchData(RenderContent oldContent)',
@@ -99166,7 +99784,7 @@ See IAutoUIExtraRequirements.h in the C++ RDK for string definitions for the par
         returns: 'Null variant if not supported.  Call the base class if you do not support the extra requirement paramter.'
       },
       {
-        signature: 'void SetName(string name,bool bRenameEvents,bool bEnsureNameUnique)',
+        signature: 'void SetName(string name,bool renameEvents,bool ensureNameUnique)',
         summary: 'Set instance name for this content',
         since: 7
       },
@@ -99187,6 +99805,30 @@ If you do not support this parameter, call the base class.`,
         summary: `This method is deprecated and no longer called. For more information
 see CalculateRenderHash`,
         since: 6
+      },
+      {
+        signature: 'bool SmartUngroupRecursive()',
+        summary: `Remove this content and all its children from any instance groups they may be a member of.
+If any content in the same document is left alone in the group, that content is also ungrouped.
+Records undo and sends events OnContentChanged and OnContentGroupIdChanged.
+\\note This method is designed to be called from a content UI and is intended for RDK internal
+use but may be used as an expert user override.`,
+        since: 6.26,
+        returns: 'True if a content was ungrouped, \\e False if no content or child was part of a group.'
+      },
+      {
+        signature: 'bool Ungroup()',
+        summary: `Remove this content from any instance group it may be a member of.
+Does not record undo but does send the OnContentGroupIdChanged event.`,
+        since: 6.26,
+        returns: 'True if content was ungrouped, \\e False if it was not part of a group.'
+      },
+      {
+        signature: 'bool UngroupRecursive()',
+        summary: `Remove this content and all its children from any instance groups they may be a member of.
+Does not record undo but does send the OnContentGroupIdChanged event.`,
+        since: 6.26,
+        returns: 'True if a content was ungrouped, \\e False if no content or child was part of a group.'
       },
       {
         signature: 'void Uninitialize()',
@@ -99469,7 +100111,7 @@ Since 6.11`,
         since: 7
       },
       {
-        signature: 'bool ContentNeedsPreviewThumbnail(RenderContent c,bool bIncludeChildren)',
+        signature: 'bool ContentNeedsPreviewThumbnail(RenderContent c,bool includeChildren)',
         since: 7
       },
       {
@@ -99678,7 +100320,7 @@ automatically restore the default contents.  This does not overwrite files that 
     namespace: 'Rhino.Render',
     name: 'RenderContentSerializer',
     dataType: 'class',
-    summary: `Used to import and export custom render content types such as
+    summary: `Used to import and export custom render content such as
 materials, environments and textures.  You must override
 RenderPlugIn.RenderContentSerializers() and return an array of
 derived RenderContentSerializer class types to add to the content
@@ -99687,20 +100329,26 @@ browsers.`,
       {
         signature: 'bool CanRead',
         summary: `If True then the file type can be imported and will be included in the
-file open box when importing the specified render content type.`,
+file open box when importing the specified render content kind.`,
         since: 5.7,
         property: ['get']
       },
       {
         signature: 'bool CanWrite',
         summary: `If True then the file type can be exported and will be included in the
-file save box when exporting the specified render content type.`,
+file save box when exporting the specified render content kind.`,
         since: 5.7,
         property: ['get']
       },
       {
+        signature: 'RenderContentKind ContentKind',
+        summary: 'Kind of content created when importing or exporting this file type - ie, Material, Texture or Environment',
+        since: 7,
+        property: ['get']
+      },
+      {
         signature: 'RenderContentKind ContentType',
-        summary: 'Type of content created when importing or exporting this file type.',
+        summary: 'Kind of content created when importing or exporting this file type.  Obsolete - use ContentKind',
         since: 5.7,
         property: ['get']
       },
@@ -99724,6 +100372,41 @@ file save box when exporting the specified render content type.`,
       }
     ],
     methods: [
+      {
+        signature: 'bool CanLoadMultiple()',
+        summary: 'If True the plug-in is capable of loading multiple contents.',
+        since: 7
+      },
+      {
+        signature: 'bool LoadMultiple(RhinoDoc doc,List<string> file_names,RenderContentKind content_kind,LMFlags flags,RenderContentSerializerItemsLoaded loaded)',
+        summary: 'Create any number of new render contents loaded from any number of files.',
+        since: 7,
+        parameters: [
+          {
+            name: 'doc',
+            summary: 'Rhino document'
+          },
+          {
+            name: 'file_names',
+            summary: 'A list of filenames to load from. Each file can contain any number of render contents.'
+          },
+          {
+            name: 'content_kind',
+            summary: `Kind is only used by I/O plug-ins that support multiple kinds. It tells the plug-in which
+content kind to create. If the plug-in only supports a single content kind, it can ignore this parameter.`
+          },
+          {
+            name: 'flags',
+            summary: 'A set of flags from the enum above.'
+          },
+          {
+            name: 'loaded',
+            summary: `Accepts a list of loaded render contents and the names of the files they were loaded from.
+The contents are not actually attached to any document, they are just loaded.
+The doc parameter is only used for unpacking embedded files, if necessary.`
+          }
+        ]
+      },
       {
         signature: 'RenderContent Read(String pathToFile)',
         summary: `Called to when importing a file, file should be parsed and converted to
@@ -99766,6 +100449,83 @@ was successfully parsed otherwise returns null.`
             name: 'previewArgs',
             summary: `Parameters used to generate a preview image which may be embedded in
 the exported file.`
+          }
+        ]
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
+    name: 'RenderContentSerializer.LMFlags',
+    dataType: 'enum',
+    values: [
+      {
+        signature: 'LoadMultiple_Normal  = 0x00'
+      },
+      {
+        signature: 'LoadMultiple_Preload = 0x01'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
+    name: 'RenderContentSerializerItemsLoaded',
+    dataType: 'class',
+    summary: 'Used by RenderContentSerializer to return render contents that were loaded and the file names they were loaded from.',
+    constructors: [
+      {
+        signature: 'RenderContentSerializerItemsLoaded(IntPtr pRenderContentSerializer)',
+        since: 7
+      }
+    ],
+    properties: [
+      {
+        signature: 'IntPtr CppPointer',
+        since: 7,
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void Add(RenderContent renderContent,int flags,string pathToFile)',
+        summary: 'Add a loaded content and the file it was loaded from.',
+        since: 7,
+        parameters: [
+          {
+            name: 'renderContent',
+            summary: 'Render content that was loaded from the file.'
+          },
+          {
+            name: 'flags',
+            summary: 'Flags for future use; should be set to zero.'
+          },
+          {
+            name: 'pathToFile',
+            summary: 'Full path of the file that was loaded.'
+          }
+        ]
+      },
+      {
+        signature: 'void AddDeferred(RenderContent renderContent,int flags,string pathToFile)',
+        summary: `Add a 'deferred' content and the file it was loaded from.
+If the LoadMultiple_Preload flag was passed to LoadMultiple(), then if your loading process is time-consuming
+or displays a dialog, you must create a 'deferred' content instead of loading a real content. A deferred
+content is a lightweight version of the same class which is fast to create. This is needed to support
+drag and drop because the content is created during dragging. On dropping, any deferred contents will
+be properly loaded and used for the drop.`,
+        since: 7,
+        parameters: [
+          {
+            name: 'renderContent',
+            summary: 'Render content that was loaded from the file.'
+          },
+          {
+            name: 'flags',
+            summary: 'Flags for future use; should be set to zero.'
+          },
+          {
+            name: 'pathToFile',
+            summary: 'Full path of the file that was loaded.'
           }
         ]
       }
@@ -99907,12 +100667,6 @@ This function can be used to create temporary content, as it calls
     baseclass: 'EventArgs',
     properties: [
       {
-        signature: 'IntPtr Argument',
-        summary: 'The pointer to the custom event args.',
-        since: 7,
-        property: ['get']
-      },
-      {
         signature: 'Guid EventType',
         summary: 'The type of the event.',
         since: 7,
@@ -100041,6 +100795,49 @@ This function can be used to create temporary content, as it calls
       },
       {
         signature: 'All = UnsafeNativeMethods.RdkRendering_CommandFilters.All'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
+    name: 'Rendering.SessionState',
+    dataType: 'enum',
+    values: [
+      {
+        signature: 'Quiescent = UnsafeNativeMethods.RdkRenderSession_Status.Quiescent'
+      },
+      {
+        signature: 'Initializing = UnsafeNativeMethods.RdkRenderSession_Status.Initializing'
+      },
+      {
+        signature: 'Rendering = UnsafeNativeMethods.RdkRenderSession_Status.Rendering'
+      },
+      {
+        signature: 'Paused = UnsafeNativeMethods.RdkRenderSession_Status.Paused'
+      },
+      {
+        signature: 'Completed = UnsafeNativeMethods.RdkRenderSession_Status.Completed'
+      },
+      {
+        signature: 'Canceled = UnsafeNativeMethods.RdkRenderSession_Status.Canceled'
+      },
+      {
+        signature: 'Aborted = UnsafeNativeMethods.RdkRenderSession_Status.Aborted'
+      },
+      {
+        signature: 'Failed = UnsafeNativeMethods.RdkRenderSession_Status.Failed'
+      },
+      {
+        signature: 'Reusing = UnsafeNativeMethods.RdkRenderSession_Status.Reusing'
+      },
+      {
+        signature: 'Disposed = UnsafeNativeMethods.RdkRenderSession_Status.Disposed'
+      },
+      {
+        signature: 'Deleted = UnsafeNativeMethods.RdkRenderSession_Status.Deleted'
+      },
+      {
+        signature: 'Waiting = UnsafeNativeMethods.RdkRenderSession_Status.Waiting'
       }
     ]
   },
@@ -100304,7 +101101,7 @@ preview panes`,
         since: 6.4
       },
       {
-        signature: 'static RenderMaterial CreateImportedMaterial(Material material,RhinoDoc doc,bool bReference)',
+        signature: 'static RenderMaterial CreateImportedMaterial(Material material,RhinoDoc doc,bool reference)',
         since: 7
       },
       {
@@ -102799,36 +103596,45 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'RenderWindow.ChannelEx(IntPtr p)'
+        signature: 'RenderWindow.ChannelEx(IntPtr p)',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
+        since: 7,
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'ChannelEx Clone()'
+        signature: 'ChannelEx Clone()',
+        since: 7
       },
       {
-        signature: 'void GetMinMaxValues(float min,float max)'
+        signature: 'void GetMinMaxValues(float min,float max)',
+        since: 7
       },
       {
-        signature: 'void GetValueEx(int x,int y,ComponentOrder order,float[] values)'
+        signature: 'void GetValueEx(int x,int y,ComponentOrder order,float[] values)',
+        since: 7
       },
       {
-        signature: 'void GetValueRect(int x,int y,int width,int height,int stride,ComponentOrder order,float[] values)'
+        signature: 'void GetValueRect(int x,int y,int width,int height,int stride,ComponentOrder order,float[] values)',
+        since: 7
       },
       {
-        signature: 'int Height()'
+        signature: 'int Height()',
+        since: 7
       },
       {
-        signature: 'Guid Id()'
+        signature: 'Guid Id()',
+        since: 7
       },
       {
-        signature: 'int Width()'
+        signature: 'int Width()',
+        since: 7
       }
     ]
   },
@@ -102839,39 +103645,50 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     interfaces: ['IDisposable'],
     constructors: [
       {
-        signature: 'RenderWindow.ChannelGPU(IntPtr p)'
+        signature: 'RenderWindow.ChannelGPU(IntPtr p)',
+        since: 7
       }
     ],
     methods: [
       {
-        signature: 'ApiTypes ApiType()'
+        signature: 'ApiTypes ApiType()',
+        since: 7
       },
       {
-        signature: 'ChannelGPU Clone()'
+        signature: 'ChannelGPU Clone()',
+        since: 7
       },
       {
-        signature: 'void Close()'
+        signature: 'void Close()',
+        since: 7
       },
       {
-        signature: 'void CopyTo(ChannelEx channel_ex)'
+        signature: 'void CopyTo(ChannelEx channel_ex)',
+        since: 7
       },
       {
-        signature: 'void Dispose()'
+        signature: 'void Dispose()',
+        since: 7
       },
       {
-        signature: 'int Height()'
+        signature: 'int Height()',
+        since: 7
       },
       {
-        signature: 'Guid Id()'
+        signature: 'Guid Id()',
+        since: 7
       },
       {
-        signature: 'uint PixelSize()'
+        signature: 'uint PixelSize()',
+        since: 7
       },
       {
-        signature: 'uint TextureHandle()'
+        signature: 'uint TextureHandle()',
+        since: 7
       },
       {
-        signature: 'int Width()'
+        signature: 'int Width()',
+        since: 7
       }
     ]
   },
@@ -103954,69 +104771,9 @@ HandleTexturedValue function.`,
     interfaces: ['IDisposable'],
     methods: [
       {
-        signature: 'static void FreeByteArray(IntPtr p)',
-        since: 7
-      },
-      {
-        signature: 'static byte GetByteArrayValue(IntPtr p,int offset)',
-        since: 7
-      },
-      {
-        signature: 'static IntPtr NewByteArray(int width,int height)',
-        since: 7
-      },
-      {
-        signature: 'static void Rdk_TextureEvaluator_ApplyGamma(IntPtr p,int width,int height,float gamma)',
-        since: 7
-      },
-      {
-        signature: 'static void SetByteArrayValue(IntPtr p,int offset,byte value)',
-        since: 7
-      },
-      {
-        signature: 'bool CanBeDumpedToBytes(int width,int height)',
-        summary: `Fast access to bitmap evaluator for Cycles - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
-if the data can be extracted direct to a width*height*4 array of unsigned chars.
-This is implemented by EVF(L"CanBeDumpedToBytes", ON_2iSize*) != nullptr;`,
-        since: 7,
-        parameters: [
-          {
-            name: 'width',
-            summary: 'is the point for which to evaluate the texture.'
-          },
-          {
-            name: 'height',
-            summary: 'duvwdx is a ray differential.'
-          }
-        ],
-        returns: 'True if the evaluator returned a valid color.  Otherwise false.'
-      },
-      {
         signature: 'void Dispose()',
         summary: 'For Dispose pattern',
         since: 5.1
-      },
-      {
-        signature: 'void DumpToBytes(int width,int height,IntPtr buffer)',
-        summary: `Fast access to bitmap evaluator for Cycles - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
-if the data can be extracted direct to a width*height*4 array of unsigned chars.
-This is implemented by EVF(L"CanBeDumpedToBytes", ON_2iSize*) != nullptr;`,
-        since: 7,
-        parameters: [
-          {
-            name: 'width',
-            summary: 'is the point for which to evaluate the texture.'
-          },
-          {
-            name: 'height',
-            summary: 'duvwdx is a ray differential.'
-          },
-          {
-            name: 'buffer',
-            summary: 'duvwdx is a ray differential.'
-          }
-        ],
-        returns: 'True if the evaluator returned a valid color.  Otherwise false.'
       },
       {
         signature: 'Display.Color4f GetColor(Point3d uvw,Vector3d duvwdx,Vector3d duvwdy)',
@@ -104070,6 +104827,40 @@ note For ray differentials see Pharr Humphreys, "Physically Based Rendering", ch
 be on the main thread, but you can also call it on a worker thread as long as you
 are sure that Initialize() or GetColor() cannot be called at the same time on another thread.`,
         since: 6
+      },
+      {
+        signature: 'SimpleArrayByte WriteToByteArray(int width,int height)',
+        summary: `Fast access to bitmap evaluator - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
+if the data can be extracted direct to a width*height*4 array of unsigned chars.`,
+        since: 7,
+        parameters: [
+          {
+            name: 'width',
+            summary: 'is the point for which to evaluate the texture.'
+          },
+          {
+            name: 'height',
+            summary: 'duvwdx is a ray differential.'
+          }
+        ],
+        returns: 'A SimpleArrayByte full of the byte values in RGBA order, or None if the function did not succeed'
+      },
+      {
+        signature: 'SimpleArrayFloat WriteToFloatArray(int width,int height)',
+        summary: `Fast access to bitmap evaluator - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
+if the data can be extracted direct to a width*height*4 array of unsigned chars.`,
+        since: 7,
+        parameters: [
+          {
+            name: 'width',
+            summary: 'is the point for which to evaluate the texture.'
+          },
+          {
+            name: 'height',
+            summary: 'duvwdx is a ray differential.'
+          }
+        ],
+        returns: 'A SimpleArrayFloat full of the float values in RGBA order, or None if the function did not succeed.'
       }
     ]
   },
@@ -105465,6 +106256,7 @@ this function returns "0" if Rhino V4SR0 is running and returns
         signature: 'static bool IsClosing',
         summary: `Returns True if Rhino is in the process of closing, False otherwise.
 This can be True even before the Closing event fires, such as when RhinoDoc.CloseDocument event is called.`,
+        since: 6.26,
         property: ['get']
       },
       {
@@ -105479,6 +106271,7 @@ False otherwise`,
         signature: 'static bool IsExiting',
         summary: `Returns True if Rhino is in the process of exiting, False otherwise.
 This can be True even before the Closing event fires, such as when RhinoDoc.CloseDocument event is called.`,
+        since: 6.26,
         property: ['get']
       },
       {
@@ -107860,6 +108653,11 @@ bool Value, defults to true`
         summary: `Bool value used on Mac to satisfy a user request to hide floating stuff when a command starts and
 leave it hidden when the command ends.  This is False by default.
 https://mcneel.myjetbrains.com/youtrack/issue/RH-57945`
+      },
+      {
+        signature: 'DisableFileWatchers',
+        summary: `Disable file watchers, using to diagnose Mac Rhino mystery crashes
+https://mcneel.myjetbrains.com/youtrack/issue/RH-52805`
       }
     ]
   },
@@ -108302,6 +109100,14 @@ Windows Domain, the computer name has "@[DOMAIN]" appended.`,
         signature: 'static string OperatingSystemVersion',
         summary: 'Returns Operating System Version "6.1" | "6.3" | ... | "Unknown"',
         since: 6.15,
+        property: ['get']
+      },
+      {
+        signature: 'static bool RunningAsRhinoInside',
+        summary: `Indicates whether Rhino is running inside another application.
+returns False if Rhino.exe is the top-level application.
+returns True if some other application is the top-level application.`,
+        since: 7,
         property: ['get']
       },
       {
@@ -109822,6 +110628,92 @@ If you are not writing C++ code then this class is not for you.`,
   },
   {
     namespace: 'Rhino.Runtime.InteropWrappers',
+    name: 'SimpleArrayByte',
+    dataType: 'class',
+    summary: `Wrapper for ON_SimpleArray<unsigned char>. If you are not writing C++ code
+then this class is not for you.`,
+    interfaces: ['IDisposable'],
+    constructors: [
+      {
+        signature: 'SimpleArrayByte()',
+        summary: 'Initializes a new SimpleArrayByte class.',
+        since: 7
+      },
+      {
+        signature: 'SimpleArrayByte(IEnumerable<byte> values)',
+        summary: 'Initializes a new SimpleArrayByte class',
+        since: 7,
+        parameters: [
+          {
+            name: 'values',
+            summary: 'initial set of integers to add to the array'
+          }
+        ]
+      },
+      {
+        signature: 'SimpleArrayByte(int initialSize)',
+        summary: `Initializes a new SimpleArrayByte class.
+Initial size of the array - all values are set to zero.`,
+        since: 7,
+        parameters: [
+          {
+            name: 'initialSize',
+            summary: 'Initial size of the array - all values are set to zero.'
+          }
+        ]
+      },
+      {
+        signature: 'SimpleArrayByte(SimpleArrayByte other)',
+        summary: 'Initializes a new SimpleArrayByte with the contents of another SimpleArrayByte.',
+        since: 7
+      }
+    ],
+    properties: [
+      {
+        signature: 'int Count',
+        summary: 'Gets the amount of elements in this array.',
+        since: 7,
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'IntPtr Array()',
+        summary: 'Return the raw data.',
+        since: 7
+      },
+      {
+        signature: 'IntPtr ConstPointer()',
+        summary: 'Gets the constant (immutable) pointer of this array.',
+        since: 7,
+        returns: 'The constant pointer.'
+      },
+      {
+        signature: 'void CopyTo(SimpleArrayByte other)',
+        summary: 'Copies the contents of a SimpleArrayByte into another SimpleArrayByte.',
+        since: 7
+      },
+      {
+        signature: 'void Dispose()',
+        summary: 'Actively reclaims unmanaged resources that this instance uses.',
+        since: 7
+      },
+      {
+        signature: 'IntPtr NonConstPointer()',
+        summary: 'Gets the non-constant pointer (for modification) of this array.',
+        since: 7,
+        returns: 'The non-constant pointer.'
+      },
+      {
+        signature: 'byte[] ToArray()',
+        summary: 'Returns the managed counterpart of the unmanaged array.',
+        since: 7,
+        returns: 'The managed array.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Runtime.InteropWrappers',
     name: 'SimpleArrayClippingPlaneObjectPointer',
     dataType: 'class',
     summary: 'ON_SimpleArray of CRhinoClippingPlaneObject*',
@@ -110039,6 +110931,92 @@ If you are not writing C++ code then this class is not for you.`,
         signature: 'Geometry.Extrusion[] ToNonConstArray()',
         summary: 'Copies the unmanaged array to a managed counterpart.',
         since: 6,
+        returns: 'The managed array.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Runtime.InteropWrappers',
+    name: 'SimpleArrayFloat',
+    dataType: 'class',
+    summary: `Wrapper for ON_SimpleArray<float>. If you are not writing C++ code
+then this class is not for you.`,
+    interfaces: ['IDisposable'],
+    constructors: [
+      {
+        signature: 'SimpleArrayFloat()',
+        summary: 'Initializes a new SimpleArrayFloat class.',
+        since: 7
+      },
+      {
+        signature: 'SimpleArrayFloat(IEnumerable<float> values)',
+        summary: 'Initializes a new SimpleArrayFloat class',
+        since: 7,
+        parameters: [
+          {
+            name: 'values',
+            summary: 'initial set of integers to add to the array'
+          }
+        ]
+      },
+      {
+        signature: 'SimpleArrayFloat(int initialSize)',
+        summary: `Initializes a new SimpleArrayFloat class.
+Initial size of the array - all values are set to zero.`,
+        since: 7,
+        parameters: [
+          {
+            name: 'initialSize',
+            summary: 'Initial size of the array - all values are set to zero.'
+          }
+        ]
+      },
+      {
+        signature: 'SimpleArrayFloat(SimpleArrayFloat other)',
+        summary: 'Initializes a new SimpleArrayFloat with the contents of another SimpleArrayFloat.',
+        since: 7
+      }
+    ],
+    properties: [
+      {
+        signature: 'int Count',
+        summary: 'Gets the amount of elements in this array.',
+        since: 7,
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'IntPtr Array()',
+        summary: 'Return the raw data.',
+        since: 7
+      },
+      {
+        signature: 'IntPtr ConstPointer()',
+        summary: 'Gets the constant (immutable) pointer of this array.',
+        since: 7,
+        returns: 'The constant pointer.'
+      },
+      {
+        signature: 'void CopyTo(SimpleArrayFloat other)',
+        summary: 'Copies the contents of a SimpleArrayFloat into another SimpleArrayFloat.',
+        since: 7
+      },
+      {
+        signature: 'void Dispose()',
+        summary: 'Actively reclaims unmanaged resources that this instance uses.',
+        since: 7
+      },
+      {
+        signature: 'IntPtr NonConstPointer()',
+        summary: 'Gets the non-constant pointer (for modification) of this array.',
+        since: 7,
+        returns: 'The non-constant pointer.'
+      },
+      {
+        signature: 'float[] ToArray()',
+        summary: 'Returns the managed counterpart of the unmanaged array.',
+        since: 7,
         returns: 'The managed array.'
       }
     ]
@@ -111193,6 +112171,11 @@ False otherwise`,
         since: 7
       },
       {
+        signature: 'bool TryGetViewport(string name,ViewportInfo viewport)',
+        summary: 'Try to get a viewport for a given key name',
+        since: 7
+      },
+      {
         signature: 'bool TryGetWindowHandle(string name,IntPtr value)',
         summary: 'Gets a HWND on Windows or NSVIew* on Mac',
         since: 7
@@ -111930,21 +112913,25 @@ inclusion into the runtime`,
       {
         signature: 'DateTime? Exp',
         summary: 'The expiration of the token. Expired tokens will be considered invalid by the Rhino Accounts server.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'bool IsExpired',
         summary: 'True if the token is expired; False otherwise.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string RawToken',
         summary: 'The raw token that can be passed to various servers for authorization.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'IReadOnlyCollection<string> Scope',
         summary: 'The scope of the token.',
+        since: 7,
         property: ['get']
       }
     ]
@@ -111958,111 +112945,133 @@ inclusion into the runtime`,
       {
         signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> AdminGroups',
         summary: 'Returns all the groups the user is an admin of.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> AllGroups',
         summary: 'Returns all the groups the user is a member of.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string AtHash',
         summary: 'Access Token hash value. Its value is the base64url encoding of the left-most half of the hash of the octets of the ASCII representation of the access_token value, where the hash algorithm used is the hash algorithm used in the alg Header Parameter of the ID Token\'s JOSE Header. For instance, if the alg is RS256, hash the access_token value with SHA-256, then take the left-most 128 bits and base64url encode them. The at_hash value is a case sensitive string.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Aud',
         summary: 'The id of the client (the audience) this token is intended for.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'DateTime? AuthTime',
         summary: 'Time when the End-User authentication occurred',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'IReadOnlyCollection<string> Emails',
         summary: 'All the emails belonging to the account the token represents.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'bool? EmailVerified',
         summary: 'True if all the emails in the account have been verified; False otherwise.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'DateTime? Exp',
         summary: 'The date the token expires.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'DateTime? Iat',
         summary: 'The date the token was issued.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'bool IsExpired',
         summary: 'True if the token is expired; False otherwise.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Iss',
         summary: 'The id of the entity that issued the token.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'bool IsUpdated',
         summary: 'True if the token has been updated; False otherwise.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Locale',
         summary: 'The local of the user this token represents.  ISO 639-1 Alpha-2 [ISO639‑1] language code and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in, separated by a dash.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> MemberGroups',
         summary: 'Returns all the groups the user is a member of, but not an admin or an owner.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Name',
         summary: 'The name of the user this token represents.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Nonce',
         summary: 'String value used to associate a Client session with an ID Token, and to mitigate replay attacks',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'IReadOnlyDictionary<string, RhinoAccountsGroup> OwnerGroups',
         summary: 'Returns all the groups the user is an owner of.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Phone',
         summary: 'The phone of the user this token represents.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Picture',
         summary: 'The url of a picture/avatar/icon of the user this token represents.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string RawToken',
         summary: 'The raw OpenIDConnect token.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Sub',
         summary: 'The unique id for the subject this token represents.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'DateTime? UpdatedAt',
         summary: 'The last time the token was updated.',
+        since: 7,
         property: ['get']
       }
     ]
@@ -112077,6 +113086,7 @@ inclusion into the runtime`,
         signature: 'void ExecuteProtectedCode(Action<SecretKey> protectedCode)',
         summary: `Any synchronous method in the IRhinoAccountsManager class must be executed within the function passed to this method,
 or an InvalidOperationException will be thrown.`,
+        since: 7,
         parameters: [
           {
             name: 'protectedCode',
@@ -112144,6 +113154,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'Task<Tuple<IOpenIDConnectToken, IOAuth2Token>> GetAuthTokensAsync(string clientId,string clientSecret,SecretKey secretKey,CancellationToken cancellationToken)',
         summary: 'Asynchronously retrieves auth tokens with the given criteria from the Rhino Accounts server.',
+        since: 7,
         parameters: [
           {
             name: 'clientId',
@@ -112167,6 +113178,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'Task RevokeAuthTokenAsync(IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
         summary: 'Invalidates/revokes an IOAuth2Token object from the Rhino Accounts server.',
+        since: 7,
         parameters: [
           {
             name: 'oauth2Token',
@@ -112185,6 +113197,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,IEnumerable<string> scope,SecretKey secretKey)',
         summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        since: 7,
         parameters: [
           {
             name: 'clientId',
@@ -112204,6 +113217,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,SecretKey secretKey)',
         summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        since: 7,
         parameters: [
           {
             name: 'clientId',
@@ -112219,6 +113233,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'Task<IOpenIDConnectToken> UpdateOpenIDConnectTokenAsync(IOpenIDConnectToken currentToken,IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
         summary: 'Updates an OpenID Connect token so that it contains the latest user information by contacting the Rhino Account\'s server userinfo endpoint using a compatible O',
+        since: 7,
         parameters: [
           {
             name: 'currentToken',
@@ -112291,16 +113306,19 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'string Description',
         summary: 'A localized description of the state that may be shown to the user of the application.',
+        since: 7,
         property: ['get', 'set']
       },
       {
         signature: 'Dictionary<object, object> Metadata',
         summary: 'Any metadata of interest that may be used by the caller of a task.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'ProgressState State',
         summary: 'The state to report.',
+        since: 7,
         property: ['get', 'set']
       }
     ]
@@ -112315,6 +113333,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsAuthTokenMismatchException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112325,6 +113344,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsAuthTokenMismatchException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112339,6 +113359,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsAuthTokenMismatchException(string currentUsername,string newUsername,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'currentUsername',
@@ -112366,6 +113387,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsCannotListenException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112376,6 +113398,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsCannotListenException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112399,6 +113422,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112409,6 +113433,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112430,18 +113455,21 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
     constructors: [
       {
         signature: 'RhinoAccountsGroup(string id,string name)',
-        summary: 'Represents a group in Rhino Accounts. Groups are a collection of individual members that can share resources.'
+        summary: 'Represents a group in Rhino Accounts. Groups are a collection of individual members that can share resources.',
+        since: 7
       }
     ],
     properties: [
       {
         signature: 'string Id',
         summary: 'The id of the group. The id is unique to a group within Rhino Accounts.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Name',
         summary: 'The name of the group. The name can be changed at anytime by group members.',
+        since: 7,
         property: ['get']
       }
     ]
@@ -112456,6 +113484,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsInvalidResponseException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112466,6 +113495,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsInvalidResponseException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112489,6 +113519,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsInvalidStateException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112499,6 +113530,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsInvalidStateException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112522,6 +113554,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsInvalidTokenException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112532,6 +113565,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
       {
         signature: 'RhinoAccountsInvalidTokenException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112555,6 +113589,7 @@ It can be used by callers of such tasks to relay the tasks' progress, as well as
         signature: 'static void ExecuteProtectedCode(Action<SecretKey> protectedCode)',
         summary: `Any synchronous method in the IRhinoAccountsManager class must be executed within the function passed to this method,
 or an InvalidOperationException will be thrown.`,
+        since: 7,
         parameters: [
           {
             name: 'protectedCode',
@@ -112622,6 +113657,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'static Task<Tuple<IOpenIDConnectToken, IOAuth2Token>> GetAuthTokensAsync(string clientId,string clientSecret,SecretKey secretKey,CancellationToken cancellationToken)',
         summary: 'Asynchronously retrieves auth tokens with the given criteria from the Rhino Accounts server.',
+        since: 7,
         parameters: [
           {
             name: 'clientId',
@@ -112645,6 +113681,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'static Task RevokeAuthTokenAsync(IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
         summary: 'Invalidates/revokes an IOAuth2Token object from the Rhino Accounts server.',
+        since: 7,
         parameters: [
           {
             name: 'oauth2Token',
@@ -112663,6 +113700,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'static Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,IEnumerable<string> scope,SecretKey secretKey)',
         summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        since: 7,
         parameters: [
           {
             name: 'clientId',
@@ -112682,6 +113720,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'static Tuple<IOpenIDConnectToken, IOAuth2Token> TryGetAuthTokens(string clientId,SecretKey secretKey)',
         summary: 'Attempts to return cached auth tokens that match the given criteria if any have been stored in cache.',
+        since: 7,
         parameters: [
           {
             name: 'clientId',
@@ -112697,6 +113736,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'static Task<IOpenIDConnectToken> UpdateOpenIDConnectTokenAsync(IOpenIDConnectToken currentToken,IOAuth2Token oauth2Token,SecretKey secretKey,CancellationToken cancellationToken)',
         summary: 'Updates an OpenID Connect token so that it contains the latest user information by contacting the Rhino Account\'s server userinfo endpoint using a compatible O',
+        since: 7,
         parameters: [
           {
             name: 'currentToken',
@@ -112729,6 +113769,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsOperationInProgressException(Assembly assembly,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'assembly',
@@ -112743,6 +113784,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsOperationInProgressException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112766,6 +113808,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsProxyException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112776,6 +113819,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsProxyException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112799,6 +113843,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsServerException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112809,6 +113854,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsServerException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -112832,6 +113878,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsServerNotReachableException(Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'innerException',
@@ -112842,6 +113889,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
       {
         signature: 'RhinoAccountsServerNotReachableException(string message,Exception innerException)',
         summary: 'Generates a new instance of the exception.',
+        since: 7,
         parameters: [
           {
             name: 'message',
@@ -113878,6 +114926,11 @@ in implementation of IRdkViewModel.  Use GetData etc to implement your propertie
       {
         signature: 'static Guid RdkRenderingToneMapping',
         since: 6.8,
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RenderChannels',
+        since: 7,
         property: ['get']
       },
       {
@@ -116855,6 +117908,7 @@ Overrides all cursor tooltip panes.`,
       {
         signature: 'NamedColor(string name,Color color)',
         summary: 'Initializes a new instance of the ColorListEntry with the specified name and color.',
+        since: 7,
         parameters: [
           {
             name: 'name',
@@ -116871,11 +117925,13 @@ Overrides all cursor tooltip panes.`,
       {
         signature: 'Color Color',
         summary: 'Gets the color for this entry.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Name',
         summary: 'Gets the name of this color to show to the user.',
+        since: 7,
         property: ['get']
       }
     ]
@@ -116890,6 +117946,7 @@ Overrides all cursor tooltip panes.`,
       {
         signature: 'NamedColorList(string name)',
         summary: 'Initializes a new instance of the ColorList with the specified name.',
+        since: 7,
         parameters: [
           {
             name: 'name',
@@ -116900,6 +117957,7 @@ Overrides all cursor tooltip panes.`,
       {
         signature: 'NamedColorList(string name,IEnumerable<NamedColor> entries)',
         summary: 'Initializes a new instance of the ColorList with the specified name and entries.',
+        since: 7,
         parameters: [
           {
             name: 'name',
@@ -116916,11 +117974,13 @@ Overrides all cursor tooltip panes.`,
       {
         signature: 'static NamedColorList Default',
         summary: 'Get the Rhino applications named color list.',
+        since: 7,
         property: ['get']
       },
       {
         signature: 'string Name',
         summary: 'The name of the color list, which may be displayed to the user.',
+        since: 7,
         property: ['get', 'set']
       }
     ]
@@ -116960,6 +118020,7 @@ Icon to display in the object properties tab control`,
 processed, override this method and return a sort index to move the button
 to the beginning of the list.  By default this returns -1 which puts the
 button at the end of the list.`,
+        since: 7,
         property: ['get']
       },
       {
