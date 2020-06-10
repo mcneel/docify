@@ -6,7 +6,7 @@ src contains a Visual Studio project (api_docify) that parses source code and ge
 # quasar_site
 a quasar project that creates a web site based on the json files created. This site currently gets published to heroku and can be viewed at
 
-https://mcneel-apidocs.herokuapp.com/rhinocommon/
+https://mcneel-apidocs.herokuapp.com/api/rhinocommon/
 
 Instructions for building and testing the quasar site can be found at
 [quasar site readme](quasar_site/readme.md)
