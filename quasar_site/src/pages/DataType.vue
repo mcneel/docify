@@ -43,8 +43,8 @@
               </q-btn>
             </q-item-label>
             <q-item-label caption>
-              <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since.toFixed(1)}}
-                <q-tooltip>Available since {{member.since.toFixed(1)}}</q-tooltip>
+              <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since}}
+                <q-tooltip>Available since {{member.since}}</q-tooltip>
               </q-badge>
               {{member.summary}}
             </q-item-label>

@@ -8,10 +8,10 @@
   "author": "Steve Baer <steve@mcneel.com>",
   "private": true,
   "scripts": {
-    "dev": "quasar dev",
-    "build": "quasar build",
-    "ssrdev": "quasar dev -m ssr",
-    "ssrbuild": "quasar build -m ssr",
+    "dev": "quasar dev --modern",
+    "build": "quasar build --modern",
+    "ssrdev": "quasar dev -m ssr --modern",
+    "ssrbuild": "quasar build -m ssr --modern",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },

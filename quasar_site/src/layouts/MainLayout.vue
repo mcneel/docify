@@ -53,7 +53,7 @@ export default {
   },
   data () {
     const vm = ViewModel.getTree()
-    const mostRecent = ViewModel.mostRecentSince().toFixed(1)
+    const mostRecent = ViewModel.mostRecentSince()
     return {
       leftDrawerOpen: false,
       api: vm,

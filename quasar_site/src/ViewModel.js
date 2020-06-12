@@ -133,21 +133,29 @@ const ViewModel = {
     return rc
   },
   mostRecentSince () {
-    let since = 0
+    let since = '0.0'
+    const sinceIsGreater = function (test, existing) {
+      if (test === existing) return false
+      const testVersion = test.split('.')
+      const existingVersion = existing.split('.')
+      if (testVersion[0] < existingVersion[0]) return false
+      if (testVersion[0] === existingVersion[0] && testVersion[1] < existingVersion[1]) return false
+      return true
+    }
     RhinoCommonApi.forEach(type => {
       if (type.constructors) {
         type.constructors.forEach(c => {
-          if (c.since && c.since > since) since = c.since
+          if (c.since && sinceIsGreater(c.since, since)) since = c.since
         })
       }
       if (type.properties) {
         type.properties.forEach(prop => {
-          if (prop.since && prop.since > since) since = prop.since
+          if (prop.since && sinceIsGreater(prop.since, since)) since = prop.since
         })
       }
       if (type.methods) {
         type.methods.forEach(m => {
-          if (m.since && m.since > since) since = m.since
+          if (m.since && sinceIsGreater(m.since, since)) since = m.since
         })
       }
     })

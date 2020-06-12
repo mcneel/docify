@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <h1>New in RhinoCommon {{version.toFixed(1)}} - ({{memberCount}} new items)</h1>
+    <h1>New in RhinoCommon {{version}} - ({{memberCount}} new items)</h1>
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      version: 0,
+      version: '0',
       memberCount: 0,
       api: []
     }
@@ -37,7 +37,7 @@ export default {
   mounted () {
     if (this.$route.params && this.$route.params.version) {
       console.log('mounted whatsnew')
-      this.version = parseFloat(this.$route.params.version)
+      this.version = this.$route.params.version
       this.api = ViewModel.getFilteredApi(this.version)
       let memberCount = 0
       this.api.forEach(type => {

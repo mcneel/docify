@@ -224,7 +224,7 @@ namespace api_docify
                 if (!string.IsNullOrWhiteSpace(since) && double.TryParse(since, out double sinceValue))
                 {
                     sb.AppendLine(",");
-                    sb.Append($"        since: {sinceValue}");
+                    sb.Append($"        since: '{since}'");
                 }
 
                 var parameters = member.GetParameters();
