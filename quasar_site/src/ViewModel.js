@@ -190,12 +190,16 @@ const ViewModel = {
         summary: type.summary,
         constructors: [],
         methods: [],
-        properties: []
+        properties: [],
+        values: []
       }
       if (type.namespace) localApi.namespace = type.namespace
       let added = test(type, type.constructors, localApi.constructors)
       added += test(type, type.properties, localApi.properties)
       added += test(type, type.methods, localApi.methods)
+      if (type.values && type.since === '7.0') {
+        added += test(type, type.values, localApi.values)
+      }
       if (added > 0) {
         api.push(localApi)
       }
@@ -207,7 +211,7 @@ const ViewModel = {
       let count = 0
       if (inputList) {
         inputList.forEach(item => {
-          if (item.since === version) {
+          if (item.since === version || type.since === version) {
             outputList.push(item)
             count++
           }

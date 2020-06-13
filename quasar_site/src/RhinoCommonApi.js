@@ -195,6 +195,7 @@ has been specified in user interface code.`
     name: 'AntialiasLevel',
     dataType: 'enum',
     summary: 'Provides the anti-alias levels used for render quality',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0',
@@ -746,6 +747,7 @@ appearing usually bottom left in viewports.`,
     name: 'ClipboardState',
     dataType: 'enum',
     summary: 'Defines enumerated constant values for different behavior that is related to clipboard data.',
+    since: '5.0',
     values: [
       {
         signature: 'KeepData = 0',
@@ -880,6 +882,7 @@ Modifications to this dictionary do not affect any Rhino command alias.`,
     name: 'CommandPromptPosition',
     dataType: 'enum',
     summary: 'Defines enumerated constant values for default positions of the command prompt inside the frame of the full editor window.',
+    since: '5.0',
     values: [
       {
         signature: 'Top = 0',
@@ -904,6 +907,7 @@ Modifications to this dictionary do not affect any Rhino command alias.`,
     name: 'CursorMode',
     dataType: 'enum',
     summary: 'Defines enumerated constant values for particular OSnap cursor colors.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -1145,6 +1149,7 @@ Note: Turning on cursor tooltips turns off object snap cursors.`,
     name: 'CurvatureAnalysisSettings.CurvatureStyle',
     dataType: 'enum',
     summary: 'Curvature analysis styles',
+    since: '6.0',
     values: [
       {
         signature: 'Gaussian = 0',
@@ -1867,6 +1872,7 @@ when an antecedent is modified.`,
     name: 'Installation',
     dataType: 'enum',
     summary: 'The type of Rhino executable that is executing',
+    since: '5.0',
     values: [
       {
         signature: 'Undefined = 0',
@@ -1911,6 +1917,7 @@ when an antecedent is modified.`,
     name: 'LicenseNode',
     dataType: 'enum',
     summary: 'License node types.',
+    since: '5.0',
     values: [
       {
         signature: 'Standalone = 0',
@@ -1932,6 +1939,7 @@ when an antecedent is modified.`,
     dataType: 'enum',
     summary: `Defines enumerated constant values to define what happens when
 either the middle mouse button on a three-button mouse is clicked or after pressing the wheel on a wheeled mouse.`,
+    since: '5.0',
     values: [
       {
         signature: 'PopupMenu = 0',
@@ -2300,6 +2308,7 @@ The mode is a bitwise value based on the OsnapModes enumeration.`,
     name: 'MouseSelectMode',
     dataType: 'enum',
     summary: 'Defines enumerated constant values to indicate a particular window selection mode.',
+    since: '5.0',
     values: [
       {
         signature: 'Crossing = 0',
@@ -2408,6 +2417,7 @@ will be used instead.  False means the individual CRhinoCommands will determine 
     dataType: 'enum',
     summary: `Defines several bit masks for each of the OSnap that are defined.
 Refer to the Rhino Help file for further information.`,
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -2556,6 +2566,7 @@ Refer to the Rhino Help file for further information.`,
     name: 'PointDisplayMode',
     dataType: 'enum',
     summary: 'Defines enumerated constant values for world coordinates and CPlane point display modes.',
+    since: '5.0',
     values: [
       {
         signature: 'WorldPoint = 0',
@@ -2669,6 +2680,7 @@ Note, the filter can be a bitwise combination of multiple object types.`,
     name: 'ShortcutKey',
     dataType: 'enum',
     summary: 'Shortcut key combinations',
+    since: '5.0',
     values: [
       {
         signature: 'F1 = 0',
@@ -6821,6 +6833,7 @@ of command styles.`
     name: 'Result',
     dataType: 'enum',
     summary: 'Defines enumerated constant values for several command result types.',
+    since: '5.0',
     values: [
       {
         signature: 'Success = 0',
@@ -6857,6 +6870,7 @@ of command styles.`
     name: 'RunMode',
     dataType: 'enum',
     summary: 'Provides enumerated constants for a command running mode. This is currently interactive or scripted.',
+    since: '5.0',
     values: [
       {
         signature: 'Interactive = 0',
@@ -6904,6 +6918,7 @@ virtual SelFilter function.`,
     dataType: 'enum',
     summary: `Defines bitwise mask flags for different styles of commands, such as
 Style.Hidden or Style.DoNotRepeat.`,
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -7002,6 +7017,7 @@ the command finishes.`
     name: 'BackgroundStyle',
     dataType: 'enum',
     summary: 'Constants that define how the background of a viewport should be filled.',
+    since: '5.0',
     values: [
       {
         signature: 'SolidColor = 0',
@@ -7026,6 +7042,7 @@ the command finishes.`
     name: 'BlendMode',
     dataType: 'enum',
     summary: 'Defines enumerated constants for display blend modes.',
+    since: '5.0',
     values: [
       {
         signature: 'Zero = 0',
@@ -8198,6 +8215,7 @@ sensitivity of cones in the human retina.`,
     namespace: 'Rhino.Display',
     name: 'CullFaceMode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'DrawFrontAndBack = 0'
@@ -8722,6 +8740,7 @@ properly shut down the CustomDisplay.`,
     name: 'DefinedViewportProjection',
     dataType: 'enum',
     summary: 'Parallel and perspective projections that are "standard" in Rhino',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0'
@@ -8756,6 +8775,7 @@ properly shut down the CustomDisplay.`,
     namespace: 'Rhino.Display',
     name: 'DepthMode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Neutral = 0'
@@ -12260,6 +12280,7 @@ cause this ID to be Guid.Empty.`,
     namespace: 'Rhino.Display',
     name: 'DisplayPipelineAttributes.BoundingBoxDisplayMode',
     dataType: 'enum',
+    since: '6.1',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.DisplayPipelineAttributesBBox.BBoxOff'
@@ -12276,6 +12297,7 @@ cause this ID to be Guid.Empty.`,
     namespace: 'Rhino.Display',
     name: 'DisplayPipelineAttributes.ContextsForDraw',
     dataType: 'enum',
+    since: '6.5',
     values: [
       {
         signature: 'Unset = 0'
@@ -12304,6 +12326,7 @@ cause this ID to be Guid.Empty.`,
     namespace: 'Rhino.Display',
     name: 'DisplayPipelineAttributes.FrameBufferFillMode',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'DefaultColor = UnsafeNativeMethods.FrameBufferFillMode.DEFAULT_COLOR'
@@ -12365,6 +12388,7 @@ cause this ID to be Guid.Empty.`,
     namespace: 'Rhino.Display',
     name: 'DisplayPipelineAttributes.StereoRenderContextEnum',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'NotApplicable = 0'
@@ -12497,6 +12521,7 @@ cause this ID to be Guid.Empty.`,
     namespace: 'Rhino.Display',
     name: 'DrawFrameStages',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'InitializeFrameBuffer = 0x00000001'
@@ -12586,6 +12611,7 @@ cause this ID to be Guid.Empty.`,
     name: 'GradientType',
     dataType: 'enum',
     summary: 'Style of color gradient',
+    since: '7.0',
     values: [
       {
         signature: 'None = 0',
@@ -15100,6 +15126,7 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
     namespace: 'Rhino.Display',
     name: 'ViewCaptureSettings.AnchorLocation',
     dataType: 'enum',
+    since: '6.2',
     values: [
       {
         signature: 'LowerLeft = UnsafeNativeMethods.PrintInfoAnchor.LowerLeft'
@@ -15122,6 +15149,7 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
     namespace: 'Rhino.Display',
     name: 'ViewCaptureSettings.ColorMode',
     dataType: 'enum',
+    since: '6.8',
     values: [
       {
         signature: 'DisplayColor'
@@ -15151,6 +15179,7 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
     namespace: 'Rhino.Display',
     name: 'ViewportType',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'StandardModelingViewport = 0'
@@ -15168,6 +15197,7 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
     name: 'VisualAnalysisMode.AnalysisStyle',
     dataType: 'enum',
     summary: 'Contains enumerated values for analysis styles, such as wireframe, texture or False colors..',
+    since: '5.0',
     values: [
       {
         signature: 'Wireframe = 1',
@@ -15209,6 +15239,7 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
     dataType: 'enum',
     summary: `Biasing applied to geometry to attempt to get coplanar items
 to draw on top of or below other geometry`,
+    since: '5.0',
     values: [
       {
         signature: 'Neutral = 0'
@@ -15303,6 +15334,7 @@ and a given display mode`,
     name: 'ActiveSpace',
     dataType: 'enum',
     summary: 'Defines the current working space.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -15323,6 +15355,7 @@ and a given display mode`,
     name: 'AngleDisplayMode',
     dataType: 'enum',
     summary: 'Defines enumerated values for the display of angles.',
+    since: '6.0',
     values: [
       {
         signature: 'Degrees = 0',
@@ -15598,6 +15631,7 @@ This angle is zero along the x-axis and increases anticlockwise.`,
     name: 'AnimationProperties.CaptureTypes',
     dataType: 'enum',
     summary: 'Constants that define the mode of the animation tools.',
+    since: '6.11',
     values: [
       {
         signature: 'Path = UnsafeNativeMethods.AnimationPropertiesCaptureTypes.Path',
@@ -15659,6 +15693,7 @@ that involve length, area, or volume measurements`,
     dataType: 'enum',
     summary: `Specifies enumerated constants used to indicate the zero level convention relating to a location on Earth.
 This is used in conjunction with the  class.`,
+    since: '5.0',
     values: [
       {
         signature: 'GroundLevel = 0',
@@ -15911,6 +15946,7 @@ Typically this is the same distance as grid spacing.`,
     name: 'CoordinateSystem',
     dataType: 'enum',
     summary: 'Defines enumerated values for coordinate systems to use as references.',
+    since: '5.0',
     values: [
       {
         signature: 'World = 0',
@@ -16590,6 +16626,7 @@ The detail view object's viewport must be to parallel projection.`,
     name: 'DetailViewObject.ScaleFormat',
     dataType: 'enum',
     summary: 'Detail view object scale formats.',
+    since: '7.0',
     values: [
       {
         signature: 'None',
@@ -17380,6 +17417,7 @@ used to render a dimension.`
     name: 'DisplayMode',
     dataType: 'enum',
     summary: 'Defines enumerated values for display modes, such as wireframe or shaded.',
+    since: '5.0',
     values: [
       {
         signature: 'Default = 0',
@@ -17409,6 +17447,7 @@ from rendering.`
     name: 'DistanceDisplayMode',
     dataType: 'enum',
     summary: 'Defines enumerated values for the display of distances in US customary and Imperial units.',
+    since: '5.0',
     values: [
       {
         signature: 'Decimal = 0',
@@ -18143,6 +18182,7 @@ document are "normal" or "reference". Reference hatch patterns are not saved.`,
     namespace: 'Rhino.DocObjects',
     name: 'HatchPatternFillType',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Solid = 0'
@@ -18363,6 +18403,7 @@ This does NOT count the number of references to this instance definition.`,
       },
       {
         signature: 'string SourceArchive',
+        since: '5.0',
         property: ['get']
       },
       {
@@ -18562,6 +18603,7 @@ and the returned value is the nesting depth.`
     dataType: 'enum',
     summary: `The archive file of a linked instance definition can have the following possible states.
 Use InstanceObject.ArchiveFileStatus to query a instance definition's archive file status.`,
+    since: '5.2',
     values: [
       {
         signature: 'NotALinkedInstanceDefinition = -3',
@@ -18600,6 +18642,7 @@ Use InstanceObject.ArchiveFileStatus to query a instance definition's archive fi
     summary: `A InstanceDefinitionUpdateType.Static or InstanceDefinitionUpdateType.LinkedAndEmbedded instance definition
 must have LayerStyle = Unset, a InstanceDefinitionUpdateType.Linked InstanceDefnition must
 have LayerStyle = Active or Reference`,
+    since: '5.0',
     values: [
       {
         signature: 'None = 0'
@@ -18618,6 +18661,7 @@ have LayerStyle = Active or Reference`,
     dataType: 'enum',
     summary: `The possible relationships between the instance definition geometry
 and the archive containing the original definition.`,
+    since: '5.0',
     values: [
       {
         signature: 'Static = 0',
@@ -20971,6 +21015,7 @@ This version sets a display mode for a specific viewport.`,
     name: 'ObjectColorSource',
     dataType: 'enum',
     summary: 'Defines enumerated values for the source of display color of single objects.',
+    since: '5.0',
     values: [
       {
         signature: 'ColorFromLayer = 0',
@@ -20996,6 +21041,7 @@ if no parent, treat as color_from_layer.`
     name: 'ObjectDecoration',
     dataType: 'enum',
     summary: 'Defines bit mask values to represent object decorations.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -21122,6 +21168,7 @@ See Rhino.Collections.ObjectTable.GetEnumerator()`,
     name: 'ObjectLinetypeSource',
     dataType: 'enum',
     summary: 'Defines enumerated values for the source of linetype of single objects.',
+    since: '5.0',
     values: [
       {
         signature: 'LinetypeFromLayer = 0',
@@ -21143,6 +21190,7 @@ if not parent, treat as linetype_from_layer.`
     name: 'ObjectMaterialSource',
     dataType: 'enum',
     summary: 'Defines enumerated values for the source of material of single objects.',
+    since: '5.0',
     values: [
       {
         signature: 'MaterialFromLayer = 0',
@@ -21167,6 +21215,7 @@ material_from_layer.`
     name: 'ObjectMode',
     dataType: 'enum',
     summary: 'Defines enumerated values for the display and behavior of single objects.',
+    since: '5.0',
     values: [
       {
         signature: 'Normal = 0',
@@ -21192,6 +21241,7 @@ m_object_uuid[] array will contain this object attribute's id.`
     name: 'ObjectPlotColorSource',
     dataType: 'enum',
     summary: 'Defines enumerated values for the source of plotting/printing color of single objects.',
+    since: '5.0',
     values: [
       {
         signature: 'PlotColorFromLayer = 0',
@@ -21217,6 +21267,7 @@ if no parent, treat as plot_color_from_layer.`
     name: 'ObjectPlotWeightSource',
     dataType: 'enum',
     summary: 'Defines enumerated values for the source of plotting/printing weight of single objects.',
+    since: '5.0',
     values: [
       {
         signature: 'PlotWeightFromLayer = 0',
@@ -21238,6 +21289,7 @@ if no parent, treat as plot_color_from_layer.`
     name: 'ObjectType',
     dataType: 'enum',
     summary: 'Defines binary mask values for each object type that can be found in a document.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -23342,6 +23394,7 @@ Returns False if objects are being deselected.`,
     name: 'SelectionMethod',
     dataType: 'enum',
     summary: 'Defines enumerated values for several kinds of selection methods.',
+    since: '5.0',
     values: [
       {
         signature: 'Other = 0',
@@ -24286,6 +24339,7 @@ We are moving towards using only IDs for all tables.`,
     namespace: 'Rhino.DocObjects.Tables',
     name: 'DimStyleTableEventType',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Added'
@@ -24656,6 +24710,7 @@ We are moving towards using only IDs for all tables.`,
     name: 'GroupTableEventType',
     dataType: 'enum',
     summary: 'Defines the types of group table events.',
+    since: '5.0',
     values: [
       {
         signature: 'Added = 0',
@@ -24867,6 +24922,7 @@ We are moving towards using only IDs for all tables.`,
       {
         signature: 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)',
         summary: 'Adds an instance definition to the instance definition table.',
+        since: '5.0',
         parameters: [
           {
             name: 'name',
@@ -25381,6 +25437,7 @@ false, nested updates are skipped.`
     namespace: 'Rhino.DocObjects.Tables',
     name: 'InstanceDefinitionTableEventType',
     dataType: 'enum',
+    since: '5.3',
     values: [
       {
         signature: 'Added = 0'
@@ -26096,6 +26153,7 @@ if the layer has been modified and the modification can be undone.`,
     namespace: 'Rhino.DocObjects.Tables',
     name: 'LayerTableEventType',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Added = 0'
@@ -26265,6 +26323,7 @@ Deleted lights have no name.`,
     namespace: 'Rhino.DocObjects.Tables',
     name: 'LightTableEventType',
     dataType: 'enum',
+    since: '5.3',
     values: [
       {
         signature: 'Added = 0'
@@ -26817,6 +26876,7 @@ to lock or hide the current material.`
     namespace: 'Rhino.DocObjects.Tables',
     name: 'MaterialTableEventType',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Added = 0'
@@ -26842,6 +26902,7 @@ to lock or hide the current material.`
     namespace: 'Rhino.DocObjects.Tables',
     name: 'ModifyType',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Modify'
@@ -31332,6 +31393,7 @@ The new object has identical attributes.`
     namespace: 'Rhino.DocObjects.Tables',
     name: 'RestoreLayerProperties',
     dataType: 'enum',
+    since: '6.14',
     values: [
       {
         signature: 'None = 0x0',
@@ -31824,6 +31886,7 @@ flash between visible and invisible.`
     name: 'TextDisplayAlignment',
     dataType: 'enum',
     summary: 'Defines enumerated values for the line alignment of text.',
+    since: '5.0',
     values: [
       {
         signature: 'Normal = 0',
@@ -32051,6 +32114,7 @@ new rgb = colorcolor
     dataType: 'enum',
     summary: `Determines how this texture is combined with others in a material's
 texture list.`,
+    since: '5.6',
     values: [
       {
         signature: 'None = 0'
@@ -32077,6 +32141,7 @@ To "subtract" a texture, set BlendAmount = -1`
     dataType: 'enum',
     summary: `The TextureType controls how the pixels in the bitmap
 are interpreted.`,
+    since: '5.6',
     values: [
       {
         signature: 'None = 0'
@@ -32192,6 +32257,7 @@ are interpreted.`,
     name: 'TextureUvwWrapping',
     dataType: 'enum',
     summary: 'Defines Texture UVW wrapping modes',
+    since: '5.6',
     values: [
       {
         signature: 'Repeat = 0',
@@ -32340,6 +32406,7 @@ document to query for the active viewport`
     name: 'ViewInfoFocalBlurModes',
     dataType: 'enum',
     summary: 'The different focal blur modes of the ViewInfo',
+    since: '6.0',
     values: [
       {
         signature: 'None',
@@ -33831,6 +33898,7 @@ an IO error has occurred.`,
     namespace: 'Rhino.FileIO',
     name: 'BinaryArchiveMode',
     dataType: 'enum',
+    since: '5.1',
     values: [
       {
         signature: 'Unknown = 0'
@@ -35858,6 +35926,7 @@ False if errors occur.`
     namespace: 'Rhino.FileIO',
     name: 'File3dm.ObjectTypeFilter',
     dataType: 'enum',
+    since: '5.9',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.ObjectTypeFilter.None'
@@ -35923,6 +35992,7 @@ False if errors occur.`
     namespace: 'Rhino.FileIO',
     name: 'File3dm.TableTypeFilter',
     dataType: 'enum',
+    since: '5.9',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.ReadFileTableTypeFilter.None'
@@ -36275,6 +36345,7 @@ We are moving towards using only IDs for all tables.`,
       {
         signature: 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)',
         summary: 'Adds an instance definition to the instance definition table.',
+        since: '6.5',
         parameters: [
           {
             name: 'name',
@@ -38585,6 +38656,7 @@ will be interpreted as objects in the Rhino model`,
     dataType: 'enum',
     summary: `Determines how "g"s in the obj file will be interpreted
 on import`,
+    since: '6.0',
     values: [
       {
         signature: 'IgnoreObjGroups = 0',
@@ -38809,6 +38881,7 @@ any the translation that might occur in a SavewithOrigin.`,
     name: 'FileObjWriteOptions.AsciiEol',
     dataType: 'enum',
     summary: 'End of Line',
+    since: '6.0',
     values: [
       {
         signature: 'Crlf = 0',
@@ -38829,6 +38902,7 @@ any the translation that might occur in a SavewithOrigin.`,
     name: 'FileObjWriteOptions.CurveType',
     dataType: 'enum',
     summary: 'Type of curve used for trimmed surfaces',
+    since: '6.0',
     values: [
       {
         signature: 'Polyline = 0',
@@ -38845,6 +38919,7 @@ any the translation that might occur in a SavewithOrigin.`,
     dataType: 'enum',
     summary: `(trimmed) NURBS surfaces may be exported
 as either NURBS or meshes`,
+    since: '6.0',
     values: [
       {
         signature: 'Nurbs = 0'
@@ -38858,6 +38933,7 @@ as either NURBS or meshes`,
     namespace: 'Rhino.FileIO',
     name: 'FileObjWriteOptions.NGons',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'None = 0',
@@ -38877,6 +38953,7 @@ as either NURBS or meshes`,
     namespace: 'Rhino.FileIO',
     name: 'FileObjWriteOptions.ObjGroupNames',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'NoGroups = 0',
@@ -38896,6 +38973,7 @@ as either NURBS or meshes`,
     namespace: 'Rhino.FileIO',
     name: 'FileObjWriteOptions.ObjObjectNames',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'NoObjects = 0',
@@ -38916,6 +38994,7 @@ as either NURBS or meshes`,
     name: 'FileObjWriteOptions.SubDMeshing',
     dataType: 'enum',
     summary: 'Determines whether the surface or control net of a SubD object is used to generate a mesh',
+    since: '7.0',
     values: [
       {
         signature: 'Surface = 0',
@@ -38932,6 +39011,7 @@ as either NURBS or meshes`,
     name: 'FileObjWriteOptions.VertexWelding',
     dataType: 'enum',
     summary: 'Determines how/if vertexes of the mesh in Rhino will be modified in the output',
+    since: '6.0',
     values: [
       {
         signature: 'Normal = 0',
@@ -42137,6 +42217,7 @@ rational, the weight is 1.`
     name: 'BlendContinuity',
     dataType: 'enum',
     summary: 'Used in curve and surface blending functions',
+    since: '5.0',
     values: [
       {
         signature: 'Position = 0'
@@ -42154,6 +42235,7 @@ rational, the weight is 1.`
     name: 'BlendType',
     dataType: 'enum',
     summary: 'Blend types used for creating filleted Brep edges',
+    since: '6.0',
     values: [
       {
         signature: 'Chamfer = 0',
@@ -46677,6 +46759,7 @@ If direction = 1, the parameter space iso interval connects the 2d points
     name: 'BrepFace.ShrinkDisableSide',
     dataType: 'enum',
     summary: 'Defines bitwise mask flags indicating what side of a surface to not shrink.',
+    since: '6.0',
     values: [
       {
         signature: 'ShrinkAllSides = 0x0000',
@@ -46758,6 +46841,7 @@ of a list of trim curves.`,
     name: 'BrepLoopType',
     dataType: 'enum',
     summary: 'Each brep loop has a defined type, e.g. outer, inner or point on surface.',
+    since: '5.0',
     values: [
       {
         signature: 'Unknown = 0',
@@ -46874,6 +46958,7 @@ connected component.`,
     name: 'BrepSolidOrientation',
     dataType: 'enum',
     summary: 'Enumerates all possible Solid Orientations for a Brep.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -47031,6 +47116,7 @@ trimming curves.`,
     name: 'BrepTrimType',
     dataType: 'enum',
     summary: 'Each brep trim has a defined type.',
+    since: '5.1',
     values: [
       {
         signature: 'Unknown = 0',
@@ -52507,6 +52593,7 @@ dim_text_point     TextEntity2 origin point.`,
     name: 'ComponentIndexType',
     dataType: 'enum',
     summary: 'Defines enumerated values to represent component index types.',
+    since: '5.0',
     values: [
       {
         signature: 'InvalidType = 0',
@@ -52835,6 +52922,7 @@ and returns a new ComponentStatus with those flags checked.`,
     name: 'Concavity',
     dataType: 'enum',
     summary: 'Enumerates the possible types of edge concavity types.',
+    since: '6.2',
     values: [
       {
         signature: 'None = -1',
@@ -52990,6 +53078,7 @@ This is synonymous with calling RevSurface.CreateFromCone().`,
     name: 'ConicSectionType',
     dataType: 'enum',
     summary: 'Defines enumerated values for types of conic sections.',
+    since: '6.0',
     values: [
       {
         signature: 'Unknown = 0',
@@ -53019,6 +53108,7 @@ This is synonymous with calling RevSurface.CreateFromCone().`,
     dataType: 'enum',
     summary: `Provides enumerated values for continuity along geometry,
 such as continuous first derivative or continuous unit tangent and curvature.`,
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -57541,6 +57631,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveEnd',
     dataType: 'enum',
     summary: 'Defines the extremes of a curve through a flagged enumeration.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -57565,6 +57656,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveEvaluationSide',
     dataType: 'enum',
     summary: 'Defines enumerated values for the options that defines a curve evaluation side when evaluating kinks.',
+    since: '5.0',
     values: [
       {
         signature: 'Default = 0',
@@ -57585,6 +57677,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveExtensionStyle',
     dataType: 'enum',
     summary: 'Defines enumerated values for styles to use during curve extension, such as "Line", "Arc" or "Smooth".',
+    since: '5.0',
     values: [
       {
         signature: 'Line = 0',
@@ -57605,6 +57698,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveKnotStyle',
     dataType: 'enum',
     summary: 'Defines enumerated values for knot spacing styles in interpolated curves.',
+    since: '5.0',
     values: [
       {
         signature: 'Uniform = 0',
@@ -57637,6 +57731,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveOffsetCornerStyle',
     dataType: 'enum',
     summary: 'Defines enumerated values for all implemented corner styles in curve offsets.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -57665,6 +57760,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveOffsetEndStyle',
     dataType: 'enum',
     summary: 'Defines enumerated values for all implemented end styles in curve offsets.',
+    since: '7.0',
     values: [
       {
         signature: 'None = 0',
@@ -57685,6 +57781,7 @@ or -1 if points[i] was not used in any region or if not successful.`
     name: 'CurveOrientation',
     dataType: 'enum',
     summary: 'Defines enumerated values for closed curve orientations.',
+    since: '5.0',
     values: [
       {
         signature: 'Undefined = 0',
@@ -57721,6 +57818,7 @@ that can be represented as a "proxy".`,
     name: 'CurveSimplifyOptions',
     dataType: 'enum',
     summary: 'Enumerates the options to use when simplifying a curve.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -58098,6 +58196,7 @@ max_cos_twist is cos(twist) for the returned ruling`,
     name: 'DistancingMode',
     dataType: 'enum',
     summary: 'Defines how offset and similar operations should work.',
+    since: '6.0',
     values: [
       {
         signature: 'Undefined',
@@ -58128,6 +58227,7 @@ compute offsets.`
     name: 'EdgeAdjacency',
     dataType: 'enum',
     summary: 'Enumerates all possible Topological Edge adjacency types.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -58240,6 +58340,7 @@ This is equivalent to calling NurbsCurve.CreateFromEllipse().`,
     name: 'ExtrudeCornerType',
     dataType: 'enum',
     summary: 'Corner types used for creating a tapered extrusion',
+    since: '5.1',
     values: [
       {
         signature: 'None = 0',
@@ -59736,6 +59837,7 @@ the z-coordinate direction points from the scene toward the camera.`,
     name: 'HiddenLineDrawingPoint.Visibility',
     dataType: 'enum',
     summary: 'The different types of HiddenLineObjectPoint visibility',
+    since: '6.8',
     values: [
       {
         signature: 'Unset = UnsafeNativeMethods.HldPointVisibility.PointUnset',
@@ -59812,6 +59914,7 @@ unknown is used for unset values and for projecting curves`,
     summary: `When a silhouette is projected on the image plane (determined by the camera location or direction),
 and projects to a curve (not a point), the image area to the left or right of a projected silhouette
 curve is filled with either the surface or a void.`,
+    since: '6.0',
     values: [
       {
         signature: 'SideUnset = UnsafeNativeMethods.HldSilhouetteSideFill.SideUnset',
@@ -59836,6 +59939,7 @@ curve is filled with either the surface or a void.`,
     name: 'HiddenLineDrawingSegment.Visibility',
     dataType: 'enum',
     summary: 'The different types of HiddenLineDrawingSegment visibility',
+    since: '6.0',
     values: [
       {
         signature: 'Unset = UnsafeNativeMethods.HldCurveVisibility.Unset',
@@ -61495,6 +61599,7 @@ to get the U and V parameters on the surface where the intersection occurs.`,
     name: 'LineCircleIntersection',
     dataType: 'enum',
     summary: 'Represents all possible cases of a Line|Circle intersection event.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -61515,6 +61620,7 @@ to get the U and V parameters on the surface where the intersection occurs.`,
     name: 'LineCylinderIntersection',
     dataType: 'enum',
     summary: 'Represents all possible cases of a Line|Cylinder intersection event.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -61539,6 +61645,7 @@ to get the U and V parameters on the surface where the intersection occurs.`,
     name: 'LineSphereIntersection',
     dataType: 'enum',
     summary: 'Represents all possible cases of a Line|Sphere intersection event.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -61804,6 +61911,7 @@ All values smaller than this cause a clash as well.`
     name: 'PlaneCircleIntersection',
     dataType: 'enum',
     summary: 'Represents all possible cases of a Plane|Circle intersection event.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -61833,6 +61941,7 @@ Parallel indicates no intersection took place.`
     name: 'PlaneSphereIntersection',
     dataType: 'enum',
     summary: 'Represents all possible cases of a Plane|Sphere intersection event.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -61853,6 +61962,7 @@ Parallel indicates no intersection took place.`
     name: 'RayShootEvent',
     dataType: 'struct',
     summary: 'Represents an element which is part of a ray shoot.',
+    since: '7.0',
     properties: [
       {
         signature: 'int BrepFaceIndex',
@@ -61880,6 +61990,7 @@ If GeometryIndex references a surface, than RhinoMath.UnsetIntIndex.`,
     name: 'SphereSphereIntersection',
     dataType: 'enum',
     summary: 'Represents all possible cases of a Sphere|Sphere intersection event.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -62222,6 +62333,7 @@ comparing by value.`,
     summary: `Defines enumerated values for isoparametric curve direction on a surface, such as X or Y,
 and curve sides, such as North or West boundary.
 Note: odd values are all x-constant; even values > 0 are all y-constant.`,
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -62683,6 +62795,7 @@ attenuation = 1/(a0 + d*a1 + d^2*a2) where d = distance to light.`,
     name: 'Light.Attenuation',
     dataType: 'enum',
     summary: 'Types of light attenuation available.',
+    since: '7.0',
     values: [
       {
         signature: 'Constant',
@@ -62703,6 +62816,7 @@ attenuation = 1/(a0 + d*a1 + d^2*a2) where d = distance to light.`,
     name: 'LightStyle',
     dataType: 'enum',
     summary: 'Defines enumerated values to represent light styles or types, such as directional or spotlight.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -63521,6 +63635,7 @@ setting start and end point from two Point3d.`,
     name: 'LoftType',
     dataType: 'enum',
     summary: 'Specifies enumerated constants for all supported loft types.',
+    since: '5.0',
     values: [
       {
         signature: 'Normal = 0',
@@ -65985,6 +66100,7 @@ If False then will run on main thread.`
       {
         signature: 'void ReleaseUnsafeLock(MeshUnsafeLock meshData)',
         summary: 'Updates the Mesh data with the information that was stored via the MeshUnsafeLock.',
+        since: '6.0',
         parameters: [
           {
             name: 'meshData',
@@ -67355,6 +67471,7 @@ These are the same settings that are shown in the DocumentProperties
     name: 'MeshingParameterStyle',
     dataType: 'enum',
     summary: 'Type of Mesh Parameters used by the RhinoDoc for meshing objects',
+    since: '5.1',
     values: [
       {
         signature: 'None = 0',
@@ -67379,6 +67496,7 @@ These are the same settings that are shown in the DocumentProperties
     name: 'MeshingParameterTextureRange',
     dataType: 'enum',
     summary: 'Defines how to pack render/meshes textures.',
+    since: '6.0',
     values: [
       {
         signature: 'Unset = 0',
@@ -67693,6 +67811,7 @@ the way the quad was split during the intersection.`,
     name: 'CreaseEdges',
     dataType: 'enum',
     summary: 'Defines the way naked edges are handled.',
+    since: '6.8',
     values: [
       {
         signature: '    NakedFixed',
@@ -67717,6 +67836,7 @@ the way the quad was split during the intersection.`,
     name: 'LoopFormula',
     dataType: 'enum',
     summary: 'Enumerates the alternative Loop implementations.',
+    since: '6.0',
     values: [
       {
         signature: 'Loop = 0',
@@ -67843,6 +67963,7 @@ the way the quad was split during the intersection.`,
     name: 'MeshType',
     dataType: 'enum',
     summary: 'Defines enumerated values for various mesh types.',
+    since: '5.0',
     values: [
       {
         signature: 'Default = 0',
@@ -69265,6 +69386,7 @@ the number of point returned by NurbsCurve.GrevillePoints(false).`
     name: 'NurbsCurve.NurbsCurveEndConditionType',
     dataType: 'enum',
     summary: 'What end conditions to set',
+    since: '6.0',
     values: [
       {
         signature: 'Nothing = UnsafeNativeMethods.NurbsCurveEndConditionType.Nothing',
@@ -70037,6 +70159,7 @@ False if the particle already exists in a different system.`
     name: 'PipeCapMode',
     dataType: 'enum',
     summary: 'Defines styles used for creating Brep pipes.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -70607,6 +70730,7 @@ pe[0], pe[1], pe[2] and pe[3] are the coefficients of the plane equation.`
     name: 'PlaneFitResult',
     dataType: 'enum',
     summary: 'Enumerates all possible outcomes of a Least-Squares plane fitting operation.',
+    since: '5.0',
     values: [
       {
         signature: 'Failure = -1',
@@ -72479,6 +72603,7 @@ always has a location, but it has an optional normal vector and color.`,
     name: 'PointContainment',
     dataType: 'enum',
     summary: 'Defines enumerated values for closed curve/point spatial relationships.',
+    since: '5.0',
     values: [
       {
         signature: 'Unset',
@@ -72503,6 +72628,7 @@ always has a location, but it has an optional normal vector and color.`,
     name: 'PointFaceRelation',
     dataType: 'enum',
     summary: 'Enumerates the possible point/BrepFace spatial relationships.',
+    since: '5.0',
     values: [
       {
         signature: 'Exterior = 0',
@@ -73236,6 +73362,7 @@ Strict - All input faces are factored in re-meshed result.`,
     name: 'QuadRemeshSymmetryAxis',
     dataType: 'enum',
     summary: 'Symmetrical meshing axis',
+    since: '7.0',
     values: [
       {
         signature: 'None = 0',
@@ -73842,6 +73969,7 @@ and plane0.zaxis to plane1.zaxis.`,
     name: 'RailType',
     dataType: 'enum',
     summary: 'Rail types used for creating filleted Brep edges',
+    since: '6.0',
     values: [
       {
         signature: 'DistanceFromEdge = 0',
@@ -74350,6 +74478,7 @@ locked and non-locked mesh vertex at the same location.`,
     name: 'RegionContainment',
     dataType: 'enum',
     summary: 'Defines enumerated values for closed curve/closed curve relationships.',
+    since: '5.0',
     values: [
       {
         signature: 'Disjoint = 0',
@@ -75467,6 +75596,7 @@ When in doubt use RhinoDoc.ModelAngleToleranceRadians.`
     name: 'SilhouetteType',
     dataType: 'enum',
     summary: 'Enumerates the different types of silhouettes and their origins.',
+    since: '6.0',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.SilEventType.None',
@@ -75525,6 +75655,7 @@ In this case side_fill[i] is meaningless so it's left unset.`
     name: 'SmoothingCoordinateSystem',
     dataType: 'enum',
     summary: 'The direction of the smoothing used by Curve, Surface, and Mesh Smooth.',
+    since: '6.0',
     values: [
       {
         signature: 'World = 0',
@@ -78303,6 +78434,7 @@ rapidly in the middle.`,
     name: 'SweepRebuild',
     dataType: 'enum',
     summary: 'Rebuild types for creating swept surfaces',
+    since: '6.16',
     values: [
       {
         signature: 'None = 0',
@@ -78755,6 +78887,7 @@ override to accommodate scaling in the transform if necessary`,
     name: 'TextJustification',
     dataType: 'enum',
     summary: 'Specifies enumerated constants used to indicate the internal alignment and justification of text.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0',
@@ -78826,6 +78959,7 @@ override to accommodate scaling in the transform if necessary`,
     namespace: 'Rhino.Geometry',
     name: 'TextRunType',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.TextRunTypeConsts.None'
@@ -79916,6 +80050,7 @@ If False is returned and this Transform is Valid, inverseTransform will be set t
     name: 'TransformRigidType',
     dataType: 'enum',
     summary: 'Lists all possible outcomes for rigid transformation.',
+    since: '6.12',
     values: [
       {
         signature: 'RigidReversing = -1',
@@ -79936,6 +80071,7 @@ If False is returned and this Transform is Valid, inverseTransform will be set t
     name: 'TransformSimilarityType',
     dataType: 'enum',
     summary: 'Lists all possible outcomes for transform similarity.',
+    since: '5.0',
     values: [
       {
         signature: 'OrientationReversing = -1',
@@ -82103,6 +82239,7 @@ RhinoGet::AddCommandOptionToggle, or RhinoGet::AddCommandOptionList.`,
     namespace: 'Rhino.Input.Custom',
     name: 'ConeConstraint',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -82119,6 +82256,7 @@ RhinoGet::AddCommandOptionToggle, or RhinoGet::AddCommandOptionList.`,
     namespace: 'Rhino.Input.Custom',
     name: 'CylinderConstraint',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -82137,6 +82275,7 @@ RhinoGet::AddCommandOptionToggle, or RhinoGet::AddCommandOptionList.`,
     dataType: 'enum',
     summary: `If an object passes the geometry TYPE filter, then the geometry ATTRIBUTE
 filter is applied.`,
+    since: '5.0',
     values: [
       {
         signature: 'WireCurve = 1<<0',
@@ -83673,6 +83812,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
     namespace: 'Rhino.Input.Custom',
     name: 'GetFileNameMode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Open = 0'
@@ -83888,6 +84028,7 @@ the start point interactive picking`,
     namespace: 'Rhino.Input.Custom',
     name: 'GetLineMode',
     dataType: 'enum',
+    since: '5.1',
     values: [
       {
         signature: 'TwoPoint = 0'
@@ -85893,6 +86034,7 @@ UpdateClippingPlanes().`,
     namespace: 'Rhino.Input.Custom',
     name: 'PickContext.MeshHitFlag',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Invalid = -1'
@@ -85912,6 +86054,7 @@ UpdateClippingPlanes().`,
     namespace: 'Rhino.Input.Custom',
     name: 'PickContext.MeshPickStyle',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'WireframePicking = 0',
@@ -85932,6 +86075,7 @@ UpdateClippingPlanes().`,
     name: 'PickMode',
     dataType: 'enum',
     summary: 'Picking can happen in wireframe or shaded display mode',
+    since: '5.0',
     values: [
       {
         signature: 'Wireframe = 1'
@@ -85946,6 +86090,7 @@ UpdateClippingPlanes().`,
     name: 'PickStyle',
     dataType: 'enum',
     summary: 'Provides picking values that describe common CAD picking behavior.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0'
@@ -85995,6 +86140,7 @@ UpdateClippingPlanes().`,
     name: 'GetBoxMode',
     dataType: 'enum',
     summary: 'Enumerates all Box getter modes.',
+    since: '5.0',
     values: [
       {
         signature: 'All = 0',
@@ -86023,6 +86169,7 @@ UpdateClippingPlanes().`,
     name: 'GetResult',
     dataType: 'enum',
     summary: 'Possible results from GetObject.Get(), GetPoint.Get(), etc...',
+    since: '5.0',
     values: [
       {
         signature: 'NoResult = 0'
@@ -86882,6 +87029,7 @@ None or empty then the English string is used as the localized value.`
     namespace: 'Rhino.Input',
     name: 'RhinoGet.BitmapFileTypes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'bmp = 1'
@@ -88759,6 +88907,7 @@ type combo box.`
     namespace: 'Rhino.PlugIns',
     name: 'DescriptionType',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Organization'
@@ -88911,6 +89060,7 @@ called when users press or release any digitizer button.`,
     name: 'LicenseBuildType',
     dataType: 'enum',
     summary: 'License build contentType enumerations.',
+    since: '5.0',
     values: [
       {
         signature: 'Unspecified = 0',
@@ -88937,6 +89087,7 @@ called when users press or release any digitizer button.`,
     summary: `Controls the buttons that will appear on the license notification window
 that is displayed if a license for the requesting product is not found.
 Note, the "Close" button will always be displayed.`,
+    since: '5.5',
     values: [
       {
         signature: 'NoCapabilities = 0x0',
@@ -89511,6 +89662,7 @@ Note, date and time is in local time coordinates.`,
     name: 'LicenseType',
     dataType: 'enum',
     summary: 'LicenseType enumeration.',
+    since: '5.0',
     values: [
       {
         signature: 'Standalone',
@@ -89680,6 +89832,7 @@ is used by Rhino C++ plug-ins.`,
     name: 'LoadPlugInResult',
     dataType: 'enum',
     summary: 'Result of attempting to load a plug-in',
+    since: '6.0',
     values: [
       {
         signature: 'Success',
@@ -89697,6 +89850,7 @@ is used by Rhino C++ plug-ins.`,
     namespace: 'Rhino.PlugIns',
     name: 'LoadReturnCode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Success = 1'
@@ -90252,6 +90406,7 @@ event.`,
     namespace: 'Rhino.PlugIns',
     name: 'PlugInLoadTime',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Disabled = 0',
@@ -90283,6 +90438,7 @@ event.`,
     namespace: 'Rhino.PlugIns',
     name: 'PlugInType',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0'
@@ -90426,6 +90582,7 @@ when your plug-in is the current render plug-in.`,
     namespace: 'Rhino.PlugIns',
     name: 'RenderPlugIn.PreviewRenderTypes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -90445,6 +90602,7 @@ when your plug-in is the current render plug-in.`,
     namespace: 'Rhino.PlugIns',
     name: 'RenderPlugIn.RenderFeature',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Materials                   = UnsafeNativeMethods.CRhinoRenderPlugInFeatures.Materials'
@@ -90519,6 +90677,7 @@ when your plug-in is the current render plug-in.`,
     name: 'ValidateResult',
     dataType: 'enum',
     summary: 'ValidateProductKeyDelegate result code.',
+    since: '5.0',
     values: [
       {
         signature: 'Success = 1',
@@ -90540,6 +90699,7 @@ delegate will show an error message, not the license manager.`
     namespace: 'Rhino.PlugIns',
     name: 'WriteFileResult',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Cancel = -1'
@@ -90916,6 +91076,7 @@ ApplyClippingPlaneChanges`,
     name: 'ChangeQueue.BakingFunctions',
     dataType: 'enum',
     summary: 'Enumeration of functions for baking to conduct.',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0x00',
@@ -91052,6 +91213,7 @@ ApplyClippingPlaneChanges`,
     name: 'Environment.FrameBufferFillMode',
     dataType: 'enum',
     summary: 'Fillmode for background',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0',
@@ -91184,6 +91346,7 @@ ApplyClippingPlaneChanges`,
     name: 'Light.Event',
     dataType: 'enum',
     summary: 'Light change type',
+    since: '6.0',
     values: [
       {
         signature: 'Added',
@@ -91939,6 +92102,7 @@ an object is a Variant.`,
     namespace: 'Rhino.Render',
     name: 'CrcRenderHashFlags',
     dataType: 'enum',
+    since: '6.2',
     values: [
       {
         signature: 'Normal                 = 0'
@@ -92079,6 +92243,7 @@ This is for use with the ChangeQueue`,
     name: 'CreatePreviewReason',
     dataType: 'enum',
     summary: 'Reason the content preview is being generated',
+    since: '5.11',
     values: [
       {
         signature: 'ContentChanged = UnsafeNativeMethods.CRhRdkPlugInQuickPreviewReason.ContentChanged'
@@ -92388,6 +92553,7 @@ that has no parameters will get registered.`,
     namespace: 'Rhino.Render.DataSources',
     name: 'AssignBys',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Unset'
@@ -92667,6 +92833,7 @@ The content should be unitilized after use with the Unitialize function.`,
     namespace: 'Rhino.Render.DataSources',
     name: 'Modes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Unset'
@@ -92959,6 +93126,7 @@ Clears the navigator ahead of the current position.`,
     namespace: 'Rhino.Render.DataSources',
     name: 'Shapes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Square'
@@ -92972,6 +93140,7 @@ Clears the navigator ahead of the current position.`,
     namespace: 'Rhino.Render.DataSources',
     name: 'Sizes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Unset'
@@ -93256,6 +93425,7 @@ You can detect when a decal changes by watching for the OnUserDataTransformed ev
     namespace: 'Rhino.Render',
     name: 'DecalMapping',
     dataType: 'enum',
+    since: '5.10',
     values: [
       {
         signature: 'Planar = (int)UnsafeNativeMethods.RhRdkDecalMapping.Planar',
@@ -93279,6 +93449,7 @@ You can detect when a decal changes by watching for the OnUserDataTransformed ev
     namespace: 'Rhino.Render',
     name: 'DecalProjection',
     dataType: 'enum',
+    since: '5.10',
     values: [
       {
         signature: 'Forward = (int)UnsafeNativeMethods.RhRdkDecalProjection.Forward',
@@ -93372,6 +93543,7 @@ from other functions.  In general, you cannot create these objects yourself.`,
     namespace: 'Rhino.Render',
     name: 'DynamicIconUsage',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'TreeControl = 0',
@@ -95781,6 +95953,7 @@ field value.  Returns False if the field was not found.`
     name: 'FilterContentByUsage',
     dataType: 'enum',
     summary: 'Content collection filter value',
+    since: '6.9',
     values: [
       {
         signature: 'None',
@@ -96004,6 +96177,7 @@ will take care of deleting old data.`,
     namespace: 'Rhino.Render',
     name: 'ImageFileEvent',
     dataType: 'enum',
+    since: '5.11',
     values: [
       {
         signature: 'Saved',
@@ -96062,6 +96236,7 @@ will take care of deleting old data.`,
     name: 'IRhRdkPreviewSceneServer_eRotationType',
     dataType: 'enum',
     summary: 'c# version of IRhRdkPreviewSceneServer eRotationType enum',
+    since: '6.0',
     values: [
       {
         signature: 'Camera',
@@ -96078,6 +96253,7 @@ will take care of deleting old data.`,
     name: 'it_strategy',
     dataType: 'enum',
     summary: 'Defines the collection type to iterate.',
+    since: '6.0',
     values: [
       {
         signature: 'ContentDataBase'
@@ -96330,6 +96506,7 @@ This shouldn't happen.  Will cause an ASSERT`,
     name: 'LightMangerSupportCustomEvent',
     dataType: 'enum',
     summary: 'LightMangerSupportCustomEvent',
+    since: '6.0',
     values: [
       {
         signature: 'light_added'
@@ -96675,6 +96852,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     namespace: 'Rhino.Render',
     name: 'PhysicallyBasedMaterial.BRDFs',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'GGX = 0'
@@ -96939,6 +97117,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     namespace: 'Rhino.Render.PostEffects',
     name: 'ComponentOrder',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'Irrelevant'
@@ -97312,6 +97491,7 @@ method to take complete control of how the document defaults are written.`,
     namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffect.ExecuteWhileRenderingOptionsValue',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'Never'
@@ -97608,6 +97788,7 @@ as the user has requested that the operation be canceled.`,
     namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffectPipeline.Histograms',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'None = 0'
@@ -97642,6 +97823,7 @@ as the user has requested that the operation be canceled.`,
     namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffectPipeline.Init',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'Empty'
@@ -97658,6 +97840,7 @@ as the user has requested that the operation be canceled.`,
     namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffectPipeline.UsageContexts',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'ProductionRendering = 0'
@@ -98008,6 +98191,7 @@ as the user has requested that the operation be canceled.`,
     name: 'PreviewSceneQuality',
     dataType: 'enum',
     summary: 'Quality levels when creating preview images',
+    since: '5.1',
     values: [
       {
         signature: '    RealtimeQuick = Low',
@@ -98086,6 +98270,7 @@ IntermediateProgressive, but not as high as Full.`
     name: 'ProxyTypes',
     dataType: 'enum',
     summary: 'Defines the proxy type of the render content',
+    since: '6.0',
     values: [
       {
         signature: 'None'
@@ -99332,6 +99517,11 @@ If you do not support this parameter, call the base class.`,
         since: '6.0'
       },
       {
+        signature: 'bool IsDeferred()',
+        since: '7.0',
+        returns: 'Return True if content is deferred.'
+      },
+      {
         signature: 'bool IsFactoryProductAcceptableAsChild(ContentFactory factory,String childSlotName)',
         since: '6.1'
       },
@@ -99424,6 +99614,10 @@ operates on.  Some examples are "color", "transparency".`,
           }
         ],
         returns: 'The default behavior for these functions is to return the input string.  Sub-classes may (in the future) override these functions to provide different mappings.'
+      },
+      {
+        signature: 'void RealizeDeferredContent(IntPtr pArray)',
+        since: '7.0'
       },
       {
         signature: 'uint RenderHashExclude(CrcRenderHashFlags flags,string excludeParameterNames)',
@@ -99747,6 +99941,7 @@ Since 6.11`,
     name: 'RenderContent.ChangeContexts',
     dataType: 'enum',
     summary: 'Context of a change to content parameters.',
+    since: '5.1',
     values: [
       {
         signature: 'UI = 0',
@@ -99786,6 +99981,7 @@ Since 6.11`,
     namespace: 'Rhino.Render',
     name: 'RenderContent.ExtraRequirementsSetContexts',
     dataType: 'enum',
+    since: '5.7',
     values: [
       {
         signature: 'UI = 0',
@@ -99806,6 +100002,7 @@ Since 6.11`,
     name: 'RenderContent.MatchDataResult',
     dataType: 'enum',
     summary: 'Return values for MatchData function',
+    since: '5.7',
     values: [
       {
         signature: 'None = 0'
@@ -99822,6 +100019,7 @@ Since 6.11`,
     namespace: 'Rhino.Render',
     name: 'RenderContent.ShowContentChooserFlags',
     dataType: 'enum',
+    since: '5.1',
     values: [
       {
         signature: 'None = 0x0000'
@@ -99857,6 +100055,7 @@ Since 6.11`,
     name: 'RenderContentChangeReason',
     dataType: 'enum',
     summary: 'Enumeration denoting type of change for attach or detach',
+    since: '6.0',
     values: [
       {
         signature: 'None',
@@ -100052,6 +100251,7 @@ Since 6.11`,
     dataType: 'enum',
     summary: `Defines constant values for all render content kinds, such as material,
 environment or texture.`,
+    since: '5.1',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.CRhRdkContentKindConst.None'
@@ -100287,6 +100487,7 @@ the exported file.`
     namespace: 'Rhino.Render',
     name: 'RenderContentSerializer.LMFlags',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'LoadMultiple_Normal  = 0x00'
@@ -100351,6 +100552,7 @@ be properly loaded and used for the drop.`,
     namespace: 'Rhino.Render',
     name: 'RenderContentStyles',
     dataType: 'enum',
+    since: '5.1',
     values: [
       {
         signature: 'None = 0',
@@ -100545,6 +100747,7 @@ This function can be used to create temporary content, as it calls
     namespace: 'Rhino.Render',
     name: 'RenderEnvironment.Usage',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None                      = 0x00'
@@ -101273,6 +101476,7 @@ the standard (ie - defined in ON_Texture) texture channels.`,
     dataType: 'enum',
     summary: `The default scene background for the image that appears in
 preview panes`,
+    since: '5.11',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.RhCmnMaterialPreviewBackground.None'
@@ -101290,6 +101494,7 @@ preview panes`,
     name: 'RenderMaterial.PreviewGeometryType',
     dataType: 'enum',
     summary: 'Geometry that appears in preview panes',
+    since: '5.11',
     values: [
       {
         signature: 'Cone = UnsafeNativeMethods.RhRdkPreviewSceneServerGeometry.Cone'
@@ -101320,6 +101525,7 @@ preview panes`,
     dataType: 'enum',
     summary: `Defines enumerated constant values for use in TextureChildSlotName method.
 NOTE WELL - these values cannot be changed. https://mcneel.myjetbrains.com/youtrack/issue/RH-57752`,
+    since: '5.1',
     values: [
       {
         signature: 'None = 0',
@@ -101572,6 +101778,7 @@ it may be hidden or shown as requested by the user.`
     name: 'RenderPanelType',
     dataType: 'enum',
     summary: 'Contains the custom user interfaces that may be provided',
+    since: '5.11',
     values: [
       {
         signature: 'RenderWindow = UnsafeNativeMethods.RhRdkCustomUiType.RenderWindowCustomDlgInterface',
@@ -101760,6 +101967,7 @@ has already completed).`
     namespace: 'Rhino.Render',
     name: 'RenderPipeline.RenderReturnCode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Ok = 0'
@@ -102277,6 +102485,7 @@ index is a box otherwise returns false.`
     namespace: 'Rhino.Render',
     name: 'RenderPrimitiveType',
     dataType: 'enum',
+    since: '5.7',
     values: [
       {
         signature: 'None = 0'
@@ -102523,6 +102732,7 @@ viewport being rendered or ImageSize when rendering`,
     name: 'RenderSettings.RenderingSources',
     dataType: 'enum',
     summary: 'Rendering source (render directly from a NamedView or Snapshot)',
+    since: '6.1',
     values: [
       {
         signature: 'ActiveViewport',
@@ -102968,6 +103178,7 @@ meter of the model.`,
     namespace: 'Rhino.Render',
     name: 'RenderTexture.eLocalMappingType',
     dataType: 'enum',
+    since: '6.3',
     values: [
       {
         signature: 'lmt_none'
@@ -102987,6 +103198,7 @@ meter of the model.`,
     namespace: 'Rhino.Render',
     name: 'RenderTexture.TextureEvaluatorFlags',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Normal                  = 0x0000'
@@ -103009,6 +103221,7 @@ meter of the model.`,
     namespace: 'Rhino.Render',
     name: 'RenderTexture.TextureGeneration',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Allow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Allow'
@@ -103484,6 +103697,7 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     namespace: 'Rhino.Render',
     name: 'ChannelGPU.ApiTypes',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'OpenGL'
@@ -103519,6 +103733,7 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     namespace: 'Rhino.Render',
     name: 'RenderWindow.RenderSuccessCode',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Completed = 0'
@@ -103532,6 +103747,7 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     namespace: 'Rhino.Render',
     name: 'RenderWindow.StandardChannels',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'None                     = 0x00000000'
@@ -103671,6 +103887,7 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     name: 'SceneServerDataUsage',
     dataType: 'enum',
     summary: 'SceneServerData Usage (Synchronous or Asynchronous)',
+    since: '6.0',
     values: [
       {
         signature: 'Synchronous'
@@ -103731,6 +103948,7 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     namespace: 'Rhino.Render',
     name: 'SimulatedEnvironment.BackgroundProjections',
     dataType: 'enum',
+    since: '5.1',
     values: [
       {
         signature: 'Planar = 0'
@@ -103883,6 +104101,7 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     namespace: 'Rhino.Render',
     name: 'SimulatedTexture.EnvironmentMappingModes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Automatic = 0'
@@ -103917,6 +104136,7 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     namespace: 'Rhino.Render',
     name: 'SimulatedTexture.ProjectionModes',
     dataType: 'enum',
+    since: '5.1',
     values: [
       {
         signature: 'MappingChannel = 0'
@@ -104444,6 +104664,7 @@ Using this function will also set sun to manual.`,
     namespace: 'Rhino.Render',
     name: 'SupportOptions.RdkInitialLocation',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'RenderContent = UnsafeNativeMethods.RdkInitialLocation.RenderContent'
@@ -104460,6 +104681,7 @@ Using this function will also set sun to manual.`,
     namespace: 'Rhino.Render',
     name: 'SupportOptions.RdkTextureSize',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Size1 = UnsafeNativeMethods.RdkTextureSize.Size1'
@@ -104484,6 +104706,7 @@ Using this function will also set sun to manual.`,
     dataType: 'class',
     summary: 'Color4f specialization of TexturedValue.',
     baseclass: 'TexturedValue<Display.Color4f>',
+    since: '6.12',
     constructors: [
       {
         signature: 'TexturedColor(string name,Color4f value,bool on,float amount)',
@@ -104497,6 +104720,7 @@ Using this function will also set sun to manual.`,
     dataType: 'class',
     summary: 'float specialization of TexturedValue.',
     baseclass: 'TexturedValue<float>',
+    since: '6.12',
     constructors: [
       {
         signature: 'TexturedFloat(string name,float value,bool on,float amount)',
@@ -104511,6 +104735,7 @@ Using this function will also set sun to manual.`,
     summary: `Generic class to help holding on to related values. This can be
 used to get data from textured content fields with the
 HandleTexturedValue function.`,
+    since: '6.12',
     constructors: [
       {
         signature: 'TexturedValue(string name,T value,bool on,float amount)'
@@ -104521,6 +104746,7 @@ HandleTexturedValue function.`,
     namespace: 'Rhino.Render',
     name: 'TextureEnvironmentMappingMode',
     dataType: 'enum',
+    since: '5.7',
     values: [
       {
         signature: 'Automatic   = 0'
@@ -104679,6 +104905,7 @@ if the data can be extracted direct to a width*height*4 array of unsigned chars.
         signature: 'TextureEvaluator.ByteArray(int initialSize)',
         summary: `Initializes a new ByteArray class.
 Initial size of the array - all values are set to zero.`,
+        since: '7.0',
         parameters: [
           {
             name: 'initialSize',
@@ -104700,7 +104927,8 @@ Initial size of the array - all values are set to zero.`,
       },
       {
         signature: 'void Dispose()',
-        summary: 'Actively reclaims unmanaged resources that this instance uses.'
+        summary: 'Actively reclaims unmanaged resources that this instance uses.',
+        since: '7.0'
       },
       {
         signature: 'byte[] ToArray()',
@@ -104737,6 +104965,7 @@ Initial size of the array - all values are set to zero.`,
         signature: 'TextureEvaluator.FloatArray(int initialSize)',
         summary: `Initializes a new FloatArray class.
 Initial size of the array - all values are set to zero.`,
+        since: '7.0',
         parameters: [
           {
             name: 'initialSize',
@@ -104758,7 +104987,8 @@ Initial size of the array - all values are set to zero.`,
       },
       {
         signature: 'void Dispose()',
-        summary: 'Actively reclaims unmanaged resources that this instance uses.'
+        summary: 'Actively reclaims unmanaged resources that this instance uses.',
+        since: '7.0'
       },
       {
         signature: 'float[] ToArray()',
@@ -104772,6 +105002,7 @@ Initial size of the array - all values are set to zero.`,
     namespace: 'Rhino.Render',
     name: 'TextureGeneration',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Allow = UnsafeNativeMethods.CRhRdkTextureGenConsts.Allow'
@@ -104850,6 +105081,7 @@ Initial size of the array - all values are set to zero.`,
     namespace: 'Rhino.Render',
     name: 'TextureGraphInfo.Axis',
     dataType: 'enum',
+    since: '6.3',
     values: [
       {
         signature: 'kU = 0'
@@ -104866,6 +105098,7 @@ Initial size of the array - all values are set to zero.`,
     namespace: 'Rhino.Render',
     name: 'TextureGraphInfo.Channel',
     dataType: 'enum',
+    since: '6.3',
     values: [
       {
         signature: 'kRed = 0'
@@ -105296,6 +105529,7 @@ plane.PointAt(0,0,dz[1]).`
     name: 'TextureMappingType',
     dataType: 'enum',
     summary: 'Defines enumerated constants for mapping types such as planar, cylindrical or spherical.',
+    since: '5.0',
     values: [
       {
         signature: 'None = UnsafeNativeMethods.TextureMappingType.NoMapping',
@@ -105343,6 +105577,7 @@ plane.PointAt(0,0,dz[1]).`
     namespace: 'Rhino.Render',
     name: 'TextureMode',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'PROJECTION_MODE = 0'
@@ -105401,6 +105636,7 @@ plane.PointAt(0,0,dz[1]).`
     namespace: 'Rhino.Render',
     name: 'TextureProjectionMode',
     dataType: 'enum',
+    since: '5.7',
     values: [
       {
         signature: 'MappingChannel = 0'
@@ -105426,6 +105662,7 @@ plane.PointAt(0,0,dz[1]).`
     namespace: 'Rhino.Render',
     name: 'TextureRenderHashFlags',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'ExcludeLocalMapping = (1 << 32)'
@@ -105436,6 +105673,7 @@ plane.PointAt(0,0,dz[1]).`
     namespace: 'Rhino.Render',
     name: 'TextureWrapType',
     dataType: 'enum',
+    since: '5.7',
     values: [
       {
         signature: 'Clamped = 0'
@@ -105958,6 +106196,7 @@ invalid or was unable to load plug-in`
     namespace: 'Rhino.Render',
     name: 'Utilities.ShowContentChooserResults',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None',
@@ -105981,6 +106220,7 @@ invalid or was unable to load plug-in`
     namespace: 'Rhino.Render',
     name: 'Utilities.UiFrameworks',
     dataType: 'enum',
+    since: '7.0',
     values: [
       {
         signature: 'Win32',
@@ -108067,6 +108307,7 @@ RenderTextureTableEvent events.`,
     name: 'RhinoDoc.RenderContentTableEventType',
     dataType: 'enum',
     summary: 'Type of content table event',
+    since: '5.7',
     values: [
       {
         signature: 'Loaded',
@@ -108157,6 +108398,7 @@ RenderTextureTableEvent events.`,
     namespace: 'Rhino',
     name: 'RhinoDoc.TextureMappingEventType',
     dataType: 'enum',
+    since: '5.8',
     values: [
       {
         signature: 'Added = UnsafeNativeMethods.RhinoEventWatcherTextureMappingEventConsts.Added',
@@ -109513,6 +109755,7 @@ Unhanded exception handler, writes stack trace to RhinoDotNet.txt file`,
     name: 'HostUtils.LogMessageType',
     dataType: 'enum',
     summary: 'Represents the type of message that is being sent to the OnSendLogMessageToCloud event',
+    since: '6.4',
     values: [
       {
         signature: 'unknown = 0',
@@ -109713,6 +109956,7 @@ Unhanded exception handler, writes stack trace to RhinoDotNet.txt file`,
     name: 'WindowStyle',
     dataType: 'enum',
     summary: 'Specified how a new window should appear when Rhino starts.',
+    since: '7.0',
     values: [
       {
         signature: 'NoWindow = -1',
@@ -111914,6 +112158,7 @@ False otherwise`,
     name: 'LicenseTypes',
     dataType: 'enum',
     summary: 'Different licensing modes that Rhino can run in',
+    since: '6.0',
     values: [
       {
         signature: 'Undefined = 0',
@@ -112102,6 +112347,7 @@ False otherwise`,
     name: 'ButtonType',
     dataType: 'enum',
     summary: 'The type of button in a notification.',
+    since: '6.0',
     values: [
       {
         signature: 'CancelOrClose',
@@ -112324,6 +112570,7 @@ notification must be wrapped in a ExecuteAssemblyProtectedCode(Action) method.`,
     name: 'Notification.Severity',
     dataType: 'enum',
     summary: 'Determines the severity of a notification.',
+    since: '6.0',
     values: [
       {
         signature: 'Debug',
@@ -113176,6 +113423,7 @@ If false, it is strongly recommended that you pass a  object and display your ow
     name: 'ProgressState',
     dataType: 'enum',
     summary: 'Describes the state of progress.',
+    since: '7.0',
     values: [
       {
         signature: 'AwaitingLogin',
@@ -114201,6 +114449,7 @@ example Letter / A4 / A6`,
     namespace: 'Rhino.Runtime',
     name: 'ViewCaptureWriter.PointType',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Move'
@@ -115318,6 +115567,7 @@ are registed`,
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
     name: 'IRhRdkContentThumbnailList_Sizes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Tiny',
@@ -115443,6 +115693,7 @@ are registed`,
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
     name: 'IRhRdkThumbnailList_Modes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Grid',
@@ -115462,6 +115713,7 @@ are registed`,
     namespace: 'Rhino.UI.Controls.ThumbnailUI',
     name: 'IRhRdkThumbnailList_Shapes',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Square',
@@ -116295,6 +116547,7 @@ user interface.`,
     namespace: 'Rhino.UI',
     name: 'DistanceDisplayMode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Decimal = 0'
@@ -116937,6 +117190,7 @@ the gumball transformation.`,
     name: 'GumballMode',
     dataType: 'enum',
     summary: 'Transformation modes for gumballs.',
+    since: '5.0',
     values: [
       {
         signature: 'None = 0'
@@ -117127,6 +117381,7 @@ In this case, gumball is set to the default.`
     namespace: 'Rhino.UI.Gumball',
     name: 'GumballScaleMode',
     dataType: 'enum',
+    since: '5.0',
     values: [
       {
         signature: 'Independent = 0'
@@ -117704,6 +117959,7 @@ using RhinoCommon outside of the Rhino process`,
     namespace: 'Rhino.UI',
     name: 'ModifierKey',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -117720,6 +117976,7 @@ using RhinoCommon outside of the Rhino process`,
     namespace: 'Rhino.UI',
     name: 'MouseButton',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -119206,6 +119463,7 @@ the tool-tip.`
     dataType: 'enum',
     summary: `Used by the FloatPanel method to determine if the floating panel
 should be shown or hidden.`,
+    since: '6.2',
     values: [
       {
         signature: 'Show',
@@ -119226,6 +119484,7 @@ should be shown or hidden.`,
     name: 'PanelType',
     dataType: 'enum',
     summary: 'Panel type',
+    since: '6.1',
     values: [
       {
         signature: 'PerDoc',
@@ -119632,6 +119891,7 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     namespace: 'Rhino.UI',
     name: 'ShowMessageButton',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'OK = 0'
@@ -119657,6 +119917,7 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     namespace: 'Rhino.UI',
     name: 'ShowMessageDefaultButton',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'Button1 = 0'
@@ -119673,6 +119934,7 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     namespace: 'Rhino.UI',
     name: 'ShowMessageIcon',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -119707,6 +119969,7 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     namespace: 'Rhino.UI',
     name: 'ShowMessageMode',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'ApplicationModal = 0'
@@ -119723,6 +119986,7 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     namespace: 'Rhino.UI',
     name: 'ShowMessageOptions',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'
@@ -119751,6 +120015,7 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     namespace: 'Rhino.UI',
     name: 'ShowMessageResult',
     dataType: 'enum',
+    since: '6.0',
     values: [
       {
         signature: 'None = 0'

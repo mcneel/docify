@@ -9,6 +9,7 @@
           <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
           <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>
           <li v-for="method in type.methods" :key="method.signature">{{method.signature}}</li>
+          <li v-for="value in type.values" :key="value.signature">{{value.signature}}</li>
         </ul>
       </li>
     </ul>
@@ -41,7 +42,10 @@ export default {
       this.api = ViewModel.getFilteredApi(this.version)
       let memberCount = 0
       this.api.forEach(type => {
-        memberCount += type.constructors.length + type.properties.length + type.methods.length
+        memberCount += type.constructors.length +
+         type.properties.length +
+         type.methods.length +
+         type.values.length
       })
       this.memberCount = memberCount
     }

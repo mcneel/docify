@@ -154,6 +154,12 @@ namespace api_docify
                     }
                 }
 
+                if (type.HasSinceTag())
+                {
+                    sb.AppendLine(",");
+                    sb.Append($"    since: '{type.Since}'");
+                }
+
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
                 string properties = MembersAsJsonArray(type, ParsedMemberType.Property);
