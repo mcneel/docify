@@ -12199,7 +12199,7 @@ cause this ID to be Guid.Empty.`,
         property: ['get', 'set']
       },
       {
-        signature: 'StereoRenderContextEnum StereoRenderContext',
+        signature: 'StereoRenderContexts StereoRenderContext',
         summary: 'Get or set the stereo render context.',
         since: '7.0',
         property: ['get', 'set']
@@ -12386,12 +12386,12 @@ cause this ID to be Guid.Empty.`,
   },
   {
     namespace: 'Rhino.Display',
-    name: 'DisplayPipelineAttributes.StereoRenderContextEnum',
+    name: 'DisplayPipelineAttributes.StereoRenderContexts',
     dataType: 'enum',
     since: '7.0',
     values: [
       {
-        signature: 'NotApplicable = 0'
+        signature: 'None = 0'
       },
       {
         signature: 'RenderingLeftEye = 1'
@@ -93701,16 +93701,16 @@ up the C++ pointers when they are disposed of.`,
         property: ['get', 'set']
       },
       {
-        signature: 'int TextureAmountMax',
+        signature: 'double TextureAmountMax',
         summary: 'Set Max value for Texture amount',
         since: '7.0',
-        property: ['set']
+        property: ['get', 'set']
       },
       {
-        signature: 'int TextureAmountMin',
+        signature: 'double TextureAmountMin',
         summary: 'Set Min value for Texture amount',
         since: '7.0',
-        property: ['set']
+        property: ['get', 'set']
       }
     ],
     methods: [
@@ -96996,7 +96996,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     ],
     methods: [
       {
-        signature: 'static string FromTextureType(TextureType tt)',
+        signature: 'static string FromTextureType(TextureType textureType)',
         since: '7.0'
       }
     ]
@@ -97032,6 +97032,18 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     name: 'Channel',
     dataType: 'class',
     interfaces: ['IDisposable'],
+    properties: [
+      {
+        signature: 'Guid Id',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'uint PixelSize',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
     methods: [
       {
         signature: 'Channel Clone()',
@@ -97046,7 +97058,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         since: '7.0'
       },
       {
-        signature: 'RenderWindow.Channel CPU_Const()',
+        signature: 'RenderWindow.Channel CPUConst()',
         since: '7.0'
       },
       {
@@ -97058,15 +97070,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         since: '7.0'
       },
       {
-        signature: 'RenderWindow.ChannelGPU GPU_Const()',
-        since: '7.0'
-      },
-      {
-        signature: 'Guid Id()',
-        since: '7.0'
-      },
-      {
-        signature: 'uint PixelSize()',
+        signature: 'RenderWindow.ChannelGPU GPUConst()',
         since: '7.0'
       },
       {
@@ -97094,15 +97098,18 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         since: '7.0'
       },
       {
-        signature: 'ChannelData(Guid uuid,ComponentOrder co)',
+        signature: 'ChannelData(Guid id,ComponentOrders componentOrder)',
         since: '7.0'
       }
     ],
-    methods: [
+    properties: [
       {
-        signature: 'ComponentOrder CO()',
-        since: '7.0'
-      },
+        signature: 'ComponentOrders ComponentOrder',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
+    methods: [
       {
         signature: 'void Dispose()',
         since: '7.0'
@@ -97115,7 +97122,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'ComponentOrder',
+    name: 'ComponentOrders',
     dataType: 'enum',
     since: '7.0',
     values: [
@@ -97150,93 +97157,55 @@ See also RhinoMath.CRC32(uint,byte[]).`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'EarlyPostEffect',
+    name: 'CustomPostEffectAttribute',
     dataType: 'class',
-    summary: `class EarlyPostEffect
-3rd-party early post effects should subclass this class.`,
-    baseclass: 'Rhino.Render.PostEffects.ListablePostEffect',
-    interfaces: ['IDisposable'],
+    baseclass: 'Attribute',
     constructors: [
       {
-        signature: 'EarlyPostEffect()',
+        signature: 'CustomPostEffectAttribute(Types t,string name,Usages usageFlags,ExecuteWhileRenderingOptions executeWhileRenderingOption,bool supportsHDR,bool canDisplayHelp,bool isFixed,int executeWhileRenderingDelay)',
         since: '7.0'
       }
     ],
     properties: [
       {
-        signature: 'int SerialNumber',
+        signature: 'bool CanDisplayHelp',
         since: '7.0',
         property: ['get', 'set']
-      }
-    ],
-    methods: [
+      },
       {
-        signature: 'void Dispose()',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'LatePostEffect',
-    dataType: 'class',
-    summary: `class LatePostEffect
-3rd-party late post effects should subclass this class.`,
-    baseclass: 'Rhino.Render.PostEffects.ListablePostEffect',
-    interfaces: ['IDisposable'],
-    constructors: [
-      {
-        signature: 'LatePostEffect()',
-        since: '7.0'
-      }
-    ],
-    properties: [
-      {
-        signature: 'int SerialNumber',
+        signature: 'int ExecuteWhileRenderingDelay',
         since: '7.0',
         property: ['get', 'set']
-      }
-    ],
-    methods: [
+      },
       {
-        signature: 'void Dispose()',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'ListablePostEffect',
-    dataType: 'class',
-    baseclass: 'Rhino.Render.PostEffects.PostEffect',
-    methods: [
-      {
-        signature: 'bool Fixed()',
-        summary: `Return True if the post effect is fixed, else false. Fixed plug-ins cannot be
-un-shown by the user, although they can be turned off.`,
+        signature: 'ExecuteWhileRenderingOptions ExecuteWhileRenderingOption',
         since: '7.0',
-        returns: 'Return True if the post effect is fixed'
+        property: ['get', 'set']
       },
       {
-        signature: 'bool On()',
-        summary: 'Return True if the post effect is turned on. Only post effects that are on will execute.',
+        signature: 'bool IsFixed',
         since: '7.0',
-        returns: 'Return True if the post effect is turned on'
+        property: ['get', 'set']
       },
       {
-        signature: 'void SetOn(bool bOn)',
-        summary: 'Turn the post effect on or off.',
-        since: '7.0'
+        signature: 'string Name',
+        since: '7.0',
+        property: ['get', 'set']
       },
       {
-        signature: 'void SetShown(bool bShown)',
-        summary: 'Show or hide the post effect.',
-        since: '7.0'
+        signature: 'Types PostEffectType',
+        since: '7.0',
+        property: ['get', 'set']
       },
       {
-        signature: 'bool Shown()',
-        summary: 'return True if the post effect is shown in a list. Only post effects that are shown will execute.',
-        since: '7.0'
+        signature: 'bool SupportsHDR',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Usages Usage',
+        since: '7.0',
+        property: ['get', 'set']
       }
     ]
   },
@@ -97251,7 +97220,7 @@ un-shown by the user, although they can be turned off.`,
         since: '7.0'
       },
       {
-        signature: 'void Get(Guid channel_uuid,ComponentOrder co,IntPtr values)',
+        signature: 'void Get(Guid channelId,ComponentOrders componentOrder,IntPtr values)',
         since: '7.0'
       }
     ]
@@ -97260,10 +97229,78 @@ un-shown by the user, although they can be turned off.`,
     namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffect',
     dataType: 'class',
+    interfaces: ['IDisposable'],
     constructors: [
       {
         signature: 'PostEffect()',
         since: '7.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'bool CanDisplayHelp',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'ExecuteWhileRenderingOptions ExecuteWhileRenderingOption',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool Fixed',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid Id',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsSelected',
+        summary: 'Return True if the post effect is selected.',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'string LocalName',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool On',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Types PostEffectType',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'Guid[] RequiredChannels',
+        summary: `The RDK calls this method to determine which channels a post effect requires. If a required channel is not
+available, the RDK will hide the post effect's UI and display explanatory text instead.
+Note: As a convenience, the default implementation adds IRhRdkRenderWindow::chanRGBA to the output array.
+Most post effects should be able to use this default with no need to override the method.`,
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'int SerialNumber',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool Shown',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Usages Usage',
+        since: '7.0',
+        property: ['get']
       }
     ],
     methods: [
@@ -97283,12 +97320,6 @@ your implementation of this method can be a no-op.`,
       {
         signature: 'void BeginChange(ChangeContexts changeContext)',
         since: '7.0'
-      },
-      {
-        signature: 'bool CanDisplayHelp()',
-        summary: 'Return True if the post effect can display a help page, else false.',
-        since: '7.0',
-        returns: 'Return True if the post effect can display a help page, else false.'
       },
       {
         signature: 'bool CanExecute(PostEffectPipeline pipeline)',
@@ -97315,6 +97346,10 @@ Post effect authors can override this to include other criteria but cannot disab
         returns: 'Return True if successful, else false.'
       },
       {
+        signature: 'void Dispose()',
+        since: '7.0'
+      },
+      {
         signature: 'bool EndChange()',
         since: '7.0'
       },
@@ -97333,24 +97368,6 @@ Post effect authors can override this to include other criteria but cannot disab
           }
         ],
         returns: 'Return True if successful, else false.'
-      },
-      {
-        signature: 'int ExecuteWhileRenderingDelayMS()',
-        summary: `If GetExecuteWhileRenderingOption() returns UseDelay then this method returns the delay in milliseconds before the
-post effect should execute for the first time.After the first time, the post effect will execute every time the dib is updated
-during rendering. see enum ExecuteWhileRenderingOptions.`,
-        since: '7.0',
-        returns: 'returns the delay in milliseconds before'
-      },
-      {
-        signature: 'ExecuteWhileRenderingOptionsValue GetExecuteWhileRenderingOptions()',
-        summary: `As rendering proceeds, in order for progress to be seen on the screen, small areas of the frame buffer
-that have been rendered are post-processed and written to an area of the dib which is then shown on the
-screen. Some post effects will not be able to support this as they need the whole frame buffer in order to operate.
-This method allows a post effect to report whether or not it is able to support execution during rendering, and
-if so, when it should be done. See enum ExecuteWhileRenderingOptions.`,
-        since: '7.0',
-        returns: 'returns the ExecuteWhileRenderingOptionsValue'
       },
       {
         signature: 'bool GetParam(string param,object v)',
@@ -97373,17 +97390,6 @@ if so, when it should be done. See enum ExecuteWhileRenderingOptions.`,
         summary: 'A CRC of the state of this post effect.',
         since: '7.0',
         returns: 'returns a crc of post effect state'
-      },
-      {
-        signature: 'bool IsSelected()',
-        summary: 'Return True if the post effect is selected.',
-        since: '7.0'
-      },
-      {
-        signature: 'string LocalName()',
-        summary: 'Return The localized name of this post effect.',
-        since: '7.0',
-        returns: 'post effect localized name'
       },
       {
         signature: 'bool ReadFromDocumentDefaults(RhinoDoc doc)',
@@ -97412,15 +97418,6 @@ method to take complete control of how the document defaults are read.`,
         returns: 'Return True if successful, else false.'
       },
       {
-        signature: 'Guid[] RequiredChannels()',
-        summary: `The RDK calls this method to determine which channels a post effect requires. If a required channel is not
-available, the RDK will hide the post effect's UI and display explanatory text instead.
-Note: As a convenience, the default implementation adds IRhRdkRenderWindow::chanRGBA to the output array.
-Most post effects should be able to use this default with no need to override the method.`,
-        since: '7.0',
-        returns: 'The channel Ids.The post effect should return all channels used by its implementation to this array.'
-      },
-      {
         signature: 'void ResetToFactoryDefaults()',
         summary: 'Reset the state to factory defaults.',
         since: '7.0'
@@ -97440,24 +97437,6 @@ Most post effects should be able to use this default with no need to override th
           }
         ],
         returns: 'Return True if successful or False if the parameter could not be set.'
-      },
-      {
-        signature: 'bool SupportsHDRData()',
-        summary: 'Return True if the post effect can operate on HDR data (meaning channels containing values greater than 1).',
-        since: '7.0',
-        returns: 'Return True if the post effect can operate on HDR data'
-      },
-      {
-        signature: 'uint UsageFlags()',
-        summary: 'See PostEfectsPlugIn variables: uf_ProductionRendering uf_RealtimeRendering uf_ViewportDisplay',
-        since: '7.0',
-        returns: 'returns the usageflags'
-      },
-      {
-        signature: 'Guid UUID()',
-        summary: 'Return The unique identifier of this post effect.',
-        since: '7.0',
-        returns: 'post effect uuid'
       },
       {
         signature: 'bool WriteState(PostEffectState state)',
@@ -97489,12 +97468,12 @@ method to take complete control of how the document defaults are written.`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffect.ExecuteWhileRenderingOptionsValue',
+    name: 'PostEffect.ExecuteWhileRenderingOptions',
     dataType: 'enum',
     since: '7.0',
     values: [
       {
-        signature: 'Never'
+        signature: 'None'
       },
       {
         signature: 'Always'
@@ -97506,35 +97485,35 @@ method to take complete control of how the document defaults are written.`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectFactory',
-    dataType: 'class',
-    summary: `To register a pep plugin create factory from PostEffectFactory.
-
-The factory should be public and have a public constructor in order
-for it to be able to register itself.
-
-Use Rhino.UI.Controls.FactoryBase.Register() to register it. This will register
-all rdk factories that are expoerted and have a public constructor.`,
-    baseclass: 'Rhino.UI.Controls.FactoryBase',
-    constructors: [
+    name: 'PostEffect.Types',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
       {
-        signature: 'PostEffectFactory()',
-        summary: 'This class allows you to provide a factory for generating a custom post-effect plug-in.',
-        since: '7.0'
-      }
-    ],
-    methods: [
-      {
-        signature: 'PostEffect NewPostEffect()',
-        summary: 'Create the new post effect instance.',
-        since: '7.0',
-        returns: 'Return an instance to the new post effect object. Do not return null.'
+        signature: 'Early = 0'
       },
       {
-        signature: 'Guid PlugInId()',
-        summary: 'Plugin id',
-        since: '7.0',
-        returns: 'Plugin id'
+        signature: 'ToneMapping = 1'
+      },
+      {
+        signature: 'Late = 2'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffect.Usages',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'ProductionRendering = 0x01'
+      },
+      {
+        signature: 'RealtimeRendering = 0x02'
+      },
+      {
+        signature: 'ViewportDisplay = 0x04'
       }
     ]
   },
@@ -97592,13 +97571,27 @@ It is also possible for a post effect to create and use any number of 'scratch' 
 temporary pixel buffer for some intermediate results, it can call NewChannel() with a custom (random) id.
 Once it is finished with this scratch channel, it can call Discard() on it.`,
     interfaces: ['IDisposable'],
-    methods: [
+    properties: [
       {
-        signature: 'bool AllowGPU()',
+        signature: 'bool GPUAllowed',
         summary: 'Post effect authors should check that GPU use is allowed before using the GPU in a post effect.',
         since: '7.0',
-        returns: 'Return True if the pipeline is allowed to use the GPU, else false'
+        property: ['get']
       },
+      {
+        signature: 'bool IsRendering',
+        summary: 'IsRendering',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'Guid RenderingId',
+        summary: 'Return a UUID that uniquely identifies the rendering being processed.',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
+    methods: [
       {
         signature: 'void Commit(Channel channel)',
         summary: `Commit changes to a new channel so that those changes can be used by subsequent post effects in the chain.
@@ -97717,13 +97710,7 @@ Do not make assumptions about what the epoch is; it might be different on differ
         returns: 'string watermark text'
       },
       {
-        signature: 'bool IsRendering()',
-        summary: 'IsRendering',
-        since: '7.0',
-        returns: 'Return True if rendering is active, else false.'
-      },
-      {
-        signature: 'Channel NewChannel(Guid uuid,Init init,uint flags)',
+        signature: 'Channel NewChannel(Guid id,InitializationOptions initializationOptions,NewChannelOptions channelOptions)',
         summary: `Create a new channel for writing. A post effect will use this to get channel(s) to write the output of its
 processing to.Input will usually come from existing channels, although a post effect is free to read
 its own output channels if needed. \\see GetChannel()
@@ -97733,16 +97720,16 @@ in which case Commit() will replace the existing channel with the new one in the
         since: '7.0',
         parameters: [
           {
-            name: 'uuid',
+            name: 'id',
             summary: 'uuidChannel is the channel identifier.'
           },
           {
-            name: 'init',
+            name: 'initializationOptions',
             summary: 'init specifies how the new channel should be initialized.'
           },
           {
-            name: 'flags',
-            summary: 'flags from the ncf_None ncf_File ncf_GPU specify options for the new channel.'
+            name: 'channelOptions',
+            summary: 'flags from the NewChannelOptions specify options for the new channel.'
           }
         ],
         returns: 'A pointer to the new channel or None if the channel could not be created.'
@@ -97752,12 +97739,6 @@ in which case Commit() will replace the existing channel with the new one in the
         summary: 'Returns a list of the post effects to be executed by this pipeline in order.',
         since: '7.0',
         returns: 'A list of the post effects to be executed by this pipeline in order'
-      },
-      {
-        signature: 'Guid RenderingId()',
-        summary: 'Return a UUID that uniquely identifies the rendering being processed.',
-        since: '7.0',
-        returns: 'Return a UUID that uniquely identifies the rendering being processed.'
       },
       {
         signature: 'bool ReportProgress(int rowsCompleted)',
@@ -97821,18 +97802,35 @@ as the user has requested that the operation be canceled.`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectPipeline.Init',
+    name: 'PostEffectPipeline.InitializationOptions',
     dataType: 'enum',
     since: '7.0',
     values: [
       {
-        signature: 'Empty'
+        signature: 'Empty = 0'
       },
       {
-        signature: 'Zero'
+        signature: 'Zero = 1'
       },
       {
-        signature: 'Copy'
+        signature: 'Copy = 2'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectPipeline.NewChannelOptions',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'None = 0x0000'
+      },
+      {
+        signature: 'File = 0x0001'
+      },
+      {
+        signature: 'GPU  = 0x0002'
       }
     ]
   },
@@ -97868,15 +97866,7 @@ as the user has requested that the operation be canceled.`,
         since: '7.0'
       },
       {
-        signature: 'PostEffect[] GetEarlyPostEffects()',
-        since: '7.0'
-      },
-      {
-        signature: 'PostEffect[] GetLatePostEffects()',
-        since: '7.0'
-      },
-      {
-        signature: 'PostEffect[] GetToneMappingPostEffects()',
+        signature: 'PostEffect[] GetPostEffects(Types type)',
         since: '7.0'
       },
       {
@@ -97940,34 +97930,6 @@ as the user has requested that the operation be canceled.`,
     ]
   },
   {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'ToneMappingPostEffect',
-    dataType: 'class',
-    summary: `class ToneMappingPostEffect
-3rd-party tone mapping post effects should subclass this class.`,
-    baseclass: 'Rhino.Render.PostEffects.PostEffect',
-    interfaces: ['IDisposable'],
-    constructors: [
-      {
-        signature: 'ToneMappingPostEffect()',
-        since: '7.0'
-      }
-    ],
-    properties: [
-      {
-        signature: 'int SerialNumber',
-        since: '7.0',
-        property: ['get', 'set']
-      }
-    ],
-    methods: [
-      {
-        signature: 'void Dispose()',
-        since: '7.0'
-      }
-    ]
-  },
-  {
     namespace: 'Rhino.Render',
     name: 'PreviewAppearance',
     dataType: 'class',
@@ -97991,6 +97953,18 @@ as the user has requested that the operation be canceled.`,
         signature: 'MetaData MetaData',
         summary: 'Previewappearance MetaData',
         since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'double Scale',
+        summary: 'Size - used in the UI.  Always meters.',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double SceneScale',
+        summary: 'Scene size - the actual size that is rendered',
+        since: '7.0',
         property: ['get']
       }
     ],
@@ -98034,11 +98008,6 @@ as the user has requested that the operation be canceled.`,
         signature: 'double RotationY()',
         summary: 'RotationY',
         since: '6.0'
-      },
-      {
-        signature: 'double SceneSize()',
-        summary: 'Scene size - the actual size that is rendered',
-        since: '7.0'
       },
       {
         signature: 'void SetRotationType(IRhRdkPreviewSceneServer_eRotationType type)',
@@ -99389,14 +99358,8 @@ Sub-classes may (in the future) override these functions to provide different ma
         ]
       },
       {
-        signature: 'void ConvertMetersToUnits(UnitSystem units)',
+        signature: 'void ConvertUnits(UnitSystem from,UnitSystem to)',
         summary: `Modify your content so that it is converted from meters into the units of the unit system.
-No need to call the base class when you override this, and no need to recurse into children.`,
-        since: '7.0'
-      },
-      {
-        signature: 'void ConvertUnitsToMeters(UnitSystem units)',
-        summary: `Modify your content so that it is converted from the units of the unit system into meters.
 No need to call the base class when you override this, and no need to recurse into children.`,
         since: '7.0'
       },
@@ -100407,7 +100370,7 @@ file save box when exporting the specified render content kind.`,
         since: '7.0'
       },
       {
-        signature: 'bool LoadMultiple(RhinoDoc doc,List<string> file_names,RenderContentKind content_kind,LMFlags flags,RenderContentSerializerItemsLoaded loaded)',
+        signature: 'bool LoadMultiple(RhinoDoc doc,List<string> file_names,RenderContentKind content_kind,LoadMultipleFlags flags,RenderContentSerializerItemsLoaded loaded)',
         summary: 'Create any number of new render contents loaded from any number of files.',
         since: '7.0',
         parameters: [
@@ -100485,15 +100448,15 @@ the exported file.`
   },
   {
     namespace: 'Rhino.Render',
-    name: 'RenderContentSerializer.LMFlags',
+    name: 'RenderContentSerializer.LoadMultipleFlags',
     dataType: 'enum',
     since: '7.0',
     values: [
       {
-        signature: 'LoadMultiple_Normal  = 0x00'
+        signature: 'Normal  = 0x00'
       },
       {
-        signature: 'LoadMultiple_Preload = 0x01'
+        signature: 'Preload = 0x01'
       }
     ]
   },
@@ -100967,22 +100930,6 @@ This function can be used to create temporary content, as it calls
   },
   {
     namespace: 'Rhino.Render',
-    name: 'RenderingPostEffects.Disposition',
-    dataType: 'enum',
-    values: [
-      {
-        signature: 'Early = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.Early'
-      },
-      {
-        signature: 'ToneMapping = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.ToneMapping'
-      },
-      {
-        signature: 'Late = UnsafeNativeMethods.RhRdkRenderingPostEffects_Disposition.Late'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
     name: 'RenderMaterial',
     dataType: 'class',
     baseclass: 'Rhino.Render.RenderContent',
@@ -101124,6 +101071,17 @@ preview panes`,
         since: '7.0'
       },
       {
+        signature: 'Rhino.Render.PhysicallyBasedMaterial ConvertToPhysicallyBasedMaterial(TextureGeneration tg)',
+        summary: 'Returns a material that is the best approximation of the original, but as a physically based material.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'tg',
+            summary: 'Determines whether simulated textures will be generated as files.'
+          }
+        ]
+      },
+      {
         signature: 'double GetTextureAmountFromUsage(StandardChildSlots slot)',
         since: '6.0'
       },
@@ -101148,10 +101106,6 @@ instance of TexturedColor`,
       },
       {
         signature: 'DocObjects.Material SimulatedMaterial(TextureGeneration tg)',
-        since: '7.0'
-      },
-      {
-        signature: 'Rhino.Render.PhysicallyBasedMaterial SimulatedPhysicallyBasedMaterial(TextureGeneration tg)',
         since: '7.0'
       },
       {
@@ -101343,14 +101297,14 @@ the standard (ie - defined in ON_Texture) texture channels.`,
     ],
     methods: [
       {
-        signature: 'static string FromTextureType(TextureType tt)',
+        signature: 'static string FromTextureType(TextureType textureType)',
         since: '7.0'
       }
     ]
   },
   {
     namespace: 'Rhino.Render',
-    name: 'PhysicallyBased.ParametersNames',
+    name: 'PhysicallyBased.ParameterNames',
     dataType: 'class',
     properties: [
       {
@@ -101698,42 +101652,7 @@ session.`
         returns: 'Returns the custom panel object if found; otherwise None is returned.'
       },
       {
-        signature: 'void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)',
-        summary: `Register custom render user interface with Rhino.  This should only be
-done in RenderPlugIn.RegisterRenderPanels.  Panels
-registered after RenderPlugIn.RegisterRenderPanels is called
-will be ignored.`,
-        since: '5.11',
-        parameters: [
-          {
-            name: 'plugin',
-            summary: 'The plug-in providing the custom user interface'
-          },
-          {
-            name: 'renderPanelType',
-            summary: 'See RenderPanelType for supported user interface types.'
-          },
-          {
-            name: 'panelType',
-            summary: 'The type of object to be created and added to the render container.'
-          },
-          {
-            name: 'caption',
-            summary: 'The caption for the custom user interface.'
-          },
-          {
-            name: 'alwaysShow',
-            summary: `If True the custom user interface will always be visible, if False then
-it may be hidden or shown as requested by the user.`
-          },
-          {
-            name: 'initialShow',
-            summary: 'Initial visibility state of the custom user interface control.'
-          }
-        ]
-      },
-      {
-        signature: 'void RegisterPanelEx(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,Guid renderEngineId,string caption,bool alwaysShow,bool initialShow)',
+        signature: 'void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,Guid renderEngineId,string caption,bool alwaysShow,bool initialShow)',
         summary: `Register custom render user interface with Rhino.  This should only be
 done in RenderPlugIn.RegisterRenderPanels.  Panels
 registered after RenderPlugIn.RegisterRenderPanels is called
@@ -101755,6 +101674,41 @@ will be ignored.`,
           {
             name: 'renderEngineId',
             summary: 'The render engine id allowing the UI to be shown'
+          },
+          {
+            name: 'caption',
+            summary: 'The caption for the custom user interface.'
+          },
+          {
+            name: 'alwaysShow',
+            summary: `If True the custom user interface will always be visible, if False then
+it may be hidden or shown as requested by the user.`
+          },
+          {
+            name: 'initialShow',
+            summary: 'Initial visibility state of the custom user interface control.'
+          }
+        ]
+      },
+      {
+        signature: 'void RegisterPanel(PlugIn plugin,RenderPanelType renderPanelType,Type panelType,string caption,bool alwaysShow,bool initialShow)',
+        summary: `Register custom render user interface with Rhino.  This should only be
+done in RenderPlugIn.RegisterRenderPanels.  Panels
+registered after RenderPlugIn.RegisterRenderPanels is called
+will be ignored.`,
+        since: '5.11',
+        parameters: [
+          {
+            name: 'plugin',
+            summary: 'The plug-in providing the custom user interface'
+          },
+          {
+            name: 'renderPanelType',
+            summary: 'See RenderPanelType for supported user interface types.'
+          },
+          {
+            name: 'panelType',
+            summary: 'The type of object to be created and added to the render container.'
           },
           {
             name: 'caption',
@@ -102826,6 +102780,10 @@ session.`
         since: '5.11'
       },
       {
+        signature: 'void RegisterTab(PlugIn plugin,Type tabType,Guid renderEngineId,string caption,Icon icon)',
+        since: '7.0'
+      },
+      {
         signature: 'void RegisterTab(PlugIn plugin,Type tabType,string caption,Icon icon)',
         summary: `Register custom render user interface with Rhino.  This should only be
 done in RenderPlugIn.RegisterRenderTabs.  Panels
@@ -102851,10 +102809,6 @@ the method will get called when F1 is pressed and the custom tab is active.`,
             summary: ''
           }
         ]
-      },
-      {
-        signature: 'void RegisterTabEx(PlugIn plugin,Type tabType,Guid renderEngineId,string caption,Icon icon)',
-        since: '7.0'
       }
     ]
   },
@@ -103519,6 +103473,26 @@ rectangle.Height is the height of the rectangle in pixels. No validation is done
     name: 'RenderWindow.Channel',
     dataType: 'class',
     interfaces: ['IDisposable'],
+    properties: [
+      {
+        signature: 'int Height',
+        summary: 'Return the channel height.',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'Guid Id',
+        summary: 'Return the channel id.',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'int Width',
+        summary: 'Return the channel width.',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
     methods: [
       {
         signature: 'void AddValue(int x,int y,Color4f value)',
@@ -103544,6 +103518,7 @@ The caller is responsible for ensuring that it is within the frame buffer.`
       },
       {
         signature: 'Channel Clone()',
+        summary: 'Return a clone of the channel.',
         since: '7.0'
       },
       {
@@ -103552,22 +103527,20 @@ The caller is responsible for ensuring that it is within the frame buffer.`
       },
       {
         signature: 'void GetMinMaxValues(float min,float max)',
+        summary: `Get the minimum and maximum values in the channel.
+The channel's minimum value.
+The channel's maximum value.`,
         since: '7.0'
       },
       {
-        signature: 'void GetValueEx(int x,int y,ComponentOrder order,float[] values)',
+        signature: 'void GetValue(int x,int y,ComponentOrders componentOrder,float[] values)',
+        summary: 'Get values from the channel.',
         since: '7.0'
       },
       {
-        signature: 'void GetValueRect(int x,int y,int width,int height,int stride,ComponentOrder order,float[] values)',
-        since: '7.0'
-      },
-      {
-        signature: 'int Height()',
-        since: '7.0'
-      },
-      {
-        signature: 'Guid Id()',
+        signature: 'void GetValueRect(int x,int y,int width,int height,int stride,ComponentOrders componentOrder,float[] values)',
+        summary: `Get a rectangle of values from the channel. The input parameters are checked for validity.
+If the rectangle is not fully inside the frame buffer, the function will fail.`,
         since: '7.0'
       },
       {
@@ -103601,7 +103574,7 @@ The caller is responsible for ensuring that it is within the frame buffer.`
       },
       {
         signature: 'void SetValue(int x,int y,float value)',
-        summary: 'If x or y are out of range, the function will fail and may crash Rhino.',
+        summary: 'Assign  to a pixel at coordinate (, ).',
         since: '5.0',
         parameters: [
           {
@@ -103638,10 +103611,6 @@ The caller is responsible for ensuring that it is within the frame buffer.`
             summary: 'PixelBuffer to a color buffer of floats in RGBA format.'
           }
         ]
-      },
-      {
-        signature: 'int Width()',
-        since: '7.0'
       }
     ]
   },
@@ -103653,42 +103622,58 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     methods: [
       {
         signature: 'ApiTypes ApiType()',
+        summary: 'Return the type of API used for this channel\'s texture handle.',
         since: '7.0'
       },
       {
         signature: 'ChannelGPU Clone()',
+        summary: 'Return a clone of the channel.',
         since: '7.0'
       },
       {
         signature: 'void Close()',
+        summary: 'Close the channel.',
         since: '7.0'
       },
       {
-        signature: 'void CopyTo(Channel channel_ex)',
-        since: '7.0'
+        signature: 'void CopyTo(Channel channel)',
+        summary: 'Copy the channel to a \'CPU\' channel.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'channel',
+            summary: 'The channel to copy to.'
+          }
+        ]
       },
       {
         signature: 'void Dispose()',
+        summary: 'Dispose of the channel.',
         since: '7.0'
       },
       {
         signature: 'int Height()',
+        summary: 'Return the channel height.',
         since: '7.0'
       },
       {
         signature: 'Guid Id()',
+        summary: 'Return the channel id.',
         since: '7.0'
       },
       {
         signature: 'uint PixelSize()',
+        summary: 'Return the size of one pixel\'s data in the channel.',
         since: '7.0'
       },
       {
         signature: 'uint TextureHandle()',
+        summary: 'Return the channel\'s texture handle.',
         since: '7.0'
       },
       {
         signature: 'int Width()',
+        summary: 'Return the channel width.',
         since: '7.0'
       }
     ]
@@ -103697,6 +103682,7 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     namespace: 'Rhino.Render',
     name: 'ChannelGPU.ApiTypes',
     dataType: 'enum',
+    summary: 'The type of API used for a channel\'s texture handle.',
     since: '7.0',
     values: [
       {
@@ -103750,79 +103736,79 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
     since: '5.0',
     values: [
       {
-        signature: 'None                     = 0x00000000'
+        signature: 'None = 0x00000000'
       },
       {
-        signature: 'Red                      = 0x00000001'
+        signature: 'Red = 0x00000001'
       },
       {
-        signature: 'Green                    = 0x00000002'
+        signature: 'Green = 0x00000002'
       },
       {
-        signature: 'Blue                     = 0x00000004'
+        signature: 'Blue = 0x00000004'
       },
       {
-        signature: 'Alpha                    = 0x00000008'
+        signature: 'Alpha = 0x00000008'
       },
       {
-        signature: 'RGBA                     = 0x0000000E'
+        signature: 'RGBA = 0x0000000E'
       },
       {
-        signature: 'RGB                      = 0x0000000F'
+        signature: 'RGB = 0x0000000F'
       },
       {
-        signature: 'DistanceFromCamera       = 0x00000010'
+        signature: 'DistanceFromCamera = 0x00000010'
       },
       {
-        signature: 'NormalX                  = 0x00000020'
+        signature: 'NormalX = 0x00000020'
       },
       {
-        signature: 'NormalY                  = 0x00000040'
+        signature: 'NormalY = 0x00000040'
       },
       {
-        signature: 'NormalZ                  = 0x00000080'
+        signature: 'NormalZ = 0x00000080'
       },
       {
-        signature: 'NormalXYZ                = 0x000000F0'
+        signature: 'NormalXYZ = 0x000000F0'
       },
       {
-        signature: 'LuminanceRed             = 0x00000100'
+        signature: 'LuminanceRed = 0x00000100'
       },
       {
-        signature: 'LuminanceGreen           = 0x00000200'
+        signature: 'LuminanceGreen = 0x00000200'
       },
       {
-        signature: 'LuminanceBlue            = 0x00000400'
+        signature: 'LuminanceBlue = 0x00000400'
       },
       {
-        signature: 'BackgroundLuminanceRed   = 0x00001000'
+        signature: 'BackgroundLuminanceRed = 0x00001000'
       },
       {
         signature: 'BackgroundLuminanceGreen = 0x00002000'
       },
       {
-        signature: 'BackgroundLuminanceBlue  = 0x00004000'
+        signature: 'BackgroundLuminanceBlue = 0x00004000'
       },
       {
-        signature: 'MaterialIds              = 0x00010000'
+        signature: 'MaterialIds = 0x00010000'
       },
       {
-        signature: 'ObjectIds                = 0x00020000'
+        signature: 'ObjectIds = 0x00020000'
       },
       {
-        signature: 'Wireframe                = 0x00040000'
+        signature: 'Wireframe = 0x00040000'
       },
       {
-        signature: 'AlbedoRed                = 0x00100000'
+        signature: 'AlbedoRed = 0x00100000'
       },
       {
-        signature: 'AlbedoGreen              = 0x00200000'
+        signature: 'AlbedoGreen = 0x00200000'
       },
       {
-        signature: 'AlbedoBlue               = 0x00400000'
+        signature: 'AlbedoBlue = 0x00400000'
       },
       {
-        signature: 'AlbedoRGB                = 0x00700000'
+        signature: 'AlbedoRGB = 0x00700000'
       }
     ]
   },

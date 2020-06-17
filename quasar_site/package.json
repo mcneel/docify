@@ -1,8 +1,8 @@
 {
   "name": "quasar_site",
-  "version": "0.0.1",
-  "description": "Rhino/Grasshopper APIs ",
-  "productName": "RhinoApis",
+  "version": "7.0.0",
+  "description": "RhinoCommon API",
+  "productName": "RhinoCommon",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Steve Baer <steve@mcneel.com>",
@@ -19,7 +19,7 @@
     "@quasar/extras": "^1.8.2",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.24",
     "lru-cache": "^5.1.1",
-    "quasar": "^1.12.4"
+    "quasar": "^1.12.5"
   },
   "devDependencies": {
     "@quasar/app": "^1.7.4",
