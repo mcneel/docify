@@ -25,6 +25,7 @@
         <q-item v-for="member in section.items" :key="member.signature">
           <q-item-section>
             <q-item-label>
+              <div :id="anchorId(section, member)">
               <span v-for="(chunk, index) in signature(member, section)" :key="index">
                 <span v-if="chunk.link">
                   <router-link :to="chunk.link">{{chunk.name}}</router-link>
@@ -41,8 +42,17 @@
                 >
                 <q-tooltip>Show Example</q-tooltip>
               </q-btn>
+              </div>
             </q-item-label>
             <q-item-label caption>
+              <q-btn v-if="useAnchors"
+                size="xs"
+                icon="mdi-link-variant"
+                flat
+                round
+                :to="anchorUrl(section, member)"
+                >
+              </q-btn>
               <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since}}
                 <q-tooltip>Available since {{member.since}}</q-tooltip>
               </q-badge>
@@ -85,6 +95,7 @@ export default {
       memberSections: [],
       namespaceItems: null,
       inheritence: [],
+      useAnchors: true,
       version: mostRecent
     }
   },
@@ -101,11 +112,21 @@ export default {
     if (this.$route.params && this.$route.params.datatype) {
       ViewModel.setSelectedItem(this.$route.params.datatype)
     }
+    // If this page is loaded with an anchor URL, attempt to scroll to
+    // it right after the page is loaded
+    if (this.$route.hash) {
+      this.$nextTick(() => {
+        const el = document.getElementById(this.$route.hash.substring(1))
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 60
+          window.scrollTo({ top: y, behavior: 'smooth' })
+        }
+      })
+    }
   },
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      // console.log('route watch ' + to.path + ' | ' + from.path)
       const selectedItem = to.path.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
     }
@@ -197,9 +218,45 @@ export default {
       name = name.substring(0, index).toLowerCase()
       return this.baseUrl + 'examples/' + name
     },
+    anchorUrl (section, member) {
+      return '#' + this.anchorId(section, member)
+    },
+    anchorId (section, member) {
+      if (!this.useAnchors) return ''
+      const getDataTypes = function (signature) {
+        const startIndex = signature.indexOf('(')
+        const endIndex = signature.indexOf(')')
+        if (endIndex > startIndex) {
+          const parameters = signature.substring(startIndex + 1, endIndex).split(',')
+          let rc = ''
+          for (let i = 0; i < parameters.length; i++) {
+            const p = parameters[i].split(' ')
+            if (p.length > 1) rc = '_' + p[0]
+          }
+          return rc
+        }
+      }
+      let anchor = ''
+      if (section.constructors) {
+        anchor = ('constructor' + getDataTypes(member.signature)).toLowerCase()
+      }
+      if (section.properties) {
+        const name = member.signature.split(' ')
+        anchor = ('property_' + name[name.length - 1]).toLowerCase()
+      }
+      if (section.methods) {
+        const startIndex = member.signature.indexOf('(')
+        const name = member.signature.substring(0, startIndex).split(' ')
+        const dataTypes = getDataTypes(member.signature)
+        anchor = ('method_' + name[name.length - 1] + dataTypes).toLowerCase()
+      }
+      console.log(anchor)
+      return anchor
+    },
     onChangeSelectedItem (item) {
       console.log('selected item changed to ' + item)
       this.vm = item
+      this.useAnchors = (item.dataType !== 'namespace' && item.dataType !== 'enum')
       if (item.dataType === 'namespace') {
         this.title = 'Namespace: ' + item.name
         this.namespace = null
