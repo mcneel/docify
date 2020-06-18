@@ -3486,8 +3486,7 @@ partial class Examples
 `,
     members: [
       ['Rhino.DocObjects.ObjectEnumeratorSettings', 'ObjectEnumeratorSettings()'],
-      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)']
+      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter']
     ]
   },
   {
@@ -8555,8 +8554,7 @@ if __name__ == "__main__":
 `,
     members: [
       ['Rhino.DocObjects.ObjectEnumeratorSettings', 'ObjectEnumeratorSettings()'],
-      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)']
+      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter']
     ]
   },
   {
@@ -13706,8 +13704,7 @@ End Class
 `,
     members: [
       ['Rhino.DocObjects.ObjectEnumeratorSettings', 'ObjectEnumeratorSettings()'],
-      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)']
+      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter']
     ]
   },
   {
