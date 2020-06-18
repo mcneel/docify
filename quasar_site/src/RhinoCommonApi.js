@@ -3,12 +3,12 @@ var RhinoCommonApi = [
   {
     name: 'Rhino',
     dataType: 'namespace',
-    summary: `The Rhino namespace contains fundamental types that
-define commonly-used value types and classes used in Rhino.`
+    summary: 'Contains commonly-used value types and classes used in Rhino.'
   },
   {
     name: 'Rhino.ApplicationSettings',
-    dataType: 'namespace'
+    dataType: 'namespace',
+    summary: 'Static settings global to the entire Rhino application'
   },
   {
     name: 'Rhino.Collections',
@@ -70,7 +70,8 @@ Examples are lines, curves, meshes and boundary representations.`
   },
   {
     name: 'Rhino.Input',
-    dataType: 'namespace'
+    dataType: 'namespace',
+    summary: 'Classes related to getting user input for things like points, objects, and numbers'
   },
   {
     name: 'Rhino.Input.Custom',
@@ -6448,46 +6449,6 @@ or an empty array if there were no Rhino objects.`
   },
   {
     namespace: 'Rhino.Commands',
-    name: 'BlockEditCommand',
-    dataType: 'class',
-    summary: `This class may be used to replace the built in BlockEdit command with a
-plug-in version.  Make sure to make your plug-in a load at startup plug-in
-when replacing the command to ensure the command is properly overridden.`,
-    properties: [
-      {
-        signature: 'static BlockEditCommand Replacement',
-        summary: 'The current replacement command',
-        since: '6.26',
-        property: ['get', 'set']
-      }
-    ],
-    methods: [
-      {
-        signature: 'static bool InBlockEditMode(RhinoDoc doc)',
-        summary: 'Call this method to determine if a document is being blocked edited.',
-        since: '6.26',
-        returns: 'Returns True if the specified document is editing a block.'
-      },
-      {
-        signature: 'static void ReplaceWith(BlockEditCommand replacementCommand)',
-        summary: `Call this method to register your replacement command, the last command
-registered will be called.`,
-        since: '6.26'
-      },
-      {
-        signature: 'bool IsBlockEditing(RhinoDoc doc)',
-        summary: 'Called to determine if the specified document was not block edit mode.',
-        since: '6.26'
-      },
-      {
-        signature: 'Result RunCommand(RhinoDoc doc,RunMode mode)',
-        summary: 'Called by the internal BlockEdit command when the command is executed.',
-        since: '6.26'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Commands',
     name: 'Command',
     dataType: 'class',
     summary: 'Defines a base class for all commands. This class is abstract.',
@@ -12473,6 +12434,30 @@ cause this ID to be Guid.Empty.`,
         signature: 'Color WorldAxisColorZ',
         since: '5.0',
         property: ['get', 'set']
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Display',
+    name: 'DisplayTechnologies',
+    dataType: 'enum',
+    summary: 'Graphics display techologies.',
+    since: '7.0',
+    values: [
+      {
+        signature: 'OpenGL = 0'
+      },
+      {
+        signature: 'Metal  = 1'
+      },
+      {
+        signature: 'DirectX = 2'
+      },
+      {
+        signature: 'Software = 3'
+      },
+      {
+        signature: 'Vulkan = 4'
       }
     ]
   },
@@ -19770,7 +19755,7 @@ documents.`,
         since: '5.0'
       },
       {
-        signature: 'Rhino.Render.PhysicallyBasedMaterial ConvertToPhysicallyBased()',
+        signature: 'PhysicallyBasedMaterial ConvertToPhysicallyBased()',
         since: '7.0'
       },
       {
@@ -21065,17 +21050,22 @@ if no parent, treat as color_from_layer.`
     namespace: 'Rhino.DocObjects',
     name: 'ObjectEnumeratorSettings',
     dataType: 'class',
-    summary: `Settings used for getting an enumerator of objects in a document
-See Rhino.Collections.ObjectTable.GetEnumerator()`,
+    summary: `Settings used for getting an enumerator of objects in a document.
+See ObjectTable.FindByFilter(ObjectEnumeratorSettings),
+ObjectTable.GetObjectsByType{T}(ObjectEnumeratorSettings),
+and ObjectTable.GetEnumerator(ObjectEnumeratorSettings).`,
     constructors: [
       {
         signature: 'ObjectEnumeratorSettings()',
+        summary: `Constructs object enumerator settings that will iterate the document looking for
+normal object and locked object that are active, or part of current model and saved in file.`,
         since: '5.0'
       }
     ],
     properties: [
       {
         signature: 'bool ActiveObjects',
+        summary: 'When true, objects that are part of current model and saved in file are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
@@ -21086,78 +21076,98 @@ See Rhino.Collections.ObjectTable.GetEnumerator()`,
       },
       {
         signature: 'bool DeletedObjects',
+        summary: 'When true, deleted objects are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool HiddenObjects',
+        summary: 'When true, hidden objects or objects on hidden layers are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool IdefObjects',
-        summary: 'When true, ONLY Instance Definitions will be returned',
+        summary: 'When true, objects in instance definitions (not the instance references) are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool IncludeGrips',
+        summary: `The default object enumerator settings will not iterate through grip objects.
+If you want the iterator to include grips, then set this property to true.`,
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool IncludeLights',
+        summary: `The default object enumerator settings will not iterate through render light objects.
+If you want the iterator to include lights, then set this property to true.`,
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool IncludePhantoms',
+        summary: `The default object enumerator settings will not iterate through phantom objects.
+If you want the iterator to include phantom objects, then set this property to true.`,
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'int LayerIndexFilter',
+        summary: `The layer filter property can be used to limit the iteration to objects on a specific layer.
+The default is to iterate through all layers.`,
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool LockedObjects',
+        summary: 'When true, locked objects or objects on locked layers are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'string NameFilter',
+        summary: 'The name filter property can be used to limit the iteration to objects with a specific name.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool NormalObjects',
+        summary: 'When true, normal objects (e.g. not locked and not hidden) are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'ObjectType ObjectTypeFilter',
+        summary: `The object type filter property can be used to limit the iteration to specific types of geometry.
+The default is to iterate all objects types.`,
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool ReferenceObjects',
+        summary: 'When true, objects that are for reference and not saved in file are returned.',
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'bool SelectedObjectsFilter',
+        summary: `The default object enumerator settings ignore the selected state of objects.
+If you want the iterator to limit itself to selected objects, then set this property to true.`,
         since: '5.0',
         property: ['get', 'set']
       },
       {
         signature: 'RhinoViewport ViewportFilter',
-        summary: 'Filter on value of object->IsActiveInViewport()',
+        summary: 'The viewport filter property can be used to limit the iteration to objects that are active in a specific viewport.',
         since: '5.6',
         property: ['get', 'set']
       },
       {
         signature: 'bool VisibleFilter',
+        summary: `The default object enumerator settings ignore the visiblity state of objects.
+If you want the iterator to limit itself to visible objects, then set this property to true.`,
         since: '5.0',
         property: ['get', 'set']
       }
@@ -21700,6 +21710,168 @@ this returns the associated brep trim.`,
         summary: 'Get the dimension geometry for this object.',
         since: '6.0',
         property: ['get']
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.DocObjects',
+    name: 'PhysicallyBasedMaterial',
+    dataType: 'class',
+    properties: [
+      {
+        signature: 'double Anisotropic',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double AnisotropicRotation',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Color4f BaseColor',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'BRDFs BRDF',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Clearcoat',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ClearcoatRoughness',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Color4f Emission',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Material Material',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'double Metallic',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Opacity',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double OpacityIOR',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double OpacityRoughness',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ReflectiveIOR',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Roughness',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Sheen',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double SheenTint',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Specular',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double SpecularTint',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Subsurface',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Color4f SubsurfaceScatteringColor',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double SubsurfaceScatteringRadius',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool Supported',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'DocObjects.Texture GetTexture(TextureType which)',
+        summary: 'Get the texture that corresponds with the specified texture type for this material.',
+        since: '7.0'
+      },
+      {
+        signature: 'DocObjects.Texture[] GetTextures()',
+        summary: 'Get array of textures that this material uses',
+        since: '7.0'
+      },
+      {
+        signature: 'bool SetTexture(Texture texture,TextureType which)',
+        summary: 'Set the texture that corresponds with the specified texture type for this material.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'texture',
+            summary: 'An instance of Rhino.DocObjects.Texture'
+          },
+          {
+            name: 'which',
+            summary: 'Use Rhino.DocObjects.TextureType'
+          }
+        ]
+      },
+      {
+        signature: 'void SynchronizeLegacyMaterial()',
+        since: '7.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.DocObjects',
+    name: 'PhysicallyBasedMaterial.BRDFs',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'GGX = 0'
+      },
+      {
+        signature: 'Ward = 1'
       }
     ]
   },
@@ -29684,7 +29856,7 @@ active or deleted.  The runtime serial number is not saved in files.`,
         parameters: [
           {
             name: 'filter',
-            summary: 'The object enumerator filter to customize inclusion requirements.'
+            summary: 'The Rhino.DocObjects.ObjectEnumeratorSettings filter to customize inclusion requirements.'
           }
         ],
         returns: 'A Rhino object array. This array can be empty but not null.'
@@ -29776,7 +29948,7 @@ active or deleted.  The runtime serial number is not saved in files.`,
           },
           {
             name: 'filter',
-            summary: 'Filter used to restrict the number of objects searched.'
+            summary: 'Rhino.DocObjects.ObjectEnumeratorSettings filter used to restrict the number of objects searched.'
           }
         ],
         returns: 'An array of all objects whose UserString matches with the search patterns or None when no such objects could be found.'
@@ -29913,7 +30085,14 @@ through file saving/opening operations. This function will not find grip objects
       },
       {
         signature: 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)',
-        since: '5.0'
+        summary: 'Returns an enumerable based on a Rhino.DocObjects.ObjectEnumeratorSettings filter.',
+        parameters: [
+          {
+            name: 'settings',
+            summary: 'The Rhino.DocObjects.ObjectEnumeratorSettings settings.'
+          }
+        ],
+        returns: 'The enumerable.'
       },
       {
         signature: 'IEnumerable<RhinoObject> GetObjectList(ObjectType typeFilter)',
@@ -29925,11 +30104,15 @@ through file saving/opening operations. This function will not find grip objects
       },
       {
         signature: 'IEnumerable<T> GetObjectsByType()',
-        since: '6.0'
+        summary: 'Returns Rhino object by type.',
+        since: '6.0',
+        returns: 'The enumerable.'
       },
       {
         signature: 'IEnumerable<T> GetObjectsByType(ObjectEnumeratorSettings settings)',
-        since: '6.0'
+        summary: 'Returns Rhino object by type.',
+        since: '6.0',
+        returns: 'The enumerable.'
       },
       {
         signature: 'IEnumerable<RhinoObject> GetSelectedObjects(bool includeLights,bool includeGrips)',
@@ -30183,7 +30366,14 @@ objects material source to ObjectMaterialSource.MaterialFromObject.`,
       },
       {
         signature: 'int ObjectCount(ObjectEnumeratorSettings filter)',
-        since: '5.0'
+        summary: 'Returns the number objects that pass a filter.',
+        parameters: [
+          {
+            name: 'filter',
+            summary: 'The Rhino.DocObjects.ObjectEnumeratorSettings filter.'
+          }
+        ],
+        returns: 'The number of objects that pass the filter.'
       },
       {
         signature: 'ObjRef[] PickObjects(PickContext pickContext)',
@@ -91588,6 +91778,130 @@ Note that the object is free floating, i.e. not part of a document.`,
     ]
   },
   {
+    namespace: 'Rhino.Render.ChildSlotNames',
+    name: 'PhysicallyBased',
+    dataType: 'class',
+    summary: 'Helper class with properties containing the names of children available in our PBR implementation.',
+    properties: [
+      {
+        signature: 'static string AmbientOcclusion',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Anisotropic',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string AnisotropicRotation',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string BaseColor',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Bump',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Clearcoat',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string ClearcoatBump',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string ClearcoatRoughness',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Displacement',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Emission',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Metallic',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Opacity',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string OpacityIor',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string OpacityRoughness',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Roughness',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Sheen',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SheenTint',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Specular',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SpecularTint',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Subsurface',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SubsurfaceScatteringColor',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SubsurfaceScatteringRadius',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static string FromTextureType(TextureType textureType)',
+        since: '7.0'
+      }
+    ]
+  },
+  {
     namespace: 'Rhino.Render',
     name: 'City',
     dataType: 'class',
@@ -92281,19 +92595,6 @@ be used.`,
         summary: 'Pixel size of the image that is being requested for the preview scene',
         since: '5.1',
         property: ['get']
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'CustomEvent',
-    dataType: 'class',
-    summary: 'This class contains the event for CustomEvents that are fired from RDK .',
-    events: [
-      {
-        signature: 'static OnCustomEvent',
-        summary: 'This event is raised when a Custom Event is triggered in rdk.',
-        since: '7.0'
       }
     ]
   },
@@ -96701,166 +97002,132 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     ]
   },
   {
-    namespace: 'Rhino.Render',
-    name: 'PhysicallyBasedMaterial',
+    namespace: 'Rhino.Render.ParameterNames',
+    name: 'PhysicallyBased',
     dataType: 'class',
+    summary: 'Helper class with properties containing the names of fields available in our PBR implementation.',
     properties: [
       {
-        signature: 'double Anisotropic',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double AnisotropicRotation',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'Color4f BaseColor',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'BRDFs BRDF',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double Clearcoat',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double ClearcoatRoughness',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'Color4f Emission',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'Material Material',
+        signature: 'static string AmbientOcclusion',
         since: '7.0',
         property: ['get']
       },
       {
-        signature: 'double Metallic',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double Opacity',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double OpacityIOR',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double OpacityRoughness',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double ReflectiveIOR',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double Roughness',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double Sheen',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double SheenTint',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double Specular',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double SpecularTint',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double Subsurface',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'Color4f SubsurfaceScatteringColor',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'double SubsurfaceScatteringRadius',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'bool Supported',
+        signature: 'static string Anisotropic',
         since: '7.0',
         property: ['get']
-      }
-    ],
-    methods: [
-      {
-        signature: 'DocObjects.Texture GetTexture(TextureType which)',
-        summary: 'Get the texture that corresponds with the specified texture type for this material.',
-        since: '7.0'
       },
       {
-        signature: 'DocObjects.Texture[] GetTextures()',
-        summary: 'Get array of textures that this material uses',
-        since: '7.0'
-      },
-      {
-        signature: 'bool SetTexture(Texture texture,TextureType which)',
-        summary: 'Set the texture that corresponds with the specified texture type for this material.',
+        signature: 'static string AnisotropicRotation',
         since: '7.0',
-        parameters: [
-          {
-            name: 'texture',
-            summary: 'An instance of Rhino.DocObjects.Texture'
-          },
-          {
-            name: 'which',
-            summary: 'Use Rhino.DocObjects.TextureType'
-          }
-        ]
+        property: ['get']
       },
       {
-        signature: 'void SynchronizeLegacyMaterial()',
-        since: '7.0'
+        signature: 'static string BaseColor',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string BRDF',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Bump',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Clearcoat',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string ClearcoatBump',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string ClearcoatRoughness',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Displacement',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Emission',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Metallic',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Opacity',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string OpacityIor',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string OpacityRoughness',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Roughness',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Sheen',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SheenTint',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Specular',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SpecularTint',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string Subsurface',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SubsurfaceScatteringColor',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static string SubsurfaceScatteringRadius',
+        since: '7.0',
+        property: ['get']
       }
     ]
   },
   {
     namespace: 'Rhino.Render',
-    name: 'PhysicallyBasedMaterial.BRDFs',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'GGX = 0'
-      },
-      {
-        signature: 'Ward = 1'
-      }
-    ]
+    name: 'PhysicallyBasedMaterial',
+    dataType: 'class'
   },
   {
     namespace: 'Rhino.Render',
@@ -96993,12 +97260,6 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         since: '6.12',
         property: ['get']
       }
-    ],
-    methods: [
-      {
-        signature: 'static string FromTextureType(TextureType textureType)',
-        since: '7.0'
-      }
     ]
   },
   {
@@ -97058,19 +97319,11 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         since: '7.0'
       },
       {
-        signature: 'RenderWindow.Channel CPUConst()',
-        since: '7.0'
-      },
-      {
         signature: 'void Dispose()',
         since: '7.0'
       },
       {
         signature: 'RenderWindow.ChannelGPU GPU()',
-        since: '7.0'
-      },
-      {
-        signature: 'RenderWindow.ChannelGPU GPUConst()',
         since: '7.0'
       },
       {
@@ -97162,7 +97415,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     baseclass: 'Attribute',
     constructors: [
       {
-        signature: 'CustomPostEffectAttribute(Types t,string name,Usages usageFlags,ExecuteWhileRenderingOptions executeWhileRenderingOption,bool supportsHDR,bool canDisplayHelp,bool isFixed,int executeWhileRenderingDelay)',
+        signature: 'CustomPostEffectAttribute(Types postEffectType,string name,Usages usageFlags,ExecuteWhileRenderingOptions executeWhileRenderingOption,bool supportsHDR,bool canDisplayHelp,bool isFixed,int executeWhileRenderingDelay)',
         since: '7.0'
       }
     ],
@@ -97206,6 +97459,21 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         signature: 'Usages Usage',
         since: '7.0',
         property: ['get', 'set']
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'IPostEffects',
+    dataType: 'interface',
+    methods: [
+      {
+        signature: 'PostEffect[] GetPostEffects(Types type)',
+        since: '7.0'
+      },
+      {
+        signature: 'PostEffect PostEffectFromId(Guid uuid)',
+        since: '7.0'
       }
     ]
   },
@@ -97304,6 +97572,14 @@ Most post effects should be able to use this default with no need to override th
       }
     ],
     methods: [
+      {
+        signature: 'static Type[] RegisterPostEffect(Assembly assembly,Guid pluginId)',
+        since: '7.0'
+      },
+      {
+        signature: 'static Type[] RegisterPostEffect(PlugIn plugin)',
+        since: '7.0'
+      },
       {
         signature: 'void AddUISections(PostEffectUI ui)',
         summary: `Create each of your UI sections using 'new' and then call ui.AddSection() on them.
@@ -97570,7 +97846,7 @@ produce the final 32-bit RGBA image in a dib.
 It is also possible for a post effect to create and use any number of 'scratch' channels.If a post effect needs a
 temporary pixel buffer for some intermediate results, it can call NewChannel() with a custom (random) id.
 Once it is finished with this scratch channel, it can call Discard() on it.`,
-    interfaces: ['IDisposable'],
+    interfaces: ['IDisposable', 'IProgress<int>'],
     properties: [
       {
         signature: 'bool GPUAllowed',
@@ -97609,16 +97885,6 @@ This call merely sets a flag.The process is deferred until after the post effect
         ]
       },
       {
-        signature: 'string DateTimeStringEnd()',
-        summary: 'Formats the end time with the date and time using the user\'s control panel preferences.',
-        since: '7.0'
-      },
-      {
-        signature: 'string DateTimeStringStart()',
-        summary: 'Formats the start time with the date and time using the user\'s control panel preferences.',
-        since: '7.0'
-      },
-      {
         signature: 'Size Dimensions()',
         summary: 'Get the dimensions of the frame buffer. All channels in the frame buffer have the same dimensions.',
         since: '7.0',
@@ -97627,12 +97893,6 @@ This call merely sets a flag.The process is deferred until after the post effect
       {
         signature: 'void Dispose()',
         since: '7.0'
-      },
-      {
-        signature: 'string ElapsedTimeString()',
-        summary: 'Formats the elapsed time (start to end) as days, hours, minutes and seconds.',
-        since: '7.0',
-        returns: 'string elapsed time'
       },
       {
         signature: 'bool Execute(Rectangle p,bool renderingInProgress,UsageContexts usageContexts,Histograms histogramsToUpdate)',
@@ -97704,12 +97964,6 @@ Do not make assumptions about what the epoch is; it might be different on differ
         returns: 'milliseconds'
       },
       {
-        signature: 'string GetWatermarkText()',
-        summary: 'Get the watermark text set by the renderer (if any).',
-        since: '7.0',
-        returns: 'string watermark text'
-      },
-      {
         signature: 'Channel NewChannel(Guid id,InitializationOptions initializationOptions,NewChannelOptions channelOptions)',
         summary: `Create a new channel for writing. A post effect will use this to get channel(s) to write the output of its
 processing to.Input will usually come from existing channels, although a post effect is free to read
@@ -97739,15 +97993,6 @@ in which case Commit() will replace the existing channel with the new one in the
         summary: 'Returns a list of the post effects to be executed by this pipeline in order.',
         since: '7.0',
         returns: 'A list of the post effects to be executed by this pipeline in order'
-      },
-      {
-        signature: 'bool ReportProgress(int rowsCompleted)',
-        summary: `Post effects should call this during execution to report progress.
-A good strategy is to call this once per pixel row (or several rows).
-If the function returns \\e false, your post effect should exit its pixel loop
-as the user has requested that the operation be canceled.`,
-        since: '7.0',
-        returns: 'Return True if the process should continue, else false.'
       },
       {
         signature: 'void SetStartTimeInMilliseconds(ulong ms)',
@@ -97856,7 +98101,7 @@ as the user has requested that the operation be canceled.`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffects',
+    name: 'PostEffectsImpl',
     dataType: 'class',
     summary: 'This is the interface to PostEffects.',
     baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
@@ -97886,11 +98131,11 @@ as the user has requested that the operation be canceled.`,
         since: '7.0'
       },
       {
-        signature: 'bool GetParam(string name,object vValue)',
+        signature: 'bool SetValue(string name,T vValue)',
         since: '7.0'
       },
       {
-        signature: 'bool SetParam(string name,object vValue)',
+        signature: 'bool TryGetValue(string name,T vValue)',
         since: '7.0'
       }
     ]
@@ -97906,7 +98151,7 @@ as the user has requested that the operation be canceled.`,
         since: '7.0'
       },
       {
-        signature: 'bool RunPostEffect(PostEffectJob job,PostEffectPipeline pipeline,PostEffect plugin,Rectangle rect,ChannelData[] channels,IntPtr pExtension)',
+        signature: 'bool RunPostEffect(PostEffectJob job,PostEffectPipeline pipeline,PostEffect plugin,Rectangle rect,ChannelData[] channels)',
         since: '7.0'
       }
     ]
@@ -99480,11 +99725,6 @@ If you do not support this parameter, call the base class.`,
         since: '6.0'
       },
       {
-        signature: 'bool IsDeferred()',
-        since: '7.0',
-        returns: 'Return True if content is deferred.'
-      },
-      {
         signature: 'bool IsFactoryProductAcceptableAsChild(ContentFactory factory,String childSlotName)',
         since: '6.1'
       },
@@ -99577,10 +99817,6 @@ operates on.  Some examples are "color", "transparency".`,
           }
         ],
         returns: 'The default behavior for these functions is to return the input string.  Sub-classes may (in the future) override these functions to provide different mappings.'
-      },
-      {
-        signature: 'void RealizeDeferredContent(IntPtr pArray)',
-        since: '7.0'
       },
       {
         signature: 'uint RenderHashExclude(CrcRenderHashFlags flags,string excludeParameterNames)',
@@ -100642,21 +100878,6 @@ This function can be used to create temporary content, as it calls
   },
   {
     namespace: 'Rhino.Render',
-    name: 'RenderCustomEventArgs',
-    dataType: 'class',
-    summary: 'Used as Rhino.Render Custom Events args.',
-    baseclass: 'EventArgs',
-    properties: [
-      {
-        signature: 'Guid EventType',
-        summary: 'The type of the event.',
-        since: '7.0',
-        property: ['get']
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
     name: 'RenderEndEventArgs',
     dataType: 'class',
     summary: 'Contains information about why OnRenderEnd was called',
@@ -101071,7 +101292,7 @@ preview panes`,
         since: '7.0'
       },
       {
-        signature: 'Rhino.Render.PhysicallyBasedMaterial ConvertToPhysicallyBasedMaterial(TextureGeneration tg)',
+        signature: 'DocObjects.PhysicallyBasedMaterial ConvertToPhysicallyBasedMaterial(TextureGeneration tg)',
         summary: 'Returns a material that is the best approximation of the original, but as a physically based material.',
         since: '7.0',
         parameters: [
@@ -101172,257 +101393,6 @@ the standard (ie - defined in ON_Texture) texture channels.`,
     name: 'RenderMaterial.BasicMaterialParameterNames',
     dataType: 'class',
     summary: 'Parameter names for use in GetNamedParameter and SetNamedParameter with basic materials.'
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'RenderMaterial.PhysicallyBased',
-    dataType: 'class',
-    summary: 'Helper class with fields containing the names of fields available in our PBR implementation.'
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'PhysicallyBased.ChildSlotNames',
-    dataType: 'class',
-    properties: [
-      {
-        signature: 'static string AmbientOcclusion',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Anisotropic',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string AnisotropicRotation',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string BaseColor',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Bump',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Clearcoat',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string ClearcoatBump',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string ClearcoatRoughness',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Displacement',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Emission',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Metallic',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Opacity',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string OpacityIor',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string OpacityRoughness',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Roughness',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Sheen',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SheenTint',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Specular',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SpecularTint',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Subsurface',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SubsurfaceScatteringColor',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SubsurfaceScatteringRadius',
-        since: '7.0',
-        property: ['get']
-      }
-    ],
-    methods: [
-      {
-        signature: 'static string FromTextureType(TextureType textureType)',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'PhysicallyBased.ParameterNames',
-    dataType: 'class',
-    properties: [
-      {
-        signature: 'static string AmbientOcclusion',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Anisotropic',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string AnisotropicRotation',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string BaseColor',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string BRDF',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Bump',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Clearcoat',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string ClearcoatBump',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string ClearcoatRoughness',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Displacement',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Emission',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Metallic',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Opacity',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string OpacityIor',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string OpacityRoughness',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Roughness',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Sheen',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SheenTint',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Specular',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SpecularTint',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string Subsurface',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SubsurfaceScatteringColor',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'static string SubsurfaceScatteringRadius',
-        since: '7.0',
-        property: ['get']
-      }
-    ]
   },
   {
     namespace: 'Rhino.Render',
@@ -103621,11 +103591,6 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     interfaces: ['IDisposable'],
     methods: [
       {
-        signature: 'ApiTypes ApiType()',
-        summary: 'Return the type of API used for this channel\'s texture handle.',
-        since: '7.0'
-      },
-      {
         signature: 'ChannelGPU Clone()',
         summary: 'Return a clone of the channel.',
         since: '7.0'
@@ -103645,6 +103610,11 @@ The caller is responsible for ensuring that it is within the frame buffer.`
             summary: 'The channel to copy to.'
           }
         ]
+      },
+      {
+        signature: 'Display.DisplayTechnologies DisplayTechnology()',
+        summary: 'Return the type of API used for this channel\'s texture handle.',
+        since: '7.0'
       },
       {
         signature: 'void Dispose()',
@@ -103675,18 +103645,6 @@ The caller is responsible for ensuring that it is within the frame buffer.`
         signature: 'int Width()',
         summary: 'Return the channel width.',
         since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'ChannelGPU.ApiTypes',
-    dataType: 'enum',
-    summary: 'The type of API used for a channel\'s texture handle.',
-    since: '7.0',
-    values: [
-      {
-        signature: 'OpenGL'
       }
     ]
   },
@@ -104829,7 +104787,7 @@ are sure that Initialize() or GetColor() cannot be called at the same time on an
         since: '6.0'
       },
       {
-        signature: 'ByteArray WriteToByteArray(int width,int height)',
+        signature: 'SimpleArrayByte WriteToByteArray(int width,int height)',
         summary: `Fast access to bitmap evaluator - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
 if the data can be extracted direct to a width*height*4 array of unsigned chars.`,
         since: '7.0',
@@ -104846,7 +104804,7 @@ if the data can be extracted direct to a width*height*4 array of unsigned chars.
         returns: 'A ByteArray full of the byte values in RGBA order, or None if the function did not succeed'
       },
       {
-        signature: 'FloatArray WriteToFloatArray(int width,int height)',
+        signature: 'SimpleArrayFloat WriteToFloatArray(int width,int height)',
         summary: `Fast access to bitmap evaluator - supply size (which you will probably have received from CRhRdkTexture::PixelSize) to see
 if the data can be extracted direct to a width*height*4 array of unsigned chars.`,
         since: '7.0',
@@ -104861,126 +104819,6 @@ if the data can be extracted direct to a width*height*4 array of unsigned chars.
           }
         ],
         returns: 'A FloatArray full of the float values in RGBA order, or None if the function did not succeed.'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'TextureEvaluator.ByteArray',
-    dataType: 'class',
-    summary: 'Simple array class that wraps a native C style array of bytes',
-    interfaces: ['IDisposable'],
-    constructors: [
-      {
-        signature: 'TextureEvaluator.ByteArray(ByteArray other)',
-        summary: 'Initializes a new ByteArray with the contents of another ByteArray.',
-        since: '7.0'
-      },
-      {
-        signature: 'TextureEvaluator.ByteArray(IEnumerable<byte> values)',
-        summary: 'Initializes a new ByteArray class',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'values',
-            summary: 'initial set of bytes to add to the array'
-          }
-        ]
-      },
-      {
-        signature: 'TextureEvaluator.ByteArray(int initialSize)',
-        summary: `Initializes a new ByteArray class.
-Initial size of the array - all values are set to zero.`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'initialSize',
-            summary: 'Initial size of the array - all values are set to zero.'
-          }
-        ]
-      }
-    ],
-    methods: [
-      {
-        signature: 'IntPtr c_array()',
-        summary: 'Return the raw data-  the unmanaged array.',
-        since: '7.0'
-      },
-      {
-        signature: 'void CopyTo(ByteArray other)',
-        summary: 'Copies the contents of a ByteArray into another ByteArray.',
-        since: '7.0'
-      },
-      {
-        signature: 'void Dispose()',
-        summary: 'Actively reclaims unmanaged resources that this instance uses.',
-        since: '7.0'
-      },
-      {
-        signature: 'byte[] ToArray()',
-        summary: 'Returns the managed counterpart of the unmanaged array.',
-        since: '7.0',
-        returns: 'The managed array.'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'TextureEvaluator.FloatArray',
-    dataType: 'class',
-    summary: 'Simple array class that wraps a native C style array of floats',
-    interfaces: ['IDisposable'],
-    constructors: [
-      {
-        signature: 'TextureEvaluator.FloatArray(FloatArray other)',
-        summary: 'Initializes a new FloatArray with the contents of another FloatArray.',
-        since: '7.0'
-      },
-      {
-        signature: 'TextureEvaluator.FloatArray(IEnumerable<float> values)',
-        summary: 'Initializes a new FloatArray class',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'values',
-            summary: 'initial set of floats to add to the array'
-          }
-        ]
-      },
-      {
-        signature: 'TextureEvaluator.FloatArray(int initialSize)',
-        summary: `Initializes a new FloatArray class.
-Initial size of the array - all values are set to zero.`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'initialSize',
-            summary: 'Initial size of the array - all values are set to zero.'
-          }
-        ]
-      }
-    ],
-    methods: [
-      {
-        signature: 'IntPtr c_array()',
-        summary: 'Return the raw data.',
-        since: '7.0'
-      },
-      {
-        signature: 'void CopyTo(FloatArray other)',
-        summary: 'Copies the contents of a FloatArray into another ByteArray.',
-        since: '7.0'
-      },
-      {
-        signature: 'void Dispose()',
-        summary: 'Actively reclaims unmanaged resources that this instance uses.',
-        since: '7.0'
-      },
-      {
-        signature: 'float[] ToArray()',
-        summary: 'Returns the managed counterpart of the unmanaged array.',
-        since: '7.0',
-        returns: 'The managed array.'
       }
     ]
   },
@@ -105979,11 +105817,6 @@ the requested window then return the object otherwise return null.`
         summary: 'Specifies whether incompatible content should be shown in the corresponding editor.',
         since: '5.3',
         property: ['get', 'set']
-      },
-      {
-        signature: 'static UiFrameworks UiFramework',
-        since: '7.0',
-        property: ['get']
       }
     ],
     methods: [
@@ -106199,34 +106032,6 @@ invalid or was unable to load plug-in`
       {
         signature: 'Instance',
         summary: 'User chose from \'Existing\' tab with \'instance\' radio button checked. uuidOut is the instance id.'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'Utilities.UiFrameworks',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'Win32',
-        summary: 'Win32.'
-      },
-      {
-        signature: 'Cocoa',
-        summary: 'Cocoa.'
-      },
-      {
-        signature: 'Eto',
-        summary: 'Eto.'
-      },
-      {
-        signature: 'WinForms',
-        summary: 'WinForms.'
-      },
-      {
-        signature: 'WPF',
-        summary: 'WPF.'
       }
     ]
   },
@@ -106649,20 +106454,6 @@ when capturing has been enabled`,
         signature: 'static void ClearCommandHistoryWindow()',
         summary: 'Clear the text in Rhino\'s command history window.',
         since: '5.0'
-      },
-      {
-        signature: 'static void DisableContinuousMainLoop()',
-        summary: `This function makes it so that Rhino's main loop is not executed continuously.
-This is default behavior.`,
-        since: '7.0'
-      },
-      {
-        signature: 'static bool EnableContinuousMainLoop()',
-        summary: `This function makes it so that Rhino's main loop is executed continuously.
-This is useful when Rhino needs to be doing something as often as possible,
-such as rendering a view at interactive frame rates.`,
-        since: '7.0',
-        returns: 'True if the functionality was enabled successfully, False otherwise.'
       },
       {
         signature: 'static Commands.Result ExecuteCommand(RhinoDoc document,string commandName)',
@@ -107512,7 +107303,7 @@ constructed.`,
         property: ['get']
       },
       {
-        signature: 'PostEffects PostEffects',
+        signature: 'IPostEffects PostEffects',
         summary: 'Access to the post effects',
         since: '7.0',
         property: ['get']
