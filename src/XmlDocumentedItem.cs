@@ -41,6 +41,11 @@ namespace api_docify
             return GetTagText("summary");
         }
 
+        public string Remarks()
+        {
+            return GetTagText("remarks");
+        }
+
         public string ReturnDocString()
         {
             return GetTagText("returns");

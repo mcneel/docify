@@ -3825,6 +3825,7 @@ When true, maximizing a viewport needs a single click on the viewport title rath
     dataType: 'class',
     summary: `Represents a dictionary class that can be attached to objects and
 can be serialized (saved) at necessity.See remarks for layout.`,
+    remarks: 'This is the layout of this object:.BEGINCHUNK (TCODE_ANONYMOUS_CHUNK)|- version (int)|- entry count (int)   for entry count entries   |- BEGINCHUNK (TCODE_ANONYMOUS_CHUNK)   |- key (string)   |- entry contents   |- ENDCHUNK (TCODE_ANONYMOUS_CHUNK)ENDCHUNK (TCODE_ANONYMOUS_CHUNK)',
     interfaces: ['ICloneable', 'IDictionary<string, object>', 'ISerializable'],
     constructors: [
       {
@@ -18185,6 +18186,8 @@ document are "normal" or "reference". Reference hatch patterns are not saved.`,
     name: 'HistoryRecord',
     dataType: 'class',
     summary: 'Provides a single bundling of information to be passed to Rhino when setting up history for an object.',
+    remarks: `To use this object, just pass it to a RhinoDoc.Add() method along with the needed geometry.
+Do not reuse this class for more than one history addition.`,
     interfaces: ['IDisposable'],
     constructors: [
       {
@@ -24542,6 +24545,7 @@ We are moving towards using only IDs for all tables.`,
     dataType: 'class',
     summary: `Font tables store the list of fonts in a Rhino document.
 The FontTable is now just a wrapper around the DimStyles table.`,
+    remarks: 'The FontTable is now just a wrapper around the DimStyles table.',
     interfaces: ['IEnumerable<Font>', 'Collections.IRhinoTable<Font>'],
     properties: [
       {
@@ -35308,6 +35312,7 @@ through file saving/opening operations. This function will not find grip objects
     dataType: 'class',
     summary: `Contains information that is useful to uniquely identify an object.
 This object is immutable.`,
+    remarks: 'This object is immutable.',
     interfaces: ['ICloneable', 'IEquatable<ContentHash>'],
     properties: [
       {
@@ -39201,6 +39206,8 @@ as either NURBS or meshes`,
     name: 'FileObjWriteOptions.VertexWelding',
     dataType: 'enum',
     summary: 'Determines how/if vertexes of the mesh in Rhino will be modified in the output',
+    remarks: `The actual values of any vertex, normal or texture coordinate are not modified, this setting
+determines whether they are duplicated or merged.`,
     since: '6.0',
     values: [
       {
@@ -40161,6 +40168,7 @@ relating to a particular type.`,
     dataType: 'class',
     summary: `Contains information that is useful to uniquely identify an object name.
 This object is immutable.`,
+    remarks: 'This object is immutable.',
     interfaces: ['ICloneable', 'IEquatable<NameHash>'],
     constructors: [
       {
@@ -41531,6 +41539,10 @@ Note that arcs cannot handle non-euclidean transformations.`
     dataType: 'class',
     summary: `Represent arcs and circles.
 ArcCurve.IsCircle returns True if the curve is a complete circle.`,
+    remarks: `Details:an ArcCurve is a sub-curve of a circle, with a constant speed
+parameterization. The parameterization is an affine linear
+reparameterization of the underlying arc m_arc onto the domain m_t.A valid ArcCurve has Radius()>0 and  0<AngleRadians()<=2*PI
+and a strictly increasing Domain.`,
     baseclass: 'Rhino.Geometry.Curve',
     constructors: [
       {
@@ -47427,6 +47439,7 @@ an edge and has no 2d curve.`
     summary: `Represents a circle in 3D.
 The values used are a radius and an orthonormal frame of the plane containing the circle,
 with origin at the center.The circle is parameterized by radians from 0 to 2 Pi given byt -> center + cos(t)*radius*xaxis + sin(t)*radius*yaxiswhere center, xaxis and yaxis define the orthonormal frame of the circle plane.`,
+    remarks: '>An IsValid circle has positive radius and an IsValid plane defining the frame.',
     constructors: [
       {
         signature: 'Circle(Arc arc)',
@@ -68182,6 +68195,8 @@ the way the quad was split during the intersection.`,
     name: 'MeshUnsafeLock',
     dataType: 'class',
     summary: 'Permits access to the underlying mesh raw data structures in an unsafe way.',
+    remarks: `This lock object needs to be disposed before using the Mesh in other calculations and this can
+be achieved with the using keyword (Using in VB.Net).`,
     interfaces: ['IDisposable'],
     methods: [
       {
@@ -74898,6 +74913,8 @@ This overload accepts a slice start and end angles.`,
     dataType: 'class',
     summary: `Represents a spatial search structure based on implementations of the
 R-tree algorithm by Toni Gutman.`,
+    remarks: `The opennurbs rtree code is a modified version of the free and unrestricted
+R-tree implementation obtained from http://www.superliminal.com/sources/sources.htm .`,
     interfaces: ['IDisposable'],
     constructors: [
       {
@@ -112422,6 +112439,9 @@ The NotificationCenter is not thread-safe and should only be used in the UI thre
     name: 'TrulyObservableOrderedSet',
     dataType: 'class',
     summary: 'An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.',
+    remarks: `This class prevents the removal of elements by assemblies they cannot be edited by. At the time of removal,
+each element's IAssemblyRestrictedObject.Editable method will be invoked, and if false, an
+InvalidOperationException will be thrown.`,
     interfaces: ['IList<T>', 'INotifyCollectionChanged'],
     constructors: [
       {

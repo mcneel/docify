@@ -2,6 +2,7 @@
   <q-page>
     <h1>{{title}}</h1>
     <p>{{vm.summary}}</p>
+    <p v-if="vm.remarks">{{vm.remarks}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
       <router-link v-if="item.link" :to="baseUrl+item.link.toLowerCase()">{{item.name}}</router-link>

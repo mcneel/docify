@@ -113,6 +113,12 @@ namespace api_docify
                 sb.AppendLine(",");
                 sb.Append($"    summary: {JsonQuote(summary)}");
             }
+            string remarks = type.Remarks();
+            if (!string.IsNullOrWhiteSpace(remarks))
+            {
+                sb.AppendLine(",");
+                sb.Append($"    remarks: {JsonQuote(remarks)}");
+            }
 
             if (type.DataType == ParsedDataType.Namespace)
             {
