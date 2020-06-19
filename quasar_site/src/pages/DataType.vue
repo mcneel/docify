@@ -45,24 +45,27 @@
               </q-btn>
               </div>
             </q-item-label>
-            <q-item-label caption>
-              <q-btn v-if="useAnchors"
-                size="xs"
-                icon="mdi-link-variant"
-                flat
-                round
-                :to="anchorUrl(section, member)"
-                >
-              </q-btn>
-              <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since}}
-                <q-tooltip>Available since {{member.since}}</q-tooltip>
-              </q-badge>
-              {{member.summary}}
-            </q-item-label>
-            <q-item v-if="member.parameters">
+            <q-item inset-level="0.2">
               <q-item-section>
-                <q-item-label inset-level="1" caption v-for="parameter in member.parameters" :key="parameter.name">
-                  {{parameter.name}} - {{parameter.summary}}
+                <q-item-label caption>
+                  <q-btn v-if="useAnchors"
+                    size="xs"
+                    icon="mdi-link-variant"
+                    flat
+                    round
+                    :to="anchorUrl(section, member)"
+                    >
+                  </q-btn>
+                  <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since}}
+                    <q-tooltip>Available since {{member.since}}</q-tooltip>
+                  </q-badge>
+                  {{member.summary}}
+                </q-item-label>
+                <q-item-label caption v-for="parameter in member.parameters" :key="parameter.name">
+                  <b>{{parameter.name}}</b> - {{parameter.summary}}
+                </q-item-label>
+                <q-item-label v-if="member.returns" inset-level="1" caption>
+                  <b>Returns:</b> {{member.returns}}
                 </q-item-label>
               </q-item-section>
             </q-item>
