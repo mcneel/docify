@@ -6,10 +6,22 @@
       <li v-for="type in api" :key="type.name">
         <router-link :to="itemPath(type)">{{type.name}}</router-link>
         <ul>
-          <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
-          <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>
-          <li v-for="method in type.methods" :key="method.signature">{{method.signature}}</li>
-          <li v-for="value in type.values" :key="value.signature">{{value.signature}}</li>
+          <li v-for="constructor in type.constructors" :key="constructor.signature">
+            <q-badge v-if="constructor.deprecated" outline color='negative'>deprecated</q-badge>
+            {{constructor.signature}}
+          </li>
+          <li v-for="property in type.properties" :key="property.signature">
+            <q-badge v-if="property.deprecated" outline color='negative'>deprecated</q-badge>
+            {{property.signature}}
+          </li>
+          <li v-for="method in type.methods" :key="method.signature">
+            <q-badge v-if="method.deprecated" outline color='negative'>deprecated</q-badge>
+            {{method.signature}}
+          </li>
+          <li v-for="value in type.values" :key="value.signature">
+            <q-badge v-if="value.deprecated" outline color='negative'>deprecated</q-badge>
+            {{value.signature}}
+          </li>
         </ul>
       </li>
     </ul>

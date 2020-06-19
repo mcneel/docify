@@ -20,6 +20,12 @@ namespace api_docify
             return exists;
         }
 
+        public bool HasDeprecatedTag()
+        {
+            bool deprecated = (Documentation != null && Documentation.Content.ToFullString().Contains("<deprecated>"));
+            return deprecated;
+        }
+
         public string Since
         {
             get
@@ -33,6 +39,22 @@ namespace api_docify
                         since = element[0].InnerText;
                 }
                 return since;
+            }
+        }
+
+        public string Deprecated
+        {
+            get
+            {
+                string deprecated = "(unknown)";
+                var xml = DocumentationAsXml();
+                if (xml != null)
+                {
+                    var element = xml.GetElementsByTagName("deprecated");
+                    if (element != null && element.Count > 0)
+                        deprecated = element[0].InnerText;
+                }
+                return deprecated;
             }
         }
 

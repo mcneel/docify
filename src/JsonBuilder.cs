@@ -165,6 +165,11 @@ namespace api_docify
                     sb.AppendLine(",");
                     sb.Append($"    since: '{type.Since}'");
                 }
+                if (type.HasDeprecatedTag())
+                {
+                    sb.AppendLine(",");
+                    sb.Append($"    deprecated: '{type.Deprecated}'");
+                }
 
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
@@ -237,6 +242,12 @@ namespace api_docify
                 {
                     sb.AppendLine(",");
                     sb.Append($"        since: '{since}'");
+                }
+                string deprecated = member.Deprecated;
+                if (!string.IsNullOrWhiteSpace(deprecated) && double.TryParse(deprecated, out double deprecatedValue))
+                {
+                    sb.AppendLine(",");
+                    sb.Append($"        deprecated: '{deprecated}'");
                 }
 
                 var parameters = member.GetParameters();

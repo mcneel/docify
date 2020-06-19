@@ -27,6 +27,9 @@
           <q-item-section>
             <q-item-label>
               <div :id="anchorId(section, member)">
+              <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{member.deprecated}}
+                <q-tooltip>Deprecated in version {{member.deprecated}}</q-tooltip>
+              </q-badge>
               <span v-for="(chunk, index) in signature(member, section)" :key="index">
                 <span v-if="chunk.link">
                   <router-link :to="chunk.link">{{chunk.name}}</router-link>
@@ -122,7 +125,7 @@ export default {
       this.$nextTick(() => {
         const el = document.getElementById(this.$route.hash.substring(1))
         if (el) {
-          const y = el.getBoundingClientRect().top + window.pageYOffset - 60
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 65
           window.scrollTo({ top: y, behavior: 'smooth' })
         }
       })

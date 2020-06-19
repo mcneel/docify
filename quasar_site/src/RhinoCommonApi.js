@@ -9350,6 +9350,7 @@ that are listed under "Advanced display" in the options dialog.`,
         signature: 'static bool DeleteDiplayMode(Guid id)',
         summary: 'Deletes an existing display mode.',
         since: '5.0',
+        deprecated: '7.0',
         parameters: [
           {
             name: 'id',
@@ -11794,7 +11795,8 @@ or failed to open.`
       {
         signature: 'void PopClipTesting()',
         summary: 'Pop a ClipTesting flag off the engine\'s stack.',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'void PopCullFaceMode()',
@@ -11820,6 +11822,7 @@ or failed to open.`
         signature: 'void PushClipTesting(bool enable)',
         summary: 'Push a ClipTesting flag on the engine\'s stack.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'enable',
@@ -18958,7 +18961,8 @@ color = Rhino.ApplicationSettings.AppearanceSettings.DefaultLayerColorline style
       },
       {
         signature: 'bool CommitChanges()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'void CopyAttributesFrom(Layer otherLayer)',
@@ -19772,17 +19776,20 @@ documents.`,
       },
       {
         signature: 'Texture GetBitmapTexture()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Texture GetBumpTexture()',
         summary: 'Gets the bump texture of this material.',
         since: '5.0',
+        deprecated: '7.0',
         returns: 'A texture; or None if no bump texture has been added to this material.'
       },
       {
         signature: 'Texture GetEnvironmentTexture()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Texture GetTexture(TextureType which)',
@@ -19796,7 +19803,8 @@ documents.`,
       },
       {
         signature: 'Texture GetTransparencyTexture()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'string GetUserString(string key)',
@@ -19847,27 +19855,33 @@ Optionally adds channel if one is not found.`,
       },
       {
         signature: 'bool SetBitmapTexture(string filename)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetBitmapTexture(Texture texture)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetBumpTexture(string filename)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetBumpTexture(Texture texture)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetEnvironmentTexture(string filename)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetEnvironmentTexture(Texture texture)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetTexture(Texture texture,TextureType which)',
@@ -19886,11 +19900,13 @@ Optionally adds channel if one is not found.`,
       },
       {
         signature: 'bool SetTransparencyTexture(string filename)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetTransparencyTexture(Texture texture)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool SetUserString(string key,string value)',
@@ -22926,6 +22942,7 @@ meshing parameters are used.`,
         signature: 'RenderPrimitiveList GetRenderPrimitiveList(ViewportInfo viewport,bool preview)',
         summary: 'Build custom render mesh(es) for this object.',
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'viewport',
@@ -23358,6 +23375,7 @@ terminates.`
         signature: 'bool SupportsRenderPrimitiveList(ViewportInfo viewport,bool preview)',
         summary: 'Determines if custom render meshes will be built for a particular object.',
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'viewport',
@@ -23406,6 +23424,7 @@ then the object's repositioned gumball frame is returned.`,
         summary: `Get the bounding box for the custom render meshes associated with this
 object.`,
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'viewport',
@@ -24348,7 +24367,8 @@ with the current default AnnotationStyle properties.`,
       },
       {
         signature: 'DimensionStyle Find(string name,bool ignoreDeleted)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'DimensionStyle FindIndex(int index)',
@@ -24463,6 +24483,7 @@ We are moving towards using only IDs for all tables.`,
         signature: 'bool SetCurrentDimensionStyleIndex(int index,bool quiet)',
         summary: 'Do not use. Use the SetCurrent method.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'index',
@@ -24742,6 +24763,7 @@ RhinoMath.UnsetIntIndex no group found with the given name.`
         signature: 'int Find(string groupName,bool ignoreDeletedGroups)',
         summary: 'Finds a group with a given name.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'groupName',
@@ -24961,6 +24983,7 @@ some other problem occurred.`
         signature: 'int Find(string name,bool ignoreDeleted)',
         summary: 'Finds the hatch pattern with a given name. Search ignores case.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'name',
@@ -25262,6 +25285,7 @@ Specifically:
         signature: 'InstanceDefinition Find(string instanceDefinitionName,bool ignoreDeletedInstanceDefinitions)',
         summary: 'Finds the instance definition with a given name.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'instanceDefinitionName',
@@ -25315,6 +25339,7 @@ new instance definitions.`,
         summary: `Gets unused instance definition name used as default when creating
 new instance definitions.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'root',
@@ -25351,6 +25376,7 @@ name begins at "Block suffix".`
         summary: `Obsolete method that always returns false.
 Marks the source path for a linked instance definition as relative or absolute.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'idef',
@@ -25476,6 +25502,7 @@ specify the source archive.`,
         summary: `If the instance definition is linked or embedded, use SetSource to
 specify the source archive.`,
         since: '6.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'idefIndex',
@@ -25854,6 +25881,7 @@ deleted because it is the current layer or because it layer contains active geom
         signature: 'int Find(Guid layerId,bool ignoreDeletedLayers)',
         summary: 'Finds a layer with a matching ID.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'layerId',
@@ -25892,6 +25920,7 @@ or RhinoMath.UnsetIntIndex to get an always-out-of-bound value.`
         signature: 'int Find(Guid parentId,string layerName,bool ignoreDeletedLayers)',
         summary: 'Finds a layer with a given name and matching parent ID.',
         since: '6.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'parentId',
@@ -25936,6 +25965,7 @@ or RhinoMath.UnsetIntIndex to get an always-out-of-bound value.`
 first match layer index will be returned.
 Deleted layers have no name.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'layerName',
@@ -25951,7 +25981,8 @@ If no layer is found, the index of the default layer, -1, is returned.`
       },
       {
         signature: 'int FindByFullPath(string layerPath,bool ignoreDeletedLayers)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'int FindByFullPath(string layerPath,int notFoundReturnValue)',
@@ -26046,7 +26077,8 @@ This is the first index that will be tested.`
       },
       {
         signature: 'int FindNext(int index,string layerName,bool ignoreDeletedLayers)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool ForceLayerVisible(Guid layerId)',
@@ -26097,6 +26129,7 @@ This is the first index that will be tested.`
         signature: 'string GetUnusedLayerName(bool ignoreDeleted)',
         summary: 'Gets the next unused layer name used as default when creating new layers.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'ignoreDeleted',
@@ -26718,6 +26751,7 @@ because it linetype is referenced by active geometry.`
         signature: 'int Find(string name,bool ignoreDeletedLinetypes)',
         summary: 'Obsolete. Use the other overload.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'name',
@@ -26770,6 +26804,7 @@ We are moving towards using only IDs for all tables.`,
         signature: 'string GetUnusedLinetypeName(bool ignoreDeleted)',
         summary: 'Obsolete. Use the other overload. Gets unused linetype name used as default when creating new linetypes.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'ignoreDeleted',
@@ -27782,7 +27817,8 @@ If there is already a named view with the same name, that view is replaced.`
       },
       {
         signature: 'bool Restore(int index,RhinoView view,bool backgroundBitmap)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool Restore(int index,RhinoViewport viewport)',
@@ -27791,23 +27827,28 @@ If there is already a named view with the same name, that view is replaced.`
       },
       {
         signature: 'bool Restore(int index,RhinoViewport viewport,bool backgroundBitmap)',
-        since: '5.9'
+        since: '5.9',
+        deprecated: '6.0'
       },
       {
         signature: 'bool RestoreAnimated(int index,RhinoView view,bool backgroundBitmap)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool RestoreAnimated(int index,RhinoView view,bool backgroundBitmap,int frames,int frameRate)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool RestoreAnimated(int index,RhinoViewport viewport,bool backgroundBitmap)',
-        since: '5.9'
+        since: '5.9',
+        deprecated: '6.0'
       },
       {
         signature: 'bool RestoreAnimated(int index,RhinoViewport viewport,bool backgroundBitmap,int frames,int frameRate)',
-        since: '5.9'
+        since: '5.9',
+        deprecated: '6.0'
       },
       {
         signature: 'bool RestoreAnimatedConstantSpeed(int index,RhinoViewport viewport,double units_per_frame,int ms_delay)',
@@ -34280,7 +34321,8 @@ An array is returned even if the input was another enumerable type.`,
         signature: 'void ReadCheckSum()',
         summary: `Reads a legacy ON_CheckSum, only provided to read data chunks from old
 V5 files, the CheckSum read is discarded`,
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'System.Drawing.Color ReadColor()',
@@ -34799,7 +34841,8 @@ The return will always be an array.`,
         signature: 'void WriteEmptyCheckSum()',
         summary: `Reads a legacy ON_CheckSum, only provided to read data chunks from old
 V5 files, the CheckSum read is discarded`,
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'void WriteFont(Font value)',
@@ -35946,6 +35989,7 @@ table.`
         signature: 'int Audit(bool attemptRepair,int repairCount,string errors,int[] warnings)',
         summary: 'This function is only kept for forward assembly compatibility.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'attemptRepair',
@@ -35998,6 +36042,7 @@ table.`
         summary: `The File3dm object is kept consistent during its creation.
 Therefore, this function now returns only true.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'errors',
@@ -36011,6 +36056,7 @@ Therefore, this function now returns only true.`,
         summary: `The File3dm object is kept consistent during its creation.
 Therefore, this function now returns only true.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'errors',
@@ -36022,7 +36068,8 @@ Therefore, this function now returns only true.`,
       {
         signature: 'void Polish()',
         summary: 'This function is only kept for forward assembly compatibility.',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'void SetPreviewImage(Bitmap image)',
@@ -44754,6 +44801,7 @@ and sweeps each piece separately, then put the results together into a Brep.`,
         signature: 'static Brep[] CreateFromTaperedExtrude(Curve curveToExtrude,double distance,Vector3d direction,Point3d basePoint,double draftAngleRadians,ExtrudeCornerType cornerType)',
         summary: 'Extrude a curve to a taper making a brep (potentially more than 1)',
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curveToExtrude',
@@ -45109,6 +45157,7 @@ otherwise the result is a Brep with joined surfaces created from the polycurve s
         signature: 'static Brep[] CreatePlanarBreps(Curve inputLoop)',
         summary: 'Constructs a set of planar breps as outlines by the loops.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'inputLoop',
@@ -45137,6 +45186,7 @@ otherwise the result is a Brep with joined surfaces created from the polycurve s
         signature: 'static Brep[] CreatePlanarBreps(CurveList inputLoops)',
         summary: 'Constructs a set of planar Breps as outlines by the loops.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'inputLoops',
@@ -45165,6 +45215,7 @@ otherwise the result is a Brep with joined surfaces created from the polycurve s
         signature: 'static Brep[] CreatePlanarBreps(IEnumerable<Curve> inputLoops)',
         summary: 'Constructs a set of planar breps as outlines by the loops.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'inputLoops',
@@ -45462,6 +45513,7 @@ otherwise the result is a Brep with joined surfaces created from the polycurve s
         summary: `Constructs a Brep using the trimming information of a brep face and a surface.
 Surface must be roughly the same shape and in the same location as the trimming brep face.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'trimSource',
@@ -52383,6 +52435,7 @@ Note, if the surface is non-rational, the weight will be 1.0.`,
         signature: 'bool SetControlPoint(int u,int v,Point3d cp)',
         summary: 'Sets the control point at the given (u, v) index.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'u',
@@ -53769,6 +53822,7 @@ If true, the blend will go in the opposite direction to the curve`
         summary: `Calculates the boolean difference between two closed, planar curves.
 Note, curves must be co-planar.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curveA',
@@ -53807,6 +53861,7 @@ Note, curves must be co-planar.`,
         summary: `Calculates the boolean difference between a closed planar curve, and a list of closed planar curves.
 Note, curves must be co-planar.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curveA',
@@ -53845,6 +53900,7 @@ Note, curves must be co-planar.`,
         summary: `Calculates the boolean intersection of two closed, planar curves.
 Note, curves must be co-planar.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curveA',
@@ -53935,6 +53991,7 @@ Note, curves must be co-planar.`,
         summary: `Calculates the boolean union of two or more closed, planar curves.
 Note, curves must be co-planar.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curves',
@@ -54346,6 +54403,7 @@ of the editing falls off smoothly.`
 That means the first control point of first curve is matched to first control point of the second curve and so on.
 There is no matching of curves direction. Caller must match input curves direction before calling the function.`,
         since: '5.2',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curve0',
@@ -54395,6 +54453,7 @@ Refits the input curves to have the same structure. The resulting curves are usu
 input curves are compatible and no refit is needed. There is no matching of curves direction.
 Caller must match input curves direction before calling the function.`,
         since: '5.2',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curve0',
@@ -54445,6 +54504,7 @@ This is how the algorithm works: Divides the two curves into an equal number of 
 corresponding points on the curves and interpolates the tween curve through those points. There is no matching of curves
 direction. Caller must match input curves direction before calling the function.`,
         since: '5.2',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curve0',
@@ -55160,6 +55220,7 @@ objects that can be passed to this function.`,
 This curve must be closed or the return value will be Unset.
 Both curve and point are projected to the World XY plane.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'testPoint',
@@ -55173,6 +55234,7 @@ Both curve and point are projected to the World XY plane.`,
         summary: `Computes the relationship between a point and a closed curve region.
 This curve must be closed or the return value will be Unset.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'testPoint',
@@ -56142,6 +56204,7 @@ represented as a polyline.`,
 the testPoint.  The search for a local close point starts at
 a seed parameter.`,
         since: '6.3',
+        deprecated: '6.18',
         parameters: [
           {
             name: 'testPoint',
@@ -57143,6 +57206,7 @@ Use the SpanCount property to test how many spans there are.`,
         signature: 'Curve[] Split(Brep cutter,double tolerance)',
         summary: 'Splits a curve into pieces using a polysurface.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'cutter',
@@ -57205,6 +57269,7 @@ The parameter must be in the interior of the curve domain.`,
         signature: 'Curve[] Split(Surface cutter,double tolerance)',
         summary: 'Splits a curve into pieces using a surface.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'cutter',
@@ -59269,6 +59334,7 @@ Hatch has an index to get the pattern definition from the pattern table.`,
         signature: 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale)',
         summary: 'Constructs an array of Hatch from one curve.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curve',
@@ -59321,6 +59387,7 @@ Hatch has an index to get the pattern definition from the pattern table.`,
         signature: 'static Hatch[] Create(IEnumerable<Curve> curves,int hatchPatternIndex,double rotationRadians,double scale)',
         summary: 'Constructs an array of Hatch from a set of curves.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'curves',
@@ -61230,6 +61297,7 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
         signature: 'static Line[] MeshMeshFast(Mesh meshA,Mesh meshB)',
         summary: 'This is an old overload kept for compatibility. Overlaps and near misses are ignored.',
         since: '5.0',
+        deprecated: '7.0',
         parameters: [
           {
             name: 'meshA',
@@ -64513,6 +64581,7 @@ v7_____________v6|\\             |\\| \\            | \\|  \\ _____________\\|  
         signature: 'static Mesh[] CreateFromBrep(Brep brep)',
         summary: 'Constructs a mesh from a brep.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'brep',
@@ -64820,6 +64889,7 @@ coincident.`
         signature: 'static Mesh CreateFromPlanarBoundary(Curve boundary,MeshingParameters parameters)',
         summary: 'Do not use this overload. Use version that takes a tolerance parameter instead.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'boundary',
@@ -78719,7 +78789,8 @@ and two curves that defines a surface edge.`,
       },
       {
         signature: 'Brep[] PerformSweep(Curve rail1,Curve rail2,Curve crossSection,double crossSectionParameterRail1,double crossSectionParameterRail2)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Brep[] PerformSweep(Curve rail1,Curve rail2,IEnumerable<Curve> crossSections)',
@@ -78744,11 +78815,13 @@ and two curves that defines a surface edge.`,
       },
       {
         signature: 'Brep[] PerformSweep(Curve rail1,Curve rail2,IEnumerable<Curve> crossSections,IEnumerable<double> crossSectionParameters1,IEnumerable<double> crossSectionParameters2)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Brep[] PerformSweepRebuild(Curve rail1,Curve rail2,Curve crossSection,double crossSectionParameterRail1,double crossSectionParameterRail2,int rebuildCount)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Brep[] PerformSweepRebuild(Curve rail1,Curve rail2,Curve crossSection,int rebuildCount)',
@@ -78777,7 +78850,8 @@ and two curves that defines a surface edge.`,
       },
       {
         signature: 'Brep[] PerformSweepRebuild(Curve rail1,Curve rail2,IEnumerable<Curve> crossSections,IEnumerable<double> crossSectionParametersRail1,IEnumerable<double> crossSectionParametersRail2,int rebuildCount)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Brep[] PerformSweepRebuild(Curve rail1,Curve rail2,IEnumerable<Curve> crossSections,int rebuildCount)',
@@ -78831,7 +78905,8 @@ and two curves that defines a surface edge.`,
       },
       {
         signature: 'Brep[] PerformSweepRefit(Curve rail1,Curve rail2,Curve crossSection,double crossSectionParameterRail1,double crossSectionParameterRail2,double refitTolerance)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       },
       {
         signature: 'Brep[] PerformSweepRefit(Curve rail1,Curve rail2,IEnumerable<Curve> crossSections,double refitTolerance)',
@@ -78860,7 +78935,8 @@ and two curves that defines a surface edge.`,
       },
       {
         signature: 'Brep[] PerformSweepRefit(Curve rail1,Curve rail2,IEnumerable<Curve> crossSections,IEnumerable<double> crossSectionParametersRail1,IEnumerable<double> crossSectionParametersRail2,double refitTolerance)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '7.0'
       }
     ]
   },
@@ -92691,32 +92767,38 @@ will get registered.`,
       {
         signature: 'static Guid CurvePipingId',
         since: '6.0',
+        deprecated: '6.0',
         property: ['get']
       },
       {
         signature: 'static Guid DisplacementId',
         since: '6.0',
+        deprecated: '6.0',
         property: ['get']
       },
       {
         signature: 'static Guid EdgeSofteningId',
         since: '6.0',
+        deprecated: '6.0',
         property: ['get']
       },
       {
         signature: 'static Guid ShutLiningId',
         since: '6.0',
+        deprecated: '6.0',
         property: ['get']
       },
       {
         signature: 'static Guid ThickeningId',
         since: '6.0',
+        deprecated: '6.0',
         property: ['get']
       },
       {
         signature: 'String Name',
         summary: 'The name of the provider for UI display.',
         since: '5.7',
+        deprecated: '6.0',
         property: ['get']
       }
     ],
@@ -92724,20 +92806,24 @@ will get registered.`,
       {
         signature: 'static void AllObjectsChanged()',
         summary: 'Call this method if your render meshes change.',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '6.0'
       },
       {
         signature: 'static void AllObjectsChanged(RhinoDoc doc)',
         summary: 'Call this method if your render meshes change.',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static void DocumentBasedMeshesChanged(RhinoDoc doc)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static void ObjectChanged(RhinoDoc doc,RhinoObject obj)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static void RegisterProviders(Assembly assembly,Guid pluginId)',
@@ -92746,6 +92832,7 @@ assembly containing a custom mesh provider.  Only publicly exported
 classes derived from CustomRenderMeshProvider with a public constructor
 that has no parameters will get registered.`,
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'assembly',
@@ -92761,6 +92848,7 @@ that has no parameters will get registered.`,
         signature: 'BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)',
         summary: 'Returns a bounding box for the custom render meshes for the given object.',
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'vp',
@@ -92783,12 +92871,14 @@ that has no parameters will get registered.`,
       },
       {
         signature: 'BoundingBox BoundingBox(ViewportInfo vp,RhinoObject obj,RhinoDoc doc,Guid requestingPlugIn,DisplayPipelineAttributes attrs)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool BuildCustomMeshes(ViewportInfo vp,RenderPrimitiveList objMeshes,Guid requestingPlugIn,bool meshType)',
         summary: 'Build custom render mesh(es).',
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'vp',
@@ -92813,6 +92903,7 @@ that has no parameters will get registered.`,
         signature: 'bool WillBuildCustomMeshes(ViewportInfo vp,RhinoObject obj,Guid requestingPlugIn,bool preview)',
         summary: 'Determines if custom render meshes will be built for a particular object.',
         since: '5.7',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'vp',
@@ -93280,28 +93371,33 @@ The content should be unitilized after use with the Unitialize function.`,
     constructors: [
       {
         signature: 'RdkModalEditContentBucket(IntPtr pRdkModalEditContentBucket)',
-        since: '6.5'
+        since: '6.5',
+        deprecated: '6.13'
       }
     ],
     properties: [
       {
         signature: 'IntPtr CppPointer',
         since: '6.5',
+        deprecated: '6.13',
         property: ['get']
       }
     ],
     methods: [
       {
         signature: 'RenderContentCollection ContentsIn()',
-        since: '6.5'
+        since: '6.5',
+        deprecated: '6.13'
       },
       {
         signature: 'void Dispose()',
-        since: '6.5'
+        since: '6.5',
+        deprecated: '6.13'
       },
       {
         signature: 'void SetContentsOut(RenderContentCollection collection)',
-        since: '6.5'
+        since: '6.5',
+        deprecated: '6.13'
       }
     ]
   },
@@ -94627,7 +94723,8 @@ not appear in the user interface.`
       },
       {
         signature: 'BoolField AddTextured(string key,bool value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'BoolField AddTextured(string key,bool value,string prompt,bool treatAsLinear)',
@@ -94658,7 +94755,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Color4fField AddTextured(string key,Color value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Color4fField AddTextured(string key,Color value,string prompt,bool treatAsLinear)',
@@ -94689,7 +94787,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Color4fField AddTextured(string key,Color4f value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Color4fField AddTextured(string key,Color4f value,string prompt,bool treatAsLinear)',
@@ -94720,7 +94819,8 @@ not appear in the user interface.`
       },
       {
         signature: 'DateTimeField AddTextured(string key,DateTime value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'DateTimeField AddTextured(string key,DateTime value,string prompt,bool treatAsLinear)',
@@ -94751,7 +94851,8 @@ not appear in the user interface.`
       },
       {
         signature: 'DoubleField AddTextured(string key,double value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'DoubleField AddTextured(string key,double value,string prompt,bool treatAsLinear)',
@@ -94782,7 +94883,8 @@ not appear in the user interface.`
       },
       {
         signature: 'FloatField AddTextured(string key,float value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'FloatField AddTextured(string key,float value,string prompt,bool treatAsLinear)',
@@ -94813,7 +94915,8 @@ not appear in the user interface.`
       },
       {
         signature: 'GuidField AddTextured(string key,Guid value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'GuidField AddTextured(string key,Guid value,string prompt,bool treatAsLinear)',
@@ -94844,7 +94947,8 @@ not appear in the user interface.`
       },
       {
         signature: 'IntField AddTextured(string key,int value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'IntField AddTextured(string key,int value,string prompt,bool treatAsLinear)',
@@ -94875,7 +94979,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Point2dField AddTextured(string key,Point2d value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Point2dField AddTextured(string key,Point2d value,string prompt,bool treatAsLinear)',
@@ -94906,7 +95011,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Point3dField AddTextured(string key,Point3d value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Point3dField AddTextured(string key,Point3d value,string prompt,bool treatAsLinear)',
@@ -94937,7 +95043,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Point4dField AddTextured(string key,Point4d value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Point4dField AddTextured(string key,Point4d value,string prompt,bool treatAsLinear)',
@@ -94968,7 +95075,8 @@ not appear in the user interface.`
       },
       {
         signature: 'StringField AddTextured(string key,string value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'StringField AddTextured(string key,string value,string prompt,bool treatAsLinear)',
@@ -94999,7 +95107,8 @@ not appear in the user interface.`
       },
       {
         signature: 'TransformField AddTextured(string key,Transform value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'TransformField AddTextured(string key,Transform value,string prompt,bool treatAsLinear)',
@@ -95030,7 +95139,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Vector2dField AddTextured(string key,Vector2d value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Vector2dField AddTextured(string key,Vector2d value,string prompt,bool treatAsLinear)',
@@ -95061,7 +95171,8 @@ not appear in the user interface.`
       },
       {
         signature: 'Vector3dField AddTextured(string key,Vector3d value,string prompt)',
-        since: '5.7'
+        since: '5.7',
+        deprecated: '7.0'
       },
       {
         signature: 'Vector3dField AddTextured(string key,Vector3d value,string prompt,bool treatAsLinear)',
@@ -95148,6 +95259,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95186,6 +95298,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95224,6 +95337,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95262,6 +95376,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95300,6 +95415,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95338,6 +95454,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95376,6 +95493,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95414,6 +95532,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95452,6 +95571,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95490,6 +95610,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95528,6 +95649,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95566,6 +95688,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95604,6 +95727,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95642,6 +95766,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95680,6 +95805,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95718,6 +95844,7 @@ name is not valid.`,
 render SDK.  Will throw a InvalidOperationException exception if the key
 name is not valid.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95737,6 +95864,7 @@ name is not valid.`,
         signature: 'bool SetTag(string key,object tag)',
         summary: 'Sets an object that contains data to associate with the field.  THIS IS NOW OBSOLETE - if you were using this, please email andy@mcneel.com and let me know why.',
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -95753,6 +95881,7 @@ name is not valid.`,
         signature: 'bool TryGetTag(string key,object tag)',
         summary: 'Gets object that contains data associate with a field. THIS IS NOW OBSOLETE - if you were using this, please email andy@mcneel.com and let me know why.',
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'key',
@@ -96852,12 +96981,12 @@ This shouldn't happen.  Will cause an ASSERT`,
     constructors: [
       {
         signature: 'LinearWorkflow()',
-        summary: 'Create an utility object not associated with any document',
+        summary: 'Create a utility object not associated with any document',
         since: '6.0'
       },
       {
         signature: 'LinearWorkflow(LinearWorkflow src)',
-        summary: 'Create utility object not associated with any document from another object',
+        summary: 'Create a utility object not associated with any document from another object',
         since: '6.0'
       }
     ],
@@ -97155,126 +97284,151 @@ See also RhinoMath.CRC32(uint,byte[]).`,
       {
         signature: 'static string AmbientOcclusion',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Anisotropic',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string AnisotropicRotation',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string BaseColor',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string BRDF',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Bump',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Clearcoat',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string ClearcoatBump',
         since: '6.16',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string ClearcoatRoughness',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Displacement',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Emission',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Metallic',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Normal',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Opacity',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string OpacityIor',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string OpacityRoughness',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Roughness',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Sheen',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string SheenTint',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Smudge',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Specular',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string SpecularTint',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string Subsurface',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string SubsurfaceScatteringColor',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       },
       {
         signature: 'static string SubsurfaceScatteringRadius',
         since: '6.12',
+        deprecated: '7.0',
         property: ['get']
       }
     ]
@@ -98289,12 +98443,14 @@ in which case Commit() will replace the existing channel with the new one in the
       {
         signature: 'void SetSize(double d)',
         summary: 'SetSize',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '7.0'
       },
       {
         signature: 'double Size()',
         summary: 'Size - used in the UI.  Always meters.',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '7.0'
       },
       {
         signature: 'void ToMetaData()',
@@ -99276,6 +99432,7 @@ top level content.  The content must have been returned from
 RenderContent::MakeCopy, NewContentFromType or a similar function that returns
 a non-document content.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'renderContent',
@@ -99291,6 +99448,7 @@ top level content.  The content must have been returned from
 RenderContent::MakeCopy, NewContentFromType or a similar function that returns
 a non-document content.`,
         since: '6.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'document',
@@ -99434,7 +99592,8 @@ otherwise it returns null.`
       },
       {
         signature: 'static RenderContent FromXml(String xml)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.4'
       },
       {
         signature: 'static RenderContent FromXml(String xml,RhinoDoc doc)',
@@ -99498,11 +99657,13 @@ False on error.`
       },
       {
         signature: 'bool AddChild(RenderContent renderContent)',
-        since: '5.6'
+        since: '5.6',
+        deprecated: '6.0'
       },
       {
         signature: 'bool AddChild(RenderContent renderContent,String childSlotName)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool AddUserInterfaceSection(ICollapsibleSection section)',
@@ -99514,6 +99675,7 @@ False on error.`
 of the createExpanded tabs client area will be the initial height of the
 specified control.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'classType',
@@ -99577,7 +99739,8 @@ class. EndChangeContentChanged`
       },
       {
         signature: 'bool ChangeChild(RenderContent oldContent,RenderContent newContent)',
-        since: '5.6'
+        since: '5.6',
+        deprecated: '6.0'
       },
       {
         signature: 'double ChildSlotAmount(String childSlotName)',
@@ -99764,6 +99927,7 @@ as a child in the specified child slot.`
         summary: `This method is deprecated and no longer called. For more information
 see CalculateRenderHash`,
         since: '6.0',
+        deprecated: '6.0',
         returns: 'bool'
       },
       {
@@ -99819,6 +99983,7 @@ document or the call will fail.`,
         summary: `Call this method to open the content in the a modal version of the editor.
 The content must be in the document or the call will fail.`,
         since: '5.7',
+        deprecated: '6.13',
         returns: 'Returns True on success or False on error.'
       },
       {
@@ -99937,6 +100102,7 @@ Do not call this method to add children in your constructor. If you
 want to add default children, you should override Initialize() and add
 them there.`,
         since: '5.10',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'renderContent',
@@ -100037,13 +100203,15 @@ If you do not support this parameter, call the base class.`,
         signature: 'bool SetParameter(String parameterName,object value,ChangeContexts changeContext)',
         summary: `Set the named parameter value for this content instance.
 If you do not support this parameter, call the base class.`,
-        since: '5.7'
+        since: '5.7',
+        deprecated: '6.0'
       },
       {
         signature: 'void SetRenderHash(uint hash)',
         summary: `This method is deprecated and no longer called. For more information
 see CalculateRenderHash`,
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool SmartUngroupRecursive()',
@@ -100352,7 +100520,8 @@ Since 6.11`,
       },
       {
         signature: 'bool ContentNeedsPreviewThumbnail(RenderContent c)',
-        since: '7.0'
+        since: '7.0',
+        deprecated: '7.0'
       },
       {
         signature: 'bool ContentNeedsPreviewThumbnail(RenderContent c,bool includeChildren)',
@@ -101340,7 +101509,8 @@ instance of TexturedColor`,
       },
       {
         signature: 'DocObjects.Material SimulatedMaterial(bool isForDataOnly)',
-        since: '7.0'
+        since: '7.0',
+        deprecated: '7.0'
       },
       {
         signature: 'DocObjects.Material SimulatedMaterial(TextureGeneration tg)',
@@ -101350,6 +101520,7 @@ instance of TexturedColor`,
         signature: 'DocObjects.Material SimulateMaterial(bool isForDataOnly)',
         summary: 'Call this function to receive the simulation for a RenderMaterial used by the display and other rendering engines.',
         since: '6.0',
+        deprecated: '7.0',
         parameters: [
           {
             name: 'isForDataOnly',
@@ -101684,6 +101855,7 @@ done in RenderPlugIn.RegisterRenderPanels.  Panels
 registered after RenderPlugIn.RegisterRenderPanels is called
 will be ignored.`,
         since: '5.11',
+        deprecated: '7.0',
         parameters: [
           {
             name: 'plugin',
@@ -101760,7 +101932,8 @@ looking up Rhino.Render.RenderPanels.`,
     methods: [
       {
         signature: 'static Size RenderSize()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.4'
       },
       {
         signature: 'static Size RenderSize(RhinoDoc doc)',
@@ -102592,6 +102765,12 @@ such as linear dimensions or angular dimensions.`,
         property: ['get', 'set']
       },
       {
+        signature: 'RenderChannels RenderChannels',
+        summary: 'Get the document render channels interface',
+        since: '7.0',
+        property: ['get']
+      },
+      {
         signature: 'bool RenderCurves',
         summary: 'Gets or sets a value indicating whether to instruct the rendering engine to show curves.',
         since: '5.0',
@@ -102778,6 +102957,7 @@ registered after RenderPlugIn.RegisterRenderTabs is called
 will be ignored.  If the class includes a public method "void DoHelp()"
 the method will get called when F1 is pressed and the custom tab is active.`,
         since: '5.11',
+        deprecated: '7.0',
         parameters: [
           {
             name: 'plugin',
@@ -102849,6 +103029,7 @@ offset and rotation applied.)`,
         signature: 'static RenderTexture NewBitmapTexture(SimulatedTexture texture)',
         summary: 'Constructs a new basic texture from a SimulatedTexture.',
         since: '5.3',
+        deprecated: '6.4',
         parameters: [
           {
             name: 'texture',
@@ -102879,6 +103060,7 @@ offset and rotation applied.)`,
 capable of evaluating texture color throughout uvw space. May be called
 from within a rendering shade pipeline.`,
         since: '5.1',
+        deprecated: '6.0',
         returns: 'A texture evaluator instance.'
       },
       {
@@ -103107,7 +103289,8 @@ meter of the model.`,
       },
       {
         signature: 'void SimulateTexture(SimulatedTexture simulation,bool isForDataOnly)',
-        since: '5.1'
+        since: '5.1',
+        deprecated: '6.0'
       },
       {
         signature: 'void SimulateTexture(SimulatedTexture simulation,TextureGeneration tg,int size,RhinoObject obj)',
@@ -103295,6 +103478,7 @@ of the render window itself (ie - the one set using SetSize)`
         summary: `Get an ImageAdjust instance containing current image adjusting settings
 for this RenderWindow`,
         since: '6.0',
+        deprecated: '7.0',
         returns: 'ImageAdjust'
       },
       {
@@ -103378,6 +103562,7 @@ supported by Rhino. Guid.Empty if there is no need for that.`,
         summary: `Set new ImageAdjust to use. An ImageAdjust instance can be obtained by first
 querying for one using GetAdjust()`,
         since: '6.0',
+        deprecated: '7.0',
         parameters: [
           {
             name: 'imageAdjust',
@@ -104034,7 +104219,8 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
       },
       {
         signature: 'double MetersToUnits(double units)',
-        since: '5.1'
+        since: '5.1',
+        deprecated: '6.0'
       },
       {
         signature: 'double MetersToUnits(RhinoDoc doc,double units)',
@@ -104050,7 +104236,8 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
       },
       {
         signature: 'double UnitsToMeters(double units)',
-        since: '5.1'
+        since: '5.1',
+        deprecated: '6.0'
       },
       {
         signature: 'double UnitsToMeters(RhinoDoc doc,double units)',
@@ -104363,7 +104550,8 @@ Using this function will also set sun to manual.`,
       {
         signature: 'void ShowDialog()',
         summary: 'Show the tabbed sun dialog.',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       }
     ],
     events: [
@@ -104557,7 +104745,8 @@ Using this function will also set sun to manual.`,
       },
       {
         signature: 'static void SetTextureSize(RdkTextureSize size,bool bSendEvent)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static void SetUseDefaultLibraryPath(bool b)',
@@ -105635,6 +105824,7 @@ event notification.`,
         signature: 'bool Hidden',
         summary: 'Return True if the section should be hidden, else return false.',
         since: '6.0',
+        deprecated: '6.0',
         property: ['get']
       }
     ],
@@ -105643,6 +105833,7 @@ event notification.`,
         signature: 'void OnUserInterfaceSectionExpanding(UserInterfaceSection userInterfaceSection,bool expanding)',
         summary: 'The UserInterfaceSection object that called this interface method.',
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'userInterfaceSection',
@@ -105660,6 +105851,7 @@ collapsed.`
         summary: `Called by UserInterfaceSection when the selected content changes or a
 content field property value changes.`,
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'userInterfaceSection',
@@ -105683,12 +105875,14 @@ content field property value changes.`,
         signature: 'RenderContent RenderContent',
         summary: 'The RenderContent object that created this user interface object.',
         since: '5.1',
+        deprecated: '6.0',
         property: ['get']
       },
       {
         signature: 'object Window',
         summary: 'The user control associated with this user interface object.',
         since: '5.1',
+        deprecated: '6.0',
         property: ['get']
       }
     ],
@@ -105698,6 +105892,7 @@ content field property value changes.`,
         summary: `Find the UserInterfaceSection that created the specified instance of a
 window.`,
         since: '6.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'window',
@@ -105712,6 +105907,7 @@ the requested window then return the object otherwise return null.`
         signature: 'void Expand(bool expand)',
         summary: 'Expand or collapse this content section.',
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'expand',
@@ -105723,12 +105919,14 @@ the requested window then return the object otherwise return null.`
         signature: 'RenderContent[] GetContentList()',
         summary: 'Returns a list of currently selected content items to be edited.',
         since: '5.1',
+        deprecated: '6.0',
         returns: 'Returns a list of currently selected content items to be edited.'
       },
       {
         signature: 'void Show(bool visible)',
         summary: 'Show or hide this content section.',
         since: '5.1',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'visible',
@@ -106624,7 +106822,8 @@ Rhino to save based on either the number of saves or a fixed period of time.`,
       {
         signature: 'static System.Windows.Forms.IWin32Window MainWindow()',
         summary: 'Main Rhino Window',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static IntPtr MainWindowHandle()',
@@ -107471,37 +107670,12 @@ to the specified file path.`,
       },
       {
         signature: 'static RhinoDoc FromId(int docId)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static RhinoDoc FromRuntimeSerialNumber(uint serialNumber)',
         since: '6.0'
-      },
-      {
-        signature: 'static RhinoDoc Load(string file3dmPath)',
-        summary: `Loads a 3DM file into a new headless RhinoDoc. Load is different than New in that
-load sets the document path`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'file3dmPath',
-            summary: 'Path of a Rhino model to load.'
-          }
-        ]
-      },
-      {
-        signature: 'static RhinoDoc New(string file3dmTemplatePath)',
-        summary: 'Create a new headless RhinoDoc from a template file',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'file3dmTemplatePath',
-            summary: `Name of a Rhino model to use as a template to initialize the document.
-If null, an empty document is created`
-          }
-        ],
-        returns: `New RhinoDoc on success. Note that this is a "headless" RhinoDoc and it's
-lifetime is under your control.`
       },
       {
         signature: 'static RhinoDoc Open(string filePath,bool wasAlreadyOpen)',
@@ -107530,7 +107704,8 @@ specified path; otherwise it will get set to false.`
       },
       {
         signature: 'static bool OpenFile(string path)',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static RhinoDoc OpenHeadless(string file3dmPath)',
@@ -115348,15 +115523,18 @@ are registed`,
     methods: [
       {
         signature: 'Rhino.Render.RenderContent ChildContent()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'Guid GroupId()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'Rhino.Render.RenderContent TopLevelContent()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ]
   },
@@ -115365,6 +115543,7 @@ are registed`,
     name: 'IRhRdkContentThumbnailList_Sizes',
     dataType: 'enum',
     since: '6.0',
+    deprecated: '6.6',
     values: [
       {
         signature: 'Tiny',
@@ -115395,31 +115574,38 @@ are registed`,
     methods: [
       {
         signature: 'void Dib(Bitmap dibOut)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'System.Drawing.Bitmap GetDib()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void GetDisplayRect(RectangleF rectOut)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'Guid Id()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'bool IsHot()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'bool IsSelected()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'string Label()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ]
   },
@@ -115430,59 +115616,73 @@ are registed`,
     methods: [
       {
         signature: 'void Add(Thumbnail t)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void Clear()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'IRhRdkThumbnail Get(Guid u)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void GetGridMetrics(int w,int h,int ox,int oy)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'IRhRdkContentThumbnailList_Sizes GetSize()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void GetStatisticsHeaderHeight()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'IRhRdkThumbnailList_Modes Mode()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void SetClientText(string w)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void SetCustomBitmapSize(int w,int h)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void SetMode(IRhRdkThumbnailList_Modes m,bool b)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void SetShowLabels(bool b)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'IRhRdkThumbnailList_Shapes Shape()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'bool ShowLabels()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'Guid UUID()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ]
   },
@@ -115491,6 +115691,7 @@ are registed`,
     name: 'IRhRdkThumbnailList_Modes',
     dataType: 'enum',
     since: '6.0',
+    deprecated: '6.6',
     values: [
       {
         signature: 'Grid',
@@ -115511,6 +115712,7 @@ are registed`,
     name: 'IRhRdkThumbnailList_Shapes',
     dataType: 'enum',
     since: '6.0',
+    deprecated: '6.6',
     values: [
       {
         signature: 'Square',
@@ -115530,82 +115732,98 @@ are registed`,
       {
         signature: 'List<ThumbData> Children',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'RenderContent Content',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'Guid Id',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'Bitmap Image',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'string Intensity',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'bool InUse',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'Color4f> InUseColor',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'string Name',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'ThumbData Parent',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'PreviewAppearance PreviewAppearance',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'bool Selected',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'List<string> Tags',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       },
       {
         signature: 'bool TopLevel',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get']
       },
       {
         signature: 'string Type',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get', 'set']
       }
     ],
     methods: [
       {
         signature: 'static int GetPreviewHeigth(Sizes thumb_size,Shapes shape)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'static int GetPreviewWidth(Sizes thumb_size,Shapes shape)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ]
   },
@@ -115619,7 +115837,8 @@ are registed`,
       {
         signature: 'Thumbnail(IntPtr pRdkThumbnail)',
         summary: 'Constructor for Thumbnail',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ],
     properties: [
@@ -115627,42 +115846,51 @@ are registed`,
         signature: 'IntPtr CppPointer',
         summary: 'Thumbnail c++ pointer',
         since: '6.0',
+        deprecated: '6.6',
         property: ['get']
       }
     ],
     methods: [
       {
         signature: 'void Dib(Bitmap dibOut)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void Dispose()',
         summary: 'Dispose for Thumbnail',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'System.Drawing.Bitmap GetDib()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'void GetDisplayRect(RectangleF rectOut)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'Guid Id()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'bool IsHot()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'bool IsSelected()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       },
       {
         signature: 'string Label()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ]
   },
@@ -115674,13 +115902,15 @@ are registed`,
     constructors: [
       {
         signature: 'ThumbnailViewModelFactory()',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ],
     methods: [
       {
         signature: 'IntPtr Get(Guid id)',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.6'
       }
     ]
   },
@@ -115858,6 +116088,7 @@ be replaces with this list.`
         signature: 'static bool ShowColorDialog(IWin32Window parent,Color4f color,bool allowAlpha)',
         summary: 'Displays the standard modal color picker dialog for floating point colors.',
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'parent',
@@ -116149,12 +116380,14 @@ the color value changes in the color dialog.`
       {
         signature: 'static System.Windows.Forms.DialogResult ShowMessageBox(string message,string title)',
         summary: 'Same as System.Windows.Forms.MessageBox.Show but using a message box tailored to Rhino.',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static System.Windows.Forms.DialogResult ShowMessageBox(string message,string title,MessageBoxButtons buttons,MessageBoxIcon icon)',
         summary: 'Same as System.Windows.Forms.MessageBox.Show but using a message box tailored to Rhino.',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static string[] ShowMultiListBox(string title,string message,IList<string> items,IList<string> defaults)',
@@ -116309,6 +116542,7 @@ linetype if function returns true.`
 the form is closed, but also allows for interaction with other elements of the Rhino
 user interface.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'form',
@@ -118078,7 +118312,8 @@ otherwise; only a single object has to be of the specified type`
         summary: `Called on the active page after the selected objects list has changed
 to notify the page to initialize its content to reflect the new
 object list.`,
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'void ModifyPage(Action<ObjectPropertiesPageEventArgs> callbackAction)',
@@ -118155,6 +118390,7 @@ choosing this page.`,
         summary: `This method is called when scripting the Rhino Properties command and
 choosing this page.`,
         since: '6.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'doc',
@@ -118176,7 +118412,8 @@ object list contains one or more object the page can modify.`,
         signature: 'bool ShouldDisplay(RhinoObject rhObj)',
         summary: `Called when the selected objects list changes, return True if the
 object list contains one or more object the page can modify.`,
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'void UpdatePage(ObjectPropertiesPageEventArgs e)',
@@ -118399,7 +118636,8 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     methods: [
       {
         signature: 'System.Windows.Forms.DialogResult ShowDialog()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool ShowOpenDialog()',
@@ -118683,7 +118921,8 @@ if there are no open panels it will be an empty array.`
       {
         signature: 'static T GetPanel()',
         summary: 'Return an instance of a .Net panel',
-        since: '6.0'
+        since: '6.0',
+        deprecated: '6.0'
       },
       {
         signature: 'static object GetPanel(Guid panelId)',
@@ -118691,6 +118930,7 @@ if there are no open panels it will be an empty array.`
 displayed at least once.  Panel instances are not created until a
 panel is displayed.`,
         since: '5.0',
+        deprecated: '6.0',
         parameters: [
           {
             name: 'panelId',
@@ -119675,7 +119915,8 @@ box in the dialog box. See System.Windows.Forms.FileDialog for details.`,
     methods: [
       {
         signature: 'System.Windows.Forms.DialogResult ShowDialog()',
-        since: '5.0'
+        since: '5.0',
+        deprecated: '6.0'
       },
       {
         signature: 'bool ShowSaveDialog()',
