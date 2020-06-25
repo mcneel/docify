@@ -12957,12 +12957,6 @@ the view will be embedded in the main frame.`,
         property: ['get']
       },
       {
-        signature: 'bool IsPageView',
-        summary: 'Return True if this view is a RhinoPageView.',
-        since: '7.0',
-        property: ['get']
-      },
-      {
         signature: 'RhinoViewport MainViewport',
         summary: `A RhinoView contains a "main viewport" that fills the entire view client window.
 RhinoPageViews may also contain nested child RhinoViewports for implementing
@@ -98272,27 +98266,6 @@ in which case Commit() will replace the existing channel with the new one in the
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectsImpl',
-    dataType: 'class',
-    summary: 'This is the interface to PostEffects.',
-    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
-    methods: [
-      {
-        signature: 'void CopyFrom(FreeFloatingBase src)',
-        since: '7.0'
-      },
-      {
-        signature: 'PostEffect[] GetPostEffects(Types type)',
-        since: '7.0'
-      },
-      {
-        signature: 'PostEffect PostEffectFromId(Guid uuid)',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
     name: 'PostEffectState',
     dataType: 'class',
     interfaces: ['IDisposable'],
@@ -100519,11 +100492,6 @@ Since 6.11`,
         since: '6.0'
       },
       {
-        signature: 'bool ContentNeedsPreviewThumbnail(RenderContent c)',
-        since: '7.0',
-        deprecated: '7.0'
-      },
-      {
         signature: 'bool ContentNeedsPreviewThumbnail(RenderContent c,bool includeChildren)',
         since: '7.0'
       },
@@ -101506,11 +101474,6 @@ preview panes`,
 instance of TexturedColor`,
         since: '6.12',
         returns: 'True if reading the base value succeeded'
-      },
-      {
-        signature: 'DocObjects.Material SimulatedMaterial(bool isForDataOnly)',
-        since: '7.0',
-        deprecated: '7.0'
       },
       {
         signature: 'DocObjects.Material SimulatedMaterial(TextureGeneration tg)',
@@ -118438,7 +118401,7 @@ to add custom ObjectPropertiesPage pages to the Rhino properties panel.`,
         property: ['get']
       },
       {
-        signature: 'uint DocumentRuntimeSerailNumber',
+        signature: 'uint DocumentRuntimeSerialNumber',
         summary: 'Document associated with the Rhino properties panel.',
         since: '7.0',
         property: ['get']
