@@ -20,6 +20,9 @@ export default {
       return ref
     }
 
+    // strip number from end of overloaded method url, e.g. M_Rhino_Geometry_Brep_CreateFromBox_1
+    ref = ref.replace(/_[0-9]+$/, '')
+
     const r = ref.split('_')
     let t
 
