@@ -18004,20 +18004,6 @@ cages this is the second parameter direction.`
         since: '5.0',
         property: ['get']
       }
-    ],
-    methods: [
-      {
-        signature: 'bool SetHatchGeometry(Hatch hatch)',
-        summary: 'Replaces a hatch object\'s underlying hatch geometry. This only works for non-document hatch objects.',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'hatch',
-            summary: 'The replacement hatch geometry.'
-          }
-        ],
-        returns: 'True if successful, False otherwise.'
-      }
     ]
   },
   {
@@ -103382,6 +103368,11 @@ meter of the model.`,
         since: '5.11'
       },
       {
+        signature: 'static StandardChannels StandardChannelForGuid(Guid id)',
+        summary: 'Get the StandardChannels for the given Guid',
+        since: '7.0'
+      },
+      {
         signature: 'bool AddChannel(StandardChannels channel)',
         summary: 'Add a channel to the frame buffer in addition to the fixed Red, Green, Blue and Alpha channels.',
         since: '5.0',
@@ -103447,6 +103438,18 @@ for this RenderWindow`,
       {
         signature: 'Bitmap GetBitmap()',
         since: '6.0'
+      },
+      {
+        signature: 'Guid[] GetRequestedRenderChannels()',
+        summary: 'Get array of Guids representing the channels requested by the post effect pipeline for this RenderWindow.',
+        since: '7.0',
+        returns: 'Array of Guid'
+      },
+      {
+        signature: 'StandardChannels[] GetRequestedRenderChannelsAsStandardChannels()',
+        summary: 'Get array of StandardChannels enum values representing the channels requested by the post effect pipeline for this RenderWindow.',
+        since: '7.0',
+        returns: 'Array of StandardChannels'
       },
       {
         signature: 'void Invalidate()',

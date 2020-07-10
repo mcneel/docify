@@ -39,11 +39,11 @@ app.use(compression({ threshold: 0 }))
 
 // serve this with no cache, if built with PWA:
 if (ssr.settings.pwa) {
-  app.use('/service-worker.js', serve('service-worker.js'))
+  app.use(ssr.resolveUrl('/service-worker.js'), serve('service-worker.js'))
 }
 
 // serve "www" folder
-app.use('/', serve('.', true))
+app.use(ssr.resolveUrl('/'), serve('.', true))
 
 // we extend the custom common dev & prod parts here
 extension.extendApp({ app, ssr })
