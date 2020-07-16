@@ -12,10 +12,9 @@
  */
 // import { RhinoCommonApi } from '../src/RhinoCommonApi'
 
-const
-  express = require('express'),
-  compression = require('compression'),
-  LRU = require('lru-cache')
+const express = require('express')
+const compression = require('compression')
+const NodeCache = require('node-cache')
 
 // const http = require('http')
 
@@ -29,10 +28,7 @@ const serve = (path, cache) => express.static(ssr.resolveWWW(path), {
   maxAge: cache ? 1000 * 60 * 60 * 24 * 30 : 0
 })
 
-const microCache = new LRU({
-  max: 100000,
-  maxAge: 1000 * 60 * 60 * 10000
-})
+const cache = new NodeCache()
 
 // gzip
 app.use(compression({ threshold: 0 }))
@@ -50,10 +46,11 @@ extension.extendApp({ app, ssr })
 
 // this should be last get(), rendering with SSR
 app.get('*', (req, res) => {
-  const hit = microCache.get(req.url)
-  if (hit) {
+  const cachedResult = cache.get(req.url)
+  if (cachedResult) {
     // console.log('cache hit ' + req.url)
-    return res.send(hit)
+    res.send(cachedResult)
+    return
   }
   // console.log('cache miss ' + req.url)
 
@@ -106,7 +103,7 @@ app.get('*', (req, res) => {
       }
     } else {
       res.send(html)
-      microCache.set(req.url, html)
+      cache.set(req.url, html)
       // console.log('caching ' + req.url)
     }
   })

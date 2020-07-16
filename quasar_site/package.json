@@ -17,11 +17,11 @@
     "@quasar/extras": "^1.8.2",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.29",
     "core-js": "3.0.0",
-    "lru-cache": "^5.1.1",
-    "quasar": "^1.12.9"
+    "node-cache": "^5.1.2",
+    "quasar": "^1.12.12"
   },
   "devDependencies": {
-    "@quasar/app": "2.0.4",
+    "@quasar/app": "2.0.5",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",

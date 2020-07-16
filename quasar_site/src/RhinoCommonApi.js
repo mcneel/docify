@@ -469,7 +469,7 @@ joined in a single class.`
         returns: 'A .Net library color.'
       },
       {
-        signature: 'static bool InitialMainWindowPosition(Rectangle bounds)',
+        signature: 'static bool InitialMainWindowPosition(out Rectangle bounds)',
         summary: `Location where the Main Rhino window attempts to show when the application is first
 started.`,
         since: '6.0',
@@ -1114,7 +1114,7 @@ Note: Turning on cursor tooltips turns off object snap cursors.`,
     ],
     methods: [
       {
-        signature: 'static bool CalculateCurvatureAutoRange(IEnumerable<Mesh> meshes,CurvatureAnalysisSettingsState settings)',
+        signature: 'static bool CalculateCurvatureAutoRange(IEnumerable<Mesh> meshes,ref CurvatureAnalysisSettingsState settings)',
         since: '6.0'
       },
       {
@@ -4401,7 +4401,20 @@ Because this interface is a reference type, changes to the assigned object will 
       },
       {
         signature: 'bool Set(string key,IEnumerable<GeometryBase> val)',
-        since: '7.0'
+        summary: 'Sets an array of Rhino.Geometry.GeometryBase',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'key',
+            summary: 'A text key'
+          },
+          {
+            name: 'val',
+            summary: `An object for that key
+Because this class is a reference type and is mutable, changes to this object will propagate to the object inside the dictionary.It is up to the user to clone this entry when appropriate.`
+          }
+        ],
+        returns: 'True if successful, False otherwise.'
       },
       {
         signature: 'bool Set(string key,IEnumerable<Guid> val)',
@@ -4954,49 +4967,49 @@ Because  has value semantics, changes to the assigning value will leave this ent
         since: '5.4'
       },
       {
-        signature: 'bool TryGetBool(string key,bool value)',
+        signature: 'bool TryGetBool(string key,out bool value)',
         summary: 'Get value as Boolean, will only succeed if value was created using Set(string key, Boolean value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetBytes(string key,byte[] value)',
+        signature: 'bool TryGetBytes(string key,out byte[] value)',
         summary: `Get value as byte[], will only succeed if value was
 created using Set(string key, byte[] value)`,
         since: '5.9'
       },
       {
-        signature: 'bool TryGetDictionary(string key,ArchivableDictionary value)',
+        signature: 'bool TryGetDictionary(string key,out ArchivableDictionary value)',
         summary: `Get value as ArchivableDictionary, will only succeed if value was
 created using Set(string key, ArchivableDictionary value)`,
         since: '5.9'
       },
       {
-        signature: 'bool TryGetDouble(string key,double value)',
+        signature: 'bool TryGetDouble(string key,out double value)',
         summary: 'Get value as double, will only succeed if value was created using Set(string key, double value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetEnumValue(string key,T enumValue)',
+        signature: 'bool TryGetEnumValue(string key,out T enumValue)',
         summary: 'Attempt to get an enum value from the dictionary using a custom key.',
         since: '5.4'
       },
       {
-        signature: 'bool TryGetFloat(string key,float value)',
+        signature: 'bool TryGetFloat(string key,out float value)',
         summary: 'Get value as float, will only succeed if value was created using Set(string key, float value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetGuid(string key,Guid value)',
+        signature: 'bool TryGetGuid(string key,out Guid value)',
         summary: 'Get value as Guid, will only succeed if value was created using Set(string key, Guid value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetInteger(string key,int value)',
+        signature: 'bool TryGetInteger(string key,out int value)',
         summary: 'Get value as int, will only succeed if value was created using Set(string key, int value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetPlane(string key,Plane value)',
+        signature: 'bool TryGetPlane(string key,out Plane value)',
         summary: 'Get value as Plane, will only succeed if value was created using Set(string key, Plane value)',
         since: '6.11',
         parameters: [
@@ -5012,22 +5025,22 @@ created using Set(string key, ArchivableDictionary value)`,
         returns: 'The value as Plane.'
       },
       {
-        signature: 'bool TryGetPoint3d(string key,Point3d value)',
+        signature: 'bool TryGetPoint3d(string key,out Point3d value)',
         summary: 'Get value as Point3d, will only succeed if value was created using Set(string key, Point3d value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetPoint3f(string key,Point3f value)',
+        signature: 'bool TryGetPoint3f(string key,out Point3f value)',
         summary: 'Get value as Point3f, will only succeed if value was created using Set(string key, Point3f value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetString(string key,string value)',
+        signature: 'bool TryGetString(string key,out string value)',
         summary: 'Get value as string, will only succeed if value was created using Set(string key, string value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetValue(string key,object value)',
+        signature: 'bool TryGetValue(string key,out object value)',
         summary: 'Gets the value associated with the specified key.',
         since: '5.0',
         parameters: [
@@ -5045,7 +5058,7 @@ otherwise, null. This parameter is passed uninitialized.`
         returns: 'True if the dictionary contains an element with the specified key; otherwise, false.'
       },
       {
-        signature: 'bool TryGetVector3d(string key,Vector3d value)',
+        signature: 'bool TryGetVector3d(string key,out Vector3d value)',
         summary: 'Get value as Vector3d, will only succeed if value was created using Set(string key, Vector3d value)',
         since: '5.0'
       }
@@ -8791,7 +8804,7 @@ existing DisplayBitmaps.`,
         since: '5.0'
       },
       {
-        signature: 'void GetBlendModes(BlendMode source,BlendMode destination)',
+        signature: 'void GetBlendModes(out BlendMode source,out BlendMode destination)',
         summary: 'Gets the source and destination blend modes.',
         since: '5.0',
         parameters: [
@@ -8906,7 +8919,7 @@ no filter is applied`,
     ],
     methods: [
       {
-        signature: 'void GetSelectionFilter(bool on,bool checkSubObjects)',
+        signature: 'void GetSelectionFilter(out bool on,out bool checkSubObjects)',
         summary: `The selection filter will make per-object conduit functions only be
 called for selected objects (when the filter is turned on)`,
         since: '7.0'
@@ -9633,7 +9646,7 @@ If stereo mode is not enables, this property always returns 0.`,
     ],
     methods: [
       {
-        signature: 'static uint AvailableOpenGLVersion(bool coreProfile)',
+        signature: 'static uint AvailableOpenGLVersion(out bool coreProfile)',
         summary: `If Rhino is using OpenGL for display, this function will return
 major.minor version of OpenGL available for this instance of Rhino`,
         since: '6.21',
@@ -9645,11 +9658,6 @@ major.minor version of OpenGL available for this instance of Rhino`,
         ],
         returns: `major version * 10 + minor version
 For example, OpenGL 4.5 returns 45`
-      },
-      {
-        signature: 'static string CrossCompileHLSL(string hlsl,string functionName,ShaderLanguage targetLanguage)',
-        summary: 'Convert HLSL code to a different shading language',
-        since: '7.0'
       },
       {
         signature: 'static bool CullControlPolygon()',
@@ -9680,7 +9688,7 @@ This value is determined by the _CullControlPolygon command.`
         returns: 'A bitmap containing the given view, or None on error.'
       },
       {
-        signature: 'static void GetDrawListSerialNumbers(uint modelSerialNumber,uint pageSerialNumber)',
+        signature: 'static void GetDrawListSerialNumbers(out uint modelSerialNumber,out uint pageSerialNumber)',
         summary: `Gets the current model and page view draw list serial numbers, which can
 be used to determine if a model or page view needs to be redrawn.`,
         since: '7.0',
@@ -11456,7 +11464,7 @@ False if you want to draw just the border of the closed shape.`
         since: '5.0'
       },
       {
-        signature: 'bool DrawStereoFrameBuffer(ViewportInfo viewportLeft,ViewportInfo viewportRight,uint handleLeft,uint handleRight)',
+        signature: 'bool DrawStereoFrameBuffer(ViewportInfo viewportLeft,ViewportInfo viewportRight,out uint handleLeft,out uint handleRight)',
         summary: `Draws the viewport as seen from the left and the right eye viewports
 and returns the result as OpenGL texture handles.`,
         since: '6.8',
@@ -12164,7 +12172,7 @@ cause this ID to be Guid.Empty.`,
         property: ['get', 'set']
       },
       {
-        signature: 'StereoRenderContexts StereoRenderContext',
+        signature: 'StereoContext StereoContext',
         summary: 'Get or set the stereo render context.',
         since: '7.0',
         property: ['get', 'set']
@@ -12216,7 +12224,7 @@ cause this ID to be Guid.Empty.`,
         since: '5.0'
       },
       {
-        signature: 'void GetFill(Color topLeft,Color bottomLeft,Color topRight,Color bottomRight)',
+        signature: 'void GetFill(out Color topLeft,out Color bottomLeft,out Color topRight,out Color bottomRight)',
         summary: 'Get fill colors used for clearing the frame buffer',
         since: '6.23'
       },
@@ -12351,26 +12359,6 @@ cause this ID to be Guid.Empty.`,
   },
   {
     namespace: 'Rhino.Display',
-    name: 'DisplayPipelineAttributes.StereoRenderContexts',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'None = 0'
-      },
-      {
-        signature: 'RenderingLeftEye = 1'
-      },
-      {
-        signature: 'RenderingRightEye = 2'
-      },
-      {
-        signature: 'RenderingBothEyes = 3'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Display',
     name: 'DisplayPipelineAttributes.ViewDisplayAttributes',
     dataType: 'class',
     properties: [
@@ -12443,25 +12431,28 @@ cause this ID to be Guid.Empty.`,
   },
   {
     namespace: 'Rhino.Display',
-    name: 'DisplayTechnologies',
+    name: 'DisplayTechnology',
     dataType: 'enum',
     summary: 'Graphics display techologies.',
     since: '7.0',
     values: [
       {
-        signature: 'OpenGL = 0'
+        signature: 'None = 0'
       },
       {
-        signature: 'Metal  = 1'
+        signature: 'OpenGL = 1'
       },
       {
-        signature: 'DirectX = 2'
+        signature: 'Metal = 2'
       },
       {
-        signature: 'Software = 3'
+        signature: 'DirectX = 3'
       },
       {
-        signature: 'Vulkan = 4'
+        signature: 'Software = 4'
+      },
+      {
+        signature: 'Vulkan = 5'
       }
     ]
   },
@@ -12762,8 +12753,23 @@ page view itself.`,
     baseclass: 'Rhino.Display.RhinoView',
     properties: [
       {
+        signature: 'DetailViewObject ActiveDetail',
+        summary: `Returns the active detail object.
+If no detail is active, or if the page is active, then None is returned.`,
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'Guid ActiveDetailId',
+        summary: `Returns the id of the active detail.
+If no detail is active, or if the page is active, then Guid.Empty is returned.`,
+        since: '7.0',
+        property: ['get']
+      },
+      {
         signature: 'RhinoViewport ActiveViewport',
-        summary: `The ActiveViewport is the same as the MainViewport for standard RhinoViews. In
+        summary: `Gets the active viewport.
+The ActiveViewport is the same as the MainViewport for standard RhinoViews. In
 a RhinoPageView, the active viewport may be the RhinoViewport of a child detail object.
 Most of the time, you will use ActiveViewport unless you explicitly need to work with
 the main viewport.`,
@@ -12778,8 +12784,8 @@ the main viewport.`,
       },
       {
         signature: 'bool PageIsActive',
-        summary: `True if the page is active instead of any detail views. This occurs
-when the MainViewport.Id == ActiveViewportID.`,
+        summary: `Returns True if the page is active, rather than any detail view.
+This occurs when the MainViewport.Id == ActiveViewportID.`,
         since: '5.0',
         property: ['get']
       },
@@ -12819,7 +12825,7 @@ used to determine the page width and page height.`,
     methods: [
       {
         signature: 'DetailViewObject AddDetailView(string title,Point2d corner0,Point2d corner1,DefinedViewportProjection initialProjection)',
-        summary: 'Creates a detail view object that is displayed on this page and adds it to the doc.',
+        summary: 'Creates a detail view object that is displayed on this page and adds it to the document.',
         since: '5.0',
         parameters: [
           {
@@ -12839,12 +12845,19 @@ used to determine the page width and page height.`,
             summary: 'The defined initial projection type.'
           }
         ],
-        returns: 'Newly created detail view on success. None on error.'
+        returns: 'Newly created detail view on success, None on error.'
       },
       {
         signature: 'RhinoPageView Duplicate(bool duplicatePageGeometry)',
-        summary: 'Copy a page view',
-        since: '6.3'
+        summary: 'Copies a page view.',
+        since: '6.3',
+        parameters: [
+          {
+            name: 'duplicatePageGeometry',
+            summary: 'Set True if you want the page view geometry copied, along with the view.'
+          }
+        ],
+        returns: 'The new page view if successful, None otherwise.'
       },
       {
         signature: 'DetailViewObject[] GetDetailViews()',
@@ -12870,14 +12883,35 @@ used to determine the page width and page height.`,
       },
       {
         signature: 'bool SetActiveDetail(Guid detailId)',
-        since: '5.0'
+        summary: 'Sets the active detail.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'detailId',
+            summary: 'The id of the detail view object to set active.'
+          }
+        ],
+        returns: 'True if successful, False otherwise.'
       },
       {
         signature: 'bool SetActiveDetail(string detailName,bool compareCase)',
-        since: '5.0'
+        summary: 'Sets the active detail.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'detailName',
+            summary: 'The name, or title, of the detail to set active.'
+          },
+          {
+            name: 'compareCase',
+            summary: 'Unused.'
+          }
+        ],
+        returns: 'True if successful, False otherwise.'
       },
       {
         signature: 'void SetPageAsActive()',
+        summary: 'Deactivates the active details and sets the page view as active.',
         since: '5.0'
       }
     ],
@@ -13625,7 +13659,7 @@ detailed construction plane information, use GetConstructionPlane.`,
         since: '5.0'
       },
       {
-        signature: 'bool GetCameraAngle(double halfDiagonalAngle,double halfVerticalAngle,double halfHorizontalAngle)',
+        signature: 'bool GetCameraAngle(out double halfDiagonalAngle,out double halfVerticalAngle,out double halfHorizontalAngle)',
         since: '5.0'
       },
       {
@@ -13633,7 +13667,7 @@ detailed construction plane information, use GetConstructionPlane.`,
         since: '5.0'
       },
       {
-        signature: 'bool GetCameraFrame(Plane frame)',
+        signature: 'bool GetCameraFrame(out Plane frame)',
         summary: 'Gets the camera plane.',
         since: '5.0',
         parameters: [
@@ -13649,7 +13683,7 @@ detailed construction plane information, use GetConstructionPlane.`,
         since: '5.0'
       },
       {
-        signature: 'bool GetDepth(BoundingBox bbox,double nearDistance,double farDistance)',
+        signature: 'bool GetDepth(BoundingBox bbox,out double nearDistance,out double farDistance)',
         summary: 'Gets near and far clipping distances of a bounding box.',
         since: '5.0',
         parameters: [
@@ -13670,7 +13704,7 @@ detailed construction plane information, use GetConstructionPlane.`,
 False if the bounding box does not intersect the view frustum.`
       },
       {
-        signature: 'bool GetDepth(Point3d point,double distance)',
+        signature: 'bool GetDepth(Point3d point,out double distance)',
         summary: 'Gets clipping distance of a point.',
         since: '5.0',
         parameters: [
@@ -13687,7 +13721,7 @@ False if the bounding box does not intersect the view frustum.`
 False if the bounding box does not intersect the view frustum.`
       },
       {
-        signature: 'bool GetDepth(Sphere sphere,double nearDistance,double farDistance)',
+        signature: 'bool GetDepth(Sphere sphere,out double nearDistance,out double farDistance)',
         summary: 'Gets near and far clipping distances of a sphere.',
         since: '5.0',
         parameters: [
@@ -13715,7 +13749,7 @@ False if the sphere does not intersect the view frustum.`
 None on failure.`
       },
       {
-        signature: 'bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)',
+        signature: 'bool GetFrustum(out double left,out double right,out double bottom,out double top,out double nearDistance,out double farDistance)',
         summary: 'Gets the view frustum.',
         since: '5.0',
         parameters: [
@@ -13747,7 +13781,7 @@ None on failure.`
         returns: 'True if operation succeeded.'
       },
       {
-        signature: 'bool GetFrustumBottomPlane(Plane plane)',
+        signature: 'bool GetFrustumBottomPlane(out Plane plane)',
         summary: 'Get bottom world frustum clipping plane.',
         since: '5.0',
         parameters: [
@@ -13766,7 +13800,7 @@ plane that is closest to the camera location.`
         since: '5.0'
       },
       {
-        signature: 'bool GetFrustumCenter(Point3d center)',
+        signature: 'bool GetFrustumCenter(out Point3d center)',
         summary: 'Returns world coordinates of frustum\'s center.',
         since: '5.0',
         parameters: [
@@ -13778,7 +13812,7 @@ plane that is closest to the camera location.`
         returns: 'True if the center was successfully computed.'
       },
       {
-        signature: 'bool GetFrustumFarPlane(Plane plane)',
+        signature: 'bool GetFrustumFarPlane(out Plane plane)',
         summary: 'Get far clipping plane.',
         since: '5.0',
         parameters: [
@@ -13793,7 +13827,7 @@ plane.`
         returns: 'True if camera and frustum are valid.'
       },
       {
-        signature: 'bool GetFrustumLeftPlane(Plane plane)',
+        signature: 'bool GetFrustumLeftPlane(out Plane plane)',
         summary: 'Get left world frustum clipping plane.',
         since: '5.0',
         parameters: [
@@ -13808,7 +13842,7 @@ plane that is closest to the camera location.`
         returns: 'True if camera and frustum are valid and plane was set.'
       },
       {
-        signature: 'bool GetFrustumLine(double screenX,double screenY,Line worldLine)',
+        signature: 'bool GetFrustumLine(double screenX,double screenY,out Line worldLine)',
         summary: 'Gets the world coordinate line in the view frustum that projects to a point on the screen.',
         since: '5.0',
         parameters: [
@@ -13830,7 +13864,7 @@ plane and ending on the far clipping plane.`
 False if view projection or frustum is invalid.`
       },
       {
-        signature: 'bool GetFrustumNearPlane(Plane plane)',
+        signature: 'bool GetFrustumNearPlane(out Plane plane)',
         summary: 'Get near clipping plane.',
         since: '5.0',
         parameters: [
@@ -13845,7 +13879,7 @@ plane.`
         returns: 'True if camera and frustum are valid.'
       },
       {
-        signature: 'bool GetFrustumRightPlane(Plane plane)',
+        signature: 'bool GetFrustumRightPlane(out Plane plane)',
         summary: 'Get right world frustum clipping plane.',
         since: '5.0',
         parameters: [
@@ -13860,7 +13894,7 @@ plane that is closest to the camera location.`
         returns: 'True if camera and frustum are valid and plane was set.'
       },
       {
-        signature: 'bool GetFrustumTopPlane(Plane plane)',
+        signature: 'bool GetFrustumTopPlane(out Plane plane)',
         summary: 'Get top world frustum clipping plane.',
         since: '5.0',
         parameters: [
@@ -13932,7 +13966,7 @@ coordinate box.`,
         returns: 'A transformation matrix.'
       },
       {
-        signature: 'bool GetScreenPort(int portLeft,int portRight,int portBottom,int portTop,int portNear,int portFar)',
+        signature: 'bool GetScreenPort(out int portLeft,out int portRight,out int portBottom,out int portTop,out int portNear,out int portFar)',
         summary: `Location of viewport in pixels.  These are provided so you can set the port you are using
 and get the appropriate transformations to and from screen space.`,
         since: '5.0',
@@ -14000,7 +14034,7 @@ Identity matrix is returned if this function fails.`
         returns: 'A collection of key strings and values strings. This'
       },
       {
-        signature: 'bool GetWorldToScreenScale(Point3d pointInFrustum,double pixelsPerUnit)',
+        signature: 'bool GetWorldToScreenScale(Point3d pointInFrustum,out double pixelsPerUnit)',
         summary: 'Gets the world to screen size scaling factor at a point in frustum.',
         since: '5.0',
         parameters: [
@@ -14649,6 +14683,26 @@ https://en.wikipedia.org/wiki/OpenGL_Shading_Language#Versions`,
   },
   {
     namespace: 'Rhino.Display',
+    name: 'StereoContext',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'LeftEye = 1'
+      },
+      {
+        signature: 'RightEye = 2'
+      },
+      {
+        signature: 'BothEyes = 3'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Display',
     name: 'Text3d',
     dataType: 'class',
     summary: '3D aligned text with font settings.',
@@ -14990,7 +15044,7 @@ print 1/2 as thick`,
         since: '6.0'
       },
       {
-        signature: 'bool GetMargins(UnitSystem lengthUnits,double left,double top,double right,double bottom)',
+        signature: 'bool GetMargins(UnitSystem lengthUnits,out double left,out double top,out double right,out double bottom)',
         summary: `Get distances from the edge of the paper (MediaSize) to the CropRectangle
 in a defined unit system`,
         since: '6.2',
@@ -15036,7 +15090,7 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
         returns: 'The model scale factor.'
       },
       {
-        signature: 'void GetOffset(UnitSystem lengthUnits,bool fromMargin,double x,double y)',
+        signature: 'void GetOffset(UnitSystem lengthUnits,out bool fromMargin,out double x,out double y)',
         since: '6.2'
       },
       {
@@ -15959,6 +16013,7 @@ X unit axis is (1, 0, 0) and Y unit axis is (0, 1, 0).`
     properties: [
       {
         signature: 'Curve CurveGeometry',
+        summary: 'Returns the underlying curve geometry.',
         since: '5.0',
         property: ['get']
       }
@@ -15966,6 +16021,7 @@ X unit axis is (1, 0, 0) and Y unit axis is (0, 1, 0).`
     methods: [
       {
         signature: 'Curve DuplicateCurveGeometry()',
+        summary: 'Returns a copy of the underlying curve geometry.',
         since: '5.0'
       }
     ]
@@ -16586,7 +16642,7 @@ This function combines these two strings to create a single "description" string
         since: '5.0'
       },
       {
-        signature: 'bool GetFormattedScale(ScaleFormat format,string value)',
+        signature: 'bool GetFormattedScale(ScaleFormat format,out string value)',
         summary: `Returns the detail view object's scale as a formatted string.
 The detail view object's viewport must be to parallel projection.`,
         since: '7.0',
@@ -17530,7 +17586,7 @@ and elevation for GIS mapping applications.`,
         returns: 'Boolean value, True if set else false'
       },
       {
-        signature: 'Plane GetEarthAnchorPlane(Vector3d anchorNorth)',
+        signature: 'Plane GetEarthAnchorPlane(out Vector3d anchorNorth)',
         summary: 'Returns the earth anchor plane',
         since: '6.0',
         returns: 'A plane value.'
@@ -17832,19 +17888,19 @@ if the grip is not a NURBS control point grip.`,
     ],
     methods: [
       {
-        signature: 'bool GetCageParameters(double u,double v,double w)',
+        signature: 'bool GetCageParameters(out double u,out double v,out double w)',
         summary: 'Retrieves the 2d parameter space values of this GripObject from the cage it\'s associated with.',
         since: '6.0',
         returns: 'True on success. Output is unreliable if return is false.'
       },
       {
-        signature: 'bool GetCurveParameters(double t)',
+        signature: 'bool GetCurveParameters(out double t)',
         summary: 'Retrieves the 2d parameter space values of this GripObject from the curve it\'s associated with.',
         since: '6.0',
         returns: 'True on success. Output is unreliable if return is false.'
       },
       {
-        signature: 'bool GetGripDirections(Vector3d u,Vector3d v,Vector3d normal)',
+        signature: 'bool GetGripDirections(out Vector3d u,out Vector3d v,out Vector3d normal)',
         summary: `Sometimes grips have directions.  These directions
 can have any length and do not have to be orthogonal.`,
         since: '6.0',
@@ -17865,7 +17921,7 @@ can have any length and do not have to be orthogonal.`,
         returns: 'True if the grip has directions.'
       },
       {
-        signature: 'bool GetSurfaceParameters(double u,double v)',
+        signature: 'bool GetSurfaceParameters(out double u,out double v)',
         summary: 'Retrieves the 2d parameter space values of this GripObject from the surface it\'s associated with.',
         since: '6.0',
         returns: 'True on success. Output is unreliable if return is false.'
@@ -18690,7 +18746,7 @@ option requested by people who do not understand all the issues.`
     ],
     methods: [
       {
-        signature: 'void Explode(bool explodeNestedInstances,RhinoObject[] pieces,ObjectAttributes[] pieceAttributes,Transform[] pieceTransforms)',
+        signature: 'void Explode(bool explodeNestedInstances,out RhinoObject[] pieces,out ObjectAttributes[] pieceAttributes,out Transform[] pieceTransforms)',
         summary: 'Explodes the instance reference into pieces.',
         since: '5.0',
         parameters: [
@@ -18715,7 +18771,7 @@ the pieces out parameter when this InstanceObject has nested references.`
         ]
       },
       {
-        signature: 'bool UsesDefinition(int definitionIndex,int nestingLevel)',
+        signature: 'bool UsesDefinition(int definitionIndex,out int nestingLevel)',
         summary: 'Determine if this reference uses an instance definition',
         since: '5.2',
         parameters: [
@@ -19459,7 +19515,7 @@ then the length is interpreted as a space.`
         since: '5.0'
       },
       {
-        signature: 'void GetSegment(int index,double length,bool isSolid)',
+        signature: 'void GetSegment(int index,out double length,out bool isSolid)',
         summary: 'Gets the segment information at a index.',
         since: '5.0',
         parameters: [
@@ -19626,6 +19682,11 @@ to modify this object when it is set to "IsReadOnly" will throw a NotSupportedEx
         property: ['get']
       },
       {
+        signature: 'bool IsPhysicallyBased',
+        since: '7.0',
+        property: ['get']
+      },
+      {
         signature: 'bool IsReference',
         summary: `Rhino allows multiple files to be viewed simultaneously. Materials in the
 document are "normal" or "reference". Reference materials are not saved.`,
@@ -19740,10 +19801,6 @@ documents.`,
       {
         signature: 'bool CommitChanges()',
         since: '5.0'
-      },
-      {
-        signature: 'PhysicallyBasedMaterial ConvertToPhysicallyBased()',
-        since: '7.0'
       },
       {
         signature: 'void CopyFrom(Material other)',
@@ -19903,6 +19960,10 @@ Optionally adds channel if one is not found.`,
           }
         ],
         returns: 'True on success.'
+      },
+      {
+        signature: 'void ToPhysicallyBased()',
+        since: '7.0'
       }
     ]
   },
@@ -20160,7 +20221,7 @@ method also returns False if key was not found in the original dictionary.`
         ]
       },
       {
-        signature: 'bool TryGetValue(Guid key,MaterialRef value)',
+        signature: 'bool TryGetValue(Guid key,out MaterialRef value)',
         summary: 'Gets the value associated with the specified key.',
         since: '5.10',
         parameters: [
@@ -20199,7 +20260,7 @@ otherwise, false.`
     ],
     methods: [
       {
-        signature: 'static bool CheckMeshes(IEnumerable<MeshObject> meshObjects,TextLog textLog,MeshCheckParameters parameters)',
+        signature: 'static bool CheckMeshes(IEnumerable<MeshObject> meshObjects,TextLog textLog,ref MeshCheckParameters parameters)',
         summary: `Examines mesh objects and logs a description of what it finds right or wrong.
 The various properties the function checks for are described in MeshCheckParameters.`,
         since: '7.0',
@@ -21526,7 +21587,7 @@ because it generally changes if you save and reload an archive.`,
         returns: 'A curve, or None if this reference targeted something else.'
       },
       {
-        signature: 'Curve CurveParameter(double parameter)',
+        signature: 'Curve CurveParameter(out double parameter)',
         summary: `If the reference geometry is a curve or edge with a selection
 point, then this gets the parameter of the selection point.`,
         since: '5.0',
@@ -21659,7 +21720,7 @@ may be used to identify the sub-object.`,
         returns: 'A surface; or None if the referenced object is not a surface, or on error.'
       },
       {
-        signature: 'Surface SurfaceParameter(double u,double v)',
+        signature: 'Surface SurfaceParameter(out double u,out double v)',
         summary: `If the reference geometry is a surface, brep with one face,
 or surface edge with a selection point, then this gets the
 surface parameters of the selection point.`,
@@ -21821,11 +21882,6 @@ this returns the associated brep trim.`,
         signature: 'double SubsurfaceScatteringRadius',
         since: '7.0',
         property: ['get', 'set']
-      },
-      {
-        signature: 'bool Supported',
-        since: '7.0',
-        property: ['get']
       }
     ],
     methods: [
@@ -22002,47 +22058,47 @@ RhinoObject pointers`,
         returns: 'ObjRef on success, None if not successful'
       },
       {
-        signature: 'bool TryGetBool(int id,bool value)',
+        signature: 'bool TryGetBool(int id,out bool value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetColor(int id,Color value)',
+        signature: 'bool TryGetColor(int id,out Color value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDouble(int id,double value)',
+        signature: 'bool TryGetDouble(int id,out double value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDoubles(int id,double[] values)',
+        signature: 'bool TryGetDoubles(int id,out double[] values)',
         since: '6.10'
       },
       {
-        signature: 'bool TryGetGuid(int id,Guid value)',
+        signature: 'bool TryGetGuid(int id,out Guid value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetInt(int id,int value)',
+        signature: 'bool TryGetInt(int id,out int value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetPoint3d(int id,Point3d value)',
+        signature: 'bool TryGetPoint3d(int id,out Point3d value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetPoint3dOnObject(int id,Point3d value)',
+        signature: 'bool TryGetPoint3dOnObject(int id,out Point3d value)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetString(int id,string value)',
+        signature: 'bool TryGetString(int id,out string value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetTransform(int id,Transform value)',
+        signature: 'bool TryGetTransform(int id,out Transform value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetVector3d(int id,Vector3d value)',
+        signature: 'bool TryGetVector3d(int id,out Vector3d value)',
         since: '5.0'
       }
     ]
@@ -22484,7 +22540,7 @@ clipping planes that did not generate them.`,
         returns: 'An array of object references.'
       },
       {
-        signature: 'static bool GetTightBoundingBox(IEnumerable<RhinoObject> rhinoObjects,BoundingBox boundingBox)',
+        signature: 'static bool GetTightBoundingBox(IEnumerable<RhinoObject> rhinoObjects,out BoundingBox boundingBox)',
         summary: 'Gets a world XY-plane aligned tight bounding box from a collection of Rhino objects.',
         since: '7.0',
         parameters: [
@@ -22499,7 +22555,7 @@ clipping planes that did not generate them.`,
         ]
       },
       {
-        signature: 'static bool GetTightBoundingBox(IEnumerable<RhinoObject> rhinoObjects,Plane plane,BoundingBox boundingBox)',
+        signature: 'static bool GetTightBoundingBox(IEnumerable<RhinoObject> rhinoObjects,Plane plane,out BoundingBox boundingBox)',
         summary: 'Gets a plane aligned tight bounding box from a collection of Rhino objects.',
         since: '7.0',
         parameters: [
@@ -22518,7 +22574,31 @@ clipping planes that did not generate them.`,
         ]
       },
       {
-        signature: 'static Commands.Result MeshObjects(IEnumerable<RhinoObject> rhinoObjects,MeshingParameters parameters,bool simpleDialog,Mesh[] meshes,ObjectAttributes[] attributes)',
+        signature: 'static Commands.Result MeshObjects(IEnumerable<RhinoObject> rhinoObjects,MeshingParameters parameters,out Mesh[] meshes,out ObjectAttributes[] attributes)',
+        summary: 'Meshes Rhino objects.',
+        since: '5.9',
+        parameters: [
+          {
+            name: 'rhinoObjects',
+            summary: 'The Rhino objects to mesh.'
+          },
+          {
+            name: 'parameters',
+            summary: 'The parameters used to create the meshes.'
+          },
+          {
+            name: 'meshes',
+            summary: 'The created meshes are appended to this array.'
+          },
+          {
+            name: 'attributes',
+            summary: 'The object attributes that coincide with each created mesh are appended to this array.'
+          }
+        ],
+        returns: 'The results of the calculation.'
+      },
+      {
+        signature: 'static Commands.Result MeshObjects(IEnumerable<RhinoObject> rhinoObjects,ref MeshingParameters parameters,ref bool simpleDialog,out Mesh[] meshes,out ObjectAttributes[] attributes)',
         summary: 'Meshes Rhino objects.',
         since: '5.9',
         parameters: [
@@ -22546,7 +22626,7 @@ clipping planes that did not generate them.`,
         returns: 'The results of the calculation.'
       },
       {
-        signature: 'static Commands.Result MeshObjects(IEnumerable<RhinoObject> rhinoObjects,MeshingParameters parameters,int uiStyle,Transform xform,Mesh[] meshes,ObjectAttributes[] attributes)',
+        signature: 'static Commands.Result MeshObjects(IEnumerable<RhinoObject> rhinoObjects,ref MeshingParameters parameters,ref int uiStyle,Transform xform,out Mesh[] meshes,out ObjectAttributes[] attributes)',
         summary: 'Meshes Rhino objects.',
         since: '6.0',
         parameters: [
@@ -22565,30 +22645,6 @@ clipping planes that did not generate them.`,
           {
             name: 'xform',
             summary: 'Transform to be used for export with origin, or Z to Y up, etc.'
-          },
-          {
-            name: 'meshes',
-            summary: 'The created meshes are appended to this array.'
-          },
-          {
-            name: 'attributes',
-            summary: 'The object attributes that coincide with each created mesh are appended to this array.'
-          }
-        ],
-        returns: 'The results of the calculation.'
-      },
-      {
-        signature: 'static Commands.Result MeshObjects(IEnumerable<RhinoObject> rhinoObjects,MeshingParameters parameters,Mesh[] meshes,ObjectAttributes[] attributes)',
-        summary: 'Meshes Rhino objects.',
-        since: '5.9',
-        parameters: [
-          {
-            name: 'rhinoObjects',
-            summary: 'The Rhino objects to mesh.'
-          },
-          {
-            name: 'parameters',
-            summary: 'The parameters used to create the meshes.'
           },
           {
             name: 'meshes',
@@ -22697,7 +22753,7 @@ object that does not support custom grips, then False is returned.`
         returns: 'IConvertible. Note that you can\'t directly cast from object, instead you have to use the Convert mechanism.'
       },
       {
-        signature: 'bool GetDynamicTransform(Transform transform)',
+        signature: 'bool GetDynamicTransform(out Transform transform)',
         summary: `While an object is being dynamically transformed (dragged, rotated, ...),
 the current transformation can be retrieved and used for creating
 dynamic display.`,
@@ -22975,7 +23031,7 @@ generated in less time, False is meant when actually rendering.`
         since: '5.7'
       },
       {
-        signature: 'TextureMapping GetTextureMapping(int channel,Transform objectTransform)',
+        signature: 'TextureMapping GetTextureMapping(int channel,out Transform objectTransform)',
         summary: 'Get objects texture mapping',
         since: '5.7'
       },
@@ -23387,7 +23443,7 @@ generated in less time, False is meant when actually rendering.`
         returns: 'Returns True if custom render mesh(es) will get built for this object.'
       },
       {
-        signature: 'bool TryGetGumballFrame(GumballFrame frame)',
+        signature: 'bool TryGetGumballFrame(out GumballFrame frame)',
         summary: `If a Rhino object has been manipulated by Rhino's gumball, and the gumball is not in its default position,
 then the object's repositioned gumball frame is returned.`,
         since: '7.0',
@@ -23400,7 +23456,7 @@ then the object's repositioned gumball frame is returned.`,
         returns: 'True if the object has a gumball frame, otherwise false.'
       },
       {
-        signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,bool preview,BoundingBox boundingBox)',
+        signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,bool preview,out BoundingBox boundingBox)',
         summary: `Get the bounding box for the custom render meshes associated with this
 object.`,
         since: '5.7',
@@ -23426,7 +23482,7 @@ object.`
 returns False on error.`
       },
       {
-        signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,DisplayPipelineAttributes attrs,BoundingBox boundingBox)',
+        signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,DisplayPipelineAttributes attrs,out BoundingBox boundingBox)',
         summary: `Get the bounding box for the custom render meshes associated with this
 object.`,
         since: '6.0',
@@ -23681,7 +23737,7 @@ A crossing selection indicates the object intersects with the selection rectangl
         returns: 'True if successful, otherwise false.'
       },
       {
-        signature: 'bool AnimateObject(RhinoDoc doc,RhinoObject doc_object,Transform transform,double dPos,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)',
+        signature: 'bool AnimateObject(RhinoDoc doc,RhinoObject doc_object,ref Transform transform,double dPos,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)',
         summary: 'Called for each frame. Starting at 0.0.',
         since: '6.0',
         parameters: [
@@ -23756,7 +23812,7 @@ object, rendering or application category`,
         since: '6.0'
       },
       {
-        signature: 'void ExtendBoundingBoxForDocumentAnimation(RhinoDoc doc,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop,BoundingBox bbox)',
+        signature: 'void ExtendBoundingBoxForDocumentAnimation(RhinoDoc doc,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop,ref BoundingBox bbox)',
         summary: 'Called once at the start of an animation. This can be used to extend the scene bounding box to avoid clipping.',
         since: '6.0',
         parameters: [
@@ -23779,7 +23835,7 @@ object, rendering or application category`,
         ]
       },
       {
-        signature: 'void ExtendBoundingBoxForObjectAnimation(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop,BoundingBox bbox)',
+        signature: 'void ExtendBoundingBoxForObjectAnimation(RhinoDoc doc,RhinoObject doc_object,ref Transform transform,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop,ref BoundingBox bbox)',
         summary: 'Called once at the start of an animation. This can be used to extend the scene bounding box to avoid clipping.',
         since: '6.0',
         parameters: [
@@ -23869,7 +23925,7 @@ After that the matrix is updated when the object is transformed(scale, rotate et
         returns: 'The client\'s name.'
       },
       {
-        signature: 'bool ObjectTransformNotification(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive)',
+        signature: 'bool ObjectTransformNotification(RhinoDoc doc,RhinoObject doc_object,ref Transform transform,BinaryArchiveReader archive)',
         summary: 'Called for every object that is associated with a snapshot and gets transformed in Rhino. This is getting called for each stored snapshot and gives the client the possibility to update the stored data.',
         since: '6.0',
         parameters: [
@@ -23920,7 +23976,7 @@ After that the matrix is updated when the object is transformed(scale, rotate et
         returns: 'True if successful, otherwise'
       },
       {
-        signature: 'bool PrepareForObjectAnimation(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)',
+        signature: 'bool PrepareForObjectAnimation(RhinoDoc doc,RhinoObject doc_object,ref Transform transform,BinaryArchiveReader archive_start,BinaryArchiveReader archive_stop)',
         summary: 'Called once at the start of an animation.',
         since: '6.0',
         parameters: [
@@ -23965,7 +24021,7 @@ After that the matrix is updated when the object is transformed(scale, rotate et
         returns: 'True if successful, otherwise false'
       },
       {
-        signature: 'bool RestoreObject(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveReader archive)',
+        signature: 'bool RestoreObject(RhinoDoc doc,RhinoObject doc_object,ref Transform transform,BinaryArchiveReader archive)',
         summary: 'Called when the user restores a snapshot and SupportsObjects() and SupportsObject(Rhino.DocObjects.RhinoObject doc_object) returns true.',
         since: '6.0',
         parameters: [
@@ -24006,7 +24062,7 @@ After that the matrix is updated when the object is transformed(scale, rotate et
         returns: 'True if successful, otherwise false'
       },
       {
-        signature: 'bool SaveObject(RhinoDoc doc,RhinoObject doc_object,Transform transform,BinaryArchiveWriter archive)',
+        signature: 'bool SaveObject(RhinoDoc doc,RhinoObject doc_object,ref Transform transform,BinaryArchiveWriter archive)',
         summary: 'Called when the user saves a snapshot and SupportsObjects() and SupportsObject(Rhino.DocObjects.RhinoObject doc_object) returns true.',
         since: '6.0',
         parameters: [
@@ -24189,7 +24245,7 @@ If NULL, a dialog is used to interactively get the directory name.`
         returns: 'Number of bitmaps written.'
       },
       {
-        signature: 'BitmapEntry Find(string name,bool createFile,string fileName)',
+        signature: 'BitmapEntry Find(string name,bool createFile,out string fileName)',
         summary: `This function first attempts to find the file with "name" on the disk.
 If it does find it, "fileName" is set to the full path of the file and
 the BitmapEntry returned will be null, even if there was a BitmapEntry
@@ -24706,7 +24762,18 @@ the settings other than face, bold and italic are copied from the current style`
       },
       {
         signature: 'bool ChangeGroupName(int groupIndex,string newName)',
-        since: '5.0'
+        summary: 'Changes the name of a group.',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          },
+          {
+            name: 'newName',
+            summary: 'The new group name.'
+          }
+        ],
+        returns: 'True if successful, False otherwise.'
       },
       {
         signature: 'bool Delete(Group item)',
@@ -24716,7 +24783,7 @@ the settings other than face, bold and italic are copied from the current style`
         signature: 'bool Delete(int groupIndex)',
         summary: `Deletes a group from this table.
 Deleted groups are kept in the runtime group table so that undo
-will work with groups.  Call IsDeleted() to determine if a group is deleted.`,
+will work with groups. Call IsDeleted() to determine if a group is deleted.`,
         since: '5.0',
         parameters: [
           {
@@ -24772,27 +24839,27 @@ We are moving towards using only IDs for all tables.`,
       },
       {
         signature: 'Group FindName(string name)',
-        summary: 'Finds a Linetype given its name. Returns the instance, rather than the index.',
+        summary: 'Finds a group given its name. Returns the instance, rather than the index.',
         since: '6.0',
         parameters: [
           {
             name: 'name',
-            summary: 'The name of the Linetype to be searched.'
+            summary: 'The name of the group to be searched.'
           }
         ],
-        returns: 'An Linetype, or None on error.'
+        returns: 'An group, or None on error.'
       },
       {
         signature: 'Group FindNameHash(NameHash nameHash)',
-        summary: 'Finds a Linetype given its name hash.',
+        summary: 'Finds a group given its name hash.',
         since: '6.0',
         parameters: [
           {
             name: 'nameHash',
-            summary: 'The name hash of the Linetype to be searched.'
+            summary: 'The name hash of the group to be searched.'
           }
         ],
-        returns: 'An Linetype, or None on error.'
+        returns: 'An group, or None on error.'
       },
       {
         signature: 'RhinoObject[] GroupMembers(int groupIndex)',
@@ -24808,39 +24875,110 @@ We are moving towards using only IDs for all tables.`,
       },
       {
         signature: 'string GroupName(int groupIndex)',
-        since: '5.0'
+        summary: 'Returns the name of a group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'The group name.'
       },
       {
         signature: 'string[] GroupNames(bool ignoreDeletedGroups)',
-        since: '5.0'
+        summary: 'Returns an array of all group names.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'ignoreDeletedGroups',
+            summary: 'Ignore any groups that were deleted.'
+          }
+        ],
+        returns: 'An array if group names if succesful, None if there are no groups.'
       },
       {
         signature: 'int GroupObjectCount(int groupIndex)',
-        since: '5.0'
+        summary: 'Returns the number of objects that are members of a group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'The nnumber of objects that are members of the group.'
       },
       {
         signature: 'int Hide(int groupIndex)',
-        since: '5.0'
+        summary: 'Hides all objects that are members of a group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'The number of objects that were hidden.'
       },
       {
         signature: 'bool IsDeleted(int groupIndex)',
-        since: '5.0'
+        summary: 'Verifies a group is deleted.',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'True if the group is deleted, False otherwise.'
       },
       {
         signature: 'int Lock(int groupIndex)',
-        since: '5.0'
+        summary: 'Locks all objects that are members of a group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'The number of objects that were locked.'
       },
       {
         signature: 'int Show(int groupIndex)',
-        since: '5.0'
+        summary: 'Shows, or unhides, all objects that are members of a group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'The number of objects that were shown.'
       },
       {
         signature: 'bool Undelete(int groupIndex)',
-        since: '5.0'
+        summary: 'Undeletes a previously deleted group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'True if successful, False otherwise.'
       },
       {
         signature: 'int Unlock(int groupIndex)',
-        since: '5.0'
+        summary: 'Unlocks all objects that are members of a group.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'groupIndex',
+            summary: 'The index of the group.'
+          }
+        ],
+        returns: 'The number of objects that were unlocked.'
       }
     ]
   },
@@ -26089,7 +26227,7 @@ This is the first index that will be tested.`
         since: '5.0'
       },
       {
-        signature: 'bool GetSelected(List<int> layerIndices)',
+        signature: 'bool GetSelected(out List<int> layerIndices)',
         summary: 'Returns the indices of layers that are selected on the Layer user interface.',
         parameters: [
           {
@@ -27526,7 +27664,7 @@ construction plane is replaced.`
         returns: 'Array of Rhino Objects which are tracked by the Named Position if successful, None if no such Named Position exists.'
       },
       {
-        signature: 'bool ObjectXform(Guid id,Guid objId,Transform xform)',
+        signature: 'bool ObjectXform(Guid id,Guid objId,ref Transform xform)',
         summary: 'Retrieve the Transform of a Rhino Object relate to a Named Position.',
         since: '6.0',
         parameters: [
@@ -27546,7 +27684,7 @@ construction plane is replaced.`
         returns: 'Transform of the RhinoObject related to the Named Position.'
       },
       {
-        signature: 'bool ObjectXform(Guid id,RhinoObject obj,Transform xform)',
+        signature: 'bool ObjectXform(Guid id,RhinoObject obj,ref Transform xform)',
         summary: 'Retrieve the Transform of a Rhino Object relate to a Named Position.',
         since: '6.0',
         parameters: [
@@ -31513,7 +31651,7 @@ Transform(obj, xform, false)`,
 The new object has identical attributes.`
       },
       {
-        signature: 'bool TryFindPoint(Guid id,Point3d point)',
+        signature: 'bool TryFindPoint(Guid id,out Point3d point)',
         summary: 'Finds the location of a point, if a point exists in the document.',
         since: '6.0',
         parameters: [
@@ -32286,7 +32424,7 @@ if ApplyUvw is true`,
     ],
     methods: [
       {
-        signature: 'void GetAlphaBlendValues(double constant,double a0,double a1,double a2,double a3)',
+        signature: 'void GetAlphaBlendValues(out double constant,out double a0,out double a1,out double a2,out double a3)',
         summary: `If the TextureCombineMode is Blend, then the blending function
 for alpha is determined by
 
@@ -33255,7 +33393,7 @@ as the targetDistance.`
 is not valid, then ON_3dPoint::UnsetPoint is returned.`
       },
       {
-        signature: 'bool GetBoundingBoxDepth(BoundingBox bbox,double nearDistance,double farDistance)',
+        signature: 'bool GetBoundingBoxDepth(BoundingBox bbox,out double nearDistance,out double farDistance)',
         summary: `Gets near and far clipping distances of a bounding box.
 This function ignores the current value of the viewport's
 near and far settings. If the viewport is a perspective
@@ -33286,7 +33424,7 @@ near_dist, zero or negative when the camera location is in front of the bounding
 False if the bounding box does not intersect the view frustum.`
       },
       {
-        signature: 'bool GetCameraAngles(double halfDiagonalAngleRadians,double halfVerticalAngleRadians,double halfHorizontalAngleRadians)',
+        signature: 'bool GetCameraAngles(out double halfDiagonalAngleRadians,out double halfVerticalAngleRadians,out double halfHorizontalAngleRadians)',
         summary: 'Gets the field of view angles.',
         since: '5.0',
         parameters: [
@@ -33306,7 +33444,7 @@ False if the bounding box does not intersect the view frustum.`
         returns: 'True if the operation succeeded; otherwise, false.'
       },
       {
-        signature: 'bool GetCameraFrame(Point3d location,Vector3d cameraX,Vector3d cameraY,Vector3d cameraZ)',
+        signature: 'bool GetCameraFrame(out Point3d location,out Vector3d cameraX,out Vector3d cameraY,out Vector3d cameraZ)',
         summary: 'Gets location and vectors of this camera.',
         since: '5.0',
         parameters: [
@@ -33387,7 +33525,7 @@ top left, top right.`,
 Empty array if viewport is not valid.`
       },
       {
-        signature: 'bool GetFrustum(double left,double right,double bottom,double top,double nearDistance,double farDistance)',
+        signature: 'bool GetFrustum(out double left,out double right,out double bottom,out double top,out double nearDistance,out double farDistance)',
         summary: 'Gets the view frustum.',
         since: '5.0',
         parameters: [
@@ -33471,7 +33609,7 @@ top left, top right.`,
 Empty array if viewport is not valid.`
       },
       {
-        signature: 'bool GetPointDepth(Point3d point,double distance)',
+        signature: 'bool GetPointDepth(Point3d point,out double distance)',
         summary: `Gets the clipping distance of a point. This function ignores the
 current value of the viewport's near and far settings. If
 the viewport is a perspective projection, then it intersects
@@ -33503,7 +33641,7 @@ See documentation for SetScreenPort(int, int, int, int, int, int).`,
         returns: 'The rectangle, or System.Drawing.Rectangle.Empty rectangle on error.'
       },
       {
-        signature: 'System.Drawing.Rectangle GetScreenPort(int near,int far)',
+        signature: 'System.Drawing.Rectangle GetScreenPort(out int near,out int far)',
         summary: `Gets the location of viewport in pixels.
 See value meanings in SetScreenPort.`,
         since: '5.0',
@@ -33520,12 +33658,12 @@ See value meanings in SetScreenPort.`,
         returns: 'The rectangle, or System.Drawing.Rectangle.Empty rectangle on error.'
       },
       {
-        signature: 'void GetScreenPortLocation(int left,int top,int right,int bottom)',
+        signature: 'void GetScreenPortLocation(out int left,out int top,out int right,out int bottom)',
         summary: 'Get the location of viewport in pixels (non System.Drawing version of GetScreenPort)',
         since: '6.0'
       },
       {
-        signature: 'bool GetSphereDepth(Sphere sphere,double nearDistance,double farDistance)',
+        signature: 'bool GetSphereDepth(Sphere sphere,out double nearDistance,out double farDistance)',
         summary: 'Gets near and far clipping distances of a bounding sphere.',
         since: '5.0',
         parameters: [
@@ -34176,16 +34314,16 @@ version of the 3dm archive format (1, 2, 3, 4 or 5).
         since: '5.1'
       },
       {
-        signature: 'bool BeginRead3dmChunk(uint expectedTypeCode,int majorVersion,int minorVersion)',
+        signature: 'bool BeginRead3dmChunk(out uint typeCode,out long value)',
+        summary: 'Begins reading a chunk that must be in the archive at this location.'
+      },
+      {
+        signature: 'bool BeginRead3dmChunk(uint expectedTypeCode,out int majorVersion,out int minorVersion)',
         summary: 'Begins reading a chunk that must be in the archive at this location.',
         since: '6.0',
         returns: `True if beginning of the chunk was read.  In this case you must call EndRead3dmChunk(),
 even if something goes wrong while you attempt to read the interior of the chunk.
 False if the chunk did not exist at the current location in the file.`
-      },
-      {
-        signature: 'bool BeginRead3dmChunk(uint typeCode,long value)',
-        summary: 'Begins reading a chunk that must be in the archive at this location.'
       },
       {
         signature: 'uint Dump3dmChunk(TextLog log)',
@@ -34227,7 +34365,7 @@ for partially read chunks.`
         ]
       },
       {
-        signature: 'void Read3dmChunkVersion(int major,int minor)',
+        signature: 'void Read3dmChunkVersion(out int major,out int minor)',
         summary: `A chunk version is a single byte that encodes a major.minor
 version number.  Useful when creating I/O code for 3dm chunks
 that may change in the future.  Increment the minor version
@@ -34248,7 +34386,7 @@ in some other way.`,
         returns: 'True on successful read.'
       },
       {
-        signature: 'bool Read3dmStartSection(int version,string comment)',
+        signature: 'bool Read3dmStartSection(out int version,out string comment)',
         since: '5.1',
         parameters: [
           {
@@ -35817,7 +35955,7 @@ table.`
         returns: 'new File3dm on success, None on error.'
       },
       {
-        signature: 'static void ReadApplicationData(string path,string applicationName,string applicationUrl,string applicationDetails)',
+        signature: 'static void ReadApplicationData(string path,out string applicationName,out string applicationUrl,out string applicationDetails)',
         summary: 'Reads only the application information from an existing 3dm file.',
         since: '5.0',
         parameters: [
@@ -35889,7 +36027,7 @@ None on error`
         returns: 'A bitmap, or None on failure.'
       },
       {
-        signature: 'static bool ReadRevisionHistory(string path,string createdBy,string lastEditedBy,int revision,DateTime createdOn,DateTime lastEditedOn)',
+        signature: 'static bool ReadRevisionHistory(string path,out string createdBy,out string lastEditedBy,out int revision,out DateTime createdOn,out DateTime lastEditedOn)',
         summary: `Quickly check a file for it's revision information.  This function does
 not read the entire file, just what it needs to get revision information out`,
         since: '5.6',
@@ -35922,7 +36060,7 @@ not read the entire file, just what it needs to get revision information out`,
         returns: 'True on success'
       },
       {
-        signature: 'static File3dm ReadWithLog(string path,string errorLog)',
+        signature: 'static File3dm ReadWithLog(string path,out string errorLog)',
         summary: `Read a 3dm file from a specified location and log any archive
 reading errors.`,
         since: '5.0',
@@ -35939,7 +36077,7 @@ reading errors.`,
         returns: 'New File3dm on success, None on error.'
       },
       {
-        signature: 'static File3dm ReadWithLog(string path,TableTypeFilter tableTypeFilterFilter,ObjectTypeFilter objectTypeFilter,string errorLog)',
+        signature: 'static File3dm ReadWithLog(string path,TableTypeFilter tableTypeFilterFilter,ObjectTypeFilter objectTypeFilter,out string errorLog)',
         summary: 'Reads a 3dm file from a specified location.',
         since: '5.9',
         parameters: [
@@ -35966,7 +36104,7 @@ table.`
         returns: 'new File3dm on success, None on error.'
       },
       {
-        signature: 'int Audit(bool attemptRepair,int repairCount,string errors,int[] warnings)',
+        signature: 'int Audit(bool attemptRepair,out int repairCount,out string errors,out int[] warnings)',
         summary: 'This function is only kept for forward assembly compatibility.',
         since: '5.0',
         deprecated: '6.0',
@@ -36018,7 +36156,7 @@ table.`
         since: '6.0'
       },
       {
-        signature: 'bool IsValid(string errors)',
+        signature: 'bool IsValid(out string errors)',
         summary: `The File3dm object is kept consistent during its creation.
 Therefore, this function now returns only true.`,
         since: '5.0',
@@ -36096,7 +36234,7 @@ Alternatively, 0 is a placeholder for the last valid version.`
 False if errors occur.`
       },
       {
-        signature: 'bool WriteWithLog(string path,File3dmWriteOptions options,string errorLog)',
+        signature: 'bool WriteWithLog(string path,File3dmWriteOptions options,out string errorLog)',
         summary: `Writes contents of this model to an openNURBS archive.
 If the model is not valid, then Write will refuse to write it.`,
         since: '6.0',
@@ -36118,7 +36256,7 @@ If the model is not valid, then Write will refuse to write it.`,
 False if errors occur.`
       },
       {
-        signature: 'bool WriteWithLog(string path,int version,string errorLog)',
+        signature: 'bool WriteWithLog(string path,int version,out string errorLog)',
         summary: `Writes contents of this model to an openNURBS archive.
 If the model is not valid, then Write will refuse to write it.`,
         since: '5.0',
@@ -40707,7 +40845,7 @@ is retrieved using ToString for this case`
         ]
       },
       {
-        signature: 'bool Get3dPoints(Point3d centerpoint,Point3d defpoint1,Point3d defpoint2,Point3d arrowpoint1,Point3d arrowpoint2,Point3d dimlinepoint,Point3d textpoint)',
+        signature: 'bool Get3dPoints(out Point3d centerpoint,out Point3d defpoint1,out Point3d defpoint2,out Point3d arrowpoint1,out Point3d arrowpoint2,out Point3d dimlinepoint,out Point3d textpoint)',
         summary: 'Get locations of dimension\'s 3d points',
         since: '6.0',
         parameters: [
@@ -40746,11 +40884,11 @@ is retrieved using ToString for this case`
         since: '6.0'
       },
       {
-        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,Line[] lines,Arc[] arcs)',
+        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,out Line[] lines,out Arc[] arcs)',
         since: '6.0'
       },
       {
-        signature: 'bool GetTextRectangle(Point3d[] corners)',
+        signature: 'bool GetTextRectangle(out Point3d[] corners)',
         since: '6.0'
       }
     ]
@@ -40972,7 +41110,7 @@ gets or sets the text height in the dimstyle`,
     ],
     methods: [
       {
-        signature: 'static bool FirstCharProperties(string rtf_str,bool bold,bool italic,bool underline,string facename)',
+        signature: 'static bool FirstCharProperties(string rtf_str,ref bool bold,ref bool italic,ref bool underline,ref string facename)',
         since: '6.0'
       },
       {
@@ -41017,7 +41155,7 @@ the current state of the parent style for non-overridden fields`,
         since: '6.0'
       },
       {
-        signature: 'string GetPlainTextWithRunMap(int[] map)',
+        signature: 'string GetPlainTextWithRunMap(ref int[] map)',
         summary: 'Return plain text string for this annotation with field expressions unevaluated.',
         since: '7.0',
         parameters: [
@@ -42054,7 +42192,7 @@ At present only Breps, Surfaces, Meshes and Planar Closed Curves are supported.`
         returns: 'The AreaMassProperties for the given Surface or None on failure.'
       },
       {
-        signature: 'bool CentroidCoordinatesPrincipalMoments(double x,Vector3d xaxis,double y,Vector3d yaxis,double z,Vector3d zaxis)',
+        signature: 'bool CentroidCoordinatesPrincipalMoments(out double x,out Vector3d xaxis,out double y,out Vector3d yaxis,out double z,out Vector3d zaxis)',
         summary: `Calculates the principal moments and principal axes with respect to centroid coordinates.
 These are simply the eigenvalues and eigenvectors of the centroid coordinate inertia matrix.`,
         since: '6.9',
@@ -42092,7 +42230,7 @@ These are simply the eigenvalues and eigenvectors of the centroid coordinate ine
         since: '5.0'
       },
       {
-        signature: 'bool WorldCoordinatesPrincipalMoments(double x,Vector3d xaxis,double y,Vector3d yaxis,double z,Vector3d zaxis)',
+        signature: 'bool WorldCoordinatesPrincipalMoments(out double x,out Vector3d xaxis,out double y,out Vector3d yaxis,out double z,out Vector3d zaxis)',
         summary: `Calculates the principal moments and principal axes with respect to world coordinates.
 These are simply the eigenvalues and eigenvectors of the world coordinate inertia matrix.`,
         since: '6.9',
@@ -42402,7 +42540,7 @@ rational, the weight is 1.`
         returns: 'Point (location of curve at the parameter t).'
       },
       {
-        signature: 'bool Split(double t,BezierCurve left,BezierCurve right)',
+        signature: 'bool Split(double t,out BezierCurve left,out BezierCurve right)',
         summary: 'Divides the Bezier curve at the specified parameter.',
         since: '6.0',
         parameters: [
@@ -43836,7 +43974,7 @@ ON_0.0001 * radius and RhinoMath.ZeroTolerance will be used.`
         returns: 'An array of Brep results or None on failure.'
       },
       {
-        signature: 'static Brep[] CreateChamferSurface(BrepFace face0,Point2d uv0,double radius0,BrepFace face1,Point2d uv1,double radius1,bool trim,bool extend,double tolerance,Brep[] outBreps0,Brep[] outBreps1)',
+        signature: 'static Brep[] CreateChamferSurface(BrepFace face0,Point2d uv0,double radius0,BrepFace face1,Point2d uv1,double radius1,bool trim,bool extend,double tolerance,out Brep[] outBreps0,out Brep[] outBreps1)',
         summary: 'Creates a ruled surface as a bevel between two input surface edges.',
         since: '6.0',
         parameters: [
@@ -44083,7 +44221,7 @@ Note, rulings will be automatically adjusted to minimum twist.`
         returns: 'Array of Breps if successful.'
       },
       {
-        signature: 'static Brep[] CreateFilletSurface(BrepFace face0,Point2d uv0,BrepFace face1,Point2d uv1,double radius,bool trim,bool extend,double tolerance,Brep[] outBreps0,Brep[] outBreps1)',
+        signature: 'static Brep[] CreateFilletSurface(BrepFace face0,Point2d uv0,BrepFace face1,Point2d uv1,double radius,bool trim,bool extend,double tolerance,out Brep[] outBreps0,out Brep[] outBreps1)',
         summary: 'Creates a constant-radius round surface between two surfaces.',
         since: '6.0',
         parameters: [
@@ -44225,7 +44363,7 @@ starting and ending at the base vertex.`,
       },
       {
         signature: 'static Brep CreateFromCornerPoints(Point3d corner1,Point3d corner2,Point3d corner3,double tolerance)',
-        summary: 'Makes a brep with one face.',
+        summary: 'Makes a Brep with one face from three corner points.',
         since: '5.0',
         parameters: [
           {
@@ -44242,14 +44380,14 @@ starting and ending at the base vertex.`,
           },
           {
             name: 'tolerance',
-            summary: 'Minimum edge length without collapsing to a singularity.'
+            summary: 'Minimum edge length allowed before collapsing the side into a singularity.'
           }
         ],
         returns: 'A boundary representation, or None on error.'
       },
       {
         signature: 'static Brep CreateFromCornerPoints(Point3d corner1,Point3d corner2,Point3d corner3,Point3d corner4,double tolerance)',
-        summary: 'make a Brep with one face.',
+        summary: 'Makes a Brep with one face from four corner points.',
         since: '5.0',
         parameters: [
           {
@@ -44325,6 +44463,60 @@ starting and ending at the bottom/top vertex.`
           }
         ],
         returns: 'The resulting Brep if successful, None on failure.'
+      },
+      {
+        signature: 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves,Point3d start,Point3d end,bool StartTangent,bool EndTangent,BrepTrim StartTrim,BrepTrim EndTrim,LoftType loftType,bool closed)',
+        summary: `Constructs one or more Breps by lofting through a set of curves, optionally matching start and
+end tangents of surfaces when first and/or last loft curves are surface edges`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'curves',
+            summary: `The curves to loft through. This function will not perform any curve sorting. You must pass in
+curves in the order you want them lofted. This function will not adjust the directions of open
+curves. Use Curve.DoDirectionsMatch and Curve.Reverse to adjust the directions of open curves.
+This function will not adjust the seams of closed curves. Use Curve.ChangeClosedCurveSeam to
+adjust the seam of closed curves.`
+          },
+          {
+            name: 'start',
+            summary: `Optional starting point of loft. Use Point3d.Unset if you do not want to include a start point.
+"start" and "StartTangent" cannot both be true.`
+          },
+          {
+            name: 'end',
+            summary: `Optional ending point of loft. Use Point3d.Unset if you do not want to include an end point.
+"end and "EndTangent" cannot both be true.`
+          },
+          {
+            name: 'StartTangent',
+            summary: `If StartTangent is True and the first loft curve is a surface edge, the loft will match the tangent
+of the surface behind that edge.`
+          },
+          {
+            name: 'EndTangent',
+            summary: `If EndTangent is True and the first loft curve is a surface edge, the loft will match the tangent
+of the surface behind that edge.`
+          },
+          {
+            name: 'StartTrim',
+            summary: 'BrepTrim from the surface edge where start tangent is to be matched'
+          },
+          {
+            name: 'EndTrim',
+            summary: 'BrepTrim from the surface edge where end tangent is to be matched'
+          },
+          {
+            name: 'loftType',
+            summary: 'type of loft to perform.'
+          },
+          {
+            name: 'closed',
+            summary: 'True if the last curve in this loft should be connected back to the first one.'
+          }
+        ],
+        returns: `Constructs a closed surface, continuing the surface past the last curve around to the
+first curve. Available when you have selected three shape curves.`
       },
       {
         signature: 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves,Point3d start,Point3d end,LoftType loftType,bool closed)',
@@ -44886,7 +45078,7 @@ plane.Normal = direction may make sense.`
         returns: 'An array of Breps if successful.'
       },
       {
-        signature: 'static Brep[] CreateOffsetBrep(Brep brep,double distance,bool solid,bool extend,double tolerance,Brep[] outBlends,Brep[] outWalls)',
+        signature: 'static Brep[] CreateOffsetBrep(Brep brep,double distance,bool solid,bool extend,double tolerance,out Brep[] outBlends,out Brep[] outWalls)',
         summary: 'Offsets a Brep.',
         since: '6.0',
         parameters: [
@@ -45719,7 +45911,7 @@ brep parts.  Duplicates are not removed`,
         returns: 'The point on the Brep closest to testPoint or Point3d.Unset if the operation failed.'
       },
       {
-        signature: 'bool ClosestPoint(Point3d testPoint,Point3d closestPoint,ComponentIndex ci,double s,double t,double maximumDistance,Vector3d normal)',
+        signature: 'bool ClosestPoint(Point3d testPoint,out Point3d closestPoint,out ComponentIndex ci,out double s,out double t,double maximumDistance,out Vector3d normal)',
         summary: `Finds a point on a Brep that is closest to testPoint.
 The method searches all Brep faces looking for the one closest to testPoint.
 When found, if the closest point falls on the inactive region of the face, then
@@ -45876,7 +46068,7 @@ duplicates, this function will return null.)`
         returns: 'An array or corner vertices.'
       },
       {
-        signature: 'void FindCoincidentBrepComponents(Point3d point,double tolerance,int[] faces,int[] edges,int[] vertices)',
+        signature: 'void FindCoincidentBrepComponents(Point3d point,double tolerance,out int[] faces,out int[] edges,out int[] vertices)',
         summary: 'Find the indices of all brep faces, edges and vertices that are within tolerance of a test-point.',
         since: '6.2',
         parameters: [
@@ -45932,7 +46124,7 @@ and error information, use the AreaMassProperties class.`,
         returns: 'The area of the Brep.'
       },
       {
-        signature: 'bool GetPointInside(double tolerance,Point3d point)',
+        signature: 'bool GetPointInside(double tolerance,out Point3d point)',
         summary: 'Finds a point inside of a solid Brep.',
         since: '6.19',
         parameters: [
@@ -46035,7 +46227,7 @@ if false, point is in if truly in or within tolerance of boundary.`
         returns: 'True if point is in, False if not.'
       },
       {
-        signature: 'bool IsValidGeometry(string log)',
+        signature: 'bool IsValidGeometry(out string log)',
         summary: `Expert user function that tests the brep to see if its geometry information is valid.
 The value of brep.IsValidTopology() must be True before brep.IsValidGeometry() can be
 safely called.`,
@@ -46052,7 +46244,7 @@ useful as a high level user interface tool. Otherwise, string.Empty.`
         returns: 'A value that indicates whether the geometry is valid.'
       },
       {
-        signature: 'bool IsValidTolerancesAndFlags(string log)',
+        signature: 'bool IsValidTolerancesAndFlags(out string log)',
         summary: `Expert user function that tests the brep to see if its tolerances and
 flags are valid.  The values of brep.IsValidTopology() and
 brep.IsValidGeometry() must be True before brep.IsValidTolerancesAndFlags()
@@ -46070,7 +46262,7 @@ intended to be useful as a high level user interface tool. Otherwise, string.Emp
         returns: 'A value that indicates'
       },
       {
-        signature: 'bool IsValidTopology(string log)',
+        signature: 'bool IsValidTopology(out string log)',
         summary: 'Tests the brep to see if its topology information is valid.',
         since: '5.0',
         parameters: [
@@ -46323,7 +46515,7 @@ definition that does not include explicit vertex information.`,
         returns: 'A new array of Breps. This array can be empty.'
       },
       {
-        signature: 'Brep[] Split(Brep cutter,double intersectionTolerance,bool toleranceWasRaised)',
+        signature: 'Brep[] Split(Brep cutter,double intersectionTolerance,out bool toleranceWasRaised)',
         summary: 'Splits a Brep into pieces using a Brep as a cutter.',
         since: '5.0',
         parameters: [
@@ -46583,7 +46775,7 @@ is defined by how many adjacent faces share this edge.`,
         returns: 'Concavity measure at parameter.'
       },
       {
-        signature: 'bool GetEdgeParameter(int trimIndex,double trimParameter,double edgeParameter)',
+        signature: 'bool GetEdgeParameter(int trimIndex,double trimParameter,out double edgeParameter)',
         summary: 'Get corresponding edge parameter for given trim at given trim parameter.',
         since: '5.12',
         returns: 'True on success'
@@ -46747,7 +46939,7 @@ If a Face has no trimming curves then it is considered a Surface.`,
         returns: 'A Brep on success or None on failure.'
       },
       {
-        signature: 'bool DraftAnglePoint(Point2d testPoint,double testAngle,Vector3d pullDirection,bool edge,Point3d draftPoint,double draftAngle)',
+        signature: 'bool DraftAnglePoint(Point2d testPoint,double testAngle,Vector3d pullDirection,bool edge,out Point3d draftPoint,out double draftAngle)',
         summary: 'Returns the surface draft angle and point at a parameter.',
         since: '6.0',
         parameters: [
@@ -46862,7 +47054,7 @@ will be skipped.`
         returns: 'True on success.'
       },
       {
-        signature: 'Surface[] RefitTrim(BrepEdge edge,IEnumerable<double> knots,double tolerance,bool bSections,double fitQuality)',
+        signature: 'Surface[] RefitTrim(BrepEdge edge,IEnumerable<double> knots,double tolerance,bool bSections,ref double fitQuality)',
         since: '7.0'
       },
       {
@@ -47292,13 +47484,13 @@ and the trim as a curve may not agree.`,
     ],
     methods: [
       {
-        signature: 'void GetTolerances(double toleranceU,double toleranceV)',
+        signature: 'void GetTolerances(out double toleranceU,out double toleranceV)',
         summary: `The values in tolerance[] record the accuracy of the parameter space
 trimming curves.`,
         since: '5.6'
       },
       {
-        signature: 'bool GetTrimParameter(double edgeParameter,double trimParameter)',
+        signature: 'bool GetTrimParameter(double edgeParameter,out double trimParameter)',
         summary: 'Get corresponding trim parameter at given edge parameter.',
         since: '5.12',
         returns: 'True on success'
@@ -47644,7 +47836,7 @@ Radii should be positive values.`,
     ],
     methods: [
       {
-        signature: 'static bool TryFitCircleToPoints(IEnumerable<Point3d> points,Circle circle)',
+        signature: 'static bool TryFitCircleToPoints(IEnumerable<Point3d> points,out Circle circle)',
         summary: 'Attempt to fit a circle through a set of points.',
         since: '6.2',
         parameters: [
@@ -47716,7 +47908,7 @@ Radii should be positive values.`,
         returns: 'Valid circle on success, Circle.Unset on failure.'
       },
       {
-        signature: 'bool ClosestParameter(Point3d testPoint,double t)',
+        signature: 'bool ClosestParameter(Point3d testPoint,out double t)',
         summary: 'Gets the parameter on the circle which is closest to a test point.',
         since: '5.0',
         parameters: [
@@ -49115,7 +49307,7 @@ For a triangular face, this is the centroid or barycenter.For a quad, this is th
         returns: 'The center point.'
       },
       {
-        signature: 'bool GetFaceVertices(int faceIndex,Point3f a,Point3f b,Point3f c,Point3f d)',
+        signature: 'bool GetFaceVertices(int faceIndex,out Point3f a,out Point3f b,out Point3f c,out Point3f d)',
         summary: 'Gets the 3D location of the vertices forming a face.',
         since: '5.0',
         parameters: [
@@ -49155,7 +49347,7 @@ For a triangular face, this is the centroid or barycenter.For a quad, this is th
         returns: 'An array of integers.'
       },
       {
-        signature: 'bool GetZeroAreaFaces(int[] whollyDegenerateFaces,int[] partiallyDegenerateFaces)',
+        signature: 'bool GetZeroAreaFaces(out int[] whollyDegenerateFaces,out int[] partiallyDegenerateFaces)',
         summary: `Examines and adds face indexes to whollyDegenerateFaces if the face is a triangle with zero area or a quad both triangles have zero area.
 Face indexes are added to partiallyDegenerateFaces when a quad has one triangle with zero area.`,
         since: '6.0',
@@ -49239,7 +49431,7 @@ A face is hidden if, and only if, at least one of its vertices is hidden.`,
         ]
       },
       {
-        signature: 'int RemoveZeroAreaFaces(int fixedFaceCount)',
+        signature: 'int RemoveZeroAreaFaces(ref int fixedFaceCount)',
         summary: 'Deletes or fixes mesh faces that have zero area.',
         since: '6.0',
         parameters: [
@@ -49333,7 +49525,7 @@ Note that this includes indices from invalid faces too.`,
         returns: 'The int array. This method never returns null.'
       },
       {
-        signature: 'int[] ToIntArray(bool asTriangles,List<int> replacedIndices)',
+        signature: 'int[] ToIntArray(bool asTriangles,ref List<int> replacedIndices)',
         summary: `Copies all of the faces to a linear array of indices.
 
 Clean-up of vertex indices if replacedIndices is a valid List<int>`,
@@ -50183,7 +50375,7 @@ All texture coordinates rows (Us) become columns (Vs), and vice versa.`,
         returns: 'An array of face indices the edge borders. This might be empty on error.'
       },
       {
-        signature: 'int[] GetConnectedFaces(int topologyEdgeIndex,bool[] faceOrientationMatchesEdgeDirection)',
+        signature: 'int[] GetConnectedFaces(int topologyEdgeIndex,out bool[] faceOrientationMatchesEdgeDirection)',
         summary: 'Gets indices of faces connected to an edge.',
         since: '5.0',
         parameters: [
@@ -50228,7 +50420,7 @@ returns -1 if no edge is found.`,
         returns: 'A new array of indices to the topological edges that are connected with the specified face.'
       },
       {
-        signature: 'int[] GetEdgesForFace(int faceIndex,bool[] sameOrientation)',
+        signature: 'int[] GetEdgesForFace(int faceIndex,out bool[] sameOrientation)',
         summary: 'Gets indices of edges that surround a given face.',
         since: '5.0',
         parameters: [
@@ -51832,7 +52024,7 @@ call this function as many times as you want.`,
         since: '5.4'
       },
       {
-        signature: 'bool GetPoint(int index,Point3d point)',
+        signature: 'bool GetPoint(int index,out Point3d point)',
         summary: `Gets a world 3-D, or Euclidean, control point at the given index.
 The 4-D representation is (x, y, z, 1.0).`,
         since: '6.0',
@@ -51849,7 +52041,7 @@ The 4-D representation is (x, y, z, 1.0).`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool GetPoint(int index,Point4d point)',
+        signature: 'bool GetPoint(int index,out Point4d point)',
         summary: `Gets a homogeneous control point at the given index, where the 4-D representation is (x, y, z, w).
 The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).`,
         since: '6.0',
@@ -52029,7 +52221,7 @@ Note, if the curve is non-rational, it will be converted to rational.`,
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'bool UVNDirectionsAt(int index,Vector3d uDir,Vector3d vDir,Vector3d nDir)',
+        signature: 'bool UVNDirectionsAt(int index,out Vector3d uDir,out Vector3d vDir,out Vector3d nDir)',
         summary: 'Calculates the U, V, and N directions of a NURBS curve control point similar to the method used by Rhino\'s MoveUVN command.',
         since: '7.0',
         parameters: [
@@ -52053,7 +52245,7 @@ Note, if the curve is non-rational, it will be converted to rational.`,
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'bool ValidateSpacing(double closeTolerance,double stackTolerance,int[] closeIndices,int[] stackedIndices)',
+        signature: 'bool ValidateSpacing(double closeTolerance,double stackTolerance,out int[] closeIndices,out int[] stackedIndices)',
         summary: 'Simple check of distance between adjacent control points',
         since: '6.0',
         parameters: [
@@ -52333,7 +52525,7 @@ call this function as many times as you want.`,
         returns: 'A Surface UV coordinate on success, Point2d.Unset on failure.'
       },
       {
-        signature: 'bool GetPoint(int u,int v,Point3d point)',
+        signature: 'bool GetPoint(int u,int v,out Point3d point)',
         summary: `Gets a world 3-D, or Euclidean, control point at the given (u, v) index.
 The 4-D representation is (x, y, z, 1.0).`,
         since: '6.0',
@@ -52354,7 +52546,7 @@ The 4-D representation is (x, y, z, 1.0).`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool GetPoint(int u,int v,Point4d point)',
+        signature: 'bool GetPoint(int u,int v,out Point4d point)',
         summary: `Gets a homogeneous control point at the given (u, v) index, where the 4-D representation is (x, y, z, w).
 The world 3-D, or Euclidean, representation is (x/w, y/w, z/w).`,
         since: '6.0',
@@ -52583,7 +52775,7 @@ Note, if the surface is non-rational, it will be converted to rational.`,
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'bool UVNDirectionsAt(int u,int v,Vector3d uDir,Vector3d vDir,Vector3d nDir)',
+        signature: 'bool UVNDirectionsAt(int u,int v,out Vector3d uDir,out Vector3d vDir,out Vector3d nDir)',
         summary: 'Calculates the U, V, and N directions of a NURBS surface control point similar to the method used by Rhino\'s MoveUVN command.',
         since: '7.0',
         parameters: [
@@ -52611,7 +52803,7 @@ Note, if the surface is non-rational, it will be converted to rational.`,
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'bool ValidateSpacing(double closeTolerance,double stackTolerance,IndexPair[] closeIndices,IndexPair[] stackedIndices)',
+        signature: 'bool ValidateSpacing(double closeTolerance,double stackTolerance,out IndexPair[] closeIndices,out IndexPair[] stackedIndices)',
         summary: 'Simple check of distance between adjacent control points',
         since: '6.0'
       }
@@ -54554,7 +54746,7 @@ direction. Caller must match input curves direction before calling the function.
 False if they point in the opposite directions.`
       },
       {
-        signature: 'static bool GetDistancesBetweenCurves(Curve curveA,Curve curveB,double tolerance,double maxDistance,double maxDistanceParameterA,double maxDistanceParameterB,double minDistance,double minDistanceParameterA,double minDistanceParameterB)',
+        signature: 'static bool GetDistancesBetweenCurves(Curve curveA,Curve curveB,double tolerance,out double maxDistance,out double maxDistanceParameterA,out double maxDistanceParameterB,out double minDistance,out double minDistanceParameterA,out double minDistanceParameterB)',
         summary: 'Computes the distances between two arbitrary curves that overlap.',
         since: '5.0',
         parameters: [
@@ -54598,7 +54790,7 @@ False if they point in the opposite directions.`
         returns: 'True if the operation succeeded; otherwise false.'
       },
       {
-        signature: 'static bool GetFilletPoints(Curve curve0,Curve curve1,double radius,double t0Base,double t1Base,double t0,double t1,Plane filletPlane)',
+        signature: 'static bool GetFilletPoints(Curve curve0,Curve curve1,double radius,double t0Base,double t1Base,out double t0,out double t1,out Plane filletPlane)',
         summary: 'Finds points at which to cut a pair of curves so that a fillet of given radius can be inserted.',
         since: '5.0',
         parameters: [
@@ -54810,7 +55002,7 @@ which curve encloses the other.`,
         returns: 'An array of projected curves or empty array if the projection set is empty.'
       },
       {
-        signature: 'static Curve[] ProjectToBrep(Curve curve,IEnumerable<Brep> breps,Vector3d direction,double tolerance,int[] brepIndices)',
+        signature: 'static Curve[] ProjectToBrep(Curve curve,IEnumerable<Brep> breps,Vector3d direction,double tolerance,out int[] brepIndices)',
         summary: 'Projects a Curve onto a collection of Breps along a given direction.',
         since: '5.0',
         parameters: [
@@ -54862,7 +55054,7 @@ which curve encloses the other.`,
         returns: 'An array of projected curves or empty array if the projection set is empty.'
       },
       {
-        signature: 'static Curve[] ProjectToBrep(IEnumerable<Curve> curves,IEnumerable<Brep> breps,Vector3d direction,double tolerance,int[] curveIndices,int[] brepIndices)',
+        signature: 'static Curve[] ProjectToBrep(IEnumerable<Curve> curves,IEnumerable<Brep> breps,Vector3d direction,double tolerance,out int[] curveIndices,out int[] brepIndices)',
         summary: 'Projects a collection of Curves onto a collection of Breps along a given direction.',
         since: '5.0',
         parameters: [
@@ -55074,7 +55266,7 @@ Only works with simple (no self intersections) closed, planar curves.`,
         returns: 'The orientation of this curve with respect to a defined up direction.'
       },
       {
-        signature: 'bool ClosestPoint(Point3d testPoint,double t)',
+        signature: 'bool ClosestPoint(Point3d testPoint,out double t)',
         summary: `Finds parameter of the point on a curve that is closest to testPoint.
 If the maximumDistance parameter is > 0, then only points whose distance
 to the given point is <= maximumDistance will be returned.  Using a
@@ -55093,7 +55285,7 @@ positive value of maximumDistance can substantially speed up the search.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool ClosestPoint(Point3d testPoint,double t,double maximumDistance)',
+        signature: 'bool ClosestPoint(Point3d testPoint,out double t,double maximumDistance)',
         summary: `Finds the parameter of the point on a curve that is closest to testPoint.
 If the maximumDistance parameter is > 0, then only points whose distance
 to the given point is <= maximumDistance will be returned.  Using a
@@ -55117,7 +55309,7 @@ Past this distance, the search is given up and False is returned.Use 0 to turn o
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool ClosestPoints(Curve otherCurve,Point3d pointOnThisCurve,Point3d pointOnOtherCurve)',
+        signature: 'bool ClosestPoints(Curve otherCurve,out Point3d pointOnThisCurve,out Point3d pointOnOtherCurve)',
         summary: 'Gets closest points between this and another curves.',
         since: '5.0',
         parameters: [
@@ -55137,7 +55329,7 @@ Past this distance, the search is given up and False is returned.Use 0 to turn o
         returns: 'True on success; False on error.'
       },
       {
-        signature: 'bool ClosestPoints(IEnumerable<GeometryBase> geometry,Point3d pointOnCurve,Point3d pointOnObject,int whichGeometry)',
+        signature: 'bool ClosestPoints(IEnumerable<GeometryBase> geometry,out Point3d pointOnCurve,out Point3d pointOnObject,out int whichGeometry)',
         summary: `Finds the object (and the closest point in that object) that is closest to
 this curve. Breps, surfaces,
 curves and point clouds are examples of
@@ -55164,7 +55356,7 @@ objects that can be passed to this function.`,
         returns: 'True on success; False if no object was found or selected.'
       },
       {
-        signature: 'bool ClosestPoints(IEnumerable<GeometryBase> geometry,Point3d pointOnCurve,Point3d pointOnObject,int whichGeometry,double maximumDistance)',
+        signature: 'bool ClosestPoints(IEnumerable<GeometryBase> geometry,out Point3d pointOnCurve,out Point3d pointOnObject,out int whichGeometry,double maximumDistance)',
         summary: `Finds the object (and the closest point in that object) that is closest to
 this curve. Breps, surfaces,
 curves and point clouds are examples of
@@ -55334,7 +55526,7 @@ it makes a big difference whether the evaluation is from below or above.`
         returns: 'List of curve parameters at the division points on success, None on failure.'
       },
       {
-        signature: 'double[] DivideByCount(int segmentCount,bool includeEnds,Point3d[] points)',
+        signature: 'double[] DivideByCount(int segmentCount,bool includeEnds,out Point3d[] points)',
         summary: 'Divide the curve into a number of equal-length segments.',
         since: '5.0',
         parameters: [
@@ -55390,7 +55582,7 @@ it makes a big difference whether the evaluation is from below or above.`
         returns: 'Array containing division curve parameters if successful, None on failure.'
       },
       {
-        signature: 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse,Point3d[] points)',
+        signature: 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse,out Point3d[] points)',
         summary: 'Divide the curve into specific length segments.',
         since: '6.0',
         parameters: [
@@ -55414,7 +55606,7 @@ it makes a big difference whether the evaluation is from below or above.`
         returns: 'Array containing division curve parameters if successful, None on failure.'
       },
       {
-        signature: 'double[] DivideByLength(double segmentLength,bool includeEnds,Point3d[] points)',
+        signature: 'double[] DivideByLength(double segmentLength,bool includeEnds,out Point3d[] points)',
         summary: 'Divide the curve into specific length segments.',
         since: '5.0',
         parameters: [
@@ -55690,7 +55882,7 @@ If angleTolerance is 0.0, all kinks are smoothedIf angleTolerance is >0.0, kinks
         returns: 'Returns a new fitted Curve if successful, None on failure.'
       },
       {
-        signature: 'bool FrameAt(double t,Plane plane)',
+        signature: 'bool FrameAt(double t,out Plane plane)',
         summary: 'Returns a 3d frame at a parameter.',
         since: '5.0',
         parameters: [
@@ -55711,7 +55903,7 @@ If angleTolerance is 0.0, all kinks are smoothedIf angleTolerance is >0.0, kinks
         since: '6.0'
       },
       {
-        signature: 'ConicSectionType GetConicSectionType(Point3d focus1,Point3d focus2,Point3d center)',
+        signature: 'ConicSectionType GetConicSectionType(out Point3d focus1,out Point3d focus2,out Point3d center)',
         summary: 'Returns the type of conic section based on the curve\'s shape.',
         since: '6.0',
         parameters: [
@@ -55730,7 +55922,7 @@ If angleTolerance is 0.0, all kinks are smoothedIf angleTolerance is >0.0, kinks
         ]
       },
       {
-        signature: 'bool GetCurveParameterFromNurbsFormParameter(double nurbsParameter,double curveParameter)',
+        signature: 'bool GetCurveParameterFromNurbsFormParameter(double nurbsParameter,out double curveParameter)',
         summary: 'Convert a NURBS curve parameter to a curve parameter.',
         since: '5.0',
         parameters: [
@@ -55794,27 +55986,7 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'The length of the sub-curve on success, or zero on failure.'
       },
       {
-        signature: 'bool GetLocalPerpPoint(Point3d testPoint,double seedParmameter,double curveParameter)',
-        summary: 'Search for a location on the curve, near seedParmameter, that is perpendicular to a test point.',
-        since: '6.0',
-        parameters: [
-          {
-            name: 'testPoint',
-            summary: 'The test point.'
-          },
-          {
-            name: 'seedParmameter',
-            summary: 'A "seed" parameter on the curve.'
-          },
-          {
-            name: 'curveParameter',
-            summary: 'The parameter value at the perpendicular point'
-          }
-        ],
-        returns: 'True if a solution is found, False otherwise.'
-      },
-      {
-        signature: 'bool GetLocalPerpPoint(Point3d testPoint,double seedParmameter,Interval subDomain,double curveParameter)',
+        signature: 'bool GetLocalPerpPoint(Point3d testPoint,double seedParmameter,Interval subDomain,out double curveParameter)',
         summary: 'Search for a location on the curve, near seedParmameter, that is perpendicular to a test point.',
         since: '6.0',
         parameters: [
@@ -55838,8 +56010,8 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'True if a solution is found, False otherwise.'
       },
       {
-        signature: 'bool GetLocalTangentPoint(Point3d testPoint,double seedParmameter,double curveParameter)',
-        summary: 'Search for a location on the curve, near seedParmameter, that is tangent to a test point.',
+        signature: 'bool GetLocalPerpPoint(Point3d testPoint,double seedParmameter,out double curveParameter)',
+        summary: 'Search for a location on the curve, near seedParmameter, that is perpendicular to a test point.',
         since: '6.0',
         parameters: [
           {
@@ -55852,13 +56024,13 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
           },
           {
             name: 'curveParameter',
-            summary: 'The parameter value at the tangent point'
+            summary: 'The parameter value at the perpendicular point'
           }
         ],
         returns: 'True if a solution is found, False otherwise.'
       },
       {
-        signature: 'bool GetLocalTangentPoint(Point3d testPoint,double seedParmameter,Interval subDomain,double curveParameter)',
+        signature: 'bool GetLocalTangentPoint(Point3d testPoint,double seedParmameter,Interval subDomain,out double curveParameter)',
         summary: 'Search for a location on the curve, near seedParmameter, that is tangent to a test point.',
         since: '6.0',
         parameters: [
@@ -55882,7 +56054,27 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'True if a solution is found, False otherwise.'
       },
       {
-        signature: 'bool GetNextDiscontinuity(Continuity continuityType,double t0,double t1,double t)',
+        signature: 'bool GetLocalTangentPoint(Point3d testPoint,double seedParmameter,out double curveParameter)',
+        summary: 'Search for a location on the curve, near seedParmameter, that is tangent to a test point.',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'testPoint',
+            summary: 'The test point.'
+          },
+          {
+            name: 'seedParmameter',
+            summary: 'A "seed" parameter on the curve.'
+          },
+          {
+            name: 'curveParameter',
+            summary: 'The parameter value at the tangent point'
+          }
+        ],
+        returns: 'True if a solution is found, False otherwise.'
+      },
+      {
+        signature: 'bool GetNextDiscontinuity(Continuity continuityType,double t0,double t1,out double t)',
         summary: 'Searches for a derivative, tangent, or curvature discontinuity.',
         since: '5.0',
         parameters: [
@@ -55916,7 +56108,7 @@ ends of their domains.  All closed curves (IsClosed()=true) are at least C0_locu
 the ends of their domains.`
       },
       {
-        signature: 'bool GetNurbsFormParameterFromCurveParameter(double curveParameter,double nurbsParameter)',
+        signature: 'bool GetNurbsFormParameterFromCurveParameter(double curveParameter,out double nurbsParameter)',
         summary: 'Convert a curve parameter to a NURBS curve parameter.',
         since: '5.0',
         parameters: [
@@ -56179,7 +56371,7 @@ represented as a polyline.`,
         returns: 'True if the length of the curve is <= tolerance.'
       },
       {
-        signature: 'bool LcoalClosestPoint(Point3d testPoint,double seed,double t)',
+        signature: 'bool LcoalClosestPoint(Point3d testPoint,double seed,out double t)',
         summary: `Find parameter of the point on a curve that is locally closest to
 the testPoint.  The search for a local close point starts at
 a seed parameter.`,
@@ -56202,7 +56394,7 @@ a seed parameter.`,
         returns: 'True if the search is successful, False if the search fails.'
       },
       {
-        signature: 'bool LengthParameter(double segmentLength,double t)',
+        signature: 'bool LengthParameter(double segmentLength,out double t)',
         summary: `Gets the parameter along the curve which coincides with a given length along the curve.
 A fractional tolerance of 1e-8 is used in this version of the function.`,
         since: '5.0',
@@ -56219,7 +56411,7 @@ A fractional tolerance of 1e-8 is used in this version of the function.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool LengthParameter(double segmentLength,double t,double fractionalTolerance)',
+        signature: 'bool LengthParameter(double segmentLength,out double t,double fractionalTolerance)',
         summary: 'Gets the parameter along the curve which coincides with a given length along the curve.',
         since: '5.0',
         parameters: [
@@ -56240,7 +56432,7 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool LengthParameter(double segmentLength,double t,double fractionalTolerance,Interval subdomain)',
+        signature: 'bool LengthParameter(double segmentLength,out double t,double fractionalTolerance,Interval subdomain)',
         summary: 'Gets the parameter along the curve which coincides with a given length along the curve.',
         since: '5.0',
         parameters: [
@@ -56265,7 +56457,7 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool LengthParameter(double segmentLength,double t,Interval subdomain)',
+        signature: 'bool LengthParameter(double segmentLength,out double t,Interval subdomain)',
         summary: `Gets the parameter along the curve which coincides with a given length along the curve.
 A fractional tolerance of 1e-8 is used in this version of the function.`,
         since: '5.0',
@@ -56286,7 +56478,7 @@ A fractional tolerance of 1e-8 is used in this version of the function.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool LocalClosestPoint(Point3d testPoint,double seed,double t)',
+        signature: 'bool LocalClosestPoint(Point3d testPoint,double seed,out double t)',
         summary: `Find parameter of the point on a curve that is locally closest to
 the testPoint.  The search for a local close point starts at
 a seed parameter.`,
@@ -56331,7 +56523,7 @@ where the curvature starts to decrease in both directions from the points.`,
         returns: 'An array of points if successful, None if not successful or on error.'
       },
       {
-        signature: 'bool NormalizedLengthParameter(double s,double t)',
+        signature: 'bool NormalizedLengthParameter(double s,out double t)',
         summary: `Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.
 A fractional tolerance of 1e-8 is used in this version of the function.`,
         since: '5.0',
@@ -56349,7 +56541,7 @@ E.g., 0 = start of curve, 1/2 = midpoint of curve, 1 = end of curve.`
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool NormalizedLengthParameter(double s,double t,double fractionalTolerance)',
+        signature: 'bool NormalizedLengthParameter(double s,out double t,double fractionalTolerance)',
         summary: 'Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.',
         since: '5.0',
         parameters: [
@@ -56371,7 +56563,7 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool NormalizedLengthParameter(double s,double t,double fractionalTolerance,Interval subdomain)',
+        signature: 'bool NormalizedLengthParameter(double s,out double t,double fractionalTolerance,Interval subdomain)',
         summary: 'Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.',
         since: '5.0',
         parameters: [
@@ -56397,7 +56589,7 @@ fabs(("exact" length from start to t) - arc_length)/arc_length <= fractionalTole
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool NormalizedLengthParameter(double s,double t,Interval subdomain)',
+        signature: 'bool NormalizedLengthParameter(double s,out double t,Interval subdomain)',
         summary: `Input the parameter of the point on the curve that is a prescribed arc length from the start of the curve.
 A fractional tolerance of 1e-8 is used in this version of the function.`,
         since: '5.0',
@@ -56766,7 +56958,7 @@ This overload allows to specify a surface point at which the offset will pass.`,
         returns: 'Offset curves on success, or None on failure.'
       },
       {
-        signature: 'bool PerpendicularFrameAt(double t,Plane plane)',
+        signature: 'bool PerpendicularFrameAt(double t,out Plane plane)',
         summary: `Return a 3d frame at a parameter. This is slightly different than FrameAt in
 that the frame is computed in a way so there is minimal rotation from one
 frame to the next.`,
@@ -56931,7 +57123,7 @@ It will be used to decide which part of the offset to keep if there are self-int
         returns: 'The offset curve if successful.'
       },
       {
-        signature: 'Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance,Curve[] crossSections,Surface[] ruledSurfaces)',
+        signature: 'Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance,out Curve[] crossSections,out Surface[] ruledSurfaces)',
         summary: `Offsets a closed curve in the following way: pProject the curve to a plane with given normal.
 Then, loose Offset the projection by distance + blend_radius and trim off self-intersection.
 THen, Offset the remaining curve back in the opposite direction by blend_radius, filling gaps with blends.
@@ -56975,7 +57167,7 @@ Note, there will be gaps between these at blends.`
         returns: 'The offset curve if successful.'
       },
       {
-        signature: 'Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance,double[] outputParameters,double[] curveParameters)',
+        signature: 'Curve RibbonOffset(double distance,double blendRadius,Point3d directionPoint,Vector3d normal,double tolerance,out double[] outputParameters,out double[] curveParameters)',
         summary: `Offsets a closed curve in the following way: pProject the curve to a plane with given normal.
 Then, loose Offset the projection by distance + blend_radius and trim off self-intersection.
 THen, Offset the remaining curve back in the opposite direction by blend_radius, filling gaps with blends.
@@ -57522,7 +57714,7 @@ and after curve(domain[1]) are removed.`
         returns: 'Trimmed curve if successful, None on failure.'
       },
       {
-        signature: 'bool TryGetArc(Arc arc)',
+        signature: 'bool TryGetArc(out Arc arc)',
         summary: 'Try to convert this curve into an Arc using RhinoMath.ZeroTolerance.',
         since: '5.0',
         parameters: [
@@ -57534,7 +57726,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an arc.'
       },
       {
-        signature: 'bool TryGetArc(Arc arc,double tolerance)',
+        signature: 'bool TryGetArc(out Arc arc,double tolerance)',
         summary: 'Try to convert this curve into an Arc using a custom tolerance.',
         since: '5.0',
         parameters: [
@@ -57550,7 +57742,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an arc.'
       },
       {
-        signature: 'bool TryGetArc(Plane plane,Arc arc)',
+        signature: 'bool TryGetArc(Plane plane,out Arc arc)',
         summary: 'Try to convert this curve into an Arc using RhinoMath.ZeroTolerance.',
         since: '5.0',
         parameters: [
@@ -57566,7 +57758,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an arc within the given plane.'
       },
       {
-        signature: 'bool TryGetArc(Plane plane,Arc arc,double tolerance)',
+        signature: 'bool TryGetArc(Plane plane,out Arc arc,double tolerance)',
         summary: 'Try to convert this curve into an Arc using a custom tolerance.',
         since: '5.0',
         parameters: [
@@ -57586,7 +57778,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an arc within the given plane.'
       },
       {
-        signature: 'bool TryGetCircle(Circle circle)',
+        signature: 'bool TryGetCircle(out Circle circle)',
         summary: 'Try to convert this curve into a circle using RhinoMath.ZeroTolerance.',
         since: '5.0',
         parameters: [
@@ -57598,7 +57790,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into a Circle.'
       },
       {
-        signature: 'bool TryGetCircle(Circle circle,double tolerance)',
+        signature: 'bool TryGetCircle(out Circle circle,double tolerance)',
         summary: 'Try to convert this curve into a Circle using a custom tolerance.',
         since: '5.0',
         parameters: [
@@ -57614,7 +57806,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into a Circle within tolerance.'
       },
       {
-        signature: 'bool TryGetEllipse(Ellipse ellipse)',
+        signature: 'bool TryGetEllipse(out Ellipse ellipse)',
         summary: 'Try to convert this curve into an Ellipse within RhinoMath.ZeroTolerance.',
         since: '5.0',
         parameters: [
@@ -57626,7 +57818,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an Ellipse.'
       },
       {
-        signature: 'bool TryGetEllipse(Ellipse ellipse,double tolerance)',
+        signature: 'bool TryGetEllipse(out Ellipse ellipse,double tolerance)',
         summary: 'Try to convert this curve into an Ellipse using a custom tolerance.',
         since: '5.0',
         parameters: [
@@ -57642,7 +57834,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an Ellipse.'
       },
       {
-        signature: 'bool TryGetEllipse(Plane plane,Ellipse ellipse)',
+        signature: 'bool TryGetEllipse(Plane plane,out Ellipse ellipse)',
         summary: 'Try to convert this curve into an Ellipse within RhinoMath.ZeroTolerance.',
         since: '5.0',
         parameters: [
@@ -57658,7 +57850,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an Ellipse within the given plane.'
       },
       {
-        signature: 'bool TryGetEllipse(Plane plane,Ellipse ellipse,double tolerance)',
+        signature: 'bool TryGetEllipse(Plane plane,out Ellipse ellipse,double tolerance)',
         summary: 'Try to convert this curve into an Ellipse using a custom tolerance.',
         since: '5.0',
         parameters: [
@@ -57678,7 +57870,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if the curve could be converted into an Ellipse within the given plane.'
       },
       {
-        signature: 'bool TryGetPlane(Plane plane)',
+        signature: 'bool TryGetPlane(out Plane plane)',
         summary: 'Test a curve for planarity and return the plane.',
         since: '5.0',
         parameters: [
@@ -57690,7 +57882,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if there is a plane such that the maximum distance from the curve to the plane is <= RhinoMath.ZeroTolerance.'
       },
       {
-        signature: 'bool TryGetPlane(Plane plane,double tolerance)',
+        signature: 'bool TryGetPlane(out Plane plane,double tolerance)',
         summary: 'Test a curve for planarity and return the plane.',
         since: '5.0',
         parameters: [
@@ -57706,7 +57898,7 @@ and after curve(domain[1]) are removed.`
         returns: 'True if there is a plane such that the maximum distance from the curve to the plane is <= tolerance.'
       },
       {
-        signature: 'bool TryGetPolyline(Polyline polyline)',
+        signature: 'bool TryGetPolyline(out Polyline polyline)',
         summary: `Several types of Curve can have the form of a polyline
 including a degree 1 NurbsCurve, a PolylineCurve,
 and a PolyCurve all of whose segments are some form of
@@ -57722,7 +57914,7 @@ represented as a polyline.`,
         returns: 'True if this curve can be represented as a polyline; otherwise, false.'
       },
       {
-        signature: 'bool TryGetPolyline(Polyline polyline,double[] parameters)',
+        signature: 'bool TryGetPolyline(out Polyline polyline,out double[] parameters)',
         summary: `Several types of Curve can have the form of a polyline
 including a degree 1 NurbsCurve, a PolylineCurve,
 and a PolyCurve all of whose segments are some form of
@@ -57845,7 +58037,7 @@ or -1 if points[i] was not used in any region or if not successful.`
         returns: 'The number of curve segments in th boundary curves.'
       },
       {
-        signature: 'int SegmentDetails(int regionIndex,int boundaryIndex,int segmmentIndex,Interval subDomain,bool reversed)',
+        signature: 'int SegmentDetails(int regionIndex,int boundaryIndex,int segmmentIndex,out Interval subDomain,out bool reversed)',
         summary: 'Returns the details of a segment in a boundary curve in a curve region.',
         since: '7.0',
         parameters: [
@@ -58335,7 +58527,7 @@ This is synonymous with calling RevSurface.CreateFromCylinder().`,
     summary: 'Helpers for developable surface functions',
     methods: [
       {
-        signature: 'static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out)',
+        signature: 'static int GetLocalDevopableRuling(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,ref double t0_out,ref double t1_out)',
         summary: 'Finds minimum twist ruling between 2 curves at local domains',
         since: '6.0',
         parameters: [
@@ -58378,21 +58570,21 @@ This is synonymous with calling RevSurface.CreateFromCylinder().`,
 the ruling between t0 and t1`
       },
       {
-        signature: 'static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,double t0_out,double t1_out,double cos_twist_out)',
+        signature: 'static bool RulingMinTwist(NurbsCurve rail0,double t0,Interval dom0,NurbsCurve rail1,double t1,Interval dom1,ref double t0_out,ref double t1_out,ref double cos_twist_out)',
         summary: `Find a ruling from rail0(t0_out) to rail1(t1_out) that has the least twist
 across the ruling with t0_out in domain0 and t1_out in domain1.
 max_cos_twist is cos(twist) for the returned ruling`,
         since: '6.0'
       },
       {
-        signature: 'static bool RulingMinTwist(NurbsCurve rail0,double t0,NurbsCurve rail1,double t1,Interval dom1,double t1_out,double cos_twist_out)',
+        signature: 'static bool RulingMinTwist(NurbsCurve rail0,double t0,NurbsCurve rail1,double t1,Interval dom1,ref double t1_out,ref double cos_twist_out)',
         summary: `Find a ruling from rail0(t0) to rail1(t1_out) that has the least twist
 across the ruling with t1_out in domain1.
 max_cos_twist is cos(twist) for the returned ruling`,
         since: '6.0'
       },
       {
-        signature: 'static bool UntwistRulings(NurbsCurve rail0,NurbsCurve rail1,IEnumerable<Point2d> rulings)'
+        signature: 'static bool UntwistRulings(NurbsCurve rail0,NurbsCurve rail1,ref IEnumerable<Point2d> rulings)'
       }
     ]
   },
@@ -59107,7 +59299,7 @@ if not bounding box could be found.`
         returns: 'A BoundingBox in plane coordinates.'
       },
       {
-        signature: 'BoundingBox GetBoundingBox(Plane plane,Box worldBox)',
+        signature: 'BoundingBox GetBoundingBox(Plane plane,out Box worldBox)',
         summary: 'Aligned Bounding box solver. Gets the plane aligned bounding box.',
         since: '5.0',
         parameters: [
@@ -59417,7 +59609,7 @@ Hatch has an index to get the pattern definition from the pattern table.`,
         returns: 'An array of hatches. The array might be empty on error.'
       },
       {
-        signature: 'void CreateDisplayGeometry(HatchPattern pattern,double patternScale,Curve[] bounds,Line[] lines,Brep solidBrep)',
+        signature: 'void CreateDisplayGeometry(HatchPattern pattern,double patternScale,out Curve[] bounds,out Line[] lines,out Brep solidBrep)',
         summary: 'Generate geometry that would be used to draw the hatch with a given hatch pattern',
         since: '5.6'
       },
@@ -60495,7 +60687,7 @@ The value can be used to multiply the document absolute tolerance.This is only a
     ],
     methods: [
       {
-        signature: 'static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)',
+        signature: 'static bool BrepBrep(Brep brepA,Brep brepB,double tolerance,out Curve[] intersectionCurves,out Point3d[] intersectionPoints)',
         summary: 'Intersects two Breps.',
         since: '5.0',
         parameters: [
@@ -60523,7 +60715,7 @@ The value can be used to multiply the document absolute tolerance.This is only a
         returns: 'True on success; False on failure.'
       },
       {
-        signature: 'static bool BrepPlane(Brep brep,Plane plane,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)',
+        signature: 'static bool BrepPlane(Brep brep,Plane plane,double tolerance,out Curve[] intersectionCurves,out Point3d[] intersectionPoints)',
         summary: 'Intersects a Brep with an (infinite) plane.',
         since: '5.0',
         parameters: [
@@ -60551,7 +60743,7 @@ The value can be used to multiply the document absolute tolerance.This is only a
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'static bool BrepSurface(Brep brep,Surface surface,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)',
+        signature: 'static bool BrepSurface(Brep brep,Surface surface,double tolerance,out Curve[] intersectionCurves,out Point3d[] intersectionPoints)',
         summary: 'Intersects a Brep and a Surface.',
         since: '5.0',
         parameters: [
@@ -60579,7 +60771,35 @@ The value can be used to multiply the document absolute tolerance.This is only a
         returns: 'True on success; False on failure.'
       },
       {
-        signature: 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)',
+        signature: 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,double angleTolerance,out double[] t)',
+        summary: 'Intersect a curve with a Brep. This function returns the intersection parameters on the curve.',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'curve',
+            summary: 'Curve.'
+          },
+          {
+            name: 'brep',
+            summary: 'Brep.'
+          },
+          {
+            name: 'tolerance',
+            summary: 'Absolute tolerance for intersections.'
+          },
+          {
+            name: 'angleTolerance',
+            summary: 'Angle tolerance in radians.'
+          },
+          {
+            name: 't',
+            summary: 'Curve parameters at intersections.'
+          }
+        ],
+        returns: 'True on success, False on failure.'
+      },
+      {
+        signature: 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,out Curve[] overlapCurves,out Point3d[] intersectionPoints)',
         summary: `Intersects a curve with a Brep. This function returns the 3D points of intersection
 and 3D overlap curves. If an error occurs while processing overlap curves, this function
 will return false, but it will still provide partial results.`,
@@ -60609,7 +60829,7 @@ will return false, but it will still provide partial results.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints,double[] curveParameters)',
+        signature: 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,out Curve[] overlapCurves,out Point3d[] intersectionPoints,out double[] curveParameters)',
         summary: `Intersects a curve with a Brep. This function returns the 3D points of intersection, curve parameters at the intersection locations,
 and 3D overlap curves. If an error occurs while processing overlap curves, this function
 will return false, but it will still provide partial results.`,
@@ -60643,35 +60863,7 @@ will return false, but it will still provide partial results.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,double angleTolerance,double[] t)',
-        summary: 'Intersect a curve with a Brep. This function returns the intersection parameters on the curve.',
-        since: '6.0',
-        parameters: [
-          {
-            name: 'curve',
-            summary: 'Curve.'
-          },
-          {
-            name: 'brep',
-            summary: 'Brep.'
-          },
-          {
-            name: 'tolerance',
-            summary: 'Absolute tolerance for intersections.'
-          },
-          {
-            name: 'angleTolerance',
-            summary: 'Angle tolerance in radians.'
-          },
-          {
-            name: 't',
-            summary: 'Curve parameters at intersections.'
-          }
-        ],
-        returns: 'True on success, False on failure.'
-      },
-      {
-        signature: 'static bool CurveBrepFace(Curve curve,BrepFace face,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)',
+        signature: 'static bool CurveBrepFace(Curve curve,BrepFace face,double tolerance,out Curve[] overlapCurves,out Point3d[] intersectionPoints)',
         summary: 'Intersects a curve with a Brep face.',
         since: '5.0',
         parameters: [
@@ -60723,7 +60915,7 @@ will return false, but it will still provide partial results.`,
         returns: 'A collection of intersection events.'
       },
       {
-        signature: 'static CurveIntersections CurveCurveValidate(Curve curveA,Curve curveB,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)',
+        signature: 'static CurveIntersections CurveCurveValidate(Curve curveA,Curve curveB,double tolerance,double overlapTolerance,out int[] invalidIndices,out TextLog textLog)',
         summary: 'Finds the intersections between two curves.',
         since: '7.0',
         parameters: [
@@ -60868,7 +61060,7 @@ an intersection is assumed.`
         returns: 'A collection of intersection events.'
       },
       {
-        signature: 'static CurveIntersections CurveSurfaceValidate(Curve curve,Interval curveDomain,Surface surface,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)',
+        signature: 'static CurveIntersections CurveSurfaceValidate(Curve curve,Interval curveDomain,Surface surface,double tolerance,double overlapTolerance,out int[] invalidIndices,out TextLog textLog)',
         summary: 'Intersects a sub-curve and a surface.',
         since: '7.0',
         parameters: [
@@ -60904,7 +61096,7 @@ an intersection is assumed.`
         returns: 'A collection of intersection events.'
       },
       {
-        signature: 'static CurveIntersections CurveSurfaceValidate(Curve curve,Surface surface,double tolerance,double overlapTolerance,int[] invalidIndices,TextLog textLog)',
+        signature: 'static CurveIntersections CurveSurfaceValidate(Curve curve,Surface surface,double tolerance,double overlapTolerance,out int[] invalidIndices,out TextLog textLog)',
         summary: 'Intersects a curve and a surface.',
         since: '7.0',
         parameters: [
@@ -60936,7 +61128,7 @@ an intersection is assumed.`
         returns: 'A collection of intersection events.'
       },
       {
-        signature: 'static bool LineBox(Line line,BoundingBox box,double tolerance,Interval lineParameters)',
+        signature: 'static bool LineBox(Line line,BoundingBox box,double tolerance,out Interval lineParameters)',
         summary: 'Intersects an infinite line and an axis aligned bounding box.',
         since: '5.0',
         parameters: [
@@ -60961,7 +61153,7 @@ that has each side moved out by tolerance.`
         returns: 'True if the line intersects the box, False if no intersection occurs.'
       },
       {
-        signature: 'static bool LineBox(Line line,Box box,double tolerance,Interval lineParameters)',
+        signature: 'static bool LineBox(Line line,Box box,double tolerance,out Interval lineParameters)',
         summary: 'Intersects an infinite line with a box volume.',
         since: '5.0',
         parameters: [
@@ -60986,7 +61178,7 @@ that has each side moved out by tolerance.`
         returns: 'True if the line intersects the box, False if no intersection occurs.'
       },
       {
-        signature: 'static LineCircleIntersection LineCircle(Line line,Circle circle,double t1,Point3d point1,double t2,Point3d point2)',
+        signature: 'static LineCircleIntersection LineCircle(Line line,Circle circle,out double t1,out Point3d point1,out double t2,out Point3d point2)',
         summary: 'Intersects a line with a circle using exact calculations.',
         since: '5.0',
         parameters: [
@@ -61019,7 +61211,7 @@ that has each side moved out by tolerance.`
 If LineCircleIntersection.Multiple is returned, t2 and point2 will also be filled out.`
       },
       {
-        signature: 'static LineCylinderIntersection LineCylinder(Line line,Cylinder cylinder,Point3d intersectionPoint1,Point3d intersectionPoint2)',
+        signature: 'static LineCylinderIntersection LineCylinder(Line line,Cylinder cylinder,out Point3d intersectionPoint1,out Point3d intersectionPoint2)',
         summary: 'Intersects a line with a cylinder using exact calculations.',
         since: '5.0',
         parameters: [
@@ -61048,7 +61240,7 @@ is the point on the line and the second point is the  same point on the
 cylinder.`
       },
       {
-        signature: 'static bool LineLine(Line lineA,Line lineB,double a,double b)',
+        signature: 'static bool LineLine(Line lineA,Line lineB,out double a,out double b)',
         summary: 'Finds the closest point between two infinite lines.',
         since: '5.0',
         parameters: [
@@ -61077,7 +61269,7 @@ Numerically parallel means the 2x2 matrix:
 is numerically singular, where A = (lineA.To - lineA.From) and B = (lineB.To-lineB.From)`
       },
       {
-        signature: 'static bool LineLine(Line lineA,Line lineB,double a,double b,double tolerance,bool finiteSegments)',
+        signature: 'static bool LineLine(Line lineA,Line lineB,out double a,out double b,double tolerance,bool finiteSegments)',
         summary: 'Intersects two lines.',
         since: '5.0',
         parameters: [
@@ -61113,7 +61305,7 @@ If false, the input lines are treated as infinite lines.`
         returns: 'True if a closest point can be calculated and the result passes the tolerance parameter test; otherwise false.'
       },
       {
-        signature: 'static bool LinePlane(Line line,Plane plane,double lineParameter)',
+        signature: 'static bool LinePlane(Line line,Plane plane,out double lineParameter)',
         summary: `Intersects a line and a plane. This function only returns True if the
 intersection result is a single point (i.e. if the line is coincident with
 the plane then no intersection is assumed).`,
@@ -61137,7 +61329,7 @@ does not intersect the plane.`
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'static LineSphereIntersection LineSphere(Line line,Sphere sphere,Point3d intersectionPoint1,Point3d intersectionPoint2)',
+        signature: 'static LineSphereIntersection LineSphere(Line line,Sphere sphere,out Point3d intersectionPoint1,out Point3d intersectionPoint2)',
         summary: 'Intersects a line with a sphere using exact calculations.',
         since: '5.0',
         parameters: [
@@ -61164,7 +61356,7 @@ If LineSphereIntersection.Single is returned, the first point is the point on th
 same point on the sphere.`
       },
       {
-        signature: 'static Point3d[] MeshLine(Mesh mesh,Line line,int[] faceIds)',
+        signature: 'static Point3d[] MeshLine(Mesh mesh,Line line,out int[] faceIds)',
         summary: 'Finds the intersections of a mesh and a line. The points are not necessarily sorted.',
         since: '5.0',
         parameters: [
@@ -61184,7 +61376,7 @@ same point on the sphere.`
         returns: 'An array of points: one for each face that was passed by the faceIds out reference.'
       },
       {
-        signature: 'static Point3d[] MeshLineSorted(Mesh mesh,Line line,int[] faceIds)',
+        signature: 'static Point3d[] MeshLineSorted(Mesh mesh,Line line,out int[] faceIds)',
         summary: 'Finds the intersections of a mesh and a line. Points are sorted along the line.',
         since: '5.0',
         parameters: [
@@ -61204,7 +61396,7 @@ same point on the sphere.`
         returns: 'An array of points: one for each face that was passed by the faceIds out reference.'
       },
       {
-        signature: 'static bool MeshMesh(IEnumerable<Mesh> meshes,double tolerance,Polyline[] intersections,bool overlapsPolylines,Polyline[] overlapsPolylinesResult,bool overlapsMesh,Mesh overlapsMeshResult,TextLog textLog,CancellationToken cancel,IProgress<double> progress)',
+        signature: 'static bool MeshMesh(IEnumerable<Mesh> meshes,double tolerance,out Polyline[] intersections,bool overlapsPolylines,out Polyline[] overlapsPolylinesResult,bool overlapsMesh,out Mesh overlapsMeshResult,TextLog textLog,CancellationToken cancel,IProgress<double> progress)',
         summary: 'Intersects meshes. Overlaps and perforations are provided in the output list.',
         since: '7.0',
         parameters: [
@@ -61323,7 +61515,7 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
         returns: 'An array of polylines describing the intersection loops or None (Nothing in Visual Basic) if no intersections could be found.'
       },
       {
-        signature: 'static Point3d[] MeshPolyline(Mesh mesh,PolylineCurve curve,int[] faceIds)',
+        signature: 'static Point3d[] MeshPolyline(Mesh mesh,PolylineCurve curve,out int[] faceIds)',
         summary: 'Finds the intersection of a mesh and a polyline. Points are not guaranteed to be sorted along the polyline.',
         since: '5.0',
         parameters: [
@@ -61343,7 +61535,7 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
         returns: 'An array of points: one for each face that was passed by the faceIds out reference.'
       },
       {
-        signature: 'static Point3d[] MeshPolylineSorted(Mesh mesh,PolylineCurve curve,int[] faceIds)',
+        signature: 'static Point3d[] MeshPolylineSorted(Mesh mesh,PolylineCurve curve,out int[] faceIds)',
         summary: 'Finds the intersection of a mesh and a polyline. Points are guaranteed to be sorted along the polyline.',
         since: '5.0',
         parameters: [
@@ -61380,7 +61572,7 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
 < 0.0 if no intersection found.`
       },
       {
-        signature: 'static double MeshRay(Mesh mesh,Ray3d ray,int[] meshFaceIndices)',
+        signature: 'static double MeshRay(Mesh mesh,Ray3d ray,out int[] meshFaceIndices)',
         summary: 'Finds the first intersection of a ray with a mesh.',
         since: '5.0',
         parameters: [
@@ -61401,7 +61593,7 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
 < 0.0 if no intersection found.`
       },
       {
-        signature: 'static PlaneCircleIntersection PlaneCircle(Plane plane,Circle circle,double firstCircleParameter,double secondCircleParameter)',
+        signature: 'static PlaneCircleIntersection PlaneCircle(Plane plane,Circle circle,out double firstCircleParameter,out double secondCircleParameter)',
         summary: 'Intersects a plane with a circle using exact calculations.',
         since: '5.0',
         parameters: [
@@ -61425,7 +61617,7 @@ WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtE
         returns: 'The type of intersection that occurred.'
       },
       {
-        signature: 'static bool PlanePlane(Plane planeA,Plane planeB,Line intersectionLine)',
+        signature: 'static bool PlanePlane(Plane planeA,Plane planeB,out Line intersectionLine)',
         summary: `Intersects two planes and return the intersection line. If the planes are
 parallel or coincident, no intersection is assumed.`,
         since: '5.0',
@@ -61447,7 +61639,7 @@ the intersectionLine parameter will return the line where the planes intersect.`
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'static bool PlanePlanePlane(Plane planeA,Plane planeB,Plane planeC,Point3d intersectionPoint)',
+        signature: 'static bool PlanePlanePlane(Plane planeA,Plane planeB,Plane planeC,out Point3d intersectionPoint)',
         summary: 'Intersects three planes to find the single point they all share.',
         since: '5.0',
         parameters: [
@@ -61472,7 +61664,7 @@ the intersectionLine parameter will return the line where the planes intersect.`
 are parallel or coincident, failure is assumed.`
       },
       {
-        signature: 'static PlaneSphereIntersection PlaneSphere(Plane plane,Sphere sphere,Circle intersectionCircle)',
+        signature: 'static PlaneSphereIntersection PlaneSphere(Plane plane,Sphere sphere,out Circle intersectionCircle)',
         summary: 'Intersects a plane with a sphere using exact calculations.',
         since: '5.0',
         parameters: [
@@ -61517,7 +61709,7 @@ is the point on the plane closest to the sphere.`
         returns: 'Array of projected points, or None in case of any error or invalid input.'
       },
       {
-        signature: 'static Point3d[] ProjectPointsToBrepsEx(IEnumerable<Brep> breps,IEnumerable<Point3d> points,Vector3d direction,double tolerance,int[] indices)',
+        signature: 'static Point3d[] ProjectPointsToBrepsEx(IEnumerable<Brep> breps,IEnumerable<Point3d> points,Vector3d direction,double tolerance,out int[] indices)',
         summary: 'Projects points onto breps.',
         since: '5.10',
         parameters: [
@@ -61569,7 +61761,7 @@ is the point on the plane closest to the sphere.`
         returns: 'Array of projected points, or None in case of any error or invalid input.'
       },
       {
-        signature: 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes,IEnumerable<Point3d> points,Vector3d direction,double tolerance,int[] indices)',
+        signature: 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes,IEnumerable<Point3d> points,Vector3d direction,double tolerance,out int[] indices)',
         summary: 'Projects points onto meshes.',
         since: '5.10',
         parameters: [
@@ -61637,7 +61829,7 @@ is the point on the plane closest to the sphere.`
         returns: 'An array of points: one for each surface or Brep face that was hit, or an empty array on failure.'
       },
       {
-        signature: 'static SphereSphereIntersection SphereSphere(Sphere sphereA,Sphere sphereB,Circle intersectionCircle)',
+        signature: 'static SphereSphereIntersection SphereSphere(Sphere sphereA,Sphere sphereB,out Circle intersectionCircle)',
         summary: 'Intersects two spheres using exact calculations.',
         since: '5.0',
         parameters: [
@@ -61657,7 +61849,7 @@ is the point on the plane closest to the sphere.`
         returns: 'The intersection type.'
       },
       {
-        signature: 'static bool SurfaceSurface(Surface surfaceA,Surface surfaceB,double tolerance,Curve[] intersectionCurves,Point3d[] intersectionPoints)',
+        signature: 'static bool SurfaceSurface(Surface surfaceA,Surface surfaceB,double tolerance,out Curve[] intersectionCurves,out Point3d[] intersectionPoints)',
         summary: 'Intersects two Surfaces.',
         since: '5.0',
         parameters: [
@@ -61810,7 +62002,7 @@ If the intersection type is not overlap, this value is meaningless.`,
         ]
       },
       {
-        signature: 'void SurfaceOverlapParameter(Interval uDomain,Interval vDomain)',
+        signature: 'void SurfaceOverlapParameter(out Interval uDomain,out Interval vDomain)',
         summary: `If this instance records a Curve|Surface intersection event,
 and the intersection type if overlap, then use this function
 to get the U and V domains on the surface where the overlap occurs.`,
@@ -61827,7 +62019,7 @@ to get the U and V domains on the surface where the overlap occurs.`,
         ]
       },
       {
-        signature: 'void SurfacePointParameter(double u,double v)',
+        signature: 'void SurfacePointParameter(out double u,out double v)',
         summary: `If this instance records a Curve|Surface intersection event,
 and the intersection type is point, then use this function
 to get the U and V parameters on the surface where the intersection occurs.`,
@@ -63004,7 +63196,7 @@ attenuation = 1/(a0 + d*a1 + d^2*a2) where d = distance to light.`,
         returns: '0 if a0 + d*a1 + d^2*a2 <= 0.'
       },
       {
-        signature: 'bool GetSpotLightRadii(double innerRadius,double outerRadius)',
+        signature: 'bool GetSpotLightRadii(out double innerRadius,out double outerRadius)',
         summary: 'Gets the spot light radii.',
         since: '5.0',
         parameters: [
@@ -63249,7 +63441,7 @@ the line segment.`,
       {
         signature: 'bool IsValid',
         summary: `Gets a value indicating whether or not this line is valid.
-Valid lines must have valid start and end points.`,
+Valid lines must have valid start and end points, and the points must not be equal.`,
         since: '5.0',
         property: ['get']
       },
@@ -63296,7 +63488,7 @@ Note that tangent vectors are always unit vectors.`,
     ],
     methods: [
       {
-        signature: 'static bool TryCreateBetweenCurves(Curve curve0,Curve curve1,double t0,double t1,bool perpendicular0,bool perpendicular1,Line line)',
+        signature: 'static bool TryCreateBetweenCurves(Curve curve0,Curve curve1,ref double t0,ref double t1,bool perpendicular0,bool perpendicular1,out Line line)',
         summary: 'Creates a line segment between a pair of curves such that the line segment is either tangent or perpendicular to each of the curves.',
         since: '5.2',
         parameters: [
@@ -63332,7 +63524,7 @@ Note that tangent vectors are always unit vectors.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'static bool TryFitLineToPoints(IEnumerable<Point3d> points,Line fitLine)',
+        signature: 'static bool TryFitLineToPoints(IEnumerable<Point3d> points,out Line fitLine)',
         summary: 'Attempt to fit a line through a set of points.',
         since: '5.0',
         parameters: [
@@ -63614,7 +63806,7 @@ This amounts to the same as calling NurbsCurve.CreateFromLine().`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool TryGetPlane(Plane plane)',
+        signature: 'bool TryGetPlane(out Plane plane)',
         summary: `Gets a plane that contains the line. The origin of the plane is at the start of the line.
 If possible, a plane parallel to the world XY, YZ, or ZX plane is returned.`,
         since: '5.0',
@@ -63739,7 +63931,7 @@ If possible, a plane parallel to the world XY, YZ, or ZX plane is returned.`,
         since: '5.0'
       },
       {
-        signature: 'bool Get3dPoints(Point3d extensionLine1End,Point3d extensionLine2End,Point3d arrowhead1End,Point3d arrowhead2End,Point3d dimlinepoint,Point3d textpoint)',
+        signature: 'bool Get3dPoints(out Point3d extensionLine1End,out Point3d extensionLine2End,out Point3d arrowhead1End,out Point3d arrowhead2End,out Point3d dimlinepoint,out Point3d textpoint)',
         summary: 'Get locations of dimension\'s 3d points',
         since: '6.0',
         parameters: [
@@ -63771,14 +63963,14 @@ If possible, a plane parallel to the world XY, YZ, or ZX plane is returned.`,
         returns: 'True = success'
       },
       {
-        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,IEnumerable<Line> lines)'
+        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,out IEnumerable<Line> lines)'
       },
       {
         signature: 'string GetDistanceDisplayText(UnitSystem unitsystem,DimensionStyle style)',
         since: '6.0'
       },
       {
-        signature: 'bool GetTextRectangle(Point3d[] corners)',
+        signature: 'bool GetTextRectangle(out Point3d[] corners)',
         since: '6.0'
       },
       {
@@ -64075,28 +64267,7 @@ Matrix might be non-invertible (singular) and the return value will be false.`,
         returns: 'True if operation succeeded; otherwise false.'
       },
       {
-        signature: 'int RowReduce(double zeroTolerance,double determinant,double pivot)',
-        summary: 'Row reduces a matrix to calculate rank and determinant.',
-        since: '5.0',
-        parameters: [
-          {
-            name: 'zeroTolerance',
-            summary: `(>=0.0) zero tolerance for pivot test.  If a the absolute value of
-a pivot is <= zeroTolerance, then the pivot is assumed to be zero.`
-          },
-          {
-            name: 'determinant',
-            summary: 'value of determinant is returned here.'
-          },
-          {
-            name: 'pivot',
-            summary: 'value of the smallest pivot is returned here.'
-          }
-        ],
-        returns: 'Rank of the matrix.'
-      },
-      {
-        signature: 'int RowReduce(double zeroTolerance,double[] b,double pivot)',
+        signature: 'int RowReduce(double zeroTolerance,double[] b,out double pivot)',
         summary: `Row reduces a matrix as the first step in solving M*X=b where
 b is a column of values.`,
         since: '5.0',
@@ -64118,7 +64289,28 @@ is <= zero_tolerance, then the pivot is assumed to be zero.`
         returns: 'Rank of the matrix.'
       },
       {
-        signature: 'int RowReduce(double zeroTolerance,Point3d[] b,double pivot)',
+        signature: 'int RowReduce(double zeroTolerance,out double determinant,out double pivot)',
+        summary: 'Row reduces a matrix to calculate rank and determinant.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'zeroTolerance',
+            summary: `(>=0.0) zero tolerance for pivot test.  If a the absolute value of
+a pivot is <= zeroTolerance, then the pivot is assumed to be zero.`
+          },
+          {
+            name: 'determinant',
+            summary: 'value of determinant is returned here.'
+          },
+          {
+            name: 'pivot',
+            summary: 'value of the smallest pivot is returned here.'
+          }
+        ],
+        returns: 'Rank of the matrix.'
+      },
+      {
+        signature: 'int RowReduce(double zeroTolerance,Point3d[] b,out double pivot)',
         summary: `Row reduces a matrix as the first step in solving M*X=b where
 b is a column of 3d points.`,
         since: '5.0',
@@ -65298,7 +65490,7 @@ into a single large mesh.`,
         ]
       },
       {
-        signature: 'bool Check(TextLog textLog,MeshCheckParameters parameters)',
+        signature: 'bool Check(TextLog textLog,ref MeshCheckParameters parameters)',
         summary: `Examines the mesh and logs a description of what it finds right or wrong.
 The various properties the function checks for are described in MeshCheckParameters.`,
         since: '7.0',
@@ -65359,7 +65551,7 @@ This parameter is ignored if you pass 0.0 for a maximumDistance.`
         returns: 'The point on the mesh closest to testPoint, or Point3d.Unset on failure.'
       },
       {
-        signature: 'int ClosestPoint(Point3d testPoint,Point3d pointOnMesh,double maximumDistance)',
+        signature: 'int ClosestPoint(Point3d testPoint,out Point3d pointOnMesh,double maximumDistance)',
         summary: 'Gets the point on the mesh that is closest to a given test point.',
         since: '5.0',
         parameters: [
@@ -65384,7 +65576,7 @@ This parameter is ignored if you pass 0.0 for a maximumDistance.`
 -1 if not successful; the value of pointOnMesh is undefined.`
       },
       {
-        signature: 'int ClosestPoint(Point3d testPoint,Point3d pointOnMesh,Vector3d normalAtPoint,double maximumDistance)',
+        signature: 'int ClosestPoint(Point3d testPoint,out Point3d pointOnMesh,out Vector3d normalAtPoint,double maximumDistance)',
         summary: 'Gets the point on the mesh that is closest to a given test point.',
         since: '5.0',
         parameters: [
@@ -65798,7 +65990,7 @@ viewport is used to determine how the outlines are projected.`,
         ]
       },
       {
-        signature: 'bool GetSelfIntersections(double tolerance,Polyline[] intersections,bool overlapsPolylines,Polyline[] overlapsPolylinesResult,bool overlapsMesh,Mesh overlapsMeshResult,TextLog textLog,CancellationToken cancel,IProgress<double> progress)',
+        signature: 'bool GetSelfIntersections(double tolerance,out Polyline[] intersections,bool overlapsPolylines,out Polyline[] overlapsPolylinesResult,bool overlapsMesh,out Mesh overlapsMeshResult,TextLog textLog,CancellationToken cancel,IProgress<double> progress)',
         summary: 'Gets the self intersections of this mesh.',
         since: '7.0'
       },
@@ -65831,7 +66023,7 @@ makes two new edges using that point.`,
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'bool IsManifold(bool topologicalTest,bool isOriented,bool hasBoundary)',
+        signature: 'bool IsManifold(bool topologicalTest,out bool isOriented,out bool hasBoundary)',
         summary: `Gets a value indicating whether or not the mesh is manifold.
 A manifold mesh does not have any edge that borders more than two faces.`,
         since: '5.0',
@@ -66005,7 +66197,7 @@ If solidify is False it acts exactly as the Offset(distance) function.`,
         returns: 'A new mesh on success, or None on failure.'
       },
       {
-        signature: 'Mesh Offset(double distance,bool solidify,Vector3d direction,List<int> wallFacesOut)',
+        signature: 'Mesh Offset(double distance,bool solidify,Vector3d direction,out List<int> wallFacesOut)',
         summary: `Makes a new mesh with vertices offset a distance along the direction parameter.
 Optionally, based on the value of solidify, adds the input mesh and a ribbon of faces along any naked edges.
 If solidify is False it acts exactly as the Offset(distance) function. Returns list of wall faces, i.e. the
@@ -66243,7 +66435,7 @@ If False then will run on main thread.`
         returns: 'True if mesh is successfully reduced and False if mesh could not be reduced for some reason.'
       },
       {
-        signature: 'bool Reduce(int desiredPolygonCount,bool allowDistortion,int accuracy,bool normalizeSize,CancellationToken cancelToken,IProgress<double> progress,string problemDescription)',
+        signature: 'bool Reduce(int desiredPolygonCount,bool allowDistortion,int accuracy,bool normalizeSize,CancellationToken cancelToken,IProgress<double> progress,out string problemDescription)',
         summary: 'Reduce polygon count',
         since: '6.0',
         parameters: [
@@ -66280,7 +66472,7 @@ to use. Greater number gives more accurate results`
         returns: 'True if mesh is successfully reduced and False if mesh could not be reduced for some reason.'
       },
       {
-        signature: 'bool Reduce(int desiredPolygonCount,bool allowDistortion,int accuracy,bool normalizeSize,CancellationToken cancelToken,IProgress<double> progress,string problemDescription,bool threaded)',
+        signature: 'bool Reduce(int desiredPolygonCount,bool allowDistortion,int accuracy,bool normalizeSize,CancellationToken cancelToken,IProgress<double> progress,out string problemDescription,bool threaded)',
         summary: 'Reduce polygon count',
         since: '6.15',
         parameters: [
@@ -66362,7 +66554,7 @@ If False then will run on main thread.`
         ]
       },
       {
-        signature: 'void SetCachedTextureCoordinates(TextureMapping tm,Transform xf)',
+        signature: 'void SetCachedTextureCoordinates(TextureMapping tm,ref Transform xf)',
         summary: 'Set cached texture coordinates using the specified mapping.',
         since: '5.10'
       },
@@ -67138,7 +67330,7 @@ The lower the value, the higher the resolution of the displaced mesh.`,
         since: '6.3'
       },
       {
-        signature: 'bool ExtrudedMesh(Mesh extrudedMeshOut)',
+        signature: 'bool ExtrudedMesh(out Mesh extrudedMeshOut)',
         summary: 'Creates new extruded mesh. Returns True if any edges or faces were extruded.',
         since: '6.3',
         parameters: [
@@ -67149,7 +67341,7 @@ The lower the value, the higher the resolution of the displaced mesh.`,
         ]
       },
       {
-        signature: 'bool ExtrudedMesh(Mesh extrudedMeshOut,List<ComponentIndex> componentIndicesOut)',
+        signature: 'bool ExtrudedMesh(out Mesh extrudedMeshOut,out List<ComponentIndex> componentIndicesOut)',
         summary: 'Creates new extruded mesh. Returns True if any edges or faces were extruded.',
         parameters: [
           {
@@ -67398,7 +67590,7 @@ this function takes actual point locations into account.`,
         returns: 'True if the face is considered valid, False if not.'
       },
       {
-        signature: 'bool IsValidEx(Point3d[] points)',
+        signature: 'bool IsValidEx(ref Point3d[] points)',
         summary: `Gets a value indicating whether or not this mesh face
 is considered to be valid. Unlike the simple IsValid function,
 this function takes actual point locations into account.`,
@@ -67425,7 +67617,7 @@ actual vertex locations into account.`,
         returns: 'True if the face was repaired, False if not.'
       },
       {
-        signature: 'bool RepairEx(Point3d[] points)',
+        signature: 'bool RepairEx(ref Point3d[] points)',
         summary: `Attempts to repair this mesh face by taking both face indexes and
 actual vertex locations into account.`,
         since: '6.5',
@@ -68051,7 +68243,7 @@ triangle defined by vi[1], vi[2], vi[3].`,
     ],
     methods: [
       {
-        signature: 'bool GetTriangle(int a,int b,int c)',
+        signature: 'bool GetTriangle(out int a,out int b,out int c)',
         summary: `Gets the mesh face indices of the triangle where the
 intersection is on the face takes into consideration
 the way the quad was split during the intersection.`,
@@ -68250,7 +68442,7 @@ be achieved with the using keyword (Using in VB.Net).`,
     interfaces: ['IDisposable'],
     methods: [
       {
-        signature: 'MeshFace* FacesArray(int length)',
+        signature: 'MeshFace* FacesArray(out int length)',
         summary: `Retrieves a pointer to the raw faces array, which uses 4 integers for each face.
 MeshFace.`,
         since: '6.20',
@@ -68264,7 +68456,7 @@ MeshFace.`,
 and item length-1 is the last valid one.`
       },
       {
-        signature: 'Vector3f* NormalVector3fArray(int length)',
+        signature: 'Vector3f* NormalVector3fArray(out int length)',
         summary: `Retrieves a pointer to the raw mesh vertex normal array, which uses vectors
 defined with single precision floating point numbers, or throws an exception if none is available.`,
         since: '6.20',
@@ -68283,7 +68475,7 @@ and item length-1 is the last valid one.`
         since: '6.0'
       },
       {
-        signature: 'Point3d* VertexPoint3dArray(int length)',
+        signature: 'Point3d* VertexPoint3dArray(out int length)',
         summary: `Retrieves a pointer to the raw mesh vertex array, which uses coordinates
 defined with double precision floating point numbers, or throws an exception if none is available.`,
         since: '6.20',
@@ -68297,7 +68489,7 @@ defined with double precision floating point numbers, or throws an exception if 
 and item length-1 is the last valid one. If no array is available, None is returned.`
       },
       {
-        signature: 'Point3f* VertexPoint3fArray(int length)',
+        signature: 'Point3f* VertexPoint3fArray(out int length)',
         summary: `Retrieves a pointer to the raw mesh vertex array, which uses coordinates
 defined with single precision floating point numbers, or None if none is available.`,
         since: '6.0',
@@ -69322,7 +69514,7 @@ When in doubt, use 12.`
       {
         signature: 'static NurbsCurve CreateSpiral(Point3d axisStart,Vector3d axisDir,Point3d radiusPoint,double pitch,double turnCount,double radius0,double radius1)',
         summary: `Creates a C1 cubic NURBS approximation of a helix or spiral. For a helix,
-you may have radius0 == radius1. For a spiral radius0 == radius0 produces
+you may have radius0 == radius1. For a spiral radius0 == radius1 produces
 a circle. Zero and negative radii are permissible.`,
         since: '5.2',
         parameters: [
@@ -69611,7 +69803,7 @@ the number of point returned by NurbsCurve.GrevillePoints(false).`
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'bool UVNDirectionsAt(double t,Vector3d uDir,Vector3d vDir,Vector3d nDir)',
+        signature: 'bool UVNDirectionsAt(double t,out Vector3d uDir,out Vector3d vDir,out Vector3d nDir)',
         summary: 'Calculates the u, V, and N directions of a NURBS curve at a parameter similar to the method used by Rhino\'s MoveUVN command.',
         since: '7.0',
         parameters: [
@@ -69998,7 +70190,7 @@ This is the same as calling  with tolerance 0.`,
         returns: 'A new NURBS surface, or None on error.'
       },
       {
-        signature: 'static NurbsSurface CreateNetworkSurface(IEnumerable<Curve> curves,int continuity,double edgeTolerance,double interiorTolerance,double angleTolerance,int error)',
+        signature: 'static NurbsSurface CreateNetworkSurface(IEnumerable<Curve> curves,int continuity,double edgeTolerance,double interiorTolerance,double angleTolerance,out int error)',
         summary: 'Builds a surface from an auto-sorted network of curves/edges.',
         since: '5.0',
         parameters: [
@@ -70032,7 +70224,7 @@ the failure occurred.  0 = success,  1 = curve sorter failed, 2 = network initia
         returns: 'A NurbsSurface or None on failure.'
       },
       {
-        signature: 'static NurbsSurface CreateNetworkSurface(IEnumerable<Curve> uCurves,int uContinuityStart,int uContinuityEnd,IEnumerable<Curve> vCurves,int vContinuityStart,int vContinuityEnd,double edgeTolerance,double interiorTolerance,double angleTolerance,int error)',
+        signature: 'static NurbsSurface CreateNetworkSurface(IEnumerable<Curve> uCurves,int uContinuityStart,int uContinuityEnd,IEnumerable<Curve> vCurves,int vContinuityStart,int vContinuityEnd,double edgeTolerance,double interiorTolerance,double angleTolerance,out int error)',
         summary: 'Builds a surface from an ordered network of curves/edges.',
         since: '5.0',
         parameters: [
@@ -70158,7 +70350,7 @@ the failure occurred.  0 = success,  1 = curve sorter failed, 2 = network initia
         returns: 'A NurbsSurface on success or None on failure.'
       },
       {
-        signature: 'static bool MakeCompatible(Surface surface0,Surface surface1,NurbsSurface nurb0,NurbsSurface nurb1)',
+        signature: 'static bool MakeCompatible(Surface surface0,Surface surface1,out NurbsSurface nurb0,out NurbsSurface nurb1)',
         summary: 'For expert use only. Makes a pair of compatible NURBS surfaces based on two input surfaces.',
         since: '6.0',
         parameters: [
@@ -70236,7 +70428,7 @@ Degrees should be number between and including 1 and 11.`
         returns: 'True if the operation succeeded; otherwise, false.'
       },
       {
-        signature: 'bool UVNDirectionsAt(double u,double v,Vector3d uDir,Vector3d vDir,Vector3d nDir)',
+        signature: 'bool UVNDirectionsAt(double u,double v,out Vector3d uDir,out Vector3d vDir,out Vector3d nDir)',
         summary: 'Calculates the U, V, and N directions of a NURBS surface at a u,v parameter similar to the method used by Rhino\'s MoveUVN command.',
         since: '7.0',
         parameters: [
@@ -70594,7 +70786,7 @@ information and the equation jibes with point and z-axis.`,
     ],
     methods: [
       {
-        signature: 'static PlaneFitResult FitPlaneToPoints(IEnumerable<Point3d> points,Plane plane)',
+        signature: 'static PlaneFitResult FitPlaneToPoints(IEnumerable<Point3d> points,out Plane plane)',
         summary: 'Fit a plane through a collection of points.',
         since: '5.0',
         parameters: [
@@ -70610,7 +70802,7 @@ information and the equation jibes with point and z-axis.`,
         returns: 'A value indicating the result of the operation.'
       },
       {
-        signature: 'static PlaneFitResult FitPlaneToPoints(IEnumerable<Point3d> points,Plane plane,double maximumDeviation)',
+        signature: 'static PlaneFitResult FitPlaneToPoints(IEnumerable<Point3d> points,out Plane plane,out double maximumDeviation)',
         summary: 'Fit a plane through a collection of points.',
         since: '5.0',
         parameters: [
@@ -70636,7 +70828,7 @@ information and the equation jibes with point and z-axis.`,
         returns: 'A plane with the same values as this item.'
       },
       {
-        signature: 'bool ClosestParameter(Point3d testPoint,double s,double t)',
+        signature: 'bool ClosestParameter(Point3d testPoint,out double s,out double t)',
         summary: 'Gets the parameters of the point on the plane closest to a test point.',
         since: '5.0',
         parameters: [
@@ -70670,7 +70862,7 @@ False if the point could not be projected successfully.`
 or Point3d.Unset on failure.`
       },
       {
-        signature: 'bool DistanceTo(BoundingBox bbox,double min,double max)',
+        signature: 'bool DistanceTo(BoundingBox bbox,out double min,out double max)',
         summary: 'Returns the signed minimum and maximum distances from bounding box to this plane.',
         since: '6.0',
         parameters: [
@@ -70731,7 +70923,7 @@ If the point is below the plane, a negative distance is returned.`,
         returns: 'True if plane has the same components as this plane; False otherwise.'
       },
       {
-        signature: 'bool ExtendThroughBox(BoundingBox box,Interval s,Interval t)',
+        signature: 'bool ExtendThroughBox(BoundingBox box,out Interval s,out Interval t)',
         summary: 'Extends this plane through a bounding box.',
         since: '5.0',
         parameters: [
@@ -70755,7 +70947,7 @@ encompass the Box.`
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool ExtendThroughBox(Box box,Interval s,Interval t)',
+        signature: 'bool ExtendThroughBox(Box box,out Interval s,out Interval t)',
         summary: 'Extend this plane through a Box.',
         since: '5.0',
         parameters: [
@@ -70831,7 +71023,7 @@ encompass the Box.`
         returns: 'plane.origin + u*plane.xaxis + v*plane.yaxis + z*plane.zaxis.'
       },
       {
-        signature: 'bool RemapToPlaneSpace(Point3d ptSample,Point3d ptPlane)',
+        signature: 'bool RemapToPlaneSpace(Point3d ptSample,out Point3d ptPlane)',
         summary: 'Convert a point from World space coordinates into Plane space coordinates.',
         since: '5.0',
         parameters: [
@@ -71885,7 +72077,7 @@ Also, removes points from the list if their common distance exceeds a specified 
         returns: 'A new point that is the difference of point minus vector.'
       },
       {
-        signature: 'static bool TryParse(string input,Point3d result)',
+        signature: 'static bool TryParse(string input,out Point3d result)',
         summary: 'Converts the string representation of a point to the equivalent Point3d structure.',
         since: '6.12',
         parameters: [
@@ -73093,7 +73285,7 @@ If polycurve_parameter < Domain.Min(), then 0 is returned.
 If polycurve_parameter > Domain.Max(), then Count()-1 is returned.`
       },
       {
-        signature: 'int SegmentIndexes(Interval subdomain,int segmentIndex0,int segmentIndex1)',
+        signature: 'int SegmentIndexes(Interval subdomain,out int segmentIndex0,out int segmentIndex1)',
         summary: 'Finds the segments that overlap the Polycurve sub domain.',
         since: '5.0',
         parameters: [
@@ -73926,7 +74118,7 @@ plane0.zaxis to plane1.zaxis.`,
         returns: 'A signed number.'
       },
       {
-        signature: 'bool GetRotation(double angle,Vector3d axis)',
+        signature: 'bool GetRotation(out double angle,out Vector3d axis)',
         summary: 'Returns the rotation defined by the quaternion.',
         since: '5.0',
         parameters: [
@@ -73942,7 +74134,7 @@ plane0.zaxis to plane1.zaxis.`,
         returns: 'True if the operation succeeded; otherwise, false.'
       },
       {
-        signature: 'bool GetRotation(Plane plane)',
+        signature: 'bool GetRotation(out Plane plane)',
         summary: `Returns the frame created by applying the quaternion's rotation
 to the canonical world frame (1,0,0),(0,1,0),(0,0,1).`,
         since: '5.0',
@@ -74184,7 +74376,7 @@ and plane0.zaxis to plane1.zaxis.`,
         ]
       },
       {
-        signature: 'bool Get3dPoints(Point3d centerpoint,Point3d radiuspoint,Point3d dimlinepoint,Point3d kneepoint)',
+        signature: 'bool Get3dPoints(out Point3d centerpoint,out Point3d radiuspoint,out Point3d dimlinepoint,out Point3d kneepoint)',
         summary: 'Get locations of dimension\'s 3d points',
         since: '6.0',
         parameters: [
@@ -74207,14 +74399,14 @@ and plane0.zaxis to plane1.zaxis.`,
         ]
       },
       {
-        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,IEnumerable<Line> lines)'
+        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,out IEnumerable<Line> lines)'
       },
       {
         signature: 'string GetDistanceDisplayText(UnitSystem unitsystem,DimensionStyle style)',
         since: '6.0'
       },
       {
-        signature: 'bool GetTextRectangle(Point3d[] corners)',
+        signature: 'bool GetTextRectangle(out Point3d[] corners)',
         since: '6.0'
       }
     ]
@@ -74477,7 +74669,7 @@ This method should not be used as a Rectangle fitter.`,
 if the polyline does not represent a rectangle.`
       },
       {
-        signature: 'static Rectangle3d CreateFromPolyline(IEnumerable<Point3d> polyline,double deviation,double angleDeviation)',
+        signature: 'static Rectangle3d CreateFromPolyline(IEnumerable<Point3d> polyline,out double deviation,out double angleDeviation)',
         summary: `Attempts to create a rectangle from a polyline. This method only works well for
 polylines that already closely resemble rectangles. If the polyline contains
 more than four vertices, the least significant ones will be ignored. If the
@@ -75982,7 +76174,7 @@ are morphed.`,
         returns: 'True on success, False on failure.'
       },
       {
-        signature: 'bool Morph(Plane plane)',
+        signature: 'bool Morph(ref Plane plane)',
         summary: 'Apply the space morph to a plane.',
         since: '6.0',
         parameters: [
@@ -76127,7 +76319,7 @@ at V value -Math.Pi/2.`,
         returns: 'The Sphere that best approximates the points or Sphere.Unset on failure.'
       },
       {
-        signature: 'bool ClosestParameter(Point3d testPoint,double longitudeRadians,double latitudeRadians)',
+        signature: 'bool ClosestParameter(Point3d testPoint,out double longitudeRadians,out double latitudeRadians)',
         summary: 'Finds the angle parameters on this sphere that are closest to a test point.',
         since: '5.0',
         parameters: [
@@ -77199,7 +77391,7 @@ strength of the editing falls off smoothly.`
         returns: 'The soft edited surface if successful. None on failure.'
       },
       {
-        signature: 'bool ClosestPoint(Point3d testPoint,double u,double v)',
+        signature: 'bool ClosestPoint(Point3d testPoint,out double u,out double v)',
         summary: 'Input the parameters of the point on the surface that is closest to testPoint.',
         since: '5.0',
         parameters: [
@@ -77276,7 +77468,7 @@ strength of the editing falls off smoothly.`
         returns: 'An interval value.'
       },
       {
-        signature: 'bool Evaluate(double u,double v,int numberDerivatives,Point3d point,Vector3d[] derivatives)',
+        signature: 'bool Evaluate(double u,double v,int numberDerivatives,out Point3d point,out Vector3d[] derivatives)',
         summary: 'Evaluates a surface mathematically.',
         since: '5.0',
         parameters: [
@@ -77345,7 +77537,7 @@ False for a C1- ruled extension.`
         returns: 'A surface, or None on error.'
       },
       {
-        signature: 'bool FrameAt(double u,double v,Plane frame)',
+        signature: 'bool FrameAt(double u,double v,out Plane frame)',
         summary: `Computes the orient plane on a surface given a U and V parameter.
 This is the simple evaluation call with no error handling.`,
         since: '5.0',
@@ -77366,7 +77558,7 @@ This is the simple evaluation call with no error handling.`,
         returns: 'True if this operation succeeded; otherwise false.'
       },
       {
-        signature: 'bool GetNextDiscontinuity(int direction,Continuity continuityType,double t0,double t1,double t)',
+        signature: 'bool GetNextDiscontinuity(int direction,Continuity continuityType,double t0,double t1,out double t)',
         summary: 'Searches for a derivative, tangent, or curvature discontinuity.',
         since: '5.0',
         parameters: [
@@ -77404,7 +77596,7 @@ discontinuous at the ends of their domains.  All closed curves (IsClosed()=true)
 at least C0_locus_continuous at the ends of their domains.`
       },
       {
-        signature: 'bool GetNurbsFormParameterFromSurfaceParameter(double surfaceS,double surfaceT,double nurbsS,double nurbsT)',
+        signature: 'bool GetNurbsFormParameterFromSurfaceParameter(double surfaceS,double surfaceT,out double nurbsS,out double nurbsT)',
         summary: 'Translates a parameter from the current surface to the parameter space of the surface returned by ToNurbsSurface().',
         since: '6.0',
         parameters: [
@@ -77440,7 +77632,7 @@ at least C0_locus_continuous at the ends of their domains.`
         returns: 'An array with span vectors; or None on error.'
       },
       {
-        signature: 'bool GetSurfaceParameterFromNurbsFormParameter(double nurbsS,double nurbsT,double surfaceS,double surfaceT)',
+        signature: 'bool GetSurfaceParameterFromNurbsFormParameter(double nurbsS,double nurbsT,out double surfaceS,out double surfaceT)',
         summary: 'Translates a parameter from a value on the surface returned by ToNurbsSurface() to the current surface.',
         since: '6.0',
         parameters: [
@@ -77464,7 +77656,7 @@ at least C0_locus_continuous at the ends of their domains.`
         returns: 'True if the operation succeeded; otherwise, false.'
       },
       {
-        signature: 'bool GetSurfaceSize(double width,double height)',
+        signature: 'bool GetSurfaceSize(out double width,out double height)',
         summary: `Gets an estimate of the size of the rectangle that would be created
 if the 3d surface where flattened into a rectangle.`,
         since: '5.0',
@@ -77808,7 +78000,7 @@ the surface to the plane is <= tolerance.`
         returns: 'True if the surface is a portion of a torus.'
       },
       {
-        signature: 'bool LocalClosestPoint(Point3d testPoint,double seedU,double seedV,double u,double v)',
+        signature: 'bool LocalClosestPoint(Point3d testPoint,double seedU,double seedV,out double u,out double v)',
         summary: `Find parameters of the point on a surface that is locally closest to
 the testPoint. The search for a local close point starts at seed parameters.`,
         since: '6.3',
@@ -78189,7 +78381,7 @@ tolerance of 0.0 is used.`,
         returns: 'NurbsSurface on success, None on failure.'
       },
       {
-        signature: 'NurbsSurface ToNurbsSurface(double tolerance,int accuracy)',
+        signature: 'NurbsSurface ToNurbsSurface(double tolerance,out int accuracy)',
         summary: 'Gets a NURBS surface representation of this surface.',
         since: '5.0',
         parameters: [
@@ -78244,7 +78436,7 @@ and cones.`
         returns: 'SubSurface on success, None on failure.'
       },
       {
-        signature: 'bool TryGetCone(Cone cone)',
+        signature: 'bool TryGetCone(out Cone cone)',
         summary: 'Tests a surface to see if it is a portion of a cone within RhinoMath.ZeroTolerance and return the cone.',
         since: '5.0',
         parameters: [
@@ -78256,7 +78448,7 @@ and cones.`
         returns: 'True if the surface is a portion of a cone.'
       },
       {
-        signature: 'bool TryGetCone(Cone cone,double tolerance)',
+        signature: 'bool TryGetCone(out Cone cone,double tolerance)',
         summary: 'Tests a surface to see if it is a portion of a cone and returns the cone.',
         since: '5.0',
         parameters: [
@@ -78272,7 +78464,7 @@ and cones.`
         returns: 'True if the surface is a portion of a cone.'
       },
       {
-        signature: 'bool TryGetCylinder(Cylinder cylinder)',
+        signature: 'bool TryGetCylinder(out Cylinder cylinder)',
         summary: 'Tests a surface to see if it is a portion of a cylinder within RhinoMath.ZeroTolerance and return the cylinder.',
         since: '5.0',
         parameters: [
@@ -78284,7 +78476,7 @@ and cones.`
         returns: 'True if the surface is a portion of a cylinder.'
       },
       {
-        signature: 'bool TryGetCylinder(Cylinder cylinder,double tolerance)',
+        signature: 'bool TryGetCylinder(out Cylinder cylinder,double tolerance)',
         summary: 'Tests a surface to see if it is a portion of a cylinder and return the infinite cylinder.',
         since: '5.0',
         parameters: [
@@ -78300,7 +78492,7 @@ and cones.`
         returns: 'True if the surface is a portion of a cylinder.'
       },
       {
-        signature: 'bool TryGetFiniteCylinder(Cylinder cylinder,double tolerance)',
+        signature: 'bool TryGetFiniteCylinder(out Cylinder cylinder,double tolerance)',
         summary: 'Tests a surface with the assumption that it might be a right circular cylinder and returns this geometry.',
         since: '6.0',
         parameters: [
@@ -78316,7 +78508,7 @@ and cones.`
         returns: 'True if the surface is a portion of a cylinder.'
       },
       {
-        signature: 'bool TryGetPlane(Plane plane)',
+        signature: 'bool TryGetPlane(out Plane plane)',
         summary: 'Tests a surface for planarity and return the plane.',
         since: '5.0',
         parameters: [
@@ -78328,7 +78520,7 @@ and cones.`
         returns: 'True if there is a plane such that the maximum distance from the surface to the plane is <= RhinoMath.ZeroTolerance.'
       },
       {
-        signature: 'bool TryGetPlane(Plane plane,double tolerance)',
+        signature: 'bool TryGetPlane(out Plane plane,double tolerance)',
         summary: 'Tests a surface for planarity and return the plane.',
         since: '5.0',
         parameters: [
@@ -78344,7 +78536,7 @@ and cones.`
         returns: 'True if there is a plane such that the maximum distance from the surface to the plane is <= tolerance.'
       },
       {
-        signature: 'bool TryGetSphere(Sphere sphere)',
+        signature: 'bool TryGetSphere(out Sphere sphere)',
         summary: 'Test a surface to see if it is a portion of a sphere and return the sphere.',
         since: '5.0',
         parameters: [
@@ -78356,7 +78548,7 @@ and cones.`
         returns: 'True if the surface is a portion of a sphere.'
       },
       {
-        signature: 'bool TryGetSphere(Sphere sphere,double tolerance)',
+        signature: 'bool TryGetSphere(out Sphere sphere,double tolerance)',
         summary: 'Test a surface to see if it is a portion of a sphere and return the sphere.',
         since: '5.0',
         parameters: [
@@ -78372,7 +78564,7 @@ and cones.`
         returns: 'True if the surface is a portion of a sphere.'
       },
       {
-        signature: 'bool TryGetTorus(Torus torus)',
+        signature: 'bool TryGetTorus(out Torus torus)',
         summary: 'Tests a surface to see if it is a portion of a torus within RhinoMath.ZeroTolerance and returns the torus.',
         since: '5.0',
         parameters: [
@@ -78384,7 +78576,7 @@ and cones.`
         returns: 'True if the surface is a portion of a torus.'
       },
       {
-        signature: 'bool TryGetTorus(Torus torus,double tolerance)',
+        signature: 'bool TryGetTorus(out Torus torus,double tolerance)',
         summary: 'Tests a surface to see if it is a portion of a torus and returns the torus.',
         since: '5.0',
         parameters: [
@@ -80004,7 +80196,7 @@ M33 has highest value, then M32, etc..`,
         returns: '-1 if this < other; 0 if both are equal; 1 otherwise.'
       },
       {
-        signature: 'bool DecomposeAffine(Transform linear,Vector3d translation)',
+        signature: 'bool DecomposeAffine(out Transform linear,out Vector3d translation)',
         summary: `Decomposes an affine transformation.
 An affine transformation can be broken into a linear transformation and a translation.
 Note, a perspective transformation is not affine.`,
@@ -80022,7 +80214,7 @@ Note, a perspective transformation is not affine.`,
         returns: 'True if successful decomposition.'
       },
       {
-        signature: 'bool DecomposeAffine(Vector3d translation,Transform linear)',
+        signature: 'bool DecomposeAffine(out Vector3d translation,out Transform linear)',
         summary: `Decomposes an affine transformation.
 An affine transformation can be broken into a linear transformation and a translation.
 Note, a perspective transformation is not affine.`,
@@ -80040,7 +80232,7 @@ Note, a perspective transformation is not affine.`,
         returns: 'True if successful decomposition.'
       },
       {
-        signature: 'bool DecomposeAffine(Vector3d translation,Transform rotation,Transform orthogonal,Vector3d diagonal)',
+        signature: 'bool DecomposeAffine(out Vector3d translation,out Transform rotation,out Transform orthogonal,out Vector3d diagonal)',
         summary: `An affine transformation can be decomposed into a Symmetric, Rotation and Translation.
 Then the Symmetric component may be further decomposed as non-uniform scale in an orthonormal
 coordinate system.`,
@@ -80066,7 +80258,7 @@ coordinate system.`,
         returns: 'True if successful decomposition.'
       },
       {
-        signature: 'TransformRigidType DecomposeRigid(Vector3d translation,Transform rotation,double tolerance)',
+        signature: 'TransformRigidType DecomposeRigid(out Vector3d translation,out Transform rotation,double tolerance)',
         summary: 'Decomposes a rigid transformation. The transformation must be affine.',
         since: '6.12',
         parameters: [
@@ -80086,7 +80278,7 @@ coordinate system.`,
         returns: 'The rigid type.'
       },
       {
-        signature: 'TransformSimilarityType DecomposeSimilarity(Vector3d translation,double dilation,Transform rotation,double tolerance)',
+        signature: 'TransformSimilarityType DecomposeSimilarity(out Vector3d translation,out double dilation,out Transform rotation,double tolerance)',
         summary: `Decomposes a similarity transformation. The transformation must be affine.
 A similarity transformation can be broken into a sequence of a dilation, translation, rotation, and a reflection.`,
         since: '6.12',
@@ -80111,7 +80303,7 @@ A similarity transformation can be broken into a sequence of a dilation, transla
         returns: 'The similarity type.'
       },
       {
-        signature: 'bool DecomposeSymmetric(Transform matrix,Vector3d diagonal)',
+        signature: 'bool DecomposeSymmetric(out Transform matrix,out Vector3d diagonal)',
         summary: `A Symmetric linear transformation can be decomposed A = Q * Diag * Q ^ T, where Diag is a diagonal
 transformation. Diag[i][i] is an eigenvalue of A and the i-th column of Q is a corresponding
 unit length eigenvector. Note, this transformation must be Linear and Symmetric.`,
@@ -80152,7 +80344,7 @@ unit length eigenvector. Note, this transformation must be Linear and Symmetric.
         returns: 'True if other has the same value as this transform; otherwise, false.'
       },
       {
-        signature: 'bool GetEulerZYZ(double alpha,double beta,double gamma)',
+        signature: 'bool GetEulerZYZ(out double alpha,out double beta,out double gamma)',
         summary: 'Find the Euler angles for a rotation transformation.',
         since: '6.11',
         parameters: [
@@ -80179,7 +80371,7 @@ If false, then this is not a rotation.`
         returns: 'A number that can be used to hash this transform in a dictionary.'
       },
       {
-        signature: 'bool GetYawPitchRoll(double yaw,double pitch,double roll)',
+        signature: 'bool GetYawPitchRoll(out double yaw,out double pitch,out double roll)',
         summary: 'Find the Tait-Byran angles (also loosely called Euler angles) for a rotation transformation.',
         since: '6.11',
         parameters: [
@@ -80193,7 +80385,7 @@ If false, then this is not a rotation.`
           },
           {
             name: 'roll',
-            summary: 'Angle of rotation, in radians, about the Z axis.'
+            summary: 'Angle of rotation, in radians, about the X axis.'
           }
         ],
         returns: `If true, then RotationZYX(yaw, pitch, roll) = R_z(yaw) * R_y(pitch) * R_x(roll)
@@ -80293,7 +80485,7 @@ points.`,
         since: '5.9'
       },
       {
-        signature: 'bool TryGetInverse(Transform inverseTransform)',
+        signature: 'bool TryGetInverse(out Transform inverseTransform)',
         summary: 'Attempts to get the inverse transform of this transform.',
         since: '5.0',
         parameters: [
@@ -80547,7 +80739,19 @@ unroll anything.`,
         returns: 'The index of the text dot added by Unroller.AddFollowingGeometry if successful, otherwise -1.'
       },
       {
-        signature: 'Brep[] PerformUnroll(Curve[] unrolledCurves,Point3d[] unrolledPoints,TextDot[] unrolledDots)',
+        signature: 'int PerformUnroll(List<Brep> flatbreps)',
+        summary: 'Executes unrolling operations.',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'flatbreps',
+            summary: 'List of breps containing flattened results.'
+          }
+        ],
+        returns: 'Number of breps in result'
+      },
+      {
+        signature: 'Brep[] PerformUnroll(out Curve[] unrolledCurves,out Point3d[] unrolledPoints,out TextDot[] unrolledDots)',
         summary: 'Executes unrolling operations.',
         since: '5.0',
         parameters: [
@@ -80565,18 +80769,6 @@ unroll anything.`,
           }
         ],
         returns: 'An array of breps. This array can be empty.'
-      },
-      {
-        signature: 'int PerformUnroll(List<Brep> flatbreps)',
-        summary: 'Executes unrolling operations.',
-        since: '6.0',
-        parameters: [
-          {
-            name: 'flatbreps',
-            summary: 'List of breps containing flattened results.'
-          }
-        ],
-        returns: 'Number of breps in result'
       }
     ]
   },
@@ -82781,7 +82973,7 @@ closed and open meshes will pass the attribute filter.`
         since: '6.0'
       },
       {
-        signature: 'Commands.Result Get(Arc arc)',
+        signature: 'Commands.Result Get(out Arc arc)',
         summary: 'Perform the \'get\' operation.',
         since: '6.0'
       }
@@ -83003,7 +83195,7 @@ GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.`,
         returns: 'Option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionColor(LocalizeStringPair optionName,OptionColor colorValue)',
+        signature: 'int AddOptionColor(LocalizeStringPair optionName,ref OptionColor colorValue)',
         summary: 'Add a command line option to get colors and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83019,7 +83211,7 @@ GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.`,
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionColor(LocalizeStringPair optionName,OptionColor colorValue,string prompt)',
+        signature: 'int AddOptionColor(LocalizeStringPair optionName,ref OptionColor colorValue,string prompt)',
         summary: 'Add a command line option to get colors and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83039,7 +83231,7 @@ GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.`,
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionColor(string englishName,OptionColor colorValue)',
+        signature: 'int AddOptionColor(string englishName,ref OptionColor colorValue)',
         summary: 'Add a command line option to get colors and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83055,7 +83247,7 @@ GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.`,
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionColor(string englishName,OptionColor colorValue,string prompt)',
+        signature: 'int AddOptionColor(string englishName,ref OptionColor colorValue,string prompt)',
         summary: 'Add a command line option to get colors and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83075,7 +83267,7 @@ GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.`,
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue)',
+        signature: 'int AddOptionDouble(LocalizeStringPair optionName,ref OptionDouble numberValue)',
         summary: 'Adds a command line option to get numbers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83091,7 +83283,7 @@ GetObject.GetObjects(), etc., then call AcceptUndo(true) beforehand.`,
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue,string prompt)',
+        signature: 'int AddOptionDouble(LocalizeStringPair optionName,ref OptionDouble numberValue,string prompt)',
         summary: 'Adds a command line option to get numbers and automatically saves the value.',
         since: '5.0',
         parameters: [
@@ -83112,7 +83304,7 @@ option name is used as the get number prompt.`
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionDouble(string englishName,OptionDouble numberValue)',
+        signature: 'int AddOptionDouble(string englishName,ref OptionDouble numberValue)',
         summary: 'Adds a command line option to get numbers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83128,7 +83320,7 @@ option name is used as the get number prompt.`
         returns: 'Option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionDouble(string englishName,OptionDouble numberValue,string prompt)',
+        signature: 'int AddOptionDouble(string englishName,ref OptionDouble numberValue,string prompt)',
         summary: 'Adds a command line option to get numbers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83190,7 +83382,7 @@ option name is used as the get number prompt.`
         since: '5.4'
       },
       {
-        signature: 'int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue)',
+        signature: 'int AddOptionInteger(LocalizeStringPair optionName,ref OptionInteger intValue)',
         summary: 'Adds a command line option to get integers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83206,7 +83398,7 @@ option name is used as the get number prompt.`
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue,string prompt)',
+        signature: 'int AddOptionInteger(LocalizeStringPair optionName,ref OptionInteger intValue,string prompt)',
         summary: 'Adds a command line option to get integers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83227,7 +83419,7 @@ option name is used as the get number prompt.`
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionInteger(string englishName,OptionInteger intValue)',
+        signature: 'int AddOptionInteger(string englishName,ref OptionInteger intValue)',
         summary: 'Adds a command line option to get integers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83243,7 +83435,7 @@ option name is used as the get number prompt.`
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionInteger(string englishName,OptionInteger intValue,string prompt)',
+        signature: 'int AddOptionInteger(string englishName,ref OptionInteger intValue,string prompt)',
         summary: 'Adds a command line option to get integers and automatically save the value.',
         since: '5.0',
         parameters: [
@@ -83304,7 +83496,7 @@ option name is used as the get number prompt.`
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionToggle(LocalizeStringPair optionName,OptionToggle toggleValue)',
+        signature: 'int AddOptionToggle(LocalizeStringPair optionName,ref OptionToggle toggleValue)',
         summary: 'Adds a command line option to toggle a setting.',
         since: '5.0',
         parameters: [
@@ -83320,7 +83512,7 @@ option name is used as the get number prompt.`
         returns: 'option index value (>0) or 0 if option cannot be added.'
       },
       {
-        signature: 'int AddOptionToggle(string englishName,OptionToggle toggleValue)',
+        signature: 'int AddOptionToggle(string englishName,ref OptionToggle toggleValue)',
         summary: 'Adds a command line option to toggle a setting.',
         since: '5.0',
         parameters: [
@@ -83721,7 +83913,7 @@ the user making a decision, the GetResult.Timeout code is returned.`,
         since: '6.0'
       },
       {
-        signature: 'Commands.Result Get(Circle circle)',
+        signature: 'Commands.Result Get(out Circle circle)',
         summary: 'Perform the \'get\' operation.',
         since: '6.0'
       }
@@ -83795,7 +83987,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         since: '6.0'
       },
       {
-        signature: 'Commands.Result Get(Cone cone)',
+        signature: 'Commands.Result Get(out Cone cone)',
         summary: 'Prompt for the getting of a cone.',
         since: '6.0',
         parameters: [
@@ -83807,7 +83999,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,Cone cone)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,out Cone cone)',
         summary: 'Prompt for the getting of a mesh cone.',
         since: '7.0',
         parameters: [
@@ -83827,7 +84019,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,int capStyle,Cone cone)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,ref int capStyle,out Cone cone)',
         summary: 'Prompt for the getting of a mesh cone.',
         since: '7.0',
         parameters: [
@@ -83912,7 +84104,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         since: '6.0'
       },
       {
-        signature: 'Commands.Result Get(Cylinder cylinder)',
+        signature: 'Commands.Result Get(out Cylinder cylinder)',
         summary: 'Prompt for the getting of a cylinder.',
         since: '6.0',
         parameters: [
@@ -83924,7 +84116,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,Cylinder cylinder)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,out Cylinder cylinder)',
         summary: 'Prompt for the getting of a mesh cylinder.',
         since: '7.0',
         parameters: [
@@ -83944,7 +84136,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,int capStyle,Cylinder cylinder)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,ref int capStyle,out Cylinder cylinder)',
         summary: 'Prompt for the getting of a mesh cylinder.',
         since: '7.0',
         parameters: [
@@ -84014,7 +84206,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         since: '7.0'
       },
       {
-        signature: 'Commands.Result Get(NurbsSurface ellipsoid)',
+        signature: 'Commands.Result Get(out NurbsSurface ellipsoid)',
         summary: 'Prompt for the getting of a ellipsoid.',
         since: '7.0',
         parameters: [
@@ -84026,7 +84218,27 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,bool quadCaps,Mesh ellipsoid)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,out Mesh ellipsoid)',
+        summary: 'Prompt for the getting of a mesh ellipsoid.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'verticalFaces',
+            summary: 'The number of faces in the vertical direction.'
+          },
+          {
+            name: 'aroundFaces',
+            summary: 'The number of faces in the around direction'
+          },
+          {
+            name: 'ellipsoid',
+            summary: 'The ellipsoid in Mesh form.'
+          }
+        ],
+        returns: 'The result of the getting operation.'
+      },
+      {
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,ref bool quadCaps,out Mesh ellipsoid)',
         summary: 'Prompt for the getting of a mesh ellipsoid.',
         since: '7.0',
         parameters: [
@@ -84041,26 +84253,6 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
           {
             name: 'quadCaps',
             summary: 'Set True to create quad faces at the caps, False for triangles.'
-          },
-          {
-            name: 'ellipsoid',
-            summary: 'The ellipsoid in Mesh form.'
-          }
-        ],
-        returns: 'The result of the getting operation.'
-      },
-      {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,Mesh ellipsoid)',
-        summary: 'Prompt for the getting of a mesh ellipsoid.',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'verticalFaces',
-            summary: 'The number of faces in the vertical direction.'
-          },
-          {
-            name: 'aroundFaces',
-            summary: 'The number of faces in the around direction'
           },
           {
             name: 'ellipsoid',
@@ -84275,7 +84467,7 @@ start point is interactively picked.`,
         since: '5.1'
       },
       {
-        signature: 'Commands.Result Get(Line line)',
+        signature: 'Commands.Result Get(out Line line)',
         summary: 'Perform the \'get\' operation.',
         since: '5.1'
       },
@@ -85234,7 +85426,7 @@ If true, the point is returned when the left mouse button goes up.`
         returns: 'An array of points.'
       },
       {
-        signature: 'bool GetPlanarConstraint(RhinoViewport vp,Plane plane)',
+        signature: 'bool GetPlanarConstraint(ref RhinoViewport vp,out Plane plane)',
         since: '6.0'
       },
       {
@@ -85324,7 +85516,7 @@ reported by ModelAidSettings.Ortho and ModelAidSettings.Planar.`
         ]
       },
       {
-        signature: 'BrepFace PointOnBrep(double u,double v)',
+        signature: 'BrepFace PointOnBrep(out double u,out double v)',
         summary: `Use to determine if point was on a Brep face. If the point was on a Brep face,
 then the (u,v) are the face parameters for the point.`,
         since: '6.0',
@@ -85341,7 +85533,7 @@ then the (u,v) are the face parameters for the point.`,
         returns: 'The Brep face or None if the point was not on a Brep face.'
       },
       {
-        signature: 'Curve PointOnCurve(double t)',
+        signature: 'Curve PointOnCurve(out double t)',
         summary: 'Use to determine is point was on a curve.',
         since: '5.0',
         parameters: [
@@ -85362,7 +85554,7 @@ on an object an ObjRef is returned; otherwise None is returned.`,
         returns: 'A point object reference.'
       },
       {
-        signature: 'Surface PointOnSurface(double u,double v)',
+        signature: 'Surface PointOnSurface(out double u,out double v)',
         summary: `Use to determine if point was on a surface. If the point was on a surface,
 then the (u,v) are the surface parameters for the point. The point returned
 by Point() is the same as surface.PointAt(u,v).`,
@@ -85402,7 +85594,7 @@ happening.`,
         since: '6.0'
       },
       {
-        signature: 'bool TryGetBasePoint(Point3d basePoint)',
+        signature: 'bool TryGetBasePoint(out Point3d basePoint)',
         since: '5.0'
       }
     ]
@@ -85536,7 +85728,7 @@ happening.`,
         since: '6.0'
       },
       {
-        signature: 'Commands.Result Get(Polyline polyline)',
+        signature: 'Commands.Result Get(out Polyline polyline)',
         summary: 'Perform the \'get\' operation.',
         since: '6.0'
       },
@@ -85647,7 +85839,7 @@ the start point interactive picking`,
         since: '7.0'
       },
       {
-        signature: 'Commands.Result Get(Torus torus)',
+        signature: 'Commands.Result Get(out Torus torus)',
         summary: 'Prompt for the getting of a torus.',
         since: '7.0',
         parameters: [
@@ -85659,7 +85851,7 @@ the start point interactive picking`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,Torus torus)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,out Torus torus)',
         summary: 'Prompt for the getting of a mesh torus.',
         since: '7.0',
         parameters: [
@@ -85803,7 +85995,7 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         since: '7.0'
       },
       {
-        signature: 'Commands.Result Get(Brep truncatedCone)',
+        signature: 'Commands.Result Get(out Brep truncatedCone)',
         summary: 'Prompt for the getting of a truncated cone.',
         since: '7.0',
         parameters: [
@@ -85815,7 +86007,27 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
         returns: 'The result of the getting operation.'
       },
       {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,int capStyle,Mesh truncatedCone)',
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,out Mesh truncatedCone)',
+        summary: 'Prompt for the getting of a mesh truncated cone.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'verticalFaces',
+            summary: 'The number of faces in the vertical direction.'
+          },
+          {
+            name: 'aroundFaces',
+            summary: 'The number of faces in the around direction'
+          },
+          {
+            name: 'truncatedCone',
+            summary: 'The truncated cone in Mesh form.'
+          }
+        ],
+        returns: 'The result of the getting operation.'
+      },
+      {
+        signature: 'Commands.Result GetMesh(ref int verticalFaces,ref int aroundFaces,ref int capStyle,out Mesh truncatedCone)',
         summary: 'Prompt for the getting of a mesh truncated cone.',
         since: '7.0',
         parameters: [
@@ -85830,26 +86042,6 @@ selected.  By default the "Vertical" option applies to VerticalCircle.`,
           {
             name: 'capStyle',
             summary: 'Set to 0 if you don\'t want the prompt, 3 is triangles, 4 is quads.'
-          },
-          {
-            name: 'truncatedCone',
-            summary: 'The truncated cone in Mesh form.'
-          }
-        ],
-        returns: 'The result of the getting operation.'
-      },
-      {
-        signature: 'Commands.Result GetMesh(int verticalFaces,int aroundFaces,Mesh truncatedCone)',
-        summary: 'Prompt for the getting of a mesh truncated cone.',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'verticalFaces',
-            summary: 'The number of faces in the vertical direction.'
-          },
-          {
-            name: 'aroundFaces',
-            summary: 'The number of faces in the around direction'
           },
           {
             name: 'truncatedCone',
@@ -86125,11 +86317,11 @@ ActiveViewport() return the world view's viewport.`,
         since: '5.0'
       },
       {
-        signature: 'bool PickFrustumTest(BezierCurve bezier,double t,double depth,double distance)',
+        signature: 'bool PickFrustumTest(BezierCurve bezier,out double t,out double depth,out double distance)',
         since: '5.0'
       },
       {
-        signature: 'bool PickFrustumTest(BoundingBox box,bool boxCompletelyInFrustum)',
+        signature: 'bool PickFrustumTest(BoundingBox box,out bool boxCompletelyInFrustum)',
         summary: 'Fast test to check if a bounding box intersects a pick frustum.',
         since: '5.0',
         parameters: [
@@ -86147,11 +86339,11 @@ hit if the object's bounding box is completely inside of the pick frustum.`
         returns: 'False if bounding box is invalid or box does not intersect the pick frustum'
       },
       {
-        signature: 'bool PickFrustumTest(Line line,double t,double depth,double distance)',
+        signature: 'bool PickFrustumTest(Line line,out double t,out double depth,out double distance)',
         since: '5.0'
       },
       {
-        signature: 'bool PickFrustumTest(Mesh mesh,MeshPickStyle pickStyle,Point3d hitPoint,double depth,double distance,MeshHitFlag hitFlag,int hitIndex)',
+        signature: 'bool PickFrustumTest(Mesh mesh,MeshPickStyle pickStyle,out Point3d hitPoint,out double depth,out double distance,out MeshHitFlag hitFlag,out int hitIndex)',
         summary: 'Utility for picking meshes',
         since: '5.0',
         parameters: [
@@ -86190,7 +86382,7 @@ corresponds to`
         ]
       },
       {
-        signature: 'bool PickFrustumTest(Mesh mesh,MeshPickStyle pickStyle,Point3d hitPoint,Point2d hitSurfaceUV,Point2d hitTextureCoordinate,double depth,double distance,MeshHitFlag hitFlag,int hitIndex)',
+        signature: 'bool PickFrustumTest(Mesh mesh,MeshPickStyle pickStyle,out Point3d hitPoint,out Point2d hitSurfaceUV,out Point2d hitTextureCoordinate,out double depth,out double distance,out MeshHitFlag hitFlag,out int hitIndex)',
         summary: 'Utility for picking meshes',
         since: '5.0',
         parameters: [
@@ -86240,11 +86432,11 @@ corresponds to`
         ]
       },
       {
-        signature: 'bool PickFrustumTest(NurbsCurve curve,double t,double depth,double distance)',
+        signature: 'bool PickFrustumTest(NurbsCurve curve,out double t,out double depth,out double distance)',
         since: '5.0'
       },
       {
-        signature: 'bool PickFrustumTest(Point3d point,double depth,double distance)',
+        signature: 'bool PickFrustumTest(Point3d point,out double depth,out double distance)',
         summary: 'Utility for picking 3d point',
         since: '5.0',
         parameters: [
@@ -86267,11 +86459,11 @@ SMALLER values are CLOSER to the pick point`
         returns: 'True if there is a hit'
       },
       {
-        signature: 'bool PickFrustumTest(Point3d[] points,int pointIndex,double depth,double distance)',
+        signature: 'bool PickFrustumTest(Point3d[] points,out int pointIndex,out double depth,out double distance)',
         since: '5.0'
       },
       {
-        signature: 'bool PickFrustumTest(PointCloud cloud,int pointIndex,double depth,double distance)',
+        signature: 'bool PickFrustumTest(PointCloud cloud,out int pointIndex,out double depth,out double distance)',
         since: '5.0'
       },
       {
@@ -86575,7 +86767,7 @@ and undo.`,
     ],
     methods: [
       {
-        signature: 'static Result Get2dRectangle(bool solidPen,Rectangle rectangle,RhinoView rectView)',
+        signature: 'static Result Get2dRectangle(bool solidPen,out Rectangle rectangle,out RhinoView rectView)',
         summary: 'Gets a rectangle in view window coordinates.',
         since: '5.0',
         parameters: [
@@ -86596,7 +86788,7 @@ If false, a dotted pen is used for drawing while the user selects a rectangle.`
         returns: 'Success or Cancel.'
       },
       {
-        signature: 'static Result GetAngle(string commandPrompt,Point3d basePoint,Point3d referencePoint,double defaultAngleRadians,double angleRadians)',
+        signature: 'static Result GetAngle(string commandPrompt,Point3d basePoint,Point3d referencePoint,double defaultAngleRadians,out double angleRadians)',
         summary: 'Allows user to interactively pick an angle',
         since: '5.2',
         parameters: [
@@ -86623,11 +86815,11 @@ If false, a dotted pen is used for drawing while the user selects a rectangle.`
         ]
       },
       {
-        signature: 'static Result GetArc(Arc arc)',
+        signature: 'static Result GetArc(out Arc arc)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetBool(string prompt,bool acceptNothing,string offPrompt,string onPrompt,bool boolValue)',
+        signature: 'static Result GetBool(string prompt,bool acceptNothing,string offPrompt,string onPrompt,ref bool boolValue)',
         summary: 'Easy to use Boolean getter.',
         since: '5.0',
         parameters: [
@@ -86656,7 +86848,7 @@ If false, a dotted pen is used for drawing while the user selects a rectangle.`
 Commands.Result.Success - got value.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user canceled value getting.`
       },
       {
-        signature: 'static Result GetBox(Box box)',
+        signature: 'static Result GetBox(out Box box)',
         summary: 'Asks the user to select a Box in the viewport.',
         since: '5.0',
         parameters: [
@@ -86668,7 +86860,7 @@ Commands.Result.Success - got value.Commands.Result.Nothing - user pressed enter
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetBox(Box box,GetBoxMode mode,Point3d basePoint,string prompt1,string prompt2,string prompt3)',
+        signature: 'static Result GetBox(out Box box,GetBoxMode mode,Point3d basePoint,string prompt1,string prompt2,string prompt3)',
         summary: 'Asks the user to select a Box in the viewport.',
         since: '5.0',
         parameters: [
@@ -86700,7 +86892,7 @@ Commands.Result.Success - got value.Commands.Result.Nothing - user pressed enter
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetBoxWithCounts(int xMin,int xCount,int yMin,int yCount,int zMin,int zCount,Point3d[] corners)',
+        signature: 'static Result GetBoxWithCounts(int xMin,ref int xCount,int yMin,ref int yCount,int zMin,ref int zCount,out Point3d[] corners)',
         summary: 'Gets a 3d box with prompts for counts in X, Y and Z directions.',
         since: '6.0',
         parameters: [
@@ -86736,11 +86928,11 @@ Commands.Result.Success - got value.Commands.Result.Nothing - user pressed enter
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetCircle(Circle circle)',
+        signature: 'static Result GetCircle(out Circle circle)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetColor(string prompt,bool acceptNothing,Color color)',
+        signature: 'static Result GetColor(string prompt,bool acceptNothing,ref Color color)',
         summary: 'Easy to use color getter.',
         since: '5.0',
         parameters: [
@@ -86772,19 +86964,19 @@ Commands.Result.Success - got value.Commands.Result.Nothing - user pressed enter
         since: '5.0'
       },
       {
-        signature: 'static Result GetGrip(GripObject grip,string prompt)',
+        signature: 'static Result GetGrip(out GripObject grip,string prompt)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetGrips(GripObject[] grips,string prompt)',
+        signature: 'static Result GetGrips(out GripObject[] grips,string prompt)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetHelix(NurbsCurve helix)',
+        signature: 'static Result GetHelix(out NurbsCurve helix)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetInteger(string prompt,bool acceptNothing,int outputNumber)',
+        signature: 'static Result GetInteger(string prompt,bool acceptNothing,ref int outputNumber)',
         summary: 'Easy to use number getter.',
         since: '5.0',
         parameters: [
@@ -86806,7 +86998,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel number getting.`
       },
       {
-        signature: 'static Result GetInteger(string prompt,bool acceptNothing,int outputNumber,int lowerLimit,int upperLimit)',
+        signature: 'static Result GetInteger(string prompt,bool acceptNothing,ref int outputNumber,int lowerLimit,int upperLimit)',
         summary: 'Easy to use number getter.',
         since: '5.0',
         parameters: [
@@ -86836,15 +87028,15 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel number getting.`
       },
       {
-        signature: 'static Result GetLine(Line line)',
+        signature: 'static Result GetLine(out Line line)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetLinearDimension(LinearDimension dimension)',
+        signature: 'static Result GetLinearDimension(out LinearDimension dimension)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetMeshParameters(RhinoDoc doc,MeshingParameters parameters,int uiStyle)',
+        signature: 'static Result GetMeshParameters(RhinoDoc doc,ref MeshingParameters parameters,ref int uiStyle)',
         summary: 'Asks the user to specify meshing parameters.',
         since: '7.0',
         parameters: [
@@ -86864,7 +87056,7 @@ Commands.Result.Cancel - user cancel number getting.`
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetMultipleObjects(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef[] rhObjects)',
+        signature: 'static Result GetMultipleObjects(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,out ObjRef[] rhObjects)',
         summary: 'Easy to use object getter for getting multiple objects.',
         since: '5.0',
         parameters: [
@@ -86890,7 +87082,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel object getting.`
       },
       {
-        signature: 'static Result GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,ObjRef[] rhObjects)',
+        signature: 'static Result GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,out ObjRef[] rhObjects)',
         summary: 'Easy to use object getter for getting multiple objects.',
         since: '5.0',
         parameters: [
@@ -86916,7 +87108,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel object getting.`
       },
       {
-        signature: 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber)',
+        signature: 'static Result GetNumber(string prompt,bool acceptNothing,ref double outputNumber)',
         summary: 'Easy to use number getter.',
         since: '5.0',
         parameters: [
@@ -86938,7 +87130,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel number getting.`
       },
       {
-        signature: 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber,double lowerLimit,double upperLimit)',
+        signature: 'static Result GetNumber(string prompt,bool acceptNothing,ref double outputNumber,double lowerLimit,double upperLimit)',
         summary: 'Easy to use number getter.',
         since: '5.0',
         parameters: [
@@ -86966,7 +87158,7 @@ Commands.Result.Cancel - user cancel number getting.`
         returns: 'Commands.Result.Success - got number.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user cancel number getting.'
       },
       {
-        signature: 'static Result GetOneObject(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,ObjRef objref)',
+        signature: 'static Result GetOneObject(string prompt,bool acceptNothing,GetObjectGeometryFilter filter,out ObjRef objref)',
         summary: 'Easy to use object getter.',
         since: '5.0',
         parameters: [
@@ -86992,7 +87184,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel object getting.`
       },
       {
-        signature: 'static Result GetOneObject(string prompt,bool acceptNothing,ObjectType filter,ObjRef rhObject)',
+        signature: 'static Result GetOneObject(string prompt,bool acceptNothing,ObjectType filter,out ObjRef rhObject)',
         summary: 'Easy to use object getter.',
         since: '5.0',
         parameters: [
@@ -87018,7 +87210,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel object getting.`
       },
       {
-        signature: 'static Result GetPlane(Plane plane)',
+        signature: 'static Result GetPlane(out Plane plane)',
         summary: 'Gets an oriented infinite plane.',
         since: '5.0',
         parameters: [
@@ -87030,7 +87222,7 @@ Commands.Result.Cancel - user cancel object getting.`
         returns: 'Commands.Result.Success - got plane.Commands.Result.Nothing - user pressed enter.Commands.Result.Cancel - user cancel number getting.'
       },
       {
-        signature: 'static Result GetPoint(string prompt,bool acceptNothing,Point3d point)',
+        signature: 'static Result GetPoint(string prompt,bool acceptNothing,out Point3d point)',
         summary: 'Gets a point coordinate from the document.',
         since: '5.0',
         parameters: [
@@ -87052,7 +87244,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel point getting.`
       },
       {
-        signature: 'static Result GetPointOnMesh(Guid meshObjectId,string prompt,bool acceptNothing,Point3d point)',
+        signature: 'static Result GetPointOnMesh(Guid meshObjectId,string prompt,bool acceptNothing,out Point3d point)',
         summary: 'Gets a point constrained to an existing mesh in the document.',
         since: '5.0',
         parameters: [
@@ -87076,7 +87268,7 @@ Commands.Result.Cancel - user cancel point getting.`
         returns: 'A command result based on user choice.'
       },
       {
-        signature: 'static Result GetPointOnMesh(MeshObject meshObject,string prompt,bool acceptNothing,Point3d point)',
+        signature: 'static Result GetPointOnMesh(MeshObject meshObject,string prompt,bool acceptNothing,out Point3d point)',
         summary: 'Gets a point constrained to an existing mesh in the document.',
         since: '5.0',
         parameters: [
@@ -87100,19 +87292,19 @@ Commands.Result.Cancel - user cancel point getting.`
         returns: 'The command result based on user choice.'
       },
       {
-        signature: 'static Result GetPolygon(int numberSides,bool inscribed,Polyline polyline)',
+        signature: 'static Result GetPolygon(ref int numberSides,ref bool inscribed,out Polyline polyline)',
         since: '6.0'
       },
       {
-        signature: 'static Result GetPolyline(Polyline polyline)',
+        signature: 'static Result GetPolyline(out Polyline polyline)',
         since: '5.9'
       },
       {
-        signature: 'static Result GetPrintWindow(ViewCaptureSettings settings)',
+        signature: 'static Result GetPrintWindow(ref ViewCaptureSettings settings)',
         since: '6.1'
       },
       {
-        signature: 'static Result GetRectangle(GetBoxMode mode,Point3d firstPoint,IEnumerable<string> prompts,Point3d[] corners)',
+        signature: 'static Result GetRectangle(GetBoxMode mode,Point3d firstPoint,IEnumerable<string> prompts,out Point3d[] corners)',
         summary: 'Gets a 3d rectangle made up of four points.',
         since: '5.0',
         parameters: [
@@ -87136,7 +87328,7 @@ Commands.Result.Cancel - user cancel point getting.`
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetRectangle(Point3d[] corners)',
+        signature: 'static Result GetRectangle(out Point3d[] corners)',
         summary: 'Gets a 3d rectangle.',
         since: '5.0',
         parameters: [
@@ -87148,7 +87340,7 @@ Commands.Result.Cancel - user cancel point getting.`
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetRectangle(string firstPrompt,Point3d[] corners)',
+        signature: 'static Result GetRectangle(string firstPrompt,out Point3d[] corners)',
         summary: 'Gets a 3d rectangle.',
         since: '6.0',
         parameters: [
@@ -87164,7 +87356,7 @@ Commands.Result.Cancel - user cancel point getting.`
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetRectangleWithCounts(int xMin,int xCount,int yMin,int yCount,Point3d[] corners)',
+        signature: 'static Result GetRectangleWithCounts(int xMin,ref int xCount,int yMin,ref int yCount,out Point3d[] corners)',
         summary: 'Gets a 3d rectangle with prompts for counts in X and Y directions.',
         since: '6.0',
         parameters: [
@@ -87192,11 +87384,11 @@ Commands.Result.Cancel - user cancel point getting.`
         returns: 'Commands.Result.Success if successful.'
       },
       {
-        signature: 'static Result GetSpiral(NurbsCurve spiral)',
+        signature: 'static Result GetSpiral(out NurbsCurve spiral)',
         since: '5.0'
       },
       {
-        signature: 'static Result GetString(string prompt,bool acceptNothing,string outputString)',
+        signature: 'static Result GetString(string prompt,bool acceptNothing,ref string outputString)',
         summary: 'Easy to use string getter.',
         since: '5.0',
         parameters: [
@@ -87218,7 +87410,7 @@ Commands.Result.Nothing - user pressed enter
 Commands.Result.Cancel - user cancel string getting.`
       },
       {
-        signature: 'static Result GetView(string commandPrompt,RhinoView view)',
+        signature: 'static Result GetView(string commandPrompt,out RhinoView view)',
         summary: 'Allows the user to interactively pick a viewport.',
         since: '5.0',
         parameters: [
@@ -87321,19 +87513,19 @@ None or empty then the English string is used as the localized value.`
     summary: 'Parse strings to numbers, distances and angles',
     methods: [
       {
-        signature: 'static int ParseAngleExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,AngleUnitSystem output_angle_unit_system,double value_out,StringParserSettings parse_results,AngleUnitSystem parsed_unit_system)',
+        signature: 'static int ParseAngleExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,AngleUnitSystem output_angle_unit_system,out double value_out,ref StringParserSettings parse_results,ref AngleUnitSystem parsed_unit_system)',
         since: '6.0'
       },
       {
-        signature: 'static bool ParseAngleExpressionDegrees(string expression,double angle_degrees)',
+        signature: 'static bool ParseAngleExpressionDegrees(string expression,out double angle_degrees)',
         since: '6.0'
       },
       {
-        signature: 'static bool ParseAngleExpressionRadians(string expression,double angle_radians)',
+        signature: 'static bool ParseAngleExpressionRadians(string expression,out double angle_radians)',
         since: '6.0'
       },
       {
-        signature: 'static int ParseLengthExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,UnitSystem output_unit_system,double value_out,StringParserSettings parse_results,UnitSystem parsed_unit_system)',
+        signature: 'static int ParseLengthExpession(string expression,int start_offset,int expression_length,StringParserSettings parse_settings_in,UnitSystem output_unit_system,out double value_out,ref StringParserSettings parse_results,ref UnitSystem parsed_unit_system)',
         summary: `Parse a string for a length value.
 Expression can include complex expressions
 Most complex version of length parsing`,
@@ -87377,7 +87569,7 @@ The output value is in the unit system specified in output_unit_system`
         returns: 'Returns the count of characters that were parsed or 0 if the operation was unsuccessful'
       },
       {
-        signature: 'static int ParseLengthExpession(string expression,StringParserSettings parse_settings_in,UnitSystem output_unit_system,double value_out)',
+        signature: 'static int ParseLengthExpession(string expression,StringParserSettings parse_settings_in,UnitSystem output_unit_system,out double value_out)',
         summary: `Parse a string for a length value.
 Expression can include complex expressions
 Simplest version of Length parsing`,
@@ -87403,7 +87595,7 @@ Simplest version of Length parsing`,
         returns: 'Count of characters parsed or 0 for failure'
       },
       {
-        signature: 'static int ParseNumber(string expression,int max_count,StringParserSettings settings_in,StringParserSettings settings_out,double answer)',
+        signature: 'static int ParseNumber(string expression,int max_count,StringParserSettings settings_in,ref StringParserSettings settings_out,out double answer)',
         summary: 'Parse a string expression to get a number',
         since: '6.0',
         parameters: [
@@ -87880,7 +88072,7 @@ Removes spaces and common operator signs.`,
     ],
     methods: [
       {
-        signature: 'object[] Evaluate(IEnumerable args,bool keepTree,string[] warnings)',
+        signature: 'object[] Evaluate(IEnumerable args,bool keepTree,out string[] warnings)',
         summary: `Evaluates the component with a set of arguments.
 There needs to be an argument for each input param, and each output param gives an entry in the output array.`,
         since: '6.0',
@@ -87902,7 +88094,7 @@ In this case, output variables are not simplified to common types.`
         returns: 'An array of objects, each representing an output result.'
       },
       {
-        signature: 'object[] Invoke(object[] args)',
+        signature: 'object[] Invoke(params object[] args)',
         summary: `Runs Evaluate with keepTree equal to false,
 and raises an exception on the first warning.`,
         since: '7.0',
@@ -87915,7 +88107,7 @@ and raises an exception on the first warning.`,
         returns: 'Items.'
       },
       {
-        signature: 'object[] InvokeKeepTree(object[] args)',
+        signature: 'object[] InvokeKeepTree(params object[] args)',
         summary: 'Runs Evaluate with keepTree equal to True and raises an exception on the first warning.',
         since: '7.0',
         parameters: [
@@ -87927,7 +88119,7 @@ and raises an exception on the first warning.`,
         returns: 'Items.'
       },
       {
-        signature: 'object[] InvokeKeepTreeSilenceWarnings(object[] args)',
+        signature: 'object[] InvokeKeepTreeSilenceWarnings(params object[] args)',
         summary: `Runs Evaluate with keepTree equal to true,
 and discards warnings (this is a dangerous operation!).`,
         since: '7.0',
@@ -87940,7 +88132,7 @@ and discards warnings (this is a dangerous operation!).`,
         returns: 'Array of items.'
       },
       {
-        signature: 'object[] InvokeSilenceWarnings(object[] args)',
+        signature: 'object[] InvokeSilenceWarnings(params object[] args)',
         summary: `Runs Evaluate with keepTree equal to false,
 then simplifies output with SimplifyTreeOutput and discards warnings (this is a dangerous operation!).`,
         since: '7.0',
@@ -88025,7 +88217,7 @@ then simplifies output with SimplifyTreeOutput and discards warnings (this is a 
         since: '6.0'
       },
       {
-        signature: 'bool TryGetIndex(GetIndexBinder binder,object[] indexes,object result)',
+        signature: 'bool TryGetIndex(GetIndexBinder binder,object[] indexes,out object result)',
         summary: 'Gets the ComponentFunctionInfo at',
         since: '6.0',
         parameters: [
@@ -88044,7 +88236,7 @@ then simplifies output with SimplifyTreeOutput and discards warnings (this is a 
         ]
       },
       {
-        signature: 'bool TryGetMember(GetMemberBinder binder,object result)',
+        signature: 'bool TryGetMember(GetMemberBinder binder,out object result)',
         summary: 'Dynamically binds the table to property-like access via its item names.',
         since: '6.0',
         parameters: [
@@ -88059,7 +88251,7 @@ then simplifies output with SimplifyTreeOutput and discards warnings (this is a 
         ]
       },
       {
-        signature: 'bool TryInvokeMember(InvokeMemberBinder binder,object[] args,object result)',
+        signature: 'bool TryInvokeMember(InvokeMemberBinder binder,object[] args,out object result)',
         summary: 'Dynamically invokes a member of the table.',
         since: '6.0',
         parameters: [
@@ -88623,31 +88815,31 @@ that location in the list when calling GetStringList.`,
         since: '5.0'
       },
       {
-        signature: 'bool TryGetBool(string key,bool value)',
+        signature: 'bool TryGetBool(string key,out bool value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetBool(string key,bool value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetBool(string key,out bool value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetByte(string key,byte value)',
+        signature: 'bool TryGetByte(string key,out byte value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetByte(string key,byte value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetByte(string key,out byte value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetChar(string key,char value)',
+        signature: 'bool TryGetChar(string key,out char value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetChar(string key,char value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetChar(string key,out char value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetChild(string key,PersistentSettings value)',
+        signature: 'bool TryGetChild(string key,out PersistentSettings value)',
         summary: `Call this method to get a nested settings PersistentSettings
 instance, will return True if the key exists and value was set
 otherwise; will return False and value will be set to null.`,
@@ -88667,126 +88859,126 @@ it will be null.`
 false.`
       },
       {
-        signature: 'bool TryGetColor(string key,Color value)',
+        signature: 'bool TryGetColor(string key,out Color value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetColor(string key,Color value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetColor(string key,out Color value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetDate(string key,DateTime value)',
+        signature: 'bool TryGetDate(string key,out DateTime value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDate(string key,DateTime value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetDate(string key,out DateTime value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,bool value)',
+        signature: 'bool TryGetDefault(string key,out bool value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,byte value)',
+        signature: 'bool TryGetDefault(string key,out byte value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,char value)',
+        signature: 'bool TryGetDefault(string key,out char value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,Color value)',
+        signature: 'bool TryGetDefault(string key,out Color value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,DateTime value)',
+        signature: 'bool TryGetDefault(string key,out DateTime value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,double value)',
+        signature: 'bool TryGetDefault(string key,out double value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,int value)',
+        signature: 'bool TryGetDefault(string key,out int value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,Point3d value)',
+        signature: 'bool TryGetDefault(string key,out Point3d value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,Rectangle value)',
+        signature: 'bool TryGetDefault(string key,out Rectangle value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,Size value)',
+        signature: 'bool TryGetDefault(string key,out Size value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,string value)',
+        signature: 'bool TryGetDefault(string key,out string value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDefault(string key,string[] value)',
+        signature: 'bool TryGetDefault(string key,out string[] value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDouble(string key,double value)',
+        signature: 'bool TryGetDouble(string key,out double value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetDouble(string key,double value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetDouble(string key,out double value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetEnumValue(String key,T enumValue)',
+        signature: 'bool TryGetEnumValue(String key,out T enumValue)',
         summary: `Attempt to get the stored value for an enumerated setting using a custom key. Note: the enumerated value ALWAYS gets assigned!
 Be sure to check for success of this method to prevent erroneous use of the value.`,
         since: '5.4',
         returns: 'True if successful'
       },
       {
-        signature: 'bool TryGetGuid(string key,Guid value)',
+        signature: 'bool TryGetGuid(string key,out Guid value)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetGuid(string key,Guid value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetGuid(string key,out Guid value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetInteger(string key,int value)',
+        signature: 'bool TryGetInteger(string key,out int value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetInteger(string key,int value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetInteger(string key,out int value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetPoint(string key,Point value)',
+        signature: 'bool TryGetPoint(string key,out Point value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetPoint(string key,Point value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetPoint(string key,out Point value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetPoint3d(string key,Point3d value)',
+        signature: 'bool TryGetPoint3d(string key,out Point3d value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetPoint3d(string key,Point3d value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetPoint3d(string key,out Point3d value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetRectangle(string key,Rectangle value)',
+        signature: 'bool TryGetRectangle(string key,out Rectangle value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetRectangle(string key,Rectangle value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetRectangle(string key,out Rectangle value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetSettingIsHiddenFromUserInterface(string key,bool value)',
+        signature: 'bool TryGetSettingIsHiddenFromUserInterface(string key,out bool value)',
         summary: `Values read from all users settings files will be marked as read-only
 which will cause any future calls to Set... to fail.`,
         since: '6.0',
@@ -88803,7 +88995,7 @@ setting.`
         ]
       },
       {
-        signature: 'bool TryGetSettingIsHiddenFromUserInterface(string key,bool value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetSettingIsHiddenFromUserInterface(string key,out bool value,IEnumerable<string> legacyKeyList)',
         summary: `Values read from all users settings files will be marked as read-only
 which will cause any future calls to Set... to fail.`,
         since: '6.0',
@@ -88824,7 +89016,7 @@ setting.`
         ]
       },
       {
-        signature: 'bool TryGetSettingIsReadOnly(string key,bool value)',
+        signature: 'bool TryGetSettingIsReadOnly(string key,out bool value)',
         summary: `Values read from all users settings files will be marked as read-only
 which will cause any future calls to Set... to fail.`,
         since: '6.0',
@@ -88841,7 +89033,7 @@ setting.`
         ]
       },
       {
-        signature: 'bool TryGetSettingType(string key,Type type)',
+        signature: 'bool TryGetSettingType(string key,out Type type)',
         summary: `Get the type of the last value passed to Set... or Get... for the
 specified setting.`,
         since: '6.0',
@@ -88858,41 +89050,41 @@ setting.`
         ]
       },
       {
-        signature: 'bool TryGetSize(string key,Size value)',
+        signature: 'bool TryGetSize(string key,out Size value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetSize(string key,Size value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetSize(string key,out Size value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetString(string key,string value)',
+        signature: 'bool TryGetString(string key,out string value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetString(string key,string value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetString(string key,out string value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetStringDictionary(string key,KeyValuePair<string, string>[] value)'
+        signature: 'bool TryGetStringDictionary(string key,out KeyValuePair<string, string>[] value)'
       },
       {
-        signature: 'bool TryGetStringDictionary(string key,KeyValuePair<string, string>[] value,IEnumerable<string> legacyKeyList)'
+        signature: 'bool TryGetStringDictionary(string key,out KeyValuePair<string, string>[] value,IEnumerable<string> legacyKeyList)'
       },
       {
-        signature: 'bool TryGetStringList(string key,string[] value)',
+        signature: 'bool TryGetStringList(string key,out string[] value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetStringList(string key,string[] value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetStringList(string key,out string[] value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       },
       {
-        signature: 'bool TryGetUnsignedInteger(string key,uint value)',
+        signature: 'bool TryGetUnsignedInteger(string key,out uint value)',
         since: '5.0'
       },
       {
-        signature: 'bool TryGetUnsignedInteger(string key,uint value,IEnumerable<string> legacyKeyList)',
+        signature: 'bool TryGetUnsignedInteger(string key,out uint value,IEnumerable<string> legacyKeyList)',
         since: '6.0'
       }
     ]
@@ -88968,7 +89160,7 @@ dictionary.`
 strings.`
       },
       {
-        signature: 'static bool TryParseDouble(string s,double value)',
+        signature: 'static bool TryParseDouble(string s,out double value)',
         summary: `Converts the string representation of a number to its double-precision
 floating-point number equivalent. A return value indicates whether the
 conversion succeeded or failed.
@@ -88993,7 +89185,7 @@ overwritten.`
         returns: 'Returns True if s was converted successfully; otherwise, false..'
       },
       {
-        signature: 'static bool TryParseEnum(Type type,string enumValueName,int value)',
+        signature: 'static bool TryParseEnum(Type type,string enumValueName,out int value)',
         summary: `Converts an enumerated value name to its integer
 equivalent.`,
         since: '6.0',
@@ -89014,7 +89206,7 @@ equivalent.`,
         returns: 'Returns True if the successfully converted or False if not.'
       },
       {
-        signature: 'static bool TryParseEnum(Type type,string intValueAsString,string value)',
+        signature: 'static bool TryParseEnum(Type type,string intValueAsString,out string value)',
         summary: `Converts an enumerated value string (integer as string) to
 a enumerated value name.`,
         since: '6.0',
@@ -89035,7 +89227,7 @@ a enumerated value name.`,
         returns: 'Returns True if the successfully converted or False if not.'
       },
       {
-        signature: 'static bool TryParseStringDictionary(string s,KeyValuePair<string, string>[] value)',
+        signature: 'static bool TryParseStringDictionary(string s,out KeyValuePair<string, string>[] value)',
         summary: 'Attempts to convert a string to a key value string pair array.',
         parameters: [
           {
@@ -89054,7 +89246,7 @@ array.`
 key value string pair list otherwise returns false.`
       },
       {
-        signature: 'static bool TryParseStringList(string s,string[] value)',
+        signature: 'static bool TryParseStringList(string s,out string[] value)',
         summary: 'Attempts to convert a string to a string value list.',
         since: '6.0',
         parameters: [
@@ -89170,6 +89362,7 @@ type combo box.`
     namespace: 'Rhino.PlugIns',
     name: 'DescriptionType',
     dataType: 'enum',
+    summary: 'Rhino plug-in developer information fields.',
     since: '5.0',
     values: [
       {
@@ -89205,6 +89398,7 @@ type combo box.`
     namespace: 'Rhino.PlugIns',
     name: 'DigitizerPlugIn',
     dataType: 'class',
+    summary: 'A Rhino plug-in that interfaces with 3-D digitizing or input devices.',
     baseclass: 'Rhino.PlugIns.PlugIn',
     methods: [
       {
@@ -89265,12 +89459,14 @@ called when users press or release any digitizer button.`,
     namespace: 'Rhino.PlugIns',
     name: 'FileExportPlugIn',
     dataType: 'class',
+    summary: 'Rhino plug-in that exports data from Rhino to other file formats; can support more than one format.',
     baseclass: 'Rhino.PlugIns.PlugIn'
   },
   {
     namespace: 'Rhino.PlugIns',
     name: 'FileImportPlugIn',
     dataType: 'class',
+    summary: 'Rhino plug-in that imports data from other file formats into Rhino; can support more that one format.',
     baseclass: 'Rhino.PlugIns.PlugIn'
   },
   {
@@ -90084,7 +90280,7 @@ is used by Rhino C++ plug-ins.`,
         since: '5.0'
       },
       {
-        signature: 'static bool ShowRhinoExpiredMessage(Mode mode,int result)',
+        signature: 'static bool ShowRhinoExpiredMessage(Mode mode,ref int result)',
         summary: 'Show Rhino or Beta expired message',
         since: '6.0'
       }
@@ -90113,6 +90309,7 @@ is used by Rhino C++ plug-ins.`,
     namespace: 'Rhino.PlugIns',
     name: 'LoadReturnCode',
     dataType: 'enum',
+    summary: 'Rhino plug-in loading return codes.',
     since: '5.0',
     values: [
       {
@@ -90130,6 +90327,7 @@ is used by Rhino C++ plug-ins.`,
     namespace: 'Rhino.PlugIns',
     name: 'PlugIn',
     dataType: 'class',
+    summary: 'A general purpose utility plug-in that can contain one or more commands.',
     properties: [
       {
         signature: 'static bool AskOnLoadProtection',
@@ -90291,7 +90489,7 @@ You can get the assembly instance at runtime with the  instance property.`
         since: '5.0'
       },
       {
-        signature: 'static bool GetLoadProtection(Guid pluginId,bool loadSilently)',
+        signature: 'static bool GetLoadProtection(Guid pluginId,out bool loadSilently)',
         summary: 'Get load protection state for a plug-in',
         since: '5.5'
       },
@@ -90373,7 +90571,7 @@ You can get the assembly instance at runtime with the  instance property.`
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'static LoadPlugInResult LoadPlugIn(string path,Guid plugInId)',
+        signature: 'static LoadPlugInResult LoadPlugIn(string path,out Guid plugInId)',
         summary: `Attempt to load a plug-in at a path. Loaded plug-ins are remembered by
 Rhino between sessions, so this function can also be considered a plug-in
 installation routine`,
@@ -90413,7 +90611,7 @@ plug-in is returned here. Guid.Empty on failure`
         since: '5.9'
       },
       {
-        signature: 'static bool PlugInExists(Guid id,bool loaded,bool loadProtected)',
+        signature: 'static bool PlugInExists(Guid id,out bool loaded,out bool loadProtected)',
         summary: 'Verifies that a Rhino plug-in is installed.',
         since: '5.0',
         parameters: [
@@ -90486,6 +90684,7 @@ event.`,
     namespace: 'Rhino.PlugIns',
     name: 'PlugInDescriptionAttribute',
     dataType: 'class',
+    summary: 'Rhino plug-in developer information attributes.',
     baseclass: 'Attribute',
     constructors: [
       {
@@ -90652,7 +90851,7 @@ event.`,
         since: '6.0'
       },
       {
-        signature: 'bool IsLoadProtected(bool loadSilently)',
+        signature: 'bool IsLoadProtected(out bool loadSilently)',
         summary: 'Returns the load protection state for a plug-in',
         since: '6.0',
         parameters: [
@@ -90669,6 +90868,7 @@ event.`,
     namespace: 'Rhino.PlugIns',
     name: 'PlugInLoadTime',
     dataType: 'enum',
+    summary: 'Rhino plug-in load time enumeration.',
     since: '5.0',
     values: [
       {
@@ -90701,6 +90901,7 @@ event.`,
     namespace: 'Rhino.PlugIns',
     name: 'PlugInType',
     dataType: 'enum',
+    summary: 'Rhino plug-in type enumeration.',
     since: '5.0',
     values: [
       {
@@ -90747,6 +90948,7 @@ event.`,
     namespace: 'Rhino.PlugIns',
     name: 'RenderPlugIn',
     dataType: 'class',
+    summary: 'A Rhino rendering plugin; applies materials, textures, and lights to a scene to produce rendered images.',
     baseclass: 'Rhino.PlugIns.PlugIn',
     properties: [
       {
@@ -90794,21 +90996,21 @@ the OnEditMaterial function is never called.`,
         returns: 'Return a Id list of the Render settings sections that will be displayed'
       },
       {
-        signature: 'bool OnAssignMaterial(IntPtr parent,RhinoDoc doc,Material material)',
+        signature: 'bool OnAssignMaterial(IntPtr parent,RhinoDoc doc,ref Material material)',
         summary: `This function is called by the Object Properties and Layer Control
 dialogs when the "Material" button is pressed in the "Render" tab.
 This is only called if EnableAssignMaterialButton returns true.`,
         since: '5.12'
       },
       {
-        signature: 'bool OnCreateMaterial(IntPtr parent,RhinoDoc doc,Material material)',
+        signature: 'bool OnCreateMaterial(IntPtr parent,RhinoDoc doc,ref Material material)',
         summary: `This function is called by the Object Properties and Layer Control
 dialogs when the "New" button is pressed in the "Material" tab.  This
 is only called if EnableCreateMaterialButton returns true.`,
         since: '5.12'
       },
       {
-        signature: 'bool OnEditMaterial(IntPtr parent,RhinoDoc doc,Material material)',
+        signature: 'bool OnEditMaterial(IntPtr parent,RhinoDoc doc,ref Material material)',
         summary: `This function is called by the Object Properties and Layer Control
 dialogs when the "Edit" button is pressed in the "Material" tab.  This
 is only called if EnableEditMaterialButton returns true. A return value
@@ -91135,7 +91337,7 @@ zero-based indexing.`
         returns: 'The index of item if found in the list; otherwise, -1.'
       },
       {
-        signature: 'bool TryGetAt(int index,double u,double v,double w)',
+        signature: 'bool TryGetAt(int index,out double u,out double v,out double w)',
         summary: 'Use this method to iterate the cached texture coordinate array.',
         since: '5.10',
         parameters: [
@@ -91794,7 +91996,8 @@ Note that the object is free floating, i.e. not part of a document.`,
       },
       {
         signature: 'Transform OcsTransform',
-        summary: 'OCS Transform for the MeshInstance (identity means no OCS, potentially just simple WCS/WCS Box)',
+        summary: `OCS Transform for the MeshInstance - this is the Object Coordinate System texture mapping transformation set in the texture mapping properties dialog.
+(identity means no OCS, potentially just simple WCS/WCS Box)`,
         since: '7.0',
         property: ['get']
       },
@@ -92039,6 +92242,51 @@ Note that the object is free floating, i.e. not part of a document.`,
           }
         ],
         returns: 'Nearest city.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
+    name: 'ComponentOrders',
+    dataType: 'enum',
+    summary: 'Pixel component order for channels in the RenderWindow and PostEffects.',
+    since: '7.0',
+    values: [
+      {
+        signature: 'Irrelevant = 0x00',
+        summary: 'Used in single-value channels.'
+      },
+      {
+        signature: 'RGBA = 0x01',
+        summary: 'This is the default (to match Rhino 5)'
+      },
+      {
+        signature: 'ARGB = 0x02',
+        summary: 'ARGB component order'
+      },
+      {
+        signature: 'RGB = 0x03',
+        summary: 'This will only access 3 components, even in the case of the RGBA channel'
+      },
+      {
+        signature: 'BGR = 0x04',
+        summary: 'This will only access 3 components, even in the case of the RGBA channel.'
+      },
+      {
+        signature: 'ABGR = 0x05',
+        summary: 'ABGR component order'
+      },
+      {
+        signature: 'BGRA = 0x06',
+        summary: 'BGRA component order'
+      },
+      {
+        signature: 'XYZ = RGB',
+        summary: 'For readability when using the Normal XYZ channel.  Same as RGB'
+      },
+      {
+        signature: 'ZYX = BGR',
+        summary: 'For readability when using the Normal XYZ channel.  Same as BGR'
       }
     ]
   },
@@ -92472,15 +92720,15 @@ These Guids can be used to check against RenderContent.TypeId.`,
 an object is a Variant.`,
     methods: [
       {
-        signature: 'static Color4f ToColor4f(IConvertible variant)',
+        signature: 'static Color4f ToColor4f(this IConvertible variant)',
         since: '6.0'
       },
       {
-        signature: 'static Vector2d ToVector2d(IConvertible variant)',
+        signature: 'static Vector2d ToVector2d(this IConvertible variant)',
         since: '6.0'
       },
       {
-        signature: 'static Vector3d ToVector3d(IConvertible variant)',
+        signature: 'static Vector3d ToVector3d(this IConvertible variant)',
         since: '6.0'
       }
     ]
@@ -93434,7 +93682,7 @@ Clears the navigator ahead of the current position.`,
         since: '6.0'
       },
       {
-        signature: 'bool GoBackwards(RenderContentCollection selectedContentArray)',
+        signature: 'bool GoBackwards(ref RenderContentCollection selectedContentArray)',
         summary: 'Navigate backwards if possible',
         since: '6.0',
         parameters: [
@@ -93446,7 +93694,7 @@ Clears the navigator ahead of the current position.`,
         returns: 'True on success, else false'
       },
       {
-        signature: 'bool GoForwards(RenderContentCollection selectedContentArray)',
+        signature: 'bool GoForwards(ref RenderContentCollection selectedContentArray)',
         summary: 'Navigate forwards if possible',
         since: '6.0',
         parameters: [
@@ -93687,7 +93935,7 @@ You can detect when a decal changes by watching for the OnUserDataTransformed ev
         since: '5.10'
       },
       {
-        signature: 'bool TryGetColor(Point3d point,Vector3d normal,Color4f colInOut,Point2d uvOut)',
+        signature: 'bool TryGetColor(Point3d point,Vector3d normal,ref Color4f colInOut,ref Point2d uvOut)',
         summary: 'Blend color with the decal color at a given point.',
         since: '5.10',
         parameters: [
@@ -93711,7 +93959,7 @@ You can detect when a decal changes by watching for the OnUserDataTransformed ev
         returns: 'True if the given point hits the decal, else false.'
       },
       {
-        signature: 'void UVBounds(double minUOut,double minVOut,double maxUOut,double maxVOut)',
+        signature: 'void UVBounds(ref double minUOut,ref double minVOut,ref double maxUOut,ref double maxVOut)',
         summary: 'The UV bounds of the decal. Only used when mapping is UV.',
         since: '5.10'
       }
@@ -94703,8 +94951,26 @@ not appear in the user interface.`
       },
       {
         signature: 'BoolField AddTextured(string key,bool value,string prompt)',
+        summary: `Add a new BoolField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'BoolField AddTextured(string key,bool value,string prompt,bool treatAsLinear)',
@@ -94735,8 +95001,26 @@ not appear in the user interface.`
       },
       {
         signature: 'Color4fField AddTextured(string key,Color value,string prompt)',
+        summary: `Add a new Color4fField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'Color4fField AddTextured(string key,Color value,string prompt,bool treatAsLinear)',
@@ -94799,8 +95083,26 @@ not appear in the user interface.`
       },
       {
         signature: 'DateTimeField AddTextured(string key,DateTime value,string prompt)',
+        summary: `Add a new DateTimeField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'DateTimeField AddTextured(string key,DateTime value,string prompt,bool treatAsLinear)',
@@ -94831,8 +95133,26 @@ not appear in the user interface.`
       },
       {
         signature: 'DoubleField AddTextured(string key,double value,string prompt)',
+        summary: `Add a new DoubleField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'DoubleField AddTextured(string key,double value,string prompt,bool treatAsLinear)',
@@ -94863,8 +95183,26 @@ not appear in the user interface.`
       },
       {
         signature: 'FloatField AddTextured(string key,float value,string prompt)',
+        summary: `Add a new FloatField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'FloatField AddTextured(string key,float value,string prompt,bool treatAsLinear)',
@@ -94895,8 +95233,26 @@ not appear in the user interface.`
       },
       {
         signature: 'GuidField AddTextured(string key,Guid value,string prompt)',
+        summary: `Add a new GuidField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'GuidField AddTextured(string key,Guid value,string prompt,bool treatAsLinear)',
@@ -94927,8 +95283,26 @@ not appear in the user interface.`
       },
       {
         signature: 'IntField AddTextured(string key,int value,string prompt)',
+        summary: `Add a new IntField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'IntField AddTextured(string key,int value,string prompt,bool treatAsLinear)',
@@ -94959,8 +95333,26 @@ not appear in the user interface.`
       },
       {
         signature: 'Point2dField AddTextured(string key,Point2d value,string prompt)',
+        summary: `Add a new Point2dField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'Point2dField AddTextured(string key,Point2d value,string prompt,bool treatAsLinear)',
@@ -94991,8 +95383,26 @@ not appear in the user interface.`
       },
       {
         signature: 'Point3dField AddTextured(string key,Point3d value,string prompt)',
+        summary: `Add a new Point3dField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'Point3dField AddTextured(string key,Point3d value,string prompt,bool treatAsLinear)',
@@ -95023,8 +95433,26 @@ not appear in the user interface.`
       },
       {
         signature: 'Point4dField AddTextured(string key,Point4d value,string prompt)',
+        summary: `Add a new Point4dField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'Point4dField AddTextured(string key,Point4d value,string prompt,bool treatAsLinear)',
@@ -95055,8 +95483,26 @@ not appear in the user interface.`
       },
       {
         signature: 'StringField AddTextured(string key,string value,string prompt)',
+        summary: `Add a new StringField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'StringField AddTextured(string key,string value,string prompt,bool treatAsLinear)',
@@ -95087,8 +95533,26 @@ not appear in the user interface.`
       },
       {
         signature: 'TransformField AddTextured(string key,Transform value,string prompt)',
+        summary: `Add a new TransformField to the dictionary. This overload will cause
+the field to be tagged as "textured" so that the texturing UI will
+appear in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'TransformField AddTextured(string key,Transform value,string prompt,bool treatAsLinear)',
@@ -95119,8 +95583,26 @@ not appear in the user interface.`
       },
       {
         signature: 'Vector2dField AddTextured(string key,Vector2d value,string prompt)',
+        summary: `Add a new Vector2dField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'Vector2dField AddTextured(string key,Vector2d value,string prompt,bool treatAsLinear)',
@@ -95151,8 +95633,26 @@ not appear in the user interface.`
       },
       {
         signature: 'Vector3dField AddTextured(string key,Vector3d value,string prompt)',
+        summary: `Add a new Vector3dField to the dictionary. This overload will cause the
+field to be tagged as "textured" so that the texturing UI will appear
+in automatic UIs.`,
         since: '5.7',
-        deprecated: '7.0'
+        parameters: [
+          {
+            name: 'key',
+            summary: 'Key name for the field value to change.'
+          },
+          {
+            name: 'value',
+            summary: 'Initial value for this field.'
+          },
+          {
+            name: 'prompt',
+            summary: `Prompt to display in the user interface (Content Browsers) if this
+is None or an empty string the this field is a data only field and will
+not appear in the user interface.`
+          }
+        ]
       },
       {
         signature: 'Vector3dField AddTextured(string key,Vector3d value,string prompt,bool treatAsLinear)',
@@ -95858,7 +96358,7 @@ name is not valid.`,
         returns: 'True if the field is found and the tag was set otherwise False is returned.'
       },
       {
-        signature: 'bool TryGetTag(string key,object tag)',
+        signature: 'bool TryGetTag(string key,out object tag)',
         summary: 'Gets object that contains data associate with a field. THIS IS NOW OBSOLETE - if you were using this, please email andy@mcneel.com and let me know why.',
         since: '5.1',
         deprecated: '6.0',
@@ -95876,7 +96376,7 @@ name is not valid.`,
 returns false.`
       },
       {
-        signature: 'bool TryGetValue(string key,bool value)',
+        signature: 'bool TryGetValue(string key,out bool value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95893,7 +96393,7 @@ returns false.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,byte[] value)',
+        signature: 'bool TryGetValue(string key,out byte[] value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95910,7 +96410,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Color value)',
+        signature: 'bool TryGetValue(string key,out Color value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95927,7 +96427,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Color4f value)',
+        signature: 'bool TryGetValue(string key,out Color4f value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95944,7 +96444,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,DateTime value)',
+        signature: 'bool TryGetValue(string key,out DateTime value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95961,7 +96461,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,double value)',
+        signature: 'bool TryGetValue(string key,out double value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95978,7 +96478,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,float value)',
+        signature: 'bool TryGetValue(string key,out float value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -95995,7 +96495,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Guid value)',
+        signature: 'bool TryGetValue(string key,out Guid value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96012,7 +96512,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,int value)',
+        signature: 'bool TryGetValue(string key,out int value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96029,7 +96529,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Point2d value)',
+        signature: 'bool TryGetValue(string key,out Point2d value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96046,7 +96546,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Point3d value)',
+        signature: 'bool TryGetValue(string key,out Point3d value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96063,7 +96563,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Point4d value)',
+        signature: 'bool TryGetValue(string key,out Point4d value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96080,7 +96580,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,string value)',
+        signature: 'bool TryGetValue(string key,out string value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96097,7 +96597,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,T value)',
+        signature: 'bool TryGetValue(string key,out T value)',
         summary: 'Parametrized version of TryGetValue.',
         since: '6.12',
         parameters: [
@@ -96113,7 +96613,7 @@ field value.  Returns False if the field was not found.`
         returns: 'True if field was found. If False out parameter value will be set to default(T).'
       },
       {
-        signature: 'bool TryGetValue(string key,Transform value)',
+        signature: 'bool TryGetValue(string key,out Transform value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96130,7 +96630,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Vector2d value)',
+        signature: 'bool TryGetValue(string key,out Vector2d value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96147,7 +96647,7 @@ field value.  Returns False if the field was not found.`
 field value.  Returns False if the field was not found.`
       },
       {
-        signature: 'bool TryGetValue(string key,Vector3d value)',
+        signature: 'bool TryGetValue(string key,out Vector3d value)',
         summary: 'Find a field with the specified key and get its value if found.',
         since: '5.1',
         parameters: [
@@ -96756,7 +97256,7 @@ from the given plug-in. The plug-in is found in the given assembly`,
         returns: 'If delete is successful, then return true, else return false'
       },
       {
-        signature: 'void GetLights(RhinoDoc doc,LightArray light_array)',
+        signature: 'void GetLights(RhinoDoc doc,ref LightArray light_array)',
         summary: `Get all the lights that are associated to the light manager. The lights are added
 to the LightArray parameter passed to the GetLights method`,
         since: '6.0'
@@ -96769,18 +97269,18 @@ False if not in solo storage (ie - this is the checkbox state on the light manag
         returns: 'Returns True if the light is in solo storage, or False if not in solo storage'
       },
       {
-        signature: 'void GroupLights(RhinoDoc doc,LightArray light_array)',
+        signature: 'void GroupLights(RhinoDoc doc,ref LightArray light_array)',
         summary: 'Creates a new group with the lights',
         since: '6.0'
       },
       {
-        signature: 'string LightDescription(RhinoDoc doc,Light light)',
+        signature: 'string LightDescription(RhinoDoc doc,ref Light light)',
         summary: 'Gets the string representation of the light description',
         since: '6.0',
         returns: 'Returns the string representation of the light description'
       },
       {
-        signature: 'bool LightFromId(RhinoDoc doc,Guid uuid,Light light)',
+        signature: 'bool LightFromId(RhinoDoc doc,Guid uuid,ref Light light)',
         summary: 'Get Rhino.Geometry.Light object associated to Guig uuid',
         since: '6.0'
       },
@@ -96796,12 +97296,12 @@ False if not in solo storage (ie - this is the checkbox state on the light manag
         since: '6.0'
       },
       {
-        signature: 'int ObjectSerialNumberFromLight(RhinoDoc doc,Light light)',
+        signature: 'int ObjectSerialNumberFromLight(RhinoDoc doc,ref Light light)',
         summary: 'Get the object serial number of the light',
         since: '6.0'
       },
       {
-        signature: 'void OnCustomLightEvent(RhinoDoc doc,LightMangerSupportCustomEvent le,Light light)',
+        signature: 'void OnCustomLightEvent(RhinoDoc doc,LightMangerSupportCustomEvent le,ref Light light)',
         summary: `Generates LightMangerSupportCustomEvent:
 light_added,
 light_deleted,
@@ -96813,7 +97313,7 @@ The event triggers a Light table event that the rdk lightmanager listens too`,
         returns: 'Returns the string representation of the light description'
       },
       {
-        signature: 'bool OnEditLight(RhinoDoc doc,LightArray light_array)',
+        signature: 'bool OnEditLight(RhinoDoc doc,ref LightArray light_array)',
         summary: `The default implementation of OnEditLight selects the lights and opens
 the Lights Properties page`,
         since: '6.0',
@@ -96849,7 +97349,7 @@ This shouldn't happen.  Will cause an ASSERT`,
         returns: 'Returns True if action is successful'
       },
       {
-        signature: 'void UnGroup(RhinoDoc doc,LightArray light_array)',
+        signature: 'void UnGroup(RhinoDoc doc,ref LightArray light_array)',
         summary: 'UnGroups the lights',
         since: '6.0'
       }
@@ -97441,132 +97941,12 @@ See also RhinoMath.CRC32(uint,byte[]).`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'Channel',
-    dataType: 'class',
-    interfaces: ['IDisposable'],
-    properties: [
-      {
-        signature: 'Guid Id',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'uint PixelSize',
-        since: '7.0',
-        property: ['get']
-      }
-    ],
-    methods: [
-      {
-        signature: 'Channel Clone()',
-        since: '7.0'
-      },
-      {
-        signature: 'void Commit()',
-        since: '7.0'
-      },
-      {
-        signature: 'RenderWindow.Channel CPU()',
-        since: '7.0'
-      },
-      {
-        signature: 'void Dispose()',
-        since: '7.0'
-      },
-      {
-        signature: 'RenderWindow.ChannelGPU GPU()',
-        since: '7.0'
-      },
-      {
-        signature: 'void SetIsCommitable()',
-        since: '7.0'
-      },
-      {
-        signature: 'bool WasCommit()',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'ChannelData',
-    dataType: 'class',
-    interfaces: ['IDisposable'],
-    constructors: [
-      {
-        signature: 'ChannelData()',
-        since: '7.0'
-      },
-      {
-        signature: 'ChannelData(ChannelData cd)',
-        since: '7.0'
-      },
-      {
-        signature: 'ChannelData(Guid id,ComponentOrders componentOrder)',
-        since: '7.0'
-      }
-    ],
-    properties: [
-      {
-        signature: 'ComponentOrders ComponentOrder',
-        since: '7.0',
-        property: ['get']
-      }
-    ],
-    methods: [
-      {
-        signature: 'void Dispose()',
-        since: '7.0'
-      },
-      {
-        signature: 'Guid Id()',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'ComponentOrders',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'Irrelevant'
-      },
-      {
-        signature: 'RGBA'
-      },
-      {
-        signature: 'ARGB'
-      },
-      {
-        signature: 'RGB'
-      },
-      {
-        signature: 'BGR'
-      },
-      {
-        signature: 'ABGR'
-      },
-      {
-        signature: 'BGRA'
-      },
-      {
-        signature: 'XYZ'
-      },
-      {
-        signature: 'ZYX'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
     name: 'CustomPostEffectAttribute',
     dataType: 'class',
     baseclass: 'Attribute',
     constructors: [
       {
-        signature: 'CustomPostEffectAttribute(Types postEffectType,string name,Usages usageFlags,ExecuteWhileRenderingOptions executeWhileRenderingOption,bool supportsHDR,bool canDisplayHelp,bool isFixed,int executeWhileRenderingDelay)',
+        signature: 'CustomPostEffectAttribute(PostEffectType postEffectType,string name,PostEffectStyles styles,PostEffectExecuteWhileRenderingOptions executeWhileRenderingOption,bool canDisplayHelp,int executeWhileRenderingDelay)',
         since: '7.0'
       }
     ],
@@ -97582,12 +97962,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         property: ['get', 'set']
       },
       {
-        signature: 'ExecuteWhileRenderingOptions ExecuteWhileRenderingOption',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'bool IsFixed',
+        signature: 'PostEffectExecuteWhileRenderingOptions ExecuteWhileRenderingOption',
         since: '7.0',
         property: ['get', 'set']
       },
@@ -97597,17 +97972,12 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         property: ['get', 'set']
       },
       {
-        signature: 'Types PostEffectType',
+        signature: 'PostEffectType PostEffectType',
         since: '7.0',
         property: ['get', 'set']
       },
       {
-        signature: 'bool SupportsHDR',
-        since: '7.0',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'Usages Usage',
+        signature: 'PostEffectStyles Styles',
         since: '7.0',
         property: ['get', 'set']
       }
@@ -97619,27 +97989,11 @@ See also RhinoMath.CRC32(uint,byte[]).`,
     dataType: 'interface',
     methods: [
       {
-        signature: 'PostEffect[] GetPostEffects(Types type)',
+        signature: 'PostEffect[] GetPostEffects(PostEffectType type)',
         since: '7.0'
       },
       {
         signature: 'PostEffect PostEffectFromId(Guid uuid)',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'Pixels',
-    dataType: 'class',
-    interfaces: ['IDisposable'],
-    methods: [
-      {
-        signature: 'void Dispose()',
-        since: '7.0'
-      },
-      {
-        signature: 'void Get(Guid channelId,ComponentOrders componentOrder,IntPtr values)',
         since: '7.0'
       }
     ]
@@ -97662,14 +98016,9 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         property: ['get']
       },
       {
-        signature: 'ExecuteWhileRenderingOptions ExecuteWhileRenderingOption',
+        signature: 'PostEffectExecuteWhileRenderingOptions ExecuteWhileRenderingOption',
         since: '7.0',
         property: ['get']
-      },
-      {
-        signature: 'bool Fixed',
-        since: '7.0',
-        property: ['get', 'set']
       },
       {
         signature: 'Guid Id',
@@ -97693,7 +98042,7 @@ See also RhinoMath.CRC32(uint,byte[]).`,
         property: ['get', 'set']
       },
       {
-        signature: 'Types PostEffectType',
+        signature: 'PostEffectType PostEffectType',
         since: '7.0',
         property: ['get']
       },
@@ -97717,7 +98066,7 @@ Most post effects should be able to use this default with no need to override th
         property: ['get', 'set']
       },
       {
-        signature: 'Usages Usage',
+        signature: 'PostEffectStyles Styles',
         since: '7.0',
         property: ['get']
       }
@@ -97777,6 +98126,10 @@ Post effect authors can override this to include other criteria but cannot disab
         since: '7.0'
       },
       {
+        signature: 'void Dispose(bool bDisposing)',
+        since: '7.0'
+      },
+      {
         signature: 'bool EndChange()',
         since: '7.0'
       },
@@ -97797,7 +98150,13 @@ Post effect authors can override this to include other criteria but cannot disab
         returns: 'Return True if successful, else false.'
       },
       {
-        signature: 'bool GetParam(string param,object v)',
+        signature: 'int GetHashCode()',
+        summary: 'A CRC of the state of this post effect.',
+        since: '7.0',
+        returns: 'returns a crc of post effect state'
+      },
+      {
+        signature: 'bool GetParam(string param,ref object v)',
         summary: 'Get a parameter.',
         since: '7.0',
         parameters: [
@@ -97811,12 +98170,6 @@ Post effect authors can override this to include other criteria but cannot disab
           }
         ],
         returns: 'Returns True if successful or False if the parameter was not found.'
-      },
-      {
-        signature: 'uint Hash()',
-        summary: 'A CRC of the state of this post effect.',
-        since: '7.0',
-        returns: 'returns a crc of post effect state'
       },
       {
         signature: 'bool ReadFromDocumentDefaults(RhinoDoc doc)',
@@ -97866,7 +98219,7 @@ method to take complete control of how the document defaults are read.`,
         returns: 'Return True if successful or False if the parameter could not be set.'
       },
       {
-        signature: 'bool WriteState(PostEffectState state)',
+        signature: 'bool WriteState(ref PostEffectState state)',
         summary: 'Write the state. If your post effect has no state, you must still return True for success.',
         since: '7.0',
         parameters: [
@@ -97895,275 +98248,98 @@ method to take complete control of how the document defaults are written.`,
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffect.ExecuteWhileRenderingOptions',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'None'
-      },
-      {
-        signature: 'Always'
-      },
-      {
-        signature: 'UseDelay'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffect.Types',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'Early = 0'
-      },
-      {
-        signature: 'ToneMapping = 1'
-      },
-      {
-        signature: 'Late = 2'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffect.Usages',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
-      {
-        signature: 'ProductionRendering = 0x01'
-      },
-      {
-        signature: 'RealtimeRendering = 0x02'
-      },
-      {
-        signature: 'ViewportDisplay = 0x04'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectJob',
+    name: 'PostEffectChannel',
     dataType: 'class',
     interfaces: ['IDisposable'],
-    constructors: [
-      {
-        signature: 'PostEffectJob()',
-        since: '7.0'
-      }
-    ],
     properties: [
       {
-        signature: 'int SerialNumber',
-        since: '7.0',
-        property: ['get', 'set']
-      }
-    ],
-    methods: [
-      {
-        signature: 'PostEffectJob Clone()',
-        since: '7.0'
-      },
-      {
-        signature: 'void Dispose()',
-        since: '7.0'
-      },
-      {
-        signature: 'bool Execute(Rectangle rect,Pixels pixels)',
-        since: '7.0'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectPipeline',
-    dataType: 'class',
-    summary: `This object provides a way for post effects to access the frame buffer channels from a rendering and create
-new channels containing post-processed information which can be passed to the next post effect in the chain.
-Consider a simple post effect that just modifies the red component of a rendering.It will call GetChannel()
-to get the red channel as its input, and it will call NewChannel() to get a new red channel for its output.
-It will then read the input channel, do calculations and write to the output channel.When finished, it will
-call Commit() passing the new channel.Because both channels have the same identifier, this will replace the
-old channel with the new one so that subsequent post effects in the chain will use the new channel instead of the
-original.Note that this will only replace the channel used by the pipeline.The original channel will still
-exist in the frame buffer.This system allows any post effect to access any number of channels for reading and
-create any number of new channels which may or may not replace existing channels depending on the channel
-id.The final stage (convert to 8-bit) operates on the channels left in the pipeline by the post effect chain to
-produce the final 32-bit RGBA image in a dib.
-
-It is also possible for a post effect to create and use any number of 'scratch' channels.If a post effect needs a
-temporary pixel buffer for some intermediate results, it can call NewChannel() with a custom (random) id.
-Once it is finished with this scratch channel, it can call Discard() on it.`,
-    interfaces: ['IDisposable', 'IProgress<int>'],
-    properties: [
-      {
-        signature: 'bool GPUAllowed',
-        summary: 'Post effect authors should check that GPU use is allowed before using the GPU in a post effect.',
+        signature: 'Guid Id',
+        summary: 'Return the channel id which indicates what type of data is used in this channel.',
         since: '7.0',
         property: ['get']
       },
       {
-        signature: 'bool IsRendering',
-        summary: 'IsRendering',
-        since: '7.0',
-        property: ['get']
-      },
-      {
-        signature: 'Guid RenderingId',
-        summary: 'Return a UUID that uniquely identifies the rendering being processed.',
+        signature: 'int PixelSize',
+        summary: 'Return the pixel size in bytes for this channel.',
         since: '7.0',
         property: ['get']
       }
     ],
     methods: [
       {
-        signature: 'void Commit(Channel channel)',
-        summary: `Commit changes to a new channel so that those changes can be used by subsequent post effects in the chain.
+        signature: 'PostEffectChannel Clone()',
+        summary: 'Return a clone of this channel.',
+        since: '7.0'
+      },
+      {
+        signature: 'void Commit()',
+        summary: `Commit changes to the channel so that those changes can be used by subsequent post effects in the chain.
+Only valid for channels that were obtained by calling GetChannelForWrite().
 If the channel has the same id as an existing channel, the existing channel will be replaced by
-the new one.If the existing channel was created by a previous post effect in the chain, it will be deleted.
+the new one. If the existing channel was created by a previous post effect in the chain, it will be deleted.
 Changes to channels that are not commited simply get ignored.
-
-This call merely sets a flag.The process is deferred until after the post effect has finished executing.`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'channel',
-            summary: 'pChannel is a pointer to the channel to commit.'
-          }
-        ]
+Note: This call merely sets a flag. The process is deferred until after the post effect has finished executing.`,
+        since: '7.0'
       },
       {
-        signature: 'Size Dimensions()',
-        summary: 'Get the dimensions of the frame buffer. All channels in the frame buffer have the same dimensions.',
-        since: '7.0',
-        returns: 'Dimension as Size'
+        signature: 'RenderWindow.Channel CPU()',
+        summary: 'Return an interface to this channel for doing channel operations on the CPU.',
+        since: '7.0'
       },
       {
         signature: 'void Dispose()',
         since: '7.0'
       },
       {
-        signature: 'bool Execute(Rectangle p,bool renderingInProgress,UsageContexts usageContexts,Histograms histogramsToUpdate)',
-        summary: `Execute the pipeline. This executes all the post effects in order.
-Only this rectangle need be modified by the post effects.`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'p',
-            summary: 'p is a rectangle within the frame buffer.'
-          },
-          {
-            name: 'renderingInProgress',
-            summary: 'rendering is True if rendering is in progress.'
-          },
-          {
-            name: 'usageContexts',
-            summary: 'Context this pipeline is being executed in'
-          },
-          {
-            name: 'histogramsToUpdate',
-            summary: 'Bitwise list of histograms to update during the execution of the pipeline'
-          }
-        ]
-      },
-      {
-        signature: 'PostEffect FindPostEffect(Guid uuid)',
-        summary: 'Return a pointer to the specified post effect or None if not found.',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'uuid',
-            summary: 'uuid of the poest effect plugin'
-          }
-        ],
-        returns: 'Return a pointer to the specified post effect or None if not found.'
-      },
-      {
-        signature: 'Channel GetChannel(Guid uuid)',
-        summary: `Get a channel for reading. A post effect will use this to get channel data as input to
-its process.Output will be written to new channel(s). \\see NewChannel()`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'uuid',
-            summary: 'uuidChannel is the channel identifier.'
-          }
-        ],
-        returns: 'A pointer to the channel or None if the channel is not available.'
-      },
-      {
-        signature: 'ulong GetEndTimeInMilliseconds()',
-        summary: `Get the end time of the rendering expressed in milliseconds since some unspecified epoch.
-Do not make assumptions about what the epoch is; it might be different on different platforms.`,
-        since: '7.0',
-        returns: 'milliseconds'
-      },
-      {
-        signature: 'float GetMaxLuminance()',
-        summary: 'Get the max luminance in the rendering.',
-        since: '7.0',
-        returns: 'max luminance'
-      },
-      {
-        signature: 'ulong GetStartTimeInMilliseconds()',
-        summary: `Get the start time of the rendering expressed in milliseconds since some unspecified epoch.
-Do not make assumptions about what the epoch is; it might be different on different platforms.`,
-        since: '7.0',
-        returns: 'milliseconds'
-      },
-      {
-        signature: 'Channel NewChannel(Guid id,InitializationOptions initializationOptions,NewChannelOptions channelOptions)',
-        summary: `Create a new channel for writing. A post effect will use this to get channel(s) to write the output of its
-processing to.Input will usually come from existing channels, although a post effect is free to read
-its own output channels if needed. \\see GetChannel()
-
-You are allowed to create one new channel with the same identifier as an existing channel,
-in which case Commit() will replace the existing channel with the new one in the pipeline.`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'id',
-            summary: 'uuidChannel is the channel identifier.'
-          },
-          {
-            name: 'initializationOptions',
-            summary: 'init specifies how the new channel should be initialized.'
-          },
-          {
-            name: 'channelOptions',
-            summary: 'flags from the NewChannelOptions specify options for the new channel.'
-          }
-        ],
-        returns: 'A pointer to the new channel or None if the channel could not be created.'
-      },
-      {
-        signature: 'Guid[] PostEffects()',
-        summary: 'Returns a list of the post effects to be executed by this pipeline in order.',
-        since: '7.0',
-        returns: 'A list of the post effects to be executed by this pipeline in order'
-      },
-      {
-        signature: 'void SetStartTimeInMilliseconds(ulong ms)',
-        summary: 'Set the start time of the rendering in milliseconds since some unspecified epoch.',
-        parameters: [
-          {
-            name: 'ms',
-            summary: 'milliseconds'
-          }
-        ]
-      },
-      {
-        signature: 'PostEffectThreadEngine ThreadEngine()',
+        signature: 'RenderWindow.ChannelGPU GPU()',
+        summary: 'Return an interface to this channel for doing channel operations on the GPU.',
         since: '7.0'
       }
     ]
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectPipeline.Histograms',
+    name: 'PostEffectExecuteContexts',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'ProductionRendering = 0'
+      },
+      {
+        signature: 'RealtimeRendering = 1'
+      },
+      {
+        signature: 'ViewportDisplay = 2'
+      },
+      {
+        signature: 'ThumbnailCreation = 3'
+      },
+      {
+        signature: 'ConvertingToHDR = 4'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectExecuteWhileRenderingOptions',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'None = 0'
+      },
+      {
+        signature: 'Always = 1'
+      },
+      {
+        signature: 'UseDelay = 2'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectHistograms',
     dataType: 'enum',
     since: '7.0',
     values: [
@@ -98198,55 +98374,197 @@ in which case Commit() will replace the existing channel with the new one in the
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectPipeline.InitializationOptions',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
+    name: 'PostEffectJob',
+    dataType: 'class',
+    interfaces: ['IDisposable'],
+    constructors: [
       {
-        signature: 'Empty = 0'
+        signature: 'PostEffectJob()',
+        since: '7.0'
+      }
+    ],
+    methods: [
+      {
+        signature: 'PostEffectJob Clone()',
+        since: '7.0'
       },
       {
-        signature: 'Zero = 1'
+        signature: 'void Dispose()',
+        since: '7.0'
       },
       {
-        signature: 'Copy = 2'
+        signature: 'bool Execute(Rectangle rect,PostEffectJobChannels access)',
+        since: '7.0'
       }
     ]
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectPipeline.NewChannelOptions',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
+    name: 'PostEffectJobChannels',
+    dataType: 'class',
+    interfaces: ['IDisposable'],
+    methods: [
       {
-        signature: 'None = 0x0000'
+        signature: 'void Dispose()',
+        since: '7.0'
       },
       {
-        signature: 'File = 0x0001'
-      },
-      {
-        signature: 'GPU  = 0x0002'
+        signature: 'PostEffectChannel GetChannel(Guid channelId)',
+        since: '7.0'
       }
     ]
   },
   {
     namespace: 'Rhino.Render.PostEffects',
-    name: 'PostEffectPipeline.UsageContexts',
-    dataType: 'enum',
-    since: '7.0',
-    values: [
+    name: 'PostEffectPipeline',
+    dataType: 'class',
+    summary: `This object provides a way for post effects to access the frame buffer channels from a rendering and create
+new channels containing post-processed information which can be passed to the next post effect in the chain.
+Consider a simple post effect that just modifies the red component of a rendering.It will call GetChannel()
+to get the red channel as its input, and it will call NewChannel() to get a new red channel for its output.
+It will then read the input channel, do calculations and write to the output channel.When finished, it will
+call Commit() passing the new channel.Because both channels have the same identifier, this will replace the
+old channel with the new one so that subsequent post effects in the chain will use the new channel instead of the
+original.Note that this will only replace the channel used by the pipeline.The original channel will still
+exist in the frame buffer.This system allows any post effect to access any number of channels for reading and
+create any number of new channels which may or may not replace existing channels depending on the channel
+id.The final stage (convert to 8-bit) operates on the channels left in the pipeline by the post effect chain to
+produce the final 32-bit RGBA image in a dib.
+
+It is also possible for a post effect to create and use any number of 'scratch' channels.If a post effect needs a
+temporary pixel buffer for some intermediate results, it can call NewChannel() with a custom (random) id.
+Once it is finished with this scratch channel, it can call Discard() on it.`,
+    interfaces: ['IDisposable', 'IProgress<int>', 'Rhino.Render.PostEffects.IPostEffects'],
+    properties: [
       {
-        signature: 'ProductionRendering = 0'
+        signature: 'bool GPUAllowed',
+        summary: 'Post effect authors should check that GPU use is allowed before using the GPU in a post effect.',
+        since: '7.0',
+        property: ['get']
       },
       {
-        signature: 'RealtimeRendering = 1'
+        signature: 'bool IsRendering',
+        summary: 'IsRendering',
+        since: '7.0',
+        property: ['get']
       },
       {
-        signature: 'ViewportDisplay = 2'
+        signature: 'Guid RenderingId',
+        summary: 'Return a UUID that uniquely identifies the rendering being processed.',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'Size Dimensions()',
+        summary: 'Get the dimensions of the frame buffer. All channels in the frame buffer have the same dimensions.',
+        since: '7.0',
+        returns: 'Dimension as Size'
       },
       {
-        signature: 'ThumbnailCreation = 3'
+        signature: 'void Dispose()',
+        since: '7.0'
+      },
+      {
+        signature: 'bool Execute(Rectangle p,bool renderingInProgress,PostEffectExecuteContexts usageContexts,PostEffectHistograms histogramsToUpdate)',
+        summary: `Execute the pipeline. This executes all the post effects in order.
+Only this rectangle need be modified by the post effects.`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'p',
+            summary: 'p is a rectangle within the frame buffer.'
+          },
+          {
+            name: 'renderingInProgress',
+            summary: 'rendering is True if rendering is in progress.'
+          },
+          {
+            name: 'usageContexts',
+            summary: 'Context this pipeline is being executed in'
+          },
+          {
+            name: 'histogramsToUpdate',
+            summary: 'Bitwise list of histograms to update during the execution of the pipeline'
+          }
+        ]
+      },
+      {
+        signature: 'Guid[] ExecutionOrder()',
+        summary: 'Returns a list of the post effects to be executed by this pipeline in order.',
+        since: '7.0',
+        returns: 'A list of the post effects to be executed by this pipeline in order'
+      },
+      {
+        signature: 'PostEffectChannel GetChannelForRead(Guid id)',
+        summary: `Get a channel for reading. A post effect will use this to get channel data as input to
+its process. Output will be written to new channel(s). \\see GetChannelForWrite()
+This method returns the current state of the channel at this stage in the pipeline.
+If the first post effect calls this, it will get the actual frame buffer channel.
+Subsequent post effects will get the data left behind by the previous post effect.
+A post effect calls GetChannelForRead() to get its input and GetChannelForWrite()
+to get the object to which it will write its output. Even when the same channel id
+is specified, these are separate, unconnected objects.`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'id',
+            summary: 'The channel identifier.'
+          }
+        ],
+        returns: 'A pointer to the channel or None if the channel is not available.'
+      },
+      {
+        signature: 'PostEffectChannel GetChannelForWrite(Guid id)',
+        summary: `Get a channel for writing. A post effect will use this to get channel(s) to write the output of its
+processing to. Input will usually come from existing channels, although a post effect is free to read
+its own output channels if needed. See GetChannelForRead()
+You are allowed to create one new channel with the same identifier as an existing channel,
+in which case IChannel::Commit() will replace the existing channel with the new one in the pipeline.`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'id',
+            summary: 'The channel identifier.'
+          }
+        ],
+        returns: 'A pointer to the new channel or None if the channel could not be created.'
+      },
+      {
+        signature: 'ulong GetEndTimeInMilliseconds()',
+        summary: `Get the end time of the rendering expressed in milliseconds since some unspecified epoch.
+Do not make assumptions about what the epoch is; it might be different on different platforms.`,
+        since: '7.0',
+        returns: 'milliseconds'
+      },
+      {
+        signature: 'float GetMaxLuminance()',
+        summary: 'Get the max luminance in the rendering.',
+        since: '7.0',
+        returns: 'max luminance'
+      },
+      {
+        signature: 'ulong GetStartTimeInMilliseconds()',
+        summary: `Get the start time of the rendering expressed in milliseconds since some unspecified epoch.
+Do not make assumptions about what the epoch is; it might be different on different platforms.`,
+        since: '7.0',
+        returns: 'milliseconds'
+      },
+      {
+        signature: 'void SetStartTimeInMilliseconds(ulong ms)',
+        summary: 'Set the start time of the rendering in milliseconds since some unspecified epoch.',
+        parameters: [
+          {
+            name: 'ms',
+            summary: 'milliseconds'
+          }
+        ]
+      },
+      {
+        signature: 'PostEffectThreadEngine ThreadEngine()',
+        summary: 'Get the post effect thread engine.',
+        since: '7.0'
       }
     ]
   },
@@ -98265,8 +98583,34 @@ in which case Commit() will replace the existing channel with the new one in the
         since: '7.0'
       },
       {
-        signature: 'bool TryGetValue(string name,T vValue)',
+        signature: 'bool TryGetValue(string name,out T vValue)',
         since: '7.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectStyles',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'ExecuteForProductionRendering = 0x0001'
+      },
+      {
+        signature: 'ExecuteForRealtimeRendering = 0x0002'
+      },
+      {
+        signature: 'ExecuteForViewportDisplay = 0x0004'
+      },
+      {
+        signature: 'Fixed = 0x0100'
+      },
+      {
+        signature: 'DefaultShown = 0x0200'
+      },
+      {
+        signature: 'DefaultOn = 0x0400'
       }
     ]
   },
@@ -98281,8 +98625,25 @@ in which case Commit() will replace the existing channel with the new one in the
         since: '7.0'
       },
       {
-        signature: 'bool RunPostEffect(PostEffectJob job,PostEffectPipeline pipeline,PostEffect plugin,Rectangle rect,ChannelData[] channels)',
+        signature: 'bool RunPostEffect(PostEffectJob job,PostEffectPipeline pipeline,PostEffect plugin,Rectangle rect,Guid[] channels)',
         since: '7.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render.PostEffects',
+    name: 'PostEffectType',
+    dataType: 'enum',
+    since: '7.0',
+    values: [
+      {
+        signature: 'Early = 0'
+      },
+      {
+        signature: 'ToneMapping = 1'
+      },
+      {
+        signature: 'Late = 2'
       }
     ]
   },
@@ -98819,7 +99180,7 @@ related.`,
         since: '6.0'
       },
       {
-        signature: 'void GetRenderSize(int width,int height)',
+        signature: 'void GetRenderSize(out int width,out int height)',
         summary: 'Get the current render resolution for the running render session.',
         since: '6.0'
       },
@@ -99760,7 +100121,7 @@ No need to call the base class when you override this, and no need to recurse in
         since: '5.1'
       },
       {
-        signature: 'bool DynamicIcon(Size size,Bitmap bitmap,DynamicIconUsage usage)',
+        signature: 'bool DynamicIcon(Size size,out Bitmap bitmap,DynamicIconUsage usage)',
         since: '6.0'
       },
       {
@@ -99844,11 +100205,11 @@ If you do not support this parameter, call the base class.`,
         returns: 'IConvertible. Note that you can\'t directly cast from object, instead you have to use the Convert mechanism.'
       },
       {
-        signature: 'bool GetUnderlyingInstances(RenderContentCollection collection)',
+        signature: 'bool GetUnderlyingInstances(ref RenderContentCollection collection)',
         since: '7.0'
       },
       {
-        signature: 'bool Icon(Size size,Bitmap bitmap)',
+        signature: 'bool Icon(Size size,out Bitmap bitmap)',
         since: '6.0'
       },
       {
@@ -100206,7 +100567,7 @@ Does not record undo but does send the OnContentGroupIdChanged event.`,
         since: '6.9'
       },
       {
-        signature: 'bool VirtualIcon(Size size,Bitmap bitmap)',
+        signature: 'bool VirtualIcon(Size size,out Bitmap bitmap)',
         summary: `Icon to display in the content browser, this bitmap needs to be valid for
 the life of this content object, the content object that returns the bitmap
 is responsible for disposing of the bitmap.`,
@@ -100746,7 +101107,7 @@ file save box when exporting the specified render content kind.`,
         since: '7.0'
       },
       {
-        signature: 'bool LoadMultiple(RhinoDoc doc,List<string> file_names,RenderContentKind content_kind,LoadMultipleFlags flags,RenderContentSerializerItemsLoaded loaded)',
+        signature: 'bool LoadMultiple(RhinoDoc doc,IEnumerable<string> fileNames,RenderContentKind contentKind,LoadMultipleFlags flags)',
         summary: 'Create any number of new render contents loaded from any number of files.',
         since: '7.0',
         parameters: [
@@ -100755,23 +101116,17 @@ file save box when exporting the specified render content kind.`,
             summary: 'Rhino document'
           },
           {
-            name: 'file_names',
+            name: 'fileNames',
             summary: 'A list of filenames to load from. Each file can contain any number of render contents.'
           },
           {
-            name: 'content_kind',
-            summary: `Kind is only used by I/O plug-ins that support multiple kinds. It tells the plug-in which
+            name: 'contentKind',
+            summary: `Only used by I/O plug-ins that support multiple kinds. It tells the plug-in which
 content kind to create. If the plug-in only supports a single content kind, it can ignore this parameter.`
           },
           {
             name: 'flags',
             summary: 'A set of flags from the enum above.'
-          },
-          {
-            name: 'loaded',
-            summary: `Accepts a list of loaded render contents and the names of the files they were loaded from.
-The contents are not actually attached to any document, they are just loaded.
-The doc parameter is only used for unpacking embedded files, if necessary.`
           }
         ]
       },
@@ -100797,6 +101152,52 @@ was successfully parsed otherwise returns null.`
           {
             name: 'id',
             summary: 'Plug-in id'
+          }
+        ]
+      },
+      {
+        signature: 'void ReportContentAndFile(RenderContent renderContent,string pathToFile,int flags)',
+        summary: `This is called from your implementation of LoadMultiple() to add a content and the file it was loaded from
+when the LoadMultipleFlags.Preload flag is NOT set.
+See LoadMultiple() for an explanation of this method's use.`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'renderContent',
+            summary: 'Render content that was loaded from the file.'
+          },
+          {
+            name: 'pathToFile',
+            summary: 'Full path of the file that the render content was loaded from.'
+          },
+          {
+            name: 'flags',
+            summary: 'Flags for future use; should be passed as zero.'
+          }
+        ]
+      },
+      {
+        signature: 'void ReportDeferredContentAndFile(RenderContent renderContent,string pathToFile,int flags)',
+        summary: `This is called from your implementation of LoadMultiple() to add a 'deferred' content and the file it will be loaded from,
+when the LoadMultipleFlags.Preload flag is set.
+See LoadMultiple() for an explanation of this method's use.
+\\param c is the deferred content.
+\\param wszFullPath is the full path to the file that 'c' will be loaded from.
+\\param flags is reserved for future use; you should pass zero.
+\\param pReserved is reserved for future use; you should pass nullptr. */`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'renderContent',
+            summary: 'Deferred render content - represents all contents that will be loaded from the file.'
+          },
+          {
+            name: 'pathToFile',
+            summary: 'Full path of the file that render contents will be loaded from.'
+          },
+          {
+            name: 'flags',
+            summary: 'Flags for future use; should be passed as zero.'
           }
         ]
       },
@@ -100833,57 +101234,6 @@ the exported file.`
       },
       {
         signature: 'Preload = 0x01'
-      }
-    ]
-  },
-  {
-    namespace: 'Rhino.Render',
-    name: 'RenderContentSerializerItemsLoaded',
-    dataType: 'class',
-    summary: 'Used by RenderContentSerializer to return render contents that were loaded and the file names they were loaded from.',
-    methods: [
-      {
-        signature: 'void Add(RenderContent renderContent,int flags,string pathToFile)',
-        summary: 'Add a loaded content and the file it was loaded from.',
-        since: '7.0',
-        parameters: [
-          {
-            name: 'renderContent',
-            summary: 'Render content that was loaded from the file.'
-          },
-          {
-            name: 'flags',
-            summary: 'Flags for future use; should be set to zero.'
-          },
-          {
-            name: 'pathToFile',
-            summary: 'Full path of the file that was loaded.'
-          }
-        ]
-      },
-      {
-        signature: 'void AddDeferred(RenderContent renderContent,int flags,string pathToFile)',
-        summary: `Add a 'deferred' content and the file it was loaded from.
-If the LoadMultiple_Preload flag was passed to LoadMultiple(), then if your loading process is time-consuming
-or displays a dialog, you must create a 'deferred' content instead of loading a real content. A deferred
-content is a lightweight version of the same class which is fast to create. This is needed to support
-drag and drop because the content is created during dragging. On dropping, any deferred contents will
-be properly loaded and used for the drop.`,
-        since: '7.0',
-        parameters: [
-          {
-            name: 'renderContent',
-            summary: 'Render content that was loaded from the file.'
-          },
-          {
-            name: 'flags',
-            summary: 'Flags for future use; should be set to zero.'
-          },
-          {
-            name: 'pathToFile',
-            summary: 'Full path of the file that was loaded.'
-          }
-        ]
       }
     ]
   },
@@ -101062,7 +101412,7 @@ This function can be used to create temporary content, as it calls
         since: '6.0'
       },
       {
-        signature: 'void SimulateEnvironment(SimulatedEnvironment simulation,bool isForDataOnly)',
+        signature: 'void SimulateEnvironment(ref SimulatedEnvironment simulation,bool isForDataOnly)',
         since: '5.1'
       }
     ]
@@ -101432,7 +101782,7 @@ preview panes`,
         since: '7.0'
       },
       {
-        signature: 'DocObjects.PhysicallyBasedMaterial ConvertToPhysicallyBasedMaterial(TextureGeneration tg)',
+        signature: 'DocObjects.PhysicallyBasedMaterial ConvertToPhysicallyBased(TextureGeneration tg)',
         summary: 'Returns a material that is the best approximation of the original, but as a physically based material.',
         since: '7.0',
         parameters: [
@@ -101479,7 +101829,7 @@ instance of TexturedColor`,
         returns: 'The simulation of the render material'
       },
       {
-        signature: 'void SimulateMaterial(Material simulation,bool isForDataOnly)',
+        signature: 'void SimulateMaterial(ref Material simulation,bool isForDataOnly)',
         summary: `Override this function to provide a Rhino.DocObjects.Material definition for this material
 to be used by other rendering engines including the display.`,
         since: '5.1',
@@ -101495,7 +101845,7 @@ to be used by other rendering engines including the display.`,
         ]
       },
       {
-        signature: 'void SimulateMaterial(Material simulation,TextureGeneration tg)',
+        signature: 'void SimulateMaterial(ref Material simulation,TextureGeneration tg)',
         summary: `Override this function to provide a Rhino.DocObjects.Material definition for this material
 to be used by other rendering engines including the display.`,
         since: '7.0',
@@ -102015,7 +102365,7 @@ has already completed).`
         ]
       },
       {
-        signature: 'void SetAsyncRenderContext(AsyncRenderContext aRC)',
+        signature: 'void SetAsyncRenderContext(ref AsyncRenderContext aRC)',
         since: '6.0'
       },
       {
@@ -102152,7 +102502,7 @@ and always return a mesh.`,
         since: '5.7'
       },
       {
-        signature: 'bool TryGetBox(Box box)',
+        signature: 'bool TryGetBox(out Box box)',
         summary: `Call this method to get a Box primitive for this mesh.  If this
 meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Box
 then the box parameter is set to Box.Empty.`,
@@ -102167,7 +102517,7 @@ then the box parameter is set to Box.Empty.`,
 the box parameter was initialized otherwise returns false.`
       },
       {
-        signature: 'bool TryGetCone(Cone cone,Plane truncation)',
+        signature: 'bool TryGetCone(out Cone cone,out Plane truncation)',
         summary: `Call this method to get a Cone primitive for this mesh.  If this
 meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Cone
 then the cone parameter is set to Cone.Unset and the truncation
@@ -102187,7 +102537,7 @@ parameter is set to Plane.Unset.`,
 the cone and truncation parameters were initialized otherwise returns false.`
       },
       {
-        signature: 'bool TryGetPlane(PlaneSurface plane)',
+        signature: 'bool TryGetPlane(out PlaneSurface plane)',
         summary: `Call this method to get a Plane primitive for this mesh.  If this
 meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Plane
 then the plane parameter is set to null.`,
@@ -102202,7 +102552,7 @@ then the plane parameter is set to null.`,
 the plane parameter was initialized otherwise returns false.`
       },
       {
-        signature: 'bool TryGetSphere(Sphere sphere)',
+        signature: 'bool TryGetSphere(out Sphere sphere)',
         summary: `Call this method to get a sphere primitive for this mesh.  If this
 meshes PrimitiveType is not a Rhino.Render.RenderPrimitiveType.Sphere
 then the sphere parameter is set to Sphere.Unset.`,
@@ -102406,7 +102756,7 @@ at this index is a primitive type other than a mesh then it mesh
 representation is returned.`
       },
       {
-        signature: 'Mesh MeshInstance(int index,Transform instance_transform)',
+        signature: 'Mesh MeshInstance(int index,out Transform instance_transform)',
         summary: `Get the mesh for the primitive at the specified index. If the item at
 this index is a primitive type other than a mesh then it mesh
 representation is returned.`,
@@ -102463,7 +102813,7 @@ meshed and the meshes will get included in the returned array.`,
 primitives to meshes.`
       },
       {
-        signature: 'bool TryGetBox(int index,Box box)',
+        signature: 'bool TryGetBox(int index,out Box box)',
         summary: 'Call this method to get a box at the specified index.',
         since: '5.7',
         parameters: [
@@ -102482,7 +102832,7 @@ and the primitive at the requested index is a box.`
 index is a box otherwise returns false.`
       },
       {
-        signature: 'bool TryGetCone(int index,Cone cone,Plane truncation)',
+        signature: 'bool TryGetCone(int index,out Cone cone,out Plane truncation)',
         summary: 'Call this method to get a box at the specified index.',
         since: '5.7',
         parameters: [
@@ -102505,7 +102855,7 @@ and the primitive at the requested index is a box.`
 index is a box otherwise returns false.`
       },
       {
-        signature: 'bool TryGetPlane(int index,PlaneSurface plane)',
+        signature: 'bool TryGetPlane(int index,out PlaneSurface plane)',
         summary: 'Call this method to get a box at the specified index.',
         since: '5.7',
         parameters: [
@@ -102524,7 +102874,7 @@ and the primitive at the requested index is a plane.`
 index is a plane otherwise returns false.`
       },
       {
-        signature: 'bool TryGetSphere(int index,Sphere sphere)',
+        signature: 'bool TryGetSphere(int index,out Sphere sphere)',
         summary: 'Call this method to get a box at the specified index.',
         since: '5.7',
         parameters: [
@@ -102951,7 +103301,7 @@ offset and rotation applied.)`,
     ],
     methods: [
       {
-        signature: 'static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,float u,float v)',
+        signature: 'static bool GetEnvironmentMappingProjection(TextureEnvironmentMappingMode mode,Vector3d reflectionVector,out float u,out float v)',
         since: '5.7'
       },
       {
@@ -103082,7 +103432,7 @@ meter of the model.`,
         since: '5.7'
       },
       {
-        signature: 'void GraphInfo(TextureGraphInfo tgi)',
+        signature: 'void GraphInfo(ref TextureGraphInfo tgi)',
         since: '6.3'
       },
       {
@@ -103121,7 +103471,7 @@ set the appropriate property on the CustomRenderContentAttribute decorator on th
         since: '6.16'
       },
       {
-        signature: 'void PixelSize(int u,int v,int w)',
+        signature: 'void PixelSize(out int u,out int v,out int w)',
         summary: 'Get the texture dimensions for the RenderTexture.',
         since: '6.0',
         parameters: [
@@ -103237,12 +103587,12 @@ meter of the model.`,
         since: '6.0'
       },
       {
-        signature: 'void SimulateTexture(SimulatedTexture simulation,bool isForDataOnly)',
+        signature: 'void SimulateTexture(ref SimulatedTexture simulation,bool isForDataOnly)',
         since: '5.1',
         deprecated: '6.0'
       },
       {
-        signature: 'void SimulateTexture(SimulatedTexture simulation,TextureGeneration tg,int size,RhinoObject obj)',
+        signature: 'void SimulateTexture(ref SimulatedTexture simulation,TextureGeneration tg,int size,RhinoObject obj)',
         since: '6.0'
       }
     ]
@@ -103386,9 +103736,12 @@ meter of the model.`,
       },
       {
         signature: 'bool AddWireframeChannel(RhinoDoc doc,ViewportInfo viewport,Size size,Rectangle region)',
-        summary: `A wireframe channel will not be added if none of the document properties settings
-indicate that one is needed. In other words, Rhino will not generate an empty wireframe channel
-just for the fun of it.`,
+        summary: `Use this utility function to add wireframe channels to the rendered image. These channels
+will be used by the Wireframe post process to composite wires into the image.
+Note: This function already calls AddChannel() so you don't need to separately add the channels.
+It adds all the necessary wireframe channels automatically.
+Note: You will need to make sure that SetSize() has already been called.
+Note: This method should really be called AddWireframeChannels(). [SDK_UNFREEZE] */`,
         since: '5.0',
         parameters: [
           {
@@ -103401,16 +103754,16 @@ just for the fun of it.`,
           },
           {
             name: 'size',
-            summary: `The size of the image without clipping (ie - if you have a region, it was the
+            summary: `The size of the image without clipping (i.e., if you have a region, it is the
 size of the image before you cut the region out.`
           },
           {
             name: 'region',
             summary: `The area of the rendering you want to display.  This should match the size
-of the render window itself (ie - the one set using SetSize)`
+of the render window itself (i.e, - the one set using SetSize)`
           }
         ],
-        returns: 'Returns True if the wireframe channel was successfully added.'
+        returns: 'Returns True if all of the wireframe channels were added successfully.'
       },
       {
         signature: 'void Dispose()',
@@ -103664,19 +104017,19 @@ The caller is responsible for ensuring that it is within the frame buffer.`
         since: '5.0'
       },
       {
-        signature: 'void GetMinMaxValues(float min,float max)',
+        signature: 'void GetMinMaxValues(out float min,out float max)',
         summary: `Get the minimum and maximum values in the channel.
 The channel's minimum value.
 The channel's maximum value.`,
         since: '7.0'
       },
       {
-        signature: 'void GetValue(int x,int y,ComponentOrders componentOrder,float[] values)',
+        signature: 'void GetValue(int x,int y,ComponentOrders componentOrder,ref float[] values)',
         summary: 'Get values from the channel.',
         since: '7.0'
       },
       {
-        signature: 'void GetValueRect(int x,int y,int width,int height,int stride,ComponentOrders componentOrder,float[] values)',
+        signature: 'void GetValues(Rectangle rectangle,int stride,ComponentOrders componentOrder,ref float[] values)',
         summary: `Get a rectangle of values from the channel. The input parameters are checked for validity.
 If the rectangle is not fully inside the frame buffer, the function will fail.`,
         since: '7.0'
@@ -103757,6 +104110,14 @@ The caller is responsible for ensuring that it is within the frame buffer.`
     name: 'RenderWindow.ChannelGPU',
     dataType: 'class',
     interfaces: ['IDisposable'],
+    properties: [
+      {
+        signature: 'DisplayTechnology DisplayTechnology',
+        summary: 'Return the type of API used for this channel\'s texture handle.',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
     methods: [
       {
         signature: 'ChannelGPU Clone()',
@@ -103778,11 +104139,6 @@ The caller is responsible for ensuring that it is within the frame buffer.`
             summary: 'The channel to copy to.'
           }
         ]
-      },
-      {
-        signature: 'Display.DisplayTechnologies DisplayTechnology()',
-        summary: 'Return the type of API used for this channel\'s texture handle.',
-        since: '7.0'
       },
       {
         signature: 'void Dispose()',
@@ -103925,16 +104281,28 @@ gamma correction to the RenderWindow RGBA channel when necessary.`,
         signature: 'Wireframe = 0x00040000'
       },
       {
-        signature: 'AlbedoRed = 0x00100000'
+        signature: 'AlbedoRed                = 0x00100000'
       },
       {
-        signature: 'AlbedoGreen = 0x00200000'
+        signature: 'AlbedoGreen              = 0x00200000'
       },
       {
-        signature: 'AlbedoBlue = 0x00400000'
+        signature: 'AlbedoBlue               = 0x00400000'
       },
       {
-        signature: 'AlbedoRGB = 0x00700000'
+        signature: 'AlbedoRGB                = 0x00700000'
+      },
+      {
+        signature: 'WireframePointsRGBA      = 0x00800000'
+      },
+      {
+        signature: 'WireframeIsocurvesRGBA   = 0x01000000'
+      },
+      {
+        signature: 'WireframeCurvesRGBA      = 0x02000000'
+      },
+      {
+        signature: 'WireframeAnnotationsRGBA = 0x04000000'
       }
     ]
   },
@@ -104445,7 +104813,7 @@ degrees.`,
         returns: 'Returns color for altitude.'
       },
       {
-        signature: 'static bool Here(double latitude,double longitude)',
+        signature: 'static bool Here(out double latitude,out double longitude)',
         since: '6.0'
       },
       {
@@ -104928,7 +105296,7 @@ note For ray differentials see Pharr Humphreys, "Physically Based Rendering", ch
         returns: 'The texture color at this point in UV space.'
       },
       {
-        signature: 'bool GetColor(Point3d uvw,Vector3d duvwdx,Vector3d duvwdy,Color4f color)',
+        signature: 'bool GetColor(Point3d uvw,Vector3d duvwdx,Vector3d duvwdy,ref Color4f color)',
         summary: 'Optimized version of GetColor for callers.  Much faster in the case of a native (C++) evaluator.',
         since: '7.0',
         parameters: [
@@ -105303,7 +105671,7 @@ The radial parameter maps (0,r) to texture "w" (0,1).`
         returns: 'TextureMapping instance if input is valid'
       },
       {
-        signature: 'int Evaluate(Point3d p,Vector3d n,Point3d t)',
+        signature: 'int Evaluate(Point3d p,Vector3d n,out Point3d t)',
         summary: 'Evaluate the mapping to get a texture coordinate',
         since: '6.17',
         parameters: [
@@ -105327,7 +105695,7 @@ Cylinder mapping: 1 = cylinder wall, 2 = bottom cap, 3 = top cap
 Box mapping: 1 = front, 2 = right, 3 = back, 4 = left, 5 = bottom, 6 = top`
       },
       {
-        signature: 'int Evaluate(Point3d p,Vector3d n,Point3d t,Transform pXform,Transform nXform)',
+        signature: 'int Evaluate(Point3d p,Vector3d n,out Point3d t,Transform pXform,Transform nXform)',
         summary: 'Evaluate the mapping to get a texture coordinate',
         since: '6.17',
         parameters: [
@@ -105361,7 +105729,7 @@ Cylinder mapping: 1 = cylinder wall, 2 = bottom cap, 3 = top cap
 Box mapping: 1 = front, 2 = right, 3 = back, 4 = left, 5 = bottom, 6 = top`
       },
       {
-        signature: 'bool TryGetMappingBox(Plane plane,Interval dx,Interval dy,Interval dz)',
+        signature: 'bool TryGetMappingBox(out Plane plane,out Interval dx,out Interval dy,out Interval dz)',
         summary: 'Get a box projection from the texture mapping.',
         since: '5.10',
         parameters: [
@@ -105395,7 +105763,7 @@ plane.PointAt(0,0,dz[1]).`
         returns: 'Returns True if a valid box is returned.'
       },
       {
-        signature: 'bool TryGetMappingBox(Plane plane,Interval dx,Interval dy,Interval dz,bool capped)',
+        signature: 'bool TryGetMappingBox(out Plane plane,out Interval dx,out Interval dy,out Interval dz,out bool capped)',
         summary: 'Get a box projection from the texture mapping, including capped information',
         since: '6.7',
         parameters: [
@@ -105433,13 +105801,13 @@ plane.PointAt(0,0,dz[1]).`
         returns: 'Returns True if a valid box is returned.'
       },
       {
-        signature: 'bool TryGetMappingCylinder(Cylinder cylinder)',
+        signature: 'bool TryGetMappingCylinder(out Cylinder cylinder)',
         summary: 'Get a cylindrical projection parameters from this texture mapping.',
         since: '5.10',
         returns: 'Returns True if a valid cylinder is returned.'
       },
       {
-        signature: 'bool TryGetMappingCylinder(Cylinder cylinder,bool capped)',
+        signature: 'bool TryGetMappingCylinder(out Cylinder cylinder,out bool capped)',
         summary: 'Get a cylindrical projection parameters from this texture mapping.',
         since: '6.7',
         parameters: [
@@ -105455,13 +105823,13 @@ plane.PointAt(0,0,dz[1]).`
         returns: 'Returns True if a valid cylinder is returned.'
       },
       {
-        signature: 'bool TryGetMappingMesh(Mesh mesh)',
+        signature: 'bool TryGetMappingMesh(out Mesh mesh)',
         summary: 'Get custom mapping mesh from this texture mapping.',
         since: '6.18',
         returns: 'True if custom mapping mesh was returned.'
       },
       {
-        signature: 'bool TryGetMappingPlane(Plane plane,Interval dx,Interval dy,Interval dz)',
+        signature: 'bool TryGetMappingPlane(out Plane plane,out Interval dx,out Interval dy,out Interval dz)',
         summary: 'Get plane mapping parameters from this texture mapping.',
         since: '5.10',
         parameters: [
@@ -105485,7 +105853,7 @@ plane.PointAt(0,0,dz[1]).`
         returns: 'Return True if valid plane mapping parameters were returned.'
       },
       {
-        signature: 'bool TryGetMappingPlane(Plane plane,Interval dx,Interval dy,Interval dz,bool capped)',
+        signature: 'bool TryGetMappingPlane(out Plane plane,out Interval dx,out Interval dy,out Interval dz,out bool capped)',
         summary: 'Get plane mapping parameters from this texture mapping, including capping information',
         since: '6.7',
         parameters: [
@@ -105513,7 +105881,7 @@ plane.PointAt(0,0,dz[1]).`
         returns: 'Return True if valid plane mapping parameters were returned.'
       },
       {
-        signature: 'bool TryGetMappingSphere(Sphere sphere)',
+        signature: 'bool TryGetMappingSphere(out Sphere sphere)',
         summary: 'Get a spherical projection parameters from this texture mapping.',
         since: '5.10',
         returns: 'Returns True if a valid sphere is returned.'
@@ -106093,7 +106461,7 @@ This is a replacement for CRhinoFileUtilities::FindFile().`,
         since: '6.0'
       },
       {
-        signature: 'static string PromptForSaveImageFileParameters(string filename,int width,int height,int colorDepth)',
+        signature: 'static string PromptForSaveImageFileParameters(string filename,ref int width,ref int height,ref int colorDepth)',
         summary: 'Prompts the user for a save file name and the width, height and depth of an image to be saved.',
         since: '6.0',
         parameters: [
@@ -106135,7 +106503,7 @@ This is a replacement for CRhinoFileUtilities::FindFile().`,
 invalid or was unable to load plug-in`
       },
       {
-        signature: 'static ShowContentChooserResults ShowContentChooser(Guid defaultType,Guid defaultInstanceId,RenderContentKind kinds,Guid instanceIdOut,ShowContentChooserFlags flags,RhinoDoc doc)',
+        signature: 'static ShowContentChooserResults ShowContentChooser(Guid defaultType,Guid defaultInstanceId,RenderContentKind kinds,ref Guid instanceIdOut,ShowContentChooserFlags flags,RhinoDoc doc)',
         summary: 'Shows the content chooser to allow the user to select a new or existing content.',
         since: '6.25',
         parameters: [
@@ -106167,7 +106535,7 @@ invalid or was unable to load plug-in`
         returns: 'The result.'
       },
       {
-        signature: 'static bool ShowIORMenu(IntPtr hwnd,Point pt,double outIOR,string outString)',
+        signature: 'static bool ShowIORMenu(IntPtr hwnd,Point pt,ref double outIOR,ref string outString)',
         summary: 'Display and track the context menu.',
         since: '6.0',
         parameters: [
@@ -106745,7 +107113,7 @@ will not know where to look for a plug-in with a matching name.`,
         since: '6.0'
       },
       {
-        signature: 'static void InvokeOnUiThread(Delegate method,object[] args)',
+        signature: 'static void InvokeOnUiThread(Delegate method,params object[] args)',
         summary: 'Execute a function on the main UI thread.',
         since: '6.0',
         parameters: [
@@ -107644,7 +108012,7 @@ to the specified file path.`,
         since: '6.0'
       },
       {
-        signature: 'static RhinoDoc Open(string filePath,bool wasAlreadyOpen)',
+        signature: 'static RhinoDoc Open(string filePath,out bool wasAlreadyOpen)',
         summary: `Opens a 3dm file and makes it the active document. If called on
 windows the active document will be saved and closed and the new
 document will be opened and become the active document.  If called
@@ -107801,7 +108169,7 @@ following places:
         since: '6.0'
       },
       {
-        signature: 'bool GetGumballPlane(Plane plane)',
+        signature: 'bool GetGumballPlane(out Plane plane)',
         summary: `Returns the active plane of Rhino's auto-gumball widget.
 Note, when calling from a Rhino command, make sure the command
 class has the Rhino.Commands.Style.Transparent command style attribute.`,
@@ -107983,7 +108351,7 @@ generated in less time, False is meant when actually rendering.`
         returns: 'Returns True if custom render mesh(es) will get built for this document.'
       },
       {
-        signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,DisplayPipelineAttributes attrs,BoundingBox boundingBox)',
+        signature: 'bool TryGetRenderPrimitiveBoundingBox(ViewportInfo viewport,DisplayPipelineAttributes attrs,out BoundingBox boundingBox)',
         summary: `Get the bounding box for the custom render meshes associated with this
 document (i.e. - GH meshes).`,
         since: '6.9',
@@ -108513,7 +108881,7 @@ http://en.wikipedia.org/wiki/Cyclic_redundancy_check.`,
         since: '5.4'
       },
       {
-        signature: 'static bool EvaluateNormal(int limitDirection,Vector3d ds,Vector3d dt,Vector3d dss,Vector3d dst,Vector3d dtt,Vector3d n)',
+        signature: 'static bool EvaluateNormal(int limitDirection,Vector3d ds,Vector3d dt,Vector3d dss,Vector3d dst,Vector3d dtt,out Vector3d n)',
         summary: 'Expert tool to evaluate surface unit normal.',
         since: '7.0',
         parameters: [
@@ -108550,7 +108918,7 @@ http://en.wikipedia.org/wiki/Cyclic_redundancy_check.`,
         returns: 'True if successful, False otherwise.'
       },
       {
-        signature: 'static bool EvaluateNormalPartials(Vector3d ds,Vector3d dt,Vector3d dss,Vector3d dst,Vector3d dtt,Vector3d ns,Vector3d nt)',
+        signature: 'static bool EvaluateNormalPartials(Vector3d ds,Vector3d dt,Vector3d dss,Vector3d dst,Vector3d dtt,out Vector3d ns,out Vector3d nt)',
         summary: 'Expert tool to evaluate partial derivatives of surface unit normal.',
         since: '7.0',
         parameters: [
@@ -108652,7 +109020,7 @@ Rhino does not use Single.NaN by convention, so this test evaluates to True if:x
         ]
       },
       {
-        signature: 'static bool TryParseNumber(string expression,double result)',
+        signature: 'static bool TryParseNumber(string expression,out double result)',
         summary: 'Evaluates command line math expression.',
         since: '6.0',
         returns: 'True if successful otherwise false'
@@ -109052,7 +109420,7 @@ call this function as many times as you want.`,
         ]
       },
       {
-        signature: 'bool IsValidWithLog(string log)',
+        signature: 'bool IsValidWithLog(out string log)',
         summary: `Determines if an object is valid. Also provides a report on errors if this
 object happens not to be valid.`,
         since: '5.0',
@@ -109361,7 +109729,7 @@ The message will only appear if the SendDebugToCommandLine property is set to tr
         ]
       },
       {
-        signature: 'static void DebugString(string format,object[] args)',
+        signature: 'static void DebugString(string format,params object[] args)',
         summary: `Prints a debug message to the Rhino Command Line.
 The message will only appear if the SendDebugToCommandLine property is set to true.`,
         since: '5.0',
@@ -109415,7 +109783,7 @@ This function makes no sense on Mono.`,
         ]
       },
       {
-        signature: 'static void ExecuteNamedCallback(string name,NamedParametersEventArgs args)',
+        signature: 'static bool ExecuteNamedCallback(string name,NamedParametersEventArgs args)',
         summary: 'Execute a named callback',
         since: '7.0'
       },
@@ -109446,7 +109814,7 @@ Rhino file extension.`,
         returns: 'Returns True if the file name has an extension like 3dm.'
       },
       {
-        signature: 'static bool GetAbsolutePath(string relativePath,bool bRelativePathisFileName,string relativeTo,bool bRelativeToIsFileName,string pathOut)',
+        signature: 'static bool GetAbsolutePath(string relativePath,bool bRelativePathisFileName,string relativeTo,bool bRelativeToIsFileName,out string pathOut)',
         summary: `Call this method to convert a relative path to an absolute path
 relative to the specified path.`,
         since: '6.0',
@@ -109495,7 +109863,7 @@ may be located`,
         since: '5.0'
       },
       {
-        signature: 'static void GetCurrentProcessInfo(string processName,Version processVersion)',
+        signature: 'static void GetCurrentProcessInfo(out string processName,out Version processVersion)',
         summary: `Returns information about the current process. If Rhino is the top level process,
 processName is "Rhino". Otherwise, processName is the name, without extension, of the main
 module that is executing. For example, "compute.backend" or "Revit".
@@ -110212,7 +110580,7 @@ be interested in using this function if you are writing C++ code.`,
         returns: 'Rhino_DotNet object on success. This will be an independent copy.'
       },
       {
-        signature: 'static bool TryCopyFromOnArc(object source,Arc destination)',
+        signature: 'static bool TryCopyFromOnArc(object source,out Arc destination)',
         summary: 'Attempts to copy the contents of a RMA.OpenNURBS.OnArc to a Rhino.Geometry.Arc.',
         since: '5.0',
         parameters: [
@@ -112007,7 +112375,7 @@ Deletes a license along with its license file.`,
         since: '6.0'
       },
       {
-        signature: 'bool GetRegisteredOwnerInfo(object verify,Guid productId,string registeredOwner,string registeredOrganization)',
+        signature: 'bool GetRegisteredOwnerInfo(object verify,Guid productId,ref string registeredOwner,ref string registeredOrganization)',
         summary: `Returns the registered owner and organization of a license
 4-Sept-2014 Dale Fugier, http://mcneel.myjetbrains.com/youtrack/issue/RH-28623`,
         since: '6.0'
@@ -112054,7 +112422,7 @@ Returns True if the license is successfully validated; False otherwise`,
         since: '6.0'
       },
       {
-        signature: 'bool ShowRhinoExpiredMessage(Mode mode,int result)',
+        signature: 'bool ShowRhinoExpiredMessage(Mode mode,ref int result)',
         since: '6.0'
       }
     ]
@@ -112217,61 +112585,61 @@ False otherwise`,
         since: '7.0'
       },
       {
-        signature: 'bool TryGetBool(string name,bool value)',
+        signature: 'bool TryGetBool(string name,out bool value)',
         summary: 'Try to get a bool value for a given key name',
         since: '6.15'
       },
       {
-        signature: 'bool TryGetColor(string name,Color value)',
+        signature: 'bool TryGetColor(string name,out Color value)',
         summary: 'Try to get a Point3d value for a given key name',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetDouble(string name,double value)',
+        signature: 'bool TryGetDouble(string name,out double value)',
         summary: 'Try to get a double value for a given key name',
         since: '6.15'
       },
       {
-        signature: 'bool TryGetGeometry(string name,GeometryBase[] values)',
+        signature: 'bool TryGetGeometry(string name,out GeometryBase[] values)',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetInt(string name,int value)',
+        signature: 'bool TryGetInt(string name,out int value)',
         summary: 'Try to get an int value for a given key name',
         since: '6.15'
       },
       {
-        signature: 'bool TryGetPoint(string name,Point3d value)',
+        signature: 'bool TryGetPoint(string name,out Point3d value)',
         summary: 'Try to get a Point3d value for a given key name',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetRhinoObjects(string key,RhinoObject[] values)',
+        signature: 'bool TryGetRhinoObjects(string key,out RhinoObject[] values)',
         summary: 'Get array of RhinoObject for the specified key',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetString(string name,string value)',
+        signature: 'bool TryGetString(string name,out string value)',
         summary: 'Try to get a string value for a given key name',
         since: '6.15'
       },
       {
-        signature: 'bool TryGetStrings(string name,string[] value)',
+        signature: 'bool TryGetStrings(string name,out string[] value)',
         summary: 'Try to get a string value for a given key name',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetUnsignedInt(string name,uint value)',
+        signature: 'bool TryGetUnsignedInt(string name,out uint value)',
         summary: 'Try to get an unsigned int for a given key name',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetViewport(string name,ViewportInfo viewport)',
+        signature: 'bool TryGetViewport(string name,out ViewportInfo viewport)',
         summary: 'Try to get a viewport for a given key name',
         since: '7.0'
       },
       {
-        signature: 'bool TryGetWindowHandle(string name,IntPtr value)',
+        signature: 'bool TryGetWindowHandle(string name,out IntPtr value)',
         summary: 'Gets a HWND on Windows or NSVIew* on Mac',
         since: '7.0'
       }
@@ -114540,7 +114908,7 @@ plug-in. If different licenses are used by different versions of the plug-in, th
     ],
     methods: [
       {
-        signature: 'ValidateResult VerifyLicenseKey(string licenseKey,string validationCode,DateTime validationCodeInstallDate,bool gracePeriodExpired,LicenseData licenseData)',
+        signature: 'ValidateResult VerifyLicenseKey(string licenseKey,string validationCode,DateTime validationCodeInstallDate,bool gracePeriodExpired,out LicenseData licenseData)',
         summary: 'Called by GetLicense to ensure that the license key entered by the user is legitimate and can be used.',
         since: '6.0',
         parameters: [
@@ -114567,7 +114935,7 @@ plug-in. If different licenses are used by different versions of the plug-in, th
         ]
       },
       {
-        signature: 'bool VerifyPreviousVersionLicense(string license,string previousVersionLicense,string errorMessage)',
+        signature: 'bool VerifyPreviousVersionLicense(string license,string previousVersionLicense,out string errorMessage)',
         summary: `When a caller calls GetLicense, ZooClient may call VerifyPreviousVersionLicense to ensure
 previousVersionLicense is legitimate and can be used to upgrade license.`,
         since: '6.0',
@@ -115410,19 +115778,19 @@ are registed`,
     ],
     methods: [
       {
-        signature: 'void Add(IRhRdkThumbnail t)'
+        signature: 'void Add(ref IRhRdkThumbnail t)'
       },
       {
         signature: 'void Clear()'
       },
       {
-        signature: 'Rhino.Render.RenderContent ContentFromThumbId(Guid uuidThumb)'
+        signature: 'Rhino.Render.RenderContent ContentFromThumbId(ref Guid uuidThumb)'
       },
       {
-        signature: 'IRhRdkThumbnail Get(Guid u)'
+        signature: 'IRhRdkThumbnail Get(ref Guid u)'
       },
       {
-        signature: 'void GetGridMetrics(int w,int h,int ox,int oy)'
+        signature: 'void GetGridMetrics(ref int w,ref int h,ref int ox,ref int oy)'
       },
       {
         signature: 'IRhRdkContentThumbnailList_Sizes GetSize()'
@@ -115539,7 +115907,7 @@ are registed`,
     dataType: 'interface',
     methods: [
       {
-        signature: 'void Dib(Bitmap dibOut)',
+        signature: 'void Dib(ref Bitmap dibOut)',
         since: '6.0',
         deprecated: '6.6'
       },
@@ -115549,7 +115917,7 @@ are registed`,
         deprecated: '6.6'
       },
       {
-        signature: 'void GetDisplayRect(RectangleF rectOut)',
+        signature: 'void GetDisplayRect(ref RectangleF rectOut)',
         since: '6.0',
         deprecated: '6.6'
       },
@@ -115591,12 +115959,12 @@ are registed`,
         deprecated: '6.6'
       },
       {
-        signature: 'IRhRdkThumbnail Get(Guid u)',
+        signature: 'IRhRdkThumbnail Get(ref Guid u)',
         since: '6.0',
         deprecated: '6.6'
       },
       {
-        signature: 'void GetGridMetrics(int w,int h,int ox,int oy)',
+        signature: 'void GetGridMetrics(ref int w,ref int h,ref int ox,ref int oy)',
         since: '6.0',
         deprecated: '6.6'
       },
@@ -115818,7 +116186,7 @@ are registed`,
     ],
     methods: [
       {
-        signature: 'void Dib(Bitmap dibOut)',
+        signature: 'void Dib(ref Bitmap dibOut)',
         since: '6.0',
         deprecated: '6.6'
       },
@@ -115834,7 +116202,7 @@ are registed`,
         deprecated: '6.6'
       },
       {
-        signature: 'void GetDisplayRect(RectangleF rectOut)',
+        signature: 'void GetDisplayRect(ref RectangleF rectOut)',
         since: '6.0',
         deprecated: '6.6'
       },
@@ -115978,80 +116346,7 @@ are registed`,
         returns: 'An array or boolean values determining if the user checked the corresponding box. On error, null.'
       },
       {
-        signature: 'static bool ShowColorDialog(Color color)',
-        summary: 'Display Rhino\'s color selection dialog.',
-        since: '5.0',
-        parameters: [
-          {
-            name: 'color',
-            summary: '[in/out] Default color for dialog, and will receive new color if function returns true.'
-          }
-        ],
-        returns: 'True if the color changed. False if the color has not changed or the user pressed cancel.'
-      },
-      {
-        signature: 'static bool ShowColorDialog(Color color,bool includeButtonColors,string dialogTitle)',
-        summary: 'Display Rhino\'s color selection dialog.',
-        since: '5.0',
-        parameters: [
-          {
-            name: 'color',
-            summary: '[in/out] Default color for dialog, and will receive new color if function returns true.'
-          },
-          {
-            name: 'includeButtonColors',
-            summary: 'Display button face and text options at top of named color list.'
-          },
-          {
-            name: 'dialogTitle',
-            summary: 'The title of the dialog.'
-          }
-        ],
-        returns: 'True if the color changed. False if the color has not changed or the user pressed cancel.'
-      },
-      {
-        signature: 'static bool ShowColorDialog(Color color,bool includeButtonColors,string dialogTitle,NamedColorList namedColorList)',
-        summary: 'Display Rhino\'s color selection dialog.',
-        since: '5.0',
-        parameters: [
-          {
-            name: 'color',
-            summary: '[in/out] Default color for dialog, and will receive new color if function returns true.'
-          },
-          {
-            name: 'includeButtonColors',
-            summary: 'Display button face and text options at top of named color list.'
-          },
-          {
-            name: 'dialogTitle',
-            summary: 'The title of the dialog.'
-          },
-          {
-            name: 'namedColorList',
-            summary: `If not None and contains one or more named colors the Rhino color dialog named color list will
-be replaces with this list.`
-          }
-        ],
-        returns: 'True if the color changed. False if the color has not changed or the user pressed cancel.'
-      },
-      {
-        signature: 'static bool ShowColorDialog(Color4f color,bool allowAlpha)',
-        summary: 'Displays the standard modal color picker dialog for floating point colors.',
-        since: '5.0',
-        parameters: [
-          {
-            name: 'color',
-            summary: 'The initial color to set the picker to and also accepts the user\'s choice.'
-          },
-          {
-            name: 'allowAlpha',
-            summary: 'Specifies if the color picker should allow changes to the alpha channel or not.'
-          }
-        ],
-        returns: 'True if a color was picked, False if the user canceled the picker dialog.'
-      },
-      {
-        signature: 'static bool ShowColorDialog(IWin32Window parent,Color4f color,bool allowAlpha)',
+        signature: 'static bool ShowColorDialog(IWin32Window parent,ref Color4f color,bool allowAlpha)',
         summary: 'Displays the standard modal color picker dialog for floating point colors.',
         since: '5.0',
         deprecated: '6.0',
@@ -116072,7 +116367,7 @@ be replaces with this list.`
         returns: 'True if a color was picked, False if the user canceled the picker dialog.'
       },
       {
-        signature: 'static bool ShowColorDialog(object parent,Color4f color,bool allowAlpha)',
+        signature: 'static bool ShowColorDialog(object parent,ref Color4f color,bool allowAlpha)',
         summary: 'Displays the standard modal color picker dialog for floating point colors.',
         since: '6.0',
         parameters: [
@@ -116092,7 +116387,7 @@ be replaces with this list.`
         returns: 'True if a color was picked, False if the user canceled the picker dialog.'
       },
       {
-        signature: 'static bool ShowColorDialog(object parent,Color4f color,bool allowAlpha,NamedColorList namedColorList,OnColorChangedEvent colorCallback)',
+        signature: 'static bool ShowColorDialog(object parent,ref Color4f color,bool allowAlpha,NamedColorList namedColorList,OnColorChangedEvent colorCallback)',
         summary: 'Displays the standard modal color picker dialog for floating point colors.',
         since: '6.0',
         parameters: [
@@ -116122,7 +116417,7 @@ the color value changes in the color dialog.`
         returns: 'True if a color was picked, False if the user canceled the picker dialog.'
       },
       {
-        signature: 'static bool ShowColorDialog(object parent,Color4f color,bool allowAlpha,OnColorChangedEvent colorCallback)',
+        signature: 'static bool ShowColorDialog(object parent,ref Color4f color,bool allowAlpha,OnColorChangedEvent colorCallback)',
         summary: 'Displays the standard modal color picker dialog for floating point colors.',
         since: '6.0',
         parameters: [
@@ -116142,6 +116437,79 @@ the color value changes in the color dialog.`
             name: 'colorCallback',
             summary: `May be optionally passed to ShowColorDialog and will get called when
 the color value changes in the color dialog.`
+          }
+        ],
+        returns: 'True if a color was picked, False if the user canceled the picker dialog.'
+      },
+      {
+        signature: 'static bool ShowColorDialog(ref Color color)',
+        summary: 'Display Rhino\'s color selection dialog.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'color',
+            summary: '[in/out] Default color for dialog, and will receive new color if function returns true.'
+          }
+        ],
+        returns: 'True if the color changed. False if the color has not changed or the user pressed cancel.'
+      },
+      {
+        signature: 'static bool ShowColorDialog(ref Color color,bool includeButtonColors,string dialogTitle)',
+        summary: 'Display Rhino\'s color selection dialog.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'color',
+            summary: '[in/out] Default color for dialog, and will receive new color if function returns true.'
+          },
+          {
+            name: 'includeButtonColors',
+            summary: 'Display button face and text options at top of named color list.'
+          },
+          {
+            name: 'dialogTitle',
+            summary: 'The title of the dialog.'
+          }
+        ],
+        returns: 'True if the color changed. False if the color has not changed or the user pressed cancel.'
+      },
+      {
+        signature: 'static bool ShowColorDialog(ref Color color,bool includeButtonColors,string dialogTitle,NamedColorList namedColorList)',
+        summary: 'Display Rhino\'s color selection dialog.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'color',
+            summary: '[in/out] Default color for dialog, and will receive new color if function returns true.'
+          },
+          {
+            name: 'includeButtonColors',
+            summary: 'Display button face and text options at top of named color list.'
+          },
+          {
+            name: 'dialogTitle',
+            summary: 'The title of the dialog.'
+          },
+          {
+            name: 'namedColorList',
+            summary: `If not None and contains one or more named colors the Rhino color dialog named color list will
+be replaces with this list.`
+          }
+        ],
+        returns: 'True if the color changed. False if the color has not changed or the user pressed cancel.'
+      },
+      {
+        signature: 'static bool ShowColorDialog(ref Color4f color,bool allowAlpha)',
+        summary: 'Displays the standard modal color picker dialog for floating point colors.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'color',
+            summary: 'The initial color to set the picker to and also accepts the user\'s choice.'
+          },
+          {
+            name: 'allowAlpha',
+            summary: 'Specifies if the color picker should allow changes to the alpha channel or not.'
           }
         ],
         returns: 'True if a color was picked, False if the user canceled the picker dialog.'
@@ -116172,7 +116540,7 @@ the color value changes in the color dialog.`
         since: '5.0'
       },
       {
-        signature: 'static bool ShowEditBox(string title,string message,string defaultText,bool multiline,string text)',
+        signature: 'static bool ShowEditBox(string title,string message,string defaultText,bool multiline,out string text)',
         summary: 'Displays Rhino\'s string edit box.',
         since: '5.0',
         parameters: [
@@ -116380,7 +116748,7 @@ the color value changes in the color dialog.`
         returns: 'The selected items if successful, None on cancel.'
       },
       {
-        signature: 'static bool ShowNumberBox(string title,string message,double number)',
+        signature: 'static bool ShowNumberBox(string title,string message,ref double number)',
         summary: 'Displays Rhino\'s number edit box.',
         since: '5.0',
         parameters: [
@@ -116400,7 +116768,7 @@ the color value changes in the color dialog.`
         returns: 'True of OK was clicked, False otherwise.'
       },
       {
-        signature: 'static bool ShowNumberBox(string title,string message,double number,double minimum,double maximum)',
+        signature: 'static bool ShowNumberBox(string title,string message,ref double number,double minimum,double maximum)',
         summary: 'Displays Rhino\'s number edit box.',
         since: '5.0',
         parameters: [
@@ -116452,7 +116820,7 @@ the color value changes in the color dialog.`
         returns: 'A list of property values if successful, None otherwise.'
       },
       {
-        signature: 'static bool ShowSelectLayerDialog(int layerIndex,string dialogTitle,bool showNewLayerButton,bool showSetCurrentButton,bool initialSetCurrentState)',
+        signature: 'static bool ShowSelectLayerDialog(ref int layerIndex,string dialogTitle,bool showNewLayerButton,bool showSetCurrentButton,ref bool initialSetCurrentState)',
         summary: 'Displays Rhino\'s single layer selection dialog.',
         since: '5.0',
         parameters: [
@@ -116481,7 +116849,7 @@ layer if function returns DialogResult.OK.`
         returns: 'True if the dialog was closed with the OK button. False if the dialog was closed with escape.'
       },
       {
-        signature: 'static bool ShowSelectLinetypeDialog(int linetypeIndex,bool displayByLayer)',
+        signature: 'static bool ShowSelectLinetypeDialog(ref int linetypeIndex,bool displayByLayer)',
         summary: 'Displays Rhino\'s single linetype selection dialog.',
         since: '6.0',
         parameters: [
@@ -116498,7 +116866,7 @@ linetype if function returns true.`
         returns: 'True if the dialog was closed with the OK button. False if the dialog was closed with escape.'
       },
       {
-        signature: 'static bool ShowSelectMultipleLayersDialog(IEnumerable<int> defaultLayerIndices,string dialogTitle,bool showNewLayerButton,int[] layerIndices)',
+        signature: 'static bool ShowSelectMultipleLayersDialog(IEnumerable<int> defaultLayerIndices,string dialogTitle,bool showNewLayerButton,out int[] layerIndices)',
         since: '5.9',
         returns: 'True if the dialog was closed with the OK button. False if the dialog was closed with escape.'
       },
@@ -117407,7 +117775,7 @@ In this case, gumball is set to the default.`
         since: '6.0'
       },
       {
-        signature: 'bool ShowColorDialog(object parent,Color4f color,bool allowAlpha,OnColorChangedEvent colorCallback)',
+        signature: 'bool ShowColorDialog(object parent,ref Color4f color,bool allowAlpha,OnColorChangedEvent colorCallback)',
         since: '7.0'
       },
       {
@@ -117493,7 +117861,7 @@ Rhino`,
         since: '6.1'
       },
       {
-        signature: 'bool SupportedType(Type type,string exceptionMessage)',
+        signature: 'bool SupportedType(Type type,out string exceptionMessage)',
         since: '6.1'
       }
     ]
@@ -117513,7 +117881,7 @@ Rhino`,
         since: '6.0'
       },
       {
-        signature: 'bool ShowEditBox(string title,string message,string defaultText,bool multiline,string text)',
+        signature: 'bool ShowEditBox(string title,string message,string defaultText,bool multiline,out string text)',
         since: '6.0'
       },
       {
@@ -117529,7 +117897,7 @@ Rhino`,
         since: '6.10'
       },
       {
-        signature: 'bool ShowNumberBox(string title,string message,double number,double minimum,double maximum)',
+        signature: 'bool ShowNumberBox(string title,string message,ref double number,double minimum,double maximum)',
         since: '6.0'
       },
       {
@@ -117556,12 +117924,12 @@ with core Rhino`,
         since: '6.0'
       },
       {
-        signature: 'IntPtr GetNativePageWindow(object nativeWindowObject,bool isRhinoPanel,object host)',
+        signature: 'IntPtr GetNativePageWindow(object nativeWindowObject,bool isRhinoPanel,out object host)',
         summary: 'Get the unmanaged pointer associated with the pages content control',
         since: '6.0'
       },
       {
-        signature: 'IntPtr GetNativePageWindow(object pageObject,bool isRhinoPanel,object nativeWindowObject,object host)',
+        signature: 'IntPtr GetNativePageWindow(object pageObject,bool isRhinoPanel,out object nativeWindowObject,out object host)',
         summary: 'Get the unmanaged pointer associated with the pages content control',
         since: '6.1'
       },
@@ -117577,7 +117945,7 @@ with core Rhino`,
         ]
       },
       {
-        signature: 'bool TryGetControlMinimumSize(object controlObject,SizeF size)',
+        signature: 'bool TryGetControlMinimumSize(object controlObject,out SizeF size)',
         summary: 'Get the minimum size associated with a control object',
         since: '6.5',
         parameters: [

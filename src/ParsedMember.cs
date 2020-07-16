@@ -136,6 +136,12 @@ namespace api_docify
                         if (i > 0)
                             signature.Append(",");
                         var parameter = method.ParameterList.Parameters[i];
+                        for (int j = 0; j < parameter.Modifiers.Count; j++)
+                        {
+                            signature.Append(parameter.Modifiers[j].Text);
+                            signature.Append(" ");
+                        }
+
                         string paramType = parameter.Type.ToString();
                         int angleIndex = paramType.IndexOf('<');
                         string prefixType = "";
