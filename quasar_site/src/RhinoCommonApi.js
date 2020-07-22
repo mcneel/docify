@@ -8785,10 +8785,19 @@ existing DisplayBitmaps.`,
         ]
       }
     ],
+    properties: [
+      {
+        signature: 'Size Size',
+        summary: 'Size of the underlying bitmap image',
+        property: ['get']
+      }
+    ],
     methods: [
       {
         signature: 'static DisplayBitmap Load(string path)',
-        summary: 'Load a DisplayBitmap from and image file on disk.',
+        summary: `Load a DisplayBitmap from and image file on disk or from URL. If path starts
+with http:// or https:// then an attempt is made to load the bitmap from an
+online resource`,
         since: '5.0',
         parameters: [
           {
@@ -11446,6 +11455,10 @@ False if you want to draw just the border of the closed shape.`
       {
         signature: 'void DrawSprite(DisplayBitmap bitmap,Point2d screenLocation,float size,Color blendColor)',
         since: '5.0'
+      },
+      {
+        signature: 'void DrawSprite(DisplayBitmap bitmap,Point2d screenLocation,float width,float height)',
+        summary: 'Draw screen oriented image centered at 2d screen location'
       },
       {
         signature: 'void DrawSprite(DisplayBitmap bitmap,Point3d worldLocation,float size,bool sizeInWorldSpace)',
@@ -23016,9 +23029,9 @@ generated in less time, False is meant when actually rendering.`
       },
       {
         signature: 'RhinoObject[] GetSubObjects()',
-        summary: 'Gets an array of sub-objects.',
+        summary: 'Explodes the object into sub-objects. It is up to the caller to add the returned objects to the document.',
         since: '5.0',
-        returns: 'An array of sub-objects, or None if there are none.'
+        returns: 'An array of Rhino objects, or None if this object cannot be exploded.'
       },
       {
         signature: 'int[] GetTextureChannels()',
@@ -39530,6 +39543,12 @@ provided ViewCaptureSettings`,
       {
         signature: 'bool ExportColors',
         summary: 'Determines whether to export vertex colors.',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool ExportDoubles',
+        summary: 'Determines whether vertexes are exported as doubles or floats.',
         since: '7.0',
         property: ['get', 'set']
       },
@@ -103736,11 +103755,14 @@ meter of the model.`,
       },
       {
         signature: 'bool AddWireframeChannel(RhinoDoc doc,ViewportInfo viewport,Size size,Rectangle region)',
-        summary: `Use this utility function to add wireframe channels to the rendered image. These channels
-will be used by the Wireframe post process to composite wires into the image.
-Note: This function already calls AddChannel() so you don't need to separately add the channels.
-It adds all the necessary wireframe channels automatically.
-Note: You will need to make sure that SetSize() has already been called.
+        summary: `This method sets the frame buffer size and adds all the necessary wireframe channels automatically.
+It also creates the wireframe channel data automatically so that your renderer doesn't have to.
+You typically call this method only when your renderer does not support wireframe rendering itself.
+If you call this method, then you should not add any wireframe channels returned by GetRenderChannels().
+If your renderer is capable of rendering the wireframe channels itself, you should not call this method.
+Instead, you must make sure you add the wireframe channels if GetRenderChannels() requests them.
+See IRhRdkRenderWindow::GetRenderChannels().
+After the wires are rendered, the wireframe post effects will composite them into the final rendered image.
 Note: This method should really be called AddWireframeChannels(). [SDK_UNFREEZE] */`,
         since: '5.0',
         parameters: [

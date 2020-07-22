@@ -14,14 +14,14 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.8.2",
+    "@quasar/extras": "^1.9.0",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.29",
     "core-js": "3.0.0",
     "node-cache": "^5.1.2",
-    "quasar": "^1.12.12"
+    "quasar": "^1.12.13"
   },
   "devDependencies": {
-    "@quasar/app": "2.0.5",
+    "@quasar/app": "2.0.6",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
