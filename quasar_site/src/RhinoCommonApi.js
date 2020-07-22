@@ -15244,6 +15244,180 @@ False if unsuccessful (this could happen if there is no set device_dpi)`
   },
   {
     namespace: 'Rhino.Display',
+    name: 'VisualAnalysisMode',
+    dataType: 'class',
+    summary: `Represents a base class for visual analysis modes.
+This class is abstract.`,
+    properties: [
+      {
+        signature: 'static Guid RhinoCurvatureColorAnalyisModeId',
+        summary: `Id for Rhino's built-in curvature color analysis mode.  Surface curvature
+is shown using False color mapping.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoCurvatureGraphAnalysisModeId',
+        summary: `Id for Rhino's built-in curvature graphs analysis mode. Curvature hair
+is shown on curves and surfaces.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoDraftAngleAnalysisModeId',
+        summary: `Id for Rhino's built-in draft angle analysis mode.  Draft angle is
+displayed using False colors.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoEdgeAnalysisModeId',
+        summary: `Id for Rhino's built-in edge analysis mode. Brep and mesh edges are
+shown in a selected color.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoEdgeContinuityAlalysisModeId',
+        summary: 'Id for Rhino\'s built-in edge continuity analysis mode.',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoEmapAnalysisModeId',
+        summary: `Id for Rhino's built-in emap analysis mode.  An environment map is
+shown on surfaces and meshes.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoThicknessAnalysisModeId',
+        summary: 'Id for Rhino\'s built-in thickness analysis mode.',
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Guid RhinoZebraStripeAnalysisModeId',
+        summary: `Id for Rhino's built-in zebra stripe analysis mode. Zebra stripes are
+shown on surfaces and meshes.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'Guid Id',
+        summary: `Gets the visual analysis mode GUID.
+The Guid is specified with the System.Runtime.InteropServices.GuidAttribute
+applied to the class.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'string Name',
+        summary: `Gets the name of the analysis mode. It is used by the _What command and the object
+properties details window to describe the object.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool ShowIsoCurves',
+        summary: `Gets True if this visual analysis mode will show isocuves on shaded surface
+objects.  Often a mode's user interface will provide a way to change this
+setting.
+The default is false.`,
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'AnalysisStyle Style',
+        summary: 'Gets the visual analysis mode style.',
+        since: '5.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static bool AdjustAnalysisMeshes(RhinoDoc doc,Guid analysisModeId)',
+        summary: 'Interactively adjusts surface analysis meshes of objects using a Rhino built-in analysis mode.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'doc',
+            summary: 'The Rhino document.'
+          },
+          {
+            name: 'analysisModeId',
+            summary: 'The id of the analysis mode.'
+          }
+        ],
+        returns: 'True if successful, False otherwise.'
+      },
+      {
+        signature: 'static VisualAnalysisMode Find(Guid id)',
+        summary: 'Finds a visual analysis mode by guid.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'id',
+            summary: 'The globally unique identifier to search for.'
+          }
+        ],
+        returns: 'The found visual analysis mode, or None if it was not found, or on error.'
+      },
+      {
+        signature: 'static VisualAnalysisMode Find(Type t)',
+        summary: 'Finds a visual analysis mode by type.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 't',
+            summary: 'A visual analysis mode type.'
+          }
+        ],
+        returns: 'A visual analysis mode on success, or None on error.'
+      },
+      {
+        signature: 'static VisualAnalysisMode Register(Type customAnalysisModeType)',
+        summary: `Registers a custom visual analysis mode for use in Rhino.  It is OK to call
+register multiple times for a single custom analysis mode type, since subsequent
+register calls will notice that the type has already been registered.`,
+        since: '5.0',
+        parameters: [
+          {
+            name: 'customAnalysisModeType',
+            summary: 'Must be a type that is a subclass of VisualAnalysisMode.'
+          }
+        ],
+        returns: 'An instance of registered analysis mode on success.'
+      },
+      {
+        signature: 'void EnableUserInterface(bool on)',
+        summary: `Turns the analysis mode's user interface on and off. For Rhino's built
+in modes this opens or closes the modeless dialog that controls the
+analysis mode's display settings.`,
+        since: '5.0',
+        parameters: [
+          {
+            name: 'on',
+            summary: 'True if the interface should be shown; False if it should be concealed.'
+          }
+        ]
+      },
+      {
+        signature: 'bool ObjectSupportsAnalysisMode(RhinoObject obj)',
+        summary: 'Gets a value indicating if this visual analysis mode can be used on a given Rhino object.',
+        since: '5.0',
+        parameters: [
+          {
+            name: 'obj',
+            summary: 'The object to be tested.'
+          }
+        ],
+        returns: 'True if this mode can indeed be used on the object; otherwise false.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Display',
     name: 'VisualAnalysisMode.AnalysisStyle',
     dataType: 'enum',
     summary: 'Contains enumerated values for analysis styles, such as wireframe, texture or False colors..',
@@ -16724,6 +16898,572 @@ associated with this OrdinateDimensionObject.`,
   },
   {
     namespace: 'Rhino.DocObjects',
+    name: 'DimensionStyle',
+    dataType: 'class',
+    summary: `Can also be considered an annotation style since it is used for
+more than just dimensions`,
+    baseclass: 'Rhino.DocObjects.ModelComponent',
+    constructors: [
+      {
+        signature: 'DimensionStyle()',
+        summary: 'Create a new non-document controlled annotation style',
+        since: '5.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'bool AlternateBelowLine',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LengthDisplay AlternateDimensionLengthDisplay',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double AlternateLengthFactor',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int AlternateLengthResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string AlternatePrefix',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double AlternateRoundoff',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string AlternateSuffix',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int AlternateToleranceResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool AlternateUnitsDisplay',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ZeroSuppression AlternateZeroSuppress',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'AngleDisplayFormat AngleFormat',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int AngleResolution',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ZeroSuppression AngleZeroSuppress',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double AngularRoundoff',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int ArcLengthSymbol',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid ArrowBlockId1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid ArrowBlockId2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ArrowLength',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowType ArrowType1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowType ArrowType2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double BaselineSpacing',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double CentermarkSize',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'CenterMarkStyle CenterMarkType',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ModelComponentType ComponentType',
+        summary: 'Returns ModelComponentType.ModelGeometry.',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'char DecimalSeparator',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LengthDisplay DimensionLengthDisplay',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double DimensionLineExtension',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double DimensionScale',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ScaleValue DimensionScaleValue',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LeaderContentAngleStyle DimRadialTextAngleType',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextLocation DimRadialTextLocation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextOrientation DimRadialTextOrientation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LeaderContentAngleStyle DimTextAngleType',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextLocation DimTextLocation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextOrientation DimTextOrientation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool DrawForward',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool DrawTextMask',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ExtensionLineExtension',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ExtensionLineOffset',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowFit FitArrow',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextFit FitText',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double FixedExtensionLength',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool FixedExtensionOn',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Font Font',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool ForceDimensionLineBetweenExtensionLines',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool HasFieldOverrides',
+        summary: 'Checks if any fields in this DimensionStyle are overrides',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsChild',
+        summary: 'Tests if this DimensionStyle is a child of any other DimensionStyle',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsDeleted',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsReference',
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'Guid LeaderArrowBlockId',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LeaderArrowLength',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowType LeaderArrowType',
+        since: '5.6',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LeaderContentAngleStyle LeaderContentAngleType',
+        summary: `Style of leader content angle
+Horizontal
+Aligned
+Rotated`,
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LeaderCurveStyle LeaderCurveType',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool LeaderHasLanding',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LeaderLandingLength',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextHorizontalAlignment LeaderTextHorizontalAlignment',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextOrientation LeaderTextOrientation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LeaderTextRotationDegrees',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LeaderTextRotationRadians',
+        summary: 'Angle of leader text for Rotated style',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextVerticalAlignment LeaderTextVerticalAlignment',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LengthFactor',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int LengthResolution',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Color MaskColor',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'MaskType MaskColorSource',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'MaskFrame MaskFrameType',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double MaskOffset',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid ParentId',
+        summary: `Get or Set the Id of this DimensionStyle's parent.
+If ParentId is Guid.Empty, this DimensionStyle has no parent`,
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string Prefix',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double Roundoff',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ScaleLeftLengthMillimeters',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ScaleRightLengthMillimeters',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'StackDisplayFormat StackFractionFormat',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double StackHeightScale',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string Suffix',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool SuppressArrow1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool SuppressArrow2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool SuppressExtension1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool SuppressExtension2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double TextGap',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double TextHeight',
+        since: '5.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextHorizontalAlignment TextHorizontalAlignment',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int TextMoveLeader',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextOrientation TextOrientation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double TextRotation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool TextUnderlined',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextVerticalAlignment TextVerticalAlignment',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ToleranceDisplayFormat ToleranceFormat',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ToleranceHeightScale',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ToleranceLowerValue',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int ToleranceResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ToleranceUpperValue',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ZeroSuppression ToleranceZeroSuppress',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ZeroSuppression ZeroSuppress',
+        since: '6.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'UnitSystem AlternateDimensionLengthDisplayUnit(uint model_serial_number)',
+        since: '6.0'
+      },
+      {
+        signature: 'void ClearAllFieldOverrides()',
+        summary: `Sets all the fields in this DimensionStyle to be not overridden
+Does not change any dimstyle_id's or parent_id's`,
+        since: '6.0'
+      },
+      {
+        signature: 'void ClearFieldOverride(Field field)',
+        summary: 'Set the field as not overridden',
+        since: '6.0'
+      },
+      {
+        signature: 'void CopyFrom(DimensionStyle source)',
+        summary: `Copy settings from source dimension style without changing the name, Id or
+index of this DimensionStyle.`,
+        since: '6.0',
+        parameters: [
+          {
+            name: 'source',
+            summary: 'DimensionStyle to copy settings from.'
+          }
+        ]
+      },
+      {
+        signature: 'Bitmap CreatePreviewBitmap(int width,int height)',
+        since: '6.0'
+      },
+      {
+        signature: 'UnitSystem DimensionLengthDisplayUnit(uint model_serial_number)',
+        since: '6.0'
+      },
+      {
+        signature: 'DimensionStyle Duplicate()',
+        summary: 'Construct a deep (full) copy of this object.',
+        since: '6.0',
+        returns: 'An object of the same type as this, with the same properties and behavior.'
+      },
+      {
+        signature: 'DimensionStyle Duplicate(string newName,Guid newId,Guid newParentId)',
+        summary: 'Construct a deep (full) copy of this object.',
+        since: '6.0',
+        returns: 'An object of the same type as this, with the same properties and behavior.'
+      },
+      {
+        signature: 'bool IsChildOf(Guid parentId)',
+        summary: 'Tests if this DimensionStyle is a child of a specific DimensionStyle',
+        since: '6.0',
+        returns: `True if this is a child of the DimensionStyle with Parent
+False otherwise.`
+      },
+      {
+        signature: 'bool IsFieldOverriden(Field field)'
+      },
+      {
+        signature: 'void ScaleLengthValues(double scale)',
+        summary: 'Scales all length values by \'scale\'',
+        since: '6.0'
+      },
+      {
+        signature: 'void SetFieldOverride(Field field)',
+        summary: 'Set a field as overridden',
+        since: '6.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.DocObjects',
     name: 'DimensionStyle.AngleDisplayFormat',
     dataType: 'enum',
     summary: 'Display format for angles',
@@ -17644,6 +18384,165 @@ the curvature of the earth can be ignored.`,
       {
         signature: 'Extrusion DuplicateExtrusionGeometry()',
         since: '5.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.DocObjects',
+    name: 'Font',
+    dataType: 'class',
+    summary: 'Defines a format for text.',
+    constructors: [
+      {
+        signature: 'Font(string familyName)',
+        since: '6.0'
+      },
+      {
+        signature: 'Font(string familyName,FontWeight weight,FontStyle style,bool underlined,bool strikethrough)',
+        since: '6.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'bool Bold',
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'string Description',
+        summary: `Returns a long description that includes family, face, weight, stretch and style information.
+Generally not useful for finding matching fonts.`,
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'string EnglishFaceName',
+        summary: 'Returns English Face name',
+        since: '6.9',
+        property: ['get']
+      },
+      {
+        signature: 'string EnglishFamilyName',
+        since: '6.9',
+        property: ['get']
+      },
+      {
+        signature: 'string EnglishQuartetName',
+        since: '6.12',
+        property: ['get']
+      },
+      {
+        signature: 'string FaceName',
+        summary: 'Returns Face name',
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'string FamilyName',
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'string FamilyPlusFaceName',
+        summary: 'Returns concatenated Family and Face names',
+        since: '6.9',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsEngravingFont',
+        since: '6.10',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsSimulated',
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsSingleStrokeFont',
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsSymbolFont',
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'bool Italic',
+        since: '5.0',
+        property: ['get']
+      },
+      {
+        signature: 'string LogfontName',
+        summary: 'Returns Windows LOGFONT Face name',
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'double PointSize',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'string PostScriptName',
+        summary: 'Returns the Font PostScriptName - "Apple font name"',
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'string QuartetName',
+        since: '6.7',
+        property: ['get']
+      },
+      {
+        signature: 'string RichTextFontName',
+        summary: `Returns the Font RichTextFontName used in RTF strings:
+{\\\\fonttbl...{\\\\fN RichTextFontName;}...}`,
+        since: '6.5',
+        property: ['get']
+      },
+      {
+        signature: 'bool Strikeout',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'FontStyle Style',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool Underlined',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'FontWeight Weight',
+        since: '6.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static string[] AvailableFontFaceNames()',
+        since: '5.0'
+      },
+      {
+        signature: 'static Font FromQuartetProperties(string quartetName,bool bold,bool italic)',
+        since: '6.7'
+      },
+      {
+        signature: 'static Font[] InstalledFonts()',
+        since: '6.5'
+      },
+      {
+        signature: 'static Font[] InstalledFonts(string familyName)',
+        since: '6.5'
+      },
+      {
+        signature: 'static FontQuartet[] InstalledFontsAsQuartets()',
+        since: '6.7'
       }
     ]
   },
@@ -40660,7 +41559,7 @@ is retrieved using ToString for this case`
     name: 'AngularDimension',
     dataType: 'class',
     summary: 'Represents a dimension of an entity that can be measured with an angle.',
-    baseclass: 'Dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'AngularDimension()',
@@ -47642,7 +48541,7 @@ an edge and has no 2d curve.`
     name: 'Centermark',
     dataType: 'class',
     summary: 'Represents a center mark',
-    baseclass: 'Dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'Centermark()',
@@ -58609,6 +59508,311 @@ max_cos_twist is cos(twist) for the returned ruling`,
   },
   {
     namespace: 'Rhino.Geometry',
+    name: 'Dimension',
+    dataType: 'class',
+    summary: 'Base class for dimensions',
+    baseclass: 'Rhino.Geometry.AnnotationBase',
+    properties: [
+      {
+        signature: 'bool AlternateBelowLine',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double AltLengthFactor',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int AltLengthResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double AltLengthRoundoff',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string AltPrefix',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string AltSuffix',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int AltToleranceResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool AltUnitsDisplay',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ZeroSuppression AltZeroSuppression',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid ArrowBlockId1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid ArrowBlockId2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowFit ArrowFit',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowType ArrowheadType1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ArrowType ArrowheadType2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ArrowSize',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double BaselineSpacing',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double CentermarkSize',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'CenterMarkStyle CentermarkStyle',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Guid DetailMeasured',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double DimensionLineExtension',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double DistanceScale',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ExtensionLineExtension',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ExtensionLineOffset',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double FixedExtensionLength',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool FixedLengthExtensionOn',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ForceArrow ForceArrowPosition',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool ForceDimensionLineBetweenExtensionLines',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool ForceDimLine',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ForceText ForceTextPosition',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LengthFactor',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int LengthResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double LengthRoundoff',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double NumericValue',
+        summary: `Gets the numeric value (or measurement), depending on geometry type.
+LinearDimension: distance between arrow tipsRadialDimension: radius or diameter depending on typeAngularDimension: angle in degrees`,
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'string PlainUserText',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'string Prefix',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string Suffix',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool SuppressExtension1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool SuppressExtension2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'LeaderContentAngleStyle TextAngleType',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextFit TextFit',
+        since: '6.20',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'string TextFormula',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextLocation TextLocation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'TextOrientation TextOrientation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Point2d TextPosition',
+        summary: 'Gets and sets the position of text on the plane.',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double TextRotation',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ToleranceDisplayFormat ToleranceFormat',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ToleranceHeightScale',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ToleranceLowerValue',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int ToleranceResolution',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double ToleranceUpperValue',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool UseDefaultTextPoint',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ZeroSuppression ZeroSuppression',
+        since: '6.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'Transform GetTextTransform(ViewportInfo viewport,DimensionStyle style,double textScale,bool drawForward)',
+        summary: 'Get the transform for this text object\'s text geometry',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'viewport',
+            summary: 'Viewport where text is being used'
+          },
+          {
+            name: 'style',
+            summary: 'Dimension\'s DimensionStyle'
+          },
+          {
+            name: 'textScale',
+            summary: 'Scale to apply to text'
+          },
+          {
+            name: 'drawForward',
+            summary: 'Draw text front-facing'
+          }
+        ]
+      },
+      {
+        signature: 'void SetAltDimensionLengthDisplayWithZeroSuppressionReset(LengthDisplay ld)',
+        since: '6.0'
+      },
+      {
+        signature: 'void SetDimensionLengthDisplayWithZeroSuppressionReset(LengthDisplay ld)',
+        since: '6.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Geometry',
     name: 'Dimension.ForceArrow',
     dataType: 'enum',
     summary: 'OBSOLETE enum do not use.',
@@ -63844,7 +65048,7 @@ If possible, a plane parallel to the world XY, YZ, or ZX plane is returned.`,
     name: 'LinearDimension',
     dataType: 'class',
     summary: 'Represents a linear dimension',
-    baseclass: 'Dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'LinearDimension()',
@@ -70478,6 +71682,165 @@ Degrees should be number between and including 1 and 11.`
   },
   {
     namespace: 'Rhino.Geometry',
+    name: 'OrdinateDimension',
+    dataType: 'class',
+    summary: 'Represents an ordinate dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
+    constructors: [
+      {
+        signature: 'OrdinateDimension()',
+        since: '6.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'Point2d DefPoint',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double KinkOffset1',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double KinkOffset2',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Point2d KinkPoint1',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'Point2d KinkPoint2',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'Point2d LeaderPoint',
+        since: '6.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static OrdinateDimension Create(DimensionStyle dimStyle,Plane plane,MeasuredDirection direction,Point3d basepoint,Point3d defpoint,Point3d leaderpoint,double kinkoffset1,double kinkoffset2)',
+        summary: 'Initialize Dimension parameters',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'dimStyle',
+            summary: 'Dimension\'s AnnotationStyle'
+          },
+          {
+            name: 'plane',
+            summary: 'Dimension;s plane'
+          },
+          {
+            name: 'direction',
+            summary: 'MeasuredDirection.XAxis or MeasuredDirection.YAxis'
+          },
+          {
+            name: 'basepoint',
+            summary: 'Dimension\'s base point'
+          },
+          {
+            name: 'defpoint',
+            summary: 'Dimension\'s definition point'
+          },
+          {
+            name: 'leaderpoint',
+            summary: 'Point at tail of leader'
+          },
+          {
+            name: 'kinkoffset1',
+            summary: 'Distance to first jog'
+          },
+          {
+            name: 'kinkoffset2',
+            summary: 'Distance to second jog'
+          }
+        ]
+      },
+      {
+        signature: 'bool AdjustFromPoints(Plane plane,MeasuredDirection direction,Point3d basepoint,Point3d defpoint,Point3d leaderpoint,double kinkoffset1,double kinkoffset2)',
+        summary: 'Update Dimension geometry from point locations',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'plane',
+            summary: 'Dimension\'s plane'
+          },
+          {
+            name: 'direction',
+            summary: 'MeasuredDirection.XAxis or MeasuredDirection.YAxisw'
+          },
+          {
+            name: 'basepoint',
+            summary: 'Dimension\'s base point'
+          },
+          {
+            name: 'defpoint',
+            summary: 'Dimension\'s definition point'
+          },
+          {
+            name: 'leaderpoint',
+            summary: 'Point at tail of leader'
+          },
+          {
+            name: 'kinkoffset1',
+            summary: 'Distance to first jog'
+          },
+          {
+            name: 'kinkoffset2',
+            summary: 'Distance to second jog'
+          }
+        ]
+      },
+      {
+        signature: 'bool Get3dPoints(out Point3d basepoint,out Point3d defpoint,out Point3d leaderpoint,out Point3d kinkpoint1,out Point3d kinkpoint2)',
+        summary: 'Get locations of dimension\'s 3d points',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'basepoint',
+            summary: 'Dimension\'s base point'
+          },
+          {
+            name: 'defpoint',
+            summary: 'Dimension\'s definition point'
+          },
+          {
+            name: 'leaderpoint',
+            summary: 'Point at tail of leader'
+          },
+          {
+            name: 'kinkpoint1',
+            summary: 'Point at first jog'
+          },
+          {
+            name: 'kinkpoint2',
+            summary: 'Point at second jog'
+          }
+        ]
+      },
+      {
+        signature: 'bool GetDisplayLines(DimensionStyle style,double scale,out IEnumerable<Line> lines)'
+      },
+      {
+        signature: 'string GetDistanceDisplayText(UnitSystem unitsystem,DimensionStyle style)',
+        since: '6.0'
+      },
+      {
+        signature: 'bool GetTextRectangle(out Point3d[] corners)',
+        since: '6.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Geometry',
     name: 'OrdinateDimension.MeasuredDirection',
     dataType: 'enum',
     summary: 'Ordinate dimension measures x or y direction',
@@ -74254,7 +75617,7 @@ and plane0.zaxis to plane1.zaxis.`,
     name: 'RadialDimension',
     dataType: 'class',
     summary: 'Represents a dimension of a circular entity that can be measured with radius or diameter.',
-    baseclass: 'Dimension',
+    baseclass: 'Rhino.Geometry.Dimension',
     constructors: [
       {
         signature: 'RadialDimension()',
@@ -76586,6 +77949,109 @@ cannot be applied to a sphere as that would result in an ellipsoid.`,
   },
   {
     namespace: 'Rhino.Geometry',
+    name: 'SubD',
+    dataType: 'class',
+    summary: 'Subdivision surface',
+    baseclass: 'Rhino.Geometry.GeometryBase',
+    constructors: [
+      {
+        signature: 'SubD()',
+        summary: 'Create a new instance of SubD geometry',
+        since: '7.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'SubDEdgeList Edges',
+        summary: 'All edges in this SubD',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'SubDFaceList Faces',
+        summary: 'All faces in this SubD',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'bool IsSolid',
+        summary: `Test subd to see if the active level is a solid.
+A "solid" is a closed oriented manifold, or a closed oriented manifold.`,
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'SubDVertexList Vertices',
+        summary: 'All vertices in this SubD',
+        since: '7.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static SubD CreateFromMesh(Mesh mesh)',
+        summary: 'Create a new SubD from a mesh',
+        since: '7.0'
+      },
+      {
+        signature: 'static SubD CreateFromMesh(Mesh mesh,SubDCreationOptions options)',
+        summary: 'Create a new SubD from a mesh',
+        since: '7.0'
+      },
+      {
+        signature: 'void ClearEvaluationCache()',
+        summary: 'Clear cached information that depends on the location of vertex control points',
+        since: '7.0'
+      },
+      {
+        signature: 'SubD Offset(double distance,bool solidify)',
+        summary: `Makes a new SubD with vertices offset at distance in the direction of the control net vertex normals.
+Optionally, based on the value of solidify, adds the input SubD and a ribbon of faces along any naked edges.`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'distance',
+            summary: 'The distance to offset.'
+          },
+          {
+            name: 'solidify',
+            summary: 'True if the output SubD should be turned into a closed SubD.'
+          }
+        ],
+        returns: 'A new SubD if successful, or None on failure.'
+      },
+      {
+        signature: 'bool Subdivide(int count)',
+        summary: `Apply the Catmull-Clark subdivision algorithm and save the results in
+this SubD`,
+        since: '7.0',
+        parameters: [
+          {
+            name: 'count',
+            summary: 'Number of times to subdivide (must be greater than 0)'
+          }
+        ],
+        returns: 'True on success'
+      },
+      {
+        signature: 'Brep ToBrep()',
+        summary: 'Create a Brep based on this SubD geometry',
+        since: '7.0'
+      },
+      {
+        signature: 'uint UpdateAllTagsAndSectorCoefficients()',
+        summary: `Updates vertex tag, edge tag, and edge coefficient values on the active
+level. After completing custom editing operations that modify the
+topology of the SubD control net or changing values of vertex or edge
+tags, the tag and sector coefficients information on nearby components
+in the edited areas need to be updated.`,
+        since: '7.0',
+        returns: 'Number of vertices and edges that were changed during the update.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Geometry',
     name: 'SubD.NurbsSurfaceType',
     dataType: 'enum',
     summary: 'ON_SubD::NurbsSurfaceType specifies what type of NURBS surfaces are returned by ON_SubD.GetSurfaceNurbsFragments()',
@@ -76700,6 +78166,128 @@ If the edges have 2 faces, then interior vertices have valence = 4.`
         summary: 'SubD that this component belongs to',
         since: '7.0',
         property: ['get']
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Geometry',
+    name: 'SubDCreationOptions',
+    dataType: 'class',
+    summary: 'Options used for creating a SubD',
+    interfaces: ['IDisposable'],
+    constructors: [
+      {
+        signature: 'SubDCreationOptions()',
+        summary: 'Create default options',
+        since: '7.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'static SubDCreationOptions ConvexCornerAtMeshCorner',
+        summary: `Look for convex corners at SubD vertices with 2 edges that have an
+included angle <= 90 degrees.`,
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static SubDCreationOptions InteriorCreaseAtMeshCrease',
+        summary: `Create an interior SubD crease along coincident input mesh edges
+where the vertex normal directions at one end differ by at
+least 30 degrees.`,
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static SubDCreationOptions InteriorCreaseAtMeshEdge',
+        summary: 'Create an interior SubD crease along all coincident input mesh edges.',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'static SubDCreationOptions Smooth',
+        summary: 'No interior creases and no corners.',
+        since: '7.0',
+        property: ['get']
+      },
+      {
+        signature: 'ConcaveCornerOption ConcaveCornerTest',
+        summary: 'Get or sets the concave corner test option.',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'ConvexCornerOption ConvexCornerTest',
+        summary: 'Get or sets the convex corner test option.',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'InteriorCreaseOption InteriorCreaseTest',
+        summary: 'Get or sets the interior crease test option.',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool InterpolateMeshVertices',
+        summary: `If false, input mesh vertex locations will be used to set subd vertex control net locations.
+If true, input mesh vertex locations will be used to set subd vertex limit surface locations.`,
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double MaximumConvexCornerAngleRadians',
+        summary: `If ConvexCornerTest == ConvexCornerOption.AtMeshCorner, then an input mesh boundary
+vertex becomes a SubD corner when the number of edges that end at the
+vertex is <= MaximumConvexCornerEdgeCount edges and the corner angle
+is <= MaximumConvexCornerAngleRadians.`,
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'uint MaximumConvexCornerEdgeCount',
+        summary: `If ConvexCornerTest == ConvexCornerOption.AtMeshCorner, then an input mesh boundary
+vertex becomes a SubD corner when the number of edges that end at the
+vertex is <= MaximumConvexCornerEdgeCount edges and the corner angle
+is <= MaximumConvexCornerAngleRadians.`,
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double MinimumConcaveCornerAngleRadians',
+        summary: `If ConcaveCornerTest == ConcaveCornerOption.AtMeshCorner, then an
+input mesh boundary vertex becomes a SubD corner when the number of
+edges that end at the vertex is >= MinimumConcaveCornerEdgeCount edges
+and the corner angle is >= MinimumConcaveCornerAngleRadians.`,
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'uint MinimumConcaveCornerEdgeCount',
+        summary: `If ConcaveCornerTest == ConcaveCornerOption.AtMeshCorner, then an
+input mesh boundary vertex becomes a SubD corner when the number of
+edges that end at the vertex is >= MinimumConcaveCornerEdgeCount edges
+and the corner angle is >= MinimumConcaveCornerAngleRadians.`,
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'double MinimumCreaseAngleRadians',
+        summary: `When the InteriorCreaseTest == InteriorCreaseOption.AtMeshCreases, the value of
+MinimumCreaseAngleRadians determines which coincident input mesh edges
+generate SubD creases.
+If the input mesh has vertex normals, and the angle between vertex
+normals is > MinimumCreaseAngleRadians at an end of a coincident
+input mesh edge, the corresponding SubD edge will be a crease.`,
+        since: '7.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void Dispose()',
+        summary: 'Delete unmanaged pointer for this',
+        since: '7.0'
       }
     ]
   },
@@ -85761,6 +87349,84 @@ the start point interactive picking`,
   },
   {
     namespace: 'Rhino.Input.Custom',
+    name: 'GetSphere',
+    dataType: 'class',
+    summary: 'Class provides user interface to define a sphere.',
+    interfaces: ['IDisposable'],
+    constructors: [
+      {
+        signature: 'GetSphere()',
+        since: '7.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'double DefaultSize',
+        summary: 'Default radius or diameter (based on InDiameterMode)',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool InDiameterMode',
+        summary: 'Determines if the "size" value is representing a radius or diameter',
+        since: '7.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void Dispose()',
+        summary: 'Actively reclaims unmanaged resources that this instance uses.',
+        since: '7.0'
+      },
+      {
+        signature: 'Commands.Result Get(out Sphere sphere)',
+        summary: 'Prompt for the getting of a sphere.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'sphere',
+            summary: 'The sphere geometry defined by the user.'
+          }
+        ],
+        returns: 'The result of the getting operation.'
+      },
+      {
+        signature: 'Commands.Result GetMesh(ref MeshSphereStyle style,ref int verticalFaces,ref int aroundFaces,ref int triangleSubdivisions,ref int quadSubdivisions,out Sphere sphere)',
+        summary: 'Prompt for the getting of a mesh sphere.',
+        since: '7.0',
+        parameters: [
+          {
+            name: 'style',
+            summary: 'The style of the mesh sphere.'
+          },
+          {
+            name: 'verticalFaces',
+            summary: 'The number of UV mesh faces in the vertical direction.'
+          },
+          {
+            name: 'aroundFaces',
+            summary: 'The number of UV mesh faces in the around direction.'
+          },
+          {
+            name: 'triangleSubdivisions',
+            summary: 'The number of triangle mesh subdivisions.'
+          },
+          {
+            name: 'quadSubdivisions',
+            summary: 'The number of quad mesh subdivisions.'
+          },
+          {
+            name: 'sphere',
+            summary: 'The sphere geometry defined by the user.'
+          }
+        ],
+        returns: 'The result of the getting operation.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Input.Custom',
     name: 'GetSphere.MeshSphereStyle',
     dataType: 'enum',
     summary: 'Mesh sphere styles enumeration.',
@@ -87931,6 +89597,151 @@ indicate switching from one active open document to another.`,
       {
         signature: 'void RhinoDocClosed(RhinoDocObserverArgs e)',
         summary: 'When a document is closed',
+        since: '6.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino',
+    name: 'LengthValue',
+    dataType: 'class',
+    summary: `Represents a length with an associated unit system and a string
+representation of that length. This allows for going back and
+forth from numerical representation of a length and a string
+representation without "guessing" at the initial string`,
+    interfaces: ['IDisposable'],
+    properties: [
+      {
+        signature: 'AngleUnitSystem ContextAngleUnitSystem',
+        summary: 'Returns the context AngleUnitSystem from this LengthValue\'s ParseSettings',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'uint ContextLocaleId',
+        summary: 'returns the context LocaleId from this LengthValue',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'string LengthString',
+        summary: 'Return length as a string',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'StringFormat LengthStringFormat',
+        summary: 'Returns the StringFormat from this LengthValue',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'StringParserSettings ParseSettings',
+        summary: 'Parse settings',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'UnitSystem UnitSystem',
+        summary: 'UnitSystem used by this LengthValue',
+        since: '6.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static LengthValue Create(double length,UnitSystem us,StringFormat format)',
+        summary: 'Create from Length and UnitSystem',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'length',
+            summary: 'Numeric length value'
+          },
+          {
+            name: 'us',
+            summary: 'Unit system'
+          },
+          {
+            name: 'format',
+            summary: ''
+          }
+        ]
+      },
+      {
+        signature: 'static LengthValue Create(double length,UnitSystem us,StringFormat format,uint localeId)',
+        summary: 'Create from Length and UnitSystem',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'length',
+            summary: 'Numeric length value'
+          },
+          {
+            name: 'us',
+            summary: 'Unit system'
+          },
+          {
+            name: 'format',
+            summary: ''
+          },
+          {
+            name: 'localeId',
+            summary: ''
+          }
+        ]
+      },
+      {
+        signature: 'static LengthValue Create(string s,StringParserSettings ps,out bool parsedAll)',
+        summary: 'Create from string',
+        since: '6.0',
+        parameters: [
+          {
+            name: 's',
+            summary: 'string to parse'
+          },
+          {
+            name: 'ps',
+            summary: ''
+          },
+          {
+            name: 'parsedAll',
+            summary: 'True if the whole string was parsed'
+          }
+        ]
+      },
+      {
+        signature: 'LengthValue ChangeLength(double newLength)',
+        summary: `Changes the numeric value in a LengthValue and leaves all of the other info unchanged
+UnitSystem, ParseSettings and StringFormat stay as they were`,
+        since: '6.0',
+        returns: 'A new LengthValue'
+      },
+      {
+        signature: 'LengthValue ChangeUnitSystem(UnitSystem newUnits)',
+        summary: `Change the UnitSystem of a LengthValue
+The numeric value of Length is scaled by new_us / current unit system
+so that the absolute length stays the same`,
+        since: '6.0'
+      },
+      {
+        signature: 'void Dispose()',
+        summary: 'actively reclaim native allocated ON_LenghtValue*',
+        since: '6.0'
+      },
+      {
+        signature: 'bool IsUnset()',
+        summary: 'Test IsUnset',
+        since: '6.0'
+      },
+      {
+        signature: 'double Length()',
+        summary: 'Length value in this instance\'s current unit system',
+        since: '6.0'
+      },
+      {
+        signature: 'double Length(UnitSystem units)',
+        summary: 'Length value in a given unit system',
         since: '6.0'
       }
     ]
@@ -94155,6 +95966,43 @@ a new decal instance to add.`,
   },
   {
     namespace: 'Rhino.Render',
+    name: 'Dithering',
+    dataType: 'class',
+    summary: 'This is the interface to linear workflow settings.',
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
+    constructors: [
+      {
+        signature: 'Dithering()',
+        summary: 'Create a utility object not associated with any document',
+        since: '6.0'
+      },
+      {
+        signature: 'Dithering(Dithering d)',
+        summary: 'Create a utility object not associated with any document from another object',
+        since: '6.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'Methods Method',
+        since: '6.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'bool On',
+        since: '7.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void CopyFrom(FreeFloatingBase src)',
+        since: '6.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
     name: 'Dithering.Methods',
     dataType: 'enum',
     summary: 'Dithering algorithm.',
@@ -99540,6 +101388,38 @@ UI.`,
         summary: 'Get the type being registered.',
         since: '6.0',
         property: ['get']
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Render',
+    name: 'RenderChannels',
+    dataType: 'class',
+    summary: 'Render Channels. This corresponds to the user\'s settings in the Rendering panel.',
+    baseclass: 'Rhino.Render.DocumentOrFreeFloatingBase',
+    properties: [
+      {
+        signature: 'Guid[] CustomList',
+        since: '7.0',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'Modes Mode',
+        since: '7.0',
+        property: ['get', 'set']
+      }
+    ],
+    methods: [
+      {
+        signature: 'void CopyFrom(FreeFloatingBase src)',
+        since: '7.0'
+      }
+    ],
+    events: [
+      {
+        signature: 'static Changed',
+        summary: 'This event is raised when a Render Channels property value is changed.',
+        since: '7.0'
       }
     ]
   },
@@ -115016,6 +116896,74 @@ This is a different condition from ON::Runtime::Unset.`
   },
   {
     namespace: 'Rhino',
+    name: 'ScaleValue',
+    dataType: 'class',
+    summary: `Represents a scale with associated LengthValues and string representations
+of the scale. This allows for going back and forth from numerical
+representations of a scale and a string representation without "guessing"
+at the initial scale.`,
+    interfaces: ['IDisposable'],
+    constructors: [
+      {
+        signature: 'ScaleValue()',
+        summary: 'Default constructor',
+        since: '6.0'
+      }
+    ],
+    properties: [
+      {
+        signature: 'double LeftToRightScale',
+        summary: 'LeftLengthValue / RightLengthValue',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'double RightToLeftScale',
+        summary: 'RightLengthValue / LeftLengthValue',
+        since: '6.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static ScaleValue Create(LengthValue left,LengthValue right,ScaleStringFormat format)',
+        summary: 'Create from 2 length values',
+        since: '6.0'
+      },
+      {
+        signature: 'static ScaleValue Create(string s,StringParserSettings ps)',
+        summary: 'Create from string',
+        since: '6.0'
+      },
+      {
+        signature: 'static ScaleValue OneToOne()',
+        summary: 'Make a new ScaleValue set to OneToOne',
+        since: '6.0'
+      },
+      {
+        signature: 'void Dispose()',
+        summary: 'actively reclaim native allocated ON_SacleValue*',
+        since: '6.0'
+      },
+      {
+        signature: 'bool IsUnset()',
+        summary: 'Test IsUnset',
+        since: '6.0'
+      },
+      {
+        signature: 'LengthValue LeftLengthValue()',
+        summary: 'Get the Left LengthValue from Scale',
+        since: '6.0'
+      },
+      {
+        signature: 'LengthValue RightLengthValue()',
+        summary: 'Get the Right LengthValue from Scale',
+        since: '6.0'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino',
     name: 'ScaleValue.ScaleStringFormat',
     dataType: 'enum',
     summary: `Specifies prefered formats for automatically
@@ -117157,6 +119105,61 @@ image.`,
           }
         ],
         returns: 'The icon if successful, None otherwise.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.UI',
+    name: 'Fonts',
+    dataType: 'class',
+    summary: 'Rhino.Rumtime.UI',
+    properties: [
+      {
+        signature: 'static Font BoldHeadingFont',
+        summary: 'Returns a font that is 1.2x NormalFont and Bold',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Font HeadingFont',
+        summary: 'Returns a font used for dialog headings. 1.2x the size of NormalFont.',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Font NormalFont',
+        summary: 'Returns the normal font used for dialog boxes and buttons.',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Font SmallFont',
+        summary: 'Returns a font use for small text in dialog boxes. 0.8x the size of NormalFont.',
+        since: '6.0',
+        property: ['get']
+      },
+      {
+        signature: 'static Font TitleFont',
+        summary: 'Returns a font used for dialog titles. 2x the size of NormalFont, and bold.',
+        since: '6.0',
+        property: ['get']
+      }
+    ],
+    methods: [
+      {
+        signature: 'static Font GetUiFont(Style style,Size size)',
+        summary: 'GetUiFont provides access to a set of unmanaged fonts used by Rhino.',
+        since: '6.0',
+        parameters: [
+          {
+            name: 'style',
+            summary: 'Normal, Bold, Italic'
+          },
+          {
+            name: 'size',
+            summary: 'One of several preset enumerable sizes'
+          }
+        ]
       }
     ]
   },

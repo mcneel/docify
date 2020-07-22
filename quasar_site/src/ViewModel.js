@@ -126,6 +126,7 @@ const ViewModel = {
       if (baseclass === 'EventArgs') item = null
       if (item) {
         node.link = link
+        node.item = item
       }
       rc.push(node)
     }
@@ -178,6 +179,7 @@ const ViewModel = {
           }
         })
       })
+      item.examples = Object.freeze(item.examples)
     }
     return item.examples
   },

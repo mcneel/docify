@@ -23,7 +23,7 @@
         :label="section.title"
         :content-inset-level="1"
       >
-        <q-item v-for="member in section.items" :key="member.signature">
+        <q-item v-for="(member, index) in section.items" :key="index">
           <q-item-section>
             <q-item-label>
               <div :id="anchorId(section, member)">
@@ -48,7 +48,7 @@
               </q-btn>
               </div>
             </q-item-label>
-            <q-item inset-level="0.2">
+            <q-item :inset-level="0.2">
               <q-item-section>
                 <q-item-label caption>
                   <q-btn v-if="useAnchors"
@@ -67,7 +67,7 @@
                 <q-item-label caption v-for="parameter in member.parameters" :key="parameter.name">
                   <b>{{parameter.name}}</b> - {{parameter.summary}}
                 </q-item-label>
-                <q-item-label v-if="member.returns" inset-level="1" caption>
+                <q-item-label caption v-if="member.returns">
                   <b>Returns:</b> {{member.returns}}
                 </q-item-label>
               </q-item-section>
@@ -257,11 +257,13 @@ export default {
         const dataTypes = getDataTypes(member.signature)
         anchor = ('method_' + name[name.length - 1] + dataTypes).toLowerCase()
       }
-      console.log(anchor)
       return anchor
     },
     onChangeSelectedItem (item) {
-      console.log('selected item changed to ' + item)
+      // bail if the selected item has not changed
+      if (this.vm.name && this.vm.name === item.name) return
+      console.log('selected item changed to ' + item.name)
+      const start = performance.now()
       this.vm = item
       this.useAnchors = (item.dataType !== 'namespace' && item.dataType !== 'enum')
       if (item.dataType === 'namespace') {
@@ -282,6 +284,8 @@ export default {
         this.namespace = item.namespace
         this.memberSections = []
         this.namespaceItems = null
+        this.inheritence = ViewModel.getInheritence(item)
+
         if (item.constructors) {
           this.memberSections.push({
             title: 'Constructors (' + item.constructors.length + ')',
@@ -290,42 +294,67 @@ export default {
             constructors: true
           })
         }
-        if (item.values) {
-          this.memberSections.push({
+
+        let values = [].concat(item.values)
+        for (let i = 0; i < this.inheritence.length; i++) {
+          values = values.concat(this.inheritence[i].item.values)
+        }
+        values = values.filter(v => v != null)
+        if (values.length > 0) {
+          this.memberSections.push(Object.freeze({
             title: 'Values',
-            items: item.values,
+            items: Object.freeze(values),
             expanded: true,
             values: true
-          })
+          }))
         }
-        if (item.properties) {
-          this.memberSections.push({
-            title: 'Properties (' + item.properties.length + ')',
-            items: item.properties,
+
+        let properties = [].concat(item.properties)
+        for (let i = 0; i < this.inheritence.length; i++) {
+          properties = properties.concat(this.inheritence[i].item.properties)
+        }
+        properties = properties.filter(p => p != null)
+        if (properties.length > 0) {
+          this.memberSections.push(Object.freeze({
+            title: 'Properties (' + properties.length + ')',
+            items: Object.freeze(properties),
             expanded: true,
             properties: true
-          })
-          item.properties.forEach(m => ViewModel.getExamples(item, m))
+          }))
+          properties.forEach(m => ViewModel.getExamples(item, m))
         }
-        if (item.methods) {
-          this.memberSections.push({
-            title: 'Methods (' + item.methods.length + ')',
-            items: item.methods,
+
+        let methods = [].concat(item.methods)
+        for (let i = 0; i < this.inheritence.length; i++) {
+          methods = methods.concat(this.inheritence[i].item.methods)
+        }
+        methods = methods.filter(m => m != null)
+        if (methods.length > 0) {
+          this.memberSections.push(Object.freeze({
+            title: 'Methods (' + methods.length + ')',
+            items: Object.freeze(methods),
             expanded: true,
             methods: true
-          })
-          item.methods.forEach(m => ViewModel.getExamples(item, m))
+          }))
+          methods.forEach(m => ViewModel.getExamples(item, m))
         }
-        if (item.events) {
-          this.memberSections.push({
-            title: 'Events (' + item.events.length + ')',
-            items: item.events,
+
+        let events = [].concat(item.events)
+        for (let i = 0; i < this.inheritence.length; i++) {
+          events = events.concat(this.inheritence[i].item.events)
+        }
+        events = events.filter(e => e != null)
+        if (events.length > 0) {
+          this.memberSections.push(Object.freeze({
+            title: 'Events (' + events.length + ')',
+            items: Object.freeze(events),
             expanded: true,
             events: true
-          })
+          }))
         }
-        this.inheritence = ViewModel.getInheritence(item)
       }
+      const elapsed = performance.now() - start
+      console.log(`viewmodel build time for page = ${elapsed.toFixed(2)}ms`)
     }
   }
 }

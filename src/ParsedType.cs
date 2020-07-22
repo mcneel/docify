@@ -45,6 +45,12 @@ namespace api_docify
                 //    throw new Exception("two Documentation sections on merge");
                 Documentation = other.Documentation;
             }
+            if( !IsPublic && other.IsPublic )
+            {
+                // partial classes can appear as non-public. If one of the declarations
+                // is public, then the whole thing is public
+                _declarationType = other._declarationType;
+            }
         }
 
         public ParsedDataType DataType
