@@ -97,10 +97,17 @@ namespace api_docify
         {
             get
             {
+                string generic = "";
+                ClassDeclarationSyntax cds = _declarationType as ClassDeclarationSyntax;
+                if (cds != null && cds.TypeParameterList != null)
+                {
+                    generic = cds.TypeParameterList.ToString();
+                }
+
                 var parentClass = _declarationType.Parent as ClassDeclarationSyntax;
                 if (parentClass != null)
-                    return $"{parentClass.Identifier}.{_declarationType.Identifier}";
-                return $"{_declarationType.Identifier}";
+                    return $"{parentClass.Identifier}.{_declarationType.Identifier}{generic}";
+                return $"{_declarationType.Identifier}{generic}";
             }
         }
 
@@ -176,6 +183,11 @@ namespace api_docify
             }
 
             string className = $"{ns}{basetype.Identifier}";
+            ClassDeclarationSyntax cds = basetype as ClassDeclarationSyntax;
+            if (cds != null && cds.TypeParameterList != null)
+            {
+                className += cds.TypeParameterList.ToString();
+            }
             return className;
         }
 

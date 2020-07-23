@@ -118,8 +118,12 @@ const ViewModel = {
       count++
       if (count > 10) break // don't allow infinite loop due to some bug in my code
       const typemap = this.getTypeMap()
-      const index = item.baseclass.lastIndexOf('.')
-      const baseclass = item.baseclass.substring(index + 1)
+      let index = item.baseclass.lastIndexOf('.')
+      let baseclass = item.baseclass.substring(index + 1)
+      index = baseclass.indexOf('<')
+      if (index > 0) {
+        baseclass = baseclass.substring(0, index + 1) + 'T>'
+      }
       const link = item.baseclass.toLowerCase()
       const node = { name: item.baseclass }
       item = typemap[baseclass]

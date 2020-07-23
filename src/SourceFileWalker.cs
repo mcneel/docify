@@ -33,10 +33,6 @@ namespace api_docify
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if( node.Identifier.Text.Equals("dimension", StringComparison.OrdinalIgnoreCase))
-            {
-                int bh = 0;
-            }
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
             _parsedBaseTypes.Add(new ParsedType(node, docComment));
             base.VisitClassDeclaration(node);

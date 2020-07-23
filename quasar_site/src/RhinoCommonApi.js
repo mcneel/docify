@@ -5452,86 +5452,6 @@ evaluated in order to get the bounding box of the list.`,
     name: 'RhinoList',
     dataType: 'class',
     summary: 'Provides helper methods to work with RhinoList<T> and other collections.',
-    interfaces: ['IList<T>', 'IList', 'ICloneable'],
-    constructors: [
-      {
-        signature: 'RhinoList()',
-        summary: 'Initializes a new, empty list.'
-      },
-      {
-        signature: 'RhinoList(IEnumerable<T> collection)',
-        summary: 'Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T.',
-        parameters: [
-          {
-            name: 'collection',
-            summary: 'Collection of items to duplicate.'
-          }
-        ]
-      },
-      {
-        signature: 'RhinoList(int initialCapacity)',
-        summary: 'Initializes an empty list with a certain capacity.',
-        parameters: [
-          {
-            name: 'initialCapacity',
-            summary: 'Number of items this list can store without resizing.'
-          }
-        ]
-      },
-      {
-        signature: 'RhinoList(int amount,T defaultValue)',
-        summary: 'Initializes a new list with a specified amount of values.',
-        parameters: [
-          {
-            name: 'amount',
-            summary: 'Number of values to add to this list. Must be equal to or larger than zero.'
-          },
-          {
-            name: 'defaultValue',
-            summary: `Value to add, for reference types,
-the same item will be added over and over again.`
-          }
-        ]
-      },
-      {
-        signature: 'RhinoList(RhinoList<T> list)',
-        summary: 'Initializes an new list by shallow duplicating another list.',
-        parameters: [
-          {
-            name: 'list',
-            summary: 'List to mimic.'
-          }
-        ]
-      }
-    ],
-    properties: [
-      {
-        signature: 'int Capacity',
-        summary: 'Gets or sets the total number of elements the internal data structure can hold without resizing.',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'int Count',
-        summary: 'Gets the number of elements actually contained in the List.',
-        property: ['get']
-      },
-      {
-        signature: 'T First',
-        summary: 'Gets or sets the first item in the list. This is synonymous to calling List[0].',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'T Last',
-        summary: 'Gets or sets the last item in the list. This is synonymous to calling List[Count-1].',
-        property: ['get', 'set']
-      },
-      {
-        signature: 'int NullCount',
-        summary: `Gets the number of None references (Nothing in Visual Basic) in this list.
-If T is a ValueType, this property always return zero.`,
-        property: ['get']
-      }
-    ],
     methods: [
       {
         signature: 'static IEnumerable<int[]> Point2dKNeighbors(IEnumerable<Point2d> hayPoints,IEnumerable<Point2d> needlePoints,int amount)',
@@ -5638,7 +5558,96 @@ This method searches needlePoints by computing all distances from each point clo
           }
         ],
         returns: 'An enumerable of arrays of indices; each array contains the indices for each of the needlePts.'
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino.Collections',
+    name: 'RhinoList<T>',
+    dataType: 'class',
+    summary: `Represents a list of generic data. This class is similar to System.Collections.Generic.List(T)
+but exposes a few more methods.`,
+    interfaces: ['IList<T>', 'IList', 'ICloneable'],
+    constructors: [
+      {
+        signature: 'RhinoList<T>()',
+        summary: 'Initializes a new, empty list.'
       },
+      {
+        signature: 'RhinoList<T>(IEnumerable<T> collection)',
+        summary: 'Initializes this list as a shallow duplicate of another list, array or any other enumerable set of T.',
+        parameters: [
+          {
+            name: 'collection',
+            summary: 'Collection of items to duplicate.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoList<T>(int initialCapacity)',
+        summary: 'Initializes an empty list with a certain capacity.',
+        parameters: [
+          {
+            name: 'initialCapacity',
+            summary: 'Number of items this list can store without resizing.'
+          }
+        ]
+      },
+      {
+        signature: 'RhinoList<T>(int amount,T defaultValue)',
+        summary: 'Initializes a new list with a specified amount of values.',
+        parameters: [
+          {
+            name: 'amount',
+            summary: 'Number of values to add to this list. Must be equal to or larger than zero.'
+          },
+          {
+            name: 'defaultValue',
+            summary: `Value to add, for reference types,
+the same item will be added over and over again.`
+          }
+        ]
+      },
+      {
+        signature: 'RhinoList<T>(RhinoList<T> list)',
+        summary: 'Initializes an new list by shallow duplicating another list.',
+        parameters: [
+          {
+            name: 'list',
+            summary: 'List to mimic.'
+          }
+        ]
+      }
+    ],
+    properties: [
+      {
+        signature: 'int Capacity',
+        summary: 'Gets or sets the total number of elements the internal data structure can hold without resizing.',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int Count',
+        summary: 'Gets the number of elements actually contained in the List.',
+        property: ['get']
+      },
+      {
+        signature: 'T First',
+        summary: 'Gets or sets the first item in the list. This is synonymous to calling List[0].',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'T Last',
+        summary: 'Gets or sets the last item in the list. This is synonymous to calling List[Count-1].',
+        property: ['get', 'set']
+      },
+      {
+        signature: 'int NullCount',
+        summary: `Gets the number of None references (Nothing in Visual Basic) in this list.
+If T is a ValueType, this property always return zero.`,
+        property: ['get']
+      }
+    ],
+    methods: [
       {
         signature: 'void Add(T item)',
         summary: 'Adds an object to the end of the List.',
@@ -32724,9 +32733,9 @@ The new object has identical attributes.`
   },
   {
     namespace: 'Rhino.DocObjects.Tables',
-    name: 'RhinoDocCommonTable',
+    name: 'RhinoDocCommonTable<T>',
     dataType: 'class',
-    baseclass: 'CommonComponentTable<T>',
+    baseclass: 'Rhino.FileIO.CommonComponentTable<T>',
     properties: [
       {
         signature: 'RhinoDoc Document',
@@ -36324,7 +36333,7 @@ The return will always be an array.`,
   },
   {
     namespace: 'Rhino.FileIO',
-    name: 'CommonComponentTable',
+    name: 'CommonComponentTable<T>',
     dataType: 'class',
     summary: 'Provides a base table type that encompasses all document tables, both in RhinoDoc and File3dm.',
     interfaces: ['ICommonComponentTable<T>', 'IList<T>', 'IReadOnlyList<T>'],
@@ -37324,10 +37333,10 @@ False if errors occur.`
   },
   {
     namespace: 'Rhino.FileIO',
-    name: 'File3dmCommonComponentTable',
+    name: 'File3dmCommonComponentTable<T>',
     dataType: 'class',
     summary: 'Provides a base table type that is shared among all File3dm tables.',
-    baseclass: 'CommonComponentTable<T>',
+    baseclass: 'Rhino.FileIO.CommonComponentTable<T>',
     interfaces: ['ICollection<T>'],
     methods: [
       {
@@ -91100,19 +91109,28 @@ string list otherwise returns false.`
     namespace: 'Rhino',
     name: 'PersistentSettingsEventArgs',
     dataType: 'class',
-    summary: 'Represents the persistent settings modification event arguments.',
+    summary: 'Represents event data that is passed as state in persistent settings events.',
     baseclass: 'EventArgs',
-    constructors: [
-      {
-        signature: 'PersistentSettingsEventArgs(T currentValue,T newValue)'
-      }
-    ],
     properties: [
       {
         signature: 'bool Cancel',
         since: '5.0',
         property: ['get', 'set']
-      },
+      }
+    ]
+  },
+  {
+    namespace: 'Rhino',
+    name: 'PersistentSettingsEventArgs<T>',
+    dataType: 'class',
+    summary: 'Represents the persistent settings modification event arguments.',
+    baseclass: 'Rhino.PersistentSettingsEventArgs',
+    constructors: [
+      {
+        signature: 'PersistentSettingsEventArgs<T>(T currentValue,T newValue)'
+      }
+    ],
+    properties: [
       {
         signature: 'T CurrentValue',
         property: ['get', 'set']
@@ -107116,7 +107134,7 @@ Using this function will also set sun to manual.`,
   },
   {
     namespace: 'Rhino.Render',
-    name: 'TexturedValue',
+    name: 'TexturedValue<T>',
     dataType: 'class',
     summary: `Generic class to help holding on to related values. This can be
 used to get data from textured content fields with the
@@ -107124,7 +107142,7 @@ HandleTexturedValue function.`,
     since: '6.12',
     constructors: [
       {
-        signature: 'TexturedValue(string name,T value,bool on,float amount)'
+        signature: 'TexturedValue<T>(string name,T value,bool on,float amount)'
       }
     ]
   },
@@ -114847,7 +114865,7 @@ The NotificationCenter is not thread-safe and should only be used in the UI thre
   },
   {
     namespace: 'Rhino.Runtime.Notifications',
-    name: 'TrulyObservableOrderedSet',
+    name: 'TrulyObservableOrderedSet<T>',
     dataType: 'class',
     summary: 'An ordered set that notifies its subscribers whenever one of its INotifyPropertyChanged elements raises its PropertyChanged event.',
     remarks: `This class prevents the removal of elements by assemblies they cannot be edited by. At the time of removal,
@@ -114856,11 +114874,11 @@ InvalidOperationException will be thrown.`,
     interfaces: ['IList<T>', 'INotifyCollectionChanged'],
     constructors: [
       {
-        signature: 'TrulyObservableOrderedSet()',
+        signature: 'TrulyObservableOrderedSet<T>()',
         summary: 'Creates an empty instance.'
       },
       {
-        signature: 'TrulyObservableOrderedSet(IEnumerable<T> items)',
+        signature: 'TrulyObservableOrderedSet<T>(IEnumerable<T> items)',
         summary: 'Creates an instance with the given items.',
         parameters: [
           {
