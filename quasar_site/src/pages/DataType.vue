@@ -23,55 +23,25 @@
         :label="section.title"
         :content-inset-level="1"
       >
-        <q-item v-for="(member, index) in section.items" :key="index">
+        <q-item v-for="(member, index) in section.items" :key="index"
+          :clickable="!section.values"
+          :to="memberUrl(section, member)"
+        >
           <q-item-section>
             <q-item-label>
-              <div :id="anchorId(section, member)">
-              <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{member.deprecated}}
+              {{memberName(member, section)}}
+              <q-badge v-if="!section.constructors && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
+                <q-icon name="mdi-file-tree"/>
+                <q-tooltip>From {{member.parent}}</q-tooltip>
+              </q-badge>
+              <q-badge v-if="member.deprecated" color='negative'>
+                {{member.deprecated}}
                 <q-tooltip>Deprecated in version {{member.deprecated}}</q-tooltip>
               </q-badge>
-              <span v-for="(chunk, index) in signature(member, section)" :key="index">
-                <span v-if="chunk.link">
-                  <router-link :to="chunk.link">{{chunk.name}}</router-link>
-                </span>
-                <span v-else>{{chunk.name}}</span>
-              </span>
-              <q-btn v-if="member.examples && member.examples.length>0"
-                size="xs"
-                dense
-                outline
-                color="secondary"
-                icon="mdi-code-tags"
-                :to="exampleUrl(member)"
-                >
-                <q-tooltip>Show Example</q-tooltip>
-              </q-btn>
-              </div>
             </q-item-label>
-            <q-item :inset-level="0.2">
-              <q-item-section>
-                <q-item-label caption>
-                  <q-btn v-if="useAnchors"
-                    size="xs"
-                    icon="mdi-link-variant"
-                    flat
-                    round
-                    :to="anchorUrl(section, member)"
-                    >
-                  </q-btn>
-                  <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since}}
-                    <q-tooltip>Available since {{member.since}}</q-tooltip>
-                  </q-badge>
-                  {{member.summary}}
-                </q-item-label>
-                <q-item-label caption v-for="parameter in member.parameters" :key="parameter.name">
-                  <b>{{parameter.name}}</b> - {{parameter.summary}}
-                </q-item-label>
-                <q-item-label caption v-if="member.returns">
-                  <b>Returns:</b> {{member.returns}}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+            <q-item-label caption class="on-right">
+              {{member.summary}}
+            </q-item-label>
           </q-item-section>
         </q-item>
       </q-expansion-item>
@@ -102,7 +72,6 @@ export default {
       memberSections: [],
       namespaceItems: null,
       inheritence: [],
-      useAnchors: true,
       version: mostRecent
     }
   },
@@ -139,125 +108,30 @@ export default {
     }
   },
   methods: {
-    tokenLink (token) {
-      // skip tokens that start with a lower case letter
-      if (token.length < 1 || token[0] === token[0].toLowerCase()) return null
-      if (token.endsWith('[]')) token = token.substring(0, token.length - 2)
-      if (token === this.vm.name) return null
-      const typeMap = ViewModel.getTypeMap()
-      const type = typeMap[token]
-      if (!type) return null
-      return this.baseUrl + ViewModel.itemPath(type)
-    },
-    signature (member, section) {
+    memberName (member, section) {
+      if (section.constructors || section.values) return member.signature
       const tokens = member.signature.split(' ')
-      const chunks = []
+      let name = tokens[1]
       if (tokens[0] === 'static') {
-        chunks.push({ name: tokens[0] + ' ' })
-        tokens.shift()
+        name = tokens[2]
       }
-      if (section.events) {
-        chunks.push({ name: tokens[0] })
-        return chunks
+      let index = name.indexOf('(')
+      if (index > 0) {
+        index = member.signature.indexOf(name)
+        return member.signature.substring(index)
       }
-
-      if (section.properties || section.methods) {
-        // try to get a link for the return type
-        const link = this.tokenLink(tokens[0])
-        if (link) {
-          chunks.push({
-            link: link,
-            name: tokens[0]
-          })
-          chunks.push({ name: ' ' })
-        } else {
-          chunks.push({ name: tokens[0] + ' ' })
-        }
-        tokens.shift()
-      }
-
-      const declaration = tokens.join(' ')
-      const parenIndex = declaration.indexOf('(')
-      if (parenIndex > 0) {
-        chunks.push({ name: declaration.substring(0, parenIndex + 1) })
-        const parameterTokens = declaration.substring(parenIndex + 1, declaration.length - 1).split(',')
-        for (let i = 0; i < parameterTokens.length; i++) {
-          if (parameterTokens[i].indexOf('<') > 0) {
-            parameterTokens[i] = parameterTokens[i] + ',' + parameterTokens[i + 1]
-            parameterTokens[i + 1] = ''
-          }
-        }
-        for (let i = 0; i < parameterTokens.length; i++) {
-          if (!parameterTokens[i]) continue
-          if (i > 0) chunks.push({ name: ', ' })
-          const parameter = parameterTokens[i].trim()
-          const index = parameter.indexOf(' ')
-          const link = this.tokenLink(parameter.substring(0, index))
-          if (link) {
-            chunks.push({
-              link: link,
-              name: parameter.substring(0, index)
-            })
-            chunks.push({ name: parameter.substring(index) })
-          } else {
-            chunks.push({ name: parameter })
-          }
-        }
-        chunks.push({ name: ')' })
-      } else {
-        chunks.push({ name: declaration })
-      }
-
-      if (member.property) {
-        let s = ' {'
-        for (let i = 0; i < member.property.length; i++) {
-          if (i > 0) s += '|'
-          s += member.property[i]
-        }
-        s += '}'
-        chunks.push({ name: s })
-      }
-      return chunks
+      return name
     },
-    exampleUrl (member) {
-      let name = member.examples[0].name
-      const index = name.lastIndexOf('.')
-      name = name.substring(0, index).toLowerCase()
-      return this.baseUrl + 'examples/' + name
-    },
-    anchorUrl (section, member) {
-      return '#' + this.anchorId(section, member)
-    },
-    anchorId (section, member) {
-      if (!this.useAnchors) return ''
-      const getDataTypes = function (signature) {
-        const startIndex = signature.indexOf('(')
-        const endIndex = signature.indexOf(')')
-        if (endIndex > startIndex) {
-          const parameters = signature.substring(startIndex + 1, endIndex).split(',')
-          let rc = ''
-          for (let i = 0; i < parameters.length; i++) {
-            const p = parameters[i].split(' ')
-            if (p.length > 1) rc = '_' + p[0]
-          }
-          return rc
-        }
-      }
-      let anchor = ''
+    memberUrl (section, member) {
+      let name = this.memberName(member, section).toLowerCase()
+      const index = name.indexOf('(')
+      if (index > 0) name = name.substring(0, index)
       if (section.constructors) {
-        anchor = ('constructor' + getDataTypes(member.signature)).toLowerCase()
+        const url = this.baseUrl + this.namespace + '.' + this.title + '/' + name
+        return url.toLowerCase()
       }
-      if (section.properties) {
-        const name = member.signature.split(' ')
-        anchor = ('property_' + name[name.length - 1]).toLowerCase()
-      }
-      if (section.methods) {
-        const startIndex = member.signature.indexOf('(')
-        const name = member.signature.substring(0, startIndex).split(' ')
-        const dataTypes = getDataTypes(member.signature)
-        anchor = ('method_' + name[name.length - 1] + dataTypes).toLowerCase()
-      }
-      return anchor
+      const url = this.baseUrl + member.parent + '/' + name
+      return url.toLowerCase()
     },
     onChangeSelectedItem (item) {
       // bail if the selected item has not changed
@@ -265,7 +139,6 @@ export default {
       console.log('selected item changed to ' + item.name)
       const start = performance.now()
       this.vm = item
-      this.useAnchors = (item.dataType !== 'namespace' && item.dataType !== 'enum')
       if (item.dataType === 'namespace') {
         this.title = 'Namespace: ' + item.name
         this.namespace = null
@@ -309,11 +182,25 @@ export default {
           }))
         }
 
+        let parentName = item.namespace + '.' + item.name
         let properties = [].concat(item.properties)
+        if (item.properties) {
+          for (let i = 0; i < properties.length; i++) {
+            properties[i].parent = parentName
+          }
+        }
         for (let i = 0; i < this.inheritence.length; i++) {
+          const inheritedProps = this.inheritence[i].item.properties
+          if (inheritedProps == null) continue
+          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
+          for (let j = 0; j < inheritedProps.length; j++) {
+            inheritedProps[j].parent = parentName
+          }
           properties = properties.concat(this.inheritence[i].item.properties)
         }
         properties = properties.filter(p => p != null)
+        const p = { properties: true }
+        properties.sort((a, b) => this.memberName(a, p).localeCompare(this.memberName(b, p)))
         if (properties.length > 0) {
           this.memberSections.push(Object.freeze({
             title: 'Properties (' + properties.length + ')',
@@ -321,14 +208,27 @@ export default {
             expanded: true,
             properties: true
           }))
-          properties.forEach(m => ViewModel.getExamples(item, m))
         }
 
+        parentName = item.namespace + '.' + item.name
         let methods = [].concat(item.methods)
+        if (item.methods) {
+          for (let i = 0; i < methods.length; i++) {
+            methods[i].parent = parentName
+          }
+        }
         for (let i = 0; i < this.inheritence.length; i++) {
+          const inheritedMethods = this.inheritence[i].item.methods
+          if (inheritedMethods == null) continue
+          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
+          for (let j = 0; j < inheritedMethods.length; j++) {
+            inheritedMethods[j].parent = parentName
+          }
           methods = methods.concat(this.inheritence[i].item.methods)
         }
         methods = methods.filter(m => m != null)
+        const m = { methods: true }
+        methods.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
         if (methods.length > 0) {
           this.memberSections.push(Object.freeze({
             title: 'Methods (' + methods.length + ')',
@@ -336,11 +236,22 @@ export default {
             expanded: true,
             methods: true
           }))
-          methods.forEach(m => ViewModel.getExamples(item, m))
         }
 
+        parentName = item.namespace + '.' + item.name
         let events = [].concat(item.events)
+        if (item.events) {
+          for (let i = 0; i < events.length; i++) {
+            events[i].parent = parentName
+          }
+        }
         for (let i = 0; i < this.inheritence.length; i++) {
+          const inheritedEvents = this.inheritence[i].item.events
+          if (inheritedEvents == null) continue
+          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
+          for (let j = 0; j < inheritedEvents.length; j++) {
+            inheritedEvents[j].parent = parentName
+          }
           events = events.concat(this.inheritence[i].item.events)
         }
         events = events.filter(e => e != null)
