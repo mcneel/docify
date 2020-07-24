@@ -10,7 +10,10 @@
     <q-list bordered class="rounded-borders q-mt-md">
       <q-item v-for="(member, index) in members.items" :key="index">
         <q-item-section>
-          <q-item-label>
+          <q-item-label v-if="member.deprecated" class="light-dimmed">
+            {{member.signature}}
+          </q-item-label>
+          <q-item-label v-if="!member.deprecated">
             <span v-for="(chunk, idx) in signature(member)" :key="idx+1000">
               <span v-if="chunk.link">
                 <router-link :to="chunk.link">{{chunk.name}}</router-link>
@@ -66,6 +69,11 @@ export default {
   methods: {
     getMembers () {
       if (this.datatype.name.toLowerCase() === this.memberName) {
+        this.datatype.constructors.sort((a, b) => {
+          if (a.deprecated && !b.deprecated) return 1
+          if (!a.deprecated && b.deprecated) return -1
+          return 0
+        })
         return {
           isConstructor: true,
           items: this.datatype.constructors
@@ -80,6 +88,11 @@ export default {
           if (name.toLowerCase() === this.memberName) props.push(prop)
         }
         if (props.length > 0) {
+          props.sort((a, b) => {
+            if (a.deprecated && !b.deprecated) return 1
+            if (!a.deprecated && b.deprecated) return -1
+            return 0
+          })
           return {
             isProperty: true,
             items: props
@@ -96,6 +109,11 @@ export default {
           if (name.toLowerCase() === this.memberName) methods.push(m)
         }
         if (methods.length > 0) {
+          methods.sort((a, b) => {
+            if (a.deprecated && !b.deprecated) return 1
+            if (!a.deprecated && b.deprecated) return -1
+            return 0
+          })
           return {
             isMethod: true,
             items: methods
@@ -111,6 +129,11 @@ export default {
           if (name.toLowerCase() === this.memberName) events.push(event)
         }
         if (events.length > 0) {
+          events.sort((a, b) => {
+            if (a.deprecated && !b.deprecated) return 1
+            if (!a.deprecated && b.deprecated) return -1
+            return 0
+          })
           return {
             isEvent: true,
             items: events
