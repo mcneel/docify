@@ -181,7 +181,7 @@ export default {
         chunks.push({ name: declaration.substring(0, parenIndex + 1) })
         const parameterTokens = declaration.substring(parenIndex + 1, declaration.length - 1).split(',')
         for (let i = 0; i < parameterTokens.length; i++) {
-          if (parameterTokens[i].indexOf('<') > 0) {
+          if (parameterTokens[i].indexOf('<') > 0 && i < (parameterTokens.length - 1)) {
             parameterTokens[i] = parameterTokens[i] + ',' + parameterTokens[i + 1]
             parameterTokens[i + 1] = ''
           }
