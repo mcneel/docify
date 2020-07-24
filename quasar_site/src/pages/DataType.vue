@@ -112,7 +112,7 @@ export default {
       if (section.constructors || section.values) return member.signature
       const tokens = member.signature.split(' ')
       let name = tokens[1]
-      if (tokens[0] === 'static') {
+      if (tokens[0] === 'static' && !section.events) {
         name = tokens[2]
       }
       let index = name.indexOf('(')
