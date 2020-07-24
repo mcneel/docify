@@ -134,7 +134,7 @@ namespace api_docify
                     for (int i = 0; i < parameterCount; i++)
                     {
                         if (i > 0)
-                            signature.Append(",");
+                            signature.Append(", ");
                         var parameter = method.ParameterList.Parameters[i];
                         for (int j = 0; j < parameter.Modifiers.Count; j++)
                         {
@@ -144,10 +144,9 @@ namespace api_docify
 
                         string paramType = parameter.Type.ToString();
                         int angleIndex = paramType.IndexOf('<');
-                        string prefixType = "";
                         if (angleIndex > 0)
                         {
-                            prefixType = paramType.Substring(0, angleIndex);
+                            string prefixType = paramType.Substring(0, angleIndex);
                             int prefixIndex = prefixType.LastIndexOf('.');
                             if (prefixIndex > 0)
                                 prefixType = prefixType.Substring(prefixIndex + 1);
@@ -243,14 +242,13 @@ namespace api_docify
                     for (int i = 0; i < parameterCount; i++)
                     {
                         if (i > 0)
-                            signature.Append(",");
+                            signature.Append(", ");
                         var parameter = constructor.ParameterList.Parameters[i];
                         string paramType = parameter.Type.ToString();
                         int angleIndex = paramType.IndexOf('<');
-                        string prefixType = "";
                         if (angleIndex > 0)
                         {
-                            prefixType = paramType.Substring(0, angleIndex);
+                            string prefixType = paramType.Substring(0, angleIndex);
                             int prefixIndex = prefixType.LastIndexOf('.');
                             if (prefixIndex > 0)
                                 prefixType = prefixType.Substring(prefixIndex + 1);
@@ -286,7 +284,7 @@ namespace api_docify
                     return signature;
                 }
             }
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ParsedParameter[] GetParameters()

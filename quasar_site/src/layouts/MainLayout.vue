@@ -7,10 +7,10 @@
           <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'"/>
         </q-toolbar-title>
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
-          :label="'v' + version"
+          :label="version"
           :to="baseUrl + 'whatsnew/' + version"
         >
-          <q-tooltip>What's new in v{{version}}</q-tooltip>
+          <q-tooltip>What's new in version {{version}}</q-tooltip>
         </q-btn>
       </q-toolbar>
     </q-header>

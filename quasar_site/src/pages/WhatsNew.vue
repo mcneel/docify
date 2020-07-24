@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <h1>New in RhinoCommon {{version}} - ({{memberCount}} new items)</h1>
+    <h1>New in {{apiTitle}} {{version}} - ({{memberCount}} new items)</h1>
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
-        <router-link :to="itemPath(type)">{{type.name}}</router-link>
+        <router-link :to="itemPath(type)">{{type.namespace}}.{{type.name}}</router-link>
         <ul>
           <li v-for="constructor in type.constructors" :key="constructor.signature">
             <q-badge v-if="constructor.deprecated" outline color='negative'>deprecated</q-badge>
@@ -33,6 +33,7 @@ import ViewModel from '../ViewModel'
 
 export default {
   props: {
+    apiTitle: { type: String },
     baseUrl: { type: String }
   },
   data () {

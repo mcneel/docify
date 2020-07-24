@@ -22,9 +22,8 @@
             <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{member.deprecated}}
               <q-tooltip>Deprecated in version {{member.deprecated}}</q-tooltip>
             </q-badge>
-            <q-badge v-if="member.since" outline :color="member.since===version?'accent':'secondary'">{{member.since}}
-              <q-tooltip>Available since {{member.since}}</q-tooltip>
-            </q-badge>
+          </q-item-label>
+          <q-item-label caption class="on-right">
             {{member.summary}}
           </q-item-label>
           <q-item-label caption class="on-right" v-for="parameter in member.parameters" :key="parameter.name">
@@ -32,6 +31,9 @@
           </q-item-label>
           <q-item-label caption class="on-right" v-if="member.returns">
             <b>Returns:</b> {{member.returns}}
+          </q-item-label>
+          <q-item-label caption class="on-right" v-if="member.since">
+            <b>Available since:</b> {{member.since}}
           </q-item-label>
         </q-item-section>
       </q-item>

@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <h1>{{title}}</h1>
+    <h1>{{title}} {{vm.dataType}}</h1>
     <p>{{vm.summary}}</p>
     <p v-if="vm.remarks">{{vm.remarks}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
@@ -30,7 +30,7 @@
           <q-item-section>
             <q-item-label>
               {{memberName(member, section)}}
-              <q-badge v-if="!section.constructors && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
+              <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
                 <q-icon name="mdi-file-tree"/>
                 <q-tooltip>From {{member.parent}}</q-tooltip>
               </q-badge>
@@ -123,6 +123,7 @@ export default {
       return name
     },
     memberUrl (section, member) {
+      if (section.values) return ''
       let name = this.memberName(member, section).toLowerCase()
       const index = name.indexOf('(')
       if (index > 0) name = name.substring(0, index)
