@@ -27,16 +27,12 @@
           :clickable="!section.values"
           :to="memberUrl(section, member)"
         >
-          <q-item-section>
+          <q-item-section :class="memberClass(member)">
             <q-item-label>
               {{memberName(member, section)}}
               <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
                 <q-icon name="mdi-file-tree"/>
                 <q-tooltip>From {{member.parent}}</q-tooltip>
-              </q-badge>
-              <q-badge v-if="member.deprecated" color='negative'>
-                {{member.deprecated}}
-                <q-tooltip>Deprecated in version {{member.deprecated}}</q-tooltip>
               </q-badge>
             </q-item-label>
             <q-item-label caption class="on-right">
@@ -108,6 +104,10 @@ export default {
     }
   },
   methods: {
+    memberClass (member) {
+      if (member.deprecated) return 'light-dimmed'
+      return ''
+    },
     memberName (member, section) {
       if (section.constructors || section.values) return member.signature
       const tokens = member.signature.split(' ')
