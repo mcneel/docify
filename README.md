@@ -10,3 +10,17 @@ https://mcneel-apidocs.herokuapp.com/api/rhinocommon/
 
 Instructions for building and testing the quasar site can be found at
 [quasar site readme](quasar_site/readme.md)
+
+
+## Usage
+
+```shell
+$ api_docify --name=<proj_name> <proj_path> <proj_output_js>
+$ api_docify --name=<proj_name> <proj_path> <proj_output_js> <examples_path> <examples_output_js>
+```
+
+**Example**
+
+```shell
+$ api_docify.exe --name="RhinoCommon" "%RHINO4SRC%/rhinocommon/dotnet" "src/modules/docify/quasar_site/src/RhinoCommonApi.js"
+```

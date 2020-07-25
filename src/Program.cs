@@ -1,20 +1,58 @@
 ﻿using System;
 using System.Text;
+using System.IO;
 using System.Collections.Generic;
+using System.Reflection;
+
+using DocoptNet;
 
 namespace api_docify
 {
     class Program
     {
+        private const string name = "api_docify";
+        private static string version => $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}";
+        private const string usage = @"dotnet API docs generator
+
+    Usage:
+      {name} --name=<proj_name> <proj_path> <proj_output_js>
+      {name} --name=<proj_name> <proj_path> <proj_output_js> <examples_path> <examples_output_js>
+
+    Options:
+      -h --help                 Show this help
+      -V --version              Show version
+      --name=<proj_name>        Project name
+      <proj_path>               Project directory containing C# source files
+      <proj_output_js>          Output javascript file
+      <examples_path>           Examples directory containing example source files
+      <examples_output_js>      Output javascript file for examples
+    ";
+
         static void Main(string[] args)
         {
-            const string rhinocommonDirectory = "../../../../rhino/src4/DotNetSDK/rhinocommon/dotnet/";
-            const string examplesDirectoryBase = "../../../../rhino/src4/DotNetSDK/rhinocommon/";
+            // ask docopt to parse input args
+            var inputs = new Docopt().Apply(
+                usage.Replace("{name}", name),
+                args,
+                version: $"{name} {version}",
+                exit: true          // exit if input args does not match pattern
+                );
 
+            Docify(
+                projName: inputs["--name"].Value.ToString(),
+                projDir: inputs["<proj_path>"].Value.ToString(),
+                outputFile: inputs["<proj_output_js>"].Value.ToString(),
+                projExamplesDir: inputs["<examples_path>"] is null ? string.Empty : inputs["<examples_path>"].Value.ToString(),
+                projExamplesOutputfile: inputs["<examples_output_js>"] is null ? string.Empty : inputs["<examples_output_js>"].Value.ToString()
+                );
+        }
+
+        static void Docify(string projName, string projDir, string outputFile, string projExamplesDir = null, string projExamplesOutputfile = null)
+        {
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
             Dictionary<string, ParsedType> allNamespaces = new Dictionary<string, ParsedType>();
-            foreach (var sourceFile in AllSourceFiles(rhinocommonDirectory))
+            foreach (var sourceFile in AllSourceFiles(projDir))
             {
                 //Console.WriteLine($"parse: {sourceFile}");
                 string text = System.IO.File.ReadAllText(sourceFile);
@@ -94,10 +132,10 @@ namespace api_docify
             //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
-            const string jsonOutput = "../../../quasar_site/src/RhinoCommonApi.js";
-            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, jsonOutput);
-            const string jsonExampleOutput = "../../../quasar_site/src/Examples.js";
-            JsonBuilder.WriteExamples(publicTypesByNamespace, examplesDirectoryBase, jsonExampleOutput);
+            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputFile);
+            // write the samples if sample base dir is provided
+            if (projExamplesDir != null && string.Empty != projExamplesDir)
+                JsonBuilder.WriteExamples(publicTypesByNamespace, projExamplesDir, projExamplesOutputfile);
         }
 
         static IEnumerable<string> AllSourceFiles(string sourcePath)
