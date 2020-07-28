@@ -10,44 +10,42 @@ namespace api_docify
 {
     class Program
     {
-        private const string name = "api_docify";
-        private static string version => $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}";
-        private const string usage = @"dotnet API docs generator
+        private const string Name = "api_docify";
+        private static string Version => $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}";
+        private const string Usage = @"dotnet API docs generator
 
     Usage:
-      {name} --name=<proj_name> <proj_path> <proj_output_js>
-      {name} --name=<proj_name> <proj_path> <proj_output_js> <examples_path> <examples_output_js>
+      {name} --name=<proj_name> <proj_path> <output_js_dir>
+      {name} --name=<proj_name> <proj_path> <output_js_dir> <examples_path>
 
     Options:
       -h --help                 Show this help
       -V --version              Show version
       --name=<proj_name>        Project name
       <proj_path>               Project directory containing C# source files
-      <proj_output_js>          Output javascript file
+      <output_js_dir>           Output directory for generated javascript files
       <examples_path>           Examples directory containing example source files
-      <examples_output_js>      Output javascript file for examples
     ";
 
         static void Main(string[] args)
         {
             // ask docopt to parse input args
             var inputs = new Docopt().Apply(
-                usage.Replace("{name}", name),
+                Usage.Replace("{name}", Name),
                 args,
-                version: $"{name} {version}",
+                version: $"{Name} {Version}",
                 exit: true          // exit if input args does not match pattern
                 );
 
             Docify(
                 projName: inputs["--name"].Value.ToString(),
                 projDir: inputs["<proj_path>"].Value.ToString(),
-                outputFile: inputs["<proj_output_js>"].Value.ToString(),
-                projExamplesDir: inputs["<examples_path>"] is null ? string.Empty : inputs["<examples_path>"].Value.ToString(),
-                projExamplesOutputfile: inputs["<examples_output_js>"] is null ? string.Empty : inputs["<examples_output_js>"].Value.ToString()
+                outputDir: inputs["<output_js_dir>"].Value.ToString(),
+                projExamplesDir: inputs["<examples_path>"] is null ? string.Empty : inputs["<examples_path>"].Value.ToString()
                 );
         }
 
-        static void Docify(string projName, string projDir, string outputFile, string projExamplesDir = null, string projExamplesOutputfile = null)
+        static void Docify(string projName, string projDir, string outputDir, string projExamplesDir = null)
         {
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
@@ -132,10 +130,14 @@ namespace api_docify
             //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
-            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputFile);
+            string outputJsFile = Path.Combine(outputDir, $"{projName}Api.js");
+            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputJsFile);
             // write the samples if sample base dir is provided
             if (projExamplesDir != null && string.Empty != projExamplesDir)
-                JsonBuilder.WriteExamples(publicTypesByNamespace, projExamplesDir, projExamplesOutputfile);
+            {
+                outputJsFile = Path.Combine(outputDir, $"{projName}Examples.js");
+                JsonBuilder.WriteExamples(publicTypesByNamespace, projExamplesDir, outputJsFile);
+            }
         }
 
         static IEnumerable<string> AllSourceFiles(string sourcePath)

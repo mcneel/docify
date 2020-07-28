@@ -105,7 +105,7 @@ partial class Examples
       ['Rhino.Display.RhinoView', 'RhinoViewport ActiveViewport'],
       ['Rhino.Display.RhinoView', 'void Redraw()'],
       ['Rhino.Display.RhinoViewport', 'Plane ConstructionPlane()'],
-      ['Rhino.Display.RhinoViewport', 'bool SetTraceImage(string bitmapFileName,Plane plane,double width,double height,bool grayscale,bool filtered)'],
+      ['Rhino.Display.RhinoViewport', 'bool SetTraceImage(string bitmapFileName, Plane plane, double width, double height, bool grayscale, bool filtered)'],
       ['Rhino.UI.OpenFileDialog', 'OpenFileDialog()'],
       ['Rhino.UI.OpenFileDialog', 'string FileName'],
       ['Rhino.UI.OpenFileDialog', 'string Filter'],
@@ -116,7 +116,7 @@ partial class Examples
       ['Rhino.Input.Custom.GetPoint', 'bool ConstrainToConstructionPlane(bool throughBasePoint)'],
       ['Rhino.Input.Custom.GetNumber', 'GetNumber()'],
       ['Rhino.Input.Custom.GetNumber', 'GetResult Get()'],
-      ['Rhino.Input.Custom.GetNumber', 'void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan)'],
+      ['Rhino.Input.Custom.GetNumber', 'void SetLowerLimit(double lowerLimit, bool strictlyGreaterThan)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'RhinoView ActiveView']
     ]
   },
@@ -141,7 +141,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.BoundingBox', 'BoundingBox(Point3d min,Point3d max)'],
+      ['Rhino.Geometry.BoundingBox', 'BoundingBox(Point3d min, Point3d max)'],
       ['Rhino.Geometry.BoundingBox', 'Brep ToBrep()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddBrep(Brep brep)']
     ]
@@ -215,8 +215,8 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Circle', 'Circle(Plane plane,double radius)'],
-      ['Rhino.Geometry.Point3d', 'Point3d(double x,double y,double z)'],
+      ['Rhino.Geometry.Circle', 'Circle(Plane plane, double radius)'],
+      ['Rhino.Geometry.Point3d', 'Point3d(double x, double y, double z)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'void Redraw()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddCircle(Circle circle)']
     ]
@@ -259,10 +259,10 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Plane', 'Plane(Point3d origin,Point3d xPoint,Point3d yPoint)'],
-      ['Rhino.FileIO.File3dmObjectTable', 'Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetRectangle(Point3d[] corners)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)']
+      ['Rhino.Geometry.Plane', 'Plane(Point3d origin, Point3d xPoint, Point3d yPoint)'],
+      ['Rhino.FileIO.File3dmObjectTable', 'Guid AddClippingPlane(Plane plane, double uMagnitude, double vMagnitude, Guid clippedViewportId)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetRectangle(out Point3d[] corners)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddClippingPlane(Plane plane, double uMagnitude, double vMagnitude, Guid clippedViewportId)']
     ]
   },
   {
@@ -289,9 +289,9 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Cylinder', 'Cylinder(Circle baseCircle,double height)'],
-      ['Rhino.Geometry.Cylinder', 'Brep ToBrep(bool capBottom,bool capTop)'],
-      ['Rhino.Geometry.Plane', 'Plane(Point3d origin,Vector3d normal)']
+      ['Rhino.Geometry.Cylinder', 'Cylinder(Circle baseCircle, double height)'],
+      ['Rhino.Geometry.Cylinder', 'Brep ToBrep(bool capBottom, bool capTop)'],
+      ['Rhino.Geometry.Plane', 'Plane(Point3d origin, Vector3d normal)']
     ]
   },
   {
@@ -348,15 +348,15 @@ partial class Examples
 `,
     members: [
       ['Rhino.RhinoApp', 'static void WriteLine(string message)'],
-      ['Rhino.RhinoApp', 'static void WriteLine(string format,object arg0)'],
+      ['Rhino.RhinoApp', 'static void WriteLine(string format, object arg0)'],
       ['Rhino.DocObjects.Layer', 'static bool IsValidName(string name)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void AcceptNothing(bool enable)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void SetDefaultString(string defaultValue)'],
       ['Rhino.Input.Custom.GetBaseClass', 'string StringResult()'],
       ['Rhino.Input.Custom.GetString', 'GetString()'],
       ['Rhino.Input.Custom.GetString', 'GetResult Get()'],
-      ['Rhino.DocObjects.Tables.LayerTable', 'int Add(string layerName,Color layerColor)'],
-      ['Rhino.DocObjects.Tables.LayerTable', 'int Find(string layerName,bool ignoreDeletedLayers)'],
+      ['Rhino.DocObjects.Tables.LayerTable', 'int Add(string layerName, Color layerColor)'],
+      ['Rhino.DocObjects.Tables.LayerTable', 'int Find(string layerName, bool ignoreDeletedLayers)'],
       ['Rhino.DocObjects.Tables.LayerTable', 'Layer FindName(string layerName)'],
       ['Rhino.DocObjects.Tables.LayerTable', 'string GetUnusedLayerName()'],
       ['Rhino.DocObjects.Tables.LayerTable', 'string GetUnusedLayerName(bool ignoreDeleted)']
@@ -404,13 +404,13 @@ partial class Examples
     members: [
       ['Rhino.RhinoDoc', 'UnitSystem PageUnitSystem'],
       ['Rhino.Geometry.DetailView', 'bool IsProjectionLocked'],
-      ['Rhino.Geometry.DetailView', 'bool SetScale(double modelLength,UnitSystem modelUnits,double pageLength,UnitSystem pageUnits)'],
+      ['Rhino.Geometry.DetailView', 'bool SetScale(double modelLength, UnitSystem modelUnits, double pageLength, UnitSystem pageUnits)'],
       ['Rhino.DocObjects.RhinoObject', 'bool CommitChanges()'],
-      ['Rhino.Display.RhinoPageView', 'DetailViewObject AddDetailView(string title,Point2d corner0,Point2d corner1,DefinedViewportProjection initialProjection)'],
+      ['Rhino.Display.RhinoPageView', 'DetailViewObject AddDetailView(string title, Point2d corner0, Point2d corner1, DefinedViewportProjection initialProjection)'],
       ['Rhino.Display.RhinoPageView', 'bool SetActiveDetail(Guid detailId)'],
       ['Rhino.Display.RhinoPageView', 'void SetPageAsActive()'],
       ['Rhino.Display.RhinoViewport', 'bool ZoomExtents()'],
-      ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView AddPageView(string title,double pageWidth,double pageHeight)'],
+      ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView AddPageView(string title, double pageWidth, double pageHeight)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView[] GetPageViews()']
     ]
   },
@@ -457,10 +457,10 @@ partial class Examples
       ['Rhino.Input.Custom.GetBaseClass', 'Point3d Point()'],
       ['Rhino.Input.Custom.GetBaseClass', 'void SetCommandPrompt(string prompt)'],
       ['Rhino.Input.Custom.GetPoint', 'GetPoint()'],
-      ['Rhino.Input.Custom.GetPoint', 'void DrawLineFromPoint(Point3d startPoint,bool showDistanceInStatusBar)'],
+      ['Rhino.Input.Custom.GetPoint', 'void DrawLineFromPoint(Point3d startPoint, bool showDistanceInStatusBar)'],
       ['Rhino.Input.Custom.GetPoint', 'GetResult Get()'],
-      ['Rhino.Input.Custom.GetPoint', 'void SetBasePoint(Point3d basePoint,bool showDistanceInStatusBar)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLine(Point3d from,Point3d to)']
+      ['Rhino.Input.Custom.GetPoint', 'void SetBasePoint(Point3d basePoint, bool showDistanceInStatusBar)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLine(Point3d from, Point3d to)']
     ]
   },
   {
@@ -485,7 +485,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Input.RhinoGet', 'static Result GetLinearDimension(LinearDimension dimension)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetLinearDimension(out LinearDimension dimension)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLinearDimension(LinearDimension dimension)']
     ]
   },
@@ -526,8 +526,8 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.LinearDimension', 'LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)'],
-      ['Rhino.Geometry.Plane', 'bool ClosestParameter(Point3d testPoint,double s,double t)']
+      ['Rhino.Geometry.LinearDimension', 'LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)'],
+      ['Rhino.Geometry.Plane', 'bool ClosestParameter(Point3d testPoint, out double s, out double t)']
     ]
   },
   {
@@ -574,10 +574,10 @@ partial class Examples
       ['Rhino.Geometry.Mesh', 'MeshVertexNormalList Normals'],
       ['Rhino.Geometry.Mesh', 'MeshVertexList Vertices'],
       ['Rhino.Geometry.Mesh', 'bool Compact()'],
-      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(double x,double y,double z)'],
-      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(float x,float y,float z)'],
+      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(double x, double y, double z)'],
+      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(float x, float y, float z)'],
       ['Rhino.Geometry.Collections.MeshVertexNormalList', 'bool ComputeNormals()'],
-      ['Rhino.Geometry.Collections.MeshFaceList', 'int AddFace(int vertex1,int vertex2,int vertex3,int vertex4)'],
+      ['Rhino.Geometry.Collections.MeshFaceList', 'int AddFace(int vertex1, int vertex2, int vertex3, int vertex4)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddMesh(Mesh mesh)']
     ]
   },
@@ -629,12 +629,12 @@ partial class Examples
       ['Rhino.Display.RhinoViewport', 'string Name'],
       ['Rhino.Display.RhinoViewport', 'bool PopViewProjection()'],
       ['Rhino.Display.RhinoViewport', 'void PushViewProjection()'],
-      ['Rhino.Display.RhinoViewport', 'void SetCameraDirection(Vector3d cameraDirection,bool updateTargetLocation)'],
-      ['Rhino.Display.RhinoViewport', 'void SetCameraLocation(Point3d cameraLocation,bool updateTargetLocation)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetPoint(string prompt,bool acceptNothing,Point3d point)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetString(string prompt,bool acceptNothing,string outputString)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetView(string commandPrompt,RhinoView view)'],
-      ['Rhino.DocObjects.Tables.NamedViewTable', 'int Add(string name,Guid viewportId)']
+      ['Rhino.Display.RhinoViewport', 'void SetCameraDirection(Vector3d cameraDirection, bool updateTargetLocation)'],
+      ['Rhino.Display.RhinoViewport', 'void SetCameraLocation(Point3d cameraLocation, bool updateTargetLocation)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetPoint(string prompt, bool acceptNothing, out Point3d point)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetString(string prompt, bool acceptNothing, ref string outputString)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetView(string commandPrompt, out RhinoView view)'],
+      ['Rhino.DocObjects.Tables.NamedViewTable', 'int Add(string name, Guid viewportId)']
     ]
   },
   {
@@ -687,7 +687,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.NurbsCurve', 'NurbsCurve(int dimension,bool rational,int order,int pointCount)'],
+      ['Rhino.Geometry.NurbsCurve', 'NurbsCurve(int dimension, bool rational, int order, int pointCount)'],
       ['Rhino.Geometry.NurbsCurve', 'NurbsCurveKnotList Knots'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddCurve(Curve curve)']
     ]
@@ -721,9 +721,9 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.NurbsCurve', 'static NurbsCurve Create(bool periodic,int degree,IEnumerable<Point3d> points)'],
+      ['Rhino.Geometry.NurbsCurve', 'static NurbsCurve Create(bool periodic, int degree, IEnumerable<Point3d> points)'],
       ['Rhino.Collections.Point3dList', 'Point3dList(int initialCapacity)'],
-      ['Rhino.Collections.Point3dList', 'void Add(double x,double y,double z)']
+      ['Rhino.Collections.Point3dList', 'void Add(double x, double y, double z)']
     ]
   },
   {
@@ -758,7 +758,7 @@ partial class Examples
     members: [
       ['Rhino.RhinoDoc', 'GroupTable Groups'],
       ['Rhino.Input.Custom.GetObject', 'GetObject()'],
-      ['Rhino.Input.Custom.GetObject', 'GetResult GetMultiple(int minimumNumber,int maximumNumber)'],
+      ['Rhino.Input.Custom.GetObject', 'GetResult GetMultiple(int minimumNumber, int maximumNumber)'],
       ['Rhino.DocObjects.Tables.GroupTable', 'int Add(IEnumerable<Guid> objectIds)']
     ]
   },
@@ -830,7 +830,7 @@ namespace examples_cs
       ['Rhino.Geometry.Curve', 'bool IsPlanar()'],
       ['Rhino.Geometry.Curve', 'bool IsPolyline()'],
       ['Rhino.Geometry.Curve', 'Point3d PointAt(double t)'],
-      ['Rhino.DocObjects.ObjRef', 'Curve CurveParameter(double parameter)'],
+      ['Rhino.DocObjects.ObjRef', 'Curve CurveParameter(out double parameter)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddRadialDimension(RadialDimension dimension)']
     ]
   },
@@ -855,7 +855,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Sphere', 'Sphere(Point3d center,double radius)'],
+      ['Rhino.Geometry.Sphere', 'Sphere(Point3d center, double radius)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddSphere(Sphere sphere)']
     ]
   },
@@ -884,7 +884,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(string text, Plane plane, double height, string fontName, bool bold, bool italic)']
     ]
   },
   {
@@ -911,7 +911,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Torus', 'Torus(Plane basePlane,double majorRadius,double minorRadius)'],
+      ['Rhino.Geometry.Torus', 'Torus(Plane basePlane, double majorRadius, double minorRadius)'],
       ['Rhino.Geometry.Torus', 'RevSurface ToRevSurface()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddSurface(Surface surface)']
     ]
@@ -947,10 +947,10 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep CreateFromRevSurface(RevSurface surface,bool capStart,bool capEnd)'],
-      ['Rhino.Geometry.Circle', 'Circle(Point3d center,double radius)'],
-      ['Rhino.Geometry.LineCurve', 'LineCurve(Point3d from,Point3d to)'],
-      ['Rhino.Geometry.RevSurface', 'static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution)']
+      ['Rhino.Geometry.Brep', 'static Brep CreateFromRevSurface(RevSurface surface, bool capStart, bool capEnd)'],
+      ['Rhino.Geometry.Circle', 'Circle(Point3d center, double radius)'],
+      ['Rhino.Geometry.LineCurve', 'LineCurve(Point3d from, Point3d to)'],
+      ['Rhino.Geometry.RevSurface', 'static RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)']
     ]
   },
   {
@@ -1189,7 +1189,7 @@ public class ZAnalysisMode : Rhino.Display.VisualAnalysisMode
 
 }`,
     members: [
-      ['Rhino.RhinoMath', 'static uint CRC32(uint currentRemainder,double value)'],
+      ['Rhino.RhinoMath', 'static uint CRC32(uint currentRemainder, double value)'],
       ['Rhino.Geometry.Collections.MeshVertexColorList', 'MappingTag Tag'],
       ['Rhino.Geometry.Collections.MeshVertexColorList', 'bool SetColors(Color[] colors)']
     ]
@@ -1340,11 +1340,11 @@ public class ArrayByDistanceCommand : Rhino.Commands.Command
 }
 `,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawObject(RhinoObject rhinoObject,Transform xform)'],
+      ['Rhino.Display.DisplayPipeline', 'void DrawObject(RhinoObject rhinoObject, Transform xform)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void ClearCommandOptions()'],
       ['Rhino.Input.Custom.GetPoint', 'object Tag'],
       ['Rhino.Input.Custom.GetPoint', 'void ClearConstraints()'],
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Point3d from,Point3d to)'],
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Point3d from, Point3d to)'],
       ['Rhino.Input.Custom.GetPointDrawEventArgs', 'GetPoint Source']
     ]
   },
@@ -1428,10 +1428,10 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet,IEnumerable<Brep> secondSet,double tolerance)'],
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet,IEnumerable<Brep> secondSet,double tolerance,bool manifoldOnly)'],
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, double tolerance)'],
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, double tolerance, bool manifoldOnly)'],
       ['Rhino.DocObjects.ObjRef', 'Brep Brep()'],
-      ['Rhino.Input.RhinoGet', 'static Result GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,ObjRef[] rhObjects)']
+      ['Rhino.Input.RhinoGet', 'static Result GetMultipleObjects(string prompt, bool acceptNothing, ObjectType filter, out ObjRef[] rhObjects)']
     ]
   },
   {
@@ -1470,7 +1470,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetCircle(Circle circle,double tolerance)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetCircle(out Circle circle, double tolerance)'],
       ['Rhino.Input.Custom.GetObject', 'GeometryAttributeFilter GeometryAttributeFilter']
     ]
   },
@@ -1568,8 +1568,8 @@ namespace examples_cs
 `,
     members: [
       ['Rhino.Geometry.RTree', 'RTree()'],
-      ['Rhino.Geometry.RTree', 'bool Insert(Point3d point,int elementId)'],
-      ['Rhino.Geometry.RTree', 'bool Search(Sphere sphere,EventHandler<RTreeEventArgs> callback,object tag)']
+      ['Rhino.Geometry.RTree', 'bool Insert(Point3d point, int elementId)'],
+      ['Rhino.Geometry.RTree', 'bool Search(Sphere sphere, EventHandler<RTreeEventArgs> callback, object tag)']
     ]
   },
   {
@@ -1626,18 +1626,18 @@ namespace examples_cs
 }
 `,
     members: [
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(string englishName,OptionDouble numberValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(string englishName,OptionInteger intValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(LocalizeStringPair optionName,OptionToggle toggleValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(string englishName,OptionToggle toggleValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(LocalizeStringPair optionName, ref OptionDouble numberValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(string englishName, ref OptionDouble numberValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(LocalizeStringPair optionName, ref OptionInteger intValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(string englishName, ref OptionInteger intValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(LocalizeStringPair optionName, ref OptionToggle toggleValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(string englishName, ref OptionToggle toggleValue)'],
       ['Rhino.Input.Custom.CommandLineOption', 'int CurrentListOptionIndex'],
-      ['Rhino.Input.Custom.OptionToggle', 'OptionToggle(bool initialValue,string offValue,string onValue)'],
+      ['Rhino.Input.Custom.OptionToggle', 'OptionToggle(bool initialValue, string offValue, string onValue)'],
       ['Rhino.Input.Custom.OptionToggle', 'bool CurrentValue'],
-      ['Rhino.Input.Custom.OptionDouble', 'OptionDouble(double initialValue,double lowerLimit,double upperLimit)'],
+      ['Rhino.Input.Custom.OptionDouble', 'OptionDouble(double initialValue, double lowerLimit, double upperLimit)'],
       ['Rhino.Input.Custom.OptionDouble', 'double CurrentValue'],
-      ['Rhino.Input.Custom.OptionInteger', 'OptionInteger(int initialValue,int lowerLimit,int upperLimit)'],
+      ['Rhino.Input.Custom.OptionInteger', 'OptionInteger(int initialValue, int lowerLimit, int upperLimit)'],
       ['Rhino.Input.Custom.OptionInteger', 'int CurrentValue']
     ]
   },
@@ -1755,7 +1755,7 @@ namespace examples_cs
 
 `,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawArrow(Line line,Color color,double screenSize,double relativeSize)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawArrow(Line line, Color color, double screenSize, double relativeSize)']
     ]
   },
   {
@@ -1807,7 +1807,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawBitmap(DisplayBitmap bitmap,int left,int top)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawBitmap(DisplayBitmap bitmap, int left, int top)']
     ]
   },
   {
@@ -1863,7 +1863,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetPlane(Plane plane)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetPlane(out Plane plane)'],
       ['Rhino.Geometry.Transform', 'static Transform Translation(Vector3d motion)'],
       ['Rhino.DocObjects.ObjRef', 'Point3d SelectionPoint()'],
       ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Line line)']
@@ -1944,9 +1944,9 @@ partial class Examples
 `,
     members: [
       ['Rhino.Input.Custom.GetObject', 'bool ReferenceObjectSelect'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)'],
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name, string description, Point3d basePoint, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes)'],
       ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName)'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName,bool ignoreDeletedInstanceDefinitions)']
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName, bool ignoreDeletedInstanceDefinitions)']
     ]
   },
   {
@@ -1998,7 +1998,7 @@ namespace examples_cs
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Default'],
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Minimal'],
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Smooth'],
-      ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep,MeshingParameters meshingParameters)'],
+      ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep, MeshingParameters meshingParameters)'],
       ['Rhino.Geometry.Mesh', 'void Append(Mesh other)']
     ]
   },
@@ -2092,7 +2092,7 @@ namespace examples_cs
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfaceKnotList KnotsU'],
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfaceKnotList KnotsV'],
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfacePointList Points'],
-      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface Create(int dimension,bool isRational,int order0,int order1,int controlPointCount0,int controlPointCount1)']
+      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface Create(int dimension, bool isRational, int order0, int order1, int controlPointCount0, int controlPointCount1)']
     ]
   },
   {
@@ -2218,7 +2218,7 @@ namespace examples_cs
 }
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'static bool GetDistancesBetweenCurves(Curve curveA,Curve curveB,double tolerance,double maxDistance,double maxDistanceParameterA,double maxDistanceParameterB,double minDistance,double minDistanceParameterA,double minDistanceParameterB)'],
+      ['Rhino.Geometry.Curve', 'static bool GetDistancesBetweenCurves(Curve curveA, Curve curveB, double tolerance, out double maxDistance, out double maxDistanceParameterA, out double maxDistanceParameterB, out double minDistance, out double minDistanceParameterA, out double minDistanceParameterB)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'int UnselectAll()']
     ]
   },
@@ -2414,7 +2414,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveSurface(Curve curve,Surface surface,double tolerance,double overlapTolerance)'],
+      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveSurface(Curve curve, Surface surface, double tolerance, double overlapTolerance)'],
       ['Rhino.Geometry.Intersect.IntersectionEvent', 'bool IsOverlap'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'int Select(IEnumerable<Guid> objectIds)']
     ]
@@ -2497,7 +2497,7 @@ namespace examples_cs
 }
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetCircle(Circle circle)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetCircle(out Circle circle)'],
       ['Rhino.Input.Custom.GetObject', 'void SetCustomGeometryFilter(GetObjectGeometryFilter filter)']
     ]
   },
@@ -2558,7 +2558,7 @@ public class ex_customundoCommand : Rhino.Commands.Command
 }
 `,
     members: [
-      ['Rhino.RhinoDoc', 'bool AddCustomUndoEvent(string description,EventHandler<CustomUndoEventArgs> handler,object tag)']
+      ['Rhino.RhinoDoc', 'bool AddCustomUndoEvent(string description, EventHandler<CustomUndoEventArgs> handler, object tag)']
     ]
   },
   {
@@ -2758,15 +2758,15 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'static Curve[] JoinCurves(IEnumerable<Curve> inputCurves,double joinTolerance)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse,Point3d[] points)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,Point3d[] points)'],
+      ['Rhino.Geometry.Curve', 'static Curve[] JoinCurves(IEnumerable<Curve> inputCurves, double joinTolerance)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, bool reverse)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, bool reverse, out Point3d[] points)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, out Point3d[] points)'],
       ['Rhino.Geometry.Curve', 'bool IsShort(double tolerance)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber,double lowerLimit,double upperLimit)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetOneObject(string prompt,bool acceptNothing,ObjectType filter,ObjRef rhObject)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt, bool acceptNothing, ref double outputNumber)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt, bool acceptNothing, ref double outputNumber, double lowerLimit, double upperLimit)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetOneObject(string prompt, bool acceptNothing, ObjectType filter, out ObjRef rhObject)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPoint(Point3d point)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPoint(Point3f point)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'bool Select(Guid objectId)']
@@ -2810,7 +2810,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void Draw2dText(string text,Color color,Point2d screenCoordinate,bool middleJustified)']
+      ['Rhino.Display.DisplayPipeline', 'void Draw2dText(string text, Color color, Point2d screenCoordinate, bool middleJustified)']
     ]
   },
   {
@@ -3088,7 +3088,7 @@ namespace examples_cs
 }`,
     members: [
       ['Rhino.Geometry.BoundingBox', 'Point3d[] GetCorners()'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static bool CurveBrep(Curve curve, Brep brep, double tolerance, out Curve[] overlapCurves, out Point3d[] intersectionPoints)']
     ]
   },
   {
@@ -3148,7 +3148,7 @@ namespace examples_cs
 }`,
     members: [
       ['Rhino.Geometry.BrepFace', 'bool OrientationIsReversed'],
-      ['Rhino.Geometry.Surface', 'Vector3d NormalAt(double u,double v)']
+      ['Rhino.Geometry.Surface', 'Vector3d NormalAt(double u, double v)']
     ]
   },
   {
@@ -3273,7 +3273,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Curve', 'Curve Extend(CurveEnd side,CurveExtensionStyle style,IEnumerable<GeometryBase> geometry)'],
+      ['Rhino.Geometry.Curve', 'Curve Extend(CurveEnd side, CurveExtensionStyle style, IEnumerable<GeometryBase> geometry)'],
       ['Rhino.Geometry.Interval', 'double Mid']
     ]
   },
@@ -3339,7 +3339,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Surface', 'Curve IsoCurve(int direction,double constantParameter)']
+      ['Rhino.Geometry.Surface', 'Curve IsoCurve(int direction, double constantParameter)']
     ]
   },
   {
@@ -3381,8 +3381,8 @@ namespace examples_cs
 }`,
     members: [
       ['Rhino.FileIO.File3dm', 'static System.Drawing.Bitmap ReadPreviewImage(string path)'],
-      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent)'],
-      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent,BitmapFileTypes fileTypes)']
+      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode, string defaultName, string title, object parent)'],
+      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode, string defaultName, string title, object parent, BitmapFileTypes fileTypes)']
     ]
   },
   {
@@ -3452,7 +3452,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Curve', 'static Curve[] CreateFilletCurves(Curve curve0,Point3d point0,Curve curve1,Point3d point1,double radius,bool join,bool trim,bool arcExtension,double tolerance,double angleTolerance)']
+      ['Rhino.Geometry.Curve', 'static Curve[] CreateFilletCurves(Curve curve0, Point3d point0, Curve curve1, Point3d point1, double radius, bool join, bool trim, bool arcExtension, double tolerance, double angleTolerance)']
     ]
   },
   {
@@ -3486,8 +3486,7 @@ partial class Examples
 `,
     members: [
       ['Rhino.DocObjects.ObjectEnumeratorSettings', 'ObjectEnumeratorSettings()'],
-      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)']
+      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter']
     ]
   },
   {
@@ -3551,7 +3550,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawCircle(Circle circle,Color color)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawCircle(Circle circle, Color color)']
     ]
   },
   {
@@ -3636,12 +3635,12 @@ namespace examples_cs
 `,
     members: [
       ['Rhino.RhinoDoc', 'HatchPatternTable HatchPatterns'],
-      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale)'],
-      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale,double tolerance)'],
+      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve, int hatchPatternIndex, double rotationRadians, double scale)'],
+      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve, int hatchPatternIndex, double rotationRadians, double scale, double tolerance)'],
       ['Rhino.DocObjects.ModelComponent', 'string Name'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddHatch(Hatch hatch)'],
       ['Rhino.DocObjects.Tables.HatchPatternTable', 'int CurrentHatchPatternIndex'],
-      ['Rhino.DocObjects.Tables.HatchPatternTable', 'int Find(string name,bool ignoreDeleted)'],
+      ['Rhino.DocObjects.Tables.HatchPatternTable', 'int Find(string name, bool ignoreDeleted)'],
       ['Rhino.DocObjects.Tables.HatchPatternTable', 'HatchPattern FindName(string name)']
     ]
   },
@@ -3685,10 +3684,10 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Curve curve,bool allowPickingPointOffObject)'],
-      ['Rhino.Input.Custom.GetPoint', 'Curve PointOnCurve(double t)'],
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Curve curve, bool allowPickingPointOffObject)'],
+      ['Rhino.Input.Custom.GetPoint', 'Curve PointOnCurve(out double t)'],
       ['Rhino.Geometry.Collections.NurbsCurveKnotList', 'bool InsertKnot(double value)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'bool Replace(ObjRef objref,Curve curve)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'bool Replace(ObjRef objref, Curve curve)']
     ]
   },
   {
@@ -3770,7 +3769,7 @@ partial class Examples
       ['Rhino.Geometry.Point3f', 'double DistanceTo(Point3f other)'],
       ['Rhino.Geometry.Point3d', 'double DistanceTo(Point3d other)'],
       ['Rhino.DocObjects.ObjRef', 'Curve Curve()'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveCurve(Curve curveA,Curve curveB,double tolerance,double overlapTolerance)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveCurve(Curve curveA, Curve curveB, double tolerance, double overlapTolerance)']
     ]
   },
   {
@@ -3829,7 +3828,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static LineCircleIntersection LineCircle(Line line,Circle circle,double t1,Point3d point1,double t2,Point3d point2)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static LineCircleIntersection LineCircle(Line line, Circle circle, out double t1, out Point3d point1, out double t2, out Point3d point2)']
     ]
   },
   {
@@ -3887,7 +3886,7 @@ partial class Examples
       ['Rhino.Geometry.Line', 'Vector3d Direction'],
       ['Rhino.Geometry.Line', 'Point3d PointAt(double t)'],
       ['Rhino.Geometry.Vector3d', 'int IsParallelTo(Vector3d other)'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static bool LineLine(Line lineA,Line lineB,double a,double b)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static bool LineLine(Line lineA, Line lineB, out double a, out double b)']
     ]
   },
   {
@@ -3956,7 +3955,7 @@ partial class Examples
 `,
     members: [
       ['Rhino.Geometry.Brep', 'bool IsSolid'],
-      ['Rhino.Geometry.Surface', 'bool TryGetPlane(Plane plane,double tolerance)']
+      ['Rhino.Geometry.Surface', 'bool TryGetPlane(out Plane plane, double tolerance)']
     ]
   },
   {
@@ -4085,7 +4084,7 @@ namespace examples_cs
 }`,
     members: [
       ['Rhino.Geometry.Point2d', 'double DistanceTo(Point2d other)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLeader(Plane plane,IEnumerable<Point2d> points)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLeader(Plane plane, IEnumerable<Point2d> points)']
     ]
   },
   {
@@ -4206,7 +4205,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves,Point3d start,Point3d end,LoftType loftType,bool closed)']
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves, Point3d start, Point3d end, LoftType loftType, bool closed)']
     ]
   },
   {
@@ -4287,8 +4286,8 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Curve[] CreateContourCurves(Brep brepToContour,Point3d contourStart,Point3d contourEnd,double interval)'],
-      ['Rhino.Geometry.Mesh', 'static Curve[] CreateContourCurves(Mesh meshToContour,Point3d contourStart,Point3d contourEnd,double interval)']
+      ['Rhino.Geometry.Brep', 'static Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, double interval)'],
+      ['Rhino.Geometry.Mesh', 'static Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, double interval)']
     ]
   },
   {
@@ -4386,8 +4385,8 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawMeshShaded(Mesh mesh,DisplayMaterial material)'],
-      ['Rhino.Display.DisplayPipeline', 'void DrawMeshWires(Mesh mesh,Color color)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawMeshShaded(Mesh mesh, DisplayMaterial material)'],
+      ['Rhino.Display.DisplayPipeline', 'void DrawMeshWires(Mesh mesh, Color color)']
     ]
   },
   {
@@ -4482,8 +4481,8 @@ namespace examples_cs
 }`,
     members: [
       ['Rhino.Geometry.Light', 'Color Diffuse'],
-      ['Rhino.UI.Dialogs', 'static bool ShowColorDialog(Color color)'],
-      ['Rhino.DocObjects.Tables.LightTable', 'bool Modify(Guid id,Light light)']
+      ['Rhino.UI.Dialogs', 'static bool ShowColorDialog(ref Color color)'],
+      ['Rhino.DocObjects.Tables.LightTable', 'bool Modify(Guid id, Light light)']
     ]
   },
   {
@@ -4605,8 +4604,8 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.InstanceReferenceGeometry', 'InstanceReferenceGeometry(Guid instanceDefinitionId,Transform transform)'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry)']
+      ['Rhino.Geometry.InstanceReferenceGeometry', 'InstanceReferenceGeometry(Guid instanceDefinitionId, Transform transform)'],
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name, string description, Point3d basePoint, IEnumerable<GeometryBase> geometry)']
     ]
   },
   {
@@ -4785,9 +4784,9 @@ partial class Examples
     members: [
       ['Rhino.DocObjects.ObjectAttributes', 'bool HasDisplayModeOverride(Guid viewportId)'],
       ['Rhino.DocObjects.ObjectAttributes', 'void RemoveDisplayModeOverride(Guid rhinoViewportId)'],
-      ['Rhino.DocObjects.ObjectAttributes', 'bool SetDisplayModeOverride(DisplayModeDescription mode,Guid rhinoViewportId)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(LocalizeStringPair optionName,IEnumerable<LocalizeStringPair> listValues,int listCurrentIndex)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(string englishOptionName,IEnumerable<string> listValues,int listCurrentIndex)']
+      ['Rhino.DocObjects.ObjectAttributes', 'bool SetDisplayModeOverride(DisplayModeDescription mode, Guid rhinoViewportId)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(LocalizeStringPair optionName, IEnumerable<LocalizeStringPair> listValues, int listCurrentIndex)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(string englishOptionName, IEnumerable<string> listValues, int listCurrentIndex)']
     ]
   },
   {
@@ -4924,8 +4923,8 @@ namespace examples_cs
 }
 `,
     members: [
-      ['Rhino.Geometry.Surface', 'bool ClosestPoint(Point3d testPoint,double u,double v)'],
-      ['Rhino.Geometry.Surface', 'bool FrameAt(double u,double v,Plane frame)'],
+      ['Rhino.Geometry.Surface', 'bool ClosestPoint(Point3d testPoint, out double u, out double v)'],
+      ['Rhino.Geometry.Surface', 'bool FrameAt(double u, double v, out Plane frame)'],
       ['Rhino.DocObjects.RhinoObject', 'int Select(bool on)'],
       ['Rhino.DocObjects.ObjRef', 'RhinoObject Object()'],
       ['Rhino.DocObjects.ObjRef', 'Surface Surface()'],
@@ -4935,8 +4934,8 @@ namespace examples_cs
       ['Rhino.Input.Custom.GetObject', 'bool OneByOnePostSelect'],
       ['Rhino.Input.Custom.GetObject', 'bool SubObjectSelect'],
       ['Rhino.Input.Custom.GetObject', 'ObjRef Object(int index)'],
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Surface surface,bool allowPickingPointOffObject)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid Transform(ObjRef objref,Transform xform,bool deleteOriginal)']
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Surface surface, bool allowPickingPointOffObject)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid Transform(ObjRef objref, Transform xform, bool deleteOriginal)']
     ]
   },
   {
@@ -5021,7 +5020,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.PlaneSurface', 'PlaneSurface(Plane plane,Interval xExtents,Interval yExtents)']
+      ['Rhino.Geometry.PlaneSurface', 'PlaneSurface(Plane plane, Interval xExtents, Interval yExtents)']
     ]
   },
   {
@@ -5065,7 +5064,7 @@ namespace examples_cs
 }`,
     members: [
       ['Rhino.Geometry.Point3d', 'void Transform(Transform xform)'],
-      ['Rhino.Display.RhinoViewport', 'Transform GetTransform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)']
+      ['Rhino.Display.RhinoViewport', 'Transform GetTransform(CoordinateSystem sourceSystem, CoordinateSystem destinationSystem)']
     ]
   },
   {
@@ -5144,7 +5143,7 @@ namespace examples_cs
       ['Rhino.Geometry.SurfaceCurvature', 'Point3d Point'],
       ['Rhino.Geometry.SurfaceCurvature', 'Vector3d Direction(int direction)'],
       ['Rhino.Geometry.SurfaceCurvature', 'double Kappa(int direction)'],
-      ['Rhino.Geometry.Surface', 'SurfaceCurvature CurvatureAt(double u,double v)']
+      ['Rhino.Geometry.Surface', 'SurfaceCurvature CurvatureAt(double u, double v)']
     ]
   },
   {
@@ -5265,7 +5264,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToBreps(IEnumerable<Brep> breps,IEnumerable<Point3d> points,Vector3d direction,double tolerance)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToBreps(IEnumerable<Brep> breps, IEnumerable<Point3d> points, Vector3d direction, double tolerance)']
     ]
   },
   {
@@ -5310,7 +5309,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes,IEnumerable<Point3d> points,Vector3d direction,double tolerance,int[] indices)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes, IEnumerable<Point3d> points, Vector3d direction, double tolerance, out int[] indices)']
     ]
   },
   {
@@ -5377,7 +5376,7 @@ namespace examples_cs
     members: [
       ['Rhino.DocObjects.InstanceDefinition', 'bool IsDeleted'],
       ['Rhino.DocObjects.InstanceDefinition', 'bool IsReference'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'bool Modify(int idefIndex,string newName,string newDescription,bool quiet)']
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'bool Modify(int idefIndex, string newName, string newDescription, bool quiet)']
     ]
   },
   {
@@ -5643,7 +5642,7 @@ namespace examples_cs
 }
 `,
     members: [
-      ['Rhino.Display.RhinoView', 'System.Drawing.Bitmap CaptureToBitmap(bool grid,bool worldAxes,bool cplaneAxes)'],
+      ['Rhino.Display.RhinoView', 'System.Drawing.Bitmap CaptureToBitmap(bool grid, bool worldAxes, bool cplaneAxes)'],
       ['Rhino.UI.SaveFileDialog', 'SaveFileDialog()'],
       ['Rhino.UI.SaveFileDialog', 'string FileName'],
       ['Rhino.UI.SaveFileDialog', 'string Filter'],
@@ -5764,8 +5763,8 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.PlaneSurface', 'static PlaneSurface CreateThroughBox(Plane plane,BoundingBox box)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetPlane(Plane plane)']
+      ['Rhino.Geometry.PlaneSurface', 'static PlaneSurface CreateThroughBox(Plane plane, BoundingBox box)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetPlane(out Plane plane)']
     ]
   },
   {
@@ -5799,7 +5798,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface CreateFromCorners(Point3d corner1,Point3d corner2,Point3d corner3,Point3d corner4)']
+      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface CreateFromCorners(Point3d corner1, Point3d corner2, Point3d corner3, Point3d corner4)']
     ]
   },
   {
@@ -5853,7 +5852,7 @@ partial class Examples
 `,
     members: [
       ['Rhino.Geometry.SweepOneRail', 'SweepOneRail()'],
-      ['Rhino.Geometry.SweepOneRail', 'Brep[] PerformSweep(Curve rail,IEnumerable<Curve> crossSections)']
+      ['Rhino.Geometry.SweepOneRail', 'Brep[] PerformSweep(Curve rail, IEnumerable<Curve> crossSections)']
     ]
   },
   {
@@ -5889,7 +5888,7 @@ namespace examples_cs
       ['Rhino.Geometry.TextEntity', 'TextEntity()'],
       ['Rhino.Geometry.TextEntity', 'TextJustification Justification'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(Text3d text3d)'],
-      ['Rhino.DocObjects.Tables.FontTable', 'int FindOrCreate(string face,bool bold,bool italic)']
+      ['Rhino.DocObjects.Tables.FontTable', 'int FindOrCreate(string face, bool bold, bool italic)']
     ]
   },
   {
@@ -5973,7 +5972,7 @@ namespace examples_cs
   }
 }`,
     members: [
-      ['Rhino.Geometry.BrepFace', 'Brep Split(IEnumerable<Curve> curves,double tolerance)'],
+      ['Rhino.Geometry.BrepFace', 'Brep Split(IEnumerable<Curve> curves, double tolerance)'],
       ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPolyline(IEnumerable<Point3d> points)']
     ]
@@ -6000,7 +5999,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.Transform', 'static Transform Translation(double dx,double dy,double dz)']
+      ['Rhino.Geometry.Transform', 'static Transform Translation(double dx, double dy, double dz)']
     ]
   },
   {
@@ -6114,7 +6113,7 @@ if __name__=="__main__":
       ['Rhino.Display.RhinoView', 'RhinoViewport ActiveViewport'],
       ['Rhino.Display.RhinoView', 'void Redraw()'],
       ['Rhino.Display.RhinoViewport', 'Plane ConstructionPlane()'],
-      ['Rhino.Display.RhinoViewport', 'bool SetTraceImage(string bitmapFileName,Plane plane,double width,double height,bool grayscale,bool filtered)'],
+      ['Rhino.Display.RhinoViewport', 'bool SetTraceImage(string bitmapFileName, Plane plane, double width, double height, bool grayscale, bool filtered)'],
       ['Rhino.UI.OpenFileDialog', 'OpenFileDialog()'],
       ['Rhino.UI.OpenFileDialog', 'string FileName'],
       ['Rhino.UI.OpenFileDialog', 'string Filter'],
@@ -6125,7 +6124,7 @@ if __name__=="__main__":
       ['Rhino.Input.Custom.GetPoint', 'bool ConstrainToConstructionPlane(bool throughBasePoint)'],
       ['Rhino.Input.Custom.GetNumber', 'GetNumber()'],
       ['Rhino.Input.Custom.GetNumber', 'GetResult Get()'],
-      ['Rhino.Input.Custom.GetNumber', 'void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan)'],
+      ['Rhino.Input.Custom.GetNumber', 'void SetLowerLimit(double lowerLimit, bool strictlyGreaterThan)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'RhinoView ActiveView']
     ]
   },
@@ -6150,7 +6149,7 @@ if( __name__ == "__main__" ):
     AddBrepBox()
 `,
     members: [
-      ['Rhino.Geometry.BoundingBox', 'BoundingBox(Point3d min,Point3d max)'],
+      ['Rhino.Geometry.BoundingBox', 'BoundingBox(Point3d min, Point3d max)'],
       ['Rhino.Geometry.BoundingBox', 'Brep ToBrep()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddBrep(Brep brep)']
     ]
@@ -6219,8 +6218,8 @@ if __name__=="__main__":
     AddCircle()
 `,
     members: [
-      ['Rhino.Geometry.Circle', 'Circle(Plane plane,double radius)'],
-      ['Rhino.Geometry.Point3d', 'Point3d(double x,double y,double z)'],
+      ['Rhino.Geometry.Circle', 'Circle(Plane plane, double radius)'],
+      ['Rhino.Geometry.Point3d', 'Point3d(double x, double y, double z)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'void Redraw()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddCircle(Circle circle)']
     ]
@@ -6255,10 +6254,10 @@ if __name__=="__main__":
     AddClippingPlane()
 `,
     members: [
-      ['Rhino.Geometry.Plane', 'Plane(Point3d origin,Point3d xPoint,Point3d yPoint)'],
-      ['Rhino.FileIO.File3dmObjectTable', 'Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetRectangle(Point3d[] corners)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)']
+      ['Rhino.Geometry.Plane', 'Plane(Point3d origin, Point3d xPoint, Point3d yPoint)'],
+      ['Rhino.FileIO.File3dmObjectTable', 'Guid AddClippingPlane(Plane plane, double uMagnitude, double vMagnitude, Guid clippedViewportId)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetRectangle(out Point3d[] corners)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddClippingPlane(Plane plane, double uMagnitude, double vMagnitude, Guid clippedViewportId)']
     ]
   },
   {
@@ -6286,9 +6285,9 @@ if __name__=="__main__":
     AddCylinder()
 `,
     members: [
-      ['Rhino.Geometry.Cylinder', 'Cylinder(Circle baseCircle,double height)'],
-      ['Rhino.Geometry.Cylinder', 'Brep ToBrep(bool capBottom,bool capTop)'],
-      ['Rhino.Geometry.Plane', 'Plane(Point3d origin,Vector3d normal)']
+      ['Rhino.Geometry.Cylinder', 'Cylinder(Circle baseCircle, double height)'],
+      ['Rhino.Geometry.Cylinder', 'Brep ToBrep(bool capBottom, bool capTop)'],
+      ['Rhino.Geometry.Plane', 'Plane(Point3d origin, Vector3d normal)']
     ]
   },
   {
@@ -6341,15 +6340,15 @@ if __name__=="__main__":
 `,
     members: [
       ['Rhino.RhinoApp', 'static void WriteLine(string message)'],
-      ['Rhino.RhinoApp', 'static void WriteLine(string format,object arg0)'],
+      ['Rhino.RhinoApp', 'static void WriteLine(string format, object arg0)'],
       ['Rhino.DocObjects.Layer', 'static bool IsValidName(string name)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void AcceptNothing(bool enable)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void SetDefaultString(string defaultValue)'],
       ['Rhino.Input.Custom.GetBaseClass', 'string StringResult()'],
       ['Rhino.Input.Custom.GetString', 'GetString()'],
       ['Rhino.Input.Custom.GetString', 'GetResult Get()'],
-      ['Rhino.DocObjects.Tables.LayerTable', 'int Add(string layerName,Color layerColor)'],
-      ['Rhino.DocObjects.Tables.LayerTable', 'int Find(string layerName,bool ignoreDeletedLayers)'],
+      ['Rhino.DocObjects.Tables.LayerTable', 'int Add(string layerName, Color layerColor)'],
+      ['Rhino.DocObjects.Tables.LayerTable', 'int Find(string layerName, bool ignoreDeletedLayers)'],
       ['Rhino.DocObjects.Tables.LayerTable', 'Layer FindName(string layerName)'],
       ['Rhino.DocObjects.Tables.LayerTable', 'string GetUnusedLayerName()'],
       ['Rhino.DocObjects.Tables.LayerTable', 'string GetUnusedLayerName(bool ignoreDeleted)']
@@ -6389,13 +6388,13 @@ if __name__=="__main__":
     members: [
       ['Rhino.RhinoDoc', 'UnitSystem PageUnitSystem'],
       ['Rhino.Geometry.DetailView', 'bool IsProjectionLocked'],
-      ['Rhino.Geometry.DetailView', 'bool SetScale(double modelLength,UnitSystem modelUnits,double pageLength,UnitSystem pageUnits)'],
+      ['Rhino.Geometry.DetailView', 'bool SetScale(double modelLength, UnitSystem modelUnits, double pageLength, UnitSystem pageUnits)'],
       ['Rhino.DocObjects.RhinoObject', 'bool CommitChanges()'],
-      ['Rhino.Display.RhinoPageView', 'DetailViewObject AddDetailView(string title,Point2d corner0,Point2d corner1,DefinedViewportProjection initialProjection)'],
+      ['Rhino.Display.RhinoPageView', 'DetailViewObject AddDetailView(string title, Point2d corner0, Point2d corner1, DefinedViewportProjection initialProjection)'],
       ['Rhino.Display.RhinoPageView', 'bool SetActiveDetail(Guid detailId)'],
       ['Rhino.Display.RhinoPageView', 'void SetPageAsActive()'],
       ['Rhino.Display.RhinoViewport', 'bool ZoomExtents()'],
-      ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView AddPageView(string title,double pageWidth,double pageHeight)'],
+      ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView AddPageView(string title, double pageWidth, double pageHeight)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView[] GetPageViews()']
     ]
   },
@@ -6439,10 +6438,10 @@ if __name__=="__main__":
       ['Rhino.Input.Custom.GetBaseClass', 'Point3d Point()'],
       ['Rhino.Input.Custom.GetBaseClass', 'void SetCommandPrompt(string prompt)'],
       ['Rhino.Input.Custom.GetPoint', 'GetPoint()'],
-      ['Rhino.Input.Custom.GetPoint', 'void DrawLineFromPoint(Point3d startPoint,bool showDistanceInStatusBar)'],
+      ['Rhino.Input.Custom.GetPoint', 'void DrawLineFromPoint(Point3d startPoint, bool showDistanceInStatusBar)'],
       ['Rhino.Input.Custom.GetPoint', 'GetResult Get()'],
-      ['Rhino.Input.Custom.GetPoint', 'void SetBasePoint(Point3d basePoint,bool showDistanceInStatusBar)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLine(Point3d from,Point3d to)']
+      ['Rhino.Input.Custom.GetPoint', 'void SetBasePoint(Point3d basePoint, bool showDistanceInStatusBar)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLine(Point3d from, Point3d to)']
     ]
   },
   {
@@ -6465,7 +6464,7 @@ if __name__=="__main__":
     AddLinearDimension()
 `,
     members: [
-      ['Rhino.Input.RhinoGet', 'static Result GetLinearDimension(LinearDimension dimension)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetLinearDimension(out LinearDimension dimension)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLinearDimension(LinearDimension dimension)']
     ]
   },
@@ -6499,8 +6498,8 @@ if __name__=="__main__":
     AddLinearDimension2()
 `,
     members: [
-      ['Rhino.Geometry.LinearDimension', 'LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)'],
-      ['Rhino.Geometry.Plane', 'bool ClosestParameter(Point3d testPoint,double s,double t)']
+      ['Rhino.Geometry.LinearDimension', 'LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)'],
+      ['Rhino.Geometry.Plane', 'bool ClosestParameter(Point3d testPoint, out double s, out double t)']
     ]
   },
   {
@@ -6547,10 +6546,10 @@ if __name__=="__main__":
       ['Rhino.Geometry.Mesh', 'MeshVertexNormalList Normals'],
       ['Rhino.Geometry.Mesh', 'MeshVertexList Vertices'],
       ['Rhino.Geometry.Mesh', 'bool Compact()'],
-      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(double x,double y,double z)'],
-      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(float x,float y,float z)'],
+      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(double x, double y, double z)'],
+      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(float x, float y, float z)'],
       ['Rhino.Geometry.Collections.MeshVertexNormalList', 'bool ComputeNormals()'],
-      ['Rhino.Geometry.Collections.MeshFaceList', 'int AddFace(int vertex1,int vertex2,int vertex3,int vertex4)'],
+      ['Rhino.Geometry.Collections.MeshFaceList', 'int AddFace(int vertex1, int vertex2, int vertex3, int vertex4)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddMesh(Mesh mesh)']
     ]
   },
@@ -6600,12 +6599,12 @@ if __name__=="__main__":
       ['Rhino.Display.RhinoViewport', 'string Name'],
       ['Rhino.Display.RhinoViewport', 'bool PopViewProjection()'],
       ['Rhino.Display.RhinoViewport', 'void PushViewProjection()'],
-      ['Rhino.Display.RhinoViewport', 'void SetCameraDirection(Vector3d cameraDirection,bool updateTargetLocation)'],
-      ['Rhino.Display.RhinoViewport', 'void SetCameraLocation(Point3d cameraLocation,bool updateTargetLocation)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetPoint(string prompt,bool acceptNothing,Point3d point)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetString(string prompt,bool acceptNothing,string outputString)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetView(string commandPrompt,RhinoView view)'],
-      ['Rhino.DocObjects.Tables.NamedViewTable', 'int Add(string name,Guid viewportId)']
+      ['Rhino.Display.RhinoViewport', 'void SetCameraDirection(Vector3d cameraDirection, bool updateTargetLocation)'],
+      ['Rhino.Display.RhinoViewport', 'void SetCameraLocation(Point3d cameraLocation, bool updateTargetLocation)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetPoint(string prompt, bool acceptNothing, out Point3d point)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetString(string prompt, bool acceptNothing, ref string outputString)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetView(string commandPrompt, out RhinoView view)'],
+      ['Rhino.DocObjects.Tables.NamedViewTable', 'int Add(string name, Guid viewportId)']
     ]
   },
   {
@@ -6658,7 +6657,7 @@ partial class Examples
 }
 `,
     members: [
-      ['Rhino.Geometry.NurbsCurve', 'NurbsCurve(int dimension,bool rational,int order,int pointCount)'],
+      ['Rhino.Geometry.NurbsCurve', 'NurbsCurve(int dimension, bool rational, int order, int pointCount)'],
       ['Rhino.Geometry.NurbsCurve', 'NurbsCurveKnotList Knots'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddCurve(Curve curve)']
     ]
@@ -6689,9 +6688,9 @@ if __name__=="__main__":
     AddNurbsCurve()
 `,
     members: [
-      ['Rhino.Geometry.NurbsCurve', 'static NurbsCurve Create(bool periodic,int degree,IEnumerable<Point3d> points)'],
+      ['Rhino.Geometry.NurbsCurve', 'static NurbsCurve Create(bool periodic, int degree, IEnumerable<Point3d> points)'],
       ['Rhino.Collections.Point3dList', 'Point3dList(int initialCapacity)'],
-      ['Rhino.Collections.Point3dList', 'void Add(double x,double y,double z)']
+      ['Rhino.Collections.Point3dList', 'void Add(double x, double y, double z)']
     ]
   },
   {
@@ -6720,7 +6719,7 @@ if __name__ == "__main__":
     members: [
       ['Rhino.RhinoDoc', 'GroupTable Groups'],
       ['Rhino.Input.Custom.GetObject', 'GetObject()'],
-      ['Rhino.Input.Custom.GetObject', 'GetResult GetMultiple(int minimumNumber,int maximumNumber)'],
+      ['Rhino.Input.Custom.GetObject', 'GetResult GetMultiple(int minimumNumber, int maximumNumber)'],
       ['Rhino.DocObjects.Tables.GroupTable', 'int Add(IEnumerable<Guid> objectIds)']
     ]
   },
@@ -6774,7 +6773,7 @@ if __name__=="__main__":
       ['Rhino.Geometry.Curve', 'bool IsPlanar()'],
       ['Rhino.Geometry.Curve', 'bool IsPolyline()'],
       ['Rhino.Geometry.Curve', 'Point3d PointAt(double t)'],
-      ['Rhino.DocObjects.ObjRef', 'Curve CurveParameter(double parameter)'],
+      ['Rhino.DocObjects.ObjRef', 'Curve CurveParameter(out double parameter)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddRadialDimension(RadialDimension dimension)']
     ]
   },
@@ -6798,7 +6797,7 @@ if __name__ == "__main__":
     AddSphere()
 `,
     members: [
-      ['Rhino.Geometry.Sphere', 'Sphere(Point3d center,double radius)'],
+      ['Rhino.Geometry.Sphere', 'Sphere(Point3d center, double radius)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddSphere(Sphere sphere)']
     ]
   },
@@ -6826,7 +6825,7 @@ if __name__=="__main__":
     AddAnnotationText()
 `,
     members: [
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(string text, Plane plane, double height, string fontName, bool bold, bool italic)']
     ]
   },
   {
@@ -6853,7 +6852,7 @@ if __name__=="__main__":
     AddTorus()
 `,
     members: [
-      ['Rhino.Geometry.Torus', 'Torus(Plane basePlane,double majorRadius,double minorRadius)'],
+      ['Rhino.Geometry.Torus', 'Torus(Plane basePlane, double majorRadius, double minorRadius)'],
       ['Rhino.Geometry.Torus', 'RevSurface ToRevSurface()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddSurface(Surface surface)']
     ]
@@ -6888,10 +6887,10 @@ if __name__=="__main__":
     AddTruncatedCone()
 `,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep CreateFromRevSurface(RevSurface surface,bool capStart,bool capEnd)'],
-      ['Rhino.Geometry.Circle', 'Circle(Point3d center,double radius)'],
-      ['Rhino.Geometry.LineCurve', 'LineCurve(Point3d from,Point3d to)'],
-      ['Rhino.Geometry.RevSurface', 'static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution)']
+      ['Rhino.Geometry.Brep', 'static Brep CreateFromRevSurface(RevSurface surface, bool capStart, bool capEnd)'],
+      ['Rhino.Geometry.Circle', 'Circle(Point3d center, double radius)'],
+      ['Rhino.Geometry.LineCurve', 'LineCurve(Point3d from, Point3d to)'],
+      ['Rhino.Geometry.RevSurface', 'static RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)']
     ]
   },
   {
@@ -7058,11 +7057,11 @@ def dynamic_array():
 if( __name__ == "__main__" ):
     dynamic_array()`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawObject(RhinoObject rhinoObject,Transform xform)'],
+      ['Rhino.Display.DisplayPipeline', 'void DrawObject(RhinoObject rhinoObject, Transform xform)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void ClearCommandOptions()'],
       ['Rhino.Input.Custom.GetPoint', 'object Tag'],
       ['Rhino.Input.Custom.GetPoint', 'void ClearConstraints()'],
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Point3d from,Point3d to)'],
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Point3d from, Point3d to)'],
       ['Rhino.Input.Custom.GetPointDrawEventArgs', 'GetPoint Source']
     ]
   },
@@ -7125,10 +7124,10 @@ def BooleanDifference():
 if __name__=="__main__":
     BooleanDifference()`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet,IEnumerable<Brep> secondSet,double tolerance)'],
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet,IEnumerable<Brep> secondSet,double tolerance,bool manifoldOnly)'],
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, double tolerance)'],
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, double tolerance, bool manifoldOnly)'],
       ['Rhino.DocObjects.ObjRef', 'Brep Brep()'],
-      ['Rhino.Input.RhinoGet', 'static Result GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,ObjRef[] rhObjects)']
+      ['Rhino.Input.RhinoGet', 'static Result GetMultipleObjects(string prompt, bool acceptNothing, ObjectType filter, out ObjRef[] rhObjects)']
     ]
   },
   {
@@ -7161,7 +7160,7 @@ def CircleCenter():
 if __name__=="__main__":
     CircleCenter()`,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetCircle(Circle circle,double tolerance)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetCircle(out Circle circle, double tolerance)'],
       ['Rhino.Input.Custom.GetObject', 'GeometryAttributeFilter GeometryAttributeFilter']
     ]
   },
@@ -7219,8 +7218,8 @@ if __name__=="__main__":
 `,
     members: [
       ['Rhino.Geometry.RTree', 'RTree()'],
-      ['Rhino.Geometry.RTree', 'bool Insert(Point3d point,int elementId)'],
-      ['Rhino.Geometry.RTree', 'bool Search(Sphere sphere,EventHandler<RTreeEventArgs> callback,object tag)']
+      ['Rhino.Geometry.RTree', 'bool Insert(Point3d point, int elementId)'],
+      ['Rhino.Geometry.RTree', 'bool Search(Sphere sphere, EventHandler<RTreeEventArgs> callback, object tag)']
     ]
   },
   {
@@ -7274,18 +7273,18 @@ if __name__ == "__main__":
 
 `,
     members: [
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(string englishName,OptionDouble numberValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(string englishName,OptionInteger intValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(LocalizeStringPair optionName,OptionToggle toggleValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(string englishName,OptionToggle toggleValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(LocalizeStringPair optionName, ref OptionDouble numberValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(string englishName, ref OptionDouble numberValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(LocalizeStringPair optionName, ref OptionInteger intValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(string englishName, ref OptionInteger intValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(LocalizeStringPair optionName, ref OptionToggle toggleValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(string englishName, ref OptionToggle toggleValue)'],
       ['Rhino.Input.Custom.CommandLineOption', 'int CurrentListOptionIndex'],
-      ['Rhino.Input.Custom.OptionToggle', 'OptionToggle(bool initialValue,string offValue,string onValue)'],
+      ['Rhino.Input.Custom.OptionToggle', 'OptionToggle(bool initialValue, string offValue, string onValue)'],
       ['Rhino.Input.Custom.OptionToggle', 'bool CurrentValue'],
-      ['Rhino.Input.Custom.OptionDouble', 'OptionDouble(double initialValue,double lowerLimit,double upperLimit)'],
+      ['Rhino.Input.Custom.OptionDouble', 'OptionDouble(double initialValue, double lowerLimit, double upperLimit)'],
       ['Rhino.Input.Custom.OptionDouble', 'double CurrentValue'],
-      ['Rhino.Input.Custom.OptionInteger', 'OptionInteger(int initialValue,int lowerLimit,int upperLimit)'],
+      ['Rhino.Input.Custom.OptionInteger', 'OptionInteger(int initialValue, int lowerLimit, int upperLimit)'],
       ['Rhino.Input.Custom.OptionInteger', 'int CurrentValue']
     ]
   },
@@ -7372,7 +7371,7 @@ if __name__=="__main__":
   RunCommand()
 `,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawArrow(Line line,Color color,double screenSize,double relativeSize)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawArrow(Line line, Color color, double screenSize, double relativeSize)']
     ]
   },
   {
@@ -7405,7 +7404,7 @@ if __name__== "__main__":
     conduit.Enabled = False
     scriptcontext.doc.Views.Redraw()`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawBitmap(DisplayBitmap bitmap,int left,int top)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawBitmap(DisplayBitmap bitmap, int left, int top)']
     ]
   },
   {
@@ -7449,7 +7448,7 @@ if __name__=="__main__":
     constrainedcopy()
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetPlane(Plane plane)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetPlane(out Plane plane)'],
       ['Rhino.Geometry.Transform', 'static Transform Translation(Vector3d motion)'],
       ['Rhino.DocObjects.ObjRef', 'Point3d SelectionPoint()'],
       ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Line line)']
@@ -7512,9 +7511,9 @@ if __name__=="__main__":
 `,
     members: [
       ['Rhino.Input.Custom.GetObject', 'bool ReferenceObjectSelect'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)'],
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name, string description, Point3d basePoint, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes)'],
       ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName)'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName,bool ignoreDeletedInstanceDefinitions)']
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName, bool ignoreDeletedInstanceDefinitions)']
     ]
   },
   {
@@ -7559,7 +7558,7 @@ if __name__ == "__main__":
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Default'],
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Minimal'],
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Smooth'],
-      ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep,MeshingParameters meshingParameters)'],
+      ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep, MeshingParameters meshingParameters)'],
       ['Rhino.Geometry.Mesh', 'void Append(Mesh other)']
     ]
   },
@@ -7622,7 +7621,7 @@ if __name__ == "__main__":
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfaceKnotList KnotsU'],
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfaceKnotList KnotsV'],
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfacePointList Points'],
-      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface Create(int dimension,bool isRational,int order0,int order1,int controlPointCount0,int controlPointCount1)']
+      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface Create(int dimension, bool isRational, int order0, int order1, int controlPointCount0, int controlPointCount1)']
     ]
   },
   {
@@ -7657,7 +7656,7 @@ if __name__=="__main__":
   RunCommand()
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'static bool GetDistancesBetweenCurves(Curve curveA,Curve curveB,double tolerance,double maxDistance,double maxDistanceParameterA,double maxDistanceParameterB,double minDistance,double minDistanceParameterA,double minDistanceParameterB)'],
+      ['Rhino.Geometry.Curve', 'static bool GetDistancesBetweenCurves(Curve curveA, Curve curveB, double tolerance, out double maxDistance, out double maxDistanceParameterA, out double maxDistanceParameterB, out double minDistance, out double minDistanceParameterA, out double minDistanceParameterB)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'int UnselectAll()']
     ]
   },
@@ -7801,7 +7800,7 @@ if __name__ == "__main__":
   RunCommand()
 `,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveSurface(Curve curve,Surface surface,double tolerance,double overlapTolerance)'],
+      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveSurface(Curve curve, Surface surface, double tolerance, double overlapTolerance)'],
       ['Rhino.Geometry.Intersect.IntersectionEvent', 'bool IsOverlap'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'int Select(IEnumerable<Guid> objectIds)']
     ]
@@ -7835,7 +7834,7 @@ def RunCommand():
 if __name__=="__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetCircle(Circle circle)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetCircle(out Circle circle)'],
       ['Rhino.Input.Custom.GetObject', 'void SetCustomGeometryFilter(GetObjectGeometryFilter filter)']
     ]
   },
@@ -7889,7 +7888,7 @@ if __name__=="__main__":
 
 `,
     members: [
-      ['Rhino.RhinoDoc', 'bool AddCustomUndoEvent(string description,EventHandler<CustomUndoEventArgs> handler,object tag)']
+      ['Rhino.RhinoDoc', 'bool AddCustomUndoEvent(string description, EventHandler<CustomUndoEventArgs> handler, object tag)']
     ]
   },
   {
@@ -8044,15 +8043,15 @@ if __name__=="__main__":
     DivideByLengthPoints()
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'static Curve[] JoinCurves(IEnumerable<Curve> inputCurves,double joinTolerance)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse,Point3d[] points)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,Point3d[] points)'],
+      ['Rhino.Geometry.Curve', 'static Curve[] JoinCurves(IEnumerable<Curve> inputCurves, double joinTolerance)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, bool reverse)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, bool reverse, out Point3d[] points)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, out Point3d[] points)'],
       ['Rhino.Geometry.Curve', 'bool IsShort(double tolerance)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber,double lowerLimit,double upperLimit)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetOneObject(string prompt,bool acceptNothing,ObjectType filter,ObjRef rhObject)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt, bool acceptNothing, ref double outputNumber)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt, bool acceptNothing, ref double outputNumber, double lowerLimit, double upperLimit)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetOneObject(string prompt, bool acceptNothing, ObjectType filter, out ObjRef rhObject)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPoint(Point3d point)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPoint(Point3f point)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'bool Select(Guid objectId)']
@@ -8088,7 +8087,7 @@ class GetDrawStringPoint(GetPoint):
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void Draw2dText(string text,Color color,Point2d screenCoordinate,bool middleJustified)']
+      ['Rhino.Display.DisplayPipeline', 'void Draw2dText(string text, Color color, Point2d screenCoordinate, bool middleJustified)']
     ]
   },
   {
@@ -8245,7 +8244,7 @@ if __name__ == "__main__":
   RunCommand()`,
     members: [
       ['Rhino.Geometry.BoundingBox', 'Point3d[] GetCorners()'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static bool CurveBrep(Curve curve, Brep brep, double tolerance, out Curve[] overlapCurves, out Point3d[] intersectionPoints)']
     ]
   },
   {
@@ -8295,7 +8294,7 @@ if __name__ == "__main__":
 `,
     members: [
       ['Rhino.Geometry.BrepFace', 'bool OrientationIsReversed'],
-      ['Rhino.Geometry.Surface', 'Vector3d NormalAt(double u,double v)']
+      ['Rhino.Geometry.Surface', 'Vector3d NormalAt(double u, double v)']
     ]
   },
   {
@@ -8376,7 +8375,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Curve', 'Curve Extend(CurveEnd side,CurveExtensionStyle style,IEnumerable<GeometryBase> geometry)'],
+      ['Rhino.Geometry.Curve', 'Curve Extend(CurveEnd side, CurveExtensionStyle style, IEnumerable<GeometryBase> geometry)'],
       ['Rhino.Geometry.Interval', 'double Mid']
     ]
   },
@@ -8431,7 +8430,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Surface', 'Curve IsoCurve(int direction,double constantParameter)']
+      ['Rhino.Geometry.Surface', 'Curve IsoCurve(int direction, double constantParameter)']
     ]
   },
   {
@@ -8467,8 +8466,8 @@ if __name__ == "__main__":
 `,
     members: [
       ['Rhino.FileIO.File3dm', 'static System.Drawing.Bitmap ReadPreviewImage(string path)'],
-      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent)'],
-      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent,BitmapFileTypes fileTypes)']
+      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode, string defaultName, string title, object parent)'],
+      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode, string defaultName, string title, object parent, BitmapFileTypes fileTypes)']
     ]
   },
   {
@@ -8528,7 +8527,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Curve', 'static Curve[] CreateFilletCurves(Curve curve0,Point3d point0,Curve curve1,Point3d point1,double radius,bool join,bool trim,bool arcExtension,double tolerance,double angleTolerance)']
+      ['Rhino.Geometry.Curve', 'static Curve[] CreateFilletCurves(Curve curve0, Point3d point0, Curve curve1, Point3d point1, double radius, bool join, bool trim, bool arcExtension, double tolerance, double angleTolerance)']
     ]
   },
   {
@@ -8555,8 +8554,7 @@ if __name__ == "__main__":
 `,
     members: [
       ['Rhino.DocObjects.ObjectEnumeratorSettings', 'ObjectEnumeratorSettings()'],
-      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)']
+      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter']
     ]
   },
   {
@@ -8606,7 +8604,7 @@ class GetCircleRadiusPoint (GetPoint):
 if __name__ == "__main__":
     RunCommand()`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawCircle(Circle circle,Color color)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawCircle(Circle circle, Color color)']
     ]
   },
   {
@@ -8673,12 +8671,12 @@ if __name__=="__main__":
     HatchCurve()`,
     members: [
       ['Rhino.RhinoDoc', 'HatchPatternTable HatchPatterns'],
-      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale)'],
-      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale,double tolerance)'],
+      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve, int hatchPatternIndex, double rotationRadians, double scale)'],
+      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve, int hatchPatternIndex, double rotationRadians, double scale, double tolerance)'],
       ['Rhino.DocObjects.ModelComponent', 'string Name'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddHatch(Hatch hatch)'],
       ['Rhino.DocObjects.Tables.HatchPatternTable', 'int CurrentHatchPatternIndex'],
-      ['Rhino.DocObjects.Tables.HatchPatternTable', 'int Find(string name,bool ignoreDeleted)'],
+      ['Rhino.DocObjects.Tables.HatchPatternTable', 'int Find(string name, bool ignoreDeleted)'],
       ['Rhino.DocObjects.Tables.HatchPatternTable', 'HatchPattern FindName(string name)']
     ]
   },
@@ -8711,10 +8709,10 @@ def InsertKnot():
 if __name__=="__main__":
     InsertKnot()`,
     members: [
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Curve curve,bool allowPickingPointOffObject)'],
-      ['Rhino.Input.Custom.GetPoint', 'Curve PointOnCurve(double t)'],
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Curve curve, bool allowPickingPointOffObject)'],
+      ['Rhino.Input.Custom.GetPoint', 'Curve PointOnCurve(out double t)'],
       ['Rhino.Geometry.Collections.NurbsCurveKnotList', 'bool InsertKnot(double value)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'bool Replace(ObjRef objref,Curve curve)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'bool Replace(ObjRef objref, Curve curve)']
     ]
   },
   {
@@ -8779,7 +8777,7 @@ if __name__=="__main__":
       ['Rhino.Geometry.Point3f', 'double DistanceTo(Point3f other)'],
       ['Rhino.Geometry.Point3d', 'double DistanceTo(Point3d other)'],
       ['Rhino.DocObjects.ObjRef', 'Curve Curve()'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveCurve(Curve curveA,Curve curveB,double tolerance,double overlapTolerance)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveCurve(Curve curveA, Curve curveB, double tolerance, double overlapTolerance)']
     ]
   },
   {
@@ -8821,7 +8819,7 @@ def RunCommand():
 if __name__ == "__main__":
     RunCommand()`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static LineCircleIntersection LineCircle(Line line,Circle circle,double t1,Point3d point1,double t2,Point3d point2)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static LineCircleIntersection LineCircle(Line line, Circle circle, out double t1, out Point3d point1, out double t2, out Point3d point2)']
     ]
   },
   {
@@ -8871,7 +8869,7 @@ if __name__=="__main__":
       ['Rhino.Geometry.Line', 'Vector3d Direction'],
       ['Rhino.Geometry.Line', 'Point3d PointAt(double t)'],
       ['Rhino.Geometry.Vector3d', 'int IsParallelTo(Vector3d other)'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static bool LineLine(Line lineA,Line lineB,double a,double b)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static bool LineLine(Line lineA, Line lineB, out double a, out double b)']
     ]
   },
   {
@@ -8918,7 +8916,7 @@ if __name__=="__main__":
 `,
     members: [
       ['Rhino.Geometry.Brep', 'bool IsSolid'],
-      ['Rhino.Geometry.Surface', 'bool TryGetPlane(Plane plane,double tolerance)']
+      ['Rhino.Geometry.Surface', 'bool TryGetPlane(out Plane plane, double tolerance)']
     ]
   },
   {
@@ -8997,7 +8995,7 @@ if __name__ == "__main__":
     RunCommand()`,
     members: [
       ['Rhino.Geometry.Point2d', 'double DistanceTo(Point2d other)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLeader(Plane plane,IEnumerable<Point2d> points)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLeader(Plane plane, IEnumerable<Point2d> points)']
     ]
   },
   {
@@ -9054,7 +9052,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves,Point3d start,Point3d end,LoftType loftType,bool closed)']
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves, Point3d start, Point3d end, LoftType loftType, bool closed)']
     ]
   },
   {
@@ -9119,8 +9117,8 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Curve[] CreateContourCurves(Brep brepToContour,Point3d contourStart,Point3d contourEnd,double interval)'],
-      ['Rhino.Geometry.Mesh', 'static Curve[] CreateContourCurves(Mesh meshToContour,Point3d contourStart,Point3d contourEnd,double interval)']
+      ['Rhino.Geometry.Brep', 'static Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, double interval)'],
+      ['Rhino.Geometry.Mesh', 'static Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, double interval)']
     ]
   },
   {
@@ -9183,8 +9181,8 @@ class DrawBlueMeshConduit(Rhino.Display.DisplayConduit):
 if __name__ == "__main__":
     RunCommand()`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawMeshShaded(Mesh mesh,DisplayMaterial material)'],
-      ['Rhino.Display.DisplayPipeline', 'void DrawMeshWires(Mesh mesh,Color color)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawMeshShaded(Mesh mesh, DisplayMaterial material)'],
+      ['Rhino.Display.DisplayPipeline', 'void DrawMeshWires(Mesh mesh, Color color)']
     ]
   },
   {
@@ -9254,8 +9252,8 @@ if __name__ == "__main__":
   RunCommand()`,
     members: [
       ['Rhino.Geometry.Light', 'Color Diffuse'],
-      ['Rhino.UI.Dialogs', 'static bool ShowColorDialog(Color color)'],
-      ['Rhino.DocObjects.Tables.LightTable', 'bool Modify(Guid id,Light light)']
+      ['Rhino.UI.Dialogs', 'static bool ShowColorDialog(ref Color color)'],
+      ['Rhino.DocObjects.Tables.LightTable', 'bool Modify(Guid id, Light light)']
     ]
   },
   {
@@ -9479,9 +9477,9 @@ if __name__=="__main__":
     members: [
       ['Rhino.DocObjects.ObjectAttributes', 'bool HasDisplayModeOverride(Guid viewportId)'],
       ['Rhino.DocObjects.ObjectAttributes', 'void RemoveDisplayModeOverride(Guid rhinoViewportId)'],
-      ['Rhino.DocObjects.ObjectAttributes', 'bool SetDisplayModeOverride(DisplayModeDescription mode,Guid rhinoViewportId)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(LocalizeStringPair optionName,IEnumerable<LocalizeStringPair> listValues,int listCurrentIndex)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(string englishOptionName,IEnumerable<string> listValues,int listCurrentIndex)']
+      ['Rhino.DocObjects.ObjectAttributes', 'bool SetDisplayModeOverride(DisplayModeDescription mode, Guid rhinoViewportId)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(LocalizeStringPair optionName, IEnumerable<LocalizeStringPair> listValues, int listCurrentIndex)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(string englishOptionName, IEnumerable<string> listValues, int listCurrentIndex)']
     ]
   },
   {
@@ -9599,8 +9597,8 @@ if __name__=="__main__":
     OrientOnSrf()
 `,
     members: [
-      ['Rhino.Geometry.Surface', 'bool ClosestPoint(Point3d testPoint,double u,double v)'],
-      ['Rhino.Geometry.Surface', 'bool FrameAt(double u,double v,Plane frame)'],
+      ['Rhino.Geometry.Surface', 'bool ClosestPoint(Point3d testPoint, out double u, out double v)'],
+      ['Rhino.Geometry.Surface', 'bool FrameAt(double u, double v, out Plane frame)'],
       ['Rhino.DocObjects.RhinoObject', 'int Select(bool on)'],
       ['Rhino.DocObjects.ObjRef', 'RhinoObject Object()'],
       ['Rhino.DocObjects.ObjRef', 'Surface Surface()'],
@@ -9610,8 +9608,8 @@ if __name__=="__main__":
       ['Rhino.Input.Custom.GetObject', 'bool OneByOnePostSelect'],
       ['Rhino.Input.Custom.GetObject', 'bool SubObjectSelect'],
       ['Rhino.Input.Custom.GetObject', 'ObjRef Object(int index)'],
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Surface surface,bool allowPickingPointOffObject)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid Transform(ObjRef objref,Transform xform,bool deleteOriginal)']
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Surface surface, bool allowPickingPointOffObject)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid Transform(ObjRef objref, Transform xform, bool deleteOriginal)']
     ]
   },
   {
@@ -9673,7 +9671,7 @@ def RunCommand():
 if __name__ == "__main__":
     RunCommand()`,
     members: [
-      ['Rhino.Geometry.PlaneSurface', 'PlaneSurface(Plane plane,Interval xExtents,Interval yExtents)']
+      ['Rhino.Geometry.PlaneSurface', 'PlaneSurface(Plane plane, Interval xExtents, Interval yExtents)']
     ]
   },
   {
@@ -9711,7 +9709,7 @@ print "  Mean curvature: {0}".format(mean)`,
       ['Rhino.Geometry.SurfaceCurvature', 'Point3d Point'],
       ['Rhino.Geometry.SurfaceCurvature', 'Vector3d Direction(int direction)'],
       ['Rhino.Geometry.SurfaceCurvature', 'double Kappa(int direction)'],
-      ['Rhino.Geometry.Surface', 'SurfaceCurvature CurvatureAt(double u,double v)']
+      ['Rhino.Geometry.Surface', 'SurfaceCurvature CurvatureAt(double u, double v)']
     ]
   },
   {
@@ -9790,7 +9788,7 @@ def RunCommand():
 if __name__ == "__main__":
     RunCommand()`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToBreps(IEnumerable<Brep> breps,IEnumerable<Point3d> points,Vector3d direction,double tolerance)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToBreps(IEnumerable<Brep> breps, IEnumerable<Point3d> points, Vector3d direction, double tolerance)']
     ]
   },
   {
@@ -9825,7 +9823,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes,IEnumerable<Point3d> points,Vector3d direction,double tolerance,int[] indices)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes, IEnumerable<Point3d> points, Vector3d direction, double tolerance, out int[] indices)']
     ]
   },
   {
@@ -9853,7 +9851,7 @@ if __name__ == "__main__":
     members: [
       ['Rhino.DocObjects.InstanceDefinition', 'bool IsDeleted'],
       ['Rhino.DocObjects.InstanceDefinition', 'bool IsReference'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'bool Modify(int idefIndex,string newName,string newDescription,bool quiet)']
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'bool Modify(int idefIndex, string newName, string newDescription, bool quiet)']
     ]
   },
   {
@@ -9992,7 +9990,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Display.RhinoView', 'System.Drawing.Bitmap CaptureToBitmap(bool grid,bool worldAxes,bool cplaneAxes)'],
+      ['Rhino.Display.RhinoView', 'System.Drawing.Bitmap CaptureToBitmap(bool grid, bool worldAxes, bool cplaneAxes)'],
       ['Rhino.UI.SaveFileDialog', 'SaveFileDialog()'],
       ['Rhino.UI.SaveFileDialog', 'string FileName'],
       ['Rhino.UI.SaveFileDialog', 'string Filter'],
@@ -10089,8 +10087,8 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.PlaneSurface', 'static PlaneSurface CreateThroughBox(Plane plane,BoundingBox box)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetPlane(Plane plane)']
+      ['Rhino.Geometry.PlaneSurface', 'static PlaneSurface CreateThroughBox(Plane plane, BoundingBox box)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetPlane(out Plane plane)']
     ]
   },
   {
@@ -10107,7 +10105,7 @@ surface = NurbsSurface.CreateFromCorners(
 doc.Objects.AddSurface(surface);
 doc.Views.Redraw();`,
     members: [
-      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface CreateFromCorners(Point3d corner1,Point3d corner2,Point3d corner3,Point3d corner4)']
+      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface CreateFromCorners(Point3d corner1, Point3d corner2, Point3d corner3, Point3d corner4)']
     ]
   },
   {
@@ -10139,7 +10137,7 @@ if __name__ == "__main__":
 `,
     members: [
       ['Rhino.Geometry.SweepOneRail', 'SweepOneRail()'],
-      ['Rhino.Geometry.SweepOneRail', 'Brep[] PerformSweep(Curve rail,IEnumerable<Curve> crossSections)']
+      ['Rhino.Geometry.SweepOneRail', 'Brep[] PerformSweep(Curve rail, IEnumerable<Curve> crossSections)']
     ]
   },
   {
@@ -10159,7 +10157,7 @@ doc.Views.Redraw()`,
       ['Rhino.Geometry.TextEntity', 'TextEntity()'],
       ['Rhino.Geometry.TextEntity', 'TextJustification Justification'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(Text3d text3d)'],
-      ['Rhino.DocObjects.Tables.FontTable', 'int FindOrCreate(string face,bool bold,bool italic)']
+      ['Rhino.DocObjects.Tables.FontTable', 'int FindOrCreate(string face, bool bold, bool italic)']
     ]
   },
   {
@@ -10225,7 +10223,7 @@ def RunCommand():
 if __name__ == "__main__":
   RunCommand()`,
     members: [
-      ['Rhino.Geometry.BrepFace', 'Brep Split(IEnumerable<Curve> curves,double tolerance)'],
+      ['Rhino.Geometry.BrepFace', 'Brep Split(IEnumerable<Curve> curves, double tolerance)'],
       ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPolyline(IEnumerable<Point3d> points)']
     ]
@@ -10247,7 +10245,7 @@ def TransformBrep():
 if __name__=="__main__":
     TransformBrep()`,
     members: [
-      ['Rhino.Geometry.Transform', 'static Transform Translation(double dx,double dy,double dz)']
+      ['Rhino.Geometry.Transform', 'static Transform Translation(double dx, double dy, double dz)']
     ]
   },
   {
@@ -10358,7 +10356,7 @@ End Class
       ['Rhino.Display.RhinoView', 'RhinoViewport ActiveViewport'],
       ['Rhino.Display.RhinoView', 'void Redraw()'],
       ['Rhino.Display.RhinoViewport', 'Plane ConstructionPlane()'],
-      ['Rhino.Display.RhinoViewport', 'bool SetTraceImage(string bitmapFileName,Plane plane,double width,double height,bool grayscale,bool filtered)'],
+      ['Rhino.Display.RhinoViewport', 'bool SetTraceImage(string bitmapFileName, Plane plane, double width, double height, bool grayscale, bool filtered)'],
       ['Rhino.UI.OpenFileDialog', 'OpenFileDialog()'],
       ['Rhino.UI.OpenFileDialog', 'string FileName'],
       ['Rhino.UI.OpenFileDialog', 'string Filter'],
@@ -10369,7 +10367,7 @@ End Class
       ['Rhino.Input.Custom.GetPoint', 'bool ConstrainToConstructionPlane(bool throughBasePoint)'],
       ['Rhino.Input.Custom.GetNumber', 'GetNumber()'],
       ['Rhino.Input.Custom.GetNumber', 'GetResult Get()'],
-      ['Rhino.Input.Custom.GetNumber', 'void SetLowerLimit(double lowerLimit,bool strictlyGreaterThan)'],
+      ['Rhino.Input.Custom.GetNumber', 'void SetLowerLimit(double lowerLimit, bool strictlyGreaterThan)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'RhinoView ActiveView']
     ]
   },
@@ -10391,7 +10389,7 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.BoundingBox', 'BoundingBox(Point3d min,Point3d max)'],
+      ['Rhino.Geometry.BoundingBox', 'BoundingBox(Point3d min, Point3d max)'],
       ['Rhino.Geometry.BoundingBox', 'Brep ToBrep()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddBrep(Brep brep)']
     ]
@@ -10458,8 +10456,8 @@ End Class`,
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Circle', 'Circle(Plane plane,double radius)'],
-      ['Rhino.Geometry.Point3d', 'Point3d(double x,double y,double z)'],
+      ['Rhino.Geometry.Circle', 'Circle(Plane plane, double radius)'],
+      ['Rhino.Geometry.Point3d', 'Point3d(double x, double y, double z)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'void Redraw()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddCircle(Circle circle)']
     ]
@@ -10499,10 +10497,10 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Plane', 'Plane(Point3d origin,Point3d xPoint,Point3d yPoint)'],
-      ['Rhino.FileIO.File3dmObjectTable', 'Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetRectangle(Point3d[] corners)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddClippingPlane(Plane plane,double uMagnitude,double vMagnitude,Guid clippedViewportId)']
+      ['Rhino.Geometry.Plane', 'Plane(Point3d origin, Point3d xPoint, Point3d yPoint)'],
+      ['Rhino.FileIO.File3dmObjectTable', 'Guid AddClippingPlane(Plane plane, double uMagnitude, double vMagnitude, Guid clippedViewportId)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetRectangle(out Point3d[] corners)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddClippingPlane(Plane plane, double uMagnitude, double vMagnitude, Guid clippedViewportId)']
     ]
   },
   {
@@ -10526,9 +10524,9 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Cylinder', 'Cylinder(Circle baseCircle,double height)'],
-      ['Rhino.Geometry.Cylinder', 'Brep ToBrep(bool capBottom,bool capTop)'],
-      ['Rhino.Geometry.Plane', 'Plane(Point3d origin,Vector3d normal)']
+      ['Rhino.Geometry.Cylinder', 'Cylinder(Circle baseCircle, double height)'],
+      ['Rhino.Geometry.Cylinder', 'Brep ToBrep(bool capBottom, bool capTop)'],
+      ['Rhino.Geometry.Plane', 'Plane(Point3d origin, Vector3d normal)']
     ]
   },
   {
@@ -10580,15 +10578,15 @@ End Class
 `,
     members: [
       ['Rhino.RhinoApp', 'static void WriteLine(string message)'],
-      ['Rhino.RhinoApp', 'static void WriteLine(string format,object arg0)'],
+      ['Rhino.RhinoApp', 'static void WriteLine(string format, object arg0)'],
       ['Rhino.DocObjects.Layer', 'static bool IsValidName(string name)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void AcceptNothing(bool enable)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void SetDefaultString(string defaultValue)'],
       ['Rhino.Input.Custom.GetBaseClass', 'string StringResult()'],
       ['Rhino.Input.Custom.GetString', 'GetString()'],
       ['Rhino.Input.Custom.GetString', 'GetResult Get()'],
-      ['Rhino.DocObjects.Tables.LayerTable', 'int Add(string layerName,Color layerColor)'],
-      ['Rhino.DocObjects.Tables.LayerTable', 'int Find(string layerName,bool ignoreDeletedLayers)'],
+      ['Rhino.DocObjects.Tables.LayerTable', 'int Add(string layerName, Color layerColor)'],
+      ['Rhino.DocObjects.Tables.LayerTable', 'int Find(string layerName, bool ignoreDeletedLayers)'],
       ['Rhino.DocObjects.Tables.LayerTable', 'Layer FindName(string layerName)'],
       ['Rhino.DocObjects.Tables.LayerTable', 'string GetUnusedLayerName()'],
       ['Rhino.DocObjects.Tables.LayerTable', 'string GetUnusedLayerName(bool ignoreDeleted)']
@@ -10632,13 +10630,13 @@ End Class
     members: [
       ['Rhino.RhinoDoc', 'UnitSystem PageUnitSystem'],
       ['Rhino.Geometry.DetailView', 'bool IsProjectionLocked'],
-      ['Rhino.Geometry.DetailView', 'bool SetScale(double modelLength,UnitSystem modelUnits,double pageLength,UnitSystem pageUnits)'],
+      ['Rhino.Geometry.DetailView', 'bool SetScale(double modelLength, UnitSystem modelUnits, double pageLength, UnitSystem pageUnits)'],
       ['Rhino.DocObjects.RhinoObject', 'bool CommitChanges()'],
-      ['Rhino.Display.RhinoPageView', 'DetailViewObject AddDetailView(string title,Point2d corner0,Point2d corner1,DefinedViewportProjection initialProjection)'],
+      ['Rhino.Display.RhinoPageView', 'DetailViewObject AddDetailView(string title, Point2d corner0, Point2d corner1, DefinedViewportProjection initialProjection)'],
       ['Rhino.Display.RhinoPageView', 'bool SetActiveDetail(Guid detailId)'],
       ['Rhino.Display.RhinoPageView', 'void SetPageAsActive()'],
       ['Rhino.Display.RhinoViewport', 'bool ZoomExtents()'],
-      ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView AddPageView(string title,double pageWidth,double pageHeight)'],
+      ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView AddPageView(string title, double pageWidth, double pageHeight)'],
       ['Rhino.DocObjects.Tables.ViewTable', 'RhinoPageView[] GetPageViews()']
     ]
   },
@@ -10683,10 +10681,10 @@ End Class
       ['Rhino.Input.Custom.GetBaseClass', 'Point3d Point()'],
       ['Rhino.Input.Custom.GetBaseClass', 'void SetCommandPrompt(string prompt)'],
       ['Rhino.Input.Custom.GetPoint', 'GetPoint()'],
-      ['Rhino.Input.Custom.GetPoint', 'void DrawLineFromPoint(Point3d startPoint,bool showDistanceInStatusBar)'],
+      ['Rhino.Input.Custom.GetPoint', 'void DrawLineFromPoint(Point3d startPoint, bool showDistanceInStatusBar)'],
       ['Rhino.Input.Custom.GetPoint', 'GetResult Get()'],
-      ['Rhino.Input.Custom.GetPoint', 'void SetBasePoint(Point3d basePoint,bool showDistanceInStatusBar)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLine(Point3d from,Point3d to)']
+      ['Rhino.Input.Custom.GetPoint', 'void SetBasePoint(Point3d basePoint, bool showDistanceInStatusBar)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLine(Point3d from, Point3d to)']
     ]
   },
   {
@@ -10707,7 +10705,7 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Input.RhinoGet', 'static Result GetLinearDimension(LinearDimension dimension)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetLinearDimension(out LinearDimension dimension)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLinearDimension(LinearDimension dimension)']
     ]
   },
@@ -10744,8 +10742,8 @@ Partial Class Examples
 End Class
 `,
     members: [
-      ['Rhino.Geometry.LinearDimension', 'LinearDimension(Plane dimensionPlane,Point2d extensionLine1End,Point2d extensionLine2End,Point2d pointOnDimensionLine)'],
-      ['Rhino.Geometry.Plane', 'bool ClosestParameter(Point3d testPoint,double s,double t)']
+      ['Rhino.Geometry.LinearDimension', 'LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)'],
+      ['Rhino.Geometry.Plane', 'bool ClosestParameter(Point3d testPoint, out double s, out double t)']
     ]
   },
   {
@@ -10787,10 +10785,10 @@ End Class
       ['Rhino.Geometry.Mesh', 'MeshVertexNormalList Normals'],
       ['Rhino.Geometry.Mesh', 'MeshVertexList Vertices'],
       ['Rhino.Geometry.Mesh', 'bool Compact()'],
-      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(double x,double y,double z)'],
-      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(float x,float y,float z)'],
+      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(double x, double y, double z)'],
+      ['Rhino.Geometry.Collections.MeshVertexList', 'int Add(float x, float y, float z)'],
       ['Rhino.Geometry.Collections.MeshVertexNormalList', 'bool ComputeNormals()'],
-      ['Rhino.Geometry.Collections.MeshFaceList', 'int AddFace(int vertex1,int vertex2,int vertex3,int vertex4)'],
+      ['Rhino.Geometry.Collections.MeshFaceList', 'int AddFace(int vertex1, int vertex2, int vertex3, int vertex4)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddMesh(Mesh mesh)']
     ]
   },
@@ -10845,12 +10843,12 @@ End Class
       ['Rhino.Display.RhinoViewport', 'string Name'],
       ['Rhino.Display.RhinoViewport', 'bool PopViewProjection()'],
       ['Rhino.Display.RhinoViewport', 'void PushViewProjection()'],
-      ['Rhino.Display.RhinoViewport', 'void SetCameraDirection(Vector3d cameraDirection,bool updateTargetLocation)'],
-      ['Rhino.Display.RhinoViewport', 'void SetCameraLocation(Point3d cameraLocation,bool updateTargetLocation)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetPoint(string prompt,bool acceptNothing,Point3d point)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetString(string prompt,bool acceptNothing,string outputString)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetView(string commandPrompt,RhinoView view)'],
-      ['Rhino.DocObjects.Tables.NamedViewTable', 'int Add(string name,Guid viewportId)']
+      ['Rhino.Display.RhinoViewport', 'void SetCameraDirection(Vector3d cameraDirection, bool updateTargetLocation)'],
+      ['Rhino.Display.RhinoViewport', 'void SetCameraLocation(Point3d cameraLocation, bool updateTargetLocation)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetPoint(string prompt, bool acceptNothing, out Point3d point)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetString(string prompt, bool acceptNothing, ref string outputString)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetView(string commandPrompt, out RhinoView view)'],
+      ['Rhino.DocObjects.Tables.NamedViewTable', 'int Add(string name, Guid viewportId)']
     ]
   },
   {
@@ -10898,7 +10896,7 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.NurbsCurve', 'NurbsCurve(int dimension,bool rational,int order,int pointCount)'],
+      ['Rhino.Geometry.NurbsCurve', 'NurbsCurve(int dimension, bool rational, int order, int pointCount)'],
       ['Rhino.Geometry.NurbsCurve', 'NurbsCurveKnotList Knots'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddCurve(Curve curve)']
     ]
@@ -10926,9 +10924,9 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.NurbsCurve', 'static NurbsCurve Create(bool periodic,int degree,IEnumerable<Point3d> points)'],
+      ['Rhino.Geometry.NurbsCurve', 'static NurbsCurve Create(bool periodic, int degree, IEnumerable<Point3d> points)'],
       ['Rhino.Collections.Point3dList', 'Point3dList(int initialCapacity)'],
-      ['Rhino.Collections.Point3dList', 'void Add(double x,double y,double z)']
+      ['Rhino.Collections.Point3dList', 'void Add(double x, double y, double z)']
     ]
   },
   {
@@ -10961,7 +10959,7 @@ End Class
     members: [
       ['Rhino.RhinoDoc', 'GroupTable Groups'],
       ['Rhino.Input.Custom.GetObject', 'GetObject()'],
-      ['Rhino.Input.Custom.GetObject', 'GetResult GetMultiple(int minimumNumber,int maximumNumber)'],
+      ['Rhino.Input.Custom.GetObject', 'GetResult GetMultiple(int minimumNumber, int maximumNumber)'],
       ['Rhino.DocObjects.Tables.GroupTable', 'int Add(IEnumerable<Guid> objectIds)']
     ]
   },
@@ -11029,7 +11027,7 @@ End Namespace`,
       ['Rhino.Geometry.Curve', 'bool IsPlanar()'],
       ['Rhino.Geometry.Curve', 'bool IsPolyline()'],
       ['Rhino.Geometry.Curve', 'Point3d PointAt(double t)'],
-      ['Rhino.DocObjects.ObjRef', 'Curve CurveParameter(double parameter)'],
+      ['Rhino.DocObjects.ObjRef', 'Curve CurveParameter(out double parameter)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddRadialDimension(RadialDimension dimension)']
     ]
   },
@@ -11049,7 +11047,7 @@ End Namespace`,
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Sphere', 'Sphere(Point3d center,double radius)'],
+      ['Rhino.Geometry.Sphere', 'Sphere(Point3d center, double radius)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddSphere(Sphere sphere)']
     ]
   },
@@ -11073,7 +11071,7 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(string text,Plane plane,double height,string fontName,bool bold,bool italic)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(string text, Plane plane, double height, string fontName, bool bold, bool italic)']
     ]
   },
   {
@@ -11095,7 +11093,7 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Torus', 'Torus(Plane basePlane,double majorRadius,double minorRadius)'],
+      ['Rhino.Geometry.Torus', 'Torus(Plane basePlane, double majorRadius, double minorRadius)'],
       ['Rhino.Geometry.Torus', 'RevSurface ToRevSurface()'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddSurface(Surface surface)']
     ]
@@ -11127,10 +11125,10 @@ Partial Class Examples
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep CreateFromRevSurface(RevSurface surface,bool capStart,bool capEnd)'],
-      ['Rhino.Geometry.Circle', 'Circle(Point3d center,double radius)'],
-      ['Rhino.Geometry.LineCurve', 'LineCurve(Point3d from,Point3d to)'],
-      ['Rhino.Geometry.RevSurface', 'static RevSurface Create(Curve revoluteCurve,Line axisOfRevolution)']
+      ['Rhino.Geometry.Brep', 'static Brep CreateFromRevSurface(RevSurface surface, bool capStart, bool capEnd)'],
+      ['Rhino.Geometry.Circle', 'Circle(Point3d center, double radius)'],
+      ['Rhino.Geometry.LineCurve', 'LineCurve(Point3d from, Point3d to)'],
+      ['Rhino.Geometry.RevSurface', 'static RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)']
     ]
   },
   {
@@ -11372,7 +11370,7 @@ Public Class ZAnalysisMode
 End Class
 `,
     members: [
-      ['Rhino.RhinoMath', 'static uint CRC32(uint currentRemainder,double value)'],
+      ['Rhino.RhinoMath', 'static uint CRC32(uint currentRemainder, double value)'],
       ['Rhino.Geometry.Collections.MeshVertexColorList', 'MappingTag Tag'],
       ['Rhino.Geometry.Collections.MeshVertexColorList', 'bool SetColors(Color[] colors)']
     ]
@@ -11516,11 +11514,11 @@ Public Class ArrayByDistanceCommand
 End Class
 `,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawObject(RhinoObject rhinoObject,Transform xform)'],
+      ['Rhino.Display.DisplayPipeline', 'void DrawObject(RhinoObject rhinoObject, Transform xform)'],
       ['Rhino.Input.Custom.GetBaseClass', 'void ClearCommandOptions()'],
       ['Rhino.Input.Custom.GetPoint', 'object Tag'],
       ['Rhino.Input.Custom.GetPoint', 'void ClearConstraints()'],
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Point3d from,Point3d to)'],
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Point3d from, Point3d to)'],
       ['Rhino.Input.Custom.GetPointDrawEventArgs', 'GetPoint Source']
     ]
   },
@@ -11603,10 +11601,10 @@ Partial Class Examples
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet,IEnumerable<Brep> secondSet,double tolerance)'],
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet,IEnumerable<Brep> secondSet,double tolerance,bool manifoldOnly)'],
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, double tolerance)'],
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, double tolerance, bool manifoldOnly)'],
       ['Rhino.DocObjects.ObjRef', 'Brep Brep()'],
-      ['Rhino.Input.RhinoGet', 'static Result GetMultipleObjects(string prompt,bool acceptNothing,ObjectType filter,ObjRef[] rhObjects)']
+      ['Rhino.Input.RhinoGet', 'static Result GetMultipleObjects(string prompt, bool acceptNothing, ObjectType filter, out ObjRef[] rhObjects)']
     ]
   },
   {
@@ -11644,7 +11642,7 @@ End Class
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetCircle(Circle circle,double tolerance)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetCircle(out Circle circle, double tolerance)'],
       ['Rhino.Input.Custom.GetObject', 'GeometryAttributeFilter GeometryAttributeFilter']
     ]
   },
@@ -11735,8 +11733,8 @@ End Namespace
 `,
     members: [
       ['Rhino.Geometry.RTree', 'RTree()'],
-      ['Rhino.Geometry.RTree', 'bool Insert(Point3d point,int elementId)'],
-      ['Rhino.Geometry.RTree', 'bool Search(Sphere sphere,EventHandler<RTreeEventArgs> callback,object tag)']
+      ['Rhino.Geometry.RTree', 'bool Insert(Point3d point, int elementId)'],
+      ['Rhino.Geometry.RTree', 'bool Search(Sphere sphere, EventHandler<RTreeEventArgs> callback, object tag)']
     ]
   },
   {
@@ -11789,18 +11787,18 @@ End Namespace
 End Class
 `,
     members: [
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(LocalizeStringPair optionName,OptionDouble numberValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(string englishName,OptionDouble numberValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(LocalizeStringPair optionName,OptionInteger intValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(string englishName,OptionInteger intValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(LocalizeStringPair optionName,OptionToggle toggleValue)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(string englishName,OptionToggle toggleValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(LocalizeStringPair optionName, ref OptionDouble numberValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionDouble(string englishName, ref OptionDouble numberValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(LocalizeStringPair optionName, ref OptionInteger intValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionInteger(string englishName, ref OptionInteger intValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(LocalizeStringPair optionName, ref OptionToggle toggleValue)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionToggle(string englishName, ref OptionToggle toggleValue)'],
       ['Rhino.Input.Custom.CommandLineOption', 'int CurrentListOptionIndex'],
-      ['Rhino.Input.Custom.OptionToggle', 'OptionToggle(bool initialValue,string offValue,string onValue)'],
+      ['Rhino.Input.Custom.OptionToggle', 'OptionToggle(bool initialValue, string offValue, string onValue)'],
       ['Rhino.Input.Custom.OptionToggle', 'bool CurrentValue'],
-      ['Rhino.Input.Custom.OptionDouble', 'OptionDouble(double initialValue,double lowerLimit,double upperLimit)'],
+      ['Rhino.Input.Custom.OptionDouble', 'OptionDouble(double initialValue, double lowerLimit, double upperLimit)'],
       ['Rhino.Input.Custom.OptionDouble', 'double CurrentValue'],
-      ['Rhino.Input.Custom.OptionInteger', 'OptionInteger(int initialValue,int lowerLimit,int upperLimit)'],
+      ['Rhino.Input.Custom.OptionInteger', 'OptionInteger(int initialValue, int lowerLimit, int upperLimit)'],
       ['Rhino.Input.Custom.OptionInteger', 'int CurrentValue']
     ]
   },
@@ -11909,7 +11907,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawArrow(Line line,Color color,double screenSize,double relativeSize)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawArrow(Line line, Color color, double screenSize, double relativeSize)']
     ]
   },
   {
@@ -11963,7 +11961,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawBitmap(DisplayBitmap bitmap,int left,int top)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawBitmap(DisplayBitmap bitmap, int left, int top)']
     ]
   },
   {
@@ -12017,7 +12015,7 @@ End Namespace`,
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetPlane(Plane plane)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetPlane(out Plane plane)'],
       ['Rhino.Geometry.Transform', 'static Transform Translation(Vector3d motion)'],
       ['Rhino.DocObjects.ObjRef', 'Point3d SelectionPoint()'],
       ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Line line)']
@@ -12095,9 +12093,9 @@ End Class
 `,
     members: [
       ['Rhino.Input.Custom.GetObject', 'bool ReferenceObjectSelect'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name,string description,Point3d basePoint,IEnumerable<GeometryBase> geometry,IEnumerable<ObjectAttributes> attributes)'],
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'int Add(string name, string description, Point3d basePoint, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes)'],
       ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName)'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName,bool ignoreDeletedInstanceDefinitions)']
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'InstanceDefinition Find(string instanceDefinitionName, bool ignoreDeletedInstanceDefinitions)']
     ]
   },
   {
@@ -12154,7 +12152,7 @@ End Namespace`,
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Default'],
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Minimal'],
       ['Rhino.Geometry.MeshingParameters', 'static MeshingParameters Smooth'],
-      ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep,MeshingParameters meshingParameters)'],
+      ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep, MeshingParameters meshingParameters)'],
       ['Rhino.Geometry.Mesh', 'void Append(Mesh other)']
     ]
   },
@@ -12246,7 +12244,7 @@ End Namespace`,
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfaceKnotList KnotsU'],
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfaceKnotList KnotsV'],
       ['Rhino.Geometry.NurbsSurface', 'NurbsSurfacePointList Points'],
-      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface Create(int dimension,bool isRational,int order0,int order1,int controlPointCount0,int controlPointCount1)']
+      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface Create(int dimension, bool isRational, int order0, int order1, int controlPointCount0, int controlPointCount1)']
     ]
   },
   {
@@ -12375,7 +12373,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Curve', 'static bool GetDistancesBetweenCurves(Curve curveA,Curve curveB,double tolerance,double maxDistance,double maxDistanceParameterA,double maxDistanceParameterB,double minDistance,double minDistanceParameterA,double minDistanceParameterB)'],
+      ['Rhino.Geometry.Curve', 'static bool GetDistancesBetweenCurves(Curve curveA, Curve curveB, double tolerance, out double maxDistance, out double maxDistanceParameterA, out double maxDistanceParameterB, out double minDistance, out double minDistanceParameterA, out double minDistanceParameterB)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'int UnselectAll()']
     ]
   },
@@ -12582,7 +12580,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveSurface(Curve curve,Surface surface,double tolerance,double overlapTolerance)'],
+      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveSurface(Curve curve, Surface surface, double tolerance, double overlapTolerance)'],
       ['Rhino.Geometry.Intersect.IntersectionEvent', 'bool IsOverlap'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'int Select(IEnumerable<Guid> objectIds)']
     ]
@@ -12672,7 +12670,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Curve', 'bool TryGetCircle(Circle circle)'],
+      ['Rhino.Geometry.Curve', 'bool TryGetCircle(out Circle circle)'],
       ['Rhino.Input.Custom.GetObject', 'void SetCustomGeometryFilter(GetObjectGeometryFilter filter)']
     ]
   },
@@ -12741,7 +12739,7 @@ Public Class ex_customundoCommand
 End Class
 `,
     members: [
-      ['Rhino.RhinoDoc', 'bool AddCustomUndoEvent(string description,EventHandler<CustomUndoEventArgs> handler,object tag)']
+      ['Rhino.RhinoDoc', 'bool AddCustomUndoEvent(string description, EventHandler<CustomUndoEventArgs> handler, object tag)']
     ]
   },
   {
@@ -12951,15 +12949,15 @@ Partial Class Examples
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Curve', 'static Curve[] JoinCurves(IEnumerable<Curve> inputCurves,double joinTolerance)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,bool reverse,Point3d[] points)'],
-      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength,bool includeEnds,Point3d[] points)'],
+      ['Rhino.Geometry.Curve', 'static Curve[] JoinCurves(IEnumerable<Curve> inputCurves, double joinTolerance)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, bool reverse)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, bool reverse, out Point3d[] points)'],
+      ['Rhino.Geometry.Curve', 'double[] DivideByLength(double segmentLength, bool includeEnds, out Point3d[] points)'],
       ['Rhino.Geometry.Curve', 'bool IsShort(double tolerance)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt,bool acceptNothing,double outputNumber,double lowerLimit,double upperLimit)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetOneObject(string prompt,bool acceptNothing,ObjectType filter,ObjRef rhObject)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt, bool acceptNothing, ref double outputNumber)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetNumber(string prompt, bool acceptNothing, ref double outputNumber, double lowerLimit, double upperLimit)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetOneObject(string prompt, bool acceptNothing, ObjectType filter, out ObjRef rhObject)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPoint(Point3d point)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPoint(Point3f point)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'bool Select(Guid objectId)']
@@ -13004,7 +13002,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void Draw2dText(string text,Color color,Point2d screenCoordinate,bool middleJustified)']
+      ['Rhino.Display.DisplayPipeline', 'void Draw2dText(string text, Color color, Point2d screenCoordinate, bool middleJustified)']
     ]
   },
   {
@@ -13286,7 +13284,7 @@ Namespace examples_vb
 End Namespace`,
     members: [
       ['Rhino.Geometry.BoundingBox', 'Point3d[] GetCorners()'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static bool CurveBrep(Curve curve,Brep brep,double tolerance,Curve[] overlapCurves,Point3d[] intersectionPoints)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static bool CurveBrep(Curve curve, Brep brep, double tolerance, out Curve[] overlapCurves, out Point3d[] intersectionPoints)']
     ]
   },
   {
@@ -13348,7 +13346,7 @@ Namespace examples_vb
 End Namespace`,
     members: [
       ['Rhino.Geometry.BrepFace', 'bool OrientationIsReversed'],
-      ['Rhino.Geometry.Surface', 'Vector3d NormalAt(double u,double v)']
+      ['Rhino.Geometry.Surface', 'Vector3d NormalAt(double u, double v)']
     ]
   },
   {
@@ -13479,7 +13477,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Curve', 'Curve Extend(CurveEnd side,CurveExtensionStyle style,IEnumerable<GeometryBase> geometry)'],
+      ['Rhino.Geometry.Curve', 'Curve Extend(CurveEnd side, CurveExtensionStyle style, IEnumerable<GeometryBase> geometry)'],
       ['Rhino.Geometry.Interval', 'double Mid']
     ]
   },
@@ -13550,7 +13548,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Surface', 'Curve IsoCurve(int direction,double constantParameter)']
+      ['Rhino.Geometry.Surface', 'Curve IsoCurve(int direction, double constantParameter)']
     ]
   },
   {
@@ -13595,8 +13593,8 @@ Namespace examples_vb
 End Namespace`,
     members: [
       ['Rhino.FileIO.File3dm', 'static System.Drawing.Bitmap ReadPreviewImage(string path)'],
-      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent)'],
-      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode,string defaultName,string title,object parent,BitmapFileTypes fileTypes)']
+      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode, string defaultName, string title, object parent)'],
+      ['Rhino.Input.RhinoGet', 'static string GetFileName(GetFileNameMode mode, string defaultName, string title, object parent, BitmapFileTypes fileTypes)']
     ]
   },
   {
@@ -13675,7 +13673,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Curve', 'static Curve[] CreateFilletCurves(Curve curve0,Point3d point0,Curve curve1,Point3d point1,double radius,bool join,bool trim,bool arcExtension,double tolerance,double angleTolerance)']
+      ['Rhino.Geometry.Curve', 'static Curve[] CreateFilletCurves(Curve curve0, Point3d point0, Curve curve1, Point3d point1, double radius, bool join, bool trim, bool arcExtension, double tolerance, double angleTolerance)']
     ]
   },
   {
@@ -13706,8 +13704,7 @@ End Class
 `,
     members: [
       ['Rhino.DocObjects.ObjectEnumeratorSettings', 'ObjectEnumeratorSettings()'],
-      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'IEnumerable<RhinoObject> GetObjectList(ObjectEnumeratorSettings settings)']
+      ['Rhino.DocObjects.ObjectEnumeratorSettings', 'string NameFilter']
     ]
   },
   {
@@ -13774,7 +13771,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawCircle(Circle circle,Color color)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawCircle(Circle circle, Color color)']
     ]
   },
   {
@@ -13863,12 +13860,12 @@ End Class
 `,
     members: [
       ['Rhino.RhinoDoc', 'HatchPatternTable HatchPatterns'],
-      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale)'],
-      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve,int hatchPatternIndex,double rotationRadians,double scale,double tolerance)'],
+      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve, int hatchPatternIndex, double rotationRadians, double scale)'],
+      ['Rhino.Geometry.Hatch', 'static Hatch[] Create(Curve curve, int hatchPatternIndex, double rotationRadians, double scale, double tolerance)'],
       ['Rhino.DocObjects.ModelComponent', 'string Name'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddHatch(Hatch hatch)'],
       ['Rhino.DocObjects.Tables.HatchPatternTable', 'int CurrentHatchPatternIndex'],
-      ['Rhino.DocObjects.Tables.HatchPatternTable', 'int Find(string name,bool ignoreDeleted)'],
+      ['Rhino.DocObjects.Tables.HatchPatternTable', 'int Find(string name, bool ignoreDeleted)'],
       ['Rhino.DocObjects.Tables.HatchPatternTable', 'HatchPattern FindName(string name)']
     ]
   },
@@ -13911,10 +13908,10 @@ Partial Class Examples
 End Class
 `,
     members: [
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Curve curve,bool allowPickingPointOffObject)'],
-      ['Rhino.Input.Custom.GetPoint', 'Curve PointOnCurve(double t)'],
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Curve curve, bool allowPickingPointOffObject)'],
+      ['Rhino.Input.Custom.GetPoint', 'Curve PointOnCurve(out double t)'],
       ['Rhino.Geometry.Collections.NurbsCurveKnotList', 'bool InsertKnot(double value)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'bool Replace(ObjRef objref,Curve curve)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'bool Replace(ObjRef objref, Curve curve)']
     ]
   },
   {
@@ -13991,7 +13988,7 @@ End Class
       ['Rhino.Geometry.Point3f', 'double DistanceTo(Point3f other)'],
       ['Rhino.Geometry.Point3d', 'double DistanceTo(Point3d other)'],
       ['Rhino.DocObjects.ObjRef', 'Curve Curve()'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveCurve(Curve curveA,Curve curveB,double tolerance,double overlapTolerance)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static CurveIntersections CurveCurve(Curve curveA, Curve curveB, double tolerance, double overlapTolerance)']
     ]
   },
   {
@@ -14053,7 +14050,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static LineCircleIntersection LineCircle(Line line,Circle circle,double t1,Point3d point1,double t2,Point3d point2)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static LineCircleIntersection LineCircle(Line line, Circle circle, out double t1, out Point3d point1, out double t2, out Point3d point2)']
     ]
   },
   {
@@ -14110,7 +14107,7 @@ End Class
       ['Rhino.Geometry.Line', 'Vector3d Direction'],
       ['Rhino.Geometry.Line', 'Point3d PointAt(double t)'],
       ['Rhino.Geometry.Vector3d', 'int IsParallelTo(Vector3d other)'],
-      ['Rhino.Geometry.Intersect.Intersection', 'static bool LineLine(Line lineA,Line lineB,double a,double b)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static bool LineLine(Line lineA, Line lineB, out double a, out double b)']
     ]
   },
   {
@@ -14181,7 +14178,7 @@ End Class
 `,
     members: [
       ['Rhino.Geometry.Brep', 'bool IsSolid'],
-      ['Rhino.Geometry.Surface', 'bool TryGetPlane(Plane plane,double tolerance)']
+      ['Rhino.Geometry.Surface', 'bool TryGetPlane(out Plane plane, double tolerance)']
     ]
   },
   {
@@ -14308,7 +14305,7 @@ Namespace examples_vb
 End Namespace`,
     members: [
       ['Rhino.Geometry.Point2d', 'double DistanceTo(Point2d other)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLeader(Plane plane,IEnumerable<Point2d> points)']
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddLeader(Plane plane, IEnumerable<Point2d> points)']
     ]
   },
   {
@@ -14430,7 +14427,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves,Point3d start,Point3d end,LoftType loftType,bool closed)']
+      ['Rhino.Geometry.Brep', 'static Brep[] CreateFromLoft(IEnumerable<Curve> curves, Point3d start, Point3d end, LoftType loftType, bool closed)']
     ]
   },
   {
@@ -14514,8 +14511,8 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Brep', 'static Curve[] CreateContourCurves(Brep brepToContour,Point3d contourStart,Point3d contourEnd,double interval)'],
-      ['Rhino.Geometry.Mesh', 'static Curve[] CreateContourCurves(Mesh meshToContour,Point3d contourStart,Point3d contourEnd,double interval)']
+      ['Rhino.Geometry.Brep', 'static Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, double interval)'],
+      ['Rhino.Geometry.Mesh', 'static Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, double interval)']
     ]
   },
   {
@@ -14616,8 +14613,8 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Display.DisplayPipeline', 'void DrawMeshShaded(Mesh mesh,DisplayMaterial material)'],
-      ['Rhino.Display.DisplayPipeline', 'void DrawMeshWires(Mesh mesh,Color color)']
+      ['Rhino.Display.DisplayPipeline', 'void DrawMeshShaded(Mesh mesh, DisplayMaterial material)'],
+      ['Rhino.Display.DisplayPipeline', 'void DrawMeshWires(Mesh mesh, Color color)']
     ]
   },
   {
@@ -14711,8 +14708,8 @@ Namespace examples_vb
 End Namespace`,
     members: [
       ['Rhino.Geometry.Light', 'Color Diffuse'],
-      ['Rhino.UI.Dialogs', 'static bool ShowColorDialog(Color color)'],
-      ['Rhino.DocObjects.Tables.LightTable', 'bool Modify(Guid id,Light light)']
+      ['Rhino.UI.Dialogs', 'static bool ShowColorDialog(ref Color color)'],
+      ['Rhino.DocObjects.Tables.LightTable', 'bool Modify(Guid id, Light light)']
     ]
   },
   {
@@ -15003,9 +15000,9 @@ End Class
     members: [
       ['Rhino.DocObjects.ObjectAttributes', 'bool HasDisplayModeOverride(Guid viewportId)'],
       ['Rhino.DocObjects.ObjectAttributes', 'void RemoveDisplayModeOverride(Guid rhinoViewportId)'],
-      ['Rhino.DocObjects.ObjectAttributes', 'bool SetDisplayModeOverride(DisplayModeDescription mode,Guid rhinoViewportId)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(LocalizeStringPair optionName,IEnumerable<LocalizeStringPair> listValues,int listCurrentIndex)'],
-      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(string englishOptionName,IEnumerable<string> listValues,int listCurrentIndex)']
+      ['Rhino.DocObjects.ObjectAttributes', 'bool SetDisplayModeOverride(DisplayModeDescription mode, Guid rhinoViewportId)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(LocalizeStringPair optionName, IEnumerable<LocalizeStringPair> listValues, int listCurrentIndex)'],
+      ['Rhino.Input.Custom.GetBaseClass', 'int AddOptionList(string englishOptionName, IEnumerable<string> listValues, int listCurrentIndex)']
     ]
   },
   {
@@ -15141,8 +15138,8 @@ End Namespace`,
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Surface', 'bool ClosestPoint(Point3d testPoint,double u,double v)'],
-      ['Rhino.Geometry.Surface', 'bool FrameAt(double u,double v,Plane frame)'],
+      ['Rhino.Geometry.Surface', 'bool ClosestPoint(Point3d testPoint, out double u, out double v)'],
+      ['Rhino.Geometry.Surface', 'bool FrameAt(double u, double v, out Plane frame)'],
       ['Rhino.DocObjects.RhinoObject', 'int Select(bool on)'],
       ['Rhino.DocObjects.ObjRef', 'RhinoObject Object()'],
       ['Rhino.DocObjects.ObjRef', 'Surface Surface()'],
@@ -15152,8 +15149,8 @@ End Class
       ['Rhino.Input.Custom.GetObject', 'bool OneByOnePostSelect'],
       ['Rhino.Input.Custom.GetObject', 'bool SubObjectSelect'],
       ['Rhino.Input.Custom.GetObject', 'ObjRef Object(int index)'],
-      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Surface surface,bool allowPickingPointOffObject)'],
-      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid Transform(ObjRef objref,Transform xform,bool deleteOriginal)']
+      ['Rhino.Input.Custom.GetPoint', 'bool Constrain(Surface surface, bool allowPickingPointOffObject)'],
+      ['Rhino.DocObjects.Tables.ObjectTable', 'Guid Transform(ObjRef objref, Transform xform, bool deleteOriginal)']
     ]
   },
   {
@@ -15240,7 +15237,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.PlaneSurface', 'PlaneSurface(Plane plane,Interval xExtents,Interval yExtents)']
+      ['Rhino.Geometry.PlaneSurface', 'PlaneSurface(Plane plane, Interval xExtents, Interval yExtents)']
     ]
   },
   {
@@ -15290,7 +15287,7 @@ Namespace examples_vb
 End Namespace`,
     members: [
       ['Rhino.Geometry.Point3d', 'void Transform(Transform xform)'],
-      ['Rhino.Display.RhinoViewport', 'Transform GetTransform(CoordinateSystem sourceSystem,CoordinateSystem destinationSystem)']
+      ['Rhino.Display.RhinoViewport', 'Transform GetTransform(CoordinateSystem sourceSystem, CoordinateSystem destinationSystem)']
     ]
   },
   {
@@ -15356,7 +15353,7 @@ End Namespace`,
       ['Rhino.Geometry.SurfaceCurvature', 'Point3d Point'],
       ['Rhino.Geometry.SurfaceCurvature', 'Vector3d Direction(int direction)'],
       ['Rhino.Geometry.SurfaceCurvature', 'double Kappa(int direction)'],
-      ['Rhino.Geometry.Surface', 'SurfaceCurvature CurvatureAt(double u,double v)']
+      ['Rhino.Geometry.Surface', 'SurfaceCurvature CurvatureAt(double u, double v)']
     ]
   },
   {
@@ -15491,7 +15488,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToBreps(IEnumerable<Brep> breps,IEnumerable<Point3d> points,Vector3d direction,double tolerance)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToBreps(IEnumerable<Brep> breps, IEnumerable<Point3d> points, Vector3d direction, double tolerance)']
     ]
   },
   {
@@ -15545,7 +15542,7 @@ End Namespace
 
 `,
     members: [
-      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes,IEnumerable<Point3d> points,Vector3d direction,double tolerance,int[] indices)']
+      ['Rhino.Geometry.Intersect.Intersection', 'static Point3d[] ProjectPointsToMeshesEx(IEnumerable<Mesh> meshes, IEnumerable<Point3d> points, Vector3d direction, double tolerance, out int[] indices)']
     ]
   },
   {
@@ -15616,7 +15613,7 @@ End Namespace`,
     members: [
       ['Rhino.DocObjects.InstanceDefinition', 'bool IsDeleted'],
       ['Rhino.DocObjects.InstanceDefinition', 'bool IsReference'],
-      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'bool Modify(int idefIndex,string newName,string newDescription,bool quiet)']
+      ['Rhino.DocObjects.Tables.InstanceDefinitionTable', 'bool Modify(int idefIndex, string newName, string newDescription, bool quiet)']
     ]
   },
   {
@@ -15883,7 +15880,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Display.RhinoView', 'System.Drawing.Bitmap CaptureToBitmap(bool grid,bool worldAxes,bool cplaneAxes)'],
+      ['Rhino.Display.RhinoView', 'System.Drawing.Bitmap CaptureToBitmap(bool grid, bool worldAxes, bool cplaneAxes)'],
       ['Rhino.UI.SaveFileDialog', 'SaveFileDialog()'],
       ['Rhino.UI.SaveFileDialog', 'string FileName'],
       ['Rhino.UI.SaveFileDialog', 'string Filter'],
@@ -15997,8 +15994,8 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.PlaneSurface', 'static PlaneSurface CreateThroughBox(Plane plane,BoundingBox box)'],
-      ['Rhino.Input.RhinoGet', 'static Result GetPlane(Plane plane)']
+      ['Rhino.Geometry.PlaneSurface', 'static PlaneSurface CreateThroughBox(Plane plane, BoundingBox box)'],
+      ['Rhino.Input.RhinoGet', 'static Result GetPlane(out Plane plane)']
     ]
   },
   {
@@ -16031,7 +16028,7 @@ Namespace examples_vb
   End Class
 End Namespace`,
     members: [
-      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface CreateFromCorners(Point3d corner1,Point3d corner2,Point3d corner3,Point3d corner4)']
+      ['Rhino.Geometry.NurbsSurface', 'static NurbsSurface CreateFromCorners(Point3d corner1, Point3d corner2, Point3d corner3, Point3d corner4)']
     ]
   },
   {
@@ -16088,7 +16085,7 @@ End Class
 `,
     members: [
       ['Rhino.Geometry.SweepOneRail', 'SweepOneRail()'],
-      ['Rhino.Geometry.SweepOneRail', 'Brep[] PerformSweep(Curve rail,IEnumerable<Curve> crossSections)']
+      ['Rhino.Geometry.SweepOneRail', 'Brep[] PerformSweep(Curve rail, IEnumerable<Curve> crossSections)']
     ]
   },
   {
@@ -16124,7 +16121,7 @@ End Namespace`,
       ['Rhino.Geometry.TextEntity', 'TextEntity()'],
       ['Rhino.Geometry.TextEntity', 'TextJustification Justification'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddText(Text3d text3d)'],
-      ['Rhino.DocObjects.Tables.FontTable', 'int FindOrCreate(string face,bool bold,bool italic)']
+      ['Rhino.DocObjects.Tables.FontTable', 'int FindOrCreate(string face, bool bold, bool italic)']
     ]
   },
   {
@@ -16212,7 +16209,7 @@ Namespace examples_vb
 End Namespace
 `,
     members: [
-      ['Rhino.Geometry.BrepFace', 'Brep Split(IEnumerable<Curve> curves,double tolerance)'],
+      ['Rhino.Geometry.BrepFace', 'Brep Split(IEnumerable<Curve> curves, double tolerance)'],
       ['Rhino.Geometry.Mesh', 'static Mesh[] CreateFromBrep(Brep brep)'],
       ['Rhino.DocObjects.Tables.ObjectTable', 'Guid AddPolyline(IEnumerable<Point3d> points)']
     ]
@@ -16238,7 +16235,7 @@ Partial Class Examples
 End Class
 `,
     members: [
-      ['Rhino.Geometry.Transform', 'static Transform Translation(double dx,double dy,double dz)']
+      ['Rhino.Geometry.Transform', 'static Transform Translation(double dx, double dy, double dz)']
     ]
   },
   {
