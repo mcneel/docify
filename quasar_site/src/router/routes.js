@@ -15,17 +15,12 @@ const routes = [
       { path: 'examples/:example', component: () => import('pages/Example.vue') },
       { path: 'whatsnew/:version', component: () => import('pages/WhatsNew.vue'), props: rhinocommonProps },
       { path: 'references/:datatype', component: () => import('pages/References.vue'), props: rhinocommonProps },
+      { path: 'html/:ref', component: () => import('pages/SandcastleRedirect.vue') },
       { path: ':datatype/:member', component: () => import('pages/MemberDetail.vue'), props: rhinocommonProps },
       { path: ':datatype', component: () => import('pages/DataType.vue'), props: rhinocommonProps }
     ]
   }
 ]
-
-// redirect sandcastle urls
-routes.push({
-  path: apiBase + 'rhinocommon/html/:ref',
-  component: () => import('pages/SandcastleRedirect.vue')
-})
 
 // Always leave this as last one
 routes.push({

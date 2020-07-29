@@ -46,7 +46,7 @@ const ViewModel = {
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
           if (!node) {
-            console.log('no namespace for ' + type.name)
+            console.warn('no namespace for ' + type.name)
           } else {
             namespaceDict[type.namespace].children.push(item)
           }
