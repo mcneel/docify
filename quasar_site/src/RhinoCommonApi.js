@@ -78348,26 +78348,26 @@ the number of edges the end at the vertex is <= MaximumConvexCornerEdgeCount().`
     namespace: 'Rhino.Geometry',
     name: 'SubDCreationOptions.InteriorCreaseOption',
     dataType: 'enum',
-    summary: 'Defines how interior creases are treated.',
+    summary: 'Specifies the test used to determine when an interior mesh edge generates an interior SubD creased edge.',
     values: [
       {
         signature: 'Unset = 0',
-        summary: 'The interior creases option is not defined.'
+        summary: 'The interior crease test is not defined.'
       },
       {
         signature: 'None = 1',
         summary: 'No interior creases.'
       },
       {
-        signature: 'AtMeshCrease = 2',
-        summary: `An interior subd crease will appear along coincident
-mesh edges where the angle between coindident vertex
-normals >= MinimumCreaseAngleRadians().`
+        signature: 'AtMeshDoubleEdge = 2',
+        summary: `An interior mesh double edge will create an interior SubD creased edge.
+An interior mesh double edge occurs when the sides of two mesh faces have
+have distinct vertex indices and identical vertex locations.`
       },
       {
-        signature: 'AtMeshEdge = 3',
-        summary: `An interior subd crease will appear all coincident mesh edges.
-Input mesh vertex normals are ignored.`
+        signature: 'AtMeshEdge = 2',
+        summary: `AtMeshEdge is OBSOLETE - use to AtMeshDoubleEdge.
+AtMeshEdge will be deleted ASAP ... RH-59664`
       }
     ]
   },

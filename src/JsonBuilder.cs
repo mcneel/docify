@@ -12,10 +12,17 @@ namespace api_docify
             Dictionary<string, List<ParsedType>> publicTypes,
             string path)
         {
+            bool asJavascript = path.EndsWith(".js", StringComparison.OrdinalIgnoreCase);
             StringBuilder content = new StringBuilder();
 
-            content.AppendLine(@"// auto-generated from api_docify");
-            content.AppendLine("var RhinoCommonApi = [");
+            if (asJavascript)
+            {
+                content.AppendLine(@"// auto-generated from api_docify");
+                content.AppendLine("var RhinoCommonApi = [");
+            } else
+            {
+                content.AppendLine("[");
+            }
 
             // write all namespaces first along with their docs
             // sort namespaces alphabetically
@@ -27,7 +34,7 @@ namespace api_docify
                 if (!namespaces.ContainsKey(namespaceName))
                     continue; // TODO: figure out these cases
                 var nsDefinition = namespaces[namespaceName];
-                string jsonType = WriteTypeAsObject(nsDefinition, null);
+                string jsonType = WriteTypeAsObject(nsDefinition, null, asJavascript);
                 if (string.IsNullOrEmpty(jsonType))
                     continue;
                 if (objectWritten)
@@ -54,7 +61,7 @@ namespace api_docify
             objectWritten = false;
             for( int i=0; i<sortedTypes.Count; i++ )
             {
-                string jsonType = WriteTypeAsObject(sortedTypes[i], typesByNameDictionary);
+                string jsonType = WriteTypeAsObject(sortedTypes[i], typesByNameDictionary, asJavascript);
                 if (string.IsNullOrEmpty(jsonType))
                     continue;
                 if (objectWritten)
@@ -65,33 +72,69 @@ namespace api_docify
             content.AppendLine();
             content.AppendLine("]");
             content.AppendLine();
-            content.AppendLine("export { RhinoCommonApi }");
+            if(asJavascript)
+                content.AppendLine("export { RhinoCommonApi }");
 
             System.IO.File.WriteAllText(path, content.ToString());
         }
 
-        static string JsonQuote(string s)
+        static string JsonQuote(string s, bool asJavascript)
         {
-            s = s.Replace("\\", "\\\\");
+            s = s.Replace("\r", "");
+
             if (s.Contains('\n'))
             {
                 var lines = s.Split('\n');
                 StringBuilder sb = new StringBuilder();
-                sb.Append("`");
+                sb.Append(asJavascript ? "`" : "\"");
                 for (int i = 0; i < lines.Length; i++)
                 {
                     if (i > 0)
-                        sb.AppendLine();
-                    sb.Append(lines[i].Trim());
+                    {
+                        if (asJavascript)
+                            sb.AppendLine();
+                        else
+                            sb.Append("\\n");
+                    }
+                    string line = lines[i].Trim();
+                    line = line.Replace("\\", "\\\\");
+                    if (!asJavascript)
+                    {
+                        line = line.Replace("\"", "\\\"");
+                    }
+                    sb.Append(line);
                 }
-                sb.Append("`");
+                sb.Append(asJavascript ? "`" : "\"");
                 return sb.ToString();
             }
-            s = s.Replace("'", "\\'");
-            return "'" + s + "'";
+
+            if (asJavascript)
+            {
+                s = s.Replace("\\", "\\\\");
+                s = s.Replace("'", "\\'");
+                return "'" + s + "'";
+            }
+            else
+            {
+                s = s.Replace("\\", "\\\\");
+                s = s.Replace("\"", "\\\"");
+                return $"\"{s}\"";
+            }
         }
 
-        static string WriteTypeAsObject(ParsedType type, Dictionary<string, ParsedType> allPublicTypesByShortName)
+        static string KeyValString(int indent, string key, string val, bool asJavascript)
+        {
+            string rc = "".PadLeft(indent);
+            if (asJavascript)
+                rc += key;
+            else
+                rc += $"\"{key}\"";
+            rc += ": ";
+            rc += JsonQuote(val, asJavascript);
+            return rc;
+        }
+
+        static string WriteTypeAsObject(ParsedType type, Dictionary<string, ParsedType> allPublicTypesByShortName, bool asJavascript)
         {
             if (!type.IsPublic || (type.DataType != ParsedDataType.Namespace && string.IsNullOrWhiteSpace(type.Namespace)))
                 return null;
@@ -99,25 +142,25 @@ namespace api_docify
             sb.AppendLine("  {");
             if (type.DataType == ParsedDataType.Namespace)
             {
-                sb.AppendLine($"    name: '{type.FullName}',");
+                sb.AppendLine(KeyValString(4, "name", type.FullName, asJavascript) + ",");
             }
             else
             {
-                sb.AppendLine($"    namespace: '{type.Namespace}',");
-                sb.AppendLine($"    name: '{type.Name}',");
+                sb.AppendLine(KeyValString(4, "namespace", type.Namespace, asJavascript) + ",");
+                sb.AppendLine(KeyValString(4, "name", type.Name, asJavascript) + ",");
             }
-            sb.Append($"    dataType: '{type.DataType.ToString().ToLower()}'");
+            sb.Append(KeyValString(4, "dataType", type.DataType.ToString().ToLower(), asJavascript));
             string summary = type.Summary();
             if( !string.IsNullOrWhiteSpace(summary) )
             {
                 sb.AppendLine(",");
-                sb.Append($"    summary: {JsonQuote(summary)}");
+                sb.Append(KeyValString(4, "summary", summary, asJavascript));
             }
             string remarks = type.Remarks();
             if (!string.IsNullOrWhiteSpace(remarks))
             {
                 sb.AppendLine(",");
-                sb.Append($"    remarks: {JsonQuote(remarks)}");
+                sb.Append(KeyValString(4, "remarks", remarks, asJavascript));
             }
 
             if (type.DataType == ParsedDataType.Namespace)
@@ -143,18 +186,21 @@ namespace api_docify
                     }
                     if(firstInterfaceIndex!=0)
                     {
-                        sb.Append($"    baseclass: {JsonQuote(baseList[0])}");
+                        sb.Append(KeyValString(4, "baseclass", baseList[0], asJavascript));
                     }
-                    if(firstInterfaceIndex>-1)
+                    if (firstInterfaceIndex>-1)
                     {
                         if( firstInterfaceIndex>0)
                             sb.AppendLine(",");
-                        sb.Append("    interfaces: [");
+                        if( asJavascript)
+                            sb.Append("    interfaces: [");
+                        else
+                            sb.Append("    \"interfaces\": [");
                         for (int i = firstInterfaceIndex; i < baseList.Length; i++)
                         {
                             if (i > firstInterfaceIndex)
                                 sb.Append(", ");
-                            sb.Append(JsonQuote(baseList[i]));
+                            sb.Append(JsonQuote(baseList[i], asJavascript));
                         }
                         sb.Append("]");
                     }
@@ -163,19 +209,19 @@ namespace api_docify
                 if (type.HasSinceTag())
                 {
                     sb.AppendLine(",");
-                    sb.Append($"    since: '{type.Since}'");
+                    sb.Append(KeyValString(4, "since", type.Since, asJavascript));
                 }
                 if (type.HasDeprecatedTag())
                 {
                     sb.AppendLine(",");
-                    sb.Append($"    deprecated: '{type.Deprecated}'");
+                    sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
 
-                string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue);
-                string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor);
-                string properties = MembersAsJsonArray(type, ParsedMemberType.Property);
-                string methods = MembersAsJsonArray(type, ParsedMemberType.Method);
-                string events = MembersAsJsonArray(type, ParsedMemberType.Event);
+                string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
+                string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor, asJavascript);
+                string properties = MembersAsJsonArray(type, ParsedMemberType.Property, asJavascript);
+                string methods = MembersAsJsonArray(type, ParsedMemberType.Method, asJavascript);
+                string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
                 if (values != null || constructors != null || properties != null || methods != null || events != null)
                     sb.AppendLine(",");
                 else
@@ -183,11 +229,17 @@ namespace api_docify
 
                 if (!string.IsNullOrWhiteSpace(values))
                 {
-                    sb.AppendLine($"    values: {values}");
+                    if( asJavascript)
+                        sb.AppendLine($"    values: {values}");
+                    else
+                        sb.AppendLine($"    \"values\": {values}");
                 }
                 if (!string.IsNullOrWhiteSpace(constructors))
                 {
-                    sb.Append($"    constructors: {constructors}");
+                    if( asJavascript)
+                        sb.Append($"    constructors: {constructors}");
+                    else
+                        sb.Append($"    \"constructors\": {constructors}");
                     if (properties != null || methods != null || events != null)
                         sb.AppendLine(",");
                     else
@@ -195,7 +247,11 @@ namespace api_docify
                 }
                 if (!string.IsNullOrWhiteSpace(properties))
                 {
-                    sb.Append($"    properties: {properties}");
+                    if( asJavascript)
+                        sb.Append($"    properties: {properties}");
+                    else
+                        sb.Append($"    \"properties\": {properties}");
+
                     if (methods != null || events != null)
                         sb.AppendLine(",");
                     else
@@ -203,20 +259,29 @@ namespace api_docify
                 }
                 if (!string.IsNullOrWhiteSpace(methods))
                 {
-                    sb.Append($"    methods: {methods}");
+                    if( asJavascript)
+                        sb.Append($"    methods: {methods}");
+                    else
+                        sb.Append($"    \"methods\": {methods}");
+
                     if (events != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
                 }
                 if (!string.IsNullOrWhiteSpace(events))
-                    sb.AppendLine($"    events: {events}");
+                {
+                    if (asJavascript)
+                        sb.AppendLine($"    events: {events}");
+                    else
+                        sb.AppendLine($"    \"events\": {events}");
+                }
             }
             sb.Append("  }");
             return sb.ToString();
         }
 
-        static string MembersAsJsonArray(ParsedType type, ParsedMemberType filter)
+        static string MembersAsJsonArray(ParsedType type, ParsedMemberType filter, bool asJavascript = true)
         {
             if (type.Members == null)
                 return null;
@@ -230,24 +295,28 @@ namespace api_docify
                 if (memberAdded)
                     sb.AppendLine(",");
                 sb.AppendLine("      {");
-                sb.Append($"        signature: '{member.Signature(false)}'");
+                sb.Append(KeyValString(8, "signature", member.Signature(false), asJavascript));
+                //sb.Append($"        signature: '{member.Signature(false)}'");
                 string summary = member.Summary();
                 if (!string.IsNullOrWhiteSpace(summary))
                 {
                     sb.AppendLine(",");
-                    sb.Append($"        summary: {JsonQuote(summary)}");
+                    sb.Append(KeyValString(8, "summary", summary, asJavascript));
+                    //sb.Append($"        summary: {JsonQuote(summary)}");
                 }
                 string since = member.Since;
                 if (!string.IsNullOrWhiteSpace(since) && double.TryParse(since, out double sinceValue))
                 {
                     sb.AppendLine(",");
-                    sb.Append($"        since: '{since}'");
+                    sb.Append(KeyValString(8, "since", since, asJavascript));
+                    //sb.Append($"        since: '{since}'");
                 }
                 string deprecated = member.Deprecated;
                 if (!string.IsNullOrWhiteSpace(deprecated) && double.TryParse(deprecated, out double deprecatedValue))
                 {
                     sb.AppendLine(",");
-                    sb.Append($"        deprecated: '{deprecated}'");
+                    sb.Append(KeyValString(8, "deprecated", deprecated, asJavascript));
+                    //sb.Append($"        deprecated: '{deprecated}'");
                 }
 
                 var parameters = member.GetParameters();
@@ -267,16 +336,21 @@ namespace api_docify
                     if (writeParameters)
                     {
                         sb.AppendLine(",");
-                        sb.AppendLine($"        parameters: [");
+                        if( asJavascript)
+                            sb.AppendLine($"        parameters: [");
+                        else
+                            sb.AppendLine($"        \"parameters\": [");
                         for (int i = 0; i < parameters.Length; i++)
                         {
                             if (i > 0)
                                 sb.AppendLine(",");
                             sb.AppendLine("          {");
-                            sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
+                            sb.AppendLine(KeyValString(12, "name", parameters[i].Name, asJavascript) + ",");
+                            //sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
                             // Not sure if we really need type as it is easy to resolve in javascript
                             // sb.AppendLine($"            type: {JsonQuote(parameters[i].Type)},");
-                            sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
+                            sb.AppendLine(KeyValString(12, "summary", parameters[i].DocString, asJavascript));
+                            //sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
                             sb.Append("          }");
                         }
                         sb.AppendLine();
@@ -290,7 +364,7 @@ namespace api_docify
                     if (!string.IsNullOrWhiteSpace(returns))
                     {
                         sb.AppendLine(",");
-                        sb.Append($"        returns: {JsonQuote(returns)}");
+                        sb.Append(KeyValString(8, "returns", returns, asJavascript));
                     }
                 }
 
@@ -308,7 +382,12 @@ namespace api_docify
                             s += "'set'";
                         }
                         s += "]";
-                        sb.Append($"        property: {s}");
+                        if (!asJavascript)
+                            s = s.Replace("'", "\"");
+                        if(asJavascript)
+                            sb.Append($"        property: {s}");
+                        else
+                            sb.Append($"        \"property\": {s}");
                     }
                 }
                 sb.AppendLine();

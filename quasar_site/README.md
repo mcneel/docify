@@ -51,6 +51,6 @@ Files:
   - routes.js: maps urls to vue pages
 - statics
   - icons and images
-- Examples.js: JSON created by api_docify that represents source code examples and the methods they should be associated with
+- RhinoCommonExamples.js: JSON created by api_docify that represents source code examples and the methods they should be associated with
 - RhinoCommonApi.js: JSON created by api_docify that represents all public items in the RhinoCommon SDK
 - ViewModel.js: shared javascript that is used by the vue pages to figure out what to show
