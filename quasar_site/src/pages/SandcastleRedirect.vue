@@ -35,12 +35,16 @@ export default {
       case 'P': // P_Rhino_ApplicationSettings_AppearanceSettingsState_CommandPromptBackgroundColor.htm
       case 'M': // M_Rhino_ApplicationSettings_AppearanceSettings_GetCurrentState.htm
       case 'E': // E_Rhino_Commands_Command_BeginCommand.htm
+        t = r.slice(1, -1).join('.') + '/' + r[r.length - 1]
+        break
       case 'Overload': // Overload_Rhino_ApplicationSettings_AppearanceSettings_SetPaintColor.htm
         t = r.slice(1, -1).join('.')
         break
       case 'Methods': // Methods_T_Rhino_ApplicationSettings_AppearanceSettings.htm
       case 'Properties': // Properties_T_Rhino_ApplicationSettings_AppearanceSettings.htm
       case 'Events': // Events_T_Rhino_Commands_Command.htm
+        t = r.slice(2).join('.') + '#' + r[0]
+        break
       case 'Operators': // Operators_T_Rhino_Display_Color4f.htm
         t = r.slice(2).join('.')
         break
