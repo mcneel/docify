@@ -130,7 +130,7 @@ namespace api_docify
             //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
-            string outputJsFile = Path.Combine(outputDir, $"{projName}Api.js");
+            string outputJsFile = Path.Combine(outputDir, $"{projName}Api.json");
             JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputJsFile);
             // write the samples if sample base dir is provided
             if (projExamplesDir != null && string.Empty != projExamplesDir)

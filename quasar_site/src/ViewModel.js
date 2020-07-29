@@ -1,5 +1,4 @@
-import { RhinoCommonApi } from './RhinoCommonApi'
-import { Examples } from './RhinoCommonExamples'
+import RhinoCommonApi from './RhinoCommonApi.json'
 
 const DataTypes = {
   NAMESPACE: 'namespace',
@@ -166,7 +165,7 @@ const ViewModel = {
     })
     return since
   },
-  getExamples (parentType, item) {
+  /*   getExamples (parentType, item) {
     if (!item.examples) {
       item.examples = []
       let fullname = null
@@ -187,7 +186,7 @@ const ViewModel = {
     }
     return item.examples
   },
-  getFilteredSet (test) {
+ */getFilteredSet (test) {
     const api = []
     RhinoCommonApi.forEach(type => {
       const localApi = {
