@@ -14,7 +14,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.9.0",
+    "@quasar/extras": "^1.9.2",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.29",
     "core-js": "3.0.0",
     "node-cache": "^5.1.2",

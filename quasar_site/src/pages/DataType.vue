@@ -22,6 +22,7 @@
         :value="section.expanded"
         :label="section.title"
         :content-inset-level="1"
+        :id="anchorId(section)"
       >
         <q-item v-for="(member, index) in section.items" :key="index"
           :clickable="!section.values"
@@ -104,6 +105,21 @@ export default {
     }
   },
   methods: {
+    anchorId (section) {
+      if (section.constructors) {
+        return 'constructors'
+      }
+      if (section.properties) {
+        return 'properties'
+      }
+      if (section.methods) {
+        return 'methods'
+      }
+      if (section.events) {
+        return 'events'
+      }
+      return ''
+    },
     memberClass (member) {
       if (member.deprecated) return 'light-dimmed'
       return ''
