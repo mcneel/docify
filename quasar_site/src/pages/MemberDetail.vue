@@ -3,7 +3,7 @@
     <h1>{{getTitle()}}</h1>
     <p v-if="datatype">
       Class:&nbsp;
-      <router-link :to="baseUrl+datatype.namespace.toLowerCase()+'.'+datatype.name.toLowerCase()">
+      <router-link class="routerlink" :to="baseUrl+datatype.namespace.toLowerCase()+'.'+datatype.name.toLowerCase()">
         {{datatype.namespace}}.{{datatype.name}}
       </router-link>
     </p>
@@ -16,7 +16,7 @@
           <q-item-label v-if="!member.deprecated">
             <span v-for="(chunk, idx) in signature(member)" :key="idx+1000">
               <span v-if="chunk.link">
-                <router-link :to="chunk.link">{{chunk.name}}</router-link>
+                <router-link class="routerlink" :to="chunk.link">{{chunk.name}}</router-link>
               </span>
               <span v-else>{{chunk.name}}</span>
             </span>

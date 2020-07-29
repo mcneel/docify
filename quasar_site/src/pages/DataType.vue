@@ -5,15 +5,15 @@
     <p v-if="vm.remarks">{{vm.remarks}}</p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
-      <router-link v-if="item.link" :to="baseUrl+item.link.toLowerCase()">{{item.name}}</router-link>
+      <router-link v-if="item.link" class="routerlink" :to="baseUrl+item.link.toLowerCase()">{{item.name}}</router-link>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{title}}</i>
     </i>
     <p v-if="namespace">
-      <i>Namespace: <router-link :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i>
+      <i>Namespace: <router-link class="routerlink" :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i>
       <br>
-      <i>{{title}}: <router-link :to="baseUrl+'references/'+namespace.toLowerCase() + '.' + title.toLowerCase()">references</router-link></i>
+      <i>{{title}}: <router-link class="routerlink" :to="baseUrl+'references/'+namespace.toLowerCase() + '.' + title.toLowerCase()">references</router-link></i>
     </p>
     <q-list bordered class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"

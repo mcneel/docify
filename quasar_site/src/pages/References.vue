@@ -4,7 +4,7 @@
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
-        <router-link :to="itemPath(type)">{{type.name}}</router-link>
+        <router-link class="routerlink" :to="itemPath(type)">{{type.name}}</router-link>
         <ul>
           <li v-for="constructor in type.constructors" :key="constructor.signature">{{constructor.signature}}</li>
           <li v-for="property in type.properties" :key="property.signature">{{property.signature}}</li>

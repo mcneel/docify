@@ -120,3 +120,13 @@ export default {
   }
 }
 </script>
+
+<style>
+body.body--dark, .q-list--dark, .q-item--dark {
+  color: #c5c5c5;
+}
+
+a.routerlink {
+  color: #9C27B0;
+}
+</style>

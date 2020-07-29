@@ -4,7 +4,7 @@
     <q-separator/>
     <ul>
       <li v-for="type in api" :key="type.name">
-        <router-link :to="itemPath(type)">{{type.namespace}}.{{type.name}}</router-link>
+        <router-link class="routerlink" :to="itemPath(type)">{{type.namespace}}.{{type.name}}</router-link>
         <ul>
           <li v-for="constructor in type.constructors" :key="constructor.signature">
             <q-badge v-if="constructor.deprecated" outline color='negative'>deprecated</q-badge>
