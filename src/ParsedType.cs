@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace api_docify
+namespace Docify
 {
     enum ParsedDataType
     {
@@ -38,14 +38,14 @@ namespace api_docify
         {
             if (!FullName.Equals(other.FullName) && !other.Name.Equals("NamespaceDoc"))
                 throw new Exception("Invalid Merge");
-            if( other.Documentation!= null )
+            if (other.Documentation != null)
             {
                 // TODO: deal with merging documentation
                 //if (this.Documentation != null)
                 //    throw new Exception("two Documentation sections on merge");
                 Documentation = other.Documentation;
             }
-            if( !IsPublic && other.IsPublic )
+            if (!IsPublic && other.IsPublic)
             {
                 // partial classes can appear as non-public. If one of the declarations
                 // is public, then the whole thing is public
@@ -86,7 +86,7 @@ namespace api_docify
         {
             var types = _declarationType.BaseList.Types;
             string[] rc = new string[types.Count];
-            for( int i=0; i<types.Count; i++)
+            for (int i = 0; i < types.Count; i++)
             {
                 rc[i] = types[i].ToString();
             }
@@ -135,7 +135,7 @@ namespace api_docify
             get
             {
                 // all namespaces are "public"
-                return _namespaceType!= null || _declarationType.IsPublic();
+                return _namespaceType != null || _declarationType.IsPublic();
             }
         }
 
@@ -143,10 +143,10 @@ namespace api_docify
         {
             get
             {
-                if(null == _members && DataType == ParsedDataType.Enum)
+                if (null == _members && DataType == ParsedDataType.Enum)
                 {
                     _members = new List<ParsedMember>();
-                    foreach( var node in _declarationType.ChildNodes())
+                    foreach (var node in _declarationType.ChildNodes())
                     {
                         var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
                         var enumMember = node as EnumMemberDeclarationSyntax;
@@ -206,10 +206,10 @@ namespace api_docify
             {
                 int typeCount = _declarationType.BaseList.Types.Count;
                 string[] rc = new string[typeCount];
-                for( int i=0; i<typeCount; i++)
+                for (int i = 0; i < typeCount; i++)
                 {
                     rc[i] = _declarationType.BaseList.Types[i].ToString();
-                    if( rc[i].Equals("Runtime.CommonObject"))
+                    if (rc[i].Equals("Runtime.CommonObject"))
                     {
                         rc[i] = "CommonObject"; //temp hack fix
                     }

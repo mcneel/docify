@@ -6,12 +6,12 @@ using System.Reflection;
 
 using DocoptNet;
 
-namespace api_docify
+namespace Docify
 {
     class Program
     {
-        private const string Name = "api_docify";
-        private static string Version => $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}";
+        public static string Name = $"{Assembly.GetExecutingAssembly().GetName().Name}";
+        public static string Version => $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}";
         private const string Usage = @"dotnet API docs generator
 
     Usage:

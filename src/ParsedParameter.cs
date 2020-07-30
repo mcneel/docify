@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace api_docify
+namespace Docify
 {
     class ParsedParameter : XmlDocumentedItem
     {

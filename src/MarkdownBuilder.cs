@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace api_docify
+namespace Docify
 {
     class MarkdownBuilder
     {
@@ -81,14 +81,14 @@ namespace api_docify
                 {
                     content.AppendLine("```cs");
                     string[] attributes = basetype.GetAttributes();
-                    for( int i=0; i<attributes.Length; i++ )
+                    for (int i = 0; i < attributes.Length; i++)
                         content.AppendLine(attributes[i]);
 
                     content.Append($"public class {basetype.Name}");
                     string[] baseList = basetype.GetBaseList(null);
-                    if( baseList != null )
+                    if (baseList != null)
                     {
-                        for( int i=0; i<baseList.Length; i++)
+                        for (int i = 0; i < baseList.Length; i++)
                         {
                             if (i == 0)
                                 content.Append($": {baseList[i]}");
@@ -129,7 +129,7 @@ namespace api_docify
                     content.AppendLine();
                     string signature = item.Signature(false);
                     var returntype = item.ReturnType(types.Values);
-                    if(returntype != null && returntype != item.ParentType)
+                    if (returntype != null && returntype != item.ParentType)
                     {
                         string rn = returntype.Name;
                         int index = signature.IndexOf(rn);
@@ -145,14 +145,14 @@ namespace api_docify
                     string returnString = item.ReturnDocString();
                     if (!string.IsNullOrWhiteSpace(returnString))
                         content.AppendLine($": Returns - {returnString}");
-                    if( !item.Since.Equals("5.0") ) // no need to add since tags initial items
+                    if (!item.Since.Equals("5.0")) // no need to add since tags initial items
                         content.AppendLine($": since {item.Since}");
                 }
 
                 string name = basetype.Name;
                 string directory = OutputDirectoryFromNamespace(outputDirectory, basetype.Namespace);
                 string path = System.IO.Path.Combine(directory, name.ToLower() + ".md");
-                if( WriteContent(content, path, true))
+                if (WriteContent(content, path, true))
                     Console.WriteLine($"(write) {name}");
                 else
                     Console.WriteLine($"(no change) {name}");
@@ -165,7 +165,7 @@ namespace api_docify
             string directory = System.IO.Path.GetDirectoryName(path);
             if (!System.IO.Directory.Exists(directory))
                 System.IO.Directory.CreateDirectory(directory);
-            if( checkExisting && System.IO.File.Exists(path))
+            if (checkExisting && System.IO.File.Exists(path))
             {
                 string oldContent = System.IO.File.ReadAllText(path);
                 if (oldContent.Equals(content.ToString()))

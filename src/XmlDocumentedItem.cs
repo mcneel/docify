@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace api_docify
+namespace Docify
 {
     class XmlDocumentedItem
     {
@@ -81,12 +81,12 @@ namespace api_docify
                 var element = xml.GetElementsByTagName(tag);
                 if (element != null && element.Count > 0)
                 {
-                    if(attributeName==null)
+                    if (attributeName == null)
                         return Markdownify(element[0]);
-                    for(int i=0; i<element.Count; i++ )
+                    for (int i = 0; i < element.Count; i++)
                     {
                         var el = element[i];
-                        for( int j=0; j<el.Attributes.Count; j++)
+                        for (int j = 0; j < el.Attributes.Count; j++)
                         {
                             var attr = el.Attributes[j];
                             if (attr.Name.Equals("name") && attr.Value.Equals(attributeName))
