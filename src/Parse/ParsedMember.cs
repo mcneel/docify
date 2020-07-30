@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace api_docify
+namespace Docify.Parse
 {
     enum ParsedMemberType
     {
@@ -21,7 +21,7 @@ namespace api_docify
     class ParsedMember : XmlDocumentedItem
     {
         public ParsedMember(MemberDeclarationSyntax member, DocumentationCommentTriviaSyntax documentation)
-            : base (documentation)
+            : base(documentation)
         {
             Member = member;
             ParsedMemberType mt = ParsedMemberType.None;
@@ -292,10 +292,10 @@ namespace api_docify
             // BaseMethodDeclarationSyntax handles both methods and constructors
             BaseMethodDeclarationSyntax method = Member as BaseMethodDeclarationSyntax;
             ParameterListSyntax parameters = method?.ParameterList;
-            if(parameters != null && parameters.Parameters.Count > 0)
+            if (parameters != null && parameters.Parameters.Count > 0)
             {
                 ParsedParameter[] rc = new ParsedParameter[parameters.Parameters.Count];
-                for( int i=0; i<parameters.Parameters.Count; i++ )
+                for (int i = 0; i < parameters.Parameters.Count; i++)
                 {
                     rc[i] = new ParsedParameter(parameters.Parameters[i], Documentation);
                 }
@@ -334,7 +334,7 @@ namespace api_docify
 
             foreach (var type in types)
             {
-                if( type.Name.EndsWith(searchName) )
+                if (type.Name.EndsWith(searchName))
                 {
                     string name = type.Name;
                     int index = name.LastIndexOf('.');

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace api_docify
+namespace Docify.Parse
 {
     class SourceFileWalker : Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker
     {
