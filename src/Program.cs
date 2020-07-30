@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reflection;
 
 using DocoptNet;
+
 using Docify.Parse;
 
 namespace Docify
@@ -13,19 +14,16 @@ namespace Docify
     {
         public static string Name = $"{Assembly.GetExecutingAssembly().GetName().Name}";
         public static string Version => $"v{Assembly.GetExecutingAssembly().GetName().Version.ToString(2)}";
-        private const string Usage = @"dotnet API docs generator
+
+        private const string Usage = @".NET API documents generator
 
     Usage:
-      {name} --name=<proj_name> <proj_path> <output_js_dir>
-      {name} --name=<proj_name> <proj_path> <output_js_dir> <examples_path>
+      {name} init [<project_name>]
+      {name} build
 
     Options:
       -h --help                 Show this help
       -V --version              Show version
-      --name=<proj_name>        Project name
-      <proj_path>               Project directory containing C# source files
-      <output_js_dir>           Output directory for generated javascript files
-      <examples_path>           Examples directory containing example source files
     ";
 
         static void Main(string[] args)
@@ -38,15 +36,31 @@ namespace Docify
                 exit: true          // exit if input args does not match pattern
                 );
 
-            Docify(
-                projName: inputs["--name"].Value.ToString(),
-                projDir: inputs["<proj_path>"].Value.ToString(),
-                outputDir: inputs["<output_js_dir>"].Value.ToString(),
-                projExamplesDir: inputs["<examples_path>"] is null ? string.Empty : inputs["<examples_path>"].Value.ToString()
-                );
+            if (inputs["init"].IsTrue)
+            {
+                ProgramConfigs.InitConfigs(
+                    // grab the optional project name
+                    inputs["<project_name>"] is null ? string.Empty : inputs["<project_name>"].Value.ToString()
+                    );
+            }
+            else if (inputs["build"].IsTrue)
+            {
+                string source = ProgramConfigs.GetProjectSource();
+                if (source is null) {
+                    Console.Error.WriteLine("Can not determine source directory from configs");
+                    Environment.Exit(1);
+                }
+                var outputDir = ProgramConfigs.GetProjectTarget();
+                // write project info
+                var configs = ProgramConfigs.GetConfigs();
+                ProjectConfigs.WriteProjectInfo(configs, outputDir);
+                // build the docs data file
+                Console.WriteLine($"Building docs:\n{source} => {outputDir}");
+                Docify(source, outputDir);
+            }
         }
 
-        static void Docify(string projName, string projDir, string outputDir, string projExamplesDir = null)
+        static void Docify(string projDir, string outputDir)
         {
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
@@ -131,13 +145,13 @@ namespace Docify
             //const string markdownOutput = "../../../hugo_site/content/rhinocommon/";
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
-            string outputJsFile = Path.Combine(outputDir, $"{projName}Api.json");
-            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputJsFile);
+            string outputDataFile = Path.Combine(outputDir, ProgramConfigs.OutputDataFile);
+            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputDataFile);
             // write the samples if sample base dir is provided
-            if (projExamplesDir != null && string.Empty != projExamplesDir)
+            if (outputDir != null && string.Empty != outputDir)
             {
-                outputJsFile = Path.Combine(outputDir, $"{projName}Examples.js");
-                JsonBuilder.WriteExamples(publicTypesByNamespace, projExamplesDir, outputJsFile);
+                outputDataFile = Path.Combine(outputDir, ProgramConfigs.OutputExamplesDataFile);
+                JsonBuilder.WriteExamples(publicTypesByNamespace, outputDir, outputDataFile);
             }
         }
 
