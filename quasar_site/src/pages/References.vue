@@ -17,6 +17,7 @@
 
 <script>
 import ViewModel from '../ViewModel'
+import ProjInfo from '../proj_info.json'
 
 export default {
   props: {
@@ -31,7 +32,7 @@ export default {
   meta () {
     const desc = 'References for ' + this.title
     return {
-      title: 'RhinoCommon API - ' + this.title + ' references',
+      title: ProjInfo.name + ' API - ' + this.title + ' references',
       meta: {
         description: { name: 'description', content: desc }
       }

@@ -10,7 +10,6 @@
  *   If you are looking to add common DEV & PROD logic to the express app, then use
  *   "src-ssr/extension.js"
  */
-// import { RhinoCommonApi } from '../src/RhinoCommonApi'
 
 const express = require('express')
 const compression = require('compression')
@@ -127,7 +126,7 @@ app.listen(port, () => {
     // do nothing
   })
 
-  RhinoCommonApi.forEach(type => {
+  Api.forEach(type => {
     const cacheUrl = '/' + type.name.toLowerCase()
     console.log('attempt to get ' + cacheUrl)
     const cacheData = {

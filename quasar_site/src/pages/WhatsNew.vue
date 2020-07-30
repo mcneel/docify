@@ -30,6 +30,7 @@
 
 <script>
 import ViewModel from '../ViewModel'
+import ProjInfo from '../proj_info.json'
 
 export default {
   props: {
@@ -44,9 +45,9 @@ export default {
     }
   },
   meta () {
-    const desc = "What's new in RhinoCommon version " + this.version
+    const desc = 'What\'s new in ' + ProjInfo.name + ' version ' + this.version
     return {
-      title: "RhinoCommon API - What's New",
+      title: ProjInfo.name + ' API - What\'s New',
       meta: {
         description: { name: 'description', content: desc }
       }

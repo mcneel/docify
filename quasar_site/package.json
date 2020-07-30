@@ -1,8 +1,8 @@
 {
   "name": "quasar_site",
   "version": "7.0.0",
-  "description": "RhinoCommon API",
-  "productName": "RhinoCommon",
+  "description": "Docify Site Template",
+  "productName": "Docify Site Template",
   "author": "Steve Baer <steve@mcneel.com>",
   "private": true,
   "scripts": {
