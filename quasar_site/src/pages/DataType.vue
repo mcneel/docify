@@ -197,7 +197,9 @@ export default {
 
         let values = [].concat(item.values)
         for (let i = 0; i < this.inheritence.length; i++) {
-          values = values.concat(this.inheritence[i].item.values)
+          if (this.inheritence[i].item) {
+            values = values.concat(this.inheritence[i].item.values)
+          }
         }
         values = values.filter(v => v != null)
         if (values.length > 0) {
@@ -217,6 +219,7 @@ export default {
           }
         }
         for (let i = 0; i < this.inheritence.length; i++) {
+          if (!this.inheritence[i].item) continue
           const inheritedProps = this.inheritence[i].item.properties
           if (inheritedProps == null) continue
           parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
@@ -245,6 +248,7 @@ export default {
           }
         }
         for (let i = 0; i < this.inheritence.length; i++) {
+          if (!this.inheritence[i].item) continue
           const inheritedMethods = this.inheritence[i].item.methods
           if (inheritedMethods == null) continue
           parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
@@ -273,6 +277,7 @@ export default {
           }
         }
         for (let i = 0; i < this.inheritence.length; i++) {
+          if (!this.inheritence[i].item) continue
           const inheritedEvents = this.inheritence[i].item.events
           if (inheritedEvents == null) continue
           parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
