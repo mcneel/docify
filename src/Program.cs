@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reflection;
 
 using DocoptNet;
+using Docify.Parse;
 
 namespace Docify
 {
