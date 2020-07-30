@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Docify
+namespace Docify.Parse
 {
     enum ParsedDataType
     {

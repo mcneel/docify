@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Docify
+namespace Docify.Parse
 {
     class XmlDocumentedItem
     {

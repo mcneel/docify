@@ -42,16 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeAnalysisExtensions.cs" />
-    <Compile Include="JsonBuilder.cs" />
-    <Compile Include="MarkdownBuilder.cs" />
-    <Compile Include="ParsedParameter.cs" />
-    <Compile Include="ParsedType.cs" />
-    <Compile Include="ParsedMember.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SourceFileWalker.cs" />
-    <Compile Include="XmlDocumentedItem.cs" />
+    <Compile Include="Parse\CodeAnalysisExtensions.cs" />
+    <Compile Include="Parse\JsonBuilder.cs" />
+    <Compile Include="Parse\MarkdownBuilder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Parse\ParsedMember.cs" />
+    <Compile Include="Parse\ParsedParameter.cs" />
+    <Compile Include="Parse\ParsedType.cs" />
+    <Compile Include="Parse\SourceFileWalker.cs" />
+    <Compile Include="Parse\XmlDocumentedItem.cs" />
+    <Compile Include="ProgramConfigs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

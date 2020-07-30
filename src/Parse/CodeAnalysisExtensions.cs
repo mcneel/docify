@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 
-namespace Docify
+namespace Docify.Parse
 {
     static class CodeAnalysisExtensions
     {
