@@ -83,7 +83,7 @@ description: ""your project description""
 
 #if DEBUG
             // write parsed configs in debug mode
-            foreach (var cfg in configs)
+            foreach (var cfg in _configs)
                 Console.WriteLine($"{cfg.Key} = {cfg.Value}");
 #endif
             // remove the known properties

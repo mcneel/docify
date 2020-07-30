@@ -34,6 +34,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugMono|AnyCPU' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\DebugMono</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
