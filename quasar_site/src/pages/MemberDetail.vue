@@ -7,8 +7,11 @@
         {{datatype.namespace}}.{{datatype.name}}
       </router-link>
     </p>
-    <q-list bordered class="rounded-borders q-mt-md">
-      <q-item v-for="(member, index) in members.items" :key="index">
+    <q-list v-for="(member, index) in members.items"
+      :key="index"
+      bordered
+      class="rounded-borders q-mt-md">
+      <q-item>
         <q-item-section>
           <q-item-label v-if="member.deprecated" class="light-dimmed">
             {{member.signature}}
@@ -40,12 +43,26 @@
           </q-item-label>
         </q-item-section>
       </q-item>
+      <q-item v-if="member.examples && member.examples.length>0" dense class="on-right">
+        <q-btn
+          no-caps
+          outline
+          dense
+          size="sm"
+          icon="mdi-code-tags"
+          color="secondary"
+          :to="exampleUrl(member)"
+          >
+          Example
+        </q-btn>
+      </q-item>
     </q-list>
   </q-page>
 </template>
 
 <script>
 import ViewModel from '../ViewModel'
+import { Examples } from '../RhinoCommonExamples'
 
 export default {
   props: {
@@ -76,7 +93,9 @@ export default {
     console.log('mounted member detail')
     this.datatype = ViewModel.findNodeByPath(this.$route.params.datatype)
     this.memberName = this.$route.params.member.toLowerCase()
-    this.members = Object.freeze(this.getMembers(this.datatype, this.memberName))
+    const members = this.getMembers(this.datatype, this.memberName)
+    members.items.forEach(m => this.getExamples(this.datatype, m))
+    this.members = Object.freeze(members)
   },
   methods: {
     getMembers (datatype, memberName) {
@@ -255,6 +274,33 @@ export default {
         chunks.push({ name: s })
       }
       return chunks
+    },
+    exampleUrl (member) {
+      let name = member.examples[0].name
+      const index = name.lastIndexOf('.')
+      name = name.substring(0, index).toLowerCase()
+      return this.baseUrl + 'examples/' + name
+    },
+    getExamples (parentType, item) {
+      if (!item.examples) {
+        item.examples = []
+        let fullname = null
+        if (parentType.namespace) fullname = parentType.namespace + '.' + parentType.name
+        else fullname = parentType.name
+        Examples.forEach(example => {
+          example.members.forEach(member => {
+            const type = member[0]
+            if (fullname === type) {
+              const signature = member[1]
+              if (signature === item.signature) {
+                item.examples.push(example)
+              }
+            }
+          })
+        })
+        item.examples = Object.freeze(item.examples)
+      }
+      return item.examples
     }
   }
 }
