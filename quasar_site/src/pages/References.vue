@@ -29,9 +29,12 @@ export default {
     }
   },
   meta () {
+    const desc = 'References for ' + this.title
     return {
-      // set the actual page title
-      title: 'RhinoCommon - ' + this.title
+      title: 'RhinoCommon API - ' + this.title + ' references',
+      meta: {
+        description: { name: 'description', content: desc }
+      }
     }
   },
   mounted () {

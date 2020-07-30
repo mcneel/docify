@@ -24,6 +24,14 @@ export default {
       vm: tree
     }
   },
+  meta () {
+    return {
+      title: 'RhinoCommon API',
+      meta: {
+        description: { name: 'description', content: 'API Reference for types, members, and examples in RhinoCommon' }
+      }
+    }
+  },
   methods: {
     setSelectedItem (name) {
       this.$router.push(this.baseUrl + name.toLowerCase())

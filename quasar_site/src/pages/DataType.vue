@@ -73,9 +73,19 @@ export default {
     }
   },
   meta () {
+    const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+    let desc = node.namespace ? node.namespace + '.' + node.name : node.name
+    if (node.dataType === 'namespace') {
+      desc += ' namespace'
+    }
+    if (node.summary) {
+      desc += ': ' + node.summary
+    }
     return {
-      // set the actual page title
-      title: 'RhinoCommon - ' + this.title
+      title: 'RhinoCommon API - ' + node.name + ' ' + node.dataType,
+      meta: {
+        description: { name: 'description', content: desc }
+      }
     }
   },
   created () {
