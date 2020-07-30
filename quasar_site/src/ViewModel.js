@@ -165,28 +165,7 @@ const ViewModel = {
     })
     return since
   },
-  /*   getExamples (parentType, item) {
-    if (!item.examples) {
-      item.examples = []
-      let fullname = null
-      if (parentType.namespace) fullname = parentType.namespace + '.' + parentType.name
-      else fullname = parentType.name
-      Examples.forEach(example => {
-        example.members.forEach(member => {
-          const type = member[0]
-          if (fullname === type) {
-            const signature = member[1]
-            if (signature === item.signature) {
-              item.examples.push(example)
-            }
-          }
-        })
-      })
-      item.examples = Object.freeze(item.examples)
-    }
-    return item.examples
-  },
- */getFilteredSet (test) {
+  getFilteredSet (test) {
     const api = []
     RhinoCommonApi.forEach(type => {
       const localApi = {
