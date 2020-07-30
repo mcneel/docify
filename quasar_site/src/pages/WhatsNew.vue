@@ -43,6 +43,15 @@ export default {
       api: []
     }
   },
+  meta () {
+    const desc = "What's new in RhinoCommon version " + this.version
+    return {
+      title: "RhinoCommon API - What's New",
+      meta: {
+        description: { name: 'description', content: desc }
+      }
+    }
+  },
   methods: {
     itemPath (item) {
       return this.baseUrl + ViewModel.itemPath(item)

@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <h1>{{getTitle()}}</h1>
+    <h1>{{getTitle(datatype, members)}}</h1>
     <p v-if="datatype">
       Class:&nbsp;
       <router-link class="routerlink" :to="baseUrl+datatype.namespace.toLowerCase()+'.'+datatype.name.toLowerCase()">
@@ -60,32 +60,44 @@ export default {
       version: mostRecent
     }
   },
+  meta () {
+    const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+    const memberName = this.$route.params.member.toLowerCase()
+    const members = this.getMembers(node, memberName)
+    const desc = node.name + '.' + this.getTitle(node, members)
+    return {
+      title: 'RhinoCommon API - ' + node.name + ' ' + node.dataType,
+      meta: {
+        description: { name: 'description', content: desc }
+      }
+    }
+  },
   mounted () {
     console.log('mounted member detail')
     this.datatype = ViewModel.findNodeByPath(this.$route.params.datatype)
     this.memberName = this.$route.params.member.toLowerCase()
-    this.members = Object.freeze(this.getMembers())
+    this.members = Object.freeze(this.getMembers(this.datatype, this.memberName))
   },
   methods: {
-    getMembers () {
-      if (this.datatype.name.toLowerCase() === this.memberName) {
-        this.datatype.constructors.sort((a, b) => {
+    getMembers (datatype, memberName) {
+      if (datatype.name.toLowerCase() === memberName) {
+        datatype.constructors.sort((a, b) => {
           if (a.deprecated && !b.deprecated) return 1
           if (!a.deprecated && b.deprecated) return -1
           return 0
         })
         return {
           isConstructor: true,
-          items: this.datatype.constructors
+          items: datatype.constructors
         }
       }
-      if (this.datatype.properties) {
+      if (datatype.properties) {
         const props = []
-        for (let i = 0; i < this.datatype.properties.length; i++) {
-          const prop = this.datatype.properties[i]
+        for (let i = 0; i < datatype.properties.length; i++) {
+          const prop = datatype.properties[i]
           const chunks = prop.signature.split(' ')
           const name = chunks[chunks.length - 1]
-          if (name.toLowerCase() === this.memberName) props.push(prop)
+          if (name.toLowerCase() === memberName) props.push(prop)
         }
         if (props.length > 0) {
           props.sort((a, b) => {
@@ -99,14 +111,14 @@ export default {
           }
         }
       }
-      if (this.datatype.methods) {
+      if (datatype.methods) {
         const methods = []
-        for (let i = 0; i < this.datatype.methods.length; i++) {
-          const m = this.datatype.methods[i]
+        for (let i = 0; i < datatype.methods.length; i++) {
+          const m = datatype.methods[i]
           const index = m.signature.indexOf('(')
           const chunks = m.signature.substring(0, index).split(' ')
           const name = chunks[chunks.length - 1]
-          if (name.toLowerCase() === this.memberName) methods.push(m)
+          if (name.toLowerCase() === memberName) methods.push(m)
         }
         if (methods.length > 0) {
           methods.sort((a, b) => {
@@ -120,13 +132,13 @@ export default {
           }
         }
       }
-      if (this.datatype.events) {
+      if (datatype.events) {
         const events = []
-        for (let i = 0; i < this.datatype.events.length; i++) {
-          const event = this.datatype.events[i]
+        for (let i = 0; i < datatype.events.length; i++) {
+          const event = datatype.events[i]
           const chunks = event.signature.split(' ')
           const name = chunks[chunks.length - 1]
-          if (name.toLowerCase() === this.memberName) events.push(event)
+          if (name.toLowerCase() === memberName) events.push(event)
         }
         if (events.length > 0) {
           events.sort((a, b) => {
@@ -143,22 +155,22 @@ export default {
 
       return {}
     },
-    getTitle () {
-      if (this.members.isConstructor) {
-        return this.datatype.name + ' constructor'
+    getTitle (datatype, members) {
+      if (members.isConstructor) {
+        return datatype.name + ' constructor'
       }
-      if (this.members.isProperty) {
-        const chunks = this.members.items[0].signature.split(' ')
+      if (members.isProperty) {
+        const chunks = members.items[0].signature.split(' ')
         return chunks[chunks.length - 1] + ' property'
       }
-      if (this.members.isMethod) {
-        const name = this.members.items[0].signature
+      if (members.isMethod) {
+        const name = members.items[0].signature
         const index = name.indexOf('(')
         const chunks = name.substring(0, index).split(' ')
         return chunks[chunks.length - 1] + ' method'
       }
-      if (this.members.isEvent) {
-        const chunks = this.members.items[0].signature.split(' ')
+      if (members.isEvent) {
+        const chunks = members.items[0].signature.split(' ')
         return chunks[chunks.length - 1] + ' event'
       }
       return this.memberName
