@@ -422,10 +422,13 @@ namespace Docify.Parse
                         {
                             for (int i = 0; i < sampleRefs.Length; i++)
                             {
-                                string s = sampleRefs[i].ToLower();
-                                if (!examples.ContainsKey(s))
-                                    examples[s] = new List<ParsedMember>();
-                                examples[s].Add(member);
+                                if (sampleRefs[i] != null)
+                                {
+                                    string s = sampleRefs[i].ToLower();
+                                    if (!examples.ContainsKey(s))
+                                        examples[s] = new List<ParsedMember>();
+                                    examples[s].Add(member);
+                                }
                             }
                         }
                     }

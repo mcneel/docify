@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Docify.Parse
@@ -142,7 +143,10 @@ namespace Docify.Parse
                         string[] rc = new string[count];
                         for (int i = 0; i < count; i++)
                         {
-                            rc[i] = element[0].ChildNodes[i].Attributes["source"].Value;
+                            // not all examples have a source attr
+                            var sourceAttr = element[0].ChildNodes[i].Attributes.GetNamedItem("source");
+                            if (sourceAttr != null)
+                                    rc[i] = sourceAttr.Value;
                         }
                         return rc;
                     }
