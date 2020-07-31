@@ -89,11 +89,19 @@
     "dataType": "namespace"
   },
   {
+    "name": "Rhino.Render.ChildSlotNames",
+    "dataType": "namespace"
+  },
+  {
     "name": "Rhino.Render.DataSources",
     "dataType": "namespace"
   },
   {
     "name": "Rhino.Render.Fields",
+    "dataType": "namespace"
+  },
+  {
+    "name": "Rhino.Render.ParameterNames",
     "dataType": "namespace"
   },
   {
@@ -130,6 +138,10 @@
   },
   {
     "name": "Rhino.UI.Controls",
+    "dataType": "namespace"
+  },
+  {
+    "name": "Rhino.UI.Controls.DataSource",
     "dataType": "namespace"
   },
   {
