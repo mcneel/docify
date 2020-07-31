@@ -23,16 +23,19 @@ namespace Docify
 
 
         private const string SourceKey = "source";
+        private const string ExamplesKey = "examples";
         private const string TargetKey = "target";
         private static string ConfigTemplate = $@"# auto-generated {Program.Name} config file. configure for your project
 {{0}}: ""{ProgramConfigs.CurrentPath}""
 {{1}}: ""{ProgramConfigs.CurrentPath}""
-name: ""{{2}}""
+{{2}}: ""{ProgramConfigs.CurrentPath}""
+name: ""{{3}}""
 shortname: ""your project short name""
 description: ""your project description""
 ";
 
         private static string _source = null;
+        private static string _examples = null;
         private static string _target = null;
         private static IDictionary<string, string> _configs = null;
 
@@ -49,6 +52,7 @@ description: ""your project description""
                     string.Format(
                         ConfigTemplate,
                         SourceKey,
+                        ExamplesKey,
                         TargetKey,
                         projectName != string.Empty ? projectName : "your project name"
                         ));
@@ -66,19 +70,15 @@ description: ""your project description""
 
             // make a yaml deserializer
             var deserializer = new YamlDotNet.Serialization.Deserializer();
-            using (var cfgFile = File.OpenText(ConfigFilePath))
+            string configData = File.ReadAllText(ConfigFilePath);
+            try
             {
-                try
-                {
-                    _configs = deserializer.Deserialize<Dictionary<string, string>>(
-                        cfgFile.ReadToEnd()
-                        );
-                }
-                catch (Exception ex)
-                {
-                    Console.Error.WriteLine($"Error reading config file: {ex.Message}");
-                    Environment.Exit(1);
-                }
+                _configs = deserializer.Deserialize<Dictionary<string, string>>(configData);
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error reading config file: {ex.Message}");
+                Environment.Exit(1);
             }
 
 #if DEBUG
@@ -89,6 +89,8 @@ description: ""your project description""
             // remove the known properties
             _configs.TryGetValue(SourceKey, out _source);
             _configs.Remove(SourceKey);
+            _configs.TryGetValue(ExamplesKey, out _examples);
+            _configs.Remove(ExamplesKey);
             _configs.TryGetValue(TargetKey, out _target);
             _configs.Remove(TargetKey);
         }
@@ -107,6 +109,14 @@ description: ""your project description""
                 UpdateConfigs();
 
             return _source;
+        }
+
+        public static string GetExamplesSource()
+        {
+            if (_examples is null)
+                UpdateConfigs();
+
+            return _examples;
         }
 
         public static string GetProjectTarget()

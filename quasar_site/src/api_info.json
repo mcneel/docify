@@ -38251,6 +38251,12 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool UseRenderMeshes",
+        "summary": "Use existing or generate render meshes instead of calling RhinoObject.MeshObjects.",
+        "since": "7.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool UseSimpleDialog",
         "summary": "Determines whether to use the simple or detailed meshing dialog.",
         "since": "6.0",
@@ -43552,7 +43558,7 @@
       },
       {
         "signature": "static Brep[] CreateFromSweep(Curve rail1, Curve rail2, IEnumerable<Curve> shapes, Point3d start, Point3d end, bool closed, double tolerance, SweepRebuild rebuild, int rebuildPointCount, double refitTolerance, bool preserveHeight)",
-        "summary": "Sweep2 function that fits a surface through profile curves that define the surface cross-sections\nand two curves that defines a surface edge.",
+        "summary": "Sweep2 function that fits a surface through profile curves that define the surface cross-sections\nand two curves that defines the surface edges.",
         "since": "6.16",
         "parameters": [
           {
@@ -43627,6 +43633,66 @@
         "returns": "Array of Brep sweep results"
       },
       {
+        "signature": "static Brep[] CreateFromSweep(Curve rail, IEnumerable<Curve> shapes, Point3d startPoint, Point3d endPoint, SweepFrame frameType, Vector3d roadlikeNormal, bool closed, SweepBlend blendType, SweepMiter miterType, double tolerance, SweepRebuild rebuildType, int rebuildPointCount, double refitTolerance)",
+        "summary": "Sweep1 function that fits a surface through a series of profile curves that define the surface cross-sections\nand one curve that defines a surface edge.",
+        "since": "7.0",
+        "parameters": [
+          {
+            "name": "rail",
+            "summary": "Rail to sweep shapes along."
+          },
+          {
+            "name": "shapes",
+            "summary": "Shape curves."
+          },
+          {
+            "name": "startPoint",
+            "summary": "Optional starting point of sweep. Use Point3d.Unset if you do not want to include a start point."
+          },
+          {
+            "name": "endPoint",
+            "summary": "Optional ending point of sweep. Use Point3d.Unset if you do not want to include an end point."
+          },
+          {
+            "name": "frameType",
+            "summary": "The frame type."
+          },
+          {
+            "name": "roadlikeNormal",
+            "summary": "The roadlike normal directoion. Use Vector3d.Unset if the frame type is not set to roadlike."
+          },
+          {
+            "name": "closed",
+            "summary": "Only matters if shapes are closed."
+          },
+          {
+            "name": "blendType",
+            "summary": "The shape blending type."
+          },
+          {
+            "name": "miterType",
+            "summary": "The mitering type."
+          },
+          {
+            "name": "tolerance",
+            "summary": ""
+          },
+          {
+            "name": "rebuildType",
+            "summary": "The rebuild style."
+          },
+          {
+            "name": "rebuildPointCount",
+            "summary": "If rebuild == SweepRebuild.Rebuild, the number of points. Otherwise specify 0."
+          },
+          {
+            "name": "refitTolerance",
+            "summary": "If rebuild == SweepRebuild.Refit, the refit tolerance. Otherwise, specify 0.0"
+          }
+        ],
+        "returns": "Array of Brep sweep results."
+      },
+      {
         "signature": "static Brep[] CreateFromSweepInParts(Curve rail1, Curve rail2, IEnumerable<Curve> shapes, IEnumerable<Point2d> rail_params, bool closed, double tolerance)",
         "summary": "Makes a 2 rail sweep. Like CreateFromSweep but the result is split where parameterization along a rail changes abruptly.",
         "since": "6.0",
@@ -43689,22 +43755,82 @@
         "parameters": [
           {
             "name": "rail",
-            "summary": "Rail to sweep shapes along"
+            "summary": "Rail to sweep shapes along."
           },
           {
             "name": "shapes",
-            "summary": "Shape curves"
+            "summary": "Shape curves."
           },
           {
             "name": "closed",
-            "summary": "Only matters if shapes are closed"
+            "summary": "Only matters if shapes are closed."
           },
           {
             "name": "tolerance",
-            "summary": "Tolerance for fitting surface and rails"
+            "summary": "Tolerance for fitting surface and rails."
           }
         ],
-        "returns": "Array of Brep sweep results"
+        "returns": "Array of Brep sweep results."
+      },
+      {
+        "signature": "static Brep[] CreateFromSweepSegmented(Curve rail, IEnumerable<Curve> shapes, Point3d startPoint, Point3d endPoint, SweepFrame frameType, Vector3d roadlikeNormal, bool closed, SweepBlend blendType, SweepMiter miterType, double tolerance, SweepRebuild rebuildType, int rebuildPointCount, double refitTolerance)",
+        "summary": "Sweep1 function that fits a surface through a series of profile curves that define the surface cross-sections\nand one curve that defines a surface edge. The Segmented version breaks the rail at curvature kinks\nand sweeps each piece separately, then put the results together into a Brep.",
+        "since": "7.0",
+        "parameters": [
+          {
+            "name": "rail",
+            "summary": "Rail to sweep shapes along."
+          },
+          {
+            "name": "shapes",
+            "summary": "Shape curves."
+          },
+          {
+            "name": "startPoint",
+            "summary": "Optional starting point of sweep. Use Point3d.Unset if you do not want to include a start point."
+          },
+          {
+            "name": "endPoint",
+            "summary": "Optional ending point of sweep. Use Point3d.Unset if you do not want to include an end point."
+          },
+          {
+            "name": "frameType",
+            "summary": "The frame type."
+          },
+          {
+            "name": "roadlikeNormal",
+            "summary": "The roadlike normal directoion. Use Vector3d.Unset if the frame type is not set to roadlike."
+          },
+          {
+            "name": "closed",
+            "summary": "Only matters if shapes are closed."
+          },
+          {
+            "name": "blendType",
+            "summary": "The shape blending type."
+          },
+          {
+            "name": "miterType",
+            "summary": "The mitering type."
+          },
+          {
+            "name": "tolerance",
+            "summary": ""
+          },
+          {
+            "name": "rebuildType",
+            "summary": "The rebuild style."
+          },
+          {
+            "name": "rebuildPointCount",
+            "summary": "If rebuild == SweepRebuild.Rebuild, the number of points. Otherwise specify 0."
+          },
+          {
+            "name": "refitTolerance",
+            "summary": "If rebuild == SweepRebuild.Refit, the refit tolerance. Otherwise, specify 0.0"
+          }
+        ],
+        "returns": "Array of Brep sweep results."
       },
       {
         "signature": "static Brep[] CreateFromTaperedExtrude(Curve curveToExtrude, double distance, Vector3d direction, Point3d basePoint, double draftAngleRadians, ExtrudeCornerType cornerType)",
@@ -74384,6 +74510,38 @@
   },
   {
     "namespace": "Rhino.Geometry",
+    "name": "SubDCreationOptions.TextureCoordinateOption",
+    "dataType": "enum",
+    "summary": "Specifies how texture coordinate information is transfered from the mesh to the SubD.",
+    "values": [
+      {
+        "signature": "Unset = 0",
+        "summary": "The option is not set."
+      },
+      {
+        "signature": "None = 1",
+        "summary": "No texture coordianate information is transfered from the mesh."
+      },
+      {
+        "signature": "Automatic = 2",
+        "summary": "If the mesh has a mapping, then TextureCoordinatesOption::CopyMapping is used.\nOtherwise if the mesh has texture coordinates, then TextureCoordinatesOption::CopyCoordinates is used.\nOtherwise TextureCoordinatesOption::Packed is used."
+      },
+      {
+        "signature": "Packed = 3",
+        "summary": "No texture coordianate information is transfered from the mesh.\nThe SubD faces are packed."
+      },
+      {
+        "signature": "CopyMapping = 4",
+        "summary": "Texture coordinates mapping information is copied from the mesh.\nGenerally this is the best choice because common mappings, like planar,\nwill appear as most people expect on the SubD."
+      },
+      {
+        "signature": "CopyCoordinates = 5",
+        "summary": "If a mesh has custom texture coordinates, the custom texture coordinates\nare transfered to the SubD. This requires more memory resources,\nslows subdivision evaluation, often produces unattractive\nresults on n-gons, and distorts the texture when comes from a common mapping\ntechnique, like planar. This option may be useful when the mesh contains only\ntriangles and quads and the custom texture coordinates are of high quality."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Geometry",
     "name": "SubDEdge",
     "dataType": "class",
     "summary": "Single edge of a SubD",
@@ -74443,7 +74601,7 @@
     "namespace": "Rhino.Geometry",
     "name": "SubDEdgeTag",
     "dataType": "enum",
-    "summary": "SubD::EdgeTag identifies the type of subdivision edge.  Different tags use\ndifferent subdivision algorithms to calculate the subdivision point.",
+    "summary": "ON_SubDEdgeTag identifies the type of subdivision edge.  Different tags use\ndifferent subdivision algorithms to calculate the subdivision point.",
     "values": [
       {
         "signature": "Unset = 0",
@@ -74451,15 +74609,15 @@
       },
       {
         "signature": "Smooth = 1",
-        "summary": "At least one the edge's vertices must be tagged as ON_SubD::VertexTag::Smooth.\nThe edge must have exactly two faces.\nThe edge's subdivision point is (A1 + A2 + S(f1) + S(f2))/4, where\nAi = ON_SubDEdge.Vertex(i)->ControlNetPoint() and\nS(fi) = ON_SubDEdge.Face(i)->SubdivisionPoint()."
+        "summary": "At least one the edge's vertices must be tagged as ON_SubDVertexTag::Smooth.\nThe edge must have exactly two faces.\nThe edge's subdivision point is (A1 + A2 + S(f1) + S(f2))/4, where\nAi = ON_SubDEdge.Vertex(i)->ControlNetPoint() and\nS(fi) = ON_SubDEdge.Face(i)->SubdivisionPoint()."
       },
       {
         "signature": "Crease = 2",
-        "summary": "Both of the edge's vertices must be tagged as ON_SubD::VertexTag::Dart,\nON_SubD::VertexTag::Crease, or ON_SubD::VertexTag::Corner.\n(The vertex tags can be different.) The edge can have any number of faces.\nThe edge's subdivision point is (A1+A2)/2 where Ai = ON_SubDEdge.Vertex(i)->ControlNetPoint()."
+        "summary": "Both of the edge's vertices must be tagged as ON_SubDVertexTag::Dart,\nON_SubDVertexTag::Crease, or ON_SubDVertexTag::Corner.\n(The vertex tags can be different.) The edge can have any number of faces.\nThe edge's subdivision point is (A1+A2)/2 where Ai = ON_SubDEdge.Vertex(i)->ControlNetPoint()."
       },
       {
         "signature": "SmoothX = 4",
-        "summary": "This tag appears only on level 0 edges that have exactly two neighboring faces\nand both of the edge's vertices are tagged as ON_SubD::VertexTag::Dart,\nON_SubD::VertexTag::Crease, or ON_SubD::VertexTag::Corner.\nThe level 1 subdivision point for a level 0 edge tagged as ON_SubD::EdgeTag::SmoothX\nis the standard smooth edge subdivision point.\nWhen subdivided, the new subdivision vertex will be tagged\nas ON_SubD::VertexTag::Smooth and the subdivided edges will\nbe tagged as ON_SubD::EdgeTag::Smooth.\nThe tag ON_SubD::EdgeTag::SmoothX can only appear on a level 0 edge.\nThis tag exists because the ON_SubD subdivision\nalgorithm requires any edge with both end vertices\ntagged as not smooth must be subdivided at its midpoint.\nSector iterators treat \"SmoothX\" edges as smooth.\nBoth edge m_sector_coefficient[] values must be set so the smooth subdivided edges will be valid."
+        "summary": "This tag appears only on level 0 edges that have exactly two neighboring faces\nand both of the edge's vertices are tagged as ON_SubDVertexTag::Dart,\nON_SubDVertexTag::Crease, or ON_SubDVertexTag::Corner.\nThe level 1 subdivision point for a level 0 edge tagged as ON_SubDEdgeTag::SmoothX\nis the standard smooth edge subdivision point.\nWhen subdivided, the new subdivision vertex will be tagged\nas ON_SubDVertexTag::Smooth and the subdivided edges will\nbe tagged as ON_SubDEdgeTag::Smooth.\nThe tag ON_SubDEdgeTag::SmoothX can only appear on a level 0 edge.\nThis tag exists because the ON_SubD subdivision\nalgorithm requires any edge with both end vertices\ntagged as not smooth must be subdivided at its midpoint.\nSector iterators treat \"SmoothX\" edges as smooth.\nBoth edge m_sector_coefficient[] values must be set so the smooth subdivided edges will be valid."
       }
     ]
   },
@@ -74677,7 +74835,7 @@
     "namespace": "Rhino.Geometry",
     "name": "SubDVertexTag",
     "dataType": "enum",
-    "summary": "SubD::VertexTag identifies the type of subdivision vertex.  Different tags use\ndifferent subdivision algorithms to determine where the subdivision point and\nlimit point are located.  There are toplological constraints that restrict which\ntags can be assigned.",
+    "summary": "ON_SubDVertexTag identifies the type of subdivision vertex.  Different tags use\ndifferent subdivision algorithms to determine where the subdivision point and\nlimit point are located.  There are toplological constraints that restrict which\ntags can be assigned.",
     "values": [
       {
         "signature": "Unset = 0",
@@ -74685,11 +74843,11 @@
       },
       {
         "signature": "Smooth = 1",
-        "summary": "Must be an interior vertex.\nAll edges attached to a smooth vertex must be tagged as ON_SubD::EdgeTag::Smooth\nand must have 2 faces."
+        "summary": "Must be an interior vertex.\nAll edges attached to a smooth vertex must be tagged as ON_SubDEdgeTag::Smooth\nand must have 2 faces."
       },
       {
         "signature": "Crease = 2",
-        "summary": "Can be an interior or a boundary vertex.\nExactly two edges ending at a crease vertex must be tagged as ON_SubD::EdgeTag::Crease and may\nhave 1 or 2 faces.\nAll other edges ending at a crease must be tagged as tagON_SubD::EdgeTag::Smooth and have 2 faces.\nBelow P = ON_SubDVertex.ControlNetPoint() and Ai = ON_SubDVertex.Edge(i)->OtherEndVertex()->ControlNetPoint().\nA crease vertex subdivision point is (6*P + A1 + A2)/8.\nA crease vertex limit surface point is (4*P + A1 + A2)/6."
+        "summary": "Can be an interior or a boundary vertex.\nExactly two edges ending at a crease vertex must be tagged as ON_SubDEdgeTag::Crease and may\nhave 1 or 2 faces.\nAll other edges ending at a crease must be tagged as tagON_SubD::EdgeTag::Smooth and have 2 faces.\nBelow P = ON_SubDVertex.ControlNetPoint() and Ai = ON_SubDVertex.Edge(i)->OtherEndVertex()->ControlNetPoint().\nA crease vertex subdivision point is (6*P + A1 + A2)/8.\nA crease vertex limit surface point is (4*P + A1 + A2)/6."
       },
       {
         "signature": "Corner = 3",
@@ -74697,7 +74855,7 @@
       },
       {
         "signature": "Dart = 4",
-        "summary": "Must be an interior vertex.\nEvery edge attached to a dart vertex must have 2 faces.\nExactly one edge attached to a dart vertex must be tagged as ON_SubD::EdgeTag::Crease\nand every other attached edge must be tagged as tagON_SubD::EdgeTag::smooth."
+        "summary": "Must be an interior vertex.\nEvery edge attached to a dart vertex must have 2 faces.\nExactly one edge attached to a dart vertex must be tagged as ON_SubDEdgeTag::Crease\nand every other attached edge must be tagged as ON_SubDEdgeTag::smooth."
       }
     ]
   },
@@ -76217,6 +76375,61 @@
     "dataType": "class",
     "summary": "Provides a base class to brep faces and other surface proxies.",
     "baseclass": "Rhino.Geometry.Surface"
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "SweepBlend",
+    "dataType": "enum",
+    "summary": "Blend types for creating swept surfaces",
+    "since": "7.0",
+    "values": [
+      {
+        "signature": "Local = 0",
+        "summary": "The sweep stays constant at the ends and changes more rapidly in the middle."
+      },
+      {
+        "signature": "Global = 1",
+        "summary": "The sweep is linearly blended from one end to the other, creating sweeps that taper from one cross-section curve to the other."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "SweepFrame",
+    "dataType": "enum",
+    "summary": "Frame types for creating swept surfaces",
+    "since": "7.0",
+    "values": [
+      {
+        "signature": "Freeform = 0",
+        "summary": "The cross-section curve rotates to maintain its angle to the rail throughout the sweep."
+      },
+      {
+        "signature": "Roadlike = 1",
+        "summary": "Specify an axis for calculating the 3-D rotation of the cross-section."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "SweepMiter",
+    "dataType": "enum",
+    "summary": "Miter types for creating swept surfaces",
+    "since": "7.0",
+    "values": [
+      {
+        "signature": "None = 0",
+        "summary": "No mitering"
+      },
+      {
+        "signature": "Trimmed = 1",
+        "summary": "If the sweep creates a polysurface with kinks, the component surfaces will be trimmed."
+      },
+      {
+        "signature": "Untrimmed = 2",
+        "summary": "If the sweep creates a polysurface with kinks, the component surfaces will be untrimmed."
+      }
+    ]
   },
   {
     "namespace": "Rhino.Geometry",

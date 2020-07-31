@@ -7,11 +7,13 @@ namespace Docify.Parse
 {
     class JsonBuilder
     {
+        static bool _writingApi = true;
         public static void Write(
             Dictionary<string, ParsedType> namespaces,
             Dictionary<string, List<ParsedType>> publicTypes,
             string path)
         {
+            _writingApi = true;
             bool asJavascript = path.EndsWith(".js", StringComparison.OrdinalIgnoreCase);
             StringBuilder content = new StringBuilder();
 
@@ -97,7 +99,9 @@ namespace Docify.Parse
                         else
                             sb.Append("\\n");
                     }
-                    string line = lines[i].Trim();
+                    string line = lines[i];
+                    if(_writingApi)
+                        line = line.Trim();
                     line = line.Replace("\\", "\\\\");
                     if (!asJavascript)
                     {
@@ -406,6 +410,7 @@ namespace Docify.Parse
             string examplesBaseDirectory,
             string outputJsonFile)
         {
+            _writingApi = false;
             Dictionary<string, List<ParsedMember>> examples = new Dictionary<string, List<ParsedMember>>();
             foreach (var typelist in publicTypes.Values)
             {
@@ -435,8 +440,16 @@ namespace Docify.Parse
                 }
             }
 
+            bool asJavascript = outputJsonFile.EndsWith(".js", StringComparison.OrdinalIgnoreCase);
             StringBuilder content = new StringBuilder();
-            content.AppendLine("var Examples = [");
+            if (asJavascript)
+            {
+                content.AppendLine("var Examples = [");
+            }
+            else
+            {
+                content.AppendLine("[");
+            }
             bool addComma = false;
             var keys = new List<string>(examples.Keys);
             // sort so we get a consistent order
@@ -459,14 +472,20 @@ namespace Docify.Parse
                     content.AppendLine(",");
                 addComma = true;
                 content.AppendLine("  {");
-                content.AppendLine($"    name: '{name}',");
-                content.AppendLine($"    code: `{code}`,");
-                content.AppendLine("    members: [");
+                content.AppendLine(KeyValString(4, "name", name, asJavascript) + ",");
+                content.AppendLine(KeyValString(4, "code", code, asJavascript) + ",");
+                if (asJavascript)
+                    content.AppendLine("    members: [");
+                else
+                    content.AppendLine("    \"members\": [");
                 for (int i = 0; i < sample.Count; i++)
                 {
                     if (i > 0)
                         content.AppendLine(",");
-                    content.Append($"      ['{sample[i].ParentType.FullName}', '{sample[i].Signature(false)}']");
+                    if (asJavascript)
+                        content.Append($"      ['{sample[i].ParentType.FullName}', '{sample[i].Signature(false)}']");
+                    else
+                        content.Append($"      [\"{sample[i].ParentType.FullName}\", \"{sample[i].Signature(false)}\"]");
                 }
                 content.AppendLine();
                 content.AppendLine("    ]");
@@ -475,7 +494,8 @@ namespace Docify.Parse
             content.AppendLine();
             content.AppendLine("]");
             content.AppendLine();
-            content.AppendLine("export { Examples }");
+            if (asJavascript)
+                content.AppendLine("export { Examples }");
             System.IO.File.WriteAllText(outputJsonFile, content.ToString());
         }
     }
