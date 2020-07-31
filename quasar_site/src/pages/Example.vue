@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Examples } from '../api_examples.json'
+import Examples from '../api_examples.json'
 
 export default {
   data () {

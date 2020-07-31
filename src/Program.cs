@@ -50,17 +50,18 @@ namespace Docify
                     Console.Error.WriteLine("Can not determine source directory from configs");
                     Environment.Exit(1);
                 }
+                var examplesDir = ProgramConfigs.GetExamplesSource();
                 var outputDir = ProgramConfigs.GetProjectTarget();
                 // write project info
                 var configs = ProgramConfigs.GetConfigs();
                 ProjectConfigs.WriteProjectInfo(configs, outputDir);
                 // build the docs data file
                 Console.WriteLine($"Building docs:\n{source} => {outputDir}");
-                Docify(source, outputDir);
+                Docify(source, examplesDir, outputDir);
             }
         }
 
-        static void Docify(string projDir, string outputDir)
+        static void Docify(string projDir, string examplesDir, string outputDir)
         {
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
@@ -148,10 +149,10 @@ namespace Docify
             string outputDataFile = Path.Combine(outputDir, ProgramConfigs.OutputDataFile);
             JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputDataFile);
             // write the samples if sample base dir is provided
-            if (outputDir != null && string.Empty != outputDir)
+            if (!string.IsNullOrWhiteSpace(examplesDir) && Directory.Exists(examplesDir))
             {
                 outputDataFile = Path.Combine(outputDir, ProgramConfigs.OutputExamplesDataFile);
-                JsonBuilder.WriteExamples(publicTypesByNamespace, outputDir, outputDataFile);
+                JsonBuilder.WriteExamples(publicTypesByNamespace, examplesDir, outputDataFile);
             }
         }
 
