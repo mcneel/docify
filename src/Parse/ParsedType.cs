@@ -77,7 +77,15 @@ namespace Docify.Parse
             get
             {
                 if (_namespaceType != null)
-                    return _namespaceType.Name.ToString();
+                {
+                    string rc = _namespaceType.Name.ToString();
+                    var parent = _namespaceType.Parent as NamespaceDeclarationSyntax;
+                    if( parent!=null )
+                    {
+                        rc = parent.Name.ToString() + "." + rc;
+                    }
+                    return rc;
+                }
                 return GetFullContainerName(_declarationType);
             }
         }
