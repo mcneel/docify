@@ -62,7 +62,8 @@
 
 <script>
 import ViewModel from '../ViewModel'
-import { Examples } from '../RhinoCommonExamples'
+import Examples from '../api_examples.json'
+import ProjInfo from '../proj_info.json'
 
 export default {
   props: {
@@ -83,7 +84,7 @@ export default {
     const members = this.getMembers(node, memberName)
     const desc = node.name + '.' + this.getTitle(node, members)
     return {
-      title: 'RhinoCommon API - ' + node.name + ' ' + node.dataType,
+      title: ProjInfo.name + ' API - ' + node.name + ' ' + node.dataType,
       meta: {
         description: { name: 'description', content: desc }
       }

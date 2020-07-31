@@ -27,6 +27,7 @@ export default {
     const r = ref.split('_')
     let t
 
+    // examples are from legacy rhinocommon api urls built on sandcastle
     switch (r[0]) {
       case 'T': // T_Rhino_AngleUnitSystem.htm
       case 'N': // N_Rhino.htm

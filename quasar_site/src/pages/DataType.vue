@@ -55,6 +55,7 @@
 
 <script>
 import ViewModel from '../ViewModel'
+import ProjInfo from '../proj_info.json'
 
 export default {
   props: {
@@ -82,7 +83,7 @@ export default {
       desc += ': ' + node.summary
     }
     return {
-      title: 'RhinoCommon API - ' + node.name + ' ' + node.dataType,
+      title: ProjInfo.name + ' API - ' + node.name + ' ' + node.dataType,
       meta: {
         description: { name: 'description', content: desc }
       }

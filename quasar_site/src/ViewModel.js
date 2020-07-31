@@ -1,4 +1,4 @@
-import RhinoCommonApi from './RhinoCommonApi.json'
+import ApiInfo from './api_info.json'
 
 const DataTypes = {
   NAMESPACE: 'namespace',
@@ -26,7 +26,7 @@ const ViewModel = {
     {
       // console.log('creating viewodel')
       const namespaceDict = {}
-      RhinoCommonApi.forEach(type => {
+      ApiInfo.forEach(type => {
         let summary = ''
         if (type.summary) summary = type.summary
         if (type.dataType === DataTypes.NAMESPACE) {
@@ -64,7 +64,7 @@ const ViewModel = {
   getTypeMap () {
     if (_typemap) return _typemap
     const typemap = {}
-    RhinoCommonApi.forEach(type => {
+    ApiInfo.forEach(type => {
       if (type.dataType !== DataTypes.NAMESPACE) {
         typemap[type.name] = type
       }
@@ -78,7 +78,7 @@ const ViewModel = {
   findNodeByPath (path) {
     path = path.toLowerCase()
     let found = null
-    RhinoCommonApi.forEach(type => {
+    ApiInfo.forEach(type => {
       if (found) return
       if (this.itemPath(type) === path) found = type
     })
@@ -146,7 +146,7 @@ const ViewModel = {
       if (testVersion[0] === existingVersion[0] && testVersion[1] < existingVersion[1]) return false
       return true
     }
-    RhinoCommonApi.forEach(type => {
+    ApiInfo.forEach(type => {
       if (type.constructors) {
         type.constructors.forEach(c => {
           if (c.since && sinceIsGreater(c.since, since)) since = c.since
@@ -167,7 +167,7 @@ const ViewModel = {
   },
   getFilteredSet (test) {
     const api = []
-    RhinoCommonApi.forEach(type => {
+    ApiInfo.forEach(type => {
       const localApi = {
         name: type.name,
         dataType: type.dataType,

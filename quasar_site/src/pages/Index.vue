@@ -13,6 +13,7 @@
 
 <script>
 import ViewModel from '../ViewModel'
+import ProjInfo from '../proj_info.json'
 
 export default {
   props: {
@@ -26,9 +27,9 @@ export default {
   },
   meta () {
     return {
-      title: 'RhinoCommon API',
+      title: ProjInfo.name + ' API',
       meta: {
-        description: { name: 'description', content: 'API Reference for types, members, and examples in RhinoCommon' }
+        description: { name: 'description', content: ProjInfo.description }
       }
     }
   },
