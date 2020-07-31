@@ -62,7 +62,7 @@
 
 <script>
 import ViewModel from '../ViewModel'
-import { Examples } from '../api_examples.json'
+import Examples from '../api_examples.json'
 import ProjInfo from '../proj_info.json'
 
 export default {
