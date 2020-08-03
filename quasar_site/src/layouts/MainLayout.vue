@@ -7,9 +7,17 @@
           <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'"/>
         </q-toolbar-title>
         <q-btn flat round
+          :to="baseUrl + 'search'"
+          icon="search"
+        >
+          <q-tooltip>Search</q-tooltip>
+        </q-btn>
+        <q-btn flat round
           @click="$q.dark.toggle()"
           :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'"
-        />
+        >
+          <q-tooltip>Toggle dark mode</q-tooltip>
+        </q-btn>
         <q-btn dense flat no-caps size="md" class="q-pa-sm"
           :label="version"
           :to="baseUrl + 'whatsnew/' + version"

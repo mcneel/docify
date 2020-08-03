@@ -12,6 +12,7 @@ const DataTypes = {
 const _selectedItemChangedCallbacks = {}
 let _viewmodel = null
 let _typemap = null
+let _searchInstance = null
 
 const ViewModel = {
   itemPath (item) {
@@ -246,6 +247,64 @@ const ViewModel = {
       return count
     }
     return this.getFilteredSet(test)
+  },
+  getSearchInstance () {
+    return _searchInstance
+  },
+  setSearchInstance (searchInstance) {
+    _searchInstance = searchInstance
+  },
+  getSearchList () {
+    const items = []
+    ApiInfo.forEach(entry => {
+      // skip namespaces
+      if (entry.dataType === 'namespace') return
+      const dataTypeUrl = (entry.namespace + '.' + entry.name).toLowerCase()
+      const typename = entry.namespace + '.' + entry.name
+      let node = {
+        typename: typename,
+        member: entry.name,
+        type: entry.dataType,
+        url: dataTypeUrl
+      }
+      if (entry.summary) node.summary = entry.summary
+      items.push(node)
+      if (entry.properties) {
+        entry.properties.forEach(prop => {
+          const chunks = prop.signature.split(' ')
+          node = { typename: typename, member: chunks[chunks.length - 1] }
+          if (items[items.length - 1].member === node.member) return
+          node.type = 'property'
+          node.url = dataTypeUrl + '/' + node.member.toLowerCase()
+          if (prop.summary) node.summary = prop.summary
+          items.push(node)
+        })
+      }
+      if (entry.methods) {
+        entry.methods.forEach(method => {
+          let chunks = method.signature.split('(')
+          chunks = chunks[0].split(' ')
+          node = { typename: typename, member: chunks[chunks.length - 1] }
+          if (items[items.length - 1].member === node.member) return
+          node.type = 'method'
+          node.url = dataTypeUrl + '/' + node.member.toLowerCase()
+          if (method.summary) node.summary = method.summary
+          items.push(node)
+        })
+      }
+      if (entry.events) {
+        entry.events.forEach(event => {
+          const chunks = event.signature.split(' ')
+          node = { typename: typename, member: chunks[chunks.length - 1] }
+          if (items[items.length - 1].member === node.member) return
+          node.type = 'event'
+          node.url = dataTypeUrl + '/' + node.member.toLowerCase()
+          if (event.summary) node.summary = event.summary
+          items.push(node)
+        })
+      }
+    })
+    return items
   }
 }
 
