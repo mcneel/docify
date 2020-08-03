@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="q-pa-xs">
-    <q-breadcrumbs v-if="vm.dataType !== 'namespace'" class="q-mb-sm" active-color="accent">
+    <q-breadcrumbs v-if="vm.namespace" class="q-mb-sm" active-color="accent">
       <q-breadcrumbs-el icon="home" :to="baseUrl" />
       <q-breadcrumbs-el :label="vm.namespace" :to="baseUrl + vm.namespace.toLowerCase()" />
       <q-breadcrumbs-el :label="title" />
