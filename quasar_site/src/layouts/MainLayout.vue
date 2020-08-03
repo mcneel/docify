@@ -31,12 +31,8 @@
       show-if-above
       bordered
     >
-      <q-input class="q-pa-md q-gutter-sm" ref="filter" filled v-model="filter" label="Filter">
-        <template v-slot:append>
-          <q-icon v-if="filter !== ''" name="clear" class="cursor-pointer" @click="resetFilter" />
-        </template>
-      </q-input>
       <q-tree
+        class="q-pt-sm"
         :nodes="api"
         accordion
         node-key="path"
@@ -44,8 +40,6 @@
         :selected.sync="selectedNode"
         :expanded.sync="expanded"
         :duration="200"
-        :filter="filter"
-        :filter-method="nodeFilter"
       />
     </q-drawer>
 
@@ -73,7 +67,6 @@ export default {
       watcherEnabled: true,
       version: mostRecent,
       model: null,
-      filter: '',
       expanded: []
     }
   },
@@ -85,24 +78,6 @@ export default {
       this.watcherEnabled = false
       this.selectedNode = ViewModel.itemPath(item)
       this.watcherEnabled = true
-    },
-    nodeFilter (node, filter) {
-      const filt = filter.toLowerCase()
-      const passesTest = node.label && node.label.toLowerCase().indexOf(filt) > -1
-      if (passesTest && !node.children) {
-        const ns = node.path.substring(0, node.path.length - node.label.length - 1)
-        let pushit = true
-        this.expanded.forEach(name => {
-          if (name === ns) pushit = false
-        })
-        if (pushit) this.expanded.push(ns)
-      }
-      return passesTest
-    },
-    resetFilter () {
-      this.filter = ''
-      this.expanded = []
-      this.$refs.filter.focus()
     }
   },
   watch: {

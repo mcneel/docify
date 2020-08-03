@@ -1,5 +1,11 @@
 <template>
   <q-page>
+    <div class="q-pa-xs">
+    <q-breadcrumbs v-if="vm.dataType !== 'namespace'" class="q-mb-sm" active-color="accent">
+      <q-breadcrumbs-el icon="home" :to="baseUrl" />
+      <q-breadcrumbs-el :label="vm.namespace" :to="baseUrl + vm.namespace.toLowerCase()" />
+      <q-breadcrumbs-el :label="title" />
+    </q-breadcrumbs>
     <h1>{{title}} {{vm.dataType}}</h1>
     <p>{{vm.summary}}</p>
     <p v-if="vm.remarks">{{vm.remarks}}</p>
@@ -15,7 +21,7 @@
       <br>
       <i>{{title}}: <router-link class="routerlink" :to="baseUrl+'references/'+namespace.toLowerCase() + '.' + title.toLowerCase()">references</router-link></i>
     </p>
-    <q-list bordered class="rounded-borders q-mt-md">
+    <q-list class="rounded-borders q-mt-md">
       <q-expansion-item v-for="section in memberSections"
         :key="section.title"
         switch-toggle-side
@@ -50,6 +56,7 @@
         </q-item-section>
       </q-item>
     </q-list>
+    </div>
   </q-page>
 </template>
 

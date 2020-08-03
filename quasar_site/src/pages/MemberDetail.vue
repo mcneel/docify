@@ -1,5 +1,12 @@
 <template>
   <q-page>
+    <div class="q-pa-xs">
+    <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
+      <q-breadcrumbs-el icon="home" :to="baseUrl" />
+      <q-breadcrumbs-el :label="datatype.namespace" :to="baseUrl + datatype.namespace.toLowerCase()" />
+      <q-breadcrumbs-el :label="datatype.name" :to="(baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()" />
+      <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
+    </q-breadcrumbs>
     <h1>{{getTitle(datatype, members)}}</h1>
     <p v-if="datatype">
       Class:&nbsp;
@@ -57,6 +64,7 @@
         </q-btn>
       </q-item>
     </q-list>
+    </div>
   </q-page>
 </template>
 
