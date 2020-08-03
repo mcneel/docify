@@ -4,7 +4,9 @@
       <q-input
         outlined
         v-model="searchText"
-        label="search">
+        label="search"
+        debounce="200"
+      >
         <template v-slot:append>
           <q-icon name="search"/>
         </template>
@@ -50,7 +52,6 @@ export default {
   watch: {
     searchText (val) {
       this.search(val)
-      this.basic = val.length > 0
     }
   },
   methods: {
@@ -62,7 +63,7 @@ export default {
         const options = {
           includeScore: true,
           keys: [
-            { name: 'typename', weight: 1.5 },
+            { name: 'typename', weight: 1.0 },
             { name: 'member', weight: 1.0 }
           ]
         }
@@ -72,11 +73,11 @@ export default {
       }
       const timeBuild = performance.now()
       const result = fuse.search(text)
-      console.log(result)
+      // console.log(result)
       const timeEnd = performance.now()
       console.log(`build time ${timeBuild - timeStart} ms`)
       console.log(`search time ${timeEnd - timeBuild} ms`)
-      let count = 20
+      let count = 15
       if (result.length < count) count = result.length
       const rc = []
       for (let i = 0; i < count; i++) {
