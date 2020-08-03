@@ -16,6 +16,7 @@ const routes = [
     props: apiProps,
     children: [
       { path: '', component: () => import('pages/Index.vue'), props: apiProps },
+      { path: 'search', component: () => import('pages/Search.vue') },
       { path: 'examples/:example', component: () => import('pages/Example.vue') },
       { path: 'whatsnew/:version', component: () => import('pages/WhatsNew.vue'), props: apiProps },
       { path: 'references/:datatype', component: () => import('pages/References.vue'), props: apiProps },
