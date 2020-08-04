@@ -106,10 +106,14 @@ export default {
 
 <style>
 body.body--dark, .q-list--dark, .q-item--dark {
-  color: #c5c5c5;
+  color: #e6e6e6;
 }
 
 a.routerlink {
-  color: #9C27B0;
+  color: #518ae7;
+}
+
+.q-item__label--caption {
+  color: rgba(0,0,0,0.75);
 }
 </style>
