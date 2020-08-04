@@ -41,8 +41,8 @@ const ViewModel = {
           const item = {
             label: type.name,
             path: this.itemPath(type),
-            summary: summary,
-            icon: this.icon(type.dataType)
+            summary: summary
+            // icon: this.icon(type.dataType)
           }
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
