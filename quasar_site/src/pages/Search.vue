@@ -6,6 +6,7 @@
         v-model="searchText"
         label="search"
         debounce="200"
+        autofocus
       >
         <template v-slot:append>
           <q-icon name="search"/>
