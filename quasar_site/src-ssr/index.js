@@ -15,13 +15,10 @@ const express = require('express')
 const compression = require('compression')
 const NodeCache = require('node-cache')
 
-// const http = require('http')
-
-const
-  ssr = require('quasar-ssr'),
-  extension = require('./extension'),
-  app = express(),
-  port = process.env.PORT || 3000
+const ssr = require('quasar-ssr')
+const extension = require('./extension')
+const app = express()
+const port = process.env.PORT || 3000
 
 const serve = (path, cache) => express.static(ssr.resolveWWW(path), {
   maxAge: cache ? 1000 * 60 * 60 * 24 * 30 : 0
@@ -44,7 +41,7 @@ app.use(ssr.resolveUrl('/'), serve('.', true))
 extension.extendApp({ app, ssr })
 
 // this should be last get(), rendering with SSR
-app.get('*', (req, res) => {
+app.get(ssr.resolveUrl('*'), (req, res) => {
   const cachedResult = cache.get(req.url)
   if (cachedResult) {
     // console.log('cache hit ' + req.url)
@@ -89,10 +86,15 @@ app.get('*', (req, res) => {
     if (err) {
       if (err.url) {
         res.redirect(err.url)
-      } else if (err.code === 404) {
+      }
+      else if (err.code === 404) {
+        // Should reach here only if no "catch-all" route
+        // is defined in /src/routes
         res.status(404).send('404 | Page Not Found')
-      } else {
-        // Render Error Page or Redirect
+      }
+      else {
+        // Render Error Page or
+        // create a route (/src/routes) for an error page and redirect to it
         res.status(500).send('500 | Internal Server Error')
         if (ssr.settings.debug) {
           console.error(`500 on ${req.url}`)
@@ -100,7 +102,8 @@ app.get('*', (req, res) => {
           console.error(err.stack)
         }
       }
-    } else {
+    }
+    else {
       res.send(html)
       cache.set(req.url, html)
       // console.log('caching ' + req.url)
@@ -110,36 +113,4 @@ app.get('*', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server listening at port ${port}`)
-
-  // The following could be used to "warm" the cache though
-  // it causes the server to be unresponsive for the first
-  // minute or so of start-up. There's most likely a much
-  // better way
-  /*
-  const getData = {
-    hostname: 'localhost',
-    port: port,
-    path: '/',
-    agent: false // Create a new agent just for this one request
-  }
-  http.get(getData, response => {
-    // do nothing
-  })
-
-  Api.forEach(type => {
-    const cacheUrl = '/' + type.name.toLowerCase()
-    console.log('attempt to get ' + cacheUrl)
-    const cacheData = {
-      hostname: 'localhost',
-      port: port,
-      path: cacheUrl,
-      agent: false // Create a new agent just for this one request
-    }
-    http.get(cacheData, response => {
-      // do nothing
-    }).on('error', (e) => {
-      console.error(`Got error: ${e.message}`)
-    })
-  })
-  */
 })
