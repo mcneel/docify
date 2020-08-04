@@ -28,7 +28,7 @@
       :label="section.title"
       :content-inset-level="1"
       :id="anchorId(section)"
-      header-class="bg-primary text-white"
+      header-class="bg-secondary text-white"
     >
       <q-list>
         <div v-for="(member, index) in section.items" :key="index">
