@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="q-pa-xs">
+    <div class="q-pa-sm">
     <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
       <q-breadcrumbs-el icon="home" :to="baseUrl" />
       <q-breadcrumbs-el :label="datatype.namespace" :to="baseUrl + datatype.namespace.toLowerCase()" />
@@ -14,10 +14,8 @@
         {{datatype.namespace}}.{{datatype.name}}
       </router-link>
     </p>
-    <q-list v-for="(member, index) in members.items"
-      :key="index"
-      bordered
-      class="rounded-borders q-mt-md">
+    <q-list class="q-mt-md">
+      <div v-for="(member, index) in members.items" :key="index">
       <q-item>
         <q-item-section>
           <q-item-label v-if="member.deprecated" class="light-dimmed">
@@ -63,6 +61,8 @@
           Example
         </q-btn>
       </q-item>
+      <q-separator spaced inset />
+      </div>
     </q-list>
     </div>
   </q-page>

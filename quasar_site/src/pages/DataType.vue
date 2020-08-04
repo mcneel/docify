@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="q-pa-xs">
+    <div class="q-pa-sm">
     <q-breadcrumbs v-if="vm.namespace" class="q-mb-sm" active-color="accent">
       <q-breadcrumbs-el icon="home" :to="baseUrl" />
       <q-breadcrumbs-el :label="vm.namespace" :to="baseUrl + vm.namespace.toLowerCase()" />
@@ -21,42 +21,46 @@
       <br>
       <i>{{title}}: <router-link class="routerlink" :to="baseUrl+'references/'+namespace.toLowerCase() + '.' + title.toLowerCase()">references</router-link></i>
     </p>
-    <q-list class="rounded-borders q-mt-md">
-      <q-expansion-item v-for="section in memberSections"
-        :key="section.title"
-        switch-toggle-side
-        :value="section.expanded"
-        :label="section.title"
-        :content-inset-level="1"
-        :id="anchorId(section)"
-      >
-        <q-item v-for="(member, index) in section.items" :key="index"
-          :clickable="!section.values"
-          :to="memberUrl(section, member)"
-        >
-          <q-item-section :class="memberClass(member)">
-            <q-item-label>
-              {{memberName(member, section)}}
-              <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
-                <q-icon name="mdi-file-tree"/>
-                <q-tooltip>From {{member.parent}}</q-tooltip>
-              </q-badge>
-            </q-item-label>
-            <q-item-label caption class="on-right">
-              {{member.summary}}
-            </q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-expansion-item>
-      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
-        <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
-        <q-item-section>
-          <q-item-label>{{item.label}}</q-item-label>
-          <q-item-label caption>{{item.summary}}</q-item-label>
-        </q-item-section>
-      </q-item>
-    </q-list>
-    </div>
+    <q-expansion-item v-for="section in memberSections"
+      :key="section.title"
+      switch-toggle-side
+      :value="section.expanded"
+      :label="section.title"
+      :content-inset-level="1"
+      :id="anchorId(section)"
+      header-class="bg-primary text-white"
+    >
+      <q-list>
+        <div v-for="(member, index) in section.items" :key="index">
+          <q-item
+            :clickable="!section.values"
+            :to="memberUrl(section, member)"
+          >
+            <q-item-section :class="memberClass(member)">
+              <q-item-label :class="section.values ? '' : 'text-accent'">
+                <b>{{memberName(member, section)}}</b>&nbsp;
+                <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
+                  <q-icon name="mdi-file-tree"/>
+                  <q-tooltip>From {{member.parent}}</q-tooltip>
+                </q-badge>
+              </q-item-label>
+              <q-item-label caption class="on-right">
+                {{member.summary}}
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-separator spaced inset />
+        </div>
+      </q-list>
+    </q-expansion-item>
+    <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
+      <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
+      <q-item-section>
+        <q-item-label class="text-accent"><b>{{item.label}}</b></q-item-label>
+        <q-item-label caption>{{item.summary}}</q-item-label>
+      </q-item-section>
+    </q-item>
+  </div>
   </q-page>
 </template>
 

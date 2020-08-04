@@ -4,7 +4,7 @@
       <q-item clickable v-for="item in vm" :key="item.label" @click="setSelectedItem(item.path)">
         <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
         <q-item-section>
-          <q-item-label>{{item.label}}</q-item-label>
+          <q-item-label class="text-accent"><b>{{item.label}}</b></q-item-label>
           <q-item-label caption>{{item.summary}}</q-item-label>
         </q-item-section>
       </q-item>
