@@ -16,7 +16,7 @@
     </p>
     <q-list>
       <div v-for="(member, index) in members.items" :key="index">
-      <q-item class="q-pb-none">
+      <q-item class="q-pb-none q-pl-none">
         <q-item-section>
           <q-item-label v-if="member.deprecated" class="light-dimmed">
             {{member.signature}}
@@ -31,7 +31,7 @@
           </q-item-label>
         </q-item-section>
       </q-item>
-      <q-item :inset-level="0.5" class="q-pt-none">
+      <q-item :inset-level="0.25" class="q-pt-none">
         <q-item-section>
           <q-item-label caption class="on-right">
             <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{member.deprecated}}
