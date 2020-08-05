@@ -42,7 +42,6 @@ const ViewModel = {
             label: type.name,
             path: this.itemPath(type),
             summary: summary
-            // icon: this.icon(type.dataType)
           }
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
@@ -86,29 +85,11 @@ const ViewModel = {
     return found
   },
   setSelectedItem (item) {
-    const node = this.findNodeByPath(item)
+    const node = item.dataType ? item : this.findNodeByPath(item)
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
         callback(node)
       }
-    }
-  },
-  icon (dataType) {
-    switch (dataType) {
-      case DataTypes.CLASS:
-        return 'mdi-alpha-c-circle-outline'
-      case DataTypes.ENUM:
-        return 'mdi-alpha-e-box-outline'
-      case DataTypes.EVENT:
-        return 'mdi-alpha-e-circle-outline'
-      case DataTypes.INTERFACE:
-        return 'mdi-alpha-i-circle-outline'
-      case DataTypes.STRUCT:
-        return 'mdi-alpha-s-circle-outline'
-      case DataTypes.NAMESPACE:
-        return 'mdi-code-braces'
-      default:
-        return null
     }
   },
   getInheritence (item) {

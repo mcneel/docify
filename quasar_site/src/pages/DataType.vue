@@ -54,7 +54,6 @@
       </q-list>
     </q-expansion-item>
     <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
-      <q-item-section avatar><q-icon :name="item.icon"/></q-item-section>
       <q-item-section>
         <q-item-label class="text-accent"><b>{{item.label}}</b></q-item-label>
         <q-item-label caption>{{item.summary}}</q-item-label>
