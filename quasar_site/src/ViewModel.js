@@ -84,11 +84,11 @@ const ViewModel = {
     })
     return found
   },
-  setSelectedItem (item) {
+  setSelectedItem (item, updateRoute = true) {
     const node = item.dataType ? item : this.findNodeByPath(item)
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
-        callback(node)
+        callback(node, updateRoute)
       }
     }
   },

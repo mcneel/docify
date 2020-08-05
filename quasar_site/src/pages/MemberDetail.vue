@@ -14,14 +14,14 @@
         {{datatype.namespace}}.{{datatype.name}}
       </router-link>
     </p>
-    <q-list class="q-mt-md">
+    <q-list>
       <div v-for="(member, index) in members.items" :key="index">
-      <q-item>
+      <q-item class="q-pb-none">
         <q-item-section>
           <q-item-label v-if="member.deprecated" class="light-dimmed">
             {{member.signature}}
           </q-item-label>
-          <q-item-label v-if="!member.deprecated">
+          <q-item-label v-if="!member.deprecated" style="font-size:18px;">
             <span v-for="(chunk, idx) in signature(member)" :key="idx+1000">
               <span v-if="chunk.link">
                 <router-link class="routerlink" :to="chunk.link">{{chunk.name}}</router-link>
@@ -29,22 +29,28 @@
               <span v-else>{{chunk.name}}</span>
             </span>
           </q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item :inset-level="0.5" class="q-pt-none">
+        <q-item-section>
           <q-item-label caption class="on-right">
             <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{member.deprecated}}
               <q-tooltip>Deprecated in version {{member.deprecated}}</q-tooltip>
             </q-badge>
           </q-item-label>
-          <q-item-label caption class="on-right">
-            {{member.summary}}
-          </q-item-label>
+          <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
+          <q-item-label caption class="on-right">{{member.summary}}</q-item-label>
+          <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
           <q-item-label caption class="on-right" v-for="parameter in member.parameters" :key="parameter.name">
             <b>{{parameter.name}}</b> - {{parameter.summary}}
           </q-item-label>
+          <q-item-label caption v-if="member.returns" class="text-bold">Returns:</q-item-label>
           <q-item-label caption class="on-right" v-if="member.returns">
-            <b>Returns:</b> {{member.returns}}
+            {{member.returns}}
           </q-item-label>
+          <q-item-label caption v-if="member.since" class="text-bold">Available since:</q-item-label>
           <q-item-label caption class="on-right" v-if="member.since">
-            <b>Available since:</b> {{member.since}}
+            {{member.since}}
           </q-item-label>
         </q-item-section>
       </q-item>
@@ -105,7 +111,7 @@ export default {
     const members = this.getMembers(this.datatype, this.memberName)
     members.items.forEach(m => this.getExamples(this.datatype, m))
     this.members = Object.freeze(members)
-    ViewModel.setSelectedItem(this.datatype)
+    ViewModel.setSelectedItem(this.datatype, false)
   },
   methods: {
     getMembers (datatype, memberName) {

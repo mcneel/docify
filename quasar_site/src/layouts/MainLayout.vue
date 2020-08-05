@@ -67,17 +67,19 @@ export default {
       watcherEnabled: true,
       version: mostRecent,
       model: null,
-      expanded: []
+      expanded: [],
+      routePushEnabled: true
     }
   },
   created () {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
   },
   methods: {
-    onChangeSelectedItem (item) {
+    onChangeSelectedItem (item, updateRoute) {
       console.log('onchangeselecteditem')
       const newSelectedNode = ViewModel.itemPath(item)
       if (newSelectedNode !== this.selectedNode) {
+        this.routePushEnabled = updateRoute
         this.selectedNode = newSelectedNode
       }
       if (item.dataType !== 'namespace') {
@@ -104,6 +106,10 @@ export default {
         }
         return
       }
+
+      const updateRoute = this.routePushEnabled
+      this.routePushEnabled = true
+      if (!updateRoute) return
 
       // console.log(newState)
       const newPath = this.baseUrl + newState.toLowerCase()
