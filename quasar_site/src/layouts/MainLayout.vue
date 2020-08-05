@@ -127,4 +127,8 @@ a.routerlink {
 .q-item__label--caption {
   color: rgba(0,0,0,0.75);
 }
+
+.q-tree__node--selected {
+  font-weight: bold;
+}
 </style>
