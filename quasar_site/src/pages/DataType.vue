@@ -171,7 +171,7 @@ export default {
       const url = this.baseUrl + member.parent + '/' + name
       return url.toLowerCase()
     },
-    onChangeSelectedItem (item) {
+    onChangeSelectedItem (item, updateRoute) {
       // bail if the selected item has not changed
       if (this.vm.name && this.vm.name === item.name) return
       console.log('selected item changed to ' + item.name)
