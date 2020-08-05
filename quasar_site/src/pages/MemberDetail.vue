@@ -105,6 +105,7 @@ export default {
     const members = this.getMembers(this.datatype, this.memberName)
     members.items.forEach(m => this.getExamples(this.datatype, m))
     this.members = Object.freeze(members)
+    ViewModel.setSelectedItem(this.datatype)
   },
   methods: {
     getMembers (datatype, memberName) {

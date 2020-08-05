@@ -75,9 +75,20 @@ export default {
   },
   methods: {
     onChangeSelectedItem (item) {
-      this.watcherEnabled = false
-      this.selectedNode = ViewModel.itemPath(item)
-      this.watcherEnabled = true
+      console.log('onchangeselecteditem')
+      const newSelectedNode = ViewModel.itemPath(item)
+      if (newSelectedNode !== this.selectedNode) {
+        this.selectedNode = newSelectedNode
+      }
+      if (item.dataType !== 'namespace') {
+        const expandedNode = item.namespace.toLowerCase()
+        for (let i = 0; i < this.expanded.length; i++) {
+          if (this.expanded[1] === expandedNode) {
+            return
+          }
+        }
+        this.expanded.push(expandedNode)
+      }
     }
   },
   watch: {
