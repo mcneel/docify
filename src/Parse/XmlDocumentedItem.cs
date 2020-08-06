@@ -115,6 +115,10 @@ namespace Docify.Parse
                     //case "b":
                     //    sb.Append(string.Format("**{0}**", child.InnerText));
                     //    break;
+                    case "para":
+                        // TODO: consider stripping newlines from source
+                        sb.AppendLine(child.InnerText);
+                        break;
                     default:
                         sb.Append(child.InnerText);
                         break;

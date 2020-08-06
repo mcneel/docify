@@ -7,8 +7,18 @@
       <q-breadcrumbs-el :label="title" />
     </q-breadcrumbs>
     <h1>{{title}} {{vm.dataType}}</h1>
-    <p>{{vm.summary}}</p>
-    <p v-if="vm.remarks">{{vm.remarks}}</p>
+    <p>
+      <span v-for="(line, index) in getLines(vm.summary)" :key="'summary' + index">
+        <br v-if="index>0">
+        {{line}}
+      </span>
+    </p>
+    <p v-if="vm.remarks">
+      <span v-for="(line, index) in getLines(vm.remarks)" :key="'remark' + index">
+        <br v-if="index>0">
+        {{line}}
+      </span>
+    </p>
     <i v-for="(item, index) in inheritence" :key="item.name">
       <i v-if="index===0">Inheritence: </i>
       <router-link v-if="item.link" class="routerlink" :to="baseUrl+item.link.toLowerCase()">{{item.name}}</router-link>
@@ -45,7 +55,10 @@
                 </q-badge>
               </q-item-label>
               <q-item-label caption class="on-right">
-                {{member.summary}}
+                <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
+                  <br v-if="index>0">
+                  {{line}}
+                </span>
               </q-item-label>
             </q-item-section>
           </q-item>
@@ -140,6 +153,12 @@ export default {
         return 'events'
       }
       return ''
+    },
+    getLines (text) {
+      if (text == null) return text
+      const lines = text.split('  \n')
+      // if (lines.length > 1) console.log('split worked')
+      return lines
     },
     memberClass (member) {
       if (member.deprecated) return 'light-dimmed'
