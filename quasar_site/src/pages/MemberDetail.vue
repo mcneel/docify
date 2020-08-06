@@ -39,7 +39,12 @@
             </q-badge>
           </q-item-label>
           <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
-          <q-item-label caption class="on-right">{{member.summary}}</q-item-label>
+          <q-item-label caption v-if="member.summary" class="on-right">
+            <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
+              <br v-if="index>0">
+              {{line}}
+            </span>
+          </q-item-label>
           <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
           <q-item-label caption class="on-right" v-for="parameter in member.parameters" :key="parameter.name">
             <b>{{parameter.name}}</b> - {{parameter.summary}}
@@ -189,6 +194,12 @@ export default {
       }
 
       return {}
+    },
+    getLines (text) {
+      if (text == null) return text
+      const lines = text.split('  \n')
+      // if (lines.length > 1) console.log('split worked')
+      return lines
     },
     getTitle (datatype, members) {
       if (members.isConstructor) {
