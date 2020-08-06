@@ -81,7 +81,7 @@ namespace Docify.Parse
             System.IO.File.WriteAllText(path, content.ToString());
         }
 
-        static string JsonQuote(string s, bool asJavascript)
+        static string JsonQuote(string s, bool asJavascript, string key)
         {
             s = s.Replace("\r", "");
 
@@ -97,7 +97,11 @@ namespace Docify.Parse
                         if (asJavascript)
                             sb.AppendLine();
                         else
+                        {
+                            if (string.CompareOrdinal(key, "code") != 0)
+                                sb.Append("  ");
                             sb.Append("\\n");
+                        }
                     }
                     string line = lines[i];
                     if(_writingApi)
@@ -135,7 +139,7 @@ namespace Docify.Parse
             else
                 rc += $"\"{key}\"";
             rc += ": ";
-            rc += JsonQuote(val, asJavascript);
+            rc += JsonQuote(val, asJavascript, key);
             return rc;
         }
 
@@ -205,7 +209,7 @@ namespace Docify.Parse
                         {
                             if (i > firstInterfaceIndex)
                                 sb.Append(", ");
-                            sb.Append(JsonQuote(baseList[i], asJavascript));
+                            sb.Append(JsonQuote(baseList[i], asJavascript, null));
                         }
                         sb.Append("]");
                     }
