@@ -110,17 +110,24 @@ namespace Docify.Parse
                 {
                     case "see":
                     case "seealso":
-                        sb.Append(child.Attributes[0].Value); // TODO: linkify
+                        sb.Append(" " + child.Attributes[0].Value); // TODO: linkify
                         break;
                     //case "b":
                     //    sb.Append(string.Format("**{0}**", child.InnerText));
                     //    break;
                     case "para":
-                        // TODO: consider stripping newlines from source
-                        sb.AppendLine(child.InnerText);
-                        break;
                     default:
-                        sb.Append(child.InnerText);
+                        {
+                            if (child.Name.Equals("para"))
+                                sb.AppendLine();
+                            var lines = child.InnerText.Split(new char[] { '\n' });
+                            for( int j=0; j<lines.Length; j++)
+                            {
+                                if (j > 0)
+                                    sb.Append(' ');
+                                sb.Append(lines[j].Trim());
+                            }
+                        }
                         break;
                 }
             }
