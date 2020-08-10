@@ -13,6 +13,8 @@ const _selectedItemChangedCallbacks = {}
 let _viewmodel = null
 let _typemap = null
 let _searchInstance = null
+let _selectedPath = ''
+let _lastFound = null
 
 const ViewModel = {
   itemPath (item) {
@@ -78,13 +80,23 @@ const ViewModel = {
   findNodeByPath (path) {
     path = path.toLowerCase()
     let found = null
+
+    if (_lastFound && this.itemPath(_lastFound) === path) {
+      return _lastFound
+    }
+
     ApiInfo.forEach(type => {
       if (found) return
       if (this.itemPath(type) === path) found = type
     })
+    _lastFound = found
     return found
   },
   setSelectedItem (item, updateRoute = true) {
+    let path = item.dataType ? this.itemPath(item) : item
+    path = path.toLowerCase()
+    if (path === _selectedPath) return // no change
+    _selectedPath = path
     const node = item.dataType ? item : this.findNodeByPath(item)
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
