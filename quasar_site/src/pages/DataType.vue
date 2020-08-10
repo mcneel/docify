@@ -1,20 +1,20 @@
 <template>
   <q-page>
     <div class="q-pa-sm">
-    <q-breadcrumbs v-if="vm.namespace" class="q-mb-sm" active-color="accent">
+    <q-breadcrumbs v-if="namespace" class="q-mb-sm" active-color="accent">
       <q-breadcrumbs-el icon="home" :to="baseUrl" />
-      <q-breadcrumbs-el :label="vm.namespace" :to="baseUrl + vm.namespace.toLowerCase()" />
-      <q-breadcrumbs-el :label="title" />
+      <q-breadcrumbs-el :label="namespace" :to="baseUrl + namespace.toLowerCase()" />
+      <q-breadcrumbs-el :label="name" />
     </q-breadcrumbs>
-    <h1>{{title}} {{vm.dataType}}</h1>
+    <h1>{{name}} {{dataType}}</h1>
     <p>
-      <span v-for="(line, index) in getLines(vm.summary)" :key="'summary' + index">
+      <span v-for="(line, index) in getLines(summary)" :key="'summary' + index">
         <br v-if="index>0">
         {{line}}
       </span>
     </p>
-    <p v-if="vm.remarks">
-      <span v-for="(line, index) in getLines(vm.remarks)" :key="'remark' + index">
+    <p v-if="remarks">
+      <span v-for="(line, index) in getLines(remarks)" :key="'remark' + index">
         <br v-if="index>0">
         {{line}}
       </span>
@@ -24,12 +24,12 @@
       <router-link v-if="item.link" class="routerlink" :to="baseUrl+item.link.toLowerCase()">{{item.name}}</router-link>
       <i v-else>{{item.name}}</i>
       <q-icon name="arrow_forward"/>
-      <i v-if="index===(inheritence.length-1)">{{title}}</i>
+      <i v-if="index===(inheritence.length-1)">{{name}}</i>
     </i>
     <p v-if="namespace">
       <i>Namespace: <router-link class="routerlink" :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i>
       <br>
-      <i>{{title}}: <router-link class="routerlink" :to="baseUrl+'references/'+namespace.toLowerCase() + '.' + title.toLowerCase()">references</router-link></i>
+      <i>{{name}}: <router-link class="routerlink" :to="(baseUrl+'references/'+namespace+'.'+name).toLowerCase()">references</router-link></i>
     </p>
     <q-expansion-item v-for="section in memberSections"
       :key="section.title"
@@ -49,7 +49,7 @@
             <q-item-section :class="memberClass(member)">
               <q-item-label :class="section.values ? '' : 'text-accent'">
                 <b>{{memberName(member, section)}}</b>&nbsp;
-                <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + vm.name)" color='info' outline>
+                <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + name)" color='info' outline>
                   <q-icon name="mdi-file-tree"/>
                   <q-tooltip>From {{member.parent}}</q-tooltip>
                 </q-badge>
@@ -85,15 +85,7 @@ export default {
     baseUrl: { type: String }
   },
   data () {
-    const mostRecent = ViewModel.mostRecentSince()
     return {
-      vm: {},
-      title: '',
-      namespace: '',
-      memberSections: [],
-      namespaceItems: null,
-      inheritence: [],
-      version: mostRecent
     }
   },
   meta () {
@@ -112,8 +104,161 @@ export default {
       }
     }
   },
-  created () {
-    ViewModel.setSelectedItemChangedCallback('DataType.vue', this.onChangeSelectedItem)
+  computed: {
+    dataType: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      return node.dataType
+    },
+    inheritence: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      return ViewModel.getInheritence(node)
+    },
+    memberSections: function () {
+      const item = ViewModel.findNodeByPath(this.$route.params.datatype)
+      const rc = []
+
+      if (item.dataType !== 'namespace') {
+        if (item.constructors) {
+          rc.push({
+            title: 'Constructors (' + item.constructors.length + ')',
+            items: item.constructors,
+            expanded: true,
+            constructors: true
+          })
+        }
+
+        let values = [].concat(item.values)
+        for (let i = 0; i < this.inheritence.length; i++) {
+          if (this.inheritence[i].item) {
+            values = values.concat(this.inheritence[i].item.values)
+          }
+        }
+        values = values.filter(v => v != null)
+        if (values.length > 0) {
+          rc.push(Object.freeze({
+            title: 'Values',
+            items: Object.freeze(values),
+            expanded: true,
+            values: true
+          }))
+        }
+
+        let parentName = item.namespace + '.' + item.name
+        let properties = [].concat(item.properties)
+        if (item.properties) {
+          for (let i = 0; i < properties.length; i++) {
+            properties[i].parent = parentName
+          }
+        }
+        for (let i = 0; i < this.inheritence.length; i++) {
+          if (!this.inheritence[i].item) continue
+          const inheritedProps = this.inheritence[i].item.properties
+          if (inheritedProps == null) continue
+          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
+          for (let j = 0; j < inheritedProps.length; j++) {
+            inheritedProps[j].parent = parentName
+          }
+          properties = properties.concat(this.inheritence[i].item.properties)
+        }
+        properties = properties.filter(p => p != null)
+        const p = { properties: true }
+        properties.sort((a, b) => this.memberName(a, p).localeCompare(this.memberName(b, p)))
+        if (properties.length > 0) {
+          rc.push(Object.freeze({
+            title: 'Properties (' + properties.length + ')',
+            items: Object.freeze(properties),
+            expanded: true,
+            properties: true
+          }))
+        }
+
+        parentName = item.namespace + '.' + item.name
+        let methods = [].concat(item.methods)
+        if (item.methods) {
+          for (let i = 0; i < methods.length; i++) {
+            methods[i].parent = parentName
+          }
+        }
+        for (let i = 0; i < this.inheritence.length; i++) {
+          if (!this.inheritence[i].item) continue
+          const inheritedMethods = this.inheritence[i].item.methods
+          if (inheritedMethods == null) continue
+          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
+          for (let j = 0; j < inheritedMethods.length; j++) {
+            inheritedMethods[j].parent = parentName
+          }
+          methods = methods.concat(this.inheritence[i].item.methods)
+        }
+        methods = methods.filter(m => m != null)
+        const m = { methods: true }
+        methods.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        if (methods.length > 0) {
+          rc.push(Object.freeze({
+            title: 'Methods (' + methods.length + ')',
+            items: Object.freeze(methods),
+            expanded: true,
+            methods: true
+          }))
+        }
+
+        parentName = item.namespace + '.' + item.name
+        let events = [].concat(item.events)
+        if (item.events) {
+          for (let i = 0; i < events.length; i++) {
+            events[i].parent = parentName
+          }
+        }
+        for (let i = 0; i < this.inheritence.length; i++) {
+          if (!this.inheritence[i].item) continue
+          const inheritedEvents = this.inheritence[i].item.events
+          if (inheritedEvents == null) continue
+          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
+          for (let j = 0; j < inheritedEvents.length; j++) {
+            inheritedEvents[j].parent = parentName
+          }
+          events = events.concat(this.inheritence[i].item.events)
+        }
+        events = events.filter(e => e != null)
+        if (events.length > 0) {
+          rc.push(Object.freeze({
+            title: 'Events (' + events.length + ')',
+            items: Object.freeze(events),
+            expanded: true,
+            events: true
+          }))
+        }
+      }
+      return rc
+    },
+    name: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      return node.name
+    },
+    namespace: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      if (node.namespace) return node.namespace
+      return node.name
+    },
+    namespaceItems: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      if (node.dataType === 'namespace') {
+        const tree = ViewModel.getTree()
+        for (let i = 0; i < tree.length; i++) {
+          if (tree[i].label === node.name) {
+            return tree[i].children
+          }
+        }
+      }
+      return null
+    },
+    remarks: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      return node.remarks
+    },
+    summary: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      return node.summary
+    }
   },
   mounted () {
     if (this.$route.params && this.$route.params.datatype) {
@@ -189,145 +334,6 @@ export default {
       }
       const url = this.baseUrl + member.parent + '/' + name
       return url.toLowerCase()
-    },
-    onChangeSelectedItem (item, updateRoute) {
-      // bail if the selected item has not changed
-      if (this.vm.name && this.vm.name === item.name) return
-      console.log('selected item changed to ' + item.name)
-      const start = performance.now()
-      this.vm = item
-      if (item.dataType === 'namespace') {
-        this.title = 'Namespace: ' + item.name
-        this.namespace = null
-        this.memberSections = []
-        const tree = ViewModel.getTree()
-        this.namespaceItems = null
-        for (let i = 0; i < tree.length; i++) {
-          if (tree[i].label === item.name) {
-            this.namespaceItems = tree[i].children
-            break
-          }
-        }
-        this.inheritence = []
-      } else {
-        this.title = item.name
-        this.namespace = item.namespace
-        this.memberSections = []
-        this.namespaceItems = null
-        this.inheritence = ViewModel.getInheritence(item)
-
-        if (item.constructors) {
-          this.memberSections.push({
-            title: 'Constructors (' + item.constructors.length + ')',
-            items: item.constructors,
-            expanded: true,
-            constructors: true
-          })
-        }
-
-        let values = [].concat(item.values)
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (this.inheritence[i].item) {
-            values = values.concat(this.inheritence[i].item.values)
-          }
-        }
-        values = values.filter(v => v != null)
-        if (values.length > 0) {
-          this.memberSections.push(Object.freeze({
-            title: 'Values',
-            items: Object.freeze(values),
-            expanded: true,
-            values: true
-          }))
-        }
-
-        let parentName = item.namespace + '.' + item.name
-        let properties = [].concat(item.properties)
-        if (item.properties) {
-          for (let i = 0; i < properties.length; i++) {
-            properties[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedProps = this.inheritence[i].item.properties
-          if (inheritedProps == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedProps.length; j++) {
-            inheritedProps[j].parent = parentName
-          }
-          properties = properties.concat(this.inheritence[i].item.properties)
-        }
-        properties = properties.filter(p => p != null)
-        const p = { properties: true }
-        properties.sort((a, b) => this.memberName(a, p).localeCompare(this.memberName(b, p)))
-        if (properties.length > 0) {
-          this.memberSections.push(Object.freeze({
-            title: 'Properties (' + properties.length + ')',
-            items: Object.freeze(properties),
-            expanded: true,
-            properties: true
-          }))
-        }
-
-        parentName = item.namespace + '.' + item.name
-        let methods = [].concat(item.methods)
-        if (item.methods) {
-          for (let i = 0; i < methods.length; i++) {
-            methods[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedMethods = this.inheritence[i].item.methods
-          if (inheritedMethods == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedMethods.length; j++) {
-            inheritedMethods[j].parent = parentName
-          }
-          methods = methods.concat(this.inheritence[i].item.methods)
-        }
-        methods = methods.filter(m => m != null)
-        const m = { methods: true }
-        methods.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
-        if (methods.length > 0) {
-          this.memberSections.push(Object.freeze({
-            title: 'Methods (' + methods.length + ')',
-            items: Object.freeze(methods),
-            expanded: true,
-            methods: true
-          }))
-        }
-
-        parentName = item.namespace + '.' + item.name
-        let events = [].concat(item.events)
-        if (item.events) {
-          for (let i = 0; i < events.length; i++) {
-            events[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedEvents = this.inheritence[i].item.events
-          if (inheritedEvents == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedEvents.length; j++) {
-            inheritedEvents[j].parent = parentName
-          }
-          events = events.concat(this.inheritence[i].item.events)
-        }
-        events = events.filter(e => e != null)
-        if (events.length > 0) {
-          this.memberSections.push(Object.freeze({
-            title: 'Events (' + events.length + ')',
-            items: Object.freeze(events),
-            expanded: true,
-            events: true
-          }))
-        }
-      }
-      const elapsed = performance.now() - start
-      console.log(`viewmodel build time for page = ${elapsed.toFixed(2)}ms`)
     }
   }
 }
