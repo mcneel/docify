@@ -14,15 +14,15 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.9.2",
-    "@quasar/quasar-app-extension-qmarkdown": "^1.0.29",
+    "@quasar/extras": "^1.9.5",
+    "@quasar/quasar-app-extension-qmarkdown": "^1.0.31",
     "core-js": "3.0.0",
     "fuse.js": "^6.4.1",
     "node-cache": "^5.1.2",
-    "quasar": "^1.12.13"
+    "quasar": "^1.13.1"
   },
   "devDependencies": {
-    "@quasar/app": "2.0.6",
+    "@quasar/app": "2.0.8",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
