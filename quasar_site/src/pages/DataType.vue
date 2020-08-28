@@ -3,7 +3,7 @@
     <div class="q-pa-sm">
     <q-breadcrumbs v-if="namespace" class="q-mb-sm" active-color="accent">
       <q-breadcrumbs-el icon="home" :to="baseUrl" />
-      <q-breadcrumbs-el :label="namespace" :to="baseUrl + namespace.toLowerCase()" />
+      <q-breadcrumbs-el v-if="dataType !== 'namespace'" :label="namespace" :to="baseUrl + namespace.toLowerCase()" />
       <q-breadcrumbs-el :label="name" />
     </q-breadcrumbs>
     <h1>{{name}} {{dataType}}</h1>
@@ -26,7 +26,7 @@
       <q-icon name="arrow_forward"/>
       <i v-if="index===(inheritence.length-1)">{{name}}</i>
     </i>
-    <p v-if="namespace">
+    <p v-if="namespace && dataType !== 'namespace'">
       <i>Namespace: <router-link class="routerlink" :to="baseUrl+namespace.toLowerCase()">{{namespace}}</router-link></i>
       <br>
       <i>{{name}}: <router-link class="routerlink" :to="(baseUrl+'references/'+namespace+'.'+name).toLowerCase()">references</router-link></i>
@@ -68,7 +68,10 @@
     </q-expansion-item>
     <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
       <q-item-section>
-        <q-item-label class="text-accent"><b>{{item.label}}</b></q-item-label>
+        <q-item-label>
+          <span v-if="item.childNamespace">Child Namespace: </span>
+          <b class="text-accent">{{item.label}}</b>
+        </q-item-label>
         <q-item-label caption>{{item.summary}}</q-item-label>
       </q-item-section>
     </q-item>
@@ -240,14 +243,28 @@ export default {
       return node.name
     },
     namespaceItems: function () {
+      console.log('namespaceitems')
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
       if (node.dataType === 'namespace') {
         const tree = ViewModel.getTree()
+        let children = []
         for (let i = 0; i < tree.length; i++) {
           if (tree[i].label === node.name) {
-            return tree[i].children
+            children = children.concat(tree[i].children)
+            break
           }
         }
+        for (let i = 0; i < tree.length; i++) {
+          if (tree[i].label.startsWith(node.name + '.')) {
+            children.push({
+              childNamespace: true,
+              label: tree[i].label,
+              path: tree[i].path,
+              summary: tree[i].summary
+            })
+          }
+        }
+        return children
       }
       return null
     },
