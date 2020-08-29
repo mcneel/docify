@@ -66,12 +66,27 @@
         </div>
       </q-list>
     </q-expansion-item>
+    <q-expansion-item v-if="childNamespaces"
+      switch-toggle-side
+      label="Child Namespaces"
+      :content-inset-level="1"
+      default-opened
+      header-class="bg-secondary text-white"
+    >
+      <q-list>
+        <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
+          <q-item-section>
+            <q-item-label>
+              <b class="text-accent">{{item.label}}</b>
+            </q-item-label>
+            <q-item-label caption>{{item.summary}}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-expansion-item>
     <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
       <q-item-section>
-        <q-item-label>
-          <span v-if="item.childNamespace">Child Namespace: </span>
-          <b class="text-accent">{{item.label}}</b>
-        </q-item-label>
+        <q-item-label><b class="text-accent">{{item.label}}</b></q-item-label>
         <q-item-label caption>{{item.summary}}</q-item-label>
       </q-item-section>
     </q-item>
@@ -242,29 +257,35 @@ export default {
       if (node.namespace) return node.namespace
       return node.name
     },
-    namespaceItems: function () {
-      console.log('namespaceitems')
+    childNamespaces: function () {
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
       if (node.dataType === 'namespace') {
         const tree = ViewModel.getTree()
-        let children = []
-        for (let i = 0; i < tree.length; i++) {
-          if (tree[i].label === node.name) {
-            children = children.concat(tree[i].children)
-            break
-          }
-        }
+        const children = []
         for (let i = 0; i < tree.length; i++) {
           if (tree[i].label.startsWith(node.name + '.')) {
-            children.push({
-              childNamespace: true,
-              label: tree[i].label,
-              path: tree[i].path,
-              summary: tree[i].summary
-            })
+            if (tree[i].label.indexOf('.', node.name.length + 1) < 0) {
+              children.push({
+                label: tree[i].label,
+                path: tree[i].path,
+                summary: tree[i].summary
+              })
+            }
           }
         }
-        return children
+        return children.length > 0 ? children : null
+      }
+      return null
+    },
+    namespaceItems: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      if (node.dataType === 'namespace') {
+        const tree = ViewModel.getTree()
+        for (let i = 0; i < tree.length; i++) {
+          if (tree[i].label === node.name) {
+            return tree[i].children
+          }
+        }
       }
       return null
     },
