@@ -367,7 +367,7 @@ export default {
       const index = name.indexOf('(')
       if (index > 0) name = name.substring(0, index)
       if (section.constructors) {
-        const url = this.baseUrl + this.namespace + '.' + this.title + '/' + name
+        const url = this.baseUrl + this.namespace + '.' + name + '/' + name
         return url.toLowerCase()
       }
       const url = this.baseUrl + member.parent + '/' + name
