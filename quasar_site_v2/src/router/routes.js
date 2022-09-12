@@ -21,7 +21,11 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue'), props: apiProps },
       { path: 'search', component: () => import('pages/SearchPage.vue') },
       { path: 'examples/:example', component: () => import('pages/ExamplePage.vue') },
-      { path: 'whatsnew/:version', component: () => import('pages/WhatsNew.vue'), props: apiProps }
+      { path: 'whatsnew/:version', component: () => import('pages/WhatsNew.vue'), props: apiProps },
+      { path: 'references/:datatype', component: () => import('pages/ReferencesPage.vue'), props: apiProps },
+      { path: 'html/:ref', component: () => import('pages/SandcastleRedirect.vue') },
+      { path: ':datatype/:member', component: () => import('pages/MemberDetail.vue'), props: apiProps },
+      { path: ':datatype', component: () => import('pages/DataType.vue'), props: apiProps }
     ]
   },
 
