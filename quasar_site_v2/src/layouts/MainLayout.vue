@@ -1,42 +1,46 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
         <q-toolbar-title>
-          Quasar App
+          <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'"/>
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat round
+          :to="baseUrl + 'search'"
+          icon="search"
+        >
+          <q-tooltip>Search</q-tooltip>
+        </q-btn>
+        <q-btn flat round
+          @click="$q.dark.toggle()"
+          :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'"
+        >
+          <q-tooltip>Toggle dark mode</q-tooltip>
+        </q-btn>
+        <q-btn dense flat no-caps size="md" class="q-pa-sm"
+          :label="version"
+          :to="baseUrl + 'whatsnew/' + version"
+        >
+          <q-tooltip>What's new in version {{version}}</q-tooltip>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
+    <q-drawer v-model="leftDrawerOpen"
       show-if-above
       bordered
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+      <q-tree
+        class="q-pt-sm"
+        :nodes="api"
+        accordion
+        node-key="path"
+        selected-color="accent"
+        v-model:selected="selectedNode"
+        v-model:expanded="expanded"
+        :duration="200"
+      />
     </q-drawer>
 
     <q-page-container>
@@ -46,71 +50,91 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import ViewModel from '../ViewModel'
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+export default {
+  props: {
+    apiTitle: { type: String },
+    baseUrl: { type: String }
   },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
-
-export default defineComponent({
-  name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
+  data () {
+    const vm = ViewModel.getTree()
+    const mostRecent = ViewModel.mostRecentSince()
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
+      leftDrawerOpen: false,
+      api: vm,
+      selectedNode: [],
+      watcherEnabled: true,
+      version: mostRecent,
+      model: null,
+      expanded: [],
+      routePushEnabled: true
+    }
+  },
+  created () {
+    ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
+  },
+  methods: {
+    onChangeSelectedItem (item, updateRoute) {
+      console.log('onchangeselecteditem')
+      const newSelectedNode = ViewModel.itemPath(item)
+      if (newSelectedNode !== this.selectedNode) {
+        this.routePushEnabled = updateRoute
+        this.selectedNode = newSelectedNode
+      }
+      if (item.dataType !== 'namespace') {
+        const expandedNode = item.namespace.toLowerCase()
+        for (let i = 0; i < this.expanded.length; i++) {
+          if (this.expanded[1] === expandedNode) {
+            return
+          }
+        }
+        this.expanded.push(expandedNode)
       }
     }
+  },
+  watch: {
+    selectedNode: function (newState, oldState) {
+      if (!this.watcherEnabled) return
+
+      if (!newState) {
+        const selectItem = this.$router.currentRoute.path.substring(this.baseUrl.length)
+        if (selectItem) {
+          this.watcherEnabled = false
+          this.selectedNode = selectItem
+          this.watcherEnabled = true
+        }
+        return
+      }
+
+      const updateRoute = this.routePushEnabled
+      this.routePushEnabled = true
+      if (!updateRoute) return
+
+      // console.log(newState)
+      const newPath = this.baseUrl + newState.toLowerCase()
+      if (this.$router.currentRoute.path.toLowerCase() === newPath) return
+      this.$router.push(newPath)
+      ViewModel.setSelectedItem(newState)
+    }
   }
-})
+}
 </script>
+
+<style>
+body.body--dark, .q-list--dark, .q-item--dark {
+  color: #e6e6e6;
+}
+
+a.routerlink {
+  color: #518ae7;
+}
+
+.q-item__label--caption {
+  color: rgba(0,0,0,0.75);
+}
+
+.q-tree__node--selected {
+  font-weight: bold;
+}
+</style>
