@@ -60,6 +60,7 @@ export default {
   data () {
     const vm = ViewModel.getTree()
     const mostRecent = ViewModel.mostRecentSince()
+
     return {
       leftDrawerOpen: false,
       api: vm,
@@ -112,8 +113,10 @@ export default {
       if (!updateRoute) return
 
       // console.log(newState)
-      const newPath = this.baseUrl + newState.toLowerCase()
-      if (this.$router.currentRoute.path.toLowerCase() === newPath) return
+
+      const newPath = `${this.baseUrl}${newState}`.toLowerCase()
+
+      if (this.$route.path.toLowerCase() === newPath) return
       this.$router.push(newPath)
       ViewModel.setSelectedItem(newState)
     }
