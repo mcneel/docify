@@ -303,6 +303,7 @@ export default {
       return chunks
     },
     exampleUrl (member) {
+      // console.log("____Name:", member.examples[0])
       let name = member.examples[0].name
       const index = name.lastIndexOf('.')
       name = name.substring(0, index).toLowerCase()
