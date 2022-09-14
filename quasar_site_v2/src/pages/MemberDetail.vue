@@ -114,7 +114,10 @@ export default {
     this.datatype = ViewModel.findNodeByPath(this.$route.params.datatype)
     this.memberName = this.$route.params.member.toLowerCase()
     const members = this.getMembers(this.datatype, this.memberName)
-    members.items.forEach(m => this.getExamples(this.datatype, m))
+    members.items = members.items.map( m => {
+      const examples = this.getExamples(this.datatype, m)
+      return {...m, examples}
+    })
     this.members = Object.freeze(members)
     ViewModel.setSelectedItem(this.datatype, false)
   },
@@ -303,7 +306,6 @@ export default {
       return chunks
     },
     exampleUrl (member) {
-      // console.log("____Name:", member.examples[0])
       let name = member.examples[0].name
       const index = name.lastIndexOf('.')
       name = name.substring(0, index).toLowerCase()
@@ -326,7 +328,6 @@ export default {
             }
           })
         })
-        item.examples = Object.freeze(item.examples)
       }
       return item.examples
     }
