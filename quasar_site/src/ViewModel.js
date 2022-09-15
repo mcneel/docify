@@ -46,7 +46,10 @@ const ViewModel = {
             summary: summary
           }
           if (type.constructors) {
-            const constructors = type.constructors.map(x => {return {label:x.signature,  header: 'secondary'}})
+            const constructors = type.constructors.map(x => {
+              x.namespace = type.namespace
+              const url = this.memberUrl("constructors", x)
+              return {label:x.signature, path: url, header: 'secondary'}})
             item.children = [
               { label: 'Constructors', path: `${this.itemPath(type)}?constructors`, children: constructors },
             ]
@@ -304,6 +307,32 @@ const ViewModel = {
       }
     })
     return items
+  },
+  memberName (member, memberType) {
+    if (memberType == "constructors" || memberType == "values") return member.signature
+    const tokens = member.signature.split(' ')
+    let name = tokens[1]
+    if (tokens[0] === 'static' && !section.events) {
+      name = tokens[2]
+    }
+    let index = name.indexOf('(')
+    if (index > 0) {
+      index = member.signature.indexOf(name)
+      return member.signature.substring(index)
+    }
+    return name
+  },
+  memberUrl (memberType, member) {
+    if (memberType == "values") return ''
+    let name = this.memberName(member, memberType).toLowerCase()
+    const index = name.indexOf('(')
+    if (index > 0) name = name.substring(0, index)
+    if (memberType == "constructors") {
+      const url =  member.namespace + '.' + name + '/' + name
+      return url.toLowerCase()
+    }
+    const url = this.baseUrl + member.parent + '/' + name
+    return url.toLowerCase()
   }
 }
 
