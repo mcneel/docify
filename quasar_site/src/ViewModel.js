@@ -70,6 +70,15 @@ const ViewModel = {
               return {label:x.signature, path: url, header: 'secondary'}})
               item.children.push({ label: 'Methods', path: `${this.itemPath(type)}?methods`, children })
           }
+          if (type.events) {
+            const children = type.events.map(x => {
+              x.namespace = type.namespace
+              x.parent = type.name
+              const url = this.memberUrl("events", x)
+              return {label:x.signature, path: url, header: 'secondary'}})
+              item.children.push({ label: 'Events', path: `${this.itemPath(type)}?events`, children })
+          }
+
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
           if (!node) {
@@ -330,6 +339,9 @@ const ViewModel = {
     let name = tokens[1]
     if (tokens[0] === 'static' && memberType != "events") {
       name = tokens[2]
+    }
+    if (!name){
+      return ""
     }
     let index = name.indexOf('(')
     if (index > 0) {
