@@ -43,16 +43,24 @@ const ViewModel = {
           const item = {
             label: type.name,
             path: this.itemPath(type),
-            summary: summary
+            summary: summary,
+            children : []
           }
           if (type.constructors) {
-            const constructors = type.constructors.map(x => {
+            const children = type.constructors.map(x => {
               x.namespace = type.namespace
+              x.parent = type.name
               const url = this.memberUrl("constructors", x)
               return {label:x.signature, path: url, header: 'secondary'}})
-            item.children = [
-              { label: 'Constructors', path: `${this.itemPath(type)}?constructors`, children: constructors },
-            ]
+              item.children.push({ label: 'Constructors', path: `${this.itemPath(type)}?constructors`, children })
+          }
+          if (type.properties) {
+            const children = type.properties.map(x => {
+              x.namespace = type.namespace
+              x.parent = type.name
+              const url = this.memberUrl("properties", x)
+              return {label:x.signature, path: url, header: 'secondary'}})
+              item.children.push({ label: 'Properties', path: `${this.itemPath(type)}?properties`, children })
           }
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
@@ -312,7 +320,7 @@ const ViewModel = {
     if (memberType == "constructors" || memberType == "values") return member.signature
     const tokens = member.signature.split(' ')
     let name = tokens[1]
-    if (tokens[0] === 'static' && !section.events) {
+    if (tokens[0] === 'static' && memberType != "events") {
       name = tokens[2]
     }
     let index = name.indexOf('(')
@@ -331,7 +339,7 @@ const ViewModel = {
       const url =  member.namespace + '.' + name + '/' + name
       return url.toLowerCase()
     }
-    const url = this.baseUrl + member.parent + '/' + name
+    const url = member.namespace + '.'+member.parent + '/' + name
     return url.toLowerCase()
   }
 }
