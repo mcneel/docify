@@ -62,6 +62,14 @@ const ViewModel = {
               return {label:x.signature, path: url, header: 'secondary'}})
               item.children.push({ label: 'Properties', path: `${this.itemPath(type)}?properties`, children })
           }
+          if (type.methods) {
+            const children = type.methods.map(x => {
+              x.namespace = type.namespace
+              x.parent = type.name
+              const url = this.memberUrl("methods", x)
+              return {label:x.signature, path: url, header: 'secondary'}})
+              item.children.push({ label: 'Methods', path: `${this.itemPath(type)}?methods`, children })
+          }
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
           if (!node) {
