@@ -48,7 +48,7 @@ const ViewModel = {
           if (type.constructors) {
             const constructors = type.constructors.map(x => {return {label:x.signature,  header: 'secondary'}})
             item.children = [
-              { label: 'Constructors', path: "foo", children: constructors },
+              { label: 'Constructors', path: `${this.itemPath(type)}?constructors`, children: constructors },
             ]
           }
           if (type.inherits) item.inherits = type.inherits
