@@ -35,12 +35,19 @@
         class="q-pt-sm"
         :nodes="api"
         accordion
+        dense
         node-key="path"
         selected-color="accent"
         v-model:selected="selectedNode"
         v-model:expanded="expanded"
         :duration="200"
-      />
+      >
+      <template v-slot:header-secondary="prop">
+        <div class="row items-center">
+          <div class="text-weight-light text-black toc-secondary-header" >{{ prop.node.label }}</div>
+        </div>
+      </template>
+      </q-tree>
     </q-drawer>
 
     <q-page-container>
@@ -60,7 +67,6 @@ export default {
   data () {
     const vm = ViewModel.getTree()
     const mostRecent = ViewModel.mostRecentSince()
-
     return {
       leftDrawerOpen: false,
       api: vm,
@@ -92,7 +98,7 @@ export default {
         }
         this.expanded.push(expandedNode)
       }
-    }
+    },
   },
   watch: {
     selectedNode: function (newState, oldState) {
@@ -139,5 +145,13 @@ a.routerlink {
 
 .q-tree__node--selected {
   font-weight: bold;
+}
+
+.toc-secondary-header{
+  /* TODO: replace hardcoded width */
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 </style>

@@ -45,6 +45,12 @@ const ViewModel = {
             path: this.itemPath(type),
             summary: summary
           }
+          if (type.constructors) {
+            const constructors = type.constructors.map(x => {return {label:x.signature,  header: 'secondary'}})
+            item.children = [
+              { label: 'Constructors', path: "foo", children: constructors },
+            ]
+          }
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
           if (!node) {
