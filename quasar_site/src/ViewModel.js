@@ -52,7 +52,7 @@ const ViewModel = {
               x.parent = type.name
               const url = this.memberUrl("constructors", x)
               return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Constructors', path: `${this.itemPath(type)}?constructors`, children })
+              item.children.push({ label: 'Constructors', path: `${this.itemPath(type)}#constructors`, children })
           }
           if (type.properties) {
             const children = type.properties.map(x => {
@@ -60,7 +60,7 @@ const ViewModel = {
               x.parent = type.name
               const url = this.memberUrl("properties", x)
               return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Properties', path: `${this.itemPath(type)}?properties`, children })
+              item.children.push({ label: 'Properties', path: `${this.itemPath(type)}#properties`, children })
           }
           if (type.methods) {
             const children = type.methods.map(x => {
@@ -68,7 +68,7 @@ const ViewModel = {
               x.parent = type.name
               const url = this.memberUrl("methods", x)
               return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Methods', path: `${this.itemPath(type)}?methods`, children })
+              item.children.push({ label: 'Methods', path: `${this.itemPath(type)}#methods`, children })
           }
           if (type.events) {
             const children = type.events.map(x => {
@@ -76,7 +76,7 @@ const ViewModel = {
               x.parent = type.name
               const url = this.memberUrl("events", x)
               return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Events', path: `${this.itemPath(type)}?events`, children })
+              item.children.push({ label: 'Events', path: `${this.itemPath(type)}#events`, children })
           }
 
           if (type.inherits) item.inherits = type.inherits

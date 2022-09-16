@@ -320,23 +320,6 @@ export default {
       // react to route changes...
       const selectedItem = to.path.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
-
-      //Scroll to section based on url query
-      const queryKeys = Object.keys(to.query)
-
-      if (queryKeys.includes("constructors")){
-        console.log("TODO: scroll to constructors")
-      }
-      if (queryKeys.includes("properties")){
-        console.log("TODO: scroll to properties")
-      }
-      if (queryKeys.includes("methods")){
-        console.log("TODO: scroll to methods")
-      }
-      if (queryKeys.includes("events")){
-        console.log("TODO: scroll to events")
-      }
-
     }
   },
   methods: {
