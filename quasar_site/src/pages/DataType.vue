@@ -34,7 +34,7 @@
     <q-expansion-item v-for="section in memberSections"
       :key="section.title"
       switch-toggle-side
-      :value="section.expanded"
+      v-model="section.expanded"
       :label="section.title"
       :content-inset-level="1"
       :id="anchorId(section)"
@@ -43,6 +43,7 @@
       <q-list>
         <div v-for="(member, index) in section.items" :key="index">
           <q-item
+            dense
             :clickable="!section.values"
             :to="memberUrl(section, member)"
           >
