@@ -34,7 +34,8 @@
     <q-expansion-item v-for="section in memberSections"
       :key="section.title"
       switch-toggle-side
-      v-model="section.expanded"
+      :default-opened = "section.expanded"
+      :model="section.expanded"
       :label="section.title"
       :content-inset-level="1"
       :id="anchorId(section)"
