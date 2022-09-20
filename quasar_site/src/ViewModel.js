@@ -51,7 +51,7 @@ const ViewModel = {
               x.namespace = type.namespace
               x.parent = type.name
               const url = this.memberUrl("constructors", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
+              return {label:this.memberName(x, "constructors"), path: url, header: 'secondary', deprecated: x.deprecated}})
               item.children.push({ label: 'Constructors', path: `${this.itemPath(type)}#constructors`, children })
           }
           if (type.properties) {
@@ -59,7 +59,7 @@ const ViewModel = {
               x.namespace = type.namespace
               x.parent = type.name
               const url = this.memberUrl("properties", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
+              return {label:this.memberName(x, "properties"), path: url, header: 'secondary', deprecated: x.deprecated}})
               item.children.push({ label: 'Properties', path: `${this.itemPath(type)}#properties`, children })
           }
           if (type.methods) {
@@ -67,15 +67,15 @@ const ViewModel = {
               x.namespace = type.namespace
               x.parent = type.name
               const url = this.memberUrl("methods", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Methods', path: `${this.itemPath(type)}#methods`, children })
+              return {label:this.memberName(x, "methods"), path: url, header: 'secondary', deprecated: x.deprecated}})
+              item.children.push({ label: 'Methods', path: `${this.itemPath(type)}#methods`, children})
           }
           if (type.events) {
             const children = type.events.map(x => {
               x.namespace = type.namespace
               x.parent = type.name
               const url = this.memberUrl("events", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
+              return {label:this.memberName(x, "events"), path: url, header: 'secondary', deprecated: x.deprecated}})
               item.children.push({ label: 'Events', path: `${this.itemPath(type)}#events`, children })
           }
 
@@ -333,6 +333,7 @@ const ViewModel = {
     })
     return items
   },
+
   memberName (member, memberType) {
     if (memberType == "constructors" || memberType == "values") return member.signature
     const tokens = member.signature.split(' ')

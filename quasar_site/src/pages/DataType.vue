@@ -34,7 +34,7 @@
     <q-expansion-item v-for="section in memberSections"
       :key="section.title"
       switch-toggle-side
-      :default-opened = "section.expanded"
+      :default-opened = "this.$route.hash ? this.$route.hash.substring(1) == anchorId(section) : section.expanded"
       :model="section.expanded"
       :label="section.title"
       :content-inset-level="1"

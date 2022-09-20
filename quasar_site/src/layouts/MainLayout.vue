@@ -44,7 +44,7 @@
       >
       <template v-slot:header-secondary="prop">
         <div class="row items-center">
-          <div class="text-weight-light text-black toc-secondary-header" >{{ prop.node.label }}</div>
+          <div class="text-weight-light text-black toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
         </div>
       </template>
       </q-tree>
@@ -153,5 +153,9 @@ a.routerlink {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.toc-deprecated{
+  text-decoration: line-through;
 }
 </style>
