@@ -132,7 +132,7 @@ export default {
         return {...m, examples}
       })
       this.members = Object.freeze(members)
-      const selectedItem = route.fullPath.substring(this.baseUrl.length)
+      const selectedItem = decodeURI(route.fullPath.substring(this.baseUrl.length))
       ViewModel.setSelectedItem(selectedItem, false)
     },
     getMembers (datatype, memberName) {

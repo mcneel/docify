@@ -305,7 +305,7 @@ export default {
   },
   mounted () {
     if (this.$route.params && this.$route.params.datatype) {
-      const selectedItem = this.$route.fullPath.substring(this.baseUrl.length)
+      const selectedItem = decodeURI(this.$route.fullPath.substring(this.baseUrl.length))
       ViewModel.setSelectedItem(selectedItem)
     }
     // If this page is loaded with an anchor URL, attempt to scroll to

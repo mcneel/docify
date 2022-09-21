@@ -35,11 +35,7 @@ const ViewModel = {
       return
     }
     const children = members.map(x => {
-      const url = this.memberUrl(childType.toLowerCase(), x)
-      x.path = url
-      x.parents = [childrenGroupPath, this.itemPath(parent)]
-      _pathMap[url]= x
-      return {label:this.memberName(x, childType.toLowerCase()), path: url, header: 'secondary', deprecated: x.deprecated}
+      return {label:this.memberName(x, childType.toLowerCase()), path: x.path, header: 'secondary', deprecated: x.deprecated}
     })
     const childrenGroup = { label: childType, namespace: parent.namespace, parents: [this.itemPath(parent)], path: childrenGroupPath, children }
     _pathMap[childrenGroupPath]= childrenGroup
@@ -340,6 +336,10 @@ const ViewModel = {
       for (let i = 0; i < members.length; i++) {
         members[i].parent = node.namespace + '.' + node.name
         members[i].namespace = node.namespace
+        const url = this.memberUrl(memberType, members[i])
+        members[i].path = url
+        members[i].parents = [`${this.itemPath(node)}#${memberType}`, this.itemPath(node)]
+        _pathMap[url]= members[i]
       }
     }
     members = members.filter(m => m != null)
@@ -352,6 +352,10 @@ const ViewModel = {
         for (let j = 0; j < inheritedMembers.length; j++) {
             inheritedMembers[j].parent = inheritence[i].item.namespace + '.' + inheritence[i].item.name
             inheritedMembers[j].namespace = inheritence[i].item.namespace
+
+            const url = this.memberUrl(memberType, inheritedMembers[j])
+            inheritedMembers[j].path = url
+            _pathMap[url]= inheritedMembers[j]
         }
 
         members = members.concat(inheritedMembers)
@@ -368,7 +372,6 @@ const ViewModel = {
         }
       }
     }
-
     return members
   },
   memberName (member, memberType) {
