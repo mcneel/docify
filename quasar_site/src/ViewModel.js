@@ -37,7 +37,7 @@ const ViewModel = {
       return {label:this.memberName(x, childType.toLowerCase()), path: url, header: 'secondary', deprecated: x.deprecated}
     })
     const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
-    const childrenGroup = { label: childType, path: childrenGroupPath, children }
+    const childrenGroup = { label: childType, namespace: parent.namespace, path: childrenGroupPath, children }
     _pathMap[childrenGroupPath]= childrenGroup
     return childrenGroup
   },
@@ -84,8 +84,8 @@ const ViewModel = {
           } else {
             namespaceDict[type.namespace].children.push(item)
           }
-          _pathMap[this.itemPath(type)]= type
         }
+        _pathMap[this.itemPath(type)]= type
       })
       viewmodel = []
       const namespaceKeys = Object.keys(namespaceDict).sort()
@@ -127,6 +127,7 @@ const ViewModel = {
   },
   setSelectedItem (item, updateRoute = true) {
     let path = item.dataType ? this.itemPath(item) : item
+    console.log("path is:", item)
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path
