@@ -44,7 +44,7 @@
       >
       <template v-slot:header-secondary="prop">
         <div class="row items-center">
-          <div class="text-weight-light text-black toc-secondary-header" >{{ prop.node.label }}</div>
+          <div class="text-weight-light toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
         </div>
       </template>
       </q-tree>
@@ -83,20 +83,23 @@ export default {
   },
   methods: {
     onChangeSelectedItem (item, updateRoute) {
-      console.log('onchangeselecteditem')
       const newSelectedNode = ViewModel.itemPath(item)
+      console.log('onchangeselecteditem')
       if (newSelectedNode !== this.selectedNode) {
         this.routePushEnabled = updateRoute
         this.selectedNode = newSelectedNode
       }
       if (item.dataType !== 'namespace') {
-        const expandedNode = item.namespace.toLowerCase()
-        for (let i = 0; i < this.expanded.length; i++) {
-          if (this.expanded[1] === expandedNode) {
-            return
-          }
-        }
-        this.expanded.push(expandedNode)
+        const expandedNamespace = item.namespace.toLowerCase()
+        const expandedParents = item.parents || []
+        const expandedNodes = [expandedNamespace, ...expandedParents]
+        console.log("expanded Nodes:", expandedNodes)
+        // for (let i = 0; i < this.expanded.length; i++) {
+        //   if (this.expanded[1] === expandedNamespace) {
+        //     return
+        //   }
+        // }
+        this.expanded= [this.expanded, ...expandedNodes]
       }
     },
   },
@@ -153,5 +156,9 @@ a.routerlink {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.toc-deprecated{
+  text-decoration: line-through;
 }
 </style>

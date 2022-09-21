@@ -15,13 +15,32 @@ let _typemap = null
 let _searchInstance = null
 let _selectedPath = ''
 let _lastFound = null
+let _pathMap = {}
 
 const ViewModel = {
   itemPath (item) {
+    if (item.path){
+      return item.path
+    }
     let path = null
     if (item.namespace) path = item.namespace + '.' + item.name
     else path = item.name
     return path.toLowerCase()
+  },
+  childTree (parent, childType){
+    const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
+    const children = parent[childType.toLowerCase()].map(x => {
+      x.namespace = parent.namespace
+      x.parent = parent.name
+      const url = this.memberUrl(childType.toLowerCase(), x)
+      x.path = url
+      x.parents = [childrenGroupPath, this.itemPath(parent)]
+      _pathMap[url]= x
+      return {label:this.memberName(x, childType.toLowerCase()), path: url, header: 'secondary', deprecated: x.deprecated}
+    })
+    const childrenGroup = { label: childType, namespace: parent.namespace, parents: [this.itemPath(parent)], path: childrenGroupPath, children }
+    _pathMap[childrenGroupPath]= childrenGroup
+    return childrenGroup
   },
   getTree () {
     if (_viewmodel) return _viewmodel
@@ -47,36 +66,16 @@ const ViewModel = {
             children : []
           }
           if (type.constructors) {
-            const children = type.constructors.map(x => {
-              x.namespace = type.namespace
-              x.parent = type.name
-              const url = this.memberUrl("constructors", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Constructors', path: `${this.itemPath(type)}#constructors`, children })
+              item.children.push(this.childTree(type, "Constructors"))
           }
           if (type.properties) {
-            const children = type.properties.map(x => {
-              x.namespace = type.namespace
-              x.parent = type.name
-              const url = this.memberUrl("properties", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Properties', path: `${this.itemPath(type)}#properties`, children })
+              item.children.push(this.childTree(type, "Properties"))
           }
           if (type.methods) {
-            const children = type.methods.map(x => {
-              x.namespace = type.namespace
-              x.parent = type.name
-              const url = this.memberUrl("methods", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Methods', path: `${this.itemPath(type)}#methods`, children })
+              item.children.push(this.childTree(type, "Methods"))
           }
           if (type.events) {
-            const children = type.events.map(x => {
-              x.namespace = type.namespace
-              x.parent = type.name
-              const url = this.memberUrl("events", x)
-              return {label:x.signature, path: url, header: 'secondary'}})
-              item.children.push({ label: 'Events', path: `${this.itemPath(type)}#events`, children })
+              item.children.push(this.childTree(type, "Events"))
           }
 
           if (type.inherits) item.inherits = type.inherits
@@ -87,6 +86,7 @@ const ViewModel = {
             namespaceDict[type.namespace].children.push(item)
           }
         }
+        _pathMap[this.itemPath(type)]= type
       })
       viewmodel = []
       const namespaceKeys = Object.keys(namespaceDict).sort()
@@ -131,7 +131,7 @@ const ViewModel = {
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path
-    const node = item.dataType ? item : this.findNodeByPath(item)
+    const node = item.dataType ? item :  _pathMap[path]
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
         callback(node, updateRoute)
@@ -333,8 +333,13 @@ const ViewModel = {
     })
     return items
   },
+
   memberName (member, memberType) {
     if (memberType == "constructors" || memberType == "values") return member.signature
+    if (memberType == "methods"){
+      const match = member.signature.match(/\S*\(.*\)/g)
+      return match[0]
+    }
     const tokens = member.signature.split(' ')
     let name = tokens[1]
     if (tokens[0] === 'static' && memberType != "events") {

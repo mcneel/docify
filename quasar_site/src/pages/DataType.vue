@@ -34,7 +34,7 @@
     <q-expansion-item v-for="section in memberSections"
       :key="section.title"
       switch-toggle-side
-      :default-opened = "section.expanded"
+      :default-opened = "this.$route.hash ? this.$route.hash.substring(1) == anchorId(section) : section.expanded"
       :model="section.expanded"
       :label="section.title"
       :content-inset-level="1"
@@ -302,7 +302,8 @@ export default {
   },
   mounted () {
     if (this.$route.params && this.$route.params.datatype) {
-      ViewModel.setSelectedItem(this.$route.params.datatype)
+      const selectedItem = this.$route.fullPath.substring(this.baseUrl.length)
+      ViewModel.setSelectedItem(selectedItem)
     }
     // If this page is loaded with an anchor URL, attempt to scroll to
     // it right after the page is loaded
@@ -319,7 +320,7 @@ export default {
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      const selectedItem = to.path.substring(this.baseUrl.length)
+      const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
     }
   },
@@ -351,6 +352,10 @@ export default {
     },
     memberName (member, section) {
       if (section.constructors || section.values) return member.signature
+      if (section.methods){
+      const match = member.signature.match(/\S*\(.*\)/g)
+      return match[0]
+      }
       const tokens = member.signature.split(' ')
       let name = tokens[1]
       if (tokens[0] === 'static' && !section.events) {
