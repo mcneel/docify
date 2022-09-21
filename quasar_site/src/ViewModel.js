@@ -28,16 +28,17 @@ const ViewModel = {
     return path.toLowerCase()
   },
   childTree (parent, childType){
+    const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
     const children = parent[childType.toLowerCase()].map(x => {
       x.namespace = parent.namespace
       x.parent = parent.name
       const url = this.memberUrl(childType.toLowerCase(), x)
       x.path = url
+      x.parents = [childrenGroupPath, this.itemPath(parent)]
       _pathMap[url]= x
       return {label:this.memberName(x, childType.toLowerCase()), path: url, header: 'secondary', deprecated: x.deprecated}
     })
-    const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
-    const childrenGroup = { label: childType, namespace: parent.namespace, path: childrenGroupPath, children }
+    const childrenGroup = { label: childType, namespace: parent.namespace, parents: [this.itemPath(parent)], path: childrenGroupPath, children }
     _pathMap[childrenGroupPath]= childrenGroup
     return childrenGroup
   },
@@ -127,7 +128,6 @@ const ViewModel = {
   },
   setSelectedItem (item, updateRoute = true) {
     let path = item.dataType ? this.itemPath(item) : item
-    console.log("path is:", item)
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path

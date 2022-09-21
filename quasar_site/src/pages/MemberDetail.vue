@@ -116,7 +116,9 @@ export default {
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      this.renderUrl(to)
+      if(to.params.datatype && to.params.member){
+        this.renderUrl(to)
+      }
     }
   },
   methods: {
@@ -130,7 +132,8 @@ export default {
         return {...m, examples}
       })
       this.members = Object.freeze(members)
-      ViewModel.setSelectedItem(this.datatype, false)
+      const selectedItem = route.fullPath.substring(this.baseUrl.length)
+      ViewModel.setSelectedItem(selectedItem, false)
     },
     getMembers (datatype, memberName) {
       if (datatype.name.toLowerCase() === memberName) {
