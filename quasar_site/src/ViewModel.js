@@ -29,9 +29,9 @@ const ViewModel = {
   },
   childTree (parent, childType){
     const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
-    const children = parent[childType.toLowerCase()].map(x => {
-      x.namespace = parent.namespace
-      x.parent = parent.name
+    const includeInherited = childType.toLowerCase() == "constructors" ? false : true
+    const members =  this.getMembers(parent, childType.toLowerCase(), includeInherited)
+    const children = members.map(x => {
       const url = this.memberUrl(childType.toLowerCase(), x)
       x.path = url
       x.parents = [childrenGroupPath, this.itemPath(parent)]
@@ -334,6 +334,42 @@ const ViewModel = {
     return items
   },
 
+  getMembers (node, memberType, inherited=true) {
+    const inheritence = this.getInheritence(node)
+    let members = [].concat(node[memberType])
+    if (node[memberType]) {
+      for (let i = 0; i < members.length; i++) {
+        members[i].parent = node.namespace + '.' + node.name
+        members[i].namespace = node.namespace
+      }
+    }
+    if (inherited){
+      for (const i in inheritence) {
+        if (!inheritence[i].item) continue
+        const inheritedMembers = inheritence[i].item[memberType]
+        if (inheritedMembers == null) continue
+
+        for (let j = 0; j < inheritedMembers.length; j++) {
+            inheritedMembers[j].parent = inheritence[i].item.namespace + '.' + inheritence[i].item.name
+            inheritedMembers[j].namespace = inheritence[i].item.namespace
+        }
+
+        members = members.concat(inheritedMembers)
+        members = members.filter(m => m != null)
+        if (memberType == "methods")
+        {
+          const m = { methods: true }
+          members.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        }
+        if (memberType == "properties")
+        {
+          const m = { properties: true }
+          members.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        }
+      }
+    }
+    return members
+  },
   memberName (member, memberType) {
     if (memberType == "constructors" || memberType == "values") return member.signature
     if (memberType == "methods"){
@@ -364,7 +400,7 @@ const ViewModel = {
       const url =  member.namespace + '.' + name + '/' + name
       return url.toLowerCase()
     }
-    const url = member.namespace + '.'+member.parent + '/' + name
+    const url = member.parent + '/' + name
     return url.toLowerCase()
   }
 }
