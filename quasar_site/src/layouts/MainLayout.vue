@@ -44,7 +44,7 @@
       >
       <template v-slot:header-secondary="prop">
         <div class="row items-center">
-          <div class="text-weight-light text-black toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+          <div class="text-weight-light toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
         </div>
       </template>
       </q-tree>
