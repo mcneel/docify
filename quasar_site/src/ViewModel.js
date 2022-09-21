@@ -31,6 +31,9 @@ const ViewModel = {
     const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
     const includeInherited = childType.toLowerCase() == "constructors" ? false : true
     const members =  this.getMembers(parent, childType.toLowerCase(), includeInherited)
+    if (members.length <1){
+      return
+    }
     const children = members.map(x => {
       const url = this.memberUrl(childType.toLowerCase(), x)
       x.path = url
@@ -65,18 +68,14 @@ const ViewModel = {
             summary: summary,
             children : []
           }
-          if (type.constructors) {
-              item.children.push(this.childTree(type, "Constructors"))
-          }
-          if (type.properties) {
-              item.children.push(this.childTree(type, "Properties"))
-          }
-          if (type.methods) {
-              item.children.push(this.childTree(type, "Methods"))
-          }
-          if (type.events) {
-              item.children.push(this.childTree(type, "Events"))
-          }
+          const constructors = this.childTree(type, "Constructors")
+          if (constructors){ item.children.push(constructors)}
+          const properties = this.childTree(type, "Properties")
+          if (properties){ item.children.push(properties)}
+          const methods = this.childTree(type, "Methods")
+          if (methods){ item.children.push(methods)}
+          const events = this.childTree(type, "Events")
+          if (events){ item.children.push(events)}
 
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
@@ -343,6 +342,7 @@ const ViewModel = {
         members[i].namespace = node.namespace
       }
     }
+    members = members.filter(m => m != null)
     if (inherited){
       for (const i in inheritence) {
         if (!inheritence[i].item) continue
@@ -368,6 +368,7 @@ const ViewModel = {
         }
       }
     }
+
     return members
   },
   memberName (member, memberType) {

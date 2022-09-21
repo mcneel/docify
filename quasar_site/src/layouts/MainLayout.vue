@@ -93,7 +93,6 @@ export default {
         const expandedNamespace = item.namespace.toLowerCase()
         const expandedParents = item.parents || []
         const expandedNodes = [expandedNamespace, ...expandedParents]
-        console.log("expanded Nodes:", expandedNodes)
         // for (let i = 0; i < this.expanded.length; i++) {
         //   if (this.expanded[1] === expandedNamespace) {
         //     return

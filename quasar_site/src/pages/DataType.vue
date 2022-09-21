@@ -164,6 +164,7 @@ export default {
         }
 
         let parentName = item.namespace + '.' + item.name
+        //TODO: use ViewModel getMembers method
         let properties = [].concat(item.properties)
         if (item.properties) {
           for (let i = 0; i < properties.length; i++) {
@@ -193,6 +194,7 @@ export default {
         }
 
         parentName = item.namespace + '.' + item.name
+        //TODO: use ViewModel getMembers method
         let methods = [].concat(item.methods)
         if (item.methods) {
           for (let i = 0; i < methods.length; i++) {
@@ -222,6 +224,7 @@ export default {
         }
 
         parentName = item.namespace + '.' + item.name
+        //TODO: use ViewModel getMembers method
         let events = [].concat(item.events)
         if (item.events) {
           for (let i = 0; i < events.length; i++) {
@@ -351,6 +354,7 @@ export default {
       return ''
     },
     memberName (member, section) {
+      //TODO: use ViewModel method
       if (section.constructors || section.values) return member.signature
       if (section.methods){
       const match = member.signature.match(/\S*\(.*\)/g)
@@ -369,6 +373,7 @@ export default {
       return name
     },
     memberUrl (section, member) {
+      //TODO: use ViewModel method
       if (section.values) return ''
       let name = this.memberName(member, section).toLowerCase()
       const index = name.indexOf('(')
