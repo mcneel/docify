@@ -352,6 +352,10 @@ export default {
     },
     memberName (member, section) {
       if (section.constructors || section.values) return member.signature
+      if (section.methods){
+      const match = member.signature.match(/\S*\(.*\)/g)
+      return match[0]
+      }
       const tokens = member.signature.split(' ')
       let name = tokens[1]
       if (tokens[0] === 'static' && !section.events) {

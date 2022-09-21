@@ -336,6 +336,10 @@ const ViewModel = {
 
   memberName (member, memberType) {
     if (memberType == "constructors" || memberType == "values") return member.signature
+    if (memberType == "methods"){
+      const match = member.signature.match(/\S*\(.*\)/g)
+      return match[0]
+    }
     const tokens = member.signature.split(' ')
     let name = tokens[1]
     if (tokens[0] === 'static' && memberType != "events") {

@@ -84,7 +84,7 @@ export default {
   methods: {
     onChangeSelectedItem (item, updateRoute) {
       const newSelectedNode = ViewModel.itemPath(item)
-      console.log('onchangeselecteditem', item)
+      console.log('onchangeselecteditem')
       if (newSelectedNode !== this.selectedNode) {
         this.routePushEnabled = updateRoute
         this.selectedNode = newSelectedNode
