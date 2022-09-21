@@ -111,17 +111,27 @@ export default {
   },
   mounted () {
     console.log('mounted member detail')
-    this.datatype = ViewModel.findNodeByPath(this.$route.params.datatype)
-    this.memberName = this.$route.params.member.toLowerCase()
-    const members = this.getMembers(this.datatype, this.memberName)
-    members.items = members.items.map( m => {
-      const examples = this.getExamples(this.datatype, m)
-      return {...m, examples}
-    })
-    this.members = Object.freeze(members)
-    ViewModel.setSelectedItem(this.datatype, false)
+    this.renderUrl(this.$route)
+  },
+  watch: {
+    '$route' (to, from) {
+      // react to route changes...
+      this.renderUrl(to)
+    }
   },
   methods: {
+    renderUrl (route){
+      //TODO: need to pay attention to full path when setting selected item
+      this.datatype = ViewModel.findNodeByPath(route.params.datatype)
+      this.memberName = route.params.member.toLowerCase()
+      const members = this.getMembers(this.datatype, this.memberName)
+      members.items = members.items.map( m => {
+        const examples = this.getExamples(this.datatype, m)
+        return {...m, examples}
+      })
+      this.members = Object.freeze(members)
+      ViewModel.setSelectedItem(this.datatype, false)
+    },
     getMembers (datatype, memberName) {
       if (datatype.name.toLowerCase() === memberName) {
         datatype.constructors.sort((a, b) => {

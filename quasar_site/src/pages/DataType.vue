@@ -319,7 +319,7 @@ export default {
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      const selectedItem = to.path.substring(this.baseUrl.length)
+      const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
     }
   },

@@ -85,19 +85,20 @@ export default {
     onChangeSelectedItem (item, updateRoute) {
       console.log('onchangeselecteditem')
       const newSelectedNode = ViewModel.itemPath(item)
+      console.log("item path:", newSelectedNode)
       if (newSelectedNode !== this.selectedNode) {
         this.routePushEnabled = updateRoute
         this.selectedNode = newSelectedNode
       }
-      if (item.dataType !== 'namespace') {
-        const expandedNode = item.namespace.toLowerCase()
-        for (let i = 0; i < this.expanded.length; i++) {
-          if (this.expanded[1] === expandedNode) {
-            return
-          }
-        }
-        this.expanded.push(expandedNode)
-      }
+      // if (item.dataType !== 'namespace') {
+      //   const expandedNode = item.namespace.toLowerCase()
+      //   for (let i = 0; i < this.expanded.length; i++) {
+      //     if (this.expanded[1] === expandedNode) {
+      //       return
+      //     }
+      //   }
+      //   this.expanded.push(expandedNode)
+      // }
     },
   },
   watch: {
