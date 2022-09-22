@@ -44,7 +44,7 @@
       >
       <template v-slot:header-secondary="prop">
         <div class="row items-center">
-          <div class="text-weight-light toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+          <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
         </div>
       </template>
       </q-tree>
@@ -124,9 +124,17 @@ export default {
 
       const newPath = `${this.baseUrl}${newState}`.toLowerCase()
 
+      console.log("selected:", newState)
+
       if (this.$route.path.toLowerCase() === newPath) return
       this.$router.push(newPath)
       ViewModel.setSelectedItem(newState)
+
+      //TODO: scrollto selectedNode
+      // const el = document.getElementById(`TOC:${newState}`)
+      //   if (el) {
+      //     el.scrollIntoView()
+      //   }
     }
   }
 }
