@@ -164,26 +164,7 @@ export default {
         }
 
         let parentName = item.namespace + '.' + item.name
-        //TODO: use ViewModel getMembers method
-        let properties = [].concat(item.properties)
-        if (item.properties) {
-          for (let i = 0; i < properties.length; i++) {
-            properties[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedProps = this.inheritence[i].item.properties
-          if (inheritedProps == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedProps.length; j++) {
-            inheritedProps[j].parent = parentName
-          }
-          properties = properties.concat(this.inheritence[i].item.properties)
-        }
-        properties = properties.filter(p => p != null)
-        const p = { properties: true }
-        properties.sort((a, b) => this.memberName(a, p).localeCompare(this.memberName(b, p)))
+        const properties = ViewModel.getMembers(item, "properties", true)
         if (properties.length > 0) {
           rc.push(Object.freeze({
             title: 'Properties (' + properties.length + ')',
@@ -194,26 +175,7 @@ export default {
         }
 
         parentName = item.namespace + '.' + item.name
-        //TODO: use ViewModel getMembers method
-        let methods = [].concat(item.methods)
-        if (item.methods) {
-          for (let i = 0; i < methods.length; i++) {
-            methods[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedMethods = this.inheritence[i].item.methods
-          if (inheritedMethods == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedMethods.length; j++) {
-            inheritedMethods[j].parent = parentName
-          }
-          methods = methods.concat(this.inheritence[i].item.methods)
-        }
-        methods = methods.filter(m => m != null)
-        const m = { methods: true }
-        methods.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        const methods = ViewModel.getMembers(item, "methods", true)
         if (methods.length > 0) {
           rc.push(Object.freeze({
             title: 'Methods (' + methods.length + ')',
@@ -224,24 +186,7 @@ export default {
         }
 
         parentName = item.namespace + '.' + item.name
-        //TODO: use ViewModel getMembers method
-        let events = [].concat(item.events)
-        if (item.events) {
-          for (let i = 0; i < events.length; i++) {
-            events[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedEvents = this.inheritence[i].item.events
-          if (inheritedEvents == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedEvents.length; j++) {
-            inheritedEvents[j].parent = parentName
-          }
-          events = events.concat(this.inheritence[i].item.events)
-        }
-        events = events.filter(e => e != null)
+        const events = ViewModel.getMembers(item, "events", true)
         if (events.length > 0) {
           rc.push(Object.freeze({
             title: 'Events (' + events.length + ')',
