@@ -42,6 +42,7 @@ const ViewModel = {
     return childrenGroup
   },
   getTree () {
+    console.log("start tree")
     if (_viewmodel) return _viewmodel
     let viewmodel = null
     {
@@ -89,6 +90,7 @@ const ViewModel = {
         viewmodel.push(namespaceDict[ns])
       })
     }
+    console.log("end tree")
     _viewmodel = viewmodel
     return viewmodel
   },

@@ -45,13 +45,13 @@
         <div v-for="(member, index) in section.items" :key="index">
           <q-item
             dense
-            :clickable="!section.values"
-            :to="memberUrl(section, member)"
+            :clickable="section.type != 'values'"
+            :to="ViewModel.memberUrl(section.type, member)"
           >
             <q-item-section :class="memberClass(member)">
-              <q-item-label :class="section.values ? '' : 'text-accent'">
-                <b>{{memberName(member, section)}}</b>&nbsp;
-                <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + name)" color='info' outline>
+              <q-item-label :class="section.type == 'values' ? '' : 'text-accent'">
+                <b>{{ViewModel.memberName(member, section.type)}}</b>&nbsp;
+                <q-badge v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)" color='info' outline>
                   <q-icon name="mdi-file-tree"/>
                   <q-tooltip>From {{member.parent}}</q-tooltip>
                 </q-badge>
@@ -106,6 +106,7 @@ export default {
   },
   data () {
     return {
+      ViewModel
     }
   },
   meta () {
@@ -143,7 +144,7 @@ export default {
             title: 'Constructors (' + item.constructors.length + ')',
             items: item.constructors,
             expanded: true,
-            constructors: true
+            type: 'constructors'
           })
         }
 
@@ -159,7 +160,7 @@ export default {
             title: 'Values',
             items: Object.freeze(values),
             expanded: true,
-            values: true
+            type: 'values'
           }))
         }
 
@@ -170,7 +171,7 @@ export default {
             title: 'Properties (' + properties.length + ')',
             items: Object.freeze(properties),
             expanded: true,
-            properties: true
+            type: 'properties'
           }))
         }
 
@@ -181,7 +182,7 @@ export default {
             title: 'Methods (' + methods.length + ')',
             items: Object.freeze(methods),
             expanded: true,
-            methods: true
+            type: 'methods'
           }))
         }
 
@@ -192,7 +193,7 @@ export default {
             title: 'Events (' + events.length + ')',
             items: Object.freeze(events),
             expanded: true,
-            events: true
+            type: 'events'
           }))
         }
       }
@@ -274,16 +275,16 @@ export default {
   },
   methods: {
     anchorId (section) {
-      if (section.constructors) {
+      if (section.type == 'constructors') {
         return 'constructors'
       }
-      if (section.properties) {
+      if (section.type == 'properties') {
         return 'properties'
       }
-      if (section.methods) {
+      if (section.type == 'methods') {
         return 'methods'
       }
-      if (section.events) {
+      if (section.type == 'events') {
         return 'events'
       }
       return ''
@@ -298,38 +299,6 @@ export default {
       if (member.deprecated) return 'light-dimmed'
       return ''
     },
-    memberName (member, section) {
-      //TODO: use ViewModel method
-      if (section.constructors || section.values) return member.signature
-      if (section.methods){
-      const match = member.signature.match(/\S*\(.*\)/g)
-      return match[0]
-      }
-      const tokens = member.signature.split(' ')
-      let name = tokens[1]
-      if (tokens[0] === 'static' && !section.events) {
-        name = tokens[2]
-      }
-      let index = name.indexOf('(')
-      if (index > 0) {
-        index = member.signature.indexOf(name)
-        return member.signature.substring(index)
-      }
-      return name
-    },
-    memberUrl (section, member) {
-      //TODO: use ViewModel method
-      if (section.values) return ''
-      let name = this.memberName(member, section).toLowerCase()
-      const index = name.indexOf('(')
-      if (index > 0) name = name.substring(0, index)
-      if (section.constructors) {
-        const url = this.baseUrl + this.namespace + '.' + name + '/' + name
-        return url.toLowerCase()
-      }
-      const url = this.baseUrl + member.parent + '/' + name
-      return url.toLowerCase()
-    }
   }
 }
 </script>
