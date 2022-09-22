@@ -75,13 +75,22 @@ export default {
       version: mostRecent,
       model: null,
       expanded: [],
-      routePushEnabled: true
+      routePushEnabled: true,
     }
   },
   created () {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
   },
   methods: {
+    onExpandComplete (expanded){
+      console.log("expand complete:", expanded)
+      //TODO: scrollto selectedNode
+      // const el = document.getElementById(`TOC:${newSelectedNode}`)
+      //     if (el) {
+      //       console.log("EL:", el)
+      //       el.scrollIntoView()
+      //   }
+    },
     onChangeSelectedItem (item, updateRoute) {
       const newSelectedNode = ViewModel.itemPath(item)
       console.log('onchangeselecteditem')
@@ -120,8 +129,6 @@ export default {
       this.routePushEnabled = true
       if (!updateRoute) return
 
-      // console.log(newState)
-
       const newPath = `${this.baseUrl}${newState}`.toLowerCase()
 
       console.log("selected:", newState)
@@ -129,12 +136,6 @@ export default {
       if (this.$route.path.toLowerCase() === newPath) return
       this.$router.push(newPath)
       ViewModel.setSelectedItem(newState)
-
-      //TODO: scrollto selectedNode
-      // const el = document.getElementById(`TOC:${newState}`)
-      //   if (el) {
-      //     el.scrollIntoView()
-      //   }
     }
   }
 }
