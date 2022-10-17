@@ -1,6 +1,6 @@
-# Docify Site Template (quasar-site-webpack)
+# Quasar App (quasar-site-v2)
 
-Docify Site Template
+Documentation site for RhinoCommon
 
 ## Install the dependencies
 ```bash
@@ -38,4 +38,4 @@ quasar build
 ```
 
 ### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
