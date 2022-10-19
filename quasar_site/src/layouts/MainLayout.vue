@@ -35,12 +35,19 @@
         class="q-pt-sm"
         :nodes="api"
         accordion
+        dense
         node-key="path"
         selected-color="accent"
-        :selected.sync="selectedNode"
-        :expanded.sync="expanded"
+        v-model:selected="selectedNode"
+        v-model:expanded="expanded"
         :duration="200"
-      />
+      >
+      <template v-slot:header-secondary="prop">
+        <div class="row items-center">
+          <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+        </div>
+      </template>
+      </q-tree>
     </q-drawer>
 
     <q-page-container>
@@ -68,37 +75,48 @@ export default {
       version: mostRecent,
       model: null,
       expanded: [],
-      routePushEnabled: true
+      routePushEnabled: true,
     }
   },
   created () {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
   },
   methods: {
+    onExpandComplete (expanded){
+      console.log("expand complete:", expanded)
+      //TODO: scrollto selectedNode
+      // const el = document.getElementById(`TOC:${newSelectedNode}`)
+      //     if (el) {
+      //       console.log("EL:", el)
+      //       el.scrollIntoView()
+      //   }
+    },
     onChangeSelectedItem (item, updateRoute) {
-      console.log('onchangeselecteditem')
       const newSelectedNode = ViewModel.itemPath(item)
+      console.log('onchangeselecteditem')
       if (newSelectedNode !== this.selectedNode) {
         this.routePushEnabled = updateRoute
         this.selectedNode = newSelectedNode
       }
       if (item.dataType !== 'namespace') {
-        const expandedNode = item.namespace.toLowerCase()
-        for (let i = 0; i < this.expanded.length; i++) {
-          if (this.expanded[1] === expandedNode) {
-            return
-          }
-        }
-        this.expanded.push(expandedNode)
+        const expandedNamespace = item.namespace.toLowerCase()
+        const expandedParents = item.parents || []
+        const expandedNodes = [expandedNamespace, ...expandedParents]
+        // for (let i = 0; i < this.expanded.length; i++) {
+        //   if (this.expanded[1] === expandedNamespace) {
+        //     return
+        //   }
+        // }
+        this.expanded= [this.expanded, ...expandedNodes]
       }
-    }
+    },
   },
   watch: {
     selectedNode: function (newState, oldState) {
       if (!this.watcherEnabled) return
 
       if (!newState) {
-        const selectItem = this.$router.currentRoute.path.substring(this.baseUrl.length)
+        const selectItem = this.$route.path.substring(this.baseUrl.length)
         if (selectItem) {
           this.watcherEnabled = false
           this.selectedNode = selectItem
@@ -111,9 +129,11 @@ export default {
       this.routePushEnabled = true
       if (!updateRoute) return
 
-      // console.log(newState)
-      const newPath = this.baseUrl + newState.toLowerCase()
-      if (this.$router.currentRoute.path.toLowerCase() === newPath) return
+      const newPath = `${this.baseUrl}${newState}`.toLowerCase()
+
+      console.log("selected:", newState)
+
+      if (this.$route.path.toLowerCase() === newPath) return
       this.$router.push(newPath)
       ViewModel.setSelectedItem(newState)
     }
@@ -136,5 +156,17 @@ a.routerlink {
 
 .q-tree__node--selected {
   font-weight: bold;
+}
+
+.toc-secondary-header{
+  /* TODO: replace hardcoded width */
+  max-width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toc-deprecated{
+  text-decoration: line-through;
 }
 </style>

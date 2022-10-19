@@ -1,42 +1,37 @@
 {
-  "name": "quasar_site",
-  "version": "7.0.0",
+  "name": "quasar-site-webpack",
+  "version": "0.0.1",
   "description": "Docify Site Template",
   "productName": "Docify Site Template",
-  "author": "Steve Baer <steve@mcneel.com>",
+  "author": "Morteza Karimi <morteza@mcneel.com>",
   "private": true,
   "scripts": {
     "dev": "quasar dev",
     "build": "quasar build",
     "ssrdev": "quasar dev -m ssr",
     "ssrbuild": "quasar build -m ssr",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue ./",
+    "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.9.5",
-    "@quasar/quasar-app-extension-qmarkdown": "^1.0.31",
-    "core-js": "3.0.0",
-    "fuse.js": "^6.4.1",
-    "node-cache": "^5.1.2",
-    "quasar": "^1.13.1"
+    "@quasar/extras": "^1.0.0",
+    "core-js": "^3.6.5",
+    "fuse.js": "^6.6.2",
+    "highlight.js": "^11.6.0",
+    "quasar": "^2.6.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "2.0.8",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2"
-  },
-  "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "@babel/eslint-parser": "^7.13.14",
+    "@quasar/app-webpack": "^3.0.0",
+    "@types/marked": "^4.0.7",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "prettier": "^2.5.1"
   },
   "browserslist": [
     "last 10 Chrome versions",
@@ -48,5 +43,10 @@
     "last 8 FirefoxAndroid versions",
     "last 10 iOS versions",
     "last 5 Opera versions"
-  ]
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
 }

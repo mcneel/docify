@@ -34,7 +34,8 @@
     <q-expansion-item v-for="section in memberSections"
       :key="section.title"
       switch-toggle-side
-      :value="section.expanded"
+      :default-opened = "this.$route.hash ? this.$route.hash.substring(1) == anchorId(section) : section.expanded"
+      :model="section.expanded"
       :label="section.title"
       :content-inset-level="1"
       :id="anchorId(section)"
@@ -43,13 +44,14 @@
       <q-list>
         <div v-for="(member, index) in section.items" :key="index">
           <q-item
-            :clickable="!section.values"
-            :to="memberUrl(section, member)"
+            dense
+            :clickable="section.type != 'values'"
+            :to="ViewModel.memberUrl(section.type, member)"
           >
             <q-item-section :class="memberClass(member)">
-              <q-item-label :class="section.values ? '' : 'text-accent'">
-                <b>{{memberName(member, section)}}</b>&nbsp;
-                <q-badge v-if="!section.constructors && !section.values && member.parent !== (namespace + '.' + name)" color='info' outline>
+              <q-item-label :class="section.type == 'values' ? '' : 'text-accent'">
+                <b>{{ViewModel.memberName(member, section.type)}}</b>&nbsp;
+                <q-badge v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)" color='info' outline>
                   <q-icon name="mdi-file-tree"/>
                   <q-tooltip>From {{member.parent}}</q-tooltip>
                 </q-badge>
@@ -104,6 +106,7 @@ export default {
   },
   data () {
     return {
+      ViewModel
     }
   },
   meta () {
@@ -141,7 +144,7 @@ export default {
             title: 'Constructors (' + item.constructors.length + ')',
             items: item.constructors,
             expanded: true,
-            constructors: true
+            type: 'constructors'
           })
         }
 
@@ -157,92 +160,40 @@ export default {
             title: 'Values',
             items: Object.freeze(values),
             expanded: true,
-            values: true
+            type: 'values'
           }))
         }
 
         let parentName = item.namespace + '.' + item.name
-        let properties = [].concat(item.properties)
-        if (item.properties) {
-          for (let i = 0; i < properties.length; i++) {
-            properties[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedProps = this.inheritence[i].item.properties
-          if (inheritedProps == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedProps.length; j++) {
-            inheritedProps[j].parent = parentName
-          }
-          properties = properties.concat(this.inheritence[i].item.properties)
-        }
-        properties = properties.filter(p => p != null)
-        const p = { properties: true }
-        properties.sort((a, b) => this.memberName(a, p).localeCompare(this.memberName(b, p)))
+        const properties = ViewModel.getMembers(item, "properties", true)
         if (properties.length > 0) {
           rc.push(Object.freeze({
             title: 'Properties (' + properties.length + ')',
             items: Object.freeze(properties),
             expanded: true,
-            properties: true
+            type: 'properties'
           }))
         }
 
         parentName = item.namespace + '.' + item.name
-        let methods = [].concat(item.methods)
-        if (item.methods) {
-          for (let i = 0; i < methods.length; i++) {
-            methods[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedMethods = this.inheritence[i].item.methods
-          if (inheritedMethods == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedMethods.length; j++) {
-            inheritedMethods[j].parent = parentName
-          }
-          methods = methods.concat(this.inheritence[i].item.methods)
-        }
-        methods = methods.filter(m => m != null)
-        const m = { methods: true }
-        methods.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        const methods = ViewModel.getMembers(item, "methods", true)
         if (methods.length > 0) {
           rc.push(Object.freeze({
             title: 'Methods (' + methods.length + ')',
             items: Object.freeze(methods),
             expanded: true,
-            methods: true
+            type: 'methods'
           }))
         }
 
         parentName = item.namespace + '.' + item.name
-        let events = [].concat(item.events)
-        if (item.events) {
-          for (let i = 0; i < events.length; i++) {
-            events[i].parent = parentName
-          }
-        }
-        for (let i = 0; i < this.inheritence.length; i++) {
-          if (!this.inheritence[i].item) continue
-          const inheritedEvents = this.inheritence[i].item.events
-          if (inheritedEvents == null) continue
-          parentName = this.inheritence[i].item.namespace + '.' + this.inheritence[i].item.name
-          for (let j = 0; j < inheritedEvents.length; j++) {
-            inheritedEvents[j].parent = parentName
-          }
-          events = events.concat(this.inheritence[i].item.events)
-        }
-        events = events.filter(e => e != null)
+        const events = ViewModel.getMembers(item, "events", true)
         if (events.length > 0) {
           rc.push(Object.freeze({
             title: 'Events (' + events.length + ')',
             items: Object.freeze(events),
             expanded: true,
-            events: true
+            type: 'events'
           }))
         }
       }
@@ -300,7 +251,8 @@ export default {
   },
   mounted () {
     if (this.$route.params && this.$route.params.datatype) {
-      ViewModel.setSelectedItem(this.$route.params.datatype)
+      const selectedItem = decodeURI(this.$route.fullPath.substring(this.baseUrl.length))
+      ViewModel.setSelectedItem(selectedItem)
     }
     // If this page is loaded with an anchor URL, attempt to scroll to
     // it right after the page is loaded
@@ -317,22 +269,22 @@ export default {
   watch: {
     '$route' (to, from) {
       // react to route changes...
-      const selectedItem = to.path.substring(this.baseUrl.length)
+      const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
     }
   },
   methods: {
     anchorId (section) {
-      if (section.constructors) {
+      if (section.type == 'constructors') {
         return 'constructors'
       }
-      if (section.properties) {
+      if (section.type == 'properties') {
         return 'properties'
       }
-      if (section.methods) {
+      if (section.type == 'methods') {
         return 'methods'
       }
-      if (section.events) {
+      if (section.type == 'events') {
         return 'events'
       }
       return ''
@@ -347,32 +299,6 @@ export default {
       if (member.deprecated) return 'light-dimmed'
       return ''
     },
-    memberName (member, section) {
-      if (section.constructors || section.values) return member.signature
-      const tokens = member.signature.split(' ')
-      let name = tokens[1]
-      if (tokens[0] === 'static' && !section.events) {
-        name = tokens[2]
-      }
-      let index = name.indexOf('(')
-      if (index > 0) {
-        index = member.signature.indexOf(name)
-        return member.signature.substring(index)
-      }
-      return name
-    },
-    memberUrl (section, member) {
-      if (section.values) return ''
-      let name = this.memberName(member, section).toLowerCase()
-      const index = name.indexOf('(')
-      if (index > 0) name = name.substring(0, index)
-      if (section.constructors) {
-        const url = this.baseUrl + this.namespace + '.' + name + '/' + name
-        return url.toLowerCase()
-      }
-      const url = this.baseUrl + member.parent + '/' + name
-      return url.toLowerCase()
-    }
   }
 }
 </script>

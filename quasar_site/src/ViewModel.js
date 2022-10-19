@@ -15,15 +15,34 @@ let _typemap = null
 let _searchInstance = null
 let _selectedPath = ''
 let _lastFound = null
+let _pathMap = {}
 
 const ViewModel = {
   itemPath (item) {
+    if (item.path){
+      return item.path
+    }
     let path = null
     if (item.namespace) path = item.namespace + '.' + item.name
     else path = item.name
     return path.toLowerCase()
   },
+  childTree (parent, childType){
+    const childrenGroupPath =  `${this.itemPath(parent)}#${childType.toLowerCase()}`
+    const includeInherited = childType.toLowerCase() == "constructors" ? false : true
+    const members =  this.getMembers(parent, childType.toLowerCase(), includeInherited)
+    if (members.length <1){
+      return
+    }
+    const children = members.map(x => {
+      return {label:this.memberName(x, childType.toLowerCase()), path: x.path, header: 'secondary', deprecated: x.deprecated}
+    })
+    const childrenGroup = { label: childType, namespace: parent.namespace, parents: [this.itemPath(parent)], path: childrenGroupPath, children }
+    _pathMap[childrenGroupPath]= childrenGroup
+    return childrenGroup
+  },
   getTree () {
+    console.log("start tree")
     if (_viewmodel) return _viewmodel
     let viewmodel = null
     {
@@ -43,8 +62,18 @@ const ViewModel = {
           const item = {
             label: type.name,
             path: this.itemPath(type),
-            summary: summary
+            summary: summary,
+            children : []
           }
+          const constructors = this.childTree(type, "Constructors")
+          if (constructors){ item.children.push(constructors)}
+          const properties = this.childTree(type, "Properties")
+          if (properties){ item.children.push(properties)}
+          const methods = this.childTree(type, "Methods")
+          if (methods){ item.children.push(methods)}
+          const events = this.childTree(type, "Events")
+          if (events){ item.children.push(events)}
+
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
           if (!node) {
@@ -53,6 +82,7 @@ const ViewModel = {
             namespaceDict[type.namespace].children.push(item)
           }
         }
+        _pathMap[this.itemPath(type)]= type
       })
       viewmodel = []
       const namespaceKeys = Object.keys(namespaceDict).sort()
@@ -60,6 +90,7 @@ const ViewModel = {
         viewmodel.push(namespaceDict[ns])
       })
     }
+    console.log("end tree")
     _viewmodel = viewmodel
     return viewmodel
   },
@@ -97,7 +128,7 @@ const ViewModel = {
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path
-    const node = item.dataType ? item : this.findNodeByPath(item)
+    const node = item.dataType ? item :  _pathMap[path]
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
         callback(node, updateRoute)
@@ -298,6 +329,85 @@ const ViewModel = {
       }
     })
     return items
+  },
+
+  getMembers (node, memberType, inherited=true) {
+    const inheritence = this.getInheritence(node)
+    let members = [].concat(node[memberType])
+    if (node[memberType]) {
+      for (let i = 0; i < members.length; i++) {
+        members[i].parent = node.namespace + '.' + node.name
+        members[i].namespace = node.namespace
+        const url = this.memberUrl(memberType, members[i])
+        members[i].path = url
+        members[i].parents = [`${this.itemPath(node)}#${memberType}`, this.itemPath(node)]
+        _pathMap[url]= members[i]
+      }
+    }
+    members = members.filter(m => m != null)
+    if (inherited){
+      for (const i in inheritence) {
+        if (!inheritence[i].item) continue
+        const inheritedMembers = inheritence[i].item[memberType]
+        if (inheritedMembers == null) continue
+
+        for (let j = 0; j < inheritedMembers.length; j++) {
+            inheritedMembers[j].parent = inheritence[i].item.namespace + '.' + inheritence[i].item.name
+            inheritedMembers[j].namespace = inheritence[i].item.namespace
+
+            const url = this.memberUrl(memberType, inheritedMembers[j])
+            inheritedMembers[j].path = url
+            _pathMap[url]= inheritedMembers[j]
+        }
+
+        members = members.concat(inheritedMembers)
+        members = members.filter(m => m != null)
+        if (memberType == "methods")
+        {
+          const m = { methods: true }
+          members.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        }
+        if (memberType == "properties")
+        {
+          const m = { properties: true }
+          members.sort((a, b) => this.memberName(a, m).localeCompare(this.memberName(b, m)))
+        }
+      }
+    }
+    return members
+  },
+  memberName (member, memberType) {
+    if (memberType == "constructors" || memberType == "values") return member.signature
+    if (memberType == "methods"){
+      const match = member.signature.match(/\S*\(.*\)/g)
+      return match[0]
+    }
+    const tokens = member.signature.split(' ')
+    let name = tokens[1]
+    if (tokens[0] === 'static' && memberType != "events") {
+      name = tokens[2]
+    }
+    if (!name){
+      return ""
+    }
+    let index = name.indexOf('(')
+    if (index > 0) {
+      index = member.signature.indexOf(name)
+      return member.signature.substring(index)
+    }
+    return name
+  },
+  memberUrl (memberType, member) {
+    if (memberType == "values") return ''
+    let name = this.memberName(member, memberType).toLowerCase()
+    const index = name.indexOf('(')
+    if (index > 0) name = name.substring(0, index)
+    if (memberType == "constructors") {
+      const url =  member.namespace + '.' + name + '/' + name
+      return url.toLowerCase()
+    }
+    const url = member.parent + '/' + name
+    return url.toLowerCase()
   }
 }
 
