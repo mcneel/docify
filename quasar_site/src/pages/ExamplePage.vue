@@ -13,11 +13,9 @@
     <q-separator/>
     <q-tab-panels v-model="language" animated>
       <q-tab-panel v-for="markdown in exampleMarkdown" :key="markdown.language" :name="markdown.language">
-        <code-highlight :language="markdown.language">
-          <pre>
-            {{markdown.code}}
-          </pre>
-        </code-highlight>
+        <pre>
+          <div v-html="highlightSyntax(markdown.code)"></div>
+        </pre>
       </q-tab-panel>
      </q-tab-panels>
   </q-page>
@@ -25,12 +23,8 @@
 
 <script>
 import Examples from '../api_examples.json'
-import CodeHighlight from "vue-code-highlight/src/CodeHighlight.vue";
-import 'prism-es6/components/prism-markup-templating';
-import 'prism-es6/components/prism-python';
-import 'prism-es6/components/prism-csharp';
-import 'prism-es6/components/prism-visual-basic';
-import "vue-code-highlight/themes/prism-tomorrow.css";
+import highlight from "highlight.js"
+import "highlight.js/styles/github.css"
 
 export default {
   data () {
@@ -40,8 +34,12 @@ export default {
       exampleMarkdown: []
     }
   },
-  components: {
-    CodeHighlight
+
+  methods: {
+    highlightSyntax(code){
+      const html = highlight.highlightAuto(code)
+      return html.value
+    }
   },
   mounted () {
     if (this.$route.params && this.$route.params.example) {

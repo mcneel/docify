@@ -18,14 +18,15 @@
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
     "fuse.js": "^6.6.2",
+    "highlight.js": "^11.6.0",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
-    "vue-code-highlight": "^0.7.8",
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
     "@quasar/app-webpack": "^3.0.0",
+    "@types/marked": "^4.0.7",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^9.0.0",
