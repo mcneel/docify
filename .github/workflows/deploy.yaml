@@ -23,6 +23,8 @@ jobs:
       run: |
         cd quasar_site/dist/ssr/
         git init
+        git config user.email "morteza@mcneel.com"
+        git config user.name "Morteza Karimi"
         git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/mcneel-apidocs.git
         git add .
         git commit -m "CI build"
