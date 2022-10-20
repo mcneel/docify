@@ -14,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: cd quasar_site/
-    - run: pwd
-    - run: yarn
-    - run: yarn ssrbuild
+    - name: install and build
+      run: |
+        cd quasar_site/
+        yarn
+        yarn ssrbuild
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
