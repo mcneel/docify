@@ -2,12 +2,12 @@ name: Heroku build and deploy
 
 on:
   push:
-    branches: [ 'main' ]
+    branches: [ 'master' ]
   pull_request:
-    branches: [ 'main' ]
+    branches: [ 'master' ]
   workflow_dispatch:
     branches:
-      - main
+      - master
 
 jobs:
   build_deploy:
