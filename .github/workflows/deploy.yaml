@@ -24,5 +24,7 @@ jobs:
         cd quasar_site/dist/ssr/
         git init
         git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/mcneel-apidocs.git
+        git add .
+        git commit -m "CI build"
         git push heroku master --force
 
