@@ -25,5 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: pwd
-    - run: git push heroku `git subtree split --prefix quasar_site/dist/ssr`:master --force 
-    # - run: git subtree push --prefix quasar_site/dist/ssr/ https://heroku:fae6583a-d8af-4745-9865-ef9e6e61a8a3@git.heroku.com/mcneel-apidocs.git HEAD:master
+    - name: init git repo and deploy
+      run: |
+        cd quasar_site/dist/ssr
+        git init
+        git remote add heroku https://heroku:fae6583a-d8af-4745-9865-ef9e6e61a8a3@git.heroku.com/mcneel-apidocs.git
+        git push heroku master --force
