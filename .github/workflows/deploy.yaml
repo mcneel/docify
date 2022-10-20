@@ -25,9 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: pwd
+    - run: ls
     - name: init git repo and deploy
       run: |
         cd quasar_site/dist/ssr
         git init
-        git remote add heroku https://heroku:fae6583a-d8af-4745-9865-ef9e6e61a8a3@git.heroku.com/mcneel-apidocs.git
+        git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/mcneel-apidocs.git
         git push heroku master --force
