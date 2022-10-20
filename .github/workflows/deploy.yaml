@@ -21,7 +21,6 @@ jobs:
         yarn ssrbuild
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
     steps:
