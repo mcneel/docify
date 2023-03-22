@@ -17,6 +17,15 @@ let _selectedPath = ''
 let _lastFound = null
 let _pathMap = {}
 
+let updateTree = (path, children) => obj => {
+  if (obj.path === path) {
+      obj.children = children;
+      return true;
+  }
+  else if (obj.children)
+      return obj.children.some(updateTree(path, children));
+}
+
 const ViewModel = {
   itemPath (item) {
     if (item.path){
@@ -40,6 +49,31 @@ const ViewModel = {
     const childrenGroup = { label: childType, namespace: parent.namespace, parents: [this.itemPath(parent)], path: childrenGroupPath, children }
     _pathMap[childrenGroupPath]= childrenGroup
     return childrenGroup
+  },
+  lazyChildForPath (path) {
+    for (let i = 0; i < ApiInfo.length; i++) {
+      const type = ApiInfo[i];
+      let summary = ''
+      if (type.dataType !== DataTypes.NAMESPACE) {
+        if (this.itemPath(type) == path){
+          const children = []
+          const constructors = this.childTree(type, "Constructors")
+          if (constructors){ children.push(constructors)}
+          const properties = this.childTree(type, "Properties")
+          if (properties){ children.push(properties)}
+          const methods = this.childTree(type, "Methods")
+          if (methods){ children.push(methods)}
+          const events = this.childTree(type, "Events")
+          if (events){ children.push(events)}
+
+          //replace the populated child in the _viewmodel and _pathMap
+          _pathMap[this.itemPath(type)]["children"] = children;
+          _viewmodel.forEach(updateTree(path, children));
+
+          return children;
+        }
+      }
+    }
   },
   getTree () {
     console.log("start tree")
@@ -65,14 +99,15 @@ const ViewModel = {
             summary: summary,
             children : []
           }
-          const constructors = this.childTree(type, "Constructors")
-          if (constructors){ item.children.push(constructors)}
-          const properties = this.childTree(type, "Properties")
-          if (properties){ item.children.push(properties)}
-          const methods = this.childTree(type, "Methods")
-          if (methods){ item.children.push(methods)}
-          const events = this.childTree(type, "Events")
-          if (events){ item.children.push(events)}
+          // const constructors = this.childTree(type, "Constructors")
+          // if (constructors){ item.children.push(constructors)}
+          // const properties = this.childTree(type, "Properties")
+          // if (properties){ item.children.push(properties)}
+          // const methods = this.childTree(type, "Methods")
+          // if (methods){ item.children.push(methods)}
+          // const events = this.childTree(type, "Events")
+          // if (events){ item.children.push(events)}
+          item["lazy"] = true;
 
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
@@ -124,11 +159,26 @@ const ViewModel = {
     return found
   },
   setSelectedItem (item, updateRoute = true) {
+    //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path
-    const node = item.dataType ? item :  _pathMap[path]
+    let node = null;
+    if (item.dataType){
+      node = item
+    }
+    else{
+      if (_pathMap[path]){
+        node = _pathMap[path];
+      }
+      else{
+        //If node is lazy loaded it doens't exist on page load, this.lazyChildForPath(parentPath) adds it to the tree
+        const parentPath = path.split(/[//,#]+/)[0];
+        this.lazyChildForPath(parentPath);
+        node = _pathMap[path];
+      }
+    }
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
         callback(node, updateRoute)

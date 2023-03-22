@@ -47,7 +47,7 @@
           </q-item-label>
           <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
           <q-item-label caption class="on-right" v-for="parameter in member.parameters" :key="parameter.name">
-            <b>{{parameter.name}}</b> - {{parameter.summary}}
+            <b>{{parameter.name}}</b> - <span style="white-space: pre;">{{parameter.summary}}</span>
           </q-item-label>
           <q-item-label caption v-if="member.returns" class="text-bold">Returns:</q-item-label>
           <q-item-label caption class="on-right" v-if="member.returns">

@@ -41,6 +41,7 @@
         v-model:selected="selectedNode"
         v-model:expanded="expanded"
         :duration="200"
+        @lazy-load="onLazyLoad"
       >
       <template v-slot:header-secondary="prop">
         <div class="row items-center">
@@ -110,6 +111,10 @@ export default {
         this.expanded= [this.expanded, ...expandedNodes]
       }
     },
+    onLazyLoad ({ node, key, done, fail }) {
+        const childNodes = ViewModel.lazyChildForPath(node.path);
+        done(childNodes);
+      }
   },
   watch: {
     selectedNode: function (newState, oldState) {
