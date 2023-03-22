@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/docify.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run quasar",
+            "command": "quasar",
+            "type": "process",
+            "args": [
+                "dev",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/quasar_site"
+            },
+            "problemMatcher": "$msCompile"
+        },
+    ]
+}
