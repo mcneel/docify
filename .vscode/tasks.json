@@ -14,6 +14,33 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "docify init",
+            "command": "dotnet",
+            "type": "process",
+            "dependsOn": "build",
+            "args": [
+                "${workspaceFolder}/src/bin/Debug/net7.0/docify.dll",
+                "init",
+                "RhinoCommon",
+                "--force",
+                "--target=${workspaceFolder}/quasar_site/src",
+                "--source=${input:rhinoSource}/src4/DotNetSDK/rhinocommon/dotnet",
+                "--examples=${input:rhinoSource}/src4/DotNetSDK/rhinocommon"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "docify build",
+            "command": "dotnet",
+            "type": "process",
+            "dependsOn": "build",
+            "args": [
+                "${workspaceFolder}/src/bin/Debug/net7.0/docify.dll",
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "run quasar",
             "command": "quasar",
             "type": "process",
@@ -25,5 +52,22 @@
             },
             "problemMatcher": "$msCompile"
         },
+        {
+            "label": "initial setup (npm)",
+            "type": "shell",
+            "command": "npm install && npm run lint",
+            "options": {
+                "cwd": "${workspaceFolder}/quasar_site"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "rhinoSource",
+            "type": "promptString",
+            "default": "${workspaceFolder}/../rhino",
+            "description": "Enter the Rhino source folder"
+        }
     ]
 }

@@ -18,7 +18,7 @@ namespace Docify
         private const string Usage = @".NET API documents generator
 
     Usage:
-      {name} init [<project_name>]
+      {name} init [<project_name>] [--target=<out_dir>] [--source=<source_dir>] [--examples=<examples_dir>] [--force]
       {name} build
 
     Options:
@@ -38,9 +38,14 @@ namespace Docify
 
             if (inputs["init"].IsTrue)
             {
+
                 ProgramConfigs.InitConfigs(
                     // grab the optional project name
-                    inputs["<project_name>"] is null ? string.Empty : inputs["<project_name>"].Value.ToString()
+                    inputs["<project_name>"]?.Value?.ToString(),
+                    inputs["--target"]?.Value?.ToString(),
+                    inputs["--source"]?.Value?.ToString(),
+                    inputs["--examples"]?.Value?.ToString(),
+                    inputs["--force"]?.IsTrue ?? false
                     );
             }
             else if (inputs["build"].IsTrue)

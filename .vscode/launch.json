@@ -11,8 +11,12 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/bin/Debug/net7.0/docify.dll",
             "args": [
-                "build"
-                // add the necessary args here
+                "init",
+                "RhinoCommon",
+                "--force",
+                "--target=${workspaceFolder}/quasar_site/src",
+                "--source=${workspaceFolder}/../rhino8/src4/DotNetSDK/rhinocommon/dotnet",
+                "--examples=${workspaceFolder}/../rhino8/src4/DotNetSDK/rhinocommon"
             ],
             "cwd": "${workspaceFolder}/src",
             "console": "internalConsole",
