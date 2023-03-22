@@ -24,3 +24,12 @@ $ api_docify --name=<proj_name> <proj_path> <proj_output_js> <examples_path> <ex
 ```shell
 $ api_docify.exe --name="RhinoCommon" "%RHINO4SRC%/rhinocommon/dotnet" "src/modules/docify/quasar_site/src/RhinoCommonApi.js"
 ```
+
+# VS Code (Mac) setup instructions
+
+1. Ensure node, npm, and quasar are installed
+2. Open this folder in VS Code
+3. Run `CMD+Shift+P > Run Task > initial setup (npm)` 
+4. Run `CMD+Shift+P > Run Task > docify init`, then enter the path where the Rhino source code is located and press enter.
+5. Run `CMD+Shift+P > Run Task > docify build`
+5. Run `CMD+Shift+P > Run Task > run quasar`

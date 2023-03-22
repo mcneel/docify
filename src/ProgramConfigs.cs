@@ -26,9 +26,9 @@ namespace Docify
         private const string ExamplesKey = "examples";
         private const string TargetKey = "target";
         private static string ConfigTemplate = $@"# auto-generated {Program.Name} config file. configure for your project
-{{0}}: ""{ProgramConfigs.CurrentPath}""
-{{1}}: ""{ProgramConfigs.CurrentPath}""
-{{2}}: ""{ProgramConfigs.CurrentPath}""
+{SourceKey}: ""{{0}}""
+{ExamplesKey}: ""{{1}}""
+{TargetKey}: ""{{2}}""
 name: ""{{3}}""
 shortname: ""your project short name""
 description: ""your project description""
@@ -39,21 +39,25 @@ description: ""your project description""
         private static string _target = null;
         private static IDictionary<string, string> _configs = null;
 
-        public static void InitConfigs(string projectName = "")
+        public static void InitConfigs(string projectName = "", string targetDir = null, string sourceDir = null, string examplesDir = null, bool force = false)
         {
-            if (File.Exists(ConfigFilePath)) {
+            if (!force && File.Exists(ConfigFilePath)) {
                 Console.Error.WriteLine($"Config file already exists: {ConfigFilePath}");
                 Environment.Exit(1);
             }
 
             using (var cfgFile = File.CreateText(ConfigFilePath))
             {
+                targetDir ??= ProgramConfigs.CurrentPath;
+                sourceDir ??= ProgramConfigs.CurrentPath;
+                examplesDir ??= sourceDir;
+
                 cfgFile.Write(
                     string.Format(
                         ConfigTemplate,
-                        SourceKey,
-                        ExamplesKey,
-                        TargetKey,
+                        sourceDir,
+                        examplesDir,
+                        targetDir,
                         projectName != string.Empty ? projectName : "your project name"
                         ));
                 Console.WriteLine($"Created config file: {ConfigFilePath}");
