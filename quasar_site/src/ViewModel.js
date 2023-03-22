@@ -41,6 +41,29 @@ const ViewModel = {
     _pathMap[childrenGroupPath]= childrenGroup
     return childrenGroup
   },
+  lazyChildForPath (path) {
+    for (let i = 0; i < ApiInfo.length; i++) {
+      const type = ApiInfo[i];
+      let summary = ''
+      if (type.dataType !== DataTypes.NAMESPACE) {
+        if (this.itemPath(type) == path){
+          const children = []
+          const constructors = this.childTree(type, "Constructors")
+          if (constructors){ children.push(constructors)}
+          const properties = this.childTree(type, "Properties")
+          if (properties){ children.push(properties)}
+          const methods = this.childTree(type, "Methods")
+          if (methods){ children.push(methods)}
+          const events = this.childTree(type, "Events")
+          if (events){ children.push(events)}
+
+          //TODO: may need to replace the populated child in the _viewmodel and _pathMap
+          return children;
+        }
+      }
+
+    }
+  },
   getTree () {
     console.log("start tree")
     if (_viewmodel) return _viewmodel
@@ -65,14 +88,15 @@ const ViewModel = {
             summary: summary,
             children : []
           }
-          const constructors = this.childTree(type, "Constructors")
-          if (constructors){ item.children.push(constructors)}
-          const properties = this.childTree(type, "Properties")
-          if (properties){ item.children.push(properties)}
-          const methods = this.childTree(type, "Methods")
-          if (methods){ item.children.push(methods)}
-          const events = this.childTree(type, "Events")
-          if (events){ item.children.push(events)}
+          // const constructors = this.childTree(type, "Constructors")
+          // if (constructors){ item.children.push(constructors)}
+          // const properties = this.childTree(type, "Properties")
+          // if (properties){ item.children.push(properties)}
+          // const methods = this.childTree(type, "Methods")
+          // if (methods){ item.children.push(methods)}
+          // const events = this.childTree(type, "Events")
+          // if (events){ item.children.push(events)}
+          item["lazy"] = true;
 
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
