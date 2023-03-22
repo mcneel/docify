@@ -112,7 +112,6 @@ export default {
       }
     },
     onLazyLoad ({ node, key, done, fail }) {
-        console.log("lazy loading:", node.path);
         const childNodes = ViewModel.lazyChildForPath(node.path);
         done(childNodes);
       }

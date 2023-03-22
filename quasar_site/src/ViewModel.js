@@ -17,6 +17,15 @@ let _selectedPath = ''
 let _lastFound = null
 let _pathMap = {}
 
+let updateTree = (path, children) => obj => {
+  if (obj.path === path) {
+      obj.children = children;
+      return true;
+  }
+  else if (obj.children)
+      return obj.children.some(updateTree(path, children));
+}
+
 const ViewModel = {
   itemPath (item) {
     if (item.path){
@@ -57,11 +66,13 @@ const ViewModel = {
           const events = this.childTree(type, "Events")
           if (events){ children.push(events)}
 
-          //TODO: may need to replace the populated child in the _viewmodel and _pathMap
+          //replace the populated child in the _viewmodel and _pathMap
+          _pathMap[this.itemPath(type)]["children"] = children;
+          _viewmodel.forEach(updateTree(path, children));
+
           return children;
         }
       }
-
     }
   },
   getTree () {
@@ -148,11 +159,26 @@ const ViewModel = {
     return found
   },
   setSelectedItem (item, updateRoute = true) {
+    //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path
-    const node = item.dataType ? item :  _pathMap[path]
+    let node = null;
+    if (item.dataType){
+      node = item
+    }
+    else{
+      if (_pathMap[path]){
+        node = _pathMap[path];
+      }
+      else{
+        //If node is lazy loaded it doens't exist on page load, this.lazyChildForPath(parentPath) adds it to the tree
+        const parentPath = path.split(/[//,#]+/)[0];
+        this.lazyChildForPath(parentPath);
+        node = _pathMap[path];
+      }
+    }
     if (node) {
       for (const [, callback] of Object.entries(_selectedItemChangedCallbacks)) {
         callback(node, updateRoute)
