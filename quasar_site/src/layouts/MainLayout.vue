@@ -31,6 +31,7 @@
       show-if-above
       bordered
     >
+      <!--
       <q-tree
         class="q-pt-sm"
         :nodes="api"
@@ -49,6 +50,7 @@
         </div>
       </template>
       </q-tree>
+      -->
     </q-drawer>
 
     <q-page-container>
