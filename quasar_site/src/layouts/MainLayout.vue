@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      leftDrawerOpen: false,
+      leftDrawerOpen: true,
       api: [],
       selectedNode: [],
       watcherEnabled: true,
