@@ -65,22 +65,24 @@ export default {
     apiTitle: { type: String },
     baseUrl: { type: String }
   },
-  data () {
-    const vm = ViewModel.getTree()
-    const mostRecent = ViewModel.mostRecentSince()
+  data() {
     return {
       leftDrawerOpen: false,
-      api: vm,
+      api: [],
       selectedNode: [],
       watcherEnabled: true,
-      version: mostRecent,
+      version: "",
       model: null,
       expanded: [],
       routePushEnabled: true,
     }
   },
-  created () {
+  async created() {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
+    const vm = ViewModel.getTree()
+    const mostRecent = ViewModel.mostRecentSince()
+    this.api = vm;
+    this.version = mostRecent;
   },
   methods: {
     onExpandComplete (expanded){
