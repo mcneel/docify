@@ -226,9 +226,15 @@ namespace Docify.Parse
                     sb.AppendLine(",");
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
-
+                if (type.FullName == "Rhino.Display.ColorGradient"){
+                    var colorGradient = type;
+                }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor, asJavascript);
+                if (constructors==null){
+                    //Try to add default constructor
+                    constructors = DefaultConstructorAsJson(type, asJavascript);
+                }
                 string properties = MembersAsJsonArray(type, ParsedMemberType.Property, asJavascript);
                 string methods = MembersAsJsonArray(type, ParsedMemberType.Method, asJavascript);
                 string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
@@ -289,6 +295,29 @@ namespace Docify.Parse
             }
             sb.Append("  }");
             return sb.ToString();
+        }
+
+        static string DefaultConstructorAsJson(ParsedType type,  bool asJavascript = true)
+        {
+            if (!type.IsPublic)
+                return null;
+            if (!type.IsClass)
+                return null;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("[");
+            sb.AppendLine("      {");
+            sb.Append(KeyValString(8, "signature", type.Name+ "()", asJavascript));
+            string summary = "Initializes a new instance of the "+ type.Name + " class";
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                sb.AppendLine(",");
+                sb.Append(KeyValString(8, "summary", summary, asJavascript));
+            }
+            sb.AppendLine();
+            sb.Append("      }");
+            sb.AppendLine();
+            sb.Append("    ]");
+            return  sb.ToString();
         }
 
         static string MembersAsJsonArray(ParsedType type, ParsedMemberType filter, bool asJavascript = true)
