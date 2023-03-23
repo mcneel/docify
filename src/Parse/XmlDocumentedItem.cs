@@ -115,11 +115,27 @@ namespace Docify.Parse
                     //case "b":
                     //    sb.Append(string.Format("**{0}**", child.InnerText));
                     //    break;
+                    case "pre":
+                        {
+                            // Morteza March 23, 2023: added case to render multiline diagram in corner parameter for `CreateFromBox(IEnumerable<Point3d> corners)` method.
+                            sb.Append("<pre>");
+                            string lines = Markdownify(child);
+                            sb.Append(lines);
+                            sb.Append("</pre>");
+                            break;
+                        }
                     case "para":
+                        {
+                            sb.AppendLine();
+                            var lines = child.InnerText.Split(new char[] { '\n' });
+                            for( int j=0; j<lines.Length; j++)
+                            {
+                                sb.Append(lines[j]);
+                            }
+                        }
+                        break;
                     default:
                         {
-                            if (child.Name.Equals("para"))
-                                sb.AppendLine();
                             var lines = child.InnerText.Split(new char[] { '\n' });
                             for( int j=0; j<lines.Length; j++)
                             {

@@ -104,7 +104,8 @@ namespace Docify.Parse
                         }
                     }
                     string line = lines[i];
-                    if(_writingApi)
+                    // Morteza March 23, 2023 added check for <pre> to maintain  whitespace
+                    if(_writingApi & !s.Contains("<pre>"))
                         line = line.Trim();
                     line = line.Replace("\\", "\\\\");
                     if (!asJavascript)
