@@ -99,15 +99,9 @@ const ViewModel = {
             summary: summary,
             children : []
           }
-          // const constructors = this.childTree(type, "Constructors")
-          // if (constructors){ item.children.push(constructors)}
-          // const properties = this.childTree(type, "Properties")
-          // if (properties){ item.children.push(properties)}
-          // const methods = this.childTree(type, "Methods")
-          // if (methods){ item.children.push(methods)}
-          // const events = this.childTree(type, "Events")
-          // if (events){ item.children.push(events)}
-          item["lazy"] = true;
+          if (type.methods || type.constructors || type.properties || type.events){
+            item["lazy"] = true;
+          }
 
           if (type.inherits) item.inherits = type.inherits
           const node = namespaceDict[type.namespace]
