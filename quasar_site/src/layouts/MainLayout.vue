@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import ViewModel from '../ViewModel'
+// import ViewModel from '../ViewModel'
 
 export default {
   props: {
@@ -83,11 +83,11 @@ export default {
 
   },
   async mounted() {
-    ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
-    const vm = ViewModel.getTree()
-    const mostRecent = ViewModel.mostRecentSince()
-    this.api = vm;
-    this.version = mostRecent;
+    // ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
+    // const vm = ViewModel.getTree()
+    // const mostRecent = ViewModel.mostRecentSince()
+    // this.api = vm;
+    // this.version = mostRecent;
   },
   methods: {
     onExpandComplete (expanded){
