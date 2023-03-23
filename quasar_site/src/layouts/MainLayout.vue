@@ -80,6 +80,9 @@ export default {
     }
   },
   async created() {
+
+  },
+  async mounted() {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
     const vm = ViewModel.getTree()
     const mostRecent = ViewModel.mostRecentSince()
