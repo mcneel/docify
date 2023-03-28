@@ -139,13 +139,15 @@ export default {
       const rc = []
 
       if (item.dataType !== 'namespace') {
-        if (item.constructors) {
-          rc.push({
-            title: 'Constructors (' + item.constructors.length + ')',
-            items: item.constructors,
+
+        const constructors = ViewModel.getMembers(item, "constructors", true)
+        if (constructors.length > 0) {
+          rc.push(Object.freeze({
+            title: 'Constructors (' + constructors.length + ')',
+            items: Object.freeze(constructors),
             expanded: true,
             type: 'constructors'
-          })
+          }))
         }
 
         let values = [].concat(item.values)
