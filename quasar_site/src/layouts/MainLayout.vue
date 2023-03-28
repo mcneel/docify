@@ -28,6 +28,7 @@
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen"
+        behavior="desktop"
       show-if-above
       bordered
     >
