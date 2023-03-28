@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+    <q-layout view="hHh Lpr lff">
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen"/>
@@ -28,6 +28,7 @@
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen"
+        behavior="desktop"
       show-if-above
       bordered
     >
@@ -83,15 +84,16 @@ export default {
     ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
   },
   methods: {
-    onExpandComplete (expanded){
-      console.log("expand complete:", expanded)
-      //TODO: scrollto selectedNode
-      // const el = document.getElementById(`TOC:${newSelectedNode}`)
-      //     if (el) {
-      //       console.log("EL:", el)
-      //       el.scrollIntoView()
-      //   }
-    },
+    // onExpandComplete(expanded) {
+    //   console.log("expand:", `TOC:${this.selectedNode}`)
+    //   //TODO: scrollto selectedNode
+    //   const el = document.getElementById(`TOC:${this.selectedNode}`)
+    //   console.log("ELLLL:", el)
+    //   if (el) {
+    //     console.log("EL:", el)
+    //     el.scrollIntoView()
+    //   }
+    // },
     onChangeSelectedItem (item, updateRoute) {
       const newSelectedNode = ViewModel.itemPath(item)
       console.log('onchangeselecteditem')
@@ -110,6 +112,11 @@ export default {
         // }
         this.expanded= [this.expanded, ...expandedNodes]
       }
+      // const el = document.getElementById(`TOC:${newSelectedNode}`)
+      // if (el) {
+      //   el.scrollIntoView()
+      // }
+      // console.log(`TOC:${newSelectedNode}`, el)
     },
     onLazyLoad ({ node, key, done, fail }) {
         const childNodes = ViewModel.lazyChildForPath(node.path);
