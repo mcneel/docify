@@ -52,8 +52,9 @@ export default {
         const options = {
           includeScore: true,
           keys: [
-            { name: 'typename', weight: 1.0 },
-            { name: 'member', weight: 1.0 }
+            // { name: 'typename', weight: 1.0 },
+            // { name: 'member', weight: 1.0 }.name,
+            { name: 'url', weight: 1.0 }
           ]
         }
         const searchList = ViewModel.getSearchList()
