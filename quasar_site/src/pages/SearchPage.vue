@@ -1,22 +1,9 @@
 <template>
-  <q-page>
-    <q-item class="q-gutter-y-md column" style="max-width: 300px">
-      <q-input
-        outlined
-        v-model="searchText"
-        label="search"
-        debounce="200"
-        autofocus
-      >
-        <template v-slot:append>
-          <q-icon name="search"/>
-        </template>
-      </q-input>
-    </q-item>
-    <q-list padding>
-      <q-item clickable v-for="item in searchResults"
-        :key="item.label"
-        :to="item.url">
+              <q-page>
+          <q-list padding>
+            <q-item clickable v-for="item in searchResults"
+              :key="item.label"
+              :to="baseUrl + item.url">
         <q-item-section>
           <q-item-label>{{searchItemTitle(item)}}</q-item-label>
           <q-item-label caption>{{item.type.toUpperCase()}}</q-item-label>
@@ -34,15 +21,15 @@ import Fuse from 'fuse.js'
 
 export default {
   props: {
-    baseUrl: { type: String }
+    baseUrl: { type: String },
+    query: { type: String },
   },
-  data () {
+  data() {
     return {
-      searchText: '',
       searchResults: []
     }
   },
-  meta () {
+  meta() {
     return {
       title: ProjInfo.name + ' API',
       meta: {
@@ -51,7 +38,8 @@ export default {
     }
   },
   watch: {
-    searchText (val) {
+    query(val) {
+      console.log("quert:", val)
       this.search(val)
     }
   },

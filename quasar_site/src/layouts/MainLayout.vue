@@ -6,38 +6,45 @@
           <q-toolbar-title>
             <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'" />
           </q-toolbar-title>
-          <q-btn flat round :to="baseUrl + 'search'" icon="search">
-            <q-tooltip>Search</q-tooltip>
-          </q-btn>
-          <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
-            <q-tooltip>Toggle dark mode</q-tooltip>
-          </q-btn>
-          <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
-            <q-tooltip>What's new in version {{ version }}</q-tooltip>
-          </q-btn>
-        </q-toolbar>
-      </q-header>
-      <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer">
-        <q-tree class="q-pt-sm" :nodes="api" accordion dense node-key="path" selected-color="accent"
-          v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
-          <template v-slot:header-secondary="prop">
-            <div class="row items-center">
-              <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
-                :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
-            </div>
-          </template>
-        </q-tree>
-        <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
-      </q-drawer>
-
-      <q-page-container id="myPage">
-      <router-view />
-    </q-page-container>
+            <q-input dark dense standout v-model="searchText" label="search" debounce="200">
+              <template v-slot:append>
+                <q-icon color="white" name="search" />
+              </template>
+            </q-input>
+            <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
+              <q-tooltip>Toggle dark mode</q-tooltip>
+            </q-btn>
+            <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
+              <q-tooltip>What's new in version {{ version }}</q-tooltip>
+            </q-btn>
+          </q-toolbar>
+        </q-header>
+        <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer">
+          <q-tree class="q-pt-sm" :nodes="api" accordion dense node-key="path" selected-color="accent"
+            v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
+            <template v-slot:header-secondary="prop">
+              <div class="row items-center">
+                <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
+                  :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+              </div>
+            </template>
+          </q-tree>
+          <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
+        </q-drawer>
+        <q-page-container id="myPage" v-show="searchText">
+          <SearchPage :query="searchText" :base-url="baseUrl"/>
+        </q-page-container>
+        <template v-if="!searchText">
+          <q-page-container id="myPage">
+            <router-view />
+          </q-page-container>
+        </template>
   </q-layout>
 </template>
 
 <script>
 import ViewModel from '../ViewModel'
+import SearchPage from 'src/pages/SearchPage.vue';
 
 let initialDrawerWidth;
 
@@ -47,8 +54,8 @@ export default {
     baseUrl: { type: String }
   },
   data() {
-    const vm = ViewModel.getTree()
-    const mostRecent = ViewModel.mostRecentSince()
+    const vm = ViewModel.getTree();
+    const mostRecent = ViewModel.mostRecentSince();
     return {
       leftDrawerOpen: false,
       api: vm,
@@ -58,10 +65,11 @@ export default {
       model: null,
       expanded: [],
       routePushEnabled: true,
-    }
+      searchText: "",
+    };
   },
   created() {
-    ViewModel.setSelectedItemChangedCallback('MainLayout.vue', this.onChangeSelectedItem)
+    ViewModel.setSelectedItemChangedCallback("MainLayout.vue", this.onChangeSelectedItem);
   },
   methods: {
     // onExpandComplete(expanded) {
@@ -80,28 +88,29 @@ export default {
       if (ev.isFirst === true) {
         initialDrawerWidth = parseInt(drawerParent.style.width);
       }
-      const newWidth = `${initialDrawerWidth + ev.offset.x}px`;;
+      const newWidth = `${initialDrawerWidth + ev.offset.x}px`;
+      ;
       drawerParent.style.width = newWidth;
       const pageEl = document.getElementById("myPage");
       pageEl.style.paddingLeft = newWidth;
     },
     onChangeSelectedItem(item, updateRoute) {
-      const newSelectedNode = ViewModel.itemPath(item)
-      console.log('onchangeselecteditem')
+      const newSelectedNode = ViewModel.itemPath(item);
+      console.log("onchangeselecteditem");
       if (newSelectedNode !== this.selectedNode) {
-        this.routePushEnabled = updateRoute
-        this.selectedNode = newSelectedNode
+        this.routePushEnabled = updateRoute;
+        this.selectedNode = newSelectedNode;
       }
-      if (item.dataType !== 'namespace') {
-        const expandedNamespace = item.namespace.toLowerCase()
-        const expandedParents = item.parents || []
-        const expandedNodes = [expandedNamespace, ...expandedParents]
+      if (item.dataType !== "namespace") {
+        const expandedNamespace = item.namespace.toLowerCase();
+        const expandedParents = item.parents || [];
+        const expandedNodes = [expandedNamespace, ...expandedParents];
         // for (let i = 0; i < this.expanded.length; i++) {
         //   if (this.expanded[1] === expandedNamespace) {
         //     return
         //   }
         // }
-        this.expanded = [this.expanded, ...expandedNodes]
+        this.expanded = [this.expanded, ...expandedNodes];
       }
       // const el = document.getElementById(`TOC:${newSelectedNode}`)
       // if (el) {
@@ -116,31 +125,32 @@ export default {
   },
   watch: {
     selectedNode: function (newState, oldState) {
-      if (!this.watcherEnabled) return
-
+      if (!this.watcherEnabled)
+        return;
       if (!newState) {
-        const selectItem = this.$route.path.substring(this.baseUrl.length)
+        const selectItem = this.$route.path.substring(this.baseUrl.length);
         if (selectItem) {
-          this.watcherEnabled = false
-          this.selectedNode = selectItem
-          this.watcherEnabled = true
+          this.watcherEnabled = false;
+          this.selectedNode = selectItem;
+          this.watcherEnabled = true;
         }
-        return
+        return;
       }
-
-      const updateRoute = this.routePushEnabled
-      this.routePushEnabled = true
-      if (!updateRoute) return
-
-      const newPath = `${this.baseUrl}${newState}`.toLowerCase()
-
-      console.log("selected:", newState)
-
-      if (this.$route.path.toLowerCase() === newPath) return
-      this.$router.push(newPath)
-      ViewModel.setSelectedItem(newState)
+      const updateRoute = this.routePushEnabled;
+      this.routePushEnabled = true;
+      if (!updateRoute)
+        return;
+      const newPath = `${this.baseUrl}${newState}`.toLowerCase();
+      if (this.$route.path.toLowerCase() === newPath)
+        return;
+      this.$router.push(newPath);
+      ViewModel.setSelectedItem(newState);
+    },
+    $route(to, from) {
+      this.searchText = "";
     }
-  }
+  },
+  components: { SearchPage }
 }
 </script>
 
