@@ -148,8 +148,24 @@ export default {
       this.$router.push(newPath);
       ViewModel.setSelectedItem(newState);
     },
+    searchText(val) {
+      if (val) {
+        this.$router.push({ query: { search: val } })
+      }
+      else {
+        this.$router.push({ query: {} })
+      }
+    },
     $route(to, from) {
-      this.searchText = "";
+      if (to.path !== from.path) {
+        this.searchText = "";
+      }
+      if (to.query["search"]) {
+        this.searchText = to.query["search"];
+      }
+      else {
+        this.searchText = "";
+      }
     }
   },
   components: { SearchPage }

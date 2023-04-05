@@ -39,8 +39,9 @@ export default {
   },
   watch: {
     query(val) {
-      console.log("quert:", val)
-      this.search(val)
+      if (val) {
+        this.search(val)
+      }
     }
   },
   methods: {
