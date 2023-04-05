@@ -49,7 +49,7 @@
 import ViewModel from '../ViewModel'
 import SearchPage from 'src/pages/SearchPage.vue';
 import { scroll } from 'quasar'
-const { getScrollTarget, setVerticalScrollPosition } = scroll
+const { getScrollTarget } = scroll
 
 let initialDrawerWidth;
 
@@ -125,7 +125,7 @@ export default {
       console.log("node selected:", newState)
       const node = this.$refs.myTree.getNodeByKey(newState);
 
-      //Set scoll height when selected. TODO: only do this on load
+      //Set scoll height when selected. only doing this on fresh load
       if (this.intact) {
         this.$nextTick(() => {
           const el = document.getElementById(`TOC:${node.path}`)
