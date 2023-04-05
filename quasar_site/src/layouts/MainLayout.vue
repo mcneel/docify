@@ -19,18 +19,18 @@
             </q-btn>
           </q-toolbar>
         </q-header>
-        <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer">
-          <q-tree class="q-pt-sm" :nodes="api" accordion dense node-key="path" selected-color="accent"
-            v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
-            <template v-slot:header-secondary="prop">
-              <div class="row items-center">
-                <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
-                  :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
-              </div>
-            </template>
-          </q-tree>
-          <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
-        </q-drawer>
+                                <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth">
+                                  <q-tree class="q-pt-sm" :nodes="api" accordion dense node-key="path" selected-color="accent"
+                                    v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
+                                    <template v-slot:header-secondary="prop">
+                                      <div class="row items-center">
+                                        <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
+                                          :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+                                      </div>
+                                    </template>
+                                  </q-tree>
+                                  <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
+                                  </q-drawer >
                     <q-page-container id="pageContainer">
                       <router-view v-show="!searchText" />
                       <SearchPage :query="searchText" :base-url="baseUrl" v-show="searchText"/>
@@ -54,6 +54,7 @@ export default {
     const mostRecent = ViewModel.mostRecentSince();
     return {
       leftDrawerOpen: false,
+      drawerWidth: 300,
       api: vm,
       selectedNode: [],
       watcherEnabled: true,
@@ -84,11 +85,16 @@ export default {
       if (ev.isFirst === true) {
         initialDrawerWidth = parseInt(drawerParent.style.width);
       }
+      //Don't update the props on every frame, this is very slow, update css instead
       const newWidth = `${initialDrawerWidth + ev.offset.x}px`;
       ;
       drawerParent.style.width = newWidth;
       const pageEl = document.getElementById("pageContainer");
       pageEl.style.paddingLeft = newWidth;
+      //Finally update the prop
+      if (ev.isFinal === true) {
+        this.drawerWidth = initialDrawerWidth + ev.offset.x;
+      }
     },
     onChangeSelectedItem(item, updateRoute) {
       const newSelectedNode = ViewModel.itemPath(item);
