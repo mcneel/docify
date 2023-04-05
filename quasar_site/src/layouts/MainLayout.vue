@@ -6,41 +6,50 @@
           <q-toolbar-title>
             <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'" />
           </q-toolbar-title>
-            <q-input dark dense standout v-model="searchText" label="search" debounce="200">
-              <template v-slot:append>
-                <q-icon color="white" name="search" />
-              </template>
-            </q-input>
-            <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
-              <q-tooltip>Toggle dark mode</q-tooltip>
-            </q-btn>
-            <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
-              <q-tooltip>What's new in version {{ version }}</q-tooltip>
-            </q-btn>
-          </q-toolbar>
-        </q-header>
-                                <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth">
-                                  <q-tree class="q-pt-sm" :nodes="api" accordion dense node-key="path" selected-color="accent"
-                                    v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
-                                    <template v-slot:header-secondary="prop">
-                                      <div class="row items-center">
-                                        <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
-                                          :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
-                                      </div>
-                                    </template>
-                                  </q-tree>
-                                  <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
-                                  </q-drawer >
-                    <q-page-container id="pageContainer">
-                      <router-view v-show="!searchText" />
-                      <SearchPage :query="searchText" :base-url="baseUrl" v-show="searchText"/>
-                    </q-page-container>
+          <q-input dark dense standout v-model="searchText" label="search" debounce="200">
+            <template v-slot:append>
+              <q-icon color="white" name="search" />
+            </template>
+          </q-input>
+          <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
+            <q-tooltip>Toggle dark mode</q-tooltip>
+          </q-btn>
+          <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
+            <q-tooltip>What's new in version {{ version }}</q-tooltip>
+          </q-btn>
+        </q-toolbar>
+      </q-header>
+      <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
+        @mouseover="() => intact = false">
+        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent"
+          v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
+          <template v-slot:default-header="prop">
+            <div class="row items-center">
+              <div :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}
+              </div>
+            </div>
+          </template>
+          <template v-slot:header-secondary="prop">
+            <div class="row items-center">
+              <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
+                :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+            </div>
+          </template>
+        </q-tree>
+        <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
+      </q-drawer>
+      <q-page-container id="pageContainer">
+        <router-view v-show="!searchText" />
+        <SearchPage :query="searchText" :base-url="baseUrl" v-show="searchText" />
+      </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import ViewModel from '../ViewModel'
 import SearchPage from 'src/pages/SearchPage.vue';
+import { scroll } from 'quasar'
+const { getScrollTarget, setVerticalScrollPosition } = scroll
 
 let initialDrawerWidth;
 
@@ -63,22 +72,13 @@ export default {
       expanded: [],
       routePushEnabled: true,
       searchText: "",
+      intact: true,
     };
   },
   created() {
     ViewModel.setSelectedItemChangedCallback("MainLayout.vue", this.onChangeSelectedItem);
   },
   methods: {
-    // onExpandComplete(expanded) {
-    //   console.log("expand:", `TOC:${this.selectedNode}`)
-    //   //TODO: scrollto selectedNode
-    //   const el = document.getElementById(`TOC:${this.selectedNode}`)
-    //   console.log("ELLLL:", el)
-    //   if (el) {
-    //     console.log("EL:", el)
-    //     el.scrollIntoView()
-    //   }
-    // },
     resizeDrawer(ev) {
       const drawerEl = document.getElementById("myDrawer");
       const drawerParent = drawerEl.parentElement;
@@ -114,11 +114,6 @@ export default {
         // }
         this.expanded = [this.expanded, ...expandedNodes];
       }
-      // const el = document.getElementById(`TOC:${newSelectedNode}`)
-      // if (el) {
-      //   el.scrollIntoView()
-      // }
-      // console.log(`TOC:${newSelectedNode}`, el)
     },
     onLazyLoad({ node, key, done, fail }) {
       const childNodes = ViewModel.lazyChildForPath(node.path);
@@ -127,6 +122,25 @@ export default {
   },
   watch: {
     selectedNode: function (newState, oldState) {
+      console.log("node selected:", newState)
+      const node = this.$refs.myTree.getNodeByKey(newState);
+
+      //Set scoll height when selected. TODO: only do this on load
+      if (this.intact) {
+        this.$nextTick(() => {
+          const el = document.getElementById(`TOC:${node.path}`)
+          if (el) {
+            el.scrollIntoView({
+              behavior: 'auto',
+              block: 'center',
+              inline: 'center'
+            })
+            const target = getScrollTarget(el);
+            target.scrollLeft = 0;
+          }
+        })
+      }
+
       if (!this.watcherEnabled)
         return;
       if (!newState) {
