@@ -1,13 +1,13 @@
 <template>
-              <q-page>
-          <q-list padding>
-            <q-item clickable v-for="item in searchResults"
-              :key="item.label"
-              :to="baseUrl + item.url">
-        <q-item-section>
-          <q-item-label>{{searchItemTitle(item)}}</q-item-label>
-          <q-item-label caption>{{item.type.toUpperCase()}}</q-item-label>
-          <q-item-label caption>{{item.summary}}</q-item-label>
+    <q-page>
+      <q-list padding>
+        <q-item v-for="item in searchResults" :key="item.label">
+          <q-item-section>
+            <router-link class="routerlink" :to="baseUrl + item.url">
+              {{ searchItemTitle(item) }}
+            </router-link>
+            <q-item-label caption>{{ item.type.toUpperCase() }}</q-item-label>
+            <q-item-label caption>{{ item.summary }}</q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
@@ -44,7 +44,7 @@ export default {
     }
   },
   methods: {
-    search (text) {
+    search(text) {
       console.log('searching')
       const timeStart = performance.now()
       let fuse = ViewModel.getSearchInstance()
@@ -75,7 +75,7 @@ export default {
       }
       this.searchResults = rc
     },
-    searchItemTitle (item) {
+    searchItemTitle(item) {
       if (item.type !== 'property' && item.type !== 'method' && item.type !== 'event') {
         return item.typename
       }
