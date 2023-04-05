@@ -31,14 +31,10 @@
           </q-tree>
           <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
         </q-drawer>
-        <q-page-container id="myPage" v-show="searchText">
-          <SearchPage :query="searchText" :base-url="baseUrl"/>
-        </q-page-container>
-        <template v-if="!searchText">
-          <q-page-container id="myPage">
-            <router-view />
-          </q-page-container>
-        </template>
+                    <q-page-container id="pageContainer">
+                      <router-view v-show="!searchText" />
+                      <SearchPage :query="searchText" :base-url="baseUrl" v-show="searchText"/>
+                    </q-page-container>
   </q-layout>
 </template>
 
@@ -91,7 +87,7 @@ export default {
       const newWidth = `${initialDrawerWidth + ev.offset.x}px`;
       ;
       drawerParent.style.width = newWidth;
-      const pageEl = document.getElementById("myPage");
+      const pageEl = document.getElementById("pageContainer");
       pageEl.style.paddingLeft = newWidth;
     },
     onChangeSelectedItem(item, updateRoute) {
