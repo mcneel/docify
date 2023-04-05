@@ -53,7 +53,7 @@ export default {
           includeScore: true,
           keys: [
             // { name: 'typename', weight: 1.0 },
-            // { name: 'member', weight: 1.0 }.name,
+            { name: 'member', weight: 10 }.name,
             { name: 'url', weight: 1.0 }
           ]
         }
