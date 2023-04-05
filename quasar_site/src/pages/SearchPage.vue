@@ -67,7 +67,7 @@ export default {
       const timeEnd = performance.now()
       console.log(`build time ${timeBuild - timeStart} ms`)
       console.log(`search time ${timeEnd - timeBuild} ms`)
-      let count = 15
+      let count = 25
       if (result.length < count) count = result.length
       const rc = []
       for (let i = 0; i < count; i++) {
