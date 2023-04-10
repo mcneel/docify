@@ -1,9 +1,9 @@
 
-const apiBase = '/api/'
+// const apiBase = '/api/'
 import ProjInfo from '../proj_info.json'
 
 const apiUrl = ProjInfo.name.toLowerCase()
-const apiPath = apiBase + apiUrl + '/'
+const apiPath = `/${apiUrl}/`
 
 console.log("API PATH:", apiPath)
 
