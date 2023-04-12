@@ -18,6 +18,13 @@
             <q-tooltip>What's new in version {{ version }}</q-tooltip>
           </q-btn>
         </q-toolbar>
+        <q-banner v-if="bannerVisible" inline-actions dense class="bg-blue text-white">
+          {{ apiTitle }} documentation has a new look. The old site can still be found <span><a
+              href="https://mcneel.github.io/rhinocommon-api-docs/api/RhinoCommon/">here</a></span>.
+          <template v-slot:action>
+            <q-btn flat label="Close" @click="bannerVisible = false" />
+          </template>
+        </q-banner>
       </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
         @mouseover="() => intact = false">
@@ -73,6 +80,7 @@ export default {
       routePushEnabled: true,
       searchText: "",
       intact: true,
+      bannerVisible: true,
     };
   },
   created() {
