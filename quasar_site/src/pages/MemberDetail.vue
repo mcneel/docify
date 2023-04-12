@@ -1,80 +1,81 @@
 <template>
   <q-page>
     <div class="q-pa-sm">
-    <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
-      <q-breadcrumbs-el icon="home" :to="baseUrl" />
-      <q-breadcrumbs-el :label="datatype.namespace" :to="baseUrl + datatype.namespace.toLowerCase()" />
-      <q-breadcrumbs-el :label="datatype.name" :to="(baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()" />
-      <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
-    </q-breadcrumbs>
-    <h1>{{getTitle(datatype, members)}}</h1>
-    <p v-if="datatype">
-      Class:&nbsp;
-      <router-link class="routerlink" :to="baseUrl+datatype.namespace.toLowerCase()+'.'+datatype.name.toLowerCase()">
-        {{datatype.namespace}}.{{datatype.name}}
-      </router-link>
-    </p>
-    <q-list>
-      <div v-for="(member, index) in members.items" :key="index">
-      <q-item class="q-pb-none q-pl-none">
-        <q-item-section>
-          <q-item-label v-if="member.deprecated" class="light-dimmed">
-            {{member.signature}}
-          </q-item-label>
-          <q-item-label v-if="!member.deprecated" style="font-size:18px;">
-            <span v-for="(chunk, idx) in signature(member)" :key="idx+1000">
-              <span v-if="chunk.link">
-                <router-link class="routerlink" :to="chunk.link">{{chunk.name}}</router-link>
-              </span>
-              <span v-else>{{chunk.name}}</span>
-            </span>
-          </q-item-label>
-        </q-item-section>
-      </q-item>
-      <q-item :inset-level="0.25" class="q-pt-none">
-        <q-item-section>
-          <q-item-label caption class="on-right">
-            <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{member.deprecated}}
-              <q-tooltip>Deprecated in version {{member.deprecated}}</q-tooltip>
-            </q-badge>
-          </q-item-label>
-          <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
-          <q-item-label caption v-if="member.summary" class="on-right">
-            <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
-              <br v-if="index>0">
-              {{line}}
-            </span>
-          </q-item-label>
-          <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
-          <q-item-label caption class="on-right" v-for="parameter in member.parameters" :key="parameter.name">
-                  <b>{{ parameter.name }}</b> - <span v-html="parameter.summary"></span>
-          </q-item-label>
-          <q-item-label caption v-if="member.returns" class="text-bold">Returns:</q-item-label>
-          <q-item-label caption class="on-right" v-if="member.returns">
-            {{member.returns}}
-          </q-item-label>
-          <q-item-label caption v-if="member.since" class="text-bold">Available since:</q-item-label>
-          <q-item-label caption class="on-right" v-if="member.since">
-            {{member.since}}
-          </q-item-label>
-        </q-item-section>
-      </q-item>
-      <q-item v-if="member.examples && member.examples.length>0" dense class="on-right">
-        <q-btn
-          no-caps
-          outline
-          dense
-          size="sm"
-          icon="mdi-code-tags"
-          color="secondary"
-          :to="exampleUrl(member)"
-          >
-          Example
-        </q-btn>
-      </q-item>
-      <q-separator spaced inset />
-      </div>
-    </q-list>
+        <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
+          <q-breadcrumbs-el icon="home" :to="baseUrl" />
+          <q-breadcrumbs-el :label="datatype.namespace" :to="baseUrl + datatype.namespace.toLowerCase()" />
+          <q-breadcrumbs-el :label="datatype.name"
+            :to="(baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()" />
+          <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
+        </q-breadcrumbs>
+        <h1>{{ getTitle(datatype, members) }}</h1>
+        <p v-if="datatype">
+          Class:&nbsp;
+          <router-link class="routerlink"
+            :to="baseUrl + datatype.namespace.toLowerCase() + '.' + datatype.name.toLowerCase()">
+            {{ datatype.namespace }}.{{ datatype.name }}
+          </router-link>
+        </p>
+        <q-list>
+          <div v-for="(member, index) in members.items" :key="index">
+            <q-item class="q-pb-none q-pl-none">
+              <q-item-section>
+                <q-item-label v-if="member.deprecated" class="light-dimmed">
+                  {{ member.signature }}
+                </q-item-label>
+                <q-item-label v-if="!member.deprecated" style="font-size:18px;">
+                  <span v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                    <span v-if="chunk.link">
+                      <router-link class="routerlink" :to="chunk.link">{{ chunk.name }}</router-link>
+                    </span>
+                    <span v-else>{{ chunk.name }}</span>
+                  </span>
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item :inset-level="0.25" class="q-pt-none">
+              <q-item-section>
+                <q-item-label caption class="on-right">
+                  <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{ member.deprecated }}
+                    <q-tooltip>Deprecated in version {{ member.deprecated }}</q-tooltip>
+                  </q-badge>
+                </q-item-label>
+                <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
+                <q-item-label caption v-if="member.summary" class="on-right">
+                  <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
+                    <br v-if="index > 0">
+                    {{ line }}
+                  </span>
+                </q-item-label>
+                <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
+                <q-item-label caption class="on-right row" v-for="parameter in member.parameters" :key="parameter.name">
+                  <div class="row q-gutter-sm">
+                    <b>{{ parameter.name }}</b>
+                    <router-link v-if="paramTypes[parameter.name]" class="routerlink" :to="paramTypes[parameter.name].link">
+                      {{ paramTypes[parameter.name].path }}
+                    </router-link>
+                    <span v-html="parameter.summary"></span>
+                  </div>
+
+                </q-item-label>
+                <q-item-label caption v-if="member.returns" class="text-bold">Returns:</q-item-label>
+                <q-item-label caption class="on-right" v-if="member.returns">
+                  {{ member.returns }}
+                </q-item-label>
+                <q-item-label caption v-if="member.since" class="text-bold">Available since:</q-item-label>
+                <q-item-label caption class="on-right" v-if="member.since">
+                  {{ member.since }}
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item v-if="member.examples && member.examples.length > 0" dense class="on-right">
+              <q-btn no-caps outline dense size="sm" icon="mdi-code-tags" color="secondary" :to="exampleUrl(member)">
+                Example
+              </q-btn>
+            </q-item>
+            <q-separator spaced inset />
+          </div>
+        </q-list>
     </div>
   </q-page>
 </template>
@@ -88,16 +89,17 @@ export default {
   props: {
     baseUrl: { type: String }
   },
-  data () {
+  data() {
     const mostRecent = ViewModel.mostRecentSince()
     return {
       memberName: null,
       datatype: null,
       members: {},
-      version: mostRecent
+      version: mostRecent,
+      paramTypes: {}
     }
   },
-  meta () {
+  meta() {
     const node = ViewModel.findNodeByPath(this.$route.params.datatype)
     const memberName = this.$route.params.member.toLowerCase()
     const members = this.getMembers(node, memberName)
@@ -109,33 +111,33 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     console.log('mounted member detail')
     this.renderUrl(this.$route)
   },
   watch: {
-    '$route' (to, from) {
+    '$route'(to, from) {
       // react to route changes...
-      if(to.params.datatype && to.params.member){
+      if (to.params.datatype && to.params.member) {
         this.renderUrl(to)
       }
     }
   },
   methods: {
-    renderUrl (route){
+    renderUrl(route) {
       //TODO: need to pay attention to full path when setting selected item
       this.datatype = ViewModel.findNodeByPath(route.params.datatype)
       this.memberName = route.params.member.toLowerCase()
       const members = this.getMembers(this.datatype, this.memberName)
-      members.items = members.items.map( m => {
+      members.items = members.items.map(m => {
         const examples = this.getExamples(this.datatype, m)
-        return {...m, examples}
+        return { ...m, examples }
       })
       this.members = Object.freeze(members)
       const selectedItem = decodeURI(route.fullPath.substring(this.baseUrl.length))
       ViewModel.setSelectedItem(selectedItem, false)
     },
-    getMembers (datatype, memberName) {
+    getMembers(datatype, memberName) {
       if (datatype.name.toLowerCase() === memberName) {
         datatype.constructors.sort((a, b) => {
           if (a.deprecated && !b.deprecated) return 1
@@ -211,13 +213,13 @@ export default {
 
       return {}
     },
-    getLines (text) {
+    getLines(text) {
       if (text == null) return text
       const lines = text.split('  \n')
       // if (lines.length > 1) console.log('split worked')
       return lines
     },
-    getTitle (datatype, members) {
+    getTitle(datatype, members) {
       if (members.isConstructor) {
         return datatype.name + ' constructor'
       }
@@ -237,7 +239,7 @@ export default {
       }
       return this.memberName
     },
-    tokenLink (token) {
+    tokenPath(token) {
       // skip tokens that start with a lower case letter
       if (token.length < 1 || token[0] === token[0].toLowerCase()) return null
       if (token.endsWith('[]')) token = token.substring(0, token.length - 2)
@@ -245,9 +247,9 @@ export default {
       const typeMap = ViewModel.getTypeMap()
       const type = typeMap[token]
       if (!type) return null
-      return this.baseUrl + ViewModel.itemPath(type)
+      return ViewModel.itemPath(type)
     },
-    signature (member) {
+    signature(member) {
       const tokens = member.signature.split(' ')
       const chunks = []
       if (tokens[0] === 'static') {
@@ -260,7 +262,8 @@ export default {
       }
       if (this.members.isProperty || this.members.isMethod) {
         // try to get a link for the return type
-        const link = this.tokenLink(tokens[0])
+        const tokenPath = this.tokenPath(tokens[0])
+        const link = tokenPath ? this.baseUrl + tokenPath : null
         if (link) {
           chunks.push({
             link: link,
@@ -289,7 +292,10 @@ export default {
           const parameter = parameterTokens[i].trim()
           const paramChunks = parameter.split(' ')
           const typeToken = paramChunks[paramChunks.length - 2]
-          const link = this.tokenLink(typeToken)
+          const paramName = paramChunks[paramChunks.length - 1]
+          const tokenPath = this.tokenPath(typeToken)
+          const link = tokenPath ? this.baseUrl + tokenPath : null
+
           if (link) {
             for (let j = 0; j < paramChunks.length - 2; j++) {
               chunks.push({ name: paramChunks[j] + ' ' })
@@ -299,6 +305,12 @@ export default {
               name: typeToken + ' '
             })
             chunks.push({ name: paramChunks[paramChunks.length - 1] })
+            //keep track of param names and their types
+            this.paramTypes[paramName] = {
+              link: link,
+              path: tokenPath,
+              type: typeToken
+            }
           } else {
             chunks.push({ name: parameter })
           }
@@ -318,13 +330,13 @@ export default {
       }
       return chunks
     },
-    exampleUrl (member) {
+    exampleUrl(member) {
       let name = member.examples[0].name
       const index = name.lastIndexOf('.')
       name = name.substring(0, index).toLowerCase()
       return this.baseUrl + 'examples/' + name
     },
-    getExamples (parentType, item) {
+    getExamples(parentType, item) {
       if (!item.examples) {
         item.examples = []
         let fullname = null
