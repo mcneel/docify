@@ -51,9 +51,10 @@
                 <q-item-label caption class="on-right row" v-for="parameter in member.parameters" :key="parameter.name">
                   <div class="row q-gutter-sm">
                     <b>{{ parameter.name }}</b>
-                    <router-link v-if="paramTypes[parameter.name]" class="routerlink" :to="paramTypes[parameter.name].link">
-                      {{ paramTypes[parameter.name].path }}
-                    </router-link>
+                            <router-link v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link" class="routerlink" :to="paramTypes[parameter.name].link">
+                            {{ paramTypes[parameter.name].path }}
+                            </router-link>
+                            <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{ paramTypes[parameter.name].type }}</span>
                     <span v-html="parameter.summary"></span>
                   </div>
 
@@ -313,6 +314,10 @@ export default {
             }
           } else {
             chunks.push({ name: parameter })
+            this.paramTypes[paramName] = {
+              path: tokenPath || typeToken,
+              type: typeToken
+            }
           }
         }
         chunks.push({ name: ')' })
