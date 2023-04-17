@@ -86,6 +86,14 @@ import ViewModel from '../ViewModel'
 import Examples from '../api_examples.json'
 import ProjInfo from '../proj_info.json'
 
+const titleCase = (input) => {
+  input = (input === undefined || input === null) ? '' : input;
+  input = input.toLowerCase()
+  return input.toString().replace(/(^|\. *)([a-z])/g, function (match, separator, char) {
+    return separator + char.toUpperCase();
+  });
+}
+
 export default {
   props: {
     baseUrl: { type: String }
@@ -309,7 +317,7 @@ export default {
             //keep track of param names and their types
             this.paramTypes[paramName] = {
               link: link,
-              path: tokenPath,
+              path: titleCase(tokenPath),
               type: typeToken
             }
           } else {
