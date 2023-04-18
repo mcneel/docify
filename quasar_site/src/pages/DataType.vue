@@ -21,27 +21,29 @@
         </p>
         <i v-for="(item, index) in inheritence" :key="item.name">
           <i v-if="index === 0">Inheritence: </i>
-          <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name }}</router-link>
-          <i v-else>{{ item.name }}</i>
-          <q-icon name="arrow_forward" />
-          <i v-if="index === (inheritence.length - 1)">{{ name }}</i>
-        </i>
-        <p v-if="namespace && dataType !== 'namespace'">
-          <i>Namespace: <router-link class="routerlink"
-              :to="baseUrl + namespace.toLowerCase()">{{ namespace }}</router-link></i>
-          <br>
-          <i>{{ name }}: <router-link class="routerlink"
-              :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
-        </p>
-        <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
-          :default-opened="this.$route.hash ? this.$route.hash.substring(1) == anchorId(section) : section.expanded"
-          :model="section.expanded" :label="section.title" :content-inset-level="1" :id="anchorId(section)"
-          header-class="bg-secondary text-white">
-          <q-list>
-            <div v-for="(member, index) in section.items" :key="index">
-              <q-item dense :clickable="section.type != 'values'" :to="ViewModel.memberUrl(section.type, member)">
-                <q-item-section :class="memberClass(member)" style="display:flex; flex-direction: row;">
-                  <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col">
+            <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
+            }}</router-link>
+            <i v-else>{{ item.name }}</i>
+            <q-icon name="arrow_forward" />
+            <i v-if="index === (inheritence.length - 1)">{{ name }}</i>
+          </i>
+          <p v-if="namespace && dataType !== 'namespace'">
+            <i>Namespace: <router-link class="routerlink" :to="baseUrl + namespace.toLowerCase()">{{ namespace
+            }}</router-link></i>
+            <br>
+            <i>{{ name }}: <router-link class="routerlink"
+                :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
+          </p>
+          <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
+            :default-opened="this.$route.hash ? this.$route.hash.substring(1) == anchorId(section) : section.expanded"
+            :model="section.expanded" :label="section.title" :content-inset-level="1" :id="anchorId(section)"
+            header-class="bg-secondary text-white">
+            <q-list>
+              <div v-for="(member, index) in section.items" :key="index">
+                <q-item dense :clickable="section.type != 'values'" :to="ViewModel.memberUrl(section.type, member)"
+                  :class="memberClass(member)" class="row">
+
+                  <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col" style="overflow-wrap: break-word;">
                     <b>{{ ViewModel.memberName(member, section.type) }}</b>&nbsp;
                     <q-badge
                       v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
@@ -50,36 +52,33 @@
                       <q-tooltip>From {{ member.parent }}</q-tooltip>
                     </q-badge>
                   </q-item-label>
-                  <q-item-label caption class="on-right col">
+                  <q-item-label caption class="on-right col-8">
                     <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
                       <br v-if="index > 0">
                       {{ line }}
                     </span>
                   </q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-separator spaced inset />
-            </div>
-          </q-list>
-        </q-expansion-item>
-        <q-expansion-item v-if="childNamespaces" switch-toggle-side label="Child Namespaces" :content-inset-level="1"
-          default-opened header-class="bg-secondary text-white">
-          <q-list>
-            <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
-              <q-item-section style="display:flex; flex-direction: row;">
-                <q-item-label class="col">
+                </q-item>
+                <q-separator spaced inset />
+              </div>
+            </q-list>
+          </q-expansion-item>
+          <q-expansion-item v-if="childNamespaces" switch-toggle-side label="Child Namespaces" :content-inset-level="1"
+            default-opened header-class="bg-secondary text-white">
+            <q-list>
+              <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
+                class="row">
+                <q-item-label class="col" style="overflow-wrap: break-word;">
                   <b class="text-accent">{{ item.label }}</b>
                 </q-item-label>
-                <q-item-label caption class="col">{{ item.summary }}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-expansion-item>
-        <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()">
-          <q-item-section style="display:flex; flex-direction: row;">
-            <q-item-label class="col"><b class="text-accent">{{ item.label }}</b></q-item-label>
-            <q-item-label caption class="col">{{ item.summary }}</q-item-label>
-          </q-item-section>
+                <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
+              </q-item>
+            </q-list>
+          </q-expansion-item>
+          <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
+            class="row">
+            <q-item-label class="col" style="overflow-wrap: break-word;"><b class="text-accent">{{ item.label }}</b></q-item-label>
+            <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
         </q-item>
       </div>
   </q-page>
