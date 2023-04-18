@@ -58,7 +58,6 @@
                       {{ line }}
                     </span>
                   </q-item-label>
-
                 </q-item>
                 <q-separator spaced inset />
               </div>
