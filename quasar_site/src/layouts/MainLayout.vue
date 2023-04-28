@@ -133,9 +133,6 @@ export default {
       console.log("node selected:", newState)
       const node = this.$refs.myTree.getNodeByKey(newState);
 
-      // Below won't work on lazy loaded nodes
-      // this.expanded = [...this.expanded, newState];
-
       //Set scoll height when selected. only doing this on fresh load
       if (this.shouldAutoScroll) {
         this.$nextTick(() => {
@@ -168,10 +165,16 @@ export default {
       if (!updateRoute)
         return;
       const newPath = `${this.baseUrl}${newState}`.toLowerCase();
-      if (this.$route.path.toLowerCase() === newPath)
-        return;
-      this.$router.push(newPath);
+
+      if (this.$route.path.toLowerCase() !== newPath) {
+        console.log("pushing path")
+        this.$router.push(newPath);
+      }
       ViewModel.setSelectedItem(newState);
+
+      if (!this.expanded.includes[newState]) {
+        this.expanded = [...this.expanded, newState];
+      }
     },
     searchText(val) {
       if (val) {
