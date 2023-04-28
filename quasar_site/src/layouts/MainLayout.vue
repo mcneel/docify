@@ -27,7 +27,7 @@
         </q-banner>
       </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
-        @mouseover="() => intact = false">
+                @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
         <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent"
           v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
           <template v-slot:default-header="prop">
@@ -79,7 +79,7 @@ export default {
       expanded: [],
       routePushEnabled: true,
       searchText: "",
-      intact: true,
+      shouldAutoScroll: true,
       bannerVisible: true,
     };
   },
@@ -120,7 +120,7 @@ export default {
         //     return
         //   }
         // }
-        this.expanded = [this.expanded, ...expandedNodes];
+        this.expanded = [...this.expanded, ...expandedNodes];
       }
     },
     onLazyLoad({ node, key, done, fail }) {
@@ -133,8 +133,11 @@ export default {
       console.log("node selected:", newState)
       const node = this.$refs.myTree.getNodeByKey(newState);
 
+      // Below won't work on lazy loaded nodes
+      // this.expanded = [...this.expanded, newState];
+
       //Set scoll height when selected. only doing this on fresh load
-      if (this.intact) {
+      if (this.shouldAutoScroll) {
         this.$nextTick(() => {
           const el = document.getElementById(`TOC:${node.path}`)
           if (el) {
