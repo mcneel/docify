@@ -155,6 +155,10 @@ const ViewModel = {
   setSelectedItem (item, updateRoute = true) {
     //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item
+
+    //Try to load its children
+    this.lazyChildForPath(path);
+
     path = path.toLowerCase()
     if (path === _selectedPath) return // no change
     _selectedPath = path
