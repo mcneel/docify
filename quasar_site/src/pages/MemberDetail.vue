@@ -18,21 +18,41 @@
         </p>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index">
-            <q-item class="q-pb-none q-pl-none">
-              <q-item-section>
-                <q-item-label v-if="member.deprecated" class="light-dimmed">
-                  {{ member.signature }}
-                </q-item-label>
-                <q-item-label v-if="!member.deprecated" style="font-size:18px;">
-                  <span v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                    <span v-if="chunk.link">
-                      <router-link class="routerlink" :to="chunk.link">{{ chunk.name }}</router-link>
-                    </span>
-                    <span v-else>{{ chunk.name }}</span>
-                  </span>
-                </q-item-label>
-              </q-item-section>
-            </q-item>
+
+            <!--Signature-->
+            <q-card flat bordered>
+              <q-item>
+                <q-item-section>
+                  <q-item-label v-if="member.deprecated" class="light-dimmed">
+                    <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                      <template v-if="chunk.name.endsWith(')')">
+                        <br />&nbsp;
+                      </template>
+                      <span>{{ chunk.name }}</span>
+                      <template v-if="chunk.name.endsWith('(') || chunk.name.startsWith(',')">
+                        <br />&nbsp;
+                      </template>
+                    </template>
+                  </q-item-label>
+                  <q-item-label v-if="!member.deprecated" style="font-size:18px;">
+                    <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                      <template v-if="member.parameters && chunk.name.endsWith(')')">
+                        <br />&nbsp;
+                      </template>
+                      <span v-if="chunk.link">
+                        <router-link class="routerlink" :to="chunk.link">{{ chunk.name }}</router-link>
+                      </span>
+                      <span v-else>{{ chunk.name }}</span>
+                      <template v-if="member.parameters && (chunk.name.endsWith('(') || chunk.name.startsWith(','))">
+                        <br />&nbsp;
+                      </template>
+                    </template>
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-card>
+
+
             <q-item :inset-level="0.25" class="q-pt-none">
               <q-item-section>
                 <q-item-label caption class="on-right">
@@ -51,10 +71,12 @@
                 <q-item-label caption class="on-right row" v-for="parameter in member.parameters" :key="parameter.name">
                   <div class="row q-gutter-sm">
                     <b>{{ parameter.name }}</b>
-                            <router-link v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link" class="routerlink" :to="paramTypes[parameter.name].link">
-                            {{ paramTypes[parameter.name].path }}
-                            </router-link>
-                            <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{ paramTypes[parameter.name].type }}</span>
+                    <router-link v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link" class="routerlink"
+                      :to="paramTypes[parameter.name].link">
+                      {{ paramTypes[parameter.name].path }}
+                    </router-link>
+                    <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{
+                      paramTypes[parameter.name].type }}</span>
                     <span v-html="parameter.summary"></span>
                   </div>
 
