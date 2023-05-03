@@ -25,27 +25,27 @@
                 <q-item-section>
                   <q-item-label v-if="member.deprecated" class="light-dimmed">
                     <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                      <template v-if="member.signature.split(' ').length > 1 && chunk.name.endsWith(')')">
+                      <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
                         <br />&nbsp;
                       </template>
                       <span>{{ chunk.name }}</span>
                       <template
-                        v-if="member.signature.split(' ').length > 1 && chunk.name.endsWith('(') || chunk.name.startsWith(',')">
+                        v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith('(') || chunk.name.startsWith(',')">
                         <br />&nbsp;
                       </template>
                     </template>
                   </q-item-label>
                   <q-item-label v-if="!member.deprecated" style="font-size:18px;">
                     <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                      <template v-if="member.signature.split(' ').length > 1 && chunk.name.endsWith(')')">
+                      <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
                         <br />&nbsp;
                       </template>
-                      <span v-if="chunk.link">
-                        <router-link class="routerlink" :to="chunk.link">{{ chunk.name }}</router-link>
+                      <span v-if="chunk.link" class="q-pr-sm">
+                        <router-link class="routerlink" :to="chunk.link">{{ chunk.name.trim() }}</router-link>
                       </span>
                       <span v-else>{{ chunk.name }}</span>
                       <template
-                        v-if="member.signature.split(' ').length > 1 && (chunk.name.endsWith('(') || chunk.name.includes(','))">
+                        v-if="member.signature.split(' ').length > 2 && (chunk.name.endsWith('(') || chunk.name.includes(','))">
                         <br />&nbsp;
                       </template>
                     </template>
