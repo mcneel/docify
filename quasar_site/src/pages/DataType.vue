@@ -35,9 +35,9 @@
               :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
         </p>
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
-          :default-opened="this.$route.hash ? this.$route.hash.substring(1) == anchorId(section) : section.expanded"
-          :model="section.expanded" :label="section.title" :content-inset-level="1" :id="anchorId(section)"
-          header-class="bg-secondary text-white">
+            :default-opened="section.expanded" v-model="section.expanded" :label="section.title" :content-inset-level="1"
+            :id="anchorId(section)" header-class="bg-secondary text-white">
+
           <q-list>
             <div v-for="(member, index) in section.items" :key="index">
               <q-item dense :clickable="section.type != 'values'" :to="ViewModel.memberUrl(section.type, member)"
@@ -98,7 +98,7 @@ export default {
   },
   data() {
     return {
-      ViewModel
+      ViewModel,
     }
   },
   meta() {
@@ -128,6 +128,12 @@ export default {
     },
     memberSections: function () {
       const item = ViewModel.findNodeByPath(this.$route.params.datatype)
+
+      let expandedType;
+      if (this.$route.hash) {
+        expandedType = this.$route.hash.substring(1);
+      }
+
       const rc = []
 
       if (item.dataType !== 'namespace') {
@@ -137,7 +143,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Constructors (' + constructors.length + ')',
             items: Object.freeze(constructors),
-            expanded: true,
+            expanded: 'constructors' == expandedType,
             type: 'constructors'
           }))
         }
@@ -153,7 +159,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Values',
             items: Object.freeze(values),
-            expanded: true,
+            expanded: 'values' == expandedType,
             type: 'values'
           }))
         }
@@ -164,7 +170,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Properties (' + properties.length + ')',
             items: Object.freeze(properties),
-            expanded: true,
+            expanded: 'properties' == expandedType,
             type: 'properties'
           }))
         }
@@ -175,7 +181,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Methods (' + methods.length + ')',
             items: Object.freeze(methods),
-            expanded: true,
+            expanded: 'methods' == expandedType,
             type: 'methods'
           }))
         }
@@ -186,7 +192,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Events (' + events.length + ')',
             items: Object.freeze(events),
-            expanded: true,
+            expanded: 'events' == expandedType,
             type: 'events'
           }))
         }
