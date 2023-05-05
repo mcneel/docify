@@ -27,19 +27,20 @@
         </q-banner>
       </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
-                @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
+        @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
         <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent"
           v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
           <template v-slot:default-header="prop">
             <div class="row items-center">
-              <div :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}
-              </div>
+              <a :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}
+              </a>
             </div>
           </template>
           <template v-slot:header-secondary="prop">
             <div class="row items-center">
-              <div :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
-                :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}</div>
+              <router-link :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
+                style="text-decoration: none; color: inherit;" :class="prop.node.deprecated ? 'toc-deprecated' : ''"
+                :to="baseUrl + prop.node.path.toLowerCase()">{{ prop.node.label }}</router-link>
             </div>
           </template>
         </q-tree>
