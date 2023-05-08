@@ -35,7 +35,7 @@
               :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
         </p>
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
-            :default-opened="section.expanded" v-model="section.expanded" :label="section.title" :content-inset-level="1"
+                :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="section.title" :content-inset-level="1"
             :id="anchorId(section)" header-class="bg-secondary text-white">
 
           <q-list>
@@ -99,6 +99,8 @@ export default {
   data() {
     return {
       ViewModel,
+      ExpandedSections: {
+      }
     }
   },
   meta() {
@@ -159,7 +161,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Values',
             items: Object.freeze(values),
-            expanded: 'values' == expandedType,
+            expanded: true, //Always expand enums
             type: 'values'
           }))
         }
@@ -271,6 +273,16 @@ export default {
       // react to route changes...
       const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
+
+      let expandedType;
+      if (to.hash) {
+        expandedType = to.hash.substring(1);
+      }
+      this.ExpandedSections['constructors'] = 'constructors' == expandedType;
+      this.ExpandedSections['methods'] = 'methods' == expandedType;
+      this.ExpandedSections['events'] = 'events' == expandedType;
+      this.ExpandedSections['properties'] = 'properties' == expandedType;
+      this.ExpandedSections['values'] = 'values' == expandedType;
     }
   },
   methods: {
