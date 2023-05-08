@@ -17,8 +17,7 @@
           </router-link>
         </p>
         <q-list>
-          <div v-for="(member, index) in members.items" :key="index">
-
+            <div v-for="(member, index) in members.items" :key="index">
             <!--Signature-->
             <q-card flat bordered style="font-family: monospace;">
               <q-item>
@@ -249,7 +248,6 @@ export default {
           const operator = datatype.operators[i]
           const chunks = operator.signature.split(' ')
           const name = chunks[chunks.length - 1]
-          console.log("operator name:", name)
           if (name.toLowerCase() === memberName) operators.push(operator)
         }
         if (operators.length > 0) {
