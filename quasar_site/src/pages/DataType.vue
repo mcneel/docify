@@ -46,46 +46,45 @@
                 <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
                   style="overflow-wrap: break-word;">
                   <!--formatting member signature below to show only name as bold and signature non-bold-->
-                  <p><span><b><b>{{ ViewModel.memberName(member, section.type).split("(")[0] }}</b></b></span>({{
-                    ViewModel.memberName(member, section.type).split("(")[1] || ")" }}</p>&nbsp;
-                  <q-badge
-                    v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
-                    color='info' outline>
-                    <q-icon name="mdi-file-tree" />
-                    <q-tooltip>From {{ member.parent }}</q-tooltip>
-                  </q-badge>
-                </q-item-label>
-                <q-item-label caption class="on-right col-8">
-                  <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
-                    <br v-if="index > 0">
-                    {{ line }}
-                  </span>
-                </q-item-label>
-              </q-item>
-              <q-separator spaced inset />
-            </div>
-          </q-list>
-        </q-expansion-item>
-        <q-expansion-item v-if="childNamespaces" switch-toggle-side label="Child Namespaces" :content-inset-level="1"
-          default-opened header-class="bg-secondary text-white">
-          <q-list>
-            <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
-              class="row">
-              <q-item-label class="col" style="overflow-wrap: break-word;">
-                <b class="text-accent">{{ item.label }}</b>
-              </q-item-label>
-              <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
-            </q-item>
-          </q-list>
-        </q-expansion-item>
-        <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
-          class="row">
-          <q-item-label class="col" style="overflow-wrap: break-word;"><b class="text-accent">{{ item.label
-          }}</b></q-item-label>
-          <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
-        </q-item>
-      </div>
-  </q-page>
+                                  <p><span><b>{{ splitSignature(ViewModel.memberName(member, section.type))[0] }}</b></span>{{ splitSignature(ViewModel.memberName(member, section.type))[1] }}</p>&nbsp;
+                                <q-badge
+                                  v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
+                                  color='info' outline>
+                                  <q-icon name="mdi-file-tree" />
+                                  <q-tooltip>From {{ member.parent }}</q-tooltip>
+                                </q-badge>
+                              </q-item-label>
+                              <q-item-label caption class="on-right col-8">
+                                <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
+                                  <br v-if="index > 0">
+                                  {{ line }}
+                                </span>
+                              </q-item-label>
+                            </q-item>
+                            <q-separator spaced inset />
+                          </div>
+                        </q-list>
+                      </q-expansion-item>
+                      <q-expansion-item v-if="childNamespaces" switch-toggle-side label="Child Namespaces" :content-inset-level="1"
+                        default-opened header-class="bg-secondary text-white">
+                        <q-list>
+                          <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
+                            class="row">
+                            <q-item-label class="col" style="overflow-wrap: break-word;">
+                              <b class="text-accent">{{ item.label }}</b>
+                            </q-item-label>
+                            <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
+                          </q-item>
+                        </q-list>
+                      </q-expansion-item>
+                      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
+                        class="row">
+                        <q-item-label class="col" style="overflow-wrap: break-word;"><b class="text-accent">{{ item.label
+                        }}</b></q-item-label>
+                        <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
+                      </q-item>
+                    </div>
+                </q-page>
 </template>
 
 <script>
@@ -189,6 +188,17 @@ export default {
         }
 
         parentName = item.namespace + '.' + item.name
+        const operators = ViewModel.getMembers(item, "operators", true)
+        if (operators.length > 0) {
+          rc.push(Object.freeze({
+            title: 'Operators (' + operators.length + ')',
+            items: Object.freeze(operators),
+            expanded: 'operators' == expandedType,
+            type: 'operators'
+          }))
+        }
+
+        parentName = item.namespace + '.' + item.name
         const events = ViewModel.getMembers(item, "events", true)
         if (events.length > 0) {
           rc.push(Object.freeze({
@@ -283,6 +293,7 @@ export default {
       this.ExpandedSections['events'] = 'events' == expandedType;
       this.ExpandedSections['properties'] = 'properties' == expandedType;
       this.ExpandedSections['values'] = 'values' == expandedType;
+      this.ExpandedSections['operators'] = 'operators' == expandedType;
     }
   },
   methods: {
@@ -299,7 +310,16 @@ export default {
       if (section.type == 'events') {
         return 'events'
       }
+      if (section.type == 'operators') {
+        return 'operators'
+      }
       return ''
+    },
+    splitSignature(signature) {
+      const chunks = signature.split("(");
+      const name = chunks[0];
+      const args = chunks[1] ? `(${chunks[1]}` : null
+      return [name, args];
     },
     getLines(text) {
       if (text == null) return text

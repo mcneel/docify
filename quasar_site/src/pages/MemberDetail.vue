@@ -243,6 +243,27 @@ export default {
           }
         }
       }
+      if (datatype.operators) {
+        const operators = []
+        for (let i = 0; i < datatype.operators.length; i++) {
+          const operator = datatype.operators[i]
+          const chunks = operator.signature.split(' ')
+          const name = chunks[chunks.length - 1]
+          console.log("operator name:", name)
+          if (name.toLowerCase() === memberName) operators.push(operator)
+        }
+        if (operators.length > 0) {
+          operators.sort((a, b) => {
+            if (a.deprecated && !b.deprecated) return 1
+            if (!a.deprecated && b.deprecated) return -1
+            return 0
+          })
+          return {
+            isOperator: true,
+            items: operators
+          }
+        }
+      }
 
       return {}
     },
@@ -270,6 +291,10 @@ export default {
         const chunks = members.items[0].signature.split(' ')
         return chunks[chunks.length - 1] + ' event'
       }
+      if (members.isOperator) {
+        const chunks = members.items[0].signature.split(' ')
+        return chunks[chunks.length - 1] + ' operator'
+      }
       return this.memberName
     },
     tokenPath(token) {
@@ -289,7 +314,7 @@ export default {
         chunks.push({ name: tokens[0] + ' ' })
         tokens.shift()
       }
-      if (this.members.isEvent) {
+      if (this.members.isEvent || this.members.isOperator) {
         chunks.push({ name: tokens[0] })
         return chunks
       }
