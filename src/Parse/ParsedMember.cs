@@ -11,7 +11,8 @@ namespace Docify.Parse
         Event = 2,
         Property = 3,
         Method = 4,
-        EnumValue = 5
+        EnumValue = 5,
+        Operator = 6,
     }
 
     /// <summary>
@@ -30,6 +31,7 @@ namespace Docify.Parse
             if (Member is PropertyDeclarationSyntax) mt = ParsedMemberType.Property;
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
             if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
+            if (Member is OperatorDeclarationSyntax) mt = ParsedMemberType.Operator;
             MemberType = mt;
         }
         public ParsedType ParentType { get; set; }
@@ -47,6 +49,7 @@ namespace Docify.Parse
         public bool IsEvent { get { return Member is EventDeclarationSyntax; } }
         public bool IsProperty { get { return Member is PropertyDeclarationSyntax; } }
         public bool IsMethod { get { return Member is MethodDeclarationSyntax; } }
+        public bool IsOperator { get { return Member is OperatorDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {

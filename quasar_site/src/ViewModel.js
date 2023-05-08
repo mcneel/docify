@@ -65,6 +65,8 @@ const ViewModel = {
           if (methods){ children.push(methods)}
           const events = this.childTree(type, "Events")
           if (events){ children.push(events)}
+          const operators = this.childTree(type, "Operators")
+          if (operators){ children.push(operators)}
 
           //replace the populated child in the _viewmodel and _pathMap
           _pathMap[this.itemPath(type)]["children"] = children;
@@ -99,7 +101,7 @@ const ViewModel = {
             summary: summary,
             children : []
           }
-          if (type.methods || type.constructors || type.properties || type.events){
+          if (type.methods || type.constructors || type.properties || type.events || type.operators){
             item["lazy"] = true;
           }
 
@@ -235,6 +237,11 @@ const ViewModel = {
           if (m.since && sinceIsGreater(m.since, since)) since = m.since
         })
       }
+      if (type.operators) {
+        type.operators.forEach(m => {
+          if (m.since && sinceIsGreater(m.since, since)) since = m.since
+        })
+      }
     })
     return since
   },
@@ -248,12 +255,14 @@ const ViewModel = {
         constructors: [],
         methods: [],
         properties: [],
-        values: []
+        values: [],
+        operators: []
       }
       if (type.namespace) localApi.namespace = type.namespace
       let added = test(type, type.constructors, localApi.constructors)
       added += test(type, type.properties, localApi.properties)
       added += test(type, type.methods, localApi.methods)
+      added += test(type, type.operators, localApi.operators)
       if (type.values && type.since === '7.0') {
         added += test(type, type.values, localApi.values)
       }
@@ -375,6 +384,17 @@ const ViewModel = {
           items.push(node)
         })
       }
+      if (entry.operators) {
+        entry.operators.forEach(operator => {
+          const chunks = operator.signature.split(' ')
+          node = { typename: typename, member: chunks[chunks.length - 1] }
+          if (items[items.length - 1].member === node.member) return
+          node.type = 'event'
+          node.url = dataTypeUrl + '/' + node.member.toLowerCase()
+          if (operator.summary) node.summary = operator.summary
+          items.push(node)
+        })
+      }
     })
     return items
   },
@@ -425,7 +445,11 @@ const ViewModel = {
     return members
   },
   memberName (member, memberType) {
-    if (memberType == "constructors" || memberType == "values") return member.signature
+    if (memberType == "constructors" || memberType == "values" ) return member.signature
+    if (memberType == "operators"){
+      const chunks = member.signature.split(' ')
+      return chunks[chunks.length - 1]
+    }
     if (memberType == "methods"){
       const match = member.signature.match(/\S*\(.*\)/g)
       return match[0]

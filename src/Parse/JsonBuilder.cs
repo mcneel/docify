@@ -226,8 +226,8 @@ namespace Docify.Parse
                     sb.AppendLine(",");
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
-                if (type.FullName == "Rhino.Display.ColorGradient"){
-                    var colorGradient = type;
+                if (type.FullName == "Rhino.Display.Color4f"){
+                    var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor, asJavascript);
@@ -238,7 +238,8 @@ namespace Docify.Parse
                 string properties = MembersAsJsonArray(type, ParsedMemberType.Property, asJavascript);
                 string methods = MembersAsJsonArray(type, ParsedMemberType.Method, asJavascript);
                 string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
-                if (values != null || constructors != null || properties != null || methods != null || events != null)
+                string operators = MembersAsJsonArray(type, ParsedMemberType.Operator, asJavascript);
+                if (values != null || constructors != null || properties != null || methods != null || events != null || operators != null)
                     sb.AppendLine(",");
                 else
                     sb.AppendLine();
@@ -280,7 +281,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"methods\": {methods}");
 
-                    if (events != null)
+                    if (events != null || operators != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -291,6 +292,18 @@ namespace Docify.Parse
                         sb.AppendLine($"    events: {events}");
                     else
                         sb.AppendLine($"    \"events\": {events}");
+
+                    if (operators != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(operators))
+                {
+                    if (asJavascript)
+                        sb.AppendLine($"    operators: {operators}");
+                    else
+                        sb.AppendLine($"    \"operators\": {operators}");
                 }
             }
             sb.Append("  }");
