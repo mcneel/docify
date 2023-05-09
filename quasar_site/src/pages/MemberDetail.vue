@@ -74,7 +74,7 @@
                     <b>{{ parameter.name }}</b>
                     <router-link v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link" class="routerlink"
                       :to="paramTypes[parameter.name].link">
-                      {{ paramTypes[parameter.name].path }}
+                        {{ paramTypes[parameter.name].type }}
                     </router-link>
                     <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{
                       paramTypes[parameter.name].type }}</span>
