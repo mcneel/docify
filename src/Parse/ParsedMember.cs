@@ -209,7 +209,12 @@ namespace Docify.Parse
                 if (op != null)
                 {
                     var signature = new System.Text.StringBuilder();
-                    signature.Append($"{prefix}{op.OperatorToken}");
+                    string declaration = op.ToString();
+                    int index = declaration.IndexOf(')');
+                        if (index > 0)
+                            declaration = declaration.Substring(0, index+1);
+
+                    signature.Append($"{declaration}");
                     return signature.ToString();
                 }
             }

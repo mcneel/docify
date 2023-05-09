@@ -17,7 +17,7 @@
           </router-link>
         </p>
         <q-list>
-            <div v-for="(member, index) in members.items" :key="index">
+          <div v-for="(member, index) in members.items" :key="index">
             <!--Signature-->
             <q-card flat bordered style="font-family: monospace;">
               <q-item>
@@ -74,7 +74,7 @@
                     <b>{{ parameter.name }}</b>
                     <router-link v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link" class="routerlink"
                       :to="paramTypes[parameter.name].link">
-                        {{ paramTypes[parameter.name].type }}
+                      {{ paramTypes[parameter.name].type }}
                     </router-link>
                     <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{
                       paramTypes[parameter.name].type }}</span>
@@ -246,8 +246,8 @@ export default {
         const operators = []
         for (let i = 0; i < datatype.operators.length; i++) {
           const operator = datatype.operators[i]
-          const chunks = operator.signature.split(' ')
-          const name = chunks[chunks.length - 1]
+          const match = operator.signature.match(/\S*\(.*\)/g)
+          const name = match[0].split("(")[0]
           if (name.toLowerCase() === memberName) operators.push(operator)
         }
         if (operators.length > 0) {
@@ -290,8 +290,9 @@ export default {
         return chunks[chunks.length - 1] + ' event'
       }
       if (members.isOperator) {
-        const chunks = members.items[0].signature.split(' ')
-        return chunks[chunks.length - 1] + ' operator'
+        const match = members.items[0].signature.match(/\S*\(.*\)/g)
+        const name = match[0].split("(")[0]
+        return name + ' operator'
       }
       return this.memberName
     },
@@ -312,11 +313,11 @@ export default {
         chunks.push({ name: tokens[0] + ' ' })
         tokens.shift()
       }
-      if (this.members.isEvent || this.members.isOperator) {
+      if (this.members.isEvent) {
         chunks.push({ name: tokens[0] })
         return chunks
       }
-      if (this.members.isProperty || this.members.isMethod) {
+      if (this.members.isProperty || this.members.isMethod || this.members.isOperator) {
         // try to get a link for the return type
         const tokenPath = this.tokenPath(tokens[0])
         const link = tokenPath ? this.baseUrl + tokenPath : null
