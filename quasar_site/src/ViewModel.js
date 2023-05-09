@@ -447,8 +447,8 @@ const ViewModel = {
   memberName (member, memberType) {
     if (memberType == "constructors" || memberType == "values" ) return member.signature
     if (memberType == "operators"){
-      const chunks = member.signature.split(' ')
-      return chunks[chunks.length - 1]
+      const match = member.signature.match(/\S*\(.*\)/g)
+      return match[0].split("(")[0]
     }
     if (memberType == "methods"){
       const match = member.signature.match(/\S*\(.*\)/g)
