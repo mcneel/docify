@@ -304,7 +304,7 @@ export default {
       // skip tokens that start with a lower case letter
       if (token.length < 1 || token[0] === token[0].toLowerCase()) return null
       if (token.endsWith('[]')) token = token.substring(0, token.length - 2)
-      if (token === this.datatype.name) return null
+      // if (token === this.datatype.name) return null
       const typeMap = ViewModel.getTypeMap()
       const type = typeMap[token]
       if (!type) return null
