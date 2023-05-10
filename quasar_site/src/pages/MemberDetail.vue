@@ -16,83 +16,87 @@
             {{ datatype.namespace }}.{{ datatype.name }}
           </router-link>
         </p>
+
         <q-list>
           <div v-for="(member, index) in members.items" :key="index">
-            <!--Signature-->
-            <q-card flat bordered style="font-family: monospace;">
-              <q-item>
-                <q-item-section>
-                  <q-item-label v-if="member.deprecated" class="light-dimmed">
-                    <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                      <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
-                        <br />&nbsp;
-                      </template>
-                      <span>{{ chunk.name }}</span>
-                      <template
-                        v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith('(') || chunk.name.startsWith(',')">
-                        <br />&nbsp;
-                      </template>
-                    </template>
-                  </q-item-label>
-                  <q-item-label v-if="!member.deprecated" style="font-size:18px;">
-                    <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                      <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
-                        <br />&nbsp;
-                      </template>
-                      <span v-if="chunk.link" class="q-pr-sm">
-                        <router-link class="routerlink" :to="chunk.link">{{ chunk.name.trim() }}</router-link>
+                    <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
+                    <q-item-label caption v-if="member.summary" class="on-right">
+                      <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
+                        <br v-if="index > 0">
+                        {{ line }}
                       </span>
-                      <span v-else>{{ chunk.name }}</span>
-                      <template
-                        v-if="member.signature.split(' ').length > 2 && (chunk.name.endsWith('(') || chunk.name.includes(','))">
-                        <br />&nbsp;
-                      </template>
-                    </template>
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-card>
+                    </q-item-label>
+
+                    <!--Signature-->
+                    <q-card flat bordered style="font-family: monospace; margin-top: 10px;">
+                      <q-item>
+                        <q-item-section>
+                          <q-item-label v-if="member.deprecated" class="light-dimmed">
+                            <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                              <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
+                                <br />&nbsp;
+                              </template>
+                              <span>{{ chunk.name }}</span>
+                              <template
+                                v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith('(') || chunk.name.startsWith(',')">
+                                <br />&nbsp;
+                              </template>
+                            </template>
+                          </q-item-label>
+                          <q-item-label v-if="!member.deprecated" style="font-size:18px;">
+                            <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                              <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
+                                <br />&nbsp;
+                              </template>
+                              <span v-if="chunk.link" class="q-pr-sm">
+                                <router-link class="routerlink" :to="chunk.link">{{ chunk.name.trim() }}</router-link>
+                              </span>
+                              <span v-else>{{ chunk.name }}</span>
+                              <template
+                                v-if="member.signature.split(' ').length > 2 && (chunk.name.endsWith('(') || chunk.name.includes(','))">
+                                <br />&nbsp;
+                              </template>
+                            </template>
+                          </q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-card>
 
 
-            <q-item :inset-level="0.25" class="q-pt-none">
-              <q-item-section>
-                <q-item-label caption class="on-right">
-                  <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{ member.deprecated }}
-                    <q-tooltip>Deprecated in version {{ member.deprecated }}</q-tooltip>
-                  </q-badge>
-                </q-item-label>
-                <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
-                <q-item-label caption v-if="member.summary" class="on-right">
-                  <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
-                    <br v-if="index > 0">
-                    {{ line }}
-                  </span>
-                </q-item-label>
-                <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
-                <q-item-label caption class="on-right row" v-for="parameter in member.parameters" :key="parameter.name">
-                  <div class="row q-gutter-sm">
-                    <b>{{ parameter.name }}</b>
-                    <router-link v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link" class="routerlink"
-                      :to="paramTypes[parameter.name].link">
-                      {{ paramTypes[parameter.name].type }}
-                    </router-link>
-                    <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{
-                      paramTypes[parameter.name].type }}</span>
-                    <span v-html="parameter.summary"></span>
-                  </div>
+                    <q-item :inset-level="0.25" class="q-pt-none">
+                      <q-item-section>
+                        <q-item-label caption class="on-right">
+                          <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{ member.deprecated }}
+                            <q-tooltip>Deprecated in version {{ member.deprecated }}</q-tooltip>
+                          </q-badge>
+                        </q-item-label>
+                        <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
+                        <q-item-label caption class="on-right row" v-for="parameter in member.parameters" :key="parameter.name">
+                          <ul style="padding-inline-start: 0px; list-style-type: none; margin-block-start: 0; margin-block-end: 5px;">
+                            <li><b>{{ parameter.name }}</b>&nbsp;
+                              <span v-if="paramTypes[parameter.name] && paramTypes[parameter.name].link">
+                                <router-link class="routerlink" :to="paramTypes[parameter.name].link">
+                                  {{ paramTypes[parameter.name].path }}
+                                </router-link>
+                              </span>
+                              <span v-if="paramTypes[parameter.name] && !paramTypes[parameter.name].link" class="disabled">{{
+                                paramTypes[parameter.name].type }}</span>
+                            </li>
+                            <li v-html="parameter.summary"></li>
+                          </ul>
 
-                </q-item-label>
-                <q-item-label caption v-if="member.returns" class="text-bold">Returns:</q-item-label>
-                <q-item-label caption class="on-right" v-if="member.returns">
-                  {{ member.returns }}
-                </q-item-label>
-                <q-item-label caption v-if="member.since" class="text-bold">Available since:</q-item-label>
-                <q-item-label caption class="on-right" v-if="member.since">
-                  {{ member.since }}
-                </q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item v-if="member.examples && member.examples.length > 0" dense class="on-right">
+                        </q-item-label>
+                        <q-item-label caption v-if="member.returns" class="text-bold" style="margin-top: 10px;">Returns:</q-item-label>
+                        <q-item-label caption class="on-right" v-if="member.returns">
+                          {{ member.returns }}
+                        </q-item-label>
+                        <q-item-label caption v-if="member.since" class="text-bold" style="margin-top: 10px;">Available since:</q-item-label>
+                        <q-item-label caption class="on-right" v-if="member.since">
+                          {{ member.since }}
+                        </q-item-label>
+                      </q-item-section>
+                    </q-item>
+                    <q-item v-if="member.examples && member.examples.length > 0" dense class="on-right" style="margin-top: 10px;">
               <q-btn no-caps outline dense size="sm" icon="mdi-code-tags" color="secondary" :to="exampleUrl(member)">
                 Example
               </q-btn>
