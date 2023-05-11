@@ -226,7 +226,8 @@ namespace Docify.Parse
                     sb.AppendLine(",");
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
-                if (type.FullName == "Rhino.Display.Color4f"){
+                //Morteza: debugging only
+                if (type.FullName == "Rhino.Input.Custom.GetPoint"){
                     var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
