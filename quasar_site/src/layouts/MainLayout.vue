@@ -210,6 +210,11 @@ body.body--dark,
 
 a.routerlink {
   color: #518ae7;
+  text-decoration: none;
+}
+
+.disabledLink {
+  color: #518ae7;
 }
 
 .q-item__label--caption {
