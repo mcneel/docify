@@ -35,8 +35,8 @@
               :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
         </p>
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
-                :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="section.title" :content-inset-level="1"
-            :id="anchorId(section)" header-class="bg-secondary text-white">
+          :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="section.title"
+          :content-inset-level="1" :id="anchorId(section)" header-class="bg-secondary text-white">
 
           <q-list>
             <div v-for="(member, index) in section.items" :key="index">
@@ -46,45 +46,50 @@
                 <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
                   style="overflow-wrap: break-word;">
                   <!--formatting member signature below to show only name as bold and signature non-bold-->
-                                  <p><span><b>{{ splitSignature(ViewModel.memberName(member, section.type))[0] }}</b></span>{{ splitSignature(ViewModel.memberName(member, section.type))[1] }}</p>&nbsp;
-                                <q-badge
-                                  v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
-                                  color='info' outline>
-                                  <q-icon name="mdi-file-tree" />
-                                  <q-tooltip>From {{ member.parent }}</q-tooltip>
-                                </q-badge>
-                              </q-item-label>
-                              <q-item-label caption class="on-right col-8">
-                                <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
-                                  <br v-if="index > 0">
-                                  {{ line }}
-                                </span>
-                              </q-item-label>
-                            </q-item>
-                            <q-separator spaced inset />
-                          </div>
-                        </q-list>
-                      </q-expansion-item>
-                      <q-expansion-item v-if="childNamespaces" switch-toggle-side label="Child Namespaces" :content-inset-level="1"
-                        default-opened header-class="bg-secondary text-white">
-                        <q-list>
-                          <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
-                            class="row">
-                            <q-item-label class="col" style="overflow-wrap: break-word;">
-                              <b class="text-accent">{{ item.label }}</b>
-                            </q-item-label>
-                            <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
-                          </q-item>
-                        </q-list>
-                      </q-expansion-item>
-                      <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
-                        class="row">
-                        <q-item-label class="col" style="overflow-wrap: break-word;"><b class="text-accent">{{ item.label
-                        }}</b></q-item-label>
-                        <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
-                      </q-item>
-                    </div>
-                </q-page>
+                  <p><span><b>{{ splitSignature(ViewModel.memberName(member, section.type))[0] }}</b></span>{{
+                    splitSignature(ViewModel.memberName(member, section.type))[1] }}</p>&nbsp;
+                  <q-badge
+                    v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
+                    color='info' outline>
+                    <q-icon name="mdi-file-tree" />
+                    <q-tooltip>From {{ member.parent }}</q-tooltip>
+                  </q-badge>
+                  <q-badge v-if="section.type == 'methods' && !member.public" color='info' outline>
+                    <q-icon name="mdi-key-variant" />
+                    <q-tooltip>Protected Member</q-tooltip>
+                  </q-badge>
+                </q-item-label>
+                <q-item-label caption class="on-right col-8">
+                  <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
+                    <br v-if="index > 0">
+                    {{ line }}
+                  </span>
+                </q-item-label>
+              </q-item>
+              <q-separator spaced inset />
+            </div>
+          </q-list>
+        </q-expansion-item>
+        <q-expansion-item v-if="childNamespaces" switch-toggle-side label="Child Namespaces" :content-inset-level="1"
+          default-opened header-class="bg-secondary text-white">
+          <q-list>
+            <q-item clickable v-for="item in childNamespaces" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
+              class="row">
+              <q-item-label class="col" style="overflow-wrap: break-word;">
+                <b class="text-accent">{{ item.label }}</b>
+              </q-item-label>
+              <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
+            </q-item>
+          </q-list>
+        </q-expansion-item>
+        <q-item clickable v-for="item in namespaceItems" :key="item.label" :to="baseUrl + item.path.toLowerCase()"
+          class="row">
+          <q-item-label class="col" style="overflow-wrap: break-word;"><b class="text-accent">{{ item.label
+          }}</b></q-item-label>
+          <q-item-label caption class="col-8">{{ item.summary }}</q-item-label>
+        </q-item>
+      </div>
+    </q-page>
 </template>
 
 <script>
