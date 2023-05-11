@@ -144,6 +144,19 @@ namespace Docify.Parse
             return rc;
         }
 
+        static string KeyValBool(int indent, string key, bool val, bool asJavascript)
+        {
+            string rc = "".PadLeft(indent);
+            if (asJavascript)
+                rc += key;
+            else
+                rc += $"\"{key}\"";
+            rc += ": ";
+            rc += val.ToString().ToLower();
+            return rc;
+        }
+
+
         static string WriteTypeAsObject(ParsedType type, Dictionary<string, ParsedType> allPublicTypesByShortName, bool asJavascript)
         {
             if (!type.IsPublic || (type.DataType != ParsedDataType.Namespace && string.IsNullOrWhiteSpace(type.Namespace)))
@@ -226,7 +239,8 @@ namespace Docify.Parse
                     sb.AppendLine(",");
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
-                if (type.FullName == "Rhino.Display.Color4f"){
+                //Morteza: debugging only
+                if (type.FullName == "Rhino.Input.Custom.GetPoint"){
                     var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
@@ -349,6 +363,9 @@ namespace Docify.Parse
                 sb.AppendLine("      {");
                 sb.Append(KeyValString(8, "signature", member.Signature(false), asJavascript));
                 //sb.Append($"        signature: '{member.Signature(false)}'");
+                sb.AppendLine(",");
+                sb.Append(KeyValBool(8, "public", member.IsPublic, asJavascript));
+
                 string summary = member.Summary();
                 if (!string.IsNullOrWhiteSpace(summary))
                 {
