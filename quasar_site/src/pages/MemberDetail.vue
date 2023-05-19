@@ -115,6 +115,7 @@
 import ViewModel from '../ViewModel'
 import Examples from '../api_examples.json'
 import ProjInfo from '../proj_info.json'
+import { createMetaMixin } from 'quasar'
 
 const titleCase = (input) => {
   input = (input === undefined || input === null) ? '' : input;
@@ -138,18 +139,22 @@ export default {
       paramTypes: {}
     }
   },
-  meta() {
-    const node = ViewModel.findNodeByPath(this.$route.params.datatype)
-    const memberName = this.$route.params.member.toLowerCase()
-    const members = this.getMembers(node, memberName)
-    const desc = node.name + '.' + this.getTitle(node, members)
-    return {
-      title: ProjInfo.name + ' API - ' + node.name + ' ' + node.dataType,
-      meta: {
-        description: { name: 'description', content: desc }
+  mixins: [
+    //This is where page meta gets set because why the heck NOT Quasar
+    createMetaMixin(function () {
+      // "this" here refers to your component
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      const memberName = this.$route.params.member;
+      const members = this.getMembers(node, memberName)
+      const desc = node.name + '.' + this.getTitle(node, members)
+      return {
+        title: desc,
+        meta: {
+          description: { name: 'description', content: desc }
+        }
       }
-    }
-  },
+    })
+  ],
   mounted() {
     console.log('mounted member detail')
     this.renderUrl(this.$route)

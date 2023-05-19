@@ -95,6 +95,7 @@
 <script>
 import ViewModel from '../ViewModel'
 import ProjInfo from '../proj_info.json'
+import { createMetaMixin } from 'quasar'
 
 export default {
   props: {
@@ -107,22 +108,27 @@ export default {
       }
     }
   },
-  meta() {
-    const node = ViewModel.findNodeByPath(this.$route.params.datatype)
-    let desc = node.namespace ? node.namespace + '.' + node.name : node.name
-    if (node.dataType === 'namespace') {
-      desc += ' namespace'
-    }
-    if (node.summary) {
-      desc += ': ' + node.summary
-    }
-    return {
-      title: ProjInfo.name + ' API - ' + node.name + ' ' + node.dataType,
-      meta: {
-        description: { name: 'description', content: desc }
+  mixins: [
+    //This is where page meta gets set because why the heck NOT Quasar
+    createMetaMixin(function () {
+      // "this" here refers to your component
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      let desc = node.namespace ? node.namespace + '.' + node.name : node.name
+      if (node.dataType === 'namespace') {
+        desc += ' namespace'
       }
-    }
-  },
+      if (node.summary) {
+        desc += ': ' + node.summary
+      }
+      return {
+        title: node.name + ' ' + node.dataType,
+        meta: {
+          description: { name: 'description', content: desc }
+        }
+      }
+    })
+  ],
+
   computed: {
     dataType: function () {
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
