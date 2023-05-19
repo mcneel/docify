@@ -240,7 +240,7 @@ namespace Docify.Parse
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
                 //Morteza: debugging only
-                if (type.FullName == "Rhino.Input.Custom.GetPoint"){
+                if (type.FullName == "Rhino.Geometry.Brep"){
                     var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
@@ -417,7 +417,7 @@ namespace Docify.Parse
                             sb.AppendLine(KeyValString(12, "name", parameters[i].Name, asJavascript) + ",");
                             //sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
                             // Not sure if we really need type as it is easy to resolve in javascript
-                            // sb.AppendLine($"            type: {JsonQuote(parameters[i].Type)},");
+                            sb.AppendLine(KeyValString(12, "type", parameters[i].Type, asJavascript) + ",");
                             sb.AppendLine(KeyValString(12, "summary", parameters[i].DocString, asJavascript));
                             //sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
                             sb.Append("          }");
