@@ -120,12 +120,12 @@
                   "
                 >
                   <li class="text-italic">{{ parameter.name }}</li>
-                  <li class="q-pl-lg"><span>Type: </span>
+                  <li class="q-pl-lg text-weight-light"><span>Type: </span>
                     <template v-if="linkForType(parameter.type)">
-                      <router-link class="routerlink" :to="linkForType(parameter.type)">
+                      <router-link class="routerlink text-weight-regular" :to="linkForType(parameter.type)">
                         {{ parameter.type }}
                       </router-link></template>
-                    <template v-else><span class="disabled disabledLink">{{ parameter.type }}</span></template>
+                    <template v-else><span class="disabled disabledLink text-weight-regular">{{ parameter.type }}</span></template>
                   </li>
                   <li v-html="parameter.summary" class="q-pl-lg text-weight-light"></li>
                 </ul>
@@ -136,7 +136,7 @@
                 style="margin-top: 10px"
                 >Returns:</q-item-label
               >
-              <q-item-label caption class="on-right" v-if="member.returns">
+              <q-item-label class="on-right text-weight-light" v-if="member.returns">
                 {{ member.returns }}
               </q-item-label>
               <q-item-label
