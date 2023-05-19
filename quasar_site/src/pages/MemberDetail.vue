@@ -19,58 +19,63 @@
 
         <q-list>
           <div v-for="(member, index) in members.items" :key="index">
-            <q-item-label caption v-if="member.summary" class="text-bold">Description:</q-item-label>
-            <q-item-label caption v-if="member.summary" class="on-right">
-              <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
-                <br v-if="index > 0">
-                {{ line }}
-              </span>
-            </q-item-label>
+                        <q-item>
+                          <q-item-section>
+                            <q-item-label v-if="member.summary" class="text-h6">Description:</q-item-label>
+                            <q-item-label caption v-if="member.summary" class="on-right">
+                              <span v-for="(line, index) in getLines(member.summary)" :key="1000 + index">
+                                <br v-if="index > 0">
+                                {{ line }}
+                              </span>
+                            </q-item-label>
+                          </q-item-section>
+                        </q-item>
 
-            <!--Signature-->
-            <q-card flat bordered style="font-family: monospace; margin-top: 10px;">
-              <q-item>
-                <q-item-section>
-                  <q-item-label v-if="member.deprecated" class="light-dimmed">
-                    <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                      <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
-                        <br />&nbsp;
-                      </template>
-                      <span>{{ chunk.name }}</span>
-                      <template
-                        v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith('(') || chunk.name.startsWith(',')">
-                        <br />&nbsp;
-                      </template>
-                    </template>
-                  </q-item-label>
-                  <q-item-label v-if="!member.deprecated" style="font-size:18px;">
-                    <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
-                      <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
-                        <br />&nbsp;
-                      </template>
-                      <span v-if="chunk.link" class="q-pr-sm">
-                        <router-link class="routerlink" :to="chunk.link">{{ chunk.name.trim() }}</router-link>
-                      </span>
-                      <span v-else>{{ chunk.name }}</span>
-                      <template
-                        v-if="member.signature.split(' ').length > 2 && (chunk.name.endsWith('(') || chunk.name.includes(','))">
-                        <br />&nbsp;
-                      </template>
-                    </template>
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-card>
+                        <!--Signature-->
+                        <q-item>
+                          <q-item-section>
+                            <q-item-label v-if="member.summary" class="text-h6">Syntax:</q-item-label>
+                            <q-card flat bordered style="font-family: monospace; margin: 10px; padding: 10px;">
+                              <q-item-label v-if="member.deprecated" class="light-dimmed">
+                                <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                                  <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
+                                    <br />&nbsp;
+                                  </template>
+                                  <span>{{ chunk.name }}</span>
+                                  <template
+                                    v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith('(') || chunk.name.startsWith(',')">
+                                    <br />&nbsp;
+                                  </template>
+                                </template>
+                              </q-item-label>
+                              <q-item-label v-if="!member.deprecated" style="font-size:18px;">
+                                <template v-for="(chunk, idx) in signature(member)" :key="idx + 1000">
+                                  <template v-if="member.signature.split(' ').length > 2 && chunk.name.endsWith(')')">
+                                    <br />&nbsp;
+                                  </template>
+                                  <span v-if="chunk.link" class="q-pr-sm">
+                                    <router-link class="routerlink" :to="chunk.link">{{ chunk.name.trim() }}</router-link>
+                                  </span>
+                                  <span v-else>{{ chunk.name }}</span>
+                                  <template
+                                    v-if="member.signature.split(' ').length > 2 && (chunk.name.endsWith('(') || chunk.name.includes(','))">
+                                    <br />&nbsp;
+                                  </template>
+                                </template>
+                              </q-item-label>
+                            </q-card>
+                          </q-item-section>
+                        </q-item>
 
 
-            <q-item :inset-level="0.25" class="q-pt-none">
-              <q-item-section>
-                <q-item-label caption class="on-right">
-                  <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{ member.deprecated }}
-                    <q-tooltip>Deprecated in version {{ member.deprecated }}</q-tooltip>
-                  </q-badge>
-                </q-item-label>
-                <q-item-label caption v-if="member.parameters" class="text-bold">Parameters:</q-item-label>
+                        <q-item>
+                          <q-item-section>
+                            <q-item-label caption class="on-right">
+                              <q-badge v-if="member.deprecated" outline color='negative'>deprecated in {{ member.deprecated }}
+                                <q-tooltip>Deprecated in version {{ member.deprecated }}</q-tooltip>
+                              </q-badge>
+                            </q-item-label>
+                            <q-item-label v-if="member.parameters" class="text-h6">Parameters:</q-item-label>
                 <q-item-label caption class="on-right row" v-for="parameter in member.parameters" :key="parameter.name">
                   <ul
                     style="padding-inline-start: 0px; list-style-type: none; margin-block-start: 0; margin-block-end: 5px;">
@@ -365,6 +370,7 @@ export default {
           const tokenPath = this.tokenPath(typeToken)
           const link = tokenPath ? this.baseUrl + tokenPath : null
 
+          // console.log(tokens);
           if (link) {
             for (let j = 0; j < paramChunks.length - 2; j++) {
               chunks.push({ name: paramChunks[j] + ' ' })
