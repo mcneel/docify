@@ -61,34 +61,46 @@
                 bordered
                 style="font-family: monospace; margin: 10px; padding: 10px"
               >
-                <q-item-label
-                  style="font-size: 18px"
-                  :class="member.deprecated && 'light-dimmed'"
-                >
-                  <template
-                    v-for="(chunk, idx) in preSyntax(member)"
-                    :key="idx + 1000"
+                <q-card-section horizontal>
+                  <q-item-label
+                    style="font-size: 18px; width: 100%"
+                    :class="member.deprecated && 'light-dimmed'"
                   >
-                    <span v-if="chunk.link">
-                      <router-link class="routerlink" :to="chunk.link">{{
-                        chunk.name.trim()
-                      }}</router-link>
+                    <template
+                      v-for="(chunk, idx) in preSyntax(member)"
+                      :key="idx + 1000"
+                    >
+                      <span v-if="chunk.link">
+                        <router-link class="routerlink" :to="chunk.link">{{
+                          chunk.name.trim()
+                        }}</router-link>
+                      </span>
+                      <span v-else>{{ chunk.name }}</span>
+                    </template>
+                    <template
+                      v-for="parameter in member.parameters"
+                      :key="parameter.name"
+                    >
+                      <br />
+                      <span class="q-pl-lg">{{ parameter.type }}&nbsp;</span>
+                      <span class="text-italic">{{ parameter.name }},</span>
+                    </template>
+                    <span v-if="member.signature.endsWith(')')">
+                      <br v-if="member.parameters" />
+                      )
                     </span>
-                    <span v-else>{{ chunk.name }}</span>
-                  </template>
-                  <template
-                    v-for="parameter in member.parameters"
-                    :key="parameter.name"
-                  >
-                    <br />
-                    <span class="q-pl-lg">{{ parameter.type }}&nbsp;</span>
-                    <span class="text-italic">{{ parameter.name }},</span>
-                  </template>
-                  <span v-if="member.signature.endsWith(')')">
-                    <br v-if="member.parameters" />
-                    )
-                  </span>
-                </q-item-label>
+                  </q-item-label>
+
+                  <q-card-actions vertical class="">
+                    <q-btn
+                      flat
+                      round
+                      color="blue"
+                      icon="mdi-content-copy"
+                      @click="copyToClipboard(member.signature)"
+                    ></q-btn>
+                  </q-card-actions>
+                </q-card-section>
               </q-card>
             </q-item-section>
           </q-item>
@@ -120,14 +132,27 @@
                   "
                 >
                   <li class="text-italic">{{ parameter.name }}</li>
-                  <li class="q-pl-lg text-weight-light"><span>Type: </span>
+                  <li class="q-pl-lg text-weight-light">
+                    <span>Type: </span>
                     <template v-if="linkForType(parameter.type)">
-                      <router-link class="routerlink text-weight-regular" :to="linkForType(parameter.type)">
+                      <router-link
+                        class="routerlink text-weight-regular"
+                        :to="linkForType(parameter.type)"
+                      >
                         {{ parameter.type }}
-                      </router-link></template>
-                    <template v-else><span class="disabled disabledLink text-weight-regular">{{ parameter.type }}</span></template>
+                      </router-link></template
+                    >
+                    <template v-else
+                      ><span
+                        class="disabled disabledLink text-weight-regular"
+                        >{{ parameter.type }}</span
+                      ></template
+                    >
                   </li>
-                  <li v-html="parameter.summary" class="q-pl-lg text-weight-light"></li>
+                  <li
+                    v-html="parameter.summary"
+                    class="q-pl-lg text-weight-light"
+                  ></li>
                 </ul>
               </q-item-label>
               <q-item-label
@@ -136,7 +161,10 @@
                 style="margin-top: 10px"
                 >Returns:</q-item-label
               >
-              <q-item-label class="on-right text-weight-light" v-if="member.returns">
+              <q-item-label
+                class="on-right text-weight-light"
+                v-if="member.returns"
+              >
                 {{ member.returns }}
               </q-item-label>
               <q-item-label
@@ -436,44 +464,6 @@ export default {
           }
         }
       }
-      //   for (let i = 0; i < parameterTokens.length; i++) {
-      //     if (!parameterTokens[i]) continue
-      //     if (i > 0) chunks.push({ name: ', ' })
-      //     const parameter = parameterTokens[i].trim()
-      //     const paramChunks = parameter.split(' ')
-      //     const typeToken = paramChunks[paramChunks.length - 2]
-      //     const paramName = paramChunks[paramChunks.length - 1]
-      //     const tokenPath = this.tokenPath(typeToken)
-      //     const link = tokenPath ? this.baseUrl + tokenPath : null
-
-      //     // console.log(tokens);
-      //     if (link) {
-      //       for (let j = 0; j < paramChunks.length - 2; j++) {
-      //         chunks.push({ name: paramChunks[j] + ' ' })
-      //       }
-      //       chunks.push({
-      //         link: link,
-      //         name: typeToken + ' '
-      //       })
-      //       chunks.push({ name: paramChunks[paramChunks.length - 1] })
-      //       //keep track of param names and their types
-      //       this.paramTypes[paramName] = {
-      //         link: link,
-      //         path: titleCase(tokenPath),
-      //         type: typeToken
-      //       }
-      //     } else {
-      //       chunks.push({ name: parameter })
-      //       this.paramTypes[paramName] = {
-      //         path: tokenPath || typeToken,
-      //         type: typeToken
-      //       }
-      //     }
-      //   }
-      //   chunks.push({ name: ')' })
-      // } else {
-      //   chunks.push({ name: declaration })
-      // }
       if (member.property) {
         let s = " {";
         for (let i = 0; i < member.property.length; i++) {
@@ -485,10 +475,13 @@ export default {
       }
       return chunks;
     },
-    linkForType(typeToken){
-      const tokenPath = this.tokenPath(typeToken)
-      const link = tokenPath ? this.baseUrl + tokenPath : null
+    linkForType(typeToken) {
+      const tokenPath = this.tokenPath(typeToken);
+      const link = tokenPath ? this.baseUrl + tokenPath : null;
       return link;
+    },
+    copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
     },
     exampleUrl(member) {
       let name = member.examples[0].name;
