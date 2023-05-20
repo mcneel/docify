@@ -77,6 +77,19 @@ namespace Docify.Parse
         }
 
         public bool IsPublic { get { return Member.IsPublic(); } }
+
+        public bool IsProtected { get {
+            foreach (var modifier in Member.Modifiers)
+            {
+                if (modifier.Text == "protected")
+                    return true;
+            }
+            if (Member.Parent is InterfaceDeclarationSyntax)
+                return true;
+            return false;
+
+        }}
+
         public bool IsStatic { get { return Member.IsStatic(); } }
 
         public string ClassPath

@@ -86,6 +86,9 @@ namespace Docify
                 }
                 foreach (var parsedItem in parsedItems)
                 {
+                    if (parsedItem.Signature(false) == "object _GetConstObjectParent()"){
+                        var inspecting = parsedItem;
+                    }
                     bool skipMember = parsedItem.IsMethod ? false : !parsedItem.IsPublic;
                     if (!parsedItem.ParentIsPublic || skipMember) //Morteza: removed `|| !parsedItem.IsPublic` because private members were exposed in old API https://discourse.mcneel.com/t/with-python-how-to-create-a-point-that-follows-the-movement-of-mouse/159205/12?u=mkarimi
                         continue;
