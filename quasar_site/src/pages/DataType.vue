@@ -54,7 +54,7 @@
                     <q-icon name="mdi-file-tree" />
                     <q-tooltip>From {{ member.parent }}</q-tooltip>
                   </q-badge>
-                  <q-badge v-if="section.type == 'methods' && !member.public" color='info' outline>
+                  <q-badge v-if="section.type == 'methods' && member.protected" color='info' outline>
                     <q-icon name="mdi-key-variant" />
                     <q-tooltip>Protected Member</q-tooltip>
                   </q-badge>
