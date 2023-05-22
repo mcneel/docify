@@ -66,29 +66,17 @@
                     style="font-size: 18px; width: 100%"
                     :class="member.deprecated && 'light-dimmed'"
                   >
-                    <template
-                      v-for="(chunk, idx) in preSyntax(member)"
-                      :key="idx + 1000"
-                    >
-                      <span v-if="chunk.link">
-                        <router-link class="routerlink" :to="chunk.link">{{
-                          chunk.name.trim()
-                        }}</router-link>
-                      </span>
-                      <span v-else>{{ chunk.name }}</span>
+                    <template v-for="chunk,id in signature(member)" :key="id">
+                      <template v-if="chunk.indent">
+                        <br/>
+                        <span class="q-pl-lg"></span>
+                      </template>
+                      <template v-if="chunk.break">
+                        <br/>
+                      </template>
+                      <router-link v-if="chunk.link" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
+                      <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
                     </template>
-                    <template
-                      v-for="parameter in member.parameters"
-                      :key="parameter.name"
-                    >
-                      <br />
-                      <span class="q-pl-lg">{{ parameter.type }}&nbsp;</span>
-                      <span class="text-italic">{{ parameter.name }},</span>
-                    </template>
-                    <span v-if="member.signature.endsWith(')')">
-                      <br v-if="member.parameters" />
-                      )
-                    </span>
                   </q-item-label>
 
                   <q-card-actions vertical class="">
@@ -414,6 +402,86 @@ export default {
       if (!type) return null;
       return ViewModel.itemPath(type);
     },
+    signature(member){
+      const tokens = member.signature.split(' ')
+      const chunks = []
+      if (tokens[0] === 'static') {
+        chunks.push({ name: tokens[0] + ' ' })
+        tokens.shift()
+      }
+      if (this.members.isEvent) {
+        chunks.push({ name: tokens[0] })
+        return chunks
+      }
+      if (this.members.isProperty || this.members.isMethod || this.members.isOperator) {
+        // try to get a link for the return type
+        const tokenPath = this.tokenPath(tokens[0])
+        const link = tokenPath ? this.baseUrl + tokenPath : null
+        if (link) {
+          chunks.push({
+            link: link,
+            name: tokens[0]
+          })
+          chunks.push({ name: ' ' })
+        } else {
+          chunks.push({ name: tokens[0] + ' ' })
+        }
+        tokens.shift()
+      }
+      const declaration = tokens.join(' ')
+      const parenIndex = declaration.indexOf('(')
+      if (parenIndex > 0) {
+        chunks.push({ name: declaration.substring(0, parenIndex + 1) })
+        const parameterTokens = declaration.substring(parenIndex + 1, declaration.length - 1).split(',')
+        for (let i = 0; i < parameterTokens.length; i++) {
+          if (parameterTokens[i].indexOf('<') > 0 && i < (parameterTokens.length - 1)) {
+            parameterTokens[i] = parameterTokens[i] + ',' + parameterTokens[i + 1]
+            parameterTokens[i + 1] = ''
+          }
+        }
+        for (let i = 0; i < parameterTokens.length; i++) {
+          if (!parameterTokens[i]) continue
+          if (i > 0) chunks.push({ name: ', ' })
+          const parameter = parameterTokens[i].trim()
+          const paramChunks = parameter.split(' ')
+          const typeToken = paramChunks[paramChunks.length - 2]
+          const paramName = paramChunks[paramChunks.length - 1]
+          const tokenPath = this.tokenPath(typeToken)
+          const link = tokenPath ? this.baseUrl + tokenPath : null
+
+          //indent all parameters
+          chunks.push({indent:true});
+
+          // if (link) {
+            for (let j = 0; j < paramChunks.length - 2; j++) {
+              chunks.push({ name: paramChunks[j] + ' ' })
+            }
+            chunks.push({
+              link: link,
+              name: typeToken + ' '
+            })
+            chunks.push({ name: paramChunks[paramChunks.length - 1], role:"name" })
+
+          // } else {
+          //   chunks.push({ name: parameter })
+          // }
+        }
+
+        chunks.push({ name: ')', break: parameterTokens.filter(p=>p.length>0).length>0 })
+      } else {
+        chunks.push({ name: declaration })
+      }
+      if (member.property) {
+        let s = ' {'
+        for (let i = 0; i < member.property.length; i++) {
+          if (i > 0) s += '|'
+          s += member.property[i]
+        }
+        s += '}'
+        chunks.push({ name: s })
+      }
+      return chunks
+    },
     preSyntax(member) {
       // const noArgs = member.signature.split('(')[0]
       // const tokens = noArgs.split(' ')
@@ -475,6 +543,18 @@ export default {
       }
       return chunks;
     },
+    // splitSignature(member){
+    //   let tokens = member.signature.split(/,|\(|\)/);
+    //   tokens = tokens.filter(t=>t.length>0);
+    //   if (member.signature.includes("(")){
+    //     tokens[0] = tokens[0]+"("
+    //     tokens.push(")");
+    //     if (tokens.length ==2){
+    //       tokens = [tokens[0]+tokens[1]];
+    //     }
+    //   }
+    //   return tokens;
+    // },
     linkForType(typeToken) {
       const tokenPath = this.tokenPath(typeToken);
       const link = tokenPath ? this.baseUrl + tokenPath : null;
