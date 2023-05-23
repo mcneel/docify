@@ -38,9 +38,9 @@
           </template>
           <template v-slot:header-secondary="prop">
             <div class="row items-center">
-              <router-link :id="`TOC:${prop.node.path}`" class="text-weight-light toc-secondary-header"
+              <router-link :id="`TOC:${prop.node.path}`" class="toc-secondary-header"
                 style="text-decoration: none; color: inherit;" :class="prop.node.deprecated ? 'toc-deprecated' : ''"
-                :to="baseUrl + prop.node.path.toLowerCase()">{{ prop.node.label }}</router-link>
+                :to="baseUrl + prop.node.path.toLowerCase()"><span>{{ prop.node.label }}</span><span class="text-weight-light">{{ prop.node.labelSecondary }}</span></router-link>
             </div>
           </template>
         </q-tree>
