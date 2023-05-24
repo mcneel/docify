@@ -158,7 +158,7 @@ namespace Docify.Parse
                     {
                         var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
                         var enumMember = node as EnumMemberDeclarationSyntax;
-                        _members.Add(new ParsedMember(enumMember, docComment));
+                        _members.Add(new ParsedMember(enumMember, docComment, null));
                     }
                 }
                 return _members;

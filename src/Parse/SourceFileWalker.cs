@@ -16,6 +16,7 @@ namespace Docify.Parse
             return (sfw._parsedBaseTypes, sfw._parsedMembers, sfw._parsedNamespaces);
         }
 
+        List<string> _usingDirectives = new List<string>();
         List<ParsedMember> _parsedMembers = new List<ParsedMember>();
         List<ParsedType> _parsedBaseTypes = new List<ParsedType>();
         List<ParsedType> _parsedNamespaces = new List<ParsedType>();
@@ -64,41 +65,47 @@ namespace Docify.Parse
         public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment));
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitConstructorDeclaration(node);
         }
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment));
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitMethodDeclaration(node);
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment));
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitPropertyDeclaration(node);
         }
         public override void VisitEventFieldDeclaration(EventFieldDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment));
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitEventFieldDeclaration(node);
         }
         public override void VisitEventDeclaration(EventDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment));
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitEventDeclaration(node);
         }
 
         public override void VisitOperatorDeclaration(OperatorDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment));
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitOperatorDeclaration(node);
+        }
+
+        public override void VisitUsingDirective(UsingDirectiveSyntax node)
+        {
+            _usingDirectives.Add(node.Name.ToFullString());
+            base.VisitUsingDirective(node);
         }
     }
 }

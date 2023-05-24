@@ -21,7 +21,8 @@ namespace Docify.Parse
     /// </summary>
     class ParsedMember : XmlDocumentedItem
     {
-        public ParsedMember(MemberDeclarationSyntax member, DocumentationCommentTriviaSyntax documentation)
+        List<string> _usingDirectives;
+        public ParsedMember(MemberDeclarationSyntax member, DocumentationCommentTriviaSyntax documentation, List<string> usingDirectives)
             : base(documentation)
         {
             Member = member;
@@ -33,9 +34,109 @@ namespace Docify.Parse
             if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
             if (Member is OperatorDeclarationSyntax) mt = ParsedMemberType.Operator;
             MemberType = mt;
+            _usingDirectives = usingDirectives;
         }
         public ParsedType ParentType { get; set; }
         private MemberDeclarationSyntax Member { get; }
+
+        static System.Reflection.Assembly[] _referenceAssemblies;
+        private static System.Reflection.Assembly[] ReferenceAssemblies()
+        {
+            if (_referenceAssemblies==null)
+            {
+                // forces System.Collections.Specialized to be referenced
+                var nvc = new System.Collections.Specialized.NameValueCollection();
+                var l = new List<System.Reflection.Assembly>();
+                var refAssemblies = System.Reflection.Assembly.GetExecutingAssembly().GetReferencedAssemblies();
+                foreach(var assemblyName in refAssemblies)
+                {
+                    if (assemblyName.Name == "System.Runtime" ||
+                        assemblyName.Name == "System.Collections" ||
+                        assemblyName.Name == "System.Collections.Specialized")
+                    {
+                        var assembly = System.Reflection.Assembly.Load(assemblyName);
+                        if (assembly!= null)
+                            l.Add(assembly);
+                    }
+                }
+                _referenceAssemblies = l.ToArray();
+            }
+            return _referenceAssemblies;
+        }
+
+        private string FullTypeName(string shortName)
+        {
+            if (char.IsLower(shortName[0]))
+            {
+                string suffix = "";
+                if (shortName.EndsWith("[]"))
+                {
+                    suffix = "[]";
+                    shortName = shortName.Substring(0, shortName.Length - 2);
+                }
+                if (shortName.EndsWith('?'))
+                {
+                    suffix = "?";
+                    shortName = shortName.Substring(0, shortName.Length - 1);
+                }
+
+                switch (shortName)
+                {
+                    case "int":
+                        return typeof(int).FullName + suffix;
+                    case "bool":
+                        return typeof(bool).FullName + suffix;
+                    case "float":
+                        return typeof(float).FullName + suffix;
+                    case "double":
+                        return typeof(double).FullName + suffix;
+                    case "string":
+                        return typeof(string).FullName + suffix;
+                    case "void":
+                        return typeof(void).FullName + suffix;
+                    case "uint":
+                        return typeof(uint).FullName + suffix;
+                    case "object":
+                        return typeof(object).FullName + suffix;
+                    case "byte":
+                        return typeof(byte).FullName + suffix;
+                    case "sbyte":
+                        return typeof(sbyte).FullName + suffix;
+                    case "short":
+                        return typeof(short).FullName + suffix;
+                    case "ushort":
+                        return typeof(ushort).FullName + suffix;
+                    case "long":
+                        return typeof(long).FullName + suffix;
+                    case "ulong":
+                        return typeof(ulong).FullName + suffix;
+                    case "char":
+                        return typeof(char).FullName + suffix;
+                    default:
+                        return shortName;
+                }
+            }
+
+            if (_usingDirectives!=null)
+            {
+                var referenceAssemblies = ReferenceAssemblies();
+                foreach(var directive in _usingDirectives)
+                {
+                    string typeName = directive + "." + shortName;
+                    foreach(var assembly in referenceAssemblies)
+                    {
+                        Type t = assembly.GetType(typeName);
+                        if (t != null)
+                        {
+                            string s = t.FullName;
+                            return s;
+                        }
+                    }
+                }
+            }
+
+            return shortName;
+        }
 
         public int SinceInsertIndex()
         {
@@ -144,7 +245,8 @@ namespace Docify.Parse
                     }
                     else
                     {
-                        signature.Append($"{prefix}{method.ReturnType} {method.Identifier}(");
+                        string returnType = FullTypeName(method.ReturnType.ToString());
+                        signature.Append($"{prefix}{returnType} {method.Identifier}(");
                     }
                     int parameterCount = method.ParameterList.Parameters.Count;
                     for (int i = 0; i < parameterCount; i++)
@@ -158,7 +260,7 @@ namespace Docify.Parse
                             signature.Append(" ");
                         }
 
-                        string paramType = parameter.Type.ToString();
+                        string paramType = FullTypeName(parameter.Type.ToString());
                         int angleIndex = paramType.IndexOf('<');
                         if (angleIndex > 0)
                         {
@@ -174,9 +276,9 @@ namespace Docify.Parse
                         }
                         else
                         {
-                            int index = paramType.LastIndexOf('.');
-                            if (index > 0)
-                                paramType = paramType.Substring(index + 1);
+                            //int index = paramType.LastIndexOf('.');
+                            //if (index > 0)
+                            //    paramType = paramType.Substring(index + 1);
                         }
                         signature.Append(paramType);
                         if (!forSorting)
