@@ -125,13 +125,17 @@
                   <li class="text-italic">{{ parameter.name }}</li>
                   <li class="q-pl-lg text-weight-light">
                     <span>Type: </span>
-                    <template v-if="linkForType(parameter.type)">
+                    <template v-if="typeUrl(parameter.type)">
+
                       <router-link
                         class="routerlink text-weight-regular"
-                        :to="linkForType(parameter.type)"
+                        :to="typeUrl(parameter.type)"
+                        v-if="!typeUrl(parameter.type).toLowerCase().startsWith('http')"
                       >
                         {{ parameter.type }}
-                      </router-link></template
+                      </router-link>
+                      <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
+                      </template
                     >
                     <template v-else
                       ><span
@@ -405,6 +409,19 @@ export default {
       if (!type) return null;
       return ViewModel.itemPath(type);
     },
+    typeUrl(typeToken){
+    const tokenPath = this.tokenPath(typeToken)
+    let link = tokenPath ? this.baseUrl + tokenPath : null
+    //Try to get system links
+    if(!link){
+      if( typeToken.toLowerCase().startsWith("system")){
+        let cleanType = typeToken.split("<")[0];
+        cleanType = cleanType.split("[")[0];
+        link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
+      }
+    }
+    return link;
+    },
     signature(member){
       const tokens = member.signature.split(' ')
       const chunks = []
@@ -451,24 +468,11 @@ export default {
           const parameter = parameterTokens[i].trim()
           const paramChunks = parameter.split(' ')
           let typeToken = paramChunks[paramChunks.length - 2]
-          console.log("type:", typeToken);
           const paramName = paramChunks[paramChunks.length - 1]
-          const tokenPath = this.tokenPath(typeToken)
-          let link = tokenPath ? this.baseUrl + tokenPath : null
-
-          //Try to get system links
-          if(!link){
-
-            if( typeToken.toLowerCase().startsWith("system")){
-              let cleanType = typeToken.split("<")[0];
-              cleanType = cleanType.split("[")[0];
-              link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
-            }
-          }
+          const link = this.typeUrl(typeToken);
 
           //remove namespaced types (usually system.blah.blah)
           typeToken= typeToken.split(".").slice(-1)[0]
-
 
           //indent all parameters
           chunks.push({indent:true});
@@ -479,7 +483,7 @@ export default {
             link: link,
             name: typeToken + ' '
           })
-          chunks.push({ name: paramChunks[paramChunks.length - 1], role:"name" })
+          chunks.push({ name: paramName, role:"name" })
         }
 
         chunks.push({ name: ')', break: parameterTokens.filter(p=>p.length>0).length>0 })
@@ -496,11 +500,6 @@ export default {
         chunks.push({ name: s })
       }
       return chunks
-    },
-    linkForType(typeToken) {
-      const tokenPath = this.tokenPath(typeToken);
-      const link = tokenPath ? this.baseUrl + tokenPath : null;
-      return link;
     },
     copyToClipboard(text) {
       navigator.clipboard.writeText(text);
