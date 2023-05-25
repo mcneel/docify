@@ -74,7 +74,10 @@
                       <template v-if="chunk.break">
                         <br/>
                       </template>
-                      <router-link v-if="chunk.link" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
+                      <template v-if="chunk.link">
+                        <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
+                        <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
+                      </template>
                       <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
                     </template>
                   </q-item-label>
@@ -433,38 +436,50 @@ export default {
       if (parenIndex > 0) {
         chunks.push({ name: declaration.substring(0, parenIndex + 1) })
         const parameterTokens = declaration.substring(parenIndex + 1, declaration.length - 1).split(',')
+
         for (let i = 0; i < parameterTokens.length; i++) {
-          if (parameterTokens[i].indexOf('<') > 0 && i < (parameterTokens.length - 1)) {
+          if (parameterTokens[i].indexOf('<') > 0 && parameterTokens[i].indexOf('>') < 0 && i < (parameterTokens.length - 1)) {
+            //This only should happen for arguments formatted like <a,b> not just <a>
             parameterTokens[i] = parameterTokens[i] + ',' + parameterTokens[i + 1]
             parameterTokens[i + 1] = ''
           }
         }
+
         for (let i = 0; i < parameterTokens.length; i++) {
           if (!parameterTokens[i]) continue
           if (i > 0) chunks.push({ name: ', ' })
           const parameter = parameterTokens[i].trim()
           const paramChunks = parameter.split(' ')
-          const typeToken = paramChunks[paramChunks.length - 2]
+          let typeToken = paramChunks[paramChunks.length - 2]
+          console.log("type:", typeToken);
           const paramName = paramChunks[paramChunks.length - 1]
           const tokenPath = this.tokenPath(typeToken)
-          const link = tokenPath ? this.baseUrl + tokenPath : null
+          let link = tokenPath ? this.baseUrl + tokenPath : null
+
+          //Try to get system links
+          if(!link){
+
+            if( typeToken.toLowerCase().startsWith("system")){
+              let cleanType = typeToken.split("<")[0];
+              cleanType = cleanType.split("[")[0];
+              link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
+            }
+          }
+
+          //remove namespaced types (usually system.blah.blah)
+          typeToken= typeToken.split(".").slice(-1)[0]
+
 
           //indent all parameters
           chunks.push({indent:true});
-
-          // if (link) {
-            for (let j = 0; j < paramChunks.length - 2; j++) {
-              chunks.push({ name: paramChunks[j] + ' ' })
-            }
-            chunks.push({
-              link: link,
-              name: typeToken + ' '
-            })
-            chunks.push({ name: paramChunks[paramChunks.length - 1], role:"name" })
-
-          // } else {
-          //   chunks.push({ name: parameter })
-          // }
+          for (let j = 0; j < paramChunks.length - 2; j++) {
+            chunks.push({ name: paramChunks[j] + ' ' })
+          }
+          chunks.push({
+            link: link,
+            name: typeToken + ' '
+          })
+          chunks.push({ name: paramChunks[paramChunks.length - 1], role:"name" })
         }
 
         chunks.push({ name: ')', break: parameterTokens.filter(p=>p.length>0).length>0 })
