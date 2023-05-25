@@ -417,7 +417,7 @@ namespace Docify.Parse
                             sb.AppendLine(KeyValString(12, "name", parameters[i].Name, asJavascript) + ",");
                             //sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
                             // Not sure if we really need type as it is easy to resolve in javascript
-                            sb.AppendLine(KeyValString(12, "type", parameters[i].Type, asJavascript) + ",");
+                            sb.AppendLine(KeyValString(12, "type", member.FullTypeName(parameters[i].Type.ToString()), asJavascript) + ",");
                             sb.AppendLine(KeyValString(12, "summary", parameters[i].DocString, asJavascript));
                             //sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
                             sb.Append("          }");

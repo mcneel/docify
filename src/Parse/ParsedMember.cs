@@ -64,7 +64,7 @@ namespace Docify.Parse
             return _referenceAssemblies;
         }
 
-        private string FullTypeName(string shortName)
+        public string FullTypeName(string shortName)
         {
             if (char.IsLower(shortName[0]))
             {
