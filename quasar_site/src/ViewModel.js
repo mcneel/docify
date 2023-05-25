@@ -531,7 +531,7 @@ const ViewModel = {
       const argsTypes = parts[1]
         .replace(/^\)+|\)+$/g, "")
         .split(",")
-        .map((a) => a.trim().split(" ")[0]);
+        .map((a) => a.trim().split(" ")[0].split(".").slice(-1)[0]);
       const commaSeparatedTypes = argsTypes.join(", ");
       // return `${name}(${commaSeparatedTypes})`;
       return [name, `(${commaSeparatedTypes})`];
