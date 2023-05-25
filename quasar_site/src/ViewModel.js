@@ -49,17 +49,6 @@ const ViewModel = {
       return;
     }
 
-    // Adding an overload tag to members with same declarations
-    members.forEach((member, id) => {
-      const nextMember = members[id + 1];
-      const prevMember = members[id - 1];
-      if (prevMember && prevMember.path == member.path) {
-        members[id].overload = prevMember.overload + 1;
-      } else if (nextMember && nextMember.path == member.path) {
-        members[id].overload = 1;
-      }
-    });
-
     const children = members.map((x) => {
       const labelParts = this.shortSignature(
         this.memberName(x, childType.toLowerCase())
@@ -67,7 +56,8 @@ const ViewModel = {
       return {
         label: labelParts[0],
         labelSecondary: labelParts[1],
-        path: x.overload ? `${x.path}?overload=${x.overload}` : x.path,
+        // path: x.overload ? `${x.path}?overload=${x.overload}` : x.path,
+        path: x.path,
         header: "secondary",
         deprecated: x.deprecated,
       };
@@ -205,6 +195,8 @@ const ViewModel = {
   setSelectedItem(item, updateRoute = true) {
     //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item;
+
+    // path = path.split("?")[0];
 
     //Try to load its children
     this.lazyChildForPath(path);
@@ -462,6 +454,7 @@ const ViewModel = {
   getMembers(node, memberType, inherited = true) {
     const inheritence = this.getInheritence(node);
     let members = [].concat(node[memberType]);
+
     if (node[memberType]) {
       for (let i = 0; i < members.length; i++) {
         members[i].parent = node.namespace + "." + node.name;
@@ -472,7 +465,6 @@ const ViewModel = {
           `${this.itemPath(node)}#${memberType}`,
           this.itemPath(node),
         ];
-        _pathMap[url] = members[i];
       }
     }
     members = members.filter((m) => m != null);
@@ -489,7 +481,6 @@ const ViewModel = {
 
           const url = this.memberUrl(memberType, inheritedMembers[j]);
           inheritedMembers[j].path = url;
-          _pathMap[url] = inheritedMembers[j];
         }
 
         members = members.concat(inheritedMembers);
@@ -508,6 +499,26 @@ const ViewModel = {
         }
       }
     }
+
+    // Adding an overload tag to members with same declarations
+    members.forEach((member, id) => {
+      const nextMember = members[id + 1];
+      const prevMember = members[id - 1];
+      if (prevMember && prevMember.path == member.path) {
+        member.overload = prevMember.overload + 1;
+      } else if (nextMember && nextMember.path == member.path) {
+        member.overload = 1;
+      }
+    });
+
+    // Updating path for  members with overloads and updating _pathMap
+    members.forEach((member) => {
+      if (member.overload) {
+        member.path = `${member.path}?overload=${member.overload}`;
+      }
+      _pathMap[member.path] = member;
+    });
+
     return members;
   },
   memberName(member, memberType) {

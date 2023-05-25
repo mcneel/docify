@@ -262,6 +262,12 @@ export default {
       this.datatype = ViewModel.findNodeByPath(route.params.datatype);
       this.memberName = route.params.member.toLowerCase();
       const members = this.getMembers(this.datatype, this.memberName);
+
+      if (route.query["overload"]){
+        //overloads are indexed from 1 and up
+        members.items = [members.items[route.query["overload"]-1]]
+      }
+
       members.items = members.items.map((m) => {
         const examples = this.getExamples(this.datatype, m);
         return { ...m, examples };
