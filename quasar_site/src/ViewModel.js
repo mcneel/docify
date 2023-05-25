@@ -48,6 +48,18 @@ const ViewModel = {
     if (members.length < 1) {
       return;
     }
+
+    // Adding an overload tag to members with same declarations
+    members.forEach((member, id) => {
+      const nextMember = members[id + 1];
+      const prevMember = members[id - 1];
+      if (prevMember && prevMember.path == member.path) {
+        members[id].overload = prevMember.overload + 1;
+      } else if (nextMember && nextMember.path == member.path) {
+        members[id].overload = 1;
+      }
+    });
+
     const children = members.map((x) => {
       const labelParts = this.shortSignature(
         this.memberName(x, childType.toLowerCase())
@@ -55,7 +67,7 @@ const ViewModel = {
       return {
         label: labelParts[0],
         labelSecondary: labelParts[1],
-        path: x.path,
+        path: x.overload ? `${x.path}?overload=${x.overload}` : x.path,
         header: "secondary",
         deprecated: x.deprecated,
       };
