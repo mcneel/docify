@@ -441,16 +441,18 @@ export default {
       }
       if (this.members.isProperty || this.members.isMethod || this.members.isOperator) {
         // try to get a link for the return type
-        const tokenPath = this.tokenPath(tokens[0])
-        const link = tokenPath ? this.baseUrl + tokenPath : null
+        // const tokenPath = this.tokenPath(tokens[0])
+        // const link = tokenPath ? this.baseUrl + tokenPath : null
+        const link = this.typeUrl(tokens[0]);
+        const name = tokens[0].split(".").slice(-1)[0];
         if (link) {
           chunks.push({
             link: link,
-            name: tokens[0]
+            name: name
           })
           chunks.push({ name: ' ' })
         } else {
-          chunks.push({ name: tokens[0] + ' ' })
+          chunks.push({ name: name + ' ' })
         }
         tokens.shift()
       }

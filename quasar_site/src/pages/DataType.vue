@@ -329,7 +329,13 @@ export default {
     splitSignature(signature) {
       const chunks = signature.split("(");
       const name = chunks[0];
-      const args = chunks[1] ? `(${chunks[1]}` : null
+      // let args = chunks[1] ? `(${chunks[1]}` : null
+      let  args = chunks[1];
+      if(args){
+      const argsList = args.split(',').map(a => a.split(".").slice(-1)[0])
+      const shortenedArgs = `(${argsList.join(",")}`
+      args = shortenedArgs;
+      }
       return [name, args];
     },
     getLines(text) {
