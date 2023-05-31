@@ -102,6 +102,13 @@ namespace Docify.Parse
             base.VisitOperatorDeclaration(node);
         }
 
+        public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
+            base.VisitFieldDeclaration(node);
+        }
+
         public override void VisitUsingDirective(UsingDirectiveSyntax node)
         {
             _usingDirectives.Add(node.Name.ToFullString());

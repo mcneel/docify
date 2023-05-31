@@ -240,7 +240,7 @@ namespace Docify.Parse
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
                 //Morteza: debugging only
-                if (type.FullName == "Rhino.Geometry.Brep"){
+                if (type.FullName == "Rhino.RhinoMath"){
                     var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
@@ -253,7 +253,8 @@ namespace Docify.Parse
                 string methods = MembersAsJsonArray(type, ParsedMemberType.Method, asJavascript);
                 string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
                 string operators = MembersAsJsonArray(type, ParsedMemberType.Operator, asJavascript);
-                if (values != null || constructors != null || properties != null || methods != null || events != null || operators != null)
+                string fields = MembersAsJsonArray(type, ParsedMemberType.Field, asJavascript);
+                if (values != null || constructors != null || properties != null || methods != null || events != null || fields != null || operators != null)
                     sb.AppendLine(",");
                 else
                     sb.AppendLine();
@@ -264,6 +265,11 @@ namespace Docify.Parse
                         sb.AppendLine($"    values: {values}");
                     else
                         sb.AppendLine($"    \"values\": {values}");
+
+                    if (constructors != null || properties != null || methods != null || events != null || fields != null  || operators != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
                 }
                 if (!string.IsNullOrWhiteSpace(constructors))
                 {
@@ -271,7 +277,8 @@ namespace Docify.Parse
                         sb.Append($"    constructors: {constructors}");
                     else
                         sb.Append($"    \"constructors\": {constructors}");
-                    if (properties != null || methods != null || events != null)
+
+                    if (properties != null || methods != null || events != null || fields != null  || operators != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -283,7 +290,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"properties\": {properties}");
 
-                    if (methods != null || events != null)
+                    if ( methods != null || events != null || fields != null  || operators != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -295,7 +302,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"methods\": {methods}");
 
-                    if (events != null || operators != null)
+                    if (events != null || fields != null  || operators != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -306,6 +313,18 @@ namespace Docify.Parse
                         sb.AppendLine($"    events: {events}");
                     else
                         sb.AppendLine($"    \"events\": {events}");
+
+                    if (fields != null  || operators != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(fields))
+                {
+                    if (asJavascript)
+                        sb.AppendLine($"    fields: {fields}");
+                    else
+                        sb.AppendLine($"    \"fields\": {fields}");
 
                     if (operators != null)
                         sb.AppendLine(",");

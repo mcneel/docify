@@ -13,6 +13,7 @@ namespace Docify.Parse
         Method = 4,
         EnumValue = 5,
         Operator = 6,
+        Field = 7,
     }
 
     /// <summary>
@@ -33,6 +34,9 @@ namespace Docify.Parse
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
             if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
             if (Member is OperatorDeclarationSyntax) mt = ParsedMemberType.Operator;
+            if (Member is FieldDeclarationSyntax){
+                mt = ParsedMemberType.Field;
+            }
             MemberType = mt;
             _usingDirectives = usingDirectives;
         }
@@ -151,6 +155,7 @@ namespace Docify.Parse
         public bool IsProperty { get { return Member is PropertyDeclarationSyntax; } }
         public bool IsMethod { get { return Member is MethodDeclarationSyntax; } }
         public bool IsOperator { get { return Member is OperatorDeclarationSyntax; } }
+        public bool IsField { get { return Member is FieldDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {
@@ -307,6 +312,19 @@ namespace Docify.Parse
                             proptype = proptype.Substring(index + 1);
                         signature.Append($"{prefix}{proptype} {property.Identifier}");
                     }
+                    return signature.ToString();
+                }
+            }
+            {
+                FieldDeclarationSyntax field = Member as FieldDeclarationSyntax;
+                if (field != null)
+                {
+                    var signature = new System.Text.StringBuilder();
+                    string declaration = field.ToString();
+                    // int index = declaration.LastIndexOf(' ');
+                    // declaration = declaration.Substring(index + 1, declaration.Length - 1 - (index + 1));
+                    // signature.Append($"{prefix}{declaration}");
+                    signature.Append(declaration);
                     return signature.ToString();
                 }
             }
