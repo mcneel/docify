@@ -372,6 +372,27 @@ export default {
         }
       }
 
+      if (datatype.fields) {
+        const fields = [];
+        for (let i = 0; i < datatype.fields.length; i++) {
+          const field = datatype.fields[i];
+          const declaration = field.signature.split("=")[0].trim();
+          const name = declaration.split(" ").slice(-1)[0];
+          if (name.toLowerCase() === memberName) fields.push(field);
+        }
+        if (fields.length > 0) {
+          fields.sort((a, b) => {
+            if (a.deprecated && !b.deprecated) return 1;
+            if (!a.deprecated && b.deprecated) return -1;
+            return 0;
+          });
+          return {
+            isField: true,
+            items: fields,
+          };
+        }
+      }
+
       return {};
     },
     getLines(text) {
@@ -402,6 +423,11 @@ export default {
         const match = members.items[0].signature.match(/\S*\(.*\)/g);
         const name = match[0].split("(")[0];
         return name + " operator";
+      }
+      if (members.isField) {
+        const declaration = members.items[0].signature.split("=")[0].trim();
+        const name = declaration.split(" ").slice(-1)[0];
+        return name + " field";
       }
       return this.memberName;
     },
