@@ -321,8 +321,8 @@ namespace Docify.Parse
                 {
                     var signature = new System.Text.StringBuilder();
                     string declaration = field.ToString();
-                    // int index = declaration.LastIndexOf(' ');
-                    // declaration = declaration.Substring(index + 1, declaration.Length - 1 - (index + 1));
+                    int index = declaration.LastIndexOf('\n');
+                    declaration = declaration.Substring(index + 1, declaration.Length - 1 - (index + 1));
                     // signature.Append($"{prefix}{declaration}");
                     signature.Append(declaration);
                     return signature.ToString();
