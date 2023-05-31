@@ -210,6 +210,17 @@ export default {
         }
 
         parentName = item.namespace + '.' + item.name
+        const fields = ViewModel.getMembers(item, "fields", true)
+        if (fields.length > 0) {
+          rc.push(Object.freeze({
+            title: 'fields (' + fields.length + ')',
+            items: Object.freeze(fields),
+            expanded: expandedType ?'fields' == expandedType : true, //expand everything if no hash
+            type: 'fields'
+          }))
+        }
+
+        parentName = item.namespace + '.' + item.name
         const events = ViewModel.getMembers(item, "events", true)
         if (events.length > 0) {
           rc.push(Object.freeze({
@@ -305,6 +316,7 @@ export default {
       this.ExpandedSections['properties'] = expandedType ?'properties' == expandedType : true //expand everything if no hash
       this.ExpandedSections['values'] = expandedType ?'values' == expandedType : true //expand everything if no hash
       this.ExpandedSections['operators'] = expandedType ?'operators' == expandedType : true //expand everything if no hash
+      this.ExpandedSections['fields'] = expandedType ?'fields' == expandedType : true //expand everything if no hash
     }
   },
   methods: {
@@ -323,6 +335,9 @@ export default {
       }
       if (section.type == 'operators') {
         return 'operators'
+      }
+      if (section.type == 'fields') {
+        return 'fields'
       }
       return ''
     },

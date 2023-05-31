@@ -99,6 +99,10 @@ const ViewModel = {
           if (operators) {
             children.push(operators);
           }
+          const fields = this.childTree(type, "Fields");
+          if (fields) {
+            children.push(fields);
+          }
 
           //replace the populated child in the _viewmodel and _pathMap
           _pathMap[this.itemPath(type)]["children"] = children;
@@ -138,7 +142,8 @@ const ViewModel = {
             type.constructors ||
             type.properties ||
             type.events ||
-            type.operators
+            type.operators ||
+            type.fields
           ) {
             item["lazy"] = true;
           }
@@ -287,6 +292,11 @@ const ViewModel = {
           if (m.since && sinceIsGreater(m.since, since)) since = m.since;
         });
       }
+      if (type.fields) {
+        type.fields.forEach((m) => {
+          if (m.since && sinceIsGreater(m.since, since)) since = m.since;
+        });
+      }
     });
     return since;
   },
@@ -302,12 +312,14 @@ const ViewModel = {
         properties: [],
         values: [],
         operators: [],
+        fields: [],
       };
       if (type.namespace) localApi.namespace = type.namespace;
       let added = test(type, type.constructors, localApi.constructors);
       added += test(type, type.properties, localApi.properties);
       added += test(type, type.methods, localApi.methods);
       added += test(type, type.operators, localApi.operators);
+      added += test(type, type.fields, localApi.fields);
       if (type.values && type.since === "7.0") {
         added += test(type, type.values, localApi.values);
       }
@@ -441,9 +453,21 @@ const ViewModel = {
           const chunks = operator.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
-          node.type = "event";
+          node.type = "operator";
           node.url = dataTypeUrl + "/" + node.member.toLowerCase();
           if (operator.summary) node.summary = operator.summary;
+          items.push(node);
+        });
+      }
+      if (entry.fields) {
+        entry.fields.forEach((field) => {
+          //TODO: review
+          const chunks = field.signature.split(" ");
+          node = { typename: typename, member: chunks[chunks.length - 1] };
+          if (items[items.length - 1].member === node.member) return;
+          node.type = "field";
+          node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          if (field.summary) node.summary = field.summary;
           items.push(node);
         });
       }
@@ -527,6 +551,10 @@ const ViewModel = {
     if (memberType == "operators") {
       const match = member.signature.match(/\S*\(.*\)/g);
       return match[0].split("(")[0];
+    }
+    if (memberType == "fields") {
+      const declaration = member.signature.split("=")[0].trim();
+      return declaration.split(" ").slice(-1)[0];
     }
     if (memberType == "methods") {
       const match = member.signature.match(/\S*\(.*\)/g);
