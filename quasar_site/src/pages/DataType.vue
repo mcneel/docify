@@ -155,7 +155,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Constructors (' + constructors.length + ')',
             items: Object.freeze(constructors),
-            expanded: 'constructors' == expandedType,
+            expanded: expandedType ?'constructors' == expandedType : true, //expand everything if no hash
             type: 'constructors'
           }))
         }
@@ -182,7 +182,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Properties (' + properties.length + ')',
             items: Object.freeze(properties),
-            expanded: 'properties' == expandedType,
+            expanded: expandedType ?'properties' == expandedType : true, //expand everything if no hash
             type: 'properties'
           }))
         }
@@ -193,7 +193,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Methods (' + methods.length + ')',
             items: Object.freeze(methods),
-            expanded: 'methods' == expandedType,
+            expanded: expandedType ?'methods' == expandedType : true, //expand everything if no hash
             type: 'methods'
           }))
         }
@@ -204,7 +204,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Operators (' + operators.length + ')',
             items: Object.freeze(operators),
-            expanded: 'operators' == expandedType,
+            expanded: expandedType ?'operators' == expandedType : true, //expand everything if no hash
             type: 'operators'
           }))
         }
@@ -215,7 +215,7 @@ export default {
           rc.push(Object.freeze({
             title: 'Events (' + events.length + ')',
             items: Object.freeze(events),
-            expanded: 'events' == expandedType,
+            expanded: expandedType ?'events' == expandedType : true, //expand everything if no hash
             type: 'events'
           }))
         }
@@ -299,12 +299,12 @@ export default {
       if (to.hash) {
         expandedType = to.hash.substring(1);
       }
-      this.ExpandedSections['constructors'] = 'constructors' == expandedType;
-      this.ExpandedSections['methods'] = 'methods' == expandedType;
-      this.ExpandedSections['events'] = 'events' == expandedType;
-      this.ExpandedSections['properties'] = 'properties' == expandedType;
-      this.ExpandedSections['values'] = 'values' == expandedType;
-      this.ExpandedSections['operators'] = 'operators' == expandedType;
+      this.ExpandedSections['constructors'] = expandedType ?'constructors' == expandedType : true //expand everything if no hash
+      this.ExpandedSections['methods'] = expandedType ?'methods' == expandedType : true //expand everything if no hash
+      this.ExpandedSections['events'] = expandedType ?'events' == expandedType : true //expand everything if no hash
+      this.ExpandedSections['properties'] = expandedType ?'properties' == expandedType : true //expand everything if no hash
+      this.ExpandedSections['values'] = expandedType ?'values' == expandedType : true //expand everything if no hash
+      this.ExpandedSections['operators'] = expandedType ?'operators' == expandedType : true //expand everything if no hash
     }
   },
   methods: {
