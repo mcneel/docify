@@ -280,11 +280,12 @@ export default {
     },
     getMembers(datatype, memberName) {
       if (datatype.name.toLowerCase() === memberName) {
-        datatype.constructors.sort((a, b) => {
-          if (a.deprecated && !b.deprecated) return 1;
-          if (!a.deprecated && b.deprecated) return -1;
-          return 0;
-        });
+        // TODO: pay attention and see if order is same as tree order
+        // datatype.constructors.sort((a, b) => {
+        //   if (a.deprecated && !b.deprecated) return 1;
+        //   if (!a.deprecated && b.deprecated) return -1;
+        //   return 0;
+        // });
         return {
           isConstructor: true,
           items: datatype.constructors,
@@ -299,11 +300,10 @@ export default {
           if (name.toLowerCase() === memberName) props.push(prop);
         }
         if (props.length > 0) {
-          props.sort((a, b) => {
-            if (a.deprecated && !b.deprecated) return 1;
-            if (!a.deprecated && b.deprecated) return -1;
-            return 0;
-          });
+          const m = { properties: true };
+          props.sort((a, b) =>
+            ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
+          );
           return {
             isProperty: true,
             items: props,
@@ -320,11 +320,11 @@ export default {
           if (name.toLowerCase() === memberName) methods.push(m);
         }
         if (methods.length > 0) {
-          methods.sort((a, b) => {
-            if (a.deprecated && !b.deprecated) return 1;
-            if (!a.deprecated && b.deprecated) return -1;
-            return 0;
-          });
+          const m = { methods: true };
+          methods.sort((a, b) =>
+            ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
+          );
+          console.log("methods:", methods)
           return {
             isMethod: true,
             items: methods,
@@ -340,11 +340,11 @@ export default {
           if (name.toLowerCase() === memberName) events.push(event);
         }
         if (events.length > 0) {
-          events.sort((a, b) => {
-            if (a.deprecated && !b.deprecated) return 1;
-            if (!a.deprecated && b.deprecated) return -1;
-            return 0;
-          });
+          // Not sorted in tree, therefore not sorted here
+          // const m = { events: true };
+          // events.sort((a, b) =>
+          //   ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
+          // );
           return {
             isEvent: true,
             items: events,
@@ -360,11 +360,11 @@ export default {
           if (name.toLowerCase() === memberName) operators.push(operator);
         }
         if (operators.length > 0) {
-          operators.sort((a, b) => {
-            if (a.deprecated && !b.deprecated) return 1;
-            if (!a.deprecated && b.deprecated) return -1;
-            return 0;
-          });
+          // Not sorted in tree, therefore not sorted here
+          // const m = { operators: true };
+          // operators.sort((a, b) =>
+          //   ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
+          // );
           return {
             isOperator: true,
             items: operators,
@@ -381,11 +381,11 @@ export default {
           if (name.toLowerCase() === memberName) fields.push(field);
         }
         if (fields.length > 0) {
-          fields.sort((a, b) => {
-            if (a.deprecated && !b.deprecated) return 1;
-            if (!a.deprecated && b.deprecated) return -1;
-            return 0;
-          });
+          // Not sorted in tree, therefore not sorted here
+          // const m = { fields: true };
+          // fields.sort((a, b) =>
+          //   ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
+          // );
           return {
             isField: true,
             items: fields,
