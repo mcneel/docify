@@ -324,7 +324,6 @@ export default {
           methods.sort((a, b) =>
             ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
           );
-          console.log("methods:", methods)
           return {
             isMethod: true,
             items: methods,

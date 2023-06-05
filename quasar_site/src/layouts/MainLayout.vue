@@ -30,17 +30,19 @@
         @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
         <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent"
           v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
-          <template v-slot:default-header="prop">
+          <template v-slot:default-header="prop" >
             <div class="row items-center">
-              <a :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''">{{ prop.node.label }}
+              <a :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''" >{{ prop.node.label }}
               </a>
             </div>
           </template>
           <template v-slot:header-secondary="prop">
             <div class="row items-center">
-              <router-link :id="`TOC:${prop.node.path}`" class="toc-secondary-header"
-                style="text-decoration: none; color: inherit;" :class="prop.node.deprecated ? 'toc-deprecated' : ''"
-                :to="baseUrl + prop.node.path.toLowerCase()"><span>{{ prop.node.label }}</span><span class="text-weight-light">{{ prop.node.labelSecondary }}</span></router-link>
+                <router-link :id="`TOC:${prop.node.path}`" class="toc-secondary-header"
+                  style="text-decoration: none; color: inherit;" :class="prop.node.deprecated ? 'toc-deprecated' : ''"
+                  :to="baseUrl + prop.node.path.toLowerCase()" ><span>{{ prop.node.label }}</span>
+                  <!--<span class="text-weight-light">{{ prop.node.labelSecondary }}</span>--> <!--hiding overloads: WWW-2046-->
+                </router-link>
             </div>
           </template>
         </q-tree>
