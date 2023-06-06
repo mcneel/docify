@@ -49,19 +49,29 @@ const ViewModel = {
       return;
     }
 
-    const children = members.map((x) => {
+    let children = members.map((x) => {
       const labelParts = this.shortSignature(
         this.memberName(x, childType.toLowerCase())
       );
-      return {
-        label: labelParts[0],
-        labelSecondary: labelParts[1],
-        // path: x.overload ? `${x.path}?overload=${x.overload}` : x.path,
-        path: x.path,
-        header: "secondary",
-        deprecated: x.deprecated,
-      };
+      // Don't display overlaods in tree: WWW-2046
+      if (!x.overload || x.overload < 2) {
+        return {
+          label: labelParts[0],
+          labelSecondary: labelParts[1],
+          // path: x.overload ? `${x.path}?overload=${x.overload}` : x.path,
+          overload: x.overload,
+          path: x.path,
+          header: "secondary",
+          deprecated: x.deprecated,
+        };
+      } else {
+        return null;
+      }
     });
+
+    // Don't display overlaods in tree: WWW-2046
+    children = children.filter((child) => child);
+
     const childrenGroup = {
       label: childType,
       namespace: parent.namespace,
@@ -538,7 +548,7 @@ const ViewModel = {
     // Updating path for  members with overloads and updating _pathMap
     members.forEach((member) => {
       if (member.overload) {
-        member.path = `${member.path}?overload=${member.overload}`;
+        // member.path = `${member.path}?overload=${member.overload}`;
       }
       _pathMap[member.path] = member;
     });
