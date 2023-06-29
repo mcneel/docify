@@ -1,6 +1,7 @@
 <template>
-    <q-page>
-      <q-list padding>
+  <q-page>
+    <q-list padding>
+      <template v-if="searchResults.length > 0">
         <q-item v-for="item in searchResults" :key="item.label">
           <q-item-section>
             <router-link class="routerlink" :to="baseUrl + item.url">
@@ -8,16 +9,24 @@
             </router-link>
             <q-item-label caption>{{ item.type.toUpperCase() }}</q-item-label>
             <q-item-label caption>{{ item.summary }}</q-item-label>
-        </q-item-section>
-      </q-item>
+          </q-item-section>
+        </q-item>
+      </template>
+      <template v-else>
+        <q-item>
+          <q-item-section>
+            <q-item-label caption>Nothing found</q-item-label>
+          </q-item-section>
+        </q-item>
+      </template>
     </q-list>
   </q-page>
 </template>
 
 <script>
-import ViewModel from '../ViewModel'
-import ProjInfo from '../proj_info.json'
-import Fuse from 'fuse.js'
+import ViewModel from "../ViewModel";
+import ProjInfo from "../proj_info.json";
+import Fuse from "fuse.js";
 
 export default {
   props: {
@@ -26,62 +35,67 @@ export default {
   },
   data() {
     return {
-      searchResults: []
-    }
+      searchResults: [],
+    };
   },
   meta() {
     return {
-      title: ProjInfo.name + ' API',
+      title: ProjInfo.name + " API",
       meta: {
-        description: { name: 'description', content: ProjInfo.description }
-      }
-    }
+        description: { name: "description", content: ProjInfo.description },
+      },
+    };
   },
   watch: {
     query(val) {
       if (val) {
-        this.search(val)
+        this.search(val);
       }
-    }
+    },
   },
   methods: {
     search(text) {
-      console.log('searching')
-      const timeStart = performance.now()
-      let fuse = ViewModel.getSearchInstance()
+      console.log("searching");
+      const timeStart = performance.now();
+      let fuse = ViewModel.getSearchInstance();
       if (fuse == null) {
         const options = {
           includeScore: true,
           keys: [
             // { name: 'typename', weight: 1.0 },
-            { name: 'member', weight: 10 }.name,
-            { name: 'url', weight: 1.0 }
-          ]
-        }
-        const searchList = ViewModel.getSearchList()
-        fuse = new Fuse(searchList, options)
-        ViewModel.setSearchInstance(fuse)
+            { name: "member", weight: 10 }.name,
+            { name: "url", weight: 1.0 },
+          ],
+        };
+        const searchList = ViewModel.getSearchList();
+        fuse = new Fuse(searchList, options);
+        ViewModel.setSearchInstance(fuse);
       }
-      const timeBuild = performance.now()
-      const result = fuse.search(text)
-      // console.log(result)
-      const timeEnd = performance.now()
-      console.log(`build time ${timeBuild - timeStart} ms`)
-      console.log(`search time ${timeEnd - timeBuild} ms`)
-      let count = 25
-      if (result.length < count) count = result.length
-      const rc = []
+      const timeBuild = performance.now();
+      const result = fuse.search(text);
+      const timeEnd = performance.now();
+      console.log(`build time ${timeBuild - timeStart} ms`);
+      console.log(`search time ${timeEnd - timeBuild} ms`);
+      let count = 25;
+      if (result.length < count) count = result.length;
+      const rc = [];
       for (let i = 0; i < count; i++) {
-        rc.push(result[i].item)
+        if (result[i].score < 0.1) {
+          rc.push(result[i].item);
+        }
       }
-      this.searchResults = rc
+      this.searchResults = rc;
     },
     searchItemTitle(item) {
-      if (item.type !== 'property' && item.type !== 'method' && item.type !== 'event') {
-        return item.typename
+      if (
+        item.type !== "property" &&
+        item.type !== "method" &&
+        item.type !== "event"
+      ) {
+        return item.typename;
       }
-      return item.typename + ' ' + item.member
-    }
-  }
-}
+      return item.typename + " " + item.member;
+    },
+  },
+};
 </script>
