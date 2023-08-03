@@ -8,7 +8,9 @@
               {{ searchItemTitle(item) }}
             </router-link>
             <q-item-label caption>{{ item.type.toUpperCase() }}</q-item-label>
-            <q-item-label caption>{{ item.summary }}</q-item-label>
+            <q-item-label caption>
+              <div v-html="item.summary" style="width: 100%; overflow: scroll;"></div>
+            </q-item-label>
           </q-item-section>
         </q-item>
       </template>
