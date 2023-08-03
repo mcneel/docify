@@ -134,6 +134,24 @@ namespace Docify.Parse
                             }
                         }
                         break;
+                    case "list":
+                        {
+                            // Morteza Aug 2, 2023: WWW-2094 Render inline bullets
+                            sb.Append("<ul>");
+                            string lines = Markdownify(child);
+                            sb.Append(lines);
+                            sb.Append("</ul>");
+                            break;
+                        }
+                    case "item":
+                        {
+                            // Morteza Aug 2, 2023: WWW-2094 Render inline bullets
+                            sb.Append("<li>");
+                            string lines = Markdownify(child);
+                            sb.Append(lines);
+                            sb.Append("</li>");
+                            break;
+                        }
                     default:
                         {
                             var lines = child.InnerText.Split(new char[] { '\n' });
