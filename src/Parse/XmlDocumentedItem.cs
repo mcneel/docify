@@ -99,7 +99,7 @@ namespace Docify.Parse
             return "";
         }
 
-        private string Markdownify(System.Xml.XmlNode el)
+        private string Markdownify(System.Xml.XmlNode el, bool keepNewLines = false)
         {
             var sb = new System.Text.StringBuilder();
 
@@ -134,13 +134,49 @@ namespace Docify.Parse
                             }
                         }
                         break;
+                    case "list":
+                        {
+                            // Morteza Aug 2, 2023: WWW-2094 Render inline bullets
+                            sb.Append("<ul>");
+                            string lines = Markdownify(child);
+                            sb.Append(lines);
+                            sb.Append("</ul>");
+                            break;
+                        }
+                    case "item":
+                        {
+                            // Morteza Aug 2, 2023: WWW-2094 Render inline bullets
+                            sb.Append("<li>");
+                            string lines = Markdownify(child);
+                            sb.Append(lines);
+                            sb.Append("</li>");
+                            break;
+                        }
+                    case "code":
+                        {
+                            // Morteza Aug 3, 2023: WWW-2062 Render inline code blocks
+                            sb.Append("<pre>");
+                            string lines = Markdownify(child, true);
+                            sb.Append(lines);
+                            sb.Append("</pre>");
+                            break;
+                        }
                     default:
                         {
                             var lines = child.InnerText.Split(new char[] { '\n' });
                             for( int j=0; j<lines.Length; j++)
                             {
                                 if (j > 0)
-                                    sb.Append(' ');
+                                {
+                                    if (keepNewLines)
+                                    {
+                                        sb.Append('\n');
+                                    }
+                                    else
+                                    {
+                                        sb.Append(' ');
+                                    }
+                                }
                                 sb.Append(lines[j].Trim());
                             }
                         }

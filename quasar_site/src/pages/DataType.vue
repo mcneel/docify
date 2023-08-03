@@ -7,12 +7,7 @@
           <q-breadcrumbs-el :label="name" />
         </q-breadcrumbs>
         <h1>{{ name }} {{ dataType }}</h1>
-        <p>
-          <span v-for="(line, index) in getLines(summary)" :key="'summary' + index">
-            <br v-if="index > 0">
-            {{ line }}
-          </span>
-        </p>
+        <div v-html="summary" style="width: 100%; overflow: scroll;"></div>
         <p v-if="remarks">
           <span v-for="(line, index) in getLines(remarks)" :key="'remark' + index">
             <br v-if="index > 0">

@@ -240,7 +240,7 @@ namespace Docify.Parse
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
                 //Morteza: debugging only
-                if (type.FullName == "Rhino.RhinoMath"){
+                if (type.FullName == "Rhino.FileIO.File3dmTypeCodes"){
                     var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
