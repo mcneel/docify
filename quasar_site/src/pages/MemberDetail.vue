@@ -436,8 +436,14 @@ export default {
       if (token.endsWith("[]")) token = token.substring(0, token.length - 2);
       // if (token === this.datatype.name) return null
       const typeMap = ViewModel.getTypeMap();
-      const type = typeMap[token];
-      if (!type) return null;
+      let type = typeMap[token];
+      if (!type){
+        //WWW-2098: try looking for enums which have . separated names in this dictionary
+        type = typeMap[`${this.datatype.name}.${token}`];
+        if (!type){
+          return null;
+        }
+      }
       return ViewModel.itemPath(type);
     },
     typeUrl(typeToken){
