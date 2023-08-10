@@ -110,7 +110,7 @@ namespace Docify.Parse
                 {
                     case "see":
                     case "seealso":
-                        sb.Append(" " + child.Attributes[0].Value); // TODO: linkify
+                        sb.Append(" <b>" + child.Attributes[0].Value + "</b> "); // TODO: linkify //Morteza Aug 10, 2023: format them as bold for now until we figure out linking
                         break;
                     //case "b":
                     //    sb.Append(string.Format("**{0}**", child.InnerText));

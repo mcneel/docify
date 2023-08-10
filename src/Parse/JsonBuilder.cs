@@ -407,6 +407,16 @@ namespace Docify.Parse
                     //sb.Append($"        deprecated: '{deprecated}'");
                 }
 
+                if (member.Signature(false).Contains("static Mesh CreateFromCurveExtrusion")){
+                    var inspecting = member;
+                }
+                string remarks = member.Remarks();
+                if (!string.IsNullOrWhiteSpace(remarks))
+                {
+                    sb.AppendLine(",");
+                    sb.Append(KeyValString(4, "remarks", remarks, asJavascript));
+                }
+
                 var parameters = member.GetParameters();
                 if (parameters != null)
                 {
