@@ -53,6 +53,10 @@
                     <q-icon name="mdi-key-variant" />
                     <q-tooltip>Protected Member</q-tooltip>
                   </q-badge>
+                  <q-badge v-if="member.signature.includes('static')" color='info' outline>
+                    <q-icon name="mdi-alpha-s" />
+                    <q-tooltip>Static Member</q-tooltip>
+                  </q-badge>
                 </q-item-label>
                 <q-item-label caption class="on-right col-8">
                   <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
