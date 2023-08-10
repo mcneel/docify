@@ -162,6 +162,21 @@
               >
                 {{ member.returns }}
               </q-item-label>
+
+              <q-item-label
+                v-if="member.remarks"
+                class="text-h6"
+                style="margin-top: 10px"
+                >Remarks:</q-item-label
+              >
+              <q-item-label
+                class="on-right text-weight-light"
+                v-if="member.remarks"
+              >
+              <div v-html="member.remarks"></div>
+              </q-item-label>
+
+
               <q-item-label
                 caption
                 v-if="member.since"
