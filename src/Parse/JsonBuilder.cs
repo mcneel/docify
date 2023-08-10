@@ -240,7 +240,7 @@ namespace Docify.Parse
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
                 //Morteza: debugging only
-                if (type.FullName == "Rhino.FileIO.File3dmTypeCodes"){
+                if (type.FullName == "Rhino.Geometry.SubDToBrepOptions"){
                     var inspecting = type;
                 }
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
