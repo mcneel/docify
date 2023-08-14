@@ -57,16 +57,18 @@ export default {
   },
   methods: {
     search(text) {
-      console.log("searching");
+      console.log("searching", text);
       const timeStart = performance.now();
       let fuse = ViewModel.getSearchInstance();
       if (fuse == null) {
         const options = {
           includeScore: true,
+          useExtendedSearch: true,
           keys: [
             // { name: 'typename', weight: 1.0 },
             { name: "member", weight: 10 }.name,
-            { name: "url", weight: 1.0 },
+            { name: "url", weight: 2.0 },
+            { name: "keywords", weight: 3.0 },
           ],
         };
         const searchList = ViewModel.getSearchList();
@@ -75,6 +77,7 @@ export default {
       }
       const timeBuild = performance.now();
       const result = fuse.search(text);
+      console.log("result:", result)
       const timeEnd = performance.now();
       console.log(`build time ${timeBuild - timeStart} ms`);
       console.log(`search time ${timeEnd - timeBuild} ms`);
@@ -83,9 +86,16 @@ export default {
       const rc = [];
       for (let i = 0; i < count; i++) {
         if (result[i].score < 0.1) {
-          rc.push(result[i].item);
+          rc.push({...result[i].item, "score":result[i].score});
         }
       }
+
+      rc.sort(function(a, b) {
+          return a.score - b.score;
+      });
+
+      console.log("sorted:",rc)
+
       this.searchResults = rc;
     },
     searchItemTitle(item) {

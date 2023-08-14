@@ -421,6 +421,7 @@ const ViewModel = {
         member: entry.name,
         type: entry.dataType,
         url: dataTypeUrl,
+        keywords: dataTypeUrl.replaceAll(".", " "),
       };
       if (entry.summary) node.summary = entry.summary;
       items.push(node);
@@ -431,6 +432,8 @@ const ViewModel = {
           if (items[items.length - 1].member === node.member) return;
           node.type = "property";
           node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.keywords =
+            dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (prop.summary) node.summary = prop.summary;
           items.push(node);
         });
@@ -443,6 +446,8 @@ const ViewModel = {
           if (items[items.length - 1].member === node.member) return;
           node.type = "method";
           node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.keywords =
+            dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (method.summary) node.summary = method.summary;
           items.push(node);
         });
@@ -454,6 +459,8 @@ const ViewModel = {
           if (items[items.length - 1].member === node.member) return;
           node.type = "event";
           node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.keywords =
+            dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (event.summary) node.summary = event.summary;
           items.push(node);
         });
@@ -465,6 +472,8 @@ const ViewModel = {
           if (items[items.length - 1].member === node.member) return;
           node.type = "operator";
           node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.keywords =
+            dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (operator.summary) node.summary = operator.summary;
           items.push(node);
         });
@@ -477,6 +486,8 @@ const ViewModel = {
           if (items[items.length - 1].member === node.member) return;
           node.type = "field";
           node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.keywords =
+            dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (field.summary) node.summary = field.summary;
           items.push(node);
         });
