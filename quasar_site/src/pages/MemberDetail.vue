@@ -50,163 +50,159 @@
             </q-item-section>
           </q-item>
 
-          <!--Syntax-->
-          <q-item>
-            <q-item-section>
-              <q-item-label v-if="member.signature" class="text-h6"
-                >Syntax:</q-item-label
-              >
-              <q-card
-                flat
-                bordered
-                style="font-family: monospace; margin: 10px; padding: 10px"
-              >
-                <q-card-section horizontal>
-                  <q-item-label
-                    style="font-size: 18px; width: 100%"
-                    :class="member.deprecated && 'light-dimmed'"
-                  >
-                    <template v-for="chunk,id in signature(member)" :key="id">
-                      <template v-if="chunk.indent">
-                        <br/>
-                        <span class="q-pl-lg"></span>
-                      </template>
-                      <template v-if="chunk.break">
-                        <br/>
-                      </template>
-                      <template v-if="chunk.link">
-                        <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
-                        <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
-                      </template>
-                      <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
-                    </template>
-                  </q-item-label>
-
-                  <q-card-actions vertical class="">
-                    <q-btn
-                      flat
-                      round
-                      color="blue"
-                      icon="mdi-content-copy"
-                      @click="copyToClipboard(member.signature)"
-                    ></q-btn>
-                  </q-card-actions>
-                </q-card-section>
-              </q-card>
-            </q-item-section>
-          </q-item>
-
-          <q-item>
-            <q-item-section>
-              <q-item-label caption class="on-right">
-                <q-badge v-if="member.deprecated" outline color="negative"
-                  >deprecated in {{ member.deprecated }}
-                  <q-tooltip
-                    >Deprecated in version {{ member.deprecated }}</q-tooltip
-                  >
-                </q-badge>
-              </q-item-label>
-              <q-item-label v-if="member.parameters" class="text-h6"
-                >Parameters:</q-item-label
-              >
-              <q-item-label
-                class="row"
-                v-for="parameter in member.parameters"
-                :key="parameter.name"
-              >
-                <ul
-                  style="
-                    padding-inline-start: 0px;
-                    list-style-type: none;
-                    margin-block-start: 0;
-                    margin-block-end: 5px;
-                  "
+          <div class="q-pl-lg">
+            <!--Syntax-->
+            <q-item>
+              <q-item-section>
+                <q-item-label v-if="member.signature" class="text-h6"
+                  >Syntax:</q-item-label
                 >
-                  <li class="text-italic">{{ parameter.name }}</li>
-                  <li class="q-pl-lg text-weight-light">
-                    <span>Type: </span>
-                    <template v-if="typeUrl(parameter.type)">
-
-                      <router-link
-                        class="routerlink text-weight-regular"
-                        :to="typeUrl(parameter.type)"
-                        v-if="!typeUrl(parameter.type).toLowerCase().startsWith('http')"
+                <q-card
+                  flat
+                  bordered
+                  style="font-family: monospace; margin: 10px; padding: 10px"
+                >
+                  <q-card-section horizontal>
+                    <q-item-label
+                      style="font-size: 18px; width: 100%"
+                      :class="member.deprecated && 'light-dimmed'"
+                    >
+                      <template v-for="chunk,id in signature(member)" :key="id">
+                        <template v-if="chunk.indent">
+                          <br/>
+                          <span class="q-pl-lg"></span>
+                        </template>
+                        <template v-if="chunk.break">
+                          <br/>
+                        </template>
+                        <template v-if="chunk.link">
+                          <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
+                          <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
+                        </template>
+                        <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
+                      </template>
+                    </q-item-label>
+                    <q-card-actions vertical class="">
+                      <q-btn
+                        flat
+                        round
+                        color="blue"
+                        icon="mdi-content-copy"
+                        @click="copyToClipboard(member.signature)"
+                      ></q-btn>
+                    </q-card-actions>
+                  </q-card-section>
+                </q-card>
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-item-label caption class="on-right">
+                  <q-badge v-if="member.deprecated" outline color="negative"
+                    >deprecated in {{ member.deprecated }}
+                    <q-tooltip
+                      >Deprecated in version {{ member.deprecated }}</q-tooltip
+                    >
+                  </q-badge>
+                </q-item-label>
+                <q-item-label v-if="member.parameters" class="text-h6"
+                  >Parameters:</q-item-label
+                >
+                <q-item-label
+                  class="row"
+                  v-for="parameter in member.parameters"
+                  :key="parameter.name"
+                >
+                  <ul
+                    style="
+                      padding-inline-start: 0px;
+                      list-style-type: none;
+                      margin-block-start: 0;
+                      margin-block-end: 5px;
+                    "
+                  >
+                    <li class="text-italic">{{ parameter.name }}</li>
+                    <li class="q-pl-lg text-weight-light">
+                      <span>Type: </span>
+                      <template v-if="typeUrl(parameter.type)">
+                        <router-link
+                          class="routerlink text-weight-regular"
+                          :to="typeUrl(parameter.type)"
+                          v-if="!typeUrl(parameter.type).toLowerCase().startsWith('http')"
+                        >
+                          {{ parameter.type }}
+                        </router-link>
+                        <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
+                        </template
                       >
-                        {{ parameter.type }}
-                      </router-link>
-                      <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
-                      </template
-                    >
-                    <template v-else
-                      ><span
-                        class="disabled disabledLink text-weight-regular"
-                        >{{ parameter.type }}</span
-                      ></template
-                    >
-                  </li>
-                  <li
-                    v-html="parameter.summary"
-                    class="q-pl-lg text-weight-light"
-                  ></li>
-                </ul>
-              </q-item-label>
-              <q-item-label
-                v-if="member.returns"
-                class="text-h6"
-                style="margin-top: 10px"
-                >Returns:</q-item-label
-              >
-              <q-item-label
-                class="on-right text-weight-light"
-                v-if="member.returns"
-              >
-                {{ member.returns }}
-              </q-item-label>
-
-              <q-item-label
-                v-if="member.remarks"
-                class="text-h6"
-                style="margin-top: 10px"
-                >Remarks:</q-item-label
-              >
-              <q-item-label
-                class="on-right text-weight-light"
-                v-if="member.remarks"
-              >
-              <div v-html="member.remarks"></div>
-              </q-item-label>
-
-
-              <q-item-label
-                caption
-                v-if="member.since"
-                class="text-bold"
-                style="margin-top: 10px"
-                >Available since:</q-item-label
-              >
-              <q-item-label caption class="on-right" v-if="member.since">
-                {{ member.since }}
-              </q-item-label>
-            </q-item-section>
-          </q-item>
-          <q-item
-            v-if="member.examples && member.examples.length > 0"
-            dense
-            class="on-right"
-            style="margin-top: 10px"
-          >
-            <q-btn
-              no-caps
-              outline
+                      <template v-else
+                        ><span
+                          class="disabled disabledLink text-weight-regular"
+                          >{{ parameter.type }}</span
+                        ></template
+                      >
+                    </li>
+                    <li
+                      v-html="parameter.summary"
+                      class="q-pl-lg text-weight-light"
+                    ></li>
+                  </ul>
+                </q-item-label>
+                <q-item-label
+                  v-if="member.returns"
+                  class="text-h6"
+                  style="margin-top: 10px"
+                  >Returns:</q-item-label
+                >
+                <q-item-label
+                  class="on-right text-weight-light"
+                  v-if="member.returns"
+                >
+                  {{ member.returns }}
+                </q-item-label>
+                <q-item-label
+                  v-if="member.remarks"
+                  class="text-h6"
+                  style="margin-top: 10px"
+                  >Remarks:</q-item-label
+                >
+                <q-item-label
+                  class="on-right text-weight-light"
+                  v-if="member.remarks"
+                >
+                <div v-html="member.remarks"></div>
+                </q-item-label>
+                <q-item-label
+                  caption
+                  v-if="member.since"
+                  class="text-bold"
+                  style="margin-top: 10px"
+                  >Available since:</q-item-label
+                >
+                <q-item-label caption class="on-right" v-if="member.since">
+                  {{ member.since }}
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item
+              v-if="member.examples && member.examples.length > 0"
               dense
-              size="sm"
-              icon="mdi-code-tags"
-              color="secondary"
-              :to="exampleUrl(member)"
+              class="on-right"
+              style="margin-top: 10px"
             >
-              Example
-            </q-btn>
-          </q-item>
+              <q-btn
+                no-caps
+                outline
+                dense
+                size="sm"
+                icon="mdi-code-tags"
+                color="secondary"
+                :to="exampleUrl(member)"
+              >
+                Example
+              </q-btn>
+            </q-item>
+          </div>
           <q-separator spaced inset />
         </div>
       </q-list>
