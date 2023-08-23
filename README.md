@@ -33,3 +33,7 @@ $ api_docify.exe --name="RhinoCommon" "%RHINO4SRC%/rhinocommon/dotnet" "src/modu
 4. Run `CMD+Shift+P > Run Task > docify init`, then enter the path where the Rhino source code is located and press enter.
 5. Run `CMD+Shift+P > Run Task > docify build`
 5. Run `CMD+Shift+P > Run Task > run quasar`
+
+## Troubleshooting
+
+Some namespaces may need `methodgen` to be run on the source first before documentation can be extracted. You can do this by building Rhino from source.
