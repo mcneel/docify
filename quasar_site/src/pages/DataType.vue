@@ -174,6 +174,11 @@ export default {
             type: 'values'
           }))
         }
+        values.forEach((v, i) => {
+          if (!v.signature.includes("=")){
+            v.signature = `${v.signature} = ${i}`
+          }
+        })
 
         let parentName = item.namespace + '.' + item.name
         const properties = ViewModel.getMembers(item, "properties", true)
