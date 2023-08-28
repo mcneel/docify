@@ -149,17 +149,33 @@
                   </ul>
                 </q-item-label>
                 <q-item-label
-                  v-if="member.returns"
+                  v-if="signature(member).filter(m => m.isReturn).length>0"
                   class="text-h6"
                   style="margin-top: 10px"
-                  >Returns:</q-item-label
+                  >Returns:
+                </q-item-label>
+                <q-item-label
+                  class="on-right text-weight-light"
                 >
+                  <template v-for="(returnType, index) in signature(member).filter(m => m.isReturn)" :key="index">
+                    <template v-if="returnType.link">
+                      Type:
+                            <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}</router-link>
+                            <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
+                  </template>
+                  <template v-else>
+                        Type: {{returnType.name}}
+                  </template>
+                  </template>
+
+
+                </q-item-label>
                 <q-item-label
                   class="on-right text-weight-light"
                   v-if="member.returns"
                 >
-                  {{ member.returns }}
-                </q-item-label>
+                {{ member.returns }}
+              </q-item-label>
                 <q-item-label
                   v-if="member.remarks"
                   class="text-h6"
@@ -495,11 +511,12 @@ export default {
         if (link) {
           chunks.push({
             link: link,
-            name: name
+            name: name,
+            isReturn: true
           })
           chunks.push({ name: ' ' })
         } else {
-          chunks.push({ name: name + ' ' })
+          chunks.push({ name: name + ' ', isReturn: true })
         }
         tokens.shift()
       }
