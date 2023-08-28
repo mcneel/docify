@@ -86,7 +86,7 @@ namespace Docify
                 }
                 foreach (var parsedItem in parsedItems)
                 {
-                    if (parsedItem.Signature(false).Contains("static Mesh CreateFromCurveExtrusion")){
+                    if (parsedItem.Signature(false).Contains("static SelectObjects")){
                         var inspecting = parsedItem;
                     }
                     if (!parsedItem.ParentIsPublic)

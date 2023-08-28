@@ -333,7 +333,7 @@ namespace Docify.Parse
                 if (evt != null)
                 {
                     var signature = new System.Text.StringBuilder();
-                    signature.Append($"{prefix}{evt.Identifier}");
+                    signature.Append($"{prefix}{evt.Type} {evt.Identifier}");
                     return signature.ToString();
                 }
             }
