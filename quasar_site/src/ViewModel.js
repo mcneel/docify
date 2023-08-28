@@ -193,6 +193,7 @@ const ViewModel = {
     _selectedItemChangedCallbacks[source] = callback;
   },
   findNodeByPath(path) {
+    console.log("finding:", path);
     path = path.toLowerCase();
     let found = null;
 
@@ -530,18 +531,20 @@ const ViewModel = {
 
         members = members.concat(inheritedMembers);
         members = members.filter((m) => m != null);
-        if (memberType == "methods") {
-          const m = { methods: true };
-          members.sort((a, b) =>
-            this.memberName(a, m).localeCompare(this.memberName(b, m))
-          );
-        }
-        if (memberType == "properties") {
-          const m = { properties: true };
-          members.sort((a, b) =>
-            this.memberName(a, m).localeCompare(this.memberName(b, m))
-          );
-        }
+
+        // Morteza Aug 28, 2023: may be redundant since we're sorting at the end of this functions
+        // if (memberType == "methods") {
+        //   const m = { methods: true };
+        //   members.sort((a, b) =>
+        //     this.memberName(a, m).localeCompare(this.memberName(b, m))
+        //   );
+        // }
+        // if (memberType == "properties") {
+        //   const m = { properties: true };
+        //   members.sort((a, b) =>
+        //     this.memberName(a, m).localeCompare(this.memberName(b, m))
+        //   );
+        // }
       }
     }
 
@@ -564,6 +567,12 @@ const ViewModel = {
       _pathMap[member.path] = member;
     });
 
+    members.sort((a, b) =>
+      this.memberName(a, memberType).localeCompare(
+        this.memberName(b, memberType)
+      )
+    );
+
     return members;
   },
   memberName(member, memberType) {
@@ -583,7 +592,7 @@ const ViewModel = {
     }
     const tokens = member.signature.split(" ");
     let name = tokens[1];
-    if (tokens[0] === "static" && memberType != "events") {
+    if (tokens[0] === "static") {
       name = tokens[2];
     }
     if (!name) {

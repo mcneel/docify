@@ -243,16 +243,20 @@ export default {
     //This is where page meta gets set because why the heck NOT Quasar
     createMetaMixin(function () {
       // "this" here refers to your component
-      const node = ViewModel.findNodeByPath(this.$route.params.datatype);
-      const memberName = this.$route.params.member;
-      const members = this.getMembers(node, memberName);
-      const desc = node.name + "." + this.getTitle(node, members);
-      return {
-        title: desc,
-        meta: {
-          description: { name: "description", content: desc },
-        },
-      };
+      if (!this.$route.path.startsWith("/example"))
+      {
+        const node = ViewModel.findNodeByPath(this.$route.params.datatype);
+        const memberName = this.$route.params.member;
+        const members = this.getMembers(node, memberName);
+        const desc = node.name + "." + this.getTitle(node, members);
+        return {
+          title: desc,
+          meta: {
+            description: { name: "description", content: desc },
+          },
+        };
+      }
+      //TODO: example page meta
     }),
   ],
   mounted() {
@@ -478,7 +482,8 @@ export default {
         tokens.shift()
       }
       if (this.members.isEvent) {
-        chunks.push({ name: tokens[0] })
+        chunks.push({ name: tokens[0]+ ' '  })
+        chunks.push({ name: tokens[1] })
         return chunks
       }
       if (this.members.isProperty || this.members.isMethod || this.members.isOperator) {
