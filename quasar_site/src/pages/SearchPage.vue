@@ -21,6 +21,11 @@
           </q-item-section>
         </q-item>
       </template>
+      <q-item v-if="theresMore">
+          <q-item-section>
+            <q-btn outline rounded color="primary" label="Show More" @click="moreResults"/>
+          </q-item-section>
+        </q-item>
     </q-list>
   </q-page>
 </template>
@@ -29,6 +34,7 @@
 import ViewModel from "../ViewModel";
 import ProjInfo from "../proj_info.json";
 import Fuse from "fuse.js";
+import { ref } from "vue";
 
 export default {
   props: {
@@ -37,7 +43,10 @@ export default {
   },
   data() {
     return {
+      rawResults: [],
       searchResults: [],
+      resultCount: 25,
+      theresMore: false,
     };
   },
   meta() {
@@ -50,6 +59,8 @@ export default {
   },
   watch: {
     query(val) {
+      this.theresMore = false;
+      this.resultCount = 25;
       if (val) {
         this.search(val);
       }
@@ -76,17 +87,27 @@ export default {
         ViewModel.setSearchInstance(fuse);
       }
       const timeBuild = performance.now();
-      const result = fuse.search(text);
-      console.log("result:", result)
-      const timeEnd = performance.now();
-      console.log(`build time ${timeBuild - timeStart} ms`);
-      console.log(`search time ${timeEnd - timeBuild} ms`);
-      let count = 25;
-      if (result.length < count) count = result.length;
+      this.rawResults = fuse.search(text);
+
+      // const timeEnd = performance.now();
+      // console.log(`build time ${timeBuild - timeStart} ms`);
+      // console.log(`search time ${timeEnd - timeBuild} ms`);
+
+      // if (filteredResults.value.length < resultCount.value) resultCount.value = filteredResults.value.length;
+
+      this.sortResults();
+    },
+
+    sortResults(){
       const rc = [];
-      for (let i = 0; i < count; i++) {
-        if (result[i].score < 0.1) {
-          rc.push({...result[i].item, "score":result[i].score});
+
+      for (let i = 0; i < this.rawResults.length; i++) {
+        if (this.rawResults[i].score < 0.1) {
+          if (i >  this.resultCount-1){
+            this.theresMore = true;
+            break;
+          }
+          rc.push({...this.rawResults[i].item, "score":this.rawResults[i].score});
         }
       }
 
@@ -94,10 +115,9 @@ export default {
           return a.score - b.score;
       });
 
-      console.log("sorted:",rc)
-
       this.searchResults = rc;
     },
+
     searchItemTitle(item) {
       if (
         item.type !== "property" &&
@@ -108,6 +128,11 @@ export default {
       }
       return item.typename + " " + item.member;
     },
+
+    moreResults() {
+      this.resultCount *= 2;
+      this.sortResults();
+    }
   },
 };
 </script>
