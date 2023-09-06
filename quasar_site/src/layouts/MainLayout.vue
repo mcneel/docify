@@ -6,7 +6,7 @@
           <q-toolbar-title>
             <q-btn no-caps size="lg" :to="baseUrl">
               <q-avatar left class="q-mr-md">
-                <img style="width:fit-content;" src="/rhinodevlogo.png">
+                <img style="width:fit-content;" src="/api/rhinocommon/rhinodevlogo.png">
               </q-avatar>
               <div>{{apiTitle + ' API'}}</div>
             </q-btn>
