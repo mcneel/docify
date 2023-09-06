@@ -1,3 +1,4 @@
+import { version } from "core-js";
 import ApiInfo from "./api_info.json";
 
 const DataTypes = {
@@ -16,6 +17,7 @@ let _searchInstance = null;
 let _selectedPath = "";
 let _lastFound = null;
 let _pathMap = {};
+let _maxVersion = null;
 
 let updateTree = (path, children) => (obj) => {
   if (obj.path === path) {
@@ -45,6 +47,9 @@ const ViewModel = {
       childType.toLowerCase(),
       includeInherited
     );
+    if (!members) {
+      return;
+    }
     if (members.length < 1) {
       return;
     }
@@ -123,14 +128,30 @@ const ViewModel = {
       }
     }
   },
+  resetTree() {
+    _viewmodel = null;
+    _searchInstance = null;
+  },
+  setMaxVersion(v) {
+    _maxVersion = v;
+  },
   getTree() {
-    console.log("start tree");
     if (_viewmodel) return _viewmodel;
     let viewmodel = null;
     {
       // console.log('creating viewodel')
       const namespaceDict = {};
       ApiInfo.forEach((type) => {
+        if (
+          _maxVersion &&
+          type.since &&
+          this.sinceIsGreater(type.since, _maxVersion)
+        ) {
+          // console.log(
+          //   `not including ${type.name} because ${type.since} is newer than ${_maxVersion}`
+          // );
+          return;
+        }
         let summary = "";
         if (type.summary) summary = type.summary;
         if (type.dataType === DataTypes.NAMESPACE) {
@@ -193,7 +214,10 @@ const ViewModel = {
     _selectedItemChangedCallbacks[source] = callback;
   },
   findNodeByPath(path) {
-    console.log("finding:", path);
+    if (!path) {
+      return;
+    }
+    // console.log("finding:", path);
     path = path.toLowerCase();
     let found = null;
 
@@ -209,6 +233,9 @@ const ViewModel = {
     return found;
   },
   setSelectedItem(item, updateRoute = true) {
+    if (!item) {
+      return;
+    }
     //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item;
 
@@ -267,45 +294,45 @@ const ViewModel = {
     rc.reverse();
     return rc;
   },
+  sinceIsGreater(test, existing) {
+    if (test === existing) return false;
+    const testVersion = test.split(".");
+    const existingVersion = existing.split(".");
+    if (testVersion[0] < existingVersion[0]) return false;
+    if (
+      testVersion[0] === existingVersion[0] &&
+      testVersion[1] < existingVersion[1]
+    )
+      return false;
+    return true;
+  },
   mostRecentSince() {
     let since = "0.0";
-    const sinceIsGreater = function (test, existing) {
-      if (test === existing) return false;
-      const testVersion = test.split(".");
-      const existingVersion = existing.split(".");
-      if (testVersion[0] < existingVersion[0]) return false;
-      if (
-        testVersion[0] === existingVersion[0] &&
-        testVersion[1] < existingVersion[1]
-      )
-        return false;
-      return true;
-    };
     ApiInfo.forEach((type) => {
       if (type.constructors) {
         type.constructors.forEach((c) => {
-          if (c.since && sinceIsGreater(c.since, since)) since = c.since;
+          if (c.since && this.sinceIsGreater(c.since, since)) since = c.since;
         });
       }
       if (type.properties) {
         type.properties.forEach((prop) => {
-          if (prop.since && sinceIsGreater(prop.since, since))
+          if (prop.since && this.sinceIsGreater(prop.since, since))
             since = prop.since;
         });
       }
       if (type.methods) {
         type.methods.forEach((m) => {
-          if (m.since && sinceIsGreater(m.since, since)) since = m.since;
+          if (m.since && this.sinceIsGreater(m.since, since)) since = m.since;
         });
       }
       if (type.operators) {
         type.operators.forEach((m) => {
-          if (m.since && sinceIsGreater(m.since, since)) since = m.since;
+          if (m.since && this.sinceIsGreater(m.since, since)) since = m.since;
         });
       }
       if (type.fields) {
         type.fields.forEach((m) => {
-          if (m.since && sinceIsGreater(m.since, since)) since = m.since;
+          if (m.since && this.sinceIsGreater(m.since, since)) since = m.since;
         });
       }
     });
@@ -414,6 +441,16 @@ const ViewModel = {
     const items = [];
     ApiInfo.forEach((entry) => {
       // skip namespaces
+      if (
+        _maxVersion &&
+        entry.since &&
+        this.sinceIsGreater(entry.since, _maxVersion)
+      ) {
+        // console.log(
+        //   `not including ${entry.name} because ${entry.since} is newer than ${_maxVersion}`
+        // );
+        return;
+      }
       if (entry.dataType === "namespace") return;
       const dataTypeUrl = (entry.namespace + "." + entry.name).toLowerCase();
       const typename = entry.namespace + "." + entry.name;
@@ -428,6 +465,13 @@ const ViewModel = {
       items.push(node);
       if (entry.properties) {
         entry.properties.forEach((prop) => {
+          if (
+            _maxVersion &&
+            prop.since &&
+            this.sinceIsGreater(prop.since, _maxVersion)
+          ) {
+            return;
+          }
           const chunks = prop.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -441,6 +485,13 @@ const ViewModel = {
       }
       if (entry.methods) {
         entry.methods.forEach((method) => {
+          if (
+            _maxVersion &&
+            method.since &&
+            this.sinceIsGreater(method.since, _maxVersion)
+          ) {
+            return;
+          }
           let chunks = method.signature.split("(");
           chunks = chunks[0].split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
@@ -455,6 +506,13 @@ const ViewModel = {
       }
       if (entry.events) {
         entry.events.forEach((event) => {
+          if (
+            _maxVersion &&
+            event.since &&
+            this.sinceIsGreater(event.since, _maxVersion)
+          ) {
+            return;
+          }
           const chunks = event.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -468,6 +526,13 @@ const ViewModel = {
       }
       if (entry.operators) {
         entry.operators.forEach((operator) => {
+          if (
+            _maxVersion &&
+            operator.since &&
+            this.sinceIsGreater(operator.since, _maxVersion)
+          ) {
+            return;
+          }
           const chunks = operator.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -482,6 +547,13 @@ const ViewModel = {
       if (entry.fields) {
         entry.fields.forEach((field) => {
           //TODO: review
+          if (
+            _maxVersion &&
+            field.since &&
+            this.sinceIsGreater(field.since, _maxVersion)
+          ) {
+            return;
+          }
           const chunks = field.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -503,6 +575,14 @@ const ViewModel = {
 
     if (node[memberType]) {
       for (let i = 0; i < members.length; i++) {
+        if (
+          _maxVersion &&
+          members[i].since &&
+          this.sinceIsGreater(members[i].since, _maxVersion)
+        ) {
+          // console.log(`not including ${members[i]}`);
+          return;
+        }
         members[i].parent = node.namespace + "." + node.name;
         members[i].namespace = node.namespace;
         const url = this.memberUrl(memberType, members[i]);

@@ -32,6 +32,9 @@ export default {
       }
     }
   },
+  mounted() {
+    // console.log("mounted index page")
+  },
   methods: {
     setSelectedItem (name) {
       this.$router.push(this.baseUrl + name.toLowerCase())

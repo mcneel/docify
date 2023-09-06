@@ -19,7 +19,7 @@
           </q-btn>
           <q-btn-dropdown color="primary" :label="`${filterVersion} and older`">
             <q-list>
-              <q-item v-for="version in [8,7,6,5]" :key="version" clickable v-close-popup @click="onItemClick(version)">
+              <q-item v-for="version in [version,'7.0','6.0','5.0']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
                 <q-item-section>
                   <q-item-label>{{ version }}</q-item-label>
                 </q-item-section>
@@ -78,8 +78,9 @@ export default {
     baseUrl: { type: String }
   },
   data() {
-    const vm = ViewModel.getTree();
     const mostRecent = ViewModel.mostRecentSince();
+    ViewModel.setMaxVersion(mostRecent);
+    const vm = ViewModel.getTree(mostRecent);
     return {
       leftDrawerOpen: false,
       drawerWidth: 300,
@@ -93,15 +94,19 @@ export default {
       searchText: "",
       shouldAutoScroll: true,
       bannerVisible: true,
-      filterVersion: 8,
+      filterVersion: mostRecent,
     };
   },
   created() {
     ViewModel.setSelectedItemChangedCallback("MainLayout.vue", this.onChangeSelectedItem);
   },
   methods: {
-    onItemClick (item) {
-      this.filterVersion = item
+    onChangeVersionFilter (item) {
+      this.filterVersion = item;
+      ViewModel.resetTree();
+      ViewModel.setMaxVersion(item);
+      this.api = ViewModel.getTree();
+      this.$router.push("/rhino");
     },
     resizeDrawer(ev) {
       const drawerEl = document.getElementById("myDrawer");
@@ -140,7 +145,7 @@ export default {
       }
     },
     onLazyLoad({ node, key, done, fail }) {
-      const childNodes = ViewModel.lazyChildForPath(node.path);
+      const childNodes = ViewModel.lazyChildForPath(node.path, this.filterVersion);
       done(childNodes);
     }
   },
