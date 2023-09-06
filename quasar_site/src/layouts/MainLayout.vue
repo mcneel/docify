@@ -16,11 +16,11 @@
               <q-icon color="white" name="search" />
             </template>
           </q-input>
-          <q-btn-dropdown color="primary" :label="`${filterVersion} and older`" class="q-ml-sm">
+          <q-btn-dropdown color="primary" :label="`${filterVersion.split('.')[0]} and older`" class="q-ml-sm">
             <q-list>
               <q-item v-for="version in [version,'7.x','6.x','5.x']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
                 <q-item-section>
-                  <q-item-label>{{ version }}</q-item-label>
+                  <q-item-label>{{ version.split(".")[0] }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
