@@ -298,6 +298,14 @@ const ViewModel = {
     if (test === existing) return false;
     const testVersion = test.split(".");
     const existingVersion = existing.split(".");
+
+    if (testVersion[1] == "x") {
+      testVersion[1] = 999;
+    }
+    if (existingVersion[1] == "x") {
+      existingVersion[1] = 999;
+    }
+
     if (testVersion[0] < existingVersion[0]) return false;
     if (
       testVersion[0] === existingVersion[0] &&

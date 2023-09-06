@@ -11,21 +11,21 @@
               <q-icon color="white" name="search" />
             </template>
           </q-input>
-          <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
-            <q-tooltip>Toggle dark mode</q-tooltip>
-          </q-btn>
-          <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
-            <q-tooltip>What's new in version {{ version }}</q-tooltip>
-          </q-btn>
           <q-btn-dropdown color="primary" :label="`${filterVersion} and older`">
             <q-list>
-              <q-item v-for="version in [version,'7.0','6.0','5.0']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
+              <q-item v-for="version in [version,'7.x','6.x','5.x']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
                 <q-item-section>
                   <q-item-label>{{ version }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
           </q-btn-dropdown>
+          <q-btn v-if="filterVersion==version" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
+            <q-tooltip>What's new in version {{ version }}</q-tooltip>
+          </q-btn>
+          <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
+            <q-tooltip>Toggle dark mode</q-tooltip>
+          </q-btn>
         </q-toolbar>
         <q-banner v-if="bannerVisible" inline-actions dense class="bg-blue text-white">
           {{ apiTitle }} documentation has a new look. The old site can still be found <span><a
