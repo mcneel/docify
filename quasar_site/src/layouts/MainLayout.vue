@@ -4,7 +4,12 @@
         <q-toolbar>
           <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen" />
           <q-toolbar-title>
-            <q-btn no-caps size="lg" :to="baseUrl" :label="apiTitle + ' API'" />
+            <q-btn no-caps size="lg" :to="baseUrl">
+              <q-avatar left class="q-mr-md">
+                <img style="width:fit-content;" src="/rhinodevlogo.png">
+              </q-avatar>
+              <div>{{apiTitle + ' API'}}</div>
+            </q-btn>
           </q-toolbar-title>
           <q-input dark dense standout v-model="searchText" label="search" debounce="200">
             <template v-slot:append>
