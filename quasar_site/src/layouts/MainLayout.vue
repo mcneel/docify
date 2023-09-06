@@ -17,6 +17,15 @@
           <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
             <q-tooltip>What's new in version {{ version }}</q-tooltip>
           </q-btn>
+          <q-btn-dropdown color="primary" :label="`${filterVersion} and older`">
+            <q-list>
+              <q-item v-for="version in [8,7,6,5]" :key="version" clickable v-close-popup @click="onItemClick(version)">
+                <q-item-section>
+                  <q-item-label>{{ version }}</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
         </q-toolbar>
         <q-banner v-if="bannerVisible" inline-actions dense class="bg-blue text-white">
           {{ apiTitle }} documentation has a new look. The old site can still be found <span><a
@@ -84,12 +93,16 @@ export default {
       searchText: "",
       shouldAutoScroll: true,
       bannerVisible: true,
+      filterVersion: 8,
     };
   },
   created() {
     ViewModel.setSelectedItemChangedCallback("MainLayout.vue", this.onChangeSelectedItem);
   },
   methods: {
+    onItemClick (item) {
+      this.filterVersion = item
+    },
     resizeDrawer(ev) {
       const drawerEl = document.getElementById("myDrawer");
       const drawerParent = drawerEl.parentElement;
