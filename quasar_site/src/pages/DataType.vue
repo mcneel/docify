@@ -184,7 +184,7 @@ export default {
 
         let parentName = item.namespace + '.' + item.name
         const properties = ViewModel.getMembers(item, "properties", true)
-        if (properties.length > 0) {
+        if (properties && properties.length > 0) {
           rc.push(Object.freeze({
             title: 'Properties (' + properties.length + ')',
             items: Object.freeze(properties),
@@ -195,7 +195,7 @@ export default {
 
         parentName = item.namespace + '.' + item.name
         const methods = ViewModel.getMembers(item, "methods", true)
-        if (methods.length > 0) {
+        if (methods && methods.length > 0) {
           rc.push(Object.freeze({
             title: 'Methods (' + methods.length + ')',
             items: Object.freeze(methods),
@@ -206,7 +206,7 @@ export default {
 
         parentName = item.namespace + '.' + item.name
         const operators = ViewModel.getMembers(item, "operators", true)
-        if (operators.length > 0) {
+        if (operators && operators.length > 0) {
           rc.push(Object.freeze({
             title: 'Operators (' + operators.length + ')',
             items: Object.freeze(operators),
@@ -217,7 +217,7 @@ export default {
 
         parentName = item.namespace + '.' + item.name
         const fields = ViewModel.getMembers(item, "fields", true)
-        if (fields.length > 0) {
+        if (fields && fields.length > 0) {
           rc.push(Object.freeze({
             title: 'fields (' + fields.length + ')',
             items: Object.freeze(fields),
@@ -228,7 +228,7 @@ export default {
 
         parentName = item.namespace + '.' + item.name
         const events = ViewModel.getMembers(item, "events", true)
-        if (events.length > 0) {
+        if (events && events.length > 0) {
           rc.push(Object.freeze({
             title: 'Events (' + events.length + ')',
             items: Object.freeze(events),
