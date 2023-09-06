@@ -11,11 +11,20 @@
               <q-icon color="white" name="search" />
             </template>
           </q-input>
+          <q-btn-dropdown color="primary" :label="`${filterVersion} and older`">
+            <q-list>
+              <q-item v-for="version in [version,'7.x','6.x','5.x']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
+                <q-item-section>
+                  <q-item-label>{{ version }}</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
+          <q-btn v-if="filterVersion==version" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
+            <q-tooltip>What's new in version {{ version }}</q-tooltip>
+          </q-btn>
           <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
             <q-tooltip>Toggle dark mode</q-tooltip>
-          </q-btn>
-          <q-btn dense flat no-caps size="md" class="q-pa-sm" :label="version" :to="baseUrl + 'whatsnew/' + version">
-            <q-tooltip>What's new in version {{ version }}</q-tooltip>
           </q-btn>
         </q-toolbar>
         <q-banner v-if="bannerVisible" inline-actions dense class="bg-blue text-white">
@@ -69,8 +78,9 @@ export default {
     baseUrl: { type: String }
   },
   data() {
-    const vm = ViewModel.getTree();
     const mostRecent = ViewModel.mostRecentSince();
+    ViewModel.setMaxVersion(mostRecent);
+    const vm = ViewModel.getTree(mostRecent);
     return {
       leftDrawerOpen: false,
       drawerWidth: 300,
@@ -84,12 +94,20 @@ export default {
       searchText: "",
       shouldAutoScroll: true,
       bannerVisible: true,
+      filterVersion: mostRecent,
     };
   },
   created() {
     ViewModel.setSelectedItemChangedCallback("MainLayout.vue", this.onChangeSelectedItem);
   },
   methods: {
+    onChangeVersionFilter (item) {
+      this.filterVersion = item;
+      ViewModel.resetTree();
+      ViewModel.setMaxVersion(item);
+      this.api = ViewModel.getTree();
+      this.$router.push("/rhino");
+    },
     resizeDrawer(ev) {
       const drawerEl = document.getElementById("myDrawer");
       const drawerParent = drawerEl.parentElement;
@@ -127,7 +145,7 @@ export default {
       }
     },
     onLazyLoad({ node, key, done, fail }) {
-      const childNodes = ViewModel.lazyChildForPath(node.path);
+      const childNodes = ViewModel.lazyChildForPath(node.path, this.filterVersion);
       done(childNodes);
     }
   },

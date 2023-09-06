@@ -112,19 +112,21 @@ export default {
     createMetaMixin(function () {
       // "this" here refers to your component
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
-      let desc = node.namespace ? node.namespace + '.' + node.name : node.name
-      if (node.dataType === 'namespace') {
-        desc += ' namespace'
-      }
-      if (node.summary) {
-        desc += ': ' + node.summary
-      }
-      return {
-        title: node.name + ' ' + node.dataType,
-        meta: {
-          description: { name: 'description', content: desc }
+      if(node){
+        let desc = node.namespace ? node.namespace + '.' + node.name : node.name
+        if (node.dataType === 'namespace') {
+          desc += ' namespace'
         }
-      }
+        if (node.summary) {
+          desc += ': ' + node.summary
+        }
+        return {
+          title: node.name + ' ' + node.dataType,
+          meta: {
+            description: { name: 'description', content: desc }
+          }
+        }
+    }
     })
   ],
 
