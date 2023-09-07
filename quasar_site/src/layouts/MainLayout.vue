@@ -18,7 +18,7 @@
           </q-input>
           <q-btn-dropdown color="primary" :label="`V${filterVersion.split('.')[0]} and older`" class="q-ml-sm">
             <q-list>
-              <q-item v-for="version in [version,'7.x','6.x','5.x']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
+              <q-item v-for="version in ['8.x','7.x','6.x','5.x']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
                 <q-item-section>
                   <q-item-label>{{ version.split(".")[0] }}</q-item-label>
                 </q-item-section>
@@ -99,11 +99,19 @@ export default {
       searchText: "",
       shouldAutoScroll: true,
       bannerVisible: true,
-      filterVersion: mostRecent,
+      filterVersion: `${mostRecent.split(".")[0]}.x`,
     };
   },
   created() {
     ViewModel.setSelectedItemChangedCallback("MainLayout.vue", this.onChangeSelectedItem);
+  },
+  mounted() {
+    if (this.$route.query.version){
+        this.onChangeVersionFilter(this.$route.query.version);
+    }
+    else{
+      this.onChangeVersionFilter(`${this.version.split(".")[0]}.x`);
+    }
   },
   methods: {
     onChangeVersionFilter (item) {
@@ -111,7 +119,7 @@ export default {
       ViewModel.resetTree();
       ViewModel.setMaxVersion(item);
       this.api = ViewModel.getTree();
-      this.$router.push("/rhino");
+      this.$router.push({ query: { version: item } })
     },
     resizeDrawer(ev) {
       const drawerEl = document.getElementById("myDrawer");

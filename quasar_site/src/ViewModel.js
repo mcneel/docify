@@ -222,6 +222,13 @@ const ViewModel = {
     let found = null;
 
     if (_lastFound && this.itemPath(_lastFound) === path) {
+      if (
+        _maxVersion &&
+        _lastFound.since &&
+        this.sinceIsGreater(_lastFound.since, _maxVersion)
+      ) {
+        return;
+      }
       return _lastFound;
     }
 
@@ -230,6 +237,14 @@ const ViewModel = {
       if (this.itemPath(type) === path) found = type;
     });
     _lastFound = found;
+
+    if (
+      _maxVersion &&
+      found.since &&
+      this.sinceIsGreater(found.since, _maxVersion)
+    ) {
+      return;
+    }
     return found;
   },
   setSelectedItem(item, updateRoute = true) {

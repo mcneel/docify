@@ -1,227 +1,233 @@
 <template>
   <q-page>
     <div class="q-pa-sm">
-      <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
-        <q-breadcrumbs-el icon="home" :to="baseUrl" />
-        <q-breadcrumbs-el
-          :label="datatype.namespace"
-          :to="baseUrl + datatype.namespace.toLowerCase()"
-        />
-        <q-breadcrumbs-el
-          :label="datatype.name"
-          :to="
-            (baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()
-          "
-        />
-        <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
-      </q-breadcrumbs>
-      <h1>{{ getTitle(datatype, members) }}</h1>
-      <p v-if="datatype">
-        Class:&nbsp;
-        <router-link
-          class="routerlink"
-          :to="
-            baseUrl +
-            datatype.namespace.toLowerCase() +
-            '.' +
-            datatype.name.toLowerCase()
-          "
-        >
-          {{ datatype.namespace }}.{{ datatype.name }}
-        </router-link>
-      </p>
-
-      <q-list>
-        <div v-for="(member, index) in members.items" :key="index">
-          <q-item>
-            <q-item-section>
-              <q-item-label v-if="member.summary" class="text-h6"
-                >Description:</q-item-label
-              >
-              <q-item-label caption v-if="member.summary" class="on-right">
-                <span
-                  v-for="(line, index) in getLines(member.summary)"
-                  :key="1000 + index"
-                >
-                  <br v-if="index > 0" />
-                  {{ line }}
-                </span>
-              </q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <div class="q-pl-lg">
-            <!--Syntax-->
+      <template v-if="members && members.items && members.items.length>0">
+        <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
+          <q-breadcrumbs-el icon="home" :to="baseUrl" />
+          <q-breadcrumbs-el
+            :label="datatype.namespace"
+            :to="baseUrl + datatype.namespace.toLowerCase()"
+          />
+          <q-breadcrumbs-el
+            :label="datatype.name"
+            :to="
+              (baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()
+            "
+          />
+          <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
+        </q-breadcrumbs>
+        <h1>{{ getTitle(datatype, members) }}</h1>
+        <p v-if="datatype">
+          Class:&nbsp;
+          <router-link
+            class="routerlink"
+            :to="
+              baseUrl +
+              datatype.namespace.toLowerCase() +
+              '.' +
+              datatype.name.toLowerCase()
+            "
+          >
+            {{ datatype.namespace }}.{{ datatype.name }}
+          </router-link>
+        </p>
+        <q-list>
+          <div v-for="(member, index) in members.items" :key="index">
             <q-item>
               <q-item-section>
-                <q-item-label v-if="member.signature" class="text-h6"
-                  >Syntax:</q-item-label
+                <q-item-label v-if="member.summary" class="text-h6"
+                  >Description:</q-item-label
                 >
-                <q-card
-                  flat
-                  bordered
-                  style="font-family: monospace; margin: 10px; padding: 10px"
-                >
-                  <q-card-section horizontal>
-                    <q-item-label
-                      style="font-size: 18px; width: 100%"
-                      :class="member.deprecated && 'light-dimmed'"
-                    >
-                      <template v-for="chunk,id in signature(member)" :key="id">
-                        <template v-if="chunk.indent">
-                          <br/>
-                          <span class="q-pl-lg"></span>
-                        </template>
-                        <template v-if="chunk.break">
-                          <br/>
-                        </template>
-                        <template v-if="chunk.link">
-                          <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
-                          <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
-                        </template>
-                        <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
-                      </template>
-                    </q-item-label>
-                    <q-card-actions vertical class="">
-                      <q-btn
-                        flat
-                        round
-                        color="blue"
-                        icon="mdi-content-copy"
-                        @click="copyToClipboard(member.signature)"
-                      ></q-btn>
-                    </q-card-actions>
-                  </q-card-section>
-                </q-card>
-              </q-item-section>
-            </q-item>
-            <q-item>
-              <q-item-section>
-                <q-item-label caption class="on-right">
-                  <q-badge v-if="member.deprecated" outline color="negative"
-                    >deprecated in {{ member.deprecated }}
-                    <q-tooltip
-                      >Deprecated in version {{ member.deprecated }}</q-tooltip
-                    >
-                  </q-badge>
-                </q-item-label>
-                <q-item-label v-if="member.parameters" class="text-h6"
-                  >Parameters:</q-item-label
-                >
-                <q-item-label
-                  class="row"
-                  v-for="parameter in member.parameters"
-                  :key="parameter.name"
-                >
-                  <ul
-                    style="
-                      padding-inline-start: 0px;
-                      list-style-type: none;
-                      margin-block-start: 0;
-                      margin-block-end: 5px;
-                    "
+                <q-item-label caption v-if="member.summary" class="on-right">
+                  <span
+                    v-for="(line, index) in getLines(member.summary)"
+                    :key="1000 + index"
                   >
-                    <li class="text-italic">{{ parameter.name }}</li>
-                    <li class="q-pl-lg text-weight-light">
-                      <span>Type: </span>
-                      <template v-if="typeUrl(parameter.type)">
-                        <router-link
-                          class="routerlink text-weight-regular"
-                          :to="typeUrl(parameter.type)"
-                          v-if="!typeUrl(parameter.type).toLowerCase().startsWith('http')"
-                        >
-                          {{ parameter.type }}
-                        </router-link>
-                        <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
-                        </template
-                      >
-                      <template v-else
-                        ><span
-                          class="disabled disabledLink text-weight-regular"
-                          >{{ parameter.type }}</span
-                        ></template
-                      >
-                    </li>
-                    <li
-                      v-html="parameter.summary"
-                      class="q-pl-lg text-weight-light"
-                    ></li>
-                  </ul>
-                </q-item-label>
-                <q-item-label
-                  v-if="signature(member).filter(m => m.isReturn).length>0"
-                  class="text-h6"
-                  style="margin-top: 10px"
-                  >Returns:
-                </q-item-label>
-                <q-item-label
-                  class="on-right text-weight-light"
-                >
-                  <template v-for="(returnType, index) in signature(member).filter(m => m.isReturn)" :key="index">
-                    <template v-if="returnType.link">
-                      Type:
-                            <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}</router-link>
-                            <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
-                  </template>
-                  <template v-else>
-                        Type: {{returnType.name}}
-                  </template>
-                  </template>
-
-
-                </q-item-label>
-                <q-item-label
-                  class="on-right text-weight-light"
-                  v-if="member.returns"
-                >
-                {{ member.returns }}
-              </q-item-label>
-                <q-item-label
-                  v-if="member.remarks"
-                  class="text-h6"
-                  style="margin-top: 10px"
-                  >Remarks:</q-item-label
-                >
-                <q-item-label
-                  class="on-right text-weight-light"
-                  v-if="member.remarks"
-                >
-                <div v-html="member.remarks"></div>
-                </q-item-label>
-                <q-item-label
-                  caption
-                  v-if="member.since"
-                  class="text-bold"
-                  style="margin-top: 10px"
-                  >Available since:</q-item-label
-                >
-                <q-item-label caption class="on-right" v-if="member.since">
-                  {{ member.since }}
+                    <br v-if="index > 0" />
+                    {{ line }}
+                  </span>
                 </q-item-label>
               </q-item-section>
             </q-item>
-            <q-item
-              v-if="member.examples && member.examples.length > 0"
-              dense
-              class="on-right"
-              style="margin-top: 10px"
-            >
-              <q-btn
-                no-caps
-                outline
+            <div class="q-pl-lg">
+              <!--Syntax-->
+              <q-item>
+                <q-item-section>
+                  <q-item-label v-if="member.signature" class="text-h6"
+                    >Syntax:</q-item-label
+                  >
+                  <q-card
+                    flat
+                    bordered
+                    style="font-family: monospace; margin: 10px; padding: 10px"
+                  >
+                    <q-card-section horizontal>
+                      <q-item-label
+                        style="font-size: 18px; width: 100%"
+                        :class="member.deprecated && 'light-dimmed'"
+                      >
+                        <template v-for="chunk,id in signature(member)" :key="id">
+                          <template v-if="chunk.indent">
+                            <br/>
+                            <span class="q-pl-lg"></span>
+                          </template>
+                          <template v-if="chunk.break">
+                            <br/>
+                          </template>
+                          <template v-if="chunk.link">
+                            <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
+                            <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
+                          </template>
+                          <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
+                        </template>
+                      </q-item-label>
+                      <q-card-actions vertical class="">
+                        <q-btn
+                          flat
+                          round
+                          color="blue"
+                          icon="mdi-content-copy"
+                          @click="copyToClipboard(member.signature)"
+                        ></q-btn>
+                      </q-card-actions>
+                    </q-card-section>
+                  </q-card>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <q-item-label caption class="on-right">
+                    <q-badge v-if="member.deprecated" outline color="negative"
+                      >deprecated in {{ member.deprecated }}
+                      <q-tooltip
+                        >Deprecated in version {{ member.deprecated }}</q-tooltip
+                      >
+                    </q-badge>
+                  </q-item-label>
+                  <q-item-label v-if="member.parameters" class="text-h6"
+                    >Parameters:</q-item-label
+                  >
+                  <q-item-label
+                    class="row"
+                    v-for="parameter in member.parameters"
+                    :key="parameter.name"
+                  >
+                    <ul
+                      style="
+                        padding-inline-start: 0px;
+                        list-style-type: none;
+                        margin-block-start: 0;
+                        margin-block-end: 5px;
+                      "
+                    >
+                      <li class="text-italic">{{ parameter.name }}</li>
+                      <li class="q-pl-lg text-weight-light">
+                        <span>Type: </span>
+                        <template v-if="typeUrl(parameter.type)">
+                          <router-link
+                            class="routerlink text-weight-regular"
+                            :to="typeUrl(parameter.type)"
+                            v-if="!typeUrl(parameter.type).toLowerCase().startsWith('http')"
+                          >
+                            {{ parameter.type }}
+                          </router-link>
+                          <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
+                          </template
+                        >
+                        <template v-else
+                          ><span
+                            class="disabled disabledLink text-weight-regular"
+                            >{{ parameter.type }}</span
+                          ></template
+                        >
+                      </li>
+                      <li
+                        v-html="parameter.summary"
+                        class="q-pl-lg text-weight-light"
+                      ></li>
+                    </ul>
+                  </q-item-label>
+                  <q-item-label
+                    v-if="signature(member).filter(m => m.isReturn).length>0"
+                    class="text-h6"
+                    style="margin-top: 10px"
+                    >Returns:
+                  </q-item-label>
+                  <q-item-label
+                    class="on-right text-weight-light"
+                  >
+                    <template v-for="(returnType, index) in signature(member).filter(m => m.isReturn)" :key="index">
+                      <template v-if="returnType.link">
+                        Type:
+                              <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}</router-link>
+                              <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
+                    </template>
+                    <template v-else>
+                          Type: {{returnType.name}}
+                    </template>
+                    </template>
+                  </q-item-label>
+                  <q-item-label
+                    class="on-right text-weight-light"
+                    v-if="member.returns"
+                  >
+                  {{ member.returns }}
+                </q-item-label>
+                  <q-item-label
+                    v-if="member.remarks"
+                    class="text-h6"
+                    style="margin-top: 10px"
+                    >Remarks:</q-item-label
+                  >
+                  <q-item-label
+                    class="on-right text-weight-light"
+                    v-if="member.remarks"
+                  >
+                  <div v-html="member.remarks"></div>
+                  </q-item-label>
+                  <q-item-label
+                    caption
+                    v-if="member.since"
+                    class="text-bold"
+                    style="margin-top: 10px"
+                    >Available since:</q-item-label
+                  >
+                  <q-item-label caption class="on-right" v-if="member.since">
+                    {{ member.since }}
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item
+                v-if="member.examples && member.examples.length > 0"
                 dense
-                size="sm"
-                icon="mdi-code-tags"
-                color="secondary"
-                :to="exampleUrl(member)"
+                class="on-right"
+                style="margin-top: 10px"
               >
-                Example
-              </q-btn>
-            </q-item>
+                <q-btn
+                  no-caps
+                  outline
+                  dense
+                  size="sm"
+                  icon="mdi-code-tags"
+                  color="secondary"
+                  :to="exampleUrl(member)"
+                >
+                  Example
+                </q-btn>
+              </q-item>
+            </div>
+            <q-separator spaced inset />
           </div>
-          <q-separator spaced inset />
-        </div>
-      </q-list>
+        </q-list>
+      </template>
+      <template v-else>
+        <q-banner inline-actions class="text-white bg-red">
+          Not Found
+          <template v-slot:action v-if="$route.query.version">
+            <q-btn flat color="white" style="pointer-events: none;" label="Try Increasing Target Version" />
+          </template>
+        </q-banner>
+      </template>
     </div>
   </q-page>
 </template>
@@ -294,6 +300,10 @@ export default {
       this.memberName = route.params.member.toLowerCase();
       const members = this.getMembers(this.datatype, this.memberName);
 
+      if (!members.items || members.items.length == 0){
+        return;
+      }
+
       if (route.query["overload"]){
         //overloads are indexed from 1 and up
         members.items = [members.items[route.query["overload"]-1]]
@@ -303,6 +313,15 @@ export default {
         const examples = this.getExamples(this.datatype, m);
         return { ...m, examples };
       });
+
+      if (route.query.version){
+        members.items = members.items.filter((m) => {
+          const include = route.query.version && m.since && ViewModel.sinceIsGreater(route.query.version, m.since);
+          // console.log("testing:", m, "against", route.query.version, include);
+          return include;
+        });
+      }
+
       this.members = Object.freeze(members);
       const selectedItem = decodeURI(
         route.fullPath.substring(this.baseUrl.length)
