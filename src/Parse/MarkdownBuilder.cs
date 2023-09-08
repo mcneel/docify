@@ -126,6 +126,11 @@ namespace Docify.Parse
                         content.AppendLine("## Constructors");
                         state = ParsedMemberType.Constructor;
                     }
+                    if (item.IsIndexer && state != ParsedMemberType.Indexer)
+                    {
+                        content.AppendLine("## Indexers");
+                        state = ParsedMemberType.Indexer;
+                    }
                     content.AppendLine();
                     string signature = item.Signature(false);
                     var returntype = item.ReturnType(types.Values);
