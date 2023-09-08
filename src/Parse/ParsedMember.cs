@@ -425,6 +425,27 @@ namespace Docify.Parse
                     return signature;
                 }
             }
+            {
+                IndexerDeclarationSyntax indexerMember = Member as IndexerDeclarationSyntax;
+                if (indexerMember != null)
+                {
+                    var signature = new System.Text.StringBuilder();
+                    if (forSorting)
+                    {
+                        signature.Append($"{ClassPath}.this[{indexerMember.ParameterList.Parameters[0]}]");
+                    }
+                    else
+                    {
+                        string proptype = $"{indexerMember.Type}";
+                        int index = proptype.LastIndexOf('.');
+                        if (index > 0)
+                            proptype = proptype.Substring(index + 1);
+                        signature.Append($"{prefix}{proptype} this[{indexerMember.ParameterList.Parameters[0]}]");
+                    }
+                    return signature.ToString();
+
+                }
+            }
             throw new NotImplementedException();
         }
 
