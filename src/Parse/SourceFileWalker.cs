@@ -76,6 +76,13 @@ namespace Docify.Parse
             base.VisitMethodDeclaration(node);
         }
 
+        public override void VisitIndexerDeclaration(IndexerDeclarationSyntax node)
+        {
+            var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
+            base.VisitIndexerDeclaration(node);
+        }
+
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
