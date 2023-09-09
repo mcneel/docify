@@ -442,6 +442,27 @@ export default {
         }
       }
 
+      if (datatype.indexers) {
+        const indexers = [];
+        for (let i = 0; i < datatype.indexers.length; i++) {
+          const field = datatype.indexers[i];
+          const declaration = field.signature.split("=")[0].trim();
+          const name = declaration.split(" ").slice(-1)[0];
+          if (name.toLowerCase() === memberName) indexers.push(field);
+        }
+        if (indexers.length > 0) {
+          // Not sorted in tree, therefore not sorted here
+          // const m = { indexers: true };
+          // indexers.sort((a, b) =>
+          //   ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
+          // );
+          return {
+            isField: true,
+            items: indexers,
+          };
+        }
+      }
+
       return {};
     },
     getLines(text) {
