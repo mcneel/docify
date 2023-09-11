@@ -316,8 +316,9 @@ export default {
 
       if (route.query.version){
         members.items = members.items.filter((m) => {
+          if (!m.since){return true;}
           const include = route.query.version && m.since && ViewModel.sinceIsGreater(route.query.version, m.since);
-          // console.log("testing:", m, "against", route.query.version, include);
+          // console.log("testing:", m.since, "against", route.query.version, include);
           return include;
         });
       }
@@ -348,6 +349,7 @@ export default {
           const chunks = prop.signature.split(" ");
           const name = chunks[chunks.length - 1];
           if (name.toLowerCase() === memberName) props.push(prop);
+          else if (memberName == "item" && prop.signature.includes("this[int")) props.push(prop);
         }
         if (props.length > 0) {
           const m = { properties: true };
@@ -442,27 +444,6 @@ export default {
         }
       }
 
-      if (datatype.indexers) {
-        const indexers = [];
-        for (let i = 0; i < datatype.indexers.length; i++) {
-          const field = datatype.indexers[i];
-          const declaration = field.signature.split("=")[0].trim();
-          const name = declaration.split(" ").slice(-1)[0];
-          if (name.toLowerCase() === memberName) indexers.push(field);
-        }
-        if (indexers.length > 0) {
-          // Not sorted in tree, therefore not sorted here
-          // const m = { indexers: true };
-          // indexers.sort((a, b) =>
-          //   ViewModel.memberName(a, m).localeCompare(ViewModel.memberName(b, m))
-          // );
-          return {
-            isField: true,
-            items: indexers,
-          };
-        }
-      }
-
       return {};
     },
     getLines(text) {
@@ -476,6 +457,10 @@ export default {
         return datatype.name + " constructor";
       }
       if (members.isProperty) {
+       if (members.items[0].signature.includes("this[int"))
+       {
+          return "Item property"
+       }
         const chunks = members.items[0].signature.split(" ");
         return chunks[chunks.length - 1] + " property";
       }

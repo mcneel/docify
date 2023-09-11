@@ -375,8 +375,13 @@ namespace Docify.Parse
             bool memberAdded = false;
             foreach (var member in type.Members)
             {
-                if (filter != member.MemberType)
-                    continue;
+                if (filter == ParsedMemberType.Property && member.MemberType == ParsedMemberType.Indexer){
+                    //Don't skip: Adding indexers as properies
+                }
+                else{
+                    if (filter != member.MemberType)
+                        continue;
+                }
                 if (memberAdded)
                     sb.AppendLine(",");
                 sb.AppendLine("      {");

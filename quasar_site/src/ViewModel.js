@@ -118,10 +118,6 @@ const ViewModel = {
           if (fields) {
             children.push(fields);
           }
-          const indexers = this.childTree(type, "Indexers");
-          if (indexers) {
-            children.push(indexers);
-          }
 
           //replace the populated child in the _viewmodel and _pathMap
           _pathMap[this.itemPath(type)]["children"] = children;
@@ -178,8 +174,7 @@ const ViewModel = {
             type.properties ||
             type.events ||
             type.operators ||
-            type.fields ||
-            type.indexers
+            type.fields
           ) {
             item["lazy"] = true;
           }
@@ -363,11 +358,6 @@ const ViewModel = {
           if (m.since && this.sinceIsGreater(m.since, since)) since = m.since;
         });
       }
-      if (type.indexers) {
-        type.indexers.forEach((m) => {
-          if (m.since && this.sinceIsGreater(m.since, since)) since = m.since;
-        });
-      }
     });
     return since;
   },
@@ -384,7 +374,6 @@ const ViewModel = {
         values: [],
         operators: [],
         fields: [],
-        indexers: [],
       };
       if (type.namespace) localApi.namespace = type.namespace;
       let added = test(type, type.constructors, localApi.constructors);
@@ -392,7 +381,6 @@ const ViewModel = {
       added += test(type, type.methods, localApi.methods);
       added += test(type, type.operators, localApi.operators);
       added += test(type, type.fields, localApi.fields);
-      added += test(type, type.indexers, localApi.indexers);
       if (type.values && type.since === "7.0") {
         added += test(type, type.values, localApi.values);
       }
@@ -705,7 +693,11 @@ const ViewModel = {
       const match = member.signature.match(/\S*\(.*\)/g);
       return match[0];
     }
-    //TODO: maybe return item as signature of indexer
+    if (memberType == "properties") {
+      if (member.signature.includes("this[int")) {
+        return "Item";
+      }
+    }
     const tokens = member.signature.split(" ");
     let name = tokens[1];
     if (tokens[0] === "static") {

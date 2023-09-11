@@ -236,17 +236,6 @@ export default {
             type: 'events'
           }))
         }
-
-        parentName = item.namespace + '.' + item.name
-        const indexers = ViewModel.getMembers(item, "indexers", true)
-        if (indexers && indexers.length > 0) {
-          rc.push(Object.freeze({
-            title: 'Indexers (' + indexers.length + ')',
-            items: Object.freeze(indexers),
-            expanded: expandedType ?'indexers' == expandedType : true, //expand everything if no hash
-            type: 'indexers'
-          }))
-        }
       }
       return rc
     },
@@ -334,7 +323,6 @@ export default {
       this.ExpandedSections['values'] = expandedType ?'values' == expandedType : true //expand everything if no hash
       this.ExpandedSections['operators'] = expandedType ?'operators' == expandedType : true //expand everything if no hash
       this.ExpandedSections['fields'] = expandedType ?'fields' == expandedType : true //expand everything if no hash
-      this.ExpandedSections['indexers'] = expandedType ?'indexers' == expandedType : true //expand everything if no hash
     }
   },
   methods: {
@@ -356,9 +344,6 @@ export default {
       }
       if (section.type == 'fields') {
         return 'fields'
-      }
-      if (section.type == 'indexers') {
-        return 'indexers'
       }
       return ''
     },
