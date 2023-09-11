@@ -15,7 +15,7 @@
           </span>
         </p>
         <i v-for="(item, index) in inheritence" :key="item.name">
-          <i v-if="index === 0">Inheritence: </i>
+          <i v-if="index === 0">inheritence: </i>
           <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
           }}</router-link>
           <i v-else>{{ item.name }}</i>
@@ -137,7 +137,7 @@ export default {
     },
     inheritence: function () {
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
-      return ViewModel.getInheritence(node)
+      return ViewModel.getinheritence(node)
     },
     memberSections: function () {
       const item = ViewModel.findNodeByPath(this.$route.params.datatype)

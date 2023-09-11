@@ -283,7 +283,7 @@ const ViewModel = {
       }
     }
   },
-  getInheritence(item) {
+  getinheritence(item) {
     const rc = [];
     let count = 0;
     while (item && item.baseclass) {
@@ -593,7 +593,7 @@ const ViewModel = {
   },
 
   getMembers(node, memberType, inherited = true) {
-    const inheritence = this.getInheritence(node);
+    const inheritence = this.getinheritence(node);
     let members = [].concat(node[memberType]);
 
     if (node[memberType]) {
@@ -692,6 +692,11 @@ const ViewModel = {
     if (memberType == "methods") {
       const match = member.signature.match(/\S*\(.*\)/g);
       return match[0];
+    }
+    if (memberType == "properties") {
+      if (member.signature.includes("this[int")) {
+        return "Item";
+      }
     }
     const tokens = member.signature.split(" ");
     let name = tokens[1];

@@ -316,8 +316,9 @@ export default {
 
       if (route.query.version){
         members.items = members.items.filter((m) => {
+          if (!m.since){return true;}
           const include = route.query.version && m.since && ViewModel.sinceIsGreater(route.query.version, m.since);
-          // console.log("testing:", m, "against", route.query.version, include);
+          // console.log("testing:", m.since, "against", route.query.version, include);
           return include;
         });
       }
@@ -348,6 +349,7 @@ export default {
           const chunks = prop.signature.split(" ");
           const name = chunks[chunks.length - 1];
           if (name.toLowerCase() === memberName) props.push(prop);
+          else if (memberName == "item" && prop.signature.includes("this[int")) props.push(prop);
         }
         if (props.length > 0) {
           const m = { properties: true };
@@ -455,6 +457,10 @@ export default {
         return datatype.name + " constructor";
       }
       if (members.isProperty) {
+       if (members.items[0].signature.includes("this[int"))
+       {
+          return "Item property"
+       }
         const chunks = members.items[0].signature.split(" ");
         return chunks[chunks.length - 1] + " property";
       }

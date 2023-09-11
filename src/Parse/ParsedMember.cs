@@ -14,6 +14,7 @@ namespace Docify.Parse
         EnumValue = 5,
         Operator = 6,
         Field = 7,
+        Indexer = 8,
     }
 
     /// <summary>
@@ -34,9 +35,8 @@ namespace Docify.Parse
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
             if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
             if (Member is OperatorDeclarationSyntax) mt = ParsedMemberType.Operator;
-            if (Member is FieldDeclarationSyntax){
-                mt = ParsedMemberType.Field;
-            }
+            if (Member is FieldDeclarationSyntax) mt = ParsedMemberType.Field;
+            if (Member is IndexerDeclarationSyntax) mt = ParsedMemberType.Indexer;
             MemberType = mt;
             _usingDirectives = usingDirectives;
         }
@@ -156,6 +156,7 @@ namespace Docify.Parse
         public bool IsMethod { get { return Member is MethodDeclarationSyntax; } }
         public bool IsOperator { get { return Member is OperatorDeclarationSyntax; } }
         public bool IsField { get { return Member is FieldDeclarationSyntax; } }
+        public bool IsIndexer { get { return Member is IndexerDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {
