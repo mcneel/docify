@@ -30,3 +30,7 @@ jobs:
         git commit -m "CI build"
         git push heroku master --force
 
+    - name: invalidate cache
+      run: |
+        curl --location 'https://api.mcneel.com/cloudfront/invalidate' --header 'Authorization: Basic ${{ secrets.BOZO_API_KEY }}' --header 'Content-Type: application/json' --data '{"url":"https://developer.rhino3d.com/api/*"}'
+
