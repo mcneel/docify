@@ -1,4 +1,5 @@
 [
+  
   {
     "name": "Activeviewport.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result ActiveViewport(Rhino.RhinoDoc doc)\n  {\n    Rhino.Display.RhinoView view = doc.Views.ActiveView;\n    if (view == null)\n      return Rhino.Commands.Result.Failure;\n\n    Rhino.Display.RhinoPageView pageview = view as Rhino.Display.RhinoPageView;\n    if (pageview != null)\n    {\n      string layout_name = pageview.PageName;\n      if (pageview.PageIsActive)\n      {\n        Rhino.RhinoApp.WriteLine(\"The layout {0} is active\", layout_name);\n      }\n      else\n      {\n        string detail_name = pageview.ActiveViewport.Name;\n        Rhino.RhinoApp.WriteLine(\"The detail {0} on layout {1} is active\", detail_name, layout_name);\n      }\n    }\n    else\n    {\n      string viewport_name = view.MainViewport.Name;\n      Rhino.RhinoApp.WriteLine(\"The viewport {0} is active\", viewport_name);\n    }\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
