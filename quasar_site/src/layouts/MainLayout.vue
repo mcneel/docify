@@ -25,7 +25,7 @@
               </q-item>
             </q-list>
           </q-btn-dropdown>
-          <q-btn v-if="filterVersion==version" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
+          <q-btn v-if="filterVersion.split('.')[0]== version.split('.')[0]" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
             <q-tooltip>What's new in version {{ version }}</q-tooltip>
           </q-btn>
           <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
