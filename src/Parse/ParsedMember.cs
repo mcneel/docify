@@ -522,16 +522,5 @@ namespace Docify.Parse
             }
             return rc;
         }
-
-        public string IsObsolete()
-        {
-            foreach (AttributeListSyntax att in Member.AttributeLists)
-            {
-                if (att.ToString().StartsWith("[Obsolete(")){
-                    return "obsolete"; //TODO: extract the note
-                }
-            }
-            return "";
-        }
     }
 }
