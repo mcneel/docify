@@ -382,14 +382,6 @@ namespace Docify.Parse
                     if (filter != member.MemberType)
                         continue;
                 }
-
-                string obsolete = member.IsObsolete();
-
-                if (!string.IsNullOrWhiteSpace(obsolete))
-                {
-                    continue;
-                }
-
                 if (memberAdded)
                     sb.AppendLine(",");
                 sb.AppendLine("      {");
@@ -420,19 +412,9 @@ namespace Docify.Parse
                     //sb.Append($"        deprecated: '{deprecated}'");
                 }
 
-                // string obsolete = member.IsObsolete();
-
-                // if (!string.IsNullOrWhiteSpace(obsolete))
-                // {
-                //     sb.AppendLine(",");
-                //     sb.Append(KeyValString(8, "obsolete", obsolete, asJavascript));
-                // }
-
-                if (member.Signature(false).Contains("Plane EquitorialPlane")){
+                if (member.Signature(false).Contains("static Mesh CreateFromCurveExtrusion")){
                     var inspecting = member;
                 }
-
-
                 string remarks = member.Remarks();
                 if (!string.IsNullOrWhiteSpace(remarks))
                 {
