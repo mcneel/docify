@@ -64,7 +64,7 @@
                     <q-card-section horizontal>
                       <q-item-label
                         style="font-size: 18px; width: 100%"
-                        :class="member.deprecated && 'light-dimmed'"
+                        :class="member.deprecated && 'disabled'"
                       >
                         <template v-for="chunk,id in signature(member)" :key="id">
                           <template v-if="chunk.indent">
