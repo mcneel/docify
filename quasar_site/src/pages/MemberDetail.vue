@@ -160,9 +160,10 @@
                     <template v-for="(returnType, index) in signature(member).filter(m => m.isReturn)" :key="index">
                       <template v-if="returnType.link">
                         Type:
-                              <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}</router-link>
+                              <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}
+                                <q-tooltip v-if="returnType.enumValues">{{returnType.enumValues}}</q-tooltip>
+                              </router-link>
                               <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
-                              <q-tooltip v-if="returnType.enumValues">{{returnType.enumValues}}</q-tooltip>
                     </template>
                     <template v-else>
                           Type: {{returnType.name}}
