@@ -75,7 +75,10 @@
                             <br/>
                           </template>
                           <template v-if="chunk.link">
-                            <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">{{chunk.name}}</router-link>
+                            <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">
+                              {{chunk.name}}
+                              <q-tooltip v-if="chunk.enumValues">{{chunk.enumValues}}</q-tooltip>
+                            </router-link>
                             <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
                           </template>
                           <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
@@ -164,7 +167,6 @@
                                 <q-tooltip v-if="returnType.enumValues">{{returnType.enumValues}}</q-tooltip>
                               </router-link>
                               <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
-                              <q-tooltip v-if="returnType.enumValues">{{returnType.enumValues}}</q-tooltip>
                     </template>
                     <template v-else>
                           Type: {{returnType.name}}
