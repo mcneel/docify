@@ -132,6 +132,7 @@
                             {{ parameter.type }}
                           </router-link>
                           <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
+                          <q-tooltip v-if="typeFromToken(parameter.type) && typeFromToken(parameter.type)['dataType']=='enum'">{{ typeFromToken(parameter.type).values.map(v => v.signature) }}</q-tooltip>
                           </template
                         >
                         <template v-else
@@ -161,6 +162,7 @@
                         Type:
                               <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}</router-link>
                               <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
+                              <q-tooltip v-if="returnType.enumValues">{{returnType.enumValues}}</q-tooltip>
                     </template>
                     <template v-else>
                           Type: {{returnType.name}}
@@ -487,6 +489,13 @@ export default {
       return this.memberName;
     },
     tokenPath(token) {
+      const type = this.typeFromToken(token);
+      if (!type){
+        return null;
+      }
+      return ViewModel.itemPath(type);
+    },
+    typeFromToken(token) {
       // skip tokens that start with a lower case letter
       if (token.length < 1 || token[0] === token[0].toLowerCase()) return null;
       if (token.endsWith("[]")) token = token.substring(0, token.length - 2);
@@ -500,7 +509,7 @@ export default {
           return null;
         }
       }
-      return ViewModel.itemPath(type);
+      return type
     },
     typeUrl(typeToken){
     const tokenPath = this.tokenPath(typeToken)
@@ -532,12 +541,14 @@ export default {
         // const tokenPath = this.tokenPath(tokens[0])
         // const link = tokenPath ? this.baseUrl + tokenPath : null
         const link = this.typeUrl(tokens[0]);
+        const returnType = this.typeFromToken(tokens[0]);
         const name = tokens[0].split(".").slice(-1)[0];
         if (link) {
           chunks.push({
             link: link,
             name: name,
-            isReturn: true
+            isReturn: true,
+            enumValues: returnType["dataType"] == "enum" ? returnType.values.map(v => v.signature) : null
           })
           chunks.push({ name: ' ' })
         } else {
@@ -578,7 +589,7 @@ export default {
           }
           chunks.push({
             link: link,
-            name: typeToken + ' '
+            name: typeToken + ' ',
           })
           chunks.push({ name: paramName, role:"name" })
         }
