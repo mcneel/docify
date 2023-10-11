@@ -28,7 +28,7 @@
           <q-btn v-if="filterVersion.split('.')[0]== version.split('.')[0]" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
             <q-tooltip>What's new in version {{ version }}</q-tooltip>
           </q-btn>
-          <q-btn flat round @click="$q.dark.toggle()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
+          <q-btn flat round @click="toggleDarkMode()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
             <q-tooltip>Toggle dark mode</q-tooltip>
           </q-btn>
         </q-toolbar>
@@ -73,6 +73,7 @@
 import ViewModel from '../ViewModel'
 import SearchPage from 'src/pages/SearchPage.vue';
 import { scroll } from 'quasar'
+import { useQuasar } from 'quasar'
 const { getScrollTarget } = scroll
 
 let initialDrawerWidth;
@@ -86,6 +87,7 @@ export default {
     const mostRecent = ViewModel.mostRecentSince();
     ViewModel.setMaxVersion(mostRecent);
     const vm = ViewModel.getTree(mostRecent);
+    const $q = useQuasar();
     return {
       leftDrawerOpen: false,
       drawerWidth: 300,
@@ -100,6 +102,7 @@ export default {
       shouldAutoScroll: true,
       bannerVisible: true,
       filterVersion: `${mostRecent.split(".")[0]}.x`,
+      $q
     };
   },
   created() {
@@ -112,6 +115,10 @@ export default {
     else{
       this.onChangeVersionFilter(`${this.version.split(".")[0]}.x`);
     }
+      const wasDark = localStorage.getItem('darkMode');
+      if (this.$q.dark.isActive.toString() != wasDark){
+        this.$q.dark.toggle()
+      }
   },
   methods: {
     onChangeVersionFilter (item) {
@@ -160,6 +167,11 @@ export default {
     onLazyLoad({ node, key, done, fail }) {
       const childNodes = ViewModel.lazyChildForPath(node.path, this.filterVersion);
       done(childNodes);
+    },
+    toggleDarkMode(){
+      console.log("toggling")
+      this.$q.dark.toggle();
+      localStorage.setItem('darkMode', this.$q.dark.isActive)
     }
   },
   watch: {

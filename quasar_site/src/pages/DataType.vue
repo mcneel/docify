@@ -366,7 +366,7 @@ export default {
       return lines
     },
     memberClass(member) {
-      if (member.deprecated) return 'light-dimmed'
+      if (member.deprecated) return 'disabled'
       return ''
     },
   }
