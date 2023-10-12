@@ -2,8 +2,8 @@
   <div class="fixed-center text-center">
     <p class="text-faded">
       Sandcastle... <strong>(404)</strong>
-      <!-- <br/><br/>
-      {{this.$route.path}} → <a :href="p">{{p}}</a> -->
+      <br/><br/>
+      {{this.$route.path}} → <router-link class="routerlink" :to="redirectPath">{{ redirectPath }}</router-link>
     </p>
 
   </div>
@@ -12,9 +12,14 @@
 <script>
 export default {
   name: 'SandcastleRedirect',
+
+  data() {
+    return {
+      redirectPath: "",
+    };
+  },
   created () {
     let ref = this.$route.params.ref
-    console.log("ref:", ref)
     if (ref.endsWith('.htm')) {
       ref = ref.slice(0, -4)
     } else {
@@ -64,14 +69,8 @@ export default {
     const base = this.$route.fullPath
     let p = base.split('/').slice(0, -2).join('/') + '/' + t
     p = p.toLowerCase()
-
-    console.log("p:", p)
-    this.$router.push(p)
-
-    // return {
-    //   t: t,
-    //   p: p
-    // }
-  }
+    this.redirectPath = p;
+    this.$router.push({path:p, replace: true })
+  },
 }
 </script>
