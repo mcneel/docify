@@ -64,6 +64,7 @@ export default {
     let p = base.split('/').slice(0, -2).join('/') + '/' + t
     p = p.toLowerCase()
 
+    console.log("p:", p)
     this.$router.push(p)
 
     // return {
