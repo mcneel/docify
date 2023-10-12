@@ -552,7 +552,7 @@ export default {
             link: link,
             name: name,
             isReturn: true,
-            enumValues: returnType["dataType"] == "enum" ? returnType.values.map(v => v.signature) : null
+            enumValues: returnType && returnType["dataType"] == "enum" ? returnType.values.map(v => v.signature) : null
           })
           chunks.push({ name: ' ' })
         } else {
