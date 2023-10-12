@@ -48,6 +48,12 @@ const routes = [
         component: () => import("pages/DataType.vue"),
         props: apiProps,
       },
+    ],
+  },
+
+  {
+    path: apiPath,
+    children: [
       {
         path: "html/:ref",
         component: () => import("pages/SandcastleRedirect.vue"),
@@ -57,10 +63,10 @@ const routes = [
 
   // Always leave this as last one,
   // but you can also remove it
-  {
-    path: "/:catchAll(.*)*",
-    component: () => import("pages/ErrorNotFound.vue"),
-  },
+  // {
+  //   path: "/:catchAll(.*)*",
+  //   component: () => import("pages/ErrorNotFound.vue"),
+  // },
 ];
 
 export default routes

@@ -14,7 +14,6 @@ export default {
   name: 'SandcastleRedirect',
   created () {
     let ref = this.$route.params.ref
-    console.log("ref:", ref)
     if (ref.endsWith('.htm')) {
       ref = ref.slice(0, -4)
     } else {
@@ -27,6 +26,8 @@ export default {
 
     const r = ref.split('_')
     let t
+
+    console.log("r", r)
 
     // examples are from legacy rhinocommon api urls built on sandcastle
     switch (r[0]) {
@@ -62,10 +63,9 @@ export default {
 
     // console.log(this.$route)
     const base = this.$route.fullPath
+
     let p = base.split('/').slice(0, -2).join('/') + '/' + t
     p = p.toLowerCase()
-
-    console.log("p:", p)
     this.$router.push(p)
 
     // return {
