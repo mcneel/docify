@@ -14,6 +14,7 @@ export default {
   name: 'SandcastleRedirect',
   created () {
     let ref = this.$route.params.ref
+    console.log("ref:", ref)
     if (ref.endsWith('.htm')) {
       ref = ref.slice(0, -4)
     } else {
