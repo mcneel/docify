@@ -70,7 +70,7 @@ export default {
     let p = base.split('/').slice(0, -2).join('/') + '/' + t
     p = p.toLowerCase()
     this.redirectPath = p;
-    this.$router.push({path:p, replace: true })
+    this.$router.push(p)
   },
 }
 </script>
