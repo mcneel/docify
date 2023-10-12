@@ -113,7 +113,10 @@ export default {
         this.onChangeVersionFilter(this.$route.query.version);
     }
     else{
-      this.onChangeVersionFilter(`${this.version.split(".")[0]}.x`);
+      //Don't add version to redirect urls from sandcastle
+      if (!this.$route.path.startsWith("/html/")){
+        this.onChangeVersionFilter(`${this.version.split(".")[0]}.x`);
+      }
     }
       const wasDark = localStorage.getItem('darkMode');
       if (this.$q.dark.isActive.toString() != wasDark){
