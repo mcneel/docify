@@ -39,13 +39,14 @@
                   >Description:</q-item-label
                 >
                 <q-item-label caption v-if="member.summary" class="on-right">
-                  <span
+                  <!--<span
                     v-for="(line, index) in getLines(member.summary)"
                     :key="1000 + index"
                   >
                     <br v-if="index > 0" />
                     {{ line }}
-                  </span>
+                  </span>-->
+                  <p><span v-html="member.summary"></span></p>
                 </q-item-label>
               </q-item-section>
             </q-item>
