@@ -582,6 +582,8 @@ export default {
           let typeToken = paramChunks[paramChunks.length - 2]
           const paramName = paramChunks[paramChunks.length - 1]
           const link = this.typeUrl(typeToken);
+          const paramType = this.typeFromToken(typeToken);
+          const  enumValues = paramType && paramType["dataType"] == "enum" ? paramType.values.map(v => v.signature) : null
 
           //remove namespaced types (usually system.blah.blah)
           typeToken= typeToken.split(".").slice(-1)[0]
@@ -593,6 +595,7 @@ export default {
           }
           chunks.push({
             link: link,
+            enumValues,
             name: typeToken + ' ',
           })
           chunks.push({ name: paramName, role:"name" })
