@@ -257,12 +257,12 @@ body.body--dark,
 }
 
 a.routerlink {
-  color: #518ae7;
+  color: #1364c4;
   text-decoration: none;
 }
 
 .disabledLink {
-  color: #518ae7;
+  color: #1364c4;
 }
 
 .q-item__label--caption {
