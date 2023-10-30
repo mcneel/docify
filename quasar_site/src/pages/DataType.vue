@@ -367,6 +367,7 @@ export default {
     },
     memberClass(member) {
       if (member.deprecated) return 'disabled'
+      if (member.obsolete) return 'disabled'
       return ''
     },
   }
