@@ -9,7 +9,7 @@
             </router-link>
             <q-item-label caption>{{ item.type.toUpperCase() }}</q-item-label>
             <q-item-label caption>
-              <div v-html="item.summary" style="width: 100%; overflow: scroll;"></div>
+              <div v-html="item.summary" style="width: 100%;"></div>
             </q-item-label>
           </q-item-section>
         </q-item>
