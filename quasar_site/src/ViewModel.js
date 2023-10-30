@@ -68,6 +68,7 @@ const ViewModel = {
           path: x.path,
           header: "secondary",
           deprecated: x.deprecated,
+          obsolete: x.obsolete,
         };
       } else {
         return null;

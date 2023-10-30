@@ -199,6 +199,8 @@ namespace Docify.Parse
 
         public bool IsStatic { get { return Member.IsStatic(); } }
 
+        public string IsObsolete { get { return Member.IsObsolete(); } }
+
         public string ClassPath
         {
             get

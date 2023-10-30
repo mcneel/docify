@@ -65,7 +65,7 @@
                     <q-card-section horizontal>
                       <q-item-label
                         style="font-size: 18px; width: 100%"
-                        :class="member.deprecated && 'disabled'"
+                        :class="member.deprecated || member.obsolete && 'disabled'"
                       >
                         <template v-for="chunk,id in signature(member)" :key="id">
                           <template v-if="chunk.indent">
@@ -106,6 +106,9 @@
                       <q-tooltip
                         >Deprecated in version {{ member.deprecated }}</q-tooltip
                       >
+                    </q-badge>
+                    <q-badge v-if="member.obsolete" outline color="negative"
+                      >obsolete: {{ member.obsolete }}
                     </q-badge>
                   </q-item-label>
                   <q-item-label v-if="member.parameters" class="text-h6"
