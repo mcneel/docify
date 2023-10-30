@@ -412,7 +412,15 @@ namespace Docify.Parse
                     //sb.Append($"        deprecated: '{deprecated}'");
                 }
 
-                if (member.Signature(false).Contains("static Mesh CreateFromCurveExtrusion")){
+                string obsolete = member.IsObsolete;
+                if (!string.IsNullOrWhiteSpace(obsolete))
+                {
+                    sb.AppendLine(",");
+                    sb.Append(KeyValString(8, "obsolete", obsolete, asJavascript));
+                    //sb.Append($"        deprecated: '{deprecated}'");
+                }
+
+                if (member.Signature(false).Contains("Plane EquitorialPlane")){
                     var inspecting = member;
                 }
                 string remarks = member.Remarks();

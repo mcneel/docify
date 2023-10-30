@@ -44,5 +44,23 @@ namespace Docify.Parse
 
             return true;
         }
+
+        public static string IsObsolete(this MemberDeclarationSyntax member)
+        {
+            foreach (var attrList in member.AttributeLists)
+            {
+                foreach (var attr in attrList.Attributes)
+                {
+                    if (attr.ToString().Contains("Obsolete(")){
+                        var comment = attr.ToString().Split('(', ')')[1];
+                        if (!string.IsNullOrWhiteSpace(comment)){
+                            return comment.Trim('\"');
+                        }
+                    }
+                }
+            }
+
+            return "";
+        }
     }
 }
