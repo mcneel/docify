@@ -57,6 +57,10 @@
                     <q-icon name="mdi-alpha-s" />
                     <q-tooltip>Static Member</q-tooltip>
                   </q-badge>
+                  <q-badge v-if="member.obsolete || member.deprecated" color='negative' outline>
+                    <q-icon name="mdi-alert" />
+                    <q-tooltip>{{member.obsolete && "Obsolete"}}{{member.obsolete && member.deprecated && " | "}}{{member.deprecated && "Deprecated"}}</q-tooltip>
+                  </q-badge>
                 </q-item-label>
                 <q-item-label caption class="on-right col-8">
                   <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
