@@ -260,9 +260,15 @@ a.routerlink {
   color: #1364c4;
   text-decoration: none;
 }
+body.body--dark a.routerlink {
+  color:  #2196f3;
+}
 
 .disabledLink {
   color: #1364c4;
+}
+body.body--dark .disabledLink {
+  color:  #2196f3;
 }
 
 .q-item__label--caption {
