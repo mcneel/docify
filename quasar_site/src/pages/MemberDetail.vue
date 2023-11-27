@@ -100,14 +100,17 @@
               </q-item>
               <q-item>
                 <q-item-section>
-                  <q-item-label caption class="on-right">
-                    <q-badge v-if="member.deprecated" outline color="negative"
+                  <q-item-label caption class="on-right" >
+                    <q-badge v-if="member.protected" outline color="warning" class="q-ma-sm"
+                      >protected
+                    </q-badge>
+                    <q-badge v-if="member.deprecated" outline color="negative" class="q-ma-sm"
                       >deprecated in {{ member.deprecated }}
                       <q-tooltip
                         >Deprecated in version {{ member.deprecated }}</q-tooltip
                       >
                     </q-badge>
-                    <q-badge v-if="member.obsolete" outline color="negative"
+                    <q-badge v-if="member.obsolete" outline color="negative" class="q-ma-sm"
                       >obsolete: {{ member.obsolete }}
                     </q-badge>
                   </q-item-label>
