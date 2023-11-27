@@ -104,6 +104,9 @@
                     <q-badge v-if="member.protected" outline color="warning" class="q-ma-sm"
                       >protected
                     </q-badge>
+                    <q-badge v-if="member.virtual" outline color="warning" class="q-ma-sm"
+                      >virtual
+                    </q-badge>
                     <q-badge v-if="member.deprecated" outline color="negative" class="q-ma-sm"
                       >deprecated in {{ member.deprecated }}
                       <q-tooltip

@@ -389,6 +389,8 @@ namespace Docify.Parse
                 //sb.Append($"        signature: '{member.Signature(false)}'");
                 sb.AppendLine(",");
                 sb.Append(KeyValBool(8, "protected", member.IsProtected, asJavascript));
+                sb.AppendLine(",");
+                sb.Append(KeyValBool(8, "virtual", member.IsVirtual, asJavascript));
 
                 string summary = member.Summary();
                 if (!string.IsNullOrWhiteSpace(summary))

@@ -53,6 +53,10 @@
                     <q-icon name="mdi-key-variant" />
                     <q-tooltip>Protected Member</q-tooltip>
                   </q-badge>
+                  <q-badge v-if="section.type == 'methods' && member.virtual" color='info' outline>
+                    <q-icon name="mdi-alpha-v" />
+                    <q-tooltip>Virtual Member</q-tooltip>
+                  </q-badge>
                   <q-badge v-if="member.signature.includes('static')" color='info' outline>
                     <q-icon name="mdi-alpha-s" />
                     <q-tooltip>Static Member</q-tooltip>

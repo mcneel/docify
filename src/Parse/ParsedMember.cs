@@ -197,6 +197,16 @@ namespace Docify.Parse
 
         }}
 
+        public bool IsVirtual { get {
+            foreach (var modifier in Member.Modifiers)
+            {
+                if (modifier.Text == "virtual")
+                    return true;
+            }
+            return false;
+
+        }}
+
         public bool IsStatic { get { return Member.IsStatic(); } }
 
         public string IsObsolete { get { return Member.IsObsolete(); } }
