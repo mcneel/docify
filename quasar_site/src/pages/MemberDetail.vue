@@ -2,35 +2,7 @@
   <q-page>
     <div class="q-pa-sm">
       <template v-if="members && members.items && members.items.length>0">
-        <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
-          <q-breadcrumbs-el icon="home" :to="baseUrl" />
-          <q-breadcrumbs-el
-            :label="datatype.namespace"
-            :to="baseUrl + datatype.namespace.toLowerCase()"
-          />
-          <q-breadcrumbs-el
-            :label="datatype.name"
-            :to="
-              (baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()
-            "
-          />
-          <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
-        </q-breadcrumbs>
-        <h1>{{ getTitle(datatype, members) }}</h1>
-        <p v-if="datatype">
-          Class:&nbsp;
-          <router-link
-            class="routerlink"
-            :to="
-              baseUrl +
-              datatype.namespace.toLowerCase() +
-              '.' +
-              datatype.name.toLowerCase()
-            "
-          >
-            {{ datatype.namespace }}.{{ datatype.name }}
-          </router-link>
-        </p>
+        <div style="height: 130px"></div>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index">
             <q-item>
@@ -49,6 +21,22 @@
                   <p><span v-html="member.summary"></span></p>
                 </q-item-label>
               </q-item-section>
+                <!--<q-btn
+                    no-caps
+                    outline
+                    dense
+                    size="md"
+                    icon="mdi-code-tags"
+                    color="accent"
+                    :to="exampleUrl(member)"
+                    v-if="member.examples && member.examples.length > 0"
+
+                  class="on-right"
+                  style="margin-top: 10px"
+                  >
+                  Example
+                </q-btn>-->
+
             </q-item>
             <div class="q-pl-lg">
               <!--Syntax-->
@@ -213,24 +201,6 @@
                   </q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item
-                v-if="member.examples && member.examples.length > 0"
-                dense
-                class="on-right"
-                style="margin-top: 10px"
-              >
-                <q-btn
-                  no-caps
-                  outline
-                  dense
-                  size="sm"
-                  icon="mdi-code-tags"
-                  color="secondary"
-                  :to="exampleUrl(member)"
-                >
-                  Example
-                </q-btn>
-              </q-item>
             </div>
             <q-separator spaced inset />
           </div>
@@ -245,6 +215,66 @@
         </q-banner>
       </template>
     </div>
+
+    <!-- place QPageSticky at end of page -->
+    <q-page-sticky v-if="members && members.items && members.items.length>0" expand position="top" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" style="max-height: 125px; overflow: hidden;">
+
+      <div class="flex-break q-pa-sm flex justify-between">
+            <div>
+              <q-breadcrumbs v-if="datatype" class="q-mb-sm" active-color="accent">
+              <q-breadcrumbs-el icon="home" :to="baseUrl" />
+              <q-breadcrumbs-el
+                :label="datatype.namespace"
+                :to="baseUrl + datatype.namespace.toLowerCase()"
+              />
+              <q-breadcrumbs-el
+                :label="datatype.name"
+                :to="
+                  (baseUrl + datatype.namespace + '.' + datatype.name).toLowerCase()
+                "
+              />
+              <q-breadcrumbs-el :label="getTitle(datatype, members).split(' ')[0]" />
+                      </q-breadcrumbs>
+                      <h1 style="text-overflow: ellipsis;">{{ getTitle(datatype, members) }}</h1>
+                      <p v-if="datatype">
+              Class:&nbsp;
+              <router-link
+                class="routerlink"
+                :to="
+                  baseUrl +
+                  datatype.namespace.toLowerCase() +
+                  '.' +
+                  datatype.name.toLowerCase()
+                "
+              >
+                {{ datatype.namespace }}.{{ datatype.name }}
+              </router-link>
+              </p>
+            </div>
+            <div>
+              <div v-for="(member, index) in members.items" :key="index">
+
+                  <q-btn
+                      no-caps
+                      outline
+                      dense
+                      size="md"
+                      icon="mdi-code-tags"
+                      color="accent"
+                      :to="exampleUrl(member)"
+                      v-if="member.examples && member.examples.length > 0"
+
+                    class="on-right"
+                    style="margin-top: 10px"
+                    >
+                    Example
+                  </q-btn>
+                </div>
+            </div>
+            </div>
+
+    </q-page-sticky>
+
   </q-page>
 </template>
 
