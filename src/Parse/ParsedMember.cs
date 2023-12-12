@@ -254,8 +254,8 @@ namespace Docify.Parse
         public string Signature(bool forSorting)
         {
             string prefix = forSorting ? ClassPath + "." : "";
-            if (!forSorting && IsStatic)
-                prefix = "static ";
+            // if (!forSorting && IsStatic)
+            //     prefix = "static ";
 
             {
                 MethodDeclarationSyntax method = Member as MethodDeclarationSyntax;
