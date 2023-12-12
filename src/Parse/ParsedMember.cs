@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Linq;
 
 namespace Docify.Parse
 {
@@ -210,6 +211,10 @@ namespace Docify.Parse
         public bool IsStatic { get { return Member.IsStatic(); } }
 
         public string IsObsolete { get { return Member.IsObsolete(); } }
+
+        public string[] Modifiers { get {
+            return Member.Modifiers.Select(mod => mod.Text).ToArray();
+        }}
 
         public string ClassPath
         {
