@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Linq;
 
 namespace Docify.Parse
 {
@@ -211,6 +212,10 @@ namespace Docify.Parse
 
         public string IsObsolete { get { return Member.IsObsolete(); } }
 
+        public string[] Modifiers { get {
+            return Member.Modifiers.Select(mod => mod.Text).ToArray();
+        }}
+
         public string ClassPath
         {
             get
@@ -249,8 +254,8 @@ namespace Docify.Parse
         public string Signature(bool forSorting)
         {
             string prefix = forSorting ? ClassPath + "." : "";
-            if (!forSorting && IsStatic)
-                prefix = "static ";
+            // if (!forSorting && IsStatic)
+            //     prefix = "static ";
 
             {
                 MethodDeclarationSyntax method = Member as MethodDeclarationSyntax;

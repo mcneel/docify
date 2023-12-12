@@ -66,7 +66,7 @@
                       <q-item-label
                         style="font-size: 18px; width: 100%"
                         :class="member.deprecated || member.obsolete && 'disabled'"
-                      >
+                      >{{member.modifiers && member.modifiers.join(' ')}}
                         <template v-for="chunk,id in signature(member)" :key="id">
                           <template v-if="chunk.indent">
                             <br/>

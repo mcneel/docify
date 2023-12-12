@@ -156,6 +156,27 @@ namespace Docify.Parse
             return rc;
         }
 
+        static string KeyValArray(int indent, string key, string[] val, bool asJavascript){
+            string rc = "".PadLeft(indent);
+            if (asJavascript)
+                rc += key;
+            else
+                rc += $"\"{key}\"";
+            rc += ": ";
+
+            rc += "[";
+            for(int i = 0; i < val.Length; i++)
+            {
+                rc += $"\"{val[i]}\"";
+                if(i < val.Length - 1)
+                {
+                    rc +=", ";
+                }
+            }
+            rc += "]";
+            return rc;
+        }
+
 
         static string WriteTypeAsObject(ParsedType type, Dictionary<string, ParsedType> allPublicTypesByShortName, bool asJavascript)
         {
@@ -386,6 +407,8 @@ namespace Docify.Parse
                     sb.AppendLine(",");
                 sb.AppendLine("      {");
                 sb.Append(KeyValString(8, "signature", member.Signature(false), asJavascript));
+                sb.AppendLine(",");
+                sb.Append(KeyValArray(8, "modifiers", member.Modifiers, asJavascript));
                 //sb.Append($"        signature: '{member.Signature(false)}'");
                 sb.AppendLine(",");
                 sb.Append(KeyValBool(8, "protected", member.IsProtected, asJavascript));
