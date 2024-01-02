@@ -125,15 +125,14 @@ export default {
   },
   methods: {
     onChangeVersionFilter (item) {
+      this.filterVersion = item;
       if (this.$route.query["version"] != item){
-        this.filterVersion = item;
         ViewModel.resetTree();
         ViewModel.setMaxVersion(item);
         this.api = ViewModel.getTree();
         this.$router.push({ query: { version: item } }).then( () =>{
           window.location.reload(); //
         })
-
       }
     },
     resizeDrawer(ev) {
