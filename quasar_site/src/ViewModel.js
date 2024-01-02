@@ -252,10 +252,13 @@ const ViewModel = {
     if (!item) {
       return;
     }
+    item = item.split("?")[0];
     //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item;
 
     // path = path.split("?")[0];
+
+    // console.log("loading lazy childern:", path, _selectedPath);
 
     //Try to load its children
     this.lazyChildForPath(path);
