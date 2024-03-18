@@ -205,7 +205,15 @@ const ViewModel = {
     const typemap = {};
     ApiInfo.forEach((type) => {
       if (type.dataType !== DataTypes.NAMESPACE) {
-        typemap[type.name] = type;
+        if (typemap[type.name]) {
+          let existing = typemap[type.name];
+          if (existing.namespace != "Rhino.Geometry") {
+            //In some rare instances, classes have the same name, Rhino.Geometry should take precedence RH-80781
+            typemap[type.name] = type;
+          }
+        } else {
+          typemap[type.name] = type;
+        }
       }
     });
     _typemap = typemap;
