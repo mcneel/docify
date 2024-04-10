@@ -15,17 +15,17 @@
       ["Rhino.UI.OpenFileDialog", "string FileName"],
       ["Rhino.UI.OpenFileDialog", "string Filter"],
       ["Rhino.UI.OpenFileDialog", "System.Boolean ShowOpenDialog()"],
-      ["Rhino.Input.Custom.GetNumber", "GetNumber()"],
-      ["Rhino.Input.Custom.GetNumber", "GetResult Get()"],
-      ["Rhino.Input.Custom.GetNumber", "System.Void SetLowerLimit(System.Double lowerLimit, System.Boolean strictlyGreaterThan)"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean ConstrainToConstructionPlane(System.Boolean throughBasePoint)"],
       ["Rhino.Input.Custom.GetBaseClass", "Result CommandResult()"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Double Number()"],
       ["Rhino.Input.Custom.GetBaseClass", "RhinoView View()"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean ConstrainToConstructionPlane(System.Boolean throughBasePoint)"],
-      ["Rhino.Display.RhinoViewport", "Plane ConstructionPlane()"],
-      ["Rhino.Display.RhinoViewport", "System.Boolean SetTraceImage(System.String bitmapFileName, Plane plane, System.Double width, System.Double height, System.Boolean grayscale, System.Boolean filtered)"],
+      ["Rhino.Input.Custom.GetNumber", "GetNumber()"],
+      ["Rhino.Input.Custom.GetNumber", "GetResult Get()"],
+      ["Rhino.Input.Custom.GetNumber", "System.Void SetLowerLimit(System.Double lowerLimit, System.Boolean strictlyGreaterThan)"],
       ["Rhino.Display.RhinoView", "RhinoViewport ActiveViewport"],
       ["Rhino.Display.RhinoView", "System.Void Redraw()"],
+      ["Rhino.Display.RhinoViewport", "Plane ConstructionPlane()"],
+      ["Rhino.Display.RhinoViewport", "System.Boolean SetTraceImage(System.String bitmapFileName, Plane plane, System.Double width, System.Double height, System.Boolean grayscale, System.Boolean filtered)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoView ActiveView"]
     ]
   },
@@ -50,8 +50,8 @@
     "name": "Addcircle.cs",
     "code": "using System;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result AddCircle(Rhino.RhinoDoc doc)\n  {\n    Rhino.Geometry.Point3d center = new Rhino.Geometry.Point3d(0, 0, 0);\n    const double radius = 10.0;\n    Rhino.Geometry.Circle c = new Rhino.Geometry.Circle(center, radius);\n    if (doc.Objects.AddCircle(c) != Guid.Empty)\n    {\n      doc.Views.Redraw();\n      return Rhino.Commands.Result.Success;\n    }\n    return Rhino.Commands.Result.Failure;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Point3d", "Point3d(double x, double y, double z)"],
       ["Rhino.Geometry.Circle", "Circle(Plane plane, double radius)"],
+      ["Rhino.Geometry.Point3d", "Point3d(double x, double y, double z)"],
       ["Rhino.DocObjects.Tables.ViewTable", "System.Void Redraw()"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddCircle(Circle circle)"]
     ]
@@ -62,31 +62,31 @@
     "members": [
       ["Rhino.Geometry.Plane", "Plane(Point3d origin, Point3d xPoint, Point3d yPoint)"],
       ["Rhino.FileIO.File3dmObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"],
-      ["Rhino.Input.RhinoGet", "Result GetRectangle(out Point3d[] corners)"]
+      ["Rhino.Input.RhinoGet", "Result GetRectangle(out Point3d[] corners)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"]
     ]
   },
   {
     "name": "Addcylinder.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result AddCylinder(Rhino.RhinoDoc doc)\n  {\n    Rhino.Geometry.Point3d center_point = new Rhino.Geometry.Point3d(0, 0, 0);\n    Rhino.Geometry.Point3d height_point = new Rhino.Geometry.Point3d(0, 0, 10);\n    Rhino.Geometry.Vector3d zaxis = height_point - center_point;\n    Rhino.Geometry.Plane plane = new Rhino.Geometry.Plane(center_point, zaxis);\n    const double radius = 5;\n    Rhino.Geometry.Circle circle = new Rhino.Geometry.Circle(plane, radius);\n    Rhino.Geometry.Cylinder cylinder = new Rhino.Geometry.Cylinder(circle, zaxis.Length);\n    Rhino.Geometry.Brep brep = cylinder.ToBrep(true, true);\n    if (brep != null)\n    {\n      doc.Objects.AddBrep(brep);\n      doc.Views.Redraw();\n    }\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Plane", "Plane(Point3d origin, Vector3d normal)"],
       ["Rhino.Geometry.Cylinder", "Cylinder(Circle baseCircle, double height)"],
-      ["Rhino.Geometry.Cylinder", "Brep ToBrep(System.Boolean capBottom, System.Boolean capTop)"]
+      ["Rhino.Geometry.Cylinder", "Brep ToBrep(System.Boolean capBottom, System.Boolean capTop)"],
+      ["Rhino.Geometry.Plane", "Plane(Point3d origin, Vector3d normal)"]
     ]
   },
   {
     "name": "Addlayer.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result AddLayer(Rhino.RhinoDoc doc)\n  {\n    // Cook up an unused layer name\n    string unused_name = doc.Layers.GetUnusedLayerName(false);\n\n    // Prompt the user to enter a layer name\n    Rhino.Input.Custom.GetString gs = new Rhino.Input.Custom.GetString();\n    gs.SetCommandPrompt(\"Name of layer to add\");\n    gs.SetDefaultString(unused_name);\n    gs.AcceptNothing(true);\n    gs.Get();\n    if (gs.CommandResult() != Rhino.Commands.Result.Success)\n      return gs.CommandResult();\n\n    // Was a layer named entered?\n    string layer_name = gs.StringResult().Trim();\n    if (string.IsNullOrEmpty(layer_name))\n    {\n      Rhino.RhinoApp.WriteLine(\"Layer name cannot be blank.\");\n      return Rhino.Commands.Result.Cancel;\n    }\n\n    // Is the layer name valid?\n    if (!Rhino.DocObjects.Layer.IsValidName(layer_name))\n    {\n      Rhino.RhinoApp.WriteLine(layer_name + \" is not a valid layer name.\");\n      return Rhino.Commands.Result.Cancel;\n    }\n\n    // Does a layer with the same name already exist?\n    int layer_index = doc.Layers.Find(layer_name, true);\n    if (layer_index >= 0)\n    {\n      Rhino.RhinoApp.WriteLine(\"A layer with the name {0} already exists.\", layer_name);\n      return Rhino.Commands.Result.Cancel;\n    }\n\n    // Add a new layer to the document\n    layer_index = doc.Layers.Add(layer_name, System.Drawing.Color.Black);\n    if (layer_index < 0)\n    {\n      Rhino.RhinoApp.WriteLine(\"Unable to add {0} layer.\", layer_name);\n      return Rhino.Commands.Result.Failure;\n    }\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
+      ["Rhino.DocObjects.Layer", "System.Boolean IsValidName(System.String name)"],
       ["Rhino.RhinoApp", "System.Void WriteLine(System.String format, System.Object arg0)"],
       ["Rhino.RhinoApp", "System.Void WriteLine(System.String message)"],
-      ["Rhino.DocObjects.Layer", "System.Boolean IsValidName(System.String name)"],
-      ["Rhino.Input.Custom.GetString", "GetString()"],
-      ["Rhino.Input.Custom.GetString", "GetResult Get()"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Void AcceptNothing(System.Boolean enable)"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Void SetDefaultString(System.String defaultValue)"],
       ["Rhino.Input.Custom.GetBaseClass", "System.String StringResult()"],
+      ["Rhino.Input.Custom.GetString", "GetString()"],
+      ["Rhino.Input.Custom.GetString", "GetResult Get()"],
       ["Rhino.DocObjects.Tables.LayerTable", "System.Int32 Add(System.String layerName, System.Drawing.Color layerColor)"],
       ["Rhino.DocObjects.Tables.LayerTable", "System.Int32 Find(System.String layerName, System.Boolean ignoreDeletedLayers)"],
       ["Rhino.DocObjects.Tables.LayerTable", "Layer FindName(System.String layerName)"],
@@ -98,14 +98,14 @@
     "name": "Addlayout.cs",
     "code": "partial class Examples\n{\n  /// <summary>\n  /// Generate a layout with a single detail view that zooms to a list of objects\n  /// </summary>\n  /// <param name=\"doc\"></param>\n  /// <returns></returns>\n  public static Rhino.Commands.Result AddLayout(Rhino.RhinoDoc doc)\n  {\n    doc.PageUnitSystem = Rhino.UnitSystem.Millimeters;\n    var page_views = doc.Views.GetPageViews();\n    int page_number = (page_views==null) ? 1 : page_views.Length + 1;\n    var pageview = doc.Views.AddPageView(string.Format(\"A0_{0}\",page_number), 1189, 841);\n    if( pageview!=null )\n    {\n      Rhino.Geometry.Point2d top_left = new Rhino.Geometry.Point2d(20,821);\n      Rhino.Geometry.Point2d bottom_right = new Rhino.Geometry.Point2d(1169, 20);\n      var detail = pageview.AddDetailView(\"ModelView\", top_left, bottom_right, Rhino.Display.DefinedViewportProjection.Top);\n      if (detail != null)\n      {\n        pageview.SetActiveDetail(detail.Id);\n        detail.Viewport.ZoomExtents();\n        detail.DetailGeometry.IsProjectionLocked = true;\n        detail.DetailGeometry.SetScale(1, doc.ModelUnitSystem, 10, doc.PageUnitSystem);\n        // Commit changes tells the document to replace the document's detail object\n        // with the modified one that we just adjusted\n        detail.CommitChanges();\n      }\n      pageview.SetPageAsActive();\n      doc.Views.ActiveView = pageview;\n      doc.Views.Redraw();\n      return Rhino.Commands.Result.Success;\n    }\n    return Rhino.Commands.Result.Failure;\n  }\n}\n",
     "members": [
-      ["Rhino.RhinoDoc", "UnitSystem PageUnitSystem"],
       ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
-      ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
-      ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
+      ["Rhino.RhinoDoc", "UnitSystem PageUnitSystem"],
+      ["Rhino.Display.RhinoViewport", "System.Boolean ZoomExtents()"],
       ["Rhino.Display.RhinoPageView", "DetailViewObject AddDetailView(System.String title, Geometry.Point2d corner0, Geometry.Point2d corner1, DefinedViewportProjection initialProjection)"],
       ["Rhino.Display.RhinoPageView", "System.Boolean SetActiveDetail(System.Guid detailId)"],
       ["Rhino.Display.RhinoPageView", "System.Void SetPageAsActive()"],
-      ["Rhino.Display.RhinoViewport", "System.Boolean ZoomExtents()"],
+      ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
+      ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView AddPageView(System.String title, System.Double pageWidth, System.Double pageHeight)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView[] GetPageViews()"]
     ]
@@ -114,14 +114,14 @@
     "name": "Addline.cs",
     "code": "using System;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result AddLine(Rhino.RhinoDoc doc)\n  {\n    Rhino.Input.Custom.GetPoint gp = new Rhino.Input.Custom.GetPoint();\n    gp.SetCommandPrompt(\"Start of line\");\n    gp.Get();\n    if (gp.CommandResult() != Rhino.Commands.Result.Success)\n      return gp.CommandResult();\n\n    Rhino.Geometry.Point3d pt_start = gp.Point();\n\n    gp.SetCommandPrompt(\"End of line\");\n    gp.SetBasePoint(pt_start, false);\n    gp.DrawLineFromPoint(pt_start, true);\n    gp.Get();\n    if (gp.CommandResult() != Rhino.Commands.Result.Success)\n      return gp.CommandResult();\n\n    Rhino.Geometry.Point3d pt_end = gp.Point();\n    Rhino.Geometry.Vector3d v = pt_end - pt_start;\n    if (v.IsTiny(Rhino.RhinoMath.ZeroTolerance))\n      return Rhino.Commands.Result.Nothing;\n\n    if (doc.Objects.AddLine(pt_start, pt_end) != Guid.Empty)\n    {\n      doc.Views.Redraw();\n      return Rhino.Commands.Result.Success;\n    }\n    return Rhino.Commands.Result.Failure;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Vector2d", "System.Boolean IsTiny(System.Double tolerance)"],
-      ["Rhino.Geometry.Vector3d", "System.Boolean IsTiny(System.Double tolerance)"],
-      ["Rhino.Input.Custom.GetBaseClass", "Point3d Point()"],
-      ["Rhino.Input.Custom.GetBaseClass", "System.Void SetCommandPrompt(System.String prompt)"],
       ["Rhino.Input.Custom.GetPoint", "GetPoint()"],
       ["Rhino.Input.Custom.GetPoint", "System.Void DrawLineFromPoint(Point3d startPoint, System.Boolean showDistanceInStatusBar)"],
       ["Rhino.Input.Custom.GetPoint", "GetResult Get()"],
       ["Rhino.Input.Custom.GetPoint", "System.Void SetBasePoint(Point3d basePoint, System.Boolean showDistanceInStatusBar)"],
+      ["Rhino.Input.Custom.GetBaseClass", "Point3d Point()"],
+      ["Rhino.Input.Custom.GetBaseClass", "System.Void SetCommandPrompt(System.String prompt)"],
+      ["Rhino.Geometry.Vector2d", "System.Boolean IsTiny(System.Double tolerance)"],
+      ["Rhino.Geometry.Vector3d", "System.Boolean IsTiny(System.Double tolerance)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLine(Point3d from, Point3d to)"]
     ]
   },
@@ -129,16 +129,16 @@
     "name": "Addlineardimension.cs",
     "code": "using System;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result AddLinearDimension(Rhino.RhinoDoc doc)\n  {\n    Rhino.Geometry.LinearDimension dimension;\n    Rhino.Commands.Result rc = Rhino.Input.RhinoGet.GetLinearDimension(out dimension);\n    if (rc == Rhino.Commands.Result.Success && dimension != null)\n    {\n      if (doc.Objects.AddLinearDimension(dimension) == Guid.Empty)\n        rc = Rhino.Commands.Result.Failure;\n      else\n        doc.Views.Redraw();\n    }\n    return rc;\n  }\n}\n",
     "members": [
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLinearDimension(LinearDimension dimension)"],
-      ["Rhino.Input.RhinoGet", "Result GetLinearDimension(out LinearDimension dimension)"]
+      ["Rhino.Input.RhinoGet", "Result GetLinearDimension(out LinearDimension dimension)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLinearDimension(LinearDimension dimension)"]
     ]
   },
   {
     "name": "Addlineardimension2.cs",
     "code": "using System;\nusing Rhino.Geometry;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result AddLinearDimension2(Rhino.RhinoDoc doc)\n  {\n    Point3d origin = new Point3d(1,1,0);\n    Point3d offset = new Point3d(11,1,0);\n    Point3d pt = new Point3d((offset.X-origin.X)/2,3,0);\n\n    Plane plane = Plane.WorldXY;\n    plane.Origin = origin;\n\n    double u,v;\n    plane.ClosestParameter(origin, out u, out v);\n    Point2d ext1 = new Point2d(u, v);\n\n    plane.ClosestParameter(offset, out u, out v);\n    Point2d ext2 = new Point2d(u, v);\n\n    plane.ClosestParameter(pt, out u, out v);\n    Point2d linePt = new Point2d(u, v);\n\n    LinearDimension dimension = new LinearDimension(plane, ext1, ext2, linePt);\n    if (doc.Objects.AddLinearDimension(dimension) != Guid.Empty)\n    {\n      doc.Views.Redraw();\n      return Rhino.Commands.Result.Success;\n    }\n    return Rhino.Commands.Result.Failure;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Plane", "System.Boolean ClosestParameter(Point3d testPoint, out System.Double s, out System.Double t)"],
-      ["Rhino.Geometry.LinearDimension", "LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)"]
+      ["Rhino.Geometry.LinearDimension", "LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)"],
+      ["Rhino.Geometry.Plane", "System.Boolean ClosestParameter(Point3d testPoint, out System.Double s, out System.Double t)"]
     ]
   },
   {
@@ -150,11 +150,11 @@
       ["Rhino.Geometry.Mesh", "MeshVertexNormalList Normals"],
       ["Rhino.Geometry.Mesh", "MeshVertexList Vertices"],
       ["Rhino.Geometry.Mesh", "System.Boolean Compact()"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddMesh(Geometry.Mesh mesh)"],
       ["Rhino.Geometry.Collections.MeshVertexList", "System.Int32 Add(System.Double x, System.Double y, System.Double z)"],
       ["Rhino.Geometry.Collections.MeshVertexList", "System.Int32 Add(System.Single x, System.Single y, System.Single z)"],
       ["Rhino.Geometry.Collections.MeshVertexNormalList", "System.Boolean ComputeNormals()"],
-      ["Rhino.Geometry.Collections.MeshFaceList", "System.Int32 AddFace(System.Int32 vertex1, System.Int32 vertex2, System.Int32 vertex3, System.Int32 vertex4)"]
+      ["Rhino.Geometry.Collections.MeshFaceList", "System.Int32 AddFace(System.Int32 vertex1, System.Int32 vertex2, System.Int32 vertex3, System.Int32 vertex4)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddMesh(Geometry.Mesh mesh)"]
     ]
   },
   {
@@ -168,10 +168,10 @@
       ["Rhino.Display.RhinoViewport", "System.Void PushViewProjection()"],
       ["Rhino.Display.RhinoViewport", "System.Void SetCameraDirection(Vector3d cameraDirection, System.Boolean updateTargetLocation)"],
       ["Rhino.Display.RhinoViewport", "System.Void SetCameraLocation(Point3d cameraLocation, System.Boolean updateTargetLocation)"],
-      ["Rhino.DocObjects.Tables.NamedViewTable", "System.Int32 Add(System.String name, System.Guid viewportId)"],
       ["Rhino.Input.RhinoGet", "Result GetPoint(System.String prompt, System.Boolean acceptNothing, out Point3d point)"],
       ["Rhino.Input.RhinoGet", "Result GetString(System.String prompt, System.Boolean acceptNothing, ref System.String outputString)"],
-      ["Rhino.Input.RhinoGet", "Result GetView(System.String commandPrompt, out RhinoView view)"]
+      ["Rhino.Input.RhinoGet", "Result GetView(System.String commandPrompt, out RhinoView view)"],
+      ["Rhino.DocObjects.Tables.NamedViewTable", "System.Int32 Add(System.String name, System.Guid viewportId)"]
     ]
   },
   {
@@ -243,9 +243,9 @@
     "name": "Addtruncatedcone.cs",
     "code": "using System;\nusing Rhino.Geometry;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result AddTruncatedCone(Rhino.RhinoDoc doc)\n  {\n    Point3d bottom_pt = new Point3d(0,0,0);\n    const double bottom_radius = 2;\n    Circle bottom_circle = new Circle(bottom_pt, bottom_radius);\n\n    Point3d top_pt = new Point3d(0,0,10);\n    const double top_radius = 6;\n    Circle top_circle = new Circle(top_pt, top_radius);\n\n    LineCurve shapeCurve = new LineCurve(bottom_circle.PointAt(0), top_circle.PointAt(0));\n    Line axis = new Line(bottom_circle.Center, top_circle.Center);\n    RevSurface revsrf = RevSurface.Create(shapeCurve, axis);\n    Brep tcone_brep = Brep.CreateFromRevSurface(revsrf, true, true);\n    if( doc.Objects.AddBrep(tcone_brep) != Guid.Empty )\n    {\n      doc.Views.Redraw();\n      return Rhino.Commands.Result.Success;\n    }\n    return Rhino.Commands.Result.Failure;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Brep", "Brep CreateFromRevSurface(RevSurface surface, System.Boolean capStart, System.Boolean capEnd)"],
-      ["Rhino.Geometry.RevSurface", "RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)"],
       ["Rhino.Geometry.LineCurve", "LineCurve(Point3d from, Point3d to)"],
+      ["Rhino.Geometry.RevSurface", "RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)"],
+      ["Rhino.Geometry.Brep", "Brep CreateFromRevSurface(RevSurface surface, System.Boolean capStart, System.Boolean capEnd)"],
       ["Rhino.Geometry.Circle", "Circle(Point3d center, double radius)"]
     ]
   },
@@ -280,11 +280,11 @@
     "name": "Arraybydistance.cs",
     "code": "using Rhino;\n\n[System.Runtime.InteropServices.Guid(\"3CDCBB20-B4E4-4AB6-B870-C911C7435BD7\")]\npublic class ArrayByDistanceCommand : Rhino.Commands.Command\n{\n  public override string EnglishName\n  {\n    get { return \"cs_ArrayByDistance\"; }\n  }\n  \n  double m_distance = 1;\n  Rhino.Geometry.Point3d m_point_start;\n  protected override Rhino.Commands.Result RunCommand(RhinoDoc doc, Rhino.Commands.RunMode mode)\n  {\n    Rhino.DocObjects.ObjRef objref;\n    var rc = Rhino.Input.RhinoGet.GetOneObject(\"Select object\", true, Rhino.DocObjects.ObjectType.AnyObject, out objref);\n    if (rc != Rhino.Commands.Result.Success)\n      return rc;\n\n    rc = Rhino.Input.RhinoGet.GetPoint(\"Start point\", false, out m_point_start);\n    if (rc != Rhino.Commands.Result.Success)\n      return rc;\n\n    var obj = objref.Object();\n    if (obj == null)\n      return Rhino.Commands.Result.Failure;\n\n    // create an instance of a GetPoint class and add a delegate\n    // for the DynamicDraw event\n    var gp = new Rhino.Input.Custom.GetPoint();\n    gp.DrawLineFromPoint(m_point_start, true);\n    var optdouble = new Rhino.Input.Custom.OptionDouble(m_distance);\n    bool constrain = false;\n    var optconstrain = new Rhino.Input.Custom.OptionToggle(constrain, \"Off\", \"On\");\n    gp.AddOptionDouble(\"Distance\", ref optdouble);\n    gp.AddOptionToggle(\"Constrain\", ref optconstrain);\n    gp.DynamicDraw += ArrayByDistanceDraw;\n    gp.Tag = obj;\n    while (gp.Get() == Rhino.Input.GetResult.Option)\n    {\n      m_distance = optdouble.CurrentValue;\n      if (constrain != optconstrain.CurrentValue)\n      {\n        constrain = optconstrain.CurrentValue;\n        if (constrain)\n        {\n          var gp2 = new Rhino.Input.Custom.GetPoint();\n          gp2.DrawLineFromPoint(m_point_start, true);\n          gp2.SetCommandPrompt(\"Second point on constraint line\");\n          if (gp2.Get() == Rhino.Input.GetResult.Point)\n            gp.Constrain(m_point_start, gp2.Point());\n          else\n          {\n            gp.ClearCommandOptions();\n            optconstrain.CurrentValue = false;\n            constrain = false;\n            gp.AddOptionDouble(\"Distance\", ref optdouble);\n            gp.AddOptionToggle(\"Constrain\", ref optconstrain);\n          }\n        }\n        else\n        {\n          gp.ClearConstraints();\n        }\n      }\n    }\n\n    if (gp.CommandResult() == Rhino.Commands.Result.Success)\n    {\n      m_distance = optdouble.CurrentValue;\n      var pt = gp.Point();\n      var vec = pt - m_point_start;\n      double length = vec.Length;\n      vec.Unitize();\n      int count = (int)(length / m_distance);\n      for (int i = 1; i < count; i++)\n      {\n        var translate = vec * (i * m_distance);\n        var xf = Rhino.Geometry.Transform.Translation(translate);\n        doc.Objects.Transform(obj, xf, false);\n      }\n      doc.Views.Redraw();\n    }\n\n    return gp.CommandResult();\n  }\n\n  // this function is called whenever the GetPoint's DynamicDraw\n  // event occurs\n  void ArrayByDistanceDraw(object sender, Rhino.Input.Custom.GetPointDrawEventArgs e)\n  {\n    Rhino.DocObjects.RhinoObject rhobj = e.Source.Tag as Rhino.DocObjects.RhinoObject;\n    if (rhobj == null)\n      return;\n    var vec = e.CurrentPoint - m_point_start;\n    double length = vec.Length;\n    vec.Unitize();\n    int count = (int)(length / m_distance);\n    for (int i = 1; i < count; i++)\n    {\n      var translate = vec * (i * m_distance);\n      var xf = Rhino.Geometry.Transform.Translation(translate);\n      e.Display.DrawObject(rhobj, xf);\n    }\n  }\n}\n",
     "members": [
-      ["Rhino.Input.Custom.GetBaseClass", "System.Void ClearCommandOptions()"],
       ["Rhino.Input.Custom.GetPoint", "object Tag"],
       ["Rhino.Input.Custom.GetPoint", "System.Void ClearConstraints()"],
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Point3d from, Point3d to)"],
       ["Rhino.Input.Custom.GetPointDrawEventArgs", "GetPoint Source"],
+      ["Rhino.Input.Custom.GetBaseClass", "System.Void ClearCommandOptions()"],
       ["Rhino.Display.DisplayPipeline", "System.Void DrawObject(DocObjects.RhinoObject rhinoObject, Transform xform)"]
     ]
   },
@@ -309,8 +309,8 @@
     "name": "Circlecenter.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result CircleCenter(Rhino.RhinoDoc doc)\n  {\n    Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select objects\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;\n    go.GetMultiple(1, 0);\n    if( go.CommandResult() != Rhino.Commands.Result.Success )\n      return go.CommandResult();\n\n    Rhino.DocObjects.ObjRef[] objrefs = go.Objects();\n    if( objrefs==null )\n      return Rhino.Commands.Result.Nothing;\n\n    double tolerance = doc.ModelAbsoluteTolerance;\n    for( int i=0; i<objrefs.Length; i++ )\n    {\n      // get the curve geometry\n      Rhino.Geometry.Curve curve = objrefs[i].Curve();\n      if( curve==null )\n        continue;\n      Rhino.Geometry.Circle circle;\n      if( curve.TryGetCircle(out circle, tolerance) )\n      {\n        Rhino.RhinoApp.WriteLine(\"Circle{0}: center = {1}\", i+1, circle.Center);\n      }\n    }\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle, System.Double tolerance)"],
-      ["Rhino.Input.Custom.GetObject", "GeometryAttributeFilter GeometryAttributeFilter"]
+      ["Rhino.Input.Custom.GetObject", "GeometryAttributeFilter GeometryAttributeFilter"],
+      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle, System.Double tolerance)"]
     ]
   },
   {
@@ -360,9 +360,9 @@
     "code": "using System;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result ConstrainedCopy(Rhino.RhinoDoc doc)\n  {\n    // Get a single planar closed curve\n    var go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select curve\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;\n    go.Get();\n    if( go.CommandResult() != Rhino.Commands.Result.Success )\n      return go.CommandResult();\n    var objref = go.Object(0);\n    var base_curve = objref.Curve();\n    var first_point = objref.SelectionPoint();\n    if( base_curve==null || !first_point.IsValid )\n      return Rhino.Commands.Result.Cancel;\n\n    Rhino.Geometry.Plane plane;\n    if( !base_curve.TryGetPlane(out plane) )\n      return Rhino.Commands.Result.Cancel;\n\n    // Get a point constrained to a line passing through the initial selection\n    // point and parallel to the plane's normal\n    var gp = new Rhino.Input.Custom.GetPoint();\n    gp.SetCommandPrompt(\"Offset point\");\n    gp.DrawLineFromPoint(first_point, true);\n    var line = new Rhino.Geometry.Line(first_point, first_point+plane.Normal);\n    gp.Constrain(line);\n    gp.Get();\n    if( gp.CommandResult() != Rhino.Commands.Result.Success )\n      return gp.CommandResult();\n    var second_point = gp.Point();\n    Rhino.Geometry.Vector3d vec = second_point - first_point;\n    if( vec.Length > 0.001 )\n    {\n      var xf = Rhino.Geometry.Transform.Translation(vec);\n      Guid id = doc.Objects.Transform(objref, xf, false);\n      if( id!=Guid.Empty )\n      {\n        doc.Views.Redraw();\n        return Rhino.Commands.Result.Success;\n      }\n    }\n    return Rhino.Commands.Result.Cancel;\n  }\n}\n",
     "members": [
       ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"],
       ["Rhino.Geometry.Curve", "System.Boolean TryGetPlane(out Plane plane)"],
-      ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"]
+      ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"]
     ]
   },
   {
@@ -417,8 +417,8 @@
     "name": "Curvebrepbox.cs",
     "code": "using Rhino;\nusing Rhino.Geometry;\nusing Rhino.Commands;\nusing Rhino.Input;\nusing Rhino.DocObjects;\n\nnamespace examples_cs\n{\n  public class BrepFromCurveBBoxCommand : Command\n  {\n    public override string EnglishName { get { return \"csBrepFromCurveBBox\"; } }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      Rhino.DocObjects.ObjRef objref;\n      var rc = RhinoGet.GetOneObject(\"Select Curve\", false, ObjectType.Curve, out objref);\n      if( rc != Result.Success )\n        return rc;\n      var curve = objref.Curve();\n\n      var view = doc.Views.ActiveView;\n      var plane = view.ActiveViewport.ConstructionPlane();\n      // Create a construction plane aligned bounding box\n      var bbox = curve.GetBoundingBox(plane);\n\n      if (bbox.IsDegenerate(doc.ModelAbsoluteTolerance) > 0) {\n        RhinoApp.WriteLine(\"the curve's bounding box is degenerate (flat) in at least one direction so a box cannot be created.\");\n        return Result.Failure;\n      }\n      var brep = Brep.CreateFromBox(bbox);\n      doc.Objects.AddBrep(brep);\n      doc.Views.Redraw();\n      return Result.Success;\n    }\n  }\n}",
     "members": [
-      ["Rhino.Geometry.Brep", "Brep CreateFromBox(BoundingBox box)"],
-      ["Rhino.Geometry.BoundingBox", "System.Int32 IsDegenerate(System.Double tolerance)"]
+      ["Rhino.Geometry.BoundingBox", "System.Int32 IsDegenerate(System.Double tolerance)"],
+      ["Rhino.Geometry.Brep", "Brep CreateFromBox(BoundingBox box)"]
     ]
   },
   {
@@ -433,17 +433,17 @@
     "name": "Curvesurfaceintersect.cs",
     "code": "using Rhino;\nusing Rhino.Geometry;\nusing Rhino.Geometry.Intersect;\nusing Rhino.Input.Custom;\nusing Rhino.DocObjects;\nusing Rhino.Commands;\n\nnamespace examples_cs\n{\n  public class CurveSurfaceIntersectCommand : Command\n  {\n    public override string EnglishName { get { return \"csCurveSurfaceIntersect\"; } }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      var gs = new GetObject();\n      gs.SetCommandPrompt(\"select brep\");\n      gs.GeometryFilter = ObjectType.Brep;\n      gs.DisablePreSelect();\n      gs.SubObjectSelect = false;\n      gs.Get();\n      if (gs.CommandResult() != Result.Success)\n        return gs.CommandResult();\n      var brep = gs.Object(0).Brep();\n\n      var gc = new GetObject();\n      gc.SetCommandPrompt(\"select curve\");\n      gc.GeometryFilter = ObjectType.Curve;\n      gc.DisablePreSelect();\n      gc.SubObjectSelect = false;\n      gc.Get();\n      if (gc.CommandResult() != Result.Success)\n        return gc.CommandResult();\n      var curve = gc.Object(0).Curve();\n\n      if (brep == null || curve == null)\n        return Result.Failure;\n\n      var tolerance = doc.ModelAbsoluteTolerance;\n\n      Point3d[] intersection_points;\n      Curve[] overlap_curves;\n      if (!Intersection.CurveBrep(curve, brep, tolerance, out overlap_curves, out intersection_points))\n      {\n        RhinoApp.WriteLine(\"curve brep intersection failed\");\n        return Result.Nothing;\n      }\n\n      foreach (var overlap_curve in overlap_curves)\n        doc.Objects.AddCurve(overlap_curve);\n      foreach (var intersection_point in intersection_points)\n        doc.Objects.AddPoint(intersection_point);\n\n      RhinoApp.WriteLine(\"{0} overlap curves, and {1} intersection points\", overlap_curves.Length, intersection_points.Length);\n      doc.Views.Redraw();\n\n      return Result.Success;\n    }\n  }\n}",
     "members": [
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Int32 Select(IEnumerable<Guid> objectIds)"],
+      ["Rhino.Geometry.Intersect.IntersectionEvent", "bool IsOverlap"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveSurface(Curve curve, Surface surface, System.Double tolerance, System.Double overlapTolerance)"],
-      ["Rhino.Geometry.Intersect.IntersectionEvent", "bool IsOverlap"]
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Int32 Select(IEnumerable<Guid> objectIds)"]
     ]
   },
   {
     "name": "Customgeometryfilter.cs",
     "code": "using Rhino;\nusing Rhino.Geometry;\nusing Rhino.Commands;\nusing Rhino.Input.Custom;\nusing Rhino.DocObjects;\n\nnamespace examples_cs\n{\n  public class CustomGeometryFilterCommand : Command\n  {\n    private double m_tolerance;\n    public override string EnglishName { get { return \"csCustomGeometryFilter\"; } }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      m_tolerance = doc.ModelAbsoluteTolerance;\n      \n      // only use a custom geometry filter if no simpler filter does the job\n\n      // only curves\n      var gc = new GetObject();\n      gc.SetCommandPrompt(\"select curve\");\n      gc.GeometryFilter = ObjectType.Curve;\n      gc.DisablePreSelect();\n      gc.SubObjectSelect = false;\n      gc.Get();\n      if (gc.CommandResult() != Result.Success)\n        return gc.CommandResult();\n      if (null == gc.Object(0).Curve())\n        return Result.Failure;\n      Rhino.RhinoApp.WriteLine(\"curve was selected\");\n\n      // only closed curves\n      var gcc = new GetObject();\n      gcc.SetCommandPrompt(\"select closed curve\");\n      gcc.GeometryFilter = ObjectType.Curve;\n      gcc.GeometryAttributeFilter = GeometryAttributeFilter.ClosedCurve;\n      gcc.DisablePreSelect();\n      gcc.SubObjectSelect = false;\n      gcc.Get();\n      if (gcc.CommandResult() != Result.Success)\n        return gcc.CommandResult();\n      if (null == gcc.Object(0).Curve())\n        return Result.Failure;\n      Rhino.RhinoApp.WriteLine(\"closed curve was selected\");\n\n      // only circles with a radius of 10\n      var gcc10 = new GetObject();\n      gcc10.SetCommandPrompt(\"select circle with radius of 10\");\n      gc.GeometryFilter = ObjectType.Curve;\n      gcc10.SetCustomGeometryFilter(CircleWithRadiusOf10GeometryFilter); // custom geometry filter\n      gcc10.DisablePreSelect();\n      gcc10.SubObjectSelect = false;\n      gcc10.Get();\n      if (gcc10.CommandResult() != Result.Success)\n        return gcc10.CommandResult();\n      if (null == gcc10.Object(0).Curve())\n        return Result.Failure;\n      RhinoApp.WriteLine(\"circle with radius of 10 was selected\");\n\n      return Result.Success;\n    }\n\n    private bool CircleWithRadiusOf10GeometryFilter (Rhino.DocObjects.RhinoObject rhObject, GeometryBase geometry,\n      ComponentIndex componentIndex)\n    {\n      bool is_circle_with_radius_of10 = false;\n      Circle circle;\n      if (geometry is Curve && (geometry as Curve).TryGetCircle(out circle))\n        is_circle_with_radius_of10 = circle.Radius <= 10.0 + m_tolerance && circle.Radius >= 10.0 - m_tolerance;\n      return is_circle_with_radius_of10;\n    }\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle)"],
-      ["Rhino.Input.Custom.GetObject", "System.Void SetCustomGeometryFilter(GetObjectGeometryFilter filter)"]
+      ["Rhino.Input.Custom.GetObject", "System.Void SetCustomGeometryFilter(GetObjectGeometryFilter filter)"],
+      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle)"]
     ]
   },
   {
@@ -458,8 +458,8 @@
     "code": "using Rhino;\nusing Rhino.DocObjects;\nusing Rhino.Commands;\nusing Rhino.Geometry;\n\nnamespace examples_cs\n{\n  public class ChangeDimensionStyleCommand : Rhino.Commands.Command\n  {\n    public override string EnglishName\n    {\n      get { return \"csChangeDimensionStyle\"; }\n    }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      foreach (var rhino_object in doc.Objects.GetObjectList(ObjectType.Annotation))\n      {\n        var annotation_object = rhino_object as AnnotationObjectBase;\n        if (annotation_object == null) continue;\n\n        var annotation = annotation_object.Geometry as AnnotationBase;\n        if (annotation == null) continue;\n\n        if (annotation.Index == doc.DimStyles.CurrentDimensionStyleIndex) continue;\n\n        annotation.Index = doc.DimStyles.CurrentDimensionStyleIndex;\n        annotation_object.CommitChanges();\n      }\n\n      doc.Views.Redraw();\n\n      return Result.Success;\n    }\n  }\n}",
     "members": [
       ["Rhino.RhinoDoc", "DimStyleTable DimStyles"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "IEnumerable<RhinoObject> GetObjectList(System.Type typeFilter)"],
-      ["Rhino.DocObjects.Tables.DimStyleTable", "int CurrentIndex"]
+      ["Rhino.DocObjects.Tables.DimStyleTable", "int CurrentIndex"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "IEnumerable<RhinoObject> GetObjectList(System.Type typeFilter)"]
     ]
   },
   {
@@ -486,12 +486,12 @@
       ["Rhino.Geometry.Curve", "System.Double[] DivideByLength(System.Double segmentLength, System.Boolean includeEnds, System.Boolean reverse)"],
       ["Rhino.Geometry.Curve", "System.Double[] DivideByLength(System.Double segmentLength, System.Boolean includeEnds)"],
       ["Rhino.Geometry.Curve", "System.Boolean IsShort(System.Double tolerance)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3d point)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3f point)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Select(System.Guid objectId)"],
       ["Rhino.Input.RhinoGet", "Result GetNumber(System.String prompt, System.Boolean acceptNothing, ref System.Double outputNumber, System.Double lowerLimit, System.Double upperLimit)"],
       ["Rhino.Input.RhinoGet", "Result GetNumber(System.String prompt, System.Boolean acceptNothing, ref System.Double outputNumber)"],
-      ["Rhino.Input.RhinoGet", "Result GetOneObject(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef rhObject)"]
+      ["Rhino.Input.RhinoGet", "Result GetOneObject(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef rhObject)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3d point)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3f point)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Select(System.Guid objectId)"]
     ]
   },
   {
@@ -609,8 +609,8 @@
     "name": "Hatchcurve.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result HatchCurve(Rhino.RhinoDoc doc)\n  {\n    var go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select closed planar curve\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;\n    go.SubObjectSelect = false;\n    go.Get();\n    if( go.CommandResult() != Rhino.Commands.Result.Success )\n      return go.CommandResult();\n\n    var curve = go.Object(0).Curve();\n    if( curve==null || !curve.IsClosed || !curve.IsPlanar() )\n      return Rhino.Commands.Result.Failure;\n\n    string hatch_name = doc.HatchPatterns[doc.HatchPatterns.CurrentHatchPatternIndex].Name;\n    var rc = Rhino.Input.RhinoGet.GetString(\"Hatch pattern\", true, ref hatch_name);\n    if( rc!= Rhino.Commands.Result.Success )\n      return rc;\n    hatch_name = hatch_name.Trim();\n    if( string.IsNullOrWhiteSpace(hatch_name) )\n      return Rhino.Commands.Result.Nothing;\n    int index = doc.HatchPatterns.Find(hatch_name, true);\n    if( index < 0 )\n    {\n      Rhino.RhinoApp.WriteLine(\"Hatch pattern does not exist.\");\n      return Rhino.Commands.Result.Nothing;\n    }\n\n    var hatches = Rhino.Geometry.Hatch.Create( curve, index, 0, 1);\n    for( int i=0; i<hatches.Length; i++ )\n      doc.Objects.AddHatch(hatches[i]);\n    if( hatches.Length>0 )\n      doc.Views.Redraw();\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
       ["Rhino.DocObjects.ModelComponent", "string Name"],
+      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale, System.Double tolerance)"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddHatch(Hatch hatch)"],
@@ -625,8 +625,8 @@
     "members": [
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Curve curve, System.Boolean allowPickingPointOffObject)"],
       ["Rhino.Input.Custom.GetPoint", "Curve PointOnCurve(out System.Double t)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Replace(ObjRef objref, Curve curve)"],
-      ["Rhino.Geometry.Collections.NurbsCurveKnotList", "System.Boolean InsertKnot(System.Double value)"]
+      ["Rhino.Geometry.Collections.NurbsCurveKnotList", "System.Boolean InsertKnot(System.Double value)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Replace(ObjRef objref, Curve curve)"]
     ]
   },
   {
@@ -642,8 +642,8 @@
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result IntersectCurves(Rhino.RhinoDoc doc)\n  {\n    // Select two curves to intersect\n    var go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select two curves\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GetMultiple(2, 2);\n    if (go.CommandResult() != Rhino.Commands.Result.Success)\n      return go.CommandResult();\n\n    // Validate input\n    var curveA = go.Object(0).Curve();\n    var curveB = go.Object(1).Curve();\n    if (curveA == null || curveB == null)\n      return Rhino.Commands.Result.Failure;\n\n    // Calculate the intersection\n    const double intersection_tolerance = 0.001;\n    const double overlap_tolerance = 0.0;\n    var events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance);\n\n    // Process the results\n    if (events != null)\n    {\n      for (int i = 0; i < events.Count; i++)\n      {\n        var ccx_event = events[i];\n        doc.Objects.AddPoint(ccx_event.PointA);\n        if (ccx_event.PointA.DistanceTo(ccx_event.PointB) > double.Epsilon)\n        {\n          doc.Objects.AddPoint(ccx_event.PointB);\n          doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB);\n        }\n      }\n      doc.Views.Redraw();\n    }\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
       ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
-      ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Point3f", "System.Double DistanceTo(Point3f other)"],
+      ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveCurve(Curve curveA, Curve curveB, System.Double tolerance, System.Double overlapTolerance)"]
     ]
   },
@@ -658,9 +658,9 @@
     "name": "Intersectlines.cs",
     "code": "using Rhino.Geometry;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result IntersectLines(Rhino.RhinoDoc doc)\n  {\n    Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt( \"Select lines\" );\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GetMultiple( 2, 2);\n    if( go.CommandResult() != Rhino.Commands.Result.Success )\n      return go.CommandResult();\n    if( go.ObjectCount != 2 )\n      return Rhino.Commands.Result.Failure;\n\n    LineCurve crv0 = go.Object(0).Geometry() as LineCurve;\n    LineCurve crv1 = go.Object(1).Geometry() as LineCurve;\n    if( crv0==null || crv1==null )\n      return Rhino.Commands.Result.Failure;\n\n    Line line0 = crv0.Line;\n    Line line1 = crv1.Line;\n    Vector3d v0 = line0.Direction;\n    v0.Unitize();\n    Vector3d v1 = line1.Direction;\n    v1.Unitize();\n\n    if( v0.IsParallelTo(v1) != 0 )\n    {\n      Rhino.RhinoApp.WriteLine(\"Selected lines are parallel.\");\n      return Rhino.Commands.Result.Nothing;\n    }\n\n    double a, b;\n    if( !Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1, out a, out b))\n    {\n      Rhino.RhinoApp.WriteLine(\"No intersection found.\");\n      return Rhino.Commands.Result.Nothing;\n    }\n\n    Point3d pt0 = line0.PointAt(a);\n    Point3d pt1 = line1.PointAt(b);\n    // pt0 and pt1 should be equal, so we will only add pt0 to the document\n    doc.Objects.AddPoint( pt0 );\n    doc.Views.Redraw();\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.Geometry.Vector3d", "System.Int32 IsParallelTo(Vector3d other)"],
       ["Rhino.Geometry.Line", "Vector3d Direction"],
       ["Rhino.Geometry.Line", "Point3d PointAt(System.Double t)"],
+      ["Rhino.Geometry.Vector3d", "System.Int32 IsParallelTo(Vector3d other)"],
       ["Rhino.Geometry.Intersect.Intersection", "System.Boolean LineLine(Line lineA, Line lineB, out System.Double a, out System.Double b)"]
     ]
   },
@@ -683,8 +683,8 @@
     "name": "Issurfaceinplane.cs",
     "code": "using System.Linq;\nusing Rhino;\nusing Rhino.DocObjects;\nusing Rhino.Geometry;\nusing Rhino.Commands;\nusing Rhino.Input;\n\nnamespace examples_cs\n{\n  public class IsPlanarSurfaceInPlaneCommand : Command\n  {\n    public override string EnglishName { get { return \"csIsPlanarSurfaceInPlane\"; } }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      ObjRef obj_ref;\n      var rc = RhinoGet.GetOneObject(\"select surface\", true, ObjectType.Surface, out obj_ref);\n      if (rc != Result.Success)\n        return rc;\n      var surface = obj_ref.Surface();\n\n      Point3d[] corners;\n      rc = RhinoGet.GetRectangle(out corners);\n      if (rc != Result.Success)\n        return rc;\n\n      var plane = new Plane(corners[0], corners[1], corners[2]);\n\n      var is_or_isnt = \"\";\n      if (IsSurfaceInPlane(surface, plane, doc.ModelAbsoluteTolerance))\n        is_or_isnt = \" not \";\n\n      RhinoApp.WriteLine(\"Surface is{0} in plane.\", is_or_isnt);\n      return Result.Success;\n    }\n\n    private bool IsSurfaceInPlane(Surface surface, Plane plane, double tolerance)\n    {\n      if (!surface.IsPlanar(tolerance))\n        return false;\n     \n      var bbox = surface.GetBoundingBox(true);\n      return bbox.GetCorners().All(\n        corner => System.Math.Abs(plane.DistanceTo(corner)) <= tolerance);\n    }\n  }\n}",
     "members": [
-      ["Rhino.Geometry.Plane", "System.Double DistanceTo(Point3d testPoint)"],
-      ["Rhino.Geometry.Surface", "System.Boolean IsPlanar()"]
+      ["Rhino.Geometry.Surface", "System.Boolean IsPlanar()"],
+      ["Rhino.Geometry.Plane", "System.Double DistanceTo(Point3d testPoint)"]
     ]
   },
   {
@@ -715,8 +715,8 @@
     "name": "Makerhinocontours.cs",
     "code": "using System;\nusing Rhino;\nusing Rhino.DocObjects;\nusing Rhino.Geometry;\nusing Rhino.Input;\nusing Rhino.Input.Custom;\nusing Rhino.Commands;\n\nnamespace examples_cs\n{\n  public class ContourCommand : Command\n  {\n    public override string EnglishName { get { return \"csContour\"; } }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      var filter = ObjectType.Surface | ObjectType.PolysrfFilter | ObjectType.Mesh;\n      ObjRef[] obj_refs;\n      var rc = RhinoGet.GetMultipleObjects(\"Select objects to contour\", false, filter, out obj_refs);\n      if (rc != Result.Success)\n        return rc;\n\n      var gp = new GetPoint();\n      gp.SetCommandPrompt(\"Contour plane base point\");\n      gp.Get();\n      if (gp.CommandResult() != Result.Success)\n        return gp.CommandResult();\n      var base_point = gp.Point();\n\n      gp.DrawLineFromPoint(base_point, true);\n      gp.SetCommandPrompt(\"Direction perpendicular to contour planes\");\n      gp.Get();\n      if (gp.CommandResult() != Result.Success)\n        return gp.CommandResult();\n      var end_point = gp.Point();\n\n      if (base_point.DistanceTo(end_point) < RhinoMath.ZeroTolerance)\n        return Result.Nothing;\n\n      double distance = 1.0;\n      rc = RhinoGet.GetNumber(\"Distance between contours\", false, ref distance);\n      if (rc != Result.Success)\n        return rc;\n\n      var interval = Math.Abs(distance);\n\n      Curve[] curves = null;\n      foreach (var obj_ref in obj_refs)\n      {\n        var geometry = obj_ref.Geometry();\n        if (geometry == null)\n          return Result.Failure;\n\n        if (geometry is Brep)\n        {\n          curves = Brep.CreateContourCurves(geometry as Brep, base_point, end_point, interval);\n        }\n        else\n        {\n          curves = Mesh.CreateContourCurves(geometry as Mesh, base_point, end_point, interval);\n        }\n\n        foreach (var curve in curves)\n        {\n          var curve_object_id = doc.Objects.AddCurve(curve);\n          doc.Objects.Select(curve_object_id);\n        }\n      }\n\n      if (curves != null)\n        doc.Views.Redraw();\n      return Result.Success;\n    }\n  }\n}",
     "members": [
-      ["Rhino.Geometry.Brep", "Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, System.Double interval)"],
-      ["Rhino.Geometry.Mesh", "Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, System.Double interval, System.Double tolerance)"]
+      ["Rhino.Geometry.Mesh", "Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, System.Double interval, System.Double tolerance)"],
+      ["Rhino.Geometry.Brep", "Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, System.Double interval)"]
     ]
   },
   {
@@ -741,8 +741,8 @@
     "name": "Modifylightcolor.cs",
     "code": "using Rhino;\nusing Rhino.DocObjects;\nusing Rhino.Commands;\nusing Rhino.Input;\nusing Rhino.UI;\n\nnamespace examples_cs\n{\n  public class ChangeLightColorCommand : Rhino.Commands.Command\n  {\n    public override string EnglishName\n    {\n      get { return \"csLightColor\"; }\n    }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      ObjRef obj_ref;\n      var rc = RhinoGet.GetOneObject(\"Select light to change color\", true,\n        ObjectType.Light, out obj_ref);\n      if (rc != Result.Success)\n        return rc;\n      var light = obj_ref.Light();\n      if (light == null)\n        return Result.Failure;\n\n      var diffuse_color = light.Diffuse;\n      if (Dialogs.ShowColorDialog(ref diffuse_color))\n      {\n        light.Diffuse = diffuse_color;\n      }\n\n      doc.Lights.Modify(obj_ref.ObjectId, light);\n      return Result.Success;\n    }\n  }\n}",
     "members": [
-      ["Rhino.Geometry.Light", "Color Diffuse"],
       ["Rhino.UI.Dialogs", "System.Boolean ShowColorDialog(ref System.Drawing.Color color)"],
+      ["Rhino.Geometry.Light", "Color Diffuse"],
       ["Rhino.DocObjects.Tables.LightTable", "System.Boolean Modify(System.Guid id, Geometry.Light light)"]
     ]
   },
@@ -818,15 +818,15 @@
       ["Rhino.DocObjects.RhinoObject", "System.Int32 Select(System.Boolean on)"],
       ["Rhino.DocObjects.ObjRef", "RhinoObject Object()"],
       ["Rhino.DocObjects.ObjRef", "Surface Surface()"],
-      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
-      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Surface surface, System.Boolean allowPickingPointOffObject)"],
       ["Rhino.Input.Custom.GetObject", "bool DeselectAllBeforePostSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjectType GeometryFilter"],
       ["Rhino.Input.Custom.GetObject", "bool GroupSelect"],
       ["Rhino.Input.Custom.GetObject", "bool OneByOnePostSelect"],
       ["Rhino.Input.Custom.GetObject", "bool SubObjectSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjRef Object(System.Int32 index)"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Surface surface, System.Boolean allowPickingPointOffObject)"],
+      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
+      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid Transform(ObjRef objref, Transform xform, System.Boolean deleteOriginal)"]
     ]
   },
@@ -848,8 +848,8 @@
     "name": "Pointatcursor.cs",
     "code": "using Rhino;\nusing Rhino.Commands;\nusing Rhino.DocObjects;\nusing System;\n\nnamespace examples_cs\n{\n  public class PointAtCursorCommand : Command\n  {\n    public override string EnglishName { get { return \"csPointAtCursor\"; } }\n\n    [System.Runtime.InteropServices.DllImport(\"user32.dll\")]\n    public static extern bool GetCursorPos(out System.Drawing.Point point);\n \n    [System.Runtime.InteropServices.DllImport(\"user32.dll\")]\n    public static extern bool ScreenToClient(IntPtr hWnd, ref System.Drawing.Point point);\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      var result = Result.Failure;\n      var view = doc.Views.ActiveView;\n      if (view == null) return result;\n\n      System.Drawing.Point windows_drawing_point;\n      if (!GetCursorPos(out windows_drawing_point) || !ScreenToClient(view.Handle, ref windows_drawing_point))\n        return result;\n\n      var xform = view.ActiveViewport.GetTransform(CoordinateSystem.Screen, CoordinateSystem.World);\n      var point = new Rhino.Geometry.Point3d(windows_drawing_point.X, windows_drawing_point.Y, 0.0);\n      RhinoApp.WriteLine(\"screen point: ({0})\", point);\n      point.Transform(xform);\n      RhinoApp.WriteLine(\"world point: ({0})\", point);\n      result = Result.Success;\n      return result;\n    }\n  }\n}",
     "members": [
-      ["Rhino.Geometry.Point3d", "System.Void Transform(Transform xform)"],
-      ["Rhino.Display.RhinoViewport", "Transform GetTransform(DocObjects.CoordinateSystem sourceSystem, DocObjects.CoordinateSystem destinationSystem)"]
+      ["Rhino.Display.RhinoViewport", "Transform GetTransform(DocObjects.CoordinateSystem sourceSystem, DocObjects.CoordinateSystem destinationSystem)"],
+      ["Rhino.Geometry.Point3d", "System.Void Transform(Transform xform)"]
     ]
   },
   {
@@ -978,16 +978,16 @@
     "members": [
       ["Rhino.Geometry.TextEntity", "TextEntity()"],
       ["Rhino.Geometry.TextEntity", "TextJustification Justification"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddText(Text3d text3d)"],
-      ["Rhino.DocObjects.Tables.FontTable", "System.Int32 FindOrCreate(System.String face, System.Boolean bold, System.Boolean italic)"]
+      ["Rhino.DocObjects.Tables.FontTable", "System.Int32 FindOrCreate(System.String face, System.Boolean bold, System.Boolean italic)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddText(Text3d text3d)"]
     ]
   },
   {
     "name": "Tightboundingbox.cs",
     "code": "using Rhino;\nusing Rhino.Commands;\nusing System.Linq;\nusing Rhino.Geometry;\nusing Rhino.Input;\nusing Rhino.DocObjects;\nusing System.Collections.Generic;\n\nnamespace examples_cs\n{\n  public class TightBoundingBoxCommand : Command\n  {\n    public override string EnglishName { get { return \"csTightBoundingBox\"; } }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      ObjRef obj_ref;\n      var rc = RhinoGet.GetOneObject(\n        \"Select surface to split\", true, ObjectType.Surface, out obj_ref);\n      if (rc != Result.Success)\n        return rc;\n      var surface = obj_ref.Surface();\n      if (surface == null)\n        return Result.Failure;\n\n      obj_ref = null;\n      rc = RhinoGet.GetOneObject(\n        \"Select cutting curve\", true, ObjectType.Curve, out obj_ref);\n      if (rc != Result.Success)\n        return rc;\n      var curve = obj_ref.Curve();\n      if (curve == null)\n        return Result.Failure;\n\n      var brep_face = surface as BrepFace;\n      if (brep_face == null)\n        return Result.Failure;\n\n      var split_brep = brep_face.Split(\n        new List<Curve> {curve}, doc.ModelAbsoluteTolerance);\n      if (split_brep == null)\n      {\n        RhinoApp.WriteLine(\"Unable to split surface.\");\n        return Result.Nothing;\n      }\n\n      var meshes = Mesh.CreateFromBrep(split_brep);\n\n      foreach (var mesh in meshes)\n      {\n        var bbox = mesh.GetBoundingBox(true);\n        switch (bbox.IsDegenerate(doc.ModelAbsoluteTolerance))\n        {\n          case 3:\n          case 2:\n            return Result.Failure;\n          case 1:\n            // rectangle\n            // box with 8 corners flattened to rectangle with 4 corners\n            var rectangle_corners = bbox.GetCorners().Distinct().ToList();\n            // add 1st point as last to close the loop\n            rectangle_corners.Add(rectangle_corners[0]);\n            doc.Objects.AddPolyline(rectangle_corners);\n            doc.Views.Redraw();\n            break;\n          case 0: \n            // box\n            var brep_box = new Box(bbox).ToBrep();\n            doc.Objects.AddBrep(brep_box);\n            doc.Views.Redraw();\n            break;\n        }\n      }\n\n      return Result.Success;\n    }\n  }\n}",
     "members": [
-      ["Rhino.Geometry.BrepFace", "Brep Split(IEnumerable<Curve> curves, System.Double tolerance)"],
       ["Rhino.Geometry.Mesh", "Mesh[] CreateFromBrep(Brep brep)"],
+      ["Rhino.Geometry.BrepFace", "Brep Split(IEnumerable<Curve> curves, System.Double tolerance)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPolyline(IEnumerable<Point3d> points)"]
     ]
   },
@@ -1021,17 +1021,17 @@
       ["Rhino.UI.OpenFileDialog", "string FileName"],
       ["Rhino.UI.OpenFileDialog", "string Filter"],
       ["Rhino.UI.OpenFileDialog", "System.Boolean ShowOpenDialog()"],
-      ["Rhino.Input.Custom.GetNumber", "GetNumber()"],
-      ["Rhino.Input.Custom.GetNumber", "GetResult Get()"],
-      ["Rhino.Input.Custom.GetNumber", "System.Void SetLowerLimit(System.Double lowerLimit, System.Boolean strictlyGreaterThan)"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean ConstrainToConstructionPlane(System.Boolean throughBasePoint)"],
       ["Rhino.Input.Custom.GetBaseClass", "Result CommandResult()"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Double Number()"],
       ["Rhino.Input.Custom.GetBaseClass", "RhinoView View()"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean ConstrainToConstructionPlane(System.Boolean throughBasePoint)"],
-      ["Rhino.Display.RhinoViewport", "Plane ConstructionPlane()"],
-      ["Rhino.Display.RhinoViewport", "System.Boolean SetTraceImage(System.String bitmapFileName, Plane plane, System.Double width, System.Double height, System.Boolean grayscale, System.Boolean filtered)"],
+      ["Rhino.Input.Custom.GetNumber", "GetNumber()"],
+      ["Rhino.Input.Custom.GetNumber", "GetResult Get()"],
+      ["Rhino.Input.Custom.GetNumber", "System.Void SetLowerLimit(System.Double lowerLimit, System.Boolean strictlyGreaterThan)"],
       ["Rhino.Display.RhinoView", "RhinoViewport ActiveViewport"],
       ["Rhino.Display.RhinoView", "System.Void Redraw()"],
+      ["Rhino.Display.RhinoViewport", "Plane ConstructionPlane()"],
+      ["Rhino.Display.RhinoViewport", "System.Boolean SetTraceImage(System.String bitmapFileName, Plane plane, System.Double width, System.Double height, System.Boolean grayscale, System.Boolean filtered)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoView ActiveView"]
     ]
   },
@@ -1056,8 +1056,8 @@
     "name": "Addcircle.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef AddCircle():\n    center = Rhino.Geometry.Point3d(0, 0, 0)\n    radius = 10.0\n    c = Rhino.Geometry.Circle(center, radius)\n    if scriptcontext.doc.Objects.AddCircle(c)!=System.Guid.Empty:\n        scriptcontext.doc.Views.Redraw()\n        return Rhino.Commands.Result.Success\n    return Rhino.Commands.Result.Failure\n\nif __name__==\"__main__\":\n    AddCircle()\n",
     "members": [
-      ["Rhino.Geometry.Point3d", "Point3d(double x, double y, double z)"],
       ["Rhino.Geometry.Circle", "Circle(Plane plane, double radius)"],
+      ["Rhino.Geometry.Point3d", "Point3d(double x, double y, double z)"],
       ["Rhino.DocObjects.Tables.ViewTable", "System.Void Redraw()"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddCircle(Circle circle)"]
     ]
@@ -1068,31 +1068,31 @@
     "members": [
       ["Rhino.Geometry.Plane", "Plane(Point3d origin, Point3d xPoint, Point3d yPoint)"],
       ["Rhino.FileIO.File3dmObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"],
-      ["Rhino.Input.RhinoGet", "Result GetRectangle(out Point3d[] corners)"]
+      ["Rhino.Input.RhinoGet", "Result GetRectangle(out Point3d[] corners)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"]
     ]
   },
   {
     "name": "Addcylinder.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef AddCylinder():\n    center_point = Rhino.Geometry.Point3d(0, 0, 0)\n    height_point = Rhino.Geometry.Point3d(0, 0, 10)\n    zaxis = height_point-center_point\n    plane = Rhino.Geometry.Plane(center_point, zaxis)\n    radius = 5\n    circle = Rhino.Geometry.Circle(plane, radius)\n    cylinder = Rhino.Geometry.Cylinder(circle, zaxis.Length)\n    brep = cylinder.ToBrep(True, True)\n    if brep:\n        if scriptcontext.doc.Objects.AddBrep(brep)!=System.Guid.Empty:\n            scriptcontext.doc.Views.Redraw()\n            return Rhino.Commands.Result.Success\n    return Rhino.Commands.Result.Failure\n\nif __name__==\"__main__\":\n    AddCylinder()\n",
     "members": [
-      ["Rhino.Geometry.Plane", "Plane(Point3d origin, Vector3d normal)"],
       ["Rhino.Geometry.Cylinder", "Cylinder(Circle baseCircle, double height)"],
-      ["Rhino.Geometry.Cylinder", "Brep ToBrep(System.Boolean capBottom, System.Boolean capTop)"]
+      ["Rhino.Geometry.Cylinder", "Brep ToBrep(System.Boolean capBottom, System.Boolean capTop)"],
+      ["Rhino.Geometry.Plane", "Plane(Point3d origin, Vector3d normal)"]
     ]
   },
   {
     "name": "Addlayer.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid, System.Drawing.Color\n\ndef AddLayer():\n    # Cook up an unused layer name\n    unused_name = scriptcontext.doc.Layers.GetUnusedLayerName(False)\n\n    # Prompt the user to enter a layer name\n    gs = Rhino.Input.Custom.GetString()\n    gs.SetCommandPrompt(\"Name of layer to add\")\n    gs.SetDefaultString(unused_name)\n    gs.AcceptNothing(True)\n    gs.Get()\n    if gs.CommandResult()!=Rhino.Commands.Result.Success:\n        return gs.CommandResult()\n\n    # Was a layer named entered?\n    layer_name = gs.StringResult().Trim()\n    if not layer_name:\n        print \"Layer name cannot be blank.\"\n        return Rhino.Commands.Result.Cancel\n\n    # Is the layer name valid?\n    if not Rhino.DocObjects.Layer.IsValidName(layer_name):\n        print layer_name, \"is not a valid layer name.\"\n        return Rhino.Commands.Result.Cancel\n\n    # Does a layer with the same name already exist?\n    layer_index = scriptcontext.doc.Layers.Find(layer_name, True)\n    if layer_index>=0:\n        print \"A layer with the name\", layer_name, \"already exists.\"\n        return Rhino.Commands.Result.Cancel\n\n    # Add a new layer to the document\n    layer_index = scriptcontext.doc.Layers.Add(layer_name, System.Drawing.Color.Black)\n    if layer_index<0:\n        print \"Unable to add\", layer_name, \"layer.\"\n        return Rhino.Commands.Result.Failure\n\n    return Rhino.Commands.Result.Success\n\n\nif __name__==\"__main__\":\n    AddLayer()\n",
     "members": [
+      ["Rhino.DocObjects.Layer", "System.Boolean IsValidName(System.String name)"],
       ["Rhino.RhinoApp", "System.Void WriteLine(System.String format, System.Object arg0)"],
       ["Rhino.RhinoApp", "System.Void WriteLine(System.String message)"],
-      ["Rhino.DocObjects.Layer", "System.Boolean IsValidName(System.String name)"],
-      ["Rhino.Input.Custom.GetString", "GetString()"],
-      ["Rhino.Input.Custom.GetString", "GetResult Get()"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Void AcceptNothing(System.Boolean enable)"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Void SetDefaultString(System.String defaultValue)"],
       ["Rhino.Input.Custom.GetBaseClass", "System.String StringResult()"],
+      ["Rhino.Input.Custom.GetString", "GetString()"],
+      ["Rhino.Input.Custom.GetString", "GetResult Get()"],
       ["Rhino.DocObjects.Tables.LayerTable", "System.Int32 Add(System.String layerName, System.Drawing.Color layerColor)"],
       ["Rhino.DocObjects.Tables.LayerTable", "System.Int32 Find(System.String layerName, System.Boolean ignoreDeletedLayers)"],
       ["Rhino.DocObjects.Tables.LayerTable", "Layer FindName(System.String layerName)"],
@@ -1104,14 +1104,14 @@
     "name": "Addlayout.py",
     "code": "import Rhino\nimport scriptcontext\n\n# Generate a layout with a single detail view that zooms\n# to a list of objects\ndef AddLayout():\n    scriptcontext.doc.PageUnitSystem = Rhino.UnitSystem.Millimeters\n    page_views = scriptcontext.doc.Views.GetPageViews()\n    page_number = 1\n    if page_views: page_number = len(page_views) + 1\n    pageview = scriptcontext.doc.Views.AddPageView(\"A0_{0}\".format(page_number), 1189, 841)\n    if pageview:\n        top_left = Rhino.Geometry.Point2d(20,821)\n        bottom_right = Rhino.Geometry.Point2d(1169, 20)\n        detail = pageview.AddDetailView(\"ModelView\", top_left, bottom_right, Rhino.Display.DefinedViewportProjection.Top)\n        if detail:\n            pageview.SetActiveDetail(detail.Id)\n            detail.Viewport.ZoomExtents()\n            detail.DetailGeometry.IsProjectionLocked = True\n            detail.DetailGeometry.SetScale(1, scriptcontext.doc.ModelUnitSystem, 10, scriptcontext.doc.PageUnitSystem)\n            # Commit changes tells the document to replace the document's detail object\n            # with the modified one that we just adjusted\n            detail.CommitChanges()\n        pageview.SetPageAsActive()\n        scriptcontext.doc.Views.ActiveView = pageview\n        scriptcontext.doc.Views.Redraw()\n\nif __name__==\"__main__\":\n    AddLayout()",
     "members": [
-      ["Rhino.RhinoDoc", "UnitSystem PageUnitSystem"],
       ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
-      ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
-      ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
+      ["Rhino.RhinoDoc", "UnitSystem PageUnitSystem"],
+      ["Rhino.Display.RhinoViewport", "System.Boolean ZoomExtents()"],
       ["Rhino.Display.RhinoPageView", "DetailViewObject AddDetailView(System.String title, Geometry.Point2d corner0, Geometry.Point2d corner1, DefinedViewportProjection initialProjection)"],
       ["Rhino.Display.RhinoPageView", "System.Boolean SetActiveDetail(System.Guid detailId)"],
       ["Rhino.Display.RhinoPageView", "System.Void SetPageAsActive()"],
-      ["Rhino.Display.RhinoViewport", "System.Boolean ZoomExtents()"],
+      ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
+      ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView AddPageView(System.String title, System.Double pageWidth, System.Double pageHeight)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView[] GetPageViews()"]
     ]
@@ -1120,14 +1120,14 @@
     "name": "Addline.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef AddLine():\n    gp = Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Start of line\")\n    gp.Get()\n    if gp.CommandResult()!=Rhino.Commands.Result.Success:\n        return gp.CommandResult()\n    pt_start = gp.Point()\n\n    gp.SetCommandPrompt(\"End of line\")\n    gp.SetBasePoint(pt_start, False)\n    gp.DrawLineFromPoint(pt_start, True)\n    gp.Get()\n    if gp.CommandResult() != Rhino.Commands.Result.Success:\n        return gp.CommandResult()\n    pt_end = gp.Point()\n    v = pt_end - pt_start\n    if v.IsTiny(Rhino.RhinoMath.ZeroTolerance):\n        return Rhino.Commands.Result.Nothing\n    \n    id = scriptcontext.doc.Objects.AddLine(pt_start, pt_end)\n    if id!=System.Guid.Empty:\n        scriptcontext.doc.Views.Redraw()\n        return Rhino.Commands.Result.Success\n    return Rhino.Commands.Result.Failure\n\nif __name__==\"__main__\":\n    AddLine()\n",
     "members": [
-      ["Rhino.Geometry.Vector2d", "System.Boolean IsTiny(System.Double tolerance)"],
-      ["Rhino.Geometry.Vector3d", "System.Boolean IsTiny(System.Double tolerance)"],
-      ["Rhino.Input.Custom.GetBaseClass", "Point3d Point()"],
-      ["Rhino.Input.Custom.GetBaseClass", "System.Void SetCommandPrompt(System.String prompt)"],
       ["Rhino.Input.Custom.GetPoint", "GetPoint()"],
       ["Rhino.Input.Custom.GetPoint", "System.Void DrawLineFromPoint(Point3d startPoint, System.Boolean showDistanceInStatusBar)"],
       ["Rhino.Input.Custom.GetPoint", "GetResult Get()"],
       ["Rhino.Input.Custom.GetPoint", "System.Void SetBasePoint(Point3d basePoint, System.Boolean showDistanceInStatusBar)"],
+      ["Rhino.Input.Custom.GetBaseClass", "Point3d Point()"],
+      ["Rhino.Input.Custom.GetBaseClass", "System.Void SetCommandPrompt(System.String prompt)"],
+      ["Rhino.Geometry.Vector2d", "System.Boolean IsTiny(System.Double tolerance)"],
+      ["Rhino.Geometry.Vector3d", "System.Boolean IsTiny(System.Double tolerance)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLine(Point3d from, Point3d to)"]
     ]
   },
@@ -1135,16 +1135,16 @@
     "name": "Addlineardimension.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef AddLinearDimension():\n    rc, dimension = Rhino.Input.RhinoGet.GetLinearDimension()\n    if rc==Rhino.Commands.Result.Success:\n        if scriptcontext.doc.Objects.AddLinearDimension(dimension)==System.Guid.Empty:\n            rc = Rhino.Commands.Result.Failure\n        else:\n            scriptcontext.doc.Views.Redraw()\n    return rc\n\n\nif __name__==\"__main__\":\n    AddLinearDimension()\n",
     "members": [
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLinearDimension(LinearDimension dimension)"],
-      ["Rhino.Input.RhinoGet", "Result GetLinearDimension(out LinearDimension dimension)"]
+      ["Rhino.Input.RhinoGet", "Result GetLinearDimension(out LinearDimension dimension)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLinearDimension(LinearDimension dimension)"]
     ]
   },
   {
     "name": "Addlineardimension2.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef AddLinearDimension2():\n    origin = Rhino.Geometry.Point3d(1,1,0)\n    offset = Rhino.Geometry.Point3d(11,1,0)\n    pt = Rhino.Geometry.Point3d((offset.X-origin.X)/2.0,3,0)\n    plane = Rhino.Geometry.Plane.WorldXY\n    plane.Origin = origin\n    \n    rc, u, v = plane.ClosestParameter(origin)\n    ext1 = Rhino.Geometry.Point2d(u,v)\n    rc, u, v = plane.ClosestParameter(offset)\n    ext2 = Rhino.Geometry.Point2d(u,v)\n    rc, u, v = plane.ClosestParameter(pt)\n    linePt = Rhino.Geometry.Point2d(u,v)\n    \n    dimension = Rhino.Geometry.LinearDimension(plane, ext1, ext2, linePt)\n    if scriptcontext.doc.Objects.AddLinearDimension(dimension)!=System.Guid.Empty:\n        scriptcontext.doc.Views.Redraw()\n        return Rhino.Commands.Result.Success\n    return Rhino.Commands.Result.Failure\n\nif __name__==\"__main__\":\n    AddLinearDimension2()\n",
     "members": [
-      ["Rhino.Geometry.Plane", "System.Boolean ClosestParameter(Point3d testPoint, out System.Double s, out System.Double t)"],
-      ["Rhino.Geometry.LinearDimension", "LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)"]
+      ["Rhino.Geometry.LinearDimension", "LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)"],
+      ["Rhino.Geometry.Plane", "System.Boolean ClosestParameter(Point3d testPoint, out System.Double s, out System.Double t)"]
     ]
   },
   {
@@ -1156,11 +1156,11 @@
       ["Rhino.Geometry.Mesh", "MeshVertexNormalList Normals"],
       ["Rhino.Geometry.Mesh", "MeshVertexList Vertices"],
       ["Rhino.Geometry.Mesh", "System.Boolean Compact()"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddMesh(Geometry.Mesh mesh)"],
       ["Rhino.Geometry.Collections.MeshVertexList", "System.Int32 Add(System.Double x, System.Double y, System.Double z)"],
       ["Rhino.Geometry.Collections.MeshVertexList", "System.Int32 Add(System.Single x, System.Single y, System.Single z)"],
       ["Rhino.Geometry.Collections.MeshVertexNormalList", "System.Boolean ComputeNormals()"],
-      ["Rhino.Geometry.Collections.MeshFaceList", "System.Int32 AddFace(System.Int32 vertex1, System.Int32 vertex2, System.Int32 vertex3, System.Int32 vertex4)"]
+      ["Rhino.Geometry.Collections.MeshFaceList", "System.Int32 AddFace(System.Int32 vertex1, System.Int32 vertex2, System.Int32 vertex3, System.Int32 vertex4)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddMesh(Geometry.Mesh mesh)"]
     ]
   },
   {
@@ -1174,10 +1174,10 @@
       ["Rhino.Display.RhinoViewport", "System.Void PushViewProjection()"],
       ["Rhino.Display.RhinoViewport", "System.Void SetCameraDirection(Vector3d cameraDirection, System.Boolean updateTargetLocation)"],
       ["Rhino.Display.RhinoViewport", "System.Void SetCameraLocation(Point3d cameraLocation, System.Boolean updateTargetLocation)"],
-      ["Rhino.DocObjects.Tables.NamedViewTable", "System.Int32 Add(System.String name, System.Guid viewportId)"],
       ["Rhino.Input.RhinoGet", "Result GetPoint(System.String prompt, System.Boolean acceptNothing, out Point3d point)"],
       ["Rhino.Input.RhinoGet", "Result GetString(System.String prompt, System.Boolean acceptNothing, ref System.String outputString)"],
-      ["Rhino.Input.RhinoGet", "Result GetView(System.String commandPrompt, out RhinoView view)"]
+      ["Rhino.Input.RhinoGet", "Result GetView(System.String commandPrompt, out RhinoView view)"],
+      ["Rhino.DocObjects.Tables.NamedViewTable", "System.Int32 Add(System.String name, System.Guid viewportId)"]
     ]
   },
   {
@@ -1249,9 +1249,9 @@
     "name": "Addtruncatedcone.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef AddTruncatedCone():\n    bottom_pt = Rhino.Geometry.Point3d(0,0,0)\n    bottom_radius = 2\n    bottom_circle = Rhino.Geometry.Circle(bottom_pt, bottom_radius)\n\n    top_pt = Rhino.Geometry.Point3d(0,0,10)\n    top_radius = 6\n    top_circle = Rhino.Geometry.Circle(top_pt, top_radius)\n\n    shapeCurve = Rhino.Geometry.LineCurve(bottom_circle.PointAt(0), top_circle.PointAt(0))\n    axis = Rhino.Geometry.Line(bottom_circle.Center, top_circle.Center)\n    revsrf = Rhino.Geometry.RevSurface.Create(shapeCurve, axis)\n    tcone_brep = Rhino.Geometry.Brep.CreateFromRevSurface(revsrf, True, True)\n\n    if scriptcontext.doc.Objects.AddBrep(tcone_brep)!=System.Guid.Empty:\n        scriptcontext.doc.Views.Redraw()\n        return Rhino.Commands.Result.Success\n    return Rhino.Commands.Result.Failure\n\n\nif __name__==\"__main__\":\n    AddTruncatedCone()\n",
     "members": [
-      ["Rhino.Geometry.Brep", "Brep CreateFromRevSurface(RevSurface surface, System.Boolean capStart, System.Boolean capEnd)"],
-      ["Rhino.Geometry.RevSurface", "RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)"],
       ["Rhino.Geometry.LineCurve", "LineCurve(Point3d from, Point3d to)"],
+      ["Rhino.Geometry.RevSurface", "RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)"],
+      ["Rhino.Geometry.Brep", "Brep CreateFromRevSurface(RevSurface surface, System.Boolean capStart, System.Boolean capEnd)"],
       ["Rhino.Geometry.Circle", "Circle(Point3d center, double radius)"]
     ]
   },
@@ -1277,11 +1277,11 @@
     "name": "Arraybydistance.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef dynamic_array():\n    rc, objref = Rhino.Input.RhinoGet.GetOneObject(\"Select object\", True, Rhino.DocObjects.ObjectType.AnyObject)\n    if rc!=Rhino.Commands.Result.Success: return\n    \n    rc, pt_start = Rhino.Input.RhinoGet.GetPoint(\"Start point\", False)\n    if rc!=Rhino.Commands.Result.Success: return\n    \n    obj = objref.Object()\n    if not obj: return\n    \n    dist = 1\n    if scriptcontext.sticky.has_key(\"dynamic_array_distance\"):\n        dist = scriptcontext.sticky[\"dynamic_array_distance\"]\n    # This is a function that is called whenever the GetPoint's\n    # DynamicDraw event occurs\n    def ArrayByDistanceDraw( sender, args ):\n        rhobj = args.Source.Tag\n        if not rhobj: return\n        vec = args.CurrentPoint - pt_start\n        length = vec.Length\n        vec.Unitize()\n        count = int(length / dist)\n        for i in range(1,count):\n            translate = vec * (i*dist)\n            xf = Rhino.Geometry.Transform.Translation(translate)\n            args.Display.DrawObject(rhobj, xf)\n\n    # Create an instance of a GetPoint class and add a delegate\n    # for the DynamicDraw event\n    gp = Rhino.Input.Custom.GetPoint()\n    gp.DrawLineFromPoint(pt_start, True)\n    optdouble = Rhino.Input.Custom.OptionDouble(dist)\n    constrain = False\n    optconstrain = Rhino.Input.Custom.OptionToggle(constrain,\"Off\", \"On\")\n    gp.AddOptionDouble(\"Distance\", optdouble)\n    gp.AddOptionToggle(\"Constrain\", optconstrain)\n    gp.DynamicDraw += ArrayByDistanceDraw\n    gp.Tag = obj\n    while gp.Get()==Rhino.Input.GetResult.Option:\n        dist = optdouble.CurrentValue\n        if constrain!=optconstrain.CurrentValue:\n            constrain = optconstrain.CurrentValue\n            if constrain:\n                gp2 = Rhino.Input.Custom.GetPoint()\n                gp2.DrawLineFromPoint(pt_start, True)\n                gp2.SetCommandPrompt(\"Second point on constraint line\")\n                if gp2.Get()==Rhino.Input.GetResult.Point:\n                    gp.Constrain(pt_start, gp2.Point())\n                else:\n                    gp.ClearCommandOptions()\n                    optconstrain.CurrentValue = False\n                    constrain = False\n                    gp.AddOptionDouble(\"Distance\", optdouble)\n                    gp.AddOptionToggle(\"Constrain\", optconstrain)\n            else:\n                gp.ClearConstraints()\n        continue\n    if gp.CommandResult()==Rhino.Commands.Result.Success:\n        scriptcontext.sticky[\"dynamic_array_distance\"] = dist\n        pt = gp.Point()\n        vec = pt - pt_start\n        length = vec.Length\n        vec.Unitize()\n        count = int(length / dist)\n        for i in range(1, count):\n            translate = vec * (i*dist)\n            xf = Rhino.Geometry.Transform.Translation(translate)\n            scriptcontext.doc.Objects.Transform(obj,xf,False)\n        scriptcontext.doc.Views.Redraw()\n\n\nif( __name__ == \"__main__\" ):\n    dynamic_array()",
     "members": [
-      ["Rhino.Input.Custom.GetBaseClass", "System.Void ClearCommandOptions()"],
       ["Rhino.Input.Custom.GetPoint", "object Tag"],
       ["Rhino.Input.Custom.GetPoint", "System.Void ClearConstraints()"],
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Point3d from, Point3d to)"],
       ["Rhino.Input.Custom.GetPointDrawEventArgs", "GetPoint Source"],
+      ["Rhino.Input.Custom.GetBaseClass", "System.Void ClearCommandOptions()"],
       ["Rhino.Display.DisplayPipeline", "System.Void DrawObject(DocObjects.RhinoObject rhinoObject, Transform xform)"]
     ]
   },
@@ -1306,8 +1306,8 @@
     "name": "Circlecenter.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef CircleCenter():\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select objects\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.GetMultiple(1, 0)\n    if go.CommandResult()!=Rhino.Commands.Result.Success:\n        return go.CommandResult()\n\n    objrefs = go.Objects()\n    if not objrefs: return Rhino.Commands.Result.Nothing\n\n    tolerance = scriptcontext.doc.ModelAbsoluteTolerance\n    for i, objref in enumerate(objrefs):\n        # get the curve geometry\n        curve = objref.Curve()\n        if not curve: continue\n        rc, circle = curve.TryGetCircle( tolerance )\n        if rc:\n            print \"Circle\", i+1, \": center = \", circle.Center\n    return Rhino.Commands.Result.Success\n\nif __name__==\"__main__\":\n    CircleCenter()",
     "members": [
-      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle, System.Double tolerance)"],
-      ["Rhino.Input.Custom.GetObject", "GeometryAttributeFilter GeometryAttributeFilter"]
+      ["Rhino.Input.Custom.GetObject", "GeometryAttributeFilter GeometryAttributeFilter"],
+      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle, System.Double tolerance)"]
     ]
   },
   {
@@ -1357,9 +1357,9 @@
     "code": "import Rhino\nimport scriptcontext\n\ndef constrainedcopy():\n    #get a single closed curve\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.Get()\n    if go.CommandResult() != Rhino.Commands.Result.Success: return\n    objref = go.Object(0)\n    base_curve = objref.Curve()\n    first_point = objref.SelectionPoint()\n    if not base_curve or not first_point.IsValid:\n        return\n    isplanar, plane = base_curve.TryGetPlane()\n    if not isplanar: return\n    \n    gp = Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Offset point\")\n    gp.DrawLineFromPoint(first_point, True)\n    line = Rhino.Geometry.Line(first_point, first_point + plane.Normal)\n    gp.Constrain(line)\n    gp.Get()\n    if gp.CommandResult() != Rhino.Commands.Result.Success:\n        return\n    second_point = gp.Point()\n    vec = second_point - first_point\n    if vec.Length > 0.001:\n        xf = Rhino.Geometry.Transform.Translation(vec)\n        id = scriptcontext.doc.Objects.Transform(objref, xf, False)\n        scriptcontext.doc.Views.Redraw()\n        return id\n\nif __name__==\"__main__\":\n    constrainedcopy()\n",
     "members": [
       ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"],
       ["Rhino.Geometry.Curve", "System.Boolean TryGetPlane(out Plane plane)"],
-      ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"]
+      ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"]
     ]
   },
   {
@@ -1414,8 +1414,8 @@
     "name": "Curvebrepbox.py",
     "code": "import Rhino\nfrom Rhino.Geometry import *\nfrom Rhino.Commands import Result\nfrom Rhino.Input import RhinoGet\nfrom Rhino.DocObjects import ObjectType\nimport rhinoscriptsyntax as rs\nfrom scriptcontext import doc\n\ndef RunCommand():\n  rc, objRef = RhinoGet.GetOneObject(\"Select curve\", False, ObjectType.Curve)\n  if rc <> Result.Success:\n    return rc\n  curve = objRef.Curve()\n  if None == curve:\n    return Result.Failure\n\n  view = doc.Views.ActiveView\n  plane = view.ActiveViewport.ConstructionPlane()\n  # Create a construction plane aligned bounding box\n  bbox = curve.GetBoundingBox(plane)\n\n  if bbox.IsDegenerate(doc.ModelAbsoluteTolerance) > 0:\n    print \"the curve's bounding box is degenerate (flat) in at least one direction so a box cannot be created.\"\n    return Result.Failure\n\n  brep = Brep.CreateFromBox(bbox)\n  doc.Objects.AddBrep(brep)\n  doc.Views.Redraw()\n\n  return Result.Success\n\nif __name__ == \"__main__\":\n  print RunCommand()\n",
     "members": [
-      ["Rhino.Geometry.Brep", "Brep CreateFromBox(BoundingBox box)"],
-      ["Rhino.Geometry.BoundingBox", "System.Int32 IsDegenerate(System.Double tolerance)"]
+      ["Rhino.Geometry.BoundingBox", "System.Int32 IsDegenerate(System.Double tolerance)"],
+      ["Rhino.Geometry.Brep", "Brep CreateFromBox(BoundingBox box)"]
     ]
   },
   {
@@ -1430,17 +1430,17 @@
     "name": "Curvesurfaceintersect.py",
     "code": "import rhinoscriptsyntax as rs\nfrom scriptcontext import *\nimport Rhino\nimport System.Collections.Generic as scg\nimport System as s\n\ndef RunCommand():\n  srfid = rs.GetObject(\"select surface\", rs.filter.surface | rs.filter.polysurface)\n  if not srfid: return\n \n  crvid = rs.GetObject(\"select curve\", rs.filter.curve)\n  if not crvid: return\n\n  result = rs.CurveBrepIntersect(crvid, srfid)\n  if result == None:\n    print \"no intersection\"\n    return\n  \n  curves, points = result\n  for curve in curves:\n    doc.Objects.AddCurve(rs.coercecurve(curve))\n  for point in points:\n    rs.AddPoint(point)\n\n  doc.Views.Redraw()\n\nif __name__ == \"__main__\":\n  RunCommand()\n",
     "members": [
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Int32 Select(IEnumerable<Guid> objectIds)"],
+      ["Rhino.Geometry.Intersect.IntersectionEvent", "bool IsOverlap"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveSurface(Curve curve, Surface surface, System.Double tolerance, System.Double overlapTolerance)"],
-      ["Rhino.Geometry.Intersect.IntersectionEvent", "bool IsOverlap"]
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Int32 Select(IEnumerable<Guid> objectIds)"]
     ]
   },
   {
     "name": "Customgeometryfilter.py",
     "code": "import rhinoscriptsyntax as rs\nfrom scriptcontext import *\nimport Rhino\n\ndef circleWithRadiusOf10GeometryFilter (rhObject, geometry, componentIndex):\n  isCircleWithRadiusOf10 = False\n  c = rs.coercecurve(geometry)\n  if c:\n    b, circle = c.TryGetCircle()\n  if b:\n    isCircleWithRadiusOf10 = circle.Radius <= 10.0 + Rhino.RhinoMath.ZeroTolerance and circle.Radius >= 10.0 - Rhino.RhinoMath.ZeroTolerance\n  return isCircleWithRadiusOf10\n\ndef RunCommand():\n  # only use a custom geometry filter if no simpler filter does the job\n\n  # for curves - only a simple filter is needed\n  if rs.GetObject(\"select curve\", rs.filter.curve): #Rhino.DocObjects.ObjectType.Curve):\n    print \"curve vas selected\"\n\n  # for circles with a radius of 10 - a custom geometry filter is needed\n  if rs.GetObject(\"select circle with radius of 10\", rs.filter.curve, False, False, circleWithRadiusOf10GeometryFilter):\n      print \"circle with radius of 10 was selected\"\n\nif __name__==\"__main__\":\n  RunCommand()",
     "members": [
-      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle)"],
-      ["Rhino.Input.Custom.GetObject", "System.Void SetCustomGeometryFilter(GetObjectGeometryFilter filter)"]
+      ["Rhino.Input.Custom.GetObject", "System.Void SetCustomGeometryFilter(GetObjectGeometryFilter filter)"],
+      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle)"]
     ]
   },
   {
@@ -1455,8 +1455,8 @@
     "code": "from Rhino import *\nfrom Rhino.DocObjects import *\nfrom Rhino.Commands import *\nfrom Rhino.Geometry import *\nfrom scriptcontext import doc\n\ndef RunCommand():\n  for annotation_object in doc.Objects.GetObjectList(ObjectType.Annotation):\n    if not isinstance (annotation_object, AnnotationObjectBase):\n      continue\n\n    annotation = annotation_object.Geometry\n\n    if annotation.Index == doc.DimStyles.CurrentDimensionStyleIndex:\n      continue\n\n    annotation.Index = doc.DimStyles.CurrentDimensionStyleIndex\n    annotation_object.CommitChanges()\n\n  doc.Views.Redraw()\n  return Result.Success\n\nif __name__ == \"__main__\":\n  RunCommand()",
     "members": [
       ["Rhino.RhinoDoc", "DimStyleTable DimStyles"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "IEnumerable<RhinoObject> GetObjectList(System.Type typeFilter)"],
-      ["Rhino.DocObjects.Tables.DimStyleTable", "int CurrentIndex"]
+      ["Rhino.DocObjects.Tables.DimStyleTable", "int CurrentIndex"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "IEnumerable<RhinoObject> GetObjectList(System.Type typeFilter)"]
     ]
   },
   {
@@ -1483,12 +1483,12 @@
       ["Rhino.Geometry.Curve", "System.Double[] DivideByLength(System.Double segmentLength, System.Boolean includeEnds, System.Boolean reverse)"],
       ["Rhino.Geometry.Curve", "System.Double[] DivideByLength(System.Double segmentLength, System.Boolean includeEnds)"],
       ["Rhino.Geometry.Curve", "System.Boolean IsShort(System.Double tolerance)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3d point)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3f point)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Select(System.Guid objectId)"],
       ["Rhino.Input.RhinoGet", "Result GetNumber(System.String prompt, System.Boolean acceptNothing, ref System.Double outputNumber, System.Double lowerLimit, System.Double upperLimit)"],
       ["Rhino.Input.RhinoGet", "Result GetNumber(System.String prompt, System.Boolean acceptNothing, ref System.Double outputNumber)"],
-      ["Rhino.Input.RhinoGet", "Result GetOneObject(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef rhObject)"]
+      ["Rhino.Input.RhinoGet", "Result GetOneObject(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef rhObject)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3d point)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3f point)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Select(System.Guid objectId)"]
     ]
   },
   {
@@ -1606,8 +1606,8 @@
     "name": "Hatchcurve.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef HatchCurve():\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select closed planar curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.SubObjectSelect = False\n    go.Get()\n    if go.CommandResult()!=Rhino.Commands.Result.Success: return\n\n    curve = go.Object(0).Curve()\n    if (not curve or not curve.IsClosed or not curve.IsPlanar()): return\n\n    hatch_name = scriptcontext.doc.HatchPatterns[scriptcontext.doc.HatchPatterns.CurrentHatchPatternIndex].Name\n    rc, hatch_name = Rhino.Input.RhinoGet.GetString(\"Hatch pattern\", True, hatch_name)\n    if rc!=Rhino.Commands.Result.Success or not hatch_name: return\n\n    index = scriptcontext.doc.HatchPatterns.Find(hatch_name, True)\n    if index<0:\n        print \"Hatch pattern does not exist.\"\n        return\n\n    hatches = Rhino.Geometry.Hatch.Create(curve, index, 0, 1)\n    for hatch in hatches:\n        scriptcontext.doc.Objects.AddHatch(hatch)\n    if hatches: scriptcontext.doc.Views.Redraw()\n\nif __name__==\"__main__\":\n    HatchCurve()",
     "members": [
-      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
       ["Rhino.DocObjects.ModelComponent", "string Name"],
+      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale, System.Double tolerance)"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddHatch(Hatch hatch)"],
@@ -1622,8 +1622,8 @@
     "members": [
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Curve curve, System.Boolean allowPickingPointOffObject)"],
       ["Rhino.Input.Custom.GetPoint", "Curve PointOnCurve(out System.Double t)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Replace(ObjRef objref, Curve curve)"],
-      ["Rhino.Geometry.Collections.NurbsCurveKnotList", "System.Boolean InsertKnot(System.Double value)"]
+      ["Rhino.Geometry.Collections.NurbsCurveKnotList", "System.Boolean InsertKnot(System.Double value)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Replace(ObjRef objref, Curve curve)"]
     ]
   },
   {
@@ -1639,8 +1639,8 @@
     "code": "import Rhino\nimport scriptcontext\n\ndef IntersectCurves():\n    # Select two curves to intersect\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select two curves\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GetMultiple(2, 2)\n    if go.CommandResult()!=Rhino.Commands.Result.Success: return\n\n    # Validate input\n    curveA = go.Object(0).Curve()\n    curveB = go.Object(1).Curve()\n    if not curveA or not curveB: return\n\n    # Calculate the intersection\n    intersection_tolerance = 0.001\n    overlap_tolerance = 0.0\n    events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance)\n\n    # Process the results\n    if not events: return\n    for ccx_event in events:\n        scriptcontext.doc.Objects.AddPoint(ccx_event.PointA)\n        if ccx_event.PointA.DistanceTo(ccx_event.PointB) > float.Epsilon:\n            scriptcontext.doc.Objects.AddPoint(ccx_event.PointB)\n            scriptcontext.doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB)\n    scriptcontext.doc.Views.Redraw()\n\nif __name__==\"__main__\":\n    IntersectCurves()",
     "members": [
       ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
-      ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Point3f", "System.Double DistanceTo(Point3f other)"],
+      ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveCurve(Curve curveA, Curve curveB, System.Double tolerance, System.Double overlapTolerance)"]
     ]
   },
@@ -1655,9 +1655,9 @@
     "name": "Intersectlines.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef IntersectLines():\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt( \"Select lines\" )\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GetMultiple( 2, 2)\n    if go.CommandResult()!=Rhino.Commands.Result.Success:\n      return go.CommandResult()\n    if go.ObjectCount!=2: return Rhino.Commands.Result.Failure\n\n    crv0 = go.Object(0).Geometry()\n    crv1 = go.Object(1).Geometry()\n    if not crv0 or not crv1: return Rhino.Commands.Result.Failure\n\n    line0 = crv0.Line\n    line1 = crv1.Line\n    v0 = line0.Direction\n    v0.Unitize()\n    v1 = line1.Direction\n    v1.Unitize()\n\n    if v0.IsParallelTo(v1)!=0:\n        print \"Selected lines are parallel.\"\n        return Rhino.Commands.Result.Nothing\n\n    rc, a, b = Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1)\n    if not rc:\n        print \"No intersection found.\"\n        return Rhino.Commands.Result.Nothing\n\n    pt0 = line0.PointAt(a)\n    pt1 = line1.PointAt(b)\n    # pt0 and pt1 should be equal, so we will only add pt0 to the document\n    scriptcontext.doc.Objects.AddPoint(pt0)\n    scriptcontext.doc.Views.Redraw()\n    return Rhino.Commands.Result.Success\n\nif __name__==\"__main__\":\n    IntersectLines()",
     "members": [
-      ["Rhino.Geometry.Vector3d", "System.Int32 IsParallelTo(Vector3d other)"],
       ["Rhino.Geometry.Line", "Vector3d Direction"],
       ["Rhino.Geometry.Line", "Point3d PointAt(System.Double t)"],
+      ["Rhino.Geometry.Vector3d", "System.Int32 IsParallelTo(Vector3d other)"],
       ["Rhino.Geometry.Intersect.Intersection", "System.Boolean LineLine(Line lineA, Line lineB, out System.Double a, out System.Double b)"]
     ]
   },
@@ -1680,8 +1680,8 @@
     "name": "Issurfaceinplane.py",
     "code": "import Rhino\nfrom Rhino.Geometry import *\nimport rhinoscriptsyntax as rs\nfrom scriptcontext import doc\nimport math\n\ndef RunCommand():\n  surface_id = rs.GetSurfaceObject()[0]\n  if surface_id == None:\n    return\n  surface = rs.coercesurface(surface_id)\n\n  corners = rs.GetRectangle()\n  if corners == None:\n    return\n    \n  plane = Plane(corners[0], corners[1], corners[2])\n\n  is_or_isnt = \"\" if IsSurfaceInPlane(surface, plane, doc.ModelAbsoluteTolerance) else \" not \"\n  print \"Surface is{0} in plane.\".format(is_or_isnt)\n\ndef IsSurfaceInPlane(surface, plane, tolerance):\n  if not surface.IsPlanar(tolerance):\n    return False\n \n  bbox = surface.GetBoundingBox(True)\n  rc = True\n  for corner in bbox.GetCorners():\n      if math.fabs(plane.DistanceTo(corner)) > tolerance:\n          rc = False\n          break\n          \n  return rc\n\nif __name__ == \"__main__\":\n    RunCommand()",
     "members": [
-      ["Rhino.Geometry.Plane", "System.Double DistanceTo(Point3d testPoint)"],
-      ["Rhino.Geometry.Surface", "System.Boolean IsPlanar()"]
+      ["Rhino.Geometry.Surface", "System.Boolean IsPlanar()"],
+      ["Rhino.Geometry.Plane", "System.Double DistanceTo(Point3d testPoint)"]
     ]
   },
   {
@@ -1712,8 +1712,8 @@
     "name": "Makerhinocontours.py",
     "code": "from System import *\nfrom Rhino import *\nfrom Rhino.DocObjects import *\nfrom Rhino.Geometry import *\nfrom Rhino.Input import *\nfrom Rhino.Input.Custom import *\nfrom Rhino.Commands import *\nfrom scriptcontext import doc\n\ndef RunCommand():\n  filter = ObjectType.Surface | ObjectType.PolysrfFilter | ObjectType.Mesh\n  rc, obj_refs = RhinoGet.GetMultipleObjects(\"Select objects to contour\", False, filter)\n  if rc <> Result.Success:\n    return rc\n\n  gp = GetPoint()\n  gp.SetCommandPrompt(\"Contour plane base point\")\n  gp.Get()\n  if gp.CommandResult() <> Result.Success:\n    return gp.CommandResult()\n  base_point = gp.Point()\n\n  gp.DrawLineFromPoint(base_point, True)\n  gp.SetCommandPrompt(\"Direction perpendicular to contour planes\")\n  gp.Get()\n  if gp.CommandResult() <> Result.Success:\n    return gp.CommandResult()\n  end_point = gp.Point()\n\n  if base_point.DistanceTo(end_point) < RhinoMath.ZeroTolerance:\n    return Result.Nothing\n\n  distance = 1.0\n  rc, distance = RhinoGet.GetNumber(\"Distance between contours\", False, distance)\n  if rc <> Result.Success:\n    return rc\n\n  interval = Math.Abs(distance)\n\n  for obj_ref in obj_refs:\n    geometry = obj_ref.Geometry()\n    if geometry == None:\n      return Result.Failure\n\n    if type(geometry) == Brep:\n      curves = Brep.CreateContourCurves(geometry, base_point, end_point, interval)\n    else:\n      curves = Mesh.CreateContourCurves(geometry, base_point, end_point, interval)\n\n    for curve in curves:\n      curve_object_id = doc.Objects.AddCurve(curve)\n      doc.Objects.Select(curve_object_id)\n\n  if curves <> None:\n    doc.Views.Redraw()\n  return Result.Success\n\nif __name__ == \"__main__\":\n  RunCommand()",
     "members": [
-      ["Rhino.Geometry.Brep", "Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, System.Double interval)"],
-      ["Rhino.Geometry.Mesh", "Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, System.Double interval, System.Double tolerance)"]
+      ["Rhino.Geometry.Mesh", "Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, System.Double interval, System.Double tolerance)"],
+      ["Rhino.Geometry.Brep", "Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, System.Double interval)"]
     ]
   },
   {
@@ -1738,8 +1738,8 @@
     "name": "Modifylightcolor.py",
     "code": "from Rhino import *\nfrom Rhino.DocObjects import *\nfrom Rhino.Input import *\nfrom Rhino.UI import *\nfrom scriptcontext import doc\n\ndef RunCommand():\n  rc, obj_ref = RhinoGet.GetOneObject(\n    \"Select light to change color\", \n    True,\n    ObjectType.Light)\n  if rc != Result.Success:\n    return rc\n  light = obj_ref.Light()\n  if light == None:\n    return Result.Failure\n\n  b, color = Dialogs.ShowColorDialog(light.Diffuse)\n  if b:\n    light.Diffuse = color\n    \n  doc.Lights.Modify(obj_ref.ObjectId, light)\n  return Result.Success\n\nif __name__ == \"__main__\":\n  RunCommand()",
     "members": [
-      ["Rhino.Geometry.Light", "Color Diffuse"],
       ["Rhino.UI.Dialogs", "System.Boolean ShowColorDialog(ref System.Drawing.Color color)"],
+      ["Rhino.Geometry.Light", "Color Diffuse"],
       ["Rhino.DocObjects.Tables.LightTable", "System.Boolean Modify(System.Guid id, Geometry.Light light)"]
     ]
   },
@@ -1807,15 +1807,15 @@
       ["Rhino.DocObjects.RhinoObject", "System.Int32 Select(System.Boolean on)"],
       ["Rhino.DocObjects.ObjRef", "RhinoObject Object()"],
       ["Rhino.DocObjects.ObjRef", "Surface Surface()"],
-      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
-      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Surface surface, System.Boolean allowPickingPointOffObject)"],
       ["Rhino.Input.Custom.GetObject", "bool DeselectAllBeforePostSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjectType GeometryFilter"],
       ["Rhino.Input.Custom.GetObject", "bool GroupSelect"],
       ["Rhino.Input.Custom.GetObject", "bool OneByOnePostSelect"],
       ["Rhino.Input.Custom.GetObject", "bool SubObjectSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjRef Object(System.Int32 index)"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Surface surface, System.Boolean allowPickingPointOffObject)"],
+      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
+      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid Transform(ObjRef objref, Transform xform, System.Boolean deleteOriginal)"]
     ]
   },
@@ -1952,16 +1952,16 @@
     "members": [
       ["Rhino.Geometry.TextEntity", "TextEntity()"],
       ["Rhino.Geometry.TextEntity", "TextJustification Justification"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddText(Text3d text3d)"],
-      ["Rhino.DocObjects.Tables.FontTable", "System.Int32 FindOrCreate(System.String face, System.Boolean bold, System.Boolean italic)"]
+      ["Rhino.DocObjects.Tables.FontTable", "System.Int32 FindOrCreate(System.String face, System.Boolean bold, System.Boolean italic)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddText(Text3d text3d)"]
     ]
   },
   {
     "name": "Tightboundingbox.py",
     "code": "from scriptcontext import doc\nimport rhinoscriptsyntax as rs\nfrom Rhino.Geometry import *\nfrom Rhino.Input import *\nfrom Rhino.DocObjects import *\nfrom Rhino.Commands import *\nfrom System.Collections.Generic import *\n\ndef RunCommand():\n  rc, obj_ref = RhinoGet.GetOneObject(\n    \"Select surface to split\", True, ObjectType.Surface)\n  if rc != Result.Success:\n    return rc\n  brep_face = obj_ref.Surface()\n  if brep_face == None:\n    return Result.Failure\n\n  rc, obj_ref = RhinoGet.GetOneObject(\n    \"Select cutting curve\", True, ObjectType.Curve)\n  if rc != Result.Success:\n    return rc\n  curve = obj_ref.Curve()\n  if curve == None:\n    return Result.Failure\n\n  curves = List[Curve]([curve])\n  split_brep = brep_face.Split(\n    curves, doc.ModelAbsoluteTolerance)\n\n  if split_brep == None:\n    RhinoApp.WriteLine(\"Unable to split surface.\")\n    return Result.Nothing\n\n  meshes = Mesh.CreateFromBrep(split_brep)\n  print type(meshes)\n  for mesh in meshes:\n    bbox = mesh.GetBoundingBox(True)\n    bbox_type = bbox.IsDegenerate(doc.ModelAbsoluteTolerance)\n    if bbox_type == 1: # rectangle\n        # box with 8 corners flattened to rectangle with 4 corners\n        box_corners = bbox.GetCorners()\n        rectangle_corners = []\n        for corner_point in box_corners:\n          if corner_point not in rectangle_corners:\n              rectangle_corners.append(corner_point)\n        # add 1st point as last to close the loop\n        rectangle_corners.append(rectangle_corners[0])\n        doc.Objects.AddPolyline(rectangle_corners)\n        doc.Views.Redraw()\n    elif bbox_type == 0: # box\n        brep_box = Box(bbox).ToBrep()\n        doc.Objects.AddBrep(brep_box)\n        doc.Views.Redraw()\n    else: # bbox invalid, point, or line\n      return Result.Failure\n\n  return Result.Success\n\nif __name__ == \"__main__\":\n  RunCommand()",
     "members": [
-      ["Rhino.Geometry.BrepFace", "Brep Split(IEnumerable<Curve> curves, System.Double tolerance)"],
       ["Rhino.Geometry.Mesh", "Mesh[] CreateFromBrep(Brep brep)"],
+      ["Rhino.Geometry.BrepFace", "Brep Split(IEnumerable<Curve> curves, System.Double tolerance)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPolyline(IEnumerable<Point3d> points)"]
     ]
   },
@@ -1995,17 +1995,17 @@
       ["Rhino.UI.OpenFileDialog", "string FileName"],
       ["Rhino.UI.OpenFileDialog", "string Filter"],
       ["Rhino.UI.OpenFileDialog", "System.Boolean ShowOpenDialog()"],
-      ["Rhino.Input.Custom.GetNumber", "GetNumber()"],
-      ["Rhino.Input.Custom.GetNumber", "GetResult Get()"],
-      ["Rhino.Input.Custom.GetNumber", "System.Void SetLowerLimit(System.Double lowerLimit, System.Boolean strictlyGreaterThan)"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean ConstrainToConstructionPlane(System.Boolean throughBasePoint)"],
       ["Rhino.Input.Custom.GetBaseClass", "Result CommandResult()"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Double Number()"],
       ["Rhino.Input.Custom.GetBaseClass", "RhinoView View()"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean ConstrainToConstructionPlane(System.Boolean throughBasePoint)"],
-      ["Rhino.Display.RhinoViewport", "Plane ConstructionPlane()"],
-      ["Rhino.Display.RhinoViewport", "System.Boolean SetTraceImage(System.String bitmapFileName, Plane plane, System.Double width, System.Double height, System.Boolean grayscale, System.Boolean filtered)"],
+      ["Rhino.Input.Custom.GetNumber", "GetNumber()"],
+      ["Rhino.Input.Custom.GetNumber", "GetResult Get()"],
+      ["Rhino.Input.Custom.GetNumber", "System.Void SetLowerLimit(System.Double lowerLimit, System.Boolean strictlyGreaterThan)"],
       ["Rhino.Display.RhinoView", "RhinoViewport ActiveViewport"],
       ["Rhino.Display.RhinoView", "System.Void Redraw()"],
+      ["Rhino.Display.RhinoViewport", "Plane ConstructionPlane()"],
+      ["Rhino.Display.RhinoViewport", "System.Boolean SetTraceImage(System.String bitmapFileName, Plane plane, System.Double width, System.Double height, System.Boolean grayscale, System.Boolean filtered)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoView ActiveView"]
     ]
   },
@@ -2030,8 +2030,8 @@
     "name": "Addcircle.vb",
     "code": "Partial Class Examples\n  Public Shared Function AddCircle(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim center As New Rhino.Geometry.Point3d(0, 0, 0)\n    Const radius As Double = 10.0\n    Dim c As New Rhino.Geometry.Circle(center, radius)\n    If doc.Objects.AddCircle(c) <> Guid.Empty Then\n      doc.Views.Redraw()\n      Return Rhino.Commands.Result.Success\n    End If\n    Return Rhino.Commands.Result.Failure\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Point3d", "Point3d(double x, double y, double z)"],
       ["Rhino.Geometry.Circle", "Circle(Plane plane, double radius)"],
+      ["Rhino.Geometry.Point3d", "Point3d(double x, double y, double z)"],
       ["Rhino.DocObjects.Tables.ViewTable", "System.Void Redraw()"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddCircle(Circle circle)"]
     ]
@@ -2042,31 +2042,31 @@
     "members": [
       ["Rhino.Geometry.Plane", "Plane(Point3d origin, Point3d xPoint, Point3d yPoint)"],
       ["Rhino.FileIO.File3dmObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"],
-      ["Rhino.Input.RhinoGet", "Result GetRectangle(out Point3d[] corners)"]
+      ["Rhino.Input.RhinoGet", "Result GetRectangle(out Point3d[] corners)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddClippingPlane(Plane plane, System.Double uMagnitude, System.Double vMagnitude, System.Guid clippedViewportId)"]
     ]
   },
   {
     "name": "Addcylinder.vb",
     "code": "Partial Class Examples\n  Public Shared Function AddCylinder(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim center_point As New Rhino.Geometry.Point3d(0, 0, 0)\n    Dim height_point As New Rhino.Geometry.Point3d(0, 0, 10)\n    Dim zaxis As Rhino.Geometry.Vector3d = height_point - center_point\n    Dim plane As New Rhino.Geometry.Plane(center_point, zaxis)\n    Const radius As Double = 5\n    Dim circle As New Rhino.Geometry.Circle(plane, radius)\n    Dim cylinder As New Rhino.Geometry.Cylinder(circle, zaxis.Length)\n    Dim brep As Rhino.Geometry.Brep = cylinder.ToBrep(True, True)\n    If brep IsNot Nothing Then\n      doc.Objects.AddBrep(brep)\n      doc.Views.Redraw()\n    End If\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Plane", "Plane(Point3d origin, Vector3d normal)"],
       ["Rhino.Geometry.Cylinder", "Cylinder(Circle baseCircle, double height)"],
-      ["Rhino.Geometry.Cylinder", "Brep ToBrep(System.Boolean capBottom, System.Boolean capTop)"]
+      ["Rhino.Geometry.Cylinder", "Brep ToBrep(System.Boolean capBottom, System.Boolean capTop)"],
+      ["Rhino.Geometry.Plane", "Plane(Point3d origin, Vector3d normal)"]
     ]
   },
   {
     "name": "Addlayer.vb",
     "code": "Partial Class Examples\n  Public Shared Function AddLayer(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    ' Cook up an unused layer name\n    Dim unused_name As String = doc.Layers.GetUnusedLayerName(False)\n\n    ' Prompt the user to enter a layer name\n    Dim gs As New Rhino.Input.Custom.GetString()\n    gs.SetCommandPrompt(\"Name of layer to add\")\n    gs.SetDefaultString(unused_name)\n    gs.AcceptNothing(True)\n    gs.Get()\n    If gs.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gs.CommandResult()\n    End If\n\n    ' Was a layer named entered?\n    Dim layer_name As String = gs.StringResult().Trim()\n    If String.IsNullOrEmpty(layer_name) Then\n      Rhino.RhinoApp.WriteLine(\"Layer name cannot be blank.\")\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    ' Is the layer name valid?\n    If Not Rhino.DocObjects.Layer.IsValidName(layer_name) Then\n      Rhino.RhinoApp.WriteLine(layer_name & \" is not a valid layer name.\")\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    ' Does a layer with the same name already exist?\n    Dim layer_index As Integer = doc.Layers.Find(layer_name, True)\n    If layer_index >= 0 Then\n      Rhino.RhinoApp.WriteLine(\"A layer with the name {0} already exists.\", layer_name)\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    ' Add a new layer to the document\n    layer_index = doc.Layers.Add(layer_name, System.Drawing.Color.Black)\n    If layer_index < 0 Then\n      Rhino.RhinoApp.WriteLine(\"Unable to add {0} layer.\", layer_name)\n      Return Rhino.Commands.Result.Failure\n    End If\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
+      ["Rhino.DocObjects.Layer", "System.Boolean IsValidName(System.String name)"],
       ["Rhino.RhinoApp", "System.Void WriteLine(System.String format, System.Object arg0)"],
       ["Rhino.RhinoApp", "System.Void WriteLine(System.String message)"],
-      ["Rhino.DocObjects.Layer", "System.Boolean IsValidName(System.String name)"],
-      ["Rhino.Input.Custom.GetString", "GetString()"],
-      ["Rhino.Input.Custom.GetString", "GetResult Get()"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Void AcceptNothing(System.Boolean enable)"],
       ["Rhino.Input.Custom.GetBaseClass", "System.Void SetDefaultString(System.String defaultValue)"],
       ["Rhino.Input.Custom.GetBaseClass", "System.String StringResult()"],
+      ["Rhino.Input.Custom.GetString", "GetString()"],
+      ["Rhino.Input.Custom.GetString", "GetResult Get()"],
       ["Rhino.DocObjects.Tables.LayerTable", "System.Int32 Add(System.String layerName, System.Drawing.Color layerColor)"],
       ["Rhino.DocObjects.Tables.LayerTable", "System.Int32 Find(System.String layerName, System.Boolean ignoreDeletedLayers)"],
       ["Rhino.DocObjects.Tables.LayerTable", "Layer FindName(System.String layerName)"],
@@ -2078,14 +2078,14 @@
     "name": "Addlayout.vb",
     "code": "Partial Class Examples\n  ''' <summary>\n  ''' Generate a layout with a single detail view that zooms to a list of objects\n  ''' </summary>\n  ''' <param name=\"doc\"></param>\n  ''' <returns></returns>\n  Public Shared Function AddLayout(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    doc.PageUnitSystem = Rhino.UnitSystem.Millimeters\n    Dim page_views = doc.Views.GetPageViews()\n    Dim page_number As Integer = If((page_views Is Nothing), 1, page_views.Length + 1)\n    Dim pageview = doc.Views.AddPageView(String.Format(\"A0_{0}\", page_number), 1189, 841)\n    If pageview IsNot Nothing Then\n      Dim top_left As New Rhino.Geometry.Point2d(20, 821)\n      Dim bottom_right As New Rhino.Geometry.Point2d(1169, 20)\n      Dim detail = pageview.AddDetailView(\"ModelView\", top_left, bottom_right, Rhino.Display.DefinedViewportProjection.Top)\n      If detail IsNot Nothing Then\n        pageview.SetActiveDetail(detail.Id)\n        detail.Viewport.ZoomExtents()\n        detail.DetailGeometry.IsProjectionLocked = True\n        detail.DetailGeometry.SetScale(1, doc.ModelUnitSystem, 10, doc.PageUnitSystem)\n        ' Commit changes tells the document to replace the document's detail object\n        ' with the modified one that we just adjusted\n        detail.CommitChanges()\n      End If\n      pageview.SetPageAsActive()\n      doc.Views.ActiveView = pageview\n      doc.Views.Redraw()\n      Return Rhino.Commands.Result.Success\n    End If\n    Return Rhino.Commands.Result.Failure\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.RhinoDoc", "UnitSystem PageUnitSystem"],
       ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
-      ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
-      ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
+      ["Rhino.RhinoDoc", "UnitSystem PageUnitSystem"],
+      ["Rhino.Display.RhinoViewport", "System.Boolean ZoomExtents()"],
       ["Rhino.Display.RhinoPageView", "DetailViewObject AddDetailView(System.String title, Geometry.Point2d corner0, Geometry.Point2d corner1, DefinedViewportProjection initialProjection)"],
       ["Rhino.Display.RhinoPageView", "System.Boolean SetActiveDetail(System.Guid detailId)"],
       ["Rhino.Display.RhinoPageView", "System.Void SetPageAsActive()"],
-      ["Rhino.Display.RhinoViewport", "System.Boolean ZoomExtents()"],
+      ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
+      ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView AddPageView(System.String title, System.Double pageWidth, System.Double pageHeight)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView[] GetPageViews()"]
     ]
@@ -2094,14 +2094,14 @@
     "name": "Addline.vb",
     "code": "Partial Class Examples\n  Public Shared Function AddLine(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim gp As New Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Start of line\")\n    gp.Get()\n    If gp.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gp.CommandResult()\n    End If\n\n    Dim pt_start As Rhino.Geometry.Point3d = gp.Point()\n\n    gp.SetCommandPrompt(\"End of line\")\n    gp.SetBasePoint(pt_start, False)\n    gp.DrawLineFromPoint(pt_start, True)\n    gp.Get()\n    If gp.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gp.CommandResult()\n    End If\n\n    Dim pt_end As Rhino.Geometry.Point3d = gp.Point()\n    Dim v As Rhino.Geometry.Vector3d = pt_end - pt_start\n    If v.IsTiny(Rhino.RhinoMath.ZeroTolerance) Then\n      Return Rhino.Commands.Result.[Nothing]\n    End If\n\n    If doc.Objects.AddLine(pt_start, pt_end) <> Guid.Empty Then\n      doc.Views.Redraw()\n      Return Rhino.Commands.Result.Success\n    End If\n    Return Rhino.Commands.Result.Failure\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Vector2d", "System.Boolean IsTiny(System.Double tolerance)"],
-      ["Rhino.Geometry.Vector3d", "System.Boolean IsTiny(System.Double tolerance)"],
-      ["Rhino.Input.Custom.GetBaseClass", "Point3d Point()"],
-      ["Rhino.Input.Custom.GetBaseClass", "System.Void SetCommandPrompt(System.String prompt)"],
       ["Rhino.Input.Custom.GetPoint", "GetPoint()"],
       ["Rhino.Input.Custom.GetPoint", "System.Void DrawLineFromPoint(Point3d startPoint, System.Boolean showDistanceInStatusBar)"],
       ["Rhino.Input.Custom.GetPoint", "GetResult Get()"],
       ["Rhino.Input.Custom.GetPoint", "System.Void SetBasePoint(Point3d basePoint, System.Boolean showDistanceInStatusBar)"],
+      ["Rhino.Input.Custom.GetBaseClass", "Point3d Point()"],
+      ["Rhino.Input.Custom.GetBaseClass", "System.Void SetCommandPrompt(System.String prompt)"],
+      ["Rhino.Geometry.Vector2d", "System.Boolean IsTiny(System.Double tolerance)"],
+      ["Rhino.Geometry.Vector3d", "System.Boolean IsTiny(System.Double tolerance)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLine(Point3d from, Point3d to)"]
     ]
   },
@@ -2109,16 +2109,16 @@
     "name": "Addlineardimension.vb",
     "code": "Partial Class Examples\n  Public Shared Function AddLinearDimension(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim dimension As Rhino.Geometry.LinearDimension = Nothing\n    Dim rc As Rhino.Commands.Result = Rhino.Input.RhinoGet.GetLinearDimension(dimension)\n    If rc = Rhino.Commands.Result.Success AndAlso dimension IsNot Nothing Then\n      If doc.Objects.AddLinearDimension(dimension) = Guid.Empty Then\n        rc = Rhino.Commands.Result.Failure\n      Else\n        doc.Views.Redraw()\n      End If\n    End If\n    Return rc\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLinearDimension(LinearDimension dimension)"],
-      ["Rhino.Input.RhinoGet", "Result GetLinearDimension(out LinearDimension dimension)"]
+      ["Rhino.Input.RhinoGet", "Result GetLinearDimension(out LinearDimension dimension)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddLinearDimension(LinearDimension dimension)"]
     ]
   },
   {
     "name": "Addlineardimension2.vb",
     "code": "Imports Rhino.Geometry\n\nPartial Class Examples\n  Public Shared Function AddLinearDimension2(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim origin As New Point3d(1, 1, 0)\n    Dim offset As New Point3d(11, 1, 0)\n    Dim pt As New Point3d((offset.X - origin.X) / 2, 3, 0)\n\n    Dim plane__1 As Plane = Plane.WorldXY\n    plane__1.Origin = origin\n\n    Dim u As Double, v As Double\n    plane__1.ClosestParameter(origin, u, v)\n    Dim ext1 As New Point2d(u, v)\n\n    plane__1.ClosestParameter(offset, u, v)\n    Dim ext2 As New Point2d(u, v)\n\n    plane__1.ClosestParameter(pt, u, v)\n    Dim linePt As New Point2d(u, v)\n\n    Dim dimension As New LinearDimension(plane__1, ext1, ext2, linePt)\n    If doc.Objects.AddLinearDimension(dimension) <> Guid.Empty Then\n      doc.Views.Redraw()\n      Return Rhino.Commands.Result.Success\n    End If\n    Return Rhino.Commands.Result.Failure\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Plane", "System.Boolean ClosestParameter(Point3d testPoint, out System.Double s, out System.Double t)"],
-      ["Rhino.Geometry.LinearDimension", "LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)"]
+      ["Rhino.Geometry.LinearDimension", "LinearDimension(Plane dimensionPlane, Point2d extensionLine1End, Point2d extensionLine2End, Point2d pointOnDimensionLine)"],
+      ["Rhino.Geometry.Plane", "System.Boolean ClosestParameter(Point3d testPoint, out System.Double s, out System.Double t)"]
     ]
   },
   {
@@ -2130,11 +2130,11 @@
       ["Rhino.Geometry.Mesh", "MeshVertexNormalList Normals"],
       ["Rhino.Geometry.Mesh", "MeshVertexList Vertices"],
       ["Rhino.Geometry.Mesh", "System.Boolean Compact()"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddMesh(Geometry.Mesh mesh)"],
       ["Rhino.Geometry.Collections.MeshVertexList", "System.Int32 Add(System.Double x, System.Double y, System.Double z)"],
       ["Rhino.Geometry.Collections.MeshVertexList", "System.Int32 Add(System.Single x, System.Single y, System.Single z)"],
       ["Rhino.Geometry.Collections.MeshVertexNormalList", "System.Boolean ComputeNormals()"],
-      ["Rhino.Geometry.Collections.MeshFaceList", "System.Int32 AddFace(System.Int32 vertex1, System.Int32 vertex2, System.Int32 vertex3, System.Int32 vertex4)"]
+      ["Rhino.Geometry.Collections.MeshFaceList", "System.Int32 AddFace(System.Int32 vertex1, System.Int32 vertex2, System.Int32 vertex3, System.Int32 vertex4)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddMesh(Geometry.Mesh mesh)"]
     ]
   },
   {
@@ -2148,10 +2148,10 @@
       ["Rhino.Display.RhinoViewport", "System.Void PushViewProjection()"],
       ["Rhino.Display.RhinoViewport", "System.Void SetCameraDirection(Vector3d cameraDirection, System.Boolean updateTargetLocation)"],
       ["Rhino.Display.RhinoViewport", "System.Void SetCameraLocation(Point3d cameraLocation, System.Boolean updateTargetLocation)"],
-      ["Rhino.DocObjects.Tables.NamedViewTable", "System.Int32 Add(System.String name, System.Guid viewportId)"],
       ["Rhino.Input.RhinoGet", "Result GetPoint(System.String prompt, System.Boolean acceptNothing, out Point3d point)"],
       ["Rhino.Input.RhinoGet", "Result GetString(System.String prompt, System.Boolean acceptNothing, ref System.String outputString)"],
-      ["Rhino.Input.RhinoGet", "Result GetView(System.String commandPrompt, out RhinoView view)"]
+      ["Rhino.Input.RhinoGet", "Result GetView(System.String commandPrompt, out RhinoView view)"],
+      ["Rhino.DocObjects.Tables.NamedViewTable", "System.Int32 Add(System.String name, System.Guid viewportId)"]
     ]
   },
   {
@@ -2223,9 +2223,9 @@
     "name": "Addtruncatedcone.vb",
     "code": "Imports Rhino.Geometry\n\nPartial Class Examples\n  Public Shared Function AddTruncatedCone(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim bottom_pt As New Point3d(0, 0, 0)\n    Const bottom_radius As Double = 2\n    Dim bottom_circle As New Circle(bottom_pt, bottom_radius)\n\n    Dim top_pt As New Point3d(0, 0, 10)\n    Const top_radius As Double = 6\n    Dim top_circle As New Circle(top_pt, top_radius)\n\n    Dim shapeCurve As New LineCurve(bottom_circle.PointAt(0), top_circle.PointAt(0))\n    Dim axis As New Line(bottom_circle.Center, top_circle.Center)\n    Dim revsrf As RevSurface = RevSurface.Create(shapeCurve, axis)\n    Dim tcone_brep As Brep = Brep.CreateFromRevSurface(revsrf, True, True)\n    If doc.Objects.AddBrep(tcone_brep) <> Guid.Empty Then\n      doc.Views.Redraw()\n      Return Rhino.Commands.Result.Success\n    End If\n    Return Rhino.Commands.Result.Failure\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Brep", "Brep CreateFromRevSurface(RevSurface surface, System.Boolean capStart, System.Boolean capEnd)"],
-      ["Rhino.Geometry.RevSurface", "RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)"],
       ["Rhino.Geometry.LineCurve", "LineCurve(Point3d from, Point3d to)"],
+      ["Rhino.Geometry.RevSurface", "RevSurface Create(Curve revoluteCurve, Line axisOfRevolution)"],
+      ["Rhino.Geometry.Brep", "Brep CreateFromRevSurface(RevSurface surface, System.Boolean capStart, System.Boolean capEnd)"],
       ["Rhino.Geometry.Circle", "Circle(Point3d center, double radius)"]
     ]
   },
@@ -2260,11 +2260,11 @@
     "name": "Arraybydistance.vb",
     "code": "Imports Rhino\n\n<System.Runtime.InteropServices.Guid(\"03249FBF-75C9-4878-83CC-20C197E5A758\")> _\nPublic Class ArrayByDistanceCommand\n  Inherits Rhino.Commands.Command\n  Public Overrides ReadOnly Property EnglishName() As String\n    Get\n      Return \"vb_ArrayByDistance\"\n    End Get\n  End Property\n\n  Private m_distance As Double = 1\n  Private m_point_start As Rhino.Geometry.Point3d\n  Protected Overrides Function RunCommand(doc As RhinoDoc, mode As Rhino.Commands.RunMode) As Rhino.Commands.Result\n    Dim objref As Rhino.DocObjects.ObjRef = Nothing\n    Dim rc = Rhino.Input.RhinoGet.GetOneObject(\"Select object\", True, Rhino.DocObjects.ObjectType.AnyObject, objref)\n    If rc <> Rhino.Commands.Result.Success Then\n      Return rc\n    End If\n\n    rc = Rhino.Input.RhinoGet.GetPoint(\"Start point\", False, m_point_start)\n    If rc <> Rhino.Commands.Result.Success Then\n      Return rc\n    End If\n\n    Dim obj = objref.Object()\n    If obj Is Nothing Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    ' create an instance of a GetPoint class and add a delegate\n    ' for the DynamicDraw event\n    Dim gp = New Rhino.Input.Custom.GetPoint()\n    gp.DrawLineFromPoint(m_point_start, True)\n    Dim optdouble = New Rhino.Input.Custom.OptionDouble(m_distance)\n    Dim constrain As Boolean = False\n    Dim optconstrain = New Rhino.Input.Custom.OptionToggle(constrain, \"Off\", \"On\")\n    gp.AddOptionDouble(\"Distance\", optdouble)\n    gp.AddOptionToggle(\"Constrain\", optconstrain)\n    AddHandler gp.DynamicDraw, AddressOf ArrayByDistanceDraw\n    gp.Tag = obj\n    While gp.Get() = Rhino.Input.GetResult.Option\n      m_distance = optdouble.CurrentValue\n      If constrain <> optconstrain.CurrentValue Then\n        constrain = optconstrain.CurrentValue\n        If constrain Then\n          Dim gp2 = New Rhino.Input.Custom.GetPoint()\n          gp2.DrawLineFromPoint(m_point_start, True)\n          gp2.SetCommandPrompt(\"Second point on constraint line\")\n          If gp2.Get() = Rhino.Input.GetResult.Point Then\n            gp.Constrain(m_point_start, gp2.Point())\n          Else\n            gp.ClearCommandOptions()\n            optconstrain.CurrentValue = False\n            constrain = False\n            gp.AddOptionDouble(\"Distance\", optdouble)\n            gp.AddOptionToggle(\"Constrain\", optconstrain)\n          End If\n        Else\n          gp.ClearConstraints()\n        End If\n      End If\n    End While\n\n    If gp.CommandResult() = Rhino.Commands.Result.Success Then\n      m_distance = optdouble.CurrentValue\n      Dim pt = gp.Point()\n      Dim vec = pt - m_point_start\n      Dim length As Double = vec.Length\n      vec.Unitize()\n      Dim count As Integer = CInt(Math.Truncate(length / m_distance))\n      For i As Integer = 1 To count - 1\n        Dim translate = vec * (i * m_distance)\n        Dim xf = Rhino.Geometry.Transform.Translation(translate)\n        doc.Objects.Transform(obj, xf, False)\n      Next\n      doc.Views.Redraw()\n    End If\n\n    Return gp.CommandResult()\n  End Function\n\n  ' this function is called whenever the GetPoint's DynamicDraw\n  ' event occurs\n  Private Sub ArrayByDistanceDraw(sender As Object, e As Rhino.Input.Custom.GetPointDrawEventArgs)\n    Dim rhobj As Rhino.DocObjects.RhinoObject = TryCast(e.Source.Tag, Rhino.DocObjects.RhinoObject)\n    If rhobj Is Nothing Then\n      Return\n    End If\n    Dim vec = e.CurrentPoint - m_point_start\n    Dim length As Double = vec.Length\n    vec.Unitize()\n    Dim count As Integer = CInt(Math.Truncate(length / m_distance))\n    For i As Integer = 1 To count - 1\n      Dim translate = vec * (i * m_distance)\n      Dim xf = Rhino.Geometry.Transform.Translation(translate)\n      e.Display.DrawObject(rhobj, xf)\n    Next\n  End Sub\nEnd Class\n",
     "members": [
-      ["Rhino.Input.Custom.GetBaseClass", "System.Void ClearCommandOptions()"],
       ["Rhino.Input.Custom.GetPoint", "object Tag"],
       ["Rhino.Input.Custom.GetPoint", "System.Void ClearConstraints()"],
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Point3d from, Point3d to)"],
       ["Rhino.Input.Custom.GetPointDrawEventArgs", "GetPoint Source"],
+      ["Rhino.Input.Custom.GetBaseClass", "System.Void ClearCommandOptions()"],
       ["Rhino.Display.DisplayPipeline", "System.Void DrawObject(DocObjects.RhinoObject rhinoObject, Transform xform)"]
     ]
   },
@@ -2289,8 +2289,8 @@
     "name": "Circlecenter.vb",
     "code": "Partial Class Examples\n  Public Shared Function CircleCenter(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim go As New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select objects\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.[Custom].GeometryAttributeFilter.ClosedCurve\n    go.GetMultiple(1, 0)\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n\n    Dim objrefs As Rhino.DocObjects.ObjRef() = go.Objects()\n    If objrefs Is Nothing Then\n      Return Rhino.Commands.Result.[Nothing]\n    End If\n\n    Dim tolerance As Double = doc.ModelAbsoluteTolerance\n    For i As Integer = 0 To objrefs.Length - 1\n      ' get the curve geometry\n      Dim curve As Rhino.Geometry.Curve = objrefs(i).Curve()\n      If curve Is Nothing Then\n        Continue For\n      End If\n      Dim circle As Rhino.Geometry.Circle\n      If curve.TryGetCircle(circle, tolerance) Then\n        Rhino.RhinoApp.WriteLine(\"Circle{0}: center = {1}\", i + 1, circle.Center)\n      End If\n    Next\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle, System.Double tolerance)"],
-      ["Rhino.Input.Custom.GetObject", "GeometryAttributeFilter GeometryAttributeFilter"]
+      ["Rhino.Input.Custom.GetObject", "GeometryAttributeFilter GeometryAttributeFilter"],
+      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle, System.Double tolerance)"]
     ]
   },
   {
@@ -2340,9 +2340,9 @@
     "code": "Partial Class Examples\n  Public Shared Function ConstrainedCopy(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    ' Get a single planar closed curve\n    Dim go = New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.Get()\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n    Dim objref = go.Object(0)\n    Dim base_curve = objref.Curve()\n    Dim first_point = objref.SelectionPoint()\n    If base_curve Is Nothing OrElse Not first_point.IsValid Then\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    Dim plane As Rhino.Geometry.Plane\n    If Not base_curve.TryGetPlane(plane) Then\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    ' Get a point constrained to a line passing through the initial selection\n    ' point and parallel to the plane's normal\n    Dim gp = New Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Offset point\")\n    gp.DrawLineFromPoint(first_point, True)\n    Dim line = New Rhino.Geometry.Line(first_point, first_point + plane.Normal)\n    gp.Constrain(line)\n    gp.Get()\n    If gp.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gp.CommandResult()\n    End If\n    Dim second_point = gp.Point()\n    Dim vec As Rhino.Geometry.Vector3d = second_point - first_point\n    If vec.Length > 0.001 Then\n      Dim xf = Rhino.Geometry.Transform.Translation(vec)\n      Dim id As Guid = doc.Objects.Transform(objref, xf, False)\n      If id <> Guid.Empty Then\n        doc.Views.Redraw()\n        Return Rhino.Commands.Result.Success\n      End If\n    End If\n    Return Rhino.Commands.Result.Cancel\n  End Function\nEnd Class\n",
     "members": [
       ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"],
       ["Rhino.Geometry.Curve", "System.Boolean TryGetPlane(out Plane plane)"],
-      ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"]
+      ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"]
     ]
   },
   {
@@ -2397,8 +2397,8 @@
     "name": "Curvebrepbox.vb",
     "code": "Imports Rhino\nImports Rhino.Geometry\nImports Rhino.Commands\nImports Rhino.Input\n\nNamespace examples_vb\n  Public Class BrepFromCurveBBoxCommand\n    Inherits Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbBrepFromCurveBBox\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim objref As DocObjects.ObjRef = Nothing\n      Dim rc = RhinoGet.GetOneObject(\"Select Curve\", False, DocObjects.ObjectType.Curve, objref)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n      Dim curve = objref.Curve()\n\n      Dim view = doc.Views.ActiveView\n      Dim plane = view.ActiveViewport.ConstructionPlane()\n      ' Create a construction plane aligned bounding box\n      Dim bbox = curve.GetBoundingBox(plane)\n\n      If bbox.IsDegenerate(doc.ModelAbsoluteTolerance) > 0 Then\n        RhinoApp.WriteLine(\"the curve's bounding box is degenerate (flat) in at least one direction so a box cannot be created.\")\n        Return Result.Failure\n      End If\n      Dim brepbox = Brep.CreateFromBox(bbox)\n      doc.Objects.AddBrep(brepbox)\n      doc.Views.Redraw()\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.Geometry.Brep", "Brep CreateFromBox(BoundingBox box)"],
-      ["Rhino.Geometry.BoundingBox", "System.Int32 IsDegenerate(System.Double tolerance)"]
+      ["Rhino.Geometry.BoundingBox", "System.Int32 IsDegenerate(System.Double tolerance)"],
+      ["Rhino.Geometry.Brep", "Brep CreateFromBox(BoundingBox box)"]
     ]
   },
   {
@@ -2413,17 +2413,17 @@
     "name": "Curvesurfaceintersect.vb",
     "code": "Imports Rhino\nImports Rhino.Geometry\nImports Rhino.Geometry.Intersect\nImports Rhino.Input.Custom\nImports Rhino.DocObjects\nImports Rhino.Commands\n\nNamespace examples_vb\n  Public Class CurveSurfaceIntersectCommand\n    Inherits Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbCurveSurfaceIntersect\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim gs = New GetObject()\n      gs.SetCommandPrompt(\"select brep\")\n      gs.GeometryFilter = ObjectType.Brep\n      gs.DisablePreSelect()\n      gs.SubObjectSelect = False\n      gs.Get()\n      If gs.CommandResult() <> Result.Success Then\n        Return gs.CommandResult()\n      End If\n      Dim brep = gs.[Object](0).Brep()\n\n      Dim gc = New GetObject()\n      gc.SetCommandPrompt(\"select curve\")\n      gc.GeometryFilter = ObjectType.Curve\n      gc.DisablePreSelect()\n      gc.SubObjectSelect = False\n      gc.Get()\n      If gc.CommandResult() <> Result.Success Then\n        Return gc.CommandResult()\n      End If\n      Dim curve = gc.Object(0).Curve()\n\n      If brep Is Nothing OrElse curve Is Nothing Then\n        Return Result.Failure\n      End If\n\n      Dim tolerance = doc.ModelAbsoluteTolerance\n\n      Dim intersectionPoints As Point3d() = Nothing\n      Dim overlapCurves As Curve() = Nothing\n      If Not Intersection.CurveBrep(curve, brep, tolerance, overlapCurves, intersectionPoints) Then\n        RhinoApp.WriteLine(\"curve brep intersection failed\")\n        Return Result.Nothing\n      End If\n\n      For Each overlapCurve As Curve In overlapCurves\n        doc.Objects.AddCurve(overlapCurve)\n      Next\n      For Each intersectionPoint As Point3d In intersectionPoints\n        doc.Objects.AddPoint(intersectionPoint)\n      Next\n\n      RhinoApp.WriteLine(\"{0} overlap curves, and {1} intersection points\", overlapCurves.Length, intersectionPoints.Length)\n      doc.Views.Redraw()\n\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Int32 Select(IEnumerable<Guid> objectIds)"],
+      ["Rhino.Geometry.Intersect.IntersectionEvent", "bool IsOverlap"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveSurface(Curve curve, Surface surface, System.Double tolerance, System.Double overlapTolerance)"],
-      ["Rhino.Geometry.Intersect.IntersectionEvent", "bool IsOverlap"]
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Int32 Select(IEnumerable<Guid> objectIds)"]
     ]
   },
   {
     "name": "Customgeometryfilter.vb",
     "code": "Imports Rhino\nImports Rhino.Geometry\nImports Rhino.Commands\nImports Rhino.Input.Custom\nImports Rhino.DocObjects\n\nNamespace examples_vb\n  Public Class CustomGeometryFilterCommand\n    Inherits Command\n    Private _tolerance As Double\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbCustomGeometryFilter\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      _tolerance = doc.ModelAbsoluteTolerance\n\n      ' only use a custom geometry filter if no simpler filter does the job\n\n      ' only curves\n      Dim gc = New GetObject()\n      gc.SetCommandPrompt(\"select curve\")\n      gc.GeometryFilter = ObjectType.Curve\n      gc.DisablePreSelect()\n      gc.SubObjectSelect = False\n      gc.[Get]()\n      If gc.CommandResult() <> Result.Success Then\n        Return gc.CommandResult()\n      End If\n      If gc.[Object](0).Curve() Is Nothing Then\n        Return Result.Failure\n      End If\n      Rhino.RhinoApp.WriteLine(\"curve was selected\")\n\n      ' only closed curves\n      Dim gcc = New GetObject()\n      gcc.SetCommandPrompt(\"select closed curve\")\n      gcc.GeometryFilter = ObjectType.Curve\n      gcc.GeometryAttributeFilter = GeometryAttributeFilter.ClosedCurve\n      gcc.DisablePreSelect()\n      gcc.SubObjectSelect = False\n      gcc.[Get]()\n      If gcc.CommandResult() <> Result.Success Then\n        Return gcc.CommandResult()\n      End If\n      If gcc.[Object](0).Curve() Is Nothing Then\n        Return Result.Failure\n      End If\n      Rhino.RhinoApp.WriteLine(\"closed curve was selected\")\n\n      ' only circles with a radius of 10\n      Dim gcc10 = New GetObject()\n      gcc10.SetCommandPrompt(\"select circle with radius of 10\")\n      gc.GeometryFilter = ObjectType.Curve\n      gcc10.SetCustomGeometryFilter(AddressOf CircleWithRadiusOf10GeometryFilter)\n      ' custom geometry filter\n      gcc10.DisablePreSelect()\n      gcc10.SubObjectSelect = False\n      gcc10.[Get]()\n      If gcc10.CommandResult() <> Result.Success Then\n        Return gcc10.CommandResult()\n      End If\n      If gcc10.[Object](0).Curve() Is Nothing Then\n        Return Result.Failure\n      End If\n      Rhino.RhinoApp.WriteLine(\"circle with radius of 10 was selected\")\n\n      Return Result.Success\n    End Function\n\n    Private Function CircleWithRadiusOf10GeometryFilter(rhObject As Rhino.DocObjects.RhinoObject, geometry As GeometryBase, componentIndex As ComponentIndex) As Boolean\n      Dim isCircleWithRadiusOf10 As Boolean = False\n      Dim circle As Circle\n      If TypeOf geometry Is Curve AndAlso TryCast(geometry, Curve).TryGetCircle(circle) Then\n        isCircleWithRadiusOf10 = circle.Radius <= 10.0 + _tolerance AndAlso circle.Radius >= 10.0 - _tolerance\n      End If\n      Return isCircleWithRadiusOf10\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle)"],
-      ["Rhino.Input.Custom.GetObject", "System.Void SetCustomGeometryFilter(GetObjectGeometryFilter filter)"]
+      ["Rhino.Input.Custom.GetObject", "System.Void SetCustomGeometryFilter(GetObjectGeometryFilter filter)"],
+      ["Rhino.Geometry.Curve", "System.Boolean TryGetCircle(out Circle circle)"]
     ]
   },
   {
@@ -2438,8 +2438,8 @@
     "code": "Imports Rhino\nImports Rhino.DocObjects\nImports Rhino.Commands\nImports Rhino.Geometry\n\nNamespace examples_vb\n  Public Class ChangeDimensionStyleCommand\n    Inherits Rhino.Commands.Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbChangeDimensionStyle\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      For Each rhino_object As RhinoObject In doc.Objects.GetObjectList(ObjectType.Annotation)\n        Dim annotation_object = TryCast(rhino_object, AnnotationObjectBase)\n        If annotation_object Is Nothing Then\n          Continue For\n        End If\n\n        Dim annotation = TryCast(annotation_object.Geometry, AnnotationBase)\n        If annotation Is Nothing Then\n          Continue For\n        End If\n\n        If annotation.Index = doc.DimStyles.CurrentDimensionStyleIndex Then\n          Continue For\n        End If\n\n        annotation.Index = doc.DimStyles.CurrentDimensionStyleIndex\n        annotation_object.CommitChanges()\n      Next\n\n      doc.Views.Redraw()\n\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
       ["Rhino.RhinoDoc", "DimStyleTable DimStyles"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "IEnumerable<RhinoObject> GetObjectList(System.Type typeFilter)"],
-      ["Rhino.DocObjects.Tables.DimStyleTable", "int CurrentIndex"]
+      ["Rhino.DocObjects.Tables.DimStyleTable", "int CurrentIndex"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "IEnumerable<RhinoObject> GetObjectList(System.Type typeFilter)"]
     ]
   },
   {
@@ -2466,12 +2466,12 @@
       ["Rhino.Geometry.Curve", "System.Double[] DivideByLength(System.Double segmentLength, System.Boolean includeEnds, System.Boolean reverse)"],
       ["Rhino.Geometry.Curve", "System.Double[] DivideByLength(System.Double segmentLength, System.Boolean includeEnds)"],
       ["Rhino.Geometry.Curve", "System.Boolean IsShort(System.Double tolerance)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3d point)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3f point)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Select(System.Guid objectId)"],
       ["Rhino.Input.RhinoGet", "Result GetNumber(System.String prompt, System.Boolean acceptNothing, ref System.Double outputNumber, System.Double lowerLimit, System.Double upperLimit)"],
       ["Rhino.Input.RhinoGet", "Result GetNumber(System.String prompt, System.Boolean acceptNothing, ref System.Double outputNumber)"],
-      ["Rhino.Input.RhinoGet", "Result GetOneObject(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef rhObject)"]
+      ["Rhino.Input.RhinoGet", "Result GetOneObject(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef rhObject)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3d point)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPoint(Point3f point)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Select(System.Guid objectId)"]
     ]
   },
   {
@@ -2589,8 +2589,8 @@
     "name": "Hatchcurve.vb",
     "code": "Partial Class Examples\n  Public Shared Function HatchCurve(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim go = New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select closed planar curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.[Custom].GeometryAttributeFilter.ClosedCurve\n    go.SubObjectSelect = False\n    go.Get()\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n\n    Dim curve = go.Object(0).Curve()\n    If curve Is Nothing OrElse Not curve.IsClosed OrElse Not curve.IsPlanar() Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    Dim hatch_name As String = doc.HatchPatterns(doc.HatchPatterns.CurrentHatchPatternIndex).Name\n    Dim rc = Rhino.Input.RhinoGet.GetString(\"Hatch pattern\", True, hatch_name)\n    If rc <> Rhino.Commands.Result.Success Then\n      Return rc\n    End If\n    hatch_name = hatch_name.Trim()\n    If String.IsNullOrWhiteSpace(hatch_name) Then\n      Return Rhino.Commands.Result.Nothing\n    End If\n    Dim index As Integer = doc.HatchPatterns.Find(hatch_name, True)\n    If index < 0 Then\n      Rhino.RhinoApp.WriteLine(\"Hatch pattern does not exist.\")\n      Return Rhino.Commands.Result.Nothing\n    End If\n\n    Dim hatches = Rhino.Geometry.Hatch.Create(curve, index, 0, 1)\n    For i As Integer = 0 To hatches.Length - 1\n      doc.Objects.AddHatch(hatches(i))\n    Next\n    If hatches.Length > 0 Then\n      doc.Views.Redraw()\n    End If\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
       ["Rhino.DocObjects.ModelComponent", "string Name"],
+      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale, System.Double tolerance)"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddHatch(Hatch hatch)"],
@@ -2605,8 +2605,8 @@
     "members": [
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Curve curve, System.Boolean allowPickingPointOffObject)"],
       ["Rhino.Input.Custom.GetPoint", "Curve PointOnCurve(out System.Double t)"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Replace(ObjRef objref, Curve curve)"],
-      ["Rhino.Geometry.Collections.NurbsCurveKnotList", "System.Boolean InsertKnot(System.Double value)"]
+      ["Rhino.Geometry.Collections.NurbsCurveKnotList", "System.Boolean InsertKnot(System.Double value)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Boolean Replace(ObjRef objref, Curve curve)"]
     ]
   },
   {
@@ -2622,8 +2622,8 @@
     "code": "Partial Class Examples\n  Public Shared Function IntersectCurves(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    ' Select two curves to intersect\n    Dim go = New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select two curves\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GetMultiple(2, 2)\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n\n    ' Validate input\n    Dim curveA = go.[Object](0).Curve()\n    Dim curveB = go.[Object](1).Curve()\n    If curveA Is Nothing OrElse curveB Is Nothing Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    ' Calculate the intersection\n    Const intersection_tolerance As Double = 0.001\n    Const overlap_tolerance As Double = 0.0\n    Dim events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance)\n\n    ' Process the results\n    If events IsNot Nothing Then\n      For i As Integer = 0 To events.Count - 1\n        Dim ccx_event = events(i)\n        doc.Objects.AddPoint(ccx_event.PointA)\n        If ccx_event.PointA.DistanceTo(ccx_event.PointB) > Double.Epsilon Then\n          doc.Objects.AddPoint(ccx_event.PointB)\n          doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB)\n        End If\n      Next\n      doc.Views.Redraw()\n    End If\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
       ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
-      ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Point3f", "System.Double DistanceTo(Point3f other)"],
+      ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveCurve(Curve curveA, Curve curveB, System.Double tolerance, System.Double overlapTolerance)"]
     ]
   },
@@ -2638,9 +2638,9 @@
     "name": "Intersectlines.vb",
     "code": "Imports Rhino.Geometry\n\nPartial Class Examples\n  Public Shared Function IntersectLines(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim go As New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select lines\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GetMultiple(2, 2)\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n    If go.ObjectCount <> 2 Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    Dim crv0 As LineCurve = TryCast(go.Object(0).Geometry(), LineCurve)\n    Dim crv1 As LineCurve = TryCast(go.Object(1).Geometry(), LineCurve)\n    If crv0 Is Nothing OrElse crv1 Is Nothing Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    Dim line0 As Line = crv0.Line\n    Dim line1 As Line = crv1.Line\n    Dim v0 As Vector3d = line0.Direction\n    v0.Unitize()\n    Dim v1 As Vector3d = line1.Direction\n    v1.Unitize()\n\n    If v0.IsParallelTo(v1) <> 0 Then\n      Rhino.RhinoApp.WriteLine(\"Selected lines are parallel.\")\n      Return Rhino.Commands.Result.[Nothing]\n    End If\n\n    Dim a As Double, b As Double\n    If Not Rhino.Geometry.Intersect.Intersection.LineLine(line0, line1, a, b) Then\n      Rhino.RhinoApp.WriteLine(\"No intersection found.\")\n      Return Rhino.Commands.Result.[Nothing]\n    End If\n\n    Dim pt0 As Point3d = line0.PointAt(a)\n    Dim pt1 As Point3d = line1.PointAt(b)\n    ' pt0 and pt1 should be equal, so we will only add pt0 to the document\n    doc.Objects.AddPoint(pt0)\n    doc.Views.Redraw()\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.Geometry.Vector3d", "System.Int32 IsParallelTo(Vector3d other)"],
       ["Rhino.Geometry.Line", "Vector3d Direction"],
       ["Rhino.Geometry.Line", "Point3d PointAt(System.Double t)"],
+      ["Rhino.Geometry.Vector3d", "System.Int32 IsParallelTo(Vector3d other)"],
       ["Rhino.Geometry.Intersect.Intersection", "System.Boolean LineLine(Line lineA, Line lineB, out System.Double a, out System.Double b)"]
     ]
   },
@@ -2663,8 +2663,8 @@
     "name": "Issurfaceinplane.vb",
     "code": "Imports System.Linq\nImports Rhino\nImports Rhino.DocObjects\nImports Rhino.Geometry\nImports Rhino.Commands\nImports Rhino.Input\n\nNamespace examples_vb\n  Public Class IsPlanarSurfaceInPlaneCommand\n    Inherits Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbIsPlanarSurfaceInPlane\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim obj_ref As ObjRef = Nothing\n      Dim rc = RhinoGet.GetOneObject(\"select surface\", True, ObjectType.Surface, obj_ref)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n      Dim surface = obj_ref.Surface()\n\n      Dim corners As Point3d() = Nothing\n      rc = RhinoGet.GetRectangle(corners)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n\n      Dim plane = New Plane(corners(0), corners(1), corners(2))\n\n      Dim is_or_isnt = If(IsSurfaceInPlane(surface, plane, doc.ModelAbsoluteTolerance), \"\", \" not \")\n      RhinoApp.WriteLine(\"Surface is{0} in plane.\", is_or_isnt)\n      Return Result.Success\n    End Function\n\n    Private Function IsSurfaceInPlane(surface As Surface, plane As Plane, tolerance As Double) As Boolean\n      If Not surface.IsPlanar(tolerance) Then\n        Return False\n      End If\n\n      Dim bbox = surface.GetBoundingBox(True)\n      Return bbox.GetCorners().All(Function(corner) Math.Abs(plane.DistanceTo(corner)) <= tolerance)\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.Geometry.Plane", "System.Double DistanceTo(Point3d testPoint)"],
-      ["Rhino.Geometry.Surface", "System.Boolean IsPlanar()"]
+      ["Rhino.Geometry.Surface", "System.Boolean IsPlanar()"],
+      ["Rhino.Geometry.Plane", "System.Double DistanceTo(Point3d testPoint)"]
     ]
   },
   {
@@ -2695,8 +2695,8 @@
     "name": "Makerhinocontours.vb",
     "code": "Imports Rhino\nImports Rhino.DocObjects\nImports Rhino.Geometry\nImports Rhino.Input\nImports Rhino.Input.Custom\nImports Rhino.Commands\n\nNamespace examples_vb\n  Public Class ContourCommand\n    Inherits Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbContour\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim filter = ObjectType.Surface Or ObjectType.PolysrfFilter Or ObjectType.Mesh\n      Dim obj_refs As ObjRef() = Nothing\n      Dim rc = RhinoGet.GetMultipleObjects(\"Select objects to contour\", False, filter, obj_refs)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n\n      Dim gp = New GetPoint()\n      gp.SetCommandPrompt(\"Contour plane base point\")\n      gp.[Get]()\n      If gp.CommandResult() <> Result.Success Then\n        Return gp.CommandResult()\n      End If\n      Dim base_point = gp.Point()\n\n      gp.DrawLineFromPoint(base_point, True)\n      gp.SetCommandPrompt(\"Direction perpendicular to contour planes\")\n      gp.[Get]()\n      If gp.CommandResult() <> Result.Success Then\n        Return gp.CommandResult()\n      End If\n      Dim end_point = gp.Point()\n\n      If base_point.DistanceTo(end_point) < RhinoMath.ZeroTolerance Then\n        Return Result.[Nothing]\n      End If\n\n      Dim distance As Double = 1.0\n      rc = RhinoGet.GetNumber(\"Distance between contours\", False, distance)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n\n      Dim interval = Math.Abs(distance)\n\n      Dim curves As Curve() = Nothing\n      For Each obj_ref As ObjRef In obj_refs\n        Dim geometry = obj_ref.Geometry()\n        If geometry Is Nothing Then\n          Return Result.Failure\n        End If\n\n        If TypeOf geometry Is Brep Then\n          curves = Brep.CreateContourCurves(TryCast(geometry, Brep), base_point, end_point, interval)\n        Else\n          curves = Mesh.CreateContourCurves(TryCast(geometry, Mesh), base_point, end_point, interval)\n        End If\n\n        For Each curve As Curve In curves\n          Dim curve_object_id = doc.Objects.AddCurve(curve)\n          doc.Objects.[Select](curve_object_id)\n        Next\n      Next\n\n      If curves IsNot Nothing Then\n        doc.Views.Redraw()\n      End If\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.Geometry.Brep", "Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, System.Double interval)"],
-      ["Rhino.Geometry.Mesh", "Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, System.Double interval, System.Double tolerance)"]
+      ["Rhino.Geometry.Mesh", "Curve[] CreateContourCurves(Mesh meshToContour, Point3d contourStart, Point3d contourEnd, System.Double interval, System.Double tolerance)"],
+      ["Rhino.Geometry.Brep", "Curve[] CreateContourCurves(Brep brepToContour, Point3d contourStart, Point3d contourEnd, System.Double interval)"]
     ]
   },
   {
@@ -2721,8 +2721,8 @@
     "name": "Modifylightcolor.vb",
     "code": "Imports Rhino\nImports Rhino.DocObjects\nImports Rhino.Commands\nImports Rhino.Input\nImports Rhino.UI\n\nNamespace examples_vb\n  Public Class ChangeLightColorCommand\n    Inherits Rhino.Commands.Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbLightColor\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim obj_ref As ObjRef = Nothing\n      Dim rc = RhinoGet.GetOneObject(\"Select light to change color\", True, ObjectType.Light, obj_ref)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n      Dim light = obj_ref.Light()\n      If light Is Nothing Then\n        Return Result.Failure\n      End If\n\n      Dim diffuse_color = light.Diffuse\n      If Dialogs.ShowColorDialog(diffuse_color) Then\n        light.Diffuse = diffuse_color\n      End If\n\n      doc.Lights.Modify(obj_ref.ObjectId, light)\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.Geometry.Light", "Color Diffuse"],
       ["Rhino.UI.Dialogs", "System.Boolean ShowColorDialog(ref System.Drawing.Color color)"],
+      ["Rhino.Geometry.Light", "Color Diffuse"],
       ["Rhino.DocObjects.Tables.LightTable", "System.Boolean Modify(System.Guid id, Geometry.Light light)"]
     ]
   },
@@ -2790,15 +2790,15 @@
       ["Rhino.DocObjects.RhinoObject", "System.Int32 Select(System.Boolean on)"],
       ["Rhino.DocObjects.ObjRef", "RhinoObject Object()"],
       ["Rhino.DocObjects.ObjRef", "Surface Surface()"],
-      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
-      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
+      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Surface surface, System.Boolean allowPickingPointOffObject)"],
       ["Rhino.Input.Custom.GetObject", "bool DeselectAllBeforePostSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjectType GeometryFilter"],
       ["Rhino.Input.Custom.GetObject", "bool GroupSelect"],
       ["Rhino.Input.Custom.GetObject", "bool OneByOnePostSelect"],
       ["Rhino.Input.Custom.GetObject", "bool SubObjectSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjRef Object(System.Int32 index)"],
-      ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Surface surface, System.Boolean allowPickingPointOffObject)"],
+      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
+      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid Transform(ObjRef objref, Transform xform, System.Boolean deleteOriginal)"]
     ]
   },
@@ -2820,8 +2820,8 @@
     "name": "Pointatcursor.vb",
     "code": "Imports Rhino\nImports Rhino.Commands\nImports Rhino.DocObjects\n\nNamespace examples_vb\n  Public Class PointAtCursorCommand\n    Inherits Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbPointAtCursor\"\n      End Get\n    End Property\n\n    <System.Runtime.InteropServices.DllImport(\"user32.dll\")> _\n    Public Shared Function GetCursorPos(ByRef point As System.Drawing.Point) As Boolean\n    End Function\n\n    <System.Runtime.InteropServices.DllImport(\"user32.dll\")> _\n    Public Shared Function ScreenToClient(hWnd As IntPtr, ByRef point As System.Drawing.Point) As Boolean\n    End Function\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim result__1 = Result.Failure\n      Dim view = doc.Views.ActiveView\n      If view Is Nothing Then\n        Return result__1\n      End If\n\n      Dim windowsDrawingPoint As System.Drawing.Point\n      If Not GetCursorPos(windowsDrawingPoint) OrElse Not ScreenToClient(view.Handle, windowsDrawingPoint) Then\n        Return result__1\n      End If\n\n      Dim xform = view.ActiveViewport.GetTransform(CoordinateSystem.Screen, CoordinateSystem.World)\n      Dim point = New Rhino.Geometry.Point3d(windowsDrawingPoint.X, windowsDrawingPoint.Y, 0.0)\n      RhinoApp.WriteLine([String].Format(\"screen point: ({0}, {1}, {2})\", point.X, point.Y, point.Z))\n      point.Transform(xform)\n      RhinoApp.WriteLine([String].Format(\"world point: ({0}, {1}, {2})\", point.X, point.Y, point.Z))\n      result__1 = Result.Success\n      Return result__1\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.Geometry.Point3d", "System.Void Transform(Transform xform)"],
-      ["Rhino.Display.RhinoViewport", "Transform GetTransform(DocObjects.CoordinateSystem sourceSystem, DocObjects.CoordinateSystem destinationSystem)"]
+      ["Rhino.Display.RhinoViewport", "Transform GetTransform(DocObjects.CoordinateSystem sourceSystem, DocObjects.CoordinateSystem destinationSystem)"],
+      ["Rhino.Geometry.Point3d", "System.Void Transform(Transform xform)"]
     ]
   },
   {
@@ -2950,16 +2950,16 @@
     "members": [
       ["Rhino.Geometry.TextEntity", "TextEntity()"],
       ["Rhino.Geometry.TextEntity", "TextJustification Justification"],
-      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddText(Text3d text3d)"],
-      ["Rhino.DocObjects.Tables.FontTable", "System.Int32 FindOrCreate(System.String face, System.Boolean bold, System.Boolean italic)"]
+      ["Rhino.DocObjects.Tables.FontTable", "System.Int32 FindOrCreate(System.String face, System.Boolean bold, System.Boolean italic)"],
+      ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddText(Text3d text3d)"]
     ]
   },
   {
     "name": "Tightboundingbox.vb",
     "code": "Imports Rhino\nImports Rhino.Commands\nImports System.Linq\nImports Rhino.Geometry\nImports Rhino.Input\nImports Rhino.DocObjects\nImports System.Collections.Generic\n\nNamespace examples_vb\n  Public Class TightBoundingBoxCommand\n    Inherits Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbTightBoundingBox\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim obj_ref As ObjRef = Nothing\n      Dim rc = RhinoGet.GetOneObject(\"Select surface to split\", True, ObjectType.Surface, obj_ref)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n      Dim surface = obj_ref.Surface()\n      If surface Is Nothing Then\n        Return Result.Failure\n      End If\n\n      obj_ref = Nothing\n      rc = RhinoGet.GetOneObject(\"Select cutting curve\", True, ObjectType.Curve, obj_ref)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n      Dim curve = obj_ref.Curve()\n      If curve Is Nothing Then\n        Return Result.Failure\n      End If\n\n      Dim brep_face = TryCast(surface, BrepFace)\n      If brep_face Is Nothing Then\n        Return Result.Failure\n      End If\n\n      Dim split_brep = brep_face.Split(New List(Of Curve)() From { _\n        curve _\n      }, doc.ModelAbsoluteTolerance)\n      If split_brep Is Nothing Then\n        RhinoApp.WriteLine(\"Unable to split surface.\")\n        Return Result.[Nothing]\n      End If\n\n      Dim meshes = Mesh.CreateFromBrep(split_brep)\n\n      For Each mesh__1 As Mesh In meshes\n        Dim bbox = mesh__1.GetBoundingBox(True)\n        Select Case bbox.IsDegenerate(doc.ModelAbsoluteTolerance)\n          Case 3, 2\n            Return Result.Failure\n            Exit Select\n          Case 1\n            ' rectangle\n            ' box with 8 corners flattened to rectangle with 4 corners\n            Dim rectangle_corners = bbox.GetCorners().Distinct().ToList()\n            ' add 1st point as last to close the loop\n            rectangle_corners.Add(rectangle_corners(0))\n            doc.Objects.AddPolyline(rectangle_corners)\n            doc.Views.Redraw()\n            Exit Select\n          Case 0\n            ' box\n            Dim brep_box = New Box(bbox).ToBrep()\n            doc.Objects.AddBrep(brep_box)\n            doc.Views.Redraw()\n            Exit Select\n        End Select\n      Next\n\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace\n",
     "members": [
-      ["Rhino.Geometry.BrepFace", "Brep Split(IEnumerable<Curve> curves, System.Double tolerance)"],
       ["Rhino.Geometry.Mesh", "Mesh[] CreateFromBrep(Brep brep)"],
+      ["Rhino.Geometry.BrepFace", "Brep Split(IEnumerable<Curve> curves, System.Double tolerance)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddPolyline(IEnumerable<Point3d> points)"]
     ]
   },
