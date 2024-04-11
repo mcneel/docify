@@ -10,6 +10,9 @@
               </q-avatar>
               <div>{{apiTitle + ' API'}}</div>
             </q-btn>
+            <q-btn flat dense icon="file_download" href="https://github.com/mcneel/docify/raw/mkarimi/electron/electron/rhinocommon_api.zip?download=">
+            <q-tooltip>Download offline copy</q-tooltip>
+          </q-btn>
           </q-toolbar-title>
           <q-input dark dense standout v-model="searchText" label="search" debounce="200">
             <template v-slot:append>
@@ -28,7 +31,7 @@
           <q-btn v-if="filterVersion.split('.')[0]== version.split('.')[0]" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
             <q-tooltip>What's new in version {{ version }}</q-tooltip>
           </q-btn>
-          <q-btn flat round @click="toggleDarkMode()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
+          <q-btn flat dense @click="toggleDarkMode()" :icon="$q.dark.isActive ? 'nights_stay' : 'wb_sunny'">
             <q-tooltip>Toggle dark mode</q-tooltip>
           </q-btn>
         </q-toolbar>
