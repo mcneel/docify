@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "quasar dev",
     "build": "quasar build",
+    "electronbuild": "quasar build -m electron",
     "ssrdev": "quasar dev -m ssr",
     "ssrbuild": "quasar build -m ssr",
     "lint": "eslint --ext .js,.vue ./",
@@ -28,6 +29,7 @@
     "@quasar/app-webpack": "^3.0.0",
     "@types/marked": "^4.0.7",
     "electron": "^29.3.0",
+    "electron-builder": "^22.4.0",
     "electron-packager": "^15.2.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.1.0",

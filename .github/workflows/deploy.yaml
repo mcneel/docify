@@ -19,6 +19,9 @@ jobs:
         cd quasar_site/
         yarn
         yarn ssrbuild
+    # - name: electron build
+    #   run: |
+    #     yarn electronbuild
     - name: deploy
       run: |
         cd quasar_site/dist/ssr/
