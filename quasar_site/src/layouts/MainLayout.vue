@@ -10,9 +10,11 @@
               </q-avatar>
               <div>{{apiTitle + ' API'}}</div>
             </q-btn>
-            <q-btn flat dense icon="file_download" href="https://github.com/mcneel/docify/raw/mkarimi/electron/electron/rhinocommon_api.zip?download=">
-            <q-tooltip>Download offline copy</q-tooltip>
-          </q-btn>
+            <template v-if="!isElectron()">
+              <q-btn flat dense icon="file_download" href="https://github.com/mcneel/docify/raw/mkarimi/electron/electron/rhinocommon_api.zip?download=">
+              <q-tooltip>Download offline copy</q-tooltip>
+              </q-btn>
+            </template>
           </q-toolbar-title>
           <q-input dark dense standout v-model="searchText" label="search" debounce="200">
             <template v-slot:append>
@@ -35,13 +37,15 @@
             <q-tooltip>Toggle dark mode</q-tooltip>
           </q-btn>
         </q-toolbar>
-        <q-banner v-if="bannerVisible" inline-actions dense class="bg-blue text-white">
-          {{ apiTitle }} documentation has a new look. The old site can still be found <span><a
-              href="https://mcneel.github.io/rhinocommon-api-docs/api/RhinoCommon/">here</a></span>.
-          <template v-slot:action>
-            <q-btn flat label="Close" @click="bannerVisible = false" />
-          </template>
-        </q-banner>
+        <template v-if="!isElectron()">
+          <q-banner v-if="bannerVisible" inline-actions dense class="bg-blue text-white">
+            {{ apiTitle }} documentation has a new look. The old site can still be found <span><a
+                href="https://mcneel.github.io/rhinocommon-api-docs/api/RhinoCommon/">here</a></span>.
+            <template v-slot:action>
+              <q-btn flat label="Close" @click="bannerVisible = false" />
+            </template>
+          </q-banner>
+        </template>
       </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
         @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
@@ -80,6 +84,7 @@ import { useQuasar } from 'quasar'
 const { getScrollTarget } = scroll
 
 let initialDrawerWidth;
+
 
 export default {
   props: {
@@ -127,6 +132,7 @@ export default {
       }
   },
   methods: {
+    isElectron() {return process.env.MODE === 'electron'},
     onChangeVersionFilter (item) {
       this.filterVersion = item;
       if (this.$route.query["version"] != item){
