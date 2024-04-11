@@ -1,8 +1,8 @@
 {
   "name": "quasar-site-webpack",
   "version": "0.0.1",
-  "description": "Docify Site Template",
-  "productName": "Docify Site Template",
+  "description": "RhinoCommon API",
+  "productName": "RhinoCommon API",
   "author": "Morteza Karimi <morteza@mcneel.com>",
   "private": true,
   "scripts": {
