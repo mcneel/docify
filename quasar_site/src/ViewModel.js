@@ -260,7 +260,9 @@ const ViewModel = {
     if (!item) {
       return;
     }
-    item = item.split("?")[0];
+    item = item.split("?")[0]; //Remove ?query string from url
+    item = item.split("#")[0]; //remove #anchors from url
+
     //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item;
 
