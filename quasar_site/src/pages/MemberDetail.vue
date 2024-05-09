@@ -5,7 +5,7 @@
         <div style="height: 130px"></div>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index">
-            <q-item>
+            <q-item :id="index">
               <q-item-section>
                 <q-item-label v-if="member.summary" class="text-h6"
                   >Description:</q-item-label
@@ -283,6 +283,8 @@ import ViewModel from "../ViewModel";
 import Examples from "../api_examples.json";
 import ProjInfo from "../proj_info.json";
 import { createMetaMixin } from "quasar";
+import { scroll } from 'quasar'
+const { getScrollTarget, setVerticalScrollPosition } = scroll
 
 const titleCase = (input) => {
   input = input === undefined || input === null ? "" : input;
@@ -330,16 +332,49 @@ export default {
   mounted() {
     console.log("mounted member detail");
     this.renderUrl(this.$route);
+
+        // If this page is loaded with an anchor URL, attempt to scroll to
+        // it right after the page is loaded
+        if (this.$route.hash) {
+          console.log("hash has:", this.$route.hash.substring(1))
+          this.$nextTick(() => {
+            const el = document.getElementById(this.$route.hash.substring(1))
+            if (el) {
+              this.scrollToElement(el, -125)
+            }
+          })
+        }
   },
   watch: {
     $route(to, from) {
       // react to route changes...
       if (to.params.datatype && to.params.member) {
         this.renderUrl(to);
+
+        // If this page is loaded with an anchor URL, attempt to scroll to
+        // it right after the page is loaded
+        if (to.hash) {
+          console.log("hash has:", to.hash.substring(1))
+          // this.$nextTick(() => {
+            const el = document.getElementById(to.hash.substring(1))
+            if (el) {
+              this.scrollToElement(el, -125)
+            }
+          // })
+        }
       }
     },
   },
   methods: {
+    // takes an element object
+    scrollToElement (el, padding) {
+      console.log("scrolling to:", el)
+      const target = getScrollTarget(el)
+      const offset = el.offsetTop + padding
+      const duration = 250
+      setVerticalScrollPosition(target, offset, duration)
+    },
+
     renderUrl(route) {
       //TODO: need to pay attention to full path when setting selected item
       this.datatype = ViewModel.findNodeByPath(route.params.datatype);
