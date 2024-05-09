@@ -741,6 +741,12 @@ const ViewModel = {
     }
     return [signature, ""];
   },
+  signatureAnchorRef(signature) {
+    return this.shortSignature(signature)
+      .join("")
+      .toLocaleLowerCase()
+      .replace(/\s/g, "");
+  },
   memberUrl(memberType, member) {
     if (memberType == "values") return "";
     let name = this.memberName(member, memberType).toLowerCase();

@@ -5,7 +5,7 @@
         <div style="height: 130px"></div>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index">
-            <q-item :id="index">
+            <q-item :id="ViewModel.signatureAnchorRef(member.signature)">
               <q-item-section>
                 <q-item-label v-if="member.summary" class="text-h6"
                   >Description:</q-item-label
@@ -303,6 +303,7 @@ export default {
   data() {
     const mostRecent = ViewModel.mostRecentSince();
     return {
+      ViewModel,
       memberName: null,
       datatype: null,
       members: {},
@@ -374,7 +375,6 @@ export default {
       const duration = 250
       setVerticalScrollPosition(target, offset, duration)
     },
-
     renderUrl(route) {
       //TODO: need to pay attention to full path when setting selected item
       this.datatype = ViewModel.findNodeByPath(route.params.datatype);

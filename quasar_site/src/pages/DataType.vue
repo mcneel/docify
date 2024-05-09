@@ -35,7 +35,7 @@
 
           <q-list>
             <div v-for="(member, index) in section.items" :key="index">
-              <q-item dense :clickable="section.type != 'values'" :to="member.path"
+              <q-item dense :clickable="section.type != 'values'" :to="member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
                 :class="memberClass(member)" class="row">
 
                 <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
