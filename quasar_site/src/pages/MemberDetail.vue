@@ -8,7 +8,15 @@
             <q-item :id="ViewModel.signatureAnchorRef(member.signature)">
               <q-item-section>
                 <q-item-label v-if="member.summary" class="text-h6"
-                  >Description:</q-item-label
+                  >Description:
+                  <q-btn
+                          flat
+                          round
+                          color="blue"
+                          icon="mdi-link"
+                          @click="this.$router.push({ hash: `#${ViewModel.signatureAnchorRef(member.signature)}` })"
+                        ></q-btn>
+                  </q-item-label
                 >
                 <q-item-label caption v-if="member.summary" class="on-right">
                   <!--<span
@@ -337,7 +345,6 @@ export default {
         // If this page is loaded with an anchor URL, attempt to scroll to
         // it right after the page is loaded
         if (this.$route.hash) {
-          console.log("hash has:", this.$route.hash.substring(1))
           this.$nextTick(() => {
             const el = document.getElementById(this.$route.hash.substring(1))
             if (el) {
