@@ -35,7 +35,7 @@
 
           <q-list>
             <div v-for="(member, index) in section.items" :key="index">
-              <q-item dense :clickable="section.type != 'values'" :to="member.path"
+              <q-item dense :clickable="section.type != 'values'" :to="member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
                 :class="memberClass(member)" class="row">
 
                 <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
@@ -103,6 +103,8 @@
 import ViewModel from '../ViewModel'
 import ProjInfo from '../proj_info.json'
 import { createMetaMixin } from 'quasar'
+import { scroll } from 'quasar'
+const { getScrollTarget, setVerticalScrollPosition } = scroll
 
 export default {
   props: {
@@ -302,17 +304,15 @@ export default {
       const selectedItem = decodeURI(this.$route.fullPath.substring(this.baseUrl.length))
       ViewModel.setSelectedItem(selectedItem)
     }
-    // If this page is loaded with an anchor URL, attempt to scroll to
-    // it right after the page is loaded
+
     if (this.$route.hash) {
-      this.$nextTick(() => {
-        const el = document.getElementById(this.$route.hash.substring(1))
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.pageYOffset - 65
-          window.scrollTo({ top: y, behavior: 'smooth' })
+          this.$nextTick(() => {
+            const el = document.getElementById(this.$route.hash.substring(1))
+            if (el) {
+              this.scrollToElement(el, 0)
+            }
+          })
         }
-      })
-    }
   },
   watch: {
     '$route'(to, from) {
@@ -334,6 +334,14 @@ export default {
     }
   },
   methods: {
+      // takes an element object
+      scrollToElement (el, padding) {
+      console.log("scrolling to:", el)
+      const target = getScrollTarget(el)
+      const offset = el.offsetTop + padding
+      const duration = 250
+      setVerticalScrollPosition(target, offset, duration)
+    },
     anchorId(section) {
       if (section.type == 'constructors') {
         return 'constructors'

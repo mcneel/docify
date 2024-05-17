@@ -260,7 +260,9 @@ const ViewModel = {
     if (!item) {
       return;
     }
-    item = item.split("?")[0];
+    item = item.split("?")[0]; //Remove ?query string from url
+    item = item.split("#")[0]; //remove #anchors from url
+
     //Global tree selection callback handler
     let path = item.dataType ? this.itemPath(item) : item;
 
@@ -738,6 +740,12 @@ const ViewModel = {
       return [name, `(${commaSeparatedTypes})`];
     }
     return [signature, ""];
+  },
+  signatureAnchorRef(signature) {
+    return this.shortSignature(signature)
+      .join("")
+      .toLocaleLowerCase()
+      .replace(/\s/g, "");
   },
   memberUrl(memberType, member) {
     if (memberType == "values") return "";
