@@ -66,8 +66,6 @@ const ViewModel = {
         return m.path == x.path;
       });
 
-      console.log("x and its overloads:", x.path, overloads);
-
       if (topLevelChild.includes(x.path)) {
         return null;
       } else {
@@ -685,16 +683,16 @@ const ViewModel = {
       }
     }
 
-    // Adding an overload tag to members with same declarations
-    members.forEach((member, id) => {
-      const nextMember = members[id + 1];
-      const prevMember = members[id - 1];
-      if (prevMember && prevMember.path == member.path) {
-        member.overload = prevMember.overload + 1;
-      } else if (nextMember && nextMember.path == member.path) {
-        member.overload = 1;
-      }
-    });
+    // // Adding an overload tag to members with same declarations
+    // members.forEach((member, id) => {
+    //   const nextMember = members[id + 1];
+    //   const prevMember = members[id - 1];
+    //   if (prevMember && prevMember.path == member.path) {
+    //     member.overload = prevMember.overload + 1;
+    //   } else if (nextMember && nextMember.path == member.path) {
+    //     member.overload = 1;
+    //   }
+    // });
 
     // Updating path for  members with overloads and updating _pathMap
     members.forEach((member) => {
