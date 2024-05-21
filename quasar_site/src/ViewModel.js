@@ -54,24 +54,42 @@ const ViewModel = {
       return;
     }
 
+    //An array containing top level children to determine if an overload should be skipped
+    let topLevelChild = [];
+
     let children = members.map((x) => {
       const labelParts = this.shortSignature(
         this.memberName(x, childType.toLowerCase())
       );
-      // Don't display overlaods in tree: WWW-2046
-      if (!x.overload || x.overload < 2) {
+
+      const overloads = members.filter((m) => {
+        return m.path == x.path;
+      });
+
+      if (topLevelChild.includes(x.path)) {
+        return null;
+      } else {
+        topLevelChild.push(x.path);
         return {
           label: labelParts[0],
           labelSecondary: labelParts[1],
-          // path: x.overload ? `${x.path}?overload=${x.overload}` : x.path,
           overload: x.overload,
           path: x.path,
           header: "secondary",
           deprecated: x.deprecated,
           obsolete: x.obsolete,
+          children:
+            overloads.length > 1
+              ? overloads.map((o) => {
+                  return {
+                    label: this.shortSignature(
+                      this.memberName(o, childType.toLowerCase())
+                    )[1],
+                    path: `${o.path}#${this.signatureAnchorRef(o.signature)}`,
+                  };
+                })
+              : [],
         };
-      } else {
-        return null;
       }
     });
 
@@ -665,16 +683,16 @@ const ViewModel = {
       }
     }
 
-    // Adding an overload tag to members with same declarations
-    members.forEach((member, id) => {
-      const nextMember = members[id + 1];
-      const prevMember = members[id - 1];
-      if (prevMember && prevMember.path == member.path) {
-        member.overload = prevMember.overload + 1;
-      } else if (nextMember && nextMember.path == member.path) {
-        member.overload = 1;
-      }
-    });
+    // // Adding an overload tag to members with same declarations
+    // members.forEach((member, id) => {
+    //   const nextMember = members[id + 1];
+    //   const prevMember = members[id - 1];
+    //   if (prevMember && prevMember.path == member.path) {
+    //     member.overload = prevMember.overload + 1;
+    //   } else if (nextMember && nextMember.path == member.path) {
+    //     member.overload = 1;
+    //   }
+    // });
 
     // Updating path for  members with overloads and updating _pathMap
     members.forEach((member) => {
@@ -742,8 +760,7 @@ const ViewModel = {
     return [signature, ""];
   },
   signatureAnchorRef(signature) {
-    return this.shortSignature(signature)
-      .join("")
+    return this.shortSignature(signature)[1]
       .toLocaleLowerCase()
       .replace(/\s/g, "");
   },

@@ -4,8 +4,8 @@
       <template v-if="members && members.items && members.items.length>0">
         <div style="height: 130px"></div>
         <q-list>
-          <div v-for="(member, index) in members.items" :key="index">
-            <q-item :id="ViewModel.signatureAnchorRef(member.signature)">
+          <div v-for="(member, index) in members.items" :key="index" :id="ViewModel.signatureAnchorRef(member.signature)" :style="this.$route.hash.substring(1).length == 0 || this.$route.hash.substring(1) == ViewModel.signatureAnchorRef(member.signature) ? 'opacity: 100%' : 'opacity: 30%'">
+            <q-item>
               <q-item-section>
                 <q-item-label v-if="member.summary" class="text-h6"
                   >Description:
