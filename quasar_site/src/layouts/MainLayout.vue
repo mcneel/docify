@@ -214,7 +214,6 @@ export default {
       const newPath = `${this.baseUrl}${newState}`.toLowerCase();
 
       if (this.$route.path.toLowerCase() !== newPath) {
-        console.log("pushing path")
         this.$router.push(newPath);
       }
       ViewModel.setSelectedItem(newState);
