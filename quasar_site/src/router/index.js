@@ -26,13 +26,17 @@ export default route(function (/* { store, ssrContext } */) {
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
 
-  function hasQueryParams(route) {
-    return !!Object.keys(route.query).length;
+  function hasVersionParams(route) {
+    return Object.keys(route.query).includes("version");
   }
 
   Router.beforeEach((to, from, next) => {
-    if (!hasQueryParams(to) && hasQueryParams(from)) {
-      next({ path: to.path, query: from.query, hash: to.hash });
+    if (!hasVersionParams(to) && hasVersionParams(from)) {
+      next({
+        path: to.path,
+        query: { ...to.query, version: from.query["version"] },
+        hash: to.hash,
+      });
     } else {
       next();
     }
