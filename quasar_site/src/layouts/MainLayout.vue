@@ -42,7 +42,7 @@
       </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
         @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
-        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="searchText"
+        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="filterVersion" :filter-method="filterTocByVersion"
           v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
           <template v-slot:default-header="prop" >
             <div class="row items-center">
@@ -129,6 +129,12 @@ export default {
         })
       }
     },
+    filterTocByVersion (node, filter) {
+        if(node.since){
+          return !ViewModel.sinceIsGreater(node.since, filter)
+        }
+        return true
+    },
     resizeDrawer(ev) {
       const drawerEl = document.getElementById("myDrawer");
       const drawerParent = drawerEl.parentElement;
@@ -148,7 +154,6 @@ export default {
     },
     onChangeSelectedItem(item, updateRoute) {
       const newSelectedNode = ViewModel.itemPath(item);
-      console.log("onchangeselecteditem");
       if (newSelectedNode !== this.selectedNode) {
         this.routePushEnabled = updateRoute;
         this.selectedNode = newSelectedNode;
