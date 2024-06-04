@@ -1,4 +1,3 @@
-import { version } from "core-js";
 import ApiInfo from "./api_info.json";
 
 const DataTypes = {
@@ -78,6 +77,7 @@ const ViewModel = {
           header: "secondary",
           deprecated: x.deprecated,
           obsolete: x.obsolete,
+          since: x.since,
           children:
             overloads.length > 1
               ? overloads.map((o) => {
@@ -86,6 +86,7 @@ const ViewModel = {
                       this.memberName(o, childType.toLowerCase())
                     )[1],
                     path: `${o.path}#${this.signatureAnchorRef(o.signature)}`,
+                    since: o.since,
                   };
                 })
               : [],
@@ -244,7 +245,6 @@ const ViewModel = {
     if (!path) {
       return;
     }
-    // console.log("finding:", path);
     path = path.toLowerCase();
     let found = null;
 
@@ -266,6 +266,7 @@ const ViewModel = {
     _lastFound = found;
 
     if (
+      found &&
       _maxVersion &&
       found.since &&
       this.sinceIsGreater(found.since, _maxVersion)
