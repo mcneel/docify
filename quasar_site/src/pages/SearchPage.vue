@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     filterByVersion (result) {
-        if(result.since){
+        if(result.since && this.filterVersion){
           return !ViewModel.sinceIsGreater(result.since, this.filterVersion)
         }
         return true

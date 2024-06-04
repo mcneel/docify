@@ -340,7 +340,7 @@ export default {
   },
   methods: {
     filterByVersion (node) {
-        if(node.since){
+        if(node.since && this.filterVersion){
           return !ViewModel.sinceIsGreater(node.since, this.filterVersion)
         }
         return true
