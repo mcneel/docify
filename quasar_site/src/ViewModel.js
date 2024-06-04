@@ -16,7 +16,6 @@ let _searchInstance = null;
 let _selectedPath = "";
 let _lastFound = null;
 let _pathMap = {};
-let _maxVersion = null;
 
 let updateTree = (path, children) => (obj) => {
   if (obj.path === path) {
@@ -152,9 +151,6 @@ const ViewModel = {
     _viewmodel = null;
     _searchInstance = null;
   },
-  setMaxVersion(v) {
-    _maxVersion = v;
-  },
   getTree() {
     if (_viewmodel) return _viewmodel;
     let viewmodel = null;
@@ -162,16 +158,6 @@ const ViewModel = {
       // console.log('creating viewodel')
       const namespaceDict = {};
       ApiInfo.forEach((type) => {
-        if (
-          _maxVersion &&
-          type.since &&
-          this.sinceIsGreater(type.since, _maxVersion)
-        ) {
-          // console.log(
-          //   `not including ${type.name} because ${type.since} is newer than ${_maxVersion}`
-          // );
-          return;
-        }
         let summary = "";
         if (type.summary) summary = type.summary;
         if (type.dataType === DataTypes.NAMESPACE) {
@@ -249,13 +235,6 @@ const ViewModel = {
     let found = null;
 
     if (_lastFound && this.itemPath(_lastFound) === path) {
-      if (
-        _maxVersion &&
-        _lastFound.since &&
-        this.sinceIsGreater(_lastFound.since, _maxVersion)
-      ) {
-        return;
-      }
       return _lastFound;
     }
 
@@ -265,14 +244,6 @@ const ViewModel = {
     });
     _lastFound = found;
 
-    if (
-      found &&
-      _maxVersion &&
-      found.since &&
-      this.sinceIsGreater(found.since, _maxVersion)
-    ) {
-      return;
-    }
     return found;
   },
   setSelectedItem(item, updateRoute = true) {
@@ -496,17 +467,6 @@ const ViewModel = {
   getSearchList() {
     const items = [];
     ApiInfo.forEach((entry) => {
-      // skip namespaces
-      if (
-        _maxVersion &&
-        entry.since &&
-        this.sinceIsGreater(entry.since, _maxVersion)
-      ) {
-        // console.log(
-        //   `not including ${entry.name} because ${entry.since} is newer than ${_maxVersion}`
-        // );
-        return;
-      }
       if (entry.dataType === "namespace") return;
       const dataTypeUrl = (entry.namespace + "." + entry.name).toLowerCase();
       const typename = entry.namespace + "." + entry.name;
@@ -521,13 +481,6 @@ const ViewModel = {
       items.push(node);
       if (entry.properties) {
         entry.properties.forEach((prop) => {
-          if (
-            _maxVersion &&
-            prop.since &&
-            this.sinceIsGreater(prop.since, _maxVersion)
-          ) {
-            return;
-          }
           const chunks = prop.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -541,13 +494,6 @@ const ViewModel = {
       }
       if (entry.methods) {
         entry.methods.forEach((method) => {
-          if (
-            _maxVersion &&
-            method.since &&
-            this.sinceIsGreater(method.since, _maxVersion)
-          ) {
-            return;
-          }
           let chunks = method.signature.split("(");
           chunks = chunks[0].split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
@@ -562,13 +508,6 @@ const ViewModel = {
       }
       if (entry.events) {
         entry.events.forEach((event) => {
-          if (
-            _maxVersion &&
-            event.since &&
-            this.sinceIsGreater(event.since, _maxVersion)
-          ) {
-            return;
-          }
           const chunks = event.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -582,13 +521,6 @@ const ViewModel = {
       }
       if (entry.operators) {
         entry.operators.forEach((operator) => {
-          if (
-            _maxVersion &&
-            operator.since &&
-            this.sinceIsGreater(operator.since, _maxVersion)
-          ) {
-            return;
-          }
           const chunks = operator.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -602,14 +534,6 @@ const ViewModel = {
       }
       if (entry.fields) {
         entry.fields.forEach((field) => {
-          //TODO: review
-          if (
-            _maxVersion &&
-            field.since &&
-            this.sinceIsGreater(field.since, _maxVersion)
-          ) {
-            return;
-          }
           const chunks = field.signature.split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
@@ -631,14 +555,6 @@ const ViewModel = {
 
     if (node[memberType]) {
       for (let i = 0; i < members.length; i++) {
-        if (
-          _maxVersion &&
-          members[i].since &&
-          this.sinceIsGreater(members[i].since, _maxVersion)
-        ) {
-          // console.log(`not including ${members[i]}`);
-          return;
-        }
         members[i].parent = node.namespace + "." + node.name;
         members[i].namespace = node.namespace;
         const url = this.memberUrl(memberType, members[i]);

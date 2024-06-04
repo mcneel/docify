@@ -85,8 +85,7 @@ export default {
   },
   data() {
     const mostRecent = ViewModel.mostRecentSince();
-    ViewModel.setMaxVersion(mostRecent);
-    const vm = ViewModel.getTree(mostRecent);
+    const vm = ViewModel.getTree();
     const $q = useQuasar();
     return {
       leftDrawerOpen: false,
@@ -120,14 +119,7 @@ export default {
   methods: {
     onChangeVersionFilter (item) {
       this.filterVersion = item;
-      if (this.$route.query["version"] != item){
-        ViewModel.resetTree();
-        ViewModel.setMaxVersion(item);
-        this.api = ViewModel.getTree();
-        this.$router.push({ query: { version: item } }).then( () =>{
-          window.location.reload(); //
-        })
-      }
+      this.$router.push({ query: { version: item } })
     },
     filterTocByVersion (node, filter) {
         if(node.since){

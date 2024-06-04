@@ -114,7 +114,8 @@ export default {
     return {
       ViewModel,
       ExpandedSections: {
-      }
+      },
+      // filterVersion: ""
     }
   },
   mixins: [
@@ -162,7 +163,7 @@ export default {
       if (item.dataType !== 'namespace') {
 
         const constructors = ViewModel.getMembers(item, "constructors", true)
-        if (constructors.length > 0) {
+        if (constructors && constructors.length > 0) {
           rc.push(Object.freeze({
             title: 'Constructors (' + constructors.length + ')',
             items: Object.freeze(constructors),
@@ -178,7 +179,7 @@ export default {
           }
         }
         values = values.filter(v => v != null)
-        if (values.length > 0) {
+        if (values && values.length > 0) {
           rc.push(Object.freeze({
             title: 'Values',
             items: Object.freeze(values),
@@ -317,6 +318,9 @@ export default {
   watch: {
     '$route'(to, from) {
       // react to route changes...
+      // console.log("route changfe:", to)
+      // this.filterVersion = to.query.version;
+
       const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
 
