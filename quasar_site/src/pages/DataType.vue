@@ -30,49 +30,48 @@
               :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
         </p>
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
-          :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="section.title"
+          :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="`${section.title} (${section.items.filter(m => filterByVersion(m)).length})`"
           :content-inset-level="1" :id="anchorId(section)" header-class="bg-secondary text-white">
 
           <q-list>
-            <div v-for="(member, index) in section.items" :key="index">
-              <q-item dense :clickable="section.type != 'values'" :to="member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
-                :class="memberClass(member)" class="row">
-
-                <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
-                  style="overflow-wrap: break-word;">
-                  <!--formatting member signature below to show only name as bold and signature non-bold-->
-                  <p><span><b>{{ splitSignature(ViewModel.memberName(member, section.type))[0] }}</b></span>{{
-                    splitSignature(ViewModel.memberName(member, section.type))[1] }}</p>&nbsp;
-                  <q-badge
-                    v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
-                    color='info' outline>
-                    <q-icon name="mdi-file-tree" />
-                    <q-tooltip>From {{ member.parent }}</q-tooltip>
-                  </q-badge>
-                  <q-badge v-if="section.type == 'methods' && member.protected" color='info' outline>
-                    <q-icon name="mdi-key-variant" />
-                    <q-tooltip>Protected Member</q-tooltip>
-                  </q-badge>
-                  <q-badge v-if="section.type == 'methods' && member.virtual" color='info' outline>
-                    <q-icon name="mdi-alpha-v" />
-                    <q-tooltip>Virtual Member</q-tooltip>
-                  </q-badge>
-                  <q-badge v-if="member.signature.includes('static')" color='info' outline>
-                    <q-icon name="mdi-alpha-s" />
-                    <q-tooltip>Static Member</q-tooltip>
-                  </q-badge>
-                  <q-badge v-if="member.obsolete || member.deprecated" color='negative' outline>
-                    <q-icon name="mdi-alert" />
-                    <q-tooltip>{{member.obsolete && "Obsolete"}}{{member.obsolete && member.deprecated && " | "}}{{member.deprecated && "Deprecated"}}</q-tooltip>
-                  </q-badge>
-                </q-item-label>
-                <q-item-label caption class="on-right col-8">
-                  <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
-                    <br v-if="index > 0">
-                    {{ line }}
-                  </span>
-                </q-item-label>
-              </q-item>
+            <div v-for="(member, index) in section.items.filter(m => filterByVersion(m))" :key="index">
+                <q-item dense :clickable="section.type != 'values'" :to="member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
+                  :class="memberClass(member)" class="row">
+                  <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
+                    style="overflow-wrap: break-word;">
+                    <!--formatting member signature below to show only name as bold and signature non-bold-->
+                    <p><span><b>{{ splitSignature(ViewModel.memberName(member, section.type))[0] }}</b></span>{{
+                      splitSignature(ViewModel.memberName(member, section.type))[1] }}</p>&nbsp;
+                    <q-badge
+                      v-if="section.type != 'constructors' && section.type != 'values' && member.parent !== (namespace + '.' + name)"
+                      color='info' outline>
+                      <q-icon name="mdi-file-tree" />
+                      <q-tooltip>From {{ member.parent }}</q-tooltip>
+                    </q-badge>
+                    <q-badge v-if="section.type == 'methods' && member.protected" color='info' outline>
+                      <q-icon name="mdi-key-variant" />
+                      <q-tooltip>Protected Member</q-tooltip>
+                    </q-badge>
+                    <q-badge v-if="section.type == 'methods' && member.virtual" color='info' outline>
+                      <q-icon name="mdi-alpha-v" />
+                      <q-tooltip>Virtual Member</q-tooltip>
+                    </q-badge>
+                    <q-badge v-if="member.signature.includes('static')" color='info' outline>
+                      <q-icon name="mdi-alpha-s" />
+                      <q-tooltip>Static Member</q-tooltip>
+                    </q-badge>
+                    <q-badge v-if="member.obsolete || member.deprecated" color='negative' outline>
+                      <q-icon name="mdi-alert" />
+                      <q-tooltip>{{member.obsolete && "Obsolete"}}{{member.obsolete && member.deprecated && " | "}}{{member.deprecated && "Deprecated"}}</q-tooltip>
+                    </q-badge>
+                  </q-item-label>
+                  <q-item-label caption class="on-right col-8">
+                    <span v-for="(line, index) in getLines(member.summary)" :key="10000 + index">
+                      <br v-if="index > 0">
+                      {{ line }}
+                    </span>
+                  </q-item-label>
+                </q-item>
               <q-separator spaced inset />
             </div>
           </q-list>
@@ -114,7 +113,8 @@ export default {
     return {
       ViewModel,
       ExpandedSections: {
-      }
+      },
+      filterVersion: ""
     }
   },
   mixins: [
@@ -162,9 +162,9 @@ export default {
       if (item.dataType !== 'namespace') {
 
         const constructors = ViewModel.getMembers(item, "constructors", true)
-        if (constructors.length > 0) {
+        if (constructors && constructors.length > 0) {
           rc.push(Object.freeze({
-            title: 'Constructors (' + constructors.length + ')',
+            title: 'Constructors',
             items: Object.freeze(constructors),
             expanded: expandedType ?'constructors' == expandedType : true, //expand everything if no hash
             type: 'constructors'
@@ -178,7 +178,7 @@ export default {
           }
         }
         values = values.filter(v => v != null)
-        if (values.length > 0) {
+        if (values && values.length > 0) {
           rc.push(Object.freeze({
             title: 'Values',
             items: Object.freeze(values),
@@ -196,7 +196,7 @@ export default {
         const properties = ViewModel.getMembers(item, "properties", true)
         if (properties && properties.length > 0) {
           rc.push(Object.freeze({
-            title: 'Properties (' + properties.length + ')',
+            title: 'Properties',
             items: Object.freeze(properties),
             expanded: expandedType ?'properties' == expandedType : true, //expand everything if no hash
             type: 'properties'
@@ -207,7 +207,7 @@ export default {
         const methods = ViewModel.getMembers(item, "methods", true)
         if (methods && methods.length > 0) {
           rc.push(Object.freeze({
-            title: 'Methods (' + methods.length + ')',
+            title: 'Methods',
             items: Object.freeze(methods),
             expanded: expandedType ?'methods' == expandedType : true, //expand everything if no hash
             type: 'methods'
@@ -218,7 +218,7 @@ export default {
         const operators = ViewModel.getMembers(item, "operators", true)
         if (operators && operators.length > 0) {
           rc.push(Object.freeze({
-            title: 'Operators (' + operators.length + ')',
+            title: 'Operators',
             items: Object.freeze(operators),
             expanded: expandedType ?'operators' == expandedType : true, //expand everything if no hash
             type: 'operators'
@@ -229,7 +229,7 @@ export default {
         const fields = ViewModel.getMembers(item, "fields", true)
         if (fields && fields.length > 0) {
           rc.push(Object.freeze({
-            title: 'fields (' + fields.length + ')',
+            title: 'Fields',
             items: Object.freeze(fields),
             expanded: expandedType ?'fields' == expandedType : true, //expand everything if no hash
             type: 'fields'
@@ -240,7 +240,7 @@ export default {
         const events = ViewModel.getMembers(item, "events", true)
         if (events && events.length > 0) {
           rc.push(Object.freeze({
-            title: 'Events (' + events.length + ')',
+            title: 'Events',
             items: Object.freeze(events),
             expanded: expandedType ?'events' == expandedType : true, //expand everything if no hash
             type: 'events'
@@ -300,6 +300,8 @@ export default {
     }
   },
   mounted() {
+    this.filterVersion = this.$route.query.version;
+
     if (this.$route.params && this.$route.params.datatype) {
       const selectedItem = decodeURI(this.$route.fullPath.substring(this.baseUrl.length))
       ViewModel.setSelectedItem(selectedItem)
@@ -317,6 +319,9 @@ export default {
   watch: {
     '$route'(to, from) {
       // react to route changes...
+      // console.log("route changfe:", to)
+      this.filterVersion = to.query.version;
+
       const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
 
@@ -334,6 +339,12 @@ export default {
     }
   },
   methods: {
+    filterByVersion (node) {
+        if(node.since && this.filterVersion){
+          return !ViewModel.sinceIsGreater(node.since, this.filterVersion)
+        }
+        return true
+    },
       // takes an element object
       scrollToElement (el, padding) {
       console.log("scrolling to:", el)
