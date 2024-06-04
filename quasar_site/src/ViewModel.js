@@ -485,7 +485,10 @@ const ViewModel = {
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
           node.type = "property";
-          node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${this.signatureAnchorRef(
+            prop.signature
+          )}`;
+          node.since = entry.since;
           node.keywords =
             dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (prop.summary) node.summary = prop.summary;
@@ -497,9 +500,11 @@ const ViewModel = {
           let chunks = method.signature.split("(");
           chunks = chunks[0].split(" ");
           node = { typename: typename, member: chunks[chunks.length - 1] };
-          if (items[items.length - 1].member === node.member) return;
           node.type = "method";
-          node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${this.signatureAnchorRef(
+            method.signature
+          )}`;
+          node.since = method.since;
           node.keywords =
             dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (method.summary) node.summary = method.summary;
@@ -512,7 +517,10 @@ const ViewModel = {
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
           node.type = "event";
-          node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${this.signatureAnchorRef(
+            event.signature
+          )}`;
+          node.since = event.since;
           node.keywords =
             dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (event.summary) node.summary = event.summary;
@@ -525,7 +533,10 @@ const ViewModel = {
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
           node.type = "operator";
-          node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${this.signatureAnchorRef(
+            operator.signature
+          )}`;
+          node.since = operator.since;
           node.keywords =
             dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (operator.summary) node.summary = operator.summary;
@@ -538,7 +549,10 @@ const ViewModel = {
           node = { typename: typename, member: chunks[chunks.length - 1] };
           if (items[items.length - 1].member === node.member) return;
           node.type = "field";
-          node.url = dataTypeUrl + "/" + node.member.toLowerCase();
+          node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${this.signatureAnchorRef(
+            field.signature
+          )}`;
+          node.since = field.since;
           node.keywords =
             dataTypeUrl.replaceAll(".", " ") + " " + node.member.toLowerCase();
           if (field.summary) node.summary = field.summary;

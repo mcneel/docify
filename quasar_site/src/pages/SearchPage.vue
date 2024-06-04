@@ -2,7 +2,7 @@
   <q-page>
     <q-list padding>
       <template v-if="searchResults.length > 0">
-        <q-item v-for="item in searchResults" :key="item.label">
+        <q-item v-for="item in searchResults.filter(r => filterByVersion(r))" :key="item.label">
           <q-item-section>
             <router-link class="routerlink" :to="baseUrl + item.url">
               {{ searchItemTitle(item) }}
@@ -47,6 +47,7 @@ export default {
       searchResults: [],
       resultCount: 25,
       theresMore: false,
+      filterVersion: ""
     };
   },
   meta() {
@@ -57,6 +58,9 @@ export default {
       },
     };
   },
+  mounted() {
+    this.filterVersion = this.$route.query.version;
+  },
   watch: {
     query(val) {
       this.theresMore = false;
@@ -65,10 +69,18 @@ export default {
         this.search(val);
       }
     },
+    '$route'(to, from) {
+      this.filterVersion = to.query.version;
+    }
   },
   methods: {
+    filterByVersion (result) {
+        if(result.since){
+          return !ViewModel.sinceIsGreater(result.since, this.filterVersion)
+        }
+        return true
+    },
     search(text) {
-      console.log("searching", text);
       const timeStart = performance.now();
       let fuse = ViewModel.getSearchInstance();
       if (fuse == null) {
@@ -100,7 +112,6 @@ export default {
 
     sortResults(){
       const rc = [];
-
       for (let i = 0; i < this.rawResults.length; i++) {
         if (this.rawResults[i].score < 0.1) {
           if (i >  this.resultCount-1){
@@ -114,7 +125,7 @@ export default {
       rc.sort(function(a, b) {
           return a.score - b.score;
       });
-
+      // console.log("raw search results:", rc)
       this.searchResults = rc;
     },
 

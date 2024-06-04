@@ -119,7 +119,7 @@ export default {
   methods: {
     onChangeVersionFilter (item) {
       this.filterVersion = item;
-      this.$router.push({ query: { version: item } })
+      this.$router.push({ query: { ...this.$route.query, version: item } })
     },
     filterTocByVersion (node, filter) {
         if(node.since){
