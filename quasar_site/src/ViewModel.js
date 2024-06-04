@@ -1,4 +1,3 @@
-import { version } from "core-js";
 import ApiInfo from "./api_info.json";
 
 const DataTypes = {

@@ -42,7 +42,7 @@
       </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
         @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
-        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent"
+        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="searchText"
           v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
           <template v-slot:default-header="prop" >
             <div class="row items-center">
