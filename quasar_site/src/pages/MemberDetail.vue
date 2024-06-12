@@ -18,7 +18,7 @@
                         ></q-btn>
                   </q-item-label
                 >
-                <q-item-label caption v-if="member.summary" class="on-right">
+                <q-item-label caption v-if="member.summary">
                   <!--<span
                     v-for="(line, index) in getLines(member.summary)"
                     :key="1000 + index"
@@ -56,7 +56,7 @@
                   <q-card
                     flat
                     bordered
-                    style="font-family: monospace; margin: 10px; padding: 10px"
+                    style="font-family: monospace; margin-top: 10px; padding: 10px"
                   >
                     <q-card-section horizontal>
                       <q-item-label
