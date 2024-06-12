@@ -4,10 +4,10 @@
       <template v-if="members && members.items && members.items.length>0">
         <div style="height: 130px"></div>
         <q-list>
-          <div v-for="(member, index) in members.items" :key="index" :id="ViewModel.signatureAnchorRef(member.signature)" :style="this.$route.hash.substring(1).length == 0 || this.$route.hash.substring(1) == ViewModel.signatureAnchorRef(member.signature) ? 'opacity: 100%' : 'opacity: 30%'">
+          <div v-for="(member, index) in members.items" :key="index" :id="ViewModel.signatureAnchorRef(member.signature)" style="transition: opacity 1s" :style="activeId && activeId != ViewModel.signatureAnchorRef(member.signature) ? 'opacity: 50%' : 'opacity: 100%'" >
             <q-item>
               <q-item-section>
-                <q-item-label v-if="member.summary" class="text-h6"
+                <q-item-label class="text-h6"
                   >Description:
                   <q-btn
                           flat
@@ -18,7 +18,7 @@
                         ></q-btn>
                   </q-item-label
                 >
-                <q-item-label caption v-if="member.summary" class="on-right">
+                <q-item-label caption v-if="member.summary">
                   <!--<span
                     v-for="(line, index) in getLines(member.summary)"
                     :key="1000 + index"
@@ -56,7 +56,7 @@
                   <q-card
                     flat
                     bordered
-                    style="font-family: monospace; margin: 10px; padding: 10px"
+                    style="font-family: monospace; margin-top: 10px; padding: 10px"
                   >
                     <q-card-section horizontal>
                       <q-item-label
@@ -210,7 +210,7 @@
                 </q-item-section>
               </q-item>
             </div>
-            <q-separator spaced inset />
+            <q-separator  />
           </div>
         </q-list>
       </template>
@@ -316,6 +316,7 @@ export default {
       datatype: null,
       members: {},
       version: mostRecent,
+      activeId: null,
     };
   },
   mixins: [
@@ -344,6 +345,7 @@ export default {
 
         // If this page is loaded with an anchor URL, attempt to scroll to
         // it right after the page is loaded
+        this.checkHash();
         if (this.$route.hash) {
           this.$nextTick(() => {
             const el = document.getElementById(this.$route.hash.substring(1))
@@ -361,6 +363,7 @@ export default {
 
         // If this page is loaded with an anchor URL, attempt to scroll to
         // it right after the page is loaded
+        this.checkHash();
         if (to.hash) {
           console.log("hash has:", to.hash.substring(1))
           // this.$nextTick(() => {
@@ -381,6 +384,14 @@ export default {
       const offset = el.offsetTop + padding
       const duration = 250
       setVerticalScrollPosition(target, offset, duration)
+    },
+    checkHash() {
+      this.activeId = this.$route.hash.substring(1)
+      if (this.activeId) {
+        setTimeout(() => {
+          this.activeId = null;
+        }, 2000); // dim after 2 seconds
+      }
     },
     renderUrl(route) {
       //TODO: need to pay attention to full path when setting selected item
