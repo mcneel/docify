@@ -15,12 +15,22 @@
           </span>
         </p>
         <i v-for="(item, index) in inheritence" :key="item.name">
-          <i v-if="index === 0">inheritence: </i>
+          <i v-if="index === 0">Inheritence: </i>
           <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
           }}</router-link>
           <i v-else>{{ item.name }}</i>
           <q-icon name="arrow_forward" />
           <i v-if="index === (inheritence.length - 1)">{{ name }}</i>
+        </i>
+        <br/>
+
+        <i>Derived Classes: </i>
+        <i v-for="(item, index) in derivedClasses" :key="item.name">
+
+          <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
+          }}</router-link>
+          <i v-else>{{ item.name }}</i>
+          <i v-if="index < (inheritence.length)">, </i>
         </i>
         <p v-if="namespace && dataType !== 'namespace'">
           <i>Namespace: <router-link class="routerlink" :to="baseUrl + namespace.toLowerCase()">{{ namespace
@@ -148,6 +158,10 @@ export default {
     inheritence: function () {
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
       return ViewModel.getinheritence(node)
+    },
+    derivedClasses: function () {
+      const node = ViewModel.findNodeByPath(this.$route.params.datatype)
+      return ViewModel.getDerivedClasses(node)
     },
     memberSections: function () {
       const item = ViewModel.findNodeByPath(this.$route.params.datatype)

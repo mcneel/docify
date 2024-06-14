@@ -313,6 +313,18 @@ const ViewModel = {
     rc.reverse();
     return rc;
   },
+  getDerivedClasses(item) {
+    const fullName = `${item.namespace}.${item.name}`.toLocaleLowerCase();
+    const children = Object.values(this.getTypeMap()).filter(
+      (c) => c.baseclass && c.baseclass.toLocaleLowerCase() == fullName
+    );
+    return children.map((c) => {
+      return {
+        ...c,
+        link: `${c.namespace}.${c.name}`.toLocaleLowerCase(),
+      };
+    });
+  },
   sinceIsGreater(test, existing) {
     if (test === existing) return false;
     const testVersion = test.split(".");
