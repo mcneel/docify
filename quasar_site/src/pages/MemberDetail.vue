@@ -2,7 +2,7 @@
   <q-page>
     <div class="q-pa-sm">
       <template v-if="members && members.items && members.items.length>0">
-        <div style="height: 130px"></div>
+        <div style="height: 130px" v-if="!forScriptEditor"></div>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index" :id="ViewModel.signatureAnchorRef(member.signature)" style="transition: opacity 1s" :style="activeId && activeId != ViewModel.signatureAnchorRef(member.signature) ? 'opacity: 50%' : 'opacity: 100%'" >
             <q-item>
@@ -225,7 +225,7 @@
     </div>
 
     <!-- place QPageSticky at end of page -->
-    <q-page-sticky v-if="members && members.items && members.items.length>0" expand position="top" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" style="max-height: 125px; overflow: hidden;">
+    <q-page-sticky v-if="!forScriptEditor && members && members.items && members.items.length>0" expand position="top" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" style="max-height: 125px; overflow: hidden;">
 
       <div class="flex-break q-pa-sm flex justify-between">
             <div>
@@ -317,6 +317,7 @@ export default {
       members: {},
       version: mostRecent,
       activeId: null,
+      forScriptEditor: false,
     };
   },
   mixins: [
@@ -342,6 +343,10 @@ export default {
   mounted() {
     console.log("mounted member detail");
     this.renderUrl(this.$route);
+
+    if (this.$route.query.plain) {
+        this.forScriptEditor = true;
+    }
 
         // If this page is loaded with an anchor URL, attempt to scroll to
         // it right after the page is loaded

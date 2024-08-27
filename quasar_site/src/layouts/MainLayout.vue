@@ -1,5 +1,6 @@
 <template>
     <q-layout view="hHh Lpr lff">
+      <template v-if="!forScriptEditor">
       <q-header elevated>
         <q-toolbar>
           <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen" />
@@ -40,28 +41,29 @@
           </template>
         </q-banner>
       </q-header>
-      <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
-        @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
-        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="filterVersion" :filter-method="filterTocByVersion"
-          v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
-          <template v-slot:default-header="prop" >
-            <div class="row items-center">
-              <a :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''" >{{ prop.node.label }}
-              </a>
-            </div>
-          </template>
-          <template v-slot:header-secondary="prop">
-            <div class="row items-center">
-                <router-link :id="`TOC:${prop.node.path}`" class="toc-secondary-header"
-                  style="text-decoration: none; color: inherit;" :class="prop.node.deprecated ? 'toc-deprecated' : ''"
-                  :to="baseUrl + prop.node.path.toLowerCase()" ><span>{{ prop.node.label }}</span>
-                  <!--<span class="text-weight-light">{{ prop.node.labelSecondary }}</span>--> <!--hiding overloads: WWW-2046-->
-                </router-link>
-            </div>
-          </template>
-        </q-tree>
-        <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
-      </q-drawer>
+        <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
+          @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
+          <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="filterVersion" :filter-method="filterTocByVersion"
+            v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
+            <template v-slot:default-header="prop" >
+              <div class="row items-center">
+                <a :id="`TOC:${prop.node.path}`" :class="prop.node.deprecated ? 'toc-deprecated' : ''" >{{ prop.node.label }}
+                </a>
+              </div>
+            </template>
+            <template v-slot:header-secondary="prop">
+              <div class="row items-center">
+                  <router-link :id="`TOC:${prop.node.path}`" class="toc-secondary-header"
+                    style="text-decoration: none; color: inherit;" :class="prop.node.deprecated ? 'toc-deprecated' : ''"
+                    :to="baseUrl + prop.node.path.toLowerCase()" ><span>{{ prop.node.label }}</span>
+                    <!--<span class="text-weight-light">{{ prop.node.labelSecondary }}</span>--> <!--hiding overloads: WWW-2046-->
+                  </router-link>
+              </div>
+            </template>
+          </q-tree>
+          <div v-touch-pan.preserveCursor.prevent.mouse.horizontal="resizeDrawer" class="q-drawer__resizer"></div>
+        </q-drawer>
+      </template>
       <q-page-container id="pageContainer">
         <router-view v-show="!searchText" />
         <SearchPage :query="searchText" :base-url="baseUrl" v-show="searchText" />
@@ -101,6 +103,7 @@ export default {
       shouldAutoScroll: true,
       bannerVisible: true,
       filterVersion: `${mostRecent.split(".")[0]}.x`,
+      forScriptEditor: false,
       $q
     };
   },
@@ -111,10 +114,13 @@ export default {
     if (this.$route.query.version){
         this.onChangeVersionFilter(this.$route.query.version);
     }
-      const wasDark = localStorage.getItem('darkMode');
-      if (this.$q.dark.isActive.toString() != wasDark){
-        this.$q.dark.toggle()
-      }
+    if (this.$route.query.plain) {
+        this.forScriptEditor = true;
+    }
+    const wasDark = localStorage.getItem('darkMode');
+    if (this.$q.dark.isActive.toString() != wasDark){
+      this.$q.dark.toggle()
+    }
   },
   methods: {
     onChangeVersionFilter (item) {
@@ -175,22 +181,26 @@ export default {
   watch: {
     selectedNode: function (newState, oldState) {
       console.log("node selected:", newState)
-      const node = this.$refs.myTree.getNodeByKey(newState);
 
-      //Set scoll height when selected. only doing this on fresh load
-      if (this.shouldAutoScroll) {
-        this.$nextTick(() => {
-          const el = document.getElementById(`TOC:${node.path}`)
-          if (el) {
-            el.scrollIntoView({
-              behavior: 'auto',
-              block: 'center',
-              inline: 'center'
-            })
-            const target = getScrollTarget(el);
-            target.scrollLeft = 0;
-          }
-        })
+      if(!this.forScriptEditor)
+      {
+        const node = this.$refs.myTree.getNodeByKey(newState);
+
+        //Set scoll height when selected. only doing this on fresh load
+        if (this.shouldAutoScroll) {
+          this.$nextTick(() => {
+            const el = document.getElementById(`TOC:${node.path}`)
+            if (el) {
+              el.scrollIntoView({
+                behavior: 'auto',
+                block: 'center',
+                inline: 'center'
+              })
+              const target = getScrollTarget(el);
+              target.scrollLeft = 0;
+            }
+          })
+        }
       }
 
       if (!this.watcherEnabled)
