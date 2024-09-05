@@ -264,6 +264,7 @@ namespace Docify.Parse
                 if (type.FullName == "Rhino.Geometry.SubDToBrepOptions"){
                     var inspecting = type;
                 }
+                string delegates = MembersAsJsonArray(type, ParsedMemberType.Delegate, asJavascript);
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor, asJavascript);
                 if (constructors==null){
@@ -396,6 +397,10 @@ namespace Docify.Parse
             bool memberAdded = false;
             foreach (var member in type.Members)
             {
+                if ( member.MemberType == ParsedMemberType.Delegate)
+                {
+                    var inspecting = member;
+                }
                 if (filter == ParsedMemberType.Property && member.MemberType == ParsedMemberType.Indexer){
                     //Don't skip: Adding indexers as properies
                 }

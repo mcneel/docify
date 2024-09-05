@@ -62,6 +62,11 @@ namespace Docify.Parse
             base.VisitEnumMemberDeclaration(node);
         }
 
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            base.VisitDelegateDeclaration(node);
+        }
+
         public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();

@@ -16,6 +16,7 @@ namespace Docify.Parse
         Operator = 6,
         Field = 7,
         Indexer = 8,
+        Delegate = 9,
     }
 
     /// <summary>
@@ -35,6 +36,7 @@ namespace Docify.Parse
             if (Member is PropertyDeclarationSyntax) mt = ParsedMemberType.Property;
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
             if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
+            if (Member is DelegateDeclarationSyntax) mt = ParsedMemberType.Delegate;
             if (Member is OperatorDeclarationSyntax) mt = ParsedMemberType.Operator;
             if (Member is FieldDeclarationSyntax) mt = ParsedMemberType.Field;
             if (Member is IndexerDeclarationSyntax) mt = ParsedMemberType.Indexer;
@@ -158,6 +160,7 @@ namespace Docify.Parse
         public bool IsOperator { get { return Member is OperatorDeclarationSyntax; } }
         public bool IsField { get { return Member is FieldDeclarationSyntax; } }
         public bool IsIndexer { get { return Member is IndexerDeclarationSyntax; } }
+        public bool isDelegate { get { return Member is DelegateDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {
@@ -431,6 +434,16 @@ namespace Docify.Parse
                     }
                     signature.Append(")");
                     return signature.ToString();
+                }
+            }
+            {
+                DelegateDeclarationSyntax delegateMember = Member as DelegateDeclarationSyntax;
+                if (delegateMember != null)
+                {
+                    var signature = delegateMember.ToString();
+                    var items = signature.Split(new char[] { '\n' });
+                    signature = items[items.Length - 1];
+                    return signature;
                 }
             }
             {

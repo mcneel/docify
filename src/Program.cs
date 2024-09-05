@@ -74,6 +74,9 @@ namespace Docify
             foreach (var sourceFile in AllSourceFiles(projDir))
             {
                 //Console.WriteLine($"parse: {sourceFile}");
+                if (sourceFile.Contains("rhinosdkapp.cs")){
+                    var i = 0;
+                }
                 string text = System.IO.File.ReadAllText(sourceFile);
                 var (containers, parsedItems, namespaceDefinitions) = SourceFileWalker.ParseSource(text);
                 foreach (var container in containers)
@@ -86,7 +89,7 @@ namespace Docify
                 }
                 foreach (var parsedItem in parsedItems)
                 {
-                    if (parsedItem.Signature(false).Contains("static SelectObjects")){
+                    if (parsedItem.Signature(false).Contains("KeyboardHookEvent")){
                         var inspecting = parsedItem;
                     }
                     if (!parsedItem.ParentIsPublic)
