@@ -276,7 +276,7 @@ namespace Docify.Parse
                 string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
                 string operators = MembersAsJsonArray(type, ParsedMemberType.Operator, asJavascript);
                 string fields = MembersAsJsonArray(type, ParsedMemberType.Field, asJavascript);
-                if (values != null || constructors != null || properties != null || methods != null || events != null || fields != null || operators != null)
+                if (values != null || constructors != null || properties != null || methods != null || events != null || fields != null || operators != null || delegates != null)
                     sb.AppendLine(",");
                 else
                     sb.AppendLine();
@@ -288,7 +288,7 @@ namespace Docify.Parse
                     else
                         sb.AppendLine($"    \"values\": {values}");
 
-                    if (constructors != null || properties != null || methods != null || events != null || fields != null  || operators != null)
+                    if (constructors != null || properties != null || methods != null || events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -300,7 +300,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"constructors\": {constructors}");
 
-                    if (properties != null || methods != null || events != null || fields != null  || operators != null)
+                    if (properties != null || methods != null || events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -312,7 +312,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"properties\": {properties}");
 
-                    if ( methods != null || events != null || fields != null  || operators != null)
+                    if ( methods != null || events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -324,7 +324,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"methods\": {methods}");
 
-                    if (events != null || fields != null  || operators != null)
+                    if (events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -336,7 +336,7 @@ namespace Docify.Parse
                     else
                         sb.AppendLine($"    \"events\": {events}");
 
-                    if (fields != null  || operators != null)
+                    if (fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -348,7 +348,7 @@ namespace Docify.Parse
                     else
                         sb.AppendLine($"    \"fields\": {fields}");
 
-                    if (operators != null)
+                    if (operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -359,6 +359,18 @@ namespace Docify.Parse
                         sb.AppendLine($"    operators: {operators}");
                     else
                         sb.AppendLine($"    \"operators\": {operators}");
+
+                    if (delegates != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(delegates))
+                {
+                    if (asJavascript)
+                        sb.AppendLine($"    delegates: {delegates}");
+                    else
+                        sb.AppendLine($"    \"delegates\": {delegates}");
                 }
             }
             sb.Append("  }");
@@ -397,10 +409,6 @@ namespace Docify.Parse
             bool memberAdded = false;
             foreach (var member in type.Members)
             {
-                if ( member.MemberType == ParsedMemberType.Delegate)
-                {
-                    var inspecting = member;
-                }
                 if (filter == ParsedMemberType.Property && member.MemberType == ParsedMemberType.Indexer){
                     //Don't skip: Adding indexers as properies
                 }

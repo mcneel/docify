@@ -160,7 +160,7 @@ namespace Docify.Parse
         public bool IsOperator { get { return Member is OperatorDeclarationSyntax; } }
         public bool IsField { get { return Member is FieldDeclarationSyntax; } }
         public bool IsIndexer { get { return Member is IndexerDeclarationSyntax; } }
-        public bool isDelegate { get { return Member is DelegateDeclarationSyntax; } }
+        public bool IsDelegate { get { return Member is DelegateDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {
@@ -223,7 +223,13 @@ namespace Docify.Parse
         {
             get
             {
-                return ParsedType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
+                if (Member.Parent as NamespaceDeclarationSyntax != null){
+                    return null;
+                    // return ParsedType.GetFullContainerName(Member.Parent as NamespaceDeclarationSyntax);
+                }
+                else{
+                    return ParsedType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
+                }
             }
         }
 

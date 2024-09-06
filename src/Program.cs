@@ -82,6 +82,9 @@ namespace Docify
                 foreach (var container in containers)
                 {
                     string containerName = container.FullName;
+                    if (container.FullName.Contains("RenderFeature")){
+                        var inspecting = container;
+                    }
                     if (allTypes.ContainsKey(containerName))
                         allTypes[containerName].Merge(container);
                     else
@@ -89,17 +92,19 @@ namespace Docify
                 }
                 foreach (var parsedItem in parsedItems)
                 {
-                    if (parsedItem.Signature(false).Contains("KeyboardHookEvent")){
-                        var inspecting = parsedItem;
-                    }
                     if (!parsedItem.ParentIsPublic)
                         continue;
                     if (!parsedItem.IsPublic && !parsedItem.IsProtected)
                         continue;
+                    if (parsedItem.Signature(false).Contains("KeyboardHookEvent(int key)")){
+                        var inspecting = parsedItem;
+                    }
                     string className = parsedItem.ClassPath;
-                    if (!allMembers.ContainsKey(className))
-                        allMembers[className] = new List<ParsedMember>();
-                    allMembers[className].Add(parsedItem);
+                    if (className != null){
+                        if (!allMembers.ContainsKey(className))
+                            allMembers[className] = new List<ParsedMember>();
+                        allMembers[className].Add(parsedItem);
+                    }
                 }
 
                 foreach (var ns in namespaceDefinitions)

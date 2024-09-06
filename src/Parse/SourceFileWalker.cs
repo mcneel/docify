@@ -62,11 +62,6 @@ namespace Docify.Parse
             base.VisitEnumMemberDeclaration(node);
         }
 
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
-            base.VisitDelegateDeclaration(node);
-        }
-
         public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
@@ -105,6 +100,13 @@ namespace Docify.Parse
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
             _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitEventDeclaration(node);
+        }
+
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
+            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
+            base.VisitDelegateDeclaration(node);
         }
 
         public override void VisitOperatorDeclaration(OperatorDeclarationSyntax node)
