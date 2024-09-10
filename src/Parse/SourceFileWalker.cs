@@ -7,19 +7,20 @@ namespace Docify.Parse
 {
     class SourceFileWalker : Microsoft.CodeAnalysis.CSharp.CSharpSyntaxWalker
     {
-        public static (List<ParsedType>, List<ParsedMember>, List<ParsedType>) ParseSource(string code)
+        public static (List<ParsedType>, List<ParsedMember>, List<ParsedType>, List<ParsedMember>) ParseSource(string code)
         {
             var options = new Microsoft.CodeAnalysis.CSharp.CSharpParseOptions().WithPreprocessorSymbols("RHINO_SDK").WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode.Parse);
             var tree = Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(code, options);
             SourceFileWalker sfw = new SourceFileWalker();
             sfw.Visit(tree.GetRoot());
-            return (sfw._parsedBaseTypes, sfw._parsedMembers, sfw._parsedNamespaces);
+            return (sfw._parsedBaseTypes, sfw._parsedMembers, sfw._parsedNamespaces, sfw._parsedDelegates);
         }
 
         List<string> _usingDirectives = new List<string>();
         List<ParsedMember> _parsedMembers = new List<ParsedMember>();
         List<ParsedType> _parsedBaseTypes = new List<ParsedType>();
         List<ParsedType> _parsedNamespaces = new List<ParsedType>();
+        List<ParsedMember> _parsedDelegates = new List<ParsedMember>();
 
         private SourceFileWalker() : base(Microsoft.CodeAnalysis.SyntaxWalkerDepth.StructuredTrivia)
         {
@@ -105,7 +106,7 @@ namespace Docify.Parse
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
         {
             var docComment = node.GetLeadingTrivia().Select(i => i.GetStructure()).OfType<DocumentationCommentTriviaSyntax>().FirstOrDefault();
-            _parsedMembers.Add(new ParsedMember(node, docComment, _usingDirectives));
+            _parsedDelegates.Add(new ParsedMember(node, docComment, _usingDirectives));
             base.VisitDelegateDeclaration(node);
         }
 

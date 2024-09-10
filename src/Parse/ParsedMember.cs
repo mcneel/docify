@@ -200,6 +200,15 @@ namespace Docify.Parse
             return false;
 
         }}
+        public bool IsInternal { get {
+            foreach (var modifier in Member.Modifiers)
+            {
+                if (modifier.Text == "internal")
+                    return true;
+            }
+            return false;
+
+        }}
 
         public bool IsVirtual { get {
             foreach (var modifier in Member.Modifiers)
@@ -219,17 +228,27 @@ namespace Docify.Parse
             return Member.Modifiers.Select(mod => mod.Text).ToArray();
         }}
 
-        public string ClassPath
+        public string DelegateNamespace
         {
             get
             {
                 if (Member.Parent as NamespaceDeclarationSyntax != null){
-                    return null;
-                    // return ParsedType.GetFullContainerName(Member.Parent as NamespaceDeclarationSyntax);
+                    return ParsedType.GetFullContainerName(Member.Parent as NamespaceDeclarationSyntax);
                 }
                 else{
-                    return ParsedType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
+                    if (Member.Parent.Parent as NamespaceDeclarationSyntax != null){
+                        return ParsedType.GetFullContainerName(Member.Parent.Parent as NamespaceDeclarationSyntax);
+                    }
+                    else
+                    throw new NotImplementedException();
                 }
+            }
+        }
+        public string ClassPath
+        {
+            get
+            {
+                return ParsedType.GetFullContainerName(Member.Parent as BaseTypeDeclarationSyntax);
             }
         }
 
@@ -447,8 +466,6 @@ namespace Docify.Parse
                 if (delegateMember != null)
                 {
                     var signature = delegateMember.ToString();
-                    var items = signature.Split(new char[] { '\n' });
-                    signature = items[items.Length - 1];
                     return signature;
                 }
             }
