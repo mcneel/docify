@@ -24,21 +24,82 @@
         </i>
         <br/>
 
-        <i>Derived Classes: </i>
-        <i v-for="(item, index) in derivedClasses" :key="item.name">
+        <template v-if="dataType != 'delegate'">
+          <i>Derived Classes: </i>
+          <i v-for="(item, index) in derivedClasses" :key="item.name">
+            <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
+            }}</router-link>
+            <i v-else>{{ item.name }}</i>
+            <i v-if="index < (inheritence.length)">, </i>
+          </i>
+        </template>
 
-          <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
-          }}</router-link>
-          <i v-else>{{ item.name }}</i>
-          <i v-if="index < (inheritence.length)">, </i>
-        </i>
         <p v-if="namespace && dataType !== 'namespace'">
           <i>Namespace: <router-link class="routerlink" :to="baseUrl + namespace.toLowerCase()">{{ namespace
           }}</router-link></i>
           <br>
-          <i>{{ name }}: <router-link class="routerlink"
+          <i v-if="dataType != 'delegate'">{{ name }}: <router-link class="routerlink"
               :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
         </p>
+
+        <q-list v-if="dataType == 'delegate'" label="Delegate stuff" switch-toggle-side default-opened header-class="bg-secondary text-white">
+          <q-item>
+              <q-item-section>
+                <q-item-label class="text-h6"
+                  >Description:
+                  <q-btn
+                          flat
+                          round
+                          color="blue"
+                          icon="mdi-link"
+                        ></q-btn>
+                  </q-item-label
+                >
+                <q-item-label caption v-if="node.summary">
+                  <p><span v-html="node.summary"></span></p>
+                </q-item-label>
+              </q-item-section>
+
+
+            </q-item>
+
+              <div class="q-pl-lg">
+              <!--Syntax-->
+                <q-item>
+                  <q-item-section>
+                    <q-item-label v-if="node.signature" class="text-h6"
+                      >Syntax:</q-item-label
+                    >
+                    <q-card
+                      flat
+                      bordered
+                      style="font-family: monospace; margin-top: 10px; padding: 10px"
+                    >
+                      <q-card-section horizontal>
+                        <q-item-label
+                          style="font-size: 18px; width: 100%"
+                          :class="node.deprecated || node.obsolete && 'disabled'"
+                        >
+                        {{ node.signature }}
+
+                        </q-item-label>
+                        <q-card-actions vertical class="">
+                          <q-btn
+                            flat
+                            round
+                            color="blue"
+                            icon="mdi-content-copy"
+                            @click="copyToClipboard(node.signature)"
+                          ></q-btn>
+                        </q-card-actions>
+                      </q-card-section>
+                    </q-card>
+                  </q-item-section>
+                </q-item>
+
+              </div>
+        </q-list >
+
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
           :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="`${section.title} (${section.items.filter(m => filterByVersion(m)).length})`"
           :content-inset-level="1" :id="anchorId(section)" header-class="bg-secondary text-white">
@@ -151,6 +212,9 @@ export default {
   ],
 
   computed: {
+    node: function () {
+      return ViewModel.findNodeByPath(this.$route.params.datatype)
+    },
     dataType: function () {
       const node = ViewModel.findNodeByPath(this.$route.params.datatype)
       return node.dataType
