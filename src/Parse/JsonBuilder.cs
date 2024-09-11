@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Docify.Parse
 {
@@ -11,6 +12,7 @@ namespace Docify.Parse
         public static void Write(
             Dictionary<string, ParsedType> namespaces,
             Dictionary<string, List<ParsedType>> publicTypes,
+            List<ParsedMember> delegates,
             string path)
         {
             _writingApi = true;
@@ -70,6 +72,17 @@ namespace Docify.Parse
                 if (objectWritten)
                     content.AppendLine(",");
                 content.Append(jsonType);
+                objectWritten = true;
+            }
+            for (int j = 0; j < delegates.Count; j++)
+            {
+                // string sig = delegates[j].Signature(false);
+                string jsonDel = DelegateAsJsonArray(delegates[j], asJavascript);
+                if (string.IsNullOrEmpty(jsonDel))
+                    continue;
+                if (objectWritten)
+                    content.AppendLine(",");
+                content.Append(jsonDel);
                 objectWritten = true;
             }
             content.AppendLine();
@@ -264,6 +277,7 @@ namespace Docify.Parse
                 if (type.FullName == "Rhino.Geometry.SubDToBrepOptions"){
                     var inspecting = type;
                 }
+                string delegates = MembersAsJsonArray(type, ParsedMemberType.Delegate, asJavascript);
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor, asJavascript);
                 if (constructors==null){
@@ -275,7 +289,7 @@ namespace Docify.Parse
                 string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
                 string operators = MembersAsJsonArray(type, ParsedMemberType.Operator, asJavascript);
                 string fields = MembersAsJsonArray(type, ParsedMemberType.Field, asJavascript);
-                if (values != null || constructors != null || properties != null || methods != null || events != null || fields != null || operators != null)
+                if (values != null || constructors != null || properties != null || methods != null || events != null || fields != null || operators != null || delegates != null)
                     sb.AppendLine(",");
                 else
                     sb.AppendLine();
@@ -287,7 +301,7 @@ namespace Docify.Parse
                     else
                         sb.AppendLine($"    \"values\": {values}");
 
-                    if (constructors != null || properties != null || methods != null || events != null || fields != null  || operators != null)
+                    if (constructors != null || properties != null || methods != null || events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -299,7 +313,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"constructors\": {constructors}");
 
-                    if (properties != null || methods != null || events != null || fields != null  || operators != null)
+                    if (properties != null || methods != null || events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -311,7 +325,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"properties\": {properties}");
 
-                    if ( methods != null || events != null || fields != null  || operators != null)
+                    if ( methods != null || events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -323,7 +337,7 @@ namespace Docify.Parse
                     else
                         sb.Append($"    \"methods\": {methods}");
 
-                    if (events != null || fields != null  || operators != null)
+                    if (events != null || fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -335,7 +349,7 @@ namespace Docify.Parse
                     else
                         sb.AppendLine($"    \"events\": {events}");
 
-                    if (fields != null  || operators != null)
+                    if (fields != null  || operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -347,7 +361,7 @@ namespace Docify.Parse
                     else
                         sb.AppendLine($"    \"fields\": {fields}");
 
-                    if (operators != null)
+                    if (operators != null || delegates != null)
                         sb.AppendLine(",");
                     else
                         sb.AppendLine();
@@ -358,6 +372,18 @@ namespace Docify.Parse
                         sb.AppendLine($"    operators: {operators}");
                     else
                         sb.AppendLine($"    \"operators\": {operators}");
+
+                    if (delegates != null)
+                        sb.AppendLine(",");
+                    else
+                        sb.AppendLine();
+                }
+                if (!string.IsNullOrWhiteSpace(delegates))
+                {
+                    if (asJavascript)
+                        sb.AppendLine($"    delegates: {delegates}");
+                    else
+                        sb.AppendLine($"    \"delegates\": {delegates}");
                 }
             }
             sb.Append("  }");
@@ -387,6 +413,155 @@ namespace Docify.Parse
             return  sb.ToString();
         }
 
+        static string DelegateAsJsonArray(ParsedMember del, bool asJavascript = true)
+        {
+            if (del == null)
+                return null;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("  {");
+            sb.AppendLine(KeyValString(4, "namespace", del.DelegateNamespace, asJavascript) + ",");
+            string delegateName = Regex.Match(del.Signature(false), @"delegate\s+(\w+)\s+(\w+)").Groups[2].Value;
+            sb.AppendLine(KeyValString(4, "name", delegateName, asJavascript) + ",");
+            sb.Append(KeyValString(4, "dataType", "delegate", asJavascript) + ",");
+            sb.AppendLine();
+
+            string memberString = MemberAsJsonArray(del, asJavascript);
+            sb.Append(memberString);
+            sb.Append("      }");
+            sb.AppendLine();
+
+            return sb.ToString();
+        }
+
+        static string MemberAsJsonArray(ParsedMember member, bool asJavascript = true)
+        {
+            if (member == null)
+                return null;
+            StringBuilder sb = new StringBuilder();
+            sb.Append(KeyValString(8, "signature", member.Signature(false), asJavascript));
+            sb.AppendLine(",");
+            sb.Append(KeyValArray(8, "modifiers", member.Modifiers, asJavascript));
+            //sb.Append($"        signature: '{member.Signature(false)}'");
+            sb.AppendLine(",");
+            sb.Append(KeyValBool(8, "protected", member.IsProtected, asJavascript));
+            sb.AppendLine(",");
+            sb.Append(KeyValBool(8, "virtual", member.IsVirtual, asJavascript));
+
+            string summary = member.Summary();
+            if (!string.IsNullOrWhiteSpace(summary))
+            {
+                sb.AppendLine(",");
+                sb.Append(KeyValString(8, "summary", summary, asJavascript));
+                //sb.Append($"        summary: {JsonQuote(summary)}");
+            }
+            string since = member.Since;
+            if (!string.IsNullOrWhiteSpace(since) && double.TryParse(since, out double sinceValue))
+            {
+                sb.AppendLine(",");
+                sb.Append(KeyValString(8, "since", since, asJavascript));
+                //sb.Append($"        since: '{since}'");
+            }
+            string deprecated = member.Deprecated;
+            if (!string.IsNullOrWhiteSpace(deprecated) && double.TryParse(deprecated, out double deprecatedValue))
+            {
+                sb.AppendLine(",");
+                sb.Append(KeyValString(8, "deprecated", deprecated, asJavascript));
+                //sb.Append($"        deprecated: '{deprecated}'");
+            }
+
+            string obsolete = member.IsObsolete;
+            if (!string.IsNullOrWhiteSpace(obsolete))
+            {
+                sb.AppendLine(",");
+                sb.Append(KeyValString(8, "obsolete", obsolete, asJavascript));
+                //sb.Append($"        deprecated: '{deprecated}'");
+            }
+
+            if (member.Signature(false).Contains("Plane EquitorialPlane")){
+                var inspecting = member;
+            }
+            string remarks = member.Remarks();
+            if (!string.IsNullOrWhiteSpace(remarks))
+            {
+                sb.AppendLine(",");
+                sb.Append(KeyValString(4, "remarks", remarks, asJavascript));
+            }
+
+            var parameters = member.GetParameters();
+            if (parameters != null)
+            {
+                // for now, just skip items that have ALL undocumented parameters
+                bool writeParameters = false;
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(parameters[i].DocString))
+                    {
+                        writeParameters = true;
+                        break;
+                    }
+                }
+
+                if (writeParameters)
+                {
+                    sb.AppendLine(",");
+                    if (asJavascript)
+                        sb.AppendLine($"        parameters: [");
+                    else
+                        sb.AppendLine($"        \"parameters\": [");
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        if (i > 0)
+                            sb.AppendLine(",");
+                        sb.AppendLine("          {");
+                        sb.AppendLine(KeyValString(12, "name", parameters[i].Name, asJavascript) + ",");
+                        //sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
+                        // Not sure if we really need type as it is easy to resolve in javascript
+                        sb.AppendLine(KeyValString(12, "type", member.FullTypeName(parameters[i].Type.ToString()), asJavascript) + ",");
+                        sb.AppendLine(KeyValString(12, "summary", parameters[i].DocString, asJavascript));
+                        //sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
+                        sb.Append("          }");
+                    }
+                    sb.AppendLine();
+                    sb.Append("        ]");
+                }
+            }
+
+            if (member.MemberType == ParsedMemberType.Method)
+            {
+                string returns = member.ReturnDocString();
+                if (!string.IsNullOrWhiteSpace(returns))
+                {
+                    sb.AppendLine(",");
+                    sb.Append(KeyValString(8, "returns", returns, asJavascript));
+                }
+            }
+
+            if (member.MemberType == ParsedMemberType.Property)
+            {
+                bool get, set;
+                if (member.PropertyType(out get, out set))
+                {
+                    sb.AppendLine(",");
+                    string s = get ? "['get'" : "[";
+                    if (set)
+                    {
+                        if (get)
+                            s += ", ";
+                        s += "'set'";
+                    }
+                    s += "]";
+                    if (!asJavascript)
+                        s = s.Replace("'", "\"");
+                    if (asJavascript)
+                        sb.Append($"        property: {s}");
+                    else
+                        sb.Append($"        \"property\": {s}");
+                }
+            }
+            sb.AppendLine();
+            return sb.ToString();
+        }
+
         static string MembersAsJsonArray(ParsedType type, ParsedMemberType filter, bool asJavascript = true)
         {
             if (type.Members == null)
@@ -406,127 +581,8 @@ namespace Docify.Parse
                 if (memberAdded)
                     sb.AppendLine(",");
                 sb.AppendLine("      {");
-                sb.Append(KeyValString(8, "signature", member.Signature(false), asJavascript));
-                sb.AppendLine(",");
-                sb.Append(KeyValArray(8, "modifiers", member.Modifiers, asJavascript));
-                //sb.Append($"        signature: '{member.Signature(false)}'");
-                sb.AppendLine(",");
-                sb.Append(KeyValBool(8, "protected", member.IsProtected, asJavascript));
-                sb.AppendLine(",");
-                sb.Append(KeyValBool(8, "virtual", member.IsVirtual, asJavascript));
-
-                string summary = member.Summary();
-                if (!string.IsNullOrWhiteSpace(summary))
-                {
-                    sb.AppendLine(",");
-                    sb.Append(KeyValString(8, "summary", summary, asJavascript));
-                    //sb.Append($"        summary: {JsonQuote(summary)}");
-                }
-                string since = member.Since;
-                if (!string.IsNullOrWhiteSpace(since) && double.TryParse(since, out double sinceValue))
-                {
-                    sb.AppendLine(",");
-                    sb.Append(KeyValString(8, "since", since, asJavascript));
-                    //sb.Append($"        since: '{since}'");
-                }
-                string deprecated = member.Deprecated;
-                if (!string.IsNullOrWhiteSpace(deprecated) && double.TryParse(deprecated, out double deprecatedValue))
-                {
-                    sb.AppendLine(",");
-                    sb.Append(KeyValString(8, "deprecated", deprecated, asJavascript));
-                    //sb.Append($"        deprecated: '{deprecated}'");
-                }
-
-                string obsolete = member.IsObsolete;
-                if (!string.IsNullOrWhiteSpace(obsolete))
-                {
-                    sb.AppendLine(",");
-                    sb.Append(KeyValString(8, "obsolete", obsolete, asJavascript));
-                    //sb.Append($"        deprecated: '{deprecated}'");
-                }
-
-                if (member.Signature(false).Contains("Plane EquitorialPlane")){
-                    var inspecting = member;
-                }
-                string remarks = member.Remarks();
-                if (!string.IsNullOrWhiteSpace(remarks))
-                {
-                    sb.AppendLine(",");
-                    sb.Append(KeyValString(4, "remarks", remarks, asJavascript));
-                }
-
-                var parameters = member.GetParameters();
-                if (parameters != null)
-                {
-                    // for now, just skip items that have ALL undocumented parameters
-                    bool writeParameters = false;
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        if (!string.IsNullOrWhiteSpace(parameters[i].DocString))
-                        {
-                            writeParameters = true;
-                            break;
-                        }
-                    }
-
-                    if (writeParameters)
-                    {
-                        sb.AppendLine(",");
-                        if (asJavascript)
-                            sb.AppendLine($"        parameters: [");
-                        else
-                            sb.AppendLine($"        \"parameters\": [");
-                        for (int i = 0; i < parameters.Length; i++)
-                        {
-                            if (i > 0)
-                                sb.AppendLine(",");
-                            sb.AppendLine("          {");
-                            sb.AppendLine(KeyValString(12, "name", parameters[i].Name, asJavascript) + ",");
-                            //sb.AppendLine($"            name: {JsonQuote(parameters[i].Name)},");
-                            // Not sure if we really need type as it is easy to resolve in javascript
-                            sb.AppendLine(KeyValString(12, "type", member.FullTypeName(parameters[i].Type.ToString()), asJavascript) + ",");
-                            sb.AppendLine(KeyValString(12, "summary", parameters[i].DocString, asJavascript));
-                            //sb.AppendLine($"            summary: {JsonQuote(parameters[i].DocString)}");
-                            sb.Append("          }");
-                        }
-                        sb.AppendLine();
-                        sb.Append("        ]");
-                    }
-                }
-
-                if (member.MemberType == ParsedMemberType.Method)
-                {
-                    string returns = member.ReturnDocString();
-                    if (!string.IsNullOrWhiteSpace(returns))
-                    {
-                        sb.AppendLine(",");
-                        sb.Append(KeyValString(8, "returns", returns, asJavascript));
-                    }
-                }
-
-                if (member.MemberType == ParsedMemberType.Property)
-                {
-                    bool get, set;
-                    if (member.PropertyType(out get, out set))
-                    {
-                        sb.AppendLine(",");
-                        string s = get ? "['get'" : "[";
-                        if (set)
-                        {
-                            if (get)
-                                s += ", ";
-                            s += "'set'";
-                        }
-                        s += "]";
-                        if (!asJavascript)
-                            s = s.Replace("'", "\"");
-                        if (asJavascript)
-                            sb.Append($"        property: {s}");
-                        else
-                            sb.Append($"        \"property\": {s}");
-                    }
-                }
-                sb.AppendLine();
+                string memberString = MemberAsJsonArray(member, asJavascript);
+                sb.Append(memberString);
                 sb.Append("      }");
                 memberAdded = true;
             }

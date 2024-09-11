@@ -169,6 +169,19 @@ namespace Docify.Parse
             }
         }
 
+        public static string GetFullContainerName(NamespaceDeclarationSyntax ns)
+        {
+            if (ns == null)
+                throw new ArgumentNullException();
+            string rc = ns.Name.ToString();
+            var parent = ns.Parent as NamespaceDeclarationSyntax;
+            while (parent != null)
+            {
+                rc = $"{parent.Name}.{rc}";
+                parent = parent.Parent as NamespaceDeclarationSyntax;
+            }
+            return rc;
+        }
         public static string GetFullContainerName(BaseTypeDeclarationSyntax basetype)
         {
             if (basetype == null)

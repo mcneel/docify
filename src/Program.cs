@@ -70,15 +70,22 @@ namespace Docify
         {
             Dictionary<string, List<ParsedMember>> allMembers = new Dictionary<string, List<ParsedMember>>();
             Dictionary<string, ParsedType> allTypes = new Dictionary<string, ParsedType>();
+            List<ParsedMember> allDelegates = new List<ParsedMember>();
             Dictionary<string, ParsedType> allNamespaces = new Dictionary<string, ParsedType>();
             foreach (var sourceFile in AllSourceFiles(projDir))
             {
                 //Console.WriteLine($"parse: {sourceFile}");
+                if (sourceFile.Contains("rhinosdkapp.cs")){
+                    var i = 0;
+                }
                 string text = System.IO.File.ReadAllText(sourceFile);
-                var (containers, parsedItems, namespaceDefinitions) = SourceFileWalker.ParseSource(text);
+                var (containers, parsedItems, namespaceDefinitions, delegates) = SourceFileWalker.ParseSource(text);
                 foreach (var container in containers)
                 {
                     string containerName = container.FullName;
+                    if (container.FullName.Contains("RenderFeature")){
+                        var inspecting = container;
+                    }
                     if (allTypes.ContainsKey(containerName))
                         allTypes[containerName].Merge(container);
                     else
@@ -86,17 +93,19 @@ namespace Docify
                 }
                 foreach (var parsedItem in parsedItems)
                 {
-                    if (parsedItem.Signature(false).Contains("static SelectObjects")){
-                        var inspecting = parsedItem;
-                    }
                     if (!parsedItem.ParentIsPublic)
                         continue;
                     if (!parsedItem.IsPublic && !parsedItem.IsProtected)
                         continue;
+                    if (parsedItem.Signature(false).Contains("KeyboardHookEvent(int key)")){
+                        var inspecting = parsedItem;
+                    }
                     string className = parsedItem.ClassPath;
-                    if (!allMembers.ContainsKey(className))
-                        allMembers[className] = new List<ParsedMember>();
-                    allMembers[className].Add(parsedItem);
+                    if (className != null){
+                        if (!allMembers.ContainsKey(className))
+                            allMembers[className] = new List<ParsedMember>();
+                        allMembers[className].Add(parsedItem);
+                    }
                 }
 
                 foreach (var ns in namespaceDefinitions)
@@ -106,6 +115,16 @@ namespace Docify
                         allNamespaces[namespaceName].Merge(ns);
                     else
                         allNamespaces[namespaceName] = ns;
+                }
+                foreach (var del in delegates)
+                {
+                    if (!del.ParentIsPublic)
+                        continue;
+                    if (!del.IsPublic && !del.IsProtected)
+                        continue;
+                    if (del.IsInternal)
+                        continue;
+                    allDelegates.Add(del);
                 }
             }
 
@@ -157,7 +176,7 @@ namespace Docify
             //MarkdownBuilder.WriteNamespaces(namespaces, markdownOutput);
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
             string outputDataFile = Path.Combine(outputDir, ProgramConfigs.OutputDataFile);
-            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, outputDataFile);
+            JsonBuilder.Write(allNamespaces, publicTypesByNamespace, allDelegates, outputDataFile);
             // write the samples if sample base dir is provided
             if (!string.IsNullOrWhiteSpace(examplesDir) && Directory.Exists(examplesDir))
             {

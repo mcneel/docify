@@ -5,211 +5,7 @@
         <div style="height: 130px" v-if="!forScriptEditor"></div>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index" :id="ViewModel.signatureAnchorRef(member.signature)" style="transition: opacity 1s" :style="activeId && activeId != ViewModel.signatureAnchorRef(member.signature) ? 'opacity: 50%' : 'opacity: 100%'" >
-            <q-item>
-              <q-item-section>
-                <q-item-label class="text-h6"
-                  >Description:
-                  <q-btn
-                          flat
-                          round
-                          color="blue"
-                          icon="mdi-link"
-                          @click="this.$router.push({ hash: `#${ViewModel.signatureAnchorRef(member.signature)}` })"
-                        ></q-btn>
-                  </q-item-label
-                >
-                <q-item-label caption v-if="member.summary">
-                  <!--<span
-                    v-for="(line, index) in getLines(member.summary)"
-                    :key="1000 + index"
-                  >
-                    <br v-if="index > 0" />
-                    {{ line }}
-                  </span>-->
-                  <p><span v-html="member.summary"></span></p>
-                </q-item-label>
-              </q-item-section>
-                <!--<q-btn
-                    no-caps
-                    outline
-                    dense
-                    size="md"
-                    icon="mdi-code-tags"
-                    color="accent"
-                    :to="exampleUrl(member)"
-                    v-if="member.examples && member.examples.length > 0"
-
-                  class="on-right"
-                  style="margin-top: 10px"
-                  >
-                  Example
-                </q-btn>-->
-
-            </q-item>
-            <div class="q-pl-lg">
-              <!--Syntax-->
-              <q-item>
-                <q-item-section>
-                  <q-item-label v-if="member.signature" class="text-h6"
-                    >Syntax:</q-item-label
-                  >
-                  <q-card
-                    flat
-                    bordered
-                    style="font-family: monospace; margin-top: 10px; padding: 10px"
-                  >
-                    <q-card-section horizontal>
-                      <q-item-label
-                        style="font-size: 18px; width: 100%"
-                        :class="member.deprecated || member.obsolete && 'disabled'"
-                      >{{member.modifiers && member.modifiers.join(' ')}}
-                        <template v-for="chunk,id in signature(member)" :key="id">
-                          <template v-if="chunk.indent">
-                            <br/>
-                            <span class="q-pl-lg"></span>
-                          </template>
-                          <template v-if="chunk.break">
-                            <br/>
-                          </template>
-                          <template v-if="chunk.link">
-                            <router-link v-if="!chunk.link.toLowerCase().startsWith('http')" :to="chunk.link" class="routerlink">
-                              {{chunk.name}}
-                              <q-tooltip v-if="chunk.enumValues">{{chunk.enumValues}}</q-tooltip>
-                            </router-link>
-                            <a v-else :href="chunk.link" target="_blank" class="routerlink">{{ chunk.name }}</a>
-                          </template>
-                          <span v-else :class="chunk.role == 'name' && 'text-italic'">{{ chunk.name }}</span>
-                        </template>
-                      </q-item-label>
-                      <q-card-actions vertical class="">
-                        <q-btn
-                          flat
-                          round
-                          color="blue"
-                          icon="mdi-content-copy"
-                          @click="copyToClipboard(member.signature)"
-                        ></q-btn>
-                      </q-card-actions>
-                    </q-card-section>
-                  </q-card>
-                </q-item-section>
-              </q-item>
-              <q-item>
-                <q-item-section>
-                  <q-item-label caption class="on-right" >
-                    <q-badge v-if="member.protected" outline color="warning" class="q-ma-sm"
-                      >protected
-                    </q-badge>
-                    <q-badge v-if="member.virtual" outline color="warning" class="q-ma-sm"
-                      >virtual
-                    </q-badge>
-                    <q-badge v-if="member.deprecated" outline color="negative" class="q-ma-sm"
-                      >deprecated in {{ member.deprecated }}
-                      <q-tooltip
-                        >Deprecated in version {{ member.deprecated }}</q-tooltip
-                      >
-                    </q-badge>
-                    <q-badge v-if="member.obsolete" outline color="negative" class="q-ma-sm"
-                      >obsolete: {{ member.obsolete }}
-                    </q-badge>
-                  </q-item-label>
-                  <q-item-label v-if="member.parameters" class="text-h6"
-                    >Parameters:</q-item-label
-                  >
-                  <q-item-label
-                    class="row"
-                    v-for="parameter in member.parameters"
-                    :key="parameter.name"
-                  >
-                    <ul
-                      style="
-                        padding-inline-start: 0px;
-                        list-style-type: none;
-                        margin-block-start: 0;
-                        margin-block-end: 5px;
-                      "
-                    >
-                      <li class="text-italic">{{ parameter.name }}</li>
-                      <li class="q-pl-lg text-weight-light">
-                        <span>Type: </span>
-                        <template v-if="typeUrl(parameter.type)">
-                          <router-link
-                            class="routerlink text-weight-regular"
-                            :to="typeUrl(parameter.type)"
-                            v-if="!typeUrl(parameter.type).toLowerCase().startsWith('http')"
-                          >
-                            {{ parameter.type }}
-                          </router-link>
-                          <a v-else :href="typeUrl(parameter.type)" target="_blank" class="routerlink text-weight-regular">{{ parameter.type }}</a>
-                          <q-tooltip v-if="typeFromToken(parameter.type) && typeFromToken(parameter.type)['dataType']=='enum'">{{ typeFromToken(parameter.type).values.map(v => v.signature) }}</q-tooltip>
-                          </template
-                        >
-                        <template v-else
-                          ><span
-                            class="disabled disabledLink text-weight-regular"
-                            >{{ parameter.type }}</span
-                          ></template
-                        >
-                      </li>
-                      <li
-                        v-html="parameter.summary"
-                        class="q-pl-lg text-weight-light"
-                      ></li>
-                    </ul>
-                  </q-item-label>
-                  <q-item-label
-                    v-if="signature(member).filter(m => m.isReturn).length>0"
-                    class="text-h6"
-                    style="margin-top: 10px"
-                    >Returns:
-                  </q-item-label>
-                  <q-item-label
-                    class="on-right text-weight-light"
-                  >
-                    <template v-for="(returnType, index) in signature(member).filter(m => m.isReturn)" :key="index">
-                      <template v-if="returnType.link">
-                        Type:
-                              <router-link v-if="!returnType.link.toLowerCase().startsWith('http')" :to="returnType.link" class="routerlink">{{returnType.name}}
-                                <q-tooltip v-if="returnType.enumValues">{{returnType.enumValues}}</q-tooltip>
-                              </router-link>
-                              <a v-else :href="returnType.link" target="_blank" class="routerlink">{{ returnType.name }}</a>
-                    </template>
-                    <template v-else>
-                          Type: {{returnType.name}}
-                    </template>
-                    </template>
-                  </q-item-label>
-                  <q-item-label
-                    class="on-right text-weight-light"
-                    v-if="member.returns"
-                  >
-                  {{ member.returns }}
-                </q-item-label>
-                  <q-item-label
-                    v-if="member.remarks"
-                    class="text-h6"
-                    style="margin-top: 10px"
-                    >Remarks:</q-item-label
-                  >
-                  <q-item-label
-                    class="on-right text-weight-light"
-                    v-if="member.remarks"
-                  >
-                  <div v-html="member.remarks"></div>
-                  </q-item-label>
-                  <q-item-label
-                    caption
-                    v-if="member.since"
-                    class="text-bold"
-                    style="margin-top: 10px"
-                    >Available since:</q-item-label
-                  >
-                  <q-item-label caption class="on-right" v-if="member.since">
-                    {{ member.since }}
-                  </q-item-label>
-                </q-item-section>
-              </q-item>
-            </div>
+            <MemberSignature :member="member" :datatype="datatype"/>
             <q-separator  />
           </div>
         </q-list>
@@ -287,6 +83,7 @@
 </template>
 
 <script>
+import MemberSignature from "src/components/MemberSignature.vue";
 import ViewModel from "../ViewModel";
 import Examples from "../api_examples.json";
 import ProjInfo from "../proj_info.json";
@@ -305,6 +102,9 @@ const titleCase = (input) => {
 };
 
 export default {
+  components: {
+    MemberSignature,
+  },
   props: {
     baseUrl: { type: String },
   },

@@ -16,6 +16,7 @@ namespace Docify.Parse
         Operator = 6,
         Field = 7,
         Indexer = 8,
+        Delegate = 9,
     }
 
     /// <summary>
@@ -35,6 +36,7 @@ namespace Docify.Parse
             if (Member is PropertyDeclarationSyntax) mt = ParsedMemberType.Property;
             if (Member is MethodDeclarationSyntax) mt = ParsedMemberType.Method;
             if (Member is EnumMemberDeclarationSyntax) mt = ParsedMemberType.EnumValue;
+            if (Member is DelegateDeclarationSyntax) mt = ParsedMemberType.Delegate;
             if (Member is OperatorDeclarationSyntax) mt = ParsedMemberType.Operator;
             if (Member is FieldDeclarationSyntax) mt = ParsedMemberType.Field;
             if (Member is IndexerDeclarationSyntax) mt = ParsedMemberType.Indexer;
@@ -158,6 +160,7 @@ namespace Docify.Parse
         public bool IsOperator { get { return Member is OperatorDeclarationSyntax; } }
         public bool IsField { get { return Member is FieldDeclarationSyntax; } }
         public bool IsIndexer { get { return Member is IndexerDeclarationSyntax; } }
+        public bool IsDelegate { get { return Member is DelegateDeclarationSyntax; } }
 
         public bool ParentIsPublic
         {
@@ -197,6 +200,15 @@ namespace Docify.Parse
             return false;
 
         }}
+        public bool IsInternal { get {
+            foreach (var modifier in Member.Modifiers)
+            {
+                if (modifier.Text == "internal")
+                    return true;
+            }
+            return false;
+
+        }}
 
         public bool IsVirtual { get {
             foreach (var modifier in Member.Modifiers)
@@ -216,6 +228,22 @@ namespace Docify.Parse
             return Member.Modifiers.Select(mod => mod.Text).ToArray();
         }}
 
+        public string DelegateNamespace
+        {
+            get
+            {
+                if (Member.Parent as NamespaceDeclarationSyntax != null){
+                    return ParsedType.GetFullContainerName(Member.Parent as NamespaceDeclarationSyntax);
+                }
+                else{
+                    if (Member.Parent.Parent as NamespaceDeclarationSyntax != null){
+                        return ParsedType.GetFullContainerName(Member.Parent.Parent as NamespaceDeclarationSyntax);
+                    }
+                    else
+                    throw new NotImplementedException();
+                }
+            }
+        }
         public string ClassPath
         {
             get
@@ -431,6 +459,16 @@ namespace Docify.Parse
                     }
                     signature.Append(")");
                     return signature.ToString();
+                }
+            }
+            {
+                DelegateDeclarationSyntax delegateMember = Member as DelegateDeclarationSyntax;
+                if (delegateMember != null)
+                {
+                    var signature = delegateMember.ToString();
+                    var delegateModifiers = delegateMember.Modifiers.Select(mod => mod.Text).ToList();
+                    signature = string.Join(" ", signature.Split(' ').Where(part => !delegateModifiers.Contains(part)));
+                    return signature;
                 }
             }
             {
