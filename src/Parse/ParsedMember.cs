@@ -466,6 +466,8 @@ namespace Docify.Parse
                 if (delegateMember != null)
                 {
                     var signature = delegateMember.ToString();
+                    var delegateModifiers = delegateMember.Modifiers.Select(mod => mod.Text).ToList();
+                    signature = string.Join(" ", signature.Split(' ').Where(part => !delegateModifiers.Contains(part)));
                     return signature;
                 }
             }

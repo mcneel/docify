@@ -43,61 +43,59 @@
         </p>
 
         <q-list v-if="dataType == 'delegate'" label="Delegate stuff" switch-toggle-side default-opened header-class="bg-secondary text-white">
-          <q-item>
-              <q-item-section>
-                <q-item-label class="text-h6"
-                  >Description:
-                  <q-btn
-                          flat
-                          round
-                          color="blue"
-                          icon="mdi-link"
-                        ></q-btn>
-                  </q-item-label
-                >
-                <q-item-label caption v-if="node.summary">
-                  <p><span v-html="node.summary"></span></p>
-                </q-item-label>
-              </q-item-section>
-
-
-            </q-item>
-
-              <div class="q-pl-lg">
-              <!--Syntax-->
-                <q-item>
-                  <q-item-section>
-                    <q-item-label v-if="node.signature" class="text-h6"
-                      >Syntax:</q-item-label
-                    >
-                    <q-card
-                      flat
-                      bordered
-                      style="font-family: monospace; margin-top: 10px; padding: 10px"
-                    >
-                      <q-card-section horizontal>
-                        <q-item-label
-                          style="font-size: 18px; width: 100%"
-                          :class="node.deprecated || node.obsolete && 'disabled'"
-                        >
-                        {{ node.signature }}
-
-                        </q-item-label>
-                        <q-card-actions vertical class="">
-                          <q-btn
+          <MemberSignature :member="node" :datatype="node"/>
+          <template v-if="false">
+            <q-item>
+                <q-item-section>
+                  <q-item-label class="text-h6"
+                    >Description:
+                    <q-btn
                             flat
                             round
                             color="blue"
-                            icon="mdi-content-copy"
-                            @click="copyToClipboard(node.signature)"
+                            icon="mdi-link"
                           ></q-btn>
-                        </q-card-actions>
-                      </q-card-section>
-                    </q-card>
-                  </q-item-section>
-                </q-item>
-
-              </div>
+                    </q-item-label
+                  >
+                  <q-item-label caption v-if="node.summary">
+                    <p><span v-html="node.summary"></span></p>
+                  </q-item-label>
+                </q-item-section>
+              </q-item>
+                <div class="q-pl-lg">
+                <!--Syntax-->
+                  <q-item>
+                    <q-item-section>
+                      <q-item-label v-if="node.signature" class="text-h6"
+                        >Syntax:</q-item-label
+                      >
+                      <q-card
+                        flat
+                        bordered
+                        style="font-family: monospace; margin-top: 10px; padding: 10px"
+                      >
+                        <q-card-section horizontal>
+                          <q-item-label
+                            style="font-size: 18px; width: 100%"
+                            :class="node.deprecated || node.obsolete && 'disabled'"
+                          >
+                          {{ node.signature }}
+                          </q-item-label>
+                          <q-card-actions vertical class="">
+                            <q-btn
+                              flat
+                              round
+                              color="blue"
+                              icon="mdi-content-copy"
+                              @click="copyToClipboard(node.signature)"
+                            ></q-btn>
+                          </q-card-actions>
+                        </q-card-section>
+                      </q-card>
+                    </q-item-section>
+                  </q-item>
+                </div>
+          </template>
         </q-list >
 
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
@@ -172,6 +170,7 @@
 <script>
 import ViewModel from '../ViewModel'
 import ProjInfo from '../proj_info.json'
+import MemberSignature from "src/components/MemberSignature.vue";
 import { createMetaMixin } from 'quasar'
 import { scroll } from 'quasar'
 const { getScrollTarget, setVerticalScrollPosition } = scroll
@@ -179,6 +178,9 @@ const { getScrollTarget, setVerticalScrollPosition } = scroll
 export default {
   props: {
     baseUrl: { type: String }
+  },
+  components: {
+    MemberSignature,
   },
   data() {
     return {
