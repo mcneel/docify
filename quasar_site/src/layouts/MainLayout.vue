@@ -117,7 +117,10 @@ export default {
     if (this.$route.query.plain) {
         this.forScriptEditor = true;
     }
-    const wasDark = localStorage.getItem('darkMode');
+    let wasDark = localStorage.getItem('darkMode');
+    if (this.$route.query.dark){
+        wasDark = true;
+    }
     if (this.$q.dark.isActive.toString() != wasDark){
       this.$q.dark.toggle()
     }
