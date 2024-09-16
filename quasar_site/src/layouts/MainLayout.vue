@@ -117,10 +117,12 @@ mounted() {
   if (this.$route.query.plain) {
       this.forScriptEditor = true;
   }
-  let wasDark = localStorage.getItem('darkMode');
-  if (this.$route.query.dark  == "true"){
+  let wasDark = localStorage.getItem('darkMode') || "false";
+  if (this.$route.query.dark == "true"){
       wasDark = true;
   }
+  console.log("wasDark", wasDark)
+  console.log("isActive", this.$q.dark.isActive.toString())
   if (this.$q.dark.isActive.toString() != wasDark){
     this.$q.dark.toggle()
   }
