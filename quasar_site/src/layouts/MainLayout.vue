@@ -118,7 +118,7 @@ export default {
         this.forScriptEditor = true;
     }
     let wasDark = localStorage.getItem('darkMode');
-    if (this.$route.query.dark){
+    if (this.$route.query.dark  == "true"){
         wasDark = true;
     }
     if (this.$q.dark.isActive.toString() != wasDark){
@@ -250,6 +250,15 @@ export default {
       else {
         this.searchText = "";
       }
+      let wasDark = false;
+      if (to.query.dark == "true"){
+        console.log("dark is setting")
+        wasDark = true;
+      }
+      if (this.$q.dark.isActive.toString() != wasDark){
+        console.log("toggling")
+      this.$q.dark.toggle()
+    }
     }
   },
   components: { SearchPage }
