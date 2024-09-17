@@ -117,12 +117,15 @@ mounted() {
   if (this.$route.query.plain) {
       this.forScriptEditor = true;
   }
-  let wasDark = localStorage.getItem('darkMode') || "false";
-  if (this.$route.query.dark == "true"){
-      wasDark = true;
+  let wasDark = localStorage.getItem('darkMode');
+  if (this.$route.query.dark){
+    if (this.$route.query.dark == "true"){
+        wasDark = "true";
+    }
+    else{
+        wasDark = "false";
+    }
   }
-  console.log("wasDark", wasDark)
-  console.log("isActive", this.$q.dark.isActive.toString())
   if (this.$q.dark.isActive.toString() != wasDark){
     this.$q.dark.toggle()
   }
@@ -178,7 +181,6 @@ methods: {
     done(childNodes);
   },
   toggleDarkMode(){
-    console.log("toggling")
     this.$q.dark.toggle();
     localStorage.setItem('darkMode', this.$q.dark.isActive)
   }
@@ -252,15 +254,20 @@ watch: {
     else {
       this.searchText = "";
     }
-    let wasDark = false;
-    if (to.query.dark == "true"){
-      console.log("dark is setting")
-      wasDark = true;
+
+    let wasDark = localStorage.getItem('darkMode');
+    if (to.query.dark){
+      if (to.query.dark == "true"){
+          wasDark = "true";
+      }
+      else{
+          wasDark = "false";
+      }
     }
     if (this.$q.dark.isActive.toString() != wasDark){
-      console.log("toggling")
-    this.$q.dark.toggle()
-  }
+      console.log("toggling dark mode",wasDark,this.$q.dark.isActive.toString() )
+      this.$q.dark.toggle()
+    }
   }
 },
 components: { SearchPage }
