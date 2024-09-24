@@ -126,7 +126,7 @@ mounted() {
         wasDark = "false";
     }
   }
-  if (this.$q.dark.isActive.toString() != wasDark){
+  if (wasDark!= null && this.$q.dark.isActive.toString() != wasDark){
     this.$q.dark.toggle()
   }
 },
@@ -264,8 +264,7 @@ watch: {
           wasDark = "false";
       }
     }
-    if (this.$q.dark.isActive.toString() != wasDark){
-      console.log("toggling dark mode",wasDark,this.$q.dark.isActive.toString() )
+    if (wasDark!= null && this.$q.dark.isActive.toString() != wasDark){
       this.$q.dark.toggle()
     }
   }
