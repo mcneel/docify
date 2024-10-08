@@ -104,7 +104,7 @@
 
           <q-list>
             <div v-for="(member, index) in section.items.filter(m => filterByVersion(m))" :key="index">
-                <q-item dense :clickable="section.type != 'values'" :to="member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
+                <q-item dense :clickable="section.type != 'values'" :to="'/'+member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
                   :class="memberClass(member)" class="row">
                   <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
                     style="overflow-wrap: break-word;">
