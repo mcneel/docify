@@ -134,7 +134,6 @@ export default {
     return {
       ViewModel,
       memberName: null,
-      members: {},
       version: mostRecent,
       activeId: null,
       forScriptEditor: false,
@@ -148,12 +147,13 @@ export default {
         chunks.push({ name: tokens[0] + ' ' })
         tokens.shift()
       }
-      if (this.members.isEvent) {
+      if (member.isEvent) {
         chunks.push({ name: tokens[0]+ ' '  })
         chunks.push({ name: tokens[1] })
         return chunks
       }
-      if (this.members.isProperty || this.members.isMethod || this.members.isOperator) {
+
+      if (member.isProperty || member.isMethod || member.isOperator) {
         // try to get a link for the return type
         // const tokenPath = this.tokenPath(tokens[0])
         // const link = tokenPath ? this.baseUrl + tokenPath : null
@@ -250,7 +250,6 @@ export default {
         //WWW-2098: try looking for enums which have . separated names in this dictionary
         type = typeMap[`${this.datatype.name}.${token}`];
         if (!type){
-          console.log(`typeFromToken: ${token} type: ${type}`)
           //WWW-2523 RhinoCommon docs: Some method argument type links are disabled
           type = typeMap[token.split(".").slice(-1)[0]];
           if (!type){
