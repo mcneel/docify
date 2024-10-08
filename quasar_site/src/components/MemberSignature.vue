@@ -250,7 +250,12 @@ export default {
         //WWW-2098: try looking for enums which have . separated names in this dictionary
         type = typeMap[`${this.datatype.name}.${token}`];
         if (!type){
-          return null;
+          console.log(`typeFromToken: ${token} type: ${type}`)
+          //WWW-2523 RhinoCommon docs: Some method argument type links are disabled
+          type = typeMap[token.split(".").slice(-1)[0]];
+          if (!type){
+            return null;
+          }
         }
       }
       return type
@@ -266,7 +271,7 @@ export default {
         link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
       }
     }
-    console.log("returning link", this.baseUrl)
+    // console.log(`returning link for ${typeToken} path: ${tokenPath}`, link)
     return link;
     },
   },
