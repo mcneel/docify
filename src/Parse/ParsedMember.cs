@@ -87,41 +87,42 @@ namespace Docify.Parse
                     shortName = shortName.Substring(0, shortName.Length - 1);
                 }
 
-                switch (shortName)
-                {
-                    case "int":
-                        return typeof(int).FullName + suffix;
-                    case "bool":
-                        return typeof(bool).FullName + suffix;
-                    case "float":
-                        return typeof(float).FullName + suffix;
-                    case "double":
-                        return typeof(double).FullName + suffix;
-                    case "string":
-                        return typeof(string).FullName + suffix;
-                    case "void":
-                        return typeof(void).FullName + suffix;
-                    case "uint":
-                        return typeof(uint).FullName + suffix;
-                    case "object":
-                        return typeof(object).FullName + suffix;
-                    case "byte":
-                        return typeof(byte).FullName + suffix;
-                    case "sbyte":
-                        return typeof(sbyte).FullName + suffix;
-                    case "short":
-                        return typeof(short).FullName + suffix;
-                    case "ushort":
-                        return typeof(ushort).FullName + suffix;
-                    case "long":
-                        return typeof(long).FullName + suffix;
-                    case "ulong":
-                        return typeof(ulong).FullName + suffix;
-                    case "char":
-                        return typeof(char).FullName + suffix;
-                    default:
-                        return shortName;
-                }
+                // switch (shortName)
+                // {
+                //     case "int":
+                //         return typeof(int).FullName + suffix;
+                //     case "bool":
+                //         return typeof(bool).FullName + suffix;
+                //     case "float":
+                //         return typeof(float).FullName + suffix;
+                //     case "double":
+                //         return typeof(double).FullName + suffix;
+                //     case "string":
+                //         return typeof(string).FullName + suffix;
+                //     case "void":
+                //         return typeof(void).FullName + suffix;
+                //     case "uint":
+                //         return typeof(uint).FullName + suffix;
+                //     case "object":
+                //         return typeof(object).FullName + suffix;
+                //     case "byte":
+                //         return typeof(byte).FullName + suffix;
+                //     case "sbyte":
+                //         return typeof(sbyte).FullName + suffix;
+                //     case "short":
+                //         return typeof(short).FullName + suffix;
+                //     case "ushort":
+                //         return typeof(ushort).FullName + suffix;
+                //     case "long":
+                //         return typeof(long).FullName + suffix;
+                //     case "ulong":
+                //         return typeof(ulong).FullName + suffix;
+                //     case "char":
+                //         return typeof(char).FullName + suffix;
+                //     default:
+                //         return shortName;
+                // }
+                return shortName;
             }
 
             if (_usingDirectives!=null)

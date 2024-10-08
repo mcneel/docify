@@ -97,7 +97,7 @@ namespace Docify
                         continue;
                     if (!parsedItem.IsPublic && !parsedItem.IsProtected)
                         continue;
-                    if (parsedItem.Signature(false).Contains("KeyboardHookEvent(int key)")){
+                    if (parsedItem.Signature(false).Contains("explodeNestedInstances")){
                         var inspecting = parsedItem;
                     }
                     string className = parsedItem.ClassPath;
