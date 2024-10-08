@@ -5,7 +5,7 @@
         <div style="height: 130px" v-if="!forScriptEditor"></div>
         <q-list>
           <div v-for="(member, index) in members.items" :key="index" :id="ViewModel.signatureAnchorRef(member.signature)" style="transition: opacity 1s" :style="activeId && activeId != ViewModel.signatureAnchorRef(member.signature) ? 'opacity: 50%' : 'opacity: 100%'" >
-            <MemberSignature :member="member" :datatype="datatype"/>
+            <MemberSignature :member="member" :datatype="datatype" :base-url="baseUrl"/>
             <q-separator  />
           </div>
         </q-list>

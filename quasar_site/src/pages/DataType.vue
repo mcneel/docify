@@ -43,7 +43,7 @@
         </p>
 
         <q-list v-if="dataType == 'delegate'" label="Delegate stuff" switch-toggle-side default-opened header-class="bg-secondary text-white">
-          <MemberSignature :member="node" :datatype="node"/>
+          <MemberSignature :member="node" :datatype="node" :base-url="baseUrl"/>
           <template v-if="false">
             <q-item>
                 <q-item-section>

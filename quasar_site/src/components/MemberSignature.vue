@@ -125,6 +125,9 @@ export default {
       type: String,
       required: true,
     },
+    baseUrl: {
+      type: String
+    },
   },
   data() {
     const mostRecent = ViewModel.mostRecentSince();
@@ -263,6 +266,7 @@ export default {
         link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
       }
     }
+    console.log("returning link", this.baseUrl)
     return link;
     },
   },
