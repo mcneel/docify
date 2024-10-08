@@ -243,7 +243,12 @@ export default {
         // });
         return {
           isConstructor: true,
-          items: datatype.constructors,
+          items: datatype.constructors.map((c) => {
+            return {
+              ...c,
+              isConstructor: true,
+            };
+          }),
         };
       }
       if (datatype.properties) {
@@ -262,7 +267,12 @@ export default {
           );
           return {
             isProperty: true,
-            items: props,
+            items: props.map((p) => {
+              return {
+                ...p,
+                isProperty: true,
+              };
+            }),
           };
         }
       }
@@ -282,7 +292,12 @@ export default {
           );
           return {
             isMethod: true,
-            items: methods,
+            items: methods.map((m) => {
+              return {
+                ...m,
+                isMethod: true,
+              };
+            }),
           };
         }
       }
@@ -302,7 +317,12 @@ export default {
           // );
           return {
             isEvent: true,
-            items: events,
+            items: events.map((e) => {
+              return {
+                ...e,
+                isEvent: true,
+              };
+            }),
           };
         }
       }
@@ -322,7 +342,12 @@ export default {
           // );
           return {
             isOperator: true,
-            items: operators,
+            items: operators.map((o) => {
+              return {
+                ...o,
+                isOperator: true,
+              };
+            }),
           };
         }
       }
@@ -343,7 +368,12 @@ export default {
           // );
           return {
             isField: true,
-            items: fields,
+            items: fields.map((f) => {
+              return {
+                ...f,
+                isField: true,
+              };
+            }),
           };
         }
       }
