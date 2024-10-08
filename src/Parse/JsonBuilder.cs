@@ -477,7 +477,7 @@ namespace Docify.Parse
                 //sb.Append($"        deprecated: '{deprecated}'");
             }
 
-            if (member.Signature(false).Contains("Plane EquitorialPlane")){
+            if (member.Signature(false).Contains("explodeNestedInstances")){
                 var inspecting = member;
             }
             string remarks = member.Remarks();

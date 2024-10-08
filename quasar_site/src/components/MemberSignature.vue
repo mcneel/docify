@@ -265,10 +265,34 @@ export default {
     let link = tokenPath ? this.baseUrl + tokenPath : null
     //Try to get system links
     if(!link){
-      if( typeToken.toLowerCase().startsWith("system")){
-        let cleanType = typeToken.split("<")[0];
-        cleanType = cleanType.split("[")[0];
-        link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
+      // if( typeToken.toLowerCase().startsWith("system")){
+      //   let cleanType = typeToken.split("<")[0];
+      //   cleanType = cleanType.split("[")[0];
+      //   link = `https://learn.microsoft.com/en-us/dotnet/api/${cleanType}`
+      // }
+      const standardCSharpTypes = {
+        "int": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "string": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-string-type",
+        "bool": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool",
+        "double": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types",
+        "float": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types",
+        "decimal": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types",
+        "char": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char",
+        "byte": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "void": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/void",
+        "object": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-object-type",
+        "DateTime": "https://learn.microsoft.com/en-us/dotnet/api/system.datetime",
+        "uint": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "sbyte": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "short": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "ushort": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "long": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "ulong": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        // Add more standard types as needed
+      };
+
+      if (!link && standardCSharpTypes[typeToken]) {
+        link = standardCSharpTypes[typeToken];
       }
     }
     // console.log(`returning link for ${typeToken} path: ${tokenPath}`, link)
