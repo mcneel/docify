@@ -93,13 +93,13 @@ namespace Docify
                 }
                 foreach (var parsedItem in parsedItems)
                 {
-                    if (!parsedItem.ParentIsPublic)
-                        continue;
-                    if (!parsedItem.IsPublic && !parsedItem.IsProtected)
-                        continue;
-                    if (parsedItem.Signature(false).Contains("explodeNestedInstances")){
+                    if (parsedItem.Signature(false).Contains("RhinoObject()")){
                         var inspecting = parsedItem;
                     }
+                    if (!parsedItem.ParentIsPublic)
+                        continue;
+                    if (!parsedItem.IsPublic && !parsedItem.IsProtected && !parsedItem.IsInternal) //We'll skip the internal members when we write the json, we need to know if a constructor is internal so we don't write default constructor
+                        continue;
                     string className = parsedItem.ClassPath;
                     if (className != null){
                         if (!allMembers.ContainsKey(className))

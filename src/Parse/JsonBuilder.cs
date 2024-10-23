@@ -274,16 +274,12 @@ namespace Docify.Parse
                     sb.Append(KeyValString(4, "deprecated", type.Deprecated, asJavascript));
                 }
                 //Morteza: debugging only
-                if (type.FullName == "Rhino.Geometry.SubDToBrepOptions"){
+                if (type.FullName == "Rhino.DocObjects.RhinoObject"){
                     var inspecting = type;
                 }
                 string delegates = MembersAsJsonArray(type, ParsedMemberType.Delegate, asJavascript);
                 string values = MembersAsJsonArray(type, ParsedMemberType.EnumValue, asJavascript);
                 string constructors = MembersAsJsonArray(type, ParsedMemberType.Constructor, asJavascript);
-                if (constructors==null){
-                    //Try to add default constructor
-                    constructors = DefaultConstructorAsJson(type, asJavascript);
-                }
                 string properties = MembersAsJsonArray(type, ParsedMemberType.Property, asJavascript);
                 string methods = MembersAsJsonArray(type, ParsedMemberType.Method, asJavascript);
                 string events = MembersAsJsonArray(type, ParsedMemberType.Event, asJavascript);
@@ -569,6 +565,7 @@ namespace Docify.Parse
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("[");
             bool memberAdded = false;
+            bool internalConstructorSkipped = false;
             foreach (var member in type.Members)
             {
                 if (filter == ParsedMemberType.Property && member.MemberType == ParsedMemberType.Indexer){
@@ -577,6 +574,11 @@ namespace Docify.Parse
                 else{
                     if (filter != member.MemberType)
                         continue;
+                }
+                if (member.IsInternal){
+                    if (member.MemberType == ParsedMemberType.Constructor)
+                        internalConstructorSkipped = true;
+                    continue;
                 }
                 if (memberAdded)
                     sb.AppendLine(",");
@@ -588,6 +590,11 @@ namespace Docify.Parse
             }
             sb.AppendLine();
             sb.Append("    ]");
+
+            if (!memberAdded && filter == ParsedMemberType.Constructor){
+                if (!internalConstructorSkipped)
+                    return DefaultConstructorAsJson(type, asJavascript);
+            }
 
             return memberAdded ? sb.ToString() : null;
         }
