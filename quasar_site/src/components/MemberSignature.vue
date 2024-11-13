@@ -263,6 +263,7 @@ export default {
     const tokenPath = this.tokenPath(typeToken)
     let link = tokenPath ? this.baseUrl + tokenPath : null
     //Try to get system links
+    console.log("typetoken", typeToken)
     if(!link){
       // if( typeToken.toLowerCase().startsWith("system")){
       //   let cleanType = typeToken.split("<")[0];
@@ -287,6 +288,7 @@ export default {
         "ushort": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
         "long": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
         "ulong": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
+        "Version": "https://learn.microsoft.com/en-us/dotnet/api/system.version"
         // Add more standard types as needed
       };
 
