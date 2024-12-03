@@ -289,7 +289,7 @@ export default {
         "long": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
         "ulong": "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types",
         "Version": "https://learn.microsoft.com/en-us/dotnet/api/system.version",
-        "NameValueCollection": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.specialized.namevaluecollection",
+        "System.Collections.Specialized.NameValueCollection": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.specialized.namevaluecollection",
         "Color": "https://learn.microsoft.com/en-us/dotnet/api/system.drawing.color"
         // Add more standard types as needed
       };
