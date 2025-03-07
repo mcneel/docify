@@ -17,7 +17,7 @@
             <q-icon color="white" name="search" />
           </template>
         </q-input>
-        <q-btn-dropdown color="primary" :label="`V${filterVersion.split('.')[0]} and older`" class="q-ml-sm">
+        <q-btn-dropdown color="primary" :label="`V${filterVersion.split('.')[0]}`" class="q-ml-sm">
           <q-list>
             <q-item v-for="version in ['8.x','7.x','6.x','5.x']" :key="version" clickable v-close-popup @click="onChangeVersionFilter(version)">
               <q-item-section>
