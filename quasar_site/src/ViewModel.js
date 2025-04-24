@@ -77,6 +77,7 @@ const ViewModel = {
           deprecated: x.deprecated,
           obsolete: x.obsolete,
           since: x.since,
+          inherited: x.inherited,
           children:
             overloads.length > 1
               ? overloads.map((o) => {
@@ -607,7 +608,13 @@ const ViewModel = {
           inheritedMembers[j].path = url;
         }
 
-        members = members.concat(inheritedMembers);
+
+        const inheritedMembersMarked = inheritedMembers.map((m) => {
+          m.inherited = true;
+          return m;
+        });
+
+        members = members.concat(inheritedMembersMarked);
         members = members.filter((m) => m != null);
 
         // Morteza Aug 28, 2023: may be redundant since we're sorting at the end of this functions

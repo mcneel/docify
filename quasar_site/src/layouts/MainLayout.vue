@@ -26,6 +26,15 @@
             </q-item>
           </q-list>
         </q-btn-dropdown>
+        <q-btn-dropdown color="primary" icon="filter_list" class="q-ml-sm">
+          <q-list>
+            <q-item>
+              <q-item-section>
+                  <q-toggle v-model="showInheritedMembers" label="Show Inherited Members" />
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
         <q-btn v-if="filterVersion.split('.')[0]== version.split('.')[0]" dense flat no-caps size="md" class="q-pa-sm" icon="new_releases" :to="baseUrl + 'whatsnew/' + version">
           <q-tooltip>What's new in version {{ version }}</q-tooltip>
         </q-btn>
@@ -43,7 +52,7 @@
     </q-header>
       <q-drawer v-model="leftDrawerOpen" behavior="desktop" show-if-above bordered id="myDrawer" :width="drawerWidth"
         @mouseover="() => shouldAutoScroll = false" @mouseout="() => shouldAutoScroll = true">
-        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="filterVersion" :filter-method="filterTocByVersion"
+        <q-tree no-transition ref=myTree :nodes="api" accordion dense node-key="path" selected-color="accent" :filter="{'version':filterVersion, 'inherited':showInheritedMembers}" :filter-method="filterToc"
           v-model:selected="selectedNode" v-model:expanded="expanded" :duration="200" @lazy-load="onLazyLoad">
           <template v-slot:default-header="prop" >
             <div class="row items-center">
@@ -104,6 +113,7 @@ data() {
     bannerVisible: true,
     filterVersion: `${mostRecent.split(".")[0]}.x`,
     forScriptEditor: false,
+    showInheritedMembers: true,
     $q
   };
 },
@@ -114,6 +124,10 @@ mounted() {
   if (this.$route.query.version){
       this.onChangeVersionFilter(this.$route.query.version);
   }
+  if (this.$route.query.inherited){
+      this.showInheritedMembers = this.$route.query.inherited == "true";
+  }
+
   if (this.$route.query.plain) {
       this.forScriptEditor = true;
   }
@@ -135,9 +149,12 @@ methods: {
     this.filterVersion = item;
     this.$router.push({ query: { ...this.$route.query, version: item } })
   },
-  filterTocByVersion (node, filter) {
+  filterToc (node, filter) {
+      if (!filter.inherited && node.inherited) {
+        return false;
+      }
       if(node.since){
-        return !ViewModel.sinceIsGreater(node.since, filter)
+        return !ViewModel.sinceIsGreater(node.since, filter.version)
       }
       return true
   },
@@ -235,6 +252,9 @@ watch: {
     if (!this.expanded.includes[newState]) {
       this.expanded = [...this.expanded, newState];
     }
+  },
+  showInheritedMembers(val) {
+    this.$router.push({ query: { ...this.$route.query, inherited: val } })
   },
   searchText(val) {
     if (val) {

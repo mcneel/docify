@@ -99,11 +99,11 @@
         </q-list >
 
         <q-expansion-item v-for="section in memberSections" :key="section.title" switch-toggle-side
-          :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="`${section.title} (${section.items.filter(m => filterByVersion(m)).length})`"
+          :default-opened="section.expanded" v-model="ExpandedSections[section.type]" :label="`${section.title} (${section.items.filter(m => filterFunc(m)).length})`"
           :content-inset-level="1" :id="anchorId(section)" header-class="bg-secondary text-white">
 
           <q-list>
-            <div v-for="(member, index) in section.items.filter(m => filterByVersion(m))" :key="index">
+            <div v-for="(member, index) in section.items.filter(m => filterFunc(m))" :key="index">
                 <q-item dense :clickable="section.type != 'values'" :to="'/'+member.path+'#'+ViewModel.signatureAnchorRef(member.signature)"
                   :class="memberClass(member)" class="row">
                   <q-item-label :class="section.type == 'values' ? '' : 'text-accent'" class="col"
@@ -187,7 +187,8 @@ export default {
       ViewModel,
       ExpandedSections: {
       },
-      filterVersion: ""
+      filterVersion: "",
+      showInheritedMembers: true
     }
   },
   mixins: [
@@ -382,6 +383,10 @@ export default {
   mounted() {
     this.filterVersion = this.$route.query.version;
 
+    if (this.$route.query.inherited){
+      this.showInheritedMembers = this.$route.query.inherited == "true";
+    }
+
     if (this.$route.params && this.$route.params.datatype) {
       const selectedItem = decodeURI(this.$route.fullPath.substring(this.baseUrl.length))
       ViewModel.setSelectedItem(selectedItem)
@@ -401,6 +406,9 @@ export default {
       // react to route changes...
       // console.log("route changfe:", to)
       this.filterVersion = to.query.version;
+      if (to.query.inherited){
+        this.showInheritedMembers = to.query.inherited == "true";
+      }
 
       const selectedItem = to.fullPath.substring(this.baseUrl.length)
       ViewModel.setSelectedItem(selectedItem)
@@ -419,7 +427,11 @@ export default {
     }
   },
   methods: {
-    filterByVersion (node) {
+    filterFunc (node) {
+        if (!this.showInheritedMembers && node.inherited)
+        {
+          return false
+        }
         if(node.since && this.filterVersion){
           return !ViewModel.sinceIsGreater(node.since, this.filterVersion)
         }
