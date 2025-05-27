@@ -338,12 +338,13 @@ const ViewModel = {
       existingVersion[1] = 999;
     }
 
-    if (testVersion[0] < existingVersion[0]) return false;
+    if (parseInt(testVersion[0]) < parseInt(existingVersion[0])) return false;
     if (
       testVersion[0] === existingVersion[0] &&
-      testVersion[1] < existingVersion[1]
-    )
+      parseInt(testVersion[1]) < parseInt(existingVersion[1])
+    ) {
       return false;
+    }
     return true;
   },
   mostRecentSince() {
