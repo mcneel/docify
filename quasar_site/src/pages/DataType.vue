@@ -30,7 +30,7 @@
             <router-link v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{ item.name
             }}</router-link>
             <i v-else>{{ item.name }}</i>
-            <i v-if="index < (inheritence.length)">, </i>
+            <i v-if="index < (derivedClasses.length)-1">, </i>
           </i>
         </template>
 
