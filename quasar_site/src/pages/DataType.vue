@@ -42,6 +42,10 @@
               :to="(baseUrl + 'references/' + namespace + '.' + name).toLowerCase()">references</router-link></i>
         </p>
 
+        <p v-if="node.since">
+          <i>Available since: <b>{{ node.since}}</b></i>
+        </p>
+
         <q-list v-if="dataType == 'delegate'" label="Delegate stuff" switch-toggle-side default-opened header-class="bg-secondary text-white">
           <MemberSignature :member="node" :datatype="node" :base-url="baseUrl"/>
           <template v-if="false">
