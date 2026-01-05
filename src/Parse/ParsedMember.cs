@@ -390,6 +390,8 @@ namespace Docify.Parse
                 {
                     var signature = new System.Text.StringBuilder();
                     string declaration = op.ToString();
+                    // Remove 'public' and 'static' if present
+                    declaration = declaration.Replace("public ", "").Replace("static ", "");
                     int index = declaration.IndexOf(')');
                         if (index > 0)
                             declaration = declaration.Substring(0, index+1);
