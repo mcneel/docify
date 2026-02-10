@@ -5,17 +5,15 @@
    "version": "0.2.0",
    "configurations": [
         {
-            "name": "Run Docify",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/bin/Debug/net7.0/docify.dll",
-            "args": [
-                "build"
-            ],
-            "cwd": "${workspaceFolder}/src",
-            "console": "internalConsole",
-            "stopAtEntry": false
+          "name": "Run Docify",
+          "type": "coreclr",
+          "request": "launch",
+          "preLaunchTask": "build",
+          "program": "${workspaceFolder}/src/bin/Debug/net8.0/docify.dll",
+          "args": ["build"],
+          "cwd": "${workspaceFolder}/src",
+          "console": "internalConsole",
+          "stopAtEntry": false
         }
     ]
 }

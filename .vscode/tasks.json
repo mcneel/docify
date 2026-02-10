@@ -20,7 +20,7 @@
         "type": "process",
         "dependsOn": "build",
         "args": [
-          "${workspaceFolder}/src/bin/Debug/net7.0/docify.dll",
+          "${workspaceFolder}/src/bin/Debug/net8.0/docify.dll",
           "init",
           "RhinoCommon",
           "--force",
@@ -35,7 +35,7 @@
         "command": "dotnet",
         "type": "process",
         "dependsOn": "build",
-        "args": ["${workspaceFolder}/src/bin/Debug/net7.0/docify.dll", "build"],
+        "args": ["${workspaceFolder}/src/bin/Debug/net8.0/docify.dll", "build"],
         "problemMatcher": []
       },
       {
