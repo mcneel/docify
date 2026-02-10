@@ -97,7 +97,7 @@
           </template>
         </q-item-label>
         <q-item-label class="on-right text-weight-light" v-if="member.returns">
-          {{ member.returns }}
+          <p><span v-html="member.returns"></span></p>
         </q-item-label>
         <q-item-label v-if="member.remarks" class="text-h6" style="margin-top: 10px">Remarks:</q-item-label>
         <q-item-label class="on-right text-weight-light" v-if="member.remarks">
