@@ -379,6 +379,21 @@ const ViewModel = {
     });
     return since;
   },
+  majorVersionList() {
+    const majors = new Set();
+    ApiInfo.forEach((type) => {
+      ["constructors", "properties", "methods", "operators", "fields"].forEach(
+        (key) => {
+          if (type[key]) {
+            type[key].forEach((m) => {
+              if (m.since) majors.add(parseInt(m.since.split(".")[0]));
+            });
+          }
+        }
+      );
+    });
+    return [...majors].sort((a, b) => b - a).map((n) => `${n}.x`);
+  },
   getFilteredSet(test) {
     const api = [];
     ApiInfo.forEach((type) => {
