@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/api/rhinocommon/favicon.ico" />
+    <link
+      rel="preload"
+      as="fetch"
+      type="application/json"
+      crossorigin="anonymous"
+      href="/api/rhinocommon/data/api_info.json"
+    />
+    <title>RhinoCommon API</title>
+    <script>
+      // Apply dark mode before the app mounts to avoid a flash of the wrong theme.
+      // Precedence: ?dark query (transient) > localStorage('darkMode').
+      (function () {
+        try {
+          var hashQuery = (location.hash.split('?')[1] || '')
+          var params = new URLSearchParams(hashQuery || location.search)
+          var d = params.get('dark')
+          var dark = d != null ? d === 'true' : localStorage.getItem('darkMode') === 'true'
+          if (dark) document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
