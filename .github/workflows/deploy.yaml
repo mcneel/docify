@@ -2,41 +2,35 @@ name: Heroku build and deploy
 
 on:
   push:
-    branches: ['master']
+    branches: [ 'master' ]
+  pull_request:
+    branches: [ 'master' ]
   workflow_dispatch:
+    branches:
+      - master
 
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: build
-        run: |
-          cd webapp/
-          yarn
-          yarn build
-      - name: stage static deploy artifact
-        run: |
-          cd webapp/
-          rm -rf deploy && mkdir deploy
-          cp -r dist deploy/dist
-          cp server.js deploy/server.js
-          cp Procfile deploy/Procfile
-          cp deploy.package.json deploy/package.json
-      - name: deploy to heroku
-        run: |
-          cd webapp/deploy/
-          git init
-          git config user.email "morteza@mcneel.com"
-          git config user.name "Morteza Karimi"
-          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/mcneel-apidocs.git
-          git add .
-          git commit -m "CI build"
-          git push heroku HEAD:master --force
+    - uses: actions/checkout@v3
+    - name: build
+      run: |
+        cd quasar_site/
+        yarn
+        yarn ssrbuild
+    - name: deploy
+      run: |
+        cd quasar_site/dist/ssr/
+        git init
+        git config user.email "morteza@mcneel.com"
+        git config user.name "Morteza Karimi"
+        git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/mcneel-apidocs.git
+        git add .
+        git commit -m "CI build"
+        git push heroku master --force
 
-      - name: invalidate cache
-        run: |
-          curl --location 'https://api.mcneel.com/cloudfront/invalidate' --header 'Authorization: Basic ${{ secrets.BOZO_API_KEY }}' --header 'Content-Type: application/json' --data '{"url":"https://developer.rhino3d.com/api/*"}'
+    - name: invalidate cache
+      run: |
+        curl --location 'https://api.mcneel.com/cloudfront/invalidate' --header 'Authorization: Basic ${{ secrets.BOZO_API_KEY }}' --header 'Content-Type: application/json' --data '{"url":"https://developer.rhino3d.com/api/*"}'
+
