@@ -24,7 +24,7 @@
           "init",
           "RhinoCommon",
           "--force",
-          "--target=${workspaceFolder}/webapp/src",
+          "--target=${workspaceFolder}/quasar_site/src",
           "--source=${input:rhinoSource}/src4/DotNetSDK/rhinocommon/dotnet",
           "--examples=${input:rhinoSource}/src4/DotNetSDK/rhinocommon"
         ],
@@ -48,21 +48,21 @@
         "problemMatcher": []
       },
       {
-        "label": "run webapp",
-        "command": "yarn",
+        "label": "run quasar",
+        "command": "quasar",
         "type": "process",
         "args": ["dev"],
         "options": {
-          "cwd": "${workspaceFolder}/webapp"
+          "cwd": "${workspaceFolder}/quasar_site"
         },
         "problemMatcher": "$msCompile"
       },
       {
-        "label": "initial setup",
+        "label": "initial setup (npm)",
         "type": "shell",
-        "command": "yarn",
+        "command": "npm install && npm run lint",
         "options": {
-          "cwd": "${workspaceFolder}/webapp"
+          "cwd": "${workspaceFolder}/quasar_site"
         },
         "problemMatcher": []
       }
