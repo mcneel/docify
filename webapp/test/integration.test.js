@@ -61,4 +61,25 @@ describe('real-data pipeline', () => {
     expect(list.length).toBeGreaterThan(5000)
     expect(list.some((i) => i.type === 'method' && i.url.includes('#'))).toBe(true)
   })
+
+  it('indexes enum values (regression: AngleUnitSystem.Radians was unsearchable)', () => {
+    const list = buildSearchList(info)
+    const values = list.filter((i) => i.type === 'value')
+    expect(values.length).toBeGreaterThan(0)
+    const radians = values.find((i) => i.member === 'Radians' && i.typename === 'Rhino.AngleUnitSystem')
+    expect(radians).toBeTruthy()
+    // enum values have no own page — they link to the enum's Values section
+    expect(radians.url).toBe('rhino.angleunitsystem#values')
+  })
+
+  it('indexes fields by name, not default value (regression: member was "true"/hex)', () => {
+    const list = buildSearchList(info)
+    const fields = list.filter((i) => i.type === 'field')
+    expect(fields.length).toBeGreaterThan(0)
+    // the old bug produced members like "true" and "0x0018)"
+    expect(fields.some((f) => f.member === 'true')).toBe(false)
+    const inc = fields.find((f) => f.member === 'IncludeNormals')
+    expect(inc).toBeTruthy()
+    expect(inc.url).toContain('/includenormals#')
+  })
 })

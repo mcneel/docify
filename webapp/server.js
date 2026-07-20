@@ -1,7 +1,8 @@
 // Minimal, dependency-free static server for the SPA.
 // Serves the Vite build (dist/) under the CloudFront/Heroku base path.
-// Hash routing means the server only ever sees the base + asset requests, so no
-// SPA rewrite is strictly required; an index.html fallback is kept as a safety net.
+// History-mode routing means deep links (e.g. .../rhino.geometry.brep) hit the
+// server directly, so the index.html fallback below is required, not optional.
+// Any CDN/proxy in front of this must apply the same fallback.
 import http from 'node:http'
 import { readFile, stat } from 'node:fs/promises'
 import { join, extname } from 'node:path'

@@ -1,5 +1,5 @@
 // Search index construction. Pure — ported from ViewModel.js#getSearchList.
-import { signatureAnchorRef } from './signatures.js'
+import { signatureAnchorRef, memberName } from './signatures.js'
 
 // Fuse.js options. NOTE: the old code had `{name:'member',weight:10}.name`, which
 // silently collapsed to the string "member" (default weight 1). Fixed here so the
@@ -85,14 +85,34 @@ export function buildSearchList(apiInfo) {
     }
     if (entry.fields) {
       entry.fields.forEach((field) => {
-        const chunks = field.signature.split(' ')
-        node = { typename, member: chunks[chunks.length - 1] }
+        // NOTE: the old code used `signature.split(' ').pop()`, which returned the
+        // field's default value (e.g. "true", "0x0018)") instead of its name — so
+        // fields were unsearchable. Use the same name extraction the pages use.
+        node = { typename, member: memberName(field, 'fields') }
         if (items[items.length - 1].member === node.member) return
         node.type = 'field'
         node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${signatureAnchorRef(field.signature)}`
         node.since = field.since
         node.keywords = dataTypeUrl.replaceAll('.', ' ') + ' ' + node.member.toLowerCase()
         if (field.summary) node.summary = field.summary
+        items.push(node)
+      })
+    }
+    // Enum values were never indexed, so members like AngleUnitSystem.Radians were
+    // unsearchable. They have no dedicated page — link to the enum's Values section.
+    if (entry.values) {
+      entry.values.forEach((value) => {
+        const member = value.signature.split('=')[0].trim()
+        if (!member) return
+        node = {
+          typename,
+          member,
+          type: 'value',
+          url: `${dataTypeUrl}#values`,
+          keywords: dataTypeUrl.replaceAll('.', ' ') + ' ' + member.toLowerCase(),
+        }
+        node.since = entry.since
+        if (value.summary) node.summary = value.summary
         items.push(node)
       })
     }

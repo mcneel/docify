@@ -48,10 +48,11 @@ function moreResults() {
 }
 
 const shown = computed(() => results.value.filter(matchesVersion))
+// Type-level results (class/enum/struct/…) show just the type name; member-level
+// results (method/field/value/…) append the member so they're distinguishable.
+const CONTAINER_TYPES = new Set(['namespace', 'class', 'enum', 'struct', 'interface', 'delegate'])
 function title(item) {
-  return item.type !== 'property' && item.type !== 'method' && item.type !== 'event'
-    ? item.typename
-    : item.typename + ' ' + item.member
+  return CONTAINER_TYPES.has(item.type) ? item.typename : item.typename + ' ' + item.member
 }
 </script>
 
