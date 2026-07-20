@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+/* Class-based dark mode (toggled on <html>), replacing Quasar's $q.dark. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #353535;
+  --color-secondary: #494949c9;
+  --color-accent: #1364c4;
+  --color-rhino-dark: #1d1d1d;
+  --color-positive: #21ba45;
+  --color-negative: #c10015;
+  --color-info: #31ccec;
+  --color-warning: #f2c037;
+}
+
+/* Accent brightens in dark mode (parity with Quasar's --q-accent override). */
+.dark {
+  --color-accent: #2196f3;
+}
+
+@layer base {
+  html {
+    font-size: 15px;
+  }
+  body {
+    background: #ffffff;
+    color: #171717;
+    -webkit-font-smoothing: antialiased;
+  }
+  .dark body {
+    background: var(--color-rhino-dark);
+    color: #e6e6e6;
+  }
+  h1 {
+    font-size: 2.5em;
+    line-height: 3rem;
+  }
+}
+
+@layer components {
+  .routerlink {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .routerlink:hover {
+    text-decoration: underline;
+  }
+  .disabledLink {
+    color: var(--color-accent);
+  }
+  .toc-deprecated {
+    text-decoration: line-through;
+  }
+  /* Greyed-out deprecated/obsolete members (Quasar `disabled`). */
+  .is-disabled {
+    opacity: 0.6;
+  }
+}
