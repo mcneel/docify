@@ -11,6 +11,7 @@ import { useApiStore } from '@/stores/api.js'
 import { useSearchStore } from '@/stores/search.js'
 import { useSettingsStore } from '@/stores/settings.js'
 import SearchOverlay from '@/components/SearchOverlay.vue'
+import MemberSignature from '@/components/MemberSignature.vue'
 
 const info = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/api_info.json'), 'utf8'))
 const examples = JSON.parse(
@@ -138,6 +139,27 @@ describe('app renders and navigates (happy-dom mount)', () => {
     const links = wrapper.findAll('a')
     expect(links.length).toBeGreaterThan(0)
     expect(wrapper.text().toLowerCase()).toContain('brep')
+  })
+
+  // WWW-3482: modifiers must stay space-separated from the rest of the declaration.
+  it('keeps a space between modifiers and the return type', async () => {
+    const pinia = createPinia()
+    setActivePinia(pinia)
+    const router = createRouter({ history: createMemoryHistory('/'), routes })
+    const member = {
+      signature: 'MeshTopologyVertexList TopologyVertices',
+      modifiers: ['public'],
+      property: ['get'],
+      isProperty: true,
+    }
+    const wrapper = mount(MemberSignature, {
+      props: { member, baseUrl: '/' },
+      global: { plugins: [pinia, router] },
+    })
+    await settle()
+    const text = wrapper.text().replace(/\s+/g, ' ')
+    expect(text).toContain('public MeshTopologyVertexList')
+    expect(text).not.toContain('publicMeshTopologyVertexList')
   })
 
   it('dark mode toggles the html class', () => {

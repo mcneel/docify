@@ -59,9 +59,10 @@ function enumTitle(token) {
         <div v-if="member.signature" class="text-xl font-medium">Syntax:</div>
         <CodeCard :text="member.signature">
           <span :class="isDisabled ? 'is-disabled' : ''">
+            <!-- Trailing space lives in the expression; Vue's condense strips template whitespace. -->
             <template v-if="member.modifiers && member.modifiers.length"
-              >{{ member.modifiers.join(' ') }}
-            </template>
+              >{{ member.modifiers.join(' ') + ' ' }}</template
+            >
             <template v-for="(chunk, i) in chunks" :key="i">
               <template v-if="chunk.indent"><br /><span class="pl-6" /></template>
               <template v-if="chunk.break"><br /></template>
