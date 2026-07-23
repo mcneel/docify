@@ -139,6 +139,35 @@ describe('app renders and navigates (happy-dom mount)', () => {
     const links = wrapper.findAll('a')
     expect(links.length).toBeGreaterThan(0)
     expect(wrapper.text().toLowerCase()).toContain('brep')
+    // WWW-3482: clicking a result must not land on a URL ending with a bare '#'.
+    for (const a of links) {
+      expect((a.attributes('href') || '').endsWith('#')).toBe(false)
+    }
+  })
+
+  // WWW-3482: the "link to this member" button on a parenless member (property/field/
+  // event) must produce a clean, hashless permalink.
+  it('permalink button yields a hashless URL for a parenless member', async () => {
+    const pinia = createPinia()
+    setActivePinia(pinia)
+    const router = createRouter({ history: createMemoryHistory('/'), routes })
+    const member = {
+      signature: 'MeshTopologyVertexList TopologyVertices',
+      modifiers: ['public'],
+      property: ['get'],
+      isProperty: true,
+    }
+    router.push('/rhino.geometry.mesh/topologyvertices')
+    await router.isReady()
+    const wrapper = mount(MemberSignature, {
+      props: { member, baseUrl: '/' },
+      global: { plugins: [pinia, router] },
+    })
+    await settle()
+    await wrapper.find('button[aria-label="Link to this member"]').trigger('click')
+    await settle()
+    expect(router.currentRoute.value.hash).toBe('')
+    expect(router.currentRoute.value.fullPath.endsWith('#')).toBe(false)
   })
 
   // WWW-3482: modifiers must stay space-separated from the rest of the declaration.

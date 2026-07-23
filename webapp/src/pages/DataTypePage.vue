@@ -11,7 +11,7 @@ import {
 import { useApiStore } from '@/stores/api'
 import { useVersionFilter } from '@/composables/useVersionFilter'
 import { useDocumentMeta } from '@/composables/useDocumentMeta'
-import { memberName, signatureAnchorRef } from '@/utils/signatures'
+import { memberName, signatureHash } from '@/utils/signatures'
 import MemberSignature from '@/components/MemberSignature.vue'
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import Badge from '@/components/Badge.vue'
@@ -133,7 +133,7 @@ function memberClass(member) {
 }
 function memberTo(section, member) {
   if (section.type === 'values') return undefined
-  return props.baseUrl + member.path + '#' + signatureAnchorRef(member.signature)
+  return props.baseUrl + member.path + signatureHash(member.signature)
 }
 function isInherited(member) {
   return member.parent !== namespace.value + '.' + name.value
