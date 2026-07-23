@@ -1,5 +1,5 @@
 // Search index construction. Pure — ported from ViewModel.js#getSearchList.
-import { signatureAnchorRef, memberName } from './signatures.js'
+import { signatureHash, memberName } from './signatures.js'
 
 // Fuse.js options. NOTE: the old code had `{name:'member',weight:10}.name`, which
 // silently collapsed to the string "member" (default weight 1). Fixed here so the
@@ -37,7 +37,7 @@ export function buildSearchList(apiInfo) {
         node = { typename, member: chunks[chunks.length - 1] }
         if (items[items.length - 1].member === node.member) return
         node.type = 'property'
-        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${signatureAnchorRef(prop.signature)}`
+        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}${signatureHash(prop.signature)}`
         node.since = entry.since
         node.keywords = dataTypeUrl.replaceAll('.', ' ') + ' ' + node.member.toLowerCase()
         if (prop.summary) node.summary = prop.summary
@@ -50,7 +50,7 @@ export function buildSearchList(apiInfo) {
         chunks = chunks[0].split(' ')
         node = { typename, member: chunks[chunks.length - 1] }
         node.type = 'method'
-        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${signatureAnchorRef(method.signature)}`
+        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}${signatureHash(method.signature)}`
         node.since = method.since
         node.keywords = dataTypeUrl.replaceAll('.', ' ') + ' ' + node.member.toLowerCase()
         if (method.summary) node.summary = method.summary
@@ -63,7 +63,7 @@ export function buildSearchList(apiInfo) {
         node = { typename, member: chunks[chunks.length - 1] }
         if (items[items.length - 1].member === node.member) return
         node.type = 'event'
-        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${signatureAnchorRef(event.signature)}`
+        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}${signatureHash(event.signature)}`
         node.since = event.since
         node.keywords = dataTypeUrl.replaceAll('.', ' ') + ' ' + node.member.toLowerCase()
         if (event.summary) node.summary = event.summary
@@ -76,7 +76,7 @@ export function buildSearchList(apiInfo) {
         node = { typename, member: chunks[chunks.length - 1] }
         if (items[items.length - 1].member === node.member) return
         node.type = 'operator'
-        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${signatureAnchorRef(operator.signature)}`
+        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}${signatureHash(operator.signature)}`
         node.since = operator.since
         node.keywords = dataTypeUrl.replaceAll('.', ' ') + ' ' + node.member.toLowerCase()
         if (operator.summary) node.summary = operator.summary
@@ -91,7 +91,7 @@ export function buildSearchList(apiInfo) {
         node = { typename, member: memberName(field, 'fields') }
         if (items[items.length - 1].member === node.member) return
         node.type = 'field'
-        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}#${signatureAnchorRef(field.signature)}`
+        node.url = `${dataTypeUrl}/${node.member.toLowerCase()}${signatureHash(field.signature)}`
         node.since = field.since
         node.keywords = dataTypeUrl.replaceAll('.', ' ') + ' ' + node.member.toLowerCase()
         if (field.summary) node.summary = field.summary

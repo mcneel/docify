@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { parseSignatureChunks, signatureAnchorRef } from '@/utils/signatures.js'
+import { parseSignatureChunks, signatureHash } from '@/utils/signatures.js'
 import { useTypeLinks } from '@/composables/useTypeLinks.js'
 import Icon from './Icon.vue'
 import Badge from './Badge.vue'
@@ -22,7 +22,7 @@ const returnChunks = computed(() => chunks.value.filter((c) => c.isReturn))
 const isDisabled = computed(() => !!(props.member.deprecated || props.member.obsolete))
 
 function anchorTo() {
-  router.push({ hash: '#' + signatureAnchorRef(props.member.signature) })
+  router.push({ hash: signatureHash(props.member.signature) })
 }
 function isInternal(link) {
   return link && !link.toLowerCase().startsWith('http')

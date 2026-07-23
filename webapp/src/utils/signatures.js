@@ -49,6 +49,14 @@ export function signatureAnchorRef(signature) {
   return shortSignature(signature)[1].toLocaleLowerCase().replace(/\s/g, '')
 }
 
+// The "#anchor" URL suffix for a member, or '' when the signature has no overload
+// anchor (parenless members: properties, fields, events). Prevents a dangling '#'
+// on clean permalinks (WWW-3482).
+export function signatureHash(signature) {
+  const ref = signatureAnchorRef(signature)
+  return ref ? '#' + ref : ''
+}
+
 // Breaks a member signature into renderable chunks (return type, params, links).
 // `links` supplies { typeUrl, typeFromToken } (from useTypeLinks) to keep this pure.
 export function parseSignatureChunks(member, links) {

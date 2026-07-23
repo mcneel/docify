@@ -80,6 +80,17 @@ describe('real-data pipeline', () => {
     expect(fields.some((f) => f.member === 'true')).toBe(false)
     const inc = fields.find((f) => f.member === 'IncludeNormals')
     expect(inc).toBeTruthy()
-    expect(inc.url).toContain('/includenormals#')
+    expect(inc.url).toMatch(/\/includenormals$/)
+  })
+
+  it('parenless member URLs have no dangling "#" (WWW-3482)', () => {
+    const list = buildSearchList(info)
+    // No search URL should end with a bare '#' (the reported search-result bug).
+    expect(list.filter((i) => i.url.endsWith('#'))).toEqual([])
+    // Properties/fields/events get a clean, anchorless permalink...
+    const prop = list.find((i) => i.type === 'property')
+    expect(prop.url).not.toContain('#')
+    // ...while overloadable members (methods) keep their overload anchor.
+    expect(list.some((i) => i.type === 'method' && i.url.includes('#'))).toBe(true)
   })
 })

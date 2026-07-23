@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { sinceIsGreater, mostRecentSince, majorVersionList } from '@/utils/version.js'
-import { memberName, shortSignature, signatureAnchorRef } from '@/utils/signatures.js'
+import { memberName, shortSignature, signatureAnchorRef, signatureHash } from '@/utils/signatures.js'
 import { itemPath, memberUrl } from '@/utils/paths.js'
 import { refToPath } from '@/utils/sandcastle.js'
 import { buildTypeMap, getInheritance } from '@/utils/typemap.js'
@@ -55,6 +55,10 @@ describe('signatures', () => {
     expect(signatureAnchorRef('Foo(System.Double x, Rhino.Geometry.Point3d p)')).toBe(
       '(double,point3d)'
     )
+  })
+  it('signatureHash prefixes "#" for overloads, empty for parenless (WWW-3482)', () => {
+    expect(signatureHash('Foo(System.Double x)')).toBe('#(double)')
+    expect(signatureHash('MeshTopologyVertexList TopologyVertices')).toBe('')
   })
 })
 

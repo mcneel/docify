@@ -1,6 +1,6 @@
 // Navigation tree construction. Pure — ported from ViewModel.js (getTree/childTree/lazyChildForPath).
 import { itemPath } from './paths.js'
-import { memberName, shortSignature, signatureAnchorRef } from './signatures.js'
+import { memberName, shortSignature, signatureHash } from './signatures.js'
 import { collectMembers } from './members.js'
 
 // Builds the namespace -> type tree (types start with empty, lazily-loaded children)
@@ -77,7 +77,7 @@ export function buildMemberGroups(type, typeMap) {
             overloads.length > 1
               ? overloads.map((o) => ({
                   label: shortSignature(memberName(o, lc))[1],
-                  path: `${o.path}#${signatureAnchorRef(o.signature)}`,
+                  path: `${o.path}${signatureHash(o.signature)}`,
                   since: o.since,
                 }))
               : [],
