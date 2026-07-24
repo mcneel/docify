@@ -135,6 +135,18 @@ function memberTo(section, member) {
   if (section.type === 'values') return undefined
   return props.baseUrl + member.path + signatureHash(member.signature)
 }
+// Inherited BCL members (WWW-3489) link off-site to MS Learn; everything else is
+// an internal RouterLink (values are plain, non-clickable rows).
+function memberComponent(section, member) {
+  if (section.type === 'values') return 'div'
+  if (member.externalUrl) return 'a'
+  return RouterLink
+}
+function memberBindings(section, member) {
+  if (section.type === 'values') return {}
+  if (member.externalUrl) return { href: member.externalUrl, target: '_blank', rel: 'noopener' }
+  return { to: memberTo(section, member) }
+}
 function isInherited(member) {
   return member.parent !== namespace.value + '.' + name.value
 }
@@ -177,9 +189,20 @@ watch(memberSections, computeOpen)
     <p v-if="inheritance.length" class="italic">
       <span>Inheritence: </span>
       <template v-for="(item, index) in inheritance" :key="item.name">
-        <RouterLink v-if="item.link" class="routerlink" :to="baseUrl + item.link.toLowerCase()">{{
-          item.name
-        }}</RouterLink>
+        <a
+          v-if="item.external"
+          :href="item.external"
+          target="_blank"
+          rel="noopener"
+          class="routerlink"
+          >{{ item.name }}</a
+        >
+        <RouterLink
+          v-else-if="item.link"
+          class="routerlink"
+          :to="baseUrl + item.link.toLowerCase()"
+          >{{ item.name }}</RouterLink
+        >
         <span v-else>{{ item.name }}</span>
         <Icon name="arrow-forward" class="inline align-middle" />
         <span v-if="index === inheritance.length - 1">{{ name }}</span>
@@ -246,10 +269,10 @@ watch(memberSections, computeOpen)
         </AccordionHeader>
         <AccordionContent class="pl-4">
           <component
-            :is="section.type === 'values' ? 'div' : RouterLink"
+            :is="memberComponent(section, member)"
             v-for="(member, i) in section.items.filter(filterFunc)"
             :key="i"
-            :to="memberTo(section, member)"
+            v-bind="memberBindings(section, member)"
             class="flex flex-col gap-1 border-b border-neutral-100 px-2 py-2 md:flex-row dark:border-neutral-800"
             :class="memberClass(member)"
           >

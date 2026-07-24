@@ -33,6 +33,14 @@ $ api_docify.exe --name="RhinoCommon" "%RHINO4SRC%/rhinocommon/dotnet" "src/modu
 4. Run `CMD+Shift+P > Run Task > docify build` (or run the generator) to produce the JSON
 5. Run `cd webapp && yarn dev` to start the site
 
+## BCL base types
+
+Classes that derive from a .NET Base Class Library type (e.g. `RuntimeDocumentDataTable : Dictionary<object, object>`) inherit members the syntactic parser can't see. `build` also emits `bcl_api.json` next to `api_info.json`: it reflects the .NET reference assemblies (and their XML docs) via Roslyn to produce authoritative metadata for those base types, which the web app renders as inherited members linking to Microsoft Learn. It is generated, not hand-written — regenerate from committed data (no Rhino source needed) with:
+
+```shell
+$ dotnet run --project src -- bcl webapp/src/api_info.json webapp/src/bcl_api.json
+```
+
 ## Troubleshooting
 
 Some namespaces may need `methodgen` to be run on the source first before documentation can be extracted. You can do this by building Rhino from source.

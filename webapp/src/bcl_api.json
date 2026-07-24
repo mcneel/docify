@@ -1,0 +1,2327 @@
+{
+  "Attribute": {
+    "namespace": "System",
+    "name": "Attribute",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.attribute",
+    "properties": [
+      {
+        "signature": "object TypeId",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.attribute.typeid",
+        "summary": "When implemented in a derived class, gets a unique identifier for this Attribute.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "bool Equals(object obj)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.attribute.equals",
+        "summary": "Returns a value that indicates whether this instance is equal to a specified object."
+      },
+      {
+        "signature": "bool IsDefaultAttribute()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.attribute.isdefaultattribute",
+        "summary": "When overridden in a derived class, indicates whether the value of this instance is the default value for the derived class."
+      },
+      {
+        "signature": "bool Match(object obj)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.attribute.match",
+        "summary": "When overridden in a derived class, returns a value that indicates whether this instance equals a specified object."
+      },
+      {
+        "signature": "int GetHashCode()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.attribute.gethashcode",
+        "summary": "Returns the hash code for this instance."
+      }
+    ]
+  },
+  "CancelEventArgs": {
+    "namespace": "System.ComponentModel",
+    "name": "CancelEventArgs",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.canceleventargs",
+    "properties": [
+      {
+        "signature": "bool Cancel",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.canceleventargs.cancel",
+        "summary": "Gets or sets a value indicating whether the event should be canceled.",
+        "property": [
+          "get",
+          "set"
+        ]
+      }
+    ]
+  },
+  "Dictionary<T>": {
+    "namespace": "System.Collections.Generic",
+    "name": "Dictionary<TKey, TValue>",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2",
+    "properties": [
+      {
+        "signature": "IEqualityComparer<TKey> Comparer",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.comparer",
+        "summary": "Gets the IEqualityComparer that is used to determine equality of keys for the dictionary.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "KeyCollection Keys",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.keys",
+        "summary": "Gets a collection containing the keys in the Dictionary.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "TValue this[TKey key]",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.item",
+        "summary": "Gets or sets the value associated with the specified key."
+      },
+      {
+        "signature": "ValueCollection Values",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.values",
+        "summary": "Gets a collection containing the values in the Dictionary.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int Count",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.count",
+        "summary": "Gets the number of key/value pairs contained in the Dictionary.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Enumerator GetEnumerator()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.getenumerator",
+        "summary": "Returns an enumerator that iterates through the Dictionary."
+      },
+      {
+        "signature": "bool ContainsKey(TKey key)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containskey",
+        "summary": "Determines whether the Dictionary contains the specified key."
+      },
+      {
+        "signature": "bool ContainsValue(TValue value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.containsvalue",
+        "summary": "Determines whether the Dictionary contains a specific value."
+      },
+      {
+        "signature": "bool Remove(TKey key)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.remove",
+        "summary": "Removes the value with the specified key from the Dictionary."
+      },
+      {
+        "signature": "bool Remove(TKey key, out TValue value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.remove",
+        "summary": "Removes the value with the specified key from the Dictionary, and copies the element to the value parameter."
+      },
+      {
+        "signature": "bool TryAdd(TKey key, TValue value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.tryadd",
+        "summary": "Attempts to add the specified key and value to the dictionary."
+      },
+      {
+        "signature": "bool TryGetValue(TKey key, out TValue value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trygetvalue",
+        "summary": "Gets the value associated with the specified key."
+      },
+      {
+        "signature": "int EnsureCapacity(int capacity)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.ensurecapacity",
+        "summary": "Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage."
+      },
+      {
+        "signature": "void Add(TKey key, TValue value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add",
+        "summary": "Adds the specified key and value to the dictionary."
+      },
+      {
+        "signature": "void Clear()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.clear",
+        "summary": "Removes all keys and values from the Dictionary."
+      },
+      {
+        "signature": "void OnDeserialization(object sender)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.ondeserialization",
+        "summary": "Implements the ISerializable interface and raises the deserialization event when the deserialization is complete."
+      },
+      {
+        "signature": "void TrimExcess()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trimexcess",
+        "summary": "Sets the capacity of this dictionary to what it would be if it had been originally initialized with all its entries."
+      },
+      {
+        "signature": "void TrimExcess(int capacity)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.trimexcess",
+        "summary": "Sets the capacity of this dictionary to hold up a specified number of entries without any further expansion of its backing storage."
+      }
+    ]
+  },
+  "DynamicObject": {
+    "namespace": "System.Dynamic",
+    "name": "DynamicObject",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject",
+    "methods": [
+      {
+        "signature": "DynamicMetaObject GetMetaObject(Expression parameter)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.getmetaobject",
+        "summary": "Provides a DynamicMetaObject that dispatches to the dynamic virtual methods. The object can be encapsulated inside another DynamicMetaObject to provide custom behavior for individual actions. This method supports the Dynamic Language Runtime infrastructure for language implementers and it is not intended to be used directly from your code."
+      },
+      {
+        "signature": "IEnumerable<string> GetDynamicMemberNames()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.getdynamicmembernames",
+        "summary": "Returns the enumeration of all dynamic member names."
+      },
+      {
+        "signature": "bool TryBinaryOperation(BinaryOperationBinder binder, object arg, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trybinaryoperation",
+        "summary": "Provides implementation for binary operations. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations such as addition and multiplication."
+      },
+      {
+        "signature": "bool TryConvert(ConvertBinder binder, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.tryconvert",
+        "summary": "Provides implementation for type conversion operations. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations that convert an object from one type to another."
+      },
+      {
+        "signature": "bool TryCreateInstance(CreateInstanceBinder binder, object[] args, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trycreateinstance",
+        "summary": "Provides the implementation for operations that initialize a new instance of a dynamic object. This method is not intended for use in C# or Visual Basic."
+      },
+      {
+        "signature": "bool TryDeleteIndex(DeleteIndexBinder binder, object[] indexes)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trydeleteindex",
+        "summary": "Provides the implementation for operations that delete an object by index. This method is not intended for use in C# or Visual Basic."
+      },
+      {
+        "signature": "bool TryDeleteMember(DeleteMemberBinder binder)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trydeletemember",
+        "summary": "Provides the implementation for operations that delete an object member. This method is not intended for use in C# or Visual Basic."
+      },
+      {
+        "signature": "bool TryGetIndex(GetIndexBinder binder, object[] indexes, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trygetindex",
+        "summary": "Provides the implementation for operations that get a value by index. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for indexing operations."
+      },
+      {
+        "signature": "bool TryGetMember(GetMemberBinder binder, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trygetmember",
+        "summary": "Provides the implementation for operations that get member values. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations such as getting a value for a property."
+      },
+      {
+        "signature": "bool TryInvoke(InvokeBinder binder, object[] args, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.tryinvoke",
+        "summary": "Provides the implementation for operations that invoke an object. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations such as invoking an object or a delegate."
+      },
+      {
+        "signature": "bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.tryinvokemember",
+        "summary": "Provides the implementation for operations that invoke a member. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations such as calling a method."
+      },
+      {
+        "signature": "bool TrySetIndex(SetIndexBinder binder, object[] indexes, object value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trysetindex",
+        "summary": "Provides the implementation for operations that set a value by index. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations that access objects by a specified index."
+      },
+      {
+        "signature": "bool TrySetMember(SetMemberBinder binder, object value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.trysetmember",
+        "summary": "Provides the implementation for operations that set member values. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations such as setting a value for a property."
+      },
+      {
+        "signature": "bool TryUnaryOperation(UnaryOperationBinder binder, out object result)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject.tryunaryoperation",
+        "summary": "Provides implementation for unary operations. Classes derived from the DynamicObject class can override this method to specify dynamic behavior for operations such as negation, increment, or decrement."
+      }
+    ]
+  },
+  "Exception": {
+    "namespace": "System",
+    "name": "Exception",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception",
+    "properties": [
+      {
+        "signature": "Exception InnerException",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.innerexception",
+        "summary": "Gets the Exception instance that caused the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "IDictionary Data",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.data",
+        "summary": "Gets a collection of key/value pairs that provide additional user-defined information about the exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "MethodBase TargetSite",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.targetsite",
+        "summary": "Gets the method that throws the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int HResult",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.hresult",
+        "summary": "Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string HelpLink",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.helplink",
+        "summary": "Gets or sets a link to the help file associated with this exception.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string Message",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.message",
+        "summary": "Gets a message that describes the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "string Source",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.source",
+        "summary": "Gets or sets the name of the application or the object that causes the error.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string StackTrace",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.stacktrace",
+        "summary": "Gets a string representation of the immediate frames on the call stack.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Exception GetBaseException()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.getbaseexception",
+        "summary": "When overridden in a derived class, returns the Exception that is the root cause of one or more subsequent exceptions."
+      },
+      {
+        "signature": "Type GetType()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.gettype",
+        "summary": "Gets the runtime type of the current instance."
+      },
+      {
+        "signature": "string ToString()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.tostring",
+        "summary": "Creates and returns a string representation of the current exception."
+      }
+    ]
+  },
+  "IOException": {
+    "namespace": "System.IO",
+    "name": "IOException",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.ioexception",
+    "properties": [
+      {
+        "signature": "Exception InnerException",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.innerexception",
+        "summary": "Gets the Exception instance that caused the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "IDictionary Data",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.data",
+        "summary": "Gets a collection of key/value pairs that provide additional user-defined information about the exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "MethodBase TargetSite",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.targetsite",
+        "summary": "Gets the method that throws the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int HResult",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.hresult",
+        "summary": "Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string HelpLink",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.helplink",
+        "summary": "Gets or sets a link to the help file associated with this exception.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string Message",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.message",
+        "summary": "Gets a message that describes the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "string Source",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.source",
+        "summary": "Gets or sets the name of the application or the object that causes the error.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string StackTrace",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.stacktrace",
+        "summary": "Gets a string representation of the immediate frames on the call stack.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Exception GetBaseException()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.getbaseexception",
+        "summary": "When overridden in a derived class, returns the Exception that is the root cause of one or more subsequent exceptions."
+      },
+      {
+        "signature": "Type GetType()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.gettype",
+        "summary": "Gets the runtime type of the current instance."
+      },
+      {
+        "signature": "string ToString()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.tostring",
+        "summary": "Creates and returns a string representation of the current exception."
+      }
+    ]
+  },
+  "InvalidOperationException": {
+    "namespace": "System",
+    "name": "InvalidOperationException",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.invalidoperationexception",
+    "properties": [
+      {
+        "signature": "Exception InnerException",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.innerexception",
+        "summary": "Gets the Exception instance that caused the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "IDictionary Data",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.data",
+        "summary": "Gets a collection of key/value pairs that provide additional user-defined information about the exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "MethodBase TargetSite",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.targetsite",
+        "summary": "Gets the method that throws the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int HResult",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.hresult",
+        "summary": "Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string HelpLink",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.helplink",
+        "summary": "Gets or sets a link to the help file associated with this exception.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string Message",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.message",
+        "summary": "Gets a message that describes the current exception.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "string Source",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.source",
+        "summary": "Gets or sets the name of the application or the object that causes the error.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "string StackTrace",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.stacktrace",
+        "summary": "Gets a string representation of the immediate frames on the call stack.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Exception GetBaseException()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.getbaseexception",
+        "summary": "When overridden in a derived class, returns the Exception that is the root cause of one or more subsequent exceptions."
+      },
+      {
+        "signature": "Type GetType()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.gettype",
+        "summary": "Gets the runtime type of the current instance."
+      },
+      {
+        "signature": "string ToString()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.exception.tostring",
+        "summary": "Creates and returns a string representation of the current exception."
+      }
+    ]
+  },
+  "List<T>": {
+    "namespace": "System.Collections.Generic",
+    "name": "List<T>",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1",
+    "properties": [
+      {
+        "signature": "T this[int index]",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.item",
+        "summary": "Gets or sets the element at the specified index."
+      },
+      {
+        "signature": "int Capacity",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.capacity",
+        "summary": "Gets or sets the total number of elements the internal data structure can hold without resizing.",
+        "property": [
+          "get",
+          "set"
+        ]
+      },
+      {
+        "signature": "int Count",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.count",
+        "summary": "Gets the number of elements contained in the List.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Enumerator GetEnumerator()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.getenumerator",
+        "summary": "Returns an enumerator that iterates through the List."
+      },
+      {
+        "signature": "List<T> FindAll(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findall",
+        "summary": "Retrieves all the elements that match the conditions defined by the specified predicate."
+      },
+      {
+        "signature": "List<T> GetRange(int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.getrange",
+        "summary": "Creates a shallow copy of a range of elements in the source List."
+      },
+      {
+        "signature": "List<T> Slice(int start, int length)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.slice",
+        "summary": "Creates a shallow copy of a range of elements in the source List."
+      },
+      {
+        "signature": "List<TOutput> ConvertAll(Converter<T, TOutput> converter)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.convertall",
+        "summary": "Converts the elements in the current List to another type, and returns a list containing the converted elements."
+      },
+      {
+        "signature": "ReadOnlyCollection<T> AsReadOnly()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.asreadonly",
+        "summary": "Returns a read-only ReadOnlyCollection wrapper for the current collection."
+      },
+      {
+        "signature": "T Find(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.find",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire List."
+      },
+      {
+        "signature": "T FindLast(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findlast",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire List."
+      },
+      {
+        "signature": "T[] ToArray()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.toarray",
+        "summary": "Copies the elements of the List to a new array."
+      },
+      {
+        "signature": "bool Contains(T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.contains",
+        "summary": "Determines whether an element is in the List."
+      },
+      {
+        "signature": "bool Exists(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.exists",
+        "summary": "Determines whether the List contains elements that match the conditions defined by the specified predicate."
+      },
+      {
+        "signature": "bool Remove(T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.remove",
+        "summary": "Removes the first occurrence of a specific object from the List."
+      },
+      {
+        "signature": "bool TrueForAll(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.trueforall",
+        "summary": "Determines whether every element in the List matches the conditions defined by the specified predicate."
+      },
+      {
+        "signature": "int BinarySearch(T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.binarysearch",
+        "summary": "Searches the entire sorted List for an element using the default comparer and returns the zero-based index of the element."
+      },
+      {
+        "signature": "int BinarySearch(T item, IComparer<T> comparer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.binarysearch",
+        "summary": "Searches the entire sorted List for an element using the specified comparer and returns the zero-based index of the element."
+      },
+      {
+        "signature": "int BinarySearch(int index, int count, T item, IComparer<T> comparer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.binarysearch",
+        "summary": "Searches a range of elements in the sorted List for an element using the specified comparer and returns the zero-based index of the element."
+      },
+      {
+        "signature": "int EnsureCapacity(int capacity)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.ensurecapacity",
+        "summary": "Ensures that the capacity of this list is at least the specified capacity. If the current capacity is less than capacity, it is successively increased to twice the current capacity until it is at least the specified capacity."
+      },
+      {
+        "signature": "int FindIndex(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findindex",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire List."
+      },
+      {
+        "signature": "int FindIndex(int startIndex, Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findindex",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the List that extends from the specified index to the last element."
+      },
+      {
+        "signature": "int FindIndex(int startIndex, int count, Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findindex",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the List that starts at the specified index and contains the specified number of elements."
+      },
+      {
+        "signature": "int FindLastIndex(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findlastindex",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire List."
+      },
+      {
+        "signature": "int FindLastIndex(int startIndex, Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findlastindex",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the List that extends from the first element to the specified index."
+      },
+      {
+        "signature": "int FindLastIndex(int startIndex, int count, Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.findlastindex",
+        "summary": "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the List that contains the specified number of elements and ends at the specified index."
+      },
+      {
+        "signature": "int IndexOf(T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.indexof",
+        "summary": "Searches for the specified object and returns the zero-based index of the first occurrence within the entire List."
+      },
+      {
+        "signature": "int IndexOf(T item, int index)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.indexof",
+        "summary": "Searches for the specified object and returns the zero-based index of the first occurrence within the range of elements in the List that extends from the specified index to the last element."
+      },
+      {
+        "signature": "int IndexOf(T item, int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.indexof",
+        "summary": "Searches for the specified object and returns the zero-based index of the first occurrence within the range of elements in the List that starts at the specified index and contains the specified number of elements."
+      },
+      {
+        "signature": "int LastIndexOf(T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.lastindexof",
+        "summary": "Searches for the specified object and returns the zero-based index of the last occurrence within the entire List."
+      },
+      {
+        "signature": "int LastIndexOf(T item, int index)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.lastindexof",
+        "summary": "Searches for the specified object and returns the zero-based index of the last occurrence within the range of elements in the List that extends from the first element to the specified index."
+      },
+      {
+        "signature": "int LastIndexOf(T item, int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.lastindexof",
+        "summary": "Searches for the specified object and returns the zero-based index of the last occurrence within the range of elements in the List that contains the specified number of elements and ends at the specified index."
+      },
+      {
+        "signature": "int RemoveAll(Predicate<T> match)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removeall",
+        "summary": "Removes all the elements that match the conditions defined by the specified predicate."
+      },
+      {
+        "signature": "void Add(T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.add",
+        "summary": "Adds an object to the end of the List."
+      },
+      {
+        "signature": "void AddRange(IEnumerable<T> collection)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.addrange",
+        "summary": "Adds the elements of the specified collection to the end of the List."
+      },
+      {
+        "signature": "void Clear()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.clear",
+        "summary": "Removes all elements from the List."
+      },
+      {
+        "signature": "void CopyTo(T[] array)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.copyto",
+        "summary": "Copies the entire List to a compatible one-dimensional array, starting at the beginning of the target array."
+      },
+      {
+        "signature": "void CopyTo(T[] array, int arrayIndex)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.copyto",
+        "summary": "Copies the entire List to a compatible one-dimensional array, starting at the specified index of the target array."
+      },
+      {
+        "signature": "void CopyTo(int index, T[] array, int arrayIndex, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.copyto",
+        "summary": "Copies a range of elements from the List to a compatible one-dimensional array, starting at the specified index of the target array."
+      },
+      {
+        "signature": "void ForEach(Action<T> action)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.foreach",
+        "summary": "Performs the specified action on each element of the List."
+      },
+      {
+        "signature": "void Insert(int index, T item)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.insert",
+        "summary": "Inserts an element into the List at the specified index."
+      },
+      {
+        "signature": "void InsertRange(int index, IEnumerable<T> collection)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.insertrange",
+        "summary": "Inserts the elements of a collection into the List at the specified index."
+      },
+      {
+        "signature": "void RemoveAt(int index)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removeat",
+        "summary": "Removes the element at the specified index of the List."
+      },
+      {
+        "signature": "void RemoveRange(int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.removerange",
+        "summary": "Removes a range of elements from the List."
+      },
+      {
+        "signature": "void Reverse()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.reverse",
+        "summary": "Reverses the order of the elements in the entire List."
+      },
+      {
+        "signature": "void Reverse(int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.reverse",
+        "summary": "Reverses the order of the elements in the specified range."
+      },
+      {
+        "signature": "void Sort()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort",
+        "summary": "Sorts the elements in the entire List using the default comparer."
+      },
+      {
+        "signature": "void Sort(Comparison<T> comparison)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort",
+        "summary": "Sorts the elements in the entire List using the specified Comparison."
+      },
+      {
+        "signature": "void Sort(IComparer<T> comparer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort",
+        "summary": "Sorts the elements in the entire List using the specified comparer."
+      },
+      {
+        "signature": "void Sort(int index, int count, IComparer<T> comparer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.sort",
+        "summary": "Sorts the elements in a range of elements in List using the specified comparer."
+      },
+      {
+        "signature": "void TrimExcess()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.trimexcess",
+        "summary": "Sets the capacity to the actual number of elements in the List, if that number is less than a threshold value."
+      }
+    ]
+  },
+  "SHA1": {
+    "namespace": "System.Security.Cryptography",
+    "name": "SHA1",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha1",
+    "properties": [
+      {
+        "signature": "bool CanReuseTransform",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.canreusetransform",
+        "summary": "Gets a value indicating whether the current transform can be reused.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "bool CanTransformMultipleBlocks",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.cantransformmultipleblocks",
+        "summary": "When overridden in a derived class, gets a value indicating whether multiple blocks can be transformed.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "byte[] Hash",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.hash",
+        "summary": "Gets the value of the computed hash code.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int HashSize",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.hashsize",
+        "summary": "Gets the size, in bits, of the computed hash code.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int InputBlockSize",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.inputblocksize",
+        "summary": "When overridden in a derived class, gets the input block size.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "int OutputBlockSize",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.outputblocksize",
+        "summary": "When overridden in a derived class, gets the output block size.",
+        "property": [
+          "get"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Task<byte[]> ComputeHashAsync(Stream inputStream, CancellationToken cancellationToken)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.computehashasync",
+        "summary": "Asynchronously computes the hash value for the specified Stream object."
+      },
+      {
+        "signature": "bool TryComputeHash(ReadOnlySpan<byte> source, Span<byte> destination, out int bytesWritten)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.trycomputehash",
+        "summary": "Attempts to compute the hash value for the specified byte array."
+      },
+      {
+        "signature": "bool TryHashFinal(Span<byte> destination, out int bytesWritten)",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.tryhashfinal",
+        "summary": "Attempts to finalize the hash computation after the last data is processed by the hash algorithm."
+      },
+      {
+        "signature": "byte[] ComputeHash(Stream inputStream)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.computehash",
+        "summary": "Computes the hash value for the specified Stream object."
+      },
+      {
+        "signature": "byte[] ComputeHash(byte[] buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.computehash",
+        "summary": "Computes the hash value for the specified byte array."
+      },
+      {
+        "signature": "byte[] ComputeHash(byte[] buffer, int offset, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.computehash",
+        "summary": "Computes the hash value for the specified region of the specified byte array."
+      },
+      {
+        "signature": "byte[] HashFinal()",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.hashfinal",
+        "summary": "When overridden in a derived class, finalizes the hash computation after the last data is processed by the cryptographic hash algorithm."
+      },
+      {
+        "signature": "byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.transformfinalblock",
+        "summary": "Computes the hash value for the specified region of the specified byte array."
+      },
+      {
+        "signature": "int TransformBlock(byte[] inputBuffer, int inputOffset, int inputCount, byte[] outputBuffer, int outputOffset)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.transformblock",
+        "summary": "Computes the hash value for the specified region of the input byte array and copies the specified region of the input byte array to the specified region of the output byte array."
+      },
+      {
+        "signature": "void Clear()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.clear",
+        "summary": "Releases all resources used by the HashAlgorithm class."
+      },
+      {
+        "signature": "void Dispose()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.dispose",
+        "summary": "Releases all resources used by the current instance of the HashAlgorithm class."
+      },
+      {
+        "signature": "void Dispose(bool disposing)",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.dispose",
+        "summary": "Releases the unmanaged resources used by the HashAlgorithm and optionally releases the managed resources."
+      },
+      {
+        "signature": "void HashCore(ReadOnlySpan<byte> source)",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.hashcore",
+        "summary": "Routes data written to the object into the hash algorithm for computing the hash."
+      },
+      {
+        "signature": "void HashCore(byte[] array, int ibStart, int cbSize)",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.hashcore",
+        "summary": "When overridden in a derived class, routes data written to the object into the hash algorithm for computing the hash."
+      },
+      {
+        "signature": "void Initialize()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.initialize",
+        "summary": "Resets the hash algorithm to its initial state."
+      }
+    ],
+    "fields": [
+      {
+        "signature": "int HashSizeValue",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.hashsizevalue",
+        "summary": "Represents the size, in bits, of the computed hash code."
+      },
+      {
+        "signature": "int State",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm.state",
+        "summary": "Represents the state of the hash computation."
+      }
+    ]
+  },
+  "TextWriter": {
+    "namespace": "System.IO",
+    "name": "TextWriter",
+    "dataType": "class",
+    "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter",
+    "properties": [
+      {
+        "signature": "Encoding Encoding",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.encoding",
+        "summary": "When overridden in a derived class, returns the character encoding in which the output is written.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "IFormatProvider FormatProvider",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.formatprovider",
+        "summary": "Gets an object that controls formatting.",
+        "property": [
+          "get"
+        ]
+      },
+      {
+        "signature": "string NewLine",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.newline",
+        "summary": "Gets or sets the line terminator string used by the current TextWriter.",
+        "property": [
+          "get",
+          "set"
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "MarshalByRefObject MemberwiseClone(bool cloneIdentity)",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.marshalbyrefobject.memberwiseclone",
+        "summary": "Creates a shallow copy of the current MarshalByRefObject object."
+      },
+      {
+        "signature": "Task FlushAsync()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.flushasync",
+        "summary": "Asynchronously clears all buffers for the current writer and causes any buffered data to be written to the underlying device."
+      },
+      {
+        "signature": "Task FlushAsync(CancellationToken cancellationToken)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.flushasync",
+        "summary": "Asynchronously clears all buffers for the current writer and causes any buffered data to be written to the underlying device."
+      },
+      {
+        "signature": "Task WriteAsync(ReadOnlyMemory<char> buffer, CancellationToken cancellationToken)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeasync",
+        "summary": "Asynchronously writes a character memory region to the text stream."
+      },
+      {
+        "signature": "Task WriteAsync(StringBuilder value, CancellationToken cancellationToken)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeasync",
+        "summary": "Asynchronously writes a string builder to the text stream."
+      },
+      {
+        "signature": "Task WriteAsync(char value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeasync",
+        "summary": "Writes a character to the text stream asynchronously."
+      },
+      {
+        "signature": "Task WriteAsync(char[] buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeasync",
+        "summary": "Writes a character array to the text stream asynchronously."
+      },
+      {
+        "signature": "Task WriteAsync(char[] buffer, int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeasync",
+        "summary": "Writes a subarray of characters to the text stream asynchronously."
+      },
+      {
+        "signature": "Task WriteAsync(string value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeasync",
+        "summary": "Writes a string to the text stream asynchronously."
+      },
+      {
+        "signature": "Task WriteLineAsync()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes a line terminator to the text stream."
+      },
+      {
+        "signature": "Task WriteLineAsync(ReadOnlyMemory<char> buffer, CancellationToken cancellationToken)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes the text representation of a character memory region to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "Task WriteLineAsync(StringBuilder value, CancellationToken cancellationToken)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes the text representation of a string builder to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "Task WriteLineAsync(char value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes a character to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "Task WriteLineAsync(char[] buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes an array of characters to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "Task WriteLineAsync(char[] buffer, int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes a subarray of characters to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "Task WriteLineAsync(string value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writelineasync",
+        "summary": "Asynchronously writes a string to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "ValueTask DisposeAsync()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.disposeasync",
+        "summary": "Asynchronously releases all resources used by the TextWriter object."
+      },
+      {
+        "signature": "void Close()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.close",
+        "summary": "Closes the current writer and releases any system resources associated with the writer."
+      },
+      {
+        "signature": "void Dispose()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.dispose",
+        "summary": "Releases all resources used by the TextWriter object."
+      },
+      {
+        "signature": "void Dispose(bool disposing)",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.dispose",
+        "summary": "Releases the unmanaged resources used by the TextWriter and optionally releases the managed resources."
+      },
+      {
+        "signature": "void Flush()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.flush",
+        "summary": "Clears all buffers for the current writer and causes any buffered data to be written to the underlying device."
+      },
+      {
+        "signature": "void Write(ReadOnlySpan<char> buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a character span to the text stream."
+      },
+      {
+        "signature": "void Write(StringBuilder value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a string builder to the text stream."
+      },
+      {
+        "signature": "void Write(bool value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of a Boolean value to the text stream."
+      },
+      {
+        "signature": "void Write(char value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a character to the text stream."
+      },
+      {
+        "signature": "void Write(char[] buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a character array to the text stream."
+      },
+      {
+        "signature": "void Write(char[] buffer, int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a subarray of characters to the text stream."
+      },
+      {
+        "signature": "void Write(decimal value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of a decimal value to the text stream."
+      },
+      {
+        "signature": "void Write(double value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of an 8-byte floating-point value to the text stream."
+      },
+      {
+        "signature": "void Write(float value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of a 4-byte floating-point value to the text stream."
+      },
+      {
+        "signature": "void Write(int value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of a 4-byte signed integer to the text stream."
+      },
+      {
+        "signature": "void Write(long value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of an 8-byte signed integer to the text stream."
+      },
+      {
+        "signature": "void Write(object value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of an object to the text stream by calling the ToString method on that object."
+      },
+      {
+        "signature": "void Write(string format, object arg0)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a formatted string to the text stream, using the same semantics as the Format method."
+      },
+      {
+        "signature": "void Write(string format, object arg0, object arg1)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a formatted string to the text stream using the same semantics as the Format method."
+      },
+      {
+        "signature": "void Write(string format, object arg0, object arg1, object arg2)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a formatted string to the text stream, using the same semantics as the Format method."
+      },
+      {
+        "signature": "void Write(string format, params object[] arg)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a formatted string to the text stream, using the same semantics as the Format method."
+      },
+      {
+        "signature": "void Write(string value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes a string to the text stream."
+      },
+      {
+        "signature": "void Write(uint value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of a 4-byte unsigned integer to the text stream."
+      },
+      {
+        "signature": "void Write(ulong value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.write",
+        "summary": "Writes the text representation of an 8-byte unsigned integer to the text stream."
+      },
+      {
+        "signature": "void WriteLine()",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes a line terminator to the text stream."
+      },
+      {
+        "signature": "void WriteLine(ReadOnlySpan<char> buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a character span to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(StringBuilder value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a string builder to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(bool value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a Boolean value to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(char value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes a character to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(char[] buffer)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes an array of characters to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(char[] buffer, int index, int count)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes a subarray of characters to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(decimal value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a decimal value to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(double value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a 8-byte floating-point value to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(float value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a 4-byte floating-point value to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(int value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a 4-byte signed integer to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(long value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of an 8-byte signed integer to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(object value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of an object to the text stream, by calling the ToString method on that object, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(string format, object arg0)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes a formatted string and a new line to the text stream, using the same semantics as the Format method."
+      },
+      {
+        "signature": "void WriteLine(string format, object arg0, object arg1)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes a formatted string and a new line to the text stream, using the same semantics as the Format method."
+      },
+      {
+        "signature": "void WriteLine(string format, object arg0, object arg1, object arg2)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes out a formatted string and a new line to the text stream, using the same semantics as Format."
+      },
+      {
+        "signature": "void WriteLine(string format, params object[] arg)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes out a formatted string and a new line to the text stream, using the same semantics as Format."
+      },
+      {
+        "signature": "void WriteLine(string value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes a string to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(uint value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of a 4-byte unsigned integer to the text stream, followed by a line terminator."
+      },
+      {
+        "signature": "void WriteLine(ulong value)",
+        "modifiers": [
+          "public"
+        ],
+        "protected": false,
+        "virtual": true,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.writeline",
+        "summary": "Writes the text representation of an 8-byte unsigned integer to the text stream, followed by a line terminator."
+      }
+    ],
+    "fields": [
+      {
+        "signature": "char[] CoreNewLine",
+        "modifiers": [
+          "protected"
+        ],
+        "protected": true,
+        "virtual": false,
+        "docsUrl": "https://learn.microsoft.com/en-us/dotnet/api/system.io.textwriter.corenewline",
+        "summary": "Stores the newline characters used for this TextWriter."
+      }
+    ]
+  }
+}

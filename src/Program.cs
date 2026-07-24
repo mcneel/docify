@@ -20,6 +20,7 @@ namespace Docify
     Usage:
       {name} init [<project_name>] [--target=<out_dir>] [--source=<source_dir>] [--examples=<examples_dir>] [--force]
       {name} build
+      {name} bcl <api_info> <output>
 
     Options:
       -h --help                 Show this help
@@ -63,6 +64,14 @@ namespace Docify
                 // build the docs data file
                 Console.WriteLine($"Building docs:\n{source} => {outputDir}");
                 Docify(source, examplesDir, outputDir);
+            }
+            else if (inputs["bcl"].IsTrue)
+            {
+                // Generate BCL base-type metadata from the .NET reference assemblies
+                // (WWW-3489) without needing a full source build.
+                Parse.BclMetadata.RunStandalone(
+                    inputs["<api_info>"].Value.ToString(),
+                    inputs["<output>"].Value.ToString());
             }
         }
 
@@ -177,6 +186,9 @@ namespace Docify
             //MarkdownBuilder.WriteTypes(allTypes, markdownOutput);
             string outputDataFile = Path.Combine(outputDir, ProgramConfigs.OutputDataFile);
             JsonBuilder.Write(allNamespaces, publicTypesByNamespace, allDelegates, outputDataFile);
+            // Emit metadata for BCL base types the web app can't resolve on its own
+            // (WWW-3489), derived from the data just written. Non-fatal on failure.
+            BclMetadata.GenerateFromApiInfo(outputDataFile, Path.Combine(outputDir, "bcl_api.json"));
             // write the samples if sample base dir is provided
             if (!string.IsNullOrWhiteSpace(examplesDir) && Directory.Exists(examplesDir))
             {
