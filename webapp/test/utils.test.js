@@ -5,6 +5,7 @@ import { itemPath, memberUrl } from '@/utils/paths.js'
 import { refToPath } from '@/utils/sandcastle.js'
 import { buildTypeMap, getInheritance } from '@/utils/typemap.js'
 import { collectMembers } from '@/utils/members.js'
+import { lookupBcl } from '@/utils/bcl.js'
 
 describe('version.sinceIsGreater', () => {
   it('strictly greater', () => {
@@ -131,5 +132,77 @@ describe('members.collectMembers does not mutate source', () => {
   })
   it('inheritance chain resolves', () => {
     expect(getInheritance(raw[1], typeMap).map((n) => n.name)).toEqual(['NS.Base'])
+  })
+})
+
+describe('BCL base types (WWW-3489)', () => {
+  it('lookupBcl resolves known bases, null otherwise', () => {
+    expect(lookupBcl('NotABclType')).toBeNull()
+    const dict = lookupBcl('Dictionary<T>')
+    expect(dict.namespace).toBe('System.Collections.Generic')
+    expect(dict.docsUrl).toContain('system.collections.generic.dictionary-2')
+    // members carry their own MS Learn page URL
+    const containsKey = dict.methods.find((m) => m.signature.startsWith('bool ContainsKey'))
+    expect(containsKey.docsUrl).toMatch(/dictionary-2\.containskey$/)
+    const indexer = dict.properties.find((p) => p.signature.includes('this['))
+    expect(indexer.docsUrl).toMatch(/dictionary-2\.item$/)
+  })
+
+  it('getInheritance links a BCL base externally (Dictionary)', () => {
+    const raw = [
+      {
+        namespace: 'NS',
+        name: 'RuntimeTable',
+        dataType: 'class',
+        baseclass: 'Dictionary<object, object>',
+        methods: [{ signature: 'void Own()' }],
+      },
+    ]
+    const chain = getInheritance(raw[0], buildTypeMap(raw))
+    expect(chain).toHaveLength(1)
+    // chain shows the original closed-generic name but links out to MS Learn
+    expect(chain[0].name).toBe('Dictionary<object, object>')
+    expect(chain[0].external).toMatch(/^https:\/\/learn\.microsoft\.com/)
+    expect(chain[0].item).toBeTruthy()
+    expect(chain[0].link).toBeUndefined() // not an internal route
+  })
+
+  it('collectMembers lists inherited BCL members with external links (no mutation)', () => {
+    const raw = [
+      {
+        namespace: 'Rhino.DocObjects.Tables',
+        name: 'RuntimeDocumentDataTable',
+        dataType: 'class',
+        baseclass: 'Dictionary<object, object>',
+        methods: [{ signature: 'void Own()' }],
+      },
+    ]
+    const methods = collectMembers(raw[0], 'methods', buildTypeMap(raw), true)
+    const containsKey = methods.find((m) => m.signature.startsWith('bool ContainsKey'))
+    expect(containsKey).toBeTruthy()
+    expect(containsKey.inherited).toBe(true)
+    expect(containsKey.externalUrl).toMatch(/dictionary-2\.containskey$/)
+    expect(containsKey.parent).toBe('System.Collections.Generic.Dictionary<TKey, TValue>')
+    // own member is not flagged inherited and has no external link
+    const own = methods.find((m) => m.signature === 'void Own()')
+    expect(own.inherited).toBeUndefined()
+    expect(own.externalUrl).toBeUndefined()
+    // the shared registry member object must not be mutated by collection
+    expect(lookupBcl('Dictionary<T>').methods[0].inherited).toBeUndefined()
+    expect(lookupBcl('Dictionary<T>').methods[0].parent).toBeUndefined()
+  })
+
+  it('skips inherited BCL members when includeInherited is false', () => {
+    const raw = [
+      {
+        namespace: 'NS',
+        name: 'T',
+        dataType: 'class',
+        baseclass: 'List<Thing>',
+        methods: [{ signature: 'void Own()' }],
+      },
+    ]
+    const methods = collectMembers(raw[0], 'methods', buildTypeMap(raw), false)
+    expect(methods.map((m) => m.signature)).toEqual(['void Own()'])
   })
 })

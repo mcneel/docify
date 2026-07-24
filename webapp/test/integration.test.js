@@ -56,6 +56,34 @@ describe('real-data pipeline', () => {
     }
   })
 
+  it('surfaces BCL-inherited members (WWW-3489: RuntimeDocumentDataTable is a Dictionary)', () => {
+    const rd = pathMap['rhino.docobjects.tables.runtimedocumentdatatable']
+    expect(rd).toBeTruthy()
+    expect(rd.baseclass).toBe('Dictionary<object, object>')
+
+    // Inheritance chain now includes the BCL base, linked out to MS Learn.
+    const chain = getInheritance(rd, typeMap)
+    const dictNode = chain.find((n) => n.name.startsWith('Dictionary'))
+    expect(dictNode).toBeTruthy()
+    expect(dictNode.external).toMatch(/learn\.microsoft\.com/)
+
+    // Inherited Dictionary members appear alongside the type's own members.
+    const methods = collectMembers(rd, 'methods', typeMap, true)
+    const sigs = methods.map((m) => m.signature)
+    expect(sigs).toContain('bool ContainsKey(TKey key)')
+    expect(sigs).toContain('bool Remove(TKey key)')
+    const own = methods.find((m) => m.signature.includes('GetValue'))
+    expect(own.inherited).toBeUndefined() // the type's own member, unaffected
+    const inheritedCount = methods.filter((m) => m.externalUrl).length
+    expect(inheritedCount).toBeGreaterThan(4)
+
+    // ...but external BCL members stay OUT of the in-site nav tree.
+    const groups = buildMemberGroups(rd, typeMap)
+    const treeMethods = groups.find((g) => g.label === 'Methods')
+    const treeLabels = treeMethods ? treeMethods.children.map((c) => c.label) : []
+    expect(treeLabels.some((l) => l.startsWith('ContainsKey'))).toBe(false)
+  })
+
   it('search list flattens types + members', () => {
     const list = buildSearchList(info)
     expect(list.length).toBeGreaterThan(5000)

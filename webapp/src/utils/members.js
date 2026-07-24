@@ -28,6 +28,8 @@ export function collectMembers(node, memberType, typeMap, includeInherited = tru
       const inherited = inheritedList.map((m) => {
         const clone = { ...m, parent, namespace: entry.item.namespace, inherited: true }
         clone.path = memberUrl(memberType, clone)
+        // BCL members (WWW-3489) have no local page — link out to MS Learn.
+        if (entry.external) clone.externalUrl = m.docsUrl || entry.external
         return clone
       })
       members = members.concat(inherited)

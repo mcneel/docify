@@ -1,4 +1,5 @@
 // Type index + inheritance helpers. Pure — ported from ViewModel.js.
+import { lookupBcl } from './bcl.js'
 
 // name -> type. Rhino.Geometry takes precedence on name clashes (RH-80781).
 export function buildTypeMap(apiInfo) {
@@ -28,11 +29,22 @@ export function getInheritance(item, typeMap) {
     if (index > 0) baseclass = baseclass.substring(0, index + 1) + 'T>'
     const link = item.baseclass.toLowerCase()
     const node = { name: item.baseclass }
-    item = typeMap[baseclass]
-    if (baseclass === 'EventArgs') item = null
-    if (item) {
+    const next = typeMap[baseclass]
+    if (baseclass === 'EventArgs') {
+      item = null
+    } else if (next) {
       node.link = link
-      node.item = item
+      node.item = next
+      item = next
+    } else {
+      // Base type isn't a parsed RhinoCommon type — try the generated BCL metadata
+      // (WWW-3489) so the chain links out and inherited members can be listed.
+      const bcl = lookupBcl(baseclass)
+      if (bcl) {
+        node.item = bcl
+        node.external = bcl.docsUrl
+      }
+      item = null // BCL bases don't chain further here
     }
     rc.push(node)
   }

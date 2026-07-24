@@ -78,6 +78,32 @@ describe('app renders and navigates (happy-dom mount)', () => {
     expect(wrapper.html().length).toBeGreaterThan(500)
   })
 
+  // WWW-3489: a type deriving from a BCL base (Dictionary) must render the base in
+  // the inheritance chain AND list its inherited members, all linked to MS Learn.
+  it('renders BCL-inherited members as external links', async () => {
+    const pinia = createPinia()
+    setActivePinia(pinia)
+    const router = createRouter({ history: createMemoryHistory('/'), routes })
+    const wrapper = mount(App, { global: { plugins: [pinia, router] } })
+    await router.push('/')
+    await router.isReady()
+    await settle()
+
+    await router.push('/rhino.docobjects.tables.runtimedocumentdatatable')
+    await settle()
+
+    expect(wrapper.text()).toContain('RuntimeDocumentDataTable class')
+    // inherited Dictionary members are listed on the page...
+    expect(wrapper.text()).toContain('ContainsKey')
+    // ...and both the chain base and the member rows link out to MS Learn.
+    const msLinks = wrapper
+      .findAll('a')
+      .map((a) => a.attributes('href') || '')
+      .filter((h) => h.includes('learn.microsoft.com'))
+    expect(msLinks.some((h) => h.includes('system.collections.generic.dictionary-2'))).toBe(true)
+    expect(msLinks.some((h) => h.endsWith('dictionary-2.containskey'))).toBe(true)
+  })
+
   it('highlights the specific overload node (not just the parent)', async () => {
     const pinia = createPinia()
     setActivePinia(pinia)

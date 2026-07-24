@@ -53,7 +53,11 @@ export function buildMemberGroups(type, typeMap) {
   for (const childType of GROUP_ORDER) {
     const lc = childType.toLowerCase()
     const includeInherited = lc !== 'constructors'
-    const members = collectMembers(type, lc, typeMap, includeInherited)
+    // External (BCL) inherited members link off-site, so they don't belong in the
+    // in-site navigation tree — they're still listed on the type page (WWW-3489).
+    const members = collectMembers(type, lc, typeMap, includeInherited).filter(
+      (m) => !m.externalUrl
+    )
     if (!members || members.length < 1) continue
 
     const seen = []
