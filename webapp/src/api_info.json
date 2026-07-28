@@ -35129,42 +35129,64 @@
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "No formatting"
+        "summary": "No formatting",
+        "since": "7.0"
       },
       {
         "signature": "PageLengthToOne",
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "#:1"
+        "summary": "#:1",
+        "since": "7.0"
       },
       {
         "signature": "OneToModelLength",
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "1:#"
+        "summary": "1:#",
+        "since": "7.0"
       },
       {
         "signature": "OneInchToModelLengthFeet",
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "1\" = #'"
+        "summary": "1\" = #'",
+        "since": "7.0"
       },
       {
         "signature": "ModelLengthInchToOneFoot",
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "#\" = 1'"
+        "summary": "#\" = 1'",
+        "since": "7.0"
       },
       {
         "signature": "ModelLengthInchToOneFootInch",
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "#' = 1'-0\""
+        "summary": "#' = 1'-0\"",
+        "since": "7.0"
+      },
+      {
+        "signature": "PageLengthToOneUnitSystem",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "# page unit system:1 model unit system",
+        "since": "9.0"
+      },
+      {
+        "signature": "OneToModelLengthUnitSystem",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "1 page unit system:# model unit system",
+        "since": "9.0"
       }
     ]
 
@@ -49744,6 +49766,15 @@
         "virtual": false,
         "summary": "Color to apply for the hatch pattern. Default is Color.Empty which means get the color from the source where this section style came from (object attributes or layer)",
         "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double HatchPatternPlotWeightMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Plot width of the hatch pattern curves. values less than -1 (-10 is default): plot weight is determined by the object's attributes -1: do not plot 0: use default weight defined by the print dialog positive values are thicknesses in millimeters to print to",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -77399,6 +77430,1136 @@
           }
         ],
         "returns": "True on success"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.FileIO",
+    "name": "FileCsvDocument",
+    "dataType": "class",
+    "summary": "A simple, general-purpose, in-memory representation of a  <b>https://www.ietf.org/rfc/rfc4180.txt</b> -compliant comma-separated value (CSV) file.  \nRead a file with  (or  to treat   the first row as a column-name header), then query its dimensions   (, ), retrieve typed values by   column and row with the TryGet methods — addressing columns by index or, when a   header is present, by name — or enumerate its rows.   To build a file, construct the document with a fixed column count, populate cells with   the  overloads (addressed by column and row), then   persist it with . Every row has the same number of columns;   addressing a column outside that count throws.",
+    "interfaces": ["IEnumerable<string[]>"],
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "FileCsvDocument(int columnCount)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new, empty document with a fixed number of columns. Every row written to the document has exactly this many fields. The document has no header row.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "columnCount",
+            "type": "System.Int32",
+            "summary": "The number of columns. Must be greater than zero."
+          }
+        ]
+      },
+      {
+        "signature": "FileCsvDocument(string[] columnNames)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new, empty document with a header row of column names. The number of columns is the number of names supplied, and the header is written ahead of the data rows by <b>Save(string)</b> . Columns can then be addressed by name (see  <b>ColumnIndex(string)</b> and the name-keyedTryGetoverloads).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "columnNames",
+            "type": "System.String[]",
+            "summary": "The column names. At least one is required."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "int ColumnCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The number of columns in the document. Every row has exactly this many fields.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool HasHeader",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if the document has a header row of column names. See <b>ColumnIndex(string)</b> .",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "string[] Header",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The column names, or None if the document has no header. <b>RowCount</b> counts only the data rows; the header is not one of them.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int RowCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The number of rows in the document.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "string this[int column]",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the value of a cell, addressed by column and row. Use <b>TryGetString(int, int, out string)</b>  for access that does not throw when the cell does not exist.",
+        "since": "9.0"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "FileCsvDocument Read(System.IO.TextReader reader, System.Boolean hasHeader)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads CSV content from a text reader.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "reader",
+            "type": "System.IO.TextReader",
+            "summary": "The reader to read from."
+          },
+          {
+            "name": "hasHeader",
+            "type": "System.Boolean",
+            "summary": "When true, the first row is taken as the column-name header and is not counted as a data row."
+          }
+        ],
+        "returns": "A new document populated with the contents of the reader."
+      },
+      {
+        "signature": "FileCsvDocument Read(System.IO.TextReader reader)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads CSV content from a text reader. The content is assumed to have no header row.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "reader",
+            "type": "System.IO.TextReader",
+            "summary": "The reader to read from."
+          }
+        ],
+        "returns": "A new document populated with the contents of the reader."
+      },
+      {
+        "signature": "FileCsvDocument Read(System.String path, System.Boolean hasHeader)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads a CSV file from disk.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The path of the file to read."
+          },
+          {
+            "name": "hasHeader",
+            "type": "System.Boolean",
+            "summary": "When true, the first row is taken as the column-name header and is not counted as a data row."
+          }
+        ],
+        "returns": "A new document populated with the contents of the file."
+      },
+      {
+        "signature": "FileCsvDocument Read(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads a CSV file from disk. The file is assumed to have no header row.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The path of the file to read."
+          }
+        ],
+        "returns": "A new document populated with the contents of the file."
+      },
+      {
+        "signature": "System.Void Clear()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes all rows from the document.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Int32 ColumnIndex(System.String name)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the zero-based index of the column with the given name (case-insensitive), or -1 if the document has no header or no column with that name. When names are duplicated, the first is returned.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The column name to look up."
+          }
+        ],
+        "returns": "The column index, or -1."
+      },
+      {
+        "signature": "IEnumerator<string[]> GetEnumerator()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns an enumerator that iterates over the committed rows of the document.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.String[] GetRow(System.Int32 row)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the fields of a row.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index."
+          }
+        ],
+        "returns": "The fields of the row."
+      },
+      {
+        "signature": "System.Void Save(System.IO.TextWriter writer)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes the document to a text writer. Records are separated by CRLF, per RFC 4180. If the document has a header, it is written ahead of the data rows.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "writer",
+            "type": "System.IO.TextWriter",
+            "summary": "The writer to write to."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Save(System.String path, System.Text.Encoding encoding)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes the document to a file on disk using the specified encoding.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The path of the file to write."
+          },
+          {
+            "name": "encoding",
+            "type": "System.Text.Encoding",
+            "summary": "The character encoding to use, for example <b>Encoding.ASCII</b> or  <b>Encoding.UTF8</b> . Note that <b>Encoding.UTF8</b> emits a byte order mark; usenew UTF8Encoding(false)to write UTF-8 without one."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Save(System.String path)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes the document to a file on disk, encoded as UTF-8 with a byte order mark. The mark lets spreadsheet applications (for example Excel on Windows and Mac) detect the encoding rather than falling back to the system code page, which garbles non-ASCII text such as Korean (RH-97173). Use <b>Save(string, Encoding)</b> with new UTF8Encoding(false)to write UTF-8 without a mark.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The path of the file to write."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 row, Point3d point, System.String format)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets a row from a 3-D point, using the specified .NET numeric format string. This is only valid when <b>ColumnCount</b> is 3: the point's X, Y, and Z are written to columns 0, 1, and 2 with the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The point to store."
+          },
+          {
+            "name": "format",
+            "type": "System.String",
+            "summary": "A standard or custom numeric format string, for example \"F2\" or \"0.###\"."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 row, Point3d point)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets a row from a 3-D point. This is only valid when <b>ColumnCount</b> is 3: the point's X, Y, and Z are written to columns 0, 1, and 2 with the general (\"G\") format specifier and the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The point to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, Color value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a color, stored as its 32-bit ARGB integer ( <b>Color.ToArgb</b> ), so that the alpha channel round-trips.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "Color",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Boolean value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a boolean, written as \"1\" (true) or \"0\" (false).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Boolean",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.DateTime value, System.String format)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a date and time, formatted with the specified .NET date/time format string and the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.DateTime",
+            "summary": "The value to store."
+          },
+          {
+            "name": "format",
+            "type": "System.String",
+            "summary": "A standard or custom date/time format string, for example \"yyyy-MM-dd\"."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.DateTime value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a date and time, formatted as a round-trip ISO 8601 string (the \"o\" format) using the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.DateTime",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Double value, LengthUnit units, Rhino.UI.DistanceDisplayMode mode, System.Int32 precision)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a double-precision number, formatted with  <b>Rhino.UI.Localization.FormatNumber(double, LengthUnit, Rhino.UI.DistanceDisplayMode, int, bool)</b> . The unit system name is never appended to the field.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Double",
+            "summary": "The value to store."
+          },
+          {
+            "name": "units",
+            "type": "LengthUnit",
+            "summary": "The length unit used to format the value."
+          },
+          {
+            "name": "mode",
+            "type": "Rhino.UI.DistanceDisplayMode",
+            "summary": "The distance display mode used to format the value."
+          },
+          {
+            "name": "precision",
+            "type": "System.Int32",
+            "summary": "The number of digits of precision."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Double value, System.String format)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a specific cell to a double-precision number, formatted with the specified .NET numeric format string and the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Double",
+            "summary": "The value to store."
+          },
+          {
+            "name": "format",
+            "type": "System.String",
+            "summary": "A standard or custom numeric format string, for example \"F2\" or \"0.###\"."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Double value, UnitSystem units, Rhino.UI.DistanceDisplayMode mode, System.Int32 precision)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a double-precision number, formatted with  <b>Rhino.UI.Localization.FormatNumber(double, UnitSystem, Rhino.UI.DistanceDisplayMode, int, bool)</b> . The unit system name is never appended to the field.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Double",
+            "summary": "The value to store."
+          },
+          {
+            "name": "units",
+            "type": "UnitSystem",
+            "summary": "The unit system used to format the value."
+          },
+          {
+            "name": "mode",
+            "type": "Rhino.UI.DistanceDisplayMode",
+            "summary": "The distance display mode used to format the value."
+          },
+          {
+            "name": "precision",
+            "type": "System.Int32",
+            "summary": "The number of digits of precision."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Double value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a specific cell to a double-precision number, formatted with the general (\"G\") format specifier and the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Double",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Guid value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell to a globally unique identifier, formatted with hyphens and no braces (the \"D\" format, for example \"11f820ff-952a-4b0b-b10a-59f82c2eb1f4\").",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Guid",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Int32 value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a specific cell to a 32-bit integer, formatted using the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Int32",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.Int64 value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a specific cell to a 64-bit integer, formatted using the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Int64",
+            "summary": "The value to store."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Set(System.Int32 column, System.Int32 row, System.String value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the value of a cell, addressed by column and row. Rows are added as needed (any intervening rows are created and filled with empty fields), but the column count is fixed.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x). Must be less than <b>ColumnCount</b> ."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.String",
+            "summary": "The value to store. A None value is stored as an empty field."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetRow(System.Int32 row, IEnumerable<string> values)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the fields of a row, addressed by index, growing the document as needed (any intervening rows are created and filled with empty fields). This is the row-level counterpart to <b>GetRow(int)</b> . The number of fields must equal  <b>ColumnCount</b> . A None field is stored as an empty field.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "values",
+            "type": "IEnumerable<string>",
+            "summary": "The fields of the row, one per column."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetRow(System.Int32 row, params System.String[] values)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the fields of a row, addressed by index, growing the document as needed (any intervening rows are created and filled with empty fields). This is the row-level counterpart to <b>GetRow(int)</b> . The number of fields must equal  <b>ColumnCount</b> . A None field is stored as an empty field.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "values",
+            "type": "System.String[]",
+            "summary": "The fields of the row, one per column."
+          }
+        ]
+      },
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the full CSV content of the document as a string.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Boolean TryGetBool(System.Int32 column, System.Int32 row, out System.Boolean value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a boolean. Recognizes \"true\"/\"false\", \"yes\"/\"no\", and \"1\"/\"0\" (case-insensitive, surrounding whitespace ignored).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Boolean",
+            "summary": "The parsed value, or False if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetBool(System.String column, System.Int32 row, out System.Boolean value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a boolean, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Boolean",
+            "summary": "The parsed value, or False if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetColor(System.Int32 column, System.Int32 row, out Color value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a color from its 32-bit ARGB integer ( <b>Color.FromArgb(int)</b> ), as written by <b>Set(int, int, Color)</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "Color",
+            "summary": "The parsed value, or <b>Color.Empty</b> if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetColor(System.String column, System.Int32 row, out Color value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a color, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "Color",
+            "summary": "The parsed value, or <b>Color.Empty</b> if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetDateTime(System.Int32 column, System.Int32 row, out System.DateTime value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a date and time, parsed with the invariant culture and  <b>DateTimeStyles.RoundtripKind</b> (so ISO 8601 values, including those written by <b>Set(int, int, DateTime)</b> , round-trip).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.DateTime",
+            "summary": "The parsed value, or <b>DateTime.MinValue</b> if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetDateTime(System.String column, System.Int32 row, out System.DateTime value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a date and time, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.DateTime",
+            "summary": "The parsed value, or <b>DateTime.MinValue</b> if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetDouble(System.Int32 column, System.Int32 row, out System.Double value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a double-precision number. The cell is evaluated with <b>RhinoMath.TryParseNumber(string, out double)</b> , so command-line math expressions (for example \"1/2\") are supported.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Double",
+            "summary": "The parsed value, or 0.0 if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetDouble(System.String column, System.Int32 row, out System.Double value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a double-precision number, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Double",
+            "summary": "The parsed value, or 0.0 if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetGuid(System.Int32 column, System.Int32 row, out System.Guid value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a globally unique identifier. Accepts any of the formats understood by <b>Guid.TryParse(string, out Guid)</b> (with or without hyphens or braces).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Guid",
+            "summary": "The parsed value, or <b>Guid.Empty</b> if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetGuid(System.String column, System.Int32 row, out System.Guid value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a globally unique identifier, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Guid",
+            "summary": "The parsed value, or <b>Guid.Empty</b> if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetInt(System.Int32 column, System.Int32 row, out System.Int32 value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a 32-bit integer, parsed using the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Int32",
+            "summary": "The parsed value, or 0 if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetInt(System.String column, System.Int32 row, out System.Int32 value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a 32-bit integer, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Int32",
+            "summary": "The parsed value, or 0 if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetLong(System.Int32 column, System.Int32 row, out System.Int64 value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a 64-bit integer, parsed using the invariant culture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Int64",
+            "summary": "The parsed value, or 0 if the cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the cell exists and was parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetLong(System.String column, System.Int32 row, out System.Int64 value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a 64-bit integer, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.Int64",
+            "summary": "The parsed value, or 0 if the column or cell does not exist or cannot be parsed."
+          }
+        ],
+        "returns": "True if the column and cell exist and were parsed; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetPoint(System.Int32 row, out Point3d point)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves a row as a 3-D point. This succeeds only when <b>ColumnCount</b> is 3: the row's three fields are joined and passed to  <b>Rhino.Geometry.Point3d.TryParse(string, out Rhino.Geometry.Point3d)</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The parsed point, or <b>Rhino.Geometry.Point3d.Unset</b> if the row could not be parsed."
+          }
+        ],
+        "returns": "True if the document has 3 columns and the row parsed as a point; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetString(System.Int32 column, System.Int32 row, out System.String value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a string.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.Int32",
+            "summary": "The zero-based column index (x)."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.String",
+            "summary": "The value of the cell, or None if the cell does not exist."
+          }
+        ],
+        "returns": "True if the cell exists; otherwise false."
+      },
+      {
+        "signature": "System.Boolean TryGetString(System.String column, System.Int32 row, out System.String value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Retrieves the value of a cell as a string, addressing the column by header name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "column",
+            "type": "System.String",
+            "summary": "The header name of the column."
+          },
+          {
+            "name": "row",
+            "type": "System.Int32",
+            "summary": "The zero-based data-row index (y)."
+          },
+          {
+            "name": "value",
+            "type": "System.String",
+            "summary": "The value of the cell, or None if the column or cell does not exist."
+          }
+        ],
+        "returns": "True if the column and cell exist; otherwise false."
       }
     ]
   },
@@ -112704,6 +113865,41 @@
           }
         ],
         "returns": "A NURBS curve on success or None on failure."
+      },
+      {
+        "signature": "NurbsCurve RebuildToMatchTemplateCurve(Curve templateCurve, System.Boolean flipSourceDirection, System.Boolean preserveEndTangents, System.Boolean makeSubDFriendly, out Line maximumDeviation)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Rebuilds this curve so it takes on the degree, knot vector, and control point count of a template curve.",
+        "parameters": [
+          {
+            "name": "templateCurve",
+            "type": "Curve",
+            "summary": "The curve to match."
+          },
+          {
+            "name": "flipSourceDirection",
+            "type": "System.Boolean",
+            "summary": "If True and this curve is open, its direction is flipped (reversed) before sampling. Set this when this curve runs opposite the template."
+          },
+          {
+            "name": "preserveEndTangents",
+            "type": "System.Boolean",
+            "summary": "If True and the result is open with at least 4 control points, the interior end control points are adjusted so the result's end tangents match this curve's."
+          },
+          {
+            "name": "makeSubDFriendly",
+            "type": "System.Boolean",
+            "summary": "If true, the result is converted to a SubD friendly curve."
+          },
+          {
+            "name": "maximumDeviation",
+            "type": "Line",
+            "summary": "A line from this curve to the rebuilt curve at the point of maximum separation (the \"from\" point is on this curve, the \"to\" point is on the rebuilt curve), or Line.Unset if it cannot be computed."
+          }
+        ],
+        "returns": "The rebuilt NURBS curve, or None if the template curve is unusable or the rebuild fails."
       },
       {
         "signature": "System.Boolean RemoveShortSegments(System.Double tolerance)",
@@ -158037,6 +159233,31 @@
         "since": "6.0"
       },
       {
+        "signature": "Transform GetTextTransform(ViewportInfo viewport, System.Double textscale, DimensionStyle dimstyle)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Get the transform for this text object's text geometry as it is drawn in a particular viewport. Unlike the parameterless-viewport overload, this honors the dimension style's <b>TextOrientation</b> (for example \"Horizontal to view\") and DrawForward, orienting the text against the viewport exactly as the display pipeline does. Use this when previewing text so the preview matches how the placed object will be drawn.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "viewport",
+            "type": "ViewportInfo",
+            "summary": "Viewport the text is being drawn in."
+          },
+          {
+            "name": "textscale",
+            "type": "System.Double",
+            "summary": "Scale to apply to the text."
+          },
+          {
+            "name": "dimstyle",
+            "type": "DimensionStyle",
+            "summary": "The text's dimension style."
+          }
+        ]
+      },
+      {
         "signature": "System.Boolean Transform(Transform transform, DimensionStyle style)",
         "modifiers": ["public"],
         "protected": false,
@@ -159691,7 +160912,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Determines if this transform is uniformly scaled.",
+        "summary": "Determines if this transform is uniformly scaled - that is, a similarity transformation that scales all directions equally and preserves angles, mapping circles to circles. This includes pure rotations, translations and mirroring.",
         "since": "9.0",
         "returns": "True if uniformly scaled, False otherwise."
       },
@@ -179212,6 +180433,146 @@
         "virtual": false,
         "summary": "Width of the page in Units",
         "property": ["get", "set"]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino",
+    "name": "PurgeFilter",
+    "dataType": "enum",
+    "summary": "The document table object types that <b>RhinoDoc.Purge(PurgeFilter)</b> can purge.",
+    "values": [
+      {
+        "signature": "None = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Purge nothing."
+      },
+      {
+        "signature": "AnnotationStyles = 0x1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused annotation styles."
+      },
+      {
+        "signature": "Bitmaps = 0x2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Embedded bitmaps."
+      },
+      {
+        "signature": "BlockDefinitions = 0x4",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused block definitions."
+      },
+      {
+        "signature": "Environments = 0x8",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused render environments."
+      },
+      {
+        "signature": "Groups = 0x10",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Empty groups."
+      },
+      {
+        "signature": "HatchPatterns = 0x20",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused hatch patterns."
+      },
+      {
+        "signature": "Layers = 0x40",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Empty layers."
+      },
+      {
+        "signature": "LayoutGroups = 0x80",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Empty layout groups."
+      },
+      {
+        "signature": "Linetypes = 0x100",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused linetypes."
+      },
+      {
+        "signature": "Materials = 0x200",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused legacy materials and unused render materials."
+      },
+      {
+        "signature": "SectionStyles = 0x400",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused section styles."
+      },
+      {
+        "signature": "Textures = 0x800",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Unused render textures."
+      },
+      {
+        "signature": "          SectionStyles | Textures",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Everything listed above."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino",
+    "name": "PurgeStatistics",
+    "dataType": "class",
+    "summary": "Describes what <b>RhinoDoc.Purge(PurgeFilter)</b> purged.",
+    "properties": [
+      {
+        "signature": "int TotalPurgedCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The total number of table objects that were purged.",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Int32 PurgedCount(PurgeFilter filter)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The number of table objects that were purged.",
+        "parameters": [
+          {
+            "name": "filter",
+            "type": "PurgeFilter",
+            "summary": "The document table object types of interest. Values can be or-ed together, in which case the sum of the counts of each type is returned."
+          }
+        ],
+        "returns": "The number of table objects that were purged."
       }
     ]
   },
@@ -209200,6 +210561,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "DistanceDisplayMode ModelDistanceDisplayMode",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets/Sets the distance display mode for model space.",
+        "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "int ModelDistanceDisplayPrecision",
         "modifiers": ["public"],
         "protected": false,
@@ -209391,6 +210761,15 @@
         "virtual": false,
         "summary": "Page space angle tolerance.",
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "DistanceDisplayMode PageDistanceDisplayMode",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets/Sets the distance display mode for page space.",
+        "since": "8.0",
         "property": ["get", "set"]
       },
       {
@@ -210342,6 +211721,81 @@
           }
         ],
         "returns": "Return True if the length unit is a metric unit system."
+      },
+      {
+        "signature": "PurgeStatistics Purge(PurgeFilter filter, System.Boolean quiet)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Purges unused table objects from this document, the same way the Purge command does.",
+        "parameters": [
+          {
+            "name": "filter",
+            "type": "PurgeFilter",
+            "summary": "The document table object types to purge."
+          },
+          {
+            "name": "quiet",
+            "type": "System.Boolean",
+            "summary": "Set to True to suppress any output or progress messages."
+          }
+        ],
+        "returns": "What was purged."
+      },
+      {
+        "signature": "PurgeStatistics Purge(PurgeFilter filter)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Purges unused table objects from this document, the same way the Purge command does.",
+    "remarks": "The order in which the table object types are purged matters, and purging one type can make another type purgeable, so this purges everything asks for in a single operation.",
+        "parameters": [
+          {
+            "name": "filter",
+            "type": "PurgeFilter",
+            "summary": "The document table object types to purge."
+          }
+        ],
+        "returns": "What was purged."
+      },
+      {
+        "signature": "System.Int32 PurgeObjectHistory()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Purges the history records of every object in this document.",
+    "remarks": "Objects that are deleted (and therefore on the undo stack) have their history records purged but are not included in the returned count.",
+        "returns": "The number of objects that had a history record purged."
+      },
+      {
+        "signature": "System.Int32 PurgeObjectHistory(IEnumerable<RhinoObject> objects)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Purges the history records of a list of objects.",
+        "parameters": [
+          {
+            "name": "objects",
+            "type": "IEnumerable<RhinoObject>",
+            "summary": "The objects whose history records are to be purged. Objects that have no history record are skipped."
+          }
+        ],
+        "returns": "The number of objects that had a history record purged."
+      },
+      {
+        "signature": "System.Int32 PurgeObjectHistory(out System.Int32 hiddenCount)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Purges the history records of every object in this document.",
+        "parameters": [
+          {
+            "name": "hiddenCount",
+            "type": "System.Int32",
+            "summary": "The number of purged objects that were hidden or on a hidden layer."
+          }
+        ],
+        "returns": "The number of objects that had a history record purged."
       },
       {
         "signature": "System.Int32 ReadFileVersion()",
@@ -221867,6 +223321,22 @@
         "virtual": false,
         "summary": "Returns a detail views scale",
         "since": "7.0"
+      },
+      {
+        "signature": "System.String DimValue(System.String dimensionId, System.String styleNameOrId)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the measured value of a dimension formatted with the named annotation style.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.String DimValue(System.String dimensionId)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the measured value of a dimension formatted with the dimension's own annotation style.",
+        "since": "9.0"
       },
       {
         "signature": "System.String DocumentText(System.String key)",
@@ -234445,103 +235915,6 @@
       }
 ,
   {
-    "namespace": "Rhino.UI",
-    "name": "OnColorChangedEvent",
-    "dataType": "delegate",
-        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
-      }
-,
-  {
-    "namespace": "Rhino.DocObjects.Custom",
-    "name": "TurnOnGripsEventHandler",
-    "dataType": "delegate",
-        "signature": "delegate void TurnOnGripsEventHandler(Rhino.DocObjects.RhinoObject rhObj);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "SaveFileHandler",
-    "dataType": "delegate",
-        "signature": "delegate bool SaveFileHandler(string fileName, bool includeAlpha, RenderWindow renderWindow);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called when a user chooses to save a rendered scene as this custom file type."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "ValidateProductKeyDelegate",
-    "dataType": "delegate",
-        "signature": "delegate ValidateResult ValidateProductKeyDelegate(string productKey, out LicenseData licenseData);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Validates a product key or license."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "VerifyLicenseKeyDelegate",
-    "dataType": "delegate",
-        "signature": "delegate ValidateResult VerifyLicenseKeyDelegate(  \nstring licenseKey, string validationCode, DateTime validationCodeInstallDate, bool gracePeriodExpired, out LicenseData licenseData);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by Rhino to verify a license key. For details, see http://developer.rhino3d.com/guides/rhinocommon/rhinocommon-zoo-plugins/"
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "OnLeaseChangedDelegate",
-    "dataType": "delegate",
-        "signature": "delegate void OnLeaseChangedDelegate(LicenseLeaseChangedEventArgs args, out Icon icon);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by Rhino to signal that a lease from Rhino Accounts has changed. If LicenseLeaseChangedEventArgs.Lease is null, then the server has signaled that this product is no longer licensed. Your plug-in must change behavior to behave appropriately."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "VerifyPreviousVersionLicenseDelegate",
-    "dataType": "delegate",
-        "signature": "delegate bool VerifyPreviousVersionLicenseDelegate(  \nstring license, string previousVersionLicense, out string errorMessage);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
-      }
-,
-  {
-    "namespace": "Rhino.Commands",
-    "name": "RunCommandDelegate",
-    "dataType": "delegate",
-        "signature": "delegate Result RunCommandDelegate(RhinoDoc doc, RunMode mode, object data);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino.UI",
-    "name": "UpdateMenuItemEventHandler",
-    "dataType": "delegate",
-        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Menu item update delegate"
-      }
-,
-  {
     "namespace": "Rhino.Runtime",
     "name": "SetClipRectProc",
     "dataType": "delegate",
@@ -234662,6 +236035,71 @@
       }
 ,
   {
+    "namespace": "Rhino.Commands",
+    "name": "RunCommandDelegate",
+    "dataType": "delegate",
+        "signature": "delegate Result RunCommandDelegate(RhinoDoc doc, RunMode mode, object data);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "SaveFileHandler",
+    "dataType": "delegate",
+        "signature": "delegate bool SaveFileHandler(string fileName, bool includeAlpha, RenderWindow renderWindow);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called when a user chooses to save a rendered scene as this custom file type."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "ValidateProductKeyDelegate",
+    "dataType": "delegate",
+        "signature": "delegate ValidateResult ValidateProductKeyDelegate(string productKey, out LicenseData licenseData);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Validates a product key or license."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "VerifyLicenseKeyDelegate",
+    "dataType": "delegate",
+        "signature": "delegate ValidateResult VerifyLicenseKeyDelegate(  \nstring licenseKey, string validationCode, DateTime validationCodeInstallDate, bool gracePeriodExpired, out LicenseData licenseData);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by Rhino to verify a license key. For details, see http://developer.rhino3d.com/guides/rhinocommon/rhinocommon-zoo-plugins/"
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "OnLeaseChangedDelegate",
+    "dataType": "delegate",
+        "signature": "delegate void OnLeaseChangedDelegate(LicenseLeaseChangedEventArgs args, out Icon icon);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by Rhino to signal that a lease from Rhino Accounts has changed. If LicenseLeaseChangedEventArgs.Lease is null, then the server has signaled that this product is no longer licensed. Your plug-in must change behavior to behave appropriately."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "VerifyPreviousVersionLicenseDelegate",
+    "dataType": "delegate",
+        "signature": "delegate bool VerifyPreviousVersionLicenseDelegate(  \nstring license, string previousVersionLicense, out string errorMessage);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
+      }
+,
+  {
     "namespace": "Rhino",
     "name": "KeyboardHookEvent",
     "dataType": "delegate",
@@ -234673,6 +236111,16 @@
       }
 ,
   {
+    "namespace": "Rhino.DocObjects.Custom",
+    "name": "TurnOnGripsEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void TurnOnGripsEventHandler(Rhino.DocObjects.RhinoObject rhObj);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
     "namespace": "Rhino.Input.Custom",
     "name": "GetObjectGeometryFilter",
     "dataType": "delegate",
@@ -234680,6 +236128,28 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.UI",
+    "name": "UpdateMenuItemEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Menu item update delegate"
+      }
+,
+  {
+    "namespace": "Rhino.UI",
+    "name": "OnColorChangedEvent",
+    "dataType": "delegate",
+        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
       }
 ,
   {
