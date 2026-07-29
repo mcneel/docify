@@ -126820,7 +126820,7 @@
     "name": "Matrix",
     "dataType": "class",
     "summary": "Represents an arbitrarily sized matrix of <b>double</b> -precision floating point numbers. If you are working with a 4x4 matrix, then you may want to use the <b>Transform</b> class instead.",
-    "interfaces": ["IDisposable"],
+    "interfaces": ["IDisposable", "ISerializable"],
     "constructors": [
       {
         "signature": "Matrix(int rowCount, int columnCount)",
@@ -126839,6 +126839,25 @@
             "name": "columnCount",
             "type": "System.Int32",
             "summary": "A positive integer, or 0, for the number of columns."
+          }
+        ]
+      },
+      {
+        "signature": "Matrix(SerializationInfo info, StreamingContext context)",
+        "modifiers": ["protected"],
+        "protected": true,
+        "virtual": false,
+        "summary": "Protected constructor for internal use.",
+        "parameters": [
+          {
+            "name": "info",
+            "type": "System.Runtime.Serialization.SerializationInfo",
+            "summary": "Serialization data."
+          },
+          {
+            "name": "context",
+            "type": "System.Runtime.Serialization.StreamingContext",
+            "summary": "Serialization stream."
           }
         ]
       },
@@ -127020,6 +127039,25 @@
         "virtual": false,
         "summary": "Gets the hash code for this matrix. The hash code will change when the matrix changes so you cannot change matrices while they are stored in hash tables.",
         "returns": "Hash code."
+      },
+      {
+        "signature": "System.Void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)",
+        "modifiers": ["public", "virtual"],
+        "protected": false,
+        "virtual": true,
+        "summary": "Populates a System.Runtime.Serialization.SerializationInfo with the data needed to serialize the target object.",
+        "parameters": [
+          {
+            "name": "info",
+            "type": "System.Runtime.Serialization.SerializationInfo",
+            "summary": "The System.Runtime.Serialization.SerializationInfo to populate with data."
+          },
+          {
+            "name": "context",
+            "type": "System.Runtime.Serialization.StreamingContext",
+            "summary": "The destination (see System.Runtime.Serialization.StreamingContext) for this serialization."
+          }
+        ]
       },
       {
         "signature": "System.Boolean Invert(System.Double zeroTolerance)",
