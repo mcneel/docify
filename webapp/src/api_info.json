@@ -4117,6 +4117,50 @@
   },
   {
     "namespace": "Rhino.ApplicationSettings",
+    "name": "GumballAlignment",
+    "dataType": "enum",
+    "summary": "Specifies the plane the gumball aligns itself to.",
+    "values": [
+      {
+        "signature": "WorldPlane = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Aligns the gumball to the world axes."
+      },
+      {
+        "signature": "ConstructionPlane = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Aligns the gumball to the construction plane of the active viewport."
+      },
+      {
+        "signature": "ViewPlane = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Aligns the gumball to the plane of the active viewport."
+      },
+      {
+        "signature": "ObjectPlane = 3",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Aligns the gumball to the object."
+      },
+      {
+        "signature": "ControlPolygon = 4",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Aligns the gumball to the control polygon of the object."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.ApplicationSettings",
     "name": "GumballSettings",
     "dataType": "class",
     "summary": "Contains static metthods and properties to modify Rhino gumball settings.",
@@ -4135,6 +4179,15 @@
         "virtual": false,
         "summary": "Specifies the thickness of the rotation arcs in pixels. Set arc thickness to zero to turn off rotation handles.",
         "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "GumballAlignment AutoGumballAlignment",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Specifies the plane the gumball aligns itself to.",
+    "remarks": "Setting this does not re-align a gumball that is already on screen; the new alignment is picked up the next time the gumball is built, for example when the selection changes. Run the GumballAlignment command instead if you need the visible gumball updated.  \nThis setting is deliberately not part of , so it is     left alone by . This matches the RestoreDefaults behavior     of the -GumballSettings command, which does not reset the alignment either.",
         "property": ["get", "set"]
       },
       {
@@ -4317,6 +4370,13 @@
         "virtual": false,
         "summary": "Gets the current settings of the application.",
         "since": "9.0"
+      },
+      {
+        "signature": "GumballAlignment GetDefaultAlignment()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the factory default value of <b>AutoGumballAlignment</b> ."
       },
       {
         "signature": "GumballSettingsState GetDefaultState()",
@@ -19967,6 +20027,15 @@
         "property": ["get"]
       },
       {
+        "signature": "DisplayTechnology Technology",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Get the GPU technology that this pipeline is actively using",
+        "since": "8.35",
+        "property": ["get"]
+      },
+      {
         "signature": "RhinoViewport Viewport",
         "modifiers": ["public"],
         "protected": false,
@@ -22150,6 +22219,27 @@
         ]
       },
       {
+        "signature": "System.Void DrawMeshesShaded(IEnumerable<Mesh> meshes, GrasshopperDisplayMaterial material)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a batch of meshes with the Grasshopper 2 (\"G2\") shaded display: a gradient-shaded look driven by a <b>GrasshopperDisplayMaterial</b> — a diffuse colour plus optional striping, stippling and dark-area desaturation — rather than a full <b>DisplayMaterial</b> . The whole batch is uploaded as one combined GPU buffer and shares one material; for per-mesh settings, call once per mesh instead.",
+        "since": "9.0",
+    "remarks": "The meshes are uploaded to the GPU on every redraw. Nothing is     cached between frames, so every redraw re-uploads the whole batch. This is the     dominant cost of the call and needs to be planned around: draw only the geometry     you actually need, and prefer one batched call over many single-mesh calls.  \nMesh requirements. Every mesh must have up-to-date     single-precision vertices and vertex normals. The G2 shader reads those     directly; a mesh that carries only double-precision vertices, or no normals,     will render badly (missing geometry or flat/garbage shading). Compute the vertex     normals and make sure the single-precision vertices are current before drawing     if in doubt. Null entries in  are skipped.  \nVertex colours. If a mesh has vertex colours, those colours are     drawn in place of the material's diffuse colour, and      decides whether they are     shaded or drawn flat. Meshes without vertex colours are shaded from the material's     diffuse colour alone.",
+        "parameters": [
+          {
+            "name": "meshes",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The meshes to draw as one batch. Each should have current single-precision vertices and vertex normals (see remarks); None entries are skipped."
+          },
+          {
+            "name": "material",
+            "type": "GrasshopperDisplayMaterial",
+            "summary": "The G2 shaded settings to draw with. When null, default settings are used."
+          }
+        ]
+      },
+      {
         "signature": "System.Void DrawMeshFalseColors(Mesh mesh)",
         "modifiers": ["public"],
         "protected": false,
@@ -22239,6 +22329,27 @@
             "name": "material",
             "type": "DisplayMaterial",
             "summary": "Material to draw faces with."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void DrawMeshShaded(Mesh mesh, GrasshopperDisplayMaterial material)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a single mesh with the Grasshopper 2 (\"G2\") shaded display. This is a convenience overload of <b>DrawMeshesShaded</b> ; see it for the mesh requirements and vertex-colour handling.",
+        "since": "9.0",
+    "remarks": "The mesh is uploaded to the GPU on every redraw. Nothing is cached     between frames, so every redraw re-uploads the mesh. When drawing more than one     mesh, prefer a single batched  call over many     single-mesh calls.",
+        "parameters": [
+          {
+            "name": "mesh",
+            "type": "Mesh",
+            "summary": "The mesh to draw. Should have current single-precision vertices and vertex normals (see <b>DrawMeshesShaded</b> )."
+          },
+          {
+            "name": "material",
+            "type": "GrasshopperDisplayMaterial",
+            "summary": "The G2 shaded settings to draw with. When null, default settings are used."
           }
         ]
       },
@@ -27092,6 +27203,18 @@
         "modifiers": [],
         "protected": false,
         "virtual": false
+      },
+      {
+        "signature": "Direct3d11 = 3",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false
+      },
+      {
+        "signature": "Direct3d12 = 6",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false
       }
     ]
 
@@ -27417,6 +27540,116 @@
       }
     ]
 
+  },
+  {
+    "namespace": "Rhino.Display",
+    "name": "GrasshopperDisplayMaterial",
+    "dataType": "class",
+    "summary": "Settings for drawing shaded meshes with the Grasshopper 2 (\"G2\") shader, used by  <b>DisplayPipeline.DrawMeshShaded(Geometry.Mesh, GrasshopperDisplayMaterial)</b>  and <b>DisplayPipeline.DrawMeshesShaded</b> .",
+    "remarks": "The G2 shader produces a gradient-shaded look from a compact set of inputs rather than from the full lighting model of a <b>DisplayMaterial</b> : a diffuse colour, plus optional striping, stippling and dark-area desaturation. Unlike  <b>DisplayMaterial</b> this is a plain settings object with no unmanaged resources, so it does not need to be disposed.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "GrasshopperDisplayMaterial()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a default material with an opaque white diffuse colour.",
+        "since": "9.0"
+      },
+      {
+        "signature": "GrasshopperDisplayMaterial(Color diffuse)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a material with a specific diffuse colour.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "diffuse",
+            "type": "Color",
+            "summary": "The diffuse colour. Unlike  <b>DisplayMaterial</b> , the alpha channel isnotignored — it is the opacity. See <b>Diffuse</b> ."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "double Desaturation",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets how far the shaded colour is blended towards greyscale, as a fraction from 0 to 1: 0 leaves the colour untouched, 1 is fully greyscale, and values in between blend linearly. Default: 0.",
+        "since": "9.0",
+    "remarks": "The blend is applied uniformly to the final colour of the whole surface, including flat (unshaded) vertex colours — see <b>ShadeFalseColor</b> . It holds luminosity constant, so the colour drains towards grey without the surface appearing to get lighter or darker.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color Diffuse",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the diffuse colour — the colour reached in the brightest areas of the shading. The alpha channel isopacity, following the usual  <b>System.Drawing.Color</b> convention: A=255 is fully opaque and A=0 fully transparent. Note this differs from <b>DisplayMaterial.Diffuse</b> , which ignores alpha. Default: opaque white.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ShadeFalseColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether a mesh's vertex colours are shaded. Has no effect on a mesh that has no vertex colours. Default: false.",
+        "since": "9.0",
+    "remarks": "When a mesh carries vertex colours, those colours — its \"False colours\" — are always what gets drawn, in place of <b>Diffuse</b> . This property decides only how they are drawn: True lights and shades them like any other surface colour, while False draws them flat, with no lighting or shading applied at all. Striping, stippling and <b>Desaturation</b> still apply either way.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool Stippling",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether an 8x8 Bayer stipple (dither) mask is applied. Default: false.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double StipplingAmount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets how much of the stipple pattern is turned off, as a fraction from 0 to 1 (used only when <b>Stippling</b> is true). Default: 0.",
+        "since": "9.0",
+    "remarks": "The pattern is an 8x8 Bayer mask — 64 cells — and this is the fraction of those cells that stop drawing: 0 turns none off (nothing is stippled away), 0.5 turns off about half of them (32 of 64), and 1 is clamped to 63 of 64, so a trace of the mesh always remains rather than disappearing entirely. Values outside 0 to 1 are clamped.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double StripeContrast",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the stripe contrast (used only when <b>Striping</b> is true). The effective range is 0..0.9; higher values are clamped, and 0 means no visible striping. Default: 1.0.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double StripeWidth",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the width of one stripe band inscreen-space pixels(used only when <b>Striping</b> is true). Stripes run along the screen diagonal and the light/dark pattern repeats every2 × StripeWidthpixels; values below 1 are treated as 1. This is a pixel-space overlay — it does not scale with zoom or model units. Default: 0.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool Striping",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether the G2 striping overlay is applied. Default: false.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ]
   },
   {
     "namespace": "Rhino.Display",
@@ -32368,6 +32601,26 @@
         ]
       },
       {
+        "signature": "System.Void DrawExtrusionObject(Rhino.DocObjects.ExtrusionObject extrusion, DisplayPipeline pipeline)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Draws one extrusion. Override this method to add your custom behavior.  \nThe default implementation does nothing.",
+    "remarks": "Extrusions are not breps, so <b>DrawBrepObject</b> is not called for them. A mode that should treat the two alike needs to override both.",
+        "parameters": [
+          {
+            "name": "extrusion",
+            "type": "Rhino.DocObjects.ExtrusionObject",
+            "summary": "An extrusion object."
+          },
+          {
+            "name": "pipeline",
+            "type": "DisplayPipeline",
+            "summary": "The current display pipeline."
+          }
+        ]
+      },
+      {
         "signature": "System.Void DrawMesh(Rhino.DocObjects.RhinoObject obj, Rhino.Geometry.Mesh mesh, DisplayPipeline pipeline)",
         "modifiers": ["protected", "virtual"],
         "protected": true,
@@ -32488,6 +32741,26 @@
             "name": "point",
             "type": "Rhino.DocObjects.PointObject",
             "summary": "A point object."
+          },
+          {
+            "name": "pipeline",
+            "type": "DisplayPipeline",
+            "summary": "The current display pipeline."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void DrawSubDObject(Rhino.DocObjects.SubDObject subd, DisplayPipeline pipeline)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Draws one SubD. Override this method to add your custom behavior.  \nThe default implementation does nothing.",
+    "remarks": "The default <b>ObjectSupportsAnalysisMode</b> does not accept SubD objects, so a mode that wants them must override that as well and return True for them.",
+        "parameters": [
+          {
+            "name": "subd",
+            "type": "Rhino.DocObjects.SubDObject",
+            "summary": "A SubD object."
           },
           {
             "name": "pipeline",
@@ -60138,12 +60411,34 @@
         "returns": "An array of RhinoObjects that are inside of this region"
       },
       {
-        "signature": "ClippingPlaneObject[] FindClippingPlanesForViewport(RhinoViewport viewport)",
+        "signature": "ClippingPlaneObject[] FindClippingPlanesForViewport(RhinoViewport viewport, System.Boolean includeHidden)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "summary": "Finds all of the clipping plane objects that actively clip a viewport.",
+        "since": "8.35",
+        "parameters": [
+          {
+            "name": "viewport",
+            "type": "RhinoViewport",
+            "summary": "The viewport in which clipping planes are searched."
+          },
+          {
+            "name": "includeHidden",
+            "type": "System.Boolean",
+            "summary": "When true, clipping planes that are hidden, or that are on hidden layers, are included in the results. Such planes still clip geometry in the viewport, so pass True when you need the complete set of planes affecting what is displayed."
+          }
+        ],
+        "returns": "An array of clipping plane objects. The array can be empty but not null."
+      },
+      {
+        "signature": "ClippingPlaneObject[] FindClippingPlanesForViewport(RhinoViewport viewport)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Finds all of the visible clipping plane objects that actively clip a viewport.",
         "since": "5.0",
+    "remarks": "Hidden clipping planes, and clipping planes on hidden layers, are not included in the results even though they continue to clip geometry in the viewport. Call  <b>FindClippingPlanesForViewport(RhinoViewport, bool)</b> with includeHiddenset to True to get every plane that clips the viewport.",
         "parameters": [
           {
             "name": "viewport",
@@ -63818,6 +64113,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Constructs a new page view with a given title and, at the same time, adds it to the list.",
+    "remarks": "On Mac, building a page view's window is main-thread work. If setActive is true and this is called from another thread, the page view is created but may not have become the active view by the time this returns.",
         "parameters": [
           {
             "name": "title",
@@ -63838,6 +64134,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Constructs a new page view with a given title and size and, at the same time, adds it to the list.",
+    "remarks": "On Mac, building a page view's window is main-thread work. If setActive is true and this is called from another thread, the page view is created but may not have become the active view by the time this returns.",
         "parameters": [
           {
             "name": "title",
@@ -66944,6 +67241,15 @@
         "property": ["get"]
       },
       {
+        "signature": "WorksessionModel[] Models",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The models in this worksession, including the active model.  \nis not filled in; use      if you need it.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "string Name",
         "modifiers": ["public"],
         "protected": false,
@@ -66957,7 +67263,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Unique serial number for the worksession while the application is running. This is not a persistent value.",
+        "summary": "Unique serial number for the worksession while the application is running. This is not a persistent value.  \nSince Rhino 9 worksessions are per-document and no longer have serial numbers     of their own, so this returns 's     . Prefer that property in new code.",
         "since": "6.3",
         "property": ["get"]
       }
@@ -66969,7 +67275,131 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns the path to the open worksession, or .rws, file. If there is no worksession file open, or the active worksession has not yet been saved, then None is returned.",
-        "since": "6.3"
+        "since": "6.3",
+        "parameters": [
+          {
+            "name": "runtimeSerialNumber",
+            "type": "System.UInt32",
+            "summary": "Since Rhino 9 worksessions are per-document and no longer have serial numbers of their own, so this is a document's  <b>RhinoDoc.RuntimeSerialNumber</b> . In new code, prefer getting the document and using its <b>RhinoDoc.Worksession</b>  <b>FileName</b> ."
+          }
+        ],
+        "returns": "The path to the .rws file, or null."
+      },
+      {
+        "signature": "System.String GetLockInformation(System.String modelPath)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Describes whether a worksession model's file is locked, and by whom.",
+        "since": "9.0",
+    "remarks": "This reads the file's lock file and does not depend on any document, which is why it is static.",
+        "parameters": [
+          {
+            "name": "modelPath",
+            "type": "System.String",
+            "summary": "The full path to the model's file."
+          }
+        ],
+        "returns": "A localized description of the file's lock state, or an empty string if it could not be determined."
+      },
+      {
+        "signature": "RhinoDoc Open(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Opens a worksession (.rws) file.",
+        "since": "9.0",
+    "remarks": "Opening a worksession is a document-level operation rather than a change to     an existing worksession, which is why this is static. Always use the     returned document: it may be the current document, reused, or a newly     created one, depending on the platform and on whether the current document     can be reused. On Windows, other than headless, the current document is     closed and replaced.  \nAs with , do not call this from a script     running in a document that this might close.",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The full path to the .rws file to open."
+          }
+        ],
+        "returns": "The document the worksession was read into, or None on failure."
+      },
+      {
+        "signature": "System.Int32 Attach(IEnumerable<string> paths)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attaches several models to this worksession as reference models.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "paths",
+            "type": "IEnumerable<string>",
+            "summary": "The full paths to the .3dm files to attach."
+          }
+        ],
+        "returns": "The number of models that were attached."
+      },
+      {
+        "signature": "System.Boolean Attach(System.String path)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attaches a model to this worksession as a reference model.",
+        "since": "9.0",
+    "remarks": "The model is attached to this worksession's document, which need not be the active document. No user interface is displayed.",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The full path to the .3dm file to attach."
+          }
+        ],
+        "returns": "True if the model was attached, False otherwise."
+      },
+      {
+        "signature": "System.Boolean Detach(IEnumerable<uint> modelSerialNumbers)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Detaches several reference models from this worksession.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "modelSerialNumbers",
+            "type": "IEnumerable<uint>",
+            "summary": "The reference models' serial numbers, from  <b>WorksessionModel.SerialNumber</b> ."
+          }
+        ],
+        "returns": "True if at least one model was detached, False otherwise."
+      },
+      {
+        "signature": "System.Boolean Detach(System.UInt32 modelSerialNumber)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Detaches a reference model from this worksession.",
+        "since": "9.0",
+    "remarks": "The active model - serial number 0 - cannot be detached.",
+        "parameters": [
+          {
+            "name": "modelSerialNumber",
+            "type": "System.UInt32",
+            "summary": "The reference model's serial number, from  <b>WorksessionModel.SerialNumber</b> ."
+          }
+        ],
+        "returns": "True if the model was detached, False otherwise."
+      },
+      {
+        "signature": "WorksessionModel[] GetModels(System.Boolean checkForUpdates)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The models in this worksession, including the active model.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "checkForUpdates",
+            "type": "System.Boolean",
+            "summary": "True to fill in <b>WorksessionModel.UpdateAvailable</b> for each model. This compares a checksum of every referenced file against the one stored when the file was attached, so it touches the file system once per model and can be slow on a large or remote worksession. Pass False unless you need it."
+          }
+        ],
+        "returns": "The models in the worksession, or an empty array if there are none."
       },
       {
         "signature": "System.String ModelPathFromSerialNumber(System.UInt32 modelSerialNumber)",
@@ -66986,6 +67416,163 @@
           }
         ],
         "returns": "The path to the model if successful, None otherwise."
+      },
+      {
+        "signature": "System.Boolean Save()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Saves this worksession to its existing .rws file.",
+        "since": "9.0",
+        "returns": "True if successful. False if the worksession has never been saved, in which case use <b>SaveAs(string)</b> to supply a path."
+      },
+      {
+        "signature": "System.Boolean SaveAs(System.String path)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Saves this worksession to a .rws file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The full path to write to."
+          }
+        ],
+        "returns": "True if successful, False otherwise."
+      },
+      {
+        "signature": "RhinoDoc SetActiveModel(System.UInt32 modelSerialNumber)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Makes one of this worksession's reference models the active model.",
+        "since": "9.0",
+    "remarks": "Changing the active model loads the requested model into a different     document, so carry on with the returned document: treat      and this  instance as     unusable once this returns.  \nThe document this was called on is closed as part of the switch, but on Mac     that close is asynchronous and may not have finished when this returns. Do     not rely on the old document either still being open or already being gone.  \nThis is not fully silent: if the outgoing document has unsaved changes the     user is prompted to save it, and cancelling that prompt makes this return     null. Save the document first if you need it to run unattended.  \nDo not call this from a script that is itself running in the document being     replaced. Scripts run in a document context, and closing that document from     underneath the running script leaves Rhino's command machinery working with     a document that no longer exists. Drive this from a command, a panel, or an     idle handler instead.",
+        "parameters": [
+          {
+            "name": "modelSerialNumber",
+            "type": "System.UInt32",
+            "summary": "The reference model's serial number, from  <b>WorksessionModel.SerialNumber</b> ."
+          }
+        ],
+        "returns": "The document the worksession is now using, or None on failure."
+      },
+      {
+        "signature": "System.Boolean Update(System.UInt32 modelSerialNumber)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Re-reads a reference model whose file has changed on disk.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "modelSerialNumber",
+            "type": "System.UInt32",
+            "summary": "The reference model's serial number, from  <b>WorksessionModel.SerialNumber</b> . Pass 0 to update every out-of-date reference model in this worksession."
+          }
+        ],
+        "returns": "True if successful, False otherwise."
+      },
+      {
+        "signature": "System.Boolean UpdateAll()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Re-reads every reference model in this worksession whose file has changed on disk.",
+        "since": "9.0",
+        "returns": "True if successful, False otherwise."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.DocObjects",
+    "name": "WorksessionModel",
+    "dataType": "class",
+    "summary": "An immutable snapshot of one model in a worksession.  \nThe values are copied when the snapshot is taken, so an instance stays usable   (though it may go out of date) after the worksession changes. It holds no   pointer into the document.",
+    "since": "9.0",
+    "properties": [
+      {
+        "signature": "string Alias",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The alias used to decorate names - layers, materials, and so on - that come from this model.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool AttachFailed",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if the most recent attempt to attach this model failed, which usually means the file is missing.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "Guid FileTypeId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the plug-in used to read the model's file.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsActiveModel",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if this is the worksession's active model - the document you are editing - rather than a reference model.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsAttached",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if the model's contents are currently attached to the document.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "string Path",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The full path to the model's file. This is empty for an active model that has never been saved.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "uint SerialNumber",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The reference model's serial number, which identifies this model in calls like <b>Worksession.Detach(uint)</b> . Zero means this is the worksession's active model.  \nReference model serial numbers are unique across the application, not just     within one document, so a serial number from another document's worksession     will simply not be found rather than matching the wrong model.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool UpdateAvailable",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if the file on disk has changed since it was attached, so  <b>Worksession.Update(uint)</b> has something to do.  \nThis is only filled in when the snapshot was taken with the file check     enabled; see . It is always false     otherwise.",
+        "since": "9.0",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the model's alias, or its path when it has no alias."
       }
     ]
   },
@@ -121512,114 +122099,6 @@
         "returns": "If <b>LineSphereIntersection.None</b> is returned, the first point is the point on the line closest to the sphere and the second point is the point on the sphere closest to the line. If <b>LineSphereIntersection.Single</b> is returned, the first point is the point on the line and the second point is the same point on the sphere."
       },
       {
-        "signature": "Point3d[] MeshCurve(Mesh mesh, Curve curve, System.Double tolerance, out Curve[] overlapCurves)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Simpler overload of <b>MeshCurve(Mesh, Curve, double)</b> : returns the Point-event hits (isolated crossings and the endpoints of every overlap span) as a flat  <b>Point3d</b> array, and the overlap spans as sub-curves of via. Both arrays are ordered by curve parameter.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "mesh",
-            "type": "Mesh",
-            "summary": "Mesh to intersect."
-          },
-          {
-            "name": "curve",
-            "type": "Curve",
-            "summary": "Curve to intersect."
-          },
-          {
-            "name": "tolerance",
-            "type": "System.Double",
-            "summary": "Numerical tolerance; see the rich overload."
-          },
-          {
-            "name": "overlapCurves",
-            "type": "Curve[]",
-            "summary": "Receives one trimmed sub-curve of the input per overlap event (the portion ofthat lies in a face's plane)."
-          }
-        ],
-        "returns": "One point per Point event — isolated crossings and the endpoints of every overlap span — ordered by curve parameter. Empty on failure or no intersection."
-      },
-      {
-        "signature": "Point3d[] MeshCurve(Mesh mesh, Curve curve, System.Double tolerance, out System.Int32[] faceIds, out Curve[] overlapCurves, out System.Int32[] overlapFaceIds)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Simpler overload of <b>MeshCurve(Mesh, Curve, double)</b> with mesh face indices. Mirrors <b>MeshLine(Mesh, Line, out int[])</b> and adds overlap output as sub-curves.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "mesh",
-            "type": "Mesh",
-            "summary": "Mesh to intersect."
-          },
-          {
-            "name": "curve",
-            "type": "Curve",
-            "summary": "Curve to intersect."
-          },
-          {
-            "name": "tolerance",
-            "type": "System.Double",
-            "summary": "Numerical tolerance; see the rich overload."
-          },
-          {
-            "name": "faceIds",
-            "type": "System.Int32[]",
-            "summary": "Receives one face index per returned point (parallel to the return array)."
-          },
-          {
-            "name": "overlapCurves",
-            "type": "Curve[]",
-            "summary": "Receives one trimmed sub-curve of the input per overlap event."
-          },
-          {
-            "name": "overlapFaceIds",
-            "type": "System.Int32[]",
-            "summary": "Receives one face index per overlap sub-curve (parallel to)."
-          }
-        ],
-        "returns": "One point per Point event — isolated crossings and the endpoints of every overlap span — ordered by curve parameter. Empty on failure or no intersection."
-      },
-      {
-        "signature": "MeshCurveIntersection[] MeshCurve(Mesh mesh, Curve curve, System.Double tolerance, System.Boolean includeOverlaps)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Same as <b>MeshCurve(Mesh, Curve, double)</b> with a flag controlling the Overlap span events.",
-        "since": "9.0",
-    "remarks": "Every overlap is reported as two Point events at the overlap's endpoints plus one Overlap event for the in-plane span. The two endpoint Points are emitted in both modes; controls only the span event. Passfalseto drop the Overlap span events while still reporting the endpoint crossings as Point events — it does not reduce the result to transversal crossings only."
-      },
-      {
-        "signature": "MeshCurveIntersection[] MeshCurve(Mesh mesh, Curve curve, System.Double tolerance)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Intersects a curve and a mesh, returning certified hits sorted by curve parameter.",
-        "since": "9.0",
-    "remarks": "Every overlap is reported as two Point events at the overlap's endpoints plus one Overlap event for the in-plane span. This overload always includes the Overlap events; use the <b>MeshCurve(Mesh, Curve, double, bool)</b> overload to drop them while still reporting the endpoint Points.",
-        "parameters": [
-          {
-            "name": "mesh",
-            "type": "Mesh",
-            "summary": "Mesh to intersect."
-          },
-          {
-            "name": "curve",
-            "type": "Curve",
-            "summary": "Curve to intersect."
-          },
-          {
-            "name": "tolerance",
-            "type": "System.Double",
-            "summary": "Post-process merge tolerance in 3D model space. Consecutive intersection events whose 3D endpoints are within this distance are fused into a single event. Must be a positive finite value (use the document absolute tolerance as a starting point). The internal calculation tolerance is a fixed value independent of this parameter."
-          }
-        ],
-        "returns": "Array of intersection events sorted by curve parameter. Empty on failure or no intersection."
-      },
-      {
         "signature": "Point3d[] MeshLine(Mesh mesh, Line line, out System.Int32[] faceIds)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -121830,6 +122309,72 @@
           }
         ],
         "returns": "True, if meshes intersect or overlap, otherwise false. False is also returned on error, but textLog will start with Error: and contain the error."
+      },
+      {
+        "signature": "System.Boolean MeshMeshTwoSets(IEnumerable<Mesh> setA, IEnumerable<Mesh> setB, System.Double tolerance, out Polyline[] intersections, System.Boolean overlapsPolylines, out Polyline[] overlapsPolylinesResult, System.Boolean overlapsMesh, out Mesh overlapsMeshResult, FileIO.TextLog textLog, System.Threading.CancellationToken cancel, IProgress<double> progress)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Intersects two sets of meshes with each other. Overlaps and perforations are provided in the output list.  \nOnly events between a mesh of the first set and a mesh of the second set are computed. Intersections     among meshes of the same set, and self-intersections within a single mesh, are ignored.  \nTolerance can be specified.  \nWe suggest to use the document tolerance multiplied by .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "setA",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The first mesh input list. This cannot be null. Null entries are tolerated."
+          },
+          {
+            "name": "setB",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The second mesh input list. This cannot be null. Null entries are tolerated."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "A tolerance value. If negative, the positive value will be used. WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtEpsilon*10."
+          },
+          {
+            "name": "intersections",
+            "type": "Polyline[]",
+            "summary": "Returns the intersections."
+          },
+          {
+            "name": "overlapsPolylines",
+            "type": "System.Boolean",
+            "summary": "If true, overlaps are computed and returned."
+          },
+          {
+            "name": "overlapsPolylinesResult",
+            "type": "Polyline[]",
+            "summary": "If requested, overlaps are returned here."
+          },
+          {
+            "name": "overlapsMesh",
+            "type": "System.Boolean",
+            "summary": "If true, an overlaps mesh is computed and returned."
+          },
+          {
+            "name": "overlapsMeshResult",
+            "type": "Mesh",
+            "summary": "If requested, overlaps are returned here."
+          },
+          {
+            "name": "textLog",
+            "type": "FileIO.TextLog",
+            "summary": "A text log, or null."
+          },
+          {
+            "name": "cancel",
+            "type": "System.Threading.CancellationToken",
+            "summary": "A cancellation token to stop the computation at a given point."
+          },
+          {
+            "name": "progress",
+            "type": "IProgress<double>",
+            "summary": "A progress reporter to inform the user about progress, or null. The reported value is indicative."
+          }
+        ],
+        "returns": "True, if the operation succeeded, otherwise false."
       },
       {
         "signature": "Polyline[] MeshPlane(Mesh mesh, IEnumerable<Plane> planes)",
@@ -123068,187 +123613,6 @@
         "returns": "An array of clash objects."
       }
     ]
-  },
-  {
-    "namespace": "Rhino.Geometry.Intersect",
-    "name": "MeshCurveIntersection",
-    "dataType": "class",
-    "summary": "One certified hit from a curve-mesh intersection. Either a single isolated crossing ( <b>IsPoint</b> ) or a parameter range over which the curve lies in a face's plane ( <b>IsOverlap</b> ). For a point hit, <b>CurveParameter</b> is degenerate and  <b>PointA</b> equals <b>PointB</b> . In a results array, every overlap is reported as two Point hits at its endpoints plus one Overlap hit for the span. The *Toleranceproperties are certified half-widths derived from interval enclosures.",
-    "since": "9.0",
-    "constructors": [
-      {
-        "signature": "MeshCurveIntersection()",
-        "summary": "Initializes a new instance of the MeshCurveIntersection class"
-      }
-    ],
-    "properties": [
-      {
-        "signature": "Vector3d BarycentricA",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Barycentric coordinates of <b>PointA</b> wrt the face's triangle.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "Vector3d BarycentricB",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Barycentric coordinates of <b>PointB</b> .",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "double BarycentricTolerance",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Certified half-width on each barycentric slot.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "Interval CurveParameter",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Curve parameter range of the hit.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "double CurveParameterTolerance",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Certified half-width on each curve parameter slot.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "int FaceIndex",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Index into <b>Mesh.Faces</b> of the canonical face that produced this hit (the lowest face index among <b>FaceIndices</b> ).",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "IReadOnlyList<int> FaceIndices",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "All mesh faces that share this hit, sorted ascending. For a face-interior hit or a 1-valence mesh boundary edge, contains just <b>FaceIndex</b> . For a hit on a shared mesh edge, contains the 2+ faces meeting at that edge. For a vertex hit, contains every face incident to that vertex.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "int FaceTriangleIndex",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "0 for a triangle face; 0 or 1 for the two sub-triangles of a quad face.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "MeshIncidence Incidence",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "The kind of mesh feature this hit lies on: face, edge, or vertex.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "bool IsOnTriangleBoundary",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "True if this hit lies on a mesh-level boundary ( <b>Incidence</b> is  <b>MeshIncidence.Edge</b> or <b>MeshIncidence.Vertex</b> ).",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "bool IsOverlap",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "True if this event is a range over which the curve lies in the face's plane.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "bool IsPoint",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "True if this event is an isolated crossing.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "Point3d PointA",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "3D point on the curve at the start of the event.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "Point3d PointB",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "3D point on the curve at the end of the event.",
-        "since": "9.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "double PointTolerance",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Certified half-width on each 3D point slot.",
-        "since": "9.0",
-        "property": ["get"]
-      }
-    ]
-  },
-  {
-    "namespace": "Rhino.Geometry.Intersect",
-    "name": "MeshIncidence",
-    "dataType": "enum",
-    "summary": "The kind of mesh feature a <b>MeshCurveIntersection</b> lies on, determined by mesh topology after deduplication.",
-    "since": "9.0",
-    "values": [
-      {
-        "signature": "Face = 0",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "Strictly inside a face (also reported for hits on the internal diagonal of a quad's two-triangle split, which is not a real mesh edge)."
-      },
-      {
-        "signature": "Edge = 1",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "On a mesh edge (shared by 2+ faces, or a 1-valence boundary edge)."
-      },
-      {
-        "signature": "Vertex = 2",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "At a mesh topology vertex."
-      }
-    ]
-
   },
   {
     "namespace": "Rhino.Geometry.Intersect",
@@ -129090,6 +129454,80 @@
           }
         ],
         "returns": "A welded quad mesh sphere if successful, or None on failure."
+      },
+      {
+        "signature": "Mesh CreateQuickHull3D(IEnumerable<Point3d> points, out List<int[]> indexMap)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to create a 3d convex hull mesh from input points using the QuickHull algorithm. Hull faces whose shared edges are not clearly convex are merged, so faces of the resulting mesh may be triangles, quads, or larger convex polygons (returned as mesh ngons).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "points",
+            "type": "IEnumerable<Point3d>",
+            "summary": "The 3D input points to be covered with the convex hull. At least four points are required, and they must not be coincident, colinear, or coplanar."
+          },
+          {
+            "name": "indexMap",
+            "type": "List<int[]>",
+            "summary": "List of integer arrays, one for each hull face, containing the indices into the input points enumerable that make up that face. Note, this can be null."
+          }
+        ],
+        "returns": "A valid mesh if successful. If there were too few input points, or the input was degenerate (coincident, colinear, or coplanar), the result is null."
+      },
+      {
+        "signature": "Mesh CreateQuickHull3D(IEnumerable<Point3d> points)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to create a 3d convex hull mesh from input points using the QuickHull algorithm. Hull faces whose shared edges are not clearly convex are merged, so faces of the resulting mesh may be triangles, quads, or larger convex polygons (returned as mesh ngons).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "points",
+            "type": "IEnumerable<Point3d>",
+            "summary": "The 3D input points to be covered with the convex hull. At least four points are required, and they must not be coincident, colinear, or coplanar."
+          }
+        ],
+        "returns": "A valid mesh if successful. If there were too few input points, or the input was degenerate (coincident, colinear, or coplanar), the result is null."
+      },
+      {
+        "signature": "Mesh CreateQuickHull3D(PointCloud pointCloud, out List<int[]> indexMap)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to create a 3d convex hull mesh from an input point cloud using the QuickHull algorithm, also returning the input points that make up each hull face.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "pointCloud",
+            "type": "PointCloud",
+            "summary": "The point cloud to be covered with the convex hull. At least four points are required, and they must not be coincident, colinear, or coplanar."
+          },
+          {
+            "name": "indexMap",
+            "type": "List<int[]>",
+            "summary": "List of integer arrays, one for each hull face, containing the indices into the point cloud that make up that face. Note, this can be null."
+          }
+        ],
+        "returns": "A valid mesh if successful. If there were too few input points, or the input was degenerate (coincident, colinear, or coplanar), the result is null."
+      },
+      {
+        "signature": "Mesh CreateQuickHull3D(PointCloud pointCloud)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to create a 3d convex hull mesh from an input point cloud using the QuickHull algorithm. Hull faces whose shared edges are not clearly convex are merged, so faces of the resulting mesh may be triangles, quads, or larger convex polygons (returned as mesh ngons).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "pointCloud",
+            "type": "PointCloud",
+            "summary": "The point cloud to be covered with the convex hull. At least four points are required, and they must not be coincident, colinear, or coplanar."
+          }
+        ],
+        "returns": "A valid mesh if successful. If there were too few input points, or the input was degenerate (coincident, colinear, or coplanar), the result is null."
       },
       {
         "signature": "Mesh CreateRefinedCatmullClarkMesh(Mesh mesh, RefinementSettings settings)",
