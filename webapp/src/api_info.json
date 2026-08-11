@@ -4154,7 +4154,7 @@
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "Aligns the gumball to the control polygon of the object."
+        "summary": "Aligns the gumball to the control polygon of the object.  <b>ObjectPlane</b> when no control polygon frame can be made."
       }
     ]
 
@@ -27433,68 +27433,6 @@
         "property": ["get"]
       }
     ]
-  },
-  {
-    "namespace": "Rhino.Display",
-    "name": "FlairLayer",
-    "dataType": "enum",
-    "values": [
-      {
-        "signature": "Normals = 0",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Depth = 1",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Shadows = 2",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Shading = 3",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Material = 4",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Details = 5",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Background = 6",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Selection = 7",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      },
-      {
-        "signature": "Unknown = -1",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false
-      }
-    ]
-
   },
   {
     "namespace": "Rhino.Display",
@@ -53278,6 +53216,43 @@
         "returns": "True if operation succeeded."
       },
       {
+        "signature": "System.Boolean ModifySourceArchive(System.Int32 idefIndex, FileReference sourceArchive, InstanceDefinitionUpdateType updateType, InstanceDefinitionLayerStyle layerStyle, System.Boolean quiet)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "If the instance definition is linked or embedded, use SetSource to specify the source archive.",
+        "since": "9.0",
+    "remarks": "A linked instance definition does not remember its layer style once it has been changed to another update type. Use this overload to restore the layer style when changing an instance definition back to InstanceDefinitionUpdateType.Linked.",
+        "parameters": [
+          {
+            "name": "idefIndex",
+            "type": "System.Int32",
+            "summary": "The index of the instance definition to be modified."
+          },
+          {
+            "name": "sourceArchive",
+            "type": "FileReference",
+            "summary": "The new source archive file name."
+          },
+          {
+            "name": "updateType",
+            "type": "InstanceDefinitionUpdateType",
+            "summary": ""
+          },
+          {
+            "name": "layerStyle",
+            "type": "InstanceDefinitionLayerStyle",
+            "summary": "The layer style to apply whenis  <b>InstanceDefinitionUpdateType.Linked</b> . Pass  <b>InstanceDefinitionLayerStyle.None</b> to use the default layer style, which is <b>InstanceDefinitionLayerStyle.Reference</b> . This parameter is ignored for all other update types."
+          },
+          {
+            "name": "quiet",
+            "type": "System.Boolean",
+            "summary": "If true, then message boxes about erroneous parameters will not be shown."
+          }
+        ],
+        "returns": "Returns True if the definition was successfully modified otherwise returns false."
+      },
+      {
         "signature": "System.Boolean ModifySourceArchive(System.Int32 idefIndex, FileReference sourceArchive, InstanceDefinitionUpdateType updateType, System.Boolean quiet)",
         "modifiers": ["public"],
         "protected": false,
@@ -55823,7 +55798,7 @@
           {
             "name": "quiet",
             "type": "System.Boolean",
-            "summary": "if true, information message boxes pop up when illegal changes are attempted."
+            "summary": "if false, information message boxes pop up when illegal changes are attempted."
           }
         ],
         "returns": "True if successful. False if index is out of range."
@@ -125561,6 +125536,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "double Radius",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the emitter radius (of the emitting sphere, in model units) for point and spot lights.  \nIgnored for other light types; linear light radius is derived from .",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "double ShadowIntensity",
         "modifiers": ["public"],
         "protected": false,
@@ -131421,7 +131405,7 @@
           {
             "name": "allowDistortion",
             "type": "System.Boolean",
-            "summary": "If True mesh appearance is not changed even if the target polygon count is not reached"
+            "summary": "If true, faces are removed until desiredPolygonCount is reached, distorting the shape as needed. If false, only flat (coplanar) regions are simplified, which leaves the shape unchanged and ignores desiredPolygonCount."
           },
           {
             "name": "accuracy",
@@ -131457,7 +131441,7 @@
           {
             "name": "allowDistortion",
             "type": "System.Boolean",
-            "summary": "If True mesh appearance is not changed even if the target polygon count is not reached"
+            "summary": "If true, faces are removed until desiredPolygonCount is reached, distorting the shape as needed. If false, only flat (coplanar) regions are simplified, which leaves the shape unchanged and ignores desiredPolygonCount."
           },
           {
             "name": "accuracy",
@@ -131508,7 +131492,7 @@
           {
             "name": "allowDistortion",
             "type": "System.Boolean",
-            "summary": "If True mesh appearance is not changed even if the target polygon count is not reached"
+            "summary": "If true, faces are removed until desiredPolygonCount is reached, distorting the shape as needed. If false, only flat (coplanar) regions are simplified, which leaves the shape unchanged and ignores desiredPolygonCount."
           },
           {
             "name": "accuracy",
@@ -131554,7 +131538,7 @@
           {
             "name": "allowDistortion",
             "type": "System.Boolean",
-            "summary": "If True mesh appearance is not changed even if the target polygon count is not reached"
+            "summary": "If true, faces are removed until desiredPolygonCount is reached, distorting the shape as needed. If false, only flat (coplanar) regions are simplified, which leaves the shape unchanged and ignores desiredPolygonCount."
           },
           {
             "name": "accuracy",
@@ -148404,7 +148388,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "If True mesh appearance is not changed even if the target polygon count is not reached",
+        "summary": "If true, faces are removed until <b>DesiredPolygonCount</b> is reached, distorting the shape as needed. If false, only flat (coplanar) regions are simplified, which leaves the shape unchanged and ignores <b>DesiredPolygonCount</b> .",
         "since": "6.0",
         "property": ["get", "set"]
       },
@@ -178953,6 +178937,13 @@
         "modifiers": [],
         "protected": false,
         "virtual": false
+      },
+      {
+        "signature": "NotRhinoPlugIn",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The rhp is a valid assembly, but it does not contain a Rhino plugin class. Instead it contains what is needed to define grasshopper or grasshopper 2 component(s)"
       }
     ]
 
@@ -210974,6 +210965,15 @@
         "property": ["get"]
       },
       {
+        "signature": "MarkupMode MarkupMode",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The markup mode this document is currently in: creating, viewing or editing a markup, or <b>Rhino.DocObjects.Tables.MarkupMode.None</b> when not in markup mode. <b>MarkupViewChanged</b> reports changes to this value.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "MarkupTable Markups",
         "modifiers": ["public"],
         "protected": false,
@@ -214544,6 +214544,13 @@
         "protected": false,
         "virtual": false,
         "summary": "When true, untrimmed four-sided patches are created with the new method. The new method is still under development."
+      },
+      {
+        "signature": "MarkupMinimumCaptureSize",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Minimum size in pixels for the larger dimension of the background bitmap captured when a markup is saved. Captures from smaller viewports are upscaled to this size (keeping the viewport's aspect ratio) so the stored background is not pixelated at view, thumbnail or export time. Larger viewports are never scaled down. Set to 0 to disable. Default is 1280. https://mcneel.myjetbrains.com/youtrack/issue/RH-97563"
       }
     ]
 
@@ -235992,12 +235999,52 @@
         "summary": "Called when the mouse is released on this object"
       },
       {
+        "signature": "Rhino.Commands.Result OnRunCommand(RhinoDoc doc, Rhino.Commands.RunMode mode, MouseState mouse)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called after the above RunCommand function is called. This will be executing while inside of a Rhino command.",
+        "parameters": [
+          {
+            "name": "doc",
+            "type": "RhinoDoc",
+            "summary": "Document that the command is running in"
+          },
+          {
+            "name": "mode",
+            "type": "Rhino.Commands.RunMode",
+            "summary": "Interactive or scripted mode"
+          },
+          {
+            "name": "mouse",
+            "type": "MouseState",
+            "summary": "Mouse state that was passed to RunCommand"
+          }
+        ],
+        "returns": "Result of the command. The default implementation returns Success"
+      },
+      {
         "signature": "System.Boolean RegisterForAllDocuments()",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "summary": "Make this object visible for all documents. Typically you will only have user interface objects work with single documents. For that case, call doc.ViewUserInterface.Add",
         "since": "9.0"
+      },
+      {
+        "signature": "System.Void RunCommand(MouseState mouse)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Call RunCommand to have the virtual OnRunCommand function executed in the scope of a Rhino command. If you are modifying the document from one of the mouse functions on this object, this is the best approach to do so since changes made inside of a command are recorded for undo.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "mouse",
+            "type": "MouseState",
+            "summary": "Current mouse state. This is handed back to OnRunCommand"
+          }
+        ]
       },
       {
         "signature": "System.Void Unregister()",
