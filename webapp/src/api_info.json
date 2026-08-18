@@ -24446,6 +24446,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool HonorDrawOrder",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draw order support for this display mode. When True (the default), objects with a non-zero draw order are drawn in front of or behind other objects based on that draw order. When false, this display mode ignores per object draw order and draws everything in the standard order.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "Guid Id",
         "modifiers": ["public"],
         "protected": false,
@@ -38648,6 +38657,42 @@
         "since": "6.7"
       },
       {
+        "signature": "Font FromRichTextProperties(System.String richTextFontName, System.Boolean bold, System.Boolean italic, System.Boolean underlined, System.Boolean strikethrough)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns a font with the requested rich-text (family) name, preserving that name even when the font is not installed on the current machine. If an installed font matches it is returned; otherwise a \"not on device\" managed font that keeps the requested name is returned (rendered with a fallback quartet). Use this to author a font by name on a machine that does not have it installed: the Font constructor and  <b>FromQuartetProperties</b> both substitute the family in that case, losing the requested name when the file is written.",
+        "since": "8.35",
+        "parameters": [
+          {
+            "name": "richTextFontName",
+            "type": "System.String",
+            "summary": "The rich-text font (family) name to store."
+          },
+          {
+            "name": "bold",
+            "type": "System.Boolean",
+            "summary": "True to select the heavier member of the rich-text quartet."
+          },
+          {
+            "name": "italic",
+            "type": "System.Boolean",
+            "summary": "True to select the more slanted member of the rich-text quartet."
+          },
+          {
+            "name": "underlined",
+            "type": "System.Boolean",
+            "summary": "True for underlined text."
+          },
+          {
+            "name": "strikethrough",
+            "type": "System.Boolean",
+            "summary": "True for strikethrough text."
+          }
+        ],
+        "returns": "A font that preserves the requested name, or None if none could be created."
+      },
+      {
         "signature": "Font[] InstalledFonts()",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -52105,7 +52150,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Conceptually, the hatch pattern table is an array of hatch patterns. The operator[] can be used to get individual hatch patterns. A hatch pattern is either active or deleted and this state is reported by HatchPattern.IsDeleted."
+        "summary": "Conceptually, the hatch pattern table is an array of hatch patterns. The operator[] can be used to get individual hatch patterns. A hatch pattern is either active or deleted and this state is reported by HatchPattern.IsDeleted.",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance definition, removes its hatch patterns but leaves the table slots they occupied empty; the slots cannot be closed up, because table indices are persistent references that objects store. Count spans the empty slots and they accumulate for the life of the document. An index that lands on one returns the default hatch pattern rather than throwing, and nothing about it says it is a stand-in except its index, which is -1 and never the index you asked for - so test index == HatchPatterns[index].Index before treating an entry as real. Enumerating the table with foreach goes through the document manifest rather than the raw table array, so it does not visit empty slots at all. See RH-97389."
       }
     ],
     "methods": [
@@ -53574,7 +53620,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Conceptually, the layer table is an array of layers. The operator[] can be used to get individual layers. A layer is either active or deleted and this state is reported by Layer.IsDeleted."
+        "summary": "Conceptually, the layer table is an array of layers. The operator[] can be used to get individual layers. A layer is either active or deleted and this state is reported by Layer.IsDeleted.",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance     definition, removes its layers but leaves the table slots they occupied     empty. The slots cannot be closed up, because table indices are persistent     references that objects store - object attributes hold a layer index - so     renumbering would repoint existing objects at the wrong layer. Count spans     the empty slots, and they accumulate for the life of the document - one     per purge.  \nAn index that lands on an empty slot returns the document's default layer     rather than throwing. Nothing about that layer says it is a stand-in: it     reports the name \"Default\" and ordinary values for every other property,     so enumerating a table that has been purged several times reports several     layers that are not there. The one distinguishing mark is the index - a     stand-in reports Index -1, never the index you asked for - so test     index == Layers[index].Index before treating an entry as real.     Enumerating the table with foreach goes through the document manifest     rather than the raw table array, so it does not visit empty slots at all     and is the safer way to walk the table. See RH-97389."
       }
     ],
     "methods": [
@@ -54994,7 +55041,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Conceptually, the linetype table is an array of linetypes. The operator[] can be used to get individual linetypes. A linetype is either active or deleted and this state is reported by Linetype.IsDeleted."
+        "summary": "Conceptually, the linetype table is an array of linetypes. The operator[] can be used to get individual linetypes. A linetype is either active or deleted and this state is reported by Linetype.IsDeleted.",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance definition, removes its linetypes but leaves the table slots they occupied empty; the slots cannot be closed up, because table indices are persistent references that objects store. Count spans the empty slots and they accumulate for the life of the document. An index that lands on one returns the continuous line pattern rather than throwing, and nothing about it says it is a stand-in except its index, which is -1 and never the index you asked for - so test index == Linetypes[index].Index before treating an entry as real. Enumerating the table with foreach goes through the document manifest rather than the raw table array, so it does not visit empty slots at all. See RH-97389."
       }
     ],
     "methods": [
@@ -55557,7 +55605,8 @@
         "protected": false,
         "virtual": false,
         "summary": "Conceptually, the markup table is an array of markups. The operator[] can be used to get individual markups. A markup is either active or deleted and this state is reported by Markup.IsDeleted.",
-        "since": "9.0"
+        "since": "9.0",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance     definition, removes its markups but leaves the table slots they occupied     empty. The slots cannot be closed up, because table indices are persistent     references that objects store. Count spans the empty slots, and they     accumulate for the life of the document - one per purge.  \nAn index that lands on an empty slot returns a Markup that throws      on every property     access, so code that walks this table by index must expect it. To tell a     real markup from an empty slot, compare the index you asked for with     Markup.Index: an empty slot never reports the index you asked for.     Enumerating the table with foreach goes through the document manifest     rather than the raw table array, so it does not visit empty slots at all     and is the safer way to walk the table. See RH-97389."
       }
     ],
     "methods": [
@@ -55984,7 +56033,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Conceptually, the material table is an array of materials. The operator[] can be used to get individual materials. A material is either active or deleted and this state is reported by Material.IsDeleted."
+        "summary": "Conceptually, the material table is an array of materials. The operator[] can be used to get individual materials. A material is either active or deleted and this state is reported by Material.IsDeleted.",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance definition, removes its materials but leaves the table slots they occupied empty; the slots cannot be closed up, because table indices are persistent references that objects store. Count spans the empty slots and they accumulate for the life of the document. An index that lands on one returns the default material rather than throwing, and nothing about it says it is a stand-in except its index, which is -1 and never the index you asked for - so test index == Materials[index].Index before treating an entry as real. Enumerating the table with foreach goes through the document manifest rather than the raw table array, so it does not visit empty slots at all. See RH-97389."
       }
     ],
     "methods": [
@@ -62672,7 +62722,8 @@
         "protected": false,
         "virtual": false,
         "summary": "Conceptually, the page view group table is an array of page view groups. The operator[] can be used to get individual page view group. A page view group is either active or deleted and this state is reported by PageViewGroup.IsDeleted.",
-        "since": "9.0"
+        "since": "9.0",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance     definition, removes its page view groups but leaves the table slots they     occupied empty. The slots cannot be closed up, because table indices are     persistent references that objects store. Count spans the empty slots, and     they accumulate for the life of the document - one per purge.  \nAn index that lands on an empty slot returns a PageViewGroup that throws      on every property     access, so code that walks this table by index must expect it. To tell a     real page view group from an empty slot, compare the index you asked for     with PageViewGroup.Index: an empty slot never reports the index you asked     for. Enumerating the table with foreach goes through the document manifest     rather than the raw table array, so it does not visit empty slots at all     and is the safer way to walk the table. See RH-97389."
       }
     ],
     "methods": [
@@ -63402,7 +63453,7 @@
         "modifiers": ["public", "new"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns number of section styles in the section style table, including deleted section styles.",
+        "summary": "Returns number of section styles in the section style table, including deleted section styles.  \nThis count also spans table slots emptied by a purge, so it can be larger     than the number of section styles that are actually there. See the remarks     on the indexer.",
         "since": "9.0",
         "property": ["get"]
       },
@@ -63421,7 +63472,8 @@
         "protected": false,
         "virtual": false,
         "summary": "Conceptually, the section style table is an array of section styles. The operator[] can be used to get individual section styles. A section style is either active or deleted and this state is reported by SectionStyle.IsDeleted.",
-        "since": "9.0"
+        "since": "9.0",
+    "remarks": "Detaching a worksession reference model, or purging a linked instance     definition, removes its section styles but leaves the table slots they     occupied empty. The slots cannot be closed up, because table indices are     persistent references that objects store, so renumbering would repoint     existing objects at the wrong component.  spans the     empty slots, and they accumulate for the life of the document - one per     purge.  \nAn index that lands on an empty slot returns a SectionStyle that throws      on every property     access, so code that walks this table by index must expect it. To tell a     real section style from an empty slot, compare the index you asked for     with SectionStyle.Index: an empty slot never reports the index you asked     for. Enumerating the table with foreach goes through the document     manifest rather than the raw table array, so it does not visit empty     slots at all and is the safer way to walk the table.  \nThe layer, linetype, material and hatch pattern tables answer the same     situation differently: they return a stand-in component whose Index is -1     rather than one that throws. See RH-97389."
       }
     ],
     "methods": [
@@ -65537,6 +65589,15 @@
         ]
       },
       {
+        "signature": "ConstructionPlane GetConstructionPlane()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the view's construction plane, including its grid settings: grid and snap spacing, grid line count, thick-line frequency, and depth buffering.",
+        "since": "8.35",
+        "returns": "A copy of the view's construction plane."
+      },
+      {
         "signature": "System.Void GetWindowPosition(out System.Double left, out System.Double right, out System.Double top, out System.Double bottom)",
         "modifiers": ["public"],
         "protected": false,
@@ -65563,6 +65624,21 @@
             "name": "bottom",
             "type": "System.Double",
             "summary": "Bottom edge fraction."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetConstructionPlane(ConstructionPlane constructionPlane)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the view's construction plane, including its grid settings.",
+        "since": "8.35",
+        "parameters": [
+          {
+            "name": "constructionPlane",
+            "type": "ConstructionPlane",
+            "summary": "The construction plane to store on the view."
           }
         ]
       },
@@ -205936,6 +206012,133 @@
         "since": "6.0"
       },
       {
+        "signature": "System.String BlockContent_CustomPath()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.String BlockContent_CustomPathList()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "RdkInitialLocation BlockContent_InitialLocation()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.String BlockContent_InitialLocationCustomFolder()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.String BlockContent_LastNavigatedLocation()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetCustomPath(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetCustomPathList(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetInitialLocation(RdkInitialLocation l)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetInitialLocationCustomFolder(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetLastNavigatedLocation(System.String folder)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetShowBlockContent(System.Boolean b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetShowCustom(System.Boolean b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetShowDocuments(System.Boolean b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void BlockContent_SetUseDefaultLocation(System.Boolean b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Boolean BlockContent_ShowBlockContent()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Boolean BlockContent_ShowCustom()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Boolean BlockContent_ShowDocuments()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Boolean BlockContent_UseDefaultLocation()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Settings for the Block Content panel. This panel is the block-only sibling of the Libraries panel and keeps its own copy of the Libraries settings.",
+        "since": "9.0"
+      },
+      {
         "signature": "System.Boolean CheckSupportFilesBeforeRendering()",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -210377,6 +210580,27 @@
             "summary": "the document to use for determining a \"main window\""
           }
         ]
+      },
+      {
+        "signature": "System.Boolean ValidateRhinoLicense(System.String licenseKey, System.String email)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Validates a stand-alone Rhino license key for the given Rhino account email against the McNeel validation server, without asking the user for any input. Shows the validation wizard's connection/validation progress steps; problems reported by the server route to the wizard's normal interactive steps. On success the license is locked to this computer (standalone node). Used by the rhinoN://license protocol handler to install a license from a web link.",
+        "since": "8.34",
+        "parameters": [
+          {
+            "name": "licenseKey",
+            "type": "System.String",
+            "summary": "The Rhino license key to validate and install."
+          },
+          {
+            "name": "email",
+            "type": "System.String",
+            "summary": "The Rhino account email to validate the key against."
+          }
+        ],
+        "returns": "True if the license validated and was installed; otherwise false."
       },
       {
         "signature": "System.Void Wait()",
@@ -220527,6 +220751,23 @@
         "protected": true,
         "virtual": false,
         "since": "6.0"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Runtime",
+    "name": "IZooClientUtilities2",
+    "dataType": "interface",
+    "summary": "Additions to <b>IZooClientUtilities</b> . Implemented in ZooClient alongside that interface and discovered by casting the injected service.  \nNew members go here rather than on : that interface   is public, so adding to it is a breaking change for anything else that implements it.",
+    "since": "8.34",
+    "methods": [
+      {
+        "signature": "System.Boolean ValidateStandaloneLicense(System.Object verify, ZooClientParameters parameters, System.String licenseKey, System.String email)",
+        "modifiers": [],
+        "protected": true,
+        "virtual": false,
+        "summary": "RH-92777: Validates a stand-alone license key for the given account email against the validation server, asking the user for no input (progress and any server-reported problems are shown by the validation wizard). Returns True on success.",
+        "since": "8.34"
       }
     ]
   },
@@ -236438,6 +236679,82 @@
       }
 ,
   {
+    "namespace": "Rhino.UI",
+    "name": "OnColorChangedEvent",
+    "dataType": "delegate",
+        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
+      }
+,
+  {
+    "namespace": "Rhino.Input.Custom",
+    "name": "GetObjectGeometryFilter",
+    "dataType": "delegate",
+        "signature": "delegate bool GetObjectGeometryFilter(RhinoObject rhObject, GeometryBase geometry, ComponentIndex componentIndex);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "SaveFileHandler",
+    "dataType": "delegate",
+        "signature": "delegate bool SaveFileHandler(string fileName, bool includeAlpha, RenderWindow renderWindow);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called when a user chooses to save a rendered scene as this custom file type."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "ValidateProductKeyDelegate",
+    "dataType": "delegate",
+        "signature": "delegate ValidateResult ValidateProductKeyDelegate(string productKey, out LicenseData licenseData);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Validates a product key or license."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "VerifyLicenseKeyDelegate",
+    "dataType": "delegate",
+        "signature": "delegate ValidateResult VerifyLicenseKeyDelegate(  \nstring licenseKey, string validationCode, DateTime validationCodeInstallDate, bool gracePeriodExpired, out LicenseData licenseData);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by Rhino to verify a license key. For details, see http://developer.rhino3d.com/guides/rhinocommon/rhinocommon-zoo-plugins/"
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "OnLeaseChangedDelegate",
+    "dataType": "delegate",
+        "signature": "delegate void OnLeaseChangedDelegate(LicenseLeaseChangedEventArgs args, out Icon icon);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by Rhino to signal that a lease from Rhino Accounts has changed. If LicenseLeaseChangedEventArgs.Lease is null, then the server has signaled that this product is no longer licensed. Your plug-in must change behavior to behave appropriately."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "VerifyPreviousVersionLicenseDelegate",
+    "dataType": "delegate",
+        "signature": "delegate bool VerifyPreviousVersionLicenseDelegate(  \nstring license, string previousVersionLicense, out string errorMessage);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
+      }
+,
+  {
     "namespace": "Rhino.Runtime",
     "name": "SetClipRectProc",
     "dataType": "delegate",
@@ -236558,6 +236875,17 @@
       }
 ,
   {
+    "namespace": "Rhino.UI",
+    "name": "UpdateMenuItemEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Menu item update delegate"
+      }
+,
+  {
     "namespace": "Rhino.Commands",
     "name": "RunCommandDelegate",
     "dataType": "delegate",
@@ -236565,72 +236893,6 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "SaveFileHandler",
-    "dataType": "delegate",
-        "signature": "delegate bool SaveFileHandler(string fileName, bool includeAlpha, RenderWindow renderWindow);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called when a user chooses to save a rendered scene as this custom file type."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "ValidateProductKeyDelegate",
-    "dataType": "delegate",
-        "signature": "delegate ValidateResult ValidateProductKeyDelegate(string productKey, out LicenseData licenseData);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Validates a product key or license."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "VerifyLicenseKeyDelegate",
-    "dataType": "delegate",
-        "signature": "delegate ValidateResult VerifyLicenseKeyDelegate(  \nstring licenseKey, string validationCode, DateTime validationCodeInstallDate, bool gracePeriodExpired, out LicenseData licenseData);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by Rhino to verify a license key. For details, see http://developer.rhino3d.com/guides/rhinocommon/rhinocommon-zoo-plugins/"
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "OnLeaseChangedDelegate",
-    "dataType": "delegate",
-        "signature": "delegate void OnLeaseChangedDelegate(LicenseLeaseChangedEventArgs args, out Icon icon);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by Rhino to signal that a lease from Rhino Accounts has changed. If LicenseLeaseChangedEventArgs.Lease is null, then the server has signaled that this product is no longer licensed. Your plug-in must change behavior to behave appropriately."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "VerifyPreviousVersionLicenseDelegate",
-    "dataType": "delegate",
-        "signature": "delegate bool VerifyPreviousVersionLicenseDelegate(  \nstring license, string previousVersionLicense, out string errorMessage);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
-      }
-,
-  {
-    "namespace": "Rhino",
-    "name": "KeyboardHookEvent",
-    "dataType": "delegate",
-        "signature": "delegate void KeyboardHookEvent(int key);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "KeyboardEvent delegate"
       }
 ,
   {
@@ -236644,35 +236906,14 @@
       }
 ,
   {
-    "namespace": "Rhino.Input.Custom",
-    "name": "GetObjectGeometryFilter",
+    "namespace": "Rhino",
+    "name": "KeyboardHookEvent",
     "dataType": "delegate",
-        "signature": "delegate bool GetObjectGeometryFilter(RhinoObject rhObject, GeometryBase geometry, ComponentIndex componentIndex);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino.UI",
-    "name": "UpdateMenuItemEventHandler",
-    "dataType": "delegate",
-        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "signature": "delegate void KeyboardHookEvent(int key);",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Menu item update delegate"
-      }
-,
-  {
-    "namespace": "Rhino.UI",
-    "name": "OnColorChangedEvent",
-    "dataType": "delegate",
-        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
+        "summary": "KeyboardEvent delegate"
       }
 ,
   {
