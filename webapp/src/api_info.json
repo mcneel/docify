@@ -2488,6 +2488,26 @@
         "since": "6.0"
       },
       {
+        "signature": "System.Boolean CalculateCurvatureMaxRange(IEnumerable<Mesh> meshes, CurvatureAnalysisSettingsState settings)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Calculates the full range of curvature values found on the analysis meshes. On success the range is written to the range of settings that matches settings.Style.",
+        "parameters": [
+          {
+            "name": "meshes",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The analysis meshes to measure. Brep.CreateCurvatureAnalysisMesh creates them."
+          },
+          {
+            "name": "settings",
+            "type": "CurvatureAnalysisSettingsState",
+            "summary": "Supplies the curvature style, and receives the calculated range."
+          }
+        ],
+        "returns": "True if the range was calculated."
+      },
+      {
         "signature": "CurvatureAnalysisSettingsState GetCurrentState()",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -2533,6 +2553,7 @@
     "name": "CurvatureAnalysisSettings.CurvatureStyle",
     "dataType": "enum",
     "summary": "Curvature analysis styles",
+    "remarks": "These values mirror the curvature analysis settings of the application and differ from <b>Rhino.Geometry.CurvatureStyle</b> , which mirrors openNURBS. Casting one to the other selects the wrong style. The geometry methods, such as  <b>Rhino.Geometry.MeshCurvatureStats.CreateFromMeshes</b> , take the openNURBS values.",
     "since": "6.0",
     "values": [
       {
@@ -14852,6 +14873,14 @@
         "property": ["get"]
       },
       {
+        "signature": "bool CommandIsHiddenFromUser",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns True if the command that raised this event is hidden from the user; that is it doesn't autocomplete on the command line.",
+        "property": ["get"]
+      },
+      {
         "signature": "string CommandLocalName",
         "modifiers": ["public"],
         "protected": false,
@@ -18730,6 +18759,20 @@
             "name": "e",
             "type": "DrawEventArgs",
             "summary": "The event argument contains the current viewport and display state."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void PostProcessFrameBuffer(PostProcessFrameBufferEventArgs e)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called after the frame has been drawn, with the finished frame available to be read. Use this to record or stream a viewport: reading the frame here copies the one that was just drawn, and never redraws the scene.  \nOverriding this makes every frame cost an extra frame buffer read back for as long     as the conduit is enabled, whether or not the override reads anything.  \nThe override runs on the thread that drew the frame and holds up the next one. Copy     the pixels here and do the rest of the work somewhere else.  \nThe default implementation does nothing.",
+        "parameters": [
+          {
+            "name": "e",
+            "type": "PostProcessFrameBufferEventArgs",
+            "summary": "The event argument gives access to the frame that was drawn."
           }
         ]
       },
@@ -23857,6 +23900,13 @@
         "protected": false,
         "virtual": false,
         "since": "6.18"
+      },
+      {
+        "signature": "EventHandler<PostProcessFrameBufferEventArgs> PostProcessFrameBuffer",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called after the frame has been drawn, with the finished frame available to be read. Use this to record or stream a viewport:  <b>PostProcessFrameBufferEventArgs.TryCopyFrameBuffer(IntPtr, int, int)</b> copies the frame that was just drawn, and never redraws the scene.  \nEvery frame drawn while this event is subscribed costs an extra frame buffer read     back, whether or not the handler reads anything. Unsubscribe as soon as the frames are no     longer needed.  \nThe handler runs on the thread that drew the frame and holds up the next one. Copy     the pixels here and do the rest of the work somewhere else."
       }
     ]
 
@@ -28135,6 +28185,125 @@
   },
   {
     "namespace": "Rhino.Display",
+    "name": "PostProcessFrameBufferEventArgs",
+    "dataType": "class",
+    "summary": "Gives a <b>DisplayPipeline.PostProcessFrameBuffer</b> handler access to the frame that was just drawn.",
+    "baseclass": "Rhino.Display.DrawEventArgs",
+    "properties": [
+      {
+        "signature": "Size FrameBufferSize",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Width and height in pixels of the frame this handler can read. A layout runs this channel once per detail, so this is not always the size of the view.",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Boolean TryCopyFrameBuffer(System.Byte[] destination, System.Int32 destinationStride, System.Boolean preserveAlpha)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Copies the frame into a caller owned array as 32 bit BGRA. Reuse one array across frames; allocating per frame defeats the point of this event.",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "System.Byte[]",
+            "summary": "Destination array."
+          },
+          {
+            "name": "destinationStride",
+            "type": "System.Int32",
+            "summary": "Bytes from the start of one destination row to the start of the next. A positive value writes the top row of the image first, a negative value writes the bottom row first."
+          },
+          {
+            "name": "preserveAlpha",
+            "type": "System.Boolean",
+            "summary": "True to copy the alpha channel as the display engine left it. A frame buffer read back can carry an alpha channel the engine never wrote, which makes the whole frame transparent, so pass False unless the alpha is known to be meaningful. Passing True is also the faster of the two copies, since it leaves the alpha channel alone."
+          }
+        ],
+        "returns": "True if the frame was copied."
+      },
+      {
+        "signature": "System.Boolean TryCopyFrameBuffer(System.Byte[] destination, System.Int32 destinationStride)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Copies the frame into a caller owned array as 32 bit BGRA, with every pixel made opaque. Reuse one array across frames; allocating per frame defeats the point of this event.",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "System.Byte[]",
+            "summary": "Destination array."
+          },
+          {
+            "name": "destinationStride",
+            "type": "System.Int32",
+            "summary": "Bytes from the start of one destination row to the start of the next. A positive value writes the top row of the image first, a negative value writes the bottom row first."
+          }
+        ],
+        "returns": "True if the frame was copied."
+      },
+      {
+        "signature": "System.Boolean TryCopyFrameBuffer(System.IntPtr destination, System.Int32 destinationStride, System.Int32 destinationCapacityInBytes, System.Boolean preserveAlpha)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Copies the frame into caller owned memory as 32 bit BGRA.",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "System.IntPtr",
+            "summary": "Start of the destination buffer. This is the start of the buffer whichever row order is asked for, unlike the GDI convention of pointing at the last row."
+          },
+          {
+            "name": "destinationStride",
+            "type": "System.Int32",
+            "summary": "Bytes from the start of one destination row to the start of the next. A positive value writes the top row of the image first, a negative value writes the bottom row first."
+          },
+          {
+            "name": "destinationCapacityInBytes",
+            "type": "System.Int32",
+            "summary": "Bytes available at."
+          },
+          {
+            "name": "preserveAlpha",
+            "type": "System.Boolean",
+            "summary": "True to copy the alpha channel as the display engine left it. A frame buffer read back can carry an alpha channel the engine never wrote, which makes the whole frame transparent, so pass False unless the alpha is known to be meaningful. Passing True is also the faster of the two copies, since it leaves the alpha channel alone."
+          }
+        ],
+        "returns": "True if the frame was copied."
+      },
+      {
+        "signature": "System.Boolean TryCopyFrameBuffer(System.IntPtr destination, System.Int32 destinationStride, System.Int32 destinationCapacityInBytes)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Copies the frame into caller owned memory as 32 bit BGRA, with every pixel made opaque.",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "System.IntPtr",
+            "summary": "Start of the destination buffer. This is the start of the buffer whichever row order is asked for, unlike the GDI convention of pointing at the last row."
+          },
+          {
+            "name": "destinationStride",
+            "type": "System.Int32",
+            "summary": "Bytes from the start of one destination row to the start of the next. A positive value writes the top row of the image first, a negative value writes the bottom row first."
+          },
+          {
+            "name": "destinationCapacityInBytes",
+            "type": "System.Int32",
+            "summary": "Bytes available at."
+          }
+        ],
+        "returns": "True if the frame was copied."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Display",
     "name": "RhinoPageView",
     "dataType": "class",
     "summary": "A window that contains a single layout 'page'",
@@ -28244,9 +28413,10 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the name of the layout's destination printer.",
+        "summary": "Gets and sets the name of the layout's destination printer.",
         "since": "6.15",
-        "property": ["get"]
+    "remarks": "The name is not validated against the printers installed on this system. On Windows, setting it can change what <b>PaperName</b> returns, because that name is looked up in the destination printer's list of forms. Other platforms do not consult the printer, so <b>PaperName</b> is unaffected there.",
+        "property": ["get", "set"]
       }
     ],
     "methods": [
@@ -36229,6 +36399,15 @@
         "protected": false,
         "virtual": false,
         "since": "6.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "UnitSystem UnitSystem",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The dimension style's own unit system. This is what the style's lengths - text height, arrow size and so on - are expressed in, and openNURBS uses it internally to get scales right when annotation moves between model space, page space and instance definitions whose unit systems differ. A style that reports  <b>Rhino.UnitSystem.None</b> has no unit system of its own, and unknown scales resolve to 1.",
+        "since": "8.36",
         "property": ["get", "set"]
       },
       {
@@ -46407,6 +46586,93 @@
         "summary": "Get the dimension geometry for this object.",
         "since": "6.0",
         "property": ["get"]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.DocObjects",
+    "name": "PageSettings",
+    "dataType": "class",
+    "summary": "The paper size and margins of a layout, in millimeters. Only meaningful for a view whose <b>ViewInfo.ViewType</b> is <b>ViewType.PageView</b> .",
+    "since": "8.36",
+    "constructors": [
+      {
+        "signature": "PageSettings()",
+        "summary": "Initializes a new instance of the PageSettings class"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "double BottomMarginMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Bottom margin in millimeters.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double HeightMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Paper height in millimeters.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double LeftMarginMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Left margin in millimeters.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int PageNumber",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The page number of this layout.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "string PrinterName",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Name of the printer this layout targets, if any.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double RightMarginMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Right margin in millimeters.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double TopMarginMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Top margin in millimeters.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double WidthMillimeters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Paper width in millimeters.",
+        "since": "8.36",
+        "property": ["get", "set"]
       }
     ]
   },
@@ -65440,6 +65706,15 @@
         "property": ["get"]
       },
       {
+        "signature": "Guid DisplayModeId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the display mode this view opens in - wireframe, shaded, rendered, or any custom display mode. <b>Rhino.Display.DisplayModeDescription</b> holds the standard ids. A nil id means the view has no display mode of its own and opens in wireframe, which is what every template generated without this property did.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "double FocalBlurAperture",
         "modifiers": ["public"],
         "protected": false,
@@ -65485,6 +65760,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool LockedProjection",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether the view's projection is locked against changes.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool Maximized",
         "modifiers": ["public"],
         "protected": false,
@@ -65509,7 +65793,16 @@
         "virtual": false,
         "summary": "Returns a unique id if this is a named view otherwise an empty Guid.",
         "since": "7.28",
-        "property": ["get"]
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Size RenderingSize",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The pixel size this view renders at.",
+        "since": "8.36",
+        "property": ["get", "set"]
       },
       {
         "signature": "ViewSectionBehavior SectionBehavior",
@@ -65518,6 +65811,33 @@
         "virtual": false,
         "summary": "How a view will interact with clipping planes",
         "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ShowConstructionAxes",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether the construction plane x and y axes are drawn in this view.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ShowConstructionGrid",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether the construction plane grid is drawn in this view.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ShowConstructionZAxis",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether the construction plane z axis is drawn in this view.",
+        "since": "8.36",
         "property": ["get", "set"]
       },
       {
@@ -65530,6 +65850,15 @@
         "property": ["get"]
       },
       {
+        "signature": "bool ShowWorldAxes",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether the world axes icon is drawn in the corner of this view.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "ViewportInfo Viewport",
         "modifiers": ["public"],
         "protected": false,
@@ -65537,6 +65866,15 @@
         "summary": "Gets the viewport, or viewing frustum, associated with this view.",
         "since": "5.0",
         "property": ["get"]
+      },
+      {
+        "signature": "ViewType ViewType",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether this view is a model view, a layout page, a nested (detail) view, or one of the special editor views. A page view must be an orthographic top view; see  <b>PageSettings</b> for its paper size.",
+        "since": "8.36",
+        "property": ["get", "set"]
       },
       {
         "signature": "string WallpaperFilename",
@@ -65598,6 +65936,14 @@
         "returns": "A copy of the view's construction plane."
       },
       {
+        "signature": "PageSettings GetPageSettings()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the paper size and margins of this view. Only meaningful when  <b>ViewType</b> is <b>ViewType.PageView</b> .",
+        "since": "8.36"
+      },
+      {
         "signature": "System.Void GetWindowPosition(out System.Double left, out System.Double right, out System.Double top, out System.Double bottom)",
         "modifiers": ["public"],
         "protected": false,
@@ -65641,6 +65987,14 @@
             "summary": "The construction plane to store on the view."
           }
         ]
+      },
+      {
+        "signature": "System.Void SetPageSettings(PageSettings pageSettings)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the paper size and margins of this view. Set <b>ViewType</b> to  <b>ViewType.PageView</b> as well, or the page settings are ignored.",
+        "since": "8.36"
       },
       {
         "signature": "System.Void SetWindowPosition(System.Double left, System.Double right, System.Double top, System.Double bottom)",
@@ -66002,7 +66356,7 @@
         "virtual": false,
         "summary": "Sets the viewport's id to the value used to uniquely identify this viewport. There is no approved way to change the viewport id once it is set in order to maintain consistency across multiple viewports and those routines that manage them.",
         "since": "5.0",
-        "property": ["get"]
+        "property": ["get", "set"]
       },
       {
         "signature": "bool IsCameraDirectionLocked",
@@ -67245,6 +67599,51 @@
         "protected": false,
         "virtual": false,
         "summary": "Only show the section at the intersection of a clipping plane"
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.DocObjects",
+    "name": "ViewType",
+    "dataType": "enum",
+    "summary": "What a view in a document's view table is: a model view, a layout page, a detail nested inside a layout, or one of Rhino's special editor views.",
+    "since": "8.36",
+    "values": [
+      {
+        "signature": "ModelView = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "A standard 3d model space view."
+      },
+      {
+        "signature": "PageView = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "A layout, a.k.a. \"paper space\". Must be an orthographic top view."
+      },
+      {
+        "signature": "NestedView = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "A model view nested inside another view - a layout detail."
+      },
+      {
+        "signature": "UVEditorView = 3",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The UV editor's special view port."
+      },
+      {
+        "signature": "BlockEditorView = 4",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The block editor's special view port."
       }
     ]
 
@@ -75151,6 +75550,150 @@
     "summary": "General settings in a 3dm file.",
     "properties": [
       {
+        "signature": "Guid ActiveViewId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The viewport id of the view that is active when the model is opened. When this is nil Rhino activates the first view in the view table.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "MeshingParameters AnalysisMeshingParameters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The meshing parameters used for analysis meshes (curvature, draft angle, ...).",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color CurrentColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The colour new objects are created with.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid CurrentDimensionStyleId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the dimension style new annotation uses. When this is nil Rhino falls back to the obsolete V5 index, which selects the first style in the table - so a template that leaves it nil can open with the wrong annotation style current.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid CurrentHatchPatternId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the current hatch pattern.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid CurrentLayerId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the layer new objects are created on.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid CurrentLinePatternId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the current line pattern (linetype).",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color CurrentPlotColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The plot colour new objects are created with.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid CurrentRenderMaterialId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the current render material.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid CurrentTextStyleId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The id of the current text style.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int CurrentWireDensity",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The surface isocurve density new objects are created with. -1 draws no isocurves, 0 draws the surface edges only, and n > 0 draws n isocurves per span.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "MeshingParameters CustomRenderMeshingParameters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The meshing parameters stored as the model's custom render mesh settings.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "ConstructionPlaneGridDefaults GridDefaults",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The construction plane grid defaults new views inherit: grid and snap spacing, line counts, and whether the grid, its axes and the world axes icon are drawn.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int InstanceDefinitionLinkUpdate",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "How instance definition links are updated when the model is opened.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double LinetypeDisplayScale",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The document-wide linetype pattern display scale.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "MeshingParameters MeshingParameters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The meshing parameters Rhino uses to build render meshes for this model. Rhino derives the \"Jagged & faster\" / \"Smooth & slower\" choice from these when the model is opened, so a model that leaves them at the openNURBS default gets jagged render meshes.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "double ModelAbsoluteTolerance",
         "modifiers": ["public"],
         "protected": false,
@@ -75320,6 +75863,15 @@
         "summary": "Gets or sets the render settings.",
         "since": "8.0",
         "property": ["get"]
+      },
+      {
+        "signature": "bool SaveTextureBitmapsInFile",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether texture bitmaps are embedded in the model when it is saved.",
+        "since": "8.36",
+        "property": ["get", "set"]
       }
     ],
     "methods": [
@@ -93351,17 +93903,44 @@
         "returns": "An array with intersected curves. This array can be empty."
       },
       {
+        "signature": "Mesh[] CreateCurvatureAnalysisMesh(Brep brep, Rhino.ApplicationSettings.CurvatureAnalysisSettingsState state, MeshingParameters meshingParameters)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates an array of analysis meshes for the brep, one per face. The meshes are not set on the brep.",
+    "remarks": "Each mesh covers the untrimmed surface under a face, so on a trimmed face the mesh extends past the trims and any statistic taken from it includes area that is not part of the brep. For statistics, mesh the brep with MeshingParameters.ComputeCurvature set and pass the result to  <b>MeshCurvatureStats</b> ; the curvature values do not depend on the style, so one mesh serves every style.",
+        "parameters": [
+          {
+            "name": "brep",
+            "type": "Brep",
+            "summary": "The brep to mesh."
+          },
+          {
+            "name": "state",
+            "type": "Rhino.ApplicationSettings.CurvatureAnalysisSettingsState",
+            "summary": "Supplies the curvature style and the False color ranges."
+          },
+          {
+            "name": "meshingParameters",
+            "type": "MeshingParameters",
+            "summary": "The mesh density. RhinoDoc.GetAnalysisMeshingParameters returns what a document uses, and MeshingParameters.DefaultAnalysisMesh is the default."
+          }
+        ],
+        "returns": "The analysis meshes. The array is empty if no mesh could be created."
+      },
+      {
         "signature": "Mesh[] CreateCurvatureAnalysisMesh(Brep brep, Rhino.ApplicationSettings.CurvatureAnalysisSettingsState state)",
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
         "summary": "Create an array of analysis meshes for the brep using the specified settings. Meshes aren't set on the brep.",
         "since": "6.0",
+    "remarks": "The mesh density comes from the active document, and falls back to MeshingParameters.DefaultAnalysisMesh when there is no active document, as when running headless or in Compute.  \nEach mesh covers the untrimmed surface under a face, so on a trimmed face     the mesh extends past the trims and any statistic taken from it includes     area that is not part of the brep.",
         "parameters": [
           {
             "name": "brep",
             "type": "Brep",
-            "summary": ""
+            "summary": "The brep to mesh."
           },
           {
             "name": "state",
@@ -93369,7 +93948,7 @@
             "summary": "CurvatureAnalysisSettingsState"
           }
         ],
-        "returns": "True if meshes were created"
+        "returns": "The analysis meshes. The array is empty if no mesh could be created."
       },
       {
         "signature": "Brep[] CreateDevelopableLoft(Curve crv0, Curve crv1, System.Boolean reverse0, System.Boolean reverse1, System.Int32 density)",
@@ -100501,6 +101080,43 @@
   },
   {
     "namespace": "Rhino.Geometry",
+    "name": "ChainDirection",
+    "dataType": "enum",
+    "summary": "Which way to search along a chain from the current link.",
+    "values": [
+      {
+        "signature": "Unset = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Not set."
+      },
+      {
+        "signature": "Previous = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Search for chain links before the current link."
+      },
+      {
+        "signature": "Next = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Search for chain links after the current link."
+      },
+      {
+        "signature": "Both = 3",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Search for chain links before and after the current link."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.Geometry",
     "name": "Circle",
     "dataType": "struct",
     "summary": "Represents a circle in 3D.  \nThe values used are a radius and an orthonormal frame of the plane containing the circle,   with origin at the center.  \nThe circle is parameterized by radians from 0 to 2 Pi given by  \nt -> center + cos(t)*radius*xaxis + sin(t)*radius*yaxis  \nwhere center, xaxis and yaxis define the orthonormal frame of the circle plane.",
@@ -104020,6 +104636,7 @@
         "virtual": false,
         "summary": "Gets the mesh's curvature statistics.",
         "since": "9.0",
+    "remarks": "If the mesh carries no principal curvatures, the result is a zero range with Count 0 rather than an error.",
         "parameters": [
           {
             "name": "curvatureStyle",
@@ -107705,6 +108322,27 @@
         "since": "7.0"
       },
       {
+        "signature": "SubDEdge FindOrAdd(SubDVertex v0, SubDVertex v1)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the edge between two vertices, adding a smooth edge if there is not one yet.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "v0",
+            "type": "SubDVertex",
+            "summary": "First vertex."
+          },
+          {
+            "name": "v1",
+            "type": "SubDVertex",
+            "summary": "Second vertex."
+          }
+        ],
+        "returns": "The existing or newly added edge, or None on failure."
+      },
+      {
         "signature": "IEnumerator<SubDEdge> GetEnumerator()",
         "modifiers": ["public"],
         "protected": false,
@@ -107783,6 +108421,22 @@
     ],
     "methods": [
       {
+        "signature": "SubDFace Add(IEnumerable<SubDEdge> edges)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a face bounded by the given edges.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "edges",
+            "type": "IEnumerable<SubDEdge>",
+            "summary": "The edges of the new face, in order around its boundary. There must be at least three. Each edge is traversed according to its  <b>SubDComponent.ComponentDirection</b> , so consecutive edges have to meet: the end vertex of one is the start vertex of the next. Set ComponentDirection on the edges before calling this to orient the loop."
+          }
+        ],
+        "returns": "The new face, or None if the edges do not form a usable boundary."
+      },
+      {
         "signature": "System.UInt32 ClearPerFaceColors()",
         "modifiers": ["public"],
         "protected": false,
@@ -107823,6 +108477,7 @@
     "name": "SubDVertexList",
     "dataType": "class",
     "summary": "Provides access to all the vertices and vertex-related functionality of a SubD",
+    "interfaces": ["IEnumerable<SubDVertex>"],
     "properties": [
       {
         "signature": "int Count",
@@ -107880,6 +108535,15 @@
         "virtual": false,
         "summary": "Find a vertex in this SubD with a given id",
         "since": "7.0"
+      },
+      {
+        "signature": "IEnumerator<SubDVertex> GetEnumerator()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Implementation of IEnumerable, so a vertex list can be used with foreach and LINQ the same way <b>SubDEdgeList</b> and <b>SubDFaceList</b> can.",
+        "since": "8.36",
+    "remarks": "Note that this list has both a <b>First</b> property and, now that it is enumerable, a LINQ First() extension method. They disagree on an empty SubD: the property returns None and First() throws."
       },
       {
         "signature": "System.Void SetVertexTags(IEnumerable<int> vertexIndices, SubDVertexTag tag)",
@@ -109293,6 +109957,7 @@
     "name": "CurvatureStyle",
     "dataType": "enum",
     "summary": "Curvature style",
+    "remarks": "These values mirror openNURBS and differ from the CurvatureStyle of Rhino.ApplicationSettings.CurvatureAnalysisSettings, which mirrors the curvature analysis settings of the application. Casting one to the other selects the wrong style.",
     "since": "9.0",
     "values": [
       {
@@ -123946,6 +124611,24 @@
         "property": ["get"]
       },
       {
+        "signature": "Interval ZeroToOne",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets an Interval whose limits are 0.0 and 1.0.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "Interval ZeroToTwoPi",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets an Interval whose limits are 0.0 and 2*Pi.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
         "signature": "bool IsDecreasing",
         "modifiers": ["public"],
         "protected": false,
@@ -132959,6 +133642,7 @@
         "virtual": false,
         "summary": "Gets curvature statistics from analysis meshes, and calculate total statistics.",
         "since": "9.0",
+    "remarks": "The meshes must carry principal curvatures. Set MeshingParameters.ComputeCurvature before meshing, or use Brep.CreateCurvatureAnalysisMesh. Meshes without them are skipped, and if none of them have any, the result is a zero range with Count 0 rather than an error. Mesh.HasPrincipalCurvatures reports whether a mesh qualifies.",
         "parameters": [
           {
             "name": "analysisMeshes",
@@ -151631,6 +152315,15 @@
         "property": ["get"]
       },
       {
+        "signature": "uint ErrorCount",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The number of errors the SubD code has trapped since the process started.  \nThis is a diagnostic counter, not a per-SubD property. Sample it before and after an     operation to find out whether that operation hit an internal error, which usually     means the SubD is not valid.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
         "signature": "SubDEdgeList Edges",
         "modifiers": ["public"],
         "protected": false,
@@ -151975,6 +152668,78 @@
         "returns": "If the input parameters are valid, a SubD quad sphere is returned. Otherwise None is returned."
       },
       {
+        "signature": "SubD CreateSubDBox(Box box, System.Double edgeSharpness, System.UInt32 faceCountX, System.UInt32 faceCountY, System.UInt32 faceCountZ)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a SubD box from a <b>Box</b> .",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "box",
+            "type": "Box",
+            "summary": "The box to build from. It must be valid."
+          },
+          {
+            "name": "edgeSharpness",
+            "type": "System.Double",
+            "summary": "The sharpness to give the edges where box sides meet. See  <b>CreateSubDBox(IEnumerable{Point3d}, double, uint, uint, uint)</b> ."
+          },
+          {
+            "name": "faceCountX",
+            "type": "System.UInt32",
+            "summary": "Number of faces in the box X direction."
+          },
+          {
+            "name": "faceCountY",
+            "type": "System.UInt32",
+            "summary": "Number of faces in the box Y direction."
+          },
+          {
+            "name": "faceCountZ",
+            "type": "System.UInt32",
+            "summary": "Number of faces in the box Z direction."
+          }
+        ],
+        "returns": "A new SubD box, or None if the input is not valid."
+      },
+      {
+        "signature": "SubD CreateSubDBox(IEnumerable<Point3d> corners, System.Double edgeSharpness, System.UInt32 faceCountX, System.UInt32 faceCountY, System.UInt32 faceCountZ)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a SubD box.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "corners",
+            "type": "IEnumerable<Point3d>",
+            "summary": "The eight box corners. The first four are the bottom face, in order around it, and the last four are the top face, in the same order."
+          },
+          {
+            "name": "edgeSharpness",
+            "type": "System.Double",
+            "summary": "The sharpness to give the edges where box sides meet.  <b>SubDEdgeSharpness.SmoothValue</b> leaves them smooth and  <b>SubDEdgeSharpness.CreaseValue</b> makes them creases."
+          },
+          {
+            "name": "faceCountX",
+            "type": "System.UInt32",
+            "summary": "Number of faces along the first bottom edge."
+          },
+          {
+            "name": "faceCountY",
+            "type": "System.UInt32",
+            "summary": "Number of faces along the second bottom edge."
+          },
+          {
+            "name": "faceCountZ",
+            "type": "System.UInt32",
+            "summary": "Number of faces from the bottom face to the top face."
+          }
+        ],
+        "returns": "A new SubD box, or None if the input is not valid."
+      },
+      {
         "signature": "SubD CreateTriSphere(Sphere sphere, SubDComponentLocation vertexLocation, System.UInt32 triSubdivisionLevel)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -152058,6 +152823,15 @@
         ]
       },
       {
+        "signature": "System.UInt32 ClearEdgeSharpness()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Converts every sharp edge in this SubD to a smooth edge.",
+        "since": "8.36",
+        "returns": "The number of edges that were changed."
+      },
+      {
         "signature": "System.Void ClearEvaluationCache()",
         "modifiers": ["public"],
         "protected": false,
@@ -152098,11 +152872,101 @@
         "returns": "True if the cache was fully copied, False otherwise"
       },
       {
+        "signature": "System.Boolean DeleteComponents(IEnumerable<ComponentIndex> componentIndices, System.Boolean markDeletedFaceEdges)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Deletes components from this SubD, identified by component index.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "componentIndices",
+            "type": "IEnumerable<ComponentIndex>",
+            "summary": "The component indices to delete."
+          },
+          {
+            "name": "markDeletedFaceEdges",
+            "type": "System.Boolean",
+            "summary": "If true, edges that survive the deletion of a face they bounded get their runtime mark set."
+          }
+        ],
+        "returns": "True if the deletion succeeded."
+      },
+      {
+        "signature": "System.Boolean DeleteComponents(IEnumerable<SubDComponent> components, System.Boolean markDeletedFaceEdges)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Deletes components from this SubD.  \nDeleting a vertex deletes every edge and face attached to it. Deleting an edge     deletes every face attached to it. Deleting a face deletes only that face.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "components",
+            "type": "IEnumerable<SubDComponent>",
+            "summary": "The components to delete."
+          },
+          {
+            "name": "markDeletedFaceEdges",
+            "type": "System.Boolean",
+            "summary": "If true, edges that survive the deletion of a face they bounded get their runtime mark set, so the caller can find the boundary of the hole that was opened."
+          }
+        ],
+        "returns": "True if the deletion succeeded."
+      },
+      {
+        "signature": "System.Boolean DeleteComponents(IEnumerable<SubDComponent> components)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Deletes components from this SubD, leaving the edges that bounded any deleted face unmarked. See  <b>DeleteComponents(IEnumerable{SubDComponent}, bool)</b> .",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "components",
+            "type": "IEnumerable<SubDComponent>",
+            "summary": "The components to delete."
+          }
+        ],
+        "returns": "True if the deletion succeeded."
+      },
+      {
         "signature": "System.Void Dispose(System.Boolean disposing)",
         "modifiers": ["protected", "override"],
         "protected": true,
         "virtual": false,
         "summary": "Deletes the underlying native pointer during a Dispose call or GC collection"
+      },
+      {
+        "signature": "System.UInt32 DissolveOrDeleteComponents(IEnumerable<ComponentIndex> componentIndices)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Dissolves or deletes components, identified by component index. See <b>DissolveOrDeleteComponents(IEnumerable{SubDComponent})</b> .",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "componentIndices",
+            "type": "IEnumerable<ComponentIndex>",
+            "summary": "The component indices to dissolve or delete."
+          }
+        ],
+        "returns": "The number of merged faces created by dissolving edges and vertices."
+      },
+      {
+        "signature": "System.UInt32 DissolveOrDeleteComponents(IEnumerable<SubDComponent> components)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Dissolves the given edges and vertices, merging the faces around them, and deletes the given faces.  \nThis is the difference between removing an edge between two quads to get one bigger     face, and removing the two quads to leave a hole. Use      when a hole is what     you want.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "components",
+            "type": "IEnumerable<SubDComponent>",
+            "summary": "The vertices, edges and faces to dissolve or delete."
+          }
+        ],
+        "returns": "The number of merged faces created by dissolving edges and vertices."
       },
       {
         "signature": "Curve[] DuplicateEdgeCurves()",
@@ -152282,6 +153146,84 @@
         "returns": "The number of face packs."
       },
       {
+        "signature": "System.UInt32 SetEdgeSharpness(IEnumerable<int> edgeIds, SubDEdgeSharpness sharpness, System.Boolean preserveSymmetry)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the sharpness of a list of edges, identified by their ids.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "edgeIds",
+            "type": "IEnumerable<int>",
+            "summary": "The ids of the edges to change."
+          },
+          {
+            "name": "sharpness",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness to apply to every edge in the list. Pass  <b>SubDEdgeSharpness.Smooth</b> to make the edges smooth again."
+          },
+          {
+            "name": "preserveSymmetry",
+            "type": "System.Boolean",
+            "summary": "If True and this SubD has symmetric content, the change tries to keep it symmetric."
+          }
+        ],
+        "returns": "The number of edges that were changed."
+      },
+      {
+        "signature": "System.UInt32 SetEdgeSharpness(IEnumerable<SubDEdge> edges, IEnumerable<SubDEdgeSharpness> sharpnesses, System.Boolean preserveSymmetry)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the sharpness of a list of edges, one sharpness per edge.  \nUse this with      to give a chain of edges a sharpness that varies evenly along it.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "edges",
+            "type": "IEnumerable<SubDEdge>",
+            "summary": "The edges to change."
+          },
+          {
+            "name": "sharpnesses",
+            "type": "IEnumerable<SubDEdgeSharpness>",
+            "summary": "One sharpness per edge, in the same order as edges. Must be the same length."
+          },
+          {
+            "name": "preserveSymmetry",
+            "type": "System.Boolean",
+            "summary": "If True and this SubD has symmetric content, the change tries to keep it symmetric."
+          }
+        ],
+        "returns": "The number of edges that were changed."
+      },
+      {
+        "signature": "System.UInt32 SetEdgeSharpness(IEnumerable<SubDEdge> edges, SubDEdgeSharpness sharpness, System.Boolean preserveSymmetry)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the sharpness of a list of edges.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "edges",
+            "type": "IEnumerable<SubDEdge>",
+            "summary": "The edges to change."
+          },
+          {
+            "name": "sharpness",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness to apply to every edge in the list. Pass  <b>SubDEdgeSharpness.Smooth</b> to make the edges smooth again."
+          },
+          {
+            "name": "preserveSymmetry",
+            "type": "System.Boolean",
+            "summary": "If True and this SubD has symmetric content, the change tries to keep it symmetric."
+          }
+        ],
+        "returns": "The number of edges that were changed."
+      },
+      {
         "signature": "System.Boolean SetVertexSurfacePoint(System.UInt32 vertexIndex, Point3d surfacePoint)",
         "modifiers": ["public"],
         "protected": false,
@@ -152301,6 +153243,31 @@
           }
         ],
         "returns": "True if a vertex was modified, False otherwise."
+      },
+      {
+        "signature": "System.UInt32 SharpEdgeCount()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the number of sharp edges in this SubD. See <b>SubDEdge.IsSharp</b> for what makes an edge sharp.",
+        "since": "8.36",
+        "returns": "The number of sharp edges."
+      },
+      {
+        "signature": "System.UInt32 SharpEdgeCount(out SubDEdgeSharpness sharpnessRange)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the number of sharp edges in this SubD, and the range of sharpness values used.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sharpnessRange",
+            "type": "SubDEdgeSharpness",
+            "summary": "The smallest and largest sharpness found on the sharp edges. If there are no sharp edges, this is <b>SubDEdgeSharpness.Smooth</b> ."
+          }
+        ],
+        "returns": "The number of sharp edges."
       },
       {
         "signature": "System.Boolean Subdivide()",
@@ -152579,7 +153546,17 @@
     "name": "SubDComponent",
     "dataType": "class",
     "summary": "A part of SubD geometry. Common base class for vertices, faces, and edges",
+    "interfaces": ["IEquatable<SubDComponent>"],
     "properties": [
+      {
+        "signature": "bool ComponentDirection",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True when this component is referenced with the reverse of its natural orientation. This is always False for vertices, and for edges and faces obtained directly from the parent SubD; it is only set on components reached through an oriented reference, such as the face on a given side of an oriented edge.",
+        "since": "8.36",
+        "property": ["get", "set"]
+      },
       {
         "signature": "uint Id",
         "modifiers": ["public"],
@@ -152652,7 +153629,107 @@
         "since": "7.0",
         "property": ["get"]
       }
+    ],
+    "methods": [
+      {
+        "signature": "System.Boolean Equals(SubDComponent other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether this component and another refer to the same component, with the same orientation, in the same SubD.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "SubDComponent",
+            "summary": "The component to compare with."
+          }
+        ]
+      },
+      {
+        "signature": "System.Boolean Equals(System.Object obj)",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether an object is a SubDComponent referring to the same component, with the same orientation, in the same SubD.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "obj",
+            "type": "System.Object",
+            "summary": "The object to compare with."
+          }
+        ]
+      },
+      {
+        "signature": "System.Int32 GetHashCode()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a hash code for this component.",
+        "since": "8.36"
+      },
+      {
+        "signature": "SubDComponent ReverseComponentDirection()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Flips <b>ComponentDirection</b> and returns this component, so it can be used inline where an oppositely oriented reference is wanted.",
+        "since": "8.36",
+        "returns": "This component."
+      },
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns a string of the form \"SubDEdge(+12)\", naming the component type, the orientation it is referenced with, and its id.",
+        "since": "8.36"
+      }
+    ],
+    "operators": [
+      {
+        "signature": "bool operator !=(SubDComponent a, SubDComponent b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two components refer to different components, orientations, or SubDs.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "SubDComponent",
+            "summary": "The first component."
+          },
+          {
+            "name": "b",
+            "type": "SubDComponent",
+            "summary": "The second component."
+          }
+        ]
+      },
+      {
+        "signature": "bool operator ==(SubDComponent a, SubDComponent b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two components refer to the same component, with the same orientation, in the same SubD.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "SubDComponent",
+            "summary": "The first component."
+          },
+          {
+            "name": "b",
+            "type": "SubDComponent",
+            "summary": "The second component."
+          }
+        ]
+      }
     ]
+
   },
   {
     "namespace": "Rhino.Geometry",
@@ -153421,6 +154498,61 @@
         "property": ["get"]
       },
       {
+        "signature": "bool IsSharp",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this edge is smooth and has a nonzero sharpness. A crease edge is not a sharp edge.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDFace RelativeFaceLeft",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The face on the left of this edge, with respect to the direction this edge is referenced with. Null for a boundary edge with no face on that side, and for a nonmanifold edge.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDFace RelativeFaceRight",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The face on the right of this edge, with respect to the direction this edge is referenced with.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDVertex RelativeVertexFrom",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The vertex this edge starts at, taking <b>SubDComponent.ComponentDirection</b>  into account. This is <b>VertexFrom</b> for an edge in its natural orientation and <b>VertexTo</b> for a reversed one.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDVertex RelativeVertexTo",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The vertex this edge ends at, taking <b>SubDComponent.ComponentDirection</b>  into account.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDEdgeSharpness Sharpness",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the sharpness of this edge.  \nThe getter reports  for a crease edge; use     GetSharpness(false) to get      for creases instead.",
+        "since": "8.36",
+    "remarks": "Setting this goes through the parent SubD so that the neighboring edges and vertices are updated too. Assign <b>SubDEdgeSharpness.Smooth</b> to make the edge smooth again.",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "SubDEdgeTag Tag",
         "modifiers": ["public"],
         "protected": false,
@@ -153450,6 +154582,21 @@
     ],
     "methods": [
       {
+        "signature": "System.Void ClearSavedSubdivisionPoints(System.Boolean clearNeighborhood)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Discards the cached subdivision and surface points for this edge, so they are recomputed on next use.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "clearNeighborhood",
+            "type": "System.Boolean",
+            "summary": "If true, the cached points of the neighboring components are discarded too. Moving a control net point changes the surface around it, not just at it, so pass True after an edit unless you know only this edge is affected."
+          }
+        ]
+      },
+      {
         "signature": "ComponentIndex ComponentIndex()",
         "modifiers": ["public"],
         "protected": false,
@@ -153459,12 +154606,90 @@
         "returns": "The component index."
       },
       {
+        "signature": "System.Double EndSharpness(System.Int32 endIndex, System.Boolean useCreaseSharpness)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the sharpness of this edge at one of its ends.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "endIndex",
+            "type": "System.Int32",
+            "summary": "0 for the <b>VertexFrom</b> end, 1 for the <b>VertexTo</b> end."
+          },
+          {
+            "name": "useCreaseSharpness",
+            "type": "System.Boolean",
+            "summary": "If this edge is a crease and useCreaseSharpness is true, then  <b>SubDEdgeSharpness.CreaseValue</b> is returned."
+          }
+        ],
+        "returns": "The sharpness at that end, or 0.0 if this edge is not sharp."
+      },
+      {
         "signature": "SubDFace FaceAt(System.Int32 index)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "summary": "Retrieve a SubDFace from this edge.",
         "since": "7.0"
+      },
+      {
+        "signature": "SubDEdgeSharpness GetSharpness()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the sharpness of this edge, reporting  <b>SubDEdgeSharpness.Crease</b> for a crease edge.",
+        "since": "8.36",
+        "returns": "The sharpness of this edge."
+      },
+      {
+        "signature": "SubDEdgeSharpness GetSharpness(System.Boolean useCreaseSharpness)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the sharpness of this edge.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "useCreaseSharpness",
+            "type": "System.Boolean",
+            "summary": "If this edge is a crease and useCreaseSharpness is true, then  <b>SubDEdgeSharpness.Crease</b> is returned. If it is a crease and useCreaseSharpness is false, then <b>SubDEdgeSharpness.Smooth</b> is returned."
+          }
+        ],
+        "returns": "The sharpness of a smooth edge, <b>SubDEdgeSharpness.Crease</b> for a crease edge when useCreaseSharpness is true, and <b>SubDEdgeSharpness.Smooth</b> in every other case."
+      },
+      {
+        "signature": "SubDFace RelativeFaceAt(System.Int32 relativeFaceIndex)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the face on one side of this edge, relative to the direction this edge is referenced with.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "relativeFaceIndex",
+            "type": "System.Int32",
+            "summary": "0 for the left side, 1 for the right side."
+          }
+        ],
+        "returns": "The face, with its <b>SubDComponent.ComponentDirection</b> set so its boundary runs the same way as this edge. Null if there is no such face, or if the edge is nonmanifold."
+      },
+      {
+        "signature": "SubDVertex RelativeVertexAt(System.Int32 endIndex)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets one of this edge's two vertices, relative to the direction this edge is referenced with.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "endIndex",
+            "type": "System.Int32",
+            "summary": "0 for the start of the edge, 1 for the end."
+          }
+        ],
+        "returns": "The vertex, or None if endIndex is out of range."
       },
       {
         "signature": "NurbsCurve ToNurbsCurve(System.Boolean clampEnds)",
@@ -153484,6 +154709,1072 @@
         "returns": "The Nurbs form of this edge."
       }
     ]
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "SubDEdgeChain",
+    "dataType": "class",
+    "summary": "An ordered run of connected SubD edges.  \nConsecutive edges in a chain share a vertex, and each edge carries the direction it is   traversed with, so the chain has a start and an end even when the individual edges do   not agree on orientation. Chains are what commands like Bridge, Loft and edge   sharpening operate on.",
+    "remarks": "A chain holds a reference to its SubD and does not keep it alive across edits that change the SubD topology; rebuild the chain after editing.",
+    "interfaces": ["IDisposable"],
+    "since": "8.36",
+    "constructors": [
+      {
+        "signature": "SubDEdgeChain(SubD subd, SubDEdge startEdge)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a chain containing a single starting edge. Grow it with  <b>AddAllNeighbors(ChainDirection, SubDChainType)</b> or  <b>AddOneNeighbor(ChainDirection, SubDChainType)</b> .",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "subd",
+            "type": "SubD",
+            "summary": "The SubD the chain runs through."
+          },
+          {
+            "name": "startEdge",
+            "type": "SubDEdge",
+            "summary": "The edge to start from."
+          }
+        ]
+      },
+      {
+        "signature": "SubDEdgeChain(SubD subd)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates an empty chain in the given SubD.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "subd",
+            "type": "SubD",
+            "summary": "The SubD the chain will run through."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "uint EdgeCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The number of edges in this chain.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDEdge[] Edges",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The edges of this chain, in order.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsClosedLoop",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True when the chain closes back on itself.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubD ParentSubD",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The SubD this chain runs through.",
+        "since": "8.36",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "SubDEdge[][] SortEdgesIntoEdgeChains(SubD subd, IEnumerable<SubDEdge> edges)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sorts a set of edges into chains.",
+        "since": "8.36",
+    "remarks": "This uses the mark bits on the edges and vertices involved, so it must not run on the same SubD from more than one thread at a time.",
+        "parameters": [
+          {
+            "name": "subd",
+            "type": "SubD",
+            "summary": "The SubD the edges belong to."
+          },
+          {
+            "name": "edges",
+            "type": "IEnumerable<SubDEdge>",
+            "summary": "The edges to sort. Where three or more of them meet at one vertex, no chain passes through that vertex."
+          }
+        ],
+        "returns": "One array of edges per chain, in chain order. Each returned edge carries the direction its chain traverses it with."
+      },
+      {
+        "signature": "System.UInt32 AddAllNeighbors(ChainDirection direction, SubDChainType chainType)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Extends the chain as far as it will go at one or both ends.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "direction",
+            "type": "ChainDirection",
+            "summary": "Which end or ends to extend."
+          },
+          {
+            "name": "chainType",
+            "type": "SubDChainType",
+            "summary": "Which edges and vertices the chain is allowed through."
+          }
+        ],
+        "returns": "The number of edges that were added."
+      },
+      {
+        "signature": "System.UInt32 AddEdge(SubDEdge edge)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds an edge to whichever end of the chain it connects to.",
+        "since": "8.36",
+    "remarks": "This cannot start a chain: adding to an empty chain does nothing and returns 0. Use <b>Begin(SubDEdge)</b> or the  <b>SubDEdgeChain(SubD, SubDEdge)</b> constructor for the first edge.",
+        "parameters": [
+          {
+            "name": "edge",
+            "type": "SubDEdge",
+            "summary": "The edge to add."
+          }
+        ],
+        "returns": "The number of edges that were added, so 1 on success and 0 if the edge does not connect to either end, is already in the chain, or the chain is empty."
+      },
+      {
+        "signature": "System.UInt32 AddOneNeighbor(ChainDirection direction, SubDChainType chainType)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Extends the chain by one edge at one or both ends.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "direction",
+            "type": "ChainDirection",
+            "summary": "Which end or ends to extend."
+          },
+          {
+            "name": "chainType",
+            "type": "SubDChainType",
+            "summary": "Which edges and vertices the chain is allowed through."
+          }
+        ],
+        "returns": "The number of edges that were added."
+      },
+      {
+        "signature": "System.UInt32 Begin(SubDEdge startEdge)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Clears the chain and restarts it from a single edge.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "startEdge",
+            "type": "SubDEdge",
+            "summary": "The edge to start from."
+          }
+        ],
+        "returns": "The number of edges in the chain, so 1 on success and 0 on failure."
+      },
+      {
+        "signature": "System.Void Clear()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes every edge from the chain.",
+        "since": "8.36"
+      },
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Frees the unmanaged chain.",
+        "since": "8.36"
+      },
+      {
+        "signature": "SubDEdge EdgeAt(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the edge at the given position in the chain. The returned edge carries the direction the chain traverses it with, in  <b>SubDComponent.ComponentDirection</b> .",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "The position in the chain."
+          }
+        ],
+        "returns": "The edge, or None if index is out of range."
+      },
+      {
+        "signature": "System.Boolean IsConvexLoop(System.Boolean strictlyConvex)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True when the chain is a closed loop that is convex.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "strictlyConvex",
+            "type": "System.Boolean",
+            "summary": "If true, a loop with three or more colinear points in a row is not convex."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Reverse()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reverses the direction of the chain.",
+        "since": "8.36"
+      },
+      {
+        "signature": "NurbsCurve ToLoftCurve()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a NURBS curve suitable for lofting SubDs, following this chain.",
+        "since": "8.36",
+        "returns": "The curve, or None if the chain is not valid."
+      },
+      {
+        "signature": "NurbsCurve ToNurbsCurve()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a NURBS curve on the SubD surface following this chain.",
+        "since": "8.36",
+        "returns": "The curve, or None if the chain is not valid."
+      },
+      {
+        "signature": "System.UInt32 TrimToRange(SubDEdge firstEdge, SubDEdge lastEdge)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Trims the chain down to the run of edges between firstEdge and lastEdge, removing everything before firstEdge and everything after lastEdge.",
+        "since": "8.36",
+    "remarks": "This wraps ON_SubDEdgeChain::RemoveEdges, whose name reads as though the given range is what gets removed. It is the other way round: the range is what survives. Passing None for both edges therefore removes nothing and returns 0; use  <b>Clear</b> to empty the chain.",
+        "parameters": [
+          {
+            "name": "firstEdge",
+            "type": "SubDEdge",
+            "summary": "The edge to keep as the new start of the chain. Pass None to keep the current start."
+          },
+          {
+            "name": "lastEdge",
+            "type": "SubDEdge",
+            "summary": "The edge to keep as the new end of the chain. Pass None to keep the current end."
+          }
+        ],
+        "returns": "The number of edges that were removed."
+      },
+      {
+        "signature": "SubDVertex VertexAt(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the vertex at the given position along the chain. A chain of N edges has N+1 vertices, or N when it is a closed loop.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "The position along the chain."
+          }
+        ],
+        "returns": "The vertex, or None if index is out of range."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "SubDEdgeSharpness",
+    "dataType": "struct",
+    "summary": "Sharpness values for the two ends of a SubD edge.  \nA sharp SubD edge is an edge where the limit surface makes a tighter \"fillet radius\"   around the edge than a smooth edge would, while still staying smooth, unlike a crease   edge. It is achieved by applying the crease edge subdivision rules for the number of   subdivisions given by the sharpness value, and the smooth edge subdivision rules after   that. Sharpness can differ at the two ends of an edge.",
+    "remarks": "This is a value type wrapping two floats, and the default value is  <b>Smooth</b> . It is passed to and from the unmanaged library by value.",
+    "constructors": [
+      {
+        "signature": "SubDEdgeSharpness(double sharpness0, double sharpness1)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a sharpness that varies from one end of the edge to the other.",
+        "since": "8.36",
+    "remarks": "If either value is not valid, the result is <b>Nan</b> . Passing <b>CreaseValue</b> for both values gives <b>Crease</b> .",
+        "parameters": [
+          {
+            "name": "sharpness0",
+            "type": "System.Double",
+            "summary": "Sharpness at the start of the edge, between 0.0 and <b>MaximumValue</b> ."
+          },
+          {
+            "name": "sharpness1",
+            "type": "System.Double",
+            "summary": "Sharpness at the end of the edge, between 0.0 and <b>MaximumValue</b> ."
+          }
+        ]
+      },
+      {
+        "signature": "SubDEdgeSharpness(double sharpness)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a sharpness with the same value at both ends.",
+        "since": "8.36",
+    "remarks": "If sharpness is not valid, the result is <b>Nan</b> .",
+        "parameters": [
+          {
+            "name": "sharpness",
+            "type": "System.Double",
+            "summary": "Between 0.0 and <b>MaximumValue</b> , or <b>CreaseValue</b> ."
+          }
+        ]
+      },
+      {
+        "signature": "SubDEdgeSharpness(Interval sharpnessInterval)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a sharpness that varies from one end of the edge to the other.",
+        "since": "8.36",
+    "remarks": "If either value is not valid, the result is <b>Nan</b> .",
+        "parameters": [
+          {
+            "name": "sharpnessInterval",
+            "type": "Interval",
+            "summary": "Sharpness at the start and end of the edge. Both values must be between 0.0 and  <b>MaximumValue</b> ."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "SubDEdgeSharpness Crease",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A sharpness of <b>CreaseValue</b> at both ends, used to indicate that an edge is a crease rather than a sharp edge. <b>IsValid</b> is False for this value; see <b>IsValidOrCrease</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDEdgeSharpness Maximum",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A sharpness of <b>MaximumValue</b> at both ends. This is the sharpest an edge can be without being a crease.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDEdgeSharpness Nan",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A sharpness whose ends are both NaN. This is what the factory methods return when their input is not valid.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "SubDEdgeSharpness Smooth",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A sharpness of 0.0 at both ends, which is what a smooth edge has. This is also the default value of a <b>SubDEdgeSharpness</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "double Average",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the average of the two end sharpness values.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "double Delta",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets <b>EndSharpness(int)</b> - EndSharpness(0), or NaN if this is neither valid nor a crease.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsConstant",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if both ends have the same valid sharpness value.  <b>Crease</b> and <b>Nan</b> are both false; see  <b>IsConstantOrCrease</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsConstantOrCrease",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if both ends have the same valid sharpness value, or if this is  <b>Crease</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsCrease",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this is <b>Crease</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsCreaseOrSharp",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets ( <b>IsCrease</b> || <b>IsSharp</b> ).",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsDecreasing",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if <b>EndSharpness(int)</b> is greater than EndSharpness(1).",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsIncreasing",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if <b>EndSharpness(int)</b> is less than EndSharpness(1).",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsNotValid",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the opposite of <b>IsValid</b> .  <b>Crease</b> and <b>Nan</b> are both true.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsNotValidNorCrease",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the opposite of <b>IsValidOrCrease</b> .  <b>Nan</b> is True and <b>Crease</b> is false.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsSharp",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if both ends are valid and at least one is greater than 0.0.  <b>Crease</b> and <b>Nan</b> are both false: a crease edge is not a sharp edge.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsValid",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if both ends are between 0.0 and <b>MaximumValue</b> .  <b>Crease</b> and <b>Nan</b> are both false; see  <b>IsValidOrCrease</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsValidOrCrease",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if both ends are between 0.0 and <b>MaximumValue</b> , or if this is <b>Crease</b> .",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsVariable",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this is valid and the two ends differ.  <b>Crease</b> and <b>Nan</b> are both false.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsZero",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if both ends are 0.0, which is the sharpness of a smooth edge.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "double MaximumEndSharpness",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the larger of the two end sharpness values.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "double MinimumEndSharpness",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the smaller of the two end sharpness values.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "int Trend",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets +1 if the sharpness increases along the edge, -1 if it decreases, and 0 if it is constant. Returns <b>RhinoMath.UnsetIntIndex</b> if this is not valid.",
+        "since": "8.36",
+        "property": ["get"]
+      },
+      {
+        "signature": "double this[int endIndex]",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the sharpness at the start or the end of the edge.",
+        "since": "8.36"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "SubDEdgeSharpness[] CreateEdgeChainSharpness(Interval chainSharpnessRange, System.Int32 edgeCount)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Builds a sequence of evenly changing sharpnesses for the edges of a chain.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "chainSharpnessRange",
+            "type": "Interval",
+            "summary": "The sharpness at the start of the chain and at the end of the chain."
+          },
+          {
+            "name": "edgeCount",
+            "type": "System.Int32",
+            "summary": "The number of edges in the chain."
+          }
+        ],
+        "returns": "One sharpness per edge, or an empty array if the input is not valid."
+      },
+      {
+        "signature": "System.Boolean EqualDelta(SubDEdgeSharpness s0, SubDEdgeSharpness s1)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two sharpnesses have the same <b>Delta</b> and meet with the same value.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "s0",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness of the first edge."
+          },
+          {
+            "name": "s1",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness of the second edge."
+          }
+        ]
+      },
+      {
+        "signature": "System.Boolean EqualEndSharpness(SubDEdgeSharpness s0, SubDEdgeSharpness s1)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two sharpnesses meet with the same value, that is, whether s0. <b>EndSharpness(int)</b> equals s1.EndSharpness(0).",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "s0",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness of the first edge."
+          },
+          {
+            "name": "s1",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness of the second edge."
+          }
+        ]
+      },
+      {
+        "signature": "System.Boolean EqualTrend(SubDEdgeSharpness s0, SubDEdgeSharpness s1)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two sharpnesses have the same <b>Trend</b> and meet with the same value.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "s0",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness of the first edge."
+          },
+          {
+            "name": "s1",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness of the second edge."
+          }
+        ]
+      },
+      {
+        "signature": "SubDEdgeSharpness FromConstantPercentage(System.Double percentage)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a sharpness with the same value at both ends, from a percentage. This is useful in user interface code that expresses sharpness as a percentage.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "percentage",
+            "type": "System.Double",
+            "summary": "Between 0.0 and 100.0, or <b>double.MaxValue</b> for a crease."
+          }
+        ],
+        "returns": "A sharpness with constant value (percentage * <b>MaximumValue</b> / 100.0),  <b>Crease</b> if percentage is <b>double.MaxValue</b> , or <b>Nan</b> if percentage is out of range."
+      },
+      {
+        "signature": "SubDEdgeSharpness FromIntervalPercentage(Interval percentageInterval)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a sharpness that varies from one end of the edge to the other, from percentages. This is useful in user interface code that expresses sharpness as a percentage.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "percentageInterval",
+            "type": "Interval",
+            "summary": "Percentages at the start and end of the edge, each between 0.0 and 100.0, or <b>double.MaxValue</b> for a crease."
+          }
+        ],
+        "returns": "See <b>FromIntervalPercentage(double, double)</b> ."
+      },
+      {
+        "signature": "SubDEdgeSharpness FromIntervalPercentage(System.Double percentage0, System.Double percentage1)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a sharpness that varies from one end of the edge to the other, from percentages. This is useful in user interface code that expresses sharpness as a percentage.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "percentage0",
+            "type": "System.Double",
+            "summary": "Percentage at the start of the edge, between 0.0 and 100.0, or <b>double.MaxValue</b> for a crease."
+          },
+          {
+            "name": "percentage1",
+            "type": "System.Double",
+            "summary": "Percentage at the end of the edge, between 0.0 and 100.0, or <b>double.MaxValue</b> for a crease."
+          }
+        ],
+        "returns": "A sharpness running from (percentage0 * <b>MaximumValue</b> / 100.0) to (percentage1 * <b>MaximumValue</b> / 100.0),  <b>Crease</b> if both percentages are <b>double.MaxValue</b> , or <b>Nan</b> otherwise. An edge is either a crease or it is not, so mixing  <b>double.MaxValue</b> with a percentage gives <b>Nan</b> ."
+      },
+      {
+        "signature": "System.Boolean IsValidValue(System.Double candidateValue, System.Boolean creaseResult)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether a value can be used as an edge end sharpness.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "candidateValue",
+            "type": "System.Double",
+            "summary": "The value to check."
+          },
+          {
+            "name": "creaseResult",
+            "type": "System.Boolean",
+            "summary": "The value to return when candidateValue is <b>CreaseValue</b> ."
+          }
+        ]
+      },
+      {
+        "signature": "System.Double Sanitize(System.Double sharpness, System.Double invalidInputResult)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Verifies that sharpness is between 0.0 and <b>MaximumValue</b> , and snaps it to an integer when it is within <b>Tolerance</b> of one.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sharpness",
+            "type": "System.Double",
+            "summary": "The value to sanitize."
+          },
+          {
+            "name": "invalidInputResult",
+            "type": "System.Double",
+            "summary": "The value to return when sharpness is not valid."
+          }
+        ],
+        "returns": "A usable sharpness value, or invalidInputResult if sharpness is not valid."
+      },
+      {
+        "signature": "System.Double Sanitize(System.Double sharpness)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Verifies that sharpness is between 0.0 and <b>MaximumValue</b> , and snaps it to an integer when it is within <b>Tolerance</b> of one.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sharpness",
+            "type": "System.Double",
+            "summary": "The value to sanitize."
+          }
+        ],
+        "returns": "A usable sharpness value, or 0.0 if sharpness is not valid."
+      },
+      {
+        "signature": "System.Double SharpnessFromNormalizedValue(System.Double normalizedSliderValue)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Converts a normalized slider value to an edge end sharpness value.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "normalizedSliderValue",
+            "type": "System.Double",
+            "summary": "Between 0.0 and 1.0."
+          }
+        ],
+        "returns": "normalizedSliderValue scaled to the range 0.0 to <b>MaximumValue</b> , or NaN if it is out of range."
+      },
+      {
+        "signature": "System.Double SharpnessFromSliderValue(Interval sliderDomain, System.Double sliderValue, System.Double invalidInputResult)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Converts a user facing slider value to an edge end sharpness value.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sliderDomain",
+            "type": "Interval",
+            "summary": "The non empty domain of the slider, often <b>Interval.ZeroToOne</b> ."
+          },
+          {
+            "name": "sliderValue",
+            "type": "System.Double",
+            "summary": "A value in sliderDomain. sliderDomain.T0 maps to 0.0 and sliderDomain.T1 maps to  <b>MaximumValue</b> ."
+          },
+          {
+            "name": "invalidInputResult",
+            "type": "System.Double",
+            "summary": "The value to return when the input is not valid."
+          }
+        ]
+      },
+      {
+        "signature": "System.Double ToPercentage(System.Double sharpness, System.Double creasePercentage)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Converts a sharpness value to a percentage between 0.0 and 100.0.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sharpness",
+            "type": "System.Double",
+            "summary": "Between 0.0 and <b>MaximumValue</b> , or <b>CreaseValue</b> ."
+          },
+          {
+            "name": "creasePercentage",
+            "type": "System.Double",
+            "summary": "The value to return when sharpness is <b>CreaseValue</b> ."
+          }
+        ],
+        "returns": "100.0 * sharpness / <b>MaximumValue</b> , creasePercentage for  <b>CreaseValue</b> , or NaN if sharpness is not valid."
+      },
+      {
+        "signature": "System.String ToPercentageText(System.Double sharpness)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Describes a single end sharpness value as a percentage, for user interface code.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sharpness",
+            "type": "System.Double",
+            "summary": "Between 0.0 and <b>MaximumValue</b> , or <b>CreaseValue</b> ."
+          }
+        ],
+        "returns": "A number followed by a percent sign, \"crease\" for <b>CreaseValue</b> , or a warning sign if sharpness is not valid."
+      },
+      {
+        "signature": "SubDEdgeSharpness Union(SubDEdgeSharpness sharpness0, SubDEdgeSharpness sharpness1)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the union of two sharpness ranges, ignoring the ones that are zero, a crease, or not valid.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "sharpness0",
+            "type": "SubDEdgeSharpness",
+            "summary": "The first sharpness."
+          },
+          {
+            "name": "sharpness1",
+            "type": "SubDEdgeSharpness",
+            "summary": "The second sharpness."
+          }
+        ],
+        "returns": "The union of the nonzero valid inputs, or <b>Smooth</b> if there are none."
+      },
+      {
+        "signature": "System.Double VertexSharpness(SubDVertexTag vertexTag, System.Double interiorCreaseVertexSharpness, System.UInt32 sharpEdgeEndCount, System.Double maximumEdgeEndSharpness)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Calculates the sharpness of a vertex from the sharp edges attached to it. Vertices tagged as corners always have a sharpness of 0.0.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "vertexTag",
+            "type": "SubDVertexTag",
+            "summary": "The vertex tag."
+          },
+          {
+            "name": "interiorCreaseVertexSharpness",
+            "type": "System.Double",
+            "summary": "Only meaningful for an interior crease vertex, where it is the largest sharpness at this vertex over the smooth edges of both sectors. This matters in low level SubD evaluation code that only has information about one sector. When in doubt, pass 0.0."
+          },
+          {
+            "name": "sharpEdgeEndCount",
+            "type": "System.UInt32",
+            "summary": "The number of sharp edges at the vertex whose sharpness at this vertex is nonzero."
+          },
+          {
+            "name": "maximumEdgeEndSharpness",
+            "type": "System.Double",
+            "summary": "The largest sharp edge end sharpness at the vertex."
+          }
+        ],
+        "returns": "The sharpness to use when subdividing the vertex."
+      },
+      {
+        "signature": "System.Double EndSharpness(System.Int32 endIndex)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the sharpness at the start or the end of the edge.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "endIndex",
+            "type": "System.Int32",
+            "summary": "0 for the start of the edge, 1 for the end."
+          }
+        ],
+        "returns": "The sharpness, or NaN if endIndex is out of range."
+      },
+      {
+        "signature": "System.Boolean Equals(SubDEdgeSharpness other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether this sharpness has the same end values as another one.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "SubDEdgeSharpness",
+            "summary": "The sharpness to compare with."
+          }
+        ]
+      },
+      {
+        "signature": "System.Boolean Equals(System.Object obj)",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether an object is a sharpness with the same end values as this one.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "obj",
+            "type": "System.Object",
+            "summary": "The object to compare with."
+          }
+        ]
+      },
+      {
+        "signature": "System.Int32 GetHashCode()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a hash code for this sharpness.",
+        "since": "8.36"
+      },
+      {
+        "signature": "SubDEdgeSharpness Reversed()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets this sharpness with its two end values swapped.",
+        "since": "8.36"
+      },
+      {
+        "signature": "SubDEdgeSharpness Subdivided(System.Int32 endIndex)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the sharpness this edge would have after one subdivision.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "endIndex",
+            "type": "System.Int32",
+            "summary": "0 for the start of the edge, 1 for the end."
+          }
+        ],
+        "returns": "The subdivided sharpness, or <b>Smooth</b> if endIndex is out of range."
+      },
+      {
+        "signature": "System.String ToPercentageText(System.Boolean orderMinToMax)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Describes this sharpness as a percentage, for user interface code. A constant sharpness gives a single percentage, a variable one gives a range, and an invalid one gives a warning sign.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "orderMinToMax",
+            "type": "System.Boolean",
+            "summary": "If true, a variable sharpness is formatted as min%-max%. If false, it is formatted as <b>EndSharpness(int)</b> %-EndSharpness(1)%."
+          }
+        ]
+      },
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns a string that represents this sharpness as a percentage.",
+        "since": "8.36"
+      }
+    ],
+    "fields": [
+      {
+        "signature": "public const double CreaseValue = MaximumValue + 1.0",
+        "modifiers": ["public", "const"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The value used to indicate that an edge is a crease, <b>MaximumValue</b> + 1.0. This is deliberately not a valid sharpness value: a crease edge is not a sharp edge. It exists because it is often convenient to use a single value to describe both.",
+        "since": "8.36"
+      },
+      {
+        "signature": "public const double MaximumValue = 4.0",
+        "modifiers": ["public", "const"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The largest valid sharpness value, 4.0. Valid SubD edge sharpness values are between 0.0 and MaximumValue.",
+        "since": "8.36"
+      },
+      {
+        "signature": "public const double SmoothValue = 0.0",
+        "modifiers": ["public", "const"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The sharpness value of a smooth edge, 0.0.",
+        "since": "8.36"
+      },
+      {
+        "signature": "public const double Tolerance = 0.01",
+        "modifiers": ["public", "const"],
+        "protected": false,
+        "virtual": false,
+        "summary": "If a sharpness is within Tolerance of an integer value, it is snapped to that integer value. See <b>Sanitize(double)</b> .",
+        "since": "8.36"
+      }
+    ]
+,
+    "operators": [
+      {
+        "signature": "bool operator !=(SubDEdgeSharpness a, SubDEdgeSharpness b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two sharpnesses have different end values.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "SubDEdgeSharpness",
+            "summary": "The first sharpness."
+          },
+          {
+            "name": "b",
+            "type": "SubDEdgeSharpness",
+            "summary": "The second sharpness."
+          }
+        ]
+      },
+      {
+        "signature": "bool operator ==(SubDEdgeSharpness a, SubDEdgeSharpness b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two sharpnesses have the same end values.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "SubDEdgeSharpness",
+            "summary": "The first sharpness."
+          },
+          {
+            "name": "b",
+            "type": "SubDEdgeSharpness",
+            "summary": "The second sharpness."
+          }
+        ]
+      }
+    ]
+
   },
   {
     "namespace": "Rhino.Geometry",
@@ -153735,6 +156026,21 @@
       }
     ],
     "methods": [
+      {
+        "signature": "System.Void ClearSavedSubdivisionPoints(System.Boolean clearNeighborhood)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Discards the cached subdivision and surface points for this face, so they are recomputed on next use.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "clearNeighborhood",
+            "type": "System.Boolean",
+            "summary": "If true, the cached points of the neighboring components are discarded too. Moving a control net point changes the surface around it, not just at it, so pass True after an edit unless you know only this face is affected."
+          }
+        ]
+      },
       {
         "signature": "ComponentIndex ComponentIndex()",
         "modifiers": ["public"],
@@ -154480,6 +156786,21 @@
       }
     ],
     "methods": [
+      {
+        "signature": "System.Void ClearSavedSubdivisionPoints(System.Boolean clearNeighborhood)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Discards the cached subdivision and surface points for this vertex, so they are recomputed on next use.",
+        "since": "8.36",
+        "parameters": [
+          {
+            "name": "clearNeighborhood",
+            "type": "System.Boolean",
+            "summary": "If true, the cached points of the neighboring components are discarded too. Moving a control net point changes the surface around it, not just at it, so pass True after an edit unless you know only this vertex is affected."
+          }
+        ]
+      },
       {
         "signature": "ComponentIndex ComponentIndex()",
         "modifiers": ["public"],
@@ -168498,6 +170819,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "int AroundDirectionMinimumCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The minimum number of faces in the around direction.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "double BaseAngleDegrees",
         "modifiers": ["public"],
         "protected": false,
@@ -168556,6 +170886,15 @@
         "virtual": false,
         "summary": "Determines if the \"size\" value is representing a radius or diameter",
         "since": "6.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int VerticalDirectionMinimumCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The minimum number of faces in the vertical direction.",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -168660,6 +170999,181 @@
   },
   {
     "namespace": "Rhino.Input.Custom",
+    "name": "GetCurve",
+    "dataType": "class",
+    "summary": "Use to interactively get a control point curve or an interpolated curve. These are the getters behind the Rhino Curve and InterpCrv commands.",
+    "interfaces": ["IDisposable"],
+    "constructors": [
+      {
+        "signature": "GetCurve()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Initializes a new instance with the default prompts and options."
+      }
+    ],
+    "properties": [
+      {
+        "signature": "int Degree",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Degree of the resulting curve. Default is 3. Setting any value other than 3 clears SubDFriendly.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Vector3d EndTangent",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "End tangent of an interpolated curve. Only used when UseEndTangent is true.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "string FirstPointPrompt",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Prompt used when getting the first point. The default is the localized \"Start of curve\".",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "CurveKnotStyle KnotSpacing",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Knot spacing used when interpolating. Default is Chord. Only Uniform, Chord and ChordSquareRoot are accepted. Closing the curve selects the periodic form of the value set here, so passing a periodic value would take the knot style out of range. Ignored when SubDFriendly is true.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Point3d[] Points",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The points picked during the most recent call to GetControlPointCurve or GetInterpolatedCurve. Empty before the first call. When the curve was closed, the first point is repeated at the end.",
+        "property": ["get"]
+      },
+      {
+        "signature": "string SecondPointPrompt",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Prompt used when getting the second point. The default is the localized \"Next point\".",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool Sharp",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When true, closing the curve produces a sharp corner at the seam instead of a periodic curve. Default is false.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Vector3d StartTangent",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Start tangent of an interpolated curve. Only used when UseStartTangent is true.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool SubDFriendly",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When true, the result is a cubic, uniform, non-rational curve that is either periodic or has zero second derivatives at both ends. Default is false. Setting this to True sets Degree to 3, because a SubD friendly curve is always cubic. While this is true, KnotSpacing, StartTangent and EndTangent are ignored.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "string ThirdPointPrompt",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Prompt used when getting the third and following points. The default is the localized \"Next point. Press Enter when done\".",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool UseActiveLayerLinetype",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When true, the linetype of the active layer is used for the dynamic drawing. Default is false.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool UseEndTangent",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When true, an interpolated curve ends tangent to EndTangent. Default is false. Ignored on a closed curve unless Sharp is true, and ignored while SubDFriendly is true. The getter offers its EndTangent option to the user only at degree 3 with SubDFriendly off; a tangent set here still applies at any degree.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool UseStartTangent",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When true, an interpolated curve starts tangent to StartTangent. Default is false. Ignored on a closed curve unless Sharp is true, and ignored while SubDFriendly is true. The getter offers its StartTangent option to the user only at degree 3 with SubDFriendly off; a tangent set here still applies at any degree.",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Actively reclaims unmanaged resources that this instance uses."
+      },
+      {
+        "signature": "System.Void Dispose(System.Boolean disposing)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "For derived class implementers.  \nThis method is called with argument True when class user calls Dispose(), while with argument False when     the Garbage Collector invokes the finalizer, or Finalize() method.  \nYou must reclaim all used unmanaged resources in both cases, and can use this chance to call Dispose on disposable fields if the argument is true.  \nAlso, you must call the base virtual method within your overriding method.",
+        "parameters": [
+          {
+            "name": "disposing",
+            "type": "System.Boolean",
+            "summary": "True if the call comes from the Dispose() method; False if it comes from the Garbage Collector finalizer."
+          }
+        ]
+      },
+      {
+        "signature": "Commands.Result GetControlPointCurve(out NurbsCurve curve)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Interactively picks the control points of a curve. This is what the Rhino Curve command uses.",
+        "parameters": [
+          {
+            "name": "curve",
+            "type": "NurbsCurve",
+            "summary": "The resulting curve, or None when the result is not Success."
+          }
+        ],
+        "returns": "The command result."
+      },
+      {
+        "signature": "Commands.Result GetInterpolatedCurve(out NurbsCurve curve)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Interactively picks the points an interpolated curve passes through. This is what the Rhino InterpCrv command uses.",
+        "parameters": [
+          {
+            "name": "curve",
+            "type": "NurbsCurve",
+            "summary": "The resulting curve, or None when the result is not Success."
+          }
+        ],
+        "returns": "The command result."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Input.Custom",
     "name": "GetCylinder",
     "dataType": "class",
     "summary": "Class provides user interface to define a cylinder.",
@@ -168674,6 +171188,15 @@
       }
     ],
     "properties": [
+      {
+        "signature": "int AroundDirectionMinimumCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The minimum number of faces in the around direction.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
       {
         "signature": "bool BothSidesOption",
         "modifiers": ["public"],
@@ -168726,6 +171249,15 @@
         "virtual": false,
         "summary": "Determines if the \"size\" value is representing a radius or diameter",
         "since": "6.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int VerticalDirectionMinimumCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The minimum number of faces in the vertical direction.",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -171581,6 +174113,15 @@
     ],
     "properties": [
       {
+        "signature": "int AroundDirectionMinimumCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The minimum number of faces in the around direction.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool Cap",
         "modifiers": ["public"],
         "protected": false,
@@ -171632,6 +174173,15 @@
         "virtual": false,
         "summary": "Radius of second circle.",
         "since": "7.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int VerticalDirectionMinimumCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The minimum number of faces in the vertical direction.",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -173222,6 +175772,56 @@
           }
         ],
         "returns": "Commands.Result.Success - got number Commands.Result.Nothing - user pressed enter Commands.Result.Cancel - user cancel number getting."
+      },
+      {
+        "signature": "Result GetInterpolatedCurveOnSurface(Surface surface, out Curve curve, out ObjRef surfaceObjRef, out Point2d[] surfaceParameters)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Interactively picks the points of a curve interpolated through a surface. This is the getter behind the Rhino InterpCrvOnSrf command.",
+        "parameters": [
+          {
+            "name": "surface",
+            "type": "Surface",
+            "summary": "The surface to draw on, or None to have the user pick one."
+          },
+          {
+            "name": "curve",
+            "type": "Curve",
+            "summary": "The resulting curve, or None when the result is not Success."
+          },
+          {
+            "name": "surfaceObjRef",
+            "type": "ObjRef",
+            "summary": "The face the user picked, or None when a surface was supplied or nothing was picked."
+          },
+          {
+            "name": "surfaceParameters",
+            "type": "Point2d[]",
+            "summary": "The picked points in the parameter space of the surface."
+          }
+        ],
+        "returns": "The command result. UnknownCommand means the user chose the Edit option, which the InterpCrvOnSrf command answers by restarting in edit mode."
+      },
+      {
+        "signature": "Result GetInterpolatedCurveOnSurface(Surface surface, out Curve curve)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Interactively picks the points of a curve interpolated through a surface. This is the getter behind the Rhino InterpCrvOnSrf command.",
+        "parameters": [
+          {
+            "name": "surface",
+            "type": "Surface",
+            "summary": "The surface to draw on, or None to have the user pick one."
+          },
+          {
+            "name": "curve",
+            "type": "Curve",
+            "summary": "The resulting curve, or None when the result is not Success."
+          }
+        ],
+        "returns": "The command result."
       },
       {
         "signature": "Result GetLine(out Line line)",
@@ -183360,7 +185960,7 @@
     "name": "ContentCollectionIterator",
     "dataType": "class",
     "summary": "An iterator for the RenderContentCollection",
-    "interfaces": ["IDisposable"],
+    "interfaces": ["IDisposable", "IEnumerable<RenderContent>"],
     "constructors": [
       {
         "signature": "ContentCollectionIterator(IntPtr pCollection)",
@@ -183402,6 +186002,14 @@
         "protected": false,
         "virtual": false,
         "since": "6.0"
+      },
+      {
+        "signature": "IEnumerator<RenderContent> GetEnumerator()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Enumerates the contents, rewinding the iterator to the beginning first. This makes it possible to use the iterator in a foreach loop or with LINQ instead of manually calling First() and Next(). The iterator itself is not disposed by enumerating it, so it should still be wrapped in a 'using' statement, or the whole  <b>RenderContentCollection</b> can be enumerated directly instead.",
+        "since": "9.0"
       },
       {
         "signature": "RenderContent Next()",
@@ -198708,7 +201316,7 @@
     "name": "RenderContentCollection",
     "dataType": "class",
     "summary": "A collection of Render content",
-    "interfaces": ["IDisposable", "IEnumerable"],
+    "interfaces": ["IDisposable", "IEnumerable<RenderContent>"],
     "constructors": [
       {
         "signature": "RenderContentCollection()",
@@ -198839,6 +201447,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "summary": "Enumerates the contents in the collection. This makes it possible to use the collection directly in a foreach loop instead of manually driving a  <b>ContentCollectionIterator</b> :  <pre>foreach (RenderContent content in collection) { ... }</pre>  The collection also implements IEnumerable<RenderContent>, so LINQ can be used on it directly. Note that this method returns the non-generic enumerator for backwards compatibility, which is why the loop variable above is declared as RenderContent rather than var.",
         "since": "6.0"
       },
       {
@@ -212230,6 +214839,15 @@
         ]
       },
       {
+        "signature": "UndoRecordEntry[] GetRedoRecords()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets this document's redo history, ordered from the action that the next call to <b>Redo</b> repeats to the oldest action that can be redone.",
+        "since": "9.0",
+        "returns": "The redo records. The list is empty when there is nothing to redo."
+      },
+      {
         "signature": "RenderPrimitiveList GetRenderPrimitiveList(ViewportInfo viewport, Rhino.Display.DisplayPipelineAttributes attrs)",
         "modifiers": ["public"],
         "protected": false,
@@ -212330,6 +214948,15 @@
             "summary": "Iterate quietly, if True then no user interface will be displayed"
           }
         ]
+      },
+      {
+        "signature": "UndoRecordEntry[] GetUndoRecords()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets this document's undo history, ordered from the most recently recorded action to the oldest recorded action.",
+        "since": "9.0",
+        "returns": "The undo records. The list is empty when there is nothing to undo."
       },
       {
         "signature": "System.String GetUnitSystemName(System.Boolean modelUnits, System.Boolean capitalize, System.Boolean singular, System.Boolean abbreviate)",
@@ -236039,6 +238666,88 @@
   },
   {
     "namespace": "Rhino.UI",
+    "name": "UserInterfaceCheckBox",
+    "dataType": "class",
+    "summary": "Draws a check box with optional text beside it. Clicking anywhere on the control changes the state and raises the CheckedChanged event.",
+    "baseclass": "Rhino.UI.UserInterfaceControl",
+    "constructors": [
+      {
+        "signature": "UserInterfaceCheckBox()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceCheckBox(string text)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "bool Checked",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Convenience for the two state case. Checked is True when the state is On, and an indeterminate check box is not checked.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "UserInterfaceCheckState CheckState",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "State of the check box. Setting the state does not raise CheckedChanged; that is only for a state the user changed by clicking.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void OnCheckedChanged()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called after a click has changed the state. A click turns an indeterminate check box on. The default implementation raises the CheckedChanged event."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.UI",
+    "name": "UserInterfaceCheckState",
+    "dataType": "enum",
+    "summary": "State of a UserInterfaceCheckBox. Named the way the other enums in here are, so that it does not collide with System.Windows.Forms.CheckState in code that uses both namespaces.",
+    "values": [
+      {
+        "signature": "Off = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Not checked"
+      },
+      {
+        "signature": "On = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Checked"
+      },
+      {
+        "signature": "Indeterminate = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Neither on nor off, drawn as a dash. Use this when the things the check box stands for do not agree with each other."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.UI",
     "name": "UserInterfaceControl",
     "dataType": "class",
     "summary": "User interface controls are in-viewport control that act similar to controls you would find in most GUI frameworks. These are 2d screen aligned controls like buttons, labels and sliders",
@@ -236084,6 +238793,42 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "Color TextColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Color used to draw the text. Color.Empty, the default, means use the standard text color for the theme that is in use.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "float TextHeight",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Height of the text in logical pixels. A value of 0, the default, means use the standard control font height. Controls that draw no text ignore this setting.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "ControlHorizontalAlignment TextHorizontalAlignment",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Where the text sits inside the control's rectangle. This is not the same as HorizontalAlignment, which is where the control sits inside its parent.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "ControlVerticalAlignment TextVerticalAlignment",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Where the text sits inside the control's rectangle. This is not the same as VerticalAlignment, which is where the control sits inside its parent.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "Point3d? TrackingPoint",
         "modifiers": ["public"],
         "protected": false,
@@ -236118,6 +238863,349 @@
   },
   {
     "namespace": "Rhino.UI",
+    "name": "UserInterfaceGrid",
+    "dataType": "class",
+    "summary": "Arranges child controls in a grid of rows and columns. The common case is a two or three column grid where the first column holds labels describing values and the remaining columns hold the controls that edit those values, which produces something that looks like the Rhino object properties pages.  Children fill the grid in row major order: a new row starts every ColumnCount children, so a two column grid built by adding label, control, label, control, ... reads the way it looks.  Settings can be made before or after the grid is added to a document. The ones made beforehand are held here and applied when the native grid is created.",
+    "baseclass": "Rhino.UI.UserInterfaceControl",
+    "constructors": [
+      {
+        "signature": "UserInterfaceGrid()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceGrid(int columnCount)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "bool BackgroundClaimsMouse",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Whether a click where the grid has no child control belongs to the grid or to whatever is behind it. The default is false, so clicks on the padding, on the gaps between cells and on empty cells go through to the viewport, which is what a heads up display over a model wants.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color BackgroundColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Color the grid fills its rectangle with. Color.Empty, the default, means draw no background at all.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color BorderColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double BorderThickness",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int ChildCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Number of cells that have been filled, including the empty ones added with AddEmptyCell. This is not the same as ColumnCount * RowCount.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int ColumnCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Number of columns in the grid. The default is 1. Changing the column count reflows the children that have already been added.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double ColumnSpacing",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Space between columns in logical pixels. The default is 6.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double CornerRadius",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int RowCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Number of rows the current children occupy, computed from the child count, the column count and any column spans.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "double RowHeight",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Height of every row in logical pixels. The default is 0, which means each row is as tall as the tallest control in it.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color RowSeparatorColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool RowSeparators",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draw a horizontal line between every pair of rows. Off by default.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double RowSpacing",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Space between rows in logical pixels. The default is 2.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void AddChild(UserInterfaceControl child)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Append a control to the next cell.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void AddEmptyCell()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Append a cell with nothing in it. Use this to leave a hole in a row.",
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceLabel AddHeading(System.String text)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Append a label that spans every column, for a section heading.",
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceLabel AddLabel(System.String text)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Append a label to the next cell, which is what most first column cells are. The label is returned so that its text alignment, color or height can be adjusted.",
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceControl Cell(System.Int32 row, System.Int32 column)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Control in a cell by row and column, or None when that cell is empty. The grid has to have been added to a document for this to find anything, since it is the native grid that knows which cell a child ended up in.",
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceControl Child(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Control in a cell, or None for an empty cell or an out of range index.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void EnableRowSeparatorBelowRow(System.Int32 row, System.Boolean on)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draw a horizontal line under one row, for a heading row that wants a rule under it when a line between every row would be too much. RowSeparators draws them all whatever this is set to.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Int32 GetChildColumnSpan(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceGridColumnSizing GetColumnSizing(System.Int32 column)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Double GetColumnWidth(System.Int32 column)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Width of a column in logical pixels as of the most recent layout. This is 0 until the grid has been drawn once.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Double GetComputedRowHeight(System.Int32 row)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Height of a row in logical pixels as of the most recent layout. This is 0 until the grid has been drawn once.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void InsertChild(UserInterfaceControl child, System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Insert a control at a cell index, shifting the controls after it along.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void RemoveAllChildren()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Empty the grid.",
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceControl RemoveChild(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Take a control out of the grid. Returns the control that was in the cell, or None for an empty cell or an out of range index.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetChildColumnSpan(System.Int32 index, System.Int32 span)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Number of columns a cell occupies. The default is 1. Use this for a section heading or a control that runs the full width of the grid. A span is clamped to the number of columns left in the row.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetColumnAutoWidth(System.Int32 column)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Make a column as wide as the widest control in it. Controls report their width from their computed size, so a label column sized this way is exactly as wide as its longest description.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetColumnContentAlignment(System.Int32 column, ControlHorizontalAlignment horizontal, ControlVerticalAlignment vertical)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "How the controls in a column sit in their cells. The default is Stretch / Center, which makes a control fill the column width and center itself in the row. Any horizontal setting other than Stretch gives the control the width it reports from its computed size.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetColumnFixedWidth(System.Int32 column, System.Double width)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Give a column a width in logical pixels that is never resized.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetColumnFlexibleWidth(System.Int32 column, System.Double weight)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Have a column share the width the fixed and auto columns do not use. With one flexible column that column gets all of the remaining width; with more than one the remainder is divided in proportion to the weights.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetColumnMinimumWidth(System.Int32 column, System.Double minimumWidth)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Width a column never goes below, in logical pixels. The default is 0.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetPadding(System.Double left, System.Double top, System.Double right, System.Double bottom)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void SetPadding(System.Double padding)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Space between the edges of the grid and its cells in logical pixels. The default is 6 on all four sides.",
+        "since": "9.0"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.UI",
+    "name": "UserInterfaceGridColumnSizing",
+    "dataType": "enum",
+    "summary": "How a UserInterfaceGrid decides the width of one of its columns",
+    "values": [
+      {
+        "signature": "Fixed = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The column is exactly the width it was given"
+      },
+      {
+        "signature": "Auto = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The column is as wide as the widest control in it"
+      },
+      {
+        "signature": "Flexible = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The column shares the width the fixed and auto columns leave over, in proportion to its weight"
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.UI",
     "name": "UserInterfaceIcon",
     "dataType": "class",
     "baseclass": "Rhino.UI.UserInterfaceControl",
@@ -236125,6 +239213,29 @@
       {
         "signature": "UserInterfaceIcon()",
         "summary": "Initializes a new instance of the UserInterfaceIcon class"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.UI",
+    "name": "UserInterfaceLabel",
+    "dataType": "class",
+    "summary": "Draws a single line of text. Labels do not respond to the mouse; they are the descriptive text that goes beside the controls that do.",
+    "baseclass": "Rhino.UI.UserInterfaceControl",
+    "constructors": [
+      {
+        "signature": "UserInterfaceLabel()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceLabel(string text)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
       }
     ]
   },
@@ -236418,6 +239529,42 @@
         "protected": false,
         "virtual": false,
         "since": "5.1"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino",
+    "name": "UndoRecordEntry",
+    "dataType": "class",
+    "summary": "Represents a single entry in a document's undo or redo history.",
+    "remarks": "A document deletes its records as undo and redo are performed. An  <b>UndoRecordEntry</b> is a snapshot of a record, so it remains usable after the document's history changes. Once the history has changed, the value of <b>SerialNumber</b> may no longer identify a record in that history.",
+    "properties": [
+      {
+        "signature": "string Description",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The name of the command that created the undoable events, or a description of what created them when they did not happen in a command.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "uint SerialNumber",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The runtime serial number Rhino assigned to this undo event.",
+        "since": "9.0",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns <b>Description</b> ."
       }
     ]
   },

@@ -103,10 +103,10 @@
       ["Rhino.Display.RhinoPageView", "DetailViewObject AddDetailView(System.String title, Geometry.Point2d corner0, Geometry.Point2d corner1, DefinedViewportProjection initialProjection)"],
       ["Rhino.Display.RhinoPageView", "System.Boolean SetActiveDetail(System.Guid detailId)"],
       ["Rhino.Display.RhinoPageView", "System.Void SetPageAsActive()"],
-      ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
       ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
       ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.LengthUnit modelUnits, System.Double pageLength, Rhino.LengthUnit pageUnits)"],
       ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
+      ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView AddPageView(System.String title, System.Double pageWidth, System.Double pageHeight)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView[] GetPageViews()"]
     ]
@@ -207,12 +207,12 @@
     "name": "Addradialdimension.cs",
     "code": "using Rhino;\nusing Rhino.DocObjects;\nusing Rhino.Commands;\nusing Rhino.Geometry;\nusing Rhino.Input;\n\nnamespace examples_cs\n{\n  public class AddRadialDimensionCommand : Rhino.Commands.Command\n  {\n    public override string EnglishName\n    {\n      get { return \"csAddRadialDimension\"; }\n    }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      ObjRef obj_ref;\n      var rc = RhinoGet.GetOneObject(\"Select curve for radius dimension\", \n        true, ObjectType.Curve, out obj_ref);\n      if (rc != Result.Success)\n        return rc;\n      double curve_parameter;\n      var curve = obj_ref.CurveParameter(out curve_parameter);\n      if (curve == null)\n        return Result.Failure;\n\n      if (curve.IsLinear() || curve.IsPolyline())\n      {\n        RhinoApp.WriteLine(\"Curve must be non-linear.\");\n        return Result.Nothing;\n      }\n\n      // in this example just deal with planar curves\n      if (!curve.IsPlanar())\n      {\n        RhinoApp.WriteLine(\"Curve must be planar.\");\n        return Result.Nothing;\n      }\n\n      var point_on_curve = curve.PointAt(curve_parameter);\n      var curvature_vector = curve.CurvatureAt(curve_parameter);\n      var len = curvature_vector.Length;\n      if (len < RhinoMath.SqrtEpsilon)\n      {\n        RhinoApp.WriteLine(\"Curve is almost linear and therefore has no curvature.\");\n        return Result.Nothing;\n      }\n\n      var center = point_on_curve + (curvature_vector/(len*len));\n      Plane plane;\n      curve.TryGetPlane(out plane);\n      var radial_dimension = \n        new RadialDimension(center, point_on_curve, plane.XAxis, plane.Normal, 5.0);\n      doc.Objects.AddRadialDimension(radial_dimension);\n      doc.Views.Redraw();\n      return Result.Success;\n    }\n  }\n}",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Curve CurveParameter(out System.Double parameter)"],
       ["Rhino.Geometry.Curve", "Vector3d CurvatureAt(System.Double t)"],
       ["Rhino.Geometry.Curve", "System.Boolean IsLinear()"],
       ["Rhino.Geometry.Curve", "System.Boolean IsPlanar()"],
       ["Rhino.Geometry.Curve", "System.Boolean IsPolyline()"],
       ["Rhino.Geometry.Curve", "Point3d PointAt(System.Double t)"],
+      ["Rhino.DocObjects.ObjRef", "Curve CurveParameter(out System.Double parameter)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddRadialDimension(RadialDimension dimension)"]
     ]
   },
@@ -300,9 +300,9 @@
     "name": "Booleandifference.cs",
     "code": "using System.Collections.Generic;\nusing Rhino.Commands;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result BooleanDifference(Rhino.RhinoDoc doc)\n  {\n    Rhino.DocObjects.ObjRef[] objrefs;\n    Result rc = Rhino.Input.RhinoGet.GetMultipleObjects(\"Select first set of polysurfaces\",\n                                                        false, Rhino.DocObjects.ObjectType.PolysrfFilter, out objrefs);\n    if (rc != Rhino.Commands.Result.Success)\n      return rc;\n    if (objrefs == null || objrefs.Length < 1)\n      return Rhino.Commands.Result.Failure;\n\n    List<Rhino.Geometry.Brep> in_breps0 = new List<Rhino.Geometry.Brep>();\n    for (int i = 0; i < objrefs.Length; i++)\n    {\n      Rhino.Geometry.Brep brep = objrefs[i].Brep();\n      if (brep != null)\n        in_breps0.Add(brep);\n    }\n\n    doc.Objects.UnselectAll();\n    rc = Rhino.Input.RhinoGet.GetMultipleObjects(\"Select second set of polysurfaces\",\n      false, Rhino.DocObjects.ObjectType.PolysrfFilter, out objrefs);\n    if (rc != Rhino.Commands.Result.Success)\n      return rc;\n    if (objrefs == null || objrefs.Length < 1)\n      return Rhino.Commands.Result.Failure;\n\n    List<Rhino.Geometry.Brep> in_breps1 = new List<Rhino.Geometry.Brep>();\n    for (int i = 0; i < objrefs.Length; i++)\n    {\n      Rhino.Geometry.Brep brep = objrefs[i].Brep();\n      if (brep != null)\n        in_breps1.Add(brep);\n    }\n\n    double tolerance = doc.ModelAbsoluteTolerance;\n    Rhino.Geometry.Brep[] breps = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance);\n    if (breps.Length < 1)\n      return Rhino.Commands.Result.Nothing;\n    for (int i = 0; i < breps.Length; i++)\n      doc.Objects.AddBrep(breps[i]);\n    doc.Views.Redraw();\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Brep Brep()"],
       ["Rhino.Geometry.Brep", "Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, System.Double tolerance, System.Boolean manifoldOnly)"],
       ["Rhino.Geometry.Brep", "Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, System.Double tolerance)"],
+      ["Rhino.DocObjects.ObjRef", "Brep Brep()"],
       ["Rhino.Input.RhinoGet", "Result GetMultipleObjects(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef[] rhObjects)"]
     ]
   },
@@ -360,9 +360,9 @@
     "name": "Constrainedcopy.cs",
     "code": "using System;\n\npartial class Examples\n{\n  public static Rhino.Commands.Result ConstrainedCopy(Rhino.RhinoDoc doc)\n  {\n    // Get a single planar closed curve\n    var go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select curve\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;\n    go.Get();\n    if( go.CommandResult() != Rhino.Commands.Result.Success )\n      return go.CommandResult();\n    var objref = go.Object(0);\n    var base_curve = objref.Curve();\n    var first_point = objref.SelectionPoint();\n    if( base_curve==null || !first_point.IsValid )\n      return Rhino.Commands.Result.Cancel;\n\n    Rhino.Geometry.Plane plane;\n    if( !base_curve.TryGetPlane(out plane) )\n      return Rhino.Commands.Result.Cancel;\n\n    // Get a point constrained to a line passing through the initial selection\n    // point and parallel to the plane's normal\n    var gp = new Rhino.Input.Custom.GetPoint();\n    gp.SetCommandPrompt(\"Offset point\");\n    gp.DrawLineFromPoint(first_point, true);\n    var line = new Rhino.Geometry.Line(first_point, first_point+plane.Normal);\n    gp.Constrain(line);\n    gp.Get();\n    if( gp.CommandResult() != Rhino.Commands.Result.Success )\n      return gp.CommandResult();\n    var second_point = gp.Point();\n    Rhino.Geometry.Vector3d vec = second_point - first_point;\n    if( vec.Length > 0.001 )\n    {\n      var xf = Rhino.Geometry.Transform.Translation(vec);\n      Guid id = doc.Objects.Transform(objref, xf, false);\n      if( id!=Guid.Empty )\n      {\n        doc.Views.Redraw();\n        return Rhino.Commands.Result.Success;\n      }\n    }\n    return Rhino.Commands.Result.Cancel;\n  }\n}\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
       ["Rhino.Geometry.Curve", "System.Boolean TryGetPlane(out Plane plane)"],
       ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"],
+      ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"]
     ]
   },
@@ -610,10 +610,10 @@
     "name": "Hatchcurve.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result HatchCurve(Rhino.RhinoDoc doc)\n  {\n    var go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select closed planar curve\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve;\n    go.SubObjectSelect = false;\n    go.Get();\n    if( go.CommandResult() != Rhino.Commands.Result.Success )\n      return go.CommandResult();\n\n    var curve = go.Object(0).Curve();\n    if( curve==null || !curve.IsClosed || !curve.IsPlanar() )\n      return Rhino.Commands.Result.Failure;\n\n    string hatch_name = doc.HatchPatterns[doc.HatchPatterns.CurrentHatchPatternIndex].Name;\n    var rc = Rhino.Input.RhinoGet.GetString(\"Hatch pattern\", true, ref hatch_name);\n    if( rc!= Rhino.Commands.Result.Success )\n      return rc;\n    hatch_name = hatch_name.Trim();\n    if( string.IsNullOrWhiteSpace(hatch_name) )\n      return Rhino.Commands.Result.Nothing;\n    int index = doc.HatchPatterns.Find(hatch_name, true);\n    if( index < 0 )\n    {\n      Rhino.RhinoApp.WriteLine(\"Hatch pattern does not exist.\");\n      return Rhino.Commands.Result.Nothing;\n    }\n\n    var hatches = Rhino.Geometry.Hatch.Create( curve, index, 0, 1);\n    for( int i=0; i<hatches.Length; i++ )\n      doc.Objects.AddHatch(hatches[i]);\n    if( hatches.Length>0 )\n      doc.Views.Redraw();\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
-      ["Rhino.DocObjects.ModelComponent", "string Name"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale, System.Double tolerance)"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale)"],
+      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
+      ["Rhino.DocObjects.ModelComponent", "string Name"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddHatch(Hatch hatch)"],
       ["Rhino.DocObjects.Tables.HatchPatternTable", "int CurrentHatchPatternIndex"],
       ["Rhino.DocObjects.Tables.HatchPatternTable", "System.Int32 Find(System.String name, System.Boolean ignoreDeleted)"],
@@ -642,9 +642,9 @@
     "name": "Intersectcurves.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result IntersectCurves(Rhino.RhinoDoc doc)\n  {\n    // Select two curves to intersect\n    var go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select two curves\");\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;\n    go.GetMultiple(2, 2);\n    if (go.CommandResult() != Rhino.Commands.Result.Success)\n      return go.CommandResult();\n\n    // Validate input\n    var curveA = go.Object(0).Curve();\n    var curveB = go.Object(1).Curve();\n    if (curveA == null || curveB == null)\n      return Rhino.Commands.Result.Failure;\n\n    // Calculate the intersection\n    const double intersection_tolerance = 0.001;\n    const double overlap_tolerance = 0.0;\n    var events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance);\n\n    // Process the results\n    if (events != null)\n    {\n      for (int i = 0; i < events.Count; i++)\n      {\n        var ccx_event = events[i];\n        doc.Objects.AddPoint(ccx_event.PointA);\n        if (ccx_event.PointA.DistanceTo(ccx_event.PointB) > double.Epsilon)\n        {\n          doc.Objects.AddPoint(ccx_event.PointB);\n          doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB);\n        }\n      }\n      doc.Views.Redraw();\n    }\n    return Rhino.Commands.Result.Success;\n  }\n}\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
       ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Point3f", "System.Double DistanceTo(Point3f other)"],
+      ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveCurve(Curve curveA, Curve curveB, System.Double tolerance, System.Double overlapTolerance)"]
     ]
   },
@@ -817,11 +817,11 @@
     "name": "Orientonsrf.cs",
     "code": "partial class Examples\n{\n  public static Rhino.Commands.Result OrientOnSrf(Rhino.RhinoDoc doc)\n  {\n    // Select objects to orient\n    Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();\n    go.SetCommandPrompt(\"Select objects to orient\");\n    go.SubObjectSelect = false;\n    go.GroupSelect = true;\n    go.GetMultiple(1, 0);\n    if (go.CommandResult() != Rhino.Commands.Result.Success)\n      return go.CommandResult();\n\n    // Point to orient from\n    Rhino.Input.Custom.GetPoint gp = new Rhino.Input.Custom.GetPoint();\n    gp.SetCommandPrompt(\"Point to orient from\");\n    gp.Get();\n    if (gp.CommandResult() != Rhino.Commands.Result.Success)\n      return gp.CommandResult();\n\n    // Define source plane\n    Rhino.Display.RhinoView view = gp.View();\n    if (view == null)\n    {\n      view = doc.Views.ActiveView;\n      if (view == null)\n        return Rhino.Commands.Result.Failure;\n    }\n    Rhino.Geometry.Plane source_plane = view.ActiveViewport.ConstructionPlane();\n    source_plane.Origin = gp.Point();\n\n    // Surface to orient on\n    Rhino.Input.Custom.GetObject gs = new Rhino.Input.Custom.GetObject();\n    gs.SetCommandPrompt(\"Surface to orient on\");\n    gs.GeometryFilter = Rhino.DocObjects.ObjectType.Surface;\n    gs.SubObjectSelect = true;\n    gs.DeselectAllBeforePostSelect = false;\n    gs.OneByOnePostSelect = true;\n    gs.Get();\n    if (gs.CommandResult() != Rhino.Commands.Result.Success)\n      return gs.CommandResult();\n\n    Rhino.DocObjects.ObjRef objref = gs.Object(0);\n    // get selected surface object\n    Rhino.DocObjects.RhinoObject obj = objref.Object();\n    if (obj == null)\n      return Rhino.Commands.Result.Failure;\n    // get selected surface (face)\n    Rhino.Geometry.Surface surface = objref.Surface();\n    if (surface == null)\n      return Rhino.Commands.Result.Failure;\n    // Unselect surface\n    obj.Select(false);\n\n    // Point on surface to orient to\n    gp.SetCommandPrompt(\"Point on surface to orient to\");\n    gp.Constrain(surface, false);\n    gp.Get();\n    if (gp.CommandResult() != Rhino.Commands.Result.Success)\n      return gp.CommandResult();\n\n    // Do transformation\n    Rhino.Commands.Result rc = Rhino.Commands.Result.Failure;\n    double u, v;\n    if (surface.ClosestPoint(gp.Point(), out u, out v))\n    {\n      Rhino.Geometry.Plane target_plane;\n      if (surface.FrameAt(u, v, out target_plane))\n      {\n        // Build transformation\n        Rhino.Geometry.Transform xform = Rhino.Geometry.Transform.PlaneToPlane(source_plane, target_plane);\n\n        // Do the transformation. In this example, we will copy the original objects\n        const bool delete_original = false;\n        for (int i = 0; i < go.ObjectCount; i++)\n          doc.Objects.Transform(go.Object(i), xform, delete_original);\n\n        doc.Views.Redraw();\n        rc = Rhino.Commands.Result.Success;\n      }\n    }\n    return rc;\n  }\n}\n",
     "members": [
+      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
+      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.DocObjects.RhinoObject", "System.Int32 Select(System.Boolean on)"],
       ["Rhino.DocObjects.ObjRef", "RhinoObject Object()"],
       ["Rhino.DocObjects.ObjRef", "Surface Surface()"],
-      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
-      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.Input.Custom.GetObject", "bool DeselectAllBeforePostSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjectType GeometryFilter"],
       ["Rhino.Input.Custom.GetObject", "bool GroupSelect"],
@@ -905,8 +905,8 @@
     "name": "Replacehatchpattern.cs",
     "code": "using Rhino;\nusing Rhino.DocObjects;\nusing Rhino.Commands;\nusing Rhino.Input;\nusing Rhino.Input.Custom;\n\nnamespace examples_cs\n{\n  public class ReplaceHatchPatternCommand : Rhino.Commands.Command\n  {\n    public override string EnglishName\n    {\n      get { return \"csReplaceHatchPattern\"; }\n    }\n\n    protected override Result RunCommand(RhinoDoc doc, RunMode mode)\n    {\n      ObjRef[] obj_refs;\n      var rc = RhinoGet.GetMultipleObjects(\"Select hatches to replace\", false, ObjectType.Hatch, out obj_refs);\n      if (rc != Result.Success || obj_refs == null)\n        return rc;\n\n      var gs = new GetString();\n      gs.SetCommandPrompt(\"Name of replacement hatch pattern\");\n      gs.AcceptNothing(false);\n      gs.Get();\n      if (gs.CommandResult() != Result.Success)\n        return gs.CommandResult();\n      var hatch_name = gs.StringResult();\n\n      var pattern_index = doc.HatchPatterns.Find(hatch_name, true);\n\n      if (pattern_index < 0)\n      {\n        RhinoApp.WriteLine(\"The hatch pattern '{0}' not found  in the document.\", hatch_name);\n        return Result.Nothing;\n      }\n\n      foreach (var obj_ref in obj_refs)\n      {\n        var hatch_object = obj_ref.Object() as HatchObject;\n        if (hatch_object.HatchGeometry.PatternIndex != pattern_index)\n        {\n          hatch_object.HatchGeometry.PatternIndex = pattern_index;\n          hatch_object.CommitChanges();\n        }\n      }\n      doc.Views.Redraw();\n      return Result.Success;\n    }\n  }\n}\n",
     "members": [
-      ["Rhino.DocObjects.HatchObject", "Hatch HatchGeometry"],
-      ["Rhino.Geometry.Hatch", "int PatternIndex"]
+      ["Rhino.Geometry.Hatch", "int PatternIndex"],
+      ["Rhino.DocObjects.HatchObject", "Hatch HatchGeometry"]
     ]
   },
   {
@@ -1105,10 +1105,10 @@
       ["Rhino.Display.RhinoPageView", "DetailViewObject AddDetailView(System.String title, Geometry.Point2d corner0, Geometry.Point2d corner1, DefinedViewportProjection initialProjection)"],
       ["Rhino.Display.RhinoPageView", "System.Boolean SetActiveDetail(System.Guid detailId)"],
       ["Rhino.Display.RhinoPageView", "System.Void SetPageAsActive()"],
-      ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
       ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
       ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.LengthUnit modelUnits, System.Double pageLength, Rhino.LengthUnit pageUnits)"],
       ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
+      ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView AddPageView(System.String title, System.Double pageWidth, System.Double pageHeight)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView[] GetPageViews()"]
     ]
@@ -1209,12 +1209,12 @@
     "name": "Addradialdimension.py",
     "code": "from Rhino import *\nfrom Rhino.DocObjects import *\nfrom Rhino.Commands import *\nfrom Rhino.Geometry import *\nfrom Rhino.Input import *\nfrom scriptcontext import doc\n\ndef RunCommand():\n  rc, obj_ref = RhinoGet.GetOneObject(\"Select curve for radius dimension\", \n    True, ObjectType.Curve)\n  if rc != Result.Success:\n    return rc\n  curve, curve_parameter = obj_ref.CurveParameter()\n  if curve == None:\n    return Result.Failure\n\n  if curve.IsLinear() or curve.IsPolyline():\n    print \"Curve must be non-linear.\"\n    return Result.Nothing\n\n  # in this example just deal with planar curves\n  if not curve.IsPlanar():\n    print \"Curve must be planar.\"\n    return Result.Nothing\n\n  point_on_curve = curve.PointAt(curve_parameter)\n  curvature_vector = curve.CurvatureAt(curve_parameter)\n  len = curvature_vector.Length\n  if len < RhinoMath.SqrtEpsilon:\n    print \"Curve is almost linear and therefore has no curvature.\"\n    return Result.Nothing\n\n  center = point_on_curve + (curvature_vector/(len*len))\n  _, plane = curve.TryGetPlane()\n  radial_dimension = \\\n    RadialDimension(center, point_on_curve, plane.XAxis, plane.Normal, 5.0)\n  doc.Objects.AddRadialDimension(radial_dimension)\n  doc.Views.Redraw()\n  return Result.Success\n\nif __name__==\"__main__\":\n  RunCommand()",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Curve CurveParameter(out System.Double parameter)"],
       ["Rhino.Geometry.Curve", "Vector3d CurvatureAt(System.Double t)"],
       ["Rhino.Geometry.Curve", "System.Boolean IsLinear()"],
       ["Rhino.Geometry.Curve", "System.Boolean IsPlanar()"],
       ["Rhino.Geometry.Curve", "System.Boolean IsPolyline()"],
       ["Rhino.Geometry.Curve", "Point3d PointAt(System.Double t)"],
+      ["Rhino.DocObjects.ObjRef", "Curve CurveParameter(out System.Double parameter)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddRadialDimension(RadialDimension dimension)"]
     ]
   },
@@ -1293,9 +1293,9 @@
     "name": "Booleandifference.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef BooleanDifference():\n    filter = Rhino.DocObjects.ObjectType.PolysrfFilter\n    rc, objrefs = Rhino.Input.RhinoGet.GetMultipleObjects(\"Select first set of polysurfaces\", False, filter)\n    if rc != Rhino.Commands.Result.Success: return rc\n    if not objrefs: return Rhino.Commands.Result.Failure\n\n    in_breps0 = []\n    for objref in objrefs:\n        brep = objref.Brep()\n        if brep: in_breps0.append(brep)\n\n    scriptcontext.doc.Objects.UnselectAll()\n    rc, objrefs = Rhino.Input.RhinoGet.GetMultipleObjects(\"Select second set of polysurfaces\", False, filter)\n    if rc != Rhino.Commands.Result.Success: return rc\n    if not objrefs: return Rhino.Commands.Result.Failure\n\n    in_breps1 = []\n    for objref in objrefs:\n        brep = objref.Brep()\n        if brep: in_breps1.append(brep)\n\n    tolerance = scriptcontext.doc.ModelAbsoluteTolerance\n    breps = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance)\n    if not breps: return Rhino.Commands.Result.Nothing\n    for brep in breps: scriptcontext.doc.Objects.AddBrep(brep)\n    scriptcontext.doc.Views.Redraw()\n    return Rhino.Commands.Result.Success\n\nif __name__==\"__main__\":\n    BooleanDifference()",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Brep Brep()"],
       ["Rhino.Geometry.Brep", "Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, System.Double tolerance, System.Boolean manifoldOnly)"],
       ["Rhino.Geometry.Brep", "Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, System.Double tolerance)"],
+      ["Rhino.DocObjects.ObjRef", "Brep Brep()"],
       ["Rhino.Input.RhinoGet", "Result GetMultipleObjects(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef[] rhObjects)"]
     ]
   },
@@ -1353,9 +1353,9 @@
     "name": "Constrainedcopy.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef constrainedcopy():\n    #get a single closed curve\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.Get()\n    if go.CommandResult() != Rhino.Commands.Result.Success: return\n    objref = go.Object(0)\n    base_curve = objref.Curve()\n    first_point = objref.SelectionPoint()\n    if not base_curve or not first_point.IsValid:\n        return\n    isplanar, plane = base_curve.TryGetPlane()\n    if not isplanar: return\n    \n    gp = Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Offset point\")\n    gp.DrawLineFromPoint(first_point, True)\n    line = Rhino.Geometry.Line(first_point, first_point + plane.Normal)\n    gp.Constrain(line)\n    gp.Get()\n    if gp.CommandResult() != Rhino.Commands.Result.Success:\n        return\n    second_point = gp.Point()\n    vec = second_point - first_point\n    if vec.Length > 0.001:\n        xf = Rhino.Geometry.Transform.Translation(vec)\n        id = scriptcontext.doc.Objects.Transform(objref, xf, False)\n        scriptcontext.doc.Views.Redraw()\n        return id\n\nif __name__==\"__main__\":\n    constrainedcopy()\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
       ["Rhino.Geometry.Curve", "System.Boolean TryGetPlane(out Plane plane)"],
       ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"],
+      ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"]
     ]
   },
@@ -1603,10 +1603,10 @@
     "name": "Hatchcurve.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef HatchCurve():\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select closed planar curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.SubObjectSelect = False\n    go.Get()\n    if go.CommandResult()!=Rhino.Commands.Result.Success: return\n\n    curve = go.Object(0).Curve()\n    if (not curve or not curve.IsClosed or not curve.IsPlanar()): return\n\n    hatch_name = scriptcontext.doc.HatchPatterns[scriptcontext.doc.HatchPatterns.CurrentHatchPatternIndex].Name\n    rc, hatch_name = Rhino.Input.RhinoGet.GetString(\"Hatch pattern\", True, hatch_name)\n    if rc!=Rhino.Commands.Result.Success or not hatch_name: return\n\n    index = scriptcontext.doc.HatchPatterns.Find(hatch_name, True)\n    if index<0:\n        print \"Hatch pattern does not exist.\"\n        return\n\n    hatches = Rhino.Geometry.Hatch.Create(curve, index, 0, 1)\n    for hatch in hatches:\n        scriptcontext.doc.Objects.AddHatch(hatch)\n    if hatches: scriptcontext.doc.Views.Redraw()\n\nif __name__==\"__main__\":\n    HatchCurve()",
     "members": [
-      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
-      ["Rhino.DocObjects.ModelComponent", "string Name"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale, System.Double tolerance)"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale)"],
+      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
+      ["Rhino.DocObjects.ModelComponent", "string Name"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddHatch(Hatch hatch)"],
       ["Rhino.DocObjects.Tables.HatchPatternTable", "int CurrentHatchPatternIndex"],
       ["Rhino.DocObjects.Tables.HatchPatternTable", "System.Int32 Find(System.String name, System.Boolean ignoreDeleted)"],
@@ -1635,9 +1635,9 @@
     "name": "Intersectcurves.py",
     "code": "import Rhino\nimport scriptcontext\n\ndef IntersectCurves():\n    # Select two curves to intersect\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select two curves\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GetMultiple(2, 2)\n    if go.CommandResult()!=Rhino.Commands.Result.Success: return\n\n    # Validate input\n    curveA = go.Object(0).Curve()\n    curveB = go.Object(1).Curve()\n    if not curveA or not curveB: return\n\n    # Calculate the intersection\n    intersection_tolerance = 0.001\n    overlap_tolerance = 0.0\n    events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance)\n\n    # Process the results\n    if not events: return\n    for ccx_event in events:\n        scriptcontext.doc.Objects.AddPoint(ccx_event.PointA)\n        if ccx_event.PointA.DistanceTo(ccx_event.PointB) > float.Epsilon:\n            scriptcontext.doc.Objects.AddPoint(ccx_event.PointB)\n            scriptcontext.doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB)\n    scriptcontext.doc.Views.Redraw()\n\nif __name__==\"__main__\":\n    IntersectCurves()",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
       ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Point3f", "System.Double DistanceTo(Point3f other)"],
+      ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveCurve(Curve curveA, Curve curveB, System.Double tolerance, System.Double overlapTolerance)"]
     ]
   },
@@ -1802,11 +1802,11 @@
     "name": "Orientonsrf.py",
     "code": "import Rhino\nimport scriptcontext\nimport System.Guid\n\ndef OrientOnSrf():\n    # Select objects to orient\n    go = Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select objects to orient\")\n    go.SubObjectSelect = False\n    go.GroupSelect = True\n    go.GetMultiple(1, 0)\n    if go.CommandResult()!=Rhino.Commands.Result.Success:\n        return go.CommandResult()\n\n    # Point to orient from\n    gp = Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Point to orient from\")\n    gp.Get()\n    if gp.CommandResult()!=Rhino.Commands.Result.Success:\n        return gp.CommandResult()\n    \n    # Define source plane\n    view = gp.View()\n    if not view:\n        view = doc.Views.ActiveView\n        if not view: return Rhino.Commands.Result.Failure\n\n    source_plane = view.ActiveViewport.ConstructionPlane()\n    source_plane.Origin = gp.Point()\n\n    # Surface to orient on\n    gs = Rhino.Input.Custom.GetObject()\n    gs.SetCommandPrompt(\"Surface to orient on\")\n    gs.GeometryFilter = Rhino.DocObjects.ObjectType.Surface\n    gs.SubObjectSelect = True\n    gs.DeselectAllBeforePostSelect = False\n    gs.OneByOnePostSelect = True\n    gs.Get()\n    if gs.CommandResult()!=Rhino.Commands.Result.Success:\n        return gs.CommandResult()\n\n    objref = gs.Object(0)\n    # get selected surface object\n    obj = objref.Object()\n    if not obj: return Rhino.Commands.Result.Failure\n    # get selected surface (face)\n    surface = objref.Surface()\n    if not surface: return Rhino.Commands.Result.Failure\n    # Unselect surface\n    obj.Select(False)\n\n    # Point on surface to orient to\n    gp.SetCommandPrompt(\"Point on surface to orient to\")\n    gp.Constrain(surface, False)\n    gp.Get()\n    if gp.CommandResult()!=Rhino.Commands.Result.Success:\n        return gp.CommandResult()\n\n    # Do transformation\n    rc = Rhino.Commands.Result.Failure\n    getrc, u, v = surface.ClosestPoint(gp.Point())\n    if getrc:\n        getrc, target_plane = surface.FrameAt(u,v)\n        if getrc:\n            # Build transformation\n            xform = Rhino.Geometry.Transform.PlaneToPlane(source_plane, target_plane)\n            # Do the transformation. In this example, we will copy the original objects\n            delete_original = False\n            for i in range(go.ObjectCount):\n                rhobj = go.Object(i)\n                scriptcontext.doc.Objects.Transform(rhobj, xform, delete_original)\n            scriptcontext.doc.Views.Redraw()\n            rc = Rhino.Commands.Result.Success\n    return rc\n\n\nif __name__==\"__main__\":\n    OrientOnSrf()\n",
     "members": [
+      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
+      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.DocObjects.RhinoObject", "System.Int32 Select(System.Boolean on)"],
       ["Rhino.DocObjects.ObjRef", "RhinoObject Object()"],
       ["Rhino.DocObjects.ObjRef", "Surface Surface()"],
-      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
-      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.Input.Custom.GetObject", "bool DeselectAllBeforePostSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjectType GeometryFilter"],
       ["Rhino.Input.Custom.GetObject", "bool GroupSelect"],
@@ -1882,8 +1882,8 @@
     "name": "Replacehatchpattern.py",
     "code": "from Rhino import *\nfrom Rhino.DocObjects import *\nfrom Rhino.Commands import *\nfrom Rhino.Input import *\nfrom Rhino.Input.Custom import *\nfrom scriptcontext import doc\n\ndef RunCommand():\n  rc, obj_refs = RhinoGet.GetMultipleObjects(\"Select hatches to replace\", False, ObjectType.Hatch)\n  if rc <> Result.Success or obj_refs == None:\n    return rc\n\n  gs = GetString()\n  gs.SetCommandPrompt(\"Name of replacement hatch pattern\")\n  gs.AcceptNothing(False)\n  gs.Get()\n  if gs.CommandResult() <> Result.Success:\n    return gs.CommandResult()\n  hatch_name = gs.StringResult()\n\n  pattern_index = doc.HatchPatterns.Find(hatch_name, True)\n\n  if pattern_index < 0:\n    RhinoApp.WriteLine(\"The hatch pattern \"{0}\" not found  in the document.\", hatch_name)\n    return Result.Nothing\n\n  for obj_ref in obj_refs:\n    hatch_object = obj_ref.Object()\n    if hatch_object.HatchGeometry.PatternIndex <> pattern_index:\n      hatch_object.HatchGeometry.PatternIndex = pattern_index\n      hatch_object.CommitChanges()\n\n  doc.Views.Redraw()\n  return Result.Success\n\nif __name__ == \"__main__\":\n  RunCommand()",
     "members": [
-      ["Rhino.DocObjects.HatchObject", "Hatch HatchGeometry"],
-      ["Rhino.Geometry.Hatch", "int PatternIndex"]
+      ["Rhino.Geometry.Hatch", "int PatternIndex"],
+      ["Rhino.DocObjects.HatchObject", "Hatch HatchGeometry"]
     ]
   },
   {
@@ -2075,10 +2075,10 @@
       ["Rhino.Display.RhinoPageView", "DetailViewObject AddDetailView(System.String title, Geometry.Point2d corner0, Geometry.Point2d corner1, DefinedViewportProjection initialProjection)"],
       ["Rhino.Display.RhinoPageView", "System.Boolean SetActiveDetail(System.Guid detailId)"],
       ["Rhino.Display.RhinoPageView", "System.Void SetPageAsActive()"],
-      ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
       ["Rhino.Geometry.DetailView", "bool IsProjectionLocked"],
       ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.LengthUnit modelUnits, System.Double pageLength, Rhino.LengthUnit pageUnits)"],
       ["Rhino.Geometry.DetailView", "System.Boolean SetScale(System.Double modelLength, Rhino.UnitSystem modelUnits, System.Double pageLength, Rhino.UnitSystem pageUnits)"],
+      ["Rhino.DocObjects.RhinoObject", "System.Boolean CommitChanges()"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView AddPageView(System.String title, System.Double pageWidth, System.Double pageHeight)"],
       ["Rhino.DocObjects.Tables.ViewTable", "RhinoPageView[] GetPageViews()"]
     ]
@@ -2179,12 +2179,12 @@
     "name": "Addradialdimension.vb",
     "code": "Imports Rhino\nImports Rhino.DocObjects\nImports Rhino.Commands\nImports Rhino.Geometry\nImports Rhino.Input\n\nNamespace examples_vb\n  Public Class AddRadialDimensionCommand\n    Inherits Rhino.Commands.Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbAddRadialDimension\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim obj_ref As ObjRef = Nothing\n      Dim rc = RhinoGet.GetOneObject(\"Select curve for radius dimension\", True, ObjectType.Curve, obj_ref)\n      If rc <> Result.Success Then\n        Return rc\n      End If\n      Dim curve_parameter As Double\n      Dim curve = obj_ref.CurveParameter(curve_parameter)\n      If curve Is Nothing Then\n        Return Result.Failure\n      End If\n\n      If curve.IsLinear() OrElse curve.IsPolyline() Then\n        RhinoApp.WriteLine(\"Curve must be non-linear.\")\n        Return Result.[Nothing]\n      End If\n\n      ' in this example just deal with planar curves\n      If Not curve.IsPlanar() Then\n        RhinoApp.WriteLine(\"Curve must be planar.\")\n        Return Result.[Nothing]\n      End If\n\n      Dim point_on_curve = curve.PointAt(curve_parameter)\n      Dim curvature_vector = curve.CurvatureAt(curve_parameter)\n      Dim len = curvature_vector.Length\n      If len < RhinoMath.SqrtEpsilon Then\n        RhinoApp.WriteLine(\"Curve is almost linear and therefore has no curvature.\")\n        Return Result.[Nothing]\n      End If\n\n      Dim center = point_on_curve + (curvature_vector / (len * len))\n      Dim plane As Plane\n      curve.TryGetPlane(plane)\n      Dim radial_dimension = New RadialDimension(center, point_on_curve, plane.XAxis, plane.Normal, 5.0)\n      doc.Objects.AddRadialDimension(radial_dimension)\n      doc.Views.Redraw()\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Curve CurveParameter(out System.Double parameter)"],
       ["Rhino.Geometry.Curve", "Vector3d CurvatureAt(System.Double t)"],
       ["Rhino.Geometry.Curve", "System.Boolean IsLinear()"],
       ["Rhino.Geometry.Curve", "System.Boolean IsPlanar()"],
       ["Rhino.Geometry.Curve", "System.Boolean IsPolyline()"],
       ["Rhino.Geometry.Curve", "Point3d PointAt(System.Double t)"],
+      ["Rhino.DocObjects.ObjRef", "Curve CurveParameter(out System.Double parameter)"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddRadialDimension(RadialDimension dimension)"]
     ]
   },
@@ -2272,9 +2272,9 @@
     "name": "Booleandifference.vb",
     "code": "Imports System.Collections.Generic\n\nPartial Class Examples\n  Public Shared Function BooleanDifference(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim rc As Rhino.Commands.Result\n    Dim objrefs As Rhino.DocObjects.ObjRef() = Nothing\n    rc = Rhino.Input.RhinoGet.GetMultipleObjects(\"Select first set of polysurfaces\", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)\n    If rc <> Rhino.Commands.Result.Success Then\n      Return rc\n    End If\n    If objrefs Is Nothing OrElse objrefs.Length < 1 Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    Dim in_breps0 As New List(Of Rhino.Geometry.Brep)()\n    For i As Integer = 0 To objrefs.Length - 1\n      Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()\n      If brep IsNot Nothing Then\n        in_breps0.Add(brep)\n      End If\n    Next\n\n    doc.Objects.UnselectAll()\n    rc = Rhino.Input.RhinoGet.GetMultipleObjects(\"Select second set of polysurfaces\", False, Rhino.DocObjects.ObjectType.PolysrfFilter, objrefs)\n    If rc <> Rhino.Commands.Result.Success Then\n      Return rc\n    End If\n    If objrefs Is Nothing OrElse objrefs.Length < 1 Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    Dim in_breps1 As New List(Of Rhino.Geometry.Brep)()\n    For i As Integer = 0 To objrefs.Length - 1\n      Dim brep As Rhino.Geometry.Brep = objrefs(i).Brep()\n      If brep IsNot Nothing Then\n        in_breps1.Add(brep)\n      End If\n    Next\n\n    Dim tolerance As Double = doc.ModelAbsoluteTolerance\n    Dim breps As Rhino.Geometry.Brep() = Rhino.Geometry.Brep.CreateBooleanDifference(in_breps0, in_breps1, tolerance)\n    If breps.Length < 1 Then\n      Return Rhino.Commands.Result.[Nothing]\n    End If\n    For i As Integer = 0 To breps.Length - 1\n      doc.Objects.AddBrep(breps(i))\n    Next\n    doc.Views.Redraw()\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Brep Brep()"],
       ["Rhino.Geometry.Brep", "Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, System.Double tolerance, System.Boolean manifoldOnly)"],
       ["Rhino.Geometry.Brep", "Brep[] CreateBooleanDifference(IEnumerable<Brep> firstSet, IEnumerable<Brep> secondSet, System.Double tolerance)"],
+      ["Rhino.DocObjects.ObjRef", "Brep Brep()"],
       ["Rhino.Input.RhinoGet", "Result GetMultipleObjects(System.String prompt, System.Boolean acceptNothing, ObjectType filter, out ObjRef[] rhObjects)"]
     ]
   },
@@ -2332,9 +2332,9 @@
     "name": "Constrainedcopy.vb",
     "code": "Partial Class Examples\n  Public Shared Function ConstrainedCopy(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    ' Get a single planar closed curve\n    Dim go = New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.Custom.GeometryAttributeFilter.ClosedCurve\n    go.Get()\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n    Dim objref = go.Object(0)\n    Dim base_curve = objref.Curve()\n    Dim first_point = objref.SelectionPoint()\n    If base_curve Is Nothing OrElse Not first_point.IsValid Then\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    Dim plane As Rhino.Geometry.Plane\n    If Not base_curve.TryGetPlane(plane) Then\n      Return Rhino.Commands.Result.Cancel\n    End If\n\n    ' Get a point constrained to a line passing through the initial selection\n    ' point and parallel to the plane's normal\n    Dim gp = New Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Offset point\")\n    gp.DrawLineFromPoint(first_point, True)\n    Dim line = New Rhino.Geometry.Line(first_point, first_point + plane.Normal)\n    gp.Constrain(line)\n    gp.Get()\n    If gp.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gp.CommandResult()\n    End If\n    Dim second_point = gp.Point()\n    Dim vec As Rhino.Geometry.Vector3d = second_point - first_point\n    If vec.Length > 0.001 Then\n      Dim xf = Rhino.Geometry.Transform.Translation(vec)\n      Dim id As Guid = doc.Objects.Transform(objref, xf, False)\n      If id <> Guid.Empty Then\n        doc.Views.Redraw()\n        Return Rhino.Commands.Result.Success\n      End If\n    End If\n    Return Rhino.Commands.Result.Cancel\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
       ["Rhino.Geometry.Curve", "System.Boolean TryGetPlane(out Plane plane)"],
       ["Rhino.Geometry.Transform", "Transform Translation(Vector3d motion)"],
+      ["Rhino.DocObjects.ObjRef", "Point3d SelectionPoint()"],
       ["Rhino.Input.Custom.GetPoint", "System.Boolean Constrain(Line line)"]
     ]
   },
@@ -2582,10 +2582,10 @@
     "name": "Hatchcurve.vb",
     "code": "Partial Class Examples\n  Public Shared Function HatchCurve(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    Dim go = New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select closed planar curve\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GeometryAttributeFilter = Rhino.Input.[Custom].GeometryAttributeFilter.ClosedCurve\n    go.SubObjectSelect = False\n    go.Get()\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n\n    Dim curve = go.Object(0).Curve()\n    If curve Is Nothing OrElse Not curve.IsClosed OrElse Not curve.IsPlanar() Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    Dim hatch_name As String = doc.HatchPatterns(doc.HatchPatterns.CurrentHatchPatternIndex).Name\n    Dim rc = Rhino.Input.RhinoGet.GetString(\"Hatch pattern\", True, hatch_name)\n    If rc <> Rhino.Commands.Result.Success Then\n      Return rc\n    End If\n    hatch_name = hatch_name.Trim()\n    If String.IsNullOrWhiteSpace(hatch_name) Then\n      Return Rhino.Commands.Result.Nothing\n    End If\n    Dim index As Integer = doc.HatchPatterns.Find(hatch_name, True)\n    If index < 0 Then\n      Rhino.RhinoApp.WriteLine(\"Hatch pattern does not exist.\")\n      Return Rhino.Commands.Result.Nothing\n    End If\n\n    Dim hatches = Rhino.Geometry.Hatch.Create(curve, index, 0, 1)\n    For i As Integer = 0 To hatches.Length - 1\n      doc.Objects.AddHatch(hatches(i))\n    Next\n    If hatches.Length > 0 Then\n      doc.Views.Redraw()\n    End If\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
-      ["Rhino.DocObjects.ModelComponent", "string Name"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale, System.Double tolerance)"],
       ["Rhino.Geometry.Hatch", "Hatch[] Create(Curve curve, System.Int32 hatchPatternIndex, System.Double rotationRadians, System.Double scale)"],
+      ["Rhino.RhinoDoc", "HatchPatternTable HatchPatterns"],
+      ["Rhino.DocObjects.ModelComponent", "string Name"],
       ["Rhino.DocObjects.Tables.ObjectTable", "System.Guid AddHatch(Hatch hatch)"],
       ["Rhino.DocObjects.Tables.HatchPatternTable", "int CurrentHatchPatternIndex"],
       ["Rhino.DocObjects.Tables.HatchPatternTable", "System.Int32 Find(System.String name, System.Boolean ignoreDeleted)"],
@@ -2614,9 +2614,9 @@
     "name": "Intersectcurves.vb",
     "code": "Partial Class Examples\n  Public Shared Function IntersectCurves(doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    ' Select two curves to intersect\n    Dim go = New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select two curves\")\n    go.GeometryFilter = Rhino.DocObjects.ObjectType.Curve\n    go.GetMultiple(2, 2)\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n\n    ' Validate input\n    Dim curveA = go.[Object](0).Curve()\n    Dim curveB = go.[Object](1).Curve()\n    If curveA Is Nothing OrElse curveB Is Nothing Then\n      Return Rhino.Commands.Result.Failure\n    End If\n\n    ' Calculate the intersection\n    Const intersection_tolerance As Double = 0.001\n    Const overlap_tolerance As Double = 0.0\n    Dim events = Rhino.Geometry.Intersect.Intersection.CurveCurve(curveA, curveB, intersection_tolerance, overlap_tolerance)\n\n    ' Process the results\n    If events IsNot Nothing Then\n      For i As Integer = 0 To events.Count - 1\n        Dim ccx_event = events(i)\n        doc.Objects.AddPoint(ccx_event.PointA)\n        If ccx_event.PointA.DistanceTo(ccx_event.PointB) > Double.Epsilon Then\n          doc.Objects.AddPoint(ccx_event.PointB)\n          doc.Objects.AddLine(ccx_event.PointA, ccx_event.PointB)\n        End If\n      Next\n      doc.Views.Redraw()\n    End If\n    Return Rhino.Commands.Result.Success\n  End Function\nEnd Class\n",
     "members": [
-      ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
       ["Rhino.Geometry.Point3d", "System.Double DistanceTo(Point3d other)"],
       ["Rhino.Geometry.Point3f", "System.Double DistanceTo(Point3f other)"],
+      ["Rhino.DocObjects.ObjRef", "Curve Curve()"],
       ["Rhino.Geometry.Intersect.Intersection", "CurveIntersections CurveCurve(Curve curveA, Curve curveB, System.Double tolerance, System.Double overlapTolerance)"]
     ]
   },
@@ -2781,11 +2781,11 @@
     "name": "Orientonsrf.vb",
     "code": "Partial Class Examples\n  Public Shared Function OrientOnSrf(ByVal doc As Rhino.RhinoDoc) As Rhino.Commands.Result\n    ' Select objects to orient\n    Dim go As New Rhino.Input.Custom.GetObject()\n    go.SetCommandPrompt(\"Select objects to orient\")\n    go.SubObjectSelect = False\n    go.GroupSelect = True\n    go.GetMultiple(1, 0)\n    If go.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return go.CommandResult()\n    End If\n\n    ' Point to orient from\n    Dim gp As New Rhino.Input.Custom.GetPoint()\n    gp.SetCommandPrompt(\"Point to orient from\")\n    gp.Get()\n    If gp.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gp.CommandResult()\n    End If\n\n    ' Define source plane\n    Dim view As Rhino.Display.RhinoView = gp.View()\n    If view Is Nothing Then\n      view = doc.Views.ActiveView\n      If view Is Nothing Then\n        Return Rhino.Commands.Result.Failure\n      End If\n    End If\n    Dim source_plane As Rhino.Geometry.Plane = view.ActiveViewport.ConstructionPlane()\n    source_plane.Origin = gp.Point()\n\n    ' Surface to orient on\n    Dim gs As New Rhino.Input.Custom.GetObject()\n    gs.SetCommandPrompt(\"Surface to orient on\")\n    gs.GeometryFilter = Rhino.DocObjects.ObjectType.Surface\n    gs.SubObjectSelect = True\n    gs.DeselectAllBeforePostSelect = False\n    gs.OneByOnePostSelect = True\n    gs.Get()\n    If gs.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gs.CommandResult()\n    End If\n\n    Dim objref As Rhino.DocObjects.ObjRef = gs.[Object](0)\n    ' get selected surface object\n    Dim obj As Rhino.DocObjects.RhinoObject = objref.[Object]()\n    If obj Is Nothing Then\n      Return Rhino.Commands.Result.Failure\n    End If\n    ' get selected surface (face)\n    Dim surface As Rhino.Geometry.Surface = objref.Surface()\n    If surface Is Nothing Then\n      Return Rhino.Commands.Result.Failure\n    End If\n    ' Unselect surface\n    obj.[Select](False)\n\n    ' Point on surface to orient to\n    gp.SetCommandPrompt(\"Point on surface to orient to\")\n    gp.Constrain(surface, False)\n    gp.Get()\n    If gp.CommandResult() <> Rhino.Commands.Result.Success Then\n      Return gp.CommandResult()\n    End If\n\n    ' Do transformation\n    Dim rc As Rhino.Commands.Result = Rhino.Commands.Result.Failure\n    Dim u As Double, v As Double\n    If surface.ClosestPoint(gp.Point(), u, v) Then\n      Dim target_plane As Rhino.Geometry.Plane\n      If surface.FrameAt(u, v, target_plane) Then\n        ' Build transformation\n        Dim xform As Rhino.Geometry.Transform = Rhino.Geometry.Transform.PlaneToPlane(source_plane, target_plane)\n\n        ' Do the transformation. In this example, we will copy the original objects\n        Const delete_original As Boolean = False\n        For i As Integer = 0 To go.ObjectCount - 1\n          doc.Objects.Transform(go.[Object](i), xform, delete_original)\n        Next\n\n        doc.Views.Redraw()\n        rc = Rhino.Commands.Result.Success\n      End If\n    End If\n    Return rc\n  End Function\nEnd Class\n",
     "members": [
+      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
+      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.DocObjects.RhinoObject", "System.Int32 Select(System.Boolean on)"],
       ["Rhino.DocObjects.ObjRef", "RhinoObject Object()"],
       ["Rhino.DocObjects.ObjRef", "Surface Surface()"],
-      ["Rhino.Geometry.Surface", "System.Boolean ClosestPoint(Point3d testPoint, out System.Double u, out System.Double v)"],
-      ["Rhino.Geometry.Surface", "System.Boolean FrameAt(System.Double u, System.Double v, out Plane frame)"],
       ["Rhino.Input.Custom.GetObject", "bool DeselectAllBeforePostSelect"],
       ["Rhino.Input.Custom.GetObject", "ObjectType GeometryFilter"],
       ["Rhino.Input.Custom.GetObject", "bool GroupSelect"],
@@ -2869,8 +2869,8 @@
     "name": "Replacehatchpattern.vb",
     "code": "Imports Rhino\nImports Rhino.DocObjects\nImports Rhino.Commands\nImports Rhino.Input\nImports Rhino.Input.Custom\n\nNamespace examples_vb\n  Public Class ReplaceHatchPatternCommand\n    Inherits Rhino.Commands.Command\n    Public Overrides ReadOnly Property EnglishName() As String\n      Get\n        Return \"vbReplaceHatchPattern\"\n      End Get\n    End Property\n\n    Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result\n      Dim obj_refs As ObjRef() = Nothing\n      Dim rc = RhinoGet.GetMultipleObjects(\"Select hatches to replace\", False, ObjectType.Hatch, obj_refs)\n      If rc <> Result.Success OrElse obj_refs Is Nothing Then\n        Return rc\n      End If\n\n      Dim gs = New GetString()\n      gs.SetCommandPrompt(\"Name of replacement hatch pattern\")\n      gs.AcceptNothing(False)\n      gs.[Get]()\n      If gs.CommandResult() <> Result.Success Then\n        Return gs.CommandResult()\n      End If\n      Dim hatch_name = gs.StringResult()\n\n      Dim pattern_index = doc.HatchPatterns.Find(hatch_name, True)\n\n      If pattern_index < 0 Then\n        RhinoApp.WriteLine(\"The hatch pattern \"\"{0}\"\" not found  in the document.\", hatch_name)\n        Return Result.[Nothing]\n      End If\n\n      For Each obj_ref As ObjRef In obj_refs\n        Dim hatch_object = TryCast(obj_ref.[Object](), HatchObject)\n        If hatch_object.HatchGeometry.PatternIndex <> pattern_index Then\n          hatch_object.HatchGeometry.PatternIndex = pattern_index\n          hatch_object.CommitChanges()\n        End If\n      Next\n      doc.Views.Redraw()\n      Return Result.Success\n    End Function\n  End Class\nEnd Namespace",
     "members": [
-      ["Rhino.DocObjects.HatchObject", "Hatch HatchGeometry"],
-      ["Rhino.Geometry.Hatch", "int PatternIndex"]
+      ["Rhino.Geometry.Hatch", "int PatternIndex"],
+      ["Rhino.DocObjects.HatchObject", "Hatch HatchGeometry"]
     ]
   },
   {
