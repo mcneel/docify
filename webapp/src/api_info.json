@@ -10175,6 +10175,134 @@
         "since": "9.0",
         "property": ["get", "set"]
       }
+    ],
+    "methods": [
+      {
+        "signature": "SoftTransformSettingsState GetCurrentState()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the current settings of the application.",
+        "since": "9.0"
+      },
+      {
+        "signature": "SoftTransformSettingsState GetDefaultState()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the factory settings of the application.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void RestoreDefaults()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Commits the default settings as the current settings.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void UpdateFromState(SoftTransformSettingsState state)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets all settings to a particular defined joined state.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "state",
+            "type": "SoftTransformSettingsState",
+            "summary": "The particular state."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.ApplicationSettings",
+    "name": "SoftTransformSettingsState",
+    "dataType": "class",
+    "summary": "Represents a snapshot of <b>SoftTransformSettings</b> .",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "SoftTransformSettingsState()",
+        "summary": "Initializes a new instance of the SoftTransformSettingsState class"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "int CvCountU",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Controls the number of control vertices affected by soft transform for surfaces in the U direction.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int CvCountV",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Controls the number of control vertices affected by soft transform for surfaces in the V direction.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool Enabled",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When enabled other unselected components on an object will be moved during a transformation within the specified radius according to the falloff shape.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color FalloffColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Controls the color used to shade meshes and edges when an object is affected by soft transform.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool MeasureDistanceAlong",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When True the distance for components affected by soft transform is calculated along the object. Otherwise world distance is used.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double Radius",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The radius of effect for soft transform. Other components on the object this distance and closer to selected components will be transformed.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int Shape",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The shape of the falloff curve. 0 = Smooth 1 = Linear 2 = Round 3 = Sharp",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ShowConstraintWidgets",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Enables or disables constraint widgets on the edges of surfaces when points are on.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
     ]
   },
   {
@@ -19138,6 +19266,32 @@
         "since": "5.0"
       },
       {
+        "signature": "System.Boolean SetBitmapTexture(System.String name, System.Drawing.Bitmap bitmap, System.Boolean front)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Uses the pixels of an in-memory bitmap as this material's bitmap texture, without writing an image file.  \nThe pixels are copied into  under .     Calling this again with the same name replaces them in place, and the change shows up     on the next redraw.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name to cache the pixels under. See <b>TextureCache.Set</b> ."
+          },
+          {
+            "name": "bitmap",
+            "type": "System.Drawing.Bitmap",
+            "summary": "The pixels to use."
+          },
+          {
+            "name": "front",
+            "type": "System.Boolean",
+            "summary": "True for the front material, False for the back material."
+          }
+        ],
+        "returns": "True on success."
+      },
+      {
         "signature": "System.Boolean SetBumpTexture(Rhino.DocObjects.Texture texture, System.Boolean front)",
         "modifiers": ["public"],
         "protected": false,
@@ -25859,6 +26013,15 @@
         "property": ["get"]
       },
       {
+        "signature": "PointStyle WeightedPointStyle",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Style used to draw control points whose weight is not 1. Defaults to RoundControlPoint, matching the default control point style, so weighted control points are not called out until this is changed.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "WorldAxesIconColorUse WorldAxesIconColorUsage",
         "modifiers": ["public"],
         "protected": false,
@@ -28137,6 +28300,27 @@
         "protected": false,
         "virtual": false,
         "summary": "Arrow shape with tip as definition point. Shape is offset from tip by secondarySize."
+      },
+      {
+        "signature": "DiamondSimple = 16",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Diamond, a square turned through 45 degrees"
+      },
+      {
+        "signature": "DiamondControlPoint = 17",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Diamond with white center"
+      },
+      {
+        "signature": "Diamond = DiamondSimple",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Diamond shape"
       },
       {
         "signature": "VariableDot = 50",
@@ -31336,6 +31520,91 @@
   },
   {
     "namespace": "Rhino.Display",
+    "name": "TextureCache",
+    "dataType": "class",
+    "summary": "An application-wide cache of textures whose pixels live in memory rather than in a file on disk.  \nRhino identifies a texture by a name. Normally that name is the path of an image file,   but it does not have to be: a name registered here shadows the file system, so any   texture that refers to the name - a , a   , a  - draws the   pixels registered here instead of reading a file.  \nCalling  again with the same name replaces the pixels in place.",
+    "remarks": "The cache is per-session and per-application, not per-document: names are shared by every open document and nothing here is saved in the 3dm file. Entries are held until  <b>Remove</b> is called, so a tool that creates names dynamically should remove the ones it is finished with.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "TextureCache()",
+        "summary": "Initializes a new instance of the TextureCache class"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Boolean Contains(System.String name)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether a texture is registered under the given name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name to look for."
+          }
+        ],
+        "returns": "True if a texture is registered under this name."
+      },
+      {
+        "signature": "Size GetSize(System.String name)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the pixel size of the texture registered under the given name.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name to look for."
+          }
+        ],
+        "returns": "The size of the texture, or <b>Size.Empty</b> if nothing is registered under this name."
+      },
+      {
+        "signature": "System.Boolean Remove(System.String name)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes the texture registered under the given name and frees its pixels.  \nAnything still pointing at the name falls back to looking for an image file called     that, so remove a name only once nothing is drawing it.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name to remove."
+          }
+        ],
+        "returns": "True if a texture was registered under this name and has been removed."
+      },
+      {
+        "signature": "System.Boolean Set(System.String name, Bitmap bitmap)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Registers, or replaces the pixels of, the in-memory texture with the given name.  \nThe bitmap's pixels are copied, so the caller stays free to keep painting into the     same bitmap and call this again. Replacing the pixels of a name that is already in     use invalidates the copy the display holds on the GPU, so the new pixels appear on     the next redraw of any viewport that draws the texture.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name to register the pixels under. Any string will do as long as it is used consistently; prefixing it with something specific to your tool avoids colliding with another plug-in, or with a real image file path. Comparison is case-insensitive and treats forward and back slashes as equivalent, the same as texture file paths."
+          },
+          {
+            "name": "bitmap",
+            "type": "Bitmap",
+            "summary": "The pixels to use."
+          }
+        ],
+        "returns": "True on success."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Display",
     "name": "ViewCapture",
     "dataType": "class",
     "constructors": [
@@ -33954,6 +34223,22 @@
         "returns": "True if the viewport was added, False if the viewport is already in the list."
       },
       {
+        "signature": "System.Boolean ObjectParticipates(System.Guid objectId)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether an object is clipped by this clipping plane, taking the clip participation (inclusion/exclusion) lists into account. This is the same test the display uses.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "objectId",
+            "type": "System.Guid",
+            "summary": "Id of the object to test."
+          }
+        ],
+        "returns": "True if the object is clipped by this clipping plane."
+      },
+      {
         "signature": "System.Boolean RemoveClipViewport(Rhino.Display.RhinoViewport viewport, System.Boolean commit)",
         "modifiers": ["public"],
         "protected": false,
@@ -36274,6 +36559,24 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool SuppressDimensionLine1",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suppresses the dimension line and arrowhead between the first extension line and the dimension text.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool SuppressDimensionLine2",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suppresses the dimension line and arrowhead between the second extension line and the dimension text.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool SuppressExtension1",
         "modifiers": ["public"],
         "protected": false,
@@ -37561,7 +37864,21 @@
         "virtual": false
       },
       {
-        "signature": "Count = 120",
+        "signature": "SuppressDimLine1 = 120",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suppress the dimension line and arrowhead between the first extension line and the text."
+      },
+      {
+        "signature": "SuppressDimLine2 = 121",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suppress the dimension line and arrowhead between the second extension line and the text."
+      },
+      {
+        "signature": "Count = 122",
         "modifiers": [],
         "protected": false,
         "virtual": false,
@@ -43398,6 +43715,27 @@
         "modifiers": ["protected", "override"],
         "protected": true,
         "virtual": false
+      },
+      {
+        "signature": "System.Boolean SetBitmapTexture(System.String name, System.Drawing.Bitmap bitmap)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Uses the pixels of an in-memory bitmap as this material's bitmap texture, without writing an image file.  \nThe pixels are copied into  under     . Calling this again with the same name replaces them in place,     and the change shows up on the next redraw.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name to cache the pixels under. See <b>Rhino.Display.TextureCache.Set</b> ."
+          },
+          {
+            "name": "bitmap",
+            "type": "System.Drawing.Bitmap",
+            "summary": "The pixels to use."
+          }
+        ],
+        "returns": "True on success."
       },
       {
         "signature": "System.Boolean SetBitmapTexture(System.String filename)",
@@ -52885,6 +53223,46 @@
         "returns": ">=0  index of instance definition in the instance definition table. -1 on failure."
       },
       {
+        "signature": "System.Int32 Add(System.String name, System.String description, Point3d basePoint, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes, System.Boolean overrideExisting)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds an instance definition to the instance definition table, optionally replacing an existing definition of the same name.",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The definition name."
+          },
+          {
+            "name": "description",
+            "type": "System.String",
+            "summary": "The definition description."
+          },
+          {
+            "name": "basePoint",
+            "type": "Point3d",
+            "summary": "A base point."
+          },
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "An array, a list or any enumerable set of geometry."
+          },
+          {
+            "name": "attributes",
+            "type": "IEnumerable<ObjectAttributes>",
+            "summary": "An array, a list or any enumerable set of attributes."
+          },
+          {
+            "name": "overrideExisting",
+            "type": "System.Boolean",
+            "summary": "If True and a definition with this name exists, its geometry and description are replaced. The definition keeps its index, id, name, URL and user data, and every existing instance reference keeps its transform. Linked and reference definitions cannot be replaced this way, and -1 is returned for those, as it is for geometry that would make the definition reference itself. If false, a name already in use is an error: -1 is returned and a message naming the definition is printed to the command line."
+          }
+        ],
+        "returns": ">=0  index of instance definition in the instance definition table. -1 on failure."
+      },
+      {
         "signature": "System.Int32 Add(System.String name, System.String description, Point3d basePoint, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes)",
         "modifiers": ["public"],
         "protected": false,
@@ -52947,6 +53325,56 @@
             "name": "geometry",
             "type": "IEnumerable<GeometryBase>",
             "summary": "An array, a list or any enumerable set of geometry."
+          }
+        ],
+        "returns": ">=0  index of instance definition in the instance definition table. -1 on failure."
+      },
+      {
+        "signature": "System.Int32 Add(System.String name, System.String description, System.String url, System.String urlTag, Point3d basePoint, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes, System.Boolean overrideExisting)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds an instance definition to the instance definition table, optionally replacing an existing definition of the same name.",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The definition name."
+          },
+          {
+            "name": "description",
+            "type": "System.String",
+            "summary": "The definition description."
+          },
+          {
+            "name": "url",
+            "type": "System.String",
+            "summary": "A URL or hyperlink. When overriding, None leaves the existing value unchanged and an empty string clears it."
+          },
+          {
+            "name": "urlTag",
+            "type": "System.String",
+            "summary": "A description of the URL or hyperlink. When overriding, None leaves the existing value unchanged and an empty string clears it."
+          },
+          {
+            "name": "basePoint",
+            "type": "Point3d",
+            "summary": "A base point."
+          },
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "An array, a list or any enumerable set of geometry."
+          },
+          {
+            "name": "attributes",
+            "type": "IEnumerable<ObjectAttributes>",
+            "summary": "An array, a list or any enumerable set of attributes."
+          },
+          {
+            "name": "overrideExisting",
+            "type": "System.Boolean",
+            "summary": "If True and a definition with this name exists, its geometry, description and URL are replaced. The definition keeps its index, id, name and user data, and every existing instance reference keeps its transform. Linked and reference definitions cannot be replaced this way, and -1 is returned for those, as it is for geometry that would make the definition reference itself. If false, a name already in use is an error: -1 is returned and a message naming the definition is printed to the command line."
           }
         ],
         "returns": ">=0  index of instance definition in the instance definition table. -1 on failure."
@@ -85537,6 +85965,15 @@
     ],
     "properties": [
       {
+        "signature": "bool AnalyticCurves",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Write straight edges as STEP line entities and let circular edges reference their circle directly, instead of writing degree 1 splines and trimmed curve wrappers. Some importers, sheet metal and CAM software in particular, require these analytic curves.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool Export2dCurves",
         "modifiers": ["public"],
         "protected": false,
@@ -88187,6 +88624,120 @@
       }
     ]
 
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "Aligner",
+    "dataType": "class",
+    "summary": "Moves vertices of different kinds of geometry onto one another, within a distance.  \nSee the _AlignVertices Rhino command for more information.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "Aligner()",
+        "summary": "Initializes a new instance of the Aligner class"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Int32 AlignVertices(IEnumerable<GeometryBase> geometry, System.Double distance, System.Boolean onlyNaked, System.Boolean average, IEnumerable<IEnumerable<bool>> whichVertices)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves vertices that lie within the specified distance of one another onto the same location.  \nThis is helpful to close the seams between separate pieces of geometry.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The geometry to adjust. It is modified in place.  \nMeshes, SubDs, point clouds and degree 1 curves are supported."
+          },
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when moving a vertex."
+          },
+          {
+            "name": "onlyNaked",
+            "type": "System.Boolean",
+            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to. Point cloud points and curve points are always considered, because neither has an interior for this to exclude."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          },
+          {
+            "name": "whichVertices",
+            "type": "IEnumerable<IEnumerable<bool>>",
+            "summary": "If not null, defines which vertices should be considered for adjustment.  \nIf this parameter is non-null, it needs one item per piece of geometry, and each item needs one     value per vertex of the geometry it belongs to.  \nSubD vertices are not currently supported: a list given for a SubD is ignored, and every one of     its vertices is considered. This may be supported in a future version."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Int32 AlignVertices(IEnumerable<GeometryBase> geometry, System.Double distance, System.Boolean onlyNaked, System.Boolean average)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves vertices that lie within the specified distance of one another onto the same location.  \nThis is helpful to close the seams between separate pieces of geometry.  \nAll vertices are considered, not only those on naked edges, unless  says otherwise.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The geometry to adjust. It is modified in place.  \nMeshes, SubDs, point clouds and degree 1 curves are supported."
+          },
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when moving a vertex."
+          },
+          {
+            "name": "onlyNaked",
+            "type": "System.Boolean",
+            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to. Point cloud points and curve points are always considered, because neither has an interior for this to exclude."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Double SuggestDistance(IEnumerable<GeometryBase> geometry)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suggests a distance for <b>AlignVertices(IEnumerable{GeometryBase}, double, bool, bool)</b>  from the geometry itself, so the gaps do not have to be measured first.  \nA vertex whose nearest neighbour of all belongs to another object was meant to be shared     with it. The largest of those gaps closes every one of them, and is smaller than the spacing     each object has of its own at those places.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The geometry that would be aligned."
+          }
+        ],
+        "returns": "A distance greater than zero, or zero when no vertex is nearer to another object than to its own."
+      },
+      {
+        "signature": "System.Boolean SupportsGeometry(GeometryBase geometry)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Tests whether a piece of geometry can have its vertices aligned.  \nMeshes, SubDs, point clouds and degree 1 curves are supported.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "GeometryBase",
+            "summary": "The geometry to test. Can be null."
+          }
+        ],
+        "returns": "True if <b>AlignVertices(IEnumerable{GeometryBase}, double, bool, bool)</b> accepts this geometry."
+      }
+    ]
   },
   {
     "namespace": "Rhino.Geometry",
@@ -100223,6 +100774,23 @@
         "returns": "If direction = 0, the parameter space iso interval connects the 2d points (intervals[i][0],iso_constant) and (intervals[i][1],iso_constant). If direction = 1, the parameter space iso interval connects the 2d points (iso_constant,intervals[i][0]) and (iso_constant,intervals[i][1])."
       },
       {
+        "signature": "System.Boolean TryGetInteriorPoint(out Point3d point)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Tries to get a 3-D point that is comfortably in the interior of this face, which is useful for face labeling and for face classification.",
+        "since": "9.0",
+    "remarks": "The returned point is not necessarily the point on the face that is furthest away from the face's boundary. It is just a point that is relatively far away from all of the face's trimming curves.",
+        "parameters": [
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The interior point if successful."
+          }
+        ],
+        "returns": "True if successful, False otherwise."
+      },
+      {
         "signature": "Surface UnderlyingSurface()",
         "modifiers": ["public"],
         "protected": false,
@@ -105818,7 +106386,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Moves mesh vertices that belong to naked edges to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nSee the _AlignMeshVertices Rhino command for more information.",
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
         "parameters": [
           {
             "name": "meshes",
@@ -105836,7 +106404,69 @@
             "summary": "If not null, defines which vertices should be considered for adjustment.  \nIf this parameter is non-null, then all items within it have to be non-None as well, defining for each mesh, which vertices to adjust."
           }
         ],
-        "returns": "If the operation succeeded, the number of moved vertices, or -1 on error."
+        "returns": "If the operation succeeded, the number of mesh vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Int32 Align(IEnumerable<Mesh> meshes, System.Double distance, System.Boolean average, IEnumerable<IEnumerable<bool>> whichVertices)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshes",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The enumerable of meshes that need to have vertices adjusted."
+          },
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when modifying the mesh."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          },
+          {
+            "name": "whichVertices",
+            "type": "IEnumerable<IEnumerable<bool>>",
+            "summary": "If not null, defines which vertices should be considered for adjustment.  \nIf this parameter is non-null, then all items within it have to be non-None as well, defining for each mesh, which vertices to adjust."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of mesh vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Int32 Align(IEnumerable<Mesh> meshes, System.Double distance, System.Boolean onlyNaked, System.Boolean average)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshes",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The enumerable of meshes that need to have vertices adjusted."
+          },
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when modifying the mesh."
+          },
+          {
+            "name": "onlyNaked",
+            "type": "System.Boolean",
+            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of mesh vertices that were moved, or -1 on error."
       },
       {
         "signature": "System.Int32 Add(Point3d vertex)",
@@ -105957,7 +106587,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Moves mesh vertices that belong to naked edges to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nSee the _AlignMeshVertices Rhino command for more information.",
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
         "since": "6.0",
         "parameters": [
           {
@@ -105971,7 +106601,59 @@
             "summary": "If not null, defines which vertices should be considered for adjustment."
           }
         ],
-        "returns": "If the operation succeeded, the number of moved vertices, or -1 on error."
+        "returns": "If the operation succeeded, the number of mesh vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Int32 Align(System.Double distance, System.Boolean average, IEnumerable<bool> whichVertices)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when modifying the mesh."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          },
+          {
+            "name": "whichVertices",
+            "type": "IEnumerable<bool>",
+            "summary": "If not null, defines which vertices should be considered for adjustment."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of mesh vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Int32 Align(System.Double distance, System.Boolean onlyNaked, System.Boolean average)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when modifying the mesh."
+          },
+          {
+            "name": "onlyNaked",
+            "type": "System.Boolean",
+            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of mesh vertices that were moved, or -1 on error."
       },
       {
         "signature": "System.Void Clear()",
@@ -117893,6 +118575,24 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool SuppressDimensionLine1",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suppresses the dimension line and arrowhead between the first extension line and the dimension text.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool SuppressDimensionLine2",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suppresses the dimension line and arrowhead between the second extension line and the dimension text.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool SuppressExtension1",
         "modifiers": ["public"],
         "protected": false,
@@ -123369,6 +124069,54 @@
         "returns": ">= 0.0 parameter along ray if successful. < 0.0 if no intersection found."
       },
       {
+        "signature": "System.Double[] MeshRays(Mesh mesh, IEnumerable<Ray3d> rays, System.Boolean multithreaded)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Finds the first intersection of each one of a set of rays with a mesh.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "mesh",
+            "type": "Mesh",
+            "summary": "A mesh to intersect."
+          },
+          {
+            "name": "rays",
+            "type": "IEnumerable<Ray3d>",
+            "summary": "The rays to cast."
+          },
+          {
+            "name": "multithreaded",
+            "type": "System.Boolean",
+            "summary": "True to cast the rays on several threads."
+          }
+        ],
+        "returns": "One value for each ray, in the order of the rays: the parameter along that ray of its first intersection with the mesh, or a value smaller than 0.0 where that ray does not meet the mesh. Null when the mesh or the set of rays is null."
+      },
+      {
+        "signature": "System.Double[] MeshRays(Mesh mesh, IEnumerable<Ray3d> rays)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Finds the first intersection of each one of a set of rays with a mesh.",
+        "since": "9.0",
+    "remarks": "The rays are cast on several threads, so this is much faster than one call of  <b>MeshRay(Mesh, Ray3d)</b> per ray.",
+        "parameters": [
+          {
+            "name": "mesh",
+            "type": "Mesh",
+            "summary": "A mesh to intersect."
+          },
+          {
+            "name": "rays",
+            "type": "IEnumerable<Ray3d>",
+            "summary": "The rays to cast."
+          }
+        ],
+        "returns": "One value for each ray, in the order of the rays: the parameter along that ray of its first intersection with the mesh, or a value smaller than 0.0 where that ray does not meet the mesh. Null when the mesh or the set of rays is null."
+      },
+      {
         "signature": "System.Boolean PlaneBoundingBox(Plane plane, BoundingBox boundingBox, out Polyline polyline)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -123642,6 +124390,37 @@
           }
         ],
         "returns": "Array of projected points, or None in case of any error or invalid input."
+      },
+      {
+        "signature": "RayShootEvent[] RayShoot(IEnumerable<GeometryBase> geometry, Ray3d ray, System.Int32 maxReflections, System.Boolean honorTrims)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Computes point intersections that occur when shooting a ray to a collection of surfaces and Breps.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The collection of surfaces and Breps to intersect."
+          },
+          {
+            "name": "ray",
+            "type": "Ray3d",
+            "summary": "A ray used in intersection."
+          },
+          {
+            "name": "maxReflections",
+            "type": "System.Int32",
+            "summary": "The maximum number of reflections. This value should be any value between 1 and 1000, inclusive."
+          },
+          {
+            "name": "honorTrims",
+            "type": "System.Boolean",
+            "summary": "When true, hits that land outside a Brep face's trimming loops are skipped and the ray continues. When false, Breps are treated as their untrimmed surfaces, which is what Rhino 8 and earlier did."
+          }
+        ],
+        "returns": "An array of RayShootEvent structs if successful, or an empty array on failure."
       },
       {
         "signature": "RayShootEvent[] RayShoot(IEnumerable<GeometryBase> geometry, Ray3d ray, System.Int32 maxReflections)",
@@ -152840,6 +153619,111 @@
         "since": "7.0"
       },
       {
+        "signature": "System.Boolean ClosestPoint(Point3d testPoint, out Point3d closestPoint, out SubDComponentParameter parameter, System.Double maximumDistance)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the point on this SubD's surface that is closest to a test point.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "testPoint",
+            "type": "Point3d",
+            "summary": "The point to project onto this SubD."
+          },
+          {
+            "name": "closestPoint",
+            "type": "Point3d",
+            "summary": "The closest point is returned here, or <b>Point3d.Unset</b> if this fails."
+          },
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter of the closest point is returned here, or  <b>SubDComponentParameter.Unset</b> if this fails."
+          },
+          {
+            "name": "maximumDistance",
+            "type": "System.Double",
+            "summary": "If larger than 0 and the distance fromto this SubD is larger than this, then False is returned. Otherwise this is ignored."
+          }
+        ],
+        "returns": "True if a closest point was found."
+      },
+      {
+        "signature": "System.Boolean ClosestPoint(Point3d testPoint, out Point3d closestPoint, out SubDComponentParameter parameter)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the point on this SubD's surface that is closest to a test point.",
+        "since": "9.0",
+    "remarks": "The search is refined on the surface itself, so the result is not limited to the surface mesh. The one exception is the corner of an extraordinary vertex, where the surface derivatives needed to refine are not available; there the result is the closest surface mesh point, so its accuracy is the accuracy of the surface mesh. Call  <b>UpdateSurfaceMeshCache(bool)</b> first if you need more accuracy near extraordinary vertices.",
+        "parameters": [
+          {
+            "name": "testPoint",
+            "type": "Point3d",
+            "summary": "The point to project onto this SubD."
+          },
+          {
+            "name": "closestPoint",
+            "type": "Point3d",
+            "summary": "The closest point is returned here, or <b>Point3d.Unset</b> if this fails."
+          },
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter of the closest point is returned here, or  <b>SubDComponentParameter.Unset</b> if this fails. Evaluating it with <b>Evaluate(SubDComponentParameter, out Point3d)</b> returns ."
+          }
+        ],
+        "returns": "True if a closest point was found."
+      },
+      {
+        "signature": "Point3d ClosestPoint(Point3d testPoint)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the point on this SubD's surface that is closest to a test point.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "testPoint",
+            "type": "Point3d",
+            "summary": "The point to project onto this SubD."
+          }
+        ],
+        "returns": "The closest point, or <b>Point3d.Unset</b> if none was found."
+      },
+      {
+        "signature": "System.Int32 ClosestPoints(IEnumerable<Point3d> testPoints, out Point3d[] closestPoints, out SubDComponentParameter[] parameters, System.Double maximumDistance)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the points on this SubD's surface that are closest to each of a list of test points. This is faster than calling  <b>ClosestPoint(Point3d, out Point3d, out SubDComponentParameter)</b>  in a loop because the spatial index over the surface is built once.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "testPoints",
+            "type": "IEnumerable<Point3d>",
+            "summary": "The points to project onto this SubD."
+          },
+          {
+            "name": "closestPoints",
+            "type": "Point3d[]",
+            "summary": "One point per test point. Entries where no closest point was found are  <b>Point3d.Unset</b> ."
+          },
+          {
+            "name": "parameters",
+            "type": "SubDComponentParameter[]",
+            "summary": "One parameter per test point. Entries where no closest point was found are  <b>SubDComponentParameter.Unset</b> ."
+          },
+          {
+            "name": "maximumDistance",
+            "type": "System.Double",
+            "summary": "If larger than 0, test points farther than this from the SubD get no closest point. Otherwise this is ignored."
+          }
+        ],
+        "returns": "The number of closest points that were found."
+      },
+      {
         "signature": "SubDComponent ComponentFromComponentIndex(ComponentIndex componentIndex)",
         "modifiers": ["public"],
         "protected": false,
@@ -153017,6 +153901,176 @@
           }
         ],
         "returns": "Array of edge curves on success."
+      },
+      {
+        "signature": "System.Boolean Evaluate(SubDComponentParameter parameter, out Point3d point, out Vector3d ds, out Vector3d dt, out Vector3d normal)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Evaluates the location, first derivatives and unit normal of a point on this SubD's surface.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter to evaluate."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The surface point is returned here, or <b>Point3d.Unset</b> if this fails."
+          },
+          {
+            "name": "ds",
+            "type": "Vector3d",
+            "summary": "The first derivative in the direction of the first face corner parameter is returned here."
+          },
+          {
+            "name": "dt",
+            "type": "Vector3d",
+            "summary": "The first derivative in the direction of the second face corner parameter is returned here."
+          },
+          {
+            "name": "normal",
+            "type": "Vector3d",
+            "summary": "The unit surface normal is returned here. It is parallel to the cross product ofand."
+          }
+        ],
+        "returns": "True if the evaluation succeeded."
+      },
+      {
+        "signature": "System.Boolean Evaluate(SubDComponentParameter parameter, out Point3d point, out Vector3d normal)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Evaluates the location and unit normal of a point on this SubD's surface.",
+        "since": "9.0",
+    "remarks": "The surface derivatives this needs are not available in the corner of an extraordinary vertex unless the parameter is exactly at the vertex, at the midpoint of one of its edges, or at the center of the face.",
+        "parameters": [
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter to evaluate."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The surface point is returned here, or <b>Point3d.Unset</b> if this fails."
+          },
+          {
+            "name": "normal",
+            "type": "Vector3d",
+            "summary": "The unit surface normal is returned here, or  <b>Vector3d.Unset</b> if this fails."
+          }
+        ],
+        "returns": "True if the evaluation succeeded."
+      },
+      {
+        "signature": "System.Boolean Evaluate(SubDComponentParameter parameter, out Point3d point)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Evaluates the location of a point on this SubD's surface.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter to evaluate."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The surface point is returned here, or <b>Point3d.Unset</b> if this fails."
+          }
+        ],
+        "returns": "True if the evaluation succeeded."
+      },
+      {
+        "signature": "System.Boolean EvaluateCurvature(SubDComponentParameter parameter, ExtraordinaryVertexCurvature extraordinaryVertexCurvature, out SurfaceCurvature curvature)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Evaluates the curvature of a point on this SubD's surface, choosing what to report exactly on an extraordinary vertex.",
+        "since": "9.0",
+    "remarks": "See <b>SurfaceCurvature.CreateFromSubD(SubD, SubDComponentParameter, ExtraordinaryVertexCurvature)</b> .",
+        "parameters": [
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter to evaluate."
+          },
+          {
+            "name": "extraordinaryVertexCurvature",
+            "type": "ExtraordinaryVertexCurvature",
+            "summary": "What to report when the parameter is exactly on an extraordinary vertex, where the limit surface has no curvature of its own."
+          },
+          {
+            "name": "curvature",
+            "type": "SurfaceCurvature",
+            "summary": "The surface curvature is returned here, or None if this fails."
+          }
+        ],
+        "returns": "True if the evaluation succeeded."
+      },
+      {
+        "signature": "System.Boolean EvaluateCurvature(SubDComponentParameter parameter, out Point3d point, out Vector3d normal, out System.Double kappa1, out System.Double kappa2)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Evaluates the principal curvatures of a point on this SubD's surface.",
+        "since": "9.0",
+    "remarks": "This needs second order surface derivatives. They are available throughout the corner quad of an extraordinary vertex, but not exactly on such a vertex: a SubD limit surface is C1 there but generally not C2, so it has no curvature. This returns False in that case, and andare <b>double.NaN</b> .",
+        "parameters": [
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter to evaluate."
+          },
+          {
+            "name": "point",
+            "type": "Point3d",
+            "summary": "The surface point is returned here, or <b>Point3d.Unset</b> if this fails."
+          },
+          {
+            "name": "normal",
+            "type": "Vector3d",
+            "summary": "The unit surface normal is returned here."
+          },
+          {
+            "name": "kappa1",
+            "type": "System.Double",
+            "summary": "The largest principal curvature, in absolute value, is returned here."
+          },
+          {
+            "name": "kappa2",
+            "type": "System.Double",
+            "summary": "The smallest principal curvature, in absolute value, is returned here."
+          }
+        ],
+        "returns": "True if the evaluation succeeded."
+      },
+      {
+        "signature": "System.Boolean EvaluateCurvature(SubDComponentParameter parameter, out SurfaceCurvature curvature)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Evaluates the curvature of a point on this SubD's surface.",
+        "since": "9.0",
+    "remarks": "Unlike the overload that returns the two principal curvature values, this one also reports their directions. See  <b>SurfaceCurvature.CreateFromSubD(SubD, SubDComponentParameter)</b>  for when the curvature exists.",
+        "parameters": [
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The parameter to evaluate."
+          },
+          {
+            "name": "curvature",
+            "type": "SurfaceCurvature",
+            "summary": "The surface curvature is returned here, or None if this fails."
+          }
+        ],
+        "returns": "True if the evaluation succeeded."
       },
       {
         "signature": "System.Boolean Flip()",
@@ -153418,6 +154472,29 @@
   },
   {
     "namespace": "Rhino.Geometry",
+    "name": "SubD.ExtraordinaryVertexCurvature",
+    "dataType": "enum",
+    "summary": "ON_SubD::ExtraordinaryVertexCurvature identifies what a curvature evaluation reports exactly on an extraordinary vertex.  A SubD limit surface is C1 but generally not C2 at an extraordinary vertex. The mixed second partial does not exist there, so there is no second fundamental form and no curvature of the surface itself. Every other point of the surface, including the rest of an extraordinary vertex's corner quad, has a curvature and is unaffected by this setting.",
+    "values": [
+      {
+        "signature": "None = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Report no curvature. Evaluation fails at an extraordinary vertex. This is the default and says exactly what is True of the surface."
+      },
+      {
+        "signature": "SectorAverage = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Report the average of the curvature of the surface immediately around the vertex: one sample per surface mesh fragment of the vertex's sector, each taken at the fragment grid point nearest the vertex.  The sample spacing follows the surface mesh cache, so a denser cache samples closer to the vertex, and a minimum density of 2 is used when the cache is coarser than that or absent - the same minimum the SubD to NURBS conversion works at.  Gaussian and mean curvature are averaged, not the principal curvatures: they are the invariants, whereas k1 and k2 are ordered eigenvalues that do not average meaningfully. The principal directions are left unset for the same reason.  This is an estimate of a quantity the surface does not have. Use it where a plausible continuous value matters more than exactness, such as curvature display, and not where the value feeds further geometry."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.Geometry",
     "name": "SubD.NurbsSurfaceType",
     "dataType": "enum",
     "summary": "ON_SubD::NurbsSurfaceType specifies what type of NURBS surfaces are returned by ON_SubD.GetSurfaceNurbsFragments()",
@@ -153757,6 +154834,248 @@
         "protected": false,
         "virtual": false,
         "summary": "The component's location in the SubD limit surface. Note well: This value is saved in 3dm archives and cannot be changed."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "SubDComponentParameter",
+    "dataType": "struct",
+    "summary": "Identifies a point on the surface of a <b>SubD</b> .  \nSubDs have no global (u,v) parameterization. Instead a point on the surface   is identified relative to a component of the SubD: a vertex, a point on an   edge, or a point inside a face. A point inside a face is given by the index   of the face corner it belongs to plus two parameters inside that corner,   because a face with five or more sides has no single well behaved   (u,v) domain.  \nUse    to find a parameter and    and its overloads to evaluate one.",
+    "properties": [
+      {
+        "signature": "SubDComponentParameter Unset",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The unset parameter. It does not identify a point on any SubD.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "uint ActiveFaceId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the id of the face this parameter uses to resolve which sector of a vertex or which side of an edge it means, or 0 if there is none. It is always 0 when <b>IsFaceParameter</b> is true; use  <b>ComponentId</b> in that case.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "uint ComponentId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the id of the SubD component this parameter is relative to, or 0 if this parameter is not set.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "ComponentIndex ComponentIndex",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the component index of the SubD component this parameter is relative to. It is <b>ComponentIndex.Unset</b> if this parameter is not set.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "double EdgeParameter",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a value between 0 and 1 identifying a point on the edge, or  <b>double.NaN</b> if <b>IsEdgeParameter</b> is false.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int FaceCornerIndex",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the index of the face corner the face parameters are measured in, or -1 if <b>IsFaceParameter</b> is false.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "Point2d FaceCornerParameters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the two parameters inside the face corner identified by  <b>FaceCornerIndex</b> . Both run from 0 to 1/2: (0,0) is the corner vertex and (1/2,1/2) is the center of the face. X runs towards the midpoint of the edge leaving the corner and Y towards the midpoint of the edge entering it. The point is <b>Point2d.Unset</b> if  <b>IsFaceParameter</b> is false.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int FaceEdgeCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the number of edges of the face, or 0 if  <b>IsFaceParameter</b> is false.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsEdgeParameter",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this parameter identifies a surface point on a SubD edge.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsFaceParameter",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this parameter identifies a surface point inside a SubD face.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsSet",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this parameter identifies a point on a SubD.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsVertexParameter",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets True if this parameter identifies the surface point at a SubD vertex.",
+        "since": "9.0",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "SubDComponentParameter CreateEdgeParameter(System.UInt32 edgeId, System.Double edgeParameter, System.UInt32 activeFaceId)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a parameter that identifies a surface point on a SubD edge.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "edgeId",
+            "type": "System.UInt32",
+            "summary": "The id of a SubD edge."
+          },
+          {
+            "name": "edgeParameter",
+            "type": "System.Double",
+            "summary": "A value between 0 and 1. 0 is the edge's start vertex and 1 is its end vertex."
+          },
+          {
+            "name": "activeFaceId",
+            "type": "System.UInt32",
+            "summary": "The id of a face attached to the edge, or 0 to let the SubD choose one. A crease edge has a different surface normal on each side."
+          }
+        ]
+      },
+      {
+        "signature": "SubDComponentParameter CreateFaceParameter(System.UInt32 faceId, System.Int32 faceEdgeCount, System.Int32 cornerIndex, System.Double cornerS, System.Double cornerT)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a parameter that identifies a surface point inside a SubD face.",
+        "since": "9.0",
+    "remarks": "(0,0) is the corner vertex and (1/2,1/2) is the center of the face.",
+        "parameters": [
+          {
+            "name": "faceId",
+            "type": "System.UInt32",
+            "summary": "The id of a SubD face."
+          },
+          {
+            "name": "faceEdgeCount",
+            "type": "System.Int32",
+            "summary": "The number of edges of the face. Must be 3 or more."
+          },
+          {
+            "name": "cornerIndex",
+            "type": "System.Int32",
+            "summary": "The index of the face corner the parameters are measured in. Must be less than."
+          },
+          {
+            "name": "cornerS",
+            "type": "System.Double",
+            "summary": "A value between 0 and 1/2 measured from the corner vertex towards the midpoint of the edge that leaves the corner."
+          },
+          {
+            "name": "cornerT",
+            "type": "System.Double",
+            "summary": "A value between 0 and 1/2 measured from the corner vertex towards the midpoint of the edge that enters the corner."
+          }
+        ]
+      },
+      {
+        "signature": "SubDComponentParameter CreateVertexParameter(System.UInt32 vertexId, System.UInt32 activeFaceId)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a parameter that identifies the surface point at a SubD vertex.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "vertexId",
+            "type": "System.UInt32",
+            "summary": "The id of a SubD vertex."
+          },
+          {
+            "name": "activeFaceId",
+            "type": "System.UInt32",
+            "summary": "The id of a face attached to the vertex, or 0 to let the SubD choose one. A vertex where several faces meet with a crease has a different surface normal in each sector, so evaluation needs to know which face is meant."
+          }
+        ]
+      },
+      {
+        "signature": "System.Boolean Equals(SubDComponentParameter other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      },
+      {
+        "signature": "System.Boolean Equals(System.Object obj)",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false
+      },
+      {
+        "signature": "System.Int32 GetHashCode()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false
+      },
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false
+      }
+    ],
+    "operators": [
+      {
+        "signature": "bool operator !=(SubDComponentParameter a, SubDComponentParameter b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two parameters are different.",
+        "since": "9.0"
+      },
+      {
+        "signature": "bool operator ==(SubDComponentParameter a, SubDComponentParameter b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether two parameters are equal.",
+        "since": "9.0"
       }
     ]
 
@@ -159524,6 +160843,55 @@
         "virtual": false,
         "summary": "Create a SurfaceCurvature from the principal curvature values. The principal curvature values are the most fundamental curvature properties of a surface. Other curvatures are calculated from them.",
         "since": "9.0",
+        "returns": "A SurfaceCurvature if successful, None otherwise."
+      },
+      {
+        "signature": "SurfaceCurvature CreateFromSubD(SubD subd, SubDComponentParameter parameter, SubD.ExtraordinaryVertexCurvature extraordinaryVertexCurvature)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Create a SurfaceCurvature by evaluating a SubD's surface (its limit surface) at a surface parameter, choosing what to report exactly on an extraordinary vertex.",
+        "since": "9.0",
+    "remarks": "With <b>SubD.ExtraordinaryVertexCurvature.SectorAverage</b> the result at an extraordinary vertex is an average of the curvature around it, so <b>Direction</b> is unset: an average has no single principal direction. <b>Point</b> and <b>Normal</b> are the vertex's own and are exact.",
+        "parameters": [
+          {
+            "name": "subd",
+            "type": "SubD",
+            "summary": "The SubD to evaluate."
+          },
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The surface parameter to evaluate."
+          },
+          {
+            "name": "extraordinaryVertexCurvature",
+            "type": "SubD.ExtraordinaryVertexCurvature",
+            "summary": "What to report when the parameter is exactly on an extraordinary vertex, where the limit surface has no curvature of its own. This changes nothing anywhere else, including inside such a vertex's corner quad."
+          }
+        ],
+        "returns": "A SurfaceCurvature if successful, None otherwise."
+      },
+      {
+        "signature": "SurfaceCurvature CreateFromSubD(SubD subd, SubDComponentParameter parameter)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Create a SurfaceCurvature by evaluating a SubD's surface (its limit surface) at a surface parameter.",
+        "since": "9.0",
+    "remarks": "A SubD limit surface is C1 but generally not C2 exactly on an extraordinary vertex, so it has no curvature there and this returns null. Everywhere else, including throughout the corner quad of an extraordinary vertex, the curvature exists.  Use the overload that takes a  <b>SubD.ExtraordinaryVertexCurvature</b> to get an estimate at those vertices instead of nothing.   <b>UVPoint</b> is the face corner parameter, since that is what parameterizes a SubD surface. See  <b>SubDComponentParameter.FaceCornerParameters</b> .",
+        "parameters": [
+          {
+            "name": "subd",
+            "type": "SubD",
+            "summary": "The SubD to evaluate."
+          },
+          {
+            "name": "parameter",
+            "type": "SubDComponentParameter",
+            "summary": "The surface parameter to evaluate."
+          }
+        ],
         "returns": "A SurfaceCurvature if successful, None otherwise."
       },
       {
@@ -172582,6 +173950,37 @@
       }
     ],
     "methods": [
+      {
+        "signature": "System.Boolean Snap(RhinoView view, Point3d testPoint, out Point3d snapPoint, out Rhino.ApplicationSettings.OsnapModes osnapMode)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Calculates the point the current object snap settings would produce, in the specified view, given a test point. This function does not prompt.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "view",
+            "type": "RhinoView",
+            "summary": "The view in which to snap."
+          },
+          {
+            "name": "testPoint",
+            "type": "Point3d",
+            "summary": "The world coordinate point to snap."
+          },
+          {
+            "name": "snapPoint",
+            "type": "Point3d",
+            "summary": "The snapped point. If no object snap applied, then testPoint is returned."
+          },
+          {
+            "name": "osnapMode",
+            "type": "Rhino.ApplicationSettings.OsnapModes",
+            "summary": "The type of object snap used to obtain the point. If no object snap applied, then OsnapModes.None is returned."
+          }
+        ],
+        "returns": "True if successful, False otherwise."
+      },
       {
         "signature": "System.Int32 AddConstructionPoint(Point3d point)",
         "modifiers": ["public"],
@@ -197444,6 +198843,7 @@
         "protected": false,
         "virtual": false,
         "since": "8.13",
+    "remarks": "Obsolete; the Glare post effect was removed in Rhino 7.",
         "property": ["get"]
       },
       {
@@ -212287,12 +213687,32 @@
         "property": ["get"]
       },
       {
+        "signature": "bool IsRunningBatchMode",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Is Rhino currently being executed as a batch run, started with the /batchmode command line switch. A batch run has a main window but no user: commands run their command line (\"-\") version and modal message boxes are written to the command line instead of being shown.",
+        "since": "9.0",
+    "remarks": "To decide whether it is safe to show blocking user interface, test  <b>IsRunningUnattended</b> instead - it also covers headless.",
+        "property": ["get"]
+      },
+      {
         "signature": "bool IsRunningHeadless",
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
         "summary": "Is Rhino currently being executed in headless mode",
         "since": "6.1",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsRunningUnattended",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Is Rhino running with no user available to answer a question. True when either <b>IsRunningHeadless</b> or <b>IsRunningBatchMode</b>  is true.",
+        "since": "9.0",
+    "remarks": "Test this before showing any modal dialog. When it is True there is nobody to dismiss the dialog, so it will block until the process is killed. Write to the command line instead.  \nis deliberately excluded. COM     automation clients have driven a fully interactive Rhino since V4 and     keep that behaviour unchanged; a caller that wants the unattended     behaviour starts Rhino with /batchmode.",
         "property": ["get"]
       },
       {
@@ -217269,6 +218689,13 @@
         "protected": false,
         "virtual": false,
         "summary": "Experimenting with using a CMFCMenuBar to host main frame menu with a CMFCVisualManager derived class for styling the menu. https://mcneel.myjetbrains.com/youtrack/issue/RH-70314"
+      },
+      {
+        "signature": "UseMenuIcons",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Show SVG command icons in the main menu. https://mcneel.myjetbrains.com/youtrack/issue/RH-97848"
       },
       {
         "signature": "IgnoreRUIPlatform",
@@ -226349,6 +227776,15 @@
         "property": ["get"]
       },
       {
+        "signature": "bool HasBootSplash",
+        "modifiers": ["protected", "static"],
+        "protected": true,
+        "virtual": false,
+        "summary": "True when the platform's native boot splash is compiled in and shown at startup.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "string ApplicationName",
         "modifiers": ["protected", "virtual"],
         "protected": true,
@@ -228452,6 +229888,7 @@
         "protected": false,
         "virtual": false,
         "since": "6.10",
+    "remarks": "Obsolete; the Glare post effect was removed in Rhino 7.",
         "property": ["get"]
       },
       {
@@ -238787,9 +240224,9 @@
       },
       {
         "signature": "string Text",
-        "modifiers": ["public"],
+        "modifiers": ["public", "virtual"],
         "protected": false,
-        "virtual": false,
+        "virtual": true,
         "property": ["get", "set"]
       },
       {
@@ -239262,6 +240699,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool HasKeyboardFocus",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Does this object have keyboard focus? An object with keyboard focus gets first refusal on what is typed in a viewport; what it does not use carries on to the command line as usual.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "bool Visible",
         "modifiers": ["public"],
         "protected": false,
@@ -239271,6 +240717,21 @@
       }
     ],
     "methods": [
+      {
+        "signature": "System.Void ClearKeyboardFocus(RhinoDoc doc)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Take keyboard focus away from whichever user interface object has it, so that typing goes to the command line again.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "doc",
+            "type": "RhinoDoc",
+            "summary": "Document to redraw. This can be null."
+          }
+        ]
+      },
       {
         "signature": "System.Boolean IsMouseOver(MouseState mouse)",
         "modifiers": ["protected", "virtual"],
@@ -239491,6 +240952,146 @@
         "protected": false,
         "virtual": false,
         "summary": "Formatted string shown based on value and digit precision"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.UI",
+    "name": "UserInterfaceTextBox",
+    "dataType": "class",
+    "summary": "A single line text box. Click it to give it keyboard focus, then type. The characters go into the box instead of to the command line for as long as it has focus; Enter commits what was typed, Escape puts back the text the box started with, and both give the focus back to the viewport.",
+    "baseclass": "Rhino.UI.UserInterfaceControl",
+    "constructors": [
+      {
+        "signature": "UserInterfaceTextBox()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceTextBox(string text)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "Color BackgroundColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Color the box is filled with. Color.Empty, the default, means use the standard color for the theme that is in use.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color BorderColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Color of the outline around the box. Color.Empty, the default, means use the standard color for the theme that is in use. The outline is drawn thicker and brighter while the box has keyboard focus, whatever color it is given.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int CaretPosition",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Where the insertion point sits, as a count of characters from the start of the text. Setting it clamps to the length of the text.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int MaximumLength",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Most characters the text will hold. 0, the default, means no limit.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "string PlaceholderText",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Text drawn, dimmed, when the box is empty and does not have focus",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ReadOnly",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A read only text box can take focus and be scrolled through, but typing does not change it. False by default.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "string Text",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "What the box holds. Unlike the other controls, this is something the user changes, so reading it asks the box itself what is in it.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void OnEditCanceled()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called when Escape is pressed. The text has already been put back to what it was when the box took focus. The default implementation raises the EditCanceled event."
+      },
+      {
+        "signature": "System.Void OnKeyboardFocusChanged(System.Boolean hasFocus)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called when the box gains or loses keyboard focus. Read HasKeyboardFocus to find out which. The default implementation raises the KeyboardFocusChanged event.",
+        "parameters": [
+          {
+            "name": "hasFocus",
+            "type": "System.Boolean",
+            "summary": "True when the box has just taken focus"
+          }
+        ]
+      },
+      {
+        "signature": "System.Void OnTextChanged()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called every time the text changes, once per keystroke. The default implementation raises the TextChanged event."
+      },
+      {
+        "signature": "System.Void OnTextCommitted()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called when Enter is pressed, and when the box loses focus with the text changed from what it started with. This is where you do something about the new text. The default implementation raises the TextCommitted event."
+      },
+      {
+        "signature": "System.Void TakeKeyboardFocus(RhinoDoc doc)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Give this text box keyboard focus, as clicking it does",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "doc",
+            "type": "RhinoDoc",
+            "summary": "Document to redraw. This can be null."
+          }
+        ]
       }
     ]
   },
