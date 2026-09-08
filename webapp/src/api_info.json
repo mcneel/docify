@@ -473,6 +473,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "int EffectiveHelpLanguageIdentifier",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the language identifier the Help system uses. This is  <b>HelpLanguageIdentifier</b> when it has been set, otherwise  <b>LanguageIdentifier</b> . Never returns zero.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "Color FeedbackColor",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -533,6 +542,15 @@
         "virtual": false,
         "summary": "Gets or sets the color of the Z axis of the grid.",
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int HelpLanguageIdentifier",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the language identifier used by the Help system (the Help panel, F1 context help and the online help web site). This is independent of <b>LanguageIdentifier</b> , which is the language used by the user interface. A value of zero, the default, means the Help follows the user interface language. See <b>EffectiveHelpLanguageIdentifier</b> for the identifier the Help system actually uses.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18529,6 +18547,200 @@
   },
   {
     "namespace": "Rhino.Display",
+    "name": "Display2dPath.PathFillRule",
+    "dataType": "enum",
+    "summary": "How a self overlapping or nested path decides what is inside it.",
+    "values": [
+      {
+        "signature": "EvenOdd = 0",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Odd numbers of crossings are inside. GDI+ Alternate, WPF EvenOdd."
+      },
+      {
+        "signature": "Winding = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Non zero signed crossings are inside. GDI+ Winding, WPF Nonzero."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.Display",
+    "name": "DisplayAttributeMaterial",
+    "dataType": "class",
+    "summary": "One side of the material the display pipeline shades an object with. A texture-style  <b>Rhino.Display.VisualAnalysisMode</b> sets its texture up here from SetUpDisplayAttributes.",
+    "remarks": "Valid for as long as the <b>DisplayPipelineAttributes</b> it came from, the same as  <b>DisplayPipelineAttributes.MeshSpecificAttributes</b> . The attributes passed to SetUpDisplayAttributes belong to the display pipeline and are disposed when that call returns; using this afterwards does nothing rather than reaching freed memory.",
+    "properties": [
+      {
+        "signature": "Color Diffuse",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Diffuse color.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool DisableLighting",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When True the material is drawn at full diffuse color, ignoring the scene lights.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Color Emission",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Emission color.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool FlatShaded",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Shades with no smoothing, so the individual render mesh faces are visible.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double IndexOfRefraction",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Index of refraction.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int Luminosity",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Luminosity.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool OverrideObjectColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Objects acquire color from render materials.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool OverrideObjectReflectivity",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Objects acquire reflectivity from render materials.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool OverrideObjectTransparency",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Objects acquire transparency from render materials.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double Reflectivity",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reflectivity, 0.0 to 1.0.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double Shine",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Shine, 0 to <b>Rhino.DocObjects.Material.MaxShine</b> .",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int ShineIntensity",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Shine intensity.",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double Transparency",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Transparency, 0.0 opaque to 1.0 transparent.",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Rhino.DocObjects.Texture GetTexture(Rhino.DocObjects.TextureType which)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the texture of the given type, or None when this material has none.",
+        "parameters": [
+          {
+            "name": "which",
+            "type": "Rhino.DocObjects.TextureType",
+            "summary": "The texture type. <b>Rhino.DocObjects.TextureType.None</b> matches nothing."
+          }
+        ]
+      },
+      {
+        "signature": "Rhino.DocObjects.Texture[] GetTextures()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets every texture this material uses."
+      },
+      {
+        "signature": "System.Boolean RemoveTexture(Rhino.DocObjects.TextureType which)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes every texture of the given type.",
+        "parameters": [
+          {
+            "name": "which",
+            "type": "Rhino.DocObjects.TextureType",
+            "summary": "The texture type. <b>Rhino.DocObjects.TextureType.None</b> removes nothing."
+          }
+        ],
+        "returns": "True when a texture was removed."
+      },
+      {
+        "signature": "System.Boolean SetTexture(Rhino.DocObjects.Texture texture, Rhino.DocObjects.TextureType which)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Assigns a texture, replacing any texture this material already has of the same type.",
+        "parameters": [
+          {
+            "name": "texture",
+            "type": "Rhino.DocObjects.Texture",
+            "summary": "The texture to assign."
+          },
+          {
+            "name": "which",
+            "type": "Rhino.DocObjects.TextureType",
+            "summary": "The texture type."
+          }
+        ],
+        "returns": "True on success."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Display",
     "name": "DisplayBitmap",
     "dataType": "class",
     "summary": "A bitmap resource that can be used by the display pipeline (currently only in OpenGL display).  Reuse DisplayBitmaps for drawing if possible; it is much more expensive to construct new DisplayBitmaps than it is to reuse existing DisplayBitmaps.",
@@ -20392,11 +20604,61 @@
         "returns": "True if the pipeline was closed, False if it was already closed or failed to close."
       },
       {
+        "signature": "System.Void Draw2dLine(Point2f from, Point2f to, DisplayPen pen)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a line whose coordinates are viewport pixels rather than world units. The origin is the top left of the frame, with y increasing downwards - the same space Draw2dText and DrawBitmap work in.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "from",
+            "type": "Point2f",
+            "summary": "Start of the line, in screen coordinates."
+          },
+          {
+            "name": "to",
+            "type": "Point2f",
+            "summary": "End of the line, in screen coordinates."
+          },
+          {
+            "name": "pen",
+            "type": "DisplayPen",
+            "summary": "Pen to stroke the line with."
+          }
+        ]
+      },
+      {
         "signature": "System.Void Draw2dLine(System.Drawing.Point from, System.Drawing.Point to, System.Drawing.Color color, System.Single thickness)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "since": "6.0"
+      },
+      {
+        "signature": "System.Void Draw2dLine(System.Drawing.PointF from, System.Drawing.PointF to, DisplayPen pen)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a line whose coordinates are viewport pixels rather than world units. The origin is the top left of the frame, with y increasing downwards - the same space Draw2dText and DrawBitmap work in.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "from",
+            "type": "System.Drawing.PointF",
+            "summary": "Start of the line, in screen coordinates."
+          },
+          {
+            "name": "to",
+            "type": "System.Drawing.PointF",
+            "summary": "End of the line, in screen coordinates."
+          },
+          {
+            "name": "pen",
+            "type": "DisplayPen",
+            "summary": "Pen to stroke the line with."
+          }
+        ]
       },
       {
         "signature": "System.Void Draw2dLine(System.Drawing.PointF from, System.Drawing.PointF to, System.Drawing.Color color, System.Single thickness)",
@@ -20406,11 +20668,126 @@
         "since": "6.0"
       },
       {
+        "signature": "System.Void Draw2dPolyline(Point2f[] points, DisplayPen pen, System.Boolean closed)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a polyline whose coordinates are viewport pixels rather than world units. The origin is the top left of the frame, with y increasing downwards - the same space Draw2dText and DrawBitmap work in.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "points",
+            "type": "Point2f[]",
+            "summary": "The polyline vertices, in screen coordinates. Fewer than two draws nothing."
+          },
+          {
+            "name": "pen",
+            "type": "DisplayPen",
+            "summary": "Pen to stroke the polyline with."
+          },
+          {
+            "name": "closed",
+            "type": "System.Boolean",
+            "summary": "When True the polyline is closed back to its first point as part of the same figure, so that corner is stroked as a join rather than as two loose ends. Do not repeat the first point at the end when passing true."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Draw2dPolyline(Point2f[] points, DisplayPen pen)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a polyline whose coordinates are viewport pixels rather than world units. The origin is the top left of the frame, with y increasing downwards - the same space Draw2dText and DrawBitmap work in.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "points",
+            "type": "Point2f[]",
+            "summary": "The polyline vertices, in screen coordinates. Fewer than two draws nothing."
+          },
+          {
+            "name": "pen",
+            "type": "DisplayPen",
+            "summary": "Pen to stroke the polyline with."
+          }
+        ]
+      },
+      {
         "signature": "System.Void Draw2dRectangle(System.Drawing.Rectangle rectangle, System.Drawing.Color strokeColor, System.Int32 thickness, System.Drawing.Color fillColor)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "since": "5.10"
+      },
+      {
+        "signature": "System.Void Draw2dText(System.String text, System.Drawing.Color color, Point2d screenCoordinate, DocObjects.TextHorizontalAlignment horizontalAlignment, DocObjects.TextVerticalAlignment verticalAlignment, System.Single height, System.String fontface, System.Boolean bold, System.Boolean italic, System.Boolean underline, System.Boolean strikethrough, System.Boolean applyKerning)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws 2D text on the viewport.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "System.String",
+            "summary": "The string to draw."
+          },
+          {
+            "name": "color",
+            "type": "System.Drawing.Color",
+            "summary": "Text color."
+          },
+          {
+            "name": "screenCoordinate",
+            "type": "Point2d",
+            "summary": "Definition point in screen coordinates (0,0 is top-left corner). The alignment attaches to this point."
+          },
+          {
+            "name": "horizontalAlignment",
+            "type": "DocObjects.TextHorizontalAlignment",
+            "summary": "Where the definition point sits across the text's horizontal advance."
+          },
+          {
+            "name": "verticalAlignment",
+            "type": "DocObjects.TextVerticalAlignment",
+            "summary": "Where the definition point sits down the text's lines. BottomOfTop puts the first line's baseline on the point; Top puts the top of a capital there, which is what the middleJustified=False overloads draw."
+          },
+          {
+            "name": "height",
+            "type": "System.Single",
+            "summary": "Height in pixels (good default is 12)."
+          },
+          {
+            "name": "fontface",
+            "type": "System.String",
+            "summary": "Font name (good default is \"Arial\")."
+          },
+          {
+            "name": "bold",
+            "type": "System.Boolean",
+            "summary": "If true, the bold face of the font family is used."
+          },
+          {
+            "name": "italic",
+            "type": "System.Boolean",
+            "summary": "If true, the italic face of the font family is used."
+          },
+          {
+            "name": "underline",
+            "type": "System.Boolean",
+            "summary": "If true, the text is underlined."
+          },
+          {
+            "name": "strikethrough",
+            "type": "System.Boolean",
+            "summary": "If true, the text is struck through."
+          },
+          {
+            "name": "applyKerning",
+            "type": "System.Boolean",
+            "summary": "If true, the font's kerning pairs are used to space the glyphs."
+          }
+        ]
       },
       {
         "signature": "System.Void Draw2dText(System.String text, System.Drawing.Color color, Point2d screenCoordinate, System.Boolean middleJustified, System.Int32 height, System.String fontface)",
@@ -20514,6 +20891,76 @@
             "name": "middleJustified",
             "type": "System.Boolean",
             "summary": "if True text is centered around the definition point, otherwise it is lower-left justified."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void Draw2dText(System.String text, System.Drawing.Color color, Point3d worldCoordinate, DocObjects.TextHorizontalAlignment horizontalAlignment, DocObjects.TextVerticalAlignment verticalAlignment, System.Single height, System.String fontface, System.Boolean bold, System.Boolean italic, System.Boolean underline, System.Boolean strikethrough, System.Boolean applyKerning)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws 2D text on the viewport.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "System.String",
+            "summary": "The string to draw."
+          },
+          {
+            "name": "color",
+            "type": "System.Drawing.Color",
+            "summary": "Text color."
+          },
+          {
+            "name": "worldCoordinate",
+            "type": "Point3d",
+            "summary": "Definition point in world coordinates. The alignment attaches to this point."
+          },
+          {
+            "name": "horizontalAlignment",
+            "type": "DocObjects.TextHorizontalAlignment",
+            "summary": "Where the definition point sits across the text's horizontal advance."
+          },
+          {
+            "name": "verticalAlignment",
+            "type": "DocObjects.TextVerticalAlignment",
+            "summary": "Where the definition point sits down the text's lines. BottomOfTop puts the first line's baseline on the point; Top puts the top of a capital there, which is what the middleJustified=False overloads draw."
+          },
+          {
+            "name": "height",
+            "type": "System.Single",
+            "summary": "Height in pixels (good default is 12)."
+          },
+          {
+            "name": "fontface",
+            "type": "System.String",
+            "summary": "Font name (good default is \"Arial\")."
+          },
+          {
+            "name": "bold",
+            "type": "System.Boolean",
+            "summary": "If true, the bold face of the font family is used."
+          },
+          {
+            "name": "italic",
+            "type": "System.Boolean",
+            "summary": "If true, the italic face of the font family is used."
+          },
+          {
+            "name": "underline",
+            "type": "System.Boolean",
+            "summary": "If true, the text is underlined."
+          },
+          {
+            "name": "strikethrough",
+            "type": "System.Boolean",
+            "summary": "If true, the text is struck through."
+          },
+          {
+            "name": "applyKerning",
+            "type": "System.Boolean",
+            "summary": "If true, the font's kerning pairs are used to space the glyphs."
           }
         ]
       },
@@ -20933,6 +21380,41 @@
             "name": "color",
             "type": "System.Drawing.Color",
             "summary": "Color of arrows."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void DrawBitmap(DisplayBitmap bitmap, System.Int32 left, System.Int32 top, System.Int32 width, System.Int32 height)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a bitmap in screen coordinates, scaled to fit the given size.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "bitmap",
+            "type": "DisplayBitmap",
+            "summary": "bitmap to draw"
+          },
+          {
+            "name": "left",
+            "type": "System.Int32",
+            "summary": "where the left edge of the bitmap should appear in screen coordinates"
+          },
+          {
+            "name": "top",
+            "type": "System.Int32",
+            "summary": "where the top edge of the bitmap should appear in screen coordinates"
+          },
+          {
+            "name": "width",
+            "type": "System.Int32",
+            "summary": "width (in pixels) to draw the bitmap at"
+          },
+          {
+            "name": "height",
+            "type": "System.Int32",
+            "summary": "height (in pixels) to draw the bitmap at"
           }
         ]
       },
@@ -21777,6 +22259,30 @@
         ]
       },
       {
+        "signature": "System.Void DrawEmapPreview(Brep brep, System.Drawing.Color color, Rhino.ApplicationSettings.EmapAnalysisSettingsState settings)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a Brep in Environment Map preview with a texture of your own, instead of the one in  <b>Rhino.ApplicationSettings.EmapAnalysisSettings</b> .",
+        "parameters": [
+          {
+            "name": "brep",
+            "type": "Brep",
+            "summary": "Brep to draw."
+          },
+          {
+            "name": "color",
+            "type": "System.Drawing.Color",
+            "summary": "Object color."
+          },
+          {
+            "name": "settings",
+            "type": "Rhino.ApplicationSettings.EmapAnalysisSettingsState",
+            "summary": "Settings for this call only. Get a copy of the current ones from  <b>Rhino.ApplicationSettings.EmapAnalysisSettings.GetCurrentState</b> and change what you need. A None or empty <b>Rhino.ApplicationSettings.EmapAnalysisSettingsState.FileName</b>  keeps the texture the application settings name."
+          }
+        ]
+      },
+      {
         "signature": "System.Void DrawEmapPreview(Brep brep, System.Drawing.Color color)",
         "modifiers": ["public"],
         "protected": false,
@@ -21793,6 +22299,30 @@
             "name": "color",
             "type": "System.Drawing.Color",
             "summary": "Objct color."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void DrawEmapPreview(Mesh mesh, System.Drawing.Color color, Rhino.ApplicationSettings.EmapAnalysisSettingsState settings)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a Mesh in Environment Map preview with a texture of your own, instead of the one in  <b>Rhino.ApplicationSettings.EmapAnalysisSettings</b> .",
+        "parameters": [
+          {
+            "name": "mesh",
+            "type": "Mesh",
+            "summary": "Mesh to draw."
+          },
+          {
+            "name": "color",
+            "type": "System.Drawing.Color",
+            "summary": "Object color."
+          },
+          {
+            "name": "settings",
+            "type": "Rhino.ApplicationSettings.EmapAnalysisSettingsState",
+            "summary": "Settings for this call only. Get a copy of the current ones from  <b>Rhino.ApplicationSettings.EmapAnalysisSettings.GetCurrentState</b> and change what you need. A None or empty <b>Rhino.ApplicationSettings.EmapAnalysisSettingsState.FileName</b>  keeps the texture the application settings name."
           }
         ]
       },
@@ -24137,6 +24667,14 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "DisplayAttributeMaterial BackMaterial",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The material used to shade the back faces of an object.",
+        "property": ["get"]
+      },
+      {
         "signature": "Color BackMaterialDiffuseColor",
         "modifiers": ["public"],
         "protected": false,
@@ -24149,7 +24687,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Get or set the back material shine (0 to Rhino.DocObjects.MaxShine). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
+        "summary": "Get or set the back material shine (0 to Rhino.DocObjects.Material.MaxShine). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
         "since": "8.4",
         "property": ["get", "set"]
       },
@@ -24158,7 +24696,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Get or set the back material transparency (0 to 100). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
+        "summary": "Get or set the back material transparency (0.0 opaque to 1.0 transparent). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
         "since": "8.4",
         "property": ["get", "set"]
       },
@@ -24543,11 +25081,19 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "DisplayAttributeMaterial FrontMaterial",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The material used to shade the front faces of an object. The Front* properties on this class are shortcuts into it.",
+        "property": ["get"]
+      },
+      {
         "signature": "double FrontMaterialShine",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Get or set the front material shine (0 to Rhino.DocObjects.MaxShine). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
+        "summary": "Get or set the front material shine (0 to Rhino.DocObjects.Material.MaxShine). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
         "since": "8.4",
         "property": ["get", "set"]
       },
@@ -24556,7 +25102,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Get or set the front material transparency (0 to 100). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
+        "summary": "Get or set the front material transparency (0.0 opaque to 1.0 transparent). You must call DisplayModeDescription.UpdateDisplayMode() to commit this change.",
         "since": "8.4",
         "property": ["get", "set"]
       },
@@ -34712,7 +35258,17 @@
         "modifiers": ["public", "new"],
         "protected": false,
         "virtual": false,
+        "summary": "The grip's index. CustomObjectGrips.AddGrip already assigns this the grip's position in the grips list, and Rhino passes it back as the gripIndex argument of NeighborGrip and as the key of the grip direction cache. Setting it to anything else makes those arguments disagree with CustomObjectGrips.Grip(int), which is indexed by list position.",
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool MovedOtherThanLocation",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Set this when the grip changes something other than its location, such as a weight, so that Rhino counts the grip as moved. Rhino already counts a grip whose location moved, so this only adds to that. Cleared when Rhino undoes the grip move.",
+    "remarks": "A stored flag rather than something Rhino asks for: it is read once per grip per draw, so answering it across the managed boundary would cost a transition per grip per frame. Real time work driven by grip movement belongs in CustomObjectGrips.OnDraw, which runs on the display thread, together with the NewLocation latch.",
         "property": ["get", "set"]
       },
       {
@@ -34747,11 +35303,95 @@
         "virtual": false
       },
       {
+        "signature": "System.Int32[] EvaluateCurveCVIndices()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "The indices of the NURBS curve control points this grip drives. A grip may drive more than one, as at a closed or periodic seam.",
+        "returns": "The control point indices, or None if this grip drives none."
+      },
+      {
+        "signature": "System.Boolean EvaluateCurveParameter(out System.Double t)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "The curve parameter of the control point this grip drives.",
+        "parameters": [
+          {
+            "name": "t",
+            "type": "System.Double",
+            "summary": "The curve parameter."
+          }
+        ],
+        "returns": "True on success. The default implementation returns false."
+      },
+      {
+        "signature": "System.Boolean EvaluateGripDirections(out Vector3d x, out Vector3d y, out Vector3d z)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Evaluates this grip's directions. For a surface control point these are the two surface tangents and the normal; for a curve control point, the tangent and a frame around it. Rhino caches the result per grip and does not ask again, so the directions must not change once reported.",
+        "parameters": [
+          {
+            "name": "x",
+            "type": "Vector3d",
+            "summary": "First direction."
+          },
+          {
+            "name": "y",
+            "type": "Vector3d",
+            "summary": "Second direction."
+          },
+          {
+            "name": "z",
+            "type": "Vector3d",
+            "summary": "Third direction."
+          }
+        ],
+        "returns": "True if the directions were set. The default implementation returns false."
+      },
+      {
+        "signature": "IndexPair[] EvaluateSurfaceCVIndices()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "The indices of the NURBS surface control points this grip drives. A grip may drive more than one, as at a closed or periodic seam or a singular edge. Every index must lie inside the surface returned by the owning CustomObjectGrips' NurbsSurface(). Rhino writes through these indices without checking them, so a grip reporting one outside the control point grid is refused whole.",
+    "remarks": "IndexPair rather than the Tuple used by GripObject.GetSurfaceCVIndices: this is called once per grip while Rhino maps a whole surface, and IndexPair is a struct.",
+        "returns": "The control point indices, or None if this grip drives none."
+      },
+      {
+        "signature": "System.Boolean EvaluateSurfaceParameters(out System.Double u, out System.Double v)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "The surface parameters of the control point this grip drives.",
+        "parameters": [
+          {
+            "name": "u",
+            "type": "System.Double",
+            "summary": "The first surface parameter."
+          },
+          {
+            "name": "v",
+            "type": "System.Double",
+            "summary": "The second surface parameter."
+          }
+        ],
+        "returns": "True on success. The default implementation returns false."
+      },
+      {
         "signature": "System.Void NewLocation()",
         "modifiers": ["public", "virtual"],
         "protected": false,
         "virtual": true,
         "since": "5.0"
+      },
+      {
+        "signature": "System.Void OnUndoMove()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called when Rhino undoes a grip move. Restore anything the grip changed alongside its location, such as a weight. The location itself is restored by Rhino."
       }
     ]
   },
@@ -34802,6 +35442,20 @@
         "modifiers": ["protected"],
         "protected": true,
         "virtual": false
+      },
+      {
+        "signature": "CustomObjectGrips(CustomObjectGripsType gripsType)",
+        "modifiers": ["protected"],
+        "protected": true,
+        "virtual": false,
+        "summary": "Creates grips that present themselves to Rhino as.",
+        "parameters": [
+          {
+            "name": "gripsType",
+            "type": "CustomObjectGripsType",
+            "summary": "What the grips control. Fixed for the life of the object."
+          }
+        ]
       }
     ],
     "properties": [
@@ -34820,6 +35474,14 @@
         "virtual": false,
         "summary": "If GripsMoved is True if some of the grips have ever been moved GripObject.NewLocation() sets GripsMoved=true.",
         "since": "5.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "CustomObjectGripsType GripsType",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "What these grips control. Set at construction.",
         "property": ["get"]
       },
       {
@@ -34928,11 +35590,34 @@
         "returns": "The new geometry. The default implementation returns null."
       },
       {
+        "signature": "Rhino.Geometry.NurbsCurve NurbsCurve()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "If the grips control a NURBS curve, this returns a pointer to that curve.  You can look at but you must NEVER change this curve. Return a curve held in a field, never a temporary: Rhino keeps the underlying pointer after this call returns.",
+        "returns": "A pointer to a NURBS curve or null."
+      },
+      {
+        "signature": "GripObject NurbsCurveGrip(System.Int32 i)",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "If the grips are control points of a NURBS curve, then this gets the grip that controls the i-th CV.",
+        "parameters": [
+          {
+            "name": "i",
+            "type": "System.Int32",
+            "summary": "The control point index."
+          }
+        ],
+        "returns": "A grip controlling a NURBS curve CV or null."
+      },
+      {
         "signature": "Rhino.Geometry.NurbsSurface NurbsSurface()",
         "modifiers": ["protected", "virtual"],
         "protected": true,
         "virtual": true,
-        "summary": "If the grips control a NURBS surface, this returns a pointer to that surface.  You can look at but you must NEVER change this surface.",
+        "summary": "If the grips control a NURBS surface, this returns a pointer to that surface.  You can look at but you must NEVER change this surface. Return a surface held in a field, never a temporary: Rhino keeps the underlying pointer after this call returns.",
         "returns": "A pointer to a NURBS surface or null."
       },
       {
@@ -34998,6 +35683,44 @@
         ]
       }
     ]
+  },
+  {
+    "namespace": "Rhino.DocObjects.Custom",
+    "name": "CustomObjectGripsType",
+    "dataType": "enum",
+    "summary": "The kind of grips a <b>CustomObjectGrips</b> presents. Several Rhino commands dispatch on this, so claiming a control point type is what lets a plug-in's grips reach code paths otherwise reserved for Rhino's own curve and surface control points.",
+    "remarks": "The values match the native CRhinoGripObject::GRIP_TYPE numbering, so further types can be added here later without changing any signature.",
+    "values": [
+      {
+        "signature": "CurveControlPoint = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The grips control the control points of a NURBS curve. A grip that does not report the control points it drives is skipped, not reported as an error."
+      },
+      {
+        "signature": "SurfaceControlPoint = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The grips control the control points of a NURBS surface. A grip that does not report the control points it drives is skipped, not reported as an error."
+      },
+      {
+        "signature": "Custom = 1000",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The grips mean something private to the plug-in. Rhino draws a drag line for them."
+      },
+      {
+        "signature": "CustomNoDragLine = 1001",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "As <b>Custom</b> , but Rhino draws no drag line."
+      }
+    ]
+
   },
   {
     "namespace": "Rhino.DocObjects.Custom",
@@ -41318,6 +42041,37 @@
         "protected": false,
         "virtual": false,
         "summary": "Layers from the linked instance definition are reference components in the model. This is the default layer style when the instance definition type is InstanceDefinitionUpdateType.Linked. This layer style may be used when the instance definition type is InstanceDefinitionUpdateType.Linked."
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.DocObjects",
+    "name": "InstanceDefinitionNameConflictResolution",
+    "dataType": "enum",
+    "summary": "Specifies how to resolve a name collision when an instance definition is created from a file and the model already contains an instance definition with that name.",
+    "since": "9.0",
+    "values": [
+      {
+        "signature": "KeepCurrent = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Keep the instance definition that is already in the model and discard the new one."
+      },
+      {
+        "signature": "Redefine = 3",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replace the instance definition that is already in the model with the new one. References to the discarded instance definition are changed to reference the new one. This is what the Insert command does."
+      },
+      {
+        "signature": "KeepBoth = 4",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "Keep both instance definitions, giving the new one an automatically generated unused name, such as \"Block 01\"."
       }
     ]
 
@@ -48254,6 +49008,15 @@
         "property": ["get"]
       },
       {
+        "signature": "bool UsePreviewMesh",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True when the display should draw this object's preview mesh instead of its render or analysis mesh.",
+    "remarks": "Only meaningful while drawing: the meshing worker thread raises this for the objects it is previewing and it is False the rest of the time. A texture or False colour  <b>Rhino.Display.VisualAnalysisMode</b> reads it from SetUpDisplayAttributes to decide whether to show mesh wires, which is what the built-in analysis modes do.",
+        "property": ["get"]
+      },
+      {
         "signature": "bool Visible",
         "modifiers": ["public"],
         "protected": false,
@@ -53439,6 +54202,103 @@
             "summary": "If false, then deleted instance definition information that could possibly be undeleted by the Undo command will not be deleted. If true, then all deleted instance definition information is deleted."
           }
         ]
+      },
+      {
+        "signature": "System.Int32 CreateFromFile(System.String filename, System.String name, InstanceDefinitionUpdateType updateType, InstanceDefinitionLayerStyle layerStyle, InstanceDefinitionNameConflictResolution conflictResolution, System.Boolean skipNestedLinkedDefinitions)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates an instance definition by reading a file, the way the Insert command does when inserting a file as a block. No instance reference is created.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "filename",
+            "type": "System.String",
+            "summary": "The name of the file to read. This can be any type of file that Rhino or a plug-in can read."
+          },
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name of the instance definition to create. This must be a valid name."
+          },
+          {
+            "name": "updateType",
+            "type": "InstanceDefinitionUpdateType",
+            "summary": "The type of instance definition to create."
+          },
+          {
+            "name": "layerStyle",
+            "type": "InstanceDefinitionLayerStyle",
+            "summary": "How layers from the file appear in the model. This is used only when updateType is InstanceDefinitionUpdateType.Linked."
+          },
+          {
+            "name": "conflictResolution",
+            "type": "InstanceDefinitionNameConflictResolution",
+            "summary": "What to do when the model already contains an instance definition named name."
+          },
+          {
+            "name": "skipNestedLinkedDefinitions",
+            "type": "System.Boolean",
+            "summary": "If true, then linked instance definitions nested in the file are not read."
+          }
+        ],
+        "returns": "The index of the new instance definition, or the index of an existing linked instance definition that already references filename. -1 on error."
+      },
+      {
+        "signature": "System.Int32 CreateFromFile(System.String filename, System.String name, System.String description, System.String url, System.String urlTag, InstanceDefinitionUpdateType updateType, InstanceDefinitionLayerStyle layerStyle, InstanceDefinitionNameConflictResolution conflictResolution, System.Boolean skipNestedLinkedDefinitions)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates an instance definition by reading a file, the way the Insert command does when inserting a file as a block. No instance reference is created.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "filename",
+            "type": "System.String",
+            "summary": "The name of the file to read. This can be any type of file that Rhino or a plug-in can read."
+          },
+          {
+            "name": "name",
+            "type": "System.String",
+            "summary": "The name of the instance definition to create. This must be a valid name."
+          },
+          {
+            "name": "description",
+            "type": "System.String",
+            "summary": "The description of the instance definition. If None or empty, then the notes of the file being read, if any, are used."
+          },
+          {
+            "name": "url",
+            "type": "System.String",
+            "summary": "The URL of the instance definition. If None or empty, then the model URL of the file being read, if any, is used."
+          },
+          {
+            "name": "urlTag",
+            "type": "System.String",
+            "summary": "The URL description, or hyperlink text, of the instance definition. If None or empty, then the model URL of the file being read, if any, is used."
+          },
+          {
+            "name": "updateType",
+            "type": "InstanceDefinitionUpdateType",
+            "summary": "The type of instance definition to create."
+          },
+          {
+            "name": "layerStyle",
+            "type": "InstanceDefinitionLayerStyle",
+            "summary": "How layers from the file appear in the model. This is used only when updateType is InstanceDefinitionUpdateType.Linked."
+          },
+          {
+            "name": "conflictResolution",
+            "type": "InstanceDefinitionNameConflictResolution",
+            "summary": "What to do when the model already contains an instance definition named name."
+          },
+          {
+            "name": "skipNestedLinkedDefinitions",
+            "type": "System.Boolean",
+            "summary": "If true, then linked instance definitions nested in the file are not read."
+          }
+        ],
+        "returns": "The index of the new instance definition, or the index of an existing linked instance definition that already references filename. -1 on error."
       },
       {
         "signature": "System.Boolean Delete(InstanceDefinition item)",
@@ -68123,7 +68983,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "The models in this worksession, including the active model.  \nis not filled in; use      if you need it.",
+        "summary": "The models in this worksession, including the active model.  \nis filled in, so this     reports the same state the Worksessions panel shows. Use      with False to skip that check.",
         "since": "9.0",
         "property": ["get"]
       },
@@ -68274,7 +69134,7 @@
           {
             "name": "checkForUpdates",
             "type": "System.Boolean",
-            "summary": "True to fill in <b>WorksessionModel.UpdateAvailable</b> for each model. This compares a checksum of every referenced file against the one stored when the file was attached, so it touches the file system once per model and can be slow on a large or remote worksession. Pass False unless you need it."
+            "summary": "True to fill in <b>WorksessionModel.UpdateAvailable</b> for each model. This compares each referenced file's size and last modified time against the values stored when the file was attached, which opens and stats each file once - no file contents are read, so the cost does not grow with the size of the models, but it is still one round trip per model. Pass False to skip it, for example when reading this repeatedly or when the models live on a slow network share."
           }
         ],
         "returns": "The models in the worksession, or an empty array if there are none."
@@ -68439,7 +69299,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "True if the file on disk has changed since it was attached, so  <b>Worksession.Update(uint)</b> has something to do.  \nThis is only filled in when the snapshot was taken with the file check     enabled; see . It is always false     otherwise.",
+        "summary": "True if the file on disk has changed since it was attached, so  <b>Worksession.Update(uint)</b> has something to do.  \nThis is only filled in when the snapshot was taken with the file check     enabled.  enables it; pass False to      to skip it, and this is then     always false.",
         "since": "9.0",
         "property": ["get"]
       }
@@ -82280,6 +83140,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "MeshingParameters MeshParameters",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Mesh parameters to use when meshing geometry that is not already a mesh. Only used when <b>UseRenderMeshes</b> is disabled.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "SubDMeshing SubDMeshType",
         "modifiers": ["public"],
         "protected": false,
@@ -82313,6 +83182,15 @@
         "virtual": false,
         "summary": "Enable/disable the use of Draco mesh compression in the glTF file",
         "since": "8.3",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool UseRenderMeshes",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When enabled the meshes already generated for rendering the objects are exported. When disabled the objects are meshed for export using <b>MeshParameters</b> .",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -92537,6 +93415,7 @@
         "virtual": false,
         "summary": "Computes the intersection of two bounding boxes.",
         "since": "5.0",
+    "remarks": "The intersection is empty when a and b do not overlap, and when either box is invalid. Invalid boxes are treated as the empty set. Boxes that merely touch do overlap, and produce a valid, degenerate (zero thickness) intersection box.  \nTo test two boxes for overlap without constructing an intersection box, use     .",
         "parameters": [
           {
             "name": "a",
@@ -92549,7 +93428,7 @@
             "summary": "A second bounding box."
           }
         ],
-        "returns": "The intersection bounding box."
+        "returns": "The intersection bounding box, or <b>Unset</b> if the intersection is empty."
       },
       {
         "signature": "BoundingBox Union(BoundingBox a, BoundingBox b)",
@@ -92822,6 +93701,45 @@
           }
         ],
         "returns": "0 = box is not degenerate 1 = box is a rectangle (degenerate in one direction). 2 = box is a line (degenerate in two directions). 3 = box is a point (degenerate in three directions) 4 = box is not valid."
+      },
+      {
+        "signature": "System.Boolean IsDisjoint(BoundingBox box, System.Double tolerance)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether this bounding box and another bounding box are disjoint, that is, whether they do not intersect, allowing a tolerance for the comparison.",
+        "since": "9.0",
+    "remarks": "If either box is invalid, then True is returned.",
+        "parameters": [
+          {
+            "name": "box",
+            "type": "BoundingBox",
+            "summary": "Box to test."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "Distance tolerance for the comparison.  \nWhen tolerance is positive, the boxes are considered to intersect (not disjoint)     if the gap between them is less than or equal to tolerance. This is useful as a coarse     pre-check when the boxes may be separated by numerical noise but the underlying     geometry actually intersects within a working tolerance.  \nWhen tolerance is 0.0, the result is the same as IsDisjoint(box).  \nWhen tolerance is negative, the boxes must overlap by more than the absolute     value of tolerance to be considered not disjoint."
+          }
+        ],
+        "returns": "True if this bounding box and box are disjoint."
+      },
+      {
+        "signature": "System.Boolean IsDisjoint(BoundingBox box)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines whether this bounding box and another bounding box are disjoint, that is, whether they do not intersect.  \nThis is the same as calling IsDisjoint(box, 0.0).",
+        "since": "9.0",
+    "remarks": "If either box is invalid, then True is returned. Boxes that merely touch are not disjoint.",
+        "parameters": [
+          {
+            "name": "box",
+            "type": "BoundingBox",
+            "summary": "Box to test."
+          }
+        ],
+        "returns": "True if this bounding box and box are disjoint."
       },
       {
         "signature": "System.Boolean MakeValid()",
@@ -94280,6 +95198,37 @@
           }
         ],
         "returns": "An array of Brep results or None on failure."
+      },
+      {
+        "signature": "Brep[] CreateBooleanUnionWithIndexMap(IEnumerable<Brep> breps, System.Double tolerance, System.Boolean manifoldOnly, out int[] indexMap)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Compute the Boolean Union of a set of Breps, reporting which inputs produced each result.",
+    "remarks": "A union result can come from several inputs, so this reports a list per result where  <b>CreateBooleanDifferenceWithIndexMap</b> reports one index.  The indices name the group of inputs a result was built from, which is not always the same as the inputs its geometry reached: a result made of disconnected pieces is separated into one result per piece, and each piece names the whole group.  An input absorbed by another contributes no geometry and appears in no entry of . An input the operation could not use is absent in the same way: one that is non-manifold whenis true, or one the Boolean kernel cannot accept. An input whose shells are disjoint produces one result per shell, and each of those names it.  A None element inthrows <b>ArgumentException</b> , because the reported indices are positions in that sequence. The other CreateBooleanUnion overloads drop nulls silently and renumber what follows.",
+        "parameters": [
+          {
+            "name": "breps",
+            "type": "IEnumerable<Brep>",
+            "summary": "Breps to union. May not contain nulls."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "Tolerance to use for union operation."
+          },
+          {
+            "name": "manifoldOnly",
+            "type": "System.Boolean",
+            "summary": "If true, non-manifold input breps are ignored."
+          },
+          {
+            "name": "indexMap",
+            "type": "int[]",
+            "summary": "indexMap[i] holds the positions inof the inputs that produced result i. Null when this method returns null."
+          }
+        ],
+        "returns": "An array of Brep results or None on failure. May be empty when the union produced no geometry."
       },
       {
         "signature": "Brep[] CreateChamferSurface(BrepFace face0, Point2d uv0, System.Double radius0, BrepFace face1, Point2d uv1, System.Double radius1, System.Boolean trim, System.Boolean extend, System.Double tolerance, out Brep[] outBreps0, out Brep[] outBreps1)",
@@ -96817,6 +97766,32 @@
         "returns": "An array of Planar Breps or None on error."
       },
       {
+        "signature": "Brep[] CreatePlanarBrepsWithIndexMap(IEnumerable<Curve> inputLoops, System.Double tolerance, out int[] indexMap)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a set of planar Breps as outlines by the loops, reporting which input curves bounded each Brep.",
+    "remarks": "A curve that closes an outer loop and a curve that closes a hole in the same face are both listed for that face, and a hole rejected while the Brep is built still leaves its curves listed.  The entries are not a partition of. A self-intersecting input is split into regions, and a curve bounding several of them is listed for each. A curve the merge dropped, one sorted onto no face, and one whose face failed to produce a valid Brep are listed nowhere.  A None element inthrows <b>ArgumentException</b> , because the reported indices are positions in that sequence. The other CreatePlanarBreps overloads drop nulls silently and renumber what follows.",
+        "parameters": [
+          {
+            "name": "inputLoops",
+            "type": "IEnumerable<Curve>",
+            "summary": "Curve loops that delineate the planar boundaries."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "Tolerance to use when sorting and building the loops."
+          },
+          {
+            "name": "indexMap",
+            "type": "int[]",
+            "summary": "One entry per returned Brep, in the same order. Entry i lists, ascending, the positions inof the curves sorted onto Brep i. Null when this method returns null."
+          }
+        ],
+        "returns": "An array of planar Breps, or None on failure."
+      },
+      {
         "signature": "Brep[] CreatePlanarDifference(Brep b0, Brep b1, Plane plane, System.Double tolerance)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -99116,6 +100091,123 @@
           }
         ],
         "returns": "The untrimmed Brep if successful, None otherwise."
+      },
+      {
+        "signature": "System.Boolean WireCut(Curve openCurve, Vector3d direction, Vector3d trimDirection, System.Double depth, System.Double trimDepth, System.Boolean bothSides, System.Boolean trimBothSides, System.Double tolerance, System.Boolean splitKinkyFaces, out Brep[] keptPieces, out Brep[] cutAwayPieces)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Cuts this solid brep with a single open cutting curve. The curve is extruded along direction into a sheet, then along trimDirection to close the sheet into a solid cutter.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "openCurve",
+            "type": "Curve",
+            "summary": "Open cutting curve."
+          },
+          {
+            "name": "direction",
+            "type": "Vector3d",
+            "summary": "First extrusion direction (the wire sweep)."
+          },
+          {
+            "name": "trimDirection",
+            "type": "Vector3d",
+            "summary": "Second extrusion direction that closes the cutter."
+          },
+          {
+            "name": "depth",
+            "type": "System.Double",
+            "summary": "Depth along direction. RhinoMath.UnsetValue or a value <= 0 cuts through and skips trim capping."
+          },
+          {
+            "name": "trimDepth",
+            "type": "System.Double",
+            "summary": "Depth along trimDirection. Ignored when cutting through."
+          },
+          {
+            "name": "bothSides",
+            "type": "System.Boolean",
+            "summary": "Extrude both ways along direction."
+          },
+          {
+            "name": "trimBothSides",
+            "type": "System.Boolean",
+            "summary": "Extrude both ways along trimDirection."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "Intersection and boolean tolerance, typically the document absolute tolerance."
+          },
+          {
+            "name": "splitKinkyFaces",
+            "type": "System.Boolean",
+            "summary": "Split output pieces along creases."
+          },
+          {
+            "name": "keptPieces",
+            "type": "Brep[]",
+            "summary": "Pieces that remain after the cut (boolean difference side)."
+          },
+          {
+            "name": "cutAwayPieces",
+            "type": "Brep[]",
+            "summary": "The cut-away pieces (boolean intersection side)."
+          }
+        ],
+        "returns": "True if successful."
+      },
+      {
+        "signature": "System.Boolean WireCut(IEnumerable<Curve> closedCurves, Vector3d direction, System.Double depth, System.Boolean bothSides, System.Double tolerance, System.Boolean splitKinkyFaces, out Brep[] keptPieces, out Brep[] cutAwayPieces)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Cuts this solid brep with extrusions of closed planar curves",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "closedCurves",
+            "type": "IEnumerable<Curve>",
+            "summary": "Closed cutting curves. All are extruded along the same direction."
+          },
+          {
+            "name": "direction",
+            "type": "Vector3d",
+            "summary": "Extrusion direction of the cutters."
+          },
+          {
+            "name": "depth",
+            "type": "System.Double",
+            "summary": "Extrusion depth. RhinoMath.UnsetValue or a value <= 0 cuts all the way through."
+          },
+          {
+            "name": "bothSides",
+            "type": "System.Boolean",
+            "summary": "Extrude the cutters to both sides of the curves. Ignored when cutting through."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "Intersection and boolean tolerance, typically the document absolute tolerance."
+          },
+          {
+            "name": "splitKinkyFaces",
+            "type": "System.Boolean",
+            "summary": "Split output pieces along creases."
+          },
+          {
+            "name": "keptPieces",
+            "type": "Brep[]",
+            "summary": "Pieces that remain after the cut (boolean difference side)."
+          },
+          {
+            "name": "cutAwayPieces",
+            "type": "Brep[]",
+            "summary": "The cut-away pieces (boolean intersection side)."
+          }
+        ],
+        "returns": "True if successful."
       }
     ]
   },
@@ -123679,7 +124771,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "This is an old overload kept for compatibility. Overlaps and near misses are ignored.",
+        "summary": "Fast intersection of two meshes, returned as loose line segments rather than assembled polylines.  \nVertices are read in double precision when the mesh has them. Faces that cross or touch within     tolerance produce segments; coplanar overlaps are ignored. Use      when overlaps or joined curves are needed, and      when only the yes/no answer is needed.",
         "since": "5.0",
         "parameters": [
           {
@@ -123693,14 +124785,65 @@
             "summary": "Second mesh for intersection."
           }
         ],
-        "returns": "An array of intersection line segments, or None if no intersections were found."
+        "returns": "An array of intersection line segments, empty if no intersections were found."
+      },
+      {
+        "signature": "System.Boolean MeshMeshPredicate(IEnumerable<Mesh> meshesA, IEnumerable<Mesh> meshesB, System.Double tolerance, System.Boolean fast, out System.Int32[] pairs, out System.Int32[] facePairs, FileIO.TextLog textLog, System.Threading.CancellationToken cancel)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines which meshes intersect, and reports one intersecting face couple for each pair found. No geometry is computed: each pair of meshes is tested only until its first hit.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshesA",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The first mesh list. This cannot be null. Null entries are skipped and do not count in the indices."
+          },
+          {
+            "name": "meshesB",
+            "type": "IEnumerable<Mesh>",
+            "summary": "A second mesh list, or null. When null, every pair within meshesA is tested once; otherwise every mesh of meshesA is tested against every mesh of meshesB."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "A tolerance value. If negative, the positive value will be used. WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtEpsilon*10."
+          },
+          {
+            "name": "fast",
+            "type": "System.Boolean",
+            "summary": "True uses the fast intersector behind <b>MeshMeshFast</b> : faces that cross or touch within tolerance count, coplanar overlap without a crossing does not. False uses the accurate intersector, which also reports coplanar overlap and costs about as much as <b>MeshMeshFast</b> ."
+          },
+          {
+            "name": "pairs",
+            "type": "System.Int32[]",
+            "summary": "Flattened index couples [i0, j0, i1, j1, ...] of the meshes that intersect: i indexes meshesA and j indexes meshesB, or both index meshesA with i less than j. Empty when nothing intersects."
+          },
+          {
+            "name": "facePairs",
+            "type": "System.Int32[]",
+            "summary": "Flattened face index couples parallel to pairs: for each couple in pairs, a face of the first mesh and a face of the second that intersect, the first ones found."
+          },
+          {
+            "name": "textLog",
+            "type": "FileIO.TextLog",
+            "summary": "A text log, or null."
+          },
+          {
+            "name": "cancel",
+            "type": "System.Threading.CancellationToken",
+            "summary": "A cancellation token to stop the computation at a given point."
+          }
+        ],
+        "returns": "True if any pair intersects, otherwise false. False is also returned on error or cancellation."
       },
       {
         "signature": "System.Boolean MeshMeshPredicate(IEnumerable<Mesh> meshes, System.Double tolerance, out System.Int32[] pairs, FileIO.TextLog textLog)",
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Determines if meshes intersect or overlap. No geometry is computed.",
+        "summary": "Determines which meshes intersect. No geometry is computed: each pair of meshes is tested only until its first crossing is found, with the fast intersector behind <b>MeshMeshFast</b> . Faces that cross or touch within tolerance count; coplanar overlap without a crossing does not.  \nThe same as  with fast = true.",
         "since": "8.0",
         "parameters": [
           {
@@ -123724,7 +124867,7 @@
             "summary": "A text log, or null."
           }
         ],
-        "returns": "True, if meshes intersect or overlap, otherwise false. False is also returned on error, but textLog will start with Error: and contain the error."
+        "returns": "True, if meshes intersect, otherwise false. False is also returned on error, but textLog will start with Error: and contain the error."
       },
       {
         "signature": "System.Boolean MeshMeshTwoSets(IEnumerable<Mesh> setA, IEnumerable<Mesh> setB, System.Double tolerance, out Polyline[] intersections, System.Boolean overlapsPolylines, out Polyline[] overlapsPolylinesResult, System.Boolean overlapsMesh, out Mesh overlapsMeshResult, FileIO.TextLog textLog, System.Threading.CancellationToken cancel, IProgress<double> progress)",
@@ -215889,6 +217032,27 @@
         ]
       },
       {
+        "signature": "RhinoDoc OpenInteractive(System.String filePath, out System.Boolean wasAlreadyOpen)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Opens a 3dm file and makes it the active document. If called on windows the active document will be saved and closed and the new document will be opened and become the active document.  If called on the Mac the file will be opened in a new document window. This function is interactive in that it will ask you if you want to open a document as read only if it is already open in a different process",
+        "since": "6.0",
+        "parameters": [
+          {
+            "name": "filePath",
+            "type": "System.String",
+            "summary": "Full path to the 3dm file to open"
+          },
+          {
+            "name": "wasAlreadyOpen",
+            "type": "System.Boolean",
+            "summary": "Will get set to True if there is a currently open document with the specified path; otherwise it will get set to false."
+          }
+        ],
+        "returns": "Returns the newly opened document on success or None on error."
+      },
+      {
         "signature": "System.Boolean ReadFile(System.String path, FileReadOptions options)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -216549,9 +217713,10 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the file version of the current document. Use this function to determine which version of Rhino last saved the document.",
+        "summary": "Returns the major version of Rhino that wrote the .3dm file this document was read from. Values from referenced or merged files are not reported.",
         "since": "5.0",
-        "returns": "The file version (e.g. 1, 2, 3, 4, etc.) or -1 if the document has not been read from disk."
+    "remarks": "This is the Rhino version, not the 3dm archive version: a file written by Rhino 8 returns 8, not 80. Use <b>Rhino.FileIO.File3dm.ReadArchiveVersion</b> for the archive version of a file on disk, or <b>Rhino.FileIO.File3dm.ReadRevisionHistory</b>  for who last edited it. A document created by \"New\" returns -1 even when a template was read.",
+        "returns": "The Rhino major version (e.g. 1, 2, 3, ... 8, 9), or -1 if this document was not read from a .3dm file."
       },
       {
         "signature": "System.Boolean Redo()",
@@ -240708,6 +241873,15 @@
         "property": ["get"]
       },
       {
+        "signature": "string Tooltip",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Text shown in a tooltip when the mouse rests over this object. Null or an empty string means no tooltip, which is what an object starts with. One tooltip is on screen at a time; whichever object the mouse is over owns it.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool Visible",
         "modifiers": ["public"],
         "protected": false,
@@ -240866,6 +242040,74 @@
         "virtual": false,
         "summary": "Unregister this object",
         "since": "9.0"
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.UI",
+    "name": "UserInterfaceRadioButton",
+    "dataType": "class",
+    "summary": "Draws a radio button with optional text beside it. Radio buttons that belong to the same group take turns: turning one on turns off whichever one was on before it, so exactly one button in a set is on at a time. Clicking a button that is already on does nothing.  \nA group is the radio buttons that share a Group number, sit in the same   container and belong to the same document. The default group number is 0, so a   set of radio buttons added to one grid is already a group. Give each set its own   number when a container holds more than one set.",
+    "baseclass": "Rhino.UI.UserInterfaceControl",
+    "constructors": [
+      {
+        "signature": "UserInterfaceRadioButton()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceRadioButton(string text, int group)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "UserInterfaceRadioButton(string text)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "bool Checked",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Is this the button that is on in its group? Turning a button on turns off every other button in its group. Setting this does not raise CheckedChanged; that is only for a state the user changed.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "UserInterfaceRadioButton CheckedButtonInGroup",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The button in this button's group that is on, which can be this button, or null when nothing in the group has been turned on yet. The buttons have to have been added to a document for this to find anything, since it is the native side that keeps track of a group.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int Group",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Which set of radio buttons this one belongs to. The default is 0. Two sets of radio buttons in the same container need different group numbers or they will turn each other off.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void OnCheckedChanged()",
+        "modifiers": ["protected", "virtual"],
+        "protected": true,
+        "virtual": true,
+        "summary": "Called after a click or a key has changed the state of this button. Both ends of the change are told, the button that came on and the button that went off, so a set can be watched from any one of its buttons. The default implementation raises the CheckedChanged event."
       }
     ]
   },
@@ -241427,27 +242669,6 @@
       }
 ,
   {
-    "namespace": "Rhino.UI",
-    "name": "OnColorChangedEvent",
-    "dataType": "delegate",
-        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
-      }
-,
-  {
-    "namespace": "Rhino.Input.Custom",
-    "name": "GetObjectGeometryFilter",
-    "dataType": "delegate",
-        "signature": "delegate bool GetObjectGeometryFilter(RhinoObject rhObject, GeometryBase geometry, ComponentIndex componentIndex);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
     "namespace": "Rhino.PlugIns",
     "name": "SaveFileHandler",
     "dataType": "delegate",
@@ -241500,6 +242721,58 @@
         "protected": false,
         "virtual": false,
         "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
+      }
+,
+  {
+    "namespace": "Rhino.Commands",
+    "name": "RunCommandDelegate",
+    "dataType": "delegate",
+        "signature": "delegate Result RunCommandDelegate(RhinoDoc doc, RunMode mode, object data);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.Input.Custom",
+    "name": "GetObjectGeometryFilter",
+    "dataType": "delegate",
+        "signature": "delegate bool GetObjectGeometryFilter(RhinoObject rhObject, GeometryBase geometry, ComponentIndex componentIndex);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.UI",
+    "name": "UpdateMenuItemEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Menu item update delegate"
+      }
+,
+  {
+    "namespace": "Rhino.DocObjects.Custom",
+    "name": "TurnOnGripsEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void TurnOnGripsEventHandler(Rhino.DocObjects.RhinoObject rhObj);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino",
+    "name": "KeyboardHookEvent",
+    "dataType": "delegate",
+        "signature": "delegate void KeyboardHookEvent(int key);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "KeyboardEvent delegate"
       }
 ,
   {
@@ -241624,44 +242897,13 @@
 ,
   {
     "namespace": "Rhino.UI",
-    "name": "UpdateMenuItemEventHandler",
+    "name": "OnColorChangedEvent",
     "dataType": "delegate",
-        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Menu item update delegate"
-      }
-,
-  {
-    "namespace": "Rhino.Commands",
-    "name": "RunCommandDelegate",
-    "dataType": "delegate",
-        "signature": "delegate Result RunCommandDelegate(RhinoDoc doc, RunMode mode, object data);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino.DocObjects.Custom",
-    "name": "TurnOnGripsEventHandler",
-    "dataType": "delegate",
-        "signature": "delegate void TurnOnGripsEventHandler(Rhino.DocObjects.RhinoObject rhObj);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino",
-    "name": "KeyboardHookEvent",
-    "dataType": "delegate",
-        "signature": "delegate void KeyboardHookEvent(int key);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "KeyboardEvent delegate"
+        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
       }
 ,
   {
