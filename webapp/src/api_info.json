@@ -3606,6 +3606,15 @@
         "property": ["get"]
       },
       {
+        "signature": "bool PrefillExportFileName",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets a value that controls whether the Export command fills in the file name. When enabled, the file dialog starts out with the model's name in the last used export folder, made unique with a number suffix if that file already exists. When disabled, the file name starts out empty.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool SaveViewChanges",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -3874,6 +3883,15 @@
         "virtual": false,
         "summary": "Displays an information dialog which identifies computer file is open on.",
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool PrefillExportFileName",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets a value indicating whether the Export command fills in the file name.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -4972,6 +4990,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool DragStartsWindowSelection",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When enabled, a click and drag that starts on top of an object starts a window/crossing selection instead of dragging the object, the same as holding down the Alt key. Grip dragging and gumball dragging are not affected, and a click that does not drag still selects normally.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool EnableOsnapHighlight",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -5371,6 +5398,14 @@
         "virtual": false,
         "summary": "Gets or sets the enabled state of Rhino's display control polygon.",
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool DragStartsWindowSelection",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -19966,6 +20001,35 @@
         "returns": "The id of the DisplayModeDescription if successful."
       },
       {
+        "signature": "System.Void SaveDisplayModes()",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Saves all display modes to disk.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Boolean UpdateDisplayMode(DisplayModeDescription displayMode, System.Boolean bSave)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Updates an existing display mode.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "displayMode",
+            "type": "DisplayModeDescription",
+            "summary": "The display mode description to update."
+          },
+          {
+            "name": "bSave",
+            "type": "System.Boolean",
+            "summary": "True to save the display mode to disk, False otherwise."
+          }
+        ],
+        "returns": "True if successful, False otherwise."
+      },
+      {
         "signature": "System.Boolean UpdateDisplayMode(DisplayModeDescription displayMode)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -21380,6 +21444,47 @@
             "name": "color",
             "type": "System.Drawing.Color",
             "summary": "Color of arrows."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void DrawBitmap(DisplayBitmap bitmap, System.Int32 left, System.Int32 top, System.Int32 width, System.Int32 height, Transform2d transform)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draws a bitmap in screen coordinates, scaled to fit the given size, through a 2d transform.",
+        "since": "9.0",
+    "remarks": "The transform is honoured by the shader based display engines. The GDI engine and the fixed function OpenGL fallback blit the image at a screen position and have no matrix to apply it with, so on those the bitmap is drawn untransformed.",
+        "parameters": [
+          {
+            "name": "bitmap",
+            "type": "DisplayBitmap",
+            "summary": "bitmap to draw"
+          },
+          {
+            "name": "left",
+            "type": "System.Int32",
+            "summary": "where the left edge of the bitmap should appear in screen coordinates"
+          },
+          {
+            "name": "top",
+            "type": "System.Int32",
+            "summary": "where the top edge of the bitmap should appear in screen coordinates"
+          },
+          {
+            "name": "width",
+            "type": "System.Int32",
+            "summary": "width (in pixels) to draw the bitmap at"
+          },
+          {
+            "name": "height",
+            "type": "System.Int32",
+            "summary": "height (in pixels) to draw the bitmap at"
+          },
+          {
+            "name": "transform",
+            "type": "Transform2d",
+            "summary": "A 2d transform applied to the destination rectangle when the bitmap is drawn, in viewport pixels - the same space left, top, width and height are in. It moves the rectangle the image lands on and nothing else, so a rotation, a shear or a non-uniform scale all work and the image is resampled to suit."
           }
         ]
       },
@@ -31051,6 +31156,14 @@
         "returns": "True if operation succeeded; otherwise false."
       },
       {
+        "signature": "System.Double LastLensLength()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns the lens length of this viewport the last time it was using perspective projection in this session.",
+        "since": "9.0"
+      },
+      {
         "signature": "System.Boolean Magnify(System.Double magnificationFactor, System.Boolean mode, System.Drawing.Point fixedScreenPoint)",
         "modifiers": ["public"],
         "protected": false,
@@ -35444,7 +35557,7 @@
         "virtual": false
       },
       {
-        "signature": "CustomObjectGrips(CustomObjectGripsType gripsType)",
+        "signature": "CustomObjectGrips(ObjectGripsType gripsType)",
         "modifiers": ["protected"],
         "protected": true,
         "virtual": false,
@@ -35452,7 +35565,7 @@
         "parameters": [
           {
             "name": "gripsType",
-            "type": "CustomObjectGripsType",
+            "type": "ObjectGripsType",
             "summary": "What the grips control. Fixed for the life of the object."
           }
         ]
@@ -35477,7 +35590,7 @@
         "property": ["get"]
       },
       {
-        "signature": "CustomObjectGripsType GripsType",
+        "signature": "ObjectGripsType GripsType",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
@@ -35683,44 +35796,6 @@
         ]
       }
     ]
-  },
-  {
-    "namespace": "Rhino.DocObjects.Custom",
-    "name": "CustomObjectGripsType",
-    "dataType": "enum",
-    "summary": "The kind of grips a <b>CustomObjectGrips</b> presents. Several Rhino commands dispatch on this, so claiming a control point type is what lets a plug-in's grips reach code paths otherwise reserved for Rhino's own curve and surface control points.",
-    "remarks": "The values match the native CRhinoGripObject::GRIP_TYPE numbering, so further types can be added here later without changing any signature.",
-    "values": [
-      {
-        "signature": "CurveControlPoint = 1",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "The grips control the control points of a NURBS curve. A grip that does not report the control points it drives is skipped, not reported as an error."
-      },
-      {
-        "signature": "SurfaceControlPoint = 2",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "The grips control the control points of a NURBS surface. A grip that does not report the control points it drives is skipped, not reported as an error."
-      },
-      {
-        "signature": "Custom = 1000",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "The grips mean something private to the plug-in. Rhino draws a drag line for them."
-      },
-      {
-        "signature": "CustomNoDragLine = 1001",
-        "modifiers": [],
-        "protected": false,
-        "virtual": false,
-        "summary": "As <b>Custom</b> , but Rhino draws no drag line."
-      }
-    ]
-
   },
   {
     "namespace": "Rhino.DocObjects.Custom",
@@ -35943,6 +36018,44 @@
         "property": ["get"]
       }
     ]
+  },
+  {
+    "namespace": "Rhino.DocObjects.Custom",
+    "name": "ObjectGripsType",
+    "dataType": "enum",
+    "summary": "The kind of grips a <b>CustomObjectGrips</b> presents. Several Rhino commands dispatch on this, so claiming a control point type is what lets a plug-in's grips reach code paths otherwise reserved for Rhino's own curve and surface control points.",
+    "remarks": "The values match the native CRhinoGripObject::GRIP_TYPE numbering, so further types can be added here later without changing any signature.",
+    "values": [
+      {
+        "signature": "CurveControlPoint = 1",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The grips control the control points of a NURBS curve. A grip that does not report the control points it drives is skipped, not reported as an error."
+      },
+      {
+        "signature": "SurfaceControlPoint = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The grips control the control points of a NURBS surface. A grip that does not report the control points it drives is skipped, not reported as an error."
+      },
+      {
+        "signature": "Custom = 1000",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The grips mean something private to the plug-in. Rhino draws a drag line for them."
+      },
+      {
+        "signature": "CustomNoDragLine = 1001",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "As <b>Custom</b> , but Rhino draws no drag line."
+      }
+    ]
+
   },
   {
     "namespace": "Rhino.DocObjects.Custom",
@@ -46761,6 +46874,45 @@
   },
   {
     "namespace": "Rhino.DocObjects",
+    "name": "ObjectGripsIds",
+    "dataType": "class",
+    "summary": "Ids of the kinds of grips Rhino itself provides, for  <b>RhinoObject.EnableGrips(Guid)</b> and <b>RhinoObject.GripsId</b> .",
+    "remarks": "A plug-in's own grips are not listed here. They are identified by the id the plug-in passed to <b>Custom.CustomObjectGrips.RegisterGripsEnabler</b> , and any such id is accepted wherever these are.",
+    "constructors": [
+      {
+        "signature": "ObjectGripsIds()",
+        "summary": "Initializes a new instance of the ObjectGripsIds class"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "Guid CurveEditPoints",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A grip at every Greville point of a curve. EditPtOn turns these on.",
+        "property": ["get"]
+      },
+      {
+        "signature": "Guid Default",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The object's own control points - what the PointsOn command turns on, and what differs from one object type to the next.",
+        "property": ["get"]
+      },
+      {
+        "signature": "Guid SubDEditPoints",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A grip at every surface point of a SubD. EditPtOn turns these on.",
+        "property": ["get"]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.DocObjects",
     "name": "ObjectLinetypeSource",
     "dataType": "enum",
     "summary": "Defines enumerated values for the source of linetype of single objects.",
@@ -48809,6 +48961,15 @@
         "property": ["get"]
       },
       {
+        "signature": "Guid GripsId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Which kind of grips this object currently has on.",
+    "remarks": "<b>ObjectGripsIds.Default</b> both for default grips and for no grips at all.  <b>GripsOn</b> tells those two apart.",
+        "property": ["get"]
+      },
+      {
         "signature": "bool GripsOn",
         "modifiers": ["public"],
         "protected": false,
@@ -49497,7 +49658,7 @@
           {
             "name": "flags",
             "type": "RenderMeshProvider.Flags",
-            "summary": "See MeshProvider.Flags"
+            "summary": "See <b>RenderMeshProvider.Flags</b> . This is an in/out parameter: on return it also carries any status flags, so reset it before each call. See <b>RenderMeshes</b> for how to wait for an asynchronous provider."
           },
           {
             "name": "plugin",
@@ -49581,6 +49742,22 @@
           }
         ],
         "returns": "True if the call succeeded.  If you attempt to add custom grips to an object that does not support custom grips, then False is returned."
+      },
+      {
+        "signature": "System.Boolean EnableGrips(System.Guid gripsId)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Turns on grips of one particular kind, replacing grips of any other kind.",
+    "remarks": "Grips that were on are put back when the requested kind cannot be made, so a false     return leaves the object with the grips it had.  \nExcept when the requested kind is already on, the grips are new objects afterwards     and a  held across this call is stale.  \nGrips this turns on are not subject to Automatic Points On. They stay on until     something turns them off, as with PointsOn and EditPtOn.",
+        "parameters": [
+          {
+            "name": "gripsId",
+            "type": "System.Guid",
+            "summary": "Id of a grips enabler registered with <b>Custom.CustomObjectGrips.RegisterGripsEnabler</b> .  <b>ObjectGripsIds.Default</b> selects the object's default grips, which is what the PointsOn command turns on. <b>ObjectGripsIds</b> names the kinds Rhino itself provides."
+          }
+        ],
+        "returns": "True if the object has grips of the requested kind when this returns. False if nothing is registered for, if the object has no grips of that kind (a polysurface has no default grips), or if the grips already on refused to turn off, which they do while they are being dragged."
       },
       {
         "signature": "System.Boolean EnableVisualAnalysisMode(Display.VisualAnalysisMode mode, System.Boolean enable)",
@@ -50008,7 +50185,7 @@
           {
             "name": "flags",
             "type": "RenderMeshProvider.Flags",
-            "summary": "See MeshProvider.Flags"
+            "summary": "See <b>RenderMeshProvider.Flags</b> . This is an in/out parameter: on return it also carries any status flags, so reset it before each call. See <b>RenderMeshes</b> for how to wait for an asynchronous provider."
           },
           {
             "name": "plugin",
@@ -50390,7 +50567,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns a set of custom render primitives for this object.",
+        "summary": "Returns a set of custom render primitives for this object.  \nSome providers - Displacement in particular - compute their meshes     asynchronously. Until that work finishes, this method returns the object's     ordinary render mesh instead of the custom one and reports that by setting      in .     That mesh is valid geometry but does not yet reflect the provider, so a caller     that measures it will see the object as it was beforehand. Test for the flag     rather than trusting the first result.",
         "since": "8.0",
         "parameters": [
           {
@@ -50411,7 +50588,7 @@
           {
             "name": "flags",
             "type": "RenderMeshProvider.Flags",
-            "summary": "See MeshProvider.Flags"
+            "summary": "On input, the options to apply; on return, the same value with any status flags added. Reset it before each call rather than passing the returned value back in. To wait for an asynchronous provider, call again while  <b>RenderMeshProvider.Flags.Incomplete</b> remains set, calling  <b>RhinoApp.Wait</b> in between: the provider needs the main thread's message queue pumped before it can publish its result, so a retry loop that does not pump will never see the flag clear."
           },
           {
             "name": "plugin",
@@ -50424,7 +50601,7 @@
             "summary": "Display attributes for the caller - None if this is a full rendering."
           }
         ],
-        "returns": "Returns a set of custom render primitives for this object"
+        "returns": "A set of custom render primitives for this object, or the object's ordinary render mesh if an asynchronous provider has not finished - see. Null if the object is not in a document."
       },
       {
         "signature": "System.Int32 Select(System.Boolean on, System.Boolean syncHighlight, System.Boolean persistentSelect, System.Boolean ignoreGripsState, System.Boolean ignoreLayerLocking, System.Boolean ignoreLayerVisibility)",
@@ -63850,6 +64027,58 @@
         ]
       },
       {
+        "signature": "System.Int32 SelectGrips(IEnumerable<GripObject> grips, System.Boolean select, System.Boolean syncHighlight, System.Boolean persistentSelect)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Selects or deselects a collection of grips in one pass, so a native CRhinoOnChangeObjectSelectState watcher sees one change rather than one per grip.",
+    "remarks": "<b>RhinoDoc.SelectObjects</b> and <b>RhinoDoc.DeselectObjects</b> do not report grips whichever way they are selected; the old event watchers have filtered grips out since Rhino 5 because grip pointers do not outlive the selection.",
+        "parameters": [
+          {
+            "name": "grips",
+            "type": "IEnumerable<GripObject>",
+            "summary": "Grips to select or deselect, from <b>RhinoObject.GetGrips</b> . They may belong to several objects. Grips whose owner has since had its grips turned off, and anything in the collection that is not a grip, are skipped."
+          },
+          {
+            "name": "select",
+            "type": "System.Boolean",
+            "summary": "If true, the grips will be selected, otherwise deselected."
+          },
+          {
+            "name": "syncHighlight",
+            "type": "System.Boolean",
+            "summary": "If true, then a grip is highlighted if it is selected and unhighlighted if it is not."
+          },
+          {
+            "name": "persistentSelect",
+            "type": "System.Boolean",
+            "summary": "Grips that are persistently selected stay selected when a command terminates."
+          }
+        ],
+        "returns": "Number of grips successfully selected or deselected."
+      },
+      {
+        "signature": "System.Int32 SelectGrips(IEnumerable<GripObject> grips, System.Boolean select)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Selects or deselects a collection of grips in one pass, so a native CRhinoOnChangeObjectSelectState watcher sees one change rather than one per grip.",
+    "remarks": "<b>RhinoDoc.SelectObjects</b> and <b>RhinoDoc.DeselectObjects</b> do not report grips whichever way they are selected; the old event watchers have filtered grips out since Rhino 5 because grip pointers do not outlive the selection.",
+        "parameters": [
+          {
+            "name": "grips",
+            "type": "IEnumerable<GripObject>",
+            "summary": "Grips to select or deselect, from <b>RhinoObject.GetGrips</b> . They may belong to several objects. Grips whose owner has since had its grips turned off, and anything in the collection that is not a grip, are skipped."
+          },
+          {
+            "name": "select",
+            "type": "System.Boolean",
+            "summary": "If true, the grips will be selected, otherwise deselected."
+          }
+        ],
+        "returns": "Number of grips successfully selected or deselected."
+      },
+      {
         "signature": "System.Int32 SetSelectedObjects(IEnumerable<Guid> objectIds, System.Boolean syncHighlight, System.Boolean persistentSelect, System.Boolean ignoreGripsState, System.Boolean ignoreLayerLocking, System.Boolean ignoreLayerVisibility)",
         "modifiers": ["public"],
         "protected": false,
@@ -67974,7 +68203,7 @@
           {
             "name": "border",
             "type": "System.Double",
-            "summary": "If border > 1.0, then the frustum in enlarged by this factor to provide a border around the view.  1.1 works well for parallel projections; 0.0 is suggested for perspective projections."
+            "summary": "If border > 1.0, then the frustum is enlarged by this factor to provide a border around the view.  If 0.0 < border < 1.0, then the frustum is shrunk by this factor and the objects will extend past the edges of the view.  A border of 0.0 or 1.0 adds no border. 1.1 works well for parallel projections; 0.0 is suggested for perspective projections."
           }
         ],
         "returns": "True if successful."
@@ -67995,7 +68224,7 @@
           {
             "name": "border",
             "type": "System.Double",
-            "summary": "If border > 1.0, then the frustum in enlarged by this factor to provide a border around the view.  1.1 works well for parallel projections; 0.0 is suggested for perspective projections."
+            "summary": "If border > 1.0, then the frustum is enlarged by this factor to provide a border around the view.  If 0.0 < border < 1.0, then the frustum is shrunk by this factor and the objects will extend past the edges of the view.  A border of 0.0 or 1.0 adds no border. 1.1 works well for parallel projections; 0.0 is suggested for perspective projections."
           }
         ],
         "returns": "True if successful."
@@ -94794,7 +95023,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstBrep",
@@ -94826,7 +95055,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstBrep",
@@ -94853,7 +95082,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two sets of Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstSet",
@@ -94885,7 +95114,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two sets of Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstSet",
@@ -94912,6 +95141,7 @@
         "virtual": false,
         "summary": "Compute the solid difference between two sets of Breps.",
         "since": "8.13",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstSet",
@@ -94948,7 +95178,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstBrep",
@@ -94980,7 +95210,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstBrep",
@@ -95007,7 +95237,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two sets of Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstSet",
@@ -95039,7 +95269,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two sets of Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstSet",
@@ -95066,6 +95296,7 @@
         "virtual": false,
         "summary": "Splits shared areas of Breps and creates separate Breps from the shared and unshared parts.",
         "since": "6.16",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstBrep",
@@ -95092,6 +95323,7 @@
         "virtual": false,
         "summary": "Splits shared areas of Breps and creates separate Breps from the shared and unshared parts.",
         "since": "6.16",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "firstSet",
@@ -95118,6 +95350,7 @@
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps.",
         "since": "8.0",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "breps",
@@ -95159,6 +95392,7 @@
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps.",
         "since": "6.0",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "breps",
@@ -95185,6 +95419,7 @@
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps.",
         "since": "5.0",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "breps",
@@ -95205,7 +95440,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps, reporting which inputs produced each result.",
-    "remarks": "A union result can come from several inputs, so this reports a list per result where  <b>CreateBooleanDifferenceWithIndexMap</b> reports one index.  The indices name the group of inputs a result was built from, which is not always the same as the inputs its geometry reached: a result made of disconnected pieces is separated into one result per piece, and each piece names the whole group.  An input absorbed by another contributes no geometry and appears in no entry of . An input the operation could not use is absent in the same way: one that is non-manifold whenis true, or one the Boolean kernel cannot accept. An input whose shells are disjoint produces one result per shell, and each of those names it.  A None element inthrows <b>ArgumentException</b> , because the reported indices are positions in that sequence. The other CreateBooleanUnion overloads drop nulls silently and renumber what follows.",
+    "remarks": "A union result can come from several inputs, so this reports a list per result where  <b>CreateBooleanDifferenceWithIndexMap</b> reports one index.  The indices name the group of inputs a result was built from, which is not always the same as the inputs its geometry reached: a result made of disconnected pieces is separated into one result per piece, and each piece names the whole group.  An input absorbed by another contributes no geometry and appears in no entry of . An input the operation could not use is absent in the same way: one that is non-manifold whenis true, or one the Boolean kernel cannot accept. An input whose shells are disjoint produces one result per shell, and each of those names it.  A None element inthrows <b>ArgumentException</b> , because the reported indices are positions in that sequence. The other CreateBooleanUnion overloads drop nulls silently and renumber what follows. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
         "parameters": [
           {
             "name": "breps",
@@ -96818,7 +97053,7 @@
           {
             "name": "rail",
             "type": "Curve",
-            "summary": "Rail to sweep shapes along."
+            "summary": "Rail to sweep shapes along. For SweepFrame.AlignWithSurface, pass a BrepEdge or a BrepTrim so the sweep can find the surface to align to. An interior edge belongs to two faces and a BrepEdge does not say which one, so pass the BrepTrim of the face you want; a BrepEdge uses its first trim."
           },
           {
             "name": "shapes",
@@ -99580,6 +99815,16 @@
           }
         ],
         "returns": "True if faces were merged, False if no faces were merged."
+      },
+      {
+        "signature": "System.Boolean PrepareForBooleans()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Prepares this Brep for a Boolean or intersection operation by applying the same cleanup Rhino performs when a Brep is added to the document. Breps that have never been added to a document can fail these operations, or return unexpected results, without it.",
+        "since": "9.0",
+    "remarks": "Because kinked surfaces can cause problems downstream, Rhino, by default, splits kinked surfaces when adding Breps to the document. So this method splits all kinky Brep faces. Also, because inward pointing face normals for solid Breps can cause problems, Rhino flips inward pointing normals for solids when adding Breps to the document. So this method checks the solid orientation and, if inward, flips the face normals.  \nThis method modifies the Brep in place. If it returns false, then the Brep was     modified but is no longer valid. Duplicate the Brep first if you need to keep     the original, and note that flipping an inward pointing solid discards a     deliberately inside out orientation.",
+        "returns": "True if the Brep is ready to use, False otherwise."
       },
       {
         "signature": "Brep PushPullExtend(System.Int32 faceIndex, Transform transform, System.Double tolerance)",
@@ -134250,6 +134495,22 @@
         ]
       },
       {
+        "signature": "Mesh[] SelfSplit(MeshSplitOptions options)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Split a mesh with itself.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "options",
+            "type": "MeshSplitOptions",
+            "summary": "The split option instance, or None for the defaults.  \nBecause  derives from , an     instance used for mesh booleans can be passed here directly."
+          }
+        ],
+        "returns": "An array of mesh parts representing the split result, or null: when no mesh intersected, or if a cancel stopped the computation."
+      },
+      {
         "signature": "Mesh[] SelfSplit(System.Double tolerance, System.Boolean splitAtCoplanar, System.Boolean createNgons, TextLog textLog, System.Threading.CancellationToken cancel, IProgress<double> progress)",
         "modifiers": ["public"],
         "protected": false,
@@ -134686,6 +134947,27 @@
         "summary": "Determines orientation of a \"solid\" mesh.",
         "since": "5.0",
         "returns": "+1 = mesh is solid with outward facing normals.  \n-1 = mesh is solid with inward facing normals.  \n0 = mesh is not solid."
+      },
+      {
+        "signature": "Mesh[] Split(IEnumerable<Mesh> meshes, MeshSplitOptions options)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Split a mesh with a collection of meshes.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshes",
+            "type": "IEnumerable<Mesh>",
+            "summary": "Meshes to split with."
+          },
+          {
+            "name": "options",
+            "type": "MeshSplitOptions",
+            "summary": "The split option instance, or None for the defaults.  \nBecause  derives from , an     instance used for mesh booleans can be passed here directly."
+          }
+        ],
+        "returns": "An array of mesh parts representing the split result, or null: when no mesh intersected, or if a cancel stopped the computation."
       },
       {
         "signature": "Mesh[] Split(IEnumerable<Mesh> meshes, System.Double tolerance, System.Boolean splitAtCoplanar, System.Boolean createNgons, TextLog textLog, System.Threading.CancellationToken cancel, IProgress<double> progress)",
@@ -135164,50 +135446,7 @@
     "name": "MeshBooleanOptions",
     "dataType": "class",
     "summary": "Contains a set of data to pass to boolean options.",
-    "constructors": [
-      {
-        "signature": "MeshBooleanOptions()",
-        "summary": "Initializes a new instance of the MeshBooleanOptions class"
-      }
-    ],
-    "properties": [
-      {
-        "signature": "CancellationToken CancellationToken",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "A token that allows to request the cancellation of the operation.",
-        "since": "8.0",
-        "property": ["get", "set"]
-      },
-      {
-        "signature": "IProgress<double> ProgressReporter",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Gets or sets the object that is responsible to keep track of calculation progression.",
-        "since": "8.0",
-        "property": ["get", "set"]
-      },
-      {
-        "signature": "TextLog TextLog",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Gets or sets a text log to write computed operations into.",
-        "since": "8.0",
-        "property": ["get", "set"]
-      },
-      {
-        "signature": "double Tolerance",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Gets or sets a tolerance value for intersections and overlaps.  <b>Intersect.Intersection.MeshIntersectionsTolerancesCoefficient</b>",
-        "since": "8.0",
-        "property": ["get", "set"]
-      }
-    ]
+    "baseclass": "Rhino.Geometry.MeshSplitOptions"
   },
   {
     "namespace": "Rhino.Geometry",
@@ -137430,6 +137669,85 @@
         "virtual": false,
         "summary": "Set this property to define how naked edges should be treated.",
         "since": "6.0",
+        "property": ["get", "set"]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "MeshSplitOptions",
+    "dataType": "class",
+    "summary": "Contains a set of data to pass to mesh splitting operations.",
+    "remarks": "This is the base of <b>MeshBooleanOptions</b> , so an instance used for mesh booleans can also be passed to the splitting methods that take these options.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "MeshSplitOptions()",
+        "summary": "Initializes a new instance of the MeshSplitOptions class"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "CancellationToken CancellationToken",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "A token that allows to request the cancellation of the operation.",
+        "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool CompleteOpenCuts",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether cuts that stop inside the mesh are completed.  \nAn intersection curve that stops inside the mesh does not separate one side from the     other, so the mesh is returned whole. When this is enabled, each such open end is joined to the     nearest border of the mesh, or to another cut, following edges the mesh already has.  \nThis yields a best-effort cut where the intersection alone leaves the answer undetermined:     the added stretch follows existing edges rather than the cutter, so it is not an intersection     result. No vertex is moved and no face is added. Cuts that already close, or that already run     from border to border, are unaffected.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool CreateNgons",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether ngons are created along the split ridge, to preserve the boundary look.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "IProgress<double> ProgressReporter",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the object that is responsible to keep track of calculation progression.",
+        "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool SplitAtCoplanar",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether coplanar areas are separated. If false, coplanar areas will not be separated.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "TextLog TextLog",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets a text log to write computed operations into.",
+        "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double Tolerance",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets a tolerance value for intersections and overlaps.  <b>Intersect.Intersection.MeshIntersectionsTolerancesCoefficient</b>",
+        "since": "8.0",
         "property": ["get", "set"]
       }
     ]
@@ -150517,6 +150835,13 @@
     ],
     "methods": [
       {
+        "signature": "System.Void CalculateInitialPreview()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When the rebuild options are presented in a dialog, the initial rebuild calculation is deferred so that the dialog appears immediately instead of after that calculation finishes. The dialog calls this one time, after it is on the screen, and the initial calculation and the first dynamic preview happen then. The dialog must update itself from these options when this returns. The calculation fills in the current output properties and it can increase the point count when kink splitting needs more points than the current settings specify. Calling this when no initial calculation is pending does nothing."
+      },
+      {
         "signature": "System.Void Dispose()",
         "modifiers": ["public"],
         "protected": false,
@@ -163278,6 +163603,13 @@
         "protected": false,
         "virtual": false,
         "summary": "Specify an axis for calculating the 3-D rotation of the cross-section."
+      },
+      {
+        "signature": "AlignWithSurface = 2",
+        "modifiers": [],
+        "protected": false,
+        "virtual": false,
+        "summary": "The cross-section rotates to follow the normal of the surface that the rail lies on. This requires a rail that knows its surface, so pass a BrepEdge or a BrepTrim as the rail. Any other curve falls back to Freeform."
       }
     ]
 
@@ -166531,6 +166863,796 @@
           {
             "name": "v",
             "type": "Vector3d",
+            "summary": "A vector."
+          }
+        ]
+      }
+    ]
+
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "Transform2d",
+    "dataType": "struct",
+    "summary": "Represents the values in a 2d affine transformation.  \nThis is parallel to C++ ON_Xform2d.",
+    "constructors": [
+      {
+        "signature": "Transform2d(double m00, double m01, double m02, double m10, double m11, double m12)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Initializes a new transform matrix from its six values.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "m00",
+            "type": "System.Double",
+            "summary": "Value at [0,0]."
+          },
+          {
+            "name": "m01",
+            "type": "System.Double",
+            "summary": "Value at [0,1]."
+          },
+          {
+            "name": "m02",
+            "type": "System.Double",
+            "summary": "Value at [0,2], the X translation."
+          },
+          {
+            "name": "m10",
+            "type": "System.Double",
+            "summary": "Value at [1,0]."
+          },
+          {
+            "name": "m11",
+            "type": "System.Double",
+            "summary": "Value at [1,1]."
+          },
+          {
+            "name": "m12",
+            "type": "System.Double",
+            "summary": "Value at [1,2], the Y translation."
+          }
+        ]
+      },
+      {
+        "signature": "Transform2d(double diagonalValue)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Initializes a new transform matrix with a specified value along the diagonal.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "diagonalValue",
+            "type": "System.Double",
+            "summary": "Value to assign to M00 and M11. The translation is zero."
+          }
+        ]
+      },
+      {
+        "signature": "Transform2d(Transform2d value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Initializes a new transform matrix from another transform matrix.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "Transform2d",
+            "summary": "The transform to copy."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "Transform2d Identity",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a new identity transform matrix. An identity matrix defines no transformation.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "Transform2d Nan",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a transform matrix in which every value is not-a-number. The static constructors return this when they are given invalid input.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "Transform2d Unset",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a transform matrix filled with RhinoMath.UnsetValue.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "Transform2d ZeroTransformation",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a transform matrix in which every value is zero. This transformation maps every point to (0,0).",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "double Determinant",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The determinant of the 2x2 linear part of this matrix. Because the bottom row is (0,0,1) this is also the signed area scale factor of the transformation. A negative determinant means the transformation reverses orientation.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsIdentity",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Return True if this Transform2d is the identity transform.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsTranslation",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if this transform is a pure translation, that is the linear part is the 2x2 identity.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsValid",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a value indicating whether or not this Transform2d is a valid matrix. A valid transform matrix is not allowed to have any invalid numbers.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "bool IsZeroTransformation",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True if every value is 0. This transformation maps every point to (0,0).",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "double M00",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets this[0,0].",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double M01",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets this[0,1].",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double M02",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets this[0,2], the X translation.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double M10",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets this[1,0].",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double M11",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets this[1,1].",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double M12",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets this[1,2], the Y translation.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "double this[int row]",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the matrix value at the given row and column indices."
+      }
+    ],
+    "methods": [
+      {
+        "signature": "Transform2d FromAffineElements(System.Double a, System.Double b, System.Double c, System.Double d, System.Double tx, System.Double ty)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a transform from the six coefficients used by the traditional 2d drawing APIs. See the remarks on <b>ToAffineElements</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "System.Double",
+            "summary": "Becomes M00."
+          },
+          {
+            "name": "b",
+            "type": "System.Double",
+            "summary": "Becomes M10."
+          },
+          {
+            "name": "c",
+            "type": "System.Double",
+            "summary": "Becomes M01."
+          },
+          {
+            "name": "d",
+            "type": "System.Double",
+            "summary": "Becomes M11."
+          },
+          {
+            "name": "tx",
+            "type": "System.Double",
+            "summary": "Becomes M02, the X translation."
+          },
+          {
+            "name": "ty",
+            "type": "System.Double",
+            "summary": "Becomes M12, the Y translation."
+          }
+        ],
+        "returns": "The equivalent transform."
+      },
+      {
+        "signature": "Transform2d FromAffineElements(System.Double[] elements)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a transform from an array of six coefficients in (a, b, c, d, tx, ty) order.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "elements",
+            "type": "System.Double[]",
+            "summary": "Six coefficients. This is the layout of Eto.Drawing.IMatrix.Elements."
+          }
+        ],
+        "returns": "The equivalent transform, or Transform2d.Nan when elements is None or has fewer than six values."
+      },
+      {
+        "signature": "Transform2d FromAffineElements(System.Single[] elements)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a transform from an array of six coefficients in (a, b, c, d, tx, ty) order.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "elements",
+            "type": "System.Single[]",
+            "summary": "Six coefficients. This is the layout of Eto.Drawing.IMatrix.Elements."
+          }
+        ],
+        "returns": "The equivalent transform, or Transform2d.Nan when elements is None or has fewer than six values."
+      },
+      {
+        "signature": "Transform2d Multiply(Transform2d a, Transform2d b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Multiplies (combines) two transformations.  \nThis is the same as the * operator between two transformations.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "Transform2d",
+            "summary": "First transformation."
+          },
+          {
+            "name": "b",
+            "type": "Transform2d",
+            "summary": "Second transformation."
+          }
+        ],
+        "returns": "A transformation matrix that combines the effect of both input transformations. The resulting Transform2d gives the same result as though you'd first apply B then A."
+      },
+      {
+        "signature": "Transform2d Rotation(System.Double angleRadians, Point2d rotationCenter)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new rotation transformation with a specified rotation center.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "angleRadians",
+            "type": "System.Double",
+            "summary": "Angle, in radians, of the rotation. A positive angle rotates the X axis towards the Y axis."
+          },
+          {
+            "name": "rotationCenter",
+            "type": "Point2d",
+            "summary": "The fixed point of the rotation."
+          }
+        ],
+        "returns": "A rotation transformation, or Transform2d.Nan if the input is not valid."
+      },
+      {
+        "signature": "Transform2d Rotation(System.Double sinAngle, System.Double cosAngle, Point2d rotationCenter)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new rotation transformation from the sine and cosine of an angle and a specified rotation center.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "sinAngle",
+            "type": "System.Double",
+            "summary": "The sine of the rotation angle."
+          },
+          {
+            "name": "cosAngle",
+            "type": "System.Double",
+            "summary": "The cosine of the rotation angle."
+          },
+          {
+            "name": "rotationCenter",
+            "type": "Point2d",
+            "summary": "The fixed point of the rotation."
+          }
+        ],
+        "returns": "A rotation transformation, or Transform2d.Nan if the input is not valid."
+      },
+      {
+        "signature": "Transform2d Rotation(System.Double angleRadians)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new rotation transformation with the origin as the rotation center.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "angleRadians",
+            "type": "System.Double",
+            "summary": "Angle, in radians, of the rotation. A positive angle rotates the X axis towards the Y axis."
+          }
+        ],
+        "returns": "A rotation transformation, or Transform2d.Nan if the angle is not valid."
+      },
+      {
+        "signature": "Transform2d Rotation(Vector2d startDirection, Vector2d endDirection, Point2d rotationCenter)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs the rotation that maps one direction onto another while fixing a rotation center.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "startDirection",
+            "type": "Vector2d",
+            "summary": "A nonzero direction. Its length is ignored."
+          },
+          {
+            "name": "endDirection",
+            "type": "Vector2d",
+            "summary": "A nonzero direction. Its length is ignored."
+          },
+          {
+            "name": "rotationCenter",
+            "type": "Point2d",
+            "summary": "The fixed point of the rotation."
+          }
+        ],
+        "returns": "A rotation transformation, or Transform2d.Nan if either direction is zero."
+      },
+      {
+        "signature": "Transform2d Scale(Point2d anchor, System.Double xScaleFactor, System.Double yScaleFactor)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new non-uniform scaling transformation with a specified anchor point.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "anchor",
+            "type": "Point2d",
+            "summary": "The fixed point of the scaling."
+          },
+          {
+            "name": "xScaleFactor",
+            "type": "System.Double",
+            "summary": "The scaling factor along the world X axis."
+          },
+          {
+            "name": "yScaleFactor",
+            "type": "System.Double",
+            "summary": "The scaling factor along the world Y axis."
+          }
+        ],
+        "returns": "A transform matrix which scales geometry around the anchor point."
+      },
+      {
+        "signature": "Transform2d Scale(Point2d anchor, System.Double scaleFactor)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new uniform scaling transformation with a specified anchor point.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "anchor",
+            "type": "Point2d",
+            "summary": "The fixed point of the scaling."
+          },
+          {
+            "name": "scaleFactor",
+            "type": "System.Double",
+            "summary": "The scaling factor in both directions."
+          }
+        ],
+        "returns": "A transform matrix which scales geometry uniformly around the anchor point."
+      },
+      {
+        "signature": "Transform2d Translation(System.Double dx, System.Double dy)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new translation (move) transformation. Right column is (dx, dy).",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "dx",
+            "type": "System.Double",
+            "summary": "Distance to translate (move) geometry along the world X axis."
+          },
+          {
+            "name": "dy",
+            "type": "System.Double",
+            "summary": "Distance to translate (move) geometry along the world Y axis."
+          }
+        ],
+        "returns": "A transform matrix which moves geometry with the specified distances."
+      },
+      {
+        "signature": "Transform2d Translation(Vector2d motion)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new translation (move) transformation.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "motion",
+            "type": "Vector2d",
+            "summary": "Translation (motion) vector."
+          }
+        ],
+        "returns": "A transform matrix which moves geometry along the motion vector."
+      },
+      {
+        "signature": "System.Boolean TryGetTransform2d(Transform transform, out Transform2d transform2d)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to get the 2d transformation defined by the x and y rows and columns of a 4x4 transformation. This succeeds when transform is affine and maps the world xy plane to itself.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "transform",
+            "type": "Transform",
+            "summary": "The 4x4 transformation to convert."
+          },
+          {
+            "name": "transform2d",
+            "type": "Transform2d",
+            "summary": "The 2d transformation. This out reference will be assigned during this call."
+          }
+        ],
+        "returns": "True on success. On failure transform2d is set to Transform2d.Nan."
+      },
+      {
+        "signature": "System.Boolean TryGetTransform2d(Transform transform, System.Double zeroTolerance, out Transform2d transform2d)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to get the 2d transformation defined by the x and y rows and columns of a 4x4 transformation. This succeeds when transform is affine and maps the world xy plane to itself.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "transform",
+            "type": "Transform",
+            "summary": "The 4x4 transformation to convert."
+          },
+          {
+            "name": "zeroTolerance",
+            "type": "System.Double",
+            "summary": "A value of transform is \"zero\" if its absolute value is at most zeroTolerance, and is \"one\" if it differs from 1.0 by at most zeroTolerance."
+          },
+          {
+            "name": "transform2d",
+            "type": "Transform2d",
+            "summary": "The 2d transformation. This out reference will be assigned during this call."
+          }
+        ],
+        "returns": "True on success. On failure transform2d is set to Transform2d.Nan."
+      },
+      {
+        "signature": "Transform2d Clone()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns a deep copy of the transform. For languages that treat structures as value types, this can be accomplished by a simple assignment.",
+        "since": "9.0",
+        "returns": "A deep copy of this data structure."
+      },
+      {
+        "signature": "System.Int32 CompareTo(Transform2d other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Compares this transform with another transform.  \nM00 has highest value, then M01, etc..",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "Transform2d",
+            "summary": "Another transform."
+          }
+        ],
+        "returns": "-1 if this < other; 0 if both are equal; 1 otherwise."
+      },
+      {
+        "signature": "System.Boolean Equals(System.Object obj)",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines if another object is a Transform2d and its value equals this transform value.",
+        "parameters": [
+          {
+            "name": "obj",
+            "type": "System.Object",
+            "summary": "Another object."
+          }
+        ],
+        "returns": "True if obj is a Transform2d and has the same value as this transform; otherwise, false."
+      },
+      {
+        "signature": "System.Boolean Equals(Transform2d other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines if another transform equals this transform value.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "Transform2d",
+            "summary": "Another transform."
+          }
+        ],
+        "returns": "True if other has the same value as this transform; otherwise, false."
+      },
+      {
+        "signature": "System.Void GetAffineElements(out System.Double a, out System.Double b, out System.Double c, out System.Double d, out System.Double tx, out System.Double ty)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the six coefficients used by the traditional 2d drawing APIs. See the remarks on <b>ToAffineElements</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "System.Double",
+            "summary": "M00."
+          },
+          {
+            "name": "b",
+            "type": "System.Double",
+            "summary": "M10."
+          },
+          {
+            "name": "c",
+            "type": "System.Double",
+            "summary": "M01."
+          },
+          {
+            "name": "d",
+            "type": "System.Double",
+            "summary": "M11."
+          },
+          {
+            "name": "tx",
+            "type": "System.Double",
+            "summary": "M02, the X translation."
+          },
+          {
+            "name": "ty",
+            "type": "System.Double",
+            "summary": "M12, the Y translation."
+          }
+        ]
+      },
+      {
+        "signature": "System.Int32 GetHashCode()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a non-unique hashing code for this transform.",
+        "returns": "A number that can be used to hash this transform in a dictionary."
+      },
+      {
+        "signature": "System.Double[] ToAffineElements()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the six coefficients used by the traditional 2d drawing APIs as an array in (a, b, c, d, tx, ty) order.",
+        "since": "9.0",
+    "remarks": "Those APIs map a point (x,y) to (a*x + c*y + tx, b*x + d*y + ty), so the six values are the transpose of the Transform2d value order: a is M00, b is M10, c is M01, d is M11, tx is M02 and ty is M12. Composition order is reversed as well, because those APIs use the row vector convention: A2d * B2d is the equivalent of the platform product B * A.",
+        "returns": "Six values."
+      },
+      {
+        "signature": "System.String ToString()",
+        "modifiers": ["public", "override"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns a string representation of this transform.",
+        "returns": "A textual representation."
+      },
+      {
+        "signature": "Transform ToTransform()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the 4x4 transformation that applies this 2d transformation to the x and y coordinates and leaves the z coordinate unchanged.",
+        "since": "9.0",
+        "returns": "The equivalent 4x4 transformation."
+      },
+      {
+        "signature": "System.Boolean TryGetInverse(out Transform2d inverseTransform)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Attempts to get the inverse transform of this transform.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "inverseTransform",
+            "type": "Transform2d",
+            "summary": "The inverse transform. This out reference will be assigned during this call."
+          }
+        ],
+        "returns": "True on success. If False is returned and this Transform2d is invalid, inverseTransform will be set to this Transform2d. If False is returned and this Transform2d is valid, inverseTransform will be set to a pseudo inverse."
+      }
+    ],
+    "operators": [
+      {
+        "signature": "bool operator !=(Transform2d a, Transform2d b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines if two transformations are different in value.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "Transform2d",
+            "summary": "A transform."
+          },
+          {
+            "name": "b",
+            "type": "Transform2d",
+            "summary": "Another transform."
+          }
+        ]
+      },
+      {
+        "signature": "bool operator ==(Transform2d a, Transform2d b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines if two transformations are equal in value.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "Transform2d",
+            "summary": "A transform."
+          },
+          {
+            "name": "b",
+            "type": "Transform2d",
+            "summary": "Another transform."
+          }
+        ]
+      },
+      {
+        "signature": "Point2d operator *(Transform2d m, Point2d p)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Multiplies a transformation by a point and gets a new point.",
+        "since": "9.0",
+    "remarks": "Note well: The right hand column is the translation. It has an important effect when transforming a Euclidean point and has no effect when transforming a vector.",
+        "parameters": [
+          {
+            "name": "m",
+            "type": "Transform2d",
+            "summary": "A transformation."
+          },
+          {
+            "name": "p",
+            "type": "Point2d",
+            "summary": "A point."
+          }
+        ]
+      },
+      {
+        "signature": "Transform2d operator *(Transform2d a, Transform2d b)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Multiplies (combines) two transformations.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "a",
+            "type": "Transform2d",
+            "summary": "First transformation."
+          },
+          {
+            "name": "b",
+            "type": "Transform2d",
+            "summary": "Second transformation."
+          }
+        ]
+      },
+      {
+        "signature": "Vector2d operator *(Transform2d m, Vector2d v)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Multiplies a transformation by a vector and gets a new vector.",
+        "since": "9.0",
+    "remarks": "Note well: The right hand column is the translation. It has an important effect when transforming a Euclidean point and has no effect when transforming a vector.",
+        "parameters": [
+          {
+            "name": "m",
+            "type": "Transform2d",
+            "summary": "A transformation."
+          },
+          {
+            "name": "v",
+            "type": "Vector2d",
             "summary": "A vector."
           }
         ]
@@ -190106,7 +191228,7 @@
           {
             "name": "flags",
             "type": "Flags",
-            "summary": "See Flags."
+            "summary": "See <b>Flags</b> . This is an in/out parameter: set  <b>Flags.Incomplete</b> on return if the meshes supplied are provisional because asynchronous work has not finished."
           },
           {
             "name": "plugin",
@@ -190165,7 +191287,7 @@
           {
             "name": "flags",
             "type": "Flags",
-            "summary": "See Flags."
+            "summary": "See <b>Flags</b> . This is an in/out parameter: set  <b>Flags.Incomplete</b> on return if the meshes supplied are provisional because asynchronous work has not finished."
           },
           {
             "name": "previousPrimitives",
@@ -190286,7 +191408,7 @@
         "modifiers": [],
         "protected": false,
         "virtual": false,
-        "summary": "This flag is returned when an asynchronous operation (like Displacement) has not yet completed."
+        "summary": "This flag is returned when an asynchronous operation (like Displacement) has not yet completed. The meshes returned with it are the object's ordinary render meshes, not the provider's final result, so a caller that measures them sees the object as it was before the provider ran. Call again while this flag remains set, calling RhinoApp.Wait() in between so the pending work can publish its result."
       }
     ]
 
@@ -214834,7 +215956,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Is Rhino currently being executed as a batch run, started with the /batchmode command line switch. A batch run has a main window but no user: commands run their command line (\"-\") version and modal message boxes are written to the command line instead of being shown.",
+        "summary": "Is Rhino currently being executed as a batch run, either started with the /batchmode command line switch or put into batch mode since by the BatchMode command. A batch run has a main window but no user: commands take their input from the command line rather than showing dialogs, and modal message boxes are written to the command line instead of being shown.",
         "since": "9.0",
     "remarks": "To decide whether it is safe to show blocking user interface, test  <b>IsRunningUnattended</b> instead - it also covers headless.",
         "property": ["get"]
@@ -217182,7 +218304,7 @@
           {
             "name": "flags",
             "type": "RenderMeshProvider.Flags",
-            "summary": "See MeshProvider.Flags"
+            "summary": "See <b>RenderMeshProvider.Flags</b> . This is an in/out parameter: on return it also carries any status flags - including  <b>RenderMeshProvider.Flags.Incomplete</b> when an asynchronous provider has not finished - so reset it before each call and test it afterwards."
           },
           {
             "name": "plugin",
@@ -217569,7 +218691,7 @@
           {
             "name": "flags",
             "type": "RenderMeshProvider.Flags",
-            "summary": "See MeshProvider.Flags"
+            "summary": "See <b>RenderMeshProvider.Flags</b> . This is an in/out parameter: on return it also carries any status flags - including  <b>RenderMeshProvider.Flags.Incomplete</b> when an asynchronous provider has not finished - so reset it before each call and test it afterwards."
           },
           {
             "name": "plugin",
@@ -217748,7 +218870,7 @@
           {
             "name": "flags",
             "type": "RenderMeshProvider.Flags",
-            "summary": "See MeshProvider.Flags"
+            "summary": "See <b>RenderMeshProvider.Flags</b> . This is an in/out parameter: on return it also carries any status flags - including  <b>RenderMeshProvider.Flags.Incomplete</b> when an asynchronous provider has not finished - so reset it before each call and test it afterwards."
           },
           {
             "name": "plugin",
@@ -229501,7 +230623,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Formats the contents of a text string with field expressions and returns the result",
+        "summary": "Formats the contents of a text string with field expressions and returns the result.  \nThe text is evaluated with no object context, which suits fields that read only the     document, such as Date or ModelUnits. Fields that read the object itself or the block     instance enclosing it - user text, for example - cannot resolve this way and will come     back empty; use the overload that takes the object and its parents for those.",
         "since": "8.0",
         "parameters": [
           {
@@ -229513,6 +230635,47 @@
             "name": "doc",
             "type": "RhinoDoc",
             "summary": "The Rhino document to evaluate"
+          },
+          {
+            "name": "result",
+            "type": "System.String",
+            "summary": "The result of the formatted expression. Otherwise, if the text is null or the evaluation process fails, the result will be empty."
+          }
+        ],
+        "returns": "Returns True if the expression is formatted properly; Otherwise False."
+      },
+      {
+        "signature": "System.Boolean TryFormat(System.String text, RhinoDoc doc, RhinoObject obj, RhinoObject topParent, InstanceObject immediateParent, out System.String result)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Formats the contents of a text string with field expressions and returns the result, evaluating it against a specific object and the block instances that enclose it.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "System.String",
+            "summary": "The text formula to format"
+          },
+          {
+            "name": "doc",
+            "type": "RhinoDoc",
+            "summary": "The Rhino document to evaluate"
+          },
+          {
+            "name": "obj",
+            "type": "RhinoObject",
+            "summary": "The object the text belongs to, or null. Fields that read the object itself, such as its user text, need this."
+          },
+          {
+            "name": "topParent",
+            "type": "RhinoObject",
+            "summary": "The top level object the text belongs to, or None to use."
+          },
+          {
+            "name": "immediateParent",
+            "type": "InstanceObject",
+            "summary": "The block instance directly containing, or null. Fields that read user text off the enclosing instance need this."
           },
           {
             "name": "result",
@@ -237303,11 +238466,38 @@
         "property": ["get"]
       },
       {
+        "signature": "PointF DeviceLocation",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Where the mouse is, in device pixels of the surface this event came from.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "float DpiScale",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Device pixels per logical pixel for the surface this event came from. 1.0 when that is not known.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "Line FrustumLine",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "summary": "Line in frustum that the active mouse position covers",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "PointF Location",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Where the mouse is, in logical pixels of the surface this event came from. This is the coordinate system on screen controls are laid out in, so it is the one to hit test against.",
         "since": "9.0",
         "property": ["get"]
       },
