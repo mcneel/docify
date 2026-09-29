@@ -2511,6 +2511,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Calculates the full range of curvature values found on the analysis meshes. On success the range is written to the range of settings that matches settings.Style.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "meshes",
@@ -3505,6 +3506,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns or sets the location of Rhino's backup files.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -3540,6 +3542,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets a value that controls the creation of other types of backup files.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -4177,6 +4180,7 @@
     "name": "GumballAlignment",
     "dataType": "enum",
     "summary": "Specifies the plane the gumball aligns itself to.",
+    "since": "9.0",
     "values": [
       {
         "signature": "WorldPlane = 0",
@@ -4244,6 +4248,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Specifies the plane the gumball aligns itself to.",
+        "since": "9.0",
     "remarks": "Setting this does not re-align a gumball that is already on screen; the new alignment is picked up the next time the gumball is built, for example when the selection changes. Run the GumballAlignment command instead if you need the visible gumball updated.  \nThis setting is deliberately not part of , so it is     left alone by . This matches the RestoreDefaults behavior     of the -GumballSettings command, which does not reset the alignment either.",
         "property": ["get", "set"]
       },
@@ -4433,7 +4438,8 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Gets the factory default value of <b>AutoGumballAlignment</b> ."
+        "summary": "Gets the factory default value of <b>AutoGumballAlignment</b> .",
+        "since": "9.0"
       },
       {
         "signature": "GumballSettingsState GetDefaultState()",
@@ -15059,6 +15065,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if the command that raised this event is hidden from the user; that is it doesn't autocomplete on the command line.",
+        "since": "8.36",
         "property": ["get"]
       },
       {
@@ -18616,6 +18623,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Diffuse color.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18624,6 +18632,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When True the material is drawn at full diffuse color, ignoring the scene lights.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18632,6 +18641,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Emission color.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18640,6 +18650,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Shades with no smoothing, so the individual render mesh faces are visible.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18648,6 +18659,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Index of refraction.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18656,6 +18668,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Luminosity.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18664,6 +18677,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Objects acquire color from render materials.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18672,6 +18686,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Objects acquire reflectivity from render materials.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18680,6 +18695,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Objects acquire transparency from render materials.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18688,6 +18704,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Reflectivity, 0.0 to 1.0.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18696,6 +18713,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Shine, 0 to <b>Rhino.DocObjects.Material.MaxShine</b> .",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18704,6 +18722,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Shine intensity.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -18712,6 +18731,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Transparency, 0.0 opaque to 1.0 transparent.",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -18722,6 +18742,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the texture of the given type, or None when this material has none.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "which",
@@ -18735,7 +18756,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Gets every texture this material uses."
+        "summary": "Gets every texture this material uses.",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean RemoveTexture(Rhino.DocObjects.TextureType which)",
@@ -18743,6 +18765,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Removes every texture of the given type.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "which",
@@ -18758,6 +18781,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Assigns a texture, replacing any texture this material already has of the same type.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "texture",
@@ -19035,7 +19059,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Bind this conduit to a specific viewport"
+        "summary": "Bind this conduit to a specific viewport",
+        "since": "9.0"
       },
       {
         "signature": "System.Void CalculateBoundingBox(CalculateBoundingBoxEventArgs e)",
@@ -19098,7 +19123,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Exclusively bind this conduit to a specific viewport"
+        "summary": "Exclusively bind this conduit to a specific viewport",
+        "since": "9.0"
       },
       {
         "signature": "System.Void GetSelectionFilter(out System.Boolean on, out System.Boolean checkSubObjects)",
@@ -19201,7 +19227,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Remove viewport bindings"
+        "summary": "Remove viewport bindings",
+        "since": "9.0"
       }
     ]
   },
@@ -21299,6 +21326,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Draw a Grasshopper 2 style vector arrow. This method is relatively slow as it requires the construction of a DisplayPen and a PolylineCurve. However it is more accurate than other arrow drawing methods in that the tip of the drawn arrow is very close to the actual end of the line, the tip is always sharp, and the arrow head is resized to never be too small or large. Also note this method already takes into account logical pixel scaling.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "line",
@@ -22369,6 +22397,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Draws a Brep in Environment Map preview with a texture of your own, instead of the one in  <b>Rhino.ApplicationSettings.EmapAnalysisSettings</b> .",
+        "since": "9.0",
         "parameters": [
           {
             "name": "brep",
@@ -22413,6 +22442,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Draws a Mesh in Environment Map preview with a texture of your own, instead of the one in  <b>Rhino.ApplicationSettings.EmapAnalysisSettings</b> .",
+        "since": "9.0",
         "parameters": [
           {
             "name": "mesh",
@@ -23057,7 +23087,7 @@
         "virtual": false,
         "summary": "Draws a batch of meshes with the Grasshopper 2 (\"G2\") shaded display: a gradient-shaded look driven by a <b>GrasshopperDisplayMaterial</b> — a diffuse colour plus optional striping, stippling and dark-area desaturation — rather than a full <b>DisplayMaterial</b> . The whole batch is uploaded as one combined GPU buffer and shares one material; for per-mesh settings, call once per mesh instead.",
         "since": "9.0",
-    "remarks": "The meshes are uploaded to the GPU on every redraw. Nothing is     cached between frames, so every redraw re-uploads the whole batch. This is the     dominant cost of the call and needs to be planned around: draw only the geometry     you actually need, and prefer one batched call over many single-mesh calls.  \nMesh requirements. Every mesh must have up-to-date     single-precision vertices and vertex normals. The G2 shader reads those     directly; a mesh that carries only double-precision vertices, or no normals,     will render badly (missing geometry or flat/garbage shading). Compute the vertex     normals and make sure the single-precision vertices are current before drawing     if in doubt. Null entries in  are skipped.  \nVertex colours. If a mesh has vertex colours, those colours are     drawn in place of the material's diffuse colour, and      decides whether they are     shaded or drawn flat. Meshes without vertex colours are shaded from the material's     diffuse colour alone.",
+    "remarks": "The meshes are uploaded to the GPU on every redraw. Nothing is     cached between frames, so every redraw re-uploads the whole batch. This is the     dominant cost of the call and needs to be planned around: draw only the geometry     you actually need, and prefer one batched call over many single-mesh calls.  \nMesh requirements. Every mesh must have up-to-date     single-precision vertices and vertex normals. The G2 shader reads those     directly; a mesh that carries only double-precision vertices, or no normals,     will render badly (missing geometry or flat/garbage shading). Compute the vertex     normals and make sure the single-precision vertices are current before drawing     if in doubt. Null entries in  are skipped.  \nVertex colours. If a mesh has vertex colours, those colours are     drawn in place of the material's diffuse colour, and      decides whether they are     shaded or drawn flat. Meshes without vertex colours are shaded from the material's     diffuse colour alone.  \nMixed meshes are safe. A batch is uploaded as one interleaved vertex     buffer whose layout is the union of its meshes' attributes, and a mesh lacking an     attribute the union has would be zero-filled for it, so a colourless mesh batched     with a vertex-coloured one would draw black. This method therefore splits the     meshes into groups that share the same attributes and draws one batch per group,     so any mix may be passed in. Meshes keep their relative order within a group and     the groups are drawn in order of first appearance; order between groups is not     otherwise guaranteed.",
         "parameters": [
           {
             "name": "meshes",
@@ -23992,7 +24022,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Draw surface indicators"
+        "summary": "Draw surface indicators",
+        "since": "9.0"
       },
       {
         "signature": "System.Void DrawText(TextEntity text, System.Drawing.Color color, System.Double scale)",
@@ -24777,6 +24808,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The material used to shade the back faces of an object.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -25191,6 +25223,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The material used to shade the front faces of an object. The Front* properties on this class are shortcuts into it.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -29031,6 +29064,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Width and height in pixels of the frame this handler can read. A layout runs this channel once per detail, so this is not always the size of the view.",
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -29041,6 +29075,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Copies the frame into a caller owned array as 32 bit BGRA. Reuse one array across frames; allocating per frame defeats the point of this event.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "destination",
@@ -29066,6 +29101,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Copies the frame into a caller owned array as 32 bit BGRA, with every pixel made opaque. Reuse one array across frames; allocating per frame defeats the point of this event.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "destination",
@@ -29086,6 +29122,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Copies the frame into caller owned memory as 32 bit BGRA.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "destination",
@@ -29116,6 +29153,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Copies the frame into caller owned memory as 32 bit BGRA, with every pixel made opaque.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "destination",
@@ -35381,6 +35419,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Set this when the grip changes something other than its location, such as a weight, so that Rhino counts the grip as moved. Rhino already counts a grip whose location moved, so this only adds to that. Cleared when Rhino undoes the grip move.",
+        "since": "8.36",
     "remarks": "A stored flag rather than something Rhino asks for: it is read once per grip per draw, so answering it across the managed boundary would cost a transition per grip per frame. Real time work driven by grip movement belongs in CustomObjectGrips.OnDraw, which runs on the display thread, together with the NewLocation latch.",
         "property": ["get", "set"]
       },
@@ -35595,6 +35634,7 @@
         "protected": false,
         "virtual": false,
         "summary": "What these grips control. Set at construction.",
+        "since": "8.36",
         "property": ["get"]
       },
       {
@@ -36025,6 +36065,7 @@
     "dataType": "enum",
     "summary": "The kind of grips a <b>CustomObjectGrips</b> presents. Several Rhino commands dispatch on this, so claiming a control point type is what lets a plug-in's grips reach code paths otherwise reserved for Rhino's own curve and surface control points.",
     "remarks": "The values match the native CRhinoGripObject::GRIP_TYPE numbering, so further types can be added here later without changing any signature.",
+    "since": "8.36",
     "values": [
       {
         "signature": "CurveControlPoint = 1",
@@ -36932,6 +36973,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -36939,6 +36981,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -36946,6 +36989,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -39248,6 +39292,7 @@
     "dataType": "enum",
     "summary": "Defines enumerated values for the display of distances in US customary and Imperial units.",
     "since": "5.0",
+    "deprecated": "8.35",
     "values": [
       {
         "signature": "Decimal = 0",
@@ -39765,6 +39810,15 @@
     ],
     "properties": [
       {
+        "signature": "int AscentOfCapital",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The font's typographic capital height, in the design units reported by  <b>UnitsPerEm</b> . This is the metric a \"text height\" is measured against, so text of height h renders its capitals h tall. Zero when the font has no usable metrics.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "bool Bold",
         "modifiers": ["public"],
         "protected": false,
@@ -39962,6 +40016,15 @@
         "protected": false,
         "virtual": false,
         "since": "6.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int UnitsPerEm",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The number of design units per em in this font's normalized metrics. Together with  <b>AscentOfCapital</b> this converts between an em size - the \"font size\" used by CSS, SVG, PDF and most page layout - and the height of a capital letter, which is what Rhino means by a text height. Zero when the font has no usable metrics.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -40433,11 +40496,29 @@
         "property": ["get"]
       },
       {
+        "signature": "RhinoObject Owner",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The object these grips belong to.",
+    "remarks": "Reaches the owner without the document lookup <b>OwnerId</b> would need, so  <b>RhinoObject.EnabledGripsId</b> and <b>RhinoObject.EditPointGripsOn</b>  are one hop from a grip.",
+        "property": ["get"]
+      },
+      {
         "signature": "Guid OwnerId",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "since": "5.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "uint SubDComponentId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Id of the SubD component this grip is on, or 0 when the grip names no SubD component.",
+    "remarks": "Unlike <b>Index</b> , which is a position in the owner's grip list, this still names the same component after the SubD has been edited. Recording it is what lets a selection of SubD grips be restored against a changed object.",
         "property": ["get"]
       },
       {
@@ -42678,6 +42759,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets the section style index for this layer.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -43548,6 +43630,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Does this linetype have shapes",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -43655,6 +43738,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The bounding box of the shapes in this linetype definition.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -43663,6 +43747,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If shapes are present in this linetype, this is the gap around the shape.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -43671,6 +43756,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Local offset applied to shapes",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -43679,6 +43765,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If shapes are present in this linetype, this is the distance between shapes",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -43752,14 +43839,16 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Add a curve shape to this linetype definition"
+        "summary": "Add a curve shape to this linetype definition",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean AddShape(TextEntity text, System.Double offset)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Add text as a shape to this linetype definition"
+        "summary": "Add text as a shape to this linetype definition",
+        "since": "9.0"
       },
       {
         "signature": "System.Int32 AppendSegment(System.Double length, System.Boolean isSolid)",
@@ -43899,7 +43988,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Remove all shapes from this linetype"
+        "summary": "Remove all shapes from this linetype",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean RemoveSegment(System.Int32 index)",
@@ -44018,14 +44108,16 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Create a new instance of a Markup"
+        "summary": "Create a new instance of a Markup",
+        "since": "9.0"
       },
       {
         "signature": "Markup(Markup other)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Create a new Markup that is a copy of another Markup"
+        "summary": "Create a new Markup that is a copy of another Markup",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -44034,6 +44126,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -44041,6 +44134,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -44057,6 +44151,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -44064,6 +44159,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -44080,6 +44176,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -44087,6 +44184,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -44094,6 +44192,7 @@
         "modifiers": ["override", "public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -44102,25 +44201,29 @@
         "signature": "System.Void CopyToClipboard()",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean ReadRevisionHistory(out System.String createdBy, out System.String lastEditedBy, out System.Int32 revision, out System.DateTime createdOn, out System.DateTime lastEditedOn)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Drawing.Bitmap Thumbnail(System.Int32 height)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Void WriteToFile()",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       }
     ]
   },
@@ -45805,6 +45908,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Fill color for hatches when printing (default is Color.Empty)",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -45813,6 +45917,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Hatch boundary color override. Default is unset color which means use the standard attributes and layer colors to determine the boundary color",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -45830,6 +45935,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Hatch boundary plot color override. Default is unset color which means use the standard attributes and layer colors to determine the boundary color",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -45847,6 +45953,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Plot width of hatch boundary curves. values less than -1 (-10 is default): plot weight is determined by the m_plot_weight -1: do not plot 0: use default weight defined by the print dialog positive values are thicknesses in millimeters to print to",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -46051,6 +46158,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets the section style index.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -46178,7 +46286,8 @@
         "signature": "SectionStyle ComputedSectionStyle(RhinoDoc doc, ObjectAttributes sectionerAttributes, System.Boolean computeColors, System.Guid viewport_id)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Void DeleteAllUserStrings()",
@@ -46869,45 +46978,6 @@
         "summary": "The default object enumerator settings ignore the visibility state of objects. If you want the iterator to limit itself to visible objects, then set this property to true.",
         "since": "5.0",
         "property": ["get", "set"]
-      }
-    ]
-  },
-  {
-    "namespace": "Rhino.DocObjects",
-    "name": "ObjectGripsIds",
-    "dataType": "class",
-    "summary": "Ids of the kinds of grips Rhino itself provides, for  <b>RhinoObject.EnableGrips(Guid)</b> and <b>RhinoObject.GripsId</b> .",
-    "remarks": "A plug-in's own grips are not listed here. They are identified by the id the plug-in passed to <b>Custom.CustomObjectGrips.RegisterGripsEnabler</b> , and any such id is accepted wherever these are.",
-    "constructors": [
-      {
-        "signature": "ObjectGripsIds()",
-        "summary": "Initializes a new instance of the ObjectGripsIds class"
-      }
-    ],
-    "properties": [
-      {
-        "signature": "Guid CurveEditPoints",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "A grip at every Greville point of a curve. EditPtOn turns these on.",
-        "property": ["get"]
-      },
-      {
-        "signature": "Guid Default",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "The object's own control points - what the PointsOn command turns on, and what differs from one object type to the next.",
-        "property": ["get"]
-      },
-      {
-        "signature": "Guid SubDEditPoints",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "A grip at every surface point of a SubD. EditPtOn turns these on.",
-        "property": ["get"]
       }
     ]
   },
@@ -48952,21 +49022,30 @@
         "property": ["get"]
       },
       {
+        "signature": "bool EditPointGripsOn",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True when the grips this object has on are edit points, of either kind.",
+    "remarks": "The read-side companion of <b>EnableEditPointGrips</b> . <b>EnabledGripsId</b>  answers the same question for a plug-in's own kind, by comparing the id it registered.",
+        "property": ["get"]
+      },
+      {
+        "signature": "Guid EnabledGripsId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Which kind of grips this object currently has on.",
+    "remarks": "<b>Guid.Empty</b> both for default grips and for no grips at all.  <b>GripsOn</b> tells those two apart. Record it to replay a grip selection later: handing it back to <b>EnableGrips(Guid)</b> restores the same kind. From a grip, reach it as <b>GripObject.Owner</b> . <b>EnabledGripsId</b> .",
+        "property": ["get"]
+      },
+      {
         "signature": "GeometryBase Geometry",
         "modifiers": ["public", "virtual"],
         "protected": false,
         "virtual": true,
         "summary": "Gets the underlying geometry for this object.  \nAll rhino objects are composed of geometry and attributes.",
         "since": "5.0",
-        "property": ["get"]
-      },
-      {
-        "signature": "Guid GripsId",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Which kind of grips this object currently has on.",
-    "remarks": "<b>ObjectGripsIds.Default</b> both for default grips and for no grips at all.  <b>GripsOn</b> tells those two apart.",
         "property": ["get"]
       },
       {
@@ -49174,6 +49253,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True when the display should draw this object's preview mesh instead of its render or analysis mesh.",
+        "since": "9.0",
     "remarks": "Only meaningful while drawing: the meshing worker thread raises this for the objects it is previewing and it is False the rest of the time. A texture or False colour  <b>Rhino.Display.VisualAnalysisMode</b> reads it from SetUpDisplayAttributes to decide whether to show mesh wires, which is what the built-in analysis modes do.",
         "property": ["get"]
       },
@@ -49744,17 +49824,27 @@
         "returns": "True if the call succeeded.  If you attempt to add custom grips to an object that does not support custom grips, then False is returned."
       },
       {
+        "signature": "System.Boolean EnableEditPointGrips()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Turns on edit point grips, the ones the EditPtOn command turns on.",
+    "remarks": "Curves and SubDs carry separate kinds of edit point grips. This picks the one that suits the object, as EditPtOn does, so a caller does not have to. An object that is neither is left exactly as it was. For a curve or a SubD, what happens to grips already on is described by <b>EnableGrips(Guid)</b> .",
+        "returns": "True if the object has edit point grips when this returns. False for an object that has none: anything that is not a curve or a SubD, a curve with more than 1000 edit points or too few control points to have any, an empty SubD, and the cases  <b>EnableGrips(Guid)</b> returns False for."
+      },
+      {
         "signature": "System.Boolean EnableGrips(System.Guid gripsId)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "summary": "Turns on grips of one particular kind, replacing grips of any other kind.",
+        "since": "9.0",
     "remarks": "Grips that were on are put back when the requested kind cannot be made, so a false     return leaves the object with the grips it had.  \nExcept when the requested kind is already on, the grips are new objects afterwards     and a  held across this call is stale.  \nGrips this turns on are not subject to Automatic Points On. They stay on until     something turns them off, as with PointsOn and EditPtOn.",
         "parameters": [
           {
             "name": "gripsId",
             "type": "System.Guid",
-            "summary": "Id of a grips enabler registered with <b>Custom.CustomObjectGrips.RegisterGripsEnabler</b> .  <b>ObjectGripsIds.Default</b> selects the object's default grips, which is what the PointsOn command turns on. <b>ObjectGripsIds</b> names the kinds Rhino itself provides."
+            "summary": "Id of a grips enabler registered with <b>Custom.CustomObjectGrips.RegisterGripsEnabler</b> .  <b>Guid.Empty</b> means no custom grips: the object's own default grips, which is what the PointsOn command turns on. For edit points call  <b>EnableEditPointGrips</b> rather than naming a kind here; curves and SubDs use different ones and it picks between them."
           }
         ],
         "returns": "True if the object has grips of the requested kind when this returns. False if nothing is registered for, if the object has no grips of that kind (a polysurface has no default grips), or if the grips already on refused to turn off, which they do while they are being dragged."
@@ -50798,6 +50888,7 @@
         "protected": false,
         "virtual": false,
         "since": "8.0",
+        "deprecated": "8.31",
         "obsolete": "Use Attributes.SetObjectFrame instead"
       },
       {
@@ -50806,6 +50897,7 @@
         "protected": false,
         "virtual": false,
         "since": "8.0",
+        "deprecated": "8.31",
         "obsolete": "Use Attributes.SetObjectFrame instead"
       },
       {
@@ -51504,6 +51596,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -51512,6 +51605,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Plot width of the boundary curves. values less than -1 (-10 is default): plot weight is determined by the object's attributes -1: do not plot 0: use default weight defined by the print dialog positive values are thicknesses in millimeters to print to  NOTE: if a linetype is assigned to this section style that has a physical width (not pixels), then this value is ignored and the linetype value is used",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -54168,6 +54262,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Adds an instance definition to the instance definition table, optionally replacing an existing definition of the same name.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "name",
@@ -54275,6 +54370,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Adds an instance definition to the instance definition table, optionally replacing an existing definition of the same name.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "name",
@@ -56415,6 +56511,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the default light that Rhino uses when no other lights illuminate the scene.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -57310,6 +57407,7 @@
         "modifiers": ["public", "override"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -57546,7 +57644,8 @@
         "signature": "IEnumerator<Markup> GetEnumerator()",
         "modifiers": ["public", "override"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.String GetUnusedMarkupName()",
@@ -62408,7 +62507,8 @@
         "signature": "System.Boolean Hide(RhinoObject obj, System.Boolean ignoreLayerMode, System.String hideGroup)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "8.32"
       },
       {
         "signature": "System.Boolean Hide(RhinoObject obj, System.Boolean ignoreLayerMode)",
@@ -62435,7 +62535,8 @@
         "signature": "System.Boolean Hide(System.Guid objectId, System.Boolean ignoreLayerMode, System.String hideGroup)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "8.32"
       },
       {
         "signature": "System.Boolean Hide(System.Guid objectId, System.Boolean ignoreLayerMode)",
@@ -64032,12 +64133,13 @@
         "protected": false,
         "virtual": false,
         "summary": "Selects or deselects a collection of grips in one pass, so a native CRhinoOnChangeObjectSelectState watcher sees one change rather than one per grip.",
+        "since": "9.0",
     "remarks": "<b>RhinoDoc.SelectObjects</b> and <b>RhinoDoc.DeselectObjects</b> do not report grips whichever way they are selected; the old event watchers have filtered grips out since Rhino 5 because grip pointers do not outlive the selection.",
         "parameters": [
           {
             "name": "grips",
             "type": "IEnumerable<GripObject>",
-            "summary": "Grips to select or deselect, from <b>RhinoObject.GetGrips</b> . They may belong to several objects. Grips whose owner has since had its grips turned off, and anything in the collection that is not a grip, are skipped."
+            "summary": "Grips to select or deselect, from <b>RhinoObject.GetGrips</b> . They may belong to several objects. Grips whose owner has since had its grips turned off, and anything in the collection that is not a grip, are skipped. None selects nothing, which is what <b>RhinoObject.GetGrips</b> hands back for an object with no grips."
           },
           {
             "name": "select",
@@ -64063,12 +64165,13 @@
         "protected": false,
         "virtual": false,
         "summary": "Selects or deselects a collection of grips in one pass, so a native CRhinoOnChangeObjectSelectState watcher sees one change rather than one per grip.",
+        "since": "9.0",
     "remarks": "<b>RhinoDoc.SelectObjects</b> and <b>RhinoDoc.DeselectObjects</b> do not report grips whichever way they are selected; the old event watchers have filtered grips out since Rhino 5 because grip pointers do not outlive the selection.",
         "parameters": [
           {
             "name": "grips",
             "type": "IEnumerable<GripObject>",
-            "summary": "Grips to select or deselect, from <b>RhinoObject.GetGrips</b> . They may belong to several objects. Grips whose owner has since had its grips turned off, and anything in the collection that is not a grip, are skipped."
+            "summary": "Grips to select or deselect, from <b>RhinoObject.GetGrips</b> . They may belong to several objects. Grips whose owner has since had its grips turned off, and anything in the collection that is not a grip, are skipped. None selects nothing, which is what <b>RhinoObject.GetGrips</b> hands back for an object with no grips."
           },
           {
             "name": "select",
@@ -65229,6 +65332,7 @@
         "modifiers": ["public", "override"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -65449,7 +65553,8 @@
         "signature": "IEnumerator<SectionStyle> GetEnumerator()",
         "modifiers": ["public", "override"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.String GetUnusedSectionStyleName()",
@@ -65466,6 +65571,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if a section style is use by an object, layer, or instance definition.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "index",
@@ -65923,6 +66029,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Constructs a new page view with a given title and, at the same time, adds it to the list.",
+        "since": "9.0",
     "remarks": "On Mac, building a page view's window is main-thread work. If setActive is true and this is called from another thread, the page view is created but may not have become the active view by the time this returns.",
         "parameters": [
           {
@@ -65944,6 +66051,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Constructs a new page view with a given title and size and, at the same time, adds it to the list.",
+        "since": "9.0",
     "remarks": "On Mac, building a page view's window is main-thread work. If setActive is true and this is called from another thread, the page view is created but may not have become the active view by the time this returns.",
         "parameters": [
           {
@@ -69656,6 +69764,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Creates a new event watcher and begins watching.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "includeHeadlessDocuments",
@@ -69672,6 +69781,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets whether this watcher also receives events for headless documents.",
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -69681,7 +69791,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Stops watching and releases the underlying native watcher."
+        "summary": "Stops watching and releases the underlying native watcher.",
+        "since": "9.0"
       }
     ]
   },
@@ -76657,6 +76768,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The plug-in's binary filename",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -76665,6 +76777,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Plug-in Id",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -76673,6 +76786,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Public facing name of the plug-in",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ]
@@ -77397,7 +77511,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Information about the plug-ins loaded when the file was last saved"
+        "summary": "Information about the plug-ins loaded when the file was last saved",
+        "since": "9.0"
       }
     ]
   },
@@ -85285,7 +85400,8 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Get a list of custom PDF page definitions defined by the user"
+        "summary": "Get a list of custom PDF page definitions defined by the user",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean Read(System.String path, RhinoDoc doc, FilePdfReadOptions options)",
@@ -85318,7 +85434,8 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Set the list of custom PDF page definitions"
+        "summary": "Set the list of custom PDF page definitions",
+        "since": "9.0"
       },
       {
         "signature": "System.Int32 AddPage(Display.ViewCaptureSettings settings)",
@@ -88134,6 +88251,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If true, file writing plug-ins may show user interface (a dialog when SuppressDialogBoxes is false, command line getters when it is true) even though the document being written is headless.",
+        "since": "9.0",
     "remarks": "Added 2026-07-10 by wfcook for RH-95100",
         "property": ["get", "set"]
       },
@@ -88151,6 +88269,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -88158,6 +88277,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -88175,6 +88295,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns nil for a Rhino .3dm file or the GUID of the plugin that wrote the file",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -88183,6 +88304,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns the FileTypeIndex that identifies the extension the file writing plugin will create.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -88191,6 +88313,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the file time is some version of a Rhino 3dm file.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -88199,6 +88322,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the the file type is the current 3dm file version and everything in the document will be saved.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -88260,6 +88384,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns the version of the saved Rhino file 0: The file type is non-3dm file identified by FileTypeId() and FileTypeIndex(). >= 2: The file type is a 3dm file and the number specifies the earliest version of Rhino that will be able to read the 3dm file.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -88302,6 +88427,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -88367,7 +88493,8 @@
         "signature": "System.String GetFileName()",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       }
     ]
   },
@@ -89355,6 +89482,7 @@
     "namespace": "Rhino.FileIO",
     "name": "NavisWorksVersion",
     "dataType": "enum",
+    "since": "9.0",
     "values": [
       {
         "signature": "Navisworks2016 = 0",
@@ -89690,7 +89818,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "If the TextLog was constructed using the empty constructor, then the text information is stored in a runtime string. This function resets the data held by the string, but retains the strings allocated memory to allow for quicker logging because the stored string doesn't constantly need to reallocate."
+        "summary": "If the TextLog was constructed using the empty constructor, then the text information is stored in a runtime string. This function resets the data held by the string, but retains the strings allocated memory to allow for quicker logging because the stored string doesn't constantly need to reallocate.",
+        "since": "9.0"
       },
       {
         "signature": "System.String ToString()",
@@ -89731,6 +89860,690 @@
       }
     ]
 
+  },
+  {
+    "namespace": "Rhino.FileIO",
+    "name": "WorksessionFile",
+    "dataType": "class",
+    "summary": "Reads and writes Rhino worksession (.rws) files. A worksession file lists models and a worksession's layer overrides. It does not contain any model content, and nothing here opens or checks the model files it lists.",
+    "remarks": "Rhino 4 wrote version 4 files. Rhino 5 and later write version 5. Both versions can be read and written. Models are exchanged by value: <b>GetModel</b> returns a copy, and changes to it are kept only after <b>SetModel</b> .",
+    "interfaces": ["IDisposable"],
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "WorksessionFile()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates an empty worksession with no models.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFile(WorksessionFile other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a copy of another worksession.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "WorksessionFile",
+            "summary": "The worksession to copy."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "int CurrentVersion",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The worksession file version Rhino 5 and later write.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int ActiveModelIndex",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the index of the first active model, or -1 if there is no active model.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int ModelCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the number of models.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int Version",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the file version. Reading sets it to the version of the file that was read. Writing does not use it.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "WorksessionFile FromByteArray(System.Byte[] bytes)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads a worksession from the contents of a worksession file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "bytes",
+            "type": "System.Byte[]",
+            "summary": "The contents of a .rws file."
+          }
+        ],
+        "returns": "The worksession, or None if the bytes could not be read, including the contents of a worksession file from a newer version of Rhino."
+      },
+      {
+        "signature": "WorksessionFile Read(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads a worksession file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The file to read."
+          }
+        ],
+        "returns": "The worksession, or None if the file could not be read. That includes a worksession file from a newer version of Rhino: <b>ReadFileVersion</b> returns a version greater than <b>CurrentVersion</b> for those, and 0 for a file that is not a worksession file."
+      },
+      {
+        "signature": "System.Int32 ReadFileVersion(System.String path)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Reads only the version from the header of a worksession file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The file to read."
+          }
+        ],
+        "returns": "The file's version, or 0 if the file cannot be read or is not a worksession file. A version greater than <b>CurrentVersion</b> is from a newer version of Rhino."
+      },
+      {
+        "signature": "System.Void AddModel(WorksessionFileModel model)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a copy of a model to the end of the list.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "model",
+            "type": "WorksessionFileModel",
+            "summary": "The model to copy."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void ClearModels()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes all of the models.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Releases the native worksession.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.String Dump()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Describes the worksession: its version, and for each model its paths and saved layer settings. For each saved layer it gives its name and the settings Rhino uses.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileModel GetModel(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a copy of a model.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Index of the model."
+          }
+        ],
+        "returns": "A copy of the model. Changes to it are kept only after <b>SetModel</b> ."
+      },
+      {
+        "signature": "WorksessionFileModel[] GetModels()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets copies of all of the models.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void RemoveModelAt(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes a model.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Index of the model to remove."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetModel(System.Int32 index, WorksessionFileModel model)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replaces a model with a copy of another.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Index of the model to replace."
+          },
+          {
+            "name": "model",
+            "type": "WorksessionFileModel",
+            "summary": "The model to copy."
+          }
+        ]
+      },
+      {
+        "signature": "System.Byte[] ToByteArray()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes the worksession as the contents of a version 5 .rws file.",
+        "since": "9.0",
+        "returns": "The file contents, or None if the worksession could not be written."
+      },
+      {
+        "signature": "System.Byte[] ToByteArray(System.Int32 version)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes the worksession as the contents of a .rws file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "version",
+            "type": "System.Int32",
+            "summary": "4 or 5."
+          }
+        ],
+        "returns": "The file contents, or None if the worksession could not be written."
+      },
+      {
+        "signature": "System.Boolean Write(System.String path, System.Int32 version)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes a worksession file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The file to write."
+          },
+          {
+            "name": "version",
+            "type": "System.Int32",
+            "summary": "4 or 5. Version 4 needs exactly one active model and saves only the model file paths."
+          }
+        ],
+        "returns": "True if the file was written. If False is returned, an existing file is left as it was."
+      },
+      {
+        "signature": "System.Boolean Write(System.String path)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Writes a version 5 worksession file.",
+        "since": "9.0",
+    "remarks": "The first active model is written first and the other models follow in order. Models with an empty full path are not written. Paths are written as they are, and are not checked or changed.",
+        "parameters": [
+          {
+            "name": "path",
+            "type": "System.String",
+            "summary": "The file to write."
+          }
+        ],
+        "returns": "True if the file was written. If False is returned, an existing file is left as it was."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.FileIO",
+    "name": "WorksessionFileLayerOverride",
+    "dataType": "class",
+    "summary": "A layer setting in a reference model that the worksession changes. Any value that is different in the worksession values and the file values is an override. Values that are the same are not.",
+    "interfaces": ["IDisposable"],
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "WorksessionFileLayerOverride()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a layer override with default values.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileLayerOverride(WorksessionFileLayerOverride other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a copy of another layer override.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "WorksessionFileLayerOverride",
+            "summary": "The layer override to copy."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "Guid LayerId",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the id of the layer in the reference model file.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Releases the native layer override.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileLayerValues GetFileValues()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a copy of the layer's settings in the reference model when the worksession was saved.",
+        "since": "9.0",
+        "returns": "A copy. Changes to it are kept only after <b>SetFileValues</b> ."
+      },
+      {
+        "signature": "WorksessionFileLayerValues GetWorksessionValues()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a copy of the layer's settings in the worksession.",
+        "since": "9.0",
+        "returns": "A copy. Changes to it are kept only after <b>SetWorksessionValues</b> ."
+      },
+      {
+        "signature": "System.Void SetFileValues(WorksessionFileLayerValues values)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replaces the file values with a copy of values.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "values",
+            "type": "WorksessionFileLayerValues",
+            "summary": "The settings to copy."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetWorksessionValues(WorksessionFileLayerValues values)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replaces the worksession values with a copy of values.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "values",
+            "type": "WorksessionFileLayerValues",
+            "summary": "The settings to copy."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.FileIO",
+    "name": "WorksessionFileLayerValues",
+    "dataType": "class",
+    "summary": "Layer settings saved in a Rhino worksession (.rws) file.",
+    "interfaces": ["IDisposable"],
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "WorksessionFileLayerValues()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates layer settings with the defaults: visible, unlocked and black.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileLayerValues(WorksessionFileLayerValues other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a copy of other layer settings.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "WorksessionFileLayerValues",
+            "summary": "The settings to copy."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "Color Color",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the layer color.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool Locked",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether the layer is locked.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool Visible",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether the layer is visible.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Releases the native layer settings.",
+        "since": "9.0"
+      },
+      {
+        "signature": "Layer GetLayer()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a copy of the rest of the layer's settings, saved by Rhino 9 and later. Reading an older file leaves this set to a default layer.",
+        "since": "9.0",
+    "remarks": "Rhino uses the print color and width, model visibility, visibility in new details, whether the layer is expanded, and the per-viewport settings. It does not use the layer's id, and a layer saved without one gets a new id when it is read.",
+        "returns": "A new layer. Changes to it are kept only after <b>SetLayer</b> ."
+      },
+      {
+        "signature": "System.Void SetLayer(Layer layer)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replaces the layer settings with a copy of layer.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "layer",
+            "type": "Layer",
+            "summary": "The layer to copy."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.FileIO",
+    "name": "WorksessionFileModel",
+    "dataType": "class",
+    "summary": "A model in a Rhino worksession (.rws) file.",
+    "interfaces": ["IDisposable"],
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "WorksessionFileModel()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a reference model with no paths and no layer overrides.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileModel(string fullPath)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a reference model for a model file.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "fullPath",
+            "type": "System.String",
+            "summary": "Full path of the model file."
+          }
+        ]
+      },
+      {
+        "signature": "WorksessionFileModel(WorksessionFileModel other)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates a copy of another model.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "other",
+            "type": "WorksessionFileModel",
+            "summary": "The model to copy."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "string FullPath",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the full path of the model file, as saved. Nothing checks that it exists.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool IsActive",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether this is the model that was active when the worksession was saved. Every other model is a reference model.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int LayerOverrideCount",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the number of layer overrides. Rhino does not save or use layer overrides for the active model. Version 4 files do not have them.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "string RelativePath",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets the path of the model file relative to the .rws file, as saved. Rhino uses it when the file is no longer at <b>FullPath</b> . It can be empty. Version 4 files do not have it.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void AddLayerOverride(WorksessionFileLayerOverride layerOverride)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a copy of a layer override to the end of the list.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "layerOverride",
+            "type": "WorksessionFileLayerOverride",
+            "summary": "The layer override to copy."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void ClearLayerOverrides()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes all of the layer overrides.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Releases the native model.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileLayerOverride GetLayerOverride(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a copy of a layer override.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Index of the layer override."
+          }
+        ],
+        "returns": "A copy. Changes to it are kept only after <b>SetLayerOverride</b> ."
+      },
+      {
+        "signature": "WorksessionFileLayerOverride[] GetLayerOverrides()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets copies of all of the layer overrides.",
+        "since": "9.0"
+      },
+      {
+        "signature": "WorksessionFileLayerValues GetParentLayerValues()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a copy of the settings of the layer Rhino adds as the parent of all of a reference model's layers. Version 4 files do not have them.",
+        "since": "9.0",
+        "returns": "A copy. Changes to it are kept only after <b>SetParentLayerValues</b> ."
+      },
+      {
+        "signature": "System.Void RemoveLayerOverrideAt(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes a layer override.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Index of the layer override to remove."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetLayerOverride(System.Int32 index, WorksessionFileLayerOverride layerOverride)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replaces a layer override with a copy of another.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Index of the layer override to replace."
+          },
+          {
+            "name": "layerOverride",
+            "type": "WorksessionFileLayerOverride",
+            "summary": "The layer override to copy."
+          }
+        ]
+      },
+      {
+        "signature": "System.Void SetParentLayerValues(WorksessionFileLayerValues values)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Replaces the parent layer settings with a copy of values.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "values",
+            "type": "WorksessionFileLayerValues",
+            "summary": "The settings to copy."
+          }
+        ]
+      }
+    ]
   },
   {
     "namespace": "Rhino.Geometry",
@@ -92862,7 +93675,8 @@
         "signature": "BezierCurve Derivative()",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Void Dispose()",
@@ -95643,6 +96457,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Creates an array of analysis meshes for the brep, one per face. The meshes are not set on the brep.",
+        "since": "9.0",
     "remarks": "Each mesh covers the untrimmed surface under a face, so on a trimmed face the mesh extends past the trims and any statistic taken from it includes area that is not part of the brep. For statistics, mesh the brep with MeshingParameters.ComputeCurvature set and pass the result to  <b>MeshCurvatureStats</b> ; the curvature values do not depend on the style, so one mesh serves every style.",
         "parameters": [
           {
@@ -98417,6 +99232,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Create a patch using variational approach",
+        "since": "9.0",
         "parameters": [
           {
             "name": "edges",
@@ -98467,6 +99283,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Create a patch using variational approach",
+        "since": "9.0",
         "parameters": [
           {
             "name": "doc",
@@ -100468,6 +101285,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Subclass constructor for any continuity",
+        "since": "9.0",
         "parameters": [
           {
             "name": "curve",
@@ -100486,7 +101304,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Constructor, use curve as positional constraint"
+        "summary": "Constructor, use curve as positional constraint",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -100496,6 +101315,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The constraint curve",
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -100852,7 +101672,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Constructor for a given location"
+        "summary": "Constructor for a given location",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -100862,6 +101683,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Location of the constraint",
+        "since": "9.0",
         "property": ["get"]
       }
     ]
@@ -100884,6 +101706,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Errors generated during patch generation. If no result is obtained, this error can give more information about what went wrong.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100892,6 +101715,7 @@
         "protected": false,
         "virtual": false,
         "summary": "This value will be not-None if any positional (G0) constraints were used. It will be True if those constraints were met within the positional tolerance.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100900,6 +101724,7 @@
         "protected": false,
         "virtual": false,
         "summary": "This value will be not-None if any internal constraints were used. It will be True if those constraints were met within the internal positional tolerance.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100908,6 +101733,7 @@
         "protected": false,
         "virtual": false,
         "summary": "This value will be not-None if any tangential (G1) constraints were used. It will be True if those constraints were met within the angle tolerance.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100916,6 +101742,7 @@
         "protected": false,
         "virtual": false,
         "summary": "This value will be not-None if any curvature (G2) constraints were used. It will be True if those constraints were met within the curvature relative and zero tolerances.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100924,6 +101751,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Warnings generated during patch generation",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ]
@@ -100939,14 +101767,16 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Constructor with defaults"
+        "summary": "Constructor with defaults",
+        "since": "9.0"
       },
       {
         "signature": "Brep.VariationalPatchSettings(RhinoDoc doc)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Constructor that sets defaults and takes the tolerance, internal tolerance and angle tolerance from the document"
+        "summary": "Constructor that sets defaults and takes the tolerance, internal tolerance and angle tolerance from the document",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -100956,6 +101786,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Tolerance for normal (G1) constraints",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100964,6 +101795,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Bending to apply (default 0.3)",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100972,6 +101804,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Relative curvature (G2) tolerance between curvature values that are both not smaller than <b>CurvatureZeroTolerance</b> .",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100980,6 +101813,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Curvature value considered to be zero.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100988,6 +101822,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Surface degree in U-direction",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -100996,6 +101831,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Surface degree in V-direction",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101004,6 +101840,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The domain creation option",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101012,6 +101849,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The initial surface to use (default: null). The initial surface may not be rational.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101020,6 +101858,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Tolerance for positional (G0int) constraints on internal curves",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101028,6 +101867,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The maximum number of refinements to apply (default 5).",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101036,6 +101876,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When an initial surface has been set, use <b>PreserveEdges</b> to fix the surface boundary.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101044,6 +101885,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Rate-of-change in bending to apply (default 0.7)",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101052,6 +101894,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of spans in U-direction",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101060,6 +101903,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of spans in V-direction",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101068,6 +101912,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Stretching to apply (default 0, better not change)",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101076,6 +101921,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Tolerance for positional (G0) constraints on edges",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -101084,6 +101930,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The rotation angle of the UV domain",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ]
@@ -101537,6 +102384,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Get the closest point to this face. Closest point finding respects the trims on the face.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "testPoint",
@@ -103736,6 +104584,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The id of the dimstyle used by this clipping plane surface. This is used to help determine how the clipping plane is drawn with respect to things like arrows and fonts",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -104375,6 +105224,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Splits all of the faces of a Brep at tangent locations.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "aggressiveMode",
@@ -110570,6 +111420,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Set vertex tags for a list of vertices. Useful for adding creases to SubDs",
+        "since": "8.30",
         "parameters": [
           {
             "name": "vertexIndices",
@@ -110589,6 +111440,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Set vertex tags for a list of vertices. Useful for adding creases to SubDs",
+        "since": "8.30",
         "parameters": [
           {
             "name": "vertices",
@@ -112587,6 +113439,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Calculates the boolean union of two or more closed, planar curves, and reports which input curve ended up in which output curve. Note, curves must be co-planar.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "curves",
@@ -112651,6 +113504,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Generate a catenary curve through catenary apex.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "catenary_start",
@@ -112711,6 +113565,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Generate a catenary curve of specific length.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "catenary_start",
@@ -112771,6 +113626,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Generate a catenary curve from catenary parameter.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "catenary_start",
@@ -112831,6 +113687,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Generate a catenary curve through a point",
+        "since": "9.0",
         "parameters": [
           {
             "name": "catenary_start",
@@ -113292,6 +114149,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Rebuilds the curve to a NURBS curve with the specified options.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "curve",
@@ -117194,6 +118052,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Rebuilds this curve so it takes on the degree, knot vector, and control point count of a template curve.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "templateCurve",
@@ -118722,7 +119581,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Construct a new instance with default values."
+        "summary": "Construct a new instance with default values.",
+        "since": "9.0"
       },
       {
         "signature": "CurveKinkDefinition(double kinkAngleDegrees, double curvatureKinkRadiusRatio, bool kinkAtTangentChange, bool kinkAtCurvatureChange)",
@@ -118730,6 +119590,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Create a CurveKinkDefinition with specified settings.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "kinkAngleDegrees",
@@ -118761,6 +119622,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If the ratio (minimum radius of curvature)/(maximum radius of curvature) at a curvature discontinuity is < <b>CurvatureKinkRadiusRatio</b> , then that curvature discontinuity is treated as a kink. In particular, if <b>CurvatureKinkRadiusRatio</b> = 0, then curvature radius discontinuity checks are disabled.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -118769,6 +119631,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If the curvature <= <b>CurvatureKinkZeroTolerance</b> , then it is treated as zero curvature. Put another way, if (radius of curvature) * <b>CurvatureKinkZeroTolerance</b> >= 1, then the radius is treated as infinite. If <b>CurvatureKinkZeroTolerance</b> > 0, then the curvature kink test is scale dependent. If <b>CurvatureKinkZeroTolerance</b> = 0, then the curvature kink test is indpendent of scale.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -118777,6 +119640,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The angle, in degrees, used to determine if when an abrupt change in tangent or curvature vector direction is a kink.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -118785,6 +119649,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if curvature discontinuities should be tested when finding kinks. The angle used vector curvature direction discontinuities is KinkAngleDegrees(). The ratio used for radius of curvature discontinuities is CurvatureKinkRadiusRatio().",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -118793,6 +119658,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if tangent discontinuities should be tested when finding kinks. The angle used for testing is KinkAngleDegrees().",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -118803,6 +119669,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Calculates the curvature radius ratio and the angle between the two curvature vectors.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "curvatureFromBelow",
@@ -118831,7 +119698,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Actively reclaims unmanaged resources that this instance uses."
+        "summary": "Actively reclaims unmanaged resources that this instance uses.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void Dispose(System.Boolean disposing)",
@@ -118852,7 +119720,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "True if there is a curvature discontinuity at curve(t) that passes the curvature kink test."
+        "summary": "True if there is a curvature discontinuity at curve(t) that passes the curvature kink test.",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean IsCurvatureKink(Vector3d curvatureFromBelow, Vector3d curvatureFromAbove)",
@@ -118860,6 +119729,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the angle between curvature_from_below and curvature_from_above is > <b>KinkAngleDegrees</b>  or the ratio min/max < <b>CurvatureKinkRadiusRatio</b> , where min and max are the minimum and maximum lengths of curvatureFromBelow and v. Both of these tests are scale independent. If an input curvature vector has length <= <b>CurvatureKinkZeroTolerance</b> , then that curvature is treated as zero. When is <b>CurvatureKinkZeroTolerance</b> > 0, the test is scale dependent. The default value is chosen to work reasonably well for most models at most scales.",
+        "since": "9.0",
         "returns": "True if either curvature vector is not valid or if, based on the tests described above, they are different enough to be considered a \"curvature kink.\""
       },
       {
@@ -118867,35 +119737,40 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns True if the curvature vector is considered to be zero given the  <b>CurvatureKinkZeroTolerance</b>"
+        "summary": "Returns True if the curvature vector is considered to be zero given the  <b>CurvatureKinkZeroTolerance</b>",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean IsCurvatureZero(Vector3d curvature)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns True if the curvature vector is considered to be zero given the  <b>CurvatureKinkZeroTolerance</b>"
+        "summary": "Returns True if the curvature vector is considered to be zero given the  <b>CurvatureKinkZeroTolerance</b>",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean IsKink(Curve curve, System.Double t)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "True if there is a kink at curve(t)."
+        "summary": "True if there is a kink at curve(t).",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean IsTangentKink(Curve curve, System.Double t)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "True if there is a tangent discontinuity at curve(t) and the agnle between the two tangents is > <b>KinkAngleDegrees</b>"
+        "summary": "True if there is a tangent discontinuity at curve(t) and the agnle between the two tangents is > <b>KinkAngleDegrees</b>",
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean IsTangentKink(Vector3d tangentFromBelow, Vector3d tangentFromAbove)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "True if the angle between tangent_from_below and tangent_from_above is > <b>KinkAngleDegrees</b>"
+        "summary": "True if the angle between tangent_from_below and tangent_from_above is > <b>KinkAngleDegrees</b>",
+        "since": "9.0"
       }
     ]
   },
@@ -121186,6 +122061,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Is this instance a 'shallow copy'. Shallow copies are no different than regular instances with the exception that they will convert to complete independent 'deep' copies if a non const operation is perform on the instance (something that mutates the internal data)",
+        "since": "8.27",
         "property": ["get"]
       },
       {
@@ -123221,6 +124097,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if this instance definition is linked to an external source archive, that is, if its <b>UpdateType</b> is <b>InstanceDefinitionUpdateType.Linked</b>  or <b>InstanceDefinitionUpdateType.LinkedAndEmbedded</b> .",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -123229,6 +124106,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Specifies how model components (layers, materials, dimension styles, etc.) from linked instance definition files appear in the active model.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -123237,6 +124115,7 @@
         "protected": false,
         "virtual": false,
         "summary": "This property applies when an instance definition is linked. If true, when reading the file that defines the content of the linked instance definition, skip any linked instance definitions found in that file. If false, when reading the file that defines the content of the linked instance definition, recursively load linked instance definitions found in that file.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -123254,6 +124133,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the source archive path for linked instance definitions relative to the file that contains this definition. Empty if the definition is not linked or no relative path is stored.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -123262,6 +124142,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the unit system of the instance definition. If the instance definition was imported from another 3dm file, the unit system may differ from that of the document.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -123270,6 +124151,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the relationship between this instance definition's geometry and the source archive that contains the original definition.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -123775,6 +124657,115 @@
   },
   {
     "namespace": "Rhino.Geometry.Intersect",
+    "name": "IntersectingMeshPair",
+    "dataType": "struct",
+    "summary": "Two meshes that intersect, as reported by  <b>Intersection.MeshMeshPredicate(IEnumerable{Mesh}, IEnumerable{Mesh}, double, bool, out IntersectingMeshPair[], FileIO.TextLog, System.Threading.CancellationToken)</b> , with one face of each that intersect.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "IntersectingMeshPair(int meshIndexA, int meshIndexB, int faceIndexA, int faceIndexB)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Initializes a new instance of <b>IntersectingMeshPair</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshIndexA",
+            "type": "System.Int32",
+            "summary": "The index of the first mesh."
+          },
+          {
+            "name": "meshIndexB",
+            "type": "System.Int32",
+            "summary": "The index of the second mesh."
+          },
+          {
+            "name": "faceIndexA",
+            "type": "System.Int32",
+            "summary": "The index of a face of the first mesh."
+          },
+          {
+            "name": "faceIndexB",
+            "type": "System.Int32",
+            "summary": "The index of a face of the second mesh."
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "signature": "int FaceIndexA",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The index of a face of the first mesh that intersects <b>FaceIndexB</b> , or -1 if it could not be determined.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int FaceIndexB",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The index of a face of the second mesh that intersects <b>FaceIndexA</b> , or -1 if it could not be determined.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int MeshIndexA",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The index of the first mesh, in meshesA.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
+        "signature": "int MeshIndexB",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The index of the second mesh, in meshesB, or in meshesA when meshesB is null.",
+        "since": "9.0",
+        "property": ["get"]
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void Deconstruct(out System.Int32 meshIndexA, out System.Int32 meshIndexB, out System.Int32 faceIndexA, out System.Int32 faceIndexB)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Deconstructs this pair, so that it can be written asvar (meshIndexA, meshIndexB, _, _) = pair;.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshIndexA",
+            "type": "System.Int32",
+            "summary": "Receives <b>MeshIndexA</b> ."
+          },
+          {
+            "name": "meshIndexB",
+            "type": "System.Int32",
+            "summary": "Receives <b>MeshIndexB</b> ."
+          },
+          {
+            "name": "faceIndexA",
+            "type": "System.Int32",
+            "summary": "Receives <b>FaceIndexA</b> ."
+          },
+          {
+            "name": "faceIndexB",
+            "type": "System.Int32",
+            "summary": "Receives <b>FaceIndexB</b> ."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.Geometry.Intersect",
     "name": "Intersection",
     "dataType": "class",
     "summary": "Provides static methods for the computation of intersections, projections, sections and similar.",
@@ -123947,6 +124938,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Intersects a Brep with an (infinite) plane.",
+        "since": "8.27",
         "parameters": [
           {
             "name": "brep",
@@ -124547,7 +125539,9 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Intersects a Brep with an (infinite) plane.",
+        "summary": "Intersects geometry with an (infinite) plane.",
+        "since": "9.0",
+    "remarks": "The curves and points are projected onto the plane. Curves that are not valid after the projection are not returned. For an InstanceReferenceGeometry, curves are fitted inside the instance definition with tolerance divided by the largest scale factor of the transform, so they are within tolerance in world coordinates, also for non-uniform scale. Points are tested with their distance to the plane in world coordinates. With non-uniform scale, overlaps of curves with the plane are detected with the stricter curve tolerance, so a curve closer than tolerance to the plane can be missed as an overlap. When joinCurves is true, open curves can be reversed, very short curves can be dropped, and joined curves are PolyCurve. For point clouds, the points within tolerance of the plane are returned as one polyline in intersectionCurves, or in intersectionPoints when there is only one. Points closer together than tolerance are merged.",
         "parameters": [
           {
             "name": "geometry",
@@ -124567,12 +125561,12 @@
           {
             "name": "joinCurves",
             "type": "System.Boolean",
-            "summary": "If true, join the resulting curves where possible."
+            "summary": "If true, join the resulting curves where possible, for every geometry type and across the objects of an instance definition."
           },
           {
             "name": "doc",
             "type": "RhinoDoc",
-            "summary": "The document to use for intersection. If null, then it will fail if geometry is an InstanceDefinitionGeometry."
+            "summary": "The document that has the instance definition when geometry is an InstanceReferenceGeometry. Can be None for other geometry."
           },
           {
             "name": "intersectionCurves",
@@ -124585,7 +125579,74 @@
             "summary": "The intersection points will be returned here."
           }
         ],
-        "returns": "True on success, False on failure."
+        "returns": "True if the intersection was computed, including when the plane misses the geometry. For an InstanceReferenceGeometry, True if it was computed for any object in the instance definition. False if the geometry type is not supported or the intersection failed. Curves and points found before a failure are still returned."
+      },
+      {
+        "signature": "System.Boolean GeometryPlane(GeometryBase geometry, Plane plane, System.Double tolerance, System.Boolean joinCurves, System.Boolean pointCloudAsPoints, RhinoDoc doc, Transform xform, PlaneIntersectionCache cache, System.Threading.CancellationToken cancel, out Curve[] intersectionCurves, out Point3d[] intersectionPoints)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Intersects geometry with an (infinite) plane.",
+        "since": "9.0",
+    "remarks": "The curves and points are projected onto the plane. Curves that are not valid after the projection are not returned. For xform and for an InstanceReferenceGeometry, curves are fitted in the space of the geometry with tolerance divided by the largest scale factor of the transform, so they are within tolerance in world coordinates, also for non-uniform scale. Points are tested with their distance to the plane in world coordinates. With non-uniform scale, overlaps of curves with the plane are detected with the stricter curve tolerance, so a curve closer than tolerance to the plane can be missed as an overlap. When joinCurves is true, open curves can be reversed, very short curves can be dropped, and joined curves are PolyCurve. A cancelled call does not join. For point clouds, the points within tolerance of the plane are returned in intersectionPoints when pointCloudAsPoints is true, all of them. Otherwise they are returned as one polyline in intersectionCurves, or in intersectionPoints when there is only one, and points closer together than tolerance are merged.",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "GeometryBase",
+            "summary": "GeometryBase object to intersect."
+          },
+          {
+            "name": "plane",
+            "type": "Plane",
+            "summary": "Plane to intersect with."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "Tolerance to use for intersections."
+          },
+          {
+            "name": "joinCurves",
+            "type": "System.Boolean",
+            "summary": "If true, join the resulting curves where possible, for every geometry type and across the objects of an instance definition."
+          },
+          {
+            "name": "pointCloudAsPoints",
+            "type": "System.Boolean",
+            "summary": "If true, every point of a PointCloud within tolerance of the plane is returned in intersectionPoints. If false, they are returned as one polyline in intersectionCurves, as the Contour command does."
+          },
+          {
+            "name": "doc",
+            "type": "RhinoDoc",
+            "summary": "The document that has the instance definition when geometry is, or contains, an InstanceReferenceGeometry. Can be None for other geometry."
+          },
+          {
+            "name": "xform",
+            "type": "Transform",
+            "summary": "Maps geometry to the space of the plane and the results, as InstanceReferenceGeometry.Xform does. Avoids transforming a copy of the geometry. Must not be singular."
+          },
+          {
+            "name": "cache",
+            "type": "PlaneIntersectionCache",
+            "summary": "Data computed from the geometry alone, kept between calls, or null. Reuse one cache for many planes through the same geometry."
+          },
+          {
+            "name": "cancel",
+            "type": "System.Threading.CancellationToken",
+            "summary": "Checked between the objects of an instance definition, in point clouds and in mesh intersections. A single Brep intersection cannot be cancelled once it has started."
+          },
+          {
+            "name": "intersectionCurves",
+            "type": "Curve[]",
+            "summary": "The intersection curves will be returned here."
+          },
+          {
+            "name": "intersectionPoints",
+            "type": "Point3d[]",
+            "summary": "The intersection points will be returned here."
+          }
+        ],
+        "returns": "True if the intersection was computed, including when the plane misses the geometry. For an InstanceReferenceGeometry, True if it was computed for any object in the instance definition. False if the geometry type is not supported, the intersection failed or was cancelled, or xform or the transform of an InstanceReferenceGeometry is singular. Curves and points found before a failure or cancellation are still returned."
       },
       {
         "signature": "System.Boolean LineBox(Line line, BoundingBox box, System.Double tolerance, out Interval lineParameters)",
@@ -125033,22 +126094,22 @@
         "returns": "An array of intersection line segments, empty if no intersections were found."
       },
       {
-        "signature": "System.Boolean MeshMeshPredicate(IEnumerable<Mesh> meshesA, IEnumerable<Mesh> meshesB, System.Double tolerance, System.Boolean fast, out System.Int32[] pairs, out System.Int32[] facePairs, FileIO.TextLog textLog, System.Threading.CancellationToken cancel)",
+        "signature": "System.Boolean MeshMeshPredicate(IEnumerable<Mesh> meshesA, IEnumerable<Mesh> meshesB, System.Double tolerance, System.Boolean fast, FileIO.TextLog textLog, System.Threading.CancellationToken cancel)",
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Determines which meshes intersect, and reports one intersecting face couple for each pair found. No geometry is computed: each pair of meshes is tested only until its first hit.",
+        "summary": "Determines whether any of the meshes intersect. No geometry is computed, and the search stops at the first pair of meshes that intersect: this is the quickest answer when the intersecting pairs are not needed.",
         "since": "9.0",
         "parameters": [
           {
             "name": "meshesA",
             "type": "IEnumerable<Mesh>",
-            "summary": "The first mesh list. This cannot be null. Null entries are skipped and do not count in the indices."
+            "summary": "The first mesh list. This cannot be null. Null entries are skipped."
           },
           {
             "name": "meshesB",
             "type": "IEnumerable<Mesh>",
-            "summary": "A second mesh list, or null. When null, every pair within meshesA is tested once; otherwise every mesh of meshesA is tested against every mesh of meshesB."
+            "summary": "A second mesh list, or null. When null, every pair within meshesA is tested once; otherwise every mesh of meshesA is tested against every mesh of meshesB. Null entries are skipped."
           },
           {
             "name": "tolerance",
@@ -125061,14 +126122,50 @@
             "summary": "True uses the fast intersector behind <b>MeshMeshFast</b> : faces that cross or touch within tolerance count, coplanar overlap without a crossing does not. False uses the accurate intersector, which also reports coplanar overlap and costs about as much as <b>MeshMeshFast</b> ."
           },
           {
-            "name": "pairs",
-            "type": "System.Int32[]",
-            "summary": "Flattened index couples [i0, j0, i1, j1, ...] of the meshes that intersect: i indexes meshesA and j indexes meshesB, or both index meshesA with i less than j. Empty when nothing intersects."
+            "name": "textLog",
+            "type": "FileIO.TextLog",
+            "summary": "A text log, or null."
           },
           {
-            "name": "facePairs",
-            "type": "System.Int32[]",
-            "summary": "Flattened face index couples parallel to pairs: for each couple in pairs, a face of the first mesh and a face of the second that intersect, the first ones found."
+            "name": "cancel",
+            "type": "System.Threading.CancellationToken",
+            "summary": "A cancellation token to stop the computation at a given point."
+          }
+        ],
+        "returns": "True if any pair intersects, otherwise false. False is also returned on error or cancellation."
+      },
+      {
+        "signature": "System.Boolean MeshMeshPredicate(IEnumerable<Mesh> meshesA, IEnumerable<Mesh> meshesB, System.Double tolerance, System.Boolean fast, out IntersectingMeshPair[] intersectingPairs, FileIO.TextLog textLog, System.Threading.CancellationToken cancel)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Determines which meshes intersect, and reports one intersecting face couple for each pair found. No geometry is computed: each pair of meshes is tested only until its first hit.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "meshesA",
+            "type": "IEnumerable<Mesh>",
+            "summary": "The first mesh list. This cannot be null. Null entries are skipped but keep their index."
+          },
+          {
+            "name": "meshesB",
+            "type": "IEnumerable<Mesh>",
+            "summary": "A second mesh list, or null. When null, every pair within meshesA is tested once; otherwise every mesh of meshesA is tested against every mesh of meshesB. Null entries are skipped but keep their index."
+          },
+          {
+            "name": "tolerance",
+            "type": "System.Double",
+            "summary": "A tolerance value. If negative, the positive value will be used. WARNING! Good tolerance values are in the magnitude of 10^-7, or RhinoMath.SqrtEpsilon*10."
+          },
+          {
+            "name": "fast",
+            "type": "System.Boolean",
+            "summary": "True uses the fast intersector behind <b>MeshMeshFast</b> : faces that cross or touch within tolerance count, coplanar overlap without a crossing does not. False uses the accurate intersector, which also reports coplanar overlap and costs about as much as <b>MeshMeshFast</b> ."
+          },
+          {
+            "name": "intersectingPairs",
+            "type": "IntersectingMeshPair[]",
+            "summary": "The pairs of meshes that intersect, each with the first intersecting faces found.  <b>IntersectingMeshPair.MeshIndexA</b> indexes meshesA and <b>IntersectingMeshPair.MeshIndexB</b> indexes meshesB, or both index meshesA with MeshIndexA less than MeshIndexB. Empty when nothing intersects."
           },
           {
             "name": "textLog",
@@ -126619,6 +127716,42 @@
       }
     ]
 
+  },
+  {
+    "namespace": "Rhino.Geometry.Intersect",
+    "name": "PlaneIntersectionCache",
+    "dataType": "class",
+    "summary": "Data that <b>Intersection.GeometryPlane(GeometryBase, Plane, double, bool, bool, RhinoDoc, Transform, PlaneIntersectionCache, System.Threading.CancellationToken, out Curve[], out Point3d[])</b>  computes from the geometry alone, kept between calls: the mesh intersection data of a mesh, and the Brep a SubD, Extrusion, Surface or BrepFace converts to. Reuse one cache for many planes through the same geometry, such as a contour stack.",
+    "remarks": "Entries are keyed by the native geometry. The cache keeps each geometry it is used with alive until  <b>Clear</b> or <b>Dispose()</b> , so a new object cannot take over the entry of a collected one. Call <b>Clear</b> when a geometry used with the cache, or an instance definition it references, is changed in place; not while the cache is in use. One cache can be used from several threads at the same time.",
+    "interfaces": ["IDisposable"],
+    "constructors": [
+      {
+        "signature": "PlaneIntersectionCache()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Creates an empty cache.",
+        "since": "9.0"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void Clear()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Removes all entries, and releases the geometry the cache kept alive.",
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void Dispose()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Releases the native cache.",
+        "since": "9.0"
+      }
+    ]
   },
   {
     "namespace": "Rhino.Geometry.Intersect",
@@ -130320,6 +131453,7 @@
         "protected": false,
         "virtual": true,
         "summary": "Populates a System.Runtime.Serialization.SerializationInfo with the data needed to serialize the target object.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "info",
@@ -133422,6 +134556,7 @@
         "protected": false,
         "virtual": false,
         "since": "6.0",
+        "deprecated": "9.0",
         "obsolete": "Use Mesh.FillHole"
       },
       {
@@ -140351,6 +141486,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Creates a new instance of the <b>NurbsCurveFitParameters</b> class as a copy of an existing instance.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "other",
@@ -140367,6 +141503,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The default degree of the fit",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140375,6 +141512,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Default number of points to sample from input curves and pass to the fitter that creates the output NURBS curve.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140383,6 +141521,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The maximum degree of the fit",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140391,6 +141530,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the maximum number of points supported for NURBS curve fitting operations.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140399,6 +141539,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Maximum number of points to sample from input curves and pass to the fitter that creates the output NURBS curve.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140407,6 +141548,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The minimum clamped point count",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140415,6 +141557,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The minimum closed point count",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140423,6 +141566,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The minimum degree of the fit",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140431,6 +141575,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Minimum number of points to sample from input curves and pass to the fitter that creates the output NURBS curve.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140439,6 +141584,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If true, the TangentMatching setting is applied at kinks. Otherwise, TangentMatching applies only to the ends of curves.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140447,6 +141593,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of control points if the NURBS curve will be clamped. Number of total control points if the NURBS curve will be periodic. This number is >= PointCount() Includes SubDFriendly constrained points and the duplicated point for a clamped closed curve.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140455,6 +141602,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of total control points if the NURBS curve will be periodic. This number is >= PointCount() and includes periodic duplicates.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140463,6 +141611,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If Closed() is true, the number of constrained points is (TangentMatchStart() || TangentMatchEnd() ? 1 : 0) + (TangentMatchStart()?1:0) + (TangentMatchEnd()?1:0). If Closed() is false, the number of constrained points is 2 + (SubDFriendly() ? 2 : 0) + (TangentMatchStart()?1:0) + (TangentMatchEnd()?1:0).",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140471,6 +141620,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When CurvatureBiasIntensity == NurbsCurveFitParameters.Intensity::Custom, this value is used as the curvature bias parameter.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140479,6 +141629,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Curvature bias is used to make the fit curve stay close to regions of relatively high curvature. Use CurvatureBiasCoefficient() to convert this enum to the the value passed to the optimizer.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140487,6 +141638,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The degree of the resulting curve",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140495,6 +141647,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The angle, in degrees, used to determine if when an abrupt change in tangent or curvature vector direction is a kink.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140503,6 +141656,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The angle, in radians, used to determine if when an abrupt change in tangent or curvature vector direction is a kink.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140511,6 +141665,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets the kink splitting behavior used when fitting a NURBS curve. See also <b>KinkSplit</b>",
+        "since": "9.0",
     "remarks": "This property determines how the curve fitting algorithm handles kinks or sharp changes in direction. Adjusting this value can influence the smoothness and accuracy of the resulting curve. Choose an appropriate value based on whether preserving or smoothing out kinks is desired for your application.",
         "property": ["get", "set"]
       },
@@ -140520,6 +141675,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If OptimizeCurve = false, then all options below are ignored and the Greville interpolant is returned. Rhino 1 - Rhino 8 Rebuild command created a result similar to what's created when m_bOptimizeCurve = false.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140528,6 +141684,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of total control points if the NURBS curve will be periodic. This number is >= PointCount() and includes periodic duplicates.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140536,6 +141693,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of distinct control points in the NURBS curve fit. If a range of point counts is possible, this is the minimum number.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140544,6 +141702,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets  the point count range as an IndexPair.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140551,6 +141710,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140558,6 +141718,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140566,6 +141727,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When a range of point counts is permitted and PointCountRangeTolerance greater than 0, then searching for the NURBS curve fit terminates if the separation is less than or equal to PointCountRangeTolerance.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140574,6 +141736,7 @@
         "protected": false,
         "virtual": false,
         "summary": "This is the number of points the NURBS curve is fit through. Is it common for these points to be sampled from an input curve.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -140582,6 +141745,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When SmoothingIntensity == NurbsCurveFitParameters.Intensity::Custom, this value is used as the smoothing parameter.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140590,6 +141754,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Smoothing penalty used to make triples of consecutive control polygon points colinear. Use SmoothingCoefficient() to convert this enum to the the value passed to the optimizer.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140598,6 +141763,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets the SubDFriendly property. When true, the resulting curve will be more likely to have good subdivision surface properties, such as fewer kinks and more even parameterization. This is accomplished by using a more aggressive kink splitting strategy and by using the SmoothingCoefficient to bias the fit towards smoother curves.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140606,6 +141772,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets ot Sets the TangentMatching value",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140614,6 +141781,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When UniformityIntensity == NurbsCurveFitParameters.Intensity::Custom, this value is used as the uniformity parameter.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140622,6 +141790,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Uniformity penalty used to make the distance between control points more equal. Use UniformityCoefficient() to convert this enum to the the value passed to the optimizer.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -140629,6 +141798,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -140639,6 +141809,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Given a point count and periodic setting, determine the maximum degree.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "degree",
@@ -140664,6 +141835,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Give a degree and periodic setting, determine the minimum point count.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "degree",
@@ -140695,7 +141867,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Supports the ICloneable inteface and creates a new NurbsCurveFitParameters object with the same property values as this instance."
+        "summary": "Supports the ICloneable inteface and creates a new NurbsCurveFitParameters object with the same property values as this instance.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void Dispose()",
@@ -140724,63 +141897,72 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the Curvature bias coefficient that corresponds to a given NurbsCurveFitParameters.Intensity value."
+        "summary": "Returns the Curvature bias coefficient that corresponds to a given NurbsCurveFitParameters.Intensity value.",
+        "since": "9.0"
       },
       {
         "signature": "Intensity GetCurvatureBiasIntensityFromCoefficient(System.Double coefficient)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the NurbsCurveFitParameters.Intensity value that corresponds to a given curvature bias coefficient."
+        "summary": "Returns the NurbsCurveFitParameters.Intensity value that corresponds to a given curvature bias coefficient.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void GetPointCountRange(out System.Int32 minimum, out System.Int32 maximum, out System.Double tolerance)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Get the point count range and tolerance."
+        "summary": "Get the point count range and tolerance.",
+        "since": "9.0"
       },
       {
         "signature": "System.Double GetSmoothingCoefficientFromIntensity(Intensity intensity)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the smoothing coefficient that corresponds to a given NurbsCurveFitParameters.Intensity value."
+        "summary": "Returns the smoothing coefficient that corresponds to a given NurbsCurveFitParameters.Intensity value.",
+        "since": "9.0"
       },
       {
         "signature": "Intensity GetSmoothingIntensityFromCoefficient(System.Double coefficient)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the NurbsCurveFitParameters.Intensity value that corresponds to a given smoothing coefficient."
+        "summary": "Returns the NurbsCurveFitParameters.Intensity value that corresponds to a given smoothing coefficient.",
+        "since": "9.0"
       },
       {
         "signature": "System.Double GetUniformityCoefficientFromIntensity(Intensity intensity)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the uniformity coefficient that corresponds to a given NurbsCurveFitParameters.Intensity value."
+        "summary": "Returns the uniformity coefficient that corresponds to a given NurbsCurveFitParameters.Intensity value.",
+        "since": "9.0"
       },
       {
         "signature": "Intensity GetUniformityIntensityFromCoefficient(System.Double coefficient)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the NurbsCurveFitParameters.Intensity value that corresponds to a given uniformity coefficient."
+        "summary": "Returns the NurbsCurveFitParameters.Intensity value that corresponds to a given uniformity coefficient.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void SetPointCountRange(System.Int32 minimum, System.Int32 maximum, System.Double tolerance)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Set the point count range and tolerance."
+        "summary": "Set the point count range and tolerance.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void SetPointCountRange(System.Int32 minimum, System.Int32 maximum)",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Set the point count range and tolerance."
+        "summary": "Set the point count range and tolerance.",
+        "since": "9.0"
       }
     ]
   },
@@ -140789,6 +141971,7 @@
     "name": "NurbsCurveFitParameters.Intensity",
     "dataType": "enum",
     "summary": "The Intensity enum is used to select a predefined or a custom value for the smoothing, uniformity, and curvature bias coefficients.",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -140840,6 +142023,7 @@
     "name": "NurbsCurveFitParameters.KinkSplit",
     "dataType": "enum",
     "summary": "The KinkSplit enum is used to determine how target curve kinks (abrupt changes in target or curvature) are handled during rebuilding.",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -140884,6 +142068,7 @@
     "name": "NurbsCurveFitParameters.TangentMatch",
     "dataType": "enum",
     "summary": "The TangentMatch enum is used to constrain the tangents of the rebuilt curve to match those of the target curve.",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -141046,6 +142231,47 @@
     "baseclass": "Rhino.Geometry.Surface",
     "interfaces": ["IEpsilonComparable<NurbsSurface>"],
     "constructors": [
+      {
+        "signature": "NurbsSurface(int dimension, bool isRational, int order0, int order1, int controlPointCount0, int controlPointCount1)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Constructs a new NURBS surface with knot and control point memory allocated.",
+        "since": "9.0",
+    "remarks": "If any argument is out of range, the surface is empty and not valid. Use <b>Create</b> to get None instead.",
+        "parameters": [
+          {
+            "name": "dimension",
+            "type": "System.Int32",
+            "summary": "The number of dimensions.  \n>= 1. This value is usually 3."
+          },
+          {
+            "name": "isRational",
+            "type": "System.Boolean",
+            "summary": "True to make a rational NURBS."
+          },
+          {
+            "name": "order0",
+            "type": "System.Int32",
+            "summary": "The order in U direction.  \n>= 2."
+          },
+          {
+            "name": "order1",
+            "type": "System.Int32",
+            "summary": "The order in V direction.  \n>= 2."
+          },
+          {
+            "name": "controlPointCount0",
+            "type": "System.Int32",
+            "summary": "Control point count in U direction.  \n>= order0."
+          },
+          {
+            "name": "controlPointCount1",
+            "type": "System.Int32",
+            "summary": "Control point count in V direction.  \n>= order1."
+          }
+        ]
+      },
       {
         "signature": "NurbsSurface(NurbsSurface other)",
         "modifiers": ["public"],
@@ -145051,6 +146277,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Generates an array of two-dimensional points distributed according to the specified blue noise type.",
+        "since": "9.0",
     "remarks": "The distribution and characteristics of the generated points depend on the specified noise type.",
         "parameters": [
           {
@@ -145092,6 +146319,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Generates an array of three-dimensional points distributed according to the specified blue noise type.",
+        "since": "9.0",
     "remarks": "The distribution and characteristics of the generated points depend on the specified noise type.",
         "parameters": [
           {
@@ -150492,6 +151720,7 @@
     "name": "RebuildCurveIntensity",
     "dataType": "enum",
     "summary": "RebuildCurveIntensity used used to specify rebuild smoothing and uniformity intensities.",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -150536,6 +151765,7 @@
     "namespace": "Rhino.Geometry",
     "name": "RebuildCurveKinkSplitting",
     "dataType": "enum",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -150581,7 +151811,8 @@
         "signature": "RebuildCurveOptions()",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -150591,6 +151822,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The maximum deviation between a target curve and the corresponding rebuilt curve calculated using the current properties.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150599,6 +151831,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The range of point counts in the rebuilt curves calculated using the current properties. When multiple target curves are being rebuilt with variable point counts or kink splittings, the resulting rebuilt curves can have a range of point counts. CurrentOutputPointCountRange.I = minimum point count. CurrentOutputPointCountRange.J = maximum point count.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150607,6 +151840,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The range of span counts in the rebuilt curves calculated using the current properties. When multiple target curves are being rebuilt with variable point counts or kink splittings, the resulting rebuilt curves can have a range of span counts. CurrentOutputSpanCountRange.I = minimum span count. CurrentOutputSpanCountRange.J = maximum span count. NOTE WELL: Do not confuse span counts with point counts. The span count is always <= PointCount - Degree and is the number of spans in the rebuilt NURBS curves.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150615,6 +151849,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The degree the rebuit curves will have. Changing the degree can change other options. After changing the degre, user interface code must update all displayed values.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150623,6 +151858,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if input target curves should be deleted when possible.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150631,6 +151867,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The number of input curves.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150639,6 +151876,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The range of degrees in the input curves. InputDegreeRange.I = minimum input curve degree. InputDegreeRange.J = maximum input curve degree.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150647,6 +151885,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The range of point counts in the input curves. InputPointCountRange.I = minimum input curve point count. InputPointCountRange.J = maximum input curve point count.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150655,6 +151894,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The range of span counts in the input curves. InputDegreeRange.I = minimum input curve span count. InputDegreeRange.J = maximum input curve span count.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150663,6 +151903,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If the KinkSplitting is on, then KinkAngleDegrees is the angle in degrees used to detect discontinuous changes in target curve tangents and curvature directions.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150670,6 +151911,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150678,6 +151920,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the user interface is permitted to show the kink splitting options",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150686,6 +151929,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The maximum value a user interface may specify as a degree value.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150694,6 +151938,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The maximum point count. If the context permits ranges of point counts, then it is possible that MinimumPointCount < MaximumPointCount. Otherwise MinimumPointCount = MaximumPointCount = PointCount.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150702,6 +151947,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The maximum value a user interface may specify as a point count value.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150710,6 +151956,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The mimimum value a user interface may specify as a degree value.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150718,6 +151965,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The minimum point count. If the context permits ranges of point counts, then it is possible that MinimumPointCount < MaximumPointCount. Otherwise MinimumPointCount = MaximumPointCount = PointCount.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150726,6 +151974,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The mimimum value a user interface may specify as a point count value.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150734,6 +151983,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if output rebuilt curves should be on the current layer. False if output rebuild curves should be on the target curve's layer.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150742,6 +151992,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Always sets the number of control points in the rebuilt curve. If PointCountRangePermitted is True or the minimum and maximum point counts are equal, that value is returned. Otherwise 0 is returned and you must use MinimumPointCount and MaximumPointCount to get the point count range. Put another way, when 0 is returned, a range of point counts has been specified and you must use MinimumPointCount and MaximumPointCount to get the point count range.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150750,6 +152001,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If user interface is permitted to set a range of point counts, then PointCountRangePermitted = true and SetPointCountRange() may be used to set the range. Otherwise point count ranges are not permitted\\ and user interface must use PointCount to set a single value.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150758,6 +152010,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When PointCountRangePermitted is True and MinimumPointCount < MaximumPointCount, PointCountRangeTolerance specifies the desired maximum deviation between the target and rebuilt curves. If there is a rebuilt curve in the point count range with deviation <= PointCountRangeTolerance, then the rebuilt curve with the smallest point count whose deviation <= tolerance is returned. Otherwise the curve with the smallest deviation is returned. Use SetPointCountRange(min,max,tol) to set PointCountRangeTolerance.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150766,6 +152019,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Serial number of the Rhino document containing the target curves.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150774,6 +152028,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the control points of the rebuilt curves are displayed during the dynamic preview.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150782,6 +152037,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When SmoothingPermitted is true, SmoothingIntensity sets and gets the intensity of forcing the 2nd point of contiguous triples of control points to be halfway between the 1st and 3rd point.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150790,6 +152046,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the user interface is permitted to show the smoothing intensity option",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150798,6 +152055,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When SubDFriendly is true, the degree is set to 3 and the ends of rebuilt open curves have zero 2nd derivative. These types of curves are useful for lofting into SubDs.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150806,6 +152064,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When TangentMatchPermitted is true, TangentMatch is the active tangent mathing option. When TangentMatchPermitted is false, the user interface should not offer tangent matching.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150814,6 +152073,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if the user interface may offer tangent matching as an option.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -150822,6 +152082,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When UniformityPermitted is true, UniformityIntensity sets and gets the intensity of forcing the the distance between control points to be equal.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -150830,6 +152091,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True if the user interface is permitted to show the uniformity intensity option",
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -150839,38 +152101,44 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "When the rebuild options are presented in a dialog, the initial rebuild calculation is deferred so that the dialog appears immediately instead of after that calculation finishes. The dialog calls this one time, after it is on the screen, and the initial calculation and the first dynamic preview happen then. The dialog must update itself from these options when this returns. The calculation fills in the current output properties and it can increase the point count when kink splitting needs more points than the current settings specify. Calling this when no initial calculation is pending does nothing."
+        "summary": "When the rebuild options are presented in a dialog, the initial rebuild calculation is deferred so that the dialog appears immediately instead of after that calculation finishes. The dialog calls this one time, after it is on the screen, and the initial calculation and the first dynamic preview happen then. The dialog must update itself from these options when this returns. The calculation fills in the current output properties and it can increase the point count when kink splitting needs more points than the current settings specify. Calling this when no initial calculation is pending does nothing.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void Dispose()",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Actively reclaims unmanaged resources that this instance uses."
+        "summary": "Actively reclaims unmanaged resources that this instance uses.",
+        "since": "9.0"
       },
       {
         "signature": "System.Int32 IntensityToInt(Rhino.Geometry.RebuildCurveIntensity intensity)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "Rhino.Geometry.RebuildCurveIntensity IntToIntensity(System.Int32 intensity_as_int)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "Rhino.Geometry.RebuildCurveKinkSplitting IntToKinkSplitting(System.Int32 kink_splitting_at_as_int)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Int32 KinkSplittingToInt(Rhino.Geometry.RebuildCurveKinkSplitting kink_splitting)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Void SetPointCountRange(System.Int32 minimum_point_count, System.Int32 maximum_point_count, System.Double tolerance)",
@@ -150878,6 +152146,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If PointCountRangePermitted is true, then the user interface may use SetPointCountRange(min,max,tolerance) to specify a range of acceptable point counts. Otherwise using PointCount to specify a single point count value.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "minimum_point_count",
@@ -150903,6 +152172,7 @@
     "name": "RebuildCurveTangentMatching",
     "dataType": "enum",
     "summary": "RebuildCurveTangentMatch used used to specify tangent matching options.",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -152778,6 +154048,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Transfers mesh vertex and or point cloud colors to the shrinkwrapped results.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -156507,7 +157778,8 @@
         "signature": "System.Boolean Equals(SubDComponentParameter other)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Boolean Equals(System.Object obj)",
@@ -159594,6 +160866,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the component index of this vertex.",
+        "since": "8.30",
         "returns": "The component index."
       },
       {
@@ -162128,7 +163401,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Default constructs a new surface curvature object. Both kappa1 and kappa2 are zero."
+        "summary": "Default constructs a new surface curvature object. Both kappa1 and kappa2 are zero.",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -162193,6 +163467,7 @@
         "protected": false,
         "virtual": false,
         "summary": "If a principal curvature value is zero or the principal curvatures have opposite signs, then the maximum radius of curvature is infinite RhinoMath.InfiniteRadius is returned. Otherwise the maximum radius of curvature is 1/min(fabs(kappa1),fabs(kappa2)).",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -162529,7 +163804,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Construct for a Brep face."
+        "summary": "Construct for a Brep face.",
+        "since": "9.0"
       },
       {
         "signature": "SurfaceDirectionIndicators(NurbsSurface surface, Point2d origin)",
@@ -162537,6 +163813,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Construct for a Nurbs surface.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "surface",
@@ -162555,7 +163832,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Construct for a surface."
+        "summary": "Construct for a surface.",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -162565,6 +163843,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if this instance is valid. The geometry that was used to create may not have been garbage collected.",
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -162574,7 +163853,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Actively reclaims unmanaged resources that this instance uses."
+        "summary": "Actively reclaims unmanaged resources that this instance uses.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void Dispose(System.Boolean disposing)",
@@ -162595,7 +163875,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Draw the surface directions."
+        "summary": "Draw the surface directions.",
+        "since": "9.0"
       }
     ]
   },
@@ -173485,6 +174766,53 @@
         "returns": "Option index value (>0) or 0 if option cannot be added."
       },
       {
+        "signature": "System.Int32 AddOptionEnumList(LocalizeStringPair optionName, T defaultValue, T[] include)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a choice of enumerated values as list option. Allows to include only some enumerated values.",
+        "since": "8.37",
+        "parameters": [
+          {
+            "name": "optionName",
+            "type": "LocalizeStringPair",
+            "summary": "The name of the option"
+          },
+          {
+            "name": "defaultValue",
+            "type": "T",
+            "summary": "The default value"
+          },
+          {
+            "name": "include",
+            "type": "T[]",
+            "summary": "An array of enumerated values to use. This argument can also be null; in this case, the whole enumerated is used."
+          }
+        ],
+        "returns": "Option index"
+      },
+      {
+        "signature": "System.Int32 AddOptionEnumList(LocalizeStringPair optionName, T defaultValue)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a choice of enumerated values as list option",
+        "since": "8.37",
+        "parameters": [
+          {
+            "name": "optionName",
+            "type": "LocalizeStringPair",
+            "summary": "The name of the option"
+          },
+          {
+            "name": "defaultValue",
+            "type": "T",
+            "summary": "The default value"
+          }
+        ],
+        "returns": "Option index"
+      },
+      {
         "signature": "System.Int32 AddOptionEnumList(System.String englishOptionName, T defaultValue, T[] include)",
         "modifiers": ["public"],
         "protected": false,
@@ -173527,6 +174855,32 @@
             "name": "defaultValue",
             "type": "T",
             "summary": "The default value"
+          }
+        ],
+        "returns": "Option index"
+      },
+      {
+        "signature": "System.Int32 AddOptionEnumSelectionList(LocalizeStringPair optionName, IEnumerable<T> enumSelection, System.Int32 listCurrentIndex)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a list of enumerated values as option list. Use enumSelection[go.Option.CurrentListOptionIndex] to retrieve selection.",
+        "since": "8.37",
+        "parameters": [
+          {
+            "name": "optionName",
+            "type": "LocalizeStringPair",
+            "summary": "The name of the option"
+          },
+          {
+            "name": "enumSelection",
+            "type": "IEnumerable<T>",
+            "summary": "The enumerated values to use."
+          },
+          {
+            "name": "listCurrentIndex",
+            "type": "System.Int32",
+            "summary": "Zero based index of current option."
           }
         ],
         "returns": "Option index"
@@ -173904,7 +175258,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Returns the selected enumerated value by looking at the list of values from which to select. Use this in combination with <b>AddOptionEnumSelectionList{T}</b>",
+        "summary": "Returns the selected enumerated value by looking at the list of values from which to select. Use this in combination with AddOptionEnumSelectionList.",
         "since": "5.4"
       },
       {
@@ -174642,7 +175996,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Initializes a new instance with the default prompts and options."
+        "summary": "Initializes a new instance with the default prompts and options.",
+        "since": "9.0"
       }
     ],
     "properties": [
@@ -174652,6 +176007,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Degree of the resulting curve. Default is 3. Setting any value other than 3 clears SubDFriendly.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174660,6 +176016,7 @@
         "protected": false,
         "virtual": false,
         "summary": "End tangent of an interpolated curve. Only used when UseEndTangent is true.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174668,6 +176025,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Prompt used when getting the first point. The default is the localized \"Start of curve\".",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174676,6 +176034,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Knot spacing used when interpolating. Default is Chord. Only Uniform, Chord and ChordSquareRoot are accepted. Closing the curve selects the periodic form of the value set here, so passing a periodic value would take the knot style out of range. Ignored when SubDFriendly is true.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174684,6 +176043,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The points picked during the most recent call to GetControlPointCurve or GetInterpolatedCurve. Empty before the first call. When the curve was closed, the first point is repeated at the end.",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -174692,6 +176052,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Prompt used when getting the second point. The default is the localized \"Next point\".",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174700,6 +176061,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When true, closing the curve produces a sharp corner at the seam instead of a periodic curve. Default is false.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174708,6 +176070,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Start tangent of an interpolated curve. Only used when UseStartTangent is true.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174716,6 +176079,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When true, the result is a cubic, uniform, non-rational curve that is either periodic or has zero second derivatives at both ends. Default is false. Setting this to True sets Degree to 3, because a SubD friendly curve is always cubic. While this is true, KnotSpacing, StartTangent and EndTangent are ignored.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174724,6 +176088,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Prompt used when getting the third and following points. The default is the localized \"Next point. Press Enter when done\".",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174732,6 +176097,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When true, the linetype of the active layer is used for the dynamic drawing. Default is false.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174740,6 +176106,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When true, an interpolated curve ends tangent to EndTangent. Default is false. Ignored on a closed curve unless Sharp is true, and ignored while SubDFriendly is true. The getter offers its EndTangent option to the user only at degree 3 with SubDFriendly off; a tangent set here still applies at any degree.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -174748,6 +176115,7 @@
         "protected": false,
         "virtual": false,
         "summary": "When true, an interpolated curve starts tangent to StartTangent. Default is false. Ignored on a closed curve unless Sharp is true, and ignored while SubDFriendly is true. The getter offers its StartTangent option to the user only at degree 3 with SubDFriendly off; a tangent set here still applies at any degree.",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -174757,7 +176125,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Actively reclaims unmanaged resources that this instance uses."
+        "summary": "Actively reclaims unmanaged resources that this instance uses.",
+        "since": "9.0"
       },
       {
         "signature": "System.Void Dispose(System.Boolean disposing)",
@@ -174779,6 +176148,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Interactively picks the control points of a curve. This is what the Rhino Curve command uses.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "curve",
@@ -174794,6 +176164,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Interactively picks the points an interpolated curve passes through. This is what the Rhino InterpCrv command uses.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "curve",
@@ -179443,6 +180814,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Interactively picks the points of a curve interpolated through a surface. This is the getter behind the Rhino InterpCrvOnSrf command.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "surface",
@@ -179473,6 +180845,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Interactively picks the points of a curve interpolated through a surface. This is the getter behind the Rhino InterpCrvOnSrf command.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "surface",
@@ -180031,6 +181404,47 @@
         "returns": "Commands.Result.Success if successful."
       },
       {
+        "signature": "Result GetRectangleWithCounts(System.Int32 xMin, ref System.Int32 xCount, System.Int32 yMin, ref System.Int32 yCount, ref System.Boolean subDCorners, out Point3d[] corners)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets a 3d rectangle with prompts for counts in X and Y directions, and a SubDCorners option.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "xMin",
+            "type": "System.Int32",
+            "summary": "Minimum value allowed for count in the x direction."
+          },
+          {
+            "name": "xCount",
+            "type": "System.Int32",
+            "summary": "Count in the x direction."
+          },
+          {
+            "name": "yMin",
+            "type": "System.Int32",
+            "summary": "Minimum value allowed for count in the y direction."
+          },
+          {
+            "name": "yCount",
+            "type": "System.Int32",
+            "summary": "Count in the y direction."
+          },
+          {
+            "name": "subDCorners",
+            "type": "System.Boolean",
+            "summary": "Value of the SubDCorners option."
+          },
+          {
+            "name": "corners",
+            "type": "Point3d[]",
+            "summary": "corners of the rectangle in counter-clockwise order."
+          }
+        ],
+        "returns": "Commands.Result.Success if successful."
+      },
+      {
         "signature": "Result GetSpiral(out NurbsCurve spiral)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -180091,6 +181505,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Easy to use getter for selecting multiple viewports.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "commandPrompt",
@@ -180982,6 +182397,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns the most similar <b>UnitSystem</b> to this instance available onset.",
+        "since": "9.0",
         "returns": "A <b>UnitSystem</b> in the provided set of available."
       },
       {
@@ -187215,6 +188631,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Name of the page",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -187223,6 +188640,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Height of the page in Units",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -187231,6 +188649,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Unit system for the width and height of the page",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -187239,6 +188658,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Width of the page in Units",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ]
@@ -187248,6 +188668,7 @@
     "name": "PurgeFilter",
     "dataType": "enum",
     "summary": "The document table object types that <b>RhinoDoc.Purge(PurgeFilter)</b> can purge.",
+    "since": "9.0",
     "values": [
       {
         "signature": "None = 0",
@@ -187362,6 +188783,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The total number of table objects that were purged.",
+        "since": "9.0",
         "property": ["get"]
       }
     ],
@@ -187372,6 +188794,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The number of table objects that were purged.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "filter",
@@ -188290,7 +189713,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Signal the queue to refresh all of the materials in the scene."
+        "summary": "Signal the queue to refresh all of the materials in the scene.",
+        "since": "9.0"
       },
       {
         "signature": "RenderTexture TextureForId(System.UInt32 crc)",
@@ -202948,6 +204372,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The Content type should not be shown in the UI if Private is true",
+        "since": "9.0",
         "property": ["get"]
       },
       {
@@ -215074,7 +216499,8 @@
         "signature": "System.String ExpandEnvVarsInFileName(System.String filename)",
         "modifiers": ["public", "static"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.String FindFile(RhinoDoc doc, System.String fullPathToFile, System.Boolean unpackFromBitmapTableIfNecessary)",
@@ -215885,6 +217311,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Returns True if Rhino is licensed as an Evaluation product False otherwise",
+        "since": "8.29",
         "property": ["get"]
       },
       {
@@ -216389,7 +217816,8 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Directory where all of Rhino is installed"
+        "summary": "Directory where all of Rhino is installed",
+        "since": "9.0"
       },
       {
         "signature": "System.Object GetPlugInObject(System.Guid pluginId)",
@@ -218761,6 +220189,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Purges unused table objects from this document, the same way the Purge command does.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "filter",
@@ -218781,6 +220210,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Purges unused table objects from this document, the same way the Purge command does.",
+        "since": "9.0",
     "remarks": "The order in which the table object types are purged matters, and purging one type can make another type purgeable, so this purges everything asks for in a single operation.",
         "parameters": [
           {
@@ -218797,6 +220227,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Purges the history records of every object in this document.",
+        "since": "9.0",
     "remarks": "Objects that are deleted (and therefore on the undo stack) have their history records purged but are not included in the returned count.",
         "returns": "The number of objects that had a history record purged."
       },
@@ -218806,6 +220237,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Purges the history records of a list of objects.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "objects",
@@ -218821,6 +220253,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Purges the history records of every object in this document.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "hiddenCount",
@@ -218899,6 +220332,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Save doc as a 3dm to a specified path",
+        "since": "9.0",
         "parameters": [
           {
             "name": "file3dmPath",
@@ -221202,6 +222636,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Human-readable reason the entitlement was actively denied. Null both when entitled AND when the gate doesn't apply to this instance.",
+        "since": "8.33",
         "property": ["get"]
       },
       {
@@ -221210,6 +222645,7 @@
         "protected": false,
         "virtual": false,
         "summary": "True when the running instance is entitled by its cloud provider. See <b>ICloudHost</b> remarks for tri-state semantics.",
+        "since": "8.33",
         "property": ["get"]
       },
       {
@@ -221218,6 +222654,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Signed proof of entitlement returned by the cloud provider (None when not applicable).",
+        "since": "8.33",
         "property": ["get"]
       }
     ],
@@ -221227,7 +222664,8 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Performs the cloud entitlement check (and on AMI-based Marketplace products, also submits a metering record). Re-callable — each invocation runs the gate independently and the platform implementation makes no claim of idempotency. On EC2 with a Marketplace-attached product code and the right IAM role this calls AWS Marketplace MeterUsage; elsewhere this is a no-op."
+        "summary": "Performs the cloud entitlement check (and on AMI-based Marketplace products, also submits a metering record). Re-callable — each invocation runs the gate independently and the platform implementation makes no claim of idempotency. On EC2 with a Marketplace-attached product code and the right IAM role this calls AWS Marketplace MeterUsage; elsewhere this is a no-op.",
+        "since": "8.33"
       }
     ]
   },
@@ -221570,7 +223008,7 @@
         "virtual": false,
         "summary": "The DeviceId is a unique, stable ID that anonymously identifies the device that Rhino is running on. It is computed based on hardware information that should not change when the OS is upgraded, or if commonly modified hardware are added or removed from the computer. The machine-specific information is hashed using a cryptographic hash to make it anonymous.",
         "since": "6.0",
-        "property": ["get", "set"]
+        "property": ["get"]
       },
       {
         "signature": "string DeviceName",
@@ -231580,6 +233018,7 @@
     "name": "ControlHorizontalAlignment",
     "dataType": "enum",
     "summary": "Horizontal alignment settings for control with respect to it's parent",
+    "since": "9.0",
     "values": [
       {
         "signature": "Left = 0",
@@ -233806,6 +235245,7 @@
     "name": "ControlVerticalAlignment",
     "dataType": "enum",
     "summary": "Vertical alignment settings for control with respect to it's parent",
+    "since": "9.0",
     "values": [
       {
         "signature": "Top = 0",
@@ -234792,6 +236232,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Size of direction end shape",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -237991,6 +239432,63 @@
         "since": "6.0"
       },
       {
+        "signature": "System.String LocalizeString(ref LocalizedStringHandler english, System.Int32 contextId, System.String englishSource)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns localized version of an interpolated English string, such as LocalizeString($\"Plug-in: {pi.Name}\", 1428). The string table key is the source text of the literal, holes and all, which is what the string extractor records. Holes in the translation are matched by their source text and replaced with the formatted values.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "english",
+            "type": "LocalizedStringHandler",
+            "summary": "The interpolated text in English."
+          },
+          {
+            "name": "contextId",
+            "type": "System.Int32",
+            "summary": "The context ID."
+          },
+          {
+            "name": "englishSource",
+            "type": "System.String",
+            "summary": "Supplied by the compiler; do not pass."
+          }
+        ],
+        "returns": "The localized string."
+      },
+      {
+        "signature": "System.String LocalizeString(ref LocalizedStringHandler english, System.Object assemblyOrObject, System.Int32 contextId, System.String englishSource)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Returns localized version of an interpolated English string, such as LocalizeString($\"Plug-in: {pi.Name}\", this, 1428). See <b>LocalizeString(ref LocalizedStringHandler, int, string)</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "english",
+            "type": "LocalizedStringHandler",
+            "summary": "The interpolated text in English."
+          },
+          {
+            "name": "assemblyOrObject",
+            "type": "System.Object",
+            "summary": "An assembly or an object from an assembly."
+          },
+          {
+            "name": "contextId",
+            "type": "System.Int32",
+            "summary": "The context ID."
+          },
+          {
+            "name": "englishSource",
+            "type": "System.String",
+            "summary": "Supplied by the compiler; do not pass."
+          }
+        ],
+        "returns": "The localized string."
+      },
+      {
         "signature": "System.String LocalizeString(System.String english, System.Int32 wrongcontextId, System.Int32 contextId)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -238125,6 +239623,59 @@
           }
         ],
         "returns": "The unit system name."
+      }
+    ]
+  },
+  {
+    "namespace": "Rhino.UI",
+    "name": "LocalizedStringHandler",
+    "dataType": "struct",
+    "summary": "Built by the compiler when an interpolated string is passed to  <b>Localization.LocalizeString(ref LocalizedStringHandler, int, string)</b> . Collects the English text and each hole's formatted value. Not for direct use.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "LocalizedStringHandler(int literalLength, int formattedCount)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Void AppendFormatted(T value, System.Int32 alignment, System.String format)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void AppendFormatted(T value, System.Int32 alignment)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void AppendFormatted(T value, System.String format)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void AppendFormatted(T value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
+      },
+      {
+        "signature": "System.Void AppendLiteral(System.String value)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "since": "9.0"
       }
     ]
   },
@@ -242236,6 +243787,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Gets the SVG string for an image in this toolbar file.",
+        "since": "9.0",
         "parameters": [
           {
             "name": "imageId",
@@ -242513,6 +244065,7 @@
     "name": "UserInterfaceCheckState",
     "dataType": "enum",
     "summary": "State of a UserInterfaceCheckBox. Named the way the other enums in here are, so that it does not collide with System.Windows.Forms.CheckState in code that uses both namespaces.",
+    "since": "9.0",
     "values": [
       {
         "signature": "Off = 0",
@@ -242555,10 +244108,20 @@
     ],
     "properties": [
       {
+        "signature": "Color BackgroundColor",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Color the control is filled with: the face of a button, the track of a slider, the box of a check box or radio button, the field of a text box, the whole rectangle of a label, icon or grid. Color.Empty, the default, means the control chooses the color for the theme that is in use and follows the theme when it changes. Labels and icons draw no background when this is Color.Empty. A grid fills with the theme's panel color when it is a top level control, and draws no background when it is inside another control. UserInterfaceGrid.BackgroundOpacity makes the theme color see through, or turns the background off at 0.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "ControlHorizontalAlignment HorizontalAlignment",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -242582,6 +244145,7 @@
         "modifiers": ["public", "virtual"],
         "protected": false,
         "virtual": true,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -242634,6 +244198,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -242642,7 +244207,8 @@
         "signature": "RectangleF ComputedRectangle(Rhino.Display.RhinoView view, System.Boolean logicalPixels)",
         "modifiers": ["public"],
         "protected": false,
-        "virtual": false
+        "virtual": false,
+        "since": "9.0"
       },
       {
         "signature": "System.Void SetSvg(System.String svg)",
@@ -242686,11 +244252,11 @@
         "property": ["get", "set"]
       },
       {
-        "signature": "Color BackgroundColor",
+        "signature": "double BackgroundOpacity",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Color the grid fills its rectangle with. Color.Empty, the default, means draw no background at all.",
+        "summary": "How opaque the background is, from 0 (not drawn at all) to 1 (solid, the default). Leave BackgroundColor as Color.Empty and the grid uses the theme's panel color at this opacity, which gives a see through panel over the model that still follows the theme. A BackgroundColor that was set is drawn at this opacity on top of its own alpha. The border is not affected.",
         "since": "9.0",
         "property": ["get", "set"]
       },
@@ -242971,6 +244537,7 @@
     "name": "UserInterfaceGridColumnSizing",
     "dataType": "enum",
     "summary": "How a UserInterfaceGrid decides the width of one of its columns",
+    "since": "9.0",
     "values": [
       {
         "signature": "Fixed = 0",
@@ -243077,6 +244644,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Is the user interface object visible? Objects that are not visible will not be drawn and will not receive mouse events",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -243320,6 +244888,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Set to True if you want to allow dragging of the slider grip after the end of the defined range.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -243328,6 +244897,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Set to True if you want to allow dragging of the slider grip before the start of the defined range.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -243336,6 +244906,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Number of digits of precision for the slider. If you want the slider to only represent integer values, set the Digits value to 0.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -243344,6 +244915,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Should the slider display the current value as text on the screen",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -243351,6 +244923,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -243359,6 +244932,7 @@
         "protected": false,
         "virtual": false,
         "summary": "The range of acceptable values for the slider",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -243367,6 +244941,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Current value that the slider represents",
+        "since": "9.0",
         "property": ["get", "set"]
       }
     ],
@@ -243383,7 +244958,8 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Formatted string shown based on value and digit precision"
+        "summary": "Formatted string shown based on value and digit precision",
+        "since": "9.0"
       }
     ]
   },
@@ -243410,15 +244986,6 @@
       }
     ],
     "properties": [
-      {
-        "signature": "Color BackgroundColor",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Color the box is filled with. Color.Empty, the default, means use the standard color for the theme that is in use.",
-        "since": "9.0",
-        "property": ["get", "set"]
-      },
       {
         "signature": "Color BorderColor",
         "modifiers": ["public"],
@@ -243859,99 +245426,14 @@
       }
 ,
   {
-    "namespace": "Rhino.PlugIns",
-    "name": "SaveFileHandler",
-    "dataType": "delegate",
-        "signature": "delegate bool SaveFileHandler(string fileName, bool includeAlpha, RenderWindow renderWindow);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called when a user chooses to save a rendered scene as this custom file type."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "ValidateProductKeyDelegate",
-    "dataType": "delegate",
-        "signature": "delegate ValidateResult ValidateProductKeyDelegate(string productKey, out LicenseData licenseData);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Validates a product key or license."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "VerifyLicenseKeyDelegate",
-    "dataType": "delegate",
-        "signature": "delegate ValidateResult VerifyLicenseKeyDelegate(  \nstring licenseKey, string validationCode, DateTime validationCodeInstallDate, bool gracePeriodExpired, out LicenseData licenseData);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by Rhino to verify a license key. For details, see http://developer.rhino3d.com/guides/rhinocommon/rhinocommon-zoo-plugins/"
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "OnLeaseChangedDelegate",
-    "dataType": "delegate",
-        "signature": "delegate void OnLeaseChangedDelegate(LicenseLeaseChangedEventArgs args, out Icon icon);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by Rhino to signal that a lease from Rhino Accounts has changed. If LicenseLeaseChangedEventArgs.Lease is null, then the server has signaled that this product is no longer licensed. Your plug-in must change behavior to behave appropriately."
-      }
-,
-  {
-    "namespace": "Rhino.PlugIns",
-    "name": "VerifyPreviousVersionLicenseDelegate",
-    "dataType": "delegate",
-        "signature": "delegate bool VerifyPreviousVersionLicenseDelegate(  \nstring license, string previousVersionLicense, out string errorMessage);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
-      }
-,
-  {
-    "namespace": "Rhino.Commands",
-    "name": "RunCommandDelegate",
-    "dataType": "delegate",
-        "signature": "delegate Result RunCommandDelegate(RhinoDoc doc, RunMode mode, object data);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
-    "namespace": "Rhino.Input.Custom",
-    "name": "GetObjectGeometryFilter",
-    "dataType": "delegate",
-        "signature": "delegate bool GetObjectGeometryFilter(RhinoObject rhObject, GeometryBase geometry, ComponentIndex componentIndex);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
-      }
-,
-  {
     "namespace": "Rhino.UI",
-    "name": "UpdateMenuItemEventHandler",
+    "name": "OnColorChangedEvent",
     "dataType": "delegate",
-        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Menu item update delegate"
-      }
-,
-  {
-    "namespace": "Rhino.DocObjects.Custom",
-    "name": "TurnOnGripsEventHandler",
-    "dataType": "delegate",
-        "signature": "delegate void TurnOnGripsEventHandler(Rhino.DocObjects.RhinoObject rhObj);",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false
+        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
       }
 ,
   {
@@ -243963,6 +245445,16 @@
         "protected": false,
         "virtual": false,
         "summary": "KeyboardEvent delegate"
+      }
+,
+  {
+    "namespace": "Rhino.DocObjects.Custom",
+    "name": "TurnOnGripsEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void TurnOnGripsEventHandler(Rhino.DocObjects.RhinoObject rhObj);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
       }
 ,
   {
@@ -244086,14 +245578,89 @@
       }
 ,
   {
-    "namespace": "Rhino.UI",
-    "name": "OnColorChangedEvent",
+    "namespace": "Rhino.Commands",
+    "name": "RunCommandDelegate",
     "dataType": "delegate",
-        "signature": "delegate void OnColorChangedEvent(Display.Color4f color);",
+        "signature": "delegate Result RunCommandDelegate(RhinoDoc doc, RunMode mode, object data);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.Input.Custom",
+    "name": "GetObjectGeometryFilter",
+    "dataType": "delegate",
+        "signature": "delegate bool GetObjectGeometryFilter(RhinoObject rhObject, GeometryBase geometry, ComponentIndex componentIndex);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "SaveFileHandler",
+    "dataType": "delegate",
+        "signature": "delegate bool SaveFileHandler(string fileName, bool includeAlpha, RenderWindow renderWindow);",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "May be optionally passed to ShowColorDialog and will get called when the color value changes in the color dialog."
+        "summary": "Called when a user chooses to save a rendered scene as this custom file type."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "ValidateProductKeyDelegate",
+    "dataType": "delegate",
+        "signature": "delegate ValidateResult ValidateProductKeyDelegate(string productKey, out LicenseData licenseData);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Validates a product key or license."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "VerifyLicenseKeyDelegate",
+    "dataType": "delegate",
+        "signature": "delegate ValidateResult VerifyLicenseKeyDelegate(  \nstring licenseKey, string validationCode, DateTime validationCodeInstallDate, bool gracePeriodExpired, out LicenseData licenseData);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by Rhino to verify a license key. For details, see http://developer.rhino3d.com/guides/rhinocommon/rhinocommon-zoo-plugins/"
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "OnLeaseChangedDelegate",
+    "dataType": "delegate",
+        "signature": "delegate void OnLeaseChangedDelegate(LicenseLeaseChangedEventArgs args, out Icon icon);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by Rhino to signal that a lease from Rhino Accounts has changed. If LicenseLeaseChangedEventArgs.Lease is null, then the server has signaled that this product is no longer licensed. Your plug-in must change behavior to behave appropriately."
+      }
+,
+  {
+    "namespace": "Rhino.PlugIns",
+    "name": "VerifyPreviousVersionLicenseDelegate",
+    "dataType": "delegate",
+        "signature": "delegate bool VerifyPreviousVersionLicenseDelegate(  \nstring license, string previousVersionLicense, out string errorMessage);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Called by GetLicense/AskUserForLicense to verify that a previous version license."
+      }
+,
+  {
+    "namespace": "Rhino.UI",
+    "name": "UpdateMenuItemEventHandler",
+    "dataType": "delegate",
+        "signature": "delegate void UpdateMenuItemEventHandler(object sender, RuiUpdateUi cmdui);",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Menu item update delegate"
       }
 ,
   {
