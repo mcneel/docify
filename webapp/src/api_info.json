@@ -90630,16 +90630,16 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Suggests a distance for <b>AlignVertices(IEnumerable{GeometryBase}, double, bool, bool)</b>  from the geometry itself, so the gaps do not have to be measured first.  \nA vertex whose nearest neighbour of all belongs to another object was meant to be shared     with it. The largest of those gaps closes every one of them, and is smaller than the spacing     each object has of its own at those places.",
+        "summary": "Suggests a distance for <b>AlignVertices(IEnumerable{GeometryBase}, double, bool, bool)</b>  from the geometry itself, so the gaps do not have to be measured first.  \nA vertex whose nearest neighbour of all belongs to another object was meant to be shared     with it. Within one mesh or SubD, a cluster of naked vertices at least 1000 times closer together     than to any other naked vertex of that object was meant to be one vertex.  \nThe suggestion closes all of these gaps, rounded up to the next power of ten unless that     would reach the spacing next to a gap.",
         "since": "9.0",
         "parameters": [
           {
             "name": "geometry",
             "type": "IEnumerable<GeometryBase>",
-            "summary": "The geometry that would be aligned."
+            "summary": "The geometry that would be aligned. A single object is enough."
           }
         ],
-        "returns": "A distance greater than zero, or zero when no vertex is nearer to another object than to its own."
+        "returns": "A distance greater than zero, or zero when no such gap is found."
       },
       {
         "signature": "System.Boolean SupportsGeometry(GeometryBase geometry)",
@@ -125541,7 +125541,7 @@
         "virtual": false,
         "summary": "Intersects geometry with an (infinite) plane.",
         "since": "9.0",
-    "remarks": "The curves and points are projected onto the plane. Curves that are not valid after the projection are not returned. For an InstanceReferenceGeometry, curves are fitted inside the instance definition with tolerance divided by the largest scale factor of the transform, so they are within tolerance in world coordinates, also for non-uniform scale. Points are tested with their distance to the plane in world coordinates. With non-uniform scale, overlaps of curves with the plane are detected with the stricter curve tolerance, so a curve closer than tolerance to the plane can be missed as an overlap. When joinCurves is true, open curves can be reversed, very short curves can be dropped, and joined curves are PolyCurve. For point clouds, the points within tolerance of the plane are returned as one polyline in intersectionCurves, or in intersectionPoints when there is only one. Points closer together than tolerance are merged.",
+    "remarks": "The curves and points are projected onto the plane. Curves that are not valid after the projection are not returned. For an InstanceReferenceGeometry, curves are fitted inside the instance definition with tolerance divided by the largest scale factor of the transform, so they are within tolerance in world coordinates, also for non-uniform scale. Points are tested with their distance to the plane in world coordinates. With non-uniform scale, overlaps of curves with the plane are detected with the stricter curve tolerance, so a curve closer than tolerance to the plane can be missed as an overlap. When joinCurves is true, the open curves of each object are joined: they can be reversed, very short curves can be dropped, and joined curves are PolyCurve. For point clouds, the points within tolerance of the plane are returned as one polyline in intersectionCurves, or in intersectionPoints when there is only one. Points closer together than tolerance are merged. The objects of an instance definition that are not visible are skipped, as the Contour command does.",
         "parameters": [
           {
             "name": "geometry",
@@ -125561,7 +125561,7 @@
           {
             "name": "joinCurves",
             "type": "System.Boolean",
-            "summary": "If true, join the resulting curves where possible, for every geometry type and across the objects of an instance definition."
+            "summary": "If true, join the resulting curves of each object where possible, for every geometry type. Curves of different objects, such as the objects of an instance definition, are never joined."
           },
           {
             "name": "doc",
@@ -125579,16 +125579,16 @@
             "summary": "The intersection points will be returned here."
           }
         ],
-        "returns": "True if the intersection was computed, including when the plane misses the geometry. For an InstanceReferenceGeometry, True if it was computed for any object in the instance definition. False if the geometry type is not supported or the intersection failed. Curves and points found before a failure are still returned."
+        "returns": "True if the intersection was computed, including when the plane misses the geometry. For an InstanceReferenceGeometry, True if it was computed for any object in the instance definition. False if the plane is not valid, tolerance is negative or not a number, the geometry type is not supported or the intersection failed. Curves and points found before a failure are still returned."
       },
       {
-        "signature": "System.Boolean GeometryPlane(GeometryBase geometry, Plane plane, System.Double tolerance, System.Boolean joinCurves, System.Boolean pointCloudAsPoints, RhinoDoc doc, Transform xform, PlaneIntersectionCache cache, System.Threading.CancellationToken cancel, out Curve[] intersectionCurves, out Point3d[] intersectionPoints)",
+        "signature": "System.Boolean GeometryPlane(GeometryBase geometry, Plane plane, System.Double tolerance, System.Boolean joinCurves, System.Boolean pointCloudAsPoints, System.Boolean includeHiddenObjects, RhinoDoc doc, Transform xform, PlaneIntersectionCache cache, System.Threading.CancellationToken cancel, out Curve[] intersectionCurves, out Point3d[] intersectionPoints)",
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
         "summary": "Intersects geometry with an (infinite) plane.",
         "since": "9.0",
-    "remarks": "The curves and points are projected onto the plane. Curves that are not valid after the projection are not returned. For xform and for an InstanceReferenceGeometry, curves are fitted in the space of the geometry with tolerance divided by the largest scale factor of the transform, so they are within tolerance in world coordinates, also for non-uniform scale. Points are tested with their distance to the plane in world coordinates. With non-uniform scale, overlaps of curves with the plane are detected with the stricter curve tolerance, so a curve closer than tolerance to the plane can be missed as an overlap. When joinCurves is true, open curves can be reversed, very short curves can be dropped, and joined curves are PolyCurve. A cancelled call does not join. For point clouds, the points within tolerance of the plane are returned in intersectionPoints when pointCloudAsPoints is true, all of them. Otherwise they are returned as one polyline in intersectionCurves, or in intersectionPoints when there is only one, and points closer together than tolerance are merged.",
+    "remarks": "The curves and points are projected onto the plane. Curves that are not valid after the projection are not returned. For xform and for an InstanceReferenceGeometry, curves are fitted in the space of the geometry with tolerance divided by the largest scale factor of the transform, so they are within tolerance in world coordinates, also for non-uniform scale. Points are tested with their distance to the plane in world coordinates. With non-uniform scale, overlaps of curves with the plane are detected with the stricter curve tolerance, so a curve closer than tolerance to the plane can be missed as an overlap. When joinCurves is true, the open curves of each object are joined: they can be reversed, very short curves can be dropped, and joined curves are PolyCurve. Objects after a cancellation are not joined. For point clouds, the points within tolerance of the plane are returned in intersectionPoints when pointCloudAsPoints is true, all of them. Otherwise they are returned as one polyline in intersectionCurves, or in intersectionPoints when there is only one, and points closer together than tolerance are merged.",
         "parameters": [
           {
             "name": "geometry",
@@ -125608,12 +125608,17 @@
           {
             "name": "joinCurves",
             "type": "System.Boolean",
-            "summary": "If true, join the resulting curves where possible, for every geometry type and across the objects of an instance definition."
+            "summary": "If true, join the resulting curves of each object where possible, for every geometry type. Curves of different objects, such as the objects of an instance definition, are never joined."
           },
           {
             "name": "pointCloudAsPoints",
             "type": "System.Boolean",
             "summary": "If true, every point of a PointCloud within tolerance of the plane is returned in intersectionPoints. If false, they are returned as one polyline in intersectionCurves, as the Contour command does."
+          },
+          {
+            "name": "includeHiddenObjects",
+            "type": "System.Boolean",
+            "summary": "If false, the objects of an instance definition that are hidden or on a layer that is off are skipped, as the Contour command does. Nested instance references are entered whether they are visible or not, and their objects are tested one by one."
           },
           {
             "name": "doc",
@@ -125646,7 +125651,7 @@
             "summary": "The intersection points will be returned here."
           }
         ],
-        "returns": "True if the intersection was computed, including when the plane misses the geometry. For an InstanceReferenceGeometry, True if it was computed for any object in the instance definition. False if the geometry type is not supported, the intersection failed or was cancelled, or xform or the transform of an InstanceReferenceGeometry is singular. Curves and points found before a failure or cancellation are still returned."
+        "returns": "True if the intersection was computed, including when the plane misses the geometry. For an InstanceReferenceGeometry, True if it was computed for any object in the instance definition. False if the plane is not valid, tolerance is negative or not a number, the geometry type is not supported, the intersection failed or was cancelled, or xform or the transform of an InstanceReferenceGeometry is singular. Curves and points found before a failure or cancellation are still returned."
       },
       {
         "signature": "System.Boolean LineBox(Line line, BoundingBox box, System.Double tolerance, out Interval lineParameters)",
@@ -127721,7 +127726,7 @@
     "namespace": "Rhino.Geometry.Intersect",
     "name": "PlaneIntersectionCache",
     "dataType": "class",
-    "summary": "Data that <b>Intersection.GeometryPlane(GeometryBase, Plane, double, bool, bool, RhinoDoc, Transform, PlaneIntersectionCache, System.Threading.CancellationToken, out Curve[], out Point3d[])</b>  computes from the geometry alone, kept between calls: the mesh intersection data of a mesh, and the Brep a SubD, Extrusion, Surface or BrepFace converts to. Reuse one cache for many planes through the same geometry, such as a contour stack.",
+    "summary": "Data that <b>Intersection.GeometryPlane(GeometryBase, Plane, double, bool, bool, bool, RhinoDoc, Transform, PlaneIntersectionCache, System.Threading.CancellationToken, out Curve[], out Point3d[])</b>  computes from the geometry alone, kept between calls: the mesh intersection data of a mesh, and the Brep a SubD, Extrusion, Surface or BrepFace converts to. Reuse one cache for many planes through the same geometry, such as a contour stack.",
     "remarks": "Entries are keyed by the native geometry. The cache keeps each geometry it is used with alive until  <b>Clear</b> or <b>Dispose()</b> , so a new object cannot take over the entry of a collected one. Call <b>Clear</b> when a geometry used with the cache, or an instance definition it references, is changed in place; not while the cache is in use. One cache can be used from several threads at the same time.",
     "interfaces": ["IDisposable"],
     "constructors": [
@@ -222631,6 +222636,14 @@
     ],
     "properties": [
       {
+        "signature": "bool AppliesToThisInstance",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "True only when this instance is subject to Marketplace entitlement gating (its EC2 identity document claims our product code). Decoupled from <b>IsEntitled</b> : an instance can apply yet be denied. False for non-EC2, classic EC2, other products, and on any error. Run-gate enforcement consults this to know whether the gate applies.",
+        "property": ["get"]
+      },
+      {
         "signature": "string DenyReason",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -223177,7 +223190,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Tests if this process is currently executing in a server environment.",
+        "summary": "Tests if this process is currently executing in a server-like installation environment: Windows Server, or an AWS Marketplace instance ( <b>OperatingSystemInstallationType</b> = \"MarketplaceAWS\"). Both share the headless-server behavior model — RHINO_TOKEN-based auth, non-interactive licensing UI, no local license discovery.",
         "since": "7.8",
         "property": ["get"]
       },
@@ -239432,63 +239445,6 @@
         "since": "6.0"
       },
       {
-        "signature": "System.String LocalizeString(ref LocalizedStringHandler english, System.Int32 contextId, System.String englishSource)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Returns localized version of an interpolated English string, such as LocalizeString($\"Plug-in: {pi.Name}\", 1428). The string table key is the source text of the literal, holes and all, which is what the string extractor records. Holes in the translation are matched by their source text and replaced with the formatted values.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "english",
-            "type": "LocalizedStringHandler",
-            "summary": "The interpolated text in English."
-          },
-          {
-            "name": "contextId",
-            "type": "System.Int32",
-            "summary": "The context ID."
-          },
-          {
-            "name": "englishSource",
-            "type": "System.String",
-            "summary": "Supplied by the compiler; do not pass."
-          }
-        ],
-        "returns": "The localized string."
-      },
-      {
-        "signature": "System.String LocalizeString(ref LocalizedStringHandler english, System.Object assemblyOrObject, System.Int32 contextId, System.String englishSource)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Returns localized version of an interpolated English string, such as LocalizeString($\"Plug-in: {pi.Name}\", this, 1428). See <b>LocalizeString(ref LocalizedStringHandler, int, string)</b> .",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "english",
-            "type": "LocalizedStringHandler",
-            "summary": "The interpolated text in English."
-          },
-          {
-            "name": "assemblyOrObject",
-            "type": "System.Object",
-            "summary": "An assembly or an object from an assembly."
-          },
-          {
-            "name": "contextId",
-            "type": "System.Int32",
-            "summary": "The context ID."
-          },
-          {
-            "name": "englishSource",
-            "type": "System.String",
-            "summary": "Supplied by the compiler; do not pass."
-          }
-        ],
-        "returns": "The localized string."
-      },
-      {
         "signature": "System.String LocalizeString(System.String english, System.Int32 wrongcontextId, System.Int32 contextId)",
         "modifiers": ["public", "static"],
         "protected": false,
@@ -239623,59 +239579,6 @@
           }
         ],
         "returns": "The unit system name."
-      }
-    ]
-  },
-  {
-    "namespace": "Rhino.UI",
-    "name": "LocalizedStringHandler",
-    "dataType": "struct",
-    "summary": "Built by the compiler when an interpolated string is passed to  <b>Localization.LocalizeString(ref LocalizedStringHandler, int, string)</b> . Collects the English text and each hole's formatted value. Not for direct use.",
-    "since": "9.0",
-    "constructors": [
-      {
-        "signature": "LocalizedStringHandler(int literalLength, int formattedCount)",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "since": "9.0"
-      }
-    ],
-    "methods": [
-      {
-        "signature": "System.Void AppendFormatted(T value, System.Int32 alignment, System.String format)",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "since": "9.0"
-      },
-      {
-        "signature": "System.Void AppendFormatted(T value, System.Int32 alignment)",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "since": "9.0"
-      },
-      {
-        "signature": "System.Void AppendFormatted(T value, System.String format)",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "since": "9.0"
-      },
-      {
-        "signature": "System.Void AppendFormatted(T value)",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "since": "9.0"
-      },
-      {
-        "signature": "System.Void AppendLiteral(System.String value)",
-        "modifiers": ["public"],
-        "protected": false,
-        "virtual": false,
-        "since": "9.0"
       }
     ]
   },
