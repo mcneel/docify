@@ -24215,6 +24215,24 @@
         "since": "7.0"
       },
       {
+        "signature": "System.IntPtr GetDirect3d11Device()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "If the pipeline is running on top of Direct3D 11, this function will return a pointer to the ID3D11Device being used. IntPtr.Zero is returned if the pipeline is running on some other GPU technology. NOTE: AddRef is NOT called on this IUnknown instance.",
+        "since": "9.0",
+        "returns": "Pointer to an ID3D11Device, or IntPtr.Zero."
+      },
+      {
+        "signature": "System.IntPtr GetDirect3d11DeviceContext()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "If the pipeline is running on top of Direct3D 11, this function will return a pointer to the ID3D11DeviceContext1 actively being used. IntPtr.Zero is returned if the pipeline is running on some other GPU technology. NOTE: AddRef is NOT called on this IUnknown instance.",
+        "since": "9.0",
+        "returns": "Pointer to an ID3D11DeviceContext1, or IntPtr.Zero."
+      },
+      {
         "signature": "Light[] GetLights()",
         "modifiers": ["public"],
         "protected": false,
@@ -27852,6 +27870,15 @@
         "protected": false,
         "virtual": false,
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ShowTransparentGrid",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Draw the grid after transparent objects, using GridTransparency. This is the \"Use transparent grid\" grid appearance.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -46854,6 +46881,15 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "bool IncludeMarkups",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Markup content objects are skipped by default. Set this to True to include them along with all other objects.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "bool IncludePhantoms",
         "modifiers": ["public"],
         "protected": false,
@@ -46878,6 +46914,15 @@
         "virtual": false,
         "summary": "When true, locked objects or objects on locked layers are returned.",
         "since": "5.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "Guid MarkupIdFilter",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "When <b>IncludeMarkups</b> is true, includes only the content of the markup with this id; other objects are unaffected.  <b>Guid.Empty</b> , the default, includes the content of every markup.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -57403,6 +57448,15 @@
         "property": ["get"]
       },
       {
+        "signature": "int ActiveIndex",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Index of the markup being viewed or edited, or -1 when none is (including while creating a new markup).",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "ModelComponentType ComponentType",
         "modifiers": ["public", "override"],
         "protected": false,
@@ -57470,6 +57524,62 @@
           }
         ],
         "returns": "Index of new markup or -1 on error."
+      },
+      {
+        "signature": "System.Boolean Cancel()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Discards the current markup edit or create session, or stops viewing a markup.",
+        "since": "9.0",
+        "returns": "True if a markup session or view was ended."
+      },
+      {
+        "signature": "System.Int32 Create(Rhino.Display.RhinoView view, IEnumerable<GeometryBase> geometry, IEnumerable<ObjectAttributes> attributes)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a markup and its content without a markup session, as one undo step. The geometry is added to the document as the markup's content, and the view, captured before it is added, becomes the background. Any geometry type is allowed. It should lie on a plane parallel to the view, as markup tools draw it, but this is not enforced.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "view",
+            "type": "Rhino.Display.RhinoView",
+            "summary": "The view the markup is made in. Its viewport is stored with the markup."
+          },
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The markup's content. Copies are added to the document."
+          },
+          {
+            "name": "attributes",
+            "type": "IEnumerable<ObjectAttributes>",
+            "summary": "Attributes for each geometry item, in the same order. May be null, shorter or contain null; those items get the markup HUD's current color and linetype."
+          }
+        ],
+        "returns": "Index of the new markup, or -1 on failure, including while the document is in markup mode."
+      },
+      {
+        "signature": "System.Int32 Create(Rhino.Display.RhinoView view, IEnumerable<GeometryBase> geometry)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Adds a markup and its content without a markup session, as one undo step. The geometry is added to the document as the markup's content, and the view, captured before it is added, becomes the background. Any geometry type is allowed. It should lie on a plane parallel to the view, as markup tools draw it, but this is not enforced.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "view",
+            "type": "Rhino.Display.RhinoView",
+            "summary": "The view the markup is made in. Its viewport is stored with the markup."
+          },
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The markup's content. Copies are added to the document."
+          }
+        ],
+        "returns": "Index of the new markup, or -1 on failure, including while the document is in markup mode."
       },
       {
         "signature": "System.Int32 Delete(IEnumerable<int> markupIndices, System.Boolean quiet, System.Int32 deleteWarning)",
@@ -57572,6 +57682,22 @@
         "returns": "Index of new markup type or -1 on error."
       },
       {
+        "signature": "System.Boolean Edit(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Starts editing a markup. Its content becomes editable document objects until <b>Save</b> or <b>Cancel</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Zero based index of the markup to edit."
+          }
+        ],
+        "returns": "True if the edit session started."
+      },
+      {
         "signature": "System.Int32 Find(System.Guid id, System.Boolean ignoreDeletedMarkups)",
         "modifiers": ["public"],
         "protected": false,
@@ -57641,11 +57767,36 @@
         "returns": "The markup if found; otherwise null."
       },
       {
+        "signature": "System.Guid[] GetActiveObjectIds()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Ids of the document objects in the open markup create or edit session, including a new markup not yet saved to the table.",
+        "since": "9.0",
+        "returns": "The object ids; empty when no create or edit session is open."
+      },
+      {
         "signature": "IEnumerator<Markup> GetEnumerator()",
         "modifiers": ["public", "override"],
         "protected": false,
         "virtual": false,
         "since": "9.0"
+      },
+      {
+        "signature": "System.Guid[] GetObjectIds(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Ids of the document objects that make up a markup's content. Editable only during <b>Edit</b> .",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Zero based index of the markup."
+          }
+        ],
+        "returns": "The object ids; empty if the index is invalid or the markup has no objects."
       },
       {
         "signature": "System.String GetUnusedMarkupName()",
@@ -57681,6 +57832,31 @@
           }
         ],
         "returns": "True if successful. False if index is out of range."
+      },
+      {
+        "signature": "System.Boolean Save()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Saves the current markup edit or create session, like the on-screen checkmark. Undoable as one step.",
+        "since": "9.0",
+        "returns": "True if the markup was saved. False if no edit or create session is active, or saving failed."
+      },
+      {
+        "signature": "System.Boolean View(System.Int32 index)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Shows a markup in the active view, as the Markups panel does. Ends any current markup session first.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "index",
+            "type": "System.Int32",
+            "summary": "Zero based index of the markup to view."
+          }
+        ],
+        "returns": "True if the markup is now being viewed."
       }
     ]
   },
@@ -90547,120 +90723,6 @@
   },
   {
     "namespace": "Rhino.Geometry",
-    "name": "Aligner",
-    "dataType": "class",
-    "summary": "Moves vertices of different kinds of geometry onto one another, within a distance.  \nSee the _AlignVertices Rhino command for more information.",
-    "since": "9.0",
-    "constructors": [
-      {
-        "signature": "Aligner()",
-        "summary": "Initializes a new instance of the Aligner class"
-      }
-    ],
-    "methods": [
-      {
-        "signature": "System.Int32 AlignVertices(IEnumerable<GeometryBase> geometry, System.Double distance, System.Boolean onlyNaked, System.Boolean average, IEnumerable<IEnumerable<bool>> whichVertices)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Moves vertices that lie within the specified distance of one another onto the same location.  \nThis is helpful to close the seams between separate pieces of geometry.  \nSee the _AlignVertices Rhino command for more information.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "geometry",
-            "type": "IEnumerable<GeometryBase>",
-            "summary": "The geometry to adjust. It is modified in place.  \nMeshes, SubDs, point clouds and degree 1 curves are supported."
-          },
-          {
-            "name": "distance",
-            "type": "System.Double",
-            "summary": "Distance that should not be exceed when moving a vertex."
-          },
-          {
-            "name": "onlyNaked",
-            "type": "System.Boolean",
-            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to. Point cloud points and curve points are always considered, because neither has an interior for this to exclude."
-          },
-          {
-            "name": "average",
-            "type": "System.Boolean",
-            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
-          },
-          {
-            "name": "whichVertices",
-            "type": "IEnumerable<IEnumerable<bool>>",
-            "summary": "If not null, defines which vertices should be considered for adjustment.  \nIf this parameter is non-null, it needs one item per piece of geometry, and each item needs one     value per vertex of the geometry it belongs to.  \nSubD vertices are not currently supported: a list given for a SubD is ignored, and every one of     its vertices is considered. This may be supported in a future version."
-          }
-        ],
-        "returns": "If the operation succeeded, the number of vertices that were moved, or -1 on error."
-      },
-      {
-        "signature": "System.Int32 AlignVertices(IEnumerable<GeometryBase> geometry, System.Double distance, System.Boolean onlyNaked, System.Boolean average)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Moves vertices that lie within the specified distance of one another onto the same location.  \nThis is helpful to close the seams between separate pieces of geometry.  \nAll vertices are considered, not only those on naked edges, unless  says otherwise.  \nSee the _AlignVertices Rhino command for more information.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "geometry",
-            "type": "IEnumerable<GeometryBase>",
-            "summary": "The geometry to adjust. It is modified in place.  \nMeshes, SubDs, point clouds and degree 1 curves are supported."
-          },
-          {
-            "name": "distance",
-            "type": "System.Double",
-            "summary": "Distance that should not be exceed when moving a vertex."
-          },
-          {
-            "name": "onlyNaked",
-            "type": "System.Boolean",
-            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to. Point cloud points and curve points are always considered, because neither has an interior for this to exclude."
-          },
-          {
-            "name": "average",
-            "type": "System.Boolean",
-            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
-          }
-        ],
-        "returns": "If the operation succeeded, the number of vertices that were moved, or -1 on error."
-      },
-      {
-        "signature": "System.Double SuggestDistance(IEnumerable<GeometryBase> geometry)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Suggests a distance for <b>AlignVertices(IEnumerable{GeometryBase}, double, bool, bool)</b>  from the geometry itself, so the gaps do not have to be measured first.  \nA vertex whose nearest neighbour of all belongs to another object was meant to be shared     with it. Within one mesh or SubD, a cluster of naked vertices at least 1000 times closer together     than to any other naked vertex of that object was meant to be one vertex.  \nThe suggestion closes all of these gaps, rounded up to the next power of ten unless that     would reach the spacing next to a gap.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "geometry",
-            "type": "IEnumerable<GeometryBase>",
-            "summary": "The geometry that would be aligned. A single object is enough."
-          }
-        ],
-        "returns": "A distance greater than zero, or zero when no such gap is found."
-      },
-      {
-        "signature": "System.Boolean SupportsGeometry(GeometryBase geometry)",
-        "modifiers": ["public", "static"],
-        "protected": false,
-        "virtual": false,
-        "summary": "Tests whether a piece of geometry can have its vertices aligned.  \nMeshes, SubDs, point clouds and degree 1 curves are supported.",
-        "since": "9.0",
-        "parameters": [
-          {
-            "name": "geometry",
-            "type": "GeometryBase",
-            "summary": "The geometry to test. Can be null."
-          }
-        ],
-        "returns": "True if <b>AlignVertices(IEnumerable{GeometryBase}, double, bool, bool)</b> accepts this geometry."
-      }
-    ]
-  },
-  {
-    "namespace": "Rhino.Geometry",
     "name": "AngularDimension",
     "dataType": "class",
     "summary": "Represents a dimension of an entity that can be measured with an angle.",
@@ -95837,7 +95899,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstBrep",
@@ -95869,7 +95931,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstBrep",
@@ -95896,7 +95958,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two sets of Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstSet",
@@ -95928,7 +95990,7 @@
         "virtual": false,
         "summary": "Compute the Solid Difference of two sets of Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstSet",
@@ -95955,7 +96017,7 @@
         "virtual": false,
         "summary": "Compute the solid difference between two sets of Breps.",
         "since": "8.13",
-    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstSet",
@@ -95992,7 +96054,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstBrep",
@@ -96024,7 +96086,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstBrep",
@@ -96051,7 +96113,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two sets of Breps.",
         "since": "6.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstSet",
@@ -96083,7 +96145,7 @@
         "virtual": false,
         "summary": "Compute the Solid Intersection of two sets of Breps.",
         "since": "5.0",
-    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "The solid orientation of the breps make a difference when calling this function. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstSet",
@@ -96110,7 +96172,7 @@
         "virtual": false,
         "summary": "Splits shared areas of Breps and creates separate Breps from the shared and unshared parts.",
         "since": "6.16",
-    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstBrep",
@@ -96137,7 +96199,7 @@
         "virtual": false,
         "summary": "Splits shared areas of Breps and creates separate Breps from the shared and unshared parts.",
         "since": "6.16",
-    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "firstSet",
@@ -96164,7 +96226,7 @@
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps.",
         "since": "8.0",
-    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "breps",
@@ -96206,7 +96268,7 @@
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps.",
         "since": "6.0",
-    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "breps",
@@ -96233,7 +96295,7 @@
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps.",
         "since": "5.0",
-    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "breps",
@@ -96254,7 +96316,7 @@
         "protected": false,
         "virtual": false,
         "summary": "Compute the Boolean Union of a set of Breps, reporting which inputs produced each result.",
-    "remarks": "A union result can come from several inputs, so this reports a list per result where  <b>CreateBooleanDifferenceWithIndexMap</b> reports one index.  The indices name the group of inputs a result was built from, which is not always the same as the inputs its geometry reached: a result made of disconnected pieces is separated into one result per piece, and each piece names the whole group.  An input absorbed by another contributes no geometry and appears in no entry of . An input the operation could not use is absent in the same way: one that is non-manifold whenis true, or one the Boolean kernel cannot accept. An input whose shells are disjoint produces one result per shell, and each of those names it.  A None element inthrows <b>ArgumentException</b> , because the reported indices are positions in that sequence. The other CreateBooleanUnion overloads drop nulls silently and renumber what follows. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See  <b>PrepareForBooleans</b> .",
+    "remarks": "A union result can come from several inputs, so this reports a list per result where  <b>CreateBooleanDifferenceWithIndexMap</b> reports one index.  The indices name the group of inputs a result was built from, which is not always the same as the inputs its geometry reached: a result made of disconnected pieces is separated into one result per piece, and each piece names the whole group.  An input absorbed by another contributes no geometry and appears in no entry of . An input the operation could not use is absent in the same way: one that is non-manifold whenis true, or one the Boolean kernel cannot accept. An input whose shells are disjoint produces one result per shell, and each of those names it.  A None element inthrows <b>ArgumentException</b> , because the reported indices are positions in that sequence. The other CreateBooleanUnion overloads drop nulls silently and renumber what follows. Breps that have never been added to a document may need preparing first, or this method can fail, or return an unexpected result. See Brep.PrepareForBooleans.",
         "parameters": [
           {
             "name": "breps",
@@ -100641,6 +100703,23 @@
         "summary": "Prepares this Brep for a Boolean or intersection operation by applying the same cleanup Rhino performs when a Brep is added to the document. Breps that have never been added to a document can fail these operations, or return unexpected results, without it.",
         "since": "9.0",
     "remarks": "Because kinked surfaces can cause problems downstream, Rhino, by default, splits kinked surfaces when adding Breps to the document. So this method splits all kinky Brep faces. Also, because inward pointing face normals for solid Breps can cause problems, Rhino flips inward pointing normals for solids when adding Breps to the document. So this method checks the solid orientation and, if inward, flips the face normals.  \nThis method modifies the Brep in place. If it returns false, then the Brep was     modified but is no longer valid. Duplicate the Brep first if you need to keep     the original, and note that flipping an inward pointing solid discards a     deliberately inside out orientation.",
+        "returns": "True if the Brep is ready to use, False otherwise."
+      },
+      {
+        "signature": "System.Boolean PrepareForBooleans(System.Double angleToleranceRadians)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Prepares this Brep for a Boolean or intersection operation by applying the same cleanup Rhino performs when a Brep is added to the document. Breps that have never been added to a document can fail these operations, or return unexpected results, without it.",
+        "since": "9.0",
+    "remarks": "Because kinked surfaces can cause problems downstream, Rhino, by default, splits kinked surfaces when adding Breps to the document. So this method splits all kinky Brep faces. Also, because inward pointing face normals for solid Breps can cause problems, Rhino flips inward pointing normals for solids when adding Breps to the document. So this method checks the solid orientation and, if inward, flips the face normals.  \nThis method modifies the Brep in place. If it returns false, then the Brep was     modified but is no longer valid. Duplicate the Brep first if you need to keep     the original, and note that flipping an inward pointing solid discards a     deliberately inside out orientation.",
+        "parameters": [
+          {
+            "name": "angleToleranceRadians",
+            "type": "System.Double",
+            "summary": "Angle tolerance, in radians, used to split kinky faces. When in doubt, use the document's model angle tolerance."
+          }
+        ],
         "returns": "True if the Brep is ready to use, False otherwise."
       },
       {
@@ -108573,7 +108652,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved, or  to move and align onto naked vertices only.  \nSee the _AlignVertices Rhino command for more information.",
         "parameters": [
           {
             "name": "meshes",
@@ -108598,7 +108677,7 @@
         "modifiers": ["public", "static"],
         "protected": false,
         "virtual": false,
-        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved, or  to move and align onto naked vertices only.  \nSee the _AlignVertices Rhino command for more information.",
         "since": "9.0",
         "parameters": [
           {
@@ -108774,7 +108853,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved, or  to move and align onto naked vertices only.  \nSee the _AlignVertices Rhino command for more information.",
         "since": "6.0",
         "parameters": [
           {
@@ -108795,7 +108874,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved.  \nSee the _AlignVertices Rhino command for more information.",
+        "summary": "Moves mesh vertices to neighboring vertices, within the specified distance.  \nThis forces unaligned mesh vertices to the same location and is helpful to clean meshes for 3D printing.  \nAll vertices are considered, not only those on naked edges. Use  to restrict which ones are moved, or  to move and align onto naked vertices only.  \nSee the _AlignVertices Rhino command for more information.",
         "since": "9.0",
         "parameters": [
           {
@@ -134930,9 +135009,9 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Determines if a point is inside a solid mesh.",
+        "summary": "Determines if a point is inside a closed mesh.",
         "since": "5.0",
-    "remarks": "The caller is responsible for making certain the mesh is valid, closed, and 2-manifold before calling this function. If the mesh is not, the behavior is undetermined.",
+    "remarks": "The mesh must be closed and manifold; this function returns False for any other mesh. Inside means enclosed by the mesh, so a consistent face orientation is not required and reversing the faces does not change the answer.",
         "parameters": [
           {
             "name": "point",
@@ -134950,7 +135029,7 @@
             "summary": "If strictlyIn is true, then point must be inside mesh by at least tolerance in order for this function to return true. If strictlyIn is false, then this function will return True if point is inside or the distance from point to a mesh face is <= tolerance."
           }
         ],
-        "returns": "True if point is inside the solid mesh, False if not."
+        "returns": "True if point is inside the mesh, False if not."
       },
       {
         "signature": "System.Boolean MatchEdges(System.Double distance, System.Boolean rachet)",
@@ -138841,7 +138920,7 @@
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
-        "summary": "Gets or sets whether cuts that stop inside the mesh are completed.  \nAn intersection curve that stops inside the mesh does not separate one side from the     other, so the mesh is returned whole. When this is enabled, each such open end is joined to the     nearest border of the mesh, or to another cut, following edges the mesh already has.  \nThis yields a best-effort cut where the intersection alone leaves the answer undetermined:     the added stretch follows existing edges rather than the cutter, so it is not an intersection     result. No vertex is moved and no face is added. Cuts that already close, or that already run     from border to border, are unaffected.",
+        "summary": "Gets or sets whether cuts that stop inside the mesh are completed.  \nAn intersection curve that stops inside the mesh does not separate one side from the     other, so the mesh is returned whole. When this is enabled, each such open end is joined to the     nearest border of the mesh, or to another cut, by the shortest path along existing edges or     straight across a quad or an n-gon between two of its vertices.  \nThis yields a best-effort cut where the intersection alone leaves the answer undetermined:     the added stretch follows the mesh rather than the cutter, so it is not an intersection     result. No vertex is added or moved; faces crossed straight are re-tiled from their own vertices.     Cuts that already close, or that already run from border to border, are unaffected.",
         "since": "9.0",
         "property": ["get", "set"]
       },
@@ -138855,12 +138934,30 @@
         "property": ["get", "set"]
       },
       {
+        "signature": "Point3d[] OpenCutEnds",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the ends of the intersections that stop inside a mesh, as found by the last operation that used these options: empty when there were none, None when <b>RequestOpenCutEnds</b> was disabled.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
         "signature": "IProgress<double> ProgressReporter",
         "modifiers": ["public"],
         "protected": false,
         "virtual": false,
         "summary": "Gets or sets the object that is responsible to keep track of calculation progression.",
         "since": "8.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool RequestOpenCutEnds",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether the operation reports where intersections stop inside a mesh it splits.  \nSuch a cut separates nothing. When this is enabled,  holds the ends     of those cuts after the call. Nothing is computed when it is disabled.",
+        "since": "9.0",
         "property": ["get", "set"]
       },
       {
@@ -172821,6 +172918,120 @@
       }
     ]
 
+  },
+  {
+    "namespace": "Rhino.Geometry",
+    "name": "VertexAligner",
+    "dataType": "class",
+    "summary": "Moves vertices of different kinds of geometry onto one another, within a distance.  \nSee the _AlignVertices Rhino command for more information.",
+    "since": "9.0",
+    "constructors": [
+      {
+        "signature": "VertexAligner()",
+        "summary": "Initializes a new instance of the VertexAligner class"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "System.Int32 Align(IEnumerable<GeometryBase> geometry, System.Double distance, System.Boolean onlyNaked, System.Boolean average, IEnumerable<IEnumerable<bool>> whichVertices)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves vertices that lie within the specified distance of one another onto the same location.  \nThis is helpful to close the seams between separate pieces of geometry.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The geometry to adjust. It is modified in place.  \nMeshes, SubDs, point clouds and degree 1 curves are supported."
+          },
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when moving a vertex."
+          },
+          {
+            "name": "onlyNaked",
+            "type": "System.Boolean",
+            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to. Point cloud points and curve points are always considered, because neither has an interior for this to exclude."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          },
+          {
+            "name": "whichVertices",
+            "type": "IEnumerable<IEnumerable<bool>>",
+            "summary": "If not null, defines which vertices should be considered for adjustment.  \nIf this parameter is non-null, it needs one item per piece of geometry, and each item needs one     value per vertex of the geometry it belongs to.  \nSubD vertices are not currently supported: a list given for a SubD is ignored, and every one of     its vertices is considered. This may be supported in a future version."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Int32 Align(IEnumerable<GeometryBase> geometry, System.Double distance, System.Boolean onlyNaked, System.Boolean average)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Moves vertices that lie within the specified distance of one another onto the same location.  \nThis is helpful to close the seams between separate pieces of geometry.  \nAll vertices are considered, not only those on naked edges, unless  says otherwise.  \nSee the _AlignVertices Rhino command for more information.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The geometry to adjust. It is modified in place.  \nMeshes, SubDs, point clouds and degree 1 curves are supported."
+          },
+          {
+            "name": "distance",
+            "type": "System.Double",
+            "summary": "Distance that should not be exceed when moving a vertex."
+          },
+          {
+            "name": "onlyNaked",
+            "type": "System.Boolean",
+            "summary": "If true, only vertices that lie along naked edges are moved, and only such vertices are used as targets to align to. Point cloud points and curve points are always considered, because neither has an interior for this to exclude."
+          },
+          {
+            "name": "average",
+            "type": "System.Boolean",
+            "summary": "If true, vertices that are candidates for one another are moved towards each other, rather than one of them being privileged and the others moved onto it."
+          }
+        ],
+        "returns": "If the operation succeeded, the number of vertices that were moved, or -1 on error."
+      },
+      {
+        "signature": "System.Double SuggestDistance(IEnumerable<GeometryBase> geometry)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Suggests a distance for <b>Align(IEnumerable{GeometryBase}, double, bool, bool)</b>  from the geometry itself, so the gaps do not have to be measured first.  \nA vertex whose nearest neighbour of all belongs to another object was meant to be shared     with it. Within one mesh or SubD, a cluster of naked vertices at least 1000 times closer together     than to any other naked vertex of that object was meant to be one vertex.  \nThe suggestion closes all of these gaps, rounded up to the next power of ten unless that     would reach the spacing next to a gap.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "IEnumerable<GeometryBase>",
+            "summary": "The geometry that would be aligned. A single object is enough."
+          }
+        ],
+        "returns": "A distance greater than zero, or zero when no such gap is found."
+      },
+      {
+        "signature": "System.Boolean SupportsGeometry(GeometryBase geometry)",
+        "modifiers": ["public", "static"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Tests whether a piece of geometry can have its vertices aligned.  \nMeshes, SubDs, point clouds and degree 1 curves are supported.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "geometry",
+            "type": "GeometryBase",
+            "summary": "The geometry to test. Can be null."
+          }
+        ],
+        "returns": "True if <b>Align(IEnumerable{GeometryBase}, double, bool, bool)</b> accepts this geometry."
+      }
+    ]
   },
   {
     "namespace": "Rhino.Geometry",
