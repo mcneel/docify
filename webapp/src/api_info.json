@@ -47927,6 +47927,15 @@
         "summary": "If the referenced geometry is an edge of a surface, this returns the associated brep trim.",
         "since": "5.8",
         "returns": "A boundary representation trim; or None on error"
+      },
+      {
+        "signature": "BrepVertex Vertex()",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "If the referenced geometry is a brep vertex, this returns the brep vertex.",
+        "since": "9.0",
+        "returns": "A boundary representation vertex; or None if the referenced geometry is not a brep vertex, or on error."
       }
     ]
   },
@@ -116801,6 +116810,7 @@
         "virtual": false,
         "summary": "Searches for a derivative, tangent, or curvature discontinuity.",
         "since": "5.0",
+    "remarks": "G1 uses a 1 degree tangent angle tolerance. G2 reports a discontinuity if the curvature vectors differ in direction by more than 2 degrees or in magnitude by more than 5%. These tolerances do not depend on the document's angle tolerance.",
         "parameters": [
           {
             "name": "continuityType",
@@ -116851,12 +116861,12 @@
           {
             "name": "cosAngleTolerance",
             "type": "System.Double",
-            "summary": "default = cos(1 degree) Used only when continuity is G1_continuous or G2_continuous. If the  cosine of the angle between two tangent vectors is <= cos_angle_tolerance, then a G1 discontinuity is reported."
+            "summary": "default = cos(1 degree) Used only when continuity is G1_continuous or G2_continuous. If the cosine of the angle between two tangent vectors is <= cosAngleTolerance, then a G1 discontinuity is reported. For G2, values tighter than cos(1 degree) are treated as cos(1 degree), and angles less than about 18 degrees are doubled for the curvature direction test. With the default, a G2 discontinuity is reported if the curvature vectors differ by more than 2 degrees."
           },
           {
             "name": "curvatureTolerance",
             "type": "System.Double",
-            "summary": "(default = ON_SQRT_EPSILON) Used only when continuity is G2_continuous. If K0 and K1 are curvatures evaluated from above and below and |K0 - K1| > curvature_tolerance, then a curvature discontinuity is reported."
+            "summary": "(default = RhinoMath.SqrtEpsilon) Used only when continuity is G2_continuous. If K0 and K1 are curvatures evaluated from above and below and |K0 - K1| <= curvatureTolerance, then the curvature is considered continuous. Otherwise, a curvature discontinuity is reported if the curvature direction test fails or ||K0| - |K1|| > 0.05 * max(|K0|, |K1|). Increasing curvatureTolerance can only loosen the test."
           },
           {
             "name": "t",
@@ -117047,6 +117057,7 @@
         "virtual": false,
         "summary": "Test continuity at a curve parameter value.",
         "since": "5.0",
+    "remarks": "G1 uses a 1 degree tangent angle tolerance. G2 reports a discontinuity if the curvature vectors differ in direction by more than 2 degrees or in magnitude by more than 5%. These tolerances do not depend on the document's angle tolerance.",
         "parameters": [
           {
             "name": "continuityType",
@@ -136665,7 +136676,60 @@
     "name": "MeshBooleanOptions",
     "dataType": "class",
     "summary": "Contains a set of data to pass to boolean options.",
-    "baseclass": "Rhino.Geometry.MeshSplitOptions"
+    "baseclass": "Rhino.Geometry.MeshSplitOptions",
+    "constructors": [
+      {
+        "signature": "MeshBooleanOptions()",
+        "summary": "Initializes a new instance of the MeshBooleanOptions class"
+      }
+    ],
+    "properties": [
+      {
+        "signature": "IndexPair[] FailedInputPairs",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the pairs of input meshes whose operation with each other could not be computed. Indices count the non-None input meshes; for the two-set operations the second set is counted after the first, and a union pair is listed only when its meshes ended in different results. Empty when there were none, None when  <b>RequestReport</b> was disabled.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "int[] OpenResults",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the indices of the results that have naked edges although no input mesh had any: empty when there were none, None when <b>RequestReport</b> was disabled.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool RequestReport",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether the operation reports the work it could not do.  \nWhen this is enabled, ,  and      hold what the last operation that used these options found.     Nothing is collected when it is disabled.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "bool ResolveSelfIntersections",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets or sets whether union, difference and intersection first read an input mesh that intersects     itself, or whose closed parts nest in each other or are wound inside out, as the solid it encloses.  \nWhen this is disabled, such inputs are still resolved when the result computed from the inputs as     given has naked or non-manifold edges it should not have, or could not be computed, and the result from     the resolved inputs has neither. Splitting is not affected.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      },
+      {
+        "signature": "IndexPair[] UnmergedResultPairs",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Gets the pairs of union results that were left apart because joining them would have left naked edges, as indices into the results: empty when there were none, None when <b>RequestReport</b>  was disabled.",
+        "since": "9.0",
+        "property": ["get", "set"]
+      }
+    ]
   },
   {
     "namespace": "Rhino.Geometry",
@@ -178599,7 +178663,7 @@
             "summary": "If the point was on a Brep face, then the v parameter."
           }
         ],
-        "returns": "The Brep face or None if the point was not on a Brep face."
+        "returns": "A face on a copy of the Brep, or None if the point was not on a Brep face."
       },
       {
         "signature": "Curve PointOnCurve(out System.Double t)",
@@ -178615,7 +178679,7 @@
             "summary": "If the point was on a curve, then the t is the curve parameter for the point.  The point returned by Point() is the same as curve.PointAt(t)."
           }
         ],
-        "returns": "A curve at a specified parameter value."
+        "returns": "A copy of the curve, or None if the point was not on a curve. If the point was on a Brep edge, then an edge on a copy of the Brep is returned."
       },
       {
         "signature": "DocObjects.ObjRef PointOnObject()",
@@ -178645,7 +178709,7 @@
             "summary": "If the point was on a surface, then the v parameter."
           }
         ],
-        "returns": "The surface or None if the point was not on a surface."
+        "returns": "A copy of the surface or None if the point was not on a surface. If the point was on a Brep face, then a copy of the face is returned."
       },
       {
         "signature": "System.Void SetBasePoint(Point3d basePoint, System.Boolean showDistanceInStatusBar)",
@@ -218869,6 +218933,15 @@
         "property": ["get"]
       },
       {
+        "signature": "string CurrentUndoRecordDescription",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "The description of the undo record currently being recorded, as shown in Undo, Redo, and UndoMultiple. If no description has been set, this is the name of the command that owns the record. Null if undo recording is not active.",
+        "since": "9.0",
+        "property": ["get"]
+      },
+      {
         "signature": "uint CurrentUndoRecordSerialNumber",
         "modifiers": ["public"],
         "protected": false,
@@ -220696,6 +220769,22 @@
             "summary": "Append to current selection"
           }
         ]
+      },
+      {
+        "signature": "System.Boolean SetCurrentUndoRecordDescription(System.String description)",
+        "modifiers": ["public"],
+        "protected": false,
+        "virtual": false,
+        "summary": "Sets the description of the undo record currently being recorded. Use this to give the undo record of a running command, such as RunPythonScript, a meaningful name in Undo, Redo, and UndoMultiple.",
+        "since": "9.0",
+        "parameters": [
+          {
+            "name": "description",
+            "type": "System.String",
+            "summary": "The new description. Cannot be null, empty, or only white space."
+          }
+        ],
+        "returns": "True if an undo record is active and its description was set."
       },
       {
         "signature": "System.Void SetCustomMeshingParameters(MeshingParameters mp)",
